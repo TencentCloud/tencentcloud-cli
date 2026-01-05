@@ -779,6 +779,9 @@ SERVICE_VERSIONS = {
     "weilingwith": [
         "2023-04-27"
     ],
+    "wimgs": [
+        "2025-11-06"
+    ],
     "wsa": [
         "2025-05-08"
     ],

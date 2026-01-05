@@ -30,6 +30,7 @@ Output:
                 "Region": [
                     "15"
                 ],
+                "SpId": "svp-ivm000e-D4l9f66",
                 "SpType": "svp_common",
                 "Status": 1,
                 "UtilizationRate": 100

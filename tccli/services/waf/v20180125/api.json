@@ -399,6 +399,13 @@
       "output": "DescribeBatchIpAccessControlResponse",
       "status": "online"
     },
+    "DescribeBotIdRule": {
+      "document": "获取BotId规则列表1",
+      "input": "DescribeBotIdRuleRequest",
+      "name": "获取BotId规则列表",
+      "output": "DescribeBotIdRuleResponse",
+      "status": "online"
+    },
     "DescribeBotSceneList": {
       "document": "获取BOT场景列表与概览",
       "input": "DescribeBotSceneListRequest",
@@ -4694,6 +4701,228 @@
         }
       ],
       "usage": "in"
+    },
+    "BotIdDetail": {
+      "document": "BOT-ID规则配置详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "330001341",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "abot",
+          "member": "string",
+          "name": "BotId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则动作",
+          "example": "monitor",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "200",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "ddos",
+          "member": "string",
+          "name": "BotIdType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "1231434245",
+          "member": "int64",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插入时间",
+          "example": "1231434245",
+          "member": "int64",
+          "name": "InsertTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "nemo",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "影响",
+          "example": "high",
+          "member": "string",
+          "name": "Influence",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向路径",
+          "example": "/luffy",
+          "member": "string",
+          "name": "Redirect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否关联事件",
+          "example": "false",
+          "member": "bool",
+          "name": "HasEvent",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotIdStat": {
+      "document": "Bot-Id规则统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模式：观察/拦截/自定义",
+          "example": "观察",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "39",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置观察的规则数",
+          "example": "20",
+          "member": "int64",
+          "name": "MonitorCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置拦截的规则数",
+          "example": "90",
+          "member": "int64",
+          "name": "InterceptCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置重定向的规则数",
+          "example": "23",
+          "member": "int64",
+          "name": "RedirectCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置人机识别的规则数",
+          "example": "43",
+          "member": "int64",
+          "name": "CaptchaCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局防护等级",
+          "example": "strict",
+          "member": "string",
+          "name": "ProtectLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局重定向路径",
+          "example": "/luffy",
+          "member": "string",
+          "name": "GlobalRedirect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "JS挑战的数目",
+          "example": "12",
+          "member": "int64",
+          "name": "JsChallengeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BotMonitorPkg": {
       "document": "BOT安全监测资源信息",
@@ -11045,6 +11274,126 @@
           "example": "{                     \"Res\": [                         {                             \"Id\": \"66ac350c8f33c805d6d533ff\",                             \"RuleId\": 5501677048,                             \"ActionType\": 42,                             \"Ip\": \"4.4.4.4,5.5.5.5\",                             \"Note\": \"\",                             \"Source\": \"batch\",                             \"TsVersion\": 1722561804743,                             \"CreateTime\": 1722561804743,                             \"ValidTs\": 2019571199,                             \"Hosts\": [                                 \"testwaf.com\"                             ],                             \"IpList\": [                                 \"4.4.4.4\",                                 \"5.5.5.5\"                             ],                             \"JobType\": \"TimedJob\",                             \"JobDateTime\": {                                 \"Timed\": [                                     {                                         \"StartDateTime\": 0,                                         \"EndDateTime\": 0                                     }                                 ],                                 \"Cron\": null,                                 \"TimeTZone\": \"UTC+8\"                             },                             \"CronType\": \"-\",                             \"ValidStatus\": 1                         }], \"TotalCount\":1}",
           "member": "BatchIpAccessControlData",
           "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotIdRuleRequest": {
+      "document": "DescribeBotIdRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "admin.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景ID",
+          "example": "3032423421",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "3332423421",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "emptyua",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级筛选",
+          "example": "100",
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型筛选",
+          "example": "ddos",
+          "member": "string",
+          "name": "BotIdType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则开关-用于筛选: 0-全部 1-关闭 2-开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动作类型-用于筛选",
+          "example": "monitor",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotIdRuleResponse": {
+      "document": "DescribeBotIdRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[       {         \"RuleId\": \"333242221\",         \"BotId\": \"emptyua\",         \"Status\": true,         \"Action\": \"monitor\",         \"Level\": 100,         \"BotIdType\": \"ddos\",         \"ModifyTime\": 0,         \"InsertTime\": 0,         \"Description\": \"miaoshuxinxi\",         \"Influence\": \"high\"       }     ]",
+          "member": "BotIdDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的规则数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot规则数量统计信息",
+          "example": "{       \"Pattern\": \"intercept\",       \"TotalCount\": 0,       \"MonitorCount\": 0,       \"InterceptCount\": 10     }",
+          "member": "BotIdStat",
+          "name": "StatInfo",
           "output_required": true,
           "type": "object",
           "value_allowed_null": false

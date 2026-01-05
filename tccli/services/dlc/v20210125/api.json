@@ -25451,7 +25451,7 @@
         {
           "disabled": false,
           "document": "定时启停策略，复杂类型：包含启停时间、挂起集群策略",
-          "example": "复杂类型",
+          "example": "无",
           "member": "CrontabResumeSuspendStrategy",
           "name": "CrontabResumeSuspendStrategy",
           "required": false,
@@ -25505,7 +25505,7 @@
         {
           "disabled": false,
           "document": "Spark批作业集群Session资源配置模板",
-          "example": "{                 \"DriverSize\": \"large\",                 \"ExecutorMaxNumbers\": 3,                 \"ExecutorNums\": 3,                 \"ExecutorSize\": \"large\"             }",
+          "example": "无",
           "member": "SessionResourceTemplate",
           "name": "SessionResourceTemplate",
           "required": false,
@@ -25514,7 +25514,7 @@
         {
           "disabled": false,
           "document": "引擎资源弹性伸缩策略",
-          "example": "{                 \"ScheduledElasticityEnabled\": \"true\",                 \"ScheduleType\": \"WEEKLY\"             }",
+          "example": "无",
           "member": "ScheduleElasticityConf",
           "name": "ScheduleElasticityConf",
           "required": false,

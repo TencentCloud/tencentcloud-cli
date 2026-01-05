@@ -474,6 +474,14 @@
         "title": "Waf 多域名ip黑白名单查询"
       }
     ],
+    "DescribeBotIdRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotDetailDownloadTask\n<公共请求参数>\n\n{\n    \"Domain\": \"admin.com\",\n    \"SceneId\": \"303242221\",\n    \"RuleId\": \"333242221\",\n    \"BotId\": \"emptyua\",\n    \"Level\": [\n        100\n    ],\n    \"BotIdType\": [\n        \"ddos\"\n    ],\n    \"Status\": 0,\n    \"RuleAction\": [\n        \"monitor\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"RuleId\": \"333242221\",\n                \"BotId\": \"emptyua\",\n                \"Status\": true,\n                \"Action\": \"monitor\",\n                \"Level\": 100,\n                \"BotIdType\": \"ddos\",\n                \"ModifyTime\": 0,\n                \"InsertTime\": 0,\n                \"Description\": \"miaoshuxinxi\",\n                \"Influence\": \"high\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"StatInfo\": {\n            \"Pattern\": \"intercept\",\n            \"TotalCount\": 0,\n            \"MonitorCount\": 0,\n            \"InterceptCount\": 10\n        },\n        \"RequestId\": \"req-id-23112\"\n    }\n}",
+        "title": "sample"
+      }
+    ],
     "DescribeBotSceneList": [
       {
         "document": "仅查看默认场景",

@@ -50,11 +50,11 @@
       "status": "online"
     },
     "ContinueRunFailedTaskBatch": {
-      "document": "对执行失败的任务批次执行续跑",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n对执行失败的任务批次执行续跑",
       "input": "ContinueRunFailedTaskBatchRequest",
       "name": "续跑任务批次",
       "output": "ContinueRunFailedTaskBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAllGatewayApiAsync": {
       "document": "一键导入API分组",
@@ -239,18 +239,18 @@
       "status": "online"
     },
     "CreateTask": {
-      "document": "创建任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n创建任务",
       "input": "CreateTaskRequest",
       "name": "创建任务",
       "output": "CreateTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateTaskFlow": {
-      "document": "创建工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n创建工作流",
       "input": "CreateTaskFlowRequest",
       "name": "创建工作流",
       "output": "CreateTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateUnitNamespaces": {
       "document": "批量创建单元化命名空间",
@@ -414,11 +414,11 @@
       "status": "deprecated"
     },
     "DeleteTask": {
-      "document": "删除任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n删除任务",
       "input": "DeleteTaskRequest",
       "name": "删除任务",
       "output": "DeleteTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteUnitNamespaces": {
       "document": "删除单元化命名空间",
@@ -687,11 +687,11 @@
       "status": "online"
     },
     "DescribeFlowLastBatchState": {
-      "document": "查询工作流最新一个批次的状态信息",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询工作流最新一个批次的状态信息",
       "input": "DescribeFlowLastBatchStateRequest",
       "name": "查询工作流最近一个批次的执行状态",
       "output": "DescribeFlowLastBatchStateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeGatewayAllGroupApis": {
       "document": "查询网关所有分组下Api列表",
@@ -1051,25 +1051,25 @@
       "status": "online"
     },
     "DescribeTaskDetail": {
-      "document": "查询任务详情",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询任务详情",
       "input": "DescribeTaskDetailRequest",
       "name": "查询任务详情",
       "output": "DescribeTaskDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTaskLastStatus": {
-      "document": "查询任务最近一次执行状态",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询任务最近一次执行状态",
       "input": "DescribeTaskLastStatusRequest",
       "name": "查看任务最近执行批次状态",
       "output": "DescribeTaskLastStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTaskRecords": {
-      "document": "翻页查询任务列表",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n翻页查询任务列表",
       "input": "DescribeTaskRecordsRequest",
       "name": "查询任务列表",
       "output": "DescribeTaskRecordsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeUnitApiUseDetail": {
       "document": "查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail",
@@ -1128,18 +1128,18 @@
       "status": "online"
     },
     "DisableTask": {
-      "document": "停用任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停用任务",
       "input": "DisableTaskRequest",
       "name": "停用任务",
       "output": "DisableTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DisableTaskFlow": {
-      "document": "停用工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停用工作流",
       "input": "DisableTaskFlowRequest",
       "name": "停用工作流",
       "output": "DisableTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DisableUnitRoute": {
       "document": "禁用单元化路由",
@@ -1184,18 +1184,18 @@
       "status": "online"
     },
     "EnableTask": {
-      "document": "启用任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n启用任务",
       "input": "EnableTaskRequest",
       "name": "启用任务",
       "output": "EnableTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "EnableTaskFlow": {
-      "document": "启用工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n启用工作流",
       "input": "EnableTaskFlowRequest",
       "name": "启用工作流",
       "output": "EnableTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "EnableUnitRoute": {
       "document": "启用单元化路由",
@@ -1212,18 +1212,18 @@
       "status": "online"
     },
     "ExecuteTask": {
-      "document": "手动执行一次任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n手动执行一次任务",
       "input": "ExecuteTaskRequest",
       "name": "手动执行一次任务",
       "output": "ExecuteTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ExecuteTaskFlow": {
-      "document": "执行一次工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n执行一次工作流",
       "input": "ExecuteTaskFlowRequest",
       "name": "执行一次工作流",
       "output": "ExecuteTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ExpandGroup": {
       "document": "虚拟机部署组添加实例",
@@ -1317,11 +1317,11 @@
       "status": "online"
     },
     "ModifyTask": {
-      "document": "修改任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n修改任务",
       "input": "ModifyTaskRequest",
       "name": "修改任务",
       "output": "ModifyTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyUploadInfo": {
       "document": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。",
@@ -1345,32 +1345,32 @@
       "status": "deprecated"
     },
     "RedoTask": {
-      "document": "重新执行任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行任务",
       "input": "RedoTaskRequest",
       "name": "重新执行任务",
       "output": "RedoTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedoTaskBatch": {
-      "document": "重新执行任务批次",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行任务批次",
       "input": "RedoTaskBatchRequest",
       "name": "重新执行任务批次",
       "output": "RedoTaskBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedoTaskExecute": {
-      "document": "重新执行在某个节点上执行任务。",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行在某个节点上执行任务。",
       "input": "RedoTaskExecuteRequest",
       "name": "重新执行任务的一次执行",
       "output": "RedoTaskExecuteResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedoTaskFlowBatch": {
-      "document": "重新执行工作流批次",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行工作流批次",
       "input": "RedoTaskFlowBatchRequest",
       "name": "重新执行工作流批次",
       "output": "RedoTaskFlowBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ReleaseApiGroup": {
       "document": "发布Api分组",
@@ -1499,25 +1499,25 @@
       "status": "online"
     },
     "StopTaskBatch": {
-      "document": "停止执行中的任务批次， 非运行中的任务不可调用。",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止执行中的任务批次， 非运行中的任务不可调用。",
       "input": "StopTaskBatchRequest",
       "name": "停止执行中的任务批次",
       "output": "StopTaskBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "StopTaskExecute": {
-      "document": "停止正在某个节点上执行的任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止正在某个节点上执行的任务",
       "input": "StopTaskExecuteRequest",
       "name": "停止正在执行的任务",
       "output": "StopTaskExecuteResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "TerminateTaskFlowBatch": {
-      "document": "停止一个工作流批次",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止一个工作流批次",
       "input": "TerminateTaskFlowBatchRequest",
       "name": "停止一个工作流批次",
       "output": "TerminateTaskFlowBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UnbindApiGroup": {
       "document": "API分组批量与网关解绑",

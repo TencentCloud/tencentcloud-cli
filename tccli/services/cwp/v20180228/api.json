@@ -7,13 +7,6 @@
       "output": "AddLoginWhiteListsResponse",
       "status": "online"
     },
-    "CancelIgnoreVul": {
-      "document": "产品变动切换到了\\\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\\\n相关接口\n\n取消漏洞忽略",
-      "input": "CancelIgnoreVulRequest",
-      "name": "取消漏洞忽略",
-      "output": "CancelIgnoreVulResponse",
-      "status": "deprecated"
-    },
     "ChangeRuleEventsIgnoreStatus": {
       "document": "根据检测项id或事件id批量忽略事件或取消忽略",
       "input": "ChangeRuleEventsIgnoreStatusRequest",
@@ -875,13 +868,6 @@
       "output": "DescribeAttackVulTypeListResponse",
       "status": "online"
     },
-    "DescribeAvailableExpertServiceDetail": {
-      "document": "专家服务-可用订单详情",
-      "input": "DescribeAvailableExpertServiceDetailRequest",
-      "name": "可用订单详情",
-      "output": "DescribeAvailableExpertServiceDetailResponse",
-      "status": "online"
-    },
     "DescribeBanMode": {
       "document": "获取爆破阻断模式",
       "input": "DescribeBanModeRequest",
@@ -1218,13 +1204,6 @@
       "output": "DescribeESAggregationsResponse",
       "status": "online"
     },
-    "DescribeEmergencyResponseList": {
-      "document": "专家服务-应急响应列表",
-      "input": "DescribeEmergencyResponseListRequest",
-      "name": "应急响应列表",
-      "output": "DescribeEmergencyResponseListResponse",
-      "status": "online"
-    },
     "DescribeEmergencyVulList": {
       "document": "获取应急漏洞列表",
       "input": "DescribeEmergencyVulListRequest",
@@ -1237,20 +1216,6 @@
       "input": "DescribeEventByTableRequest",
       "name": "根据事件表名和id查询告警事件详情",
       "output": "DescribeEventByTableResponse",
-      "status": "online"
-    },
-    "DescribeExpertServiceList": {
-      "document": "专家服务-安全管家列表",
-      "input": "DescribeExpertServiceListRequest",
-      "name": "安全管家列表",
-      "output": "DescribeExpertServiceListResponse",
-      "status": "online"
-    },
-    "DescribeExpertServiceOrderList": {
-      "document": "专家服务-专家服务订单列表",
-      "input": "DescribeExpertServiceOrderListRequest",
-      "name": "专家服务订单列表",
-      "output": "DescribeExpertServiceOrderListResponse",
       "status": "online"
     },
     "DescribeExportMachines": {
@@ -1687,13 +1652,6 @@
       "output": "DescribeMalwareWhiteListAffectListResponse",
       "status": "online"
     },
-    "DescribeMonthInspectionReport": {
-      "document": "专家服务-安全管家月巡检报告下载",
-      "input": "DescribeMonthInspectionReportRequest",
-      "name": "安全管家月巡检报告下载",
-      "output": "DescribeMonthInspectionReportResponse",
-      "status": "online"
-    },
     "DescribeNetAttackSetting": {
       "document": "查询网络攻击设置",
       "input": "DescribeNetAttackSettingRequest",
@@ -1783,13 +1741,6 @@
       "input": "DescribeProtectDirRelatedServerRequest",
       "name": "查询防护目录关联服务器",
       "output": "DescribeProtectDirRelatedServerResponse",
-      "status": "online"
-    },
-    "DescribeProtectNetList": {
-      "document": "专家服务-旗舰重保列表",
-      "input": "DescribeProtectNetListRequest",
-      "name": "旗舰重保列表",
-      "output": "DescribeProtectNetListResponse",
       "status": "online"
     },
     "DescribePublicProxyInstallCommand": {
@@ -2981,13 +2932,6 @@
       "name": "获取本地存储数据",
       "output": "GetLocalStorageItemResponse",
       "status": "online"
-    },
-    "IgnoreImpactedHosts": {
-      "document": "产品变动切换到了\\\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\\\n相关接口\n\n本接口 (IgnoreImpactedHosts) 用于忽略漏洞。",
-      "input": "IgnoreImpactedHostsRequest",
-      "name": "忽略漏洞",
-      "output": "IgnoreImpactedHostsResponse",
-      "status": "deprecated"
     },
     "KeysLocalStorage": {
       "document": "获取本地存储键值列表",
@@ -12764,7 +12708,7 @@
         {
           "disabled": false,
           "document": "附加信息",
-          "example": "{'WanIP': '175.178.169****', 'PrivateIP': '10.0.1****', 'NetworkType': 0, 'NetworkName': 'vpc-3gov****', 'InstanceID': 'ins-ntkv****', 'HostName': 'demo_****'}",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -12819,6 +12763,16 @@
           "name": "BanExpiredTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP分析",
+          "example": "无",
+          "member": "IPAnalyse",
+          "name": "IPAnalyse",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -13243,33 +13197,6 @@
         }
       ],
       "usage": "out"
-    },
-    "CancelIgnoreVulRequest": {
-      "document": "CancelIgnoreVul请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "漏洞事件id串，多个用英文逗号分隔",
-          "example": "54564****",
-          "member": "string",
-          "name": "EventIds",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CancelIgnoreVulResponse": {
-      "document": "CancelIgnoreVul返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ChangeRuleEventsIgnoreStatusRequest": {
       "document": "ChangeRuleEventsIgnoreStatus请求参数结构体",
@@ -14869,15 +14796,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "漏洞id",
-          "example": "1089",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "需要修复漏洞的主机，所有主机必须有VulId的这个漏洞且是待修复状态。",
           "example": "[\"e5b4724c-49af-46ab-bd84-cdbae897e7e0\"]",
           "member": "string",
@@ -14887,10 +14805,28 @@
         },
         {
           "disabled": false,
+          "document": "漏洞id",
+          "example": "1089",
+          "member": "uint64",
+          "name": "VulId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "修复方式 0组件更新或者安装补丁,1禁用服务",
           "example": "0",
           "member": "uint64",
           "name": "FixMethod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "kb id",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
           "required": false,
           "type": "int"
         }
@@ -14972,7 +14908,7 @@
         {
           "disabled": false,
           "document": "资源对象",
-          "example": "{\n            \"Id\":1,\n            \"ResourceId\":\"white_resource-01\",\n            \"BeginTime\":\"2022-05-31 00:00:00\",\n            \"EndTime\":\"2022-06-10 00:00:00\",\n            \"LicenseType\":1\n        }",
+          "example": "无",
           "member": "OrderResource",
           "name": "Resource",
           "output_required": true,
@@ -20315,83 +20251,6 @@
       ],
       "type": "object"
     },
-    "DescribeAvailableExpertServiceDetailRequest": {
-      "document": "DescribeAvailableExpertServiceDetail请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeAvailableExpertServiceDetailResponse": {
-      "document": "DescribeAvailableExpertServiceDetail返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "安全管家订单",
-          "example": "[{\"OrderId\":10021, \"InquireType\":2, \"InquireNum\":1022, \"BeginTime\":\"2024-11-04 21:24:47\", \"EndTime\":\"2024-11-04 21:24:55\", \"ServiceTime\":134952943, \"Status\":2}]",
-          "member": "ExpertServiceOrderInfo",
-          "name": "ExpertService",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "应急响应可用次数",
-          "example": "1",
-          "member": "uint64",
-          "name": "EmergencyResponse",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "旗舰护网可用次数",
-          "example": "1",
-          "member": "uint64",
-          "name": "ProtectNet",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否购买过安全管家",
-          "example": "true",
-          "member": "bool",
-          "name": "ExpertServiceBuy",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否购买过应急响应",
-          "example": "true",
-          "member": "bool",
-          "name": "EmergencyResponseBuy",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否购买过旗舰护网",
-          "example": "true",
-          "member": "bool",
-          "name": "ProtectNetBuy",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeBanModeRequest": {
       "document": "DescribeBanMode请求参数结构体",
       "members": [],
@@ -23547,89 +23406,6 @@
       ],
       "type": "object"
     },
-    "DescribeEmergencyResponseListRequest": {
-      "document": "DescribeEmergencyResponseList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "过滤条件。\n<li>Keyword- String - 是否必填：否 - 关键词过滤，</li>\n<li>Uuids - String - 是否必填：否 - 主机id过滤</li>",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"dev\"]}]",
-          "member": "Filters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "需要返回的数量，最大值为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序步长",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序方法",
-          "example": "desc",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段 StartTime，EndTime",
-          "example": "StartTime",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeEmergencyResponseListResponse": {
-      "document": "DescribeEmergencyResponseList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总条数",
-          "example": "100",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "应急响应列表",
-          "example": "[{\"TaskId\": \"cve2021-161698979556654****\", \"HostNum\": 1, \"Status\": 1, \"StartTime\": \"2021-03-29 12:4****\", \"EndTime\": \"--\", \"ReportPath\": \"\"}]",
-          "member": "EmergencyResponseInfo",
-          "name": "List",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeEmergencyVulListRequest": {
       "document": "DescribeEmergencyVulList请求参数结构体",
       "members": [
@@ -23777,154 +23553,6 @@
           "name": "Value",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExpertServiceListRequest": {
-      "document": "DescribeExpertServiceList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "过滤条件。\n<li>Keyword- String - 是否必填：否 - 关键词过滤，</li>\n<li>Uuids - String - 是否必填：否 - 主机id过滤</li>",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"dev\"]}]",
-          "member": "Filters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "需要返回的数量，最大值为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序步长",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序方法",
-          "example": "desc",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段 StartTime，EndTime",
-          "example": "StartTime",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExpertServiceListResponse": {
-      "document": "DescribeExpertServiceList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总条数",
-          "example": "100",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "安全管家数据",
-          "example": "[{\"Id\": 67, \"OrderId\": 1374, \"Quuid\": \"206c6cf6-ff0c-467d-8591-292dff53****\", \"Uuid\": \"206c6cf6-ff0c-467d-8591-292dff53****\", \"Status\": 1, \"StartTime\": \"2023-09-28 10:4****\", \"EndTime\": \"2023-10-28 10:4****\", \"HostName\": \"ada\\u4e3b\\u673aP0\\u4e13****\", \"HostIp\": \"172.16.4****\", \"RiskCount\": 6}]",
-          "member": "SecurityButlerInfo",
-          "name": "List",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExpertServiceOrderListRequest": {
-      "document": "DescribeExpertServiceOrderList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<li>InquireType- String - 是否必填：否 - 订单类型过滤，</li>",
-          "example": "[{\"Name\":\"InquireType\",\"Values\":[\"12\"]}]",
-          "member": "Filters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "分页条数 最大100条",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页步长",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExpertServiceOrderListResponse": {
-      "document": "DescribeExpertServiceOrderList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总条数",
-          "example": "10",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "订单列表",
-          "example": "[{\"OrderId\": 1382, \"InquireType\": 3, \"InquireNum\": 100, \"BeginTime\": \"2024-09-12 20:4****\", \"EndTime\": \"2024-10-12 00:0****\", \"ServiceTime\": 1, \"Status\": 3}]",
-          "member": "ExpertServiceOrderInfo",
-          "name": "List",
-          "output_required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -25683,7 +25311,7 @@
         {
           "disabled": false,
           "document": "PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费",
-          "example": "PROVERSION_POSTPAY ",
+          "example": "PROVERSION_POSTPAY",
           "member": "string",
           "name": "ProtectType",
           "output_required": true,
@@ -25816,6 +25444,16 @@
           "example": "false",
           "member": "bool",
           "name": "AutoOpenRaspSwitch",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动缩容开关开启",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoDowngradeSwitch",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -27852,7 +27490,7 @@
         },
         {
           "disabled": false,
-          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
@@ -27880,7 +27518,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>\n<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>\n<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>",
-          "example": "[{\"Name\": \"Status\", \"Values\": [\"AGENT_OFF****\"], \"ExactMatch\": true}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -27889,7 +27527,7 @@
         {
           "disabled": false,
           "document": "机器所属业务ID列表",
-          "example": "1",
+          "example": "[1024]",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -27904,7 +27542,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "[             {\"Uuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"VpcId\": \"vpc-1dj4***\"}]",
+          "example": "无",
           "member": "Machine",
           "name": "Machines",
           "output_required": true,
@@ -27944,7 +27582,7 @@
         },
         {
           "disabled": false,
-          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "document": "机器所属地域。如：ap-guangzhou，ap-shangha，非腾讯云主机使用：ap-others",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
@@ -27972,7 +27610,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版 | UnFlagship : 非旗舰版 | PRO_POST_PAY：专业版按量计费 | PRO_PRE_PAY：专业版包年包月）</li>\n<li>TagId - String - 是否必填：否 - 标签ID </li>",
-          "example": "[{\"ExactMatch\": false, \"Name\": \"Version\", \"Values\": [\"PRO_VERSION\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -27981,7 +27619,7 @@
         {
           "disabled": false,
           "document": "机器所属业务ID列表",
-          "example": "1",
+          "example": "[1042,1043]",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -27996,7 +27634,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "[{\"MachineName\":\"test-name\",\"MachineOs\":\"Windows Server 2022 数据中心版 64位 中文版\",\"Uuid\":\"24c9be55-c743-4a75-a5c7-2a2912341234\",\"Quuid\":\"24c9be55-c743-4a75-a5c7-2a2912341234\",\"MachineIp\":\"10.0.0.11\",\"IsProVersion\":true,\"MachineWanIp\":\"110.84.0.11\",\"PayMode\":\"\",\"Tag\":[{\"Rid\":0,\"Name\":\"test-name\",\"TagId\":1}],\"RegionInfo\":{\"Region\":\"ap-guangzhou\",\"RegionName\":\"test-name\",\"RegionId\":1,\"RegionCode\":\"gz\",\"RegionNameEn\":\"test-name\"},\"InstanceState\":\"EXPIRED\",\"ProjectId\":0,\"MachineType\":\"CVM\",\"KernelVersion\":\"0.1.1\",\"ProtectType\":\"BASIC_VERSION\",\"LicenseOrder\":{\"LicenseId\":1,\"LicenseType\":1,\"Status\":1,\"SourceType\":1,\"ResourceId\":\"uf6iskfrpy4g3xg2k1jm\"},\"CloudTags\":[],\"InstanceId\":\"i-uf6iskfrpy4g3xg2k1jm\",\"CloudFrom\":1}]",
+          "example": "无",
           "member": "MachineSimple",
           "name": "Machines",
           "output_required": true,
@@ -28735,62 +28373,6 @@
           "example": "[{\"Id\":1,\"QuuidList\":\"6cf3c132-aaa-bbbb-b08d-98be9421372a\",\"Md5List\":\"87f70257f93a96273664ea5ef842c2c3\",\"IsGlobal\":1,\"Mode\":1,\"MatchType\":1,\"FileName\":\"/data/file1\",\"FileDirectory\":\"/data\",\"FileExtension\":\"php\",\"CreateTime\":\"2020-10-01 00:01:02\",\"EventsCount\":1,\"ModifyTime\":\"2020-10-01 00:01:02\"}]",
           "member": "MalwareWhiteListInfo",
           "name": "WhiteList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeMonthInspectionReportRequest": {
-      "document": "DescribeMonthInspectionReport请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "分页大小",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页步长",
-          "example": "10",
-          "member": "uint64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeMonthInspectionReportResponse": {
-      "document": "DescribeMonthInspectionReport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总条数",
-          "example": "10",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "巡检报告列表",
-          "example": "[{\"ReportName\": \"2021-04****\", \"ReportPath\": \"https://yunjing-pro-1256299843.cos.ap-guangzhou.myqcloud.com/expert_server/%E6%B9%96%E5%8D%97%E7%9C%81%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E9%A6%86%E5%AE%89%E5%85%A8%E8%BF%90%E7%BB%B4%E6%8A%A5%E5%91%8A20210415****\", \"ModifyTime\": \"2021-04-25 17:1****\"}]",
-          "member": "MonthInspectionReport",
-          "name": "List",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -29672,89 +29254,6 @@
       ],
       "type": "object"
     },
-    "DescribeProtectNetListRequest": {
-      "document": "DescribeProtectNetList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "过滤条件。\n<li>Keyword- String - 是否必填：否 - 关键词过滤，</li>\n<li>Uuids - String - 是否必填：否 - 主机id过滤</li>",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"dev\"]}]",
-          "member": "Filters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "需要返回的数量，最大值为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序步长",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序方法",
-          "example": "desc",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段 StartTime，EndTime",
-          "example": "StartTime",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProtectNetListResponse": {
-      "document": "DescribeProtectNetList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总条数",
-          "example": "100",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "安全管家数据",
-          "example": "[{\"TaskId\": \"cve2021-161698979556654****\", \"ProtectDays\": 1, \"Status\": 1, \"StartTime\": \"2021-03-29 12:4****\", \"EndTime\": \"--\", \"ReportPath\": \"\"}]",
-          "member": "ProtectNetInfo",
-          "name": "List",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribePublicProxyInstallCommandRequest": {
       "document": "DescribePublicProxyInstallCommand请求参数结构体",
       "members": [
@@ -30584,7 +30083,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制",
+          "document": "rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制",
           "example": "100",
           "member": "uint64",
           "name": "RaspMaxCpu",
@@ -31613,6 +31112,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "任务扫描的KB编号",
+          "example": "[\"KB4253\"]",
+          "member": "string",
+          "name": "KBNumber",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -31678,7 +31187,7 @@
         {
           "disabled": false,
           "document": "扫描任务信息列表",
-          "example": "[{\"Id\": 69434772, \"HostIp\": \"10.206****\", \"HostName\": \"\\u672a\\u547d\\u540d\", \"OsName\": \"win64\", \"RiskNum\": 0, \"ScanBeginTime\": \"2024-11-01 09:3****\", \"ScanEndTime\": \"2020-11-11 10:1****\", \"Uuid\": \"08a3d4ce-7ae1-49e1-8a67-58685085****\", \"Quuid\": \"08a3d4ce-7ae1-49e1-8a67-58685085****\", \"Status\": \"Scanning\", \"Description\": \"\\u68c0\\u6d4b\\u4e2d\", \"FailType\": 0, \"MachineWanIp\": \"146.56.21****\", \"MachineExtraInfo\": {\"WanIP\": \"146.56.21****\", \"PrivateIP\": \"10.206****\", \"NetworkType\": 0, \"NetworkName\": \"vpc-3gov****\", \"InstanceID\": \"ins-bask****\", \"HostName\": \"demo_****\"}}]",
+          "example": "无",
           "member": "ScanTaskDetails",
           "name": "ScanTaskDetailList",
           "output_required": true,
@@ -31778,7 +31287,7 @@
         {
           "disabled": false,
           "document": "漏洞信息",
-          "example": "[     {         \"CveId\": \"cve- \",         \"CvssScore\": 0,         \"Name\": \"name\",         \"Reference\": \"ref\",         \"Level\": 1,         \"Fix\": \"fix\",         \"Descript\": \"desc\",         \"PublishTime\": \" 2019-12-25 11:57:15\",         \"VulId\": 1,         \"Cvss\": \"cvss\",         \"VulCategory\": 1     } ]",
+          "example": "无",
           "member": "VulDetailInfo",
           "name": "VulInfo",
           "output_required": true,
@@ -31823,6 +31332,16 @@
           "name": "VulCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单独扫描kb时的信息",
+          "example": "无",
+          "member": "PatchInfoDetail",
+          "name": "PatchInfo",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -34654,6 +34173,15 @@
           "name": "Quuid",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补丁 id",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -34724,7 +34252,7 @@
         {
           "disabled": false,
           "document": "修复快照状态列表",
-          "example": "[{\"Id\": 685817, \"SnapshotName\": \"\\u6f0f\\u6d1e\\u4fee\\u590d_libarchive \\u4ee3\\u7801\\u95ee\\u9898\\u6f0f\\u6d1e(CVE-2022-36****\", \"SnapshotId\": \"snap-nb0l****\", \"Quuid\": \"e5f53d3c-7072-4e2f-ae0c-451c7a14****\", \"ModifyTime\": \"2024-10-25 11:3****\", \"HostName\": \"AI\\u6587\\u6863\\u7ec4\\u624b-p****\", \"HostIp\": \"10.22.****\", \"Status\": 1, \"FailReason\": \"\"}]",
+          "example": "无",
           "member": "VulFixStatusSnapshotInfo",
           "name": "SnapshotList",
           "output_required": true,
@@ -34734,7 +34262,7 @@
         {
           "disabled": false,
           "document": "修复漏洞详情列表",
-          "example": "[{\"VulId\": 38382, \"VulName\": \"libarchive \\u4ee3\\u7801\\u95ee\\u9898\\u6f0f\\u6d1e(CVE-2022-36****\", \"Progress\": 100, \"FailCnt\": 0, \"HostList\": [{\"Quuid\": \"e5f53d3c-7072-4e2f-ae0c-451c7a14****\", \"HostName\": \"AI\\u6587\\u6863\\u7ec4\\u624b-p****\", \"HostIp\": \"10.22.****\", \"Status\": 2, \"FailReason\": \"\\u4fee\\u590d\\u6210\\u529f\", \"ModifyTime\": \"2024-10-25 11:3****\"}], \"FixSuccessCnt\": 1, \"FixMethod\": 0}]",
+          "example": "无",
           "member": "VulFixStatusInfo",
           "name": "VulFixList",
           "output_required": true,
@@ -35764,7 +35292,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "[{\"Name\":\"Id\",\"Values\":[\"12657\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -35815,7 +35343,7 @@
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "[             {                 \"CustomFields\": [                     {                         \"Key\": \"机器a\",                         \"Value\": \"文本\"                     }                 ],                 \"Events\": [                     {                         \"ControlBit\": \"11\",                         \"Type\": 4                     },                     {                         \"ControlBit\": \"11\",                         \"Type\": 13                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 14                     },                     {                         \"ControlBit\": \"\",                         \"Type\": 22                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 23                     },                     {                         \"ControlBit\": \"\",                         \"Type\": 1                     },                     {                         \"ControlBit\": \"11\",                         \"Type\": 3                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 7                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 12                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 19                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 20                     },                     {                         \"ControlBit\": \"\",                         \"Type\": 25                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 8                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 18                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 17                     },                     {                         \"ControlBit\": \"11111\",                         \"Type\": 2                     },                     {                         \"ControlBit\": \"111\",                         \"Type\": 6                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 9                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 10                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 11                     },                     {                         \"ControlBit\": \"11\",                         \"Type\": 15                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 16                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 21                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 24                     }                 ],                 \"Format\": 0,                 \"HostCount\": 3,                 \"HostLabels\": [                     {                         \"Type\": 4,                         \"Values\": []                     }                 ],                 \"Id\": 38,                 \"IsDisabled\": 0,                 \"Name\": \"只有机器a；文本\",                 \"Quuids\": [                     \"058e0cf8-ba52-47fc-a100-2fdcc1e73e96\",                     \"00e800cb-7202-4d83-90c2-6e920758dd42\",                     \"380add75-bb06-4cc4-84c5-cf806d102fba\"                 ],                 \"Receivers\": [                     {                         \"Addr\": \"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d0c2fc25-23a2-4285-ab98-d8a862146a73\",                         \"Id\": 17,                         \"Name\": \"企微\"                     }                 ]             }         ]",
+          "example": "无",
           "member": "WebHookPolicy",
           "name": "List",
           "output_required": false,
@@ -35930,7 +35458,7 @@
         {
           "disabled": false,
           "document": "告警接收人列表",
-          "example": "[{\"Id\": 20}]",
+          "example": "无",
           "member": "WebHookReceiver",
           "name": "List",
           "required": false,
@@ -35945,7 +35473,7 @@
         {
           "disabled": false,
           "document": "告警接收人的关联策略使用信息",
-          "example": "[             {                 \"PolicyName\": \"相同IM机器a，b\",                 \"ReceiverId\": 28,                 \"ReceiverName\": \"小小机器\"             }]",
+          "example": "无",
           "member": "WebHookReceiverUsage",
           "name": "List",
           "output_required": false,
@@ -36972,72 +36500,6 @@
       ],
       "usage": "out"
     },
-    "EmergencyResponseInfo": {
-      "document": "专家服务-应急响应信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务id",
-          "example": "cve2021-4451451",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主机个数",
-          "example": "12",
-          "member": "uint64",
-          "name": "HostNum",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务状态 0未启动，·响应中，2响应完成",
-          "example": "0",
-          "member": "uint64",
-          "name": "Status",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务开始时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "StartTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务结束时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "EndTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "报告下载地址",
-          "example": "http://1.pdf",
-          "member": "string",
-          "name": "ReportPath",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "EmergencyVul": {
       "document": "应急漏洞信息",
       "members": [
@@ -37233,82 +36695,6 @@
           "example": "0",
           "member": "uint64",
           "name": "MachineAffectNum",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ExpertServiceOrderInfo": {
-      "document": "专家服务订单信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "订单id",
-          "example": "1",
-          "member": "uint64",
-          "name": "OrderId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "订单类型 1应急 2 旗舰重保 3 安全管家",
-          "example": "1",
-          "member": "uint64",
-          "name": "InquireType",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务数量",
-          "example": "1",
-          "member": "uint64",
-          "name": "InquireNum",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务开始时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "BeginTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务结束时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "EndTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务时长几个月",
-          "example": "1",
-          "member": "uint64",
-          "name": "ServiceTime",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "订单状态 0 未启动 1 服务中 2已过期 3完成，4退费销毁",
-          "example": "1",
-          "member": "uint64",
-          "name": "Status",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -42364,6 +41750,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip分析",
+          "example": "无",
+          "member": "IPAnalyse",
+          "name": "IPAnalyse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -42668,6 +42064,62 @@
       ],
       "usage": "out"
     },
+    "IPAnalyse": {
+      "document": "ip 分析",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 安全\n1 可疑\n2 恶意\n3 未知",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签特征",
+          "example": "[\"勒索软件\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "家族信息",
+          "example": "[\"勒索软件\"]",
+          "member": "string",
+          "name": "Family",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "画像",
+          "example": "[\"IDC\"]",
+          "member": "string",
+          "name": "Profile",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国电信",
+          "member": "string",
+          "name": "Isp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "IgnoreBaselineRule": {
       "document": "忽略的基线检测项信息",
       "members": [
@@ -42723,33 +42175,6 @@
         }
       ],
       "usage": "out"
-    },
-    "IgnoreImpactedHostsRequest": {
-      "document": "IgnoreImpactedHosts请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "漏洞ID数组。",
-          "example": "[545521374]",
-          "member": "uint64",
-          "name": "Ids",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "IgnoreImpactedHostsResponse": {
-      "document": "IgnoreImpactedHosts返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "IgnoreRuleEffectHostInfo": {
       "document": "忽略检测项影响主机信息",
@@ -46250,6 +45675,15 @@
         },
         {
           "disabled": false,
+          "document": "加固防护模式\nPROVERSION_POSTPAY 专业版-按量计费\nPROVERSION_PREPAY 专业版-包年包月\nFLAGSHIP_PREPAY 旗舰版-包年包月",
+          "example": "FLAGSHIP_PREPAY",
+          "member": "string",
+          "name": "ProtectType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "自动加购/扩容授权开关,默认 1, 0关闭, 1开启",
           "example": "1",
           "member": "uint64",
@@ -46290,6 +45724,15 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoOpenRaspSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动缩容开关,0 关闭 1开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoDowngradeSwitch",
           "required": false,
           "type": "int"
         }
@@ -48513,7 +47956,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制",
+          "document": "rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制",
           "example": "80",
           "member": "uint64",
           "name": "RaspMaxCpu",
@@ -49164,7 +48607,7 @@
         {
           "disabled": false,
           "document": "事件类型",
-          "example": "[{\"ControlBit\": \"11000\", \"Type\": 2}]",
+          "example": "无",
           "member": "WebHookEventKv",
           "name": "Events",
           "required": false,
@@ -49173,7 +48616,7 @@
         {
           "disabled": false,
           "document": "主机范围",
-          "example": "[{\"Type\": 4, \"Values\": []}]",
+          "example": "无",
           "member": "WebHookHostLabel",
           "name": "HostLabels",
           "required": false,
@@ -49182,7 +48625,7 @@
         {
           "disabled": false,
           "document": "接收人",
-          "example": "[{\"Id\":1,\"Name\":\"recv_name\",\"Addr\":\"addr.com\"}]",
+          "example": "无",
           "member": "WebHookReceiver",
           "name": "Receivers",
           "required": false,
@@ -49200,7 +48643,7 @@
         {
           "disabled": false,
           "document": "自定义透传字段",
-          "example": "[{\"Key\": \"\\u8fd9\\u662f\\u817e\\u8baf\\u4e91\\u6807\\u7b7e\", \"Value\": \"111\"}]",
+          "example": "无",
           "member": "WebHookCustomField",
           "name": "CustomFields",
           "required": false,
@@ -49232,6 +48675,15 @@
           "name": "ExcludedQuuids",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "推送语言类型，中文zh，英文en",
+          "example": "zh",
+          "member": "string",
+          "name": "MsgLanguage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49317,11 +48769,65 @@
         {
           "disabled": false,
           "document": "是否修改",
-          "example": "FALSE",
+          "example": "false",
           "member": "bool",
           "name": "IsModify",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SCFRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "flask_demo",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数版本",
+          "example": "latest",
+          "member": "string",
+          "name": "FunctionVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "别名",
+          "example": "alias",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49545,42 +49051,6 @@
       ],
       "type": "object"
     },
-    "MonthInspectionReport": {
-      "document": "专家服务-月巡检报告",
-      "members": [
-        {
-          "disabled": false,
-          "document": "巡检报告名称",
-          "example": "2021-03-巡检报告",
-          "member": "string",
-          "name": "ReportName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "巡检报告下载地址",
-          "example": "https://www.1.pdf",
-          "member": "string",
-          "name": "ReportPath",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "巡检报告更新时间",
-          "example": "2021-03-11 09:50:33",
-          "member": "string",
-          "name": "ModifyTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "NetAttackEvent": {
       "document": "网络攻击事件",
       "members": [
@@ -49667,7 +49137,7 @@
         {
           "disabled": false,
           "document": "主机额外信息",
-          "example": "{'WanIP': '175.178.15****', 'PrivateIP': '10.0.0****', 'NetworkType': 0, 'NetworkName': 'vpc-3gov****', 'InstanceID': 'ins-5hc1****', 'HostName': 'Jszx_DePart02_ECS_Coupon_Maste****'}",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -49752,6 +49222,26 @@
           "name": "New",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启应用防护，0关闭，1开启",
+          "example": "1",
+          "member": "int64",
+          "name": "RaspOpen",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip分析",
+          "example": "无",
+          "member": "IPAnalyse",
+          "name": "IPAnalyse",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -49903,7 +49393,7 @@
         {
           "disabled": false,
           "document": "主机额外信息",
-          "example": "{'WanIP': '10.0.1****', 'PrivateIP': '10.0.1****', 'NetworkType': 0, 'NetworkName': 'vpc-3gov****', 'InstanceID': '', 'HostName': 'demo_****'}",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -49988,6 +49478,16 @@
           "name": "HostOpProcessTree",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP分析",
+          "example": "无",
+          "member": "IPAnalyse",
+          "name": "IPAnalyse",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -50305,6 +49805,72 @@
           "example": "1",
           "member": "uint64",
           "name": "MachineOSType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PatchInfoDetail": {
+      "document": "补丁信息详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "KB编号",
+          "example": "KB5058381",
+          "member": "string",
+          "name": "KBNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB名称",
+          "example": "适用于 Windows Server 2008 R2 的",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2025-05",
+          "example": "发布时间",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB影响的漏洞",
+          "example": "[\"CVE-2025-30397\"]",
+          "member": "string",
+          "name": "RelatedCveId",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB说明文档",
+          "example": "https://support.microsoft.com/en-us/help/5058380",
+          "member": "string",
+          "name": "KbDocUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB id编号",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -51563,72 +51129,6 @@
           "example": "2020-11-21 15:16:00",
           "member": "string",
           "name": "ExpireTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ProtectNetInfo": {
-      "document": "专家服务-旗舰重保信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务id",
-          "example": "cve2021-41651531",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保天数",
-          "example": "10",
-          "member": "uint64",
-          "name": "ProtectDays",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保状态 0未启动，1重保中，2已完成",
-          "example": "1",
-          "member": "uint64",
-          "name": "Status",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保启动时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "StartTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保完成时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "EndTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "报告下载地址",
-          "example": "http://1.pdf",
-          "member": "string",
-          "name": "ReportPath",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -53405,7 +52905,16 @@
           "example": "2",
           "member": "uint64",
           "name": "VulId",
-          "required": true,
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Kb Id ",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
+          "required": false,
           "type": "int"
         }
       ],
@@ -55322,6 +54831,15 @@
           "name": "Uuids",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0漏洞,1windows 补丁",
+          "example": "0",
+          "member": "uint64",
+          "name": "EventType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -55329,6 +54847,26 @@
     "ScanVulAgainResponse": {
       "document": "ScanVulAgain返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "执行成功主机数",
+          "example": "2",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础版(不支持)的主机数",
+          "example": "3",
+          "member": "uint64",
+          "name": "BasicVersionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -55412,6 +54950,15 @@
           "name": "ScanMethod",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "kb编号",
+          "example": "[\"KB4545\"]",
+          "member": "string",
+          "name": "KBNumber",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -56771,112 +56318,6 @@
         }
       ],
       "usage": "both"
-    },
-    "SecurityButlerInfo": {
-      "document": "安全管家列表信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "数据id",
-          "example": "1",
-          "member": "uint64",
-          "name": "Id",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "订单id",
-          "example": "1",
-          "member": "uint64",
-          "name": "OrderId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "cvm id",
-          "example": "wfsfsfsfs",
-          "member": "string",
-          "name": "Quuid",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务状态 0-服务中,1-已到期 2已销毁",
-          "example": "1",
-          "member": "uint64",
-          "name": "Status",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务开始时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "StartTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务结束时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "EndTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主机名称",
-          "example": "cmv",
-          "member": "string",
-          "name": "HostName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主机Ip",
-          "example": "116.24.64.210",
-          "member": "string",
-          "name": "HostIp",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主机 uuid",
-          "example": "wfsfsfsfs",
-          "member": "string",
-          "name": "Uuid",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主机风险数",
-          "example": "1",
-          "member": "uint64",
-          "name": "RiskCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "SecurityDynamic": {
       "document": "安全事件消息数据。",
@@ -59859,7 +59300,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞纰漏时间",
+          "document": "漏洞披露时间",
           "example": "2024-09-13 14:1****",
           "member": "string",
           "name": "PublishTime",
@@ -59905,6 +59346,26 @@
           "name": "SupportDefense",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB对应的ID",
+          "example": "112",
+          "member": "uint64",
+          "name": "KbId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB号",
+          "example": "KB33425",
+          "member": "string",
+          "name": "KbNumber",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -60047,6 +59508,46 @@
           "name": "FixMethod",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kb的ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kb号",
+          "example": "kb23671",
+          "member": "string",
+          "name": "KbNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kb名字",
+          "example": "windows kb23671",
+          "member": "string",
+          "name": "KbName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前置kb列表",
+          "example": "无",
+          "member": "string",
+          "name": "PreKbList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -60312,6 +59813,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent是否在线；0不在线，1在线",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -60472,7 +59983,7 @@
         {
           "disabled": false,
           "document": "CVSS评分",
-          "example": "9",
+          "example": "9.9",
           "member": "float",
           "name": "CvssScore",
           "output_required": true,
@@ -60597,6 +60108,26 @@
           "name": "LatestFixTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护开启数量",
+          "example": "23",
+          "member": "int64",
+          "name": "RaspOpenNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护关闭数量",
+          "example": "24",
+          "member": "int64",
+          "name": "RaspClosedNodeCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -61107,7 +60638,7 @@
         {
           "disabled": false,
           "document": "事件类型",
-          "example": "[{'Type': 20, 'ControlBit': '1'}]",
+          "example": "无",
           "member": "WebHookEventKv",
           "name": "Events",
           "output_required": false,
@@ -61117,7 +60648,7 @@
         {
           "disabled": false,
           "document": "主机范围",
-          "example": "[{'Type': 4, 'Values': []}]",
+          "example": "无",
           "member": "WebHookHostLabel",
           "name": "HostLabels",
           "output_required": false,
@@ -61127,7 +60658,7 @@
         {
           "disabled": false,
           "document": "接收人",
-          "example": "[{\"Addr\":\"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d0c2fc25-23a2-4285-ab98-d8a862146a73\",\"Id\":17,\"Name\":\"企微\"}]",
+          "example": "无",
           "member": "WebHookReceiver",
           "name": "Receivers",
           "output_required": false,
@@ -61147,7 +60678,7 @@
         {
           "disabled": false,
           "document": "自定义透传字段",
-          "example": "[{'Key': '这是腾讯云标签', 'Value': '111'}]",
+          "example": "无",
           "member": "WebHookCustomField",
           "name": "CustomFields",
           "output_required": false,
@@ -61167,7 +60698,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "['e7dd60a3-6d90-42a1-af72-cfe40dfc****']",
+          "example": "[\"e7dd60a3-6d90-42a1-af72-cfe40dfc****\"]",
           "member": "string",
           "name": "Quuids",
           "output_required": false,
@@ -61192,6 +60723,16 @@
           "name": "ExcludedQuuids",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推送语言类型，中文zh，英文en\t",
+          "example": "zh",
+          "member": "string",
+          "name": "MsgLanguage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -61228,6 +60769,72 @@
           "example": "www.webhook.com",
           "member": "string",
           "name": "Addr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SCFRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "ns",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "fn",
+          "member": "string",
+          "name": "FunctionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "latest",
+          "member": "string",
+          "name": "FunctionVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "别名",
+          "example": "alias",
+          "member": "string",
+          "name": "Alias",
           "output_required": false,
           "required": false,
           "type": "string",

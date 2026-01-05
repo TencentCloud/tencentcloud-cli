@@ -7007,7 +7007,7 @@
         },
         {
           "disabled": false,
-          "document": "生成图片的分辨率。可选值为 720P、1080P、2K、4K、1024x1024、2048x2048、2304x1728、2496x1664、2560x1440、3024x1296、4096x4096、4694x3520、4992x3328、5404x3040、6198x2656，其中使用模型 Jimeng 时，推荐通过 Prompt 指定图片分辨率和宽高比。",
+          "document": "生成图片的分辨率。可选值为 720P、1080P、2K、4K、1024x1024、2048x2048、2304x1728、2496x1664、2560x1440、3024x1296、4096x4096、4694x3520、4992x3328、5404x3040、6198x2656。",
           "example": "1024x1024",
           "member": "string",
           "name": "Resolution",
@@ -7018,7 +7018,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所生成图片的宽高比。<li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li><li>当 ModelName 是 Qwen、Jimeng，则暂不支持，其中 Jimeng 会结合 Prompt意图、参考图片尺寸，由模型智能判断输出图片的宽高比。</li>",
+          "document": "指定所生成图片的宽高比。<li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li><li>当 ModelName 是 Qwen，则暂不支持。</li>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -7068,7 +7068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AI生图场景类型，可选值：\n- change_clothes：AI换衣。",
+          "document": "AI生图场景类型，可选值：\n- change_clothes：AI换衣。\n- product_image：AI生商品图。",
           "example": "change_clothes",
           "member": "string",
           "name": "Type",
@@ -7079,10 +7079,21 @@
         },
         {
           "disabled": false,
-          "document": "当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。\n\n",
+          "document": "当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。",
           "example": "无",
           "member": "ChangeClothesConfig",
           "name": "ChangeClothesConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 Type 为 product_image 时有效，表示AI 生商品图配置参数。",
+          "example": "无",
+          "member": "ProductImageConfig",
+          "name": "ProductImageConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -7430,7 +7441,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Gem2.5</li>\n<li>Gem3.0_1K</li>\n<li>Gem3.0_2K</li>\n<li>Gem3.0_4K</li>\n<li>Sora2</li>\n<li>Veo3.1Fast</li>\n<li>Veo3.1Standard</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>KlingO1_1080P</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>KlingO1_720P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>Jimeng4.0</li>\n<li>Jimeng3.0pro</li>\n<li>ViduQ2_720P</li>\n<li>ViduQ2_1080P</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_1080P</li>\n<li>ViduQ2_720P_OffPeak</li>\n<li>ViduQ2_1080P_OffPeak</li>\n<li>ViduQ2turbo_720P_OffPeak</li>\n<li>ViduQ2turbo_1080P_OffPeak</li>\n<li>ViduQ2pro_720P_OffPeak</li>\n<li>ViduQ2pro_1080P_OffPeak</li>\n<li>Hunyuan1.5_720P</li>\n<li>Hunyuan1.5_1080P</li>\n<li>Hunyuan3.0_1K</li>\n<li>Hunyuan3.0_2K</li>\n<li>Hunyuan3.0_4K</li>\n<li>Mingmou1.0_1080P</li>\n<li>Mingmou1.0_1K</li>\n<li>Mingmou1.0_2K</li>\n<li>Mingmou1.0_4K</li>\n<li>Mingmou1.0_720P</li>\n<li>Seedance1.5ProAudioOn_480P</li>\n<li>Seedance1.5ProAudioOff_480P</li>\n<li>Seedance1.5ProAudioOn_720P</li>\n<li>Seedance1.5ProAudioOff_720P</li>\n<li>Seedance1.0Pro_480P</li>\n<li>Seedance1.0Pro_720P</li>\n<li>Seedance1.0Pro_1080P</li>\n<li>Seedance1.0ProFast480P</li>\n<li>Seedance1.0ProFast720P</li>\n<li>Seedance1.0ProFast1080P</li>\n<li>Seedance1.0Lite480P</li>\n<li>Seedance1.0Lite720P</li>\n<li>Seedance1.0Lite1080P</li>\n<li> unknown</li>",
+          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Gem2.5</li>\n<li>Gem3.0_1K</li>\n<li>Gem3.0_2K</li>\n<li>Gem3.0_4K</li>\n<li>Sora2</li>\n<li>Veo3.1Fast</li>\n<li>Veo3.1Standard</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>KlingO1_1080P</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>KlingO1_720P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>ViduQ2_720P</li>\n<li>ViduQ2_1080P</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_1080P</li>\n<li>ViduQ2_720P_OffPeak</li>\n<li>ViduQ2_1080P_OffPeak</li>\n<li>ViduQ2turbo_720P_OffPeak</li>\n<li>ViduQ2turbo_1080P_OffPeak</li>\n<li>ViduQ2pro_720P_OffPeak</li>\n<li>ViduQ2pro_1080P_OffPeak</li>\n<li>Hunyuan1.5_720P</li>\n<li>Hunyuan1.5_1080P</li>\n<li>Hunyuan3.0_1K</li>\n<li>Hunyuan3.0_2K</li>\n<li>Hunyuan3.0_4K</li>\n<li>Mingmou1.0_1080P</li>\n<li>Mingmou1.0_1K</li>\n<li>Mingmou1.0_2K</li>\n<li>Mingmou1.0_4K</li>\n<li>Mingmou1.0_720P</li>\n<li> unknown</li>",
           "example": "Gem2.5",
           "member": "string",
           "name": "Specification",
@@ -7500,7 +7511,7 @@
         },
         {
           "disabled": false,
-          "document": "生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Jimeng，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>",
+          "document": "生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>",
           "example": "8.0",
           "member": "float",
           "name": "Duration",
@@ -7511,7 +7522,7 @@
         },
         {
           "disabled": false,
-          "document": "生成视频的分辨率。\n<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>\n<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>\n<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 OS，可选值为 720P；</li>",
+          "document": "生成视频的分辨率。\n<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>\n<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 OS，可选值为 720P；</li>",
           "example": "720P",
           "member": "string",
           "name": "Resolution",
@@ -7522,7 +7533,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所生成视频的宽高比。\n<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>\n<li>当 ModelName 是 Jimeng，当文生视频时，则可选值为 16:9、4:3、1:1、3:4、9:16、21:9</li>\n<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>\n<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>\n<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>\n<li>当 ModelName 是 Hailuo，则暂不支持。</li>",
+          "document": "指定所生成视频的宽高比。\n<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>\n<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>\n<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>\n<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>\n<li>当 ModelName 是 Hailuo，则暂不支持。</li>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -10978,7 +10989,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称。取值：\n<li>GEM：Gemini；</li>\n<li>Jimeng：即梦；</li>\n<li>Qwen：千问。</li>\n<li>Hunyuan：混元。</li>\n<li>Mingmou：明眸。</li>",
+          "document": "模型名称。取值：\n<li>GEM：Gemini；</li>\n<li>Qwen：千问。</li>\n<li>Hunyuan：混元。</li>\n<li>Mingmou：明眸。</li>",
           "example": "GEM",
           "member": "string",
           "name": "ModelName",
@@ -10987,7 +10998,7 @@
         },
         {
           "disabled": false,
-          "document": "模型版本。取值：\n<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>\n<li>当 ModelName 是 Jimeng，可选值为 4.0；</li>\n<li>当 ModelName 是 Qwen，可选值为 0925；</li>\n<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>\n<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>",
+          "document": "模型版本。取值：\n<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>\n<li>当 ModelName 是 Qwen，可选值为 0925；</li>\n<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>\n<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>",
           "example": "2.5",
           "member": "string",
           "name": "ModelVersion",
@@ -11114,7 +11125,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称。取值：<li>Hailuo：海螺；</li><li>Kling：可灵；</li><li> Jimeng：即梦；</li><li>Vidu；</li><li>GV：Google Veo；</li><li>OS：OpenAI Sora；</li><li>Hunyuan：混元；</li><li>Mingmou：明眸；</li><li> Seedance；</li>",
+          "document": "模型名称。取值：<li>Hailuo：海螺；</li><li>Kling：可灵；</li><li> Jimeng：即梦；</li><li>Vidu；</li><li>GV：Google Veo；</li><li>OS：OpenAI Sora；</li><li>Hunyuan：混元；</li><li>Mingmou：明眸；</li>",
           "example": "GV",
           "member": "string",
           "name": "ModelName",
@@ -11123,7 +11134,7 @@
         },
         {
           "disabled": false,
-          "document": "模型版本。取值：<li>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；</li><li>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、O1；</li><li>当 ModelName 是 Jimeng，可选值为 3.0pro；</li><li>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo；</li><li>当 ModelName 是 GV，可选值为 3.1、3.1-Fast；</li><li>当 ModelName 是 OS，可选值为 2.0；</li><li>当 ModelName 是 Hunyuan，可选值为 1.5；</li><li>当 ModelName 是 Mingmou，可选值为 1.0；</li><li>当 ModelName 是 Seedance，可选值为 1.5-pro，1.0-pro，1.0-lite-i2v，1.0-pro-fast，其中1.5-pro区分有声、无声，声音参数字段：OutputConfig.AudioGeneration，开启Enabled，关闭Disabled； </li>",
+          "document": "模型版本。取值：<li>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；</li><li>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、O1；</li><li>当 ModelName 是 Jimeng，可选值为 3.0pro；</li><li>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo；</li><li>当 ModelName 是 GV，可选值为 3.1、3.1-Fast；</li><li>当 ModelName 是 OS，可选值为 2.0；</li><li>当 ModelName 是 Hunyuan，可选值为 1.5；</li><li>当 ModelName 是 Mingmou，可选值为 1.0；</li>",
           "example": "3.1",
           "member": "string",
           "name": "ModelVersion",
@@ -13157,7 +13168,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图片列表，支持的图片格式：jpg、jpeg、png、webp。不同的场景需要不同的输入数据：\n\n- change_clothes：只能输入1张**模特**图片。",
+          "document": "输入图片列表，支持的图片格式：jpg、jpeg、png、webp。不同的场景需要不同的输入数据：\n\n- AI换衣场景：只能输入 1 张**模特**图片。\n- AI生商品图场景：需输入 1～10 张**同一产品**的不同角度的图片",
           "example": "无",
           "member": "SceneAigcImageTaskInputFileInfo",
           "name": "FileInfos",
@@ -32276,6 +32287,67 @@
       ],
       "type": "object"
     },
+    "ProductImageConfig": {
+      "document": "AI 生商品图参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成图片背景的提示词。如果此字段缺省则内部会自行生成灵感。",
+          "example": "帮我把图片替换成红色春节背景。",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要阻止模型生成图片的提示词。",
+          "example": "red",
+          "member": "string",
+          "name": "NegativePrompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关于产品的描述，详细的描述，有助于生成更符合要求的图片。",
+          "example": "这个一瓶可乐",
+          "member": "string",
+          "name": "ProductDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特殊要求。如有特殊要求，可通过该字段传入。",
+          "example": "蓝色色调",
+          "member": "string",
+          "name": "MoreRequirement",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "期望生成的图片张数。不传默认值为1，最大合法值为10。",
+          "example": "6",
+          "member": "uint64",
+          "name": "OutputImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ProductInstance": {
       "document": "预付费商品实例",
       "members": [
@@ -37175,6 +37247,17 @@
           "example": "0000-00-00T00:00:00Z",
           "member": "string",
           "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定所生成图片的宽高比。输入格式为 W:H。仅生商品图场景有效。",
+          "example": "1:1",
+          "member": "string",
+          "name": "AspectRatio",
           "output_required": false,
           "required": false,
           "type": "string",

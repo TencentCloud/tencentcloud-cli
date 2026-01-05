@@ -860,6 +860,36 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警AI分析状态\n-1 分析失败\n0 未分析\n1 分析中\n2 分析成功，真实告警\n3 分析成功，可疑告警",
+          "example": "0",
+          "member": "int64",
+          "name": "AIStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次告警时间戳（秒级）",
+          "example": "1766651394",
+          "member": "int64",
+          "name": "FirstAlarmTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后告警时间戳（秒级）",
+          "example": "1766651394",
+          "member": "int64",
+          "name": "LastAlarmTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

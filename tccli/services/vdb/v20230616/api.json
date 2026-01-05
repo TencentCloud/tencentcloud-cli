@@ -42,6 +42,27 @@
       "output": "DescribeInstancesResponse",
       "status": "online"
     },
+    "DescribePriceCreateInstance": {
+      "document": "查询新购实例价格",
+      "input": "DescribePriceCreateInstanceRequest",
+      "name": "查询新购实例价格",
+      "output": "DescribePriceCreateInstanceResponse",
+      "status": "online"
+    },
+    "DescribePriceRenewInstance": {
+      "document": "查询实例续费价格（包年包月）",
+      "input": "DescribePriceRenewInstanceRequest",
+      "name": "查询实例续费价格",
+      "output": "DescribePriceRenewInstanceResponse",
+      "status": "online"
+    },
+    "DescribePriceResizeInstance": {
+      "document": "查询实例变配价格",
+      "input": "DescribePriceResizeInstanceRequest",
+      "name": "查询实例变配价格",
+      "output": "DescribePriceResizeInstanceResponse",
+      "status": "online"
+    },
     "DestroyInstances": {
       "document": "本接口（DestroyInstances）用于销毁实例。",
       "input": "DestroyInstancesRequest",
@@ -867,6 +888,303 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePriceCreateInstanceRequest": {
+      "document": "DescribePriceCreateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型。\n- base：免费测试版。\n- single：单机版。\n- cluster：高可用版。",
+          "example": "cluster",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。\n- 计算型： 1、2、4、8、16、24、32。\n- 标准型： 1、2、4、8、12、16。\n- 存储型： 1、2、4、6、8。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WorkerNodeNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例计费方式。\n- 0：按量付费。\n- 1：包年包月。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品版本，0-标准版，1-容量增强版",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型为高可用版，需指定可用区选项。\n- two：两可用区。\n- three：三可用区。",
+          "example": "three",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "若计费方式为包年包月，指定包年包月续费的时长。\n- 单位：月。\n- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayPeriod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePriceCreateInstanceResponse": {
+      "document": "DescribePriceCreateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优惠后价格，单位：分",
+          "example": "1.0",
+          "member": "float",
+          "name": "Price",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价格，单位：分",
+          "example": "1.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种。CNY-人民币，USD-美元",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePriceRenewInstanceRequest": {
+      "document": "DescribePriceRenewInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "vdb-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包年包月的时长，单位：月",
+          "example": "1",
+          "member": "int64",
+          "name": "PayPeriod",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePriceRenewInstanceResponse": {
+      "document": "DescribePriceRenewInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优惠后价格，单位：分",
+          "example": "1.0",
+          "member": "float",
+          "name": "Price",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价格，单位：分",
+          "example": "1.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种。CNY-人民币，USD-美元",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePriceResizeInstanceRequest": {
+      "document": "DescribePriceResizeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "vdb-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。\n- 计算型： 1、2、4、8、16、24、32。\n- 标准型： 1、2、4、8、12、16。\n- 存储型： 1、2、4、6、8。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WorkerNodeNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePriceResizeInstanceResponse": {
+      "document": "DescribePriceResizeInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优惠后价格，单位：分",
+          "example": "1.0",
+          "member": "float",
+          "name": "Price",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价格，单位：分",
+          "example": "1.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种。CNY-人民币，USD-美元",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

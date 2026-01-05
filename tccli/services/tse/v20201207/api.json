@@ -9708,7 +9708,7 @@
         {
           "disabled": false,
           "document": "路由或服务的id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "5c425ea8-85d9-46e7-973e-86780fde34fa",
           "member": "string",
           "name": "SourceId",
           "output_required": false,
@@ -9738,7 +9738,7 @@
         {
           "disabled": false,
           "document": "cidr｜ip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[1.1.1.1,2.2.2.2]",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "AddressList",
           "output_required": false,

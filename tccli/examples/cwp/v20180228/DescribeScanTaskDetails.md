@@ -69,7 +69,8 @@ Output:
         "VulCount": 1,
         "RiskMachineCount": 1,
         "Type": 1,
-        "StoppingAll": false
+        "StoppingAll": false,
+        "PatchInfo": []
     }
 }
 ```
