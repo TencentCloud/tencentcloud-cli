@@ -304,6 +304,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeInternalInstanceFeatures": [
+      {
+        "document": "查询实例开启的特性列表",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInternalInstanceFeatures\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-4k4orqgq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d260e26f-e8a2-4582-8290-69bb743054e0\"\n    }\n}",
+        "title": "查询实例开启的特性列表"
+      }
+    ],
     "DescribeInternalResource": [
       {
         "document": "",
@@ -636,6 +644,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-cdrgxq94om\",\n    \"Type\": \"PUBLIC\",\n    \"Bandwidth\": 2,\n    \"IpRules\": [\n        {\n            \"Ip\": \"1.2.3.4\",\n            \"Allow\": true,\n            \"Remark\": \"test remark\"\n        }\n    ]\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"999bc587-90d9-4ec2-97e3-3ef170e1da96\"\n    }\n}",
         "title": "修改实例公网配置"
+      }
+    ],
+    "ModifyInternalInstanceFeature": [
+      {
+        "document": "开启Topic&Group粒度鉴权配置",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInternalInstanceFeature\n<公共请求参数>\n\n{\n    \"ResourceId\": \"rmq-4k4orqgq\",\n    \"Feature\": \"DetailedAcl\",\n    \"Enable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47d7fe3d-67d5-4e80-bcef-f2dc78018266\"\n    }\n}",
+        "title": "开启Topic&Group粒度鉴权配置"
       }
     ],
     "ModifyMQTTInsPublicEndpoint": [

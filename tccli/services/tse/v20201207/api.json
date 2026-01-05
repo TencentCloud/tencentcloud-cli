@@ -2613,7 +2613,7 @@
           "example": "KongPhaseDeleteAll",
           "member": "string",
           "name": "Phase",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2623,7 +2623,7 @@
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2633,7 +2633,7 @@
           "example": "success",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2643,7 +2643,7 @@
           "example": "success",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2653,7 +2653,7 @@
           "example": "1663579655000",
           "member": "uint64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2663,9 +2663,29 @@
           "example": "1663579708000",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "task-374244ab",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许重试",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowRetry",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10121,7 +10141,7 @@
         {
           "disabled": false,
           "document": "路由或服务的id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "5c425ea8-85d9-46e7-973e-86780fde34fa",
           "member": "string",
           "name": "SourceId",
           "output_required": false,
@@ -10151,7 +10171,7 @@
         {
           "disabled": false,
           "document": "cidr｜ip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[1.1.1.1,2.2.2.2]",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "AddressList",
           "output_required": false,

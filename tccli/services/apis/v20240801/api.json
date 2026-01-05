@@ -112,6 +112,13 @@
       "output": "DescribeAgentAppResponse",
       "status": "online"
     },
+    "DescribeAgentAppMcpServers": {
+      "document": "查询app mcpServer关联列表",
+      "input": "DescribeAgentAppMcpServersRequest",
+      "name": "查询app mcp关联列表",
+      "output": "DescribeAgentAppMcpServersResponse",
+      "status": "online"
+    },
     "DescribeAgentApps": {
       "document": "查询app列表",
       "input": "DescribeAgentAppsRequest",
@@ -1780,6 +1787,132 @@
           "document": "mcp server ID",
           "example": "无",
           "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppMcpServersRequest": {
+      "document": "DescribeAgentAppMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-a7af1980",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "[\"aga-05b85106\"]",
+          "member": "string",
+          "name": "AgentAppIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关联的mcp",
+          "example": "[\"mcp-2fc41d77\"]",
+          "member": "string",
+          "name": "McpServerIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "[\"agc-xxxxxxxx\"]",
+          "member": "string",
+          "name": "AgentCredentialIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "keyword",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否鉴权",
+          "example": "true",
+          "member": "bool",
+          "name": "AgentCredentialExist",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppMcpServersResp": {
+      "document": "查询App mcpServer绑定列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条目总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体条目",
+          "example": "无",
+          "member": "AgentAppMcpServerVO",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAgentAppMcpServersResponse": {
+      "document": "DescribeAgentAppMcpServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "DescribeAgentAppMcpServersResp",
           "name": "Data",
           "output_required": false,
           "type": "object",

@@ -4850,7 +4850,7 @@
         {
           "disabled": false,
           "document": "fs挂载时指定的特殊选项。",
-          "example": "fs挂载时指定的特殊选项。",
+          "example": "fs挂载时指定的特殊选项",
           "member": "string",
           "name": "MountOption",
           "output_required": false,
@@ -4894,7 +4894,7 @@
         {
           "disabled": false,
           "document": "goosefs 中Client 对应goosefs-site.properties 中对应goosefs.master.rpc.addresses信息",
-          "example": "xxx:9200,xxx:9200,xxx:9200",
+          "example": "xxx:9200,xxx:9200",
           "member": "string",
           "name": "GooseFsEndpoint",
           "output_required": false,

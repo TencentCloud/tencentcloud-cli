@@ -1483,7 +1483,7 @@
         {
           "disabled": false,
           "document": "session集群FlinkUi地址",
-          "example": "无",
+          "example": "https://203.195.143.139/cql-01mgalxg-7089934/?defaultToken=0",
           "member": "string",
           "name": "WebUIUrl",
           "output_required": true,
@@ -1543,7 +1543,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -1553,7 +1553,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -1599,6 +1599,16 @@
           "output_required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "jdk版本",
+          "example": "8",
+          "member": "string",
+          "name": "JdkVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1612,19 +1622,29 @@
           "example": "Flink-1.11",
           "member": "string",
           "name": "Flink",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群支持的Flink版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"Flink-1.13\", \"\"Flink-1.11\"]",
+          "example": "[\"Flink-1.13\", \"Flink-1.11\"]",
           "member": "string",
           "name": "SupportedFlink",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "jdk支持版本",
+          "example": "无",
+          "member": "FlinkJdkVersion",
+          "name": "JdkSupportVersion",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2119,7 +2139,7 @@
         {
           "disabled": false,
           "document": "资源引用数组",
-          "example": "[         {             \"ResourceId\": \"resource-lbi8h92t\",             \"Type\": 1,             \"Version\": 1         }     ]",
+          "example": "无",
           "member": "ResourceRef",
           "name": "ResourceRefs",
           "required": false,
@@ -2137,7 +2157,7 @@
         {
           "disabled": false,
           "document": "系统参数",
-          "example": "[         {             \"Key\": \"pipeline.max-parallelism\",             \"Value\": \"2048\"         }     ]",
+          "example": "无",
           "member": "Property",
           "name": "Properties",
           "required": false,
@@ -2254,7 +2274,7 @@
         {
           "disabled": false,
           "document": "类日志级别",
-          "example": "[    ]",
+          "example": "无",
           "member": "ClazzLevel",
           "name": "ClazzLevels",
           "required": false,
@@ -2272,7 +2292,7 @@
         {
           "disabled": false,
           "document": "专家模式的配置",
-          "example": "{    }",
+          "example": "无",
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
           "required": false,
@@ -2290,7 +2310,7 @@
         {
           "disabled": false,
           "document": "trace链路配置",
-          "example": "{    }",
+          "example": "无",
           "member": "TraceModeConfiguration",
           "name": "TraceModeConfiguration",
           "required": false,
@@ -2308,7 +2328,7 @@
         {
           "disabled": false,
           "document": "算子拓扑图",
-          "example": "{         \"Nodes\": [          ],         \"Edges\": [          ]     }",
+          "example": "无",
           "member": "JobGraph",
           "name": "JobGraph",
           "required": false,
@@ -2344,7 +2364,7 @@
         {
           "disabled": false,
           "document": "JobManager cpu",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "JobManagerCpu",
           "required": false,
@@ -2353,7 +2373,7 @@
         {
           "disabled": false,
           "document": "JobManager 内存",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "JobManagerMem",
           "required": false,
@@ -2361,8 +2381,17 @@
         },
         {
           "disabled": false,
+          "document": "jdk版本",
+          "example": "8",
+          "member": "string",
+          "name": "JdkVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "TaskManager cpu",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "TaskManagerCpu",
           "required": false,
@@ -2371,7 +2400,7 @@
         {
           "disabled": false,
           "document": "TaskManager 内存",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "TaskManagerMem",
           "required": false,
@@ -2525,7 +2554,7 @@
         {
           "disabled": false,
           "document": "作业标签",
-          "example": "1",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -2548,6 +2577,24 @@
           "name": "OpenJobDefaultAlarm",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户Uid",
+          "example": "123345",
+          "member": "int64",
+          "name": "Uid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "jdk版本",
+          "example": "8",
+          "member": "string",
+          "name": "JdkVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5072,6 +5119,32 @@
       ],
       "usage": "in"
     },
+    "FlinkJdkVersion": {
+      "document": "flink jdk版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flink版本",
+          "example": "Flink-1.13",
+          "member": "string",
+          "name": "FlinkVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "jdk版本",
+          "example": "[\"8\"]",
+          "member": "string",
+          "name": "JdkVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GatewayRefItem": {
       "document": "Gateway引用资源信息",
       "members": [
@@ -5406,7 +5479,7 @@
         {
           "disabled": false,
           "document": "系统参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[xxx]",
+          "example": "无",
           "member": "Property",
           "name": "Properties",
           "output_required": true,
@@ -5416,7 +5489,7 @@
         {
           "disabled": false,
           "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[xxx]",
+          "example": "无",
           "member": "ResourceRefDetail",
           "name": "ResourceRefDetails",
           "output_required": true,
@@ -5455,7 +5528,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用日志收集，0-未启用，1-已启用，2-历史集群未设置日志集，3-历史集群已开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用日志收集，0-未启用，1-采集到cls，4-采集到cos，5-采集到es\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "LogCollect",
@@ -5546,7 +5619,7 @@
         {
           "disabled": false,
           "document": "类日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[xxx]",
+          "example": "无",
           "member": "ClazzLevel",
           "name": "ClazzLevels",
           "output_required": true,
@@ -5566,7 +5639,7 @@
         {
           "disabled": false,
           "document": "专家模式的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{xxx}",
+          "example": "无",
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
           "output_required": false,
@@ -5586,7 +5659,7 @@
         {
           "disabled": false,
           "document": "trace链路配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{xxx}",
+          "example": "无",
           "member": "TraceModeConfiguration",
           "name": "TraceModeConfiguration",
           "output_required": true,
@@ -5606,7 +5679,7 @@
         {
           "disabled": false,
           "document": "算子拓扑图\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{xxx}",
+          "example": "无",
           "member": "JobGraph",
           "name": "JobGraph",
           "output_required": false,
@@ -5665,8 +5738,18 @@
         },
         {
           "disabled": false,
+          "document": "jdk版本",
+          "example": "8",
+          "member": "string",
+          "name": "JdkVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "jm使用cpu数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "JobManagerCpu",
           "output_required": false,
@@ -5676,7 +5759,7 @@
         {
           "disabled": false,
           "document": "jm使用内存数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "JobManagerMem",
           "output_required": false,
@@ -5686,7 +5769,7 @@
         {
           "disabled": false,
           "document": "tm使用cpu数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "1.0",
           "member": "float",
           "name": "TaskManagerCpu",
           "output_required": false,
@@ -5696,7 +5779,7 @@
         {
           "disabled": false,
           "document": "tm使用mem数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "1.0",
           "member": "float",
           "name": "TaskManagerMem",
           "output_required": false,
@@ -5706,7 +5789,7 @@
         {
           "disabled": false,
           "document": "运行中配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"\"}",
+          "example": "无",
           "member": "JobConfig",
           "name": "JobConfigItem",
           "output_required": false,
@@ -6400,6 +6483,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "期望是开启默认告警",
+          "example": "1",
+          "member": "int64",
+          "name": "ExpectJobDefaultAlarmStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "jdk版本",
+          "example": "8",
+          "member": "string",
+          "name": "JdkVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6573,7 +6676,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件夹ID（必填）",
+          "document": "只有移动文件夹的场景必填，如果是批量移动作业的场景，非必填。",
           "example": "folder-aaaaaaaa",
           "member": "string",
           "name": "SourceFolderId",
@@ -7478,7 +7581,7 @@
         {
           "disabled": false,
           "document": "资源id",
-          "example": "无",
+          "example": "resource-jsah1",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -7488,7 +7591,7 @@
         {
           "disabled": false,
           "document": "资源版本，-1表示使用最新版本",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Version",
           "output_required": true,
@@ -7498,7 +7601,7 @@
         {
           "disabled": false,
           "document": "资源名称",
-          "example": "无",
+          "example": "logger",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -7508,7 +7611,7 @@
         {
           "disabled": false,
           "document": "1: 主资源",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "output_required": true,
@@ -7518,7 +7621,7 @@
         {
           "disabled": false,
           "document": "1: 系统内置资源",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "SystemProvide",
           "output_required": true,
@@ -7531,6 +7634,16 @@
           "example": "kafka",
           "member": "string",
           "name": "Connector",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Connector版本",
+          "example": "1.1",
+          "member": "string",
+          "name": "ConnectorVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8640,7 +8753,7 @@
         {
           "disabled": false,
           "document": "唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sgw-kgv3orqj",
           "member": "string",
           "name": "SerialId",
           "output_required": true,
@@ -8650,7 +8763,7 @@
         {
           "disabled": false,
           "document": "Flink内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Flink-1.17",
           "member": "string",
           "name": "FlinkVersion",
           "output_required": true,
@@ -8660,7 +8773,7 @@
         {
           "disabled": false,
           "document": "状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -8670,7 +8783,7 @@
         {
           "disabled": false,
           "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100029236503",
           "member": "string",
           "name": "CreatorUin",
           "output_required": true,
@@ -8690,7 +8803,7 @@
         {
           "disabled": false,
           "document": "Cu规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4",
           "member": "float",
           "name": "CuSpec",
           "output_required": false,
@@ -8700,7 +8813,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -8710,7 +8823,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -8745,6 +8858,16 @@
           "name": "Mem",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "jdk版本",
+          "example": "8",
+          "member": "string",
+          "name": "JdkVersion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
