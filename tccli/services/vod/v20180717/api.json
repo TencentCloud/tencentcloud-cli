@@ -7596,6 +7596,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Disabled",
+          "member": "string",
+          "name": "FrameInterpolate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10989,7 +11000,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称。取值：\n<li>GEM：Gemini；</li>\n<li>Qwen：千问。</li>\n<li>Hunyuan：混元。</li>\n<li>Mingmou：明眸。</li>",
+          "document": "模型名称。取值：\n<li>GEM：Gemini；</li>\n<li>Qwen：千问。</li>\n<li>Hunyuan：混元。</li>",
           "example": "GEM",
           "member": "string",
           "name": "ModelName",
@@ -10998,7 +11009,7 @@
         },
         {
           "disabled": false,
-          "document": "模型版本。取值：\n<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>\n<li>当 ModelName 是 Qwen，可选值为 0925；</li>\n<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>\n<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>",
+          "document": "模型版本。取值：\n<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>\n<li>当 ModelName 是 Qwen，可选值为 0925；</li>\n<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>",
           "example": "2.5",
           "member": "string",
           "name": "ModelVersion",

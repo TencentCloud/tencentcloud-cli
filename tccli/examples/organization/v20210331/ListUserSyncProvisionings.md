@@ -11,7 +11,7 @@ tccli organization ListUserSyncProvisionings --cli-unfold-argument  \
     --NextToken  \
     --MaxResults 10 \
     --PrincipalType User \
-    --TargetUin 100003324902 \
+    --TargetUin 100000000002 \
     --TargetType MemberUin \
     --Filter user1
 ```
@@ -32,7 +32,7 @@ Output:
                 "PrincipalId": "u-swnd8wn3",
                 "PrincipalName": "user1",
                 "PrincipalType": "User",
-                "TargetUin": "10000338332",
+                "TargetUin": 100000000002,
                 "TargetName": "user2",
                 "DuplicationStrategy": "KeepBoth",
                 "DeletionStrategy": "Delete",

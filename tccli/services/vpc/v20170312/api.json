@@ -17012,7 +17012,7 @@
         {
           "disabled": false,
           "document": "限流的云服务器内网IP。",
-          "example": "10.0.0.12",
+          "example": "[\"10.0.0.12\"]",
           "member": "string",
           "name": "IpAddresses",
           "required": false,
@@ -17048,7 +17048,7 @@
           "example": "无",
           "member": "GatewayQos",
           "name": "GatewayQosSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17058,7 +17058,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25147,7 +25147,7 @@
         },
         {
           "disabled": false,
-          "document": "流控带宽值。",
+          "document": "网关流控出方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。",
           "example": "50",
           "member": "int64",
           "name": "Bandwidth",
@@ -25163,6 +25163,16 @@
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关流控入方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。",
+          "example": "50",
+          "member": "int64",
+          "name": "InBandwidth",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

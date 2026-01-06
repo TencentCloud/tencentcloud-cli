@@ -217,6 +217,13 @@
       "output": "DeleteOpsAlarmRuleResponse",
       "status": "online"
     },
+    "DeleteProject": {
+      "document": "删除项目",
+      "input": "DeleteProjectRequest",
+      "name": "删除项目",
+      "output": "DeleteProjectResponse",
+      "status": "online"
+    },
     "DeleteProjectMember": {
       "document": "删除项目用户",
       "input": "DeleteProjectMemberRequest",
@@ -6624,6 +6631,43 @@
     "DeleteProjectMemberResponse": {
       "document": "DeleteProjectMember返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的项目ID",
+          "example": "4363276",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除结果",
+          "example": "无",
+          "member": "ProjectResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

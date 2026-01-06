@@ -5785,6 +5785,15 @@
           "name": "IsDemo",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目 ID 列表",
+          "example": "[12000,120001]",
+          "member": "int64",
+          "name": "IDList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

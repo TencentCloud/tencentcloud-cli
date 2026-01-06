@@ -452,6 +452,14 @@
         "title": "deleteAlarmRule"
       }
     ],
+    "DeleteProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"3024901836648656896\"\n}",
+        "output": "{\n    \"RequestId\": \"452729ea-908b-41ef-8506-2b303bcf492a\",\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"452729ea-908b-41ef-8506-2b303bcf492a\"\n    }\n}",
+        "title": "删除项目"
+      }
+    ],
     "DeleteProjectMember": [
       {
         "document": "",
