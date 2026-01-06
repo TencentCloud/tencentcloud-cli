@@ -18,7 +18,7 @@ Output:
             {
                 "SerialNumber": "1347934239****",
                 "Issuer": "5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta",
-                "Version": "1",
+                "Version": 1,
                 "CertificateId": "idp-c-2jd8923je29****",
                 "PublicKey": "nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****",
                 "SignatureAlgorithm": "SHA256withRSA",

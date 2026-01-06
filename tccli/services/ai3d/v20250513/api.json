@@ -725,8 +725,8 @@
         },
         {
           "disabled": false,
-          "document": "生成3D模型的面数，默认值为500000。\n可支持生成面数范围，参考值：40000-1500000。",
-          "example": "400000",
+          "document": "生成3D模型的面数，默认值为500000。\n可支持生成面数范围，参考值：10000-1500000。\nGenerateType中选择LowPoly时，参考值：3000-1500000。",
+          "example": "100000",
           "member": "int64",
           "name": "FaceCount",
           "required": false,
@@ -734,7 +734,7 @@
         },
         {
           "disabled": false,
-          "document": "生成任务类型，默认Normal，参考值：\nNormal：可生成带纹理的几何模型。\nLowPoly：可生成智能减面后的模型。\nGeometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。\nSketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。",
+          "document": "生成任务类型，默认Normal，参考值：\nNormal：可生成带纹理的几何模型。\nLowPoly：可生成智能拓扑后的模型，选择此参数时，面数最低可到达3000面。\nGeometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。\nSketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。",
           "example": "Normal",
           "member": "string",
           "name": "GenerateType",

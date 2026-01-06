@@ -21,7 +21,7 @@ Output:
             "PrincipalId": "u-swnd8wn3",
             "PrincipalName": "user1",
             "PrincipalType": "User",
-            "TargetUin": "10000338332",
+            "TargetUin": 100000000002,
             "TargetName": "user2",
             "TargetType": "MemberUin",
             "DuplicationStrategy": "KeepBoth",

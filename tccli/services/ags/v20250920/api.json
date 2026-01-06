@@ -200,6 +200,45 @@
       ],
       "type": "object"
     },
+    "CosStorageSource": {
+      "document": "沙箱实例对象存储挂载配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象存储访问域名",
+          "example": "test-123456789.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储桶名称",
+          "example": "test-123456789",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储桶路径，必须为以/起始的绝对路径",
+          "example": "/",
+          "member": "string",
+          "name": "BucketPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAPIKeyRequest": {
       "document": "CreateAPIKey请求参数结构体",
       "members": [
@@ -271,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具类型，目前支持：browser、code-interpreter",
+          "document": "沙箱工具类型，目前支持：browser、code-interpreter、custom",
           "example": "code-interpreter",
           "member": "string",
           "name": "ToolType",
@@ -322,6 +361,33 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色ARN",
+          "example": "qcs::cam::uin/100000001:roleName/test_role",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具存储配置",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具自定义配置",
+          "example": "无",
+          "member": "CustomConfiguration",
+          "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -347,6 +413,205 @@
         }
       ],
       "type": "object"
+    },
+    "CustomConfiguration": {
+      "document": "沙箱自定义配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "test.tencentcloudcr.com/example/nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动命令",
+          "example": "[\"/bin/bash\", \"-c\"]",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动参数",
+          "example": "[\"-h\", \"0.0.0.0\", \"-p\", \"8000\"]",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口配置",
+          "example": "无",
+          "member": "PortConfiguration",
+          "name": "Ports",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConfiguration",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针配置",
+          "example": "无",
+          "member": "ProbeConfiguration",
+          "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomConfigurationDetail": {
+      "document": "沙箱自定义配置详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "test.tencentcloudcr.com/example/nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`TCR`、`CCR`。",
+          "example": "TCR",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像 Digest",
+          "example": "sha256:abc123def456...",
+          "member": "string",
+          "name": "ImageDigest",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动命令",
+          "example": "[\"/bin/bash\", \"-c\"]",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动参数",
+          "example": "[\"-h\", \"0.0.0.0\", \"-p\", \"8000\"]",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口配置",
+          "example": "无",
+          "member": "PortConfiguration",
+          "name": "Ports",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConfiguration",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针配置",
+          "example": "无",
+          "member": "ProbeConfiguration",
+          "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteAPIKeyRequest": {
       "document": "DeleteAPIKey请求参数结构体",
@@ -596,6 +861,34 @@
       ],
       "type": "object"
     },
+    "EnvVar": {
+      "document": "环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量名",
+          "example": "TEST_ENV",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量值",
+          "example": "ABD",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤列表规则",
       "members": [
@@ -624,17 +917,306 @@
       ],
       "usage": "both"
     },
+    "HttpGetAction": {
+      "document": "HTTP GET 探测动作配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径",
+          "example": "/health",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "8000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageStorageSource": {
+      "document": "镜像卷挂载源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "ccr.ccs.tencentyun.com/example/nginx:latest",
+          "member": "string",
+          "name": "Reference",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像内部的路径",
+          "example": "/mnt/sub",
+          "member": "string",
+          "name": "SubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像 Digest，请求时无需传入",
+          "example": "sha256:abcdefg123...",
+          "member": "string",
+          "name": "Digest",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MountOption": {
+      "document": "沙箱实例存储挂载配置可选项，用于覆盖沙箱工具的存储配置的部分选项，并提供子路径挂载配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定沙箱工具中的存储配置名称",
+          "example": "Storage1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例本地挂载路径（可选），默认继承工具中的存储配置",
+          "example": "/home/user",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例存储挂载子路径（可选）",
+          "example": "workspace1",
+          "member": "string",
+          "name": "SubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例存储挂载读写权限（可选），默认继承工具存储配置",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NetworkConfiguration": {
       "document": "沙箱网络配置",
       "members": [
         {
           "disabled": false,
-          "document": "网络模式（当前支持 PUBLIC）",
+          "document": "网络模式（当前支持 PUBLIC, VPC, SANDBOX）",
           "example": "PUBLIC",
           "member": "string",
           "name": "NetworkMode",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC网络相关配置",
+          "example": "无",
+          "member": "VPCConfig",
+          "name": "VpcConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PortConfiguration": {
+      "document": "端口配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口名",
+          "example": "http",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "8000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProbeConfiguration": {
+      "document": "健康检查探针配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP GET 探测配置",
+          "example": "无",
+          "member": "HttpGetAction",
+          "name": "HttpGet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查就绪超时",
+          "example": "30000",
+          "member": "int64",
+          "name": "ReadyTimeoutMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查单次探测超时",
+          "example": "1000",
+          "member": "int64",
+          "name": "ProbeTimeoutMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查间隔",
+          "example": "1000",
+          "member": "int64",
+          "name": "ProbePeriodMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查成功阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查失败阈值",
+          "example": "3",
+          "member": "int64",
+          "name": "FailureThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceConfiguration": {
+      "document": "资源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cpu 资源量",
+          "example": "500m",
+          "member": "string",
+          "name": "CPU",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存资源量",
+          "example": "1Gi",
+          "member": "string",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -741,6 +1323,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载选项",
+          "example": "无",
+          "member": "MountOption",
+          "name": "MountOptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例自定义配置",
+          "example": "无",
+          "member": "CustomConfigurationDetail",
+          "name": "CustomConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -858,6 +1462,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具绑定角色ARN",
+          "example": "qcs::cam::uin/100000001:roleName/test_role",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具中实例存储挂载配置",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具自定义配置",
+          "example": "无",
+          "member": "CustomConfigurationDetail",
+          "name": "CustomConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -900,6 +1537,24 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例存储挂载配置",
+          "example": "无",
+          "member": "MountOption",
+          "name": "MountOptions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例自定义配置",
+          "example": "无",
+          "member": "CustomConfiguration",
+          "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -952,6 +1607,84 @@
         }
       ],
       "type": "object"
+    },
+    "StorageMount": {
+      "document": "沙箱工具中实例存储挂载配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储挂载配置名称",
+          "example": "Storage1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储配置",
+          "example": "无",
+          "member": "StorageSource",
+          "name": "StorageSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例本地挂载路径",
+          "example": "/home/user",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载读写权限配置，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageSource": {
+      "document": "挂载存储配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象存储桶配置",
+          "example": "无",
+          "member": "CosStorageSource",
+          "name": "Cos",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像卷配置",
+          "example": "无",
+          "member": "ImageStorageSource",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签",
@@ -1055,6 +1788,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具自定义配置",
+          "example": "无",
+          "member": "CustomConfiguration",
+          "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1070,6 +1812,34 @@
         }
       ],
       "type": "object"
+    },
+    "VPCConfig": {
+      "document": "沙箱工具VPC相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC子网ID列表",
+          "example": "[\"subnet-012abcde\", \"subnet-012edcba\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID列表",
+          "example": "[\"sg-abcde012\", \"sg-210edcba\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"
