@@ -169,6 +169,15 @@
           "name": "AfterChunkId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kbase-fsdfsfd",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -513,6 +522,15 @@
           "name": "ChunkIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "klbase_-sfsfs",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1197,6 +1215,15 @@
           "name": "Content",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kbase-fsdfs",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1260,6 +1287,24 @@
           "name": "KnowledgeBaseDesc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1仅自己使用，2指定用户，0全员",
+          "example": "1",
+          "member": "int64",
+          "name": "UseScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可使用用户列表",
+          "example": "[\"10101012\",\"10110003\"]",
+          "member": "string",
+          "name": "AuthorityUins",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1306,6 +1351,15 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kbase-fdsfs",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

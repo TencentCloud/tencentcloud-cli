@@ -1127,7 +1127,7 @@
         {
           "disabled": false,
           "document": "区",
-          "example": "ap-beijing-2",
+          "example": "ap-beijing-1",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -1147,7 +1147,7 @@
         {
           "disabled": false,
           "document": "主账号 UIN",
-          "example": "123456",
+          "example": "1234561",
           "member": "string",
           "name": "OwnerUin",
           "output_required": true,
@@ -1157,7 +1157,7 @@
         {
           "disabled": false,
           "document": "创建账号 UIN",
-          "example": "123456",
+          "example": "1234562",
           "member": "string",
           "name": "CreatorUin",
           "output_required": true,
@@ -1287,7 +1287,7 @@
         {
           "disabled": false,
           "document": "弹性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "SubEks",
           "name": "SubEks",
           "output_required": false,
@@ -1297,7 +1297,7 @@
         {
           "disabled": false,
           "document": "默认 \"\" 包销模式 \"exclusiveSale\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "exclusiveSale",
           "member": "string",
           "name": "BillingResourceMode",
           "output_required": false,

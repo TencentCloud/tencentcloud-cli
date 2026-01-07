@@ -3017,8 +3017,8 @@
         },
         {
           "disabled": false,
-          "document": "第二个从库可用区的正式名称，如ap-shanghai-1",
-          "example": "ap-shanghai-1",
+          "document": "第二个从库可用区的正式名称，如 ap-shanghai-2",
+          "example": "ap-shanghai-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -4049,7 +4049,7 @@
         {
           "disabled": false,
           "document": "可用区id",
-          "example": "200001",
+          "example": "200002",
           "member": "int64",
           "name": "ZoneId",
           "output_required": true,
@@ -10158,7 +10158,7 @@
         },
         {
           "disabled": false,
-          "document": "实例可用区信息，格式如 \"ap-shanghai-1\"。",
+          "document": "实例可用区信息，格式如 \"ap-shanghai-2\"。",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -15834,7 +15834,7 @@
         {
           "disabled": false,
           "document": "可用区",
-          "example": "ap-beijing-2",
+          "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -15861,7 +15861,7 @@
         {
           "disabled": false,
           "document": "实例当前告警策略id数组",
-          "example": "[\"policy-u4c8n51d\"]",
+          "example": "[1432]",
           "member": "int64",
           "name": "SrcAlarmPolicyList",
           "required": false,
@@ -20001,8 +20001,8 @@
         },
         {
           "disabled": false,
-          "document": "RO可用区的正式名称，如ap-shanghai-1",
-          "example": "ap-shanghai-1",
+          "document": "RO可用区的正式名称，如 ap-shanghai-2",
+          "example": "ap-shanghai-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -20813,8 +20813,8 @@
         },
         {
           "disabled": false,
-          "document": "从库可用区的正式名称，如ap-shanghai-1",
-          "example": "ap-shanghai-1",
+          "document": "从库可用区的正式名称，如 ap-shanghai-2",
+          "example": "ap-shanghai-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -22619,7 +22619,7 @@
         {
           "disabled": false,
           "document": "主实例所在的可用区",
-          "example": "[\"ap-shanghai-1\"]",
+          "example": "[\"ap-shanghai-2\"]",
           "member": "string",
           "name": "MasterZone",
           "output_required": true,

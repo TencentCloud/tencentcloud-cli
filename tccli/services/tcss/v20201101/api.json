@@ -9138,7 +9138,7 @@
         {
           "disabled": true,
           "document": "是否扫描全部镜像(废弃)",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "All",
           "required": false,
@@ -9147,7 +9147,7 @@
         {
           "disabled": false,
           "document": "扫描的镜像列表",
-          "example": "[{\"Namespace\":\"name\",\"InstanceName\":\"ins-hdjh***\",\"ImageName\":\"imageName-01\",\"ImageTag\":\"tag\",\"Force\":true}]",
+          "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
@@ -9173,8 +9173,17 @@
         },
         {
           "disabled": false,
+          "document": "剔除扫描的镜像id列表",
+          "example": "[100]",
+          "member": "uint64",
+          "name": "ExcludeIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否最新镜像",
-          "example": "FALSE",
+          "example": "false",
           "member": "bool",
           "name": "IsLatest",
           "required": false,
@@ -9210,7 +9219,7 @@
         {
           "disabled": false,
           "document": "是否存在运行中的容器",
-          "example": "TRUE",
+          "example": "true",
           "member": "bool",
           "name": "ContainerRunning",
           "required": false,

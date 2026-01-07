@@ -1334,6 +1334,14 @@
         "title": "请求示例"
       }
     ],
+    "InsertTaskTemporaryFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: InsertTaskTemporaryFiles\n<公共请求参数>\n\n{\n    \"TaskId\": \"895451\",\n    \"InsertAfterIndex\": 0,\n    \"TemporaryFiles\": [\n        \"http://vod.com/path/test.mp4\"\n    ],\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ModifyCaster": [
       {
         "document": "请求修改导播台信息",

@@ -1382,7 +1382,7 @@
         {
           "disabled": false,
           "document": "健康检查详情。",
-          "example": "null",
+          "example": "无",
           "member": "TargetGroupHealthCheck",
           "name": "HealthCheck",
           "required": false,

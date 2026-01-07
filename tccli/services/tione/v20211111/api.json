@@ -329,6 +329,13 @@
       "output": "ModifyModelServiceAuthorizationResponse",
       "status": "online"
     },
+    "ModifyNotebook": {
+      "document": "修改Notebook",
+      "input": "ModifyNotebookRequest",
+      "name": "修改Notebook",
+      "output": "ModifyNotebookResponse",
+      "status": "online"
+    },
     "ModifyNotebookTags": {
       "document": "修改Notebook标签",
       "input": "ModifyNotebookTagsRequest",
@@ -3822,7 +3829,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10....即每页左边为闭区间; 默认0",
+          "document": "分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -8262,6 +8269,249 @@
       ],
       "type": "object"
     },
+    "ModifyNotebookRequest": {
+      "document": "ModifyNotebook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook id",
+          "example": "a1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称。不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "example": "a1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（不允许修改）计算资源付费模式 ，可选值为：\nPREPAID：预付费，即包年包月\nPOSTPAID_BY_HOUR：按小时后付费",
+          "example": "a1",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源配置",
+          "example": "无",
+          "member": "ResourceConf",
+          "name": "ResourceConf",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动停止",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoStopping",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否访问公网",
+          "example": "true",
+          "member": "bool",
+          "name": "DirectInternetAccess",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否ROOT权限",
+          "example": "true",
+          "member": "bool",
+          "name": "RootAccess",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否上报日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源组ID(for预付费)",
+          "example": "a1",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（不允许修改）Vpc-Id",
+          "example": "a1",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（不允许修改）子网Id",
+          "example": "a1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储卷大小，单位GB",
+          "example": "1",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "（不允许修改）存储的类型。取值包含： \n    FREE:    预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo",
+          "example": "CFS",
+          "member": "string",
+          "name": "VolumeSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（不允许修改）CFS存储的配置",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "VolumeSourceCFS",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "日志配置",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期脚本的ID",
+          "example": "a1",
+          "member": "string",
+          "name": "LifecycleScriptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认GIT存储库的ID",
+          "example": "a1",
+          "member": "string",
+          "name": "DefaultCodeRepoId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "其他GIT存储库的ID，最多3个",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "AdditionalCodeRepoIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动停止时间，单位小时",
+          "example": "1",
+          "member": "int64",
+          "name": "AutomaticStopTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签配置",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据配置，只支持WEDATA_HDFS",
+          "example": "无",
+          "member": "DataConfig",
+          "name": "DataConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型，包括SYSTEM、TCR、CCR",
+          "example": "\"SYSTEM\"",
+          "member": "string",
+          "name": "ImageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSH配置",
+          "example": "无",
+          "member": "SSHConfig",
+          "name": "SSHConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotebookResponse": {
+      "document": "ModifyNotebook返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNotebookTagsRequest": {
       "document": "ModifyNotebookTags请求参数结构体",
       "members": [
@@ -8819,7 +9069,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
+          "example": "无",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "output_required": true,
@@ -8859,7 +9109,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -9009,7 +9259,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Id\":\"cfs-abcdefg\",\"Path\":\"/\"}",
+          "example": "无",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "output_required": true,
@@ -9039,7 +9289,7 @@
         {
           "disabled": false,
           "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Enable\":false,\"PublicKey\":\"\",\"Port\":0,\"LoginCommand\":\"\"}",
+          "example": "无",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "output_required": false,
@@ -9049,7 +9299,7 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Id\":\"gs-1234\",\"Type\":\"GooseFSx\",\"Path\":\"/\", \"NameSpace\": \"test\"}",
+          "example": "无",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "output_required": false,

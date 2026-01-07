@@ -1014,6 +1014,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "压力模型",
+          "example": "不填代表梯度递增，spike: 浪涌模式，step: 梯度递增",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6237,6 +6248,17 @@
           "member": "int64",
           "name": "GracefulStopSeconds",
           "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景最大执行次数",
+          "example": "1000",
+          "member": "int64",
+          "name": "IterationCount",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

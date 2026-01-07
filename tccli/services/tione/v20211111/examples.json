@@ -376,6 +376,14 @@
         "title": "鉴权开启示例"
       }
     ],
+    "ModifyNotebook": [
+      {
+        "document": "修改Notebook",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotebook\n<公共请求参数>\n\n{\n    \"Id\": \"nb-32178932173972137\",\n    \"Name\": \"liming-notebook\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"ResourceConf\": {\n        \"Cpu\": 2000,\n        \"Memory\": 4096,\n        \"Gpu\": 1,\n        \"GpuType\": \"V100\",\n        \"InstanceType\": \"TI.GN10.2XLARGE40.POST\"\n    },\n    \"ResourceGroupId\": \"trsg-dwpqnjmk\",\n    \"VpcId\": \"vpc-4kq8vlym\",\n    \"SubnetId\": \"subnet-58zkmdob\",\n    \"VolumeSourceType\": \"CFS\",\n    \"VolumeSizeInGB\": 1,\n    \"VolumeSourceCFS\": {\n        \"Id\": \"cfs-9su5kqtv\",\n        \"Path\": \"/tione\"\n    },\n    \"LogEnable\": true,\n    \"LogConfig\": {\n        \"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\",\n        \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\"\n    },\n    \"RootAccess\": true,\n    \"LifecycleScriptId\": \"ls-1007228485705742720\",\n    \"DefaultCodeRepoId\": \"cr-1000669213287070080\",\n    \"AdditionalCodeRepoIds\": [\n        \"cr-1000669213287070081\"\n    ],\n    \"AutoStopping\": true,\n    \"AutomaticStopTime\": 1,\n    \"Tags\": [\n        {\n            \"TagKey\": \"test-key\",\n            \"TagValue\": \"test-value\"\n        }\n    ],\n    \"DirectInternetAccess\": true,\n    \"DataConfigs\": [\n        {\n            \"MappingPath\": \"/home/tione/notebook\",\n            \"DataSourceType\": \"CLOUD_PREMIUM\",\n            \"CBSSource\": {\n                \"VolumeSizeInGB\": 50\n            }\n        }\n    ],\n    \"ImageInfo\": {\n        \"ImageType\": \"SYSTEM\",\n        \"ImageUrl\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\n        \"ImageName\": \"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\"\n    },\n    \"ImageType\": \"SYSTEM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27103821308080d8sgdsggdsgd\"\n    }\n}",
+        "title": "修改Notebook"
+      }
+    ],
     "ModifyNotebookTags": [
       {
         "document": "修改Notebook标签",

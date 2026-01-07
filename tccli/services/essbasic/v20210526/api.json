@@ -11248,7 +11248,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul><li> **INIT** :合同创建</li>\n<li> **PART** :合同签署中(至少有一个签署方已经签署)</li>\n<li> **REJECT** :合同拒签</li>\n<li> **ALL** :合同签署完成</li>\n<li> **DEADLINE** :合同流签(合同过期)</li>\n<li> **CANCEL** :合同撤回</li>\n<li> **RELIEVED** :解除协议（已解除）</li></ul>\n ",
+          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul><li> **INIT** :合同创建</li>\n<li> **PART** :合同签署中(至少有一个签署方已经签署)</li>\n<li> **REJECT** :合同拒签</li>\n<li> **ALL** :合同签署完成</li>\n<li> **DEADLINE** :合同流签(合同过期)</li>\n<li> **CANCEL** :合同撤回</li>\n<li> **INVALID** : 已失效（签署期间有签署人改名等原因导致）</li>\n<li> **RELIEVED** :解除协议（已解除）</li></ul>\n ",
           "example": "ALL",
           "member": "string",
           "name": "FlowStatus",
