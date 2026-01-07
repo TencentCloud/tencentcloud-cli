@@ -3486,6 +3486,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：普通可用区\n1：cdz可用区\n2：cdcLite可用区",
+          "example": "0",
+          "member": "int64",
+          "name": "ZoneType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

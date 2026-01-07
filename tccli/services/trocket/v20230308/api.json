@@ -4111,6 +4111,16 @@
       "document": "DescribeInternalInstanceFeatures返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "特性列表。\nDetailedAcl: topic/group维度ACL",
+          "example": "无",
+          "member": "InstanceFeatureInfo",
+          "name": "Features",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7603,6 +7613,32 @@
         }
       ],
       "type": "object"
+    },
+    "InstanceFeatureInfo": {
+      "document": "实例特性白名单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID, 实例纬度的instance_id或者账户纬度的uin",
+          "example": "rmq-4k4orqgq",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特性类型",
+          "example": "DetailedAcl",
+          "member": "string",
+          "name": "Feature",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InstanceItem": {
       "document": "实例列表页中的实例信息",

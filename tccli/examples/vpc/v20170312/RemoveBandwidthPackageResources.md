@@ -1,4 +1,4 @@
-**Example 1: 删除带宽包资源**
+**Example 1: 带宽包内资源移除**
 
 
 
@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli vpc RemoveBandwidthPackageResources --cli-unfold-argument  \
-    --BandwidthPackageId bwp-pr0xbnvw \
-    --ResourceIds eip-alfxy9c8
+    --BandwidthPackageId bwp-sddefxdf \
+    --ResourceType Address \
+    --ResourceIds eip-wekidufh eip-djthcjrv
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f1989f97-6b65-40b5-8afa-37d105c60c84"
+        "RequestId": "0a82e871-6574-429e-8506-1cce14aac843"
     }
 }
 ```

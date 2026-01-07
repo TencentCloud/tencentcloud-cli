@@ -1441,7 +1441,7 @@
         {
           "disabled": false,
           "document": "健康检查详情。",
-          "example": "null",
+          "example": "无",
           "member": "TargetGroupHealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -1509,6 +1509,15 @@
           "name": "RescheduleUnhealthyStartTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "源端口选择算法\n- L3_HASH：三元组Hash\n- RANDOM：随机选择\n- L4_HASH：五元祖Hash",
+          "example": "L4_HASH",
+          "member": "string",
+          "name": "SrcPortAlgorithm",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
