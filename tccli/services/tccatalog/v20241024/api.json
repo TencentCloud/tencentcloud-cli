@@ -2292,7 +2292,7 @@
         {
           "disabled": false,
           "document": "属性信息",
-          "example": "",
+          "example": "无",
           "member": "KVPair",
           "name": "Properties",
           "required": false,

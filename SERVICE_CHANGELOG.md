@@ -1,10 +1,132 @@
-# Release 3.0.1343.1
+# Release 3.0.1344.1
 
-## 日志服务(cls) 版本：2020-10-16
+## 应用性能监控(apm) 版本：2021-06-22
 
-### 第 135 次发布
+### 第 20 次发布
 
-发布时间：2026-01-08 01:22:01
+发布时间：2026-01-09 01:10:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyApmApplicationConfig](http://document.tencentcloudapi.woa.com/document/product/1463/88214)
+
+	* 新增入参：LogSpanIdKey
+
+* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
+
+	* 新增入参：LogSpanIdKey
+
+
+修改数据结构：
+
+* [ApmAppConfig](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmAppConfig)
+
+	* 新增成员：LogSpanIdKey
+
+* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
+
+	* 新增成员：LogSpanIdKey
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 86 次发布
+
+发布时间：2026-01-09 01:18:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)
+
+	* 新增成员：SwitchSupportType
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 139 次发布
+
+发布时间：2026-01-09 01:24:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrivilegeEscalationProcess](http://document.tencentcloudapi.woa.com/document/product/296/19867#PrivilegeEscalationProcess)
+
+	* 新增成员：Count
+
+* [PrivilegeEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#PrivilegeEventInfo)
+
+	* 新增成员：Count
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 123 次发布
+
+发布时间：2026-01-09 01:35:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StarRocksQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#StarRocksQueryInfo)
+
+	* 新增成员：ErrorCode
+
+* [TrinoQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#TrinoQueryInfo)
+
+	* 新增成员：ErrorMessage
+
+
+
+
+## 腾讯云智能体开发平台(lke) 版本：2023-11-30
+
+### 第 18 次发布
+
+发布时间：2026-01-09 01:47:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ListDocItem](http://document.tencentcloudapi.woa.com/document/product/1759/83593#ListDocItem)
+
+	* 新增成员：DocSize
+
+* [ListQaItem](http://document.tencentcloudapi.woa.com/document/product/1759/83593#ListQaItem)
+
+	* 新增成员：QaSize
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 236 次发布
+
+发布时间：2026-01-09 02:13:09
 
 本次发布包含了以下内容：
 
@@ -12,164 +134,54 @@
 
 新增接口：
 
-* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/614/88698)
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 138 次发布
-
-发布时间：2026-01-08 01:25:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [NetAttackEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#NetAttackEventInfo)
-
-	* 新增成员：NetResponsePayload
-
-
-
-
-## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
-
-### 第 8 次发布
-
-发布时间：2026-01-08 01:29:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AddChunk](http://document.tencentcloudapi.woa.com/document/product/1806/87969)
-
-	* 新增入参：KnowledgeBaseId
-
-* [DeleteChunk](http://document.tencentcloudapi.woa.com/document/product/1806/87987)
-
-	* 新增入参：KnowledgeBaseId
-
-* [ModifyChunk](http://document.tencentcloudapi.woa.com/document/product/1806/87986)
-
-	* 新增入参：KnowledgeBaseId
-
-* [ModifyKnowledgeBase](http://document.tencentcloudapi.woa.com/document/product/1806/87982)
-
-	* 新增入参：UseScope, AuthorityUins
-
-* [QueryChunkList](http://document.tencentcloudapi.woa.com/document/product/1806/87985)
-
-	* 新增入参：KnowledgeBaseId
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 122 次发布
-
-发布时间：2026-01-08 01:37:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ClusterInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ClusterInstancesInfo)
-
-	* 新增成员：ZoneType
-
-
-
-
-## 网关负载均衡(gwlb) 版本：2024-09-06
-
-### 第 8 次发布
-
-发布时间：2026-01-08 01:42:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyTargetGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/1776/85063)
-
-	* 新增入参：SrcPortAlgorithm
-
-
-
-
-## 云压测(pts) 版本：2021-07-28
-
-### 第 33 次发布
-
-发布时间：2026-01-08 01:59:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Concurrency](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Concurrency)
-
-	* 新增成员：Mode
-
-* [RequestsPerSecond](http://document.tencentcloudapi.woa.com/document/product/1597/75228#RequestsPerSecond)
-
-	* 新增成员：IterationCount
-
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 46 次发布
-
-发布时间：2026-01-08 02:06:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAssetImageRegistryScanTaskOneKey](http://document.tencentcloudapi.woa.com/document/product/1662/78908)
-
-	* 新增入参：ExcludeIDs
-
-
-
-
-## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
-
-### 第 58 次发布
-
-发布时间：2026-01-08 02:14:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeInternalInstanceFeatures](http://document.tencentcloudapi.woa.com/document/product/1739/88627)
-
-	* 新增出参：Features
-
+* [ReplaceRoutesWithRoutePolicy](http://document.tencentcloudapi.woa.com/document/product/215/88700)
 
 新增数据结构：
 
-* [InstanceFeatureInfo](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InstanceFeatureInfo)
+* [ReplaceRoutesWithRoutePolicyRoute](http://document.tencentcloudapi.woa.com/document/product/215/15824#ReplaceRoutesWithRoutePolicyRoute)
+
+修改数据结构：
+
+* [NetworkAclQuintupleEntry](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkAclQuintupleEntry)
+
+	* 新增成员：SourceIPv6Cidr, DestinationIPv6Cidr
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+
+### 第 12 次发布
+
+发布时间：2026-01-09 02:17:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateQualityRule](http://document.tencentcloudapi.woa.com/document/product/1607/88702)
+* [ListQualityRuleGroups](http://document.tencentcloudapi.woa.com/document/product/1607/88701)
+
+新增数据结构：
+
+* [CreateQualityRuleVO](http://document.tencentcloudapi.woa.com/document/product/1607/87707#CreateQualityRuleVO)
+* [QualityRuleCreateResult](http://document.tencentcloudapi.woa.com/document/product/1607/87707#QualityRuleCreateResult)
+* [QualityRuleGroup](http://document.tencentcloudapi.woa.com/document/product/1607/87707#QualityRuleGroup)
+* [QualityRuleGroupPage](http://document.tencentcloudapi.woa.com/document/product/1607/87707#QualityRuleGroupPage)
+* [QualityRuleInfo](http://document.tencentcloudapi.woa.com/document/product/1607/87707#QualityRuleInfo)
+
+修改数据结构：
+
+* [QualityCompareRule](http://document.tencentcloudapi.woa.com/document/product/1607/87707#QualityCompareRule)
+
+	* <font color="#dd0000">**修改成员**：</font>Items
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
 
 
