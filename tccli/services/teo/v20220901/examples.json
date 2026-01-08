@@ -216,16 +216,10 @@
     ],
     "CreateL4Proxy": [
       {
-        "document": "在 ZoneId 为 zone-2jc2xy3hr7f7 的站点下创建一个名称为 test，加速区域为中国大陆可用区的四层实例。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL4Proxy\n<公共请求参数>\n\n{\n    \"ProxyName\": \"proxy1\",\n    \"ZoneId\": \"zone-2jc2xy3hr7f7\",\n    \"Area\": \"mainland\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ProxyId\": \"sid-2jc2hl2hr8f7\",\n        \"RequestId\": \"0se57a54-cc42-11ed-8efb-525401a961b1\"\n    }\n}",
-        "title": "新建加速区域为中国大陆可用区的四层代理实例"
-      },
-      {
-        "document": "在 ZoneId 为 zone-2jc2xy3hr7f7 的站点下创建一个名称为 test，加速区域为全球可用区（不含中国大陆）的四层实例，且开启独立 DDoS 防护，提供加速区域范围的全力防护。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL4Proxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2jc2xy3hr7f7\",\n    \"ProxyName\": \"proxy2\",\n    \"Area\": \"overseas\",\n    \"DDosProtectionConfig\": {\n        \"LevelOverseas\": \"ANYCAST_ALLIN\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ProxyId\": \"sid-2jc2hl2hr8f7\",\n        \"RequestId\": \"0se57a54-cc42-11ed-8efb-525401a961b1\"\n    }\n}",
-        "title": "新建加速区域为全球可用区（不含中国大陆），开启独立 DDoS 防护的四层代理实例"
+        "document": "在 ZoneId 为 zone-3kq782jghthh 的站点下创建一个名称为 proxy-name，加速区域为全球加速（不含中国大陆）的四层实例。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL4Proxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3kq782jghthh\",\n    \"ProxyName\": \"proxy-name\",\n    \"Area\": \"overseas\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProxyId\": \"sid-3kq7it9slfmc\",\n        \"RequestId\": \"37752cc1-7d73-47b4-801a-31a6a38c4dea\"\n    }\n}",
+        "title": "创建一个海外普通的四层实例"
       }
     ],
     "CreateL4ProxyRules": [

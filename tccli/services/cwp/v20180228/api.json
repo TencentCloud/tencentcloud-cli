@@ -50043,7 +50043,7 @@
         {
           "disabled": false,
           "document": "执行命令",
-          "example": "./a ",
+          "example": "./a",
           "member": "string",
           "name": "CmdLine",
           "output_required": true,
@@ -50163,7 +50163,7 @@
         {
           "disabled": false,
           "document": "附加信息",
-          "example": " {\r\n          \"WanIP\": \"43.138.**.**\",\r\n          \"PrivateIP\": \"10.0.**.**\",\r\n          \"NetworkType\": 1,\r\n          \"NetworkName\": \"vpc-mbgox**\",\r\n          \"InstanceID\": \"ins-j7vu**\",\r\n          \"HostName\": \"v_lllu()\"\r\n        }",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -50177,6 +50177,16 @@
           "member": "int64",
           "name": "Pid",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -50229,7 +50239,7 @@
         {
           "disabled": false,
           "document": "进程名",
-          "example": " nginx",
+          "example": "nginx",
           "member": "string",
           "name": "ProcessName",
           "output_required": true,
@@ -50239,7 +50249,7 @@
         {
           "disabled": false,
           "document": "进程路径",
-          "example": " /bin/nginx",
+          "example": "/bin/nginx",
           "member": "string",
           "name": "FullPath",
           "output_required": true,
@@ -50249,7 +50259,7 @@
         {
           "disabled": false,
           "document": "执行命令",
-          "example": " /bin/nginx",
+          "example": "/bin/nginx",
           "member": "string",
           "name": "CmdLine",
           "output_required": true,
@@ -50289,7 +50299,7 @@
         {
           "disabled": false,
           "document": "父进程名",
-          "example": "  /bin/ssh",
+          "example": "/bin/ssh",
           "member": "string",
           "name": "ParentProcName",
           "output_required": true,
@@ -50309,7 +50319,7 @@
         {
           "disabled": false,
           "document": "父进程用户组",
-          "example": " root",
+          "example": "root",
           "member": "string",
           "name": "ParentProcGroup",
           "output_required": true,
@@ -50319,7 +50329,7 @@
         {
           "disabled": false,
           "document": "父进程路径",
-          "example": "   /bin/ssh",
+          "example": "/bin/ssh",
           "member": "string",
           "name": "ParentProcPath",
           "output_required": true,
@@ -50329,7 +50339,7 @@
         {
           "disabled": false,
           "document": "进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源",
-          "example": " {}",
+          "example": "{pid:1}",
           "member": "string",
           "name": "PsTree",
           "output_required": true,
@@ -50444,6 +50454,16 @@
           "name": "ModifyTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -920,6 +920,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spanId的索引key: 当CLS索引类型为键值索引时生效",
+          "example": "span_id",
+          "member": "string",
+          "name": "LogSpanIdKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1888,6 +1898,16 @@
           "name": "UrlNumberSegmentThreshold",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spanId的索引key: 当CLS索引类型为键值索引时生效",
+          "example": "span_id",
+          "member": "string",
+          "name": "LogSpanIdKey",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4739,6 +4759,15 @@
           "name": "DesensitizationRule",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "spanId的索引key: 当CLS索引类型为键值索引时生效",
+          "example": "span_id",
+          "member": "string",
+          "name": "LogSpanIdKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5198,6 +5227,15 @@
           "name": "UrlNumberSegmentThreshold",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "spanId的索引key: 当CLS索引类型为键值索引时生效",
+          "example": "span_id",
+          "member": "string",
+          "name": "LogSpanIdKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

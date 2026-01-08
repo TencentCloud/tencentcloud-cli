@@ -6889,7 +6889,7 @@
         {
           "disabled": false,
           "document": "实例关联的标签键列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test-tag",
+          "example": "[\"test-tag\"]",
           "member": "string",
           "name": "TagKeys",
           "output_required": true,
@@ -20548,6 +20548,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "ANALYSIS_ERR",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21846,6 +21856,16 @@
           "name": "WrittenBytes",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Error日志",
+          "example": "",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

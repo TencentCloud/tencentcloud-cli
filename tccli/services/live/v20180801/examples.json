@@ -614,6 +614,14 @@
         "title": "查询导播台展示信息"
       }
     ],
+    "DescribeCasterEmergencyStatus": [
+      {
+        "document": "查询导播台备播状态",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCasterEmergencyStatus\n<公共请求参数>\n\n{\n    \"CasterId\": 63501\n}",
+        "output": "{\n    \"Response\": {\n        \"EmergencyStatus\": 1,\n        \"RequestId\": \"84fea7c5-37e7-4d89-ba04-76338dc7b41d\"\n    }\n}",
+        "title": "查询导播台备播状态"
+      }
+    ],
     "DescribeCasterInputInfos": [
       {
         "document": "",
@@ -1628,6 +1636,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchBackupStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream1\",\n    \"UpstreamSequence\": \"843110096313761792\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "SwitchCasterToEmergency": [
+      {
+        "document": "直播中发现画面有违规画面，使用该接口直接将画面切换到备播画面",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchCasterToEmergency\n<公共请求参数>\n\n{\n    \"CasterId\": 63501\n}",
+        "output": "{\n    \"Response\": {\n        \"EmergencyStatus\": 1,\n        \"RequestId\": \"84fea7c5-37e7-4d89-ba04-76338dc7b41d\"\n    }\n}",
+        "title": "切换到导播台备播"
       }
     ],
     "UnBindLiveDomainCert": [

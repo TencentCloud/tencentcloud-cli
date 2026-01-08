@@ -13040,13 +13040,23 @@
         },
         {
           "disabled": false,
-          "document": "文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档大小，单位：字节",
+          "example": "1024",
+          "member": "string",
+          "name": "DocSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13792,7 +13802,7 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -13802,12 +13812,22 @@
         },
         {
           "disabled": false,
-          "document": "问答关联的文档生效域",
+          "document": "问答关联的文档生效域：1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。\n若问答未关联文档，则该字段值同问答生效域。",
           "example": "1",
           "member": "int64",
           "name": "DocEnableScope",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问答大小（含相似问），单位：字节",
+          "example": "1024",
+          "member": "string",
+          "name": "QaSize",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

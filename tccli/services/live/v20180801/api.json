@@ -511,6 +511,13 @@
       "output": "DescribeCasterDisplayInfoResponse",
       "status": "online"
     },
+    "DescribeCasterEmergencyStatus": {
+      "document": "该接口用查询导播台的备播状态",
+      "input": "DescribeCasterEmergencyStatusRequest",
+      "name": "查询导播台备播状态",
+      "output": "DescribeCasterEmergencyStatusResponse",
+      "status": "online"
+    },
     "DescribeCasterInputInfos": {
       "document": "该接口用来查询导播台的输入源信息列表。",
       "input": "DescribeCasterInputInfosRequest",
@@ -1398,6 +1405,13 @@
       "input": "SwitchBackupStreamRequest",
       "name": "直播备用流切换",
       "output": "SwitchBackupStreamResponse",
+      "status": "online"
+    },
+    "SwitchCasterToEmergency": {
+      "document": "该接口用来将导播台切换到备播状态。\n该接口使用时，主监任务需处于运行状态。",
+      "input": "SwitchCasterToEmergencyRequest",
+      "name": "切换导播台备播",
+      "output": "SwitchCasterToEmergencyResponse",
       "status": "online"
     },
     "UnBindLiveDomainCert": {
@@ -8646,6 +8660,43 @@
           "example": "1670309219",
           "member": "uint64",
           "name": "StartLiveTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterEmergencyStatusRequest": {
+      "document": "DescribeCasterEmergencyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "63501",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterEmergencyStatusResponse": {
+      "document": "DescribeCasterEmergencyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备播状态，范围[0,1,2]\n0. 正常直播状态\n1. 备播状态\n2. 备播切换正常直播中，在配置了延播时长时出现",
+          "example": "0",
+          "member": "int64",
+          "name": "EmergencyStatus",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -21042,6 +21093,43 @@
     "SwitchBackupStreamResponse": {
       "document": "SwitchBackupStream返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchCasterToEmergencyRequest": {
+      "document": "SwitchCasterToEmergency请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "63501",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchCasterToEmergencyResponse": {
+      "document": "SwitchCasterToEmergency返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备播状态，范围[0,1,2]\n0. 正常直播状态\n1. 备播状态\n2. 备播切换正常直播中，在配置了延播时长时出现",
+          "example": "0",
+          "member": "int64",
+          "name": "EmergencyStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

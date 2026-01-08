@@ -14,6 +14,13 @@
       "output": "CreateSessionResponse",
       "status": "online"
     },
+    "DescribeConcurrentCount": {
+      "document": "获取并发计数",
+      "input": "DescribeConcurrentCountRequest",
+      "name": "获取并发计数",
+      "output": "DescribeConcurrentCountResponse",
+      "status": "online"
+    },
     "DestroySession": {
       "document": "销毁会话。如果该会话开启了云端推流，那么销毁会话时会结束云端推流。",
       "input": "DestroySessionRequest",
@@ -193,6 +200,62 @@
           "name": "ServerSession",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrentCountRequest": {
+      "document": "DescribeConcurrentCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "cap-abcdefgh",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类别（DESKTOP: 桌面端，MOBILE：移动端）",
+          "example": "DESKTOP",
+          "member": "string",
+          "name": "ApplicationCategory",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrentCountResponse": {
+      "document": "DescribeConcurrentCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "并发总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发运行数，包括预启动中的、已连接的、等待重连、清理恢复等所有非空闲的并发数，所以刷新项目或断开并发包的用户连接，都会影响到该值",
+          "example": "6",
+          "member": "uint64",
+          "name": "Running",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

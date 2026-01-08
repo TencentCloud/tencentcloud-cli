@@ -2821,6 +2821,13 @@
       "output": "ReplaceRoutesResponse",
       "status": "online"
     },
+    "ReplaceRoutesWithRoutePolicy": {
+      "document": "本接口（ReplaceRoutes）根据路由策略ID（RouteId）修改指定的路由策略（Route），支持批量修改。",
+      "input": "ReplaceRoutesWithRoutePolicyRequest",
+      "name": "匹配路由接收策略",
+      "output": "ReplaceRoutesWithRoutePolicyResponse",
+      "status": "online"
+    },
     "ReplaceSecurityGroupPolicies": {
       "document": "本接口（ReplaceSecurityGroupPolicies）用于批量修改安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条或多条规则, 必须要指定索引（PolicyIndex）。",
       "input": "ReplaceSecurityGroupPoliciesRequest",
@@ -32478,6 +32485,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPv6源CIDR。",
+          "example": "12::1/128",
+          "member": "string",
+          "name": "SourceIPv6Cidr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPv6目的CIDR。",
+          "example": "13::1/128",
+          "member": "string",
+          "name": "DestinationIPv6Cidr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -34374,6 +34403,66 @@
         }
       ],
       "type": "object"
+    },
+    "ReplaceRoutesWithRoutePolicyRequest": {
+      "document": "ReplaceRoutesWithRoutePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由表实例ID。",
+          "example": "rtb-65ckdx3a",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由策略对象。需要指定路由策略唯一ID（RouteItemId）。",
+          "example": "无",
+          "member": "ReplaceRoutesWithRoutePolicyRoute",
+          "name": "Routes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRoutesWithRoutePolicyResponse": {
+      "document": "ReplaceRoutesWithRoutePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRoutesWithRoutePolicyRoute": {
+      "document": "匹配路由接收策略对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由唯一策略ID。",
+          "example": "rti-g8jl2vll",
+          "member": "string",
+          "name": "RouteItemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配路由接收策略标记。",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceMatchPolicy",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "ReplaceSecurityGroupPoliciesRequest": {
       "document": "ReplaceSecurityGroupPolicies请求参数结构体",

@@ -7038,7 +7038,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n\n",
+          "document": "是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on",
           "member": "string",
           "name": "Ipv6",
@@ -7047,7 +7047,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "document": "是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "off",
           "member": "string",
           "name": "StaticIp",
@@ -7056,7 +7056,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "document": "是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on",
           "member": "string",
           "name": "AccelerateMainland",
@@ -7064,8 +7064,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。",
+          "disabled": true,
+          "document": "L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。\n本字段已废弃，请使用 DDosProtectionId 字段指定关联的DDoS防护配置。",
           "example": "无",
           "member": "DDosProtectionConfig",
           "name": "DDosProtectionConfig",
@@ -19304,8 +19304,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "安全防护配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "安全防护配置。\n本字段已废弃。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DDosProtectionConfig",
           "name": "DDosProtectionConfig",

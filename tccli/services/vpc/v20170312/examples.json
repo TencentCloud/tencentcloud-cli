@@ -3650,6 +3650,14 @@
         "title": "替换路由策略"
       }
     ],
+    "ReplaceRoutesWithRoutePolicy": [
+      {
+        "document": "匹配路由接收策略",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceRoutesWithRoutePolicy\n<公共请求参数>\n\n{\n    \"RouteTableId\": \"rtb-65ckdx3a\",\n    \"Routes\": [\n        {\n            \"RouteItemId\": \"rti-g8jl2vll\",\n            \"ForceMatchPolicy\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93512103-76f6-4780-a146-73380b1ab748\"\n    }\n}",
+        "title": "匹配路由接收策略"
+      }
+    ],
     "ReplaceSecurityGroupPolicies": [
       {
         "document": "批量修改安全组规则",
