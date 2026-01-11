@@ -474,6 +474,15 @@
           "name": "VoiceLanguage",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "忽略检测结果。",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreEvalResult",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
