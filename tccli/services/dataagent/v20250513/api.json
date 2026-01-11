@@ -84,11 +84,25 @@
       "output": "ModifyKnowledgeBaseResponse",
       "status": "online"
     },
+    "ModifyUserAuthority": {
+      "document": "修改对象权限",
+      "input": "ModifyUserAuthorityRequest",
+      "name": "修改对象的用户权限信息",
+      "output": "ModifyUserAuthorityResponse",
+      "status": "online"
+    },
     "QueryChunkList": {
       "document": "文档切片查询",
       "input": "QueryChunkListRequest",
       "name": "文档切片查询",
       "output": "QueryChunkListResponse",
+      "status": "online"
+    },
+    "QueryUserAuthority": {
+      "document": "查询对象权限",
+      "input": "QueryUserAuthorityRequest",
+      "name": "查询对象的用户权限信息",
+      "output": "QueryUserAuthorityResponse",
       "status": "online"
     },
     "StopChatAI": {
@@ -1177,6 +1191,100 @@
       ],
       "usage": "both"
     },
+    "ModelUserAuthority": {
+      "document": "用户对象的权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "dataagent-fsgdftertf",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块，分为知识库knowledge、数据源datasource、自定义场景scene",
+          "example": "knowledge/datasource/scene",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象创建者",
+          "example": "104354545634",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象id,分为知识库id、数据源id、场景id",
+          "example": "kbase-ssfdsfs3",
+          "member": "string",
+          "name": "ObjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作用范围：1仅自己使用，2指定用户，0全员",
+          "example": "1",
+          "member": "int64",
+          "name": "UseScope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可使用的用户列表",
+          "example": "[\"1000031244\",\"105335553\"]",
+          "member": "string",
+          "name": "AuthorityUins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-12-25 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-12-25 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyChunkRequest": {
       "document": "ModifyChunk请求参数结构体",
       "members": [
@@ -1331,6 +1439,42 @@
       ],
       "type": "object"
     },
+    "ModifyUserAuthorityRequest": {
+      "document": "ModifyUserAuthority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作用范围：1仅自己使用，2指定用户，0全员",
+          "example": "1",
+          "member": "int64",
+          "name": "UseScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可使用的用户列表，UseScope=0/1,取值为[]",
+          "example": "[\"12434354326\"]",
+          "member": "string",
+          "name": "AuthorityUins",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserAuthorityResponse": {
+      "document": "ModifyUserAuthority返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryChunkListRequest": {
       "document": "QueryChunkList请求参数结构体",
       "members": [
@@ -1385,6 +1529,33 @@
           "name": "Chunks",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserAuthorityRequest": {
+      "document": "QueryUserAuthority请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "QueryUserAuthorityResponse": {
+      "document": "QueryUserAuthority返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象权限信息",
+          "example": "无",
+          "member": "ModelUserAuthority",
+          "name": "ModelUserAuthority",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

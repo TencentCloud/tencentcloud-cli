@@ -96,12 +96,28 @@
         "title": "示例"
       }
     ],
+    "ModifyUserAuthority": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserAuthority\n<公共请求参数>\n\n{\n    \"UseScope\": 1,\n    \"AuthorityUins\": [\n        \"10002223435\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77285d7c-9d5e-44f9-8396-892b16a2cf39\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "QueryChunkList": [
       {
         "document": "文档切片查询",
         "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChunkList\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 50\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c8fa705-43d3-4be4-b7fa-5593bd3dd6f4\",\n        \"Total\": 1,\n        \"Chunks\": [\n            {\n                \"Id\": \"f5d1714d-bbba-4e2c-bf48-1378cb5bafe1\",\n                \"Content\": \"2025-03-21-whitelist\",\n                \"Size\": 30\n            }\n        ]\n    }\n}",
         "title": "文档切片查询"
+      }
+    ],
+    "QueryUserAuthority": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:QueryUserAuthority\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfd48354-970d-4368-9c6d-536579b53a86\",\n        \"ModelUserAuthority\": {\n            \"Module\": \"knowledge\",\n            \"InstanceId\": \"dataagent-G5XTaxnz\",\n            \"CreatorUin\": \"100021289371\",\n            \"ObjectId\": \"klbase-uKGsu3qP6p\",\n            \"UseScope\": 0,\n            \"AuthorityUins\": [],\n            \"CreateTime\": \"2025-12-30T17:58:25+08:00\",\n            \"UpdateTime\": \"2025-12-30T18:05:47+08:00\"\n        }\n    }\n}",
+        "title": "示例"
       }
     ],
     "StopChatAI": [

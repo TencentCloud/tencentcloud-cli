@@ -26,6 +26,7 @@ Output:
                 "SegmentType": "",
                 "ContainerType": "Video",
                 "TEHDConfig": null,
+                "EnhanceConfig": null,
                 "VideoTemplate": {
                     "Codec": "libx264",
                     "Fps": 24,

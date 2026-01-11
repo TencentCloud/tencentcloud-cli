@@ -7013,7 +7013,7 @@
         {
           "disabled": false,
           "document": "需要绑定资源组的用户信息，如果一个账户拥有多个主机信息，需要将这些信息都传入",
-          "example": "bind_user",
+          "example": "无",
           "member": "BindUser",
           "name": "BindUsers",
           "required": false,
