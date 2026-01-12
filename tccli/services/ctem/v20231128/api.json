@@ -7163,7 +7163,7 @@
         {
           "disabled": false,
           "document": "漏洞情报ID",
-          "example": "无",
+          "example": "SC-2023-0677",
           "member": "string",
           "name": "VulId",
           "required": true,
@@ -7206,7 +7206,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -15216,7 +15216,7 @@
         {
           "disabled": false,
           "document": "要搜索的字段",
-          "example": "Name",
+          "example": "Domain",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -15225,7 +15225,7 @@
         {
           "disabled": false,
           "document": "目标值列表",
-          "example": "[\"test\"]",
+          "example": "[\"qq.com\"]",
           "member": "string",
           "name": "Values",
           "required": false,
@@ -15598,7 +15598,7 @@
         {
           "disabled": false,
           "document": "客户ID",
-          "example": "无",
+          "example": "100150",
           "member": "int64",
           "name": "CustomerId",
           "output_required": false,
@@ -15608,7 +15608,7 @@
         {
           "disabled": false,
           "document": "客户名称",
-          "example": "无",
+          "example": "腾讯有限公司",
           "member": "string",
           "name": "CustomerName",
           "output_required": false,
@@ -15618,7 +15618,7 @@
         {
           "disabled": false,
           "document": "标题",
-          "example": "无",
+          "example": "测试网站",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -15628,7 +15628,7 @@
         {
           "disabled": false,
           "document": "指纹",
-          "example": "无",
+          "example": "U1NILTIuMC1PcGVuU1NIXzkuNnAxIFVidW50dS0zdWJ1bnR1MTMuMTENCg==",
           "member": "string",
           "name": "Banner",
           "output_required": false,
@@ -15638,7 +15638,7 @@
         {
           "disabled": false,
           "document": "截图预览",
-          "example": "无",
+          "example": "http://test.com/screenshot.png",
           "member": "string",
           "name": "ScreenshotUrl",
           "output_required": false,
@@ -15648,11 +15648,21 @@
         {
           "disabled": false,
           "document": "是否受影响",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsAffected",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网址",
+          "example": "1.1.1.1:22",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -1,31 +1,10 @@
-# Release 3.0.1345.1
+# Release 3.0.1346.1
 
-## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
+## 暴露面管理服务(ctem) 版本：2023-11-28
 
-### 第 9 次发布
+### 第 12 次发布
 
-发布时间：2026-01-12 01:28:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyUserAuthority](http://document.tencentcloudapi.woa.com/document/product/1806/88705)
-* [QueryUserAuthority](http://document.tencentcloudapi.woa.com/document/product/1806/88704)
-
-新增数据结构：
-
-* [ModelUserAuthority](http://document.tencentcloudapi.woa.com/document/product/1806/87994#ModelUserAuthority)
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 140 次发布
-
-发布时间：2026-01-12 01:51:27
+发布时间：2026-01-13 01:24:28
 
 本次发布包含了以下内容：
 
@@ -33,18 +12,18 @@
 
 修改数据结构：
 
-* [AigcVideoExtraParam](http://document.tencentcloudapi.woa.com/document/product/862/37615#AigcVideoExtraParam)
+* [IntelligenceResult](http://document.tencentcloudapi.woa.com/document/product/1792/87475#IntelligenceResult)
 
-	* 新增成员：OffPeak
-
-
+	* 新增成员：Url
 
 
-## 声音复刻(vrs) 版本：2020-08-24
 
-### 第 16 次发布
 
-发布时间：2026-01-12 02:16:21
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 150 次发布
+
+发布时间：2026-01-13 01:28:32
 
 本次发布包含了以下内容：
 
@@ -52,10 +31,35 @@
 
 修改接口：
 
-* [DetectEnvAndSoundQuality](http://document.tencentcloudapi.woa.com/document/product/1664/79149)
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/48087)
 
-	* 新增入参：IgnoreEvalResult
+	* 新增入参：CynosVersion
 
+
+
+
+## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
+
+### 第 10 次发布
+
+发布时间：2026-01-13 01:30:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddScene](http://document.tencentcloudapi.woa.com/document/product/1806/88710)
+* [DeleteScene](http://document.tencentcloudapi.woa.com/document/product/1806/88709)
+* [QuerySceneList](http://document.tencentcloudapi.woa.com/document/product/1806/88708)
+* [UpdateScene](http://document.tencentcloudapi.woa.com/document/product/1806/88707)
+
+新增数据结构：
+
+* [ExampleQA](http://document.tencentcloudapi.woa.com/document/product/1806/87994#ExampleQA)
+* [Scene](http://document.tencentcloudapi.woa.com/document/product/1806/87994#Scene)
+* [SearchConfig](http://document.tencentcloudapi.woa.com/document/product/1806/87994#SearchConfig)
 
 
 

@@ -460,7 +460,7 @@
       {
         "document": "实际受影响资产",
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePocAssetData\n<公共请求参数>\n\n{\n    \"VulId\": \"SC-2023-0677\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"a260897c-5a71-400b-be17-ea73e36b474c\",\n        \"Total\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Banner\": \"\",\n                \"CustomerId\": 100150,\n                \"CustomerName\": \"腾讯公司\",\n                \"IsAffected\": true,\n                \"ScreenshotUrl\": \"\",\n                \"Title\": \"测试网站\",\n                \"Url\": \"1.1.1.1:2095\"\n            }\n        ],\n        \"Total\": 10,\n        \"RequestId\": \"eae76a33-a923-4ed0-a6b8-9641a744d365\"\n    }\n}",
         "title": "实际受影响资产"
       }
     ],
