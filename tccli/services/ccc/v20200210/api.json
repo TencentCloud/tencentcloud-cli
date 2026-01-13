@@ -50,9 +50,9 @@
       "status": "online"
     },
     "CreateAICall": {
-      "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
+      "document": "用于 **直接调用AI模型** 发起 **单次** 外呼通话，支持通过API参数直接配置模型、提示词、语音等全部通话要素。\n\n该功能需购买语音智能体通话套餐，并且仅限自有电话号码使用。详情请参考 [语音智能体通话购买指引](https://cloud.tencent.com/document/product/679/125953)。",
       "input": "CreateAICallRequest",
-      "name": "创建AI通话",
+      "name": "创建单次智能体通话 - 自携模型",
       "output": "CreateAICallResponse",
       "status": "online"
     },
@@ -225,7 +225,7 @@
       "status": "online"
     },
     "DescribeAutoCalloutTask": {
-      "document": "查询自动外呼任务详情",
+      "document": "用于通过 TaskId 查询**自动外呼任务的详细信息**，包括任务基础配置、起止时间、外呼名单、执行状态以及实际通话情况等。\n该接口通常与 [创建批量自动外呼任务](https://cloud.tencent.com/document/product/679/69194) 配合使用，用于在任务创建后查看任务配置是否生效、任务当前状态，以及后续执行过程中的实时进展。",
       "input": "DescribeAutoCalloutTaskRequest",
       "name": "查询自动外呼任务详情",
       "output": "DescribeAutoCalloutTaskResponse",
@@ -1296,6 +1296,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2269,6 +2279,15 @@
           "name": "Variables",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2621,6 +2640,15 @@
           "name": "LLMExtraBody",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最大通话时长， 默认不限制。单位毫秒(ms)",
+          "example": "600000",
+          "member": "uint64",
+          "name": "MaxCallDurationMs",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2957,6 +2985,15 @@
           "name": "RetryInterval",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3061,7 +3098,7 @@
         },
         {
           "disabled": false,
-          "document": "客服用户 ID，一般为客服邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF",
+          "document": "座席邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "UserId",
@@ -3344,7 +3381,7 @@
         {
           "disabled": false,
           "document": "主叫号码列表",
-          "example": "[00861,00862]",
+          "example": "[\"008602155066897\"]",
           "member": "string",
           "name": "Callers",
           "required": false,
@@ -3353,7 +3390,7 @@
         {
           "disabled": false,
           "document": "自定义变量",
-          "example": "{\"name\":\"foo-bar\"}",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -3367,6 +3404,15 @@
           "name": "UUI",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4580,7 +4626,7 @@
         {
           "disabled": false,
           "document": "被叫信息列表",
-          "example": "[{\"State\":1,\"Callee\":\"foobar\",\"Sessions\":[\"foobar\"]}]",
+          "example": "无",
           "member": "AutoCalloutTaskCalleeInfo",
           "name": "Callees",
           "output_required": true,
@@ -4604,6 +4650,16 @@
           "member": "uint64",
           "name": "State",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9313,8 +9369,8 @@
         },
         {
           "disabled": false,
-          "document": "结束状态",
-          "example": "ok unconnected seatGiveUp seatForward outboundForward ivrGiveUp ",
+          "document": "结束状态\n\n中文详情[参考](https://www.tencentcloud.com/zh/document/product/1229/71847)\n\n英文详情[参考](https://www.tencentcloud.com/document/product/1229/71847?lang=en)",
+          "example": "ok seatGiveUp seatForward outboundForward ivrGiveUp",
           "member": "string",
           "name": "EndStatusString",
           "output_required": true,

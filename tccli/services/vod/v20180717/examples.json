@@ -229,7 +229,7 @@
     "CreateImageSpriteTemplate": [
       {
         "document": "创建雪碧图模板",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageSpriteTemplate\n<公共请求参数>\n\n{\n    \"ColumnCount\": \"10\",\n    \"Name\": \"雪碧图模板1\",\n    \"RowCount\": \"5\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"128\",\n    \"Width\": \"128\",\n    \"SampleInterval\": \"10\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageSpriteTemplate\n<公共请求参数>\n\n{\n    \"ColumnCount\": 10,\n    \"Name\": \"雪碧图模板1\",\n    \"RowCount\": 5,\n    \"SampleType\": \"Percent\",\n    \"Height\": 128,\n    \"Width\": 128,\n    \"SampleInterval\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建雪碧图模板"
       }

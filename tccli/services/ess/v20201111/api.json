@@ -119,6 +119,13 @@
       "output": "CreateContractDiffTaskWebUrlResponse",
       "status": "online"
     },
+    "CreateContractReviewChecklistWebUrl": {
+      "document": "此接口（CreateContractReviewChecklistWebUrl）用来创建新建审查要点清单web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注意:  `如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开`",
+      "input": "CreateContractReviewChecklistWebUrlRequest",
+      "name": "新建审查要点清单web页面",
+      "output": "CreateContractReviewChecklistWebUrlResponse",
+      "status": "online"
+    },
     "CreateContractReviewWebUrl": {
       "document": "此接口（CreateContractReviewWebUrl）用来创建合同审查web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注: \n1. pdf、word格式限制大小为10M以下\n2. 如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开",
       "input": "CreateContractReviewWebUrlRequest",
@@ -581,11 +588,32 @@
       "output": "DescribeContractDiffTaskWebUrlResponse",
       "status": "online"
     },
+    "DescribeContractReviewChecklistWebUrl": {
+      "document": "此接口（DescribeContractReviewChecklistWebUrl）用来创建查看审查要点清单web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注意:  `如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开`",
+      "input": "DescribeContractReviewChecklistWebUrlRequest",
+      "name": "查看审查要点清单web页面",
+      "output": "DescribeContractReviewChecklistWebUrlResponse",
+      "status": "online"
+    },
+    "DescribeContractReviewChecklistsWebUrl": {
+      "document": "此接口（DescribeContractReviewChecklistsWebUrl）用来创建审查要点清单列表web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注意:  `如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开`",
+      "input": "DescribeContractReviewChecklistsWebUrlRequest",
+      "name": "获取审查要点清单列表web页面",
+      "output": "DescribeContractReviewChecklistsWebUrlResponse",
+      "status": "online"
+    },
     "DescribeContractReviewTask": {
       "document": "本接口（DescribeContractReviewTask）用于获取合同审查任务详情，包括任务的状态和识别出的风险信息。",
       "input": "DescribeContractReviewTaskRequest",
       "name": "获取合同审查任务详情",
       "output": "DescribeContractReviewTaskResponse",
+      "status": "online"
+    },
+    "DescribeContractReviewTaskListWebUrl": {
+      "document": "此接口（DescribeContractReviewTaskListWebUrl）用来创建合同审查记录列表web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注意:  `如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开`",
+      "input": "DescribeContractReviewTaskListWebUrlRequest",
+      "name": "获取合同审查记录列表web页面",
+      "output": "DescribeContractReviewTaskListWebUrlResponse",
       "status": "online"
     },
     "DescribeContractReviewWebUrl": {
@@ -782,6 +810,13 @@
       "input": "ExportContractComparisonTaskRequest",
       "name": "导出合同对比任务详情",
       "output": "ExportContractComparisonTaskResponse",
+      "status": "online"
+    },
+    "ExportContractReviewResult": {
+      "document": "本接口（ExportContractReviewResult）用于导出和同审查结果。支持选择 1 “带风险批注文件”、 2 “审查结果＆摘要（.xIsx）”",
+      "input": "ExportContractReviewResultRequest",
+      "name": "导出合同审查结果",
+      "output": "ExportContractReviewResultResponse",
       "status": "online"
     },
     "GetTaskResultApi": {
@@ -2658,6 +2693,23 @@
       ],
       "usage": "in"
     },
+    "ContractReviewChecklistWebUrlOption": {
+      "document": "合同审查清单个性化参数，用于控制页面的展示内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "禁用新建清单功能。默认 false，设置为 true 会隐藏界面的新建按钮。",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableCreateChecklist",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ContractReviewWebUrlOption": {
       "document": "合同审查个性化参数，用于控制页面的展示内容",
       "members": [
@@ -3212,7 +3264,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化操作类型\n<ul>\n<li>CREATE_SEAL : 创建印章</li>\n<li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li>\n<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>\n</ul>",
+          "document": "初始化操作类型\n<ul>\n<li>CREATE_SEAL : 创建印章</li>\n<li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>\n<li>OPEN_AUTO_SIGN :开通企业自动签署</li>\n<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>\n<li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(**授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用**)</li>\n</ul>",
           "example": "[\"CREATE_SEAL \"]",
           "member": "string",
           "name": "OperateTypes",
@@ -3245,6 +3297,15 @@
           "name": "AuthorizedOrganizationId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "初始化操作类型里含有CHANGE_SUB_ORGANIZATION_ADMIN_AUTH（变更子企业超管授权）操作类型时，授权协议中主企业的签署方是否使用自动签（需操作人有自动签授权）",
+          "example": "true",
+          "member": "bool",
+          "name": "ChangeAdminAuthAutoSign",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4050,6 +4111,43 @@
           "member": "string",
           "name": "UserData",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContractReviewChecklistWebUrlRequest": {
+      "document": "CreateContractReviewChecklistWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContractReviewChecklistWebUrlResponse": {
+      "document": "CreateContractReviewChecklistWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "嵌入式web页面链接。注意：`链接有效期为5分钟，且链接仅能使用一次。`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4AUUckp9qgovnUy2vfEF8hYOjMMYZ&channel=TENCENTCLOUD&embedType=CONTRACT_REVIE",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11103,6 +11201,145 @@
       ],
       "type": "object"
     },
+    "DescribeContractReviewChecklistWebUrlRequest": {
+      "document": "DescribeContractReviewChecklistWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "清单 id",
+          "example": "bxxdfgsdfsdfsdfsd",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewChecklistWebUrlResponse": {
+      "document": "DescribeContractReviewChecklistWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "嵌入式web页面链接。注意：`链接有效期为5分钟，且链接仅能使用一次。`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4AUUckp9qgovnUy2vfEF8hYOjMMYZ&channel=TENCENTCLOUD&embedType=CONTRACT_REVIE",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "清单 id",
+          "example": "bxxdfgsdfsdfsdfsd",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewChecklistsWebUrlRequest": {
+      "document": "DescribeContractReviewChecklistsWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同审查清单个性化参数",
+          "example": "无",
+          "member": "ContractReviewChecklistWebUrlOption",
+          "name": "Option",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewChecklistsWebUrlResponse": {
+      "document": "DescribeContractReviewChecklistsWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "嵌入式web页面链接。注意：`链接有效期为5分钟，且链接仅能使用一次。`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4AUUckp9qgovnUy2vfEF8hYOjMMYZ&channel=TENCENTCLOUD&embedType=CONTRACT_REVIE",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewTaskListWebUrlRequest": {
+      "document": "DescribeContractReviewTaskListWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewTaskListWebUrlResponse": {
+      "document": "DescribeContractReviewTaskListWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "嵌入式web页面链接。注意：`链接有效期为5分钟，且链接仅能使用一次。`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4AUUckp9qgovnUy2vfEF8hYOjMMYZ&channel=TENCENTCLOUD&embedType=CONTRACT_REVIE",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeContractReviewTaskRequest": {
       "document": "DescribeContractReviewTask请求参数结构体",
       "members": [
@@ -13682,6 +13919,70 @@
           "name": "ExpireTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportContractReviewResultRequest": {
+      "document": "ExportContractReviewResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务ID",
+          "example": "yDtzKUUckffzxURVliRllhLFtn",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）",
+          "example": "1",
+          "member": "int64",
+          "name": "FileType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportContractReviewResultResponse": {
+      "document": "ExportContractReviewResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载链接",
+          "example": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.DOCX?hkey=5336d1f1606055b00949c2a27818dc99723b96edadd6266ca2a4a65decf5b5203f6234f47e8c765759681bd08309e78d046c49a2a52fa864",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

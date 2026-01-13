@@ -3241,6 +3241,15 @@
           "name": "Protocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于带宽包内添加IP资源时指定IP带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5768,6 +5777,16 @@
           "member": "string",
           "name": "InstanceChargeType",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计量类型",
+          "example": "BANDWIDTH",
+          "member": "string",
+          "name": "InstanceMeteringType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -33896,6 +33915,24 @@
           "example": "Address",
           "member": "string",
           "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于移除带宽包内IP资源时指定IP的带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>",
+          "example": "120",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于移除带宽包内IP资源时指定资源移除后的计费模式。<li>小时流量：TRAFFIC_POSTPAID_BY_HOUR；</li><li>小时带宽：BANDWIDTH_POSTPAID_BY_HOUR</li><p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InternetChargeType",
           "required": false,
           "type": "string"
         }

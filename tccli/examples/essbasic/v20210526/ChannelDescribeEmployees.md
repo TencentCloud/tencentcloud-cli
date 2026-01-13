@@ -23,8 +23,8 @@ Output:
         "Employees": [
             {
                 "UserId": "yDSLNUUckpossi8fUy98I4ESq4EmlpEd",
-                "DisplayName": "张三",
-                "Mobile": "18888888888",
+                "DisplayName": "张*",
+                "Mobile": "188****8888",
                 "Email": "",
                 "OpenId": "n02468",
                 "Roles": [
@@ -44,8 +44,8 @@ Output:
             },
             {
                 "UserId": "yDwi0UUckpohyi32UEdhBFEEbigdd0Dd",
-                "DisplayName": "李四",
-                "Mobile": "15100000000",
+                "DisplayName": "李*",
+                "Mobile": "151****0000",
                 "Email": "",
                 "OpenId": "n123456",
                 "Roles": [
@@ -97,8 +97,8 @@ Output:
         "Employees": [
             {
                 "UserId": "",
-                "DisplayName": "张三",
-                "Mobile": "18888888888",
+                "DisplayName": "张*",
+                "Mobile": "188****8888",
                 "Email": "",
                 "OpenId": "n02468",
                 "Roles": [],
@@ -113,8 +113,8 @@ Output:
             },
             {
                 "UserId": "",
-                "DisplayName": "李四",
-                "Mobile": "15100000000",
+                "DisplayName": "李*",
+                "Mobile": "151****0000",
                 "Email": "",
                 "OpenId": "n123456",
                 "Roles": [],

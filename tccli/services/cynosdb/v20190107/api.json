@@ -5015,6 +5015,15 @@
           "name": "AutoArchiveDelayHours",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内核小版本号",
+          "example": "3.1.16.002",
+          "member": "string",
+          "name": "CynosVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14153,6 +14162,46 @@
           "example": "standbycluster",
           "member": "string",
           "name": "StandbyClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已强切",
+          "example": "yes",
+          "member": "string",
+          "name": "ForceSwitchGdn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示信息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持强切",
+          "example": "yes",
+          "member": "string",
+          "name": "IsSupportForce",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

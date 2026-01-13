@@ -8,6 +8,14 @@
         "title": "检查cos迁移索引元数据"
       }
     ],
+    "CreateAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\",\n    \"CosBackup\": {\n        \"IsAutoBackup\": true,\n        \"BackupTime\": \"01:00\",\n        \"SnapshotName\": \"test2\",\n        \"EsRepositoryType\": 0,\n        \"StorageDuration\": 3,\n        \"AutoBackupInterval\": 1,\n        \"CosRetention\": 0,\n        \"RemoteCos\": 0,\n        \"StrategyName\": \"mypolicy2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"99593835-47fd-401d-b59f-9f84e641737c\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "CreateClusterSnapshot": [
       {
         "document": "",
@@ -64,6 +72,14 @@
         "title": "示例"
       }
     ],
+    "DeleteAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\",\n    \"StrategyName\": [\n        \"mypolicy2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"da7761e2-33fc-4640-b875-9b08f6e766aa\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DeleteClusterSnapshot": [
       {
         "document": "",
@@ -118,6 +134,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessSpaceUser\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-efafeafe\",\n    \"Username\": \"admin\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40f4f780-9969-42f9-8bd9-ccf0d1f2591a\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CosBackupList\": [\n            {\n                \"AutoBackupInterval\": 12,\n                \"BackupTime\": \"01:00\",\n                \"CosRetention\": 0,\n                \"CreateTime\": \"2025-11-12 18:02:39\",\n                \"EsRepositoryType\": 0,\n                \"Indices\": \"\",\n                \"IsAutoBackup\": true,\n                \"PaasEsRepository\": \"ES_AUTO_BACKUP_ap-beijing\",\n                \"RemoteCos\": 1,\n                \"RemoteCosRegion\": \"ap-beijing\",\n                \"RetainUntilDate\": \"\",\n                \"RetentionGraceTime\": 0,\n                \"SnapshotName\": \"zzxtest\",\n                \"StorageDuration\": 3,\n                \"StrategyName\": \"mypolicy\",\n                \"UserEsRepository\": \"\"\n            }\n        ],\n        \"RequestId\": \"2206ef18-73f2-4e8f-a237-621664885fcc\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "DescribeClusterSnapshot": [
@@ -326,6 +350,22 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallInstanceModel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-ria27gbk\",\n    \"ModelNames\": [\n        \"bge-base-zh-v1.5\"\n    ],\n    \"TaskTypes\": [\n        \"text_embedding\"\n    ],\n    \"ModelDescription\": \"test model\",\n    \"ModelSourceType\": \"PlatformModel\",\n    \"UploadedCosPaths\": [\n        \"/UserModels/common/bge-base-zh-v1.5.tar.gz\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"4294967526\",\n        \"RequestId\": \"efbad3b5-5548-47bb-a88a-173adf833c26\"\n    }\n}",
         "title": "模型安装接口调用样例"
+      }
+    ],
+    "ModifyAutoBackUpCommonInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackUpCommonInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"602b7b48-25ac-465c-a0bf-b6a7196ca869\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\",\n    \"StrategyName\": \"mypolicy2\",\n    \"CosBackup\": {\n        \"IsAutoBackup\": true,\n        \"BackupTime\": \"01:00\",\n        \"SnapshotName\": \"test2\",\n        \"EsRepositoryType\": 0,\n        \"StorageDuration\": 4,\n        \"AutoBackupInterval\": 12,\n        \"CosRetention\": 0,\n        \"RemoteCos\": 0,\n        \"StrategyName\": \"mypolicy2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"794affac-7f0b-4ff1-8737-8c5aff2401c1\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "ModifyEsVipSecurityGroup": [

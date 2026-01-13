@@ -16,6 +16,14 @@
         "title": "创建API密钥"
       }
     ],
+    "CreatePreCacheImageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageRegistryType\": \"enterprise\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:39e2c18395c3105ace919d1d285cd775d380e83581b132d8d742761123a1e675\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"RequestId\": \"57872da7-8d1e-4035-819f-92c26eaf9557\"\n    }\n}",
+        "title": "创建预热镜像任务"
+      }
+    ],
     "CreateSandboxTool": [
       {
         "document": "",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIKeyList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"APIKeySet\": [\n            {\n                \"CreatedAt\": \"2025-09-12T14:09:05.242Z\",\n                \"KeyId\": \"ark-3edcft6y\",\n                \"MaskedKey\": \"ark_Au****kKjo\",\n                \"Name\": \"LocalDev\",\n                \"Status\": \"API_KEY_STATUS_ACTIVE\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"37e8ed19-80cd-49f3-9b5a-eaea1bf9c6c1\"\n    }\n}",
         "title": "获取API密钥简略信息列表"
+      }
+    ],
+    "DescribePreCacheImageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageDigest\": \"sha256:39e2c18395c3105fce919dasdqwe85cd775d380e83581b132d8d742761123a1e675\",\n    \"ImageRegistryType\": \"enterprise\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:39e2c18395c3105fce919dasdqwe85cd775d380e83581b132d8d742761123a1e675\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"Message\": \"........\",\n        \"RequestId\": \"a34158c5-d383-49ae-9b36-d37da3fde06f\",\n        \"Status\": \"Success\"\n    }\n}",
+        "title": "查询预热任务状态"
       }
     ],
     "DescribeSandboxInstanceList": [

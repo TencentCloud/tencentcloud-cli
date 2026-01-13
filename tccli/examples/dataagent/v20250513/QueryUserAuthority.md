@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli dataagent QueryUserAuthority --cli-unfold-argument ```
+tccli dataagent QueryUserAuthority --cli-unfold-argument  \
+    --InstanceId dataagent-G5XTaxnz \
+    --Module knowledge \
+    --ObjectId klbase-uKGsu3qP6p
+```
 
 Output: 
 ```

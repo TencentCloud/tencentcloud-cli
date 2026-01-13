@@ -1006,10 +1006,10 @@
     ],
     "ModifyRabbitMQVipInstance": [
       {
-        "document": "修改RabbitMQ专享版实例",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-jero744g\",\n    \"Remark\": \"生产使用集群\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"InstanceId\": \"amqp-jero744g\"\n    }\n}",
-        "title": "修改RabbitMQ专享版实例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44ordrrj\",\n    \"ClusterName\": \"生产实例名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"amqp-44ordrrj\",\n        \"RequestId\": \"47638f78-d85a-46aa-a43d-59db21bc7c72\"\n    }\n}",
+        "title": "修改 RabbitMQ 专享版实例"
       }
     ],
     "ModifyRabbitMQVirtualHost": [

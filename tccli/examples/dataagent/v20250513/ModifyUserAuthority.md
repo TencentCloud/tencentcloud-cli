@@ -6,6 +6,9 @@ Input:
 
 ```
 tccli dataagent ModifyUserAuthority --cli-unfold-argument  \
+    --InstanceId dataagent-001 \
+    --Module scene \
+    --ObjectId fasfstr-fsfsd2e-sss \
     --UseScope 1 \
     --AuthorityUins 10002223435
 ```

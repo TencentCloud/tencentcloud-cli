@@ -1402,7 +1402,7 @@
         {
           "disabled": false,
           "document": "密钥别名",
-          "example": "[xx,xx]",
+          "example": "无",
           "member": "KeyMetadata",
           "name": "KeyMetadatas",
           "output_required": true,

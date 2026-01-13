@@ -2037,13 +2037,13 @@
         },
         {
           "disabled": false,
-          "document": "执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ",
+          "document": "执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-03-05T20:07:29Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,

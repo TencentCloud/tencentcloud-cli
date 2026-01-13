@@ -152,6 +152,14 @@
         "title": "创建cos导入任务"
       }
     ],
+    "CreateDashboard": [
+      {
+        "document": "创建仪表盘",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDashboard\n<公共请求参数>\n\n{\n    \"DashboardName\": \"仪表盘名称\",\n    \"Data\": \"{}\",\n    \"Tags\": [\n        {\n            \"Value\": \"tagValue\",\n            \"Key\": \"tagKey\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DashboardId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建仪表盘"
+      }
+    ],
     "CreateDashboardSubscribe": [
       {
         "document": "创建仪表盘订阅",
@@ -402,6 +410,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"d0217dcd-2c2b-44a4-9949-372daeb01c7d\",\n    \"TopicId\": \"7b2777f2-2d2d-48e9-8066-be31e0cda862\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f2d7ff-003a-4142-8c55-6a09780667c0\"\n    }\n}",
         "title": "删除COS导入任务"
+      }
+    ],
+    "DeleteDashboard": [
+      {
+        "document": "删除仪表盘",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"abcxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除仪表盘"
       }
     ],
     "DeleteDashboardSubscribe": [
@@ -1092,6 +1108,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"ca092608-98e8-4ad9-83c5-a6b3bbexxxxx\",\n    \"TopicId\": \"ae13f7db-00b5-41ac-916e-407802axxxxx\",\n    \"Name\": \"test_name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc78ee34-237b-41c7-8fcd-601a99bxxxxx\"\n    }\n}",
         "title": "修改cos导入任务"
+      }
+    ],
+    "ModifyDashboard": [
+      {
+        "document": "修改仪表盘",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"dashboard-e7497a78-667f-45ee-b785-4ac8fca05dc6\",\n    \"DashboardName\": \"修改仪表盘\",\n    \"Data\": \"{\\\"timezone\\\":\\\"browser\\\",\\\"subType\\\":\\\"CLS_Host\\\"}\",\n    \"Tags\": [\n        {\n            \"Value\": \"tagValue\",\n            \"Key\": \"tagKey\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73b2ae74-f740-45f9-9202-b40392ad815f\"\n    }\n}",
+        "title": "修改仪表盘"
       }
     ],
     "ModifyDashboardSubscribe": [

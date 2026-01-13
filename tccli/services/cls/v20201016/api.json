@@ -112,6 +112,13 @@
       "output": "CreateCosRechargeResponse",
       "status": "online"
     },
+    "CreateDashboard": {
+      "document": "本接口用于创建仪表盘",
+      "input": "CreateDashboardRequest",
+      "name": "创建仪表盘",
+      "output": "CreateDashboardResponse",
+      "status": "online"
+    },
     "CreateDashboardSubscribe": {
       "document": "此接口用于创建仪表盘订阅",
       "input": "CreateDashboardSubscribeRequest",
@@ -320,6 +327,13 @@
       "input": "DeleteCosRechargeRequest",
       "name": "删除cos导入任务",
       "output": "DeleteCosRechargeResponse",
+      "status": "online"
+    },
+    "DeleteDashboard": {
+      "document": "本接口用于删除仪表盘",
+      "input": "DeleteDashboardRequest",
+      "name": "删除仪表盘",
+      "output": "DeleteDashboardResponse",
       "status": "online"
     },
     "DeleteDashboardSubscribe": {
@@ -908,6 +922,13 @@
       "input": "ModifyCosRechargeRequest",
       "name": "修改cos导入任务",
       "output": "ModifyCosRechargeResponse",
+      "status": "online"
+    },
+    "ModifyDashboard": {
+      "document": "本接口用于修改仪表盘",
+      "input": "ModifyDashboardRequest",
+      "name": "修改仪表盘",
+      "output": "ModifyDashboardResponse",
       "status": "online"
     },
     "ModifyDashboardSubscribe": {
@@ -5555,6 +5576,60 @@
       ],
       "type": "object"
     },
+    "CreateDashboardRequest": {
+      "document": "CreateDashboard请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘名称",
+          "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "DashboardName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘配置数据",
+          "example": "testname",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDashboardResponse": {
+      "document": "CreateDashboard返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘id",
+          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "DashboardId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDashboardSubscribeRequest": {
       "document": "CreateDashboardSubscribe请求参数结构体",
       "members": [
@@ -8871,6 +8946,33 @@
     },
     "DeleteCosRechargeResponse": {
       "document": "DeleteCosRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDashboardRequest": {
+      "document": "DeleteDashboard请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘id",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDashboardResponse": {
+      "document": "DeleteDashboard返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17959,6 +18061,60 @@
     },
     "ModifyCosRechargeResponse": {
       "document": "ModifyCosRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDashboardRequest": {
+      "document": "ModifyDashboard请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。",
+          "example": "dashboard-e7497a78-667f-45ee-b785-4ac8fca05dc6",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘名称",
+          "example": "主机指标监控预制仪表盘",
+          "member": "string",
+          "name": "DashboardName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘配置数据",
+          "example": "\"{\\\"timezone\\\":\\\"browser\\\",\\\"subType\\\":\\\"CLS_Host\\\"}\"",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDashboardResponse": {
+      "document": "ModifyDashboard返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

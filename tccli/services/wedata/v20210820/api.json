@@ -26240,7 +26240,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "任务ID",
           "example": "20250227112841503",
           "member": "string",
           "name": "TaskId",
@@ -26249,7 +26249,7 @@
         },
         {
           "disabled": false,
-          "document": "项目Id",
+          "document": "项目ID （必填属性）",
           "example": "1470547050521227264",
           "member": "string",
           "name": "ProjectId",
@@ -38072,11 +38072,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "生命周期值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生命周期值，如果PartitionLifeCycle=custom时，表示自定义生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Lifecycle",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -38087,6 +38088,7 @@
           "member": "string",
           "name": "Columns",
           "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -38097,11 +38099,12 @@
           "member": "string",
           "name": "DateFormat",
           "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "LineageCommonInfoVO": {
       "document": "LineageCommonInfoVO",
@@ -56468,16 +56471,6 @@
         },
         {
           "disabled": false,
-          "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "LifeCycleTime",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "存储量，已转为适合的单位展示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9.13TB",
           "member": "string",
@@ -56728,6 +56721,16 @@
         },
         {
           "disabled": false,
+          "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LifeCycleTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "判断是否是分区表1 是 0否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -56744,6 +56747,16 @@
           "name": "PartitionColumns",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区时间格式：yyyy-MM-dd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DateFormat",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {

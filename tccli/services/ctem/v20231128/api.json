@@ -10638,7 +10638,7 @@
         {
           "disabled": false,
           "document": "要搜索的字段",
-          "example": "Name",
+          "example": "Domain",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10647,7 +10647,7 @@
         {
           "disabled": false,
           "document": "目标值列表",
-          "example": "[\"test\"]",
+          "example": "[\"qq.com\"]",
           "member": "string",
           "name": "Values",
           "required": false,

@@ -292,6 +292,14 @@
         "title": "创建合同对比web页面 - 跳过文件上传确认页"
       }
     ],
+    "CreateContractReviewChecklistWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContractReviewChecklistWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtzDUUcpfhltUxpgD3IvZBJ10dg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e0ea7ed-6f15-40ea-888b-19b67270254e\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDtO7UUckpft9ureUxJPqXtCggpiZ9iW&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW&action=CreateChecklist&shortKey=yDtO7UAApxPiHOuJcC9b\"\n    }\n}",
+        "title": "新建审查要点清单web页面"
+      }
+    ],
     "CreateContractReviewWebUrl": [
       {
         "document": "",
@@ -1570,12 +1578,36 @@
         "title": "获取合同对比结果web页面"
       }
     ],
+    "DescribeContractReviewChecklistWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewChecklistWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtzUckfhotlUxpgD3vZBB10dg\"\n    },\n    \"Id\": \"yDzlUckpfqqe0eU7RX5uRpuL6kx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"yDzlUckpfqqe0eU7RX5uRpuL6kx\",\n        \"RequestId\": \"25c04cf7-cfb4-4fc1-9c00-493bf4d57f5f\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDtO7UUckpft9kelUuJKYGa1CXDMNbuW&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW&action=DescribeChecklist&shortKey=yDtO7UAApy9YcVs8cga0&checklistId=yDtzlUUckpfqqe0eUx7RX5uRp4uL96kx\"\n    }\n}",
+        "title": "查看审查要点清单web页面"
+      }
+    ],
+    "DescribeContractReviewChecklistsWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewChecklistsWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtzUUckpfhotUxpgDvZBJB10dg\"\n    },\n    \"Option\": {\n        \"DisableCreateChecklist\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"917685ef-08bf-47d0-848a-562b49104f87\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDtO7UUckpft9ol3UuJKYGaxv58BYWbB&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW&action=DescribeChecklists&shortKey=yDtO7UAApwRvM9OqBY62\"\n    }\n}",
+        "title": "获取审查要点清单列表web页面"
+      }
+    ],
     "DescribeContractReviewTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJGxxrmBe\"\n    },\n    \"TaskId\": \"yDtIFxxxq\"\n}",
         "output": "{\n    \"Response\": {\n        \"ChecklistId\": \"yDtCMxxxxIi\",\n        \"CreatedOn\": 1753417470,\n        \"FinishedOn\": 1753417684,\n        \"PolicyType\": 3,\n        \"RequestId\": \"s1753417731216986125\",\n        \"ResourceId\": \"yDtG1UUxxxEsrBwa\",\n        \"Risks\": [\n            {\n                \"Content\": \"第三十二条乙方应当保守甲方的商业秘密，商业秘密系指不为公众所知悉，能为甲方带来经济利益，具有实用性并经甲方采取保密措施的技术秘密和经营信息。包括但不限于下述内容:\",\n                \"RiskAdvice\": \"建议在第三十二条后增加：「乙方离职后的竞业限制期限不得超过两年，竞业限制补偿金标准为......」\",\n                \"RiskBasis\": \"【通用商业合同审查清单】{特殊类型合同补充要点}, 系统审查要求。\",\n                \"RiskDescription\": \"保密条款未明确竞业限制期限，存在超出法定期限的法律风险，可能被认定为无效条款。\",\n                \"RiskId\": \"yDtIFUU2tnxxxKveWxm\",\n                \"RiskLevel\": \"NORMAL\",\n                \"RiskLevelId\": 0,\n                \"RiskName\": \"竞业限制期限缺失\",\n                \"RiskPresentation\": [\n                    \"不符合清单要求\"\n                ]\n            }\n        ],\n        \"ApprovedLists\": [\n            {\n                \"CategoryName\": \"合同主体审查\",\n                \"Excerpts\": [\n                    {\n                        \"Content\": \"2.2注册腾讯云账号，甲方应依法具备必要、适当的权利能力和行为能力，已授予操作人足够的权利完成注册过程。甲方必须提交自身合法、真实、有效的身份信息完成真实身份的核验。甲方未提交真实身份信息的、未能通过真实身份核验的，腾讯云依法不对甲方提供服务。\",\n                        \"Position\": null\n                    }\n                ],\n                \"RiskBasis\": \"【通用商业合同审查清单】{合同主体审查}, 系统审查要求。\",\n                \"RiskDescription\": \"1）若签约人为代理人，建议审查需审查授权范围是否涵盖合同标的（如采购金额、租赁期限等）；2）建议审查授权书是否明确排除限制条款（如不得签署担保类协议）。\",\n                \"RiskId\": \"yDtzVUUHqHYnSLWte\",\n                \"RiskName\": \"授权权限匹配性\"\n            }\n        ],\n        \"Role\": {\n            \"Description\": \"\",\n            \"Name\": \"授权方\"\n        },\n        \"Status\": 4,\n        \"TaskId\": \"yDtIFxxxq\"\n    }\n}",
         "title": "查询合同审查任务详情"
+      }
+    ],
+    "DescribeContractReviewTaskListWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewTaskListWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yzDUUckpfotltUxgD3IvZBJBdg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91d49357-6b70-4d58-8305-3c0e1093f53b\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDtO7UUckpft9uvqUxJPqXty5Qv8S45X&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW&action=DescribeTaskList&shortKey=yDtO7UAApEKYWCovDlfd\"\n    }\n}",
+        "title": "获取合同审查记录列表web页面"
       }
     ],
     "DescribeContractReviewWebUrl": [
@@ -1968,6 +2000,20 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractComparisonTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3o2rzmUxHsV0j1FlhYIKo7\"\n    },\n    \"TaskId\": \"yDtrrUUckp94goxhUyjVZ8rSEQ0lg7vb\",\n    \"ExportType\": 1,\n    \"Ignore\": true\n}",
         "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1760182715,\n        \"RequestId\": \"s1760182415600292411\",\n        \"ResourceUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=*****************\"\n    }\n}",
         "title": "导出合同对比任务详情"
+      }
+    ],
+    "ExportContractReviewResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportContractReviewResult\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtzDUUckpfhotltUxpgD3IvZBJB10dg\"\n    },\n    \"TaskId\": \"yDtzZUUckpf8wewlUx7RX5uSd4QXIcRI\",\n    \"FileType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57036460-8ab0-4a0f-b6ca-ec6e4f6cff57\",\n        \"Url\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.XLSX?hkey=533ef16b1c16d1f16060554ea3982785c3a30eda68f5c00f6947c7695feb18f97f24e189b77d14350036e89bca11f153f0ddf7c847233dd099d4ee826202371435d8080ec05323e868f41f14676d745a836d2064286b79c812144daaf68f1d661f87f3c43b04b61599a0630dafdef064b741be6c1dba5ab2528bdadfddfcca19e4c8dd5d57c6f61de3a7b186dde961d990bfa7e9fef5bd9a6169b8e1f381789a\"\n    }\n}",
+        "title": "导出审查结果和摘要 xlsx 文件"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportContractReviewResult\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtzDUUkpfhotltUxD3IvZBJB10dg\"\n    },\n    \"TaskId\": \"yDtzZUckpf8wwlUx7RX5ud4QXIcRI\",\n    \"FileType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27419bd6-09bf-459d-b514-295964b7478a\",\n        \"Url\": \"https://file.ess.tencent.cn/bresource/resource/resource/0/0.DOCX?hkey=533ef16b1c16d1f16060554ea3982785c3a30eda68f5c00f6947c7695feb18f9632ebfb577efc74e9b00949c2a27818dc99723b96edadd6266ca2a46f49ee8a6915a01f702b1932ca4b6687198aca50f02e6f9d61c8c32fac3df3741e6e9c032\"\n    }\n}",
+        "title": "导出带批注的审查文件"
       }
     ],
     "GetTaskResultApi": [

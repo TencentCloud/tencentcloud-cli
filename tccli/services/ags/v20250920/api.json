@@ -14,6 +14,13 @@
       "output": "CreateAPIKeyResponse",
       "status": "online"
     },
+    "CreatePreCacheImageTask": {
+      "document": "创建镜像预热任务",
+      "input": "CreatePreCacheImageTaskRequest",
+      "name": "创建预热镜像任务",
+      "output": "CreatePreCacheImageTaskResponse",
+      "status": "online"
+    },
     "CreateSandboxTool": {
       "document": "创建沙箱工具",
       "input": "CreateSandboxToolRequest",
@@ -40,6 +47,13 @@
       "input": "DescribeAPIKeyListRequest",
       "name": "获取API密钥列表",
       "output": "DescribeAPIKeyListResponse",
+      "status": "online"
+    },
+    "DescribePreCacheImageTask": {
+      "document": "查询镜像预热任务信息",
+      "input": "DescribePreCacheImageTaskRequest",
+      "name": "查询镜像预热任务信息",
+      "output": "DescribePreCacheImageTaskResponse",
       "status": "online"
     },
     "DescribeSandboxInstanceList": {
@@ -283,6 +297,72 @@
           "example": "ark-9ijnhy66",
           "member": "string",
           "name": "KeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePreCacheImageTaskRequest": {
+      "document": "CreatePreCacheImageTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePreCacheImageTaskResponse": {
+      "document": "CreatePreCacheImageTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像 Digest",
+          "example": "sha256:abcdefg123...",
+          "member": "string",
+          "name": "ImageDigest",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -693,6 +773,101 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreCacheImageTaskRequest": {
+      "document": "DescribePreCacheImageTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像 Digest",
+          "example": "sha256:abcdefg123...",
+          "member": "string",
+          "name": "ImageDigest",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreCacheImageTaskResponse": {
+      "document": "DescribePreCacheImageTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像 Digest",
+          "example": "sha256:abcdefg123...",
+          "member": "string",
+          "name": "ImageDigest",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像预热状态",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像预热状态描述",
+          "example": "镜像预热成功",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -911,7 +911,7 @@
       "status": "online"
     },
     "DescribeTimingL7OriginPullData": {
-      "document": "本接口用以查询七层域名业务的回源时序数据。",
+      "document": "本接口用以查询七层域名业务的回源时序数据，可以通过指定查询维度 <code>DimensionName</code> 进行分组查询，返回多组时序数据。\n\n<p>单次请求最多返回 <strong>50,000</strong> 个数据项<code> TimingDataItem </code>。数据项总数的计算规则如下：</p>\n<pre>\n   指标个数 * 时间点个数 * 维度值个数 = 数据项总数\n</pre>\n<ul>\n  <li>\n    <strong>指标个数</strong>：<code>MetricNames</code> 的列表长度。\n  </li>\n  <li>\n    <strong>时间点个数</strong>：<code>(EndTime - StartTime) / Interval</code>。\n  </li>\n  <li>\n    <strong>维度值个数</strong>：\n    <ul>\n      <li>当未指定 <code>DimensionName</code> 时，默认按账号维度汇总数据，维度值个数为 1。</li>\n      <li>当 <code>DimensionName = domain</code> 时，维度值个数为 <code>Filters</code> 中 <code>domain</code> 过滤条件指定的域名列表长度。</li>\n      <li>当 <code>DimensionName = origin-status-code-category</code> 时，维度值个数默认为 <code>6</code>。</li>\n      <li>当 <code>DimensionName = origin-status-code</code> 时，维度值个数默认为 <code>600</code>。</li>\n    </ul>\n  </li>\n</ul>\n\n<p><code>DimensionName</code> 可以与 <code>Filters</code> 组合使用，通过在 <code>Filters</code> 中指定 <code>DimensionName</code> 对应的过滤条件以限制维度值个数。</p>\n\n<h3>示例</h3>\n<p>以查询某一小时的具体状态码维度的时序数据为例，假设查询条件如下：</p>\n<ul>\n  <li><code>MetricNames = [\"l7Flow_request_hy\"]</code>（指标个数 = 1）</li>\n  <li><code>StartTime = 2025-10-01T06:00:00+08:00</code>，<code>EndTime = 2025-10-01T06:59:59+08:00</code>，<code>Interval = \"min\"</code>（时间点个数 = 60）</li>\n  <li><code>DimensionName = origin-status-code</code>，<code>Filters = [{\"originStatusCode\": [\"0\", \"4xx\", \"5xx\"]}]</code>（维度值个数 = 201）</li>\n</ul>\n<p>则数据项总数为：</p>\n<pre>1 × 60 × 201 = 12060 </pre>\n<p>未超过限制。</p>\n\n<p><strong>注意</strong>：若查询的数据项总数超过 <strong>50,000</strong>，系统会返回错误 <strong>LimitExceeded.TimingDataItemLimitExceeded</strong>。</p>\n<p>此时，请通过调整入参减少单次查询的数据项至 50,000 以内，可采取的做法有：</p>\n<ol>\n  <li>\n    <strong>减少时间点个数</strong>：\n    <ul>\n      <li>缩短查询时间范围（<code>StartTime</code> 到 <code>EndTime</code> 之间的时间跨度）。</li>\n      <li>选择更大的时间间隔（<code>Interval</code>）。</li>\n    </ul>\n  </li>\n  <li>\n    <strong>减少维度值个数</strong>：\n    <ul>\n      <li>调整 <code>Filters</code>，指定更少的 <code>domain</code> 或 <code>originStatusCode</code> 列表。</li>\n    </ul>\n  </li>\n  <li>\n    <strong>减少指标值个数</strong>：\n    <ul>\n      <li>调整 <code>MetricNames</code>，指定更少的查询指标。</li>\n    </ul>\n  </li>\n</ol>",
       "input": "DescribeTimingL7OriginPullDataRequest",
       "name": "查询回源时序数据",
       "output": "DescribeTimingL7OriginPullDataResponse",
@@ -14707,6 +14707,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标列表，取值有:\n<ul><li>l7Flow_outFlux_hy: EdgeOne 节点至源站方向的请求流量，单位：Byte；</li>\n<li>l7Flow_outBandwidth_hy: EdgeOne 节点至源站方向的请求带宽，单位：bps；</li>\n<li>l7Flow_request_hy: EdgeOne 节点至源站方向的请求数，单位：次。</li>\n<li>l7Flow_inFlux_hy: 源站至 EdgeOne 节点方向的响应流量，单位：Byte；</li>\n<li>l7Flow_inBandwidth_hy: 源站至 EdgeOne 节点方向的响应带宽，单位：bps。</li></ul>",
+          "example": "[\"l7Flow_outFlux_hy\"]",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "开始时间。",
           "example": "2020-04-29T00:00:00Z",
           "member": "datetime_iso",
@@ -14725,25 +14743,7 @@
         },
         {
           "disabled": false,
-          "document": "指标列表，取值有:\n<li>l7Flow_outFlux_hy: EdgeOne 节点至源站方向的请求流量，单位：Byte；</li>\n<li>l7Flow_outBandwidth_hy: EdgeOne 节点至源站方向的请求带宽，单位：bps；</li>\n<li>l7Flow_request_hy: EdgeOne 节点至源站方向的请求数，单位：次。</li>\n<li>l7Flow_inFlux_hy: 源站至 EdgeOne 节点方向的响应流量，单位：Byte；</li>\n<li>l7Flow_inBandwidth_hy: 源站至 EdgeOne 节点方向的响应带宽，单位：bps；</li>\n",
-          "example": "[\"l7Flow_outFlux_hy\"]",
-          "member": "string",
-          "name": "MetricNames",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
-          "example": "[\"*\"]",
-          "member": "string",
-          "name": "ZoneIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "查询时间粒度，取值有：\n<li>min: 1分钟；</li>\n<li>5min: 5分钟；</li>\n<li>hour: 1小时；</li>\n<li>day: 1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：2 小时范围内以 min 粒度查询，2 天范围内以 5min 粒度查询，7 天范围内以 hour 粒度查询，超过 7 天以 day 粒度查询。",
+          "document": "查询时间粒度，取值有：\n<ul><li>min: 1分钟；</li><li>5min: 5分钟；</li><li>hour: 1小时；</li><li>day: 1天。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：2 小时范围内以 min 粒度查询，2 天范围内以 5min 粒度查询，7 天范围内以 hour 粒度查询，超过 7 天以 day 粒度查询。",
           "example": "hour",
           "member": "string",
           "name": "Interval",
@@ -14752,12 +14752,21 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详细的过滤条件如下：\n<li>domain：客户端请求的域名。若按泛域名接入 EdgeOne，则数据中记录为泛域名，而不是具体域名。</li>",
+          "document": "过滤条件，详细的过滤条件如下：\n<ul><li><strong>domain</strong>：客户端请求的域名。若按泛域名接入 EdgeOne，则数据中记录为泛域名，而不是具体域名。</li><li><strong>originStatusCode</strong>：回源状态码，仅当 <code>MetricNames = [\"l7Flow_request_hy\"]</code> 时支持本过滤项。<br>对应的 Value 可选项如下：<ul><li><code>1xx</code>：1xx 类型的状态码；</li><li><code>2xx</code>：2xx 类型的状态码；</li><li><code>3xx</code>：3xx 类型的状态码；</li><li><code>4xx</code>：4xx 类型的状态码；</li><li><code>5xx</code>：5xx 类型的状态码；</li><li>在 <code>[0, 600)</code> 范围内的整数（不包括 600）。</li></ul></li></ul>\n**注意**：当 <code>DimensionName</code>  不为空时，仅支持 <code>equals</code> 运算符。",
           "example": "无",
           "member": "QueryCondition",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询维度名称，取值有：</p><ul><li><strong>domain</strong>：客户端请求的域名。若按泛域名接入 EdgeOne，则数据中记录为泛域名。<br>使用 domain 维度时必须在 <code>Filters</code> 中包含 <code>domain</code> 过滤项，指定总数不超过 100 个需要查询的域名列表；</li><li><strong>origin-status-code</strong>：回源状态码，如 200、404，<br>仅当 <code>MetricNames = [\"l7Flow_request_hy\"]</code> 时支持本维度；</li><li><strong>origin-status-code-category</strong>：回源状态码类别，如 2xx、4xx，<br>仅当 <code>MetricNames =[\"l7Flow_request_hy\"]</code> 时支持本维度。</li></ul><p>若 <code>DimensionName</code> 入参为空，默认按 <code>AppId</code> 维度汇总，只返回一组数据。</p><p>若 <code>DimensionName</code> 入参不为空，则按照传入的查询维度分组返回对应的时序数据。例如：</p><ul>当 <code>DimensionName = origin-status-code</code> 时：<ul><li>返回数据中 <code>TimingDataRecords.TypeKey</code> 为具体回源状态码，例如 200。</li><li>返回数据中 <code>TimingDataRecords.TypeValue</code> 是该状态码对应的时序数据。</li></ul></ul>\n<strong>注意</strong>：当指定 DimensionName 查询时，禁止并发调用。若超出查询频率限制，会返回错误 <code><strong>InvalidParameter.ActionInProgress</strong></code> 。",
+          "example": "domain",
+          "member": "string",
+          "name": "DimensionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

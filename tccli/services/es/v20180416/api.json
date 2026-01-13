@@ -7,6 +7,13 @@
       "output": "CheckMigrateIndexMetaDataResponse",
       "status": "online"
     },
+    "CreateAutoBackUpStrategy": {
+      "document": "新建自动备份快照策略",
+      "input": "CreateAutoBackUpStrategyRequest",
+      "name": "新建自动备份快照策略",
+      "output": "CreateAutoBackUpStrategyResponse",
+      "status": "online"
+    },
     "CreateClusterSnapshot": {
       "document": "集群快照手动创建",
       "input": "CreateClusterSnapshotRequest",
@@ -56,6 +63,13 @@
       "output": "CreateServerlessSpaceV2Response",
       "status": "online"
     },
+    "DeleteAutoBackUpStrategy": {
+      "document": "删除自动备份快照策略",
+      "input": "DeleteAutoBackUpStrategyRequest",
+      "name": "删除自动备份快照策略",
+      "output": "DeleteAutoBackUpStrategyResponse",
+      "status": "online"
+    },
     "DeleteClusterSnapshot": {
       "document": "删除快照仓库里备份的快照",
       "input": "DeleteClusterSnapshotRequest",
@@ -103,6 +117,13 @@
       "input": "DeleteServerlessSpaceUserRequest",
       "name": "删除Serverless空间子用户",
       "output": "DeleteServerlessSpaceUserResponse",
+      "status": "online"
+    },
+    "DescribeAutoBackUpStrategy": {
+      "document": "获取自动备份快照策略信息",
+      "input": "DescribeAutoBackUpStrategyRequest",
+      "name": "获取快照自动备份策略",
+      "output": "DescribeAutoBackUpStrategyResponse",
       "status": "online"
     },
     "DescribeClusterSnapshot": {
@@ -285,6 +306,20 @@
       "input": "InstallInstanceModelRequest",
       "name": "安装ES集群模型",
       "output": "InstallInstanceModelResponse",
+      "status": "online"
+    },
+    "ModifyAutoBackUpCommonInfo": {
+      "document": "修改自动备份快照策略公共信息",
+      "input": "ModifyAutoBackUpCommonInfoRequest",
+      "name": "修改自动备份快照策略公共信息",
+      "output": "ModifyAutoBackUpCommonInfoResponse",
+      "status": "online"
+    },
+    "ModifyAutoBackUpStrategy": {
+      "document": "修改自动备份快照策略",
+      "input": "ModifyAutoBackUpStrategyRequest",
+      "name": "修改自动备份快照策略",
+      "output": "ModifyAutoBackUpStrategyResponse",
       "status": "online"
     },
     "ModifyEsVipSecurityGroup": {
@@ -1236,6 +1271,52 @@
       ],
       "usage": "out"
     },
+    "CreateAutoBackUpStrategyRequest": {
+      "document": "CreateAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackup",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoBackUpStrategyResponse": {
+      "document": "CreateAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 成功; false 失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClusterSnapshotRequest": {
       "document": "CreateClusterSnapshot请求参数结构体",
       "members": [
@@ -1819,7 +1900,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启essd 增强型云盘",
+          "document": "硬盘额外性能",
           "example": "0",
           "member": "uint64",
           "name": "DiskEnhance",
@@ -2406,6 +2487,52 @@
       ],
       "usage": "both"
     },
+    "DeleteAutoBackUpStrategyRequest": {
+      "document": "DeleteAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "[\"mypolicy2\"]",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoBackUpStrategyResponse": {
+      "document": "DeleteAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 成功; false 失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterSnapshotRequest": {
       "document": "DeleteClusterSnapshot请求参数结构体",
       "members": [
@@ -2677,6 +2804,43 @@
     "DeleteServerlessSpaceUserResponse": {
       "document": "DeleteServerlessSpaceUser返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoBackUpStrategyRequest": {
+      "document": "DescribeAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoBackUpStrategyResponse": {
+      "document": "DescribeAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackupList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9057,6 +9221,78 @@
       ],
       "usage": "out"
     },
+    "ModifyAutoBackUpCommonInfoRequest": {
+      "document": "ModifyAutoBackUpCommonInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyAutoBackUpCommonInfoResponse": {
+      "document": "ModifyAutoBackUpCommonInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoBackUpStrategyRequest": {
+      "document": "ModifyAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前策略名称",
+          "example": "mypolicy2",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackup",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoBackUpStrategyResponse": {
+      "document": "ModifyAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 成功; false 失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEsVipSecurityGroupRequest": {
       "document": "ModifyEsVipSecurityGroup请求参数结构体",
       "members": [
@@ -9208,7 +9444,7 @@
         },
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬盘额外性能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DiskEnhance",
