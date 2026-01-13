@@ -10189,6 +10189,24 @@
           "name": "GoodsJson",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)\t",
+          "example": "1000000",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "1000000",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10209,7 +10227,7 @@
         {
           "disabled": false,
           "document": "auth结构",
-          "example": "auth结构",
+          "example": "无",
           "member": "OrderSignAuth",
           "name": "Auth",
           "output_required": false,
