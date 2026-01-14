@@ -11678,7 +11678,7 @@
         {
           "disabled": false,
           "document": "查询来源 curr/order 查询当前信息还是订单信息 不传默认查当前",
-          "example": "无",
+          "example": "curr",
           "member": "string",
           "name": "QueryFrom",
           "required": false,
@@ -11693,7 +11693,7 @@
         {
           "disabled": false,
           "document": "版本 Free/Advanced/Enterprise/Ultimate  分别是免费版/高级版/企业版/旗舰版\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Free",
           "member": "string",
           "name": "Version",
           "output_required": true,
@@ -11703,7 +11703,7 @@
         {
           "disabled": false,
           "document": "订单状态 0/1/2/3/6/7 \n0免费版/1正常支付/2(隔离)/3 销毁/6 试用中/7订单到期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -11713,7 +11713,7 @@
         {
           "disabled": false,
           "document": "过期时间 yyyy-MM-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-02-01 11:22:33",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
@@ -11733,7 +11733,7 @@
         {
           "disabled": false,
           "document": "时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "TimeSpan",
           "output_required": true,
@@ -11743,7 +11743,7 @@
         {
           "disabled": false,
           "document": "时间单位 y/m/d 年/月/日\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "m",
           "member": "string",
           "name": "TimeUnit",
           "output_required": true,
@@ -11753,7 +11753,7 @@
         {
           "disabled": false,
           "document": "创建时间  yyyy-MM-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-02-01 11:22:33",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -11763,7 +11763,7 @@
         {
           "disabled": false,
           "document": "自动续费 0不开启自动续费 1开启自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenew",
           "output_required": true,
@@ -11773,7 +11773,7 @@
         {
           "disabled": false,
           "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "csip-resid",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -11783,7 +11783,7 @@
         {
           "disabled": false,
           "document": "支付模式 1预付费   csip目前只支持预付费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
           "output_required": true,
@@ -11793,7 +11793,7 @@
         {
           "disabled": false,
           "document": "试用状态 0未试用 1试用中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TrailStatus",
           "output_required": true,
@@ -11803,7 +11803,7 @@
         {
           "disabled": false,
           "document": "试用次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TrailNum",
           "output_required": true,
@@ -11813,7 +11813,7 @@
         {
           "disabled": false,
           "document": "用户收入等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "UserLevel",
           "output_required": true,
@@ -11829,6 +11829,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户ssa的购买资产数",
+          "example": "500",
+          "member": "int64",
+          "name": "AssetsBought",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

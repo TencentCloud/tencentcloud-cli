@@ -11753,7 +11753,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
-          "example": "[{'Key': 'name', 'Value': '123'}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -11768,7 +11768,7 @@
         {
           "disabled": false,
           "document": "云联网（CCN）对象。",
-          "example": "{'CcnId': 'ccn-xxxxxxxx', 'CcnName': 'ccn', 'CcnDescription': 'ccn', 'InstanceCount': 0, 'CreateTime': '', 'State': 'AVAILABLE', 'QosLevel': 'PT', 'InstanceChargeType': 'POSTPAID', 'BandwidthLimitType': 'OUTER_REGION_LIMIT', 'RoutePriorityFlag': True}",
+          "example": "无",
           "member": "CCN",
           "name": "Ccn",
           "output_required": true,
@@ -16763,7 +16763,7 @@
         {
           "disabled": false,
           "document": "云端地址（CIDR）列表。",
-          "example": "['10.0.0.0/16']",
+          "example": "[\"10.0.0.0/16\"]",
           "member": "string",
           "name": "LocalAddress",
           "required": false,
@@ -16808,7 +16808,7 @@
         {
           "disabled": false,
           "document": "是否支持压缩。当前不支持压缩，默认False。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "Compress",
           "required": false,
@@ -16817,7 +16817,7 @@
         {
           "disabled": false,
           "document": "是否开启SSO认证。默认为False。该功能当前需要申请开白使用。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "SsoEnabled",
           "required": false,
@@ -16826,7 +16826,7 @@
         {
           "disabled": false,
           "document": "是否开启策略访问控制。默认为False",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "AccessPolicyEnabled",
           "required": false,
@@ -16844,7 +16844,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表",
-          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -47716,7 +47716,7 @@
         {
           "disabled": false,
           "document": "本端地址",
-          "example": "['10.0.0.0/24']",
+          "example": "[\"10.0.0.0/24\"]",
           "member": "string",
           "name": "LocalAddress",
           "required": false,
@@ -47770,7 +47770,7 @@
         {
           "disabled": false,
           "document": "是否支持压缩。当前不支持压缩。默认False。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "Compress",
           "required": false,
@@ -47779,7 +47779,7 @@
         {
           "disabled": false,
           "document": "是否开启SSO认证。默认为False。该功能当前需要申请开白使用。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "SsoEnabled",
           "required": false,
@@ -55953,7 +55953,7 @@
         {
           "disabled": false,
           "document": "是否支持压缩。",
-          "example": "False",
+          "example": "1",
           "member": "uint64",
           "name": "Compress",
           "output_required": true,
@@ -56013,7 +56013,7 @@
         {
           "disabled": false,
           "document": "策略信息",
-          "example": "{'TargetCidr': '10.0.8.0/24','UserGroupIds': ['user-123'],'ForAllClient': 0,'Remark': 'test-01'}",
+          "example": "无",
           "member": "AccessPolicy",
           "name": "AccessPolicy",
           "output_required": true,

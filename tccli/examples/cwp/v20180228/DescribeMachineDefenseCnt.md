@@ -12,7 +12,7 @@ Output:
 {
     "Response": {
         "FileTamper": 1,
-        "RequestId": " 0aafcd71-9603-4a8c-88c3-2d567a7143e8 ",
+        "RequestId": "0aafcd71-9603-4a8c-88c3-2d567a7143e8",
         "AttackLogs": 1
     }
 }

@@ -1734,7 +1734,7 @@
       {
         "document": "查询主机高级防御事件数统计",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachineDefenseCnt\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FileTamper\": 1,\n        \"RequestId\": \" 0aafcd71-9603-4a8c-88c3-2d567a7143e8 \",\n        \"AttackLogs\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FileTamper\": 1,\n        \"RequestId\": \"0aafcd71-9603-4a8c-88c3-2d567a7143e8\",\n        \"AttackLogs\": 1\n    }\n}",
         "title": "查询主机高级防御事件数统计"
       }
     ],

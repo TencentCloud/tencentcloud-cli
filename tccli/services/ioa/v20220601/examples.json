@@ -24,14 +24,6 @@
         "title": "绑定业务资源网关"
       }
     ],
-    "BindGateway": [
-      {
-        "document": "",
-        "input": "Path : /capi/NGN/BindGateway\n\n<body>\n{\n    \"SmartGateId\":3,\n    \"GatewayIds\":[\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1658369637.1109526\"\n    }\n}",
-        "title": "绑定关联服务器"
-      }
-    ],
     "BindVirtualAccounts": [
       {
         "document": "向自定义用户组添加用户",
@@ -786,14 +778,6 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVirtualGroupResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        {\n            \"ResourceType\": 2,\n            \"ResourceId\": 3684\n        }\n    ],\n    \"VirtualGroupId\": 18895\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4947ee19-b2b8-4f94-9c85-27a50d90c997\"\n    }\n}",
         "title": "取消自定义用户组的资源授权"
-      }
-    ],
-    "DeleteZeroTrustGateway": [
-      {
-        "document": "",
-        "input": "Path : /capi/NGN/DeleteZeroTrustGateway\n\n\n<body>\n{\n    \"Ids\":[\n        2,\n        3\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1658369637.1109526\"\n    }\n}",
-        "title": "删除零信任网关"
       }
     ],
     "DescribeAIEDRIncidentDetail": [

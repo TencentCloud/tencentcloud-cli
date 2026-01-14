@@ -86,6 +86,14 @@
         "title": "检查用户有效性"
       }
     ],
+    "Convert3DFormat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Convert3DFormat\n<公共请求参数>\n\n{\n    \"Format\": \"STL\",\n    \"File3D\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.zip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78722611-9e48-43fd-8e27-2672bae39d7b\",\n        \"ResultFile3D\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.stl\"\n    }\n}",
+        "title": "调用请求示例"
+      }
+    ],
     "CreateThread": [
       {
         "document": "创建会话",
