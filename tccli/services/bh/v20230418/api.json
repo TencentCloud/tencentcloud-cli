@@ -10477,6 +10477,24 @@
         },
         {
           "disabled": false,
+          "document": "操作类型",
+          "example": "[1,2,3,4,5,6,7]",
+          "member": "uint64",
+          "name": "OperationSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "会话类型",
+          "example": "[\"SSH\",\"RDP\",\"SFTP\",\"DB\",\"App\"]",
+          "member": "string",
+          "name": "ProtocolSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "偏移量",
           "example": "1",
           "member": "uint64",
@@ -11897,7 +11915,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，1为活跃，2为结束，3为强制离线，4为其他错误",
+          "document": "状态，1为活跃，2为结束，3为强制离线，4为其他错误，5暂停会话",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -12340,7 +12358,7 @@
         {
           "disabled": false,
           "document": "会话持续时长",
-          "example": "50",
+          "example": "50.0",
           "member": "float",
           "name": "Duration",
           "output_required": true,
@@ -12475,6 +12493,46 @@
           "name": "PodName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问方式 1-直链 2-客户端 3-web 大部分情况下是2",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用会话监控。0-不禁用；1-禁用会话，仅展示中断；2-禁用会话，不展示中断",
+          "example": "0",
+          "member": "int64",
+          "name": "DisableMonitor",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时入带宽，单位Mbps",
+          "example": "1.2",
+          "member": "float",
+          "name": "RealTimeBandwidthIn",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时出带宽，单位Mbps",
+          "example": "1.3",
+          "member": "float",
+          "name": "RealTimeBandwidthOut",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

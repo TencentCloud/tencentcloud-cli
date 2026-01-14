@@ -1504,7 +1504,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。",
-          "example": "1400***366",
+          "example": "140000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -5818,6 +5818,15 @@
           "name": "MaxResolutionUserAlign",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制房间内纯音频用户是否占据混流布局，只在混流录制，模板布局生效。true: 代表纯音频用户不占位，false: 代表纯音频用户占位（默认为false）。",
+          "example": "false",
+          "member": "bool",
+          "name": "PureAudioDisableLayout",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -6754,6 +6763,15 @@
           "example": "0",
           "member": "uint64",
           "name": "FillType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制录制任务是否订阅混流回推机器人，1是订阅，0是不订阅，默认是0。如果是混流录制任务，建议用订阅白名单控制订阅用户，防止同时订阅混流回推机器人和上行主播，以避免混音效果。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubscribeAbility",
           "required": false,
           "type": "int"
         }

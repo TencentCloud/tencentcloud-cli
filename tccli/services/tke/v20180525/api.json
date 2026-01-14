@@ -525,6 +525,13 @@
       "output": "DeleteTKEEdgeClusterResponse",
       "status": "online"
     },
+    "DeleteUserPermissions": {
+      "document": "使用请求中提供的权限集合，删除用户对应的权限",
+      "input": "DeleteUserPermissionsRequest",
+      "name": "删除用户权限",
+      "output": "DeleteUserPermissionsResponse",
+      "status": "online"
+    },
     "DescribeAddon": {
       "document": "获取addon列表",
       "input": "DescribeAddonRequest",
@@ -1239,6 +1246,13 @@
       "output": "DescribeUpgradeTasksResponse",
       "status": "online"
     },
+    "DescribeUserPermissions": {
+      "document": "查询一个指定用户在当前地域下所有 TKE 集群中的聚合权限信息。返回用户在各集群中的 ClusterRoleBinding 和 RoleBinding 信息。",
+      "input": "DescribeUserPermissionsRequest",
+      "name": "查询用户权限",
+      "output": "DescribeUserPermissionsResponse",
+      "status": "online"
+    },
     "DescribeVersions": {
       "document": "获取集群版本信息",
       "input": "DescribeVersionsRequest",
@@ -1377,6 +1391,13 @@
       "input": "GetUpgradeInstanceProgressRequest",
       "name": "获得节点升级当前的进度",
       "output": "GetUpgradeInstanceProgressResponse",
+      "status": "online"
+    },
+    "GrantUserPermissions": {
+      "document": "使用请求中提供的权限集合，为用户授予对应的 RBAC 权限。",
+      "input": "GrantUserPermissionsRequest",
+      "name": "全量授予用户权限",
+      "output": "GrantUserPermissionsResponse",
       "status": "online"
     },
     "InstallAddon": {
@@ -9017,6 +9038,42 @@
       ],
       "type": "object"
     },
+    "DeleteUserPermissionsRequest": {
+      "document": "DeleteUserPermissions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要授权的用户的唯一标识符（支持子账号 UIN和角色UIN）",
+          "example": "700002308532",
+          "member": "string",
+          "name": "TargetUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户最终应拥有的完整权限列表。采用声明式语义，传入的列表代表用户最终应该拥有的全部权限，系统会自动计算差异并执行必要的创建/删除操作。为空或不提供时将清除该用户的所有权限。最大支持 100 个权限项。",
+          "example": "无",
+          "member": "PermissionItem",
+          "name": "Permissions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserPermissionsResponse": {
+      "document": "DeleteUserPermissions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAddonRequest": {
       "document": "DescribeAddon请求参数结构体",
       "members": [
@@ -15688,6 +15745,53 @@
       ],
       "type": "object"
     },
+    "DescribeUserPermissionsRequest": {
+      "document": "DescribeUserPermissions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询的用户的唯一标识符（支持子账号 UIN和角色UIN）",
+          "example": "700002308532",
+          "member": "string",
+          "name": "TargetUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserPermissionsResponse": {
+      "document": "DescribeUserPermissions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户在当前地域下所有集群中的权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PermissionItem",
+          "name": "Permissions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户唯一标识符",
+          "example": "700002308532",
+          "member": "string",
+          "name": "TargetUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVersionsRequest": {
       "document": "DescribeVersions请求参数结构体",
       "members": [],
@@ -18466,6 +18570,42 @@
         }
       ],
       "usage": "both"
+    },
+    "GrantUserPermissionsRequest": {
+      "document": "GrantUserPermissions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要授权的用户的唯一标识符（支持子账号 UIN和角色UIN）",
+          "example": "700002308532",
+          "member": "string",
+          "name": "TargetUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户最终应拥有的完整权限列表。采用声明式语义，传入的列表代表用户最终应该拥有的全部权限，系统会自动计算差异并执行必要的创建/删除操作。为空或不提供时将清除该用户的所有权限。最大支持 100 个权限项。",
+          "example": "无",
+          "member": "PermissionItem",
+          "name": "Permissions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantUserPermissionsResponse": {
+      "document": "GrantUserPermissions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "HttpGet": {
       "document": "Probe中的HttpGet",
@@ -22826,6 +22966,67 @@
         }
       ],
       "usage": "out"
+    },
+    "PermissionItem": {
+      "document": "用户权限项，定义用户在集群中的 RBAC 权限绑定",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-abc123",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称。预置角色包括：tke:admin（集群管理员）、tke:ops（运维人员）、tke:dev（开发人员）、tke:ro（只读用户）、tke:ns:dev（命名空间开发人员）、tke:ns:ro（命名空间只读用户），其余为用户自定义角色",
+          "example": "tke:admin",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权类型。枚举值：cluster（集群级别权限，对应 ClusterRoleBinding）、namespace（命名空间级别权限，对应 RoleBinding）",
+          "example": "cluster",
+          "member": "string",
+          "name": "RoleType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为自定义角色，默认 false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCustom",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间。当 RoleType 为 namespace 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "production",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PodChargeInfo": {
       "document": "Pod计费信息",

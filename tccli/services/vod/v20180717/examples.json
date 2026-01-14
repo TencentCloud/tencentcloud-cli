@@ -106,6 +106,14 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAigcCustomElement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: CreateAigcCustomElement\n<公共请求参数>\n\n{\n    \"ElementName\": \"my_element\",\n    \"ElementDescription\": \"主体\",\n    \"ElementFrontalImage\": \"https://****.vod-qcloud.com/6cd2c44bvodcq1500039**/179cafb25145403**1/ClcdjoxE6jcA.png\",\n    \"ElementReferList\": [\n        {\n            \"ImageUrl\": \"https://****.vod-qcloud.com/6cd2c44bvodcq1500039**/179cafb25145403**1/feefsfrefer.png\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"ElementId\": \"53459345344333\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateAigcImageTask": [
       {
         "document": "",
@@ -342,6 +350,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSceneAigcImageTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 251440382,\n    \"SceneInfo\": {\n        \"Type\": \"change_clothes\",\n        \"ChangeClothesConfig\": {\n            \"ClothesFileInfos\": [\n                {\n                    \"FileId\": \"3704211***509819\"\n                }\n            ]\n        }\n    },\n    \"FileInfos\": [\n        {\n            \"FileId\": \"3704211***509820\"\n        }\n    ],\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\",\n        \"MediaName\": \"myfile\",\n        \"ClassId\": 0\n    },\n    \"SessionId\": \"mysession\",\n    \"SessionContext\": \"mySessionContext\",\n    \"TasksPriority\": 10,\n    \"ExtInfo\": \"myextinfo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3185a050-c13a-4119-83a2-ed55802034c7\",\n        \"TaskId\": \"251440382-SceneAigcImageTask-*****8a5d76bcacaaec9a6d823e4t\"\n    }\n}",
         "title": "发起生成场景化 AIGC 图片的任务"
+      }
+    ],
+    "CreateSceneAigcVideoTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSceneAigcVideoTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 251440382,\n    \"SceneInfo\": {\n        \"Type\": \"product_showcase\",\n        \"ProductShowcaseConfig\": {\n            \"CameraMovement\": \"AutoMatch\"\n        }\n    },\n    \"FileInfos\": [\n        {\n            \"FileId\": \"3704211***509820\"\n        }\n    ],\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\",\n        \"MediaName\": \"myfile\",\n        \"ClassId\": 0\n    },\n    \"SessionId\": \"mysession\",\n    \"SessionContext\": \"mySessionContext\",\n    \"TasksPriority\": 10,\n    \"ExtInfo\": \"myextinfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3185a050-c13a-4119-83a2-ed55802034c7\",\n        \"TaskId\": \"251440382-AigcVideoTask-*****8a5d76bcacaaec9a6d823e4t\"\n    }\n}",
+        "title": "发起生成场景化 AIGC 视频的任务"
       }
     ],
     "CreateSnapshotByTimeOffsetTemplate": [

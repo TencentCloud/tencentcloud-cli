@@ -14949,7 +14949,7 @@
           "example": "[\"zone-2ju9lrnpaxol\"]",
           "member": "string",
           "name": "ZoneIds",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {

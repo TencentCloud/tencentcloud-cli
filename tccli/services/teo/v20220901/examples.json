@@ -1345,7 +1345,7 @@
     "DescribeTopL7AnalysisData": [
       {
         "document": "查询特定 HTTP 协议版本（HTTP/1.0、HTTP/1.1）下的 Top URL Path 流量数据。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7AnalysisData\n<公共请求参数>\n\n{\n    \"Area\": \"mainland\",\n    \"Interval\": \"day\",\n    \"Limit\": \"1\",\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"MetricName\": \"l7Flow_outFlux_url\",\n    \"Filters\": [\n        {\n            \"Key\": \"protocol\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"HTTP/1.0\",\n                \"HTTP/1.1\"\n            ]\n        }\n    ],\n    \"ZoneIds\": [\n        \"zone-2mzegj4vln5f\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7AnalysisData\n<公共请求参数>\n\n{\n    \"Area\": \"mainland\",\n    \"Interval\": \"day\",\n    \"Limit\": 1,\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"MetricName\": \"l7Flow_outFlux_url\",\n    \"Filters\": [\n        {\n            \"Key\": \"protocol\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"HTTP/1.0\",\n                \"HTTP/1.1\"\n            ]\n        }\n    ],\n    \"ZoneIds\": [\n        \"zone-2mzegj4vln5f\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c499897-8ad9-4a2d-884e-6154f283d723\",\n        \"Data\": [\n            {\n                \"DetailData\": [\n                    {\n                        \"Key\": \"path\",\n                        \"Value\": 1210001\n                    }\n                ],\n                \"TypeKey\": \"251227260\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询特定 HTTP 协议版本下的 Top URL Path 流量数据"
       }
@@ -1353,7 +1353,7 @@
     "DescribeTopL7CacheData": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7CacheData\n<公共请求参数>\n\n{\n    \"Area\": \"mainland\",\n    \"Interval\": \"day\",\n    \"Limit\": \"5\",\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"MetricName\": \"l7Cache_outFlux_cacheType\",\n    \"Filters\": [\n        {\n            \"Key\": \"statusCode\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"2XX\",\n                \"3XX\"\n            ]\n        }\n    ],\n    \"ZoneIds\": [\n        \"zone-2mzegj4vln5f\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7CacheData\n<公共请求参数>\n\n{\n    \"Area\": \"mainland\",\n    \"Interval\": \"day\",\n    \"Limit\": 5,\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"MetricName\": \"l7Cache_outFlux_cacheType\",\n    \"Filters\": [\n        {\n            \"Key\": \"statusCode\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"2XX\",\n                \"3XX\"\n            ]\n        }\n    ],\n    \"ZoneIds\": [\n        \"zone-2mzegj4vln5f\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"64463c6f-3296-47fa-b168-2040f841eed1\",\n        \"Data\": [\n            {\n                \"DetailData\": [\n                    {\n                        \"Key\": \"hit\",\n                        \"Value\": 5810001\n                    },\n                    {\n                        \"Key\": \"miss\",\n                        \"Value\": 658\n                    }\n                ],\n                \"TypeKey\": \"251227260\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询指定状态码的top流量数据"
       }
@@ -1555,7 +1555,7 @@
     "ModifyAccelerationDomainStatuses": [
       {
         "document": "停用指定名称的加速域名。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccelerationDomainStatuses\n<公共请求参数>\n\n{\n    \"DomainNames\": [\n        \"example.com\"\n    ],\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Status\": \"offline\",\n    \"Force\": \"false\"\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccelerationDomainStatuses\n<公共请求参数>\n\n{\n    \"DomainNames\": [\n        \"example.com\"\n    ],\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Status\": \"offline\",\n    \"Force\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "批量修改加速域名状态"
       }

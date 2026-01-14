@@ -26475,7 +26475,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Uuids- String - 是否必填：否 - 主机uuid</li>",
-          "example": "[{\"Name\": \"Uuids\", \"Values\": [\"44223093-b488-44fe-bc1d-9ab038d8****\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,

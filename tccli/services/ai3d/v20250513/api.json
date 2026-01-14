@@ -680,6 +680,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1\n选择3.1版本时，LowPoly参数不可用。",
+          "example": "3.0",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "文生3D，3D内容的描述，中文正向提示词。\n最多支持1024个 utf-8 字符。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
           "example": "一只小猫",
           "member": "string",
@@ -707,7 +716,7 @@
         },
         {
           "disabled": false,
-          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
+          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\ntop：顶视图（仅3.1版本支持）；\nbottom：底视图（仅3.1版本支持）；\nleft_front：左前45°视图（仅3.1版本支持）；\nright_front：右前45°视图（仅3.1版本支持）；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
           "example": "无",
           "member": "ViewImage",
           "name": "MultiViewImages",

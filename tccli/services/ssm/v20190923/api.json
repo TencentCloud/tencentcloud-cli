@@ -227,7 +227,7 @@
         {
           "disabled": false,
           "document": "将凭据与云产品实例绑定时，需要授予的权限列表。",
-          "example": "[{\"PrivilegeName\":\"GlobalPrivileges\",\"Privileges\":[\"SELECT\"]}]",
+          "example": "无",
           "member": "ProductPrivilegeUnit",
           "name": "PrivilegesList",
           "required": true,
@@ -254,7 +254,7 @@
         {
           "disabled": false,
           "document": "标签列表。",
-          "example": "[ { \"TagKey\": \"env\", \"TagValue\": \"dev\" } ]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -272,7 +272,7 @@
         {
           "disabled": false,
           "document": "是否开启轮转\nTrue -- 开启\nFalse -- 不开启\n如果不指定，默认为False。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "EnableRotation",
           "required": false,
@@ -293,6 +293,15 @@
           "example": "cls-hsm-wiwmm3np",
           "member": "string",
           "name": "KmsHsmClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户备注",
+          "example": "托管账户",
+          "member": "string",
+          "name": "AccountRemark",
           "required": false,
           "type": "string"
         }
@@ -1738,6 +1747,69 @@
           "example": "name",
           "member": "string",
           "name": "ColumnName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅当PrivilegeName为SchemaPrivileges时这个值才生效，并且此时必须填充：\n目前仅postgresSQL需要",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅当PrivilegeName为SequencePrivileges时这个值才生效，并且此时必须填充：\n目前仅postgresSQL需要",
+          "example": "sequence",
+          "member": "string",
+          "name": "SequenceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅当PrivilegeName为ProcedurePrivileges时这个值才生效，并且此时必须填充：\n目前仅postgresSQL需要",
+          "example": "procedure",
+          "member": "string",
+          "name": "ProcedureName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅当PrivilegeName为TypePrivileges时这个值才生效，并且此时必须填充：\n目前仅postgresSQL需要",
+          "example": "type",
+          "member": "string",
+          "name": "TypeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅当PrivilegeName为FunctionPrivileges时这个值才生效，并且此时必须填充：\n目前仅postgresSQL需要",
+          "example": "function",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅当PrivilegeName为ViewPrivileges时这个值才生效，并且此时必须填充：\n目前仅postgresSQL需要",
+          "example": "vice",
+          "member": "string",
+          "name": "ViewName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅当PrivilegeName为MatviewPrivileges时这个值才生效，并且此时必须填充：\n目前仅postgresSQL需要",
+          "example": "matview",
+          "member": "string",
+          "name": "MatviewName",
           "required": false,
           "type": "string"
         }

@@ -26937,6 +26937,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据目录权限",
+          "example": "无",
+          "member": "Policys",
+          "name": "DataCatalogPolicyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型权限",
+          "example": "无",
+          "member": "Policys",
+          "name": "ModelPolicyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

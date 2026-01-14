@@ -3570,7 +3570,7 @@
         {
           "disabled": false,
           "document": "作业运行信息 key",
-          "example": "[\"TaskManagers\",\"SubTasks\"]",
+          "example": "[\"TaskManagers\",\"StreamGraph\",\"SubTasks\",\"JobManagers\"]",
           "member": "string",
           "name": "IncludeInfo",
           "required": true,

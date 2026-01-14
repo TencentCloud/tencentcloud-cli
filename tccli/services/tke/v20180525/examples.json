@@ -630,6 +630,14 @@
         "title": "删除边缘计算集群"
       }
     ],
+    "DeleteUserPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserPermissions\n<公共请求参数>\n\n{\n    \"TargetUin\": \"700002308532\",\n    \"Permissions\": [\n        {\n            \"ClusterId\": \"cls-n17663rk\",\n            \"RoleName\": \"tke:admin\",\n            \"RoleType\": \"cluster\",\n            \"IsCustom\": false,\n            \"Namespace\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eadd88e9-6a5a-48e9-828c-4cfc4bae8910\"\n    }\n}",
+        "title": "删除admin权限"
+      }
+    ],
     "DescribeAddon": [
       {
         "document": "获取一个或多个addon列表",
@@ -1530,6 +1538,14 @@
         "title": "获取计划升级任务"
       }
     ],
+    "DescribeUserPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPermissions\n<公共请求参数>\n\n{\n    \"TargetUin\": \"700002308532\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Permissions\": [\n            {\n                \"ClusterId\": \"cls-n17663rk\",\n                \"IsCustom\": false,\n                \"Namespace\": \"\",\n                \"RoleName\": \"tke:admin\",\n                \"RoleType\": \"cluster\"\n            }\n        ],\n        \"TargetUin\": \"700002308532\",\n        \"RequestId\": \"6c830591-6462-43c6-8740-28c1e03c2b45\"\n    }\n}",
+        "title": "查询子账号权限"
+      }
+    ],
     "DescribeVersions": [
       {
         "document": "",
@@ -1688,6 +1704,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=GetUpgradeInstanceProgress\n&ClusterId=cls-e55paxnt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Done\": 0,\n        \"LifeState\": \"running\",\n        \"Instances\": [\n            {\n                \"InstanceID\": \"ins-wggphft5\",\n                \"LifeState\": \"paused\",\n                \"StartAt\": \"2021-02-08T16:29:46+08:00\",\n                \"EndAt\": \"2021-02-08T16:39:46+08:00\",\n                \"CheckResult\": {\n                    \"CheckPass\": false,\n                    \"Items\": [\n                        {\n                            \"Namespace\": \"default\",\n                            \"WorkLoadKind\": \"ReplicaSet\",\n                            \"WorkLoadName\": \"kubernetes-proxy-67fd23cf4d\",\n                            \"Before\": 1,\n                            \"After\": 0,\n                            \"Pods\": [\n                                \"kubernetes-proxy-67fd23cf4d-2tcxw\"\n                            ]\n                        }\n                    ],\n                    \"SinglePods\": []\n                },\n                \"Detail\": [\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"precheck failed\",\n                        \"LifeState\": \"failed\",\n                        \"StartAt\": \"2023-02-08T08:29:51Z\",\n                        \"Step\": \"preCheck\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"drain\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"remove\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"reset\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"postCheck\"\n                    }\n                ]\n            }\n        ],\n        \"ClusterStatus\": {\n            \"PodTotal\": 10,\n            \"NotReadyPod\": 0\n        },\n        \"RequestId\": \"b224fa4b-fedf-4061-baa9-d547ew858df\"\n    }\n}",
         "title": "查询升级状态"
+      }
+    ],
+    "GrantUserPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantUserPermissions\n<公共请求参数>\n\n{\n    \"TargetUin\": \"700002308532\",\n    \"Permissions\": [\n        {\n            \"ClusterId\": \"cls-n17663rk\",\n            \"RoleName\": \"tke:admin\",\n            \"RoleType\": \"cluster\",\n            \"IsCustom\": false,\n            \"Namespace\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2be08f4-dbf9-420b-aeaa-108ce91ce0f0\"\n    }\n}",
+        "title": "授予admin权限"
       }
     ],
     "InstallAddon": [

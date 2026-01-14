@@ -16,6 +16,14 @@
         "title": "应用采集配置到指定机器组"
       }
     ],
+    "CancelRebuildIndexTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelRebuildIndexTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-xxxx-8c8e-f3d609f5e0ea\",\n    \"TaskId\": \"826f8b26-b054-4a0d-xxxx-f3d609f5e0ea\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "取消索引重建任务"
+      }
+    ],
     "CheckFunction": [
       {
         "document": "校验数据加工函数的语法",
@@ -276,6 +284,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNoticeContent\n<公共请求参数>\n\n{\n    \"Name\": \"testEmail\",\n    \"Type\": 0,\n    \"NoticeContents\": [\n        {\n            \"Type\": \"Email\",\n            \"TriggerContent\": {\n                \"Title\": \"title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            },\n            \"RecoveryContent\": {\n                \"Title\": \"title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"NoticeContentId\": \"noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\",\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "创建通知内容信息"
+      }
+    ],
+    "CreateRebuildIndexTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRebuildIndexTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"a5ce0c9c-xxxx-44a5-bc79-5f2190626bd0\",\n    \"StartTime\": 1234567890123,\n    \"EndTime\": 1234567890456\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"TaskId\": \"6ef60bec-0242-43af-bb20-270359fb54ax\"\n    }\n}",
+        "title": "创建重建索引任务"
       }
     ],
     "CreateScheduledSql": [
@@ -922,6 +938,14 @@
         "title": "获取分区列表"
       }
     ],
+    "DescribeRebuildIndexTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRebuildIndexTasks\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-xxxx-f3d609f5e0ea\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RebuildTasks\": [\n            {\n                \"TaskId\": \"02f3e53d-d120-477e-xxxx-cbed37247d97\",\n                \"Status\": 0,\n                \"StatusMessage\": \"\",\n                \"StartTime\": 1234567890123,\n                \"EndTime\": 1234567890234,\n                \"RemainTime\": 1000,\n                \"CreateTime\": 1234567890111,\n                \"UpdateTime\": 0,\n                \"Progress\": 0.0\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取索引重建任务列表"
+      }
+    ],
     "DescribeScheduledSqlInfo": [
       {
         "document": "",
@@ -992,6 +1016,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebCallbacks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Values\": [\n                \"监控告警专用\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"WebCallbacks\": [\n            {\n                \"WebCallbackId\": \"webcallback-285a1bef-xxxx-xxxx-b6b3-6fd9326d6876\",\n                \"Name\": \"监控告警专用\",\n                \"Type\": \"WeCom\",\n                \"Webhook\": \"http://www.xxx.com\",\n                \"Method\": \"POST\",\n                \"Uin\": 100001000000,\n                \"SubUin\": 100021900000,\n                \"CreateTime\": 1705998110,\n                \"UpdateTime\": 1705998110\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "获取告警渠道回调配置列表"
+      }
+    ],
+    "EstimateRebuildIndexTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EstimateRebuildIndexTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"a5ce0c9c-xxxx-44a5-bc79-5f2190626bd0\",\n    \"StartTime\": 1234567890123,\n    \"EndTime\": 1234567890456\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"RemainTime\": 10000,\n        \"WriteTraffic\": 1345\n    }\n}",
+        "title": "预估索引重建时间"
       }
     ],
     "GetAlarmLog": [

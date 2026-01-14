@@ -350,6 +350,13 @@
       "output": "DescribeIPStatusListResponse",
       "status": "online"
     },
+    "DescribeIpsModeSwitch": {
+      "document": "获取入侵防御防护模式",
+      "input": "DescribeIpsModeSwitchRequest",
+      "name": "获取入侵防御防护模式",
+      "output": "DescribeIpsModeSwitchResponse",
+      "status": "online"
+    },
     "DescribeLogStorageStatistic": {
       "document": "租户日志存储统计",
       "input": "DescribeLogStorageStatisticRequest",
@@ -642,6 +649,13 @@
       "input": "ModifyFwGroupSwitchRequest",
       "name": "修改防火墙(组)开关(支持单点模式、多点模式、全互通模式)",
       "output": "ModifyFwGroupSwitchResponse",
+      "status": "online"
+    },
+    "ModifyIpsModeSwitch": {
+      "document": "修改入侵防御防护模式",
+      "input": "ModifyIpsModeSwitchRequest",
+      "name": "修改IPS的防护模式",
+      "output": "ModifyIpsModeSwitchResponse",
       "status": "online"
     },
     "ModifyNatAcRule": {
@@ -7064,6 +7078,53 @@
       ],
       "type": "object"
     },
+    "DescribeIpsModeSwitchRequest": {
+      "document": "DescribeIpsModeSwitch请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeIpsModeSwitchResponse": {
+      "document": "DescribeIpsModeSwitch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "// Mode 取值校验：0-观察模式, 1-拦截模式, 2-严格模式",
+          "example": "无",
+          "member": "ModeInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 成功 非0失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "success 成功 其他失败",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogStorageStatisticRequest": {
       "document": "DescribeLogStorageStatistic请求参数结构体",
       "members": [],
@@ -10864,6 +10925,22 @@
       ],
       "usage": "out"
     },
+    "ModeInfo": {
+      "document": "入侵防御防护模式相关",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-观察模式, 1-拦截模式, 2-严格模式",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAcRuleRequest": {
       "document": "ModifyAcRule请求参数结构体",
       "members": [
@@ -11866,6 +11943,33 @@
     },
     "ModifyFwGroupSwitchResponse": {
       "document": "ModifyFwGroupSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpsModeSwitchRequest": {
+      "document": "ModifyIpsModeSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护模式：0-观察模式, 1-拦截模式, 2-严格模式",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpsModeSwitchResponse": {
+      "document": "ModifyIpsModeSwitch返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

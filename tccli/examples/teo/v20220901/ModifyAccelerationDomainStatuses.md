@@ -9,7 +9,7 @@ tccli teo ModifyAccelerationDomainStatuses --cli-unfold-argument  \
     --DomainNames example.com \
     --ZoneId zone-225qgrnvbi9w \
     --Status offline \
-    --Force false
+    --Force False
 ```
 
 Output: 

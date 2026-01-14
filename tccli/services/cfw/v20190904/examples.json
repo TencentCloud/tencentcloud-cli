@@ -442,6 +442,14 @@
         "title": "查询IP状态接口示例"
       }
     ],
+    "DescribeIpsModeSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpsModeSwitch\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Mode\": 1\n        },\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"71d276bf-199a-4698-a582-745654735266\"\n    }\n}",
+        "title": "查询入侵防御防护模式"
+      }
+    ],
     "DescribeLogStorageStatistic": [
       {
         "document": "租户日志存储统计",
@@ -788,6 +796,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFwGroupSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 0,\n    \"SwitchList\": [\n        {\n            \"SwitchMode\": 1,\n            \"SwitchId\": \"cfws-wxecrvtb\"\n        }\n    ],\n    \"AllSwitch\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0752de63-570c-4c2e-bbd2-78574e22a1ae\"\n    }\n}",
         "title": "修改防火墙组开关状态"
+      }
+    ],
+    "ModifyIpsModeSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIpsModeSwitch\n<公共请求参数>\n\n{\n    \"Mode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a4571df-25ab-4ea3-b069-9a1e29a130bc\"\n    }\n}",
+        "title": "编辑入侵防御防护模式"
       }
     ],
     "ModifyNatAcRule": [

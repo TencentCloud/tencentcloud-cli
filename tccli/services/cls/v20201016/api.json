@@ -14,6 +14,13 @@
       "output": "ApplyConfigToMachineGroupResponse",
       "status": "online"
     },
+    "CancelRebuildIndexTask": {
+      "document": "取消重建索引任务",
+      "input": "CancelRebuildIndexTaskRequest",
+      "name": "取消重建索引任务",
+      "output": "CancelRebuildIndexTaskResponse",
+      "status": "online"
+    },
     "CheckFunction": {
       "document": "本接口用于数据加工DSL函数的语法校验。",
       "input": "CheckFunctionRequest",
@@ -215,6 +222,13 @@
       "input": "CreateNoticeContentRequest",
       "name": "创建通知内容模板",
       "output": "CreateNoticeContentResponse",
+      "status": "online"
+    },
+    "CreateRebuildIndexTask": {
+      "document": "创建重建索引任务\n注意：\n- 单个日志主题同时仅允许运行一个重建索引任务，单个日志主题最多同时拥有10个重建索引任务记录，需删除不再需要的任务记录后才能新建索引任务。\n- 同一时间范围内的日志，仅允许重建一次索引，需删除之前的任务记录后才能再次重建。\n- 删除重建索引任务记录将恢复重建索引前的索引数据。\n- 所选时间范围对应日志写流量不能超出5TB。\n- 重建索引时间范围以日志时间为准，日志上传时间与重建索引时间范围有超过1小时的偏差时（例如16:00上传了一条02:00的日志到 CLS，重建00:00～12:00的日志索引）不会被重建且后续无法进行检索。新上报一条日志到已经被重建的日志时间范围时，也不会被重建且后续无法进行检索。",
+      "input": "CreateRebuildIndexTaskRequest",
+      "name": "创建重建索引任务",
+      "output": "CreateRebuildIndexTaskResponse",
       "status": "online"
     },
     "CreateScheduledSql": {
@@ -770,6 +784,13 @@
       "output": "DescribePartitionsResponse",
       "status": "online"
     },
+    "DescribeRebuildIndexTasks": {
+      "document": "获取重建索引任务列表",
+      "input": "DescribeRebuildIndexTasksRequest",
+      "name": "获取重建索引任务列表",
+      "output": "DescribeRebuildIndexTasksResponse",
+      "status": "online"
+    },
     "DescribeScheduledSqlInfo": {
       "document": "本接口用于获取定时SQL分析任务列表",
       "input": "DescribeScheduledSqlInfoRequest",
@@ -831,6 +852,13 @@
       "input": "DescribeWebCallbacksRequest",
       "name": "获取告警渠道回调配置列表",
       "output": "DescribeWebCallbacksResponse",
+      "status": "online"
+    },
+    "EstimateRebuildIndexTask": {
+      "document": "预估重建索引任务",
+      "input": "EstimateRebuildIndexTaskRequest",
+      "name": "预估重建索引任务",
+      "output": "EstimateRebuildIndexTaskResponse",
       "status": "online"
     },
     "GetAlarmLog": {
@@ -2503,6 +2531,42 @@
         }
       ],
       "usage": "both"
+    },
+    "CancelRebuildIndexTaskRequest": {
+      "document": "CancelRebuildIndexTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引重建任务ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelRebuildIndexTaskResponse": {
+      "document": "CancelRebuildIndexTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckFunctionRequest": {
       "document": "CheckFunction请求参数结构体",
@@ -6987,6 +7051,61 @@
           "example": "noticetemplate-5431432e-1370-490a-b43f-2757e07264c4",
           "member": "string",
           "name": "NoticeContentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRebuildIndexTaskRequest": {
+      "document": "CreateRebuildIndexTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重建起始时间戳，毫秒\n起始时间不允许超过日志生命周期",
+          "example": "978653222",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重建结束时间戳，毫秒\n结束时间不晚于当前时间往前推15分钟\n注意：建议提前使用“预估重建索引任务(EstimateRebuildIndexTask)”接口评估该时间范围重建索引涉及到的数据量及耗时，避免因数据量过大导致费用成本过高或耗时过长",
+          "example": "978653222",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRebuildIndexTaskResponse": {
+      "document": "CreateRebuildIndexTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引重建任务ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TaskId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12515,6 +12634,79 @@
       ],
       "type": "object"
     },
+    "DescribeRebuildIndexTasksRequest": {
+      "document": "DescribeRebuildIndexTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引重建任务ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔，0:索引重建任务已创建，1:已创建索引重建资源，2:重建中，3:重建完成，4:重建成功（可检索），5:任务取消，6:元数据和索引已删除",
+          "example": "0,1,2,3",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为10，最大值20。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebuildIndexTasksResponse": {
+      "document": "DescribeRebuildIndexTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引重建任务列表",
+          "example": "无",
+          "member": "RebuildIndexTaskInfo",
+          "name": "RebuildTasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScheduledSqlInfoRequest": {
       "document": "DescribeScheduledSqlInfo请求参数结构体",
       "members": [
@@ -14040,6 +14232,71 @@
         }
       ],
       "usage": "both"
+    },
+    "EstimateRebuildIndexTaskRequest": {
+      "document": "EstimateRebuildIndexTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预估任务起始时间，毫秒",
+          "example": "978653222",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预估任务结束时间，毫秒",
+          "example": "978653222",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EstimateRebuildIndexTaskResponse": {
+      "document": "EstimateRebuildIndexTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预估索引重建需要时间，单位秒",
+          "example": "1234567890",
+          "member": "uint64",
+          "name": "RemainTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预估写流量大小，单位MB",
+          "example": "1234567",
+          "member": "uint64",
+          "name": "WriteTraffic",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EventLog": {
       "document": "Windows事件日志采集配置",
@@ -21067,6 +21324,102 @@
       ],
       "type": "object"
     },
+    "RebuildIndexTaskInfo": {
+      "document": "索引重建任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引重建任务ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引重建任务当前状态，0:索引重建任务已创建，1:创建索引重建资源，2:索引重建资源创建完成，3:重建中，4:暂停，5:重建索引成功，6:重建成功（可检索），7:重建失败，8:撤销，9:删除元数据和索引",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重建任务开始时间戳",
+          "example": "1649670501",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重建任务结束时间戳",
+          "example": "1649670501",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重投预估剩余时间，单位秒",
+          "example": "10000",
+          "member": "int64",
+          "name": "RemainTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重建任务创建时间戳",
+          "example": "1649670501",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重投完成度，百分比",
+          "example": "0.1",
+          "member": "float",
+          "name": "Progress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重建任务更新时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "附加状态描述信息（目前仅描述失败时失败原因）",
+          "example": "test",
+          "member": "string",
+          "name": "StatusMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Relabeling": {
       "document": "标签重新标记配置。\n允许动态重写目标、警报、抓取样本和远程写入样本的标签集。",
       "members": [
@@ -23204,7 +23557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段类型，目前支持的类型有：long、text、double",
+          "document": "字段类型，支持的类型有：long、text、double、json\n注意：json 类型目前仅部分用户或日志主题支持，如需使用请联系我们开启功能白名单",
           "example": "long",
           "member": "string",
           "name": "Type",
@@ -23255,6 +23608,28 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仅为子节点开启索引，本字段不开启。\n注意：仅json类型字段可配置该参数",
+          "example": "false",
+          "member": "bool",
+          "name": "OpenIndexForChildOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "json子节点列表\n注意：仅json类型字段可配置该参数",
+          "example": "无",
+          "member": "KeyValueInfo",
+          "name": "ChildNode",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
