@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli emr DescribeUserSecret --cli-unfold-argument  \
-    --User test \
+    --InstanceId emr-xxx \
+    --User testuser \
     --SecretType pwd
 ```
 
@@ -14,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "abcfafdaafasda"
     }
 }
 ```

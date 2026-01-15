@@ -41,6 +41,13 @@
       "name": "销毁实例",
       "output": "TerminateInstancesResponse",
       "status": "online"
+    },
+    "UpdateServiceProperty": {
+      "document": "代理访问vpc的内部接口UpdateServiceProperty",
+      "input": "UpdateServicePropertyRequest",
+      "name": "代理访问vpc的UpdateServiceProperty内部接口",
+      "output": "UpdateServicePropertyResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -982,6 +989,88 @@
     "TerminateInstancesResponse": {
       "document": "TerminateInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServicePropertyRequest": {
+      "document": "UpdateServiceProperty请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vpcid</p>",
+          "example": "vpc-74ey56d7",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>vip</p>",
+          "example": "10.128.1.105",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>vport</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议，指定all</p>",
+          "example": "all",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否关闭toa</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ToaCheckOff",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否打开toa覆盖</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ToaOverwrite",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServicePropertyResponse": {
+      "document": "UpdateServiceProperty返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回值</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

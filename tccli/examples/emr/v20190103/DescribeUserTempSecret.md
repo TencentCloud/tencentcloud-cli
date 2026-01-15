@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli emr DescribeUserTempSecret --cli-unfold-argument ```
+tccli emr DescribeUserTempSecret --cli-unfold-argument  \
+    --InstanceId emr-xxx
+```
 
 Output: 
 ```

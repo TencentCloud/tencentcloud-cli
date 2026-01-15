@@ -53,6 +53,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b9c2388-fb6d-4fcb-971c-5f9f6a8b7dfc\"\n    }\n}",
         "title": "删除实例"
       }
+    ],
+    "UpdateServiceProperty": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceProperty\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-74ey56d7\",\n    \"Vip\": \"10.128.1.105\",\n    \"Vport\": 0,\n    \"Proto\": \"all\",\n    \"ToaCheckOff\": 1,\n    \"ToaOverwrite\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"4142d46c-ef60-4a1f-82aa-83a826abfa6c\"\n    }\n}",
+        "title": "重庆测试用例"
+      }
     ]
   },
   "version": "1.0"

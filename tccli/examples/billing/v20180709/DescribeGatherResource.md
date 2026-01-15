@@ -39,7 +39,7 @@ Output:
                 "OperateUin": "909619400",
                 "OtherRules": [
                     {
-                        "RuleId": "124",
+                        "RuleId": 124,
                         "RuleName": "分摊规则1"
                     }
                 ],
@@ -66,7 +66,7 @@ Output:
                 "RegionName": "华南地区（广州）",
                 "ResourceId": "cmgo-p46bysvb",
                 "ResourceName": "",
-                "RuleId": "191027",
+                "RuleId": 191027,
                 "RuleName": "公共服务公摊",
                 "SplitItemId": "",
                 "SplitItemName": "",

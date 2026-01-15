@@ -9991,8 +9991,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "集群字符串ID",
+          "example": "emr-adada",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户信息列表",
-          "example": "无",
+          "example": "testuser",
           "member": "string",
           "name": "User",
           "required": true,
@@ -10001,7 +10010,7 @@
         {
           "disabled": false,
           "document": "取值：\n- pwd：密码\n- keytab：keytab",
-          "example": "无",
+          "example": "keytab",
           "member": "string",
           "name": "SecretType",
           "required": true,
@@ -10024,7 +10033,17 @@
     },
     "DescribeUserTempSecretRequest": {
       "document": "DescribeUserTempSecret请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群字符串ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeUserTempSecretResponse": {

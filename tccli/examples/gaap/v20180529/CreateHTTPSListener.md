@@ -1,24 +1,24 @@
 **Example 1: 创建HTTPS监听器**
 
-创建HTTPS监听器
+
 
 Input: 
 
 ```
 tccli gaap CreateHTTPSListener --cli-unfold-argument  \
-    --ProxyId link-cuxw2rm0 \
+    --ListenerName listener-name-https \
+    --Port 8092 \
+    --CertificateId cert-etww5bkh \
     --ForwardProtocol HTTP \
-    --CertificateId N4Al2mhF \
-    --ListenerName listener-1 \
-    --Port 443
+    --ProxyId link-p9888rix
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9aeda369-17c7-429f-be39-745c1e92fc71",
-        "ListenerId": "listener-o0f3at99"
+        "ListenerId": "listener-0ld1mlud",
+        "RequestId": "a0a814a0-aa2e-41bb-a139-e2ec2915acb6"
     }
 }
 ```

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DescribeProxies --cli-unfold-argument  \
-    --Limit 1 \
-    --Offset 0
+    --Offset 0 \
+    --Limit 1
 ```
 
 Output: 
@@ -16,152 +16,128 @@ Output:
     "Response": {
         "InstanceSet": [
             {
+                "AccessRegion": "Guangzhou",
                 "AccessRegionInfo": {
-                    "RegionId": "Beijing",
-                    "RegionAreaName": "NorthChina",
+                    "FeatureBitmap": 207,
                     "IDCType": "dc",
-                    "FeatureBitmap": 79,
-                    "RegionArea": "Beijing",
-                    "RegionName": "北京（原中国大陆-华北大区）",
+                    "RegionArea": "SouthChina",
+                    "RegionAreaName": "SouthChina",
+                    "RegionId": "Guangzhou",
+                    "RegionName": "广州（原中国大陆-华南大区）",
+                    "SupportFeature": null
+                },
+                "BanStatus": "RECOVER",
+                "Bandwidth": 10,
+                "BillingType": 2,
+                "ClientIPMethod": [
+                    0
+                ],
+                "Concurrent": 2,
+                "CreateTime": 1768205817,
+                "Domain": "",
+                "FeatureBitmap": 71,
+                "ForwardIP": "",
+                "GroupId": "lg-joaaddy1",
+                "Http3Supported": 1,
+                "IP": "",
+                "IPAddressVersion": "IPv4",
+                "IPList": [],
+                "InBanBlacklist": 0,
+                "InstanceId": "link-kicu7m5b",
+                "IsAutoScaleProxy": 0,
+                "IsSupportTLSChoice": 1,
+                "ModifyConfigTime": null,
+                "NetworkType": "normal",
+                "PackageType": "Thunder",
+                "PolicyId": null,
+                "ProjectId": 0,
+                "ProxyId": "link-kicu7m5b",
+                "ProxyName": "default",
+                "ProxyType": 100,
+                "RealServerRegion": "Shanghai",
+                "RealServerRegionInfo": {
+                    "FeatureBitmap": 207,
+                    "IDCType": "dc",
+                    "RegionArea": "EastChina",
+                    "RegionAreaName": "EastChina",
+                    "RegionId": "Shanghai",
+                    "RegionName": "上海（原中国大陆-华东大区）",
                     "SupportFeature": null
                 },
                 "RelatedGlobalDomains": [],
-                "Version": "3.0",
-                "PolicyId": null,
                 "Scalarable": 1,
-                "IPList": [
-                    {
-                        "IP": "43.137.75.190",
-                        "Provider": "BGP",
-                        "Bandwidth": 10
-                    }
-                ],
-                "Status": "RUNNING",
-                "ProxyType": 100,
-                "ForwardIP": "124.222.42.242;118.25.142.34;",
-                "ProxyId": "link-4qlu8i3j",
-                "RealServerRegion": "Shanghai",
-                "Concurrent": 2,
-                "RealServerRegionInfo": {
-                    "RegionId": "Shanghai",
-                    "RegionAreaName": "上海（原中国大陆-华东大区）",
-                    "IDCType": "dc",
-                    "FeatureBitmap": 79,
-                    "RegionArea": "EastChina",
-                    "RegionName": "EastChina",
-                    "SupportFeature": null
-                },
-                "IP": "43.137.75.190",
-                "Http3Supported": 0,
-                "InBanBlacklist": 0,
-                "AccessRegion": "Beijing",
-                "ProjectId": 1323575,
-                "BillingType": 1,
+                "Status": "CREATE_FAILED",
                 "SupportProtocols": [
-                    "TCP",
-                    "UDP"
+                    "TCP"
                 ],
-                "PackageType": "Thunder",
-                "FeatureBitmap": 71,
-                "Domain": "link-4qlu8i3j.gaapqcloud.com.c",
-                "IPAddressVersion": "IPv4",
-                "BanStatus": "RECOVER",
-                "CreateTime": 1728542120,
-                "InstanceId": "link-4qlu8i3j",
-                "Bandwidth": 10,
                 "SupportSecurity": 1,
-                "TagSet": [
-                    {
-                        "TagKey": "test-01",
-                        "TagValue": "10"
-                    }
-                ],
-                "ClientIPMethod": [
-                    0,
-                    1
-                ],
-                "ProxyName": "test-proxy",
-                "NetworkType": "normal",
-                "ModifyConfigTime": 1728542120,
-                "GroupId": null
+                "TagSet": [],
+                "Version": "3.0"
             }
         ],
-        "TotalCount": 1,
         "ProxySet": [
             {
+                "AccessRegion": "Guangzhou",
                 "AccessRegionInfo": {
-                    "RegionId": "Beijing",
-                    "RegionAreaName": "NorthChina",
+                    "FeatureBitmap": 207,
                     "IDCType": "dc",
-                    "FeatureBitmap": 79,
-                    "RegionArea": "Beijing",
-                    "RegionName": "北京（原中国大陆-华北大区）",
+                    "RegionArea": "SouthChina",
+                    "RegionAreaName": "SouthChina",
+                    "RegionId": "Guangzhou",
+                    "RegionName": "广州（原中国大陆-华南大区）",
+                    "SupportFeature": null
+                },
+                "BanStatus": "RECOVER",
+                "Bandwidth": 10,
+                "BillingType": 2,
+                "ClientIPMethod": [
+                    0
+                ],
+                "Concurrent": 2,
+                "CreateTime": 1768205817,
+                "Domain": "",
+                "FeatureBitmap": 71,
+                "ForwardIP": "",
+                "GroupId": "lg-joaaddy1",
+                "Http3Supported": 1,
+                "IP": "",
+                "IPAddressVersion": "IPv4",
+                "IPList": [],
+                "InBanBlacklist": 0,
+                "InstanceId": "link-kicu7m5b",
+                "IsAutoScaleProxy": 0,
+                "IsSupportTLSChoice": 1,
+                "ModifyConfigTime": null,
+                "NetworkType": "normal",
+                "PackageType": "Thunder",
+                "PolicyId": null,
+                "ProjectId": 0,
+                "ProxyId": "link-kicu7m5b",
+                "ProxyName": "default",
+                "ProxyType": 100,
+                "RealServerRegion": "Shanghai",
+                "RealServerRegionInfo": {
+                    "FeatureBitmap": 207,
+                    "IDCType": "dc",
+                    "RegionArea": "EastChina",
+                    "RegionAreaName": "EastChina",
+                    "RegionId": "Shanghai",
+                    "RegionName": "上海（原中国大陆-华东大区）",
                     "SupportFeature": null
                 },
                 "RelatedGlobalDomains": [],
-                "Version": "3.0",
-                "PolicyId": null,
                 "Scalarable": 1,
-                "IPList": [
-                    {
-                        "IP": "43.137.75.190",
-                        "Provider": "BGP",
-                        "Bandwidth": 10
-                    }
-                ],
-                "Status": "RUNNING",
-                "ProxyType": 100,
-                "ForwardIP": "124.222.42.242;118.25.142.34;",
-                "ProxyId": "link-4qlu8i3j",
-                "RealServerRegion": "Shanghai",
-                "Concurrent": 2,
-                "RealServerRegionInfo": {
-                    "RegionId": "Shanghai",
-                    "RegionAreaName": "上海（原中国大陆-华东大区）",
-                    "IDCType": "dc",
-                    "FeatureBitmap": 79,
-                    "RegionArea": "EastChina",
-                    "RegionName": "EastChina",
-                    "SupportFeature": null
-                },
-                "IP": "43.137.75.190",
-                "Http3Supported": 0,
-                "InBanBlacklist": 0,
-                "AccessRegion": "Beijing",
-                "ProjectId": 1323575,
-                "BillingType": 1,
+                "Status": "CREATE_FAILED",
                 "SupportProtocols": [
-                    "TCP",
-                    "UDP",
-                    "HTTP",
-                    "HTTPS"
+                    "TCP"
                 ],
-                "PackageType": "Thunder",
-                "FeatureBitmap": 71,
-                "Domain": "link-4qlu8i3j.gaapqcloud.com.c",
-                "IPAddressVersion": "IPv4",
-                "BanStatus": "RECOVER",
-                "CreateTime": 1728542120,
-                "InstanceId": "link-4qlu8i3j",
-                "Bandwidth": 10,
                 "SupportSecurity": 1,
-                "TagSet": [
-                    {
-                        "TagKey": "test-01",
-                        "TagValue": "10"
-                    }
-                ],
-                "ClientIPMethod": [
-                    0,
-                    1
-                ],
-                "ProxyName": "test-proxy",
-                "NetworkType": "normal",
-                "ModifyConfigTime": 1728542120,
-                "GroupId": null
+                "TagSet": [],
+                "Version": "3.0"
             }
         ],
-        "RequestId": "bf46572b-700d-4797-831c-7fcf8232358d"
+        "TotalCount": 32,
+        "RequestId": "c8bb6c5b-a425-4ace-a22c-c488d06811ba"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 查询统计通道和监听器信息**
 
-查询统计通道和监听器信息
+
 
 Input: 
 
@@ -15,20 +15,13 @@ Output:
     "Response": {
         "ProxySet": [
             {
-                "ProxyId": "link-mmu241ob",
-                "ProxyName": "wegame",
-                "ListenerList": [
-                    {
-                        "ListenerId": "listener-lmifrrmh",
-                        "ListenerName": "wegame",
-                        "Protocol": "HTTP",
-                        "Port": 80
-                    }
-                ]
+                "ListenerList": [],
+                "ProxyId": "link-1oczk2c3",
+                "ProxyName": "default"
             }
         ],
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd",
-        "TotalCount": 1
+        "TotalCount": 34,
+        "RequestId": "c931b2ef-0fef-4d2f-92d8-90463cf2ed2b"
     }
 }
 ```

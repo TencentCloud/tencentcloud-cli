@@ -7,9 +7,9 @@ Input:
 ```
 tccli billing DescribeCostSummaryByProject --cli-unfold-argument  \
     --NeedRecordNum 1 \
-    --EndTime 2018-11 \
+    --EndTime 2024-11 \
     --Limit 1 \
-    --BeginTime 2018-11 \
+    --BeginTime 2024-11 \
     --Offset 0
 ```
 
