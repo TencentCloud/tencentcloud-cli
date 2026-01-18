@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli lighthouse EnterRescueMode --cli-unfold-argument  \
-    --InstanceId lhins-aaaabbbb \
-    --Password this_is_a_demo!
+    --InstanceId lhins-ncx3lovn \
+    --Password this_is_a_demo! \
+    --StopType SOFT_FIRST
 ```
 
 Output: 

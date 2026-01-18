@@ -9,7 +9,7 @@ tccli lighthouse SwitchParameterCreateDisks --cli-unfold-argument  \
     --DiskSize 50 \
     --DiskType CLOUD_PREMIUM \
     --DiskCount 1 \
-    --DiskName test \
+    --DiskName testName \
     --Zone ap-hongkong-2 \
     --DiskChargePrepaid.Period 1 \
     --DiskBackupQuota 1

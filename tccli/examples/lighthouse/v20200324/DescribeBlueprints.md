@@ -38,6 +38,7 @@ Output:
                 ],
                 "DockerVersion": null,
                 "BlueprintShared": false,
+                "Tags": [],
                 "CreatedTime": "2024-05-08T03:43:06Z"
             }
         ],

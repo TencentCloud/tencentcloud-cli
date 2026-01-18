@@ -4292,6 +4292,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1；\n选择3.1版本时，LowPoly参数不可用。",
+          "example": "3.0",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "文生3D，3D内容的描述，中文正向提示词。\n最多支持1024个 utf-8 字符。\n文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。",
           "example": "1",
           "member": "string",
