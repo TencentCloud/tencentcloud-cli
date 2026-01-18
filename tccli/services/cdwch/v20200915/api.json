@@ -77,6 +77,13 @@
       "output": "DescribeClusterConfigsResponse",
       "status": "online"
     },
+    "DescribeEventTasks": {
+      "document": "获取产生的事件",
+      "input": "DescribeEventTasksRequest",
+      "name": "获取产生的事件任务",
+      "output": "DescribeEventTasksResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "根据实例ID查询某个实例的具体信息",
       "input": "DescribeInstanceRequest",
@@ -1927,6 +1934,134 @@
       ],
       "type": "object"
     },
+    "DescribeEventTasksRequest": {
+      "document": "DescribeEventTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cdwch-yapr67z1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤的事件任务id",
+          "example": "27",
+          "member": "int64",
+          "name": "EventTaskId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量（支持10、20、30、50、100、200），默认为100",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件名称过滤",
+          "example": "DiskHigh",
+          "member": "string",
+          "name": "EventCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "(1-待处理;2-已预约;3-处理中;4-已结束;5-处理中;-1-已忽略;-2-已删除)",
+          "example": "[2]",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间范围开始 (格式: YYYY-MM-DD HH:MM:SS)，最大支持查询180天信息",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间范围结束 (格式: YYYY-MM-DD HH:MM:SS)",
+          "example": "2025-01-31 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段（事件类型：event_code；触发时间：create_time；完成时间：end_time）",
+          "example": "create_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序 (asc/desc)",
+          "example": "asc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventTasksResponse": {
+      "document": "DescribeEventTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产生的事件任务",
+          "example": "无",
+          "member": "EventTask",
+          "name": "EventTasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件任务总数",
+          "example": "31",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceClustersRequest": {
       "document": "DescribeInstanceClusters请求参数结构体",
       "members": [
@@ -2620,6 +2755,188 @@
       ],
       "usage": "out"
     },
+    "EventTask": {
+      "document": "事件任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cdwch-wf7txq24",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件任务的id\t",
+          "example": "23",
+          "member": "int64",
+          "name": "EventTaskId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理人uin",
+          "example": "10341958",
+          "member": "string",
+          "name": "HandleUser",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件名称\t",
+          "example": "DiskHigh",
+          "member": "string",
+          "name": "EventCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM相关事件的维修id",
+          "example": "rep-1z931n",
+          "member": "string",
+          "name": "RepairId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件名称描述\t",
+          "example": "磁盘使用率过高",
+          "member": "string",
+          "name": "EventNameDescribe",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件等级（0-低；1-中；2-高；3-严重）\t",
+          "example": "1",
+          "member": "int64",
+          "name": "EventPriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件详情\t",
+          "example": "磁盘使用率过高，超过阈值",
+          "member": "string",
+          "name": "EventDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "影响集群节点\t",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件触发时间\t",
+          "example": "2025-03-21 10:23:02",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件状态(1-待处理;2-已预约;3-处理中;4-已完成;5-处理中;6-自动处理中;-1-已忽略;-2-已删除)\t",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否需要授权维修：1-不需要，2-需要",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedAuthorization",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该事件涉及到的操作类型（OnlineMigrationForInstance-实例在线迁移,OnlineMaintenanceForInstance-实例在线维修,等）\t",
+          "example": "[\"1\",\"2\"]",
+          "member": "string",
+          "name": "OperationType",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成时间",
+          "example": "2025-03-21 10:23:02",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作指引",
+          "example": "https://cloud.tencent.com/document/product/1299/62531",
+          "member": "string",
+          "name": "OperationGuide",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "ins-l7gcq29k",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GroupInfo": {
       "document": "集群分组信息描述",
       "members": [
@@ -2929,7 +3246,7 @@
         {
           "disabled": false,
           "document": "数据节点描述信息",
-          "example": "{\"Spec\": \"S_4_16_S\",\"SubProductType\": \"STANDARD\",\"SpecCore\": 4,\"SpecMemory\": 16,\"NodeSize\": 4,\"Encrypt\": 0,\"AttachCBSSpec\": {\"DiskType\": \"\"}}",
+          "example": "无",
           "member": "NodesSummary",
           "name": "MasterSummary",
           "output_required": true,
@@ -2939,7 +3256,7 @@
         {
           "disabled": false,
           "document": "zookeeper节点描述信息",
-          "example": "{\"Spec\": \"S_4_16_S\",\"SubProductType\": \"STANDARD\",\"SpecCore\": 4,\"SpecMemory\": 16,\"NodeSize\": 4,\"Encrypt\": 0,\"AttachCBSSpec\": {\"DiskType\": \"\"}}",
+          "example": "无",
           "member": "NodesSummary",
           "name": "CommonSummary",
           "output_required": true,
@@ -3029,7 +3346,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[{\"TagKey\": \"二级业务\",\"TagValue\": \"[cdw][cdw_monitor]_1643939\"},{\"TagKey\": \"运营部门\",\"TagValue\": \"大数据基础产品中心_1135\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -3139,7 +3456,7 @@
         {
           "disabled": false,
           "document": "集群详细状态",
-          "example": "{\"InstanceState\": \"\",\"InstanceStateDesc\": \"\",\"FlowCreateTime\": \"\",\"FlowName\": \"\",\"FlowProgress\": 0,\"FlowMsg\": \"\",\"ProcessName\": \"\",\"ProcessSubName\": \"\",\"RequestId\": \"\"}",
+          "example": "无",
           "member": "InstanceStateInfo",
           "name": "InstanceStateInfo",
           "output_required": true,
@@ -3219,7 +3536,7 @@
         {
           "disabled": false,
           "document": "服务信息",
-          "example": "[\"error\"]",
+          "example": "无",
           "member": "ServiceInfo",
           "name": "Components",
           "output_required": true,
@@ -3269,7 +3586,7 @@
         {
           "disabled": false,
           "document": "true",
-          "example": "1",
+          "example": "false",
           "member": "bool",
           "name": "HasEsIndex",
           "output_required": false,
@@ -3279,7 +3596,7 @@
         {
           "disabled": false,
           "document": "true",
-          "example": "1",
+          "example": "false",
           "member": "bool",
           "name": "IsSecondaryZone",
           "output_required": false,
@@ -3309,7 +3626,7 @@
         {
           "disabled": false,
           "document": "实例扩展信息",
-          "example": "{\"EnableAlarmStrategy\": true}",
+          "example": "无",
           "member": "InstanceDetail",
           "name": "Details",
           "output_required": false,
@@ -3329,7 +3646,7 @@
         {
           "disabled": false,
           "document": "绑定的安全组",
-          "example": "false",
+          "example": "[\"cdr\",\"cdwch\"]",
           "member": "string",
           "name": "BindSGs",
           "output_required": false,
@@ -3353,6 +3670,26 @@
           "member": "string",
           "name": "UpgradeZkVersions",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否显示rip",
+          "example": "disable",
+          "member": "string",
+          "name": "ShowRip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：标准型 standard，无keeper节点类型noKeeper；",
+          "example": "standard,noKeeper",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

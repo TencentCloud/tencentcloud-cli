@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap CreateDomainErrorPageInfo --cli-unfold-argument  \
+    --ListenerId listener-oh6gsmzh \
+    --Domain winsons.site \
+    --ErrorNos 403 \
     --Body http-body \
-    --Domain domain.com \
-    --ListenerId 0 \
-    --ErrorNos 502 501 \
     --NewErrorNo 400
 ```
 
@@ -17,8 +17,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c7bfcad5-3f20-472f-9afc-13a66faebad8",
-        "ErrorPageId": "errorPage-1fewf"
+        "ErrorPageId": "errorPage-qkmqxjxx",
+        "RequestId": "30f43d0d-7c4e-492f-8de0-803ed7722426"
     }
 }
 ```

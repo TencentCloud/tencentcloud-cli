@@ -59,6 +59,34 @@
       ],
       "type": "object"
     },
+    "DisplayMetadata": {
+      "document": "元数据展示信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>展示的名称</p>",
+          "example": "颁发机构",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示的值</p>",
+          "example": "YUNAPI 接口",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤 ID、名称、状态等\n\n- 若存在多个 Filter 时，Filter间的关系为逻辑与（AND）关系。\n- 若同一个 Filter 存在多个 Values，同一 Filter 下 Values 间的关系为逻辑或（OR）关系。",
       "members": [
@@ -265,9 +293,68 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 内容信息</p>",
+          "example": "无",
+          "member": "LicenseData",
+          "name": "LicenseData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 颁发地址</p>",
+          "example": "http://127.0.0.1/license/issuing",
+          "member": "string",
+          "name": "IssueURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "LicenseData": {
+      "document": "License 内容信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>License 文本内容。支持密钥、证书等文本形式，二进制的密钥需要伙伴进行 base64 转码</p>",
+          "example": "dszxczxc-zcx-cx--xc-zcx--",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署服务输出信息，基于部署签发 License 时需要该参数。</p>",
+          "example": "{\"output\":\"deploy.data\"}",
+          "member": "string",
+          "name": "DeploymentOutput",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 前端展示信息。key、value 形式，比如可传入，颁发机构：XXXX 有限公司</p>",
+          "example": "无",
+          "member": "DisplayMetadata",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SaleParam": {
       "document": "表示商品 SKU 的单个售卖参数",

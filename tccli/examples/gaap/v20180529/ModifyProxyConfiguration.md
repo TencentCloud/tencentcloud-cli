@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli gaap ModifyProxyConfiguration --cli-unfold-argument  \
-    --ProxyId link-4ftf12sb \
-    --Concurrent 2 \
-    --Bandwidth 10
+    --InstanceId link-p9888rix \
+    --Bandwidth 20 \
+    --Concurrent 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "967ef39b-b096-4338-a1c9-4b42977dde0e"
+        "RequestId": "4b9770a7-49f5-4e0b-8980-d9a576420281"
     }
 }
 ```

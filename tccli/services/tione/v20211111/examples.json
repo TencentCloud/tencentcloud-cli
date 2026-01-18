@@ -312,6 +312,14 @@
         "title": "示例"
       }
     ],
+    "DescribeSubAccountLinuxUserInfos": [
+      {
+        "document": "批量查询子账号Linux用户信息",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubAccountLinuxUserInfos\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5dee4285-b87f-4005-ad48-45729a5942d8\",\n        \"SubAccountList\": [\n            {\n                \"LinuxGid\": 20000,\n                \"LinuxUid\": 20001,\n                \"SubUin\": \"0\",\n                \"SubUinName\": \"ExampleUser\",\n                \"Uin\": \"100033122983\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeSubAccountLinuxUserInfos"
+      }
+    ],
     "DescribeTrainingModelVersion": [
       {
         "document": "",
@@ -438,6 +446,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopTrainingTask\n<公共请求参数>\n\n{\n    \"Id\": \"train-1243143\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfds-fdsafsa\"\n    }\n}",
         "title": "停止训练任务"
+      }
+    ],
+    "UpdateSubAccountLinuxUserInfo": [
+      {
+        "document": "更新LinuxUser信息",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSubAccountLinuxUserInfo\n<公共请求参数>\n\n{\n    \"SubAccountList\": [\n        {\n            \"Uin\": \"100055132983\",\n            \"SubUin\": \"100033176827\",\n            \"SubUinName\": \"ExampleUser\",\n            \"LinuxUid\": 50000,\n            \"LinuxGid\": 50000\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30841715-2516-4a28-a4fa-4b5a62ea9ded\"\n    }\n}",
+        "title": "UpdateSubAccountLinuxUserInfo"
       }
     ]
   },

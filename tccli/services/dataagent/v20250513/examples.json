@@ -132,7 +132,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QuerySceneList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"instance001\",\n    \"SceneId\": \"s001\",\n    \"SceneName\": \"sn001\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 100,\n        \"RequestId\": \"4b54d5f7-c23b-4227-9589-57cab0d95f27\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 100,\n        \"Datas\": [\n            {\n                \"ExampleQAList\": [\n                    {\n                        \"Answer\": \"1\",\n                        \"ExampleId\": \"1\",\n                        \"Questions\": [\n                            \"1\"\n                        ],\n                        \"Type\": \"\"\n                    }\n                ],\n                \"Prompt\": \"testkeyword\",\n                \"SceneId\": \"1\",\n                \"SceneName\": \"1\",\n                \"SearchConfig\": {\n                    \"EmbeddingWeight\": 0.5,\n                    \"KnowledgeBaseIds\": [\n                        \"klbase-1234567890\"\n                    ],\n                    \"Num\": 10,\n                    \"Rerank\": 1,\n                    \"Type\": 1\n                },\n                \"Skills\": [\n                    \"rag\",\n                    \"data_analytics\"\n                ]\n            }\n        ],\n        \"RequestId\": \"4b54d5f7-c23b-4227-9589-57cab0d95f27\"\n    }\n}",
         "title": "示例"
       }
     ],

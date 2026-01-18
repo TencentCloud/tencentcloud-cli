@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli billing CreateBudget --cli-unfold-argument  \
-    --BudgetName testapi111 \
+    --BudgetName API创建预算 \
     --CycleType DAY \
     --PeriodBegin 2025-01-01 \
-    --PeriodEnd 2025-12-01 \
+    --PeriodEnd 2026-12-01 \
     --PlanType FIX \
     --BudgetQuota 1000 \
     --BillType BILL \
@@ -18,24 +18,24 @@ tccli billing CreateBudget --cli-unfold-argument  \
     --WarnJson.0.CalType PERCENTAGE \
     --WarnJson.0.ThresholdValue 100 \
     --BudgetNote 使用api创建预算信息 \
-    --DimensionsRange.Business None \
-    --DimensionsRange.PayMode None \
-    --DimensionsRange.ProductCodes None \
-    --DimensionsRange.ComponentCodes None \
-    --DimensionsRange.ZoneIds None \
-    --DimensionsRange.RegionIds None \
-    --DimensionsRange.ProjectIds None \
-    --DimensionsRange.ActionTypes None \
-    --DimensionsRange.ConsumptionTypes None \
-    --DimensionsRange.Tags.0.TagKey None \
-    --DimensionsRange.Tags.0.TagValue None \
-    --DimensionsRange.PayerUins None \
-    --DimensionsRange.OwnerUins None \
-    --DimensionsRange.TreeNodeUniqKeys None \
-    --WaveThresholdJson.0.WarnType None \
-    --WaveThresholdJson.0.Threshold None \
-    --WaveThresholdJson.0.MetaType None \
-    --WaveThresholdJson.0.PeriodType None
+    --DimensionsRange.Business p_cvm \
+    --DimensionsRange.PayMode postPay \
+    --DimensionsRange.ProductCodes sp_cvm \
+    --DimensionsRange.ComponentCodes v_cpu \
+    --DimensionsRange.ZoneIds 10001 \
+    --DimensionsRange.RegionIds 47 \
+    --DimensionsRange.ProjectIds 0 \
+    --DimensionsRange.ActionTypes postpay_deduct_d \
+    --DimensionsRange.ConsumptionTypes prepay_purchase \
+    --DimensionsRange.Tags.0.TagKey 业务部门 \
+    --DimensionsRange.Tags.0.TagValue 部门123 \
+    --DimensionsRange.PayerUins 909619400 \
+    --DimensionsRange.OwnerUins 909619400 \
+    --DimensionsRange.TreeNodeUniqKeys 909619400-6872sdw23 \
+    --WaveThresholdJson.0.WarnType ACTUAL \
+    --WaveThresholdJson.0.Threshold 10 \
+    --WaveThresholdJson.0.MetaType chain \
+    --WaveThresholdJson.0.PeriodType day
 ```
 
 Output: 

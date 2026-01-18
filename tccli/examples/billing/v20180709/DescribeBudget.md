@@ -9,9 +9,9 @@ tccli billing DescribeBudget --cli-unfold-argument  \
     --PageNo 1 \
     --PageSize 1 \
     --BudgetId 1963509727611473921 \
-    --BudgetName None \
-    --BudgetStatus None \
-    --CycleTypes None
+    --BudgetName 预算信息001 \
+    --BudgetStatus ACTIVE \
+    --CycleTypes DAY
 ```
 
 Output: 
@@ -62,21 +62,50 @@ Output:
                     "DefaultMode": 0,
                     "Dimensions": "COST",
                     "DimensionsRange": {
-                        "ActionTypes": null,
+                        "ActionTypes": [
+                            "postpay_deduct_d"
+                        ],
                         "Business": [
                             "p_cvm"
                         ],
-                        "ComponentCodes": null,
-                        "ConsumptionTypes": null,
-                        "OwnerUins": null,
-                        "PayMode": null,
-                        "PayerUins": null,
-                        "ProductCodes": null,
-                        "ProjectIds": null,
-                        "RegionIds": null,
-                        "Tags": null,
-                        "TreeNodeUniqKeys": null,
-                        "ZoneIds": null
+                        "ComponentCodes": [
+                            "v_cpu"
+                        ],
+                        "ConsumptionTypes": [
+                            "prepay_purchase"
+                        ],
+                        "OwnerUins": [
+                            "909619400"
+                        ],
+                        "PayMode": [
+                            "postPay"
+                        ],
+                        "PayerUins": [
+                            "909619400"
+                        ],
+                        "ProductCodes": [
+                            "sp_cvm"
+                        ],
+                        "ProjectIds": [
+                            "0"
+                        ],
+                        "RegionIds": [
+                            "47"
+                        ],
+                        "Tags": [
+                            {
+                                "TagKey": "部门",
+                                "TagValue": [
+                                    "部门123"
+                                ]
+                            }
+                        ],
+                        "TreeNodeUniqKeys": [
+                            "[\"909610400-695dhs38c28\"]"
+                        ],
+                        "ZoneIds": [
+                            "10001"
+                        ]
                     },
                     "FeeType": "COST",
                     "ForecastCost": null,

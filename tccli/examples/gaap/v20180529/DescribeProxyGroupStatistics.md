@@ -1,16 +1,16 @@
 **Example 1: 查询通道组统计数据**
 
-查询通道组统计数据
+
 
 Input: 
 
 ```
 tccli gaap DescribeProxyGroupStatistics --cli-unfold-argument  \
-    --EndTime 2019-03-26 12:00:00 \
-    --Granularity 300 \
-    --GroupId lg-rfgt56hy \
-    --StartTime 2019-03-25 12:00:00 \
-    --MetricNames InputBandwidth
+    --GroupId lg-0o223et7 \
+    --StartTime 2026-01-01 00:00:00 \
+    --EndTime 2026-01-01 00:10:00 \
+    --MetricNames InBandwidth \
+    --Granularity 300
 ```
 
 Output: 
@@ -19,20 +19,16 @@ Output:
     "Response": {
         "StatisticsData": [
             {
-                "MetricName": "InputBandwidth",
                 "MetricData": [
                     {
-                        "Time": 1564734780,
-                        "Data": 2000
-                    },
-                    {
-                        "Time": 1564734720,
-                        "Data": 2001
+                        "Data": null,
+                        "Time": 1767196800
                     }
-                ]
+                ],
+                "MetricName": "InBandwidth"
             }
         ],
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd"
+        "RequestId": "accd1efb-fed9-4c69-b379-50039e5336f1"
     }
 }
 ```

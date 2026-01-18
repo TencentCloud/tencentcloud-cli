@@ -216,6 +216,14 @@
         "title": "生成建库SQL语句"
       }
     ],
+    "CreateDatasourceConnection": [
+      {
+        "document": "创建mysql数据源",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasourceConnection\n<公共请求参数>\n\n{\n    \"DatasourceConnectionName\": \"test\",\n    \"DatasourceConnectionType\": \"Mysql\",\n    \"DatasourceConnectionConfig\": {\n        \"Mysql\": {\n            \"JdbcUrl\": \"jdbc:mysql://ip:port\",\n            \"User\": \"root\",\n            \"Password\": \"awfwegew\"\n        }\n    },\n    \"ServiceType\": \"DLC\",\n    \"DatasourceConnectionDesc\": \"datasource test\",\n    \"NetworkConnectionName\": \"test\",\n    \"NetworkConnectionDesc\": \"test\",\n    \"NetworkConnectionType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"DatasourceConnectionId\": \"datasource-xxx\",\n        \"RequestId\": \"e9fbdc29-93e1-40a1-afe1-871bf73ff92b\"\n    }\n}",
+        "title": "创建mysql数据源"
+      }
+    ],
     "CreateExportTask": [
       {
         "document": "",

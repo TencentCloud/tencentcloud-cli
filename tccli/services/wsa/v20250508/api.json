@@ -74,7 +74,7 @@
         },
         {
           "disabled": false,
-          "document": "Industry=gov/news/acad，对应党政机关、权威媒体、学术（英文），**仅限尊享版使用**",
+          "document": "Industry=gov/news/acad/finance，对应党政机关、权威媒体、学术（英文）、金融，**仅限尊享版使用**",
           "example": "news",
           "member": "string",
           "name": "Industry",
@@ -105,6 +105,16 @@
           "name": "Pages",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户版本：standard/premium/lite",
+          "example": "standard",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

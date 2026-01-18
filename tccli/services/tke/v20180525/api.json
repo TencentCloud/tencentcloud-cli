@@ -5246,7 +5246,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-3n90hta2",
           "member": "string",
           "name": "ClusterID",
@@ -5273,7 +5273,7 @@
         },
         {
           "disabled": false,
-          "document": "维护周期（一周中的哪几天）",
+          "document": "维护周期（一周中的哪几天），支持的参数值如下：\n\n- MO：周一\n- TU：周二\n- WE：周三\n- TH：周四\n- FR：周五\n- SA：周六\n- SU：周日",
           "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
           "member": "string",
           "name": "DayOfWeek",
@@ -8034,7 +8034,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，可以从容器服务控制台计划升级功能集群维护窗口页面获取（https://console.cloud.tencent.com/tke2/upgrade-plan）。",
           "example": "cls-3n90hta2",
           "member": "string",
           "name": "ClusterID",
@@ -20949,7 +20949,7 @@
         },
         {
           "disabled": false,
-          "document": "维护周期（一周中的哪几天）",
+          "document": "维护周期（一周中的哪几天），支持的参数值如下：\n\n- MO：周一\n- TU：周二\n- WE：周三\n- TH：周四\n- FR：周五\n- SA：周六\n- SU：周日",
           "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
           "member": "string",
           "name": "DayOfWeek",
@@ -21183,7 +21183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-3n90hta2",
           "member": "string",
           "name": "ClusterID",
@@ -21192,7 +21192,7 @@
         },
         {
           "disabled": false,
-          "document": "集群发布序列标签（为空时表示移除集群标签）",
+          "document": "集群发布序列标签（为空时表示移除集群标签）。支持以下集群标签：\n- 标签键：\"Env\"，支持的标签值：[\"Test\",\"Pre-Production\",\"Production\"]\n- 标签键：\"Protection-Level\"，支持的标签值：[\"Low\",\"Medium\",\"High\"]",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -29234,6 +29234,17 @@
           "example": "测试集群",
           "member": "string",
           "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
           "output_required": false,
           "required": false,
           "type": "string",

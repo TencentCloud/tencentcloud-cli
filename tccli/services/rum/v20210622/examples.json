@@ -242,6 +242,14 @@
         "title": "获取DescribeDataPvUrlStatistics信息"
       }
     ],
+    "DescribeDataPvUrlStatisticsV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPvUrlStatisticsV2\n<公共请求参数>\n\n{\n    \"ID\": 131800,\n    \"Type\": \"ext3\",\n    \"StartTime\": 1745911200,\n    \"EndTime\": 1748427659\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85acc203-d239-4e47-bc04-195cb09e9e83\",\n        \"Result\": \"{\\\"request_id\\\":\\\"85acc203-d239-4e47-bc04-195cb09e9e83\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeDataReportCount": [
       {
         "document": "",

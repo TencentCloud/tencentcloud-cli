@@ -6456,7 +6456,7 @@
         {
           "disabled": false,
           "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "Business",
           "output_required": false,
@@ -6467,7 +6467,7 @@
         {
           "disabled": false,
           "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"postPay\"]",
           "member": "string",
           "name": "PayMode",
           "output_required": false,
@@ -6478,7 +6478,7 @@
         {
           "disabled": false,
           "document": "子产品\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"sp_cvm\"]",
           "member": "string",
           "name": "ProductCodes",
           "output_required": false,
@@ -6489,7 +6489,7 @@
         {
           "disabled": false,
           "document": "组件编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"v_cpu\"]",
           "member": "string",
           "name": "ComponentCodes",
           "output_required": false,
@@ -6500,7 +6500,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"10001\"]",
           "member": "string",
           "name": "ZoneIds",
           "output_required": false,
@@ -6511,7 +6511,7 @@
         {
           "disabled": false,
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"47\"]",
           "member": "string",
           "name": "RegionIds",
           "output_required": false,
@@ -6522,7 +6522,7 @@
         {
           "disabled": false,
           "document": "项目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"0\"]",
           "member": "string",
           "name": "ProjectIds",
           "output_required": false,
@@ -6533,7 +6533,7 @@
         {
           "disabled": false,
           "document": "交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"postpay_deduct_d\"]",
           "member": "string",
           "name": "ActionTypes",
           "output_required": false,
@@ -6544,7 +6544,7 @@
         {
           "disabled": false,
           "document": "消耗类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\" \"]",
+          "example": "[\"prepay_purchase\"]",
           "member": "string",
           "name": "ConsumptionTypes",
           "output_required": false,
@@ -9304,7 +9304,7 @@
         {
           "disabled": false,
           "document": "分账单元唯一标识",
-          "example": "abcd",
+          "example": "696856150c9e0",
           "member": "string",
           "name": "TreeNodeUniqKey",
           "output_required": false,
@@ -14264,7 +14264,7 @@
         {
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -14273,7 +14273,7 @@
         {
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -14334,7 +14334,7 @@
         {
           "disabled": false,
           "document": "消耗详情",
-          "example": "{\"RealTotalCost\":\"4.20000000\"}",
+          "example": "无",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
           "output_required": true,
@@ -14376,7 +14376,7 @@
         {
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -14385,7 +14385,7 @@
         {
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -14446,7 +14446,7 @@
         {
           "disabled": false,
           "document": "消耗详情",
-          "example": "{\"RealTotalCost\":\"4.20000000\"}",
+          "example": "无",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
           "output_required": true,
@@ -14456,7 +14456,7 @@
         {
           "disabled": false,
           "document": "消耗按业务汇总详情",
-          "example": "空",
+          "example": "无",
           "member": "ConsumptionProjectSummaryDataItem",
           "name": "Data",
           "output_required": true,
@@ -14488,7 +14488,7 @@
         {
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -14497,7 +14497,7 @@
         {
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -14558,7 +14558,7 @@
         {
           "disabled": false,
           "document": "消耗详情",
-          "example": "{\"RealTotalCost\":\"4.20000000\"}",
+          "example": "无",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
           "output_required": true,
@@ -14600,7 +14600,7 @@
         {
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -14609,7 +14609,7 @@
         {
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "example": "2024-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -14645,7 +14645,7 @@
         {
           "disabled": false,
           "document": "是否需要返回记录数量，0不需要，1需要，默认不需要",
-          "example": "10",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRecordNum",
           "required": false,
@@ -14654,7 +14654,7 @@
         {
           "disabled": false,
           "document": "是否需要返回过滤条件，0不需要，1需要，默认不需要",
-          "example": "10",
+          "example": "0",
           "member": "uint64",
           "name": "NeedConditionValue",
           "required": false,
@@ -15533,7 +15533,7 @@
         {
           "disabled": false,
           "document": "标签，用作筛选",
-          "example": "tagkey:tagValue",
+          "example": "[\"tagkey:tagValue\"]",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -15542,7 +15542,7 @@
         {
           "disabled": false,
           "document": "项目ID，用作筛选",
-          "example": "[0,1]",
+          "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "ProjectIds",
           "required": false,

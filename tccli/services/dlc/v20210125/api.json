@@ -189,6 +189,13 @@
       "output": "CreateDatabaseResponse",
       "status": "online"
     },
+    "CreateDatasourceConnection": {
+      "document": "创建数据源",
+      "input": "CreateDatasourceConnectionRequest",
+      "name": "创建数据源",
+      "output": "CreateDatasourceConnectionResponse",
+      "status": "online"
+    },
     "CreateExportTask": {
       "document": "该接口（CreateExportTask）用于创建导出任务",
       "input": "CreateExportTaskRequest",
@@ -4041,6 +4048,124 @@
           "name": "Execution",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatasourceConnectionRequest": {
+      "document": "CreateDatasourceConnection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据连接名称",
+          "example": "datasource001",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据连接类型",
+          "example": "Mysql/Kafka",
+          "member": "string",
+          "name": "DatasourceConnectionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据连接属性",
+          "example": "无",
+          "member": "DatasourceConnectionConfig",
+          "name": "DatasourceConnectionConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据连接所属服务",
+          "example": "DLC",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据连接描述",
+          "example": "datasource test",
+          "member": "string",
+          "name": "DatasourceConnectionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据引擎名称数组",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "DataEngineNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "网络连接名称",
+          "example": "test",
+          "member": "string",
+          "name": "NetworkConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络连接描述",
+          "example": "test",
+          "member": "string",
+          "name": "NetworkConnectionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络连接类型 （2-夸源型，4-增强型）",
+          "example": "2",
+          "member": "int64",
+          "name": "NetworkConnectionType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义配置",
+          "example": "无",
+          "member": "CustomConfig",
+          "name": "CustomConfig",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatasourceConnectionResponse": {
+      "document": "CreateDatasourceConnection返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据连接Id",
+          "example": "datasource-xxx",
+          "member": "string",
+          "name": "DatasourceConnectionId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

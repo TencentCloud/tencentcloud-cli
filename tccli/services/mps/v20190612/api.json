@@ -2197,11 +2197,11 @@
         },
         {
           "disabled": false,
-          "document": "类型，可选值：\n<li>standard：通用超分</li>\n<li>super：高级超分。</li>\n默认值：standard。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型，可选值：\n<li>standard：通用超分</li>\n<li>super：高级超分super版。</li>\n<li>ultra：高级超分ultra版。</li>\n默认值：standard。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "standard",
           "member": "string",
           "name": "Type",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2212,40 +2212,62 @@
           "example": "percent",
           "member": "string",
           "name": "Mode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "超分倍率，可以为小数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超分倍率，可以为小数。\n注意：当Mode等于percent时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.0",
           "member": "float",
           "name": "Percent",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "目标图片宽度，不能超过4096。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标图片宽度，不能超过4096。\n注意：当Mode等于aspect或fixed时，优先使用此配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1280",
           "member": "int64",
           "name": "Width",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "目标图片高度，不能超过4096。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标图片高度，不能超过4096。\n注意：当Mode等于aspect或fixed时，优先使用此配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "720",
           "member": "int64",
           "name": "Height",
-          "output_required": true,
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片长边长度，不能超过4096。\n注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1280",
+          "member": "int64",
+          "name": "LongSide",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片短边长度，不能超过4096。\n注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1280",
+          "member": "int64",
+          "name": "ShortSide",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -7374,6 +7396,28 @@
         },
         {
           "disabled": false,
+          "document": "是否添加图标水印。\n1. Hailuo 支持此参数。\n2. Kling 支持此参数。\n3. Vidu 支持此参数。",
+          "example": "0",
+          "member": "int64",
+          "name": "LogoAdd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "为视频生成音频。接受的值包括 true 或 false。 \n\n支持此参数的模型：\n1. GV，默认true。\n2. OS，默认true。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableAudio",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "错峰模型，目前仅支持Vidu模型。\n错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。",
           "example": "false",
           "member": "bool",
@@ -10540,7 +10584,7 @@
         },
         {
           "disabled": false,
-          "document": "模型将以此参数传入的图片作为尾帧画面来生成视频。\n支持此参数的模型：\n1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。\n2. Kling， 在Resolution:1080P的情况下 2.1版本支持首位帧。\n3. Vidu, q2-pro, q2-turbo 支持首尾帧。\n\n注意：\n1. 推荐图片大小不超过10M，各模型限制不同。\n2. 支持的图片格式：jpeg、png。",
+          "document": "模型将以此参数传入的图片作为尾帧画面来生成视频。\n支持此参数的模型：\n1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。\n2. Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。\n3. Vidu, q2-pro, q2-turbo 支持首尾帧。\n\n注意：\n1. 推荐图片大小不超过10M，各模型限制不同。\n2. 支持的图片格式：jpeg、png。",
           "example": "https://aigc-xxx-image-1303333058.cos.ap-guangzhou.myqcloud.com/xxx_8655.png",
           "member": "string",
           "name": "LastImageUrl",
@@ -22307,6 +22351,89 @@
       ],
       "usage": "both"
     },
+    "ImageResizeConfig": {
+      "document": "图片缩放配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启</li>\n<li>OFF：关闭</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出图片模式，可选模式：\n<li>percent: 指定缩放倍率，可以为小数</li>\n<li>mfit: 缩放至指定宽高的较大矩形</li>\n<li>lfit: 缩放至指定宽高的较小矩形</li>\n<li>fill: 缩放至指定宽高的较大矩形，并居中裁剪指定宽高</li>\n<li>pad: 缩放至指定宽高的较小矩形，并填充到指定宽高</li>\n<li>fixed: 缩放至固定宽高，强制缩放</li>\n默认值：percent。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "percent",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缩放倍率，可以为小数，当Mode为percent时使用。\n\n默认值：1.0。\n取值范围：[0.1，10.0]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Percent",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片宽度。\n\n取值范围：[1，16384]。\n注意：此字段在Mode非percent时优先使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3840",
+          "member": "uint64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片高度。\n\n取值范围：[1，16384]。\n注意：此字段在Mode非percent时优先使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2160",
+          "member": "uint64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片长边。\n\n取值范围：[1，16384]。\n注意：此字段在Mode非percent且未配置Width和Height时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3840",
+          "member": "uint64",
+          "name": "LongSide",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片短边。\n\n取值范围：[1，16384]。\n注意：此字段在Mode非percent且未配置Width和Height时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2160",
+          "member": "uint64",
+          "name": "ShortSide",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageSpriteTaskInput": {
       "document": "对视频截雪碧图任务输入参数类型",
       "members": [
@@ -22581,6 +22708,34 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片基础转换能力。",
+          "example": "无",
+          "member": "ImageTransformConfig",
+          "name": "TransformConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageTransformConfig": {
+      "document": "图片基础转换能力",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片缩放配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageResizeConfig",
+          "name": "ImageResize",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

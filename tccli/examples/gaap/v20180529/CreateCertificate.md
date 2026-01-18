@@ -1,28 +1,4 @@
-**Example 1: 创建证书**
-
-
-
-Input: 
-
-```
-tccli gaap CreateCertificate --cli-unfold-argument  \
-    --CertificateType 2 \
-    --CertificateAlias cert-alias \
-    --CertificateKey %0A-----BEGIN%20RSA%20PRIVATE%20KEY-----%0Axxxxxxxxxxx%0A-----END%20RSA%20PRIVATE%20KEY-----%0A \
-    --CertificateContent %0A-----BEGIN%20CERTIFICATE-----%0AMIIFmDIUJIJL.......C%0A-----END%20CERTIFICATE-----%0A
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "c7bfcad5-3f20-472f-9afc-13a66faebad8",
-        "CertificateId": "cert-jlwr6865"
-    }
-}
-```
-
-**Example 2: 添加服务器ssl证书**
+**Example 1: 添加服务器ssl证书**
 
 
 

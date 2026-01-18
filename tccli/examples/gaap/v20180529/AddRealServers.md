@@ -1,4 +1,4 @@
-**Example 1: 添加源站**
+**Example 1: AddRealServers**
 
 
 
@@ -7,8 +7,8 @@ Input:
 ```
 tccli gaap AddRealServers --cli-unfold-argument  \
     --ProjectId 0 \
-    --RealServerName 'server_name' \
-    --RealServerIP 1.1.1.1
+    --RealServerIP 22.22.22.23 \
+    --RealServerName real-ip-name
 ```
 
 Output: 
@@ -17,16 +17,16 @@ Output:
     "Response": {
         "RealServerSet": [
             {
-                "RealServerId": "id-5dr8gu4",
-                "RealServerIP": "1.1.1.1"
+                "RealServerIP": "22.22.22.23",
+                "RealServerId": "rs-9vv3741d"
             }
         ],
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd"
+        "RequestId": "be58ef1d-25a4-4a71-b33a-9686a1258ae5"
     }
 }
 ```
 
-**Example 2: AddRealServers**
+**Example 2: 添加源站**
 
 
 
@@ -35,21 +35,21 @@ Input:
 ```
 tccli gaap AddRealServers --cli-unfold-argument  \
     --ProjectId 0 \
-    --RealServerName benny \
-    --RealServerIP 106.52.70.76
+    --RealServerIP 44.4.4.4 \
+    --RealServerName server-name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "be13ee03-60e8-4af1-880a-e84e5abdf6bc",
         "RealServerSet": [
             {
-                "RealServerIP": "106.52.70.76",
-                "RealServerId": "rs-hx4u5379"
+                "RealServerIP": "44.4.4.4",
+                "RealServerId": "rs-1008nt4p"
             }
-        ]
+        ],
+        "RequestId": "4aaf1f09-5a29-4595-af3f-81cc3098ed3c"
     }
 }
 ```

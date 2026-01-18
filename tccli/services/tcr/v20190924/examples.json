@@ -802,6 +802,14 @@
         "title": "更新实例信息"
       }
     ],
+    "ModifyInstanceStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceStorage\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dc0d****\",\n    \"TargetRegion\": \"ap-chengdu\",\n    \"TargetStorageName\": \"tcr-dc0d****-1255******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2050ca68-6341-4702-a988-53fdbc66808f\"\n    }\n}",
+        "title": "修改TCR实例存储配置"
+      }
+    ],
     "ModifyInstanceToken": [
       {
         "document": "",
@@ -914,6 +922,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=RenewInstance\n&RegistryId=tcr-12345\n&RegistryChargePrepaid.Period=1\n&RegistryChargePrepaid.RenewFlag=1\n&Flag=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-12345\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "续费企业版预付费实例"
+      }
+    ],
+    "TerminateGCJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateGCJob\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dc0*****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"GC job stopped successfully\",\n        \"Status\": \"success\",\n        \"RequestId\": \"304c05d3-c87b-489e-ad19-eee7251d4dc3\"\n    }\n}",
+        "title": "终止制品清理任务"
       }
     ],
     "ValidateNamespaceExistPersonal": [
