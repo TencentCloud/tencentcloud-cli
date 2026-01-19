@@ -429,6 +429,15 @@
           "name": "Model",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "块大小,  单位字节, 默认4194304 (4MB)",
+          "example": "262144",
+          "member": "uint64",
+          "name": "BlockSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -668,7 +677,7 @@
         },
         {
           "disabled": false,
-          "document": "cvm用于的机型；2:nsd机型 3:gw机型；4:kafka机型",
+          "document": "cvm用于的机型；2:nsd机型 3:gw机型；7:gui机型",
           "example": "2",
           "member": "uint64",
           "name": "NodeType",
@@ -784,10 +793,20 @@
         {
           "disabled": false,
           "document": "初始密码",
-          "example": "ABCDEFG",
+          "example": "*****",
           "member": "string",
           "name": "InitialPassword",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属集群id",
+          "example": "x-c60-rz400po1-client-cluster-1",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3538,6 +3557,15 @@
           "name": "FileSystemId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统关联的OwnerUin",
+          "example": "3472213910",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,

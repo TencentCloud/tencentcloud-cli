@@ -23286,7 +23286,7 @@
         {
           "disabled": false,
           "document": "当前周期容量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"40960000000000\"",
           "member": "string",
           "name": "CycleCapacitySize",
           "output_required": false,
@@ -23296,7 +23296,7 @@
         {
           "disabled": false,
           "document": "当前周期余量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"40960000000000\"",
           "member": "string",
           "name": "CycleCapacityRemain",
           "output_required": false,
@@ -23309,6 +23309,16 @@
           "example": "0",
           "member": "string",
           "name": "CapacityUsed",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期使用量",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "CycleCapacityUsed",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23581,6 +23591,16 @@
         },
         {
           "disabled": false,
+          "document": "当前周期使用量",
+          "example": "0",
+          "member": "uint64",
+          "name": "CycleCapacityUsed",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "创建时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1622044800000",
           "member": "uint64",
@@ -23662,7 +23682,7 @@
         {
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "RegionId",
           "output_required": false,
@@ -23672,7 +23692,7 @@
         {
           "disabled": false,
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
           "output_required": false,
@@ -23692,7 +23712,7 @@
         {
           "disabled": false,
           "document": "用量精确值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"1000\"",
           "member": "string",
           "name": "CapacitySizePrecise",
           "output_required": false,
@@ -23702,7 +23722,7 @@
         {
           "disabled": false,
           "document": "剩余容量精确值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"1000\"",
           "member": "string",
           "name": "CapacityRemainPrecise",
           "output_required": false,
@@ -23712,7 +23732,7 @@
         {
           "disabled": false,
           "document": "当前周期总量精确值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"1000\"",
           "member": "string",
           "name": "CycleCapacitySizePrecise",
           "output_required": false,
@@ -23722,12 +23742,22 @@
         {
           "disabled": false,
           "document": "当前周期余量精确值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"1000\"",
           "member": "string",
           "name": "CycleCapacityRemainPrecise",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前周期使用量精确值",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "CycleCapacityUsedPrecise",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -23752,7 +23782,7 @@
         {
           "disabled": false,
           "document": "周期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"2023-12-29 11:35:23\"",
           "member": "string",
           "name": "CycleTime",
           "output_required": false,
@@ -23812,7 +23842,7 @@
         {
           "disabled": false,
           "document": "业务自定义查询周期/切片详细信息",
-          "example": "{\"SlicePeriodCapacityRemain\":120000,\"SlicePeriodCapacityRemainPrecise\":\"120000\",\"SlicePeriodCapacitySize\":120000,\"SlicePeriodCapacitySizePrecise\":\"120000\",\"SlicePeriodEndTime\":\"2024-09-10 23:59:59\",\"SlicePeriodStartTime\":\"2024-09-10 00:00:00\"}",
+          "example": "无",
           "member": "SlicePeriodResourcePackage",
           "name": "SlicePeriodUsageDetails",
           "output_required": false,
@@ -26782,6 +26812,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片使用量",
+          "example": "0",
+          "member": "uint64",
+          "name": "SlicePeriodCapacityUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片使用量精确值",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "SlicePeriodCapacityUsedPrecise",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

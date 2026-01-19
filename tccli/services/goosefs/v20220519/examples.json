@@ -27,8 +27,8 @@
     "AllocateFileSystemId": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateFileSystemId\n<公共请求参数>\n\n{\n    \"UserOwnerUin\": \"100200300\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"Model\": \"C60\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"FileSystemId\": \"a1b2c3d4\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateFileSystemId\n<公共请求参数>\n\n{\n    \"UserOwnerUin\": \"100200300\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"Model\": \"C60\",\n    \"BlockSize\": 262144\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"FileSystemId\": \"x-c60-a1b2c3d4\"\n    }\n}",
         "title": "预分配文件系统ID"
       }
     ],

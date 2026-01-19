@@ -4522,6 +4522,15 @@
           "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全指定来源ip",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4674,6 +4683,15 @@
           "example": "sg-adadfd1",
           "member": "string",
           "name": "SgId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组来源Ip",
+          "example": "10.0.0.0/10",
+          "member": "string",
+          "name": "SgIP",
           "required": false,
           "type": "string"
         },
@@ -5088,6 +5106,15 @@
           "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组指定来源ip",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9965,9 +9992,27 @@
         {
           "disabled": false,
           "document": "默认空，容器版传\"native\"",
-          "example": "无",
+          "example": "CVM",
           "member": "string",
           "name": "DisplayStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "PasswdUpdateTime",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
           "required": false,
           "type": "string"
         }

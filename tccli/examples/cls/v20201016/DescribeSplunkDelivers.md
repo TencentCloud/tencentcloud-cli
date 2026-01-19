@@ -41,7 +41,8 @@ Output:
                 "TaskId": "46bb8292-1974-4663-8ce5-498256a42431",
                 "TopicId": "d1d7d473-827e-4dad-9a42-f0287ad43125",
                 "Uin": 100001127589,
-                "UpdateTime": 1757657329
+                "UpdateTime": 1757657329,
+                "DSLFilter": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))"
             }
         ],
         "RequestId": "964ff3ff-ec82-40d2-90ab-bb9b8bc43125",
