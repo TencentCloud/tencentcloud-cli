@@ -665,6 +665,13 @@
       "output": "DescribeLiveCertsResponse",
       "status": "online"
     },
+    "DescribeLiveCloudEffectConfig": {
+      "document": "使用该接口查询云端特效配置信息。",
+      "input": "DescribeLiveCloudEffectConfigRequest",
+      "name": "查询直播云端特效配置信息",
+      "output": "DescribeLiveCloudEffectConfigResponse",
+      "status": "online"
+    },
     "DescribeLiveCloudEffectList": {
       "document": "使用该接口查询云端特效列表，特效列表中包含一部分官方精品特效，同时包含用户自定义生成的特效。",
       "input": "DescribeLiveCloudEffectListRequest",
@@ -4072,6 +4079,67 @@
           "example": "2025-05-20T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudEffectTemplateInfo": {
+      "document": "云端特效模板信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>特效模板ID。</p>",
+          "example": "captain_america",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>特效模板名称。</p>",
+          "example": "变身美队",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板预览URL。</p>",
+          "example": "https://system-live-cloud-effect***cloud.com/template/fishermen.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板封面图片URL。</p>",
+          "example": "https://system-live-cloud-effect-13114022***/template_cover_image/captain_america.png",
+          "member": "string",
+          "name": "CoverImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板视频宽高比。</p>",
+          "example": "9:16",
+          "member": "string",
+          "name": "VideoRatio",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -9625,6 +9693,33 @@
           "member": "CertInfo",
           "name": "CertInfoSet",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveCloudEffectConfigRequest": {
+      "document": "DescribeLiveCloudEffectConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveCloudEffectConfigResponse": {
+      "document": "DescribeLiveCloudEffectConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板生礼物的模板信息列表。</p>",
+          "example": "无",
+          "member": "CloudEffectTemplateInfo",
+          "name": "EffectTemplateList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

@@ -790,6 +790,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveCloudEffectConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveCloudEffectConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EffectTemplateList\": [\n            {\n                \"TemplateId\": \"queen_accession\",\n                \"TemplateName\": \"女王登基\",\n                \"VideoUrl\": \"https://system-live-cloud-effect-1311402212.cos.ap-guangzhou.myqcloud.com/template/queen_accession_template.mp4\"\n            },\n            {\n                \"TemplateId\": \"wizard_of_oz\",\n                \"TemplateName\": \"绿野仙踪\",\n                \"VideoUrl\": \"https://system-live-cloud-effect-1311402212.cos.ap-guangzhou.myqcloud.com/template/wizard_of_oz_template.mp4\"\n            }\n        ],\n        \"RequestId\": \"711361074864703498\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveCloudEffectList": [
       {
         "document": "",

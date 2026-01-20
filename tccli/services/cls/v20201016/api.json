@@ -7441,7 +7441,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题id- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
           "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
           "member": "string",
           "name": "TopicId",
@@ -7450,7 +7450,7 @@
         },
         {
           "disabled": false,
-          "document": "splunk投递任务名称；\nname有如下限制：\n- 不能为空\n- 长度不大于64\n- 只能包含aA-zZ、下划线、-、0-9",
+          "document": "<p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>",
           "example": "template-1",
           "member": "string",
           "name": "Name",
@@ -7459,7 +7459,7 @@
         },
         {
           "disabled": false,
-          "document": "Splunk投递任务-目标配置-网络信息",
+          "document": "<p>Splunk投递任务-目标配置-网络信息</p>",
           "example": "无",
           "member": "NetInfo",
           "name": "NetInfo",
@@ -7468,7 +7468,7 @@
         },
         {
           "disabled": false,
-          "document": "Splunk投递任务元信息",
+          "document": "<p>Splunk投递任务元信息</p>",
           "example": "无",
           "member": "MetadataInfo",
           "name": "MetadataInfo",
@@ -7477,7 +7477,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启服务日志 1:关闭；2:开启 ;默认开启",
+          "document": "<p>是否开启服务日志 1:关闭；2:开启 ;默认开启</p>",
           "example": "2",
           "member": "int64",
           "name": "HasServiceLog",
@@ -7486,7 +7486,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-是否启用索引器；1-不启用；2-启用；\n默认：1",
+          "document": "<p>高级配置-是否启用索引器；1-不启用；2-启用；默认：1</p>",
           "example": "1",
           "member": "int64",
           "name": "IndexAck",
@@ -7495,7 +7495,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-数据来源；不超过64个字符",
+          "document": "<p>高级配置-数据来源；不超过64个字符</p>",
           "example": "client-01",
           "member": "string",
           "name": "Source",
@@ -7504,7 +7504,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-数据来源类型；不超过64个字符",
+          "document": "<p>高级配置-数据来源类型；不超过64个字符</p>",
           "example": "json",
           "member": "string",
           "name": "SourceType",
@@ -7513,7 +7513,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-Splunk写入的索引；不超过64个字符",
+          "document": "<p>高级配置-Splunk写入的索引；不超过64个字符</p>",
           "example": "main",
           "member": "string",
           "name": "Index",
@@ -7522,10 +7522,19 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-通道\n需满足限制：如果启用索引器，那么Channel必填",
+          "document": "<p>高级配置-通道需满足限制：如果启用索引器，那么Channel必填</p>",
           "example": "template-1",
           "member": "string",
           "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
           "required": false,
           "type": "string"
         }
@@ -7537,7 +7546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "splunk投递任务id",
+          "document": "<p>splunk投递任务id</p>",
           "example": "111024e3-01b0-4aeb-91f5-ee",
           "member": "string",
           "name": "TaskId",
@@ -12924,7 +12933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题Id- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
           "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
           "member": "string",
           "name": "TopicId",
@@ -12933,7 +12942,7 @@
         },
         {
           "disabled": false,
-          "document": "- taskId 按照【任务id】进行过滤。 类型：String 必选：否  \n- name 按照【任务名称】进行过滤。 类型：String 必选：否  \n- statusFlag 按照【状态】进行过滤。 类型：String 必选：否  \n 每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "document": "<ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br /> 每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12942,7 +12951,7 @@
         },
         {
           "disabled": false,
-          "document": "分页的偏移量，默认值为0。",
+          "document": "<p>分页的偏移量，默认值为0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -12951,7 +12960,7 @@
         },
         {
           "disabled": false,
-          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -12966,7 +12975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Splunk投递任务信息列表",
+          "document": "<p>Splunk投递任务信息列表</p>",
           "example": "无",
           "member": "SplunkDeliverInfo",
           "name": "Infos",
@@ -12976,7 +12985,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的任务总数。",
+          "document": "<p>符合条件的任务总数。</p>",
           "example": "12",
           "member": "uint64",
           "name": "Total",
@@ -12998,7 +13007,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题id。- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
           "example": "d1d7d473-827e-4dad-9a42-f0287ad42098",
           "member": "string",
           "name": "TopicId",
@@ -13007,12 +13016,21 @@
         },
         {
           "disabled": false,
-          "document": "splunk投递任务-元信息",
+          "document": "<p>splunk投递任务-元信息</p>",
           "example": "无",
           "member": "MetadataInfo",
           "name": "MetadataInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>splunk投递任务-投递 splunk过滤原始日志语句</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13022,12 +13040,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "预览结果",
+          "document": "<p>预览结果</p>",
           "example": "[\"asdgf-12f3\",\"gdfku-yne5\"]",
           "member": "string",
           "name": "PreviewInfos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据过滤结果</p>",
+          "example": "无",
+          "member": "FilterStatistics",
+          "name": "FilterStats",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -14843,6 +14871,42 @@
         }
       ],
       "usage": "both"
+    },
+    "FilterStatistics": {
+      "document": "投递类任务数据过滤统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>原始日志数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "OriginalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤后日志数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilteredCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤后结果</p>",
+          "example": "[\"{\\\"content\\\":\\\"--------\\\",\\\"content2\\\":\\\"0\\\"}\"]",
+          "member": "string",
+          "name": "FilteredResult",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FullTextInfo": {
       "document": "全文索引配置",
@@ -19836,7 +19900,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "111024e3-01b0-4aeb-91f5-ee",
           "member": "string",
           "name": "TaskId",
@@ -19845,7 +19909,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题id- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
           "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
           "member": "string",
           "name": "TopicId",
@@ -19854,7 +19918,7 @@
         },
         {
           "disabled": false,
-          "document": "投递任务名称\nname有以下限制：\n- 不能为空\n- 长度不大于64\n- 只能包含aA-zZ、下划线、-、0-9",
+          "document": "<p>投递任务名称name有以下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>",
           "example": "template-1",
           "member": "string",
           "name": "Name",
@@ -19863,7 +19927,7 @@
         },
         {
           "disabled": false,
-          "document": "投递任务启用状态；0:禁用；1:启用",
+          "document": "<p>投递任务启用状态；0:禁用；1:启用</p>",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -19872,7 +19936,7 @@
         },
         {
           "disabled": false,
-          "document": "splunk投递任务-目标配置",
+          "document": "<p>splunk投递任务-目标配置</p>",
           "example": "无",
           "member": "NetInfo",
           "name": "NetInfo",
@@ -19881,7 +19945,7 @@
         },
         {
           "disabled": false,
-          "document": "splunk投递任务元信息",
+          "document": "<p>splunk投递任务元信息</p>",
           "example": "无",
           "member": "MetadataInfo",
           "name": "MetadataInfo",
@@ -19890,7 +19954,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用服务日志；1:关闭；2:开启",
+          "document": "<p>是否启用服务日志；1:关闭；2:开启</p>",
           "example": "1",
           "member": "int64",
           "name": "HasServiceLog",
@@ -19899,7 +19963,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-是否启用索引器;\n1-不开启；2-开启；默认为：1",
+          "document": "<p>高级配置-是否启用索引器;1-不开启；2-开启；默认为：1</p>",
           "example": "1",
           "member": "int64",
           "name": "IndexAck",
@@ -19908,7 +19972,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-数据来源；不超过64个字符",
+          "document": "<p>高级配置-数据来源；不超过64个字符</p>",
           "example": "client-1",
           "member": "string",
           "name": "Source",
@@ -19917,7 +19981,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-数据来源类型；不超过64个字符",
+          "document": "<p>高级配置-数据来源类型；不超过64个字符</p>",
           "example": "json",
           "member": "string",
           "name": "SourceType",
@@ -19926,7 +19990,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-Splunk写入的索引；不超过64个字符",
+          "document": "<p>高级配置-Splunk写入的索引；不超过64个字符</p>",
           "example": "main",
           "member": "string",
           "name": "Index",
@@ -19935,10 +19999,19 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-通道。\n需满足限制：如果启用索引器，该值不能为空",
+          "document": "<p>高级配置-通道。需满足限制：如果启用索引器，该值不能为空</p>",
           "example": "template-1",
           "member": "string",
           "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
           "required": false,
           "type": "string"
         }
@@ -22938,7 +23011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "111024e3-01b0-4aeb-91f5-ee",
           "member": "string",
           "name": "TaskId",
@@ -22948,7 +23021,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "template-1",
           "member": "string",
           "name": "Name",
@@ -22958,7 +23031,7 @@
         },
         {
           "disabled": false,
-          "document": "用户id",
+          "document": "<p>用户id</p>",
           "example": "198644793323",
           "member": "uint64",
           "name": "Uin",
@@ -22968,7 +23041,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id",
+          "document": "<p>日志主题id</p>",
           "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
           "member": "string",
           "name": "TopicId",
@@ -22978,7 +23051,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态；1.运行中；2:暂停；3：异常",
+          "document": "<p>任务状态；1.运行中；2:暂停；3：异常</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -22988,7 +23061,7 @@
         },
         {
           "disabled": false,
-          "document": "启用状态；0:禁用；1:启用",
+          "document": "<p>启用状态；0:禁用；1:启用</p>",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -22998,7 +23071,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间；单位：秒",
+          "document": "<p>创建时间；单位：秒</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "CreateTime",
@@ -23008,7 +23081,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间；单位：秒",
+          "document": "<p>更新时间；单位：秒</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "UpdateTime",
@@ -23018,7 +23091,7 @@
         },
         {
           "disabled": false,
-          "document": "splunk投递任务-目标配置",
+          "document": "<p>splunk投递任务-目标配置</p>",
           "example": "无",
           "member": "NetInfo",
           "name": "NetInfo",
@@ -23028,7 +23101,7 @@
         },
         {
           "disabled": false,
-          "document": "splunk投递任务元信息",
+          "document": "<p>splunk投递任务元信息</p>",
           "example": "无",
           "member": "MetadataInfo",
           "name": "Metadata",
@@ -23038,7 +23111,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用服务日志；1:关闭；2:开启",
+          "document": "<p>是否启用服务日志；1:关闭；2:开启</p>",
           "example": "2",
           "member": "int64",
           "name": "HasServiceLog",
@@ -23048,7 +23121,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-数据来源；",
+          "document": "<p>高级配置-数据来源；</p>",
           "example": "client-01",
           "member": "string",
           "name": "Source",
@@ -23058,7 +23131,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-数据来源类型；",
+          "document": "<p>高级配置-数据来源类型；</p>",
           "example": "json",
           "member": "string",
           "name": "SourceType",
@@ -23068,7 +23141,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-Splunk写入的索引",
+          "document": "<p>高级配置-Splunk写入的索引</p>",
           "example": "main",
           "member": "string",
           "name": "Index",
@@ -23078,7 +23151,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-是否启用索引器；1-不开启；2-开启；",
+          "document": "<p>高级配置-是否启用索引器；1-不开启；2-开启；</p>",
           "example": "1",
           "member": "int64",
           "name": "IndexAck",
@@ -23088,10 +23161,20 @@
         },
         {
           "disabled": false,
-          "document": "高级配置-通道",
+          "document": "<p>高级配置-通道</p>",
           "example": "template",
           "member": "string",
           "name": "Channel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理语句</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

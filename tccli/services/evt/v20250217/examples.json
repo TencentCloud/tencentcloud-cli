@@ -24,6 +24,14 @@
         "title": "删除自定义用户"
       }
     ],
+    "PutEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutEvent\n<公共请求参数>\n\n{\n    \"PluginId\": \"plugin-D*******\",\n    \"Data\": \"**\",\n    \"Source\": \"操作审计\",\n    \"TargetUin\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"76db4f4c-9d32-4156-87a6-32a6b7d0a4d9\"\n    }\n}",
+        "title": "推送事件"
+      }
+    ],
     "PutMessage": [
       {
         "document": "",

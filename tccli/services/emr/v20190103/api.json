@@ -3656,6 +3656,15 @@
           "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全指定来源ip",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4063,6 +4072,15 @@
           "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组指定来源ip",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

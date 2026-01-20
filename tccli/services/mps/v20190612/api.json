@@ -479,7 +479,7 @@
     "DescribeBatchTaskDetail": {
       "document": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询7天之内提交的任务）。",
       "input": "DescribeBatchTaskDetailRequest",
-      "name": "批量任务详情查询",
+      "name": "查询多输入任务详情",
       "output": "DescribeBatchTaskDetailResponse",
       "status": "online"
     },
@@ -10384,7 +10384,7 @@
         },
         {
           "disabled": false,
-          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS/DASH+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment\n \n注：自适应码流的分片格式以此字段为准。DASH格式下SegmentType只能为mp4-byterange。",
+          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS/DASH+MP4 byte range</li> <li>ts-packed-audio：HLS+TS+Packed Audio 切片</li> <li>mp4-packed-audio：HLS+MP4+Packed Audio 切片</li> <li>ts-ts-segment：HLS+TS+TS 切片</li> <li>ts-ts-byterange：HLS+TS+TS byte range</li> <li>mp4-mp4-segment：HLS+MP4+MP4 切片</li> <li>mp4-mp4-byterange：HLS/DASH+MP4+MP4 byte range</li> <li>ts-packed-audio-byterange：HLS+TS+Packed Audio byte range</li> <li>mp4-packed-audio-byterange：HLS+MP4+Packed Audio byte range</li> 默认值：ts-segment 注：自适应码流的分片格式以此字段为准。DASH格式下SegmentType只能为mp4-byterange或mp4-mp4-byterange。",
           "example": "ts-segment",
           "member": "string",
           "name": "SegmentType",
@@ -18972,7 +18972,7 @@
         },
         {
           "disabled": false,
-          "document": "查询媒体处理任务类型，默认查询转码。\n<li>Transcode：转码</li>\n<li>Enhance：增强</li>\n<li>AIAnalysis：智能分析</li>\n<li>AIRecognition：智能识别</li>\n<li>AIReview：内容审核</li>\n<li>Snapshot：截图</li>\n<li>AnimatedGraphics：转动图</li>\n<li>AiQualityControl：质检</li>\n<li>Evaluation：视频评测</li>\n<li>ImageProcess: 图片处理</li>\n<li>AddBlindWatermark: 添加基础版权数字水印</li>\n<li>AddNagraWatermark: 添加NAGRA数字水印</li>\n<li>ExtractBlindWatermark: 提取基础版权数字水印</li>",
+          "document": "查询媒体处理任务类型，默认查询转码。\n<li>Transcode：转码</li>\n<li>Enhance：增强</li>\n<li>AIAnalysis：智能分析</li>\n<li>AIRecognition：智能识别</li>\n<li>AIReview：内容审核</li>\n<li>Snapshot：截图</li>\n<li>AnimatedGraphics：转动图</li>\n<li>AiQualityControl：质检</li>\n<li>Evaluation：视频评测</li>\n<li>ImageProcess: 图片处理</li>\n<li>AddBlindWatermark: 添加基础版权数字水印</li>\n<li>AddNagraWatermark: 添加NAGRA数字水印</li>\n<li>ExtractBlindWatermark: 提取基础版权数字水印</li>\n<li>AIGC: AIGC</li>",
           "example": "[\"Transcode\"]",
           "member": "string",
           "name": "Types",
@@ -27191,7 +27191,7 @@
         },
         {
           "disabled": false,
-          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS/DASH+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment \n注：自适应码流的hls分片格式已此字段为准。DASH格式下SegmentType只能为mp4-byterange。",
+          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS/DASH+MP4 byte range</li> <li>ts-packed-audio：HLS+TS+Packed Audio 切片</li> <li>mp4-packed-audio：HLS+MP4+Packed Audio 切片</li> <li>ts-ts-segment：HLS+TS+TS 切片</li> <li>ts-ts-byterange：HLS+TS+TS byte range</li> <li>mp4-mp4-segment：HLS+MP4+MP4 切片</li> <li>mp4-mp4-byterange：HLS/DASH+MP4+MP4 byte range</li> <li>ts-packed-audio-byterange：HLS+TS+Packed Audio byte range</li> <li>mp4-packed-audio-byterange：HLS+MP4+Packed Audio byte range</li> 默认值：ts-segment 注：自适应码流的分片格式以此字段为准。DASH格式下SegmentType只能为mp4-byterange或mp4-mp4-byterange。",
           "example": "ts-segment",
           "member": "string",
           "name": "SegmentType",
@@ -34796,6 +34796,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人ID（如启用说话人识别）",
+          "example": "speaker_0",
+          "member": "string",
+          "name": "SpeakerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
