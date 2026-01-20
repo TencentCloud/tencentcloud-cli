@@ -614,7 +614,7 @@
         },
         {
           "disabled": false,
-          "document": "PLUS：PLUS版\nENHANCED：增强版\nBASIC：基础版（默认）",
+          "document": "PLUS：PLUS版\nPRO：PRO版\nENHANCED：增强版\nBASIC：基础版（默认）",
           "example": "ENHANCED",
           "member": "string",
           "name": "SdkVersion",
@@ -5214,7 +5214,7 @@
         },
         {
           "disabled": false,
-          "document": "PLUS：PLUS版，ENHANCED：增强版，BASIC：基础版（默认）",
+          "document": "PLUS：PLUS版，PRO：PRO版，ENHANCED：增强版，BASIC：基础版（默认）",
           "example": "BASIC",
           "member": "string",
           "name": "SdkVersion",

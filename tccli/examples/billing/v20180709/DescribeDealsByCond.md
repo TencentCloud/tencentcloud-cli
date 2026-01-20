@@ -27,14 +27,14 @@ Output:
                 "ResourceId": [
                     "ins-abscde"
                 ],
-                "Price": 0.0,
+                "Price": 0,
                 "ProductInfo": [
                     {
                         "Name": "规格名称",
                         "Value": "规格值"
                     }
                 ],
-                "TotalCost": 0.0,
+                "TotalCost": 0,
                 "ProductCode": "p_abc",
                 "Payer": "1007416710",
                 "RealTotalCost": 17000,
