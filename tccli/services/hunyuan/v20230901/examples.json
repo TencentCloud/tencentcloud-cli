@@ -86,6 +86,14 @@
         "title": "创建会话"
       }
     ],
+    "Describe3DSmartTopologyJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Describe3DSmartTopologyJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1405140131170074624\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"OBJ\",\n                \"Url\": \"https://cos.ap-singapore.tencentcos.cn/xxx.obj\"\n            }\n        ],\n        \"Status\": \"DONE\",\n        \"RequestId\": \"75882497-fd9d-4b80-a2c0-1d7abf86e040\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "FilesDeletions": [
       {
         "document": "删除文件。",
@@ -196,6 +204,14 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetPayMode\n<公共请求参数>\n\n{\n    \"PayMode\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9723dd95-d217-46ff-a556-2cc760142737\"\n    }\n}",
         "title": "调用成功"
+      }
+    ],
+    "Submit3DSmartTopologyJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Submit3DSmartTopologyJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.glb\",\n        \"Type\": \"GLB\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1405140131170074624\",\n        \"RequestId\": \"f1dcd98c-47d2-47fe-81f2-26f4e0fec5d7\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "SubmitHunyuanImageChatJob": [

@@ -1823,6 +1823,15 @@
           "name": "DataFlowId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。  ture：覆盖  false：不覆盖（同时也不会释放热存数据）  为空时，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOverwrite",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4485,6 +4494,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。\n\nture：覆盖\n\nfalse：不覆盖（同时也不会释放热存数据）\n为空时，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOverwrite",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4613,6 +4633,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略类型",
+          "example": "SmartTiering",
+          "member": "string",
+          "name": "PolicyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值范围[10-90]",
+          "example": "90",
+          "member": "uint64",
+          "name": "ExpireThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值范围[10-90]",
+          "example": "80",
+          "member": "uint64",
+          "name": "TargetThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。\n\nture：覆盖\n\nfalse：不覆盖（同时也不会释放热存数据）\n\n为空时，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOverwrite",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5423,6 +5487,7 @@
           "example": "cfs-4xxxxxx",
           "member": "string",
           "name": "FileSystemId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5433,7 +5498,19 @@
           "example": "/data/log/001/",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据流动Id",
+          "example": "cfs-dataflow-xxxxxxxx",
+          "member": "string",
+          "name": "DataFlowId",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

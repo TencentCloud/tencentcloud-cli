@@ -3149,7 +3149,7 @@
     "ModifyNatGatewayAttribute": [
       {
         "document": "只支持修改NAT网关的名称和NAT网关最大外网出带宽。更新NAT网关并发连接上限请使用ResetNatGatewayConnection接口。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatGatewayAttribute\n<公共请求参数>\n\n{\n    \"InternetMaxBandwidthOut\": \"500\",\n    \"NatGatewayId\": \"nat-ig8xpno8\",\n    \"NatGatewayName\": \"测试nat网关\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatGatewayAttribute\n<公共请求参数>\n\n{\n    \"InternetMaxBandwidthOut\": 500,\n    \"NatGatewayId\": \"nat-ig8xpno8\",\n    \"NatGatewayName\": \"测试nat网关\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5c289dc-bf4b-4828-8093-3c434d1f0886\"\n    }\n}",
         "title": "修改NAT网关的属性"
       },
@@ -3886,6 +3886,20 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=UpdateTrafficMirrorDirection\r\n&TrafficMirrorId=imgf-cvfp7xo8\r\n&Direction=INGRESS\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
         "title": "更改流量镜像采集方向"
+      }
+    ],
+    "UpgradeNatGatewayProductVersion": [
+      {
+        "document": "传统型NAT实例升级到标准型NAT",
+        "input": "https://vpc.tencentcloudapi.com/?Action=MigrateTraditionalNatToStandard\n&VpcId=vpc-2d98uyh6\n&NatGatewayId=nat-lz6rjk7n\n&Force=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9b0cd80-3b86-4e03-8fc9-bc7de311bc73\"\n    }\n}",
+        "title": "传统型NAT实例升级到标准型NAT"
+      },
+      {
+        "document": "校验传统型NAT实例能否升级到标准型NAT\n返回值无报错，表示校验成功。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=MigrateTraditionalNatToStandard\n&VpcId=vpc-2d98uyh6\n&NatGatewayId=nat-lz6rjk7n\n&Force=1\n&CheckOnlyMode=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9b0cd80-3b86-4e03-8fc9-bc7de311bc73\"\n    }\n}",
+        "title": "校验传统型NAT实例能否升级到标准型NAT"
       }
     ],
     "WithdrawNotifyRoutes": [

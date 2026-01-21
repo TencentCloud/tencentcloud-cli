@@ -80,6 +80,14 @@
         "title": "创建文档"
       }
     ],
+    "CreateGroupLiveCodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroupLiveCodes\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520471,\n    \"RoomId\": 368829238,\n    \"Number\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupLiveCodes\": [\n            \"@TGS#_368829238@TOPIC#_d5nf8ud2et7qpiel1250\",\n            \"@TGS#_368829238@TOPIC#_d5nf8ud2et7qpiel125g\",\n            \"@TGS#_368829238@TOPIC#_d5nf8ud2et7qpiel1260\"\n        ],\n        \"RequestId\": \"0051e1ca-fb08-4a42-a3e4-7dd6a3ec1681\"\n    }\n}",
+        "title": "测试一"
+      }
+    ],
     "CreateGroupWithMembers": [
       {
         "document": "根据成员列表创建群组",
@@ -272,6 +280,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3618809,\n    \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n}",
         "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"cfmsqfu2r378uak93i70\",\n                \"GroupName\": \"修改测试群组名称\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n            },\n            {\n                \"GroupId\": \"cfmthke2r378uak93ii0\",\n                \"GroupName\": \"测试修改群组\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n            }\n        ],\n        \"RequestId\": \"a69c412e-1da6-4d27-bd37-c74a2703f94a\",\n        \"Total\": 2\n    }\n}",
         "title": "示例2"
+      }
+    ],
+    "DescribeGroupLiveCodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupLiveCodes\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520471,\n    \"RoomId\": 368829238\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupLiveCodes\": [\n            \"@TGS#_368829238@TOPIC#_d5nf8ud2et7qpiel1260\",\n            \"@TGS#_368829238@TOPIC#_d5nf8ud2et7qpiel125g\",\n            \"@TGS#_368829238@TOPIC#_d5nf8ud2et7qpiel1250\"\n        ],\n        \"RequestId\": \"03b04883-07f9-46ad-a25f-5679e060834c\"\n    }\n}",
+        "title": "DescribeGroupLiveCodes"
       }
     ],
     "DescribeGroupMemberList": [

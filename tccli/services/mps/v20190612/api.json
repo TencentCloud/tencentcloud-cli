@@ -2116,6 +2116,15 @@
           "name": "OutputConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理附加 prompt，只针对某些场景可用。",
+          "example": "无",
+          "member": "ImageProcessPrompt",
+          "name": "ExtPrompt",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -3048,6 +3057,16 @@
           "member": "string",
           "name": "SpeakerPath",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色id",
+          "example": "v1_cjYJK5SMrD583Pa28RJIGirQltxJz2M7opo7kX9OaPi3zqUitPkBTfSWSZw=",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10543,6 +10562,15 @@
           "example": "2.3",
           "member": "string",
           "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定场景生视频。\n注意：仅部分模型支持指定场景。\n1. Kling支持动作控制，motion_control。\n2. Mingmou支持横转竖，land2port。\n3. Vidu支持特效模板，template_effect。",
+          "example": "motion_control",
+          "member": "string",
+          "name": "SceneType",
           "required": false,
           "type": "string"
         },
@@ -22217,9 +22245,44 @@
           "name": "ImageSize",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片输出编码格式，可取值：PNG、JPG、WEBP、HEIF、AVIF。",
+          "example": "PNG",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片质量，对于某些输出格式可用，只有Format 有效的情况下生效，取值范围 0-100。",
+          "example": "75",
+          "member": "int64",
+          "name": "Quality",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
+    },
+    "ImageProcessPrompt": {
+      "document": "图片处理相关提示词。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理相关的prompt。",
+          "example": "one cat and one dog",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ImageProcessTaskOutput": {
       "document": "图片处理结果信息",
@@ -32179,12 +32242,21 @@
         },
         {
           "disabled": false,
-          "document": "音频数据格式，默认为 pcm\n\n支持的格式：pcm (16k 采样率的单声道 16 位采样 pcm 数据)",
+          "document": "音频数据格式，默认为 pcm\n\n支持的格式：\npcm (16000 采样率的单声道 16 位采样 pcm 数据)\nogg-opus (16000 / 24000 / 48000 采样率的单声道 opus 编码的 ogg 数据)",
           "example": "pcm",
           "member": "string",
           "name": "AudioFormat",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频的采样率\n\n支持的采样率：\npcm 16000\nogg-opus 16000 / 24000 / 48000",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,

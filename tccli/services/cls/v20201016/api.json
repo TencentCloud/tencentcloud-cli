@@ -6015,7 +6015,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TopicId",
@@ -6024,7 +6024,7 @@
         },
         {
           "disabled": false,
-          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "document": "<p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>",
           "example": "template_1",
           "member": "string",
           "name": "Name",
@@ -6033,7 +6033,7 @@
         },
         {
           "disabled": false,
-          "document": "投递类型。0:批投递,1:实时投递",
+          "document": "<p>投递类型。0:批投递,1:实时投递</p>",
           "example": "1",
           "member": "uint64",
           "name": "DeliverType",
@@ -6042,7 +6042,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的开始时间",
+          "document": "<p>投递时间范围的开始时间</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "StartTime",
@@ -6051,7 +6051,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc配置信息",
+          "document": "<p>dlc配置信息</p>",
           "example": "无",
           "member": "DlcInfo",
           "name": "DlcInfo",
@@ -6060,7 +6060,7 @@
         },
         {
           "disabled": false,
-          "document": "投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。",
+          "document": "<p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>",
           "example": "5",
           "member": "uint64",
           "name": "MaxSize",
@@ -6069,7 +6069,7 @@
         },
         {
           "disabled": false,
-          "document": "投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。",
+          "document": "<p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>",
           "example": "300",
           "member": "uint64",
           "name": "Interval",
@@ -6078,7 +6078,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。",
+          "document": "<p>投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。</p>",
           "example": "1741006340",
           "member": "uint64",
           "name": "EndTime",
@@ -6087,7 +6087,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。1关闭，2开启。默认开启",
+          "document": "<p>是否开启投递服务日志。1关闭，2开启。默认开启</p>",
           "example": "2",
           "member": "uint64",
           "name": "HasServicesLog",
@@ -6102,7 +6102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置id",
+          "document": "<p>配置id</p>",
           "example": "988259ca-598f-428c-8475-cf438d05468c",
           "member": "string",
           "name": "TaskId",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ApplyUpload --cli-unfold-argument  \
-    --SubAppId 1 \
+    --SubAppId 123456 \
     --MediaType mp4
 ```
 

@@ -3403,6 +3403,15 @@
           "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组来源IP",
+          "example": "10.0.0.0/0",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

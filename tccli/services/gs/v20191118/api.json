@@ -1013,6 +1013,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务状态。\nIDLE：未连接\nESTABLISHED：连接中",
+          "example": "ESTABLISHED",
+          "member": "string",
+          "name": "ServiceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

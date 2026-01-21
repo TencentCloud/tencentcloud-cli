@@ -590,9 +590,9 @@
     ],
     "ListReferShareKnowledge": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReferShareKnowledge\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1908652910168703294\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\",\n        \"List\": [\n            {\n                \"EmbeddingModel\": \"general-text-embedding-v2.7\",\n                \"KnowledgeBizId\": \"1908652910168703294\",\n                \"KnowledgeDescription\": \"计算机基础理论知识库\",\n                \"KnowledgeName\": \"共享知识库1\",\n                \"QaExtractModel\": \"general-qa-extract-v1.8\",\n                \"UpdateTime\": \"1747757139\"\n            }\n        ]\n    }\n}",
+        "document": "查看应用引用的共享知识库列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReferShareKnowledge\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1927192****14054336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DocTotal\": 0,\n                \"EmbeddingModel\": \"\",\n                \"KnowledgeBizId\": \"1927192****14054336\",\n                \"KnowledgeDescription\": \"test共享知识库\",\n                \"KnowledgeName\": \"test共享知识库\",\n                \"KnowledgeType\": 0,\n                \"OwnerStaffId\": \"\",\n                \"QaExtractModel\": \"\",\n                \"UpdateTime\": \"0\"\n            }\n        ],\n        \"RequestId\": \"2abb80ba-9d4b-48a9-bd47-129c7a07c119\"\n    }\n}",
         "title": "查看应用引用的共享知识库列表"
       }
     ],

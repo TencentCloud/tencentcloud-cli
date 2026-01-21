@@ -14,6 +14,13 @@
       "output": "DescribeHunyuanTo3DUVJobResponse",
       "status": "online"
     },
+    "DescribeProfileTo3DJob": {
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "DescribeProfileTo3DJobRequest",
+      "name": "查询3D人物生成任务",
+      "output": "DescribeProfileTo3DJobResponse",
+      "status": "online"
+    },
     "DescribeReduceFaceJob": {
       "document": "混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "DescribeReduceFaceJobRequest",
@@ -75,6 +82,13 @@
       "input": "SubmitHunyuanTo3DUVJobRequest",
       "name": "提交UV展开任务",
       "output": "SubmitHunyuanTo3DUVJobResponse",
+      "status": "online"
+    },
+    "SubmitProfileTo3DJob": {
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitProfileTo3DJobRequest",
+      "name": "提交3D人物生成任务",
+      "output": "SubmitProfileTo3DJobResponse",
       "status": "online"
     },
     "SubmitReduceFaceJob": {
@@ -197,6 +211,73 @@
           "disabled": false,
           "document": "生成文件的URL地址，有效期1天。",
           "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProfileTo3DJobRequest": {
+      "document": "DescribeProfileTo3DJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1315932989749215232",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProfileTo3DJobResponse": {
+      "document": "DescribeProfileTo3DJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "RUN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "参数错误",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的3D文件数组。",
+          "example": "File3D数据结构",
           "member": "File3D",
           "name": "ResultFile3Ds",
           "output_required": false,
@@ -897,6 +978,52 @@
           "disabled": false,
           "document": "任务ID。",
           "example": "1376862528873414656",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitProfileTo3DJobRequest": {
+      "document": "SubmitProfileTo3DJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "真人头像参考图 Base64 数据和参考图 Url。\n- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。\n- 图片限制：单边分辨率小于4096且大于500，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。",
+          "example": "Image数据结构",
+          "member": "Image",
+          "name": "Profile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "生成人物模板，参考值：\n\nbasketball: 动感球手；\n\nbadminton: 羽扬中华；\n\npingpong: 国球荣耀；\n\ngymnastics:勇攀巅峰；\n\npilidance: 舞动青春；\n\ntennis: 网球甜心；\n\nathletics: 东方疾风；\n\nfootballboykicking1:激情逐风；\n\nfootballboykicking2: 绿茵之星；\n\nguitar:甜酷弦音；\n\nfootballboy: 足球小将；\n\nskateboard: 滑跃青春；\n\nfuturesoilder: 未来战士；\n\nexplorer: 逐梦旷野；\n\nbeardollgirl:可爱女孩；\n\nbibpantsboy:都市白领；\n\nwomansitpose: 职业丽影；\n\nwomanstandpose2: 悠闲时光；\n\nmysteriousprincess: 海洋公主；\n\nmanstandpose2: 演讲之星；",
+          "example": "pingpong",
+          "member": "string",
+          "name": "Template",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitProfileTo3DJobResponse": {
+      "document": "SubmitProfileTo3DJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID（有效期24小时）",
+          "example": "1315932989749215232",
           "member": "string",
           "name": "JobId",
           "output_required": false,

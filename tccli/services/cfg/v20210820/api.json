@@ -123,7 +123,7 @@
   "metadata": {
     "apiVersion": "2021-08-20",
     "api_brief": "介绍如何使用API对混沌工程平台进行操作，包括创建演练、创建演练分组、创建经验库等",
-    "serviceNameCN": "云顾问-混沌演练",
+    "serviceNameCN": "智能顾问-混沌演练",
     "serviceShortName": "cfg"
   },
   "objects": {

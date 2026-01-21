@@ -16,6 +16,14 @@
         "title": "查询UV展示任务示例"
       }
     ],
+    "DescribeProfileTo3DJob": [
+      {
+        "document": "任务完成",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProfileTo3DJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1335073555113197568\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"6636d5d9-5fe0-4928-be9d-0b8c9dc26847\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"POSTPROCESS_OBJ\",\n                \"Url\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.obj\"\n            },\n            {\n                \"Type\": \"OBJ\",\n                \"Url\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.obj\"\n            },\n            {\n                \"Type\": \"IMAGE\",\n                \"Url\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.png\"\n            },\n            {\n                \"Type\": \"MTL\",\n                \"Url\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.mtl\"\n            },\n            {\n                \"Type\": \"FBX\",\n                \"Url\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.fbx\"\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "任务完成"
+      }
+    ],
     "DescribeReduceFaceJob": [
       {
         "document": "",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DUVJob\n<公共请求参数>\n\n{\n    \"File\": {\n        \"Type\": \"GLB\",\n        \"Url\": \"https://vcg-test-1258344699.cos.ap-guangzhou.myqcloud.com/test/3d/test.glb\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1384898587778465792\",\n        \"RequestId\": \"5265eb4a-0f4f-4cb1-9b3d-d9f1fb9347d2\"\n    }\n}",
         "title": "提交UV展开任务示例"
+      }
+    ],
+    "SubmitProfileTo3DJob": [
+      {
+        "document": "成功提交任务",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitProfileTo3DJob\n<公共请求参数>\n\n{\n    \"Profile\": {\n        \"Url\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.jpg\"\n    },\n    \"Template\": \"basketball\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1321332059964817408\",\n        \"RequestId\": \"177604c6-3647-4b7a-a637-cb00a24cf215\"\n    }\n}",
+        "title": "成功调用"
       }
     ],
     "SubmitReduceFaceJob": [

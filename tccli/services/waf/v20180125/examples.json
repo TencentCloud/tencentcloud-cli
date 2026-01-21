@@ -1046,6 +1046,14 @@
         "title": "获取qps 弹性默认值"
       }
     ],
+    "GetOrganizationRole": [
+      {
+        "document": "查询账号角色",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOrganizationRole\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"df242aa4-1a92-4900-a615-47698803066d\",\n        \"Role\": \"Admin\"\n    }\n}",
+        "title": "查询账号角色"
+      }
+    ],
     "ImportIpAccessControl": [
       {
         "document": "",

@@ -1,29 +1,32 @@
 **Example 1: 查看应用引用的共享知识库列表**
 
-
+查看应用引用的共享知识库列表
 
 Input: 
 
 ```
 tccli lke ListReferShareKnowledge --cli-unfold-argument  \
-    --AppBizId 1908652910168703294
+    --AppBizId 1927192****14054336
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f1c3dcb2-e3d7-686e-a809-29d53f7a915f",
         "List": [
             {
-                "EmbeddingModel": "general-text-embedding-v2.7",
-                "KnowledgeBizId": "1908652910168703294",
-                "KnowledgeDescription": "计算机基础理论知识库",
-                "KnowledgeName": "共享知识库1",
-                "QaExtractModel": "general-qa-extract-v1.8",
-                "UpdateTime": "1747757139"
+                "DocTotal": 0,
+                "EmbeddingModel": "",
+                "KnowledgeBizId": "1927192****14054336",
+                "KnowledgeDescription": "test共享知识库",
+                "KnowledgeName": "test共享知识库",
+                "KnowledgeType": 0,
+                "OwnerStaffId": "",
+                "QaExtractModel": "",
+                "UpdateTime": "0"
             }
-        ]
+        ],
+        "RequestId": "2abb80ba-9d4b-48a9-bd47-129c7a07c119"
     }
 }
 ```

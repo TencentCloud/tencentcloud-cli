@@ -18,7 +18,7 @@
   "metadata": {
     "apiVersion": "2020-07-21",
     "api_brief": "1",
-    "serviceNameCN": "云顾问",
+    "serviceNameCN": "智能顾问",
     "serviceShortName": "advisor"
   },
   "objects": {

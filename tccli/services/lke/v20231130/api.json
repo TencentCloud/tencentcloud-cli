@@ -2431,7 +2431,7 @@
         {
           "disabled": false,
           "document": "插件图标url",
-          "example": "http://xxxx.jpg\t",
+          "example": "http://xxxx.jpg",
           "member": "string",
           "name": "IconUrl",
           "output_required": false,
@@ -2475,7 +2475,7 @@
         {
           "disabled": false,
           "document": "工具描述",
-          "example": "获取指定日期和地点的天气信息\t",
+          "example": "获取指定日期和地点的天气信息",
           "member": "string",
           "name": "ToolDesc",
           "output_required": false,
@@ -2624,6 +2624,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权模式； 0-开发者授权；1-使用者授权",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3564,6 +3586,95 @@
         }
       ],
       "usage": "out"
+    },
+    "Audio": {
+      "document": "音频信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频文件格式",
+          "example": "wav",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频文件地址",
+          "example": "https://sample.com/123.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "《丝之歌》：争议与魅力的博弈",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频文件在正文中的位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频转录后的文字列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioTranscript",
+          "name": "AudioTranscripts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AudioTranscript": {
+      "document": "音频转录的文本内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频的发言者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "主持人1",
+          "member": "string",
+          "name": "Speaker",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频转录为文字后的内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "《空洞骑士》的续作《丝之歌》终于来了！",
+          "member": "string",
+          "name": "Transcript",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BackgroundImageConfig": {
       "document": "背景图相关配置",
@@ -13880,6 +13991,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "共享知识库数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16695,6 +16816,16 @@
           "name": "WidgetAction",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Audio",
+          "name": "Audios",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

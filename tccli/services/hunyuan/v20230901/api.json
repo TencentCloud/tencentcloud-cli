@@ -28,6 +28,13 @@
       "output": "CreateThreadResponse",
       "status": "online"
     },
+    "Describe3DSmartTopologyJob": {
+      "document": "混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "Describe3DSmartTopologyJobRequest",
+      "name": "查询智能拓扑任务",
+      "output": "Describe3DSmartTopologyJobResponse",
+      "status": "online"
+    },
     "FilesDeletions": {
       "document": "删除文件。",
       "input": "FilesDeletionsRequest",
@@ -126,6 +133,13 @@
       "output": "SetPayModeResponse",
       "status": "online"
     },
+    "Submit3DSmartTopologyJob": {
+      "document": "混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "Submit3DSmartTopologyJobRequest",
+      "name": "提交智能拓扑任务",
+      "output": "Submit3DSmartTopologyJobResponse",
+      "status": "online"
+    },
     "SubmitHunyuanImageChatJob": {
       "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "SubmitHunyuanImageChatJobRequest",
@@ -150,7 +164,7 @@
   },
   "metadata": {
     "apiVersion": "2023-09-01",
-    "api_brief": "## 概述\n腾讯混元大模型（Tencent Hunyuan）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。",
+    "api_brief": "## 概述\n腾讯混元大模型（Tencent HY）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。",
     "serviceNameCN": "腾讯混元大模型",
     "serviceShortName": "hunyuan"
   },
@@ -957,6 +971,73 @@
       ],
       "usage": "out"
     },
+    "Describe3DSmartTopologyJobRequest": {
+      "document": "Describe3DSmartTopologyJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。\t",
+          "example": "1315932989749215232",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Describe3DSmartTopologyJobResponse": {
+      "document": "Describe3DSmartTopologyJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。\t",
+          "example": "RUN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。\t",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\t",
+          "example": "参数错误",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成文件的URL地址，有效期1天。\t",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EmbeddingData": {
       "document": "Embedding 信息。",
       "members": [
@@ -1044,6 +1125,45 @@
         }
       ],
       "usage": "out"
+    },
+    "File3D": {
+      "document": "3D文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "3D文件的格式。取值范围：GIF, OBJ",
+          "example": "GIF",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的Url（有效期24小时）",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/gif.gif",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预览图片Url",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.png",
+          "member": "string",
+          "name": "PreviewImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "FileObject": {
       "document": "已上传的文件对象。",
@@ -2275,6 +2395,30 @@
       ],
       "usage": "both"
     },
+    "InputFile3D": {
+      "document": "3D文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件的Url（有效期24小时）\t",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/obj.obj\t",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件格式\t",
+          "example": "OBJ",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "Knowledge": {
       "document": "外部知识",
       "members": [
@@ -3359,6 +3503,61 @@
         }
       ],
       "usage": "out"
+    },
+    "Submit3DSmartTopologyJobRequest": {
+      "document": "Submit3DSmartTopologyJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源3D文件模型链接，参考值：\nType：glb，obj格式文件必选其一。\nUrl：文件大小不超过200MB。\n3D模型要求：复杂模型和拓扑过的模型暂无法支持减面操作，建议输入未拓扑过的高模，比如混元3D生成的模型，适用度比较高的类别：硬表面、游戏角色、道具、日常生活用品等。",
+          "example": "无",
+          "member": "InputFile3D",
+          "name": "File3D",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:\ntriangle:三角形面。\nquadrilateral：四边形面。",
+          "example": "triangle",
+          "member": "string",
+          "name": "PolygonType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "减面后面数档位类型，可选值：high，medium, low。",
+          "example": "high",
+          "member": "string",
+          "name": "FaceLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Submit3DSmartTopologyJobResponse": {
+      "document": "Submit3DSmartTopologyJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。\t",
+          "example": "1315932989749215232",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubmitHunyuanImageChatJobRequest": {
       "document": "SubmitHunyuanImageChatJob请求参数结构体",

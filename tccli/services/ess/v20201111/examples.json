@@ -1618,6 +1618,14 @@
         "title": "获取合同审查结果web页面"
       }
     ],
+    "DescribeEnterpriseContractReviewChecklists": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseContractReviewChecklists\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtUckphotltxpgD3IZBJ10dg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Checklists\": [\n            {\n                \"ConfigStatus\": 1,\n                \"Count\": 3,\n                \"Enabled\": false,\n                \"Id\": \"yDtlUUckpfqe0eUx7RX5uRpuL96kx\",\n                \"ModifiedOn\": 1763628965,\n                \"Name\": \"审核\",\n                \"Official\": false,\n                \"Updater\": \"张三\"\n            },\n            {\n                \"ConfigStatus\": 1,\n                \"Count\": 4,\n                \"Enabled\": false,\n                \"Id\": \"yDtzUUkpfharbmUuErirRNRjLfwMQ\",\n                \"ModifiedOn\": 1763100881,\n                \"Name\": \"采购\",\n                \"Official\": false,\n                \"Updater\": \"李四\"\n            },\n            {\n                \"ConfigStatus\": 1,\n                \"Count\": 4,\n                \"Enabled\": true,\n                \"Id\": \"yDVUUckpfhvlrUuXEriCmkgEM2A6\",\n                \"ModifiedOn\": 1763091112,\n                \"Name\": \"购买\",\n                \"Official\": false,\n                \"Updater\": \"王五\"\n            }\n        ],\n        \"RequestId\": \"f31368af-1ac2-47d6-80b6-146e12eb96eb\",\n        \"Total\": 3\n    }\n}",
+        "title": "获取企业全部审查要点清单"
+      }
+    ],
     "DescribeExtendedServiceAuthDetail": [
       {
         "document": "",

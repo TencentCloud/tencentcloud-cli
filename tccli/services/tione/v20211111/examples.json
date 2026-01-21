@@ -400,6 +400,14 @@
         "title": "修改Notebook标签"
       }
     ],
+    "ModifyServiceGroupWeights": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceGroupWeights\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-fdsfsd\",\n    \"Weights\": [\n        {\n            \"ServiceId\": \"ms-j7jlxfwk-2\",\n            \"Weight\": 0\n        },\n        {\n            \"ServiceId\": \"ms-j7jlxfwk-1\",\n            \"Weight\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceGroup\": null,\n        \"RequestId\": \"cccc13d6-b255-48cd-b189-2a17d4b236af\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "PushTrainingMetrics": [
       {
         "document": "",

@@ -623,6 +623,13 @@
       "output": "DescribeContractReviewWebUrlResponse",
       "status": "online"
     },
+    "DescribeEnterpriseContractReviewChecklists": {
+      "document": "本接口（DescribeEnterpriseContractReviewChecklists）用于获取企业全部审查要点清单。",
+      "input": "DescribeEnterpriseContractReviewChecklistsRequest",
+      "name": "获取企业全部审查要点清单",
+      "output": "DescribeEnterpriseContractReviewChecklistsResponse",
+      "status": "online"
+    },
     "DescribeExtendedServiceAuthDetail": {
       "document": "查询企业扩展服务的授权详情（列表），当前支持查询以下内容：\n1. 企业自动签（本企业授权、集团企业授权、合作企业授权）\n2. 批量签署能力\n\n\n注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)",
       "input": "DescribeExtendedServiceAuthDetailRequest",
@@ -2320,6 +2327,100 @@
         }
       ],
       "usage": "in"
+    },
+    "Checklist": {
+      "document": "合同审查清单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审查清单id",
+          "example": "abxxdxdsdsl",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审查清单名称",
+          "example": "租赁合同审查清单",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审查点数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改人",
+          "example": "张三",
+          "member": "string",
+          "name": "Updater",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "0",
+          "member": "int64",
+          "name": "ModifiedOn",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否官方清单",
+          "example": "false",
+          "member": "bool",
+          "name": "Official",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置状态，[0(未配置), 1(已配置)]",
+          "example": "1",
+          "member": "int64",
+          "name": "ConfigStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ComparisonDetail": {
       "document": "合同对比差异结果详情。",
@@ -8412,7 +8513,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
+          "document": "发起方企业签署员工，在进行签署操作前，是否需要先通过企业内部审批流程 （签署审核）\n1. **false（默认）**：  无需审批，发起方企业签署员工可直接进行签署操作。\n2. **true**：  需要先走企业内部审批流程。 当流程进展到发起方企业签署员工时，其签署操作会被阻塞，等待企业内部审批结果。\n\n企业应通过 <a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview\" target=\"_blank\">提交签署流程审批结果</a>审批接口，将内部审批结果通知腾讯电子签平台：\n1. 若通知为“审核通过”，发起方企业签署员工可继续完成签署操作。\n2. 若通知为“审核未通过”，平台将继续阻塞该签署方的签署操作，直到企业再次通知平台审核通过为止。\n\n说明： 此能力可用于与企业内部审批流程打通，适用于手动签署和自动签署两种模式。",
           "example": "false",
           "member": "bool",
           "name": "NeedSignReview",
@@ -8421,7 +8522,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n\n若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。\n\n",
+          "document": "发起方在创建合同流程前，是否必须先通过企业内部审批流程 （发起审核）\n\n当设置为 `true` 时：  \n  1. 您需要在企业内部完成审批，并通过接口 <a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview\" target=\"_blank\">提交签署流程审批结果</a> 将审批结果回传给腾讯电子签。 \n  2. 只有当审核状态为“通过”时，合同流程正常发起。  \n  3. 若未通过或未回传审核结果，发起操作将被阻塞，阻止合同流程。\n\n当设置为 `false` （默认值）时：  \n  发起方无需经过企业内部审批，可直接发起合同流程。",
           "example": "false",
           "member": "bool",
           "name": "NeedCreateReview",
@@ -11580,6 +11681,89 @@
           "name": "Status",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnterpriseContractReviewChecklistsRequest": {
+      "document": "DescribeEnterpriseContractReviewChecklists请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定每页返回的数据条数，和Offset参数配合使用。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnterpriseContractReviewChecklistsResponse": {
+      "document": "DescribeEnterpriseContractReviewChecklists返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "清单列表",
+          "example": "无",
+          "member": "Checklist",
+          "name": "Checklists",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

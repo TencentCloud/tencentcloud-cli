@@ -21157,8 +21157,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "是否删表",
+          "disabled": true,
+          "document": "是否删表，该字段废弃已使用，用TableExpiration策略替代",
           "example": "true",
           "member": "bool",
           "name": "DropTable",
@@ -21208,7 +21208,7 @@
         },
         {
           "disabled": false,
-          "document": "ResourceInfo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据治理资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceInfo",
           "name": "Resources",
@@ -21219,7 +21219,7 @@
         },
         {
           "disabled": false,
-          "document": "SmartOptimizerWrittenPolicy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据重写策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartOptimizerWrittenPolicy",
           "name": "Written",
@@ -21230,7 +21230,7 @@
         },
         {
           "disabled": false,
-          "document": "SmartOptimizerLifecyclePolicy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据过期策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartOptimizerLifecyclePolicy",
           "name": "Lifecycle",

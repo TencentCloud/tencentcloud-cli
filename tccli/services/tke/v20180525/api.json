@@ -29568,6 +29568,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "按量配额",
+          "example": "无",
+          "member": "SuperNodeResource",
+          "name": "Quota",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"

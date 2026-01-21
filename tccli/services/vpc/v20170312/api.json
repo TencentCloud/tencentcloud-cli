@@ -3024,6 +3024,13 @@
       "output": "UpdateTrafficMirrorDirectionResponse",
       "status": "online"
     },
+    "UpgradeNatGatewayProductVersion": {
+      "document": "本接口（UpgradeNatGatewayProductVersion）用于升级NAT实例产品版本，将传统型NAT实例升级到标准型NAT。",
+      "input": "UpgradeNatGatewayProductVersionRequest",
+      "name": "升级NAT实例产品版本",
+      "output": "UpgradeNatGatewayProductVersionResponse",
+      "status": "online"
+    },
     "WithdrawNotifyRoutes": {
       "document": "本接口（WithdrawNotifyRoutes）用于撤销已发布到云联网的路由。路由表列表页操作增加“从云联网撤销”。",
       "input": "WithdrawNotifyRoutesRequest",
@@ -29287,7 +29294,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关的名称，形如：`test_nat`。",
+          "document": "NAT网关的名称，形如：`test_nat`，边界值：[1,60] 字符。",
           "example": "测试nat网关",
           "member": "string",
           "name": "NatGatewayName",
@@ -29296,7 +29303,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关最大外网出带宽(单位:Mbps)。",
+          "document": "NAT网关最大外网出带宽(单位:Mbps)，边界值：[0,50000]。",
           "example": "500",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -29327,6 +29334,15 @@
           "example": "false",
           "member": "bool",
           "name": "DeletionProtectionEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。当前适用于标准型NAT网关。",
+          "example": "false",
+          "member": "bool",
+          "name": "PublicAddressAffinity",
           "required": false,
           "type": "bool"
         }
@@ -39462,6 +39478,60 @@
     },
     "UpdateTrafficMirrorDirectionResponse": {
       "document": "UpdateTrafficMirrorDirection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeNatGatewayProductVersionRequest": {
+      "document": "UpgradeNatGatewayProductVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-oty76xyl",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "NAT网关的ID，形如：`nat-ig8xpno8`。",
+          "example": "nat-ig8xpno8",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否热迁移。1表示冷迁移，0表示热迁移，默认值是0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Force",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅校验迁移可能性。true表示仅校验能否迁移，不做实际迁移。false表示正常迁移。默认值为false。\n仅校验模式，不报错表示校验迁移成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckOnlyMode",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeNatGatewayProductVersionResponse": {
+      "document": "UpgradeNatGatewayProductVersion返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
