@@ -43,16 +43,16 @@
     "BatchAddClientNodes": [
       {
         "document": "批量添加客户端节点",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchAddClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"SingleClusterFlag\": false,\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-m1r9uwdp\",\n            \"VpcId\": \"vpc-5ke3uoww\",\n            \"SubnetId\": \"subnet-ihijdp5h\",\n            \"LinuxClientNodeIp\": \"10.0.1.2\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchAddClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-80k2ly5b\",\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-kf9u9pih\",\n            \"VpcId\": \"vpc-lc0aecbo\",\n            \"SubnetId\": \"subnet-jwtwc1vj\",\n            \"LinuxClientNodeIp\": \"10.3.7.21\",\n            \"MountPoint\": \"/Goosefsx\"\n        }\n    ],\n    \"ClusterId\": \"x-c60-80k2ly5b-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50bb8fe8-068e-4804-83c6-2f7ed32d88a7\"\n    }\n}",
         "title": "批量添加客户端节点"
       }
     ],
     "BatchDeleteClientNodes": [
       {
         "document": "批量添加客户端节点",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"SingleClusterFlag\": false,\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-m1r9uwdp\",\n            \"VpcId\": \"vpc-5ke3uoww\",\n            \"SubnetId\": \"subnet-ihijdp5h\",\n            \"LinuxClientNodeIp\": \"10.0.1.2\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-80k2ly5b\",\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-kf9u9pih\",\n            \"VpcId\": \"vpc-lc0aecbo\",\n            \"SubnetId\": \"subnet-jwtwc1vj\",\n            \"LinuxClientNodeIp\": \"10.3.7.21\"\n        }\n    ],\n    \"ClusterId\": \"x-c60-80k2ly5b-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da09ef86-994b-4358-bc55-6f605f62a070\"\n    }\n}",
         "title": "批量删除客户端节点"
       }
     ],
@@ -82,10 +82,10 @@
     ],
     "CreateFileSystem": [
       {
-        "document": "创建文件系统",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileSystem\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-a1b2c3d4\",\n    \"Name\": \"ai_test_fs\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"Tag\": [\n        {\n            \"Value\": \"ai_team\",\n            \"Key\": \"owner_group\"\n        },\n        {\n            \"Value\": \"environment\",\n            \"Key\": \"env\"\n        }\n    ],\n    \"SubnetId\": \"subnet-m1n1g1h1\",\n    \"Type\": \"goosefsx\",\n    \"GooseFSxBuildElements\": {\n        \"Model\": \"c60\",\n        \"Capacity\": \"4608\",\n        \"MappedBucketList\": [\n            {\n                \"BucketName\": \"mybucket2-12500000\",\n                \"FileSystemPath\": \"/goosefs_data/bucket2\"\n            },\n            {\n                \"BucketName\": \"mybucket1-12500000\",\n                \"FileSystemPath\": \"/goosefs_data/bucket1\"\n            },\n            {\n                \"BucketName\": \"mybucket3-12500000\",\n                \"FileSystemPath\": \"/goosefs_data/bucket3\"\n            }\n        ]\n    },\n    \"Description\": \"ai team test only\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
-        "title": "创建文件系统"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileSystem\n<公共请求参数>\n\n{\n    \"Name\": \"ai_fs\",\n    \"Description\": \"our test fs\",\n    \"VpcId\": \"vpc-lc0aecbo\",\n    \"SubnetId\": \"subnet-jwtwc1vj\",\n    \"Zone\": \"ap-beijing-7\",\n    \"GooseFSxBuildElements\": {\n        \"Model\": \"C60\",\n        \"Capacity\": 4608\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FileSystemId\": \"x-c60-ewe600t4\",\n        \"RequestId\": \"1207751e-b9a8-40f2-ae9b-122c518fbb9a\"\n    }\n}",
+        "title": "创建Goosefsx文件系统"
       }
     ],
     "CreateFileset": [

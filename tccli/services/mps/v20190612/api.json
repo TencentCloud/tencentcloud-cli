@@ -10699,6 +10699,15 @@
         },
         {
           "disabled": false,
+          "document": "指定场景生视频。\n注意：仅部分模型支持指定场景。\n1. Kling支持动作控制，motion_control。\n2. Mingmou支持横转竖，land2port。\n3. Vidu支持特效模板，template_effect。",
+          "example": "motion_control",
+          "member": "string",
+          "name": "SceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。",
           "example": "move the picture",
           "member": "string",

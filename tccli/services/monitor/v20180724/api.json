@@ -24539,6 +24539,15 @@
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值为true时禁用集成",
+          "example": "false",
+          "member": "bool",
+          "name": "Disable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

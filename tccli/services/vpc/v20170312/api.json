@@ -45516,7 +45516,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关的名称，形如：`test_nat`。",
+          "document": "NAT网关的名称，形如：`test_nat`，边界值：[1,60] 字符。",
           "example": "测试nat网关",
           "member": "string",
           "name": "NatGatewayName",
@@ -45525,7 +45525,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关最大外网出带宽(单位:Mbps)。",
+          "document": "NAT网关最大外网出带宽(单位:Mbps)，边界值：[0,50000]。",
           "example": "500",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -45574,6 +45574,33 @@
           "example": "false",
           "member": "bool",
           "name": "DeletionProtectionEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。当前适用于标准型NAT网关。",
+          "example": "false",
+          "member": "bool",
+          "name": "PublicAddressAffinity",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。当前适用于标准型NAT网关。",
+          "example": "true",
+          "member": "bool",
+          "name": "ICMPProxy",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "标准型NAT网关自动扩容开关",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoScaling",
           "required": false,
           "type": "bool"
         }

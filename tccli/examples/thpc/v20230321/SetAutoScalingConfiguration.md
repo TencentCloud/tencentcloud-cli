@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli thpc SetAutoScalingConfiguration --cli-unfold-argument  \
-    --DryRun false \
+    --DryRun False \
     --ShrinkIdleTime 300 \
     --ExpansionBusyTime 120 \
     --ClusterId hpc-5lyv94lq

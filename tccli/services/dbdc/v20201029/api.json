@@ -59,7 +59,7 @@
           "example": "tdsql-test",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -69,7 +69,7 @@
           "example": "tdsql-test",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -79,7 +79,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -89,7 +89,7 @@
           "example": "2",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -99,7 +99,7 @@
           "example": "5.7.17",
           "member": "string",
           "name": "DbVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -109,7 +109,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -119,7 +119,7 @@
           "example": "3306",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -129,7 +129,7 @@
           "example": "vpc-test",
           "member": "string",
           "name": "UniqueVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -139,7 +139,7 @@
           "example": "subnet-test",
           "member": "string",
           "name": "UniqueSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -149,7 +149,7 @@
           "example": "1",
           "member": "int64",
           "name": "Shard",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -159,7 +159,7 @@
           "example": "3",
           "member": "int64",
           "name": "NodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -169,7 +169,7 @@
           "example": "2",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -179,7 +179,7 @@
           "example": "10",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -189,7 +189,7 @@
           "example": "10",
           "member": "int64",
           "name": "Disk",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -199,7 +199,7 @@
           "example": "2",
           "member": "int64",
           "name": "ShardNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -209,7 +209,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -219,7 +219,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -229,7 +229,7 @@
           "example": "svr-test1|svr-test2",
           "member": "string",
           "name": "DbHosts",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -239,7 +239,7 @@
           "example": "1",
           "member": "int64",
           "name": "HostRole",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -249,7 +249,7 @@
           "example": "MySQL",
           "member": "string",
           "name": "DbEngine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -259,8 +259,18 @@
           "example": "2022-05-10 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区列表",
+          "example": "[\"ap-guangzhou-1\",\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -705,6 +715,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区列表",
+          "example": "[\"ap-guangzhou-1\",\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1005,6 +1025,16 @@
           "name": "CpuType",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区列表",
+          "example": "[\"ap-guangzhou-1\",\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1377,7 +1407,7 @@
           "example": "svr-test",
           "member": "string",
           "name": "HostId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1387,7 +1417,7 @@
           "example": "svr-test",
           "member": "string",
           "name": "HostName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1397,7 +1427,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1407,7 +1437,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1417,7 +1447,7 @@
           "example": "0",
           "member": "int64",
           "name": "AssignStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1427,7 +1457,7 @@
           "example": "0",
           "member": "int64",
           "name": "HostType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1437,7 +1467,7 @@
           "example": "1",
           "member": "int64",
           "name": "DbNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1447,7 +1477,7 @@
           "example": "100",
           "member": "int64",
           "name": "CpuSpec",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1457,7 +1487,7 @@
           "example": "100",
           "member": "int64",
           "name": "CpuAssigned",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1467,7 +1497,7 @@
           "example": "100",
           "member": "int64",
           "name": "CpuAssignable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1477,7 +1507,7 @@
           "example": "100",
           "member": "int64",
           "name": "MemorySpec",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1487,7 +1517,7 @@
           "example": "100",
           "member": "int64",
           "name": "MemoryAssigned",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1497,7 +1527,7 @@
           "example": "100",
           "member": "int64",
           "name": "MemoryAssignable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1507,7 +1537,7 @@
           "example": "100",
           "member": "int64",
           "name": "DiskSpec",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1517,7 +1547,7 @@
           "example": "100",
           "member": "int64",
           "name": "DiskAssigned",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1527,37 +1557,37 @@
           "example": "100",
           "member": "int64",
           "name": "DiskAssignable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CPU分配比",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "CpuRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内存分配比",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "MemoryRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "磁盘分配比",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "DiskRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1567,7 +1597,7 @@
           "example": "HYI12A",
           "member": "string",
           "name": "MachineName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1577,17 +1607,17 @@
           "example": "SH12",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计费标签",
-          "example": "excluster_xxx",
+          "example": "sv_excluster_xxx",
           "member": "string",
           "name": "PidTag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1597,7 +1627,7 @@
           "example": "10811",
           "member": "int64",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1607,8 +1637,18 @@
           "example": "dbdc-test",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区列表",
+          "example": "[\"ap-guangzhou-1\",\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
