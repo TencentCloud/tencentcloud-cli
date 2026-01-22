@@ -59,7 +59,7 @@
     "DescribeVideoFaceFusionJob": {
       "document": "查询视频人脸融合任务",
       "input": "DescribeVideoFaceFusionJobRequest",
-      "name": "查询视频人脸融合任务",
+      "name": "查询人脸融合大模型任务",
       "output": "DescribeVideoFaceFusionJobResponse",
       "status": "online"
     },
@@ -129,7 +129,7 @@
     "SubmitVideoFaceFusionJob": {
       "document": "提交视频人脸融合任务",
       "input": "SubmitVideoFaceFusionJobRequest",
-      "name": "提交视频人脸融合任务",
+      "name": "提交人脸融合大模型任务",
       "output": "SubmitVideoFaceFusionJobResponse",
       "status": "online"
     },

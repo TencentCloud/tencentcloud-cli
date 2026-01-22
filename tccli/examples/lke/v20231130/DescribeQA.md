@@ -43,7 +43,7 @@ Output:
         "Source": 3,
         "SourceDesc": "手动录入",
         "Status": 2,
-        "StatusDesc": "待发布",
+        "StatusDesc": "导入完成",
         "UpdateTime": "1742783970",
         "VideoAuditStatus": 0
     }
