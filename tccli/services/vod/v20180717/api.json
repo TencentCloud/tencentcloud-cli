@@ -8352,7 +8352,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体存储路径，以/开头。",
+          "document": "媒体存储路径，以/开头。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以指定存储路径。",
           "example": "/dir1/video.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -21234,7 +21234,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体的存储路径。\nFileId和MediaStoragePath必须提供其中一个。",
+          "document": "媒体的存储路径。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。\nFileId和MediaStoragePath必须提供其中一个。",
           "example": "/dir1/video.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -32890,7 +32890,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体的存储路径。\nFileId和MediaStoragePath必须提供其中一个。",
+          "document": "媒体的存储路径。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。\nFileId和MediaStoragePath必须提供其中一个。",
           "example": "/dir/video.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -33118,7 +33118,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体的存储路径。\nFileId和MediaStoragePath必须提供其中一个。",
+          "document": "媒体的存储路径。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。\nFileId和MediaStoragePath必须提供其中一个。",
           "example": "/dir1/video.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -33881,7 +33881,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体存储路径，以/开头。",
+          "document": "媒体存储路径，以/开头。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以指定存储路径。",
           "example": "/dir1/a.mp4",
           "member": "string",
           "name": "MediaStoragePath",
@@ -36998,7 +36998,16 @@
           "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体的存储路径。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。\nFileId和MediaStoragePath必须提供其中一个。",
+          "example": "/dir1/video.mp4",
+          "member": "string",
+          "name": "MediaStoragePath",
+          "required": false,
           "type": "string"
         },
         {
@@ -37436,7 +37445,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体的存储路径。\nFileId和MediaStoragePath必须提供其中一个。",
+          "document": "媒体的存储路径。\n只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。\nFileId和MediaStoragePath必须提供其中一个。",
           "example": "/dir1/video.mp4",
           "member": "string",
           "name": "MediaStoragePath",

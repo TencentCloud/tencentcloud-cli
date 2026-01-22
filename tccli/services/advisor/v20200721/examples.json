@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateAdvisorAuthorization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAdvisorAuthorization\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"Already authorized\",\n        \"RequestId\": \"97aa2227-1814-4d39-9470-dadca094be1f\"\n    }\n}",
+        "title": "已开通"
+      }
+    ],
     "DescribeStrategies": [
       {
         "document": "",

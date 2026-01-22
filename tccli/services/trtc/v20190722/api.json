@@ -1430,15 +1430,6 @@
         },
         {
           "disabled": false,
-          "document": "机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算UserSig的方案。",
-          "example": "JwsjsHKgkAURt-lbv8fuXdyzAZauImIZBKDwJ3oKFdJhhkNI3r3yNx*B853XnA954GZLTsDiqSUAhH-l5VrM4zcsHGggAdvTTXCD-m6L63lGhSFiBTHmyhaCbegwIZ-WXfsu2kotauoccklT-Up0fOueN78pH15KFyrZZrtV*XI92-BNhSChKRV91jORYDw",
-          "member": "string",
-          "name": "UserSig",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "云端审核控制参数。",
           "example": "无",
           "member": "ModerationParams",
@@ -1448,11 +1439,20 @@
         },
         {
           "disabled": false,
-          "document": "云端审核文件上传到云存储的参数",
+          "document": "机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算UserSig的方案。",
+          "example": "JwsjsHKgkAURt-lbv8fuXdyzAZauImIZBKDwJ3oKFdJhhkNI3r3yNx*B853XnA954GZLTsDiqSUAhH-l5VrM4zcsHGggAdvTTXCD-m6L63lGhSFiBTHmyhaCbegwIZ-WXfsu2kotauoccklT-Up0fOueN78pH15KFyrZZrtV*XI92-BNhSChKRV91jORYDw",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端审核文件上传到云存储的参数。",
           "example": "无",
           "member": "ModerationStorageParams",
           "name": "ModerationStorageParams",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {

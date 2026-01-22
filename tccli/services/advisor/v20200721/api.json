@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateAdvisorAuthorization": {
+      "document": "开启智能顾问授权。会同步开启报告解读和云架构协作权限",
+      "input": "CreateAdvisorAuthorizationRequest",
+      "name": "开启智能顾问授权",
+      "output": "CreateAdvisorAuthorizationResponse",
+      "status": "online"
+    },
     "DescribeStrategies": {
       "document": "用于查询评估项的信息",
       "input": "DescribeStrategiesRequest",
@@ -67,6 +74,33 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAdvisorAuthorizationRequest": {
+      "document": "CreateAdvisorAuthorization请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateAdvisorAuthorizationResponse": {
+      "document": "CreateAdvisorAuthorization返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "Already authorized",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeStrategiesRequest": {
       "document": "DescribeStrategies请求参数结构体",

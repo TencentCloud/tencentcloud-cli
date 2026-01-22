@@ -12637,6 +12637,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务保护时间",
+          "example": "60",
+          "member": "int64",
+          "name": "GraceDownProtectTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21520,6 +21531,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务保护时间",
+          "example": "60",
+          "member": "int64",
+          "name": "GraceDownProtectTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

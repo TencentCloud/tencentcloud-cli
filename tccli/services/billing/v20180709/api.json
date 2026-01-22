@@ -35,6 +35,13 @@
       "output": "CreateGatherRuleResponse",
       "status": "online"
     },
+    "CreateInstance": {
+      "document": "创建一个实例资源，会创建一个新购实例资源的订单，并通过腾讯云账户余额自动支付。调用该接口的账号需要授予finace:trade的权限，否则无法支付成功。目前已接入并支持购买的产品包括：T-Sec-Web应用防火墙、云防火墙、主机安全、主机容器、云安全中心、T-Sec-密钥管理系统。",
+      "input": "CreateInstanceRequest",
+      "name": "创建实例",
+      "output": "CreateInstanceResponse",
+      "status": "online"
+    },
     "DeleteAllocationRule": {
       "document": "公摊规则删除接口",
       "input": "DeleteAllocationRuleRequest",
@@ -439,6 +446,20 @@
       "input": "PayDealsRequest",
       "name": "支付订单",
       "output": "PayDealsResponse",
+      "status": "online"
+    },
+    "RefundInstance": {
+      "document": "退订不再需要的实例，只退还实付金额的部分，已使用的代金券不退还，退还的实付金额默认退到腾讯云账户余额中。调用该接口的账号需要授予finace:RefundInstance的权限，否则无法支付成功。目前已接入并支持退订的产品包括：T-Sec-Web应用防火墙、云防火墙、主机安全、主机容器、云安全中心、T-Sec-密钥管理系统。",
+      "input": "RefundInstanceRequest",
+      "name": "退订实例",
+      "output": "RefundInstanceResponse",
+      "status": "online"
+    },
+    "RenewInstance": {
+      "document": "续费一台实例，调用该接口续费服务器时，您需要确保您的腾讯云账户余额充足，否则会续费失败。调用该接口的账号需要授予finace:trade的权限，否则无法续费成功。目前已接入并支持续费的产品包括：T-Sec-Web应用防火墙、云防火墙、主机安全、主机容器、云安全中心、T-Sec-密钥管理系统。",
+      "input": "RenewInstanceRequest",
+      "name": "续费实例",
+      "output": "RenewInstanceResponse",
       "status": "online"
     }
   },
@@ -9531,6 +9552,152 @@
       ],
       "type": "object"
     },
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ClientToken是一个由客户端生成的唯一的、区分大小写、不超过64个ASCII字符的字符串。例如，ClientToken=123e4567-e89b-12d3-a456-42665544****。",
+          "example": "c015c8ce-3698-4cd2-865b-7959fe15a705",
+          "member": "string",
+          "name": "ClientToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品一层code",
+          "example": "p_yunjing",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品二层code",
+          "example": "sp_yunjing_vas",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域code",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用区code",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "付费类型，取值：  PrePay：预付费",
+          "example": "PrePay",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品详情信息",
+          "example": "{\"pid\":1005305,\"productCode\":\"p_yunjing\",\"subProductCode\":\"sp_yunjing_vas\",\"sv_yunjing_vas_la\":\"50\",\"timeSpan\":1,\"timeUnit\":\"m\"}",
+          "member": "string",
+          "name": "Parameter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品数量，默认取值1",
+          "example": "1",
+          "member": "int64",
+          "name": "Quantity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目id，默认取0",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新购时长，取值上限：36，默认取值1",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新购时长单位，取值：m：按月购买，y：按年购买，默认取值m",
+          "example": "m",
+          "member": "string",
+          "name": "PeriodUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识，取值：NOTIFY_AND_MANUAL_RENEW：手动续费，NOTIFY_AND_AUTO_RENEW：自动续费，DISABLE_NOTIFY_AND_MANUAL_RENEW：到期不续，默认取值NOTIFY_AND_MANUAL_RENEW",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号",
+          "example": "20251201**********",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例列表，商品发货延迟可能返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"********\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DataForBudgetInfoPage": {
       "document": "获取预算管理的基础信息分页数据",
       "members": [
@@ -14141,7 +14308,7 @@
         },
         {
           "disabled": false,
-          "document": "费用类型：cost-总费用，totalCost-原价费用",
+          "document": "费用类型：cost-折后总费用，totalCost-原价费用",
           "example": "cost",
           "member": "string",
           "name": "FeeType",
@@ -17701,6 +17868,79 @@
       ],
       "usage": "out"
     },
+    "RefundInstanceRequest": {
+      "document": "RefundInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ClientToken是一个由客户端生成的唯一的、区分大小写、不超过64个ASCII字符的字符串。例如，ClientToken=123e4567-e89b-12d3-a456-42665544****。",
+          "example": "c015c8ce-3698-4cd2-865b-7959fe15a705",
+          "member": "string",
+          "name": "ClientToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品一层code",
+          "example": "p_yunjing",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品二层code",
+          "example": "sp_yunjing_vas",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域code",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefundInstanceResponse": {
+      "document": "RefundInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号列表",
+          "example": "[\"20251201**********\"]",
+          "member": "string",
+          "name": "OrderIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegionSummaryOverviewItem": {
       "document": "按地域汇总消费详情",
       "members": [
@@ -17806,6 +18046,97 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewInstanceRequest": {
+      "document": "RenewInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ClientToken是一个由客户端生成的唯一的、区分大小写、不超过64个ASCII字符的字符串。例如，ClientToken=123e4567-e89b-12d3-a456-42665544****。",
+          "example": "c015c8ce-3698-4cd2-865b-7959fe15a705",
+          "member": "string",
+          "name": "ClientToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品一层code",
+          "example": "p_yunjing",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品二层code",
+          "example": "sp_yunjing_vas",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域code",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手动续费时长，取值上限：36，默认取值1",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "手动续费时长单位，取值：m：按月续费，y：按年续费，默认取值m",
+          "example": "m",
+          "member": "string",
+          "name": "PeriodUnit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewInstanceResponse": {
+      "document": "RenewInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号列表",
+          "example": "[\"20251201**********\"]",
+          "member": "string",
+          "name": "OrderIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SummaryDetail": {
       "document": "账单多维度汇总消费详情",

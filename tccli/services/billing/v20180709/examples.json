@@ -52,6 +52,14 @@
         "title": "创建归集规则"
       }
     ],
+    "CreateInstance": [
+      {
+        "document": "创建主机安全-日志分析实例，购买数量1，购买时长1个月，并设置自动续费。",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"ClientToken\": \"46E6BF87-AF23-4710-8C82-21032D5F985F\",\n    \"ProductCode\": \"p_yunjing\",\n    \"SubProductCode\": \"sp_yunjing_vas\",\n    \"RegionCode\": \"ap-guangzhou\",\n    \"ZoneCode\": \"ap-guangzhou-1\",\n    \"PayMode\": \"PrePay\",\n    \"Parameter\": \"{\\\"pid\\\":1005305,\\\"productCode\\\":\\\"p_yunjing\\\",\\\"subProductCode\\\":\\\"sp_yunjing_vas\\\",\\\"sv_yunjing_vas_la\\\":\\\"50\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"m\\\"}\",\n    \"Quantity\": 1,\n    \"Period\": 1,\n    \"PeriodUnit\": \"m\",\n    \"ProjectId\": 0,\n    \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"20251201********\",\n        \"InstanceIdList\": [\n            \"*******\"\n        ],\n        \"RequestId\": \"9792e525-4002-4fb2-8a35-74ebf854bee7\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
     "DeleteAllocationRule": [
       {
         "document": "",
@@ -580,6 +588,22 @@
         "input": "https://billing.tencentcloudapi.com/?Action=PayDeals\n&OrderIds.0=2020111161300016142141\n&AutoVoucher=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"OrderIds\": [\n            \"2020111161300016142141\"\n        ],\n        \"BigDealIds\": [\n            \"2020111161300016142108\"\n        ],\n        \"ResourceIds\": [\n            \"ins-abc\",\n            \"ins-xxx\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "支付订单示例"
+      }
+    ],
+    "RefundInstance": [
+      {
+        "document": "退订主机安全-旗舰版实例",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundInstance\n<公共请求参数>\n\n{\n    \"ClientToken\": \"46E6BF87-AF23-4710-8C82-21032D5F389F\",\n    \"RegionCode\": \"ap-guangzhou\",\n    \"ProductCode\": \"p_yunjing\",\n    \"SubProductCode\": \"sp_yunjing_0014552\",\n    \"InstanceId\": \"*********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderIdList\": [\n            \"20251201*************\"\n        ],\n        \"RequestId\": \"41ac9a14-b2a3-4af5-a66f-baa56113ea4a\"\n    }\n}",
+        "title": "退订实例"
+      }
+    ],
+    "RenewInstance": [
+      {
+        "document": "续费主机安全-日志分析实例",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstance\n<公共请求参数>\n\n{\n    \"ClientToken\": \"46E6BF87-AF23-4710-8C82-21032D5F337F\",\n    \"RegionCode\": \"ap-guangzhou\",\n    \"InstanceId\": \"*********\",\n    \"ProductCode\": \"p_yunjing\",\n    \"SubProductCode\": \"sp_yunjing_vas\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderIdList\": [\n            \"20251201*********\"\n        ],\n        \"RequestId\": \"9792e525-4002-4fb2-8a35-74ebf854bee7\"\n    }\n}",
+        "title": "续费实例"
       }
     ]
   },

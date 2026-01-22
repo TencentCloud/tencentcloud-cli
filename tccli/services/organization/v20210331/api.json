@@ -1406,7 +1406,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定策略目标ID。成员Uin或部门ID",
+          "document": "<p>绑定策略目标ID。成员Uin或部门ID</p>",
           "example": "10001",
           "member": "uint64",
           "name": "TargetId",
@@ -1415,7 +1415,7 @@
         },
         {
           "disabled": false,
-          "document": "目标类型。取值范围：NODE-部门、MEMBER-成员",
+          "document": "<p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -1424,7 +1424,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略Id。可以调用<a href=\"https://cloud.tencent.com/document/product/850/105311\">ListPolicies</a>获取</p>",
           "example": "100001",
           "member": "uint64",
           "name": "PolicyId",
@@ -1433,7 +1433,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "document": "<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>",
           "example": "SERVICE_CONTROL_POLICY",
           "member": "string",
           "name": "Type",
@@ -5197,7 +5197,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解绑策略目标ID。成员Uin或部门ID",
+          "document": "<p>解绑策略目标ID。成员Uin或部门ID</p>",
           "example": "10001",
           "member": "uint64",
           "name": "TargetId",
@@ -5206,7 +5206,7 @@
         },
         {
           "disabled": false,
-          "document": "目标类型。取值范围：NODE-部门、MEMBER-成员",
+          "document": "<p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -5215,7 +5215,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略Id。可以调用<a href=\"https://cloud.tencent.com/document/product/850/105311\">ListPolicies</a>获取</p>",
           "example": "100001",
           "member": "uint64",
           "name": "PolicyId",
@@ -5224,7 +5224,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "document": "<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>",
           "example": "SERVICE_CONTROL_POLICY",
           "member": "string",
           "name": "Type",
