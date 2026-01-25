@@ -147,8 +147,8 @@
     "CreateTargetGroup": [
       {
         "document": "创建目标组",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-i1cnjuhx\",\n    \"Port\": 80,\n    \"TargetGroupName\": \"czhtest\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TargetGroupId\": \"lbtg-81******\",\n        \"RequestId\": \"9a4096dd-45a1-4e03-be8e-482a2fb48b59\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"TargetGroupName\": \"targetgroup-****\",\n    \"VpcId\": \"vpc-lkdo****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4ab1513-d0b8-4cf2-9836-a600a7f77d2f\",\n        \"TargetGroupId\": \"lbtg-e2ft****\"\n    }\n}",
         "title": "创建目标组"
       }
     ],

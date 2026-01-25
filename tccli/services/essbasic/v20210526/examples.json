@@ -750,7 +750,7 @@
     ],
     "ChannelDescribeSignFaceVideo": [
       {
-        "document": "1. 个人用户在H5端完成合同签署，通过视频问答模式认证。\n2. 所需白名单已经开通。\n3. 在签署完成后的三天内获取人脸图片。",
+        "document": "1. 个人用户在H5端完成合同签署，通过视频问答模式认证。\n2. 所需白名单已经开通。\n3. 在签署完成后的24小时内获取人脸图片。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSignFaceVideo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"AppId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n    \"SignId\": \"yDCNOUUckpv3ecwcUECtq4n1jXPLxLq7\"\n}",
         "output": "{\n    \"Response\": {\n        \"IntentionQuestionResult\": {\n            \"AsrResult\": [\n                \"同意\"\n            ],\n            \"ResultCode\": [\n                \"0\"\n            ],\n            \"Video\": \"AAAAHGZ0eXBpc281AAAAAWlzb21pc281aGxzZgAAB\"\n        },\n        \"RequestId\": \"s1709628366717791449\",\n        \"VideoData\": {\n            \"LiveNessVideo\": \"AAAAHGZ0eXBpc281AAAAAWlzb21pc281aGxzZgAAB\"\n        }\n    }\n}",
         "title": "查询签署认证人脸视频结果"

@@ -77,6 +77,13 @@
       "output": "GetActiveDeviceCountResponse",
       "status": "online"
     },
+    "GetDestIPByName": {
+      "document": "统计单个设备访问目标IP地址信息",
+      "input": "GetDestIPByNameRequest",
+      "name": "根据设备名统计目标IP地址",
+      "output": "GetDestIPByNameResponse",
+      "status": "online"
+    },
     "GetDevice": {
       "document": "通过指定设备的ID查找设备详细信息",
       "input": "GetDeviceRequest",
@@ -126,6 +133,13 @@
       "output": "GetFlowStatisticByGroupResponse",
       "status": "online"
     },
+    "GetFlowStatisticByName": {
+      "document": "获取指定设备Id，指定时间点数据流量使用情况",
+      "input": "GetFlowStatisticByNameRequest",
+      "name": "根据设备名获取数据流量统计数据",
+      "output": "GetFlowStatisticByNameResponse",
+      "status": "online"
+    },
     "GetFlowStatisticByRegion": {
       "document": "获取指定区域，指定时间点数据流量使用情况",
       "input": "GetFlowStatisticByRegionRequest",
@@ -161,6 +175,13 @@
       "output": "GetL3ConnListResponse",
       "status": "online"
     },
+    "GetMonitorDataByName": {
+      "document": "获取单个设备所有监控指标的下载文件链接",
+      "input": "GetMonitorDataByNameRequest",
+      "name": "根据设备名称下载监控数据文件",
+      "output": "GetMonitorDataByNameResponse",
+      "status": "online"
+    },
     "GetMultiFlowStatistic": {
       "document": "批量获取设备流量统计曲线",
       "input": "GetMultiFlowStatisticRequest",
@@ -175,6 +196,13 @@
       "output": "GetNetMonitorResponse",
       "status": "online"
     },
+    "GetNetMonitorByName": {
+      "document": "获取单设备的实时流量统计指标",
+      "input": "GetNetMonitorByNameRequest",
+      "name": "根据设备名获取流量监控信息",
+      "output": "GetNetMonitorByNameResponse",
+      "status": "online"
+    },
     "GetPublicKey": {
       "document": "获取公钥用于验签",
       "input": "GetPublicKeyRequest",
@@ -187,6 +215,13 @@
       "input": "GetStatisticDataRequest",
       "name": "下载用量统计数据",
       "output": "GetStatisticDataResponse",
+      "status": "online"
+    },
+    "GetStatisticDataByName": {
+      "document": "在用量统计页面下载流量数据",
+      "input": "GetStatisticDataByNameRequest",
+      "name": "根据设备名下载用量统计数据",
+      "output": "GetStatisticDataByNameResponse",
       "status": "online"
     },
     "GetVendorHardware": {
@@ -877,6 +912,62 @@
         }
       ],
       "type": "object"
+    },
+    "DestIpInfo": {
+      "document": "目标IP信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间：s",
+          "example": "1662622200",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx.xxx.xx.xx\"",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"guangzhou\"",
+          "member": "string",
+          "name": "GatewaySite",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标IP数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DeviceBaseInfo": {
       "document": "设备的基本信息",
@@ -1670,6 +1761,80 @@
       ],
       "type": "object"
     },
+    "GetDestIPByNameRequest": {
+      "document": "GetDestIPByName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名",
+          "example": "\"devicexx\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1662622200",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1662624800",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDestIPByNameResponse": {
+      "document": "GetDestIPByName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标IP信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DestIpInfo",
+          "name": "DestIpInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetDevicePayModeRequest": {
       "document": "GetDevicePayMode请求参数结构体",
       "members": [
@@ -2042,6 +2207,136 @@
           "disabled": false,
           "document": "流量详细信息",
           "example": "{         \"Current\": 305576473,         \"Time\": \"1711555200\"       },       {         \"Current\": 3291852,         \"Time\": \"1711641600\"       }",
+          "member": "NetDetails",
+          "name": "NetDetails",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用最大值（单位：byte）",
+          "example": "216516",
+          "member": "float",
+          "name": "MaxValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用平均值（单位：byte）",
+          "example": "25151",
+          "member": "float",
+          "name": "AvgValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用总量（单位：byte）",
+          "example": "35465464",
+          "member": "float",
+          "name": "TotalValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowStatisticByNameRequest": {
+      "document": "GetFlowStatisticByName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "devicexxxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始查找时间",
+          "example": "1659514436",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "截止时间",
+          "example": "1659515436",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "流量种类（1：上行流量，2：下行流量，3：上下行总和）",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeGranularity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备名列表，用于查询多设备流量，该字段启用时DeviceId可传\"-1\"",
+          "example": "[\"device01\",\"device02\"]",
+          "member": "string",
+          "name": "DeviceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowStatisticByNameResponse": {
+      "document": "GetFlowStatisticByName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量详细信息",
+          "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
           "output_required": true,
@@ -2648,6 +2943,70 @@
       ],
       "type": "object"
     },
+    "GetMonitorDataByNameRequest": {
+      "document": "GetMonitorDataByName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "\"devicexxx\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1662622200",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1662624800",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetMonitorDataByNameResponse": {
+      "document": "GetMonitorDataByName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetMultiFlowStatisticRequest": {
       "document": "GetMultiFlowStatistic请求参数结构体",
       "members": [
@@ -2728,6 +3087,89 @@
           "name": "FlowDetails",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetNetMonitorByNameRequest": {
+      "document": "GetNetMonitorByName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名",
+          "example": "\"devicexxx\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1662622200",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1662624800",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统计指标（上行速率：\"TxRate\":bit/s，下行速率：\"RxRate\":bit/s，丢包：\"Loss\":%，时延：\"RTT\":ms）",
+          "example": "\"TxRate\"",
+          "member": "string",
+          "name": "Metrics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetNetMonitorByNameResponse": {
+      "document": "GetNetMonitorByName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控数据",
+          "example": "无",
+          "member": "MonitorData",
+          "name": "MonitorData",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM']\nMC=中国大陆\nAP=亚太\nEU=欧洲\nAM=美洲",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2836,6 +3278,115 @@
           "example": "\"-----BEGIN RSA Public Key-----\\nMIIBIjANBgkqhkiG9w0Bd7Fqz8X\\no+TronsIDAQAB\\n-----END RSA Public Key-----\"",
           "member": "string",
           "name": "PublicKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetStatisticDataByNameRequest": {
+      "document": "GetStatisticDataByName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名。若不指定设备，可传\"-1\"",
+          "example": "\"devicexxx\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计开始时间，单位：s",
+          "example": "1661212800",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统计结束时间，单位：s",
+          "example": "1661587200",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "聚合粒度：\n1:按小时统计\n2:按天统计",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeGranularity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备名列表，最多10个设备，下载多个设备流量时使用，此时DeviceName可传\"-1\"",
+          "example": "[\"device1\",\"device2\"]",
+          "member": "string",
+          "name": "DeviceList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设备分组ID，若不指定分组则不传，按分组下载数据时使用",
+          "example": "\"group-test\"",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID，若不指定应用不填，按应用下载数据时使用",
+          "example": "\"app-fvwy7esyat\"",
+          "member": "string",
+          "name": "MpApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetStatisticDataByNameResponse": {
+      "document": "GetStatisticDataByName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件地址url",
+          "example": "\"http://xxxx\"",
+          "member": "string",
+          "name": "FilePath",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

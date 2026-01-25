@@ -6354,6 +6354,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "DatasourceId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DatasourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11886,7 +11908,7 @@
         },
         {
           "disabled": false,
-          "document": "父目录ID",
+          "document": "父目录ID(此参数还未支持)",
           "example": "0",
           "member": "string",
           "name": "ParentCatalogId",
@@ -24882,6 +24904,39 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "DatasourceId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DatasourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

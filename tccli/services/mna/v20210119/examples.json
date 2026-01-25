@@ -88,6 +88,14 @@
         "title": "活跃设备数量统计"
       }
     ],
+    "GetDestIPByName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDestIPByName\n<公共请求参数>\n\n{\n    \"DeviceName\": \"testdev\",\n    \"BeginTime\": 1758544656,\n    \"EndTime\": 1758544716,\n    \"GatewayType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessRegion\": \"MC\",\n        \"DestIpInfo\": [\n            {\n                \"GatewayIp\": \"\",\n                \"GatewaySite\": \"\",\n                \"IpCount\": 0,\n                \"IpList\": [],\n                \"Time\": \"1758544620\"\n            },\n            {\n                \"GatewayIp\": \"\",\n                \"GatewaySite\": \"\",\n                \"IpCount\": 0,\n                \"IpList\": [],\n                \"Time\": \"1758544680\"\n            }\n        ],\n        \"RequestId\": \"33ef661c-3d47-4b67-96a1-d4852daeace6\"\n    }\n}",
+        "title": "根据DeviceName（testdev）查询目标IP列表"
+      }
+    ],
     "GetDevice": [
       {
         "document": "获取设备基本信息和网络信息",
@@ -150,6 +158,14 @@
         "title": "根据分组获取用量统计信息"
       }
     ],
+    "GetFlowStatisticByName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatisticByName\n<公共请求参数>\n\n{\n    \"DeviceName\": \"test0916\",\n    \"BeginTime\": 1757865600,\n    \"EndTime\": 1758544927,\n    \"Type\": 1,\n    \"TimeGranularity\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AvgValue\": 51145200,\n        \"MaxValue\": 51145200,\n        \"NetDetails\": [\n            {\n                \"Current\": 51145200,\n                \"Time\": \"1758024000\"\n            }\n        ],\n        \"RequestId\": \"3dc9c965-862b-46ea-b80a-0caf4368d0ba\",\n        \"TotalValue\": 51145200\n    }\n}",
+        "title": "根据DeviceName（test0916）查询按小时的流量统计信息"
+      }
+    ],
     "GetFlowStatisticByRegion": [
       {
         "document": "",
@@ -190,6 +206,14 @@
         "title": "示例1"
       }
     ],
+    "GetMonitorDataByName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMonitorDataByName\n<公共请求参数>\n\n{\n    \"DeviceName\": \"test0916\",\n    \"BeginTime\": 1757865600,\n    \"EndTime\": 1758544927\n}",
+        "output": "{\n    \"Response\": {\n        \"FilePath\": \"https://mpacc-1258344699.cos.ap-shanghai.myqcloud.com/statistics/test0916-2025-09-15%2000%3A00-2025-09-22%2020%3A42.xlsx?x-cos-security-token=jbHT6Au3IyqAzImDJ7OdTkQ4p9KEM7na6ee3e51e8ec37e302783895fd151f13bZ7AsI8iUE1m3lkPZvh4nES34VFP_i5h8Rzc-ktTG4qsVkp4OA2R-eYxnBlRvLSzBFnBXkp-3_AXZPcJVZl9BnR3nmGzyHVuy0pdQXvgFonpYl9R8zg8PmcrKg5xn60WXalm0xkYbEeZYNFFWaUWTI_h0BX4vbm3XxDp-GQ6Q_OADCi_H4kT-uakfDE6fnt8SrP7qlHVLTfLCOTSqvNoaT4sjXmIaR356TIOZQ5D64TN9ifsHu3QFyAHkbZFTwMzmDOHaJEY1OTwDmFO9S3SosA&q-sign-algorithm=sha1&q-ak=AKID-oMDWX77h9wxXqhV_3kJcRLY4WsmvmWtWtvi8wVyjzOZl8sJnnhW0Y77Hra_tbJy&q-sign-time=1758545263%3B1758548863&q-key-time=1758545263%3B1758548863&q-header-list=host&q-url-param-list=x-cos-security-token&q-signature=26276e2bab1c468111b665d2d2a491643dda356e\",\n        \"RequestId\": \"999228ed-2113-4431-8162-de82508419fd\"\n    }\n}",
+        "title": "根据DeviceName（test0916）获取监控数据文件下载链接"
+      }
+    ],
     "GetMultiFlowStatistic": [
       {
         "document": "批量获取指定设备列表流量使用信息",
@@ -206,6 +230,14 @@
         "title": "获取流量监控信息"
       }
     ],
+    "GetNetMonitorByName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetNetMonitorByName\n<公共请求参数>\n\n{\n    \"DeviceName\": \"testdev\",\n    \"BeginTime\": 1758545194,\n    \"EndTime\": 1758545494,\n    \"Metrics\": \"RxRate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessRegion\": \"MC\",\n        \"MonitorData\": [\n            {\n                \"BusinessMetrics\": 158.133333,\n                \"SlotNetInfo\": [\n                    {\n                        \"Current\": 7104.8,\n                        \"NetInfoName\": \"rmnet_data5\",\n                        \"PublicIP\": \"123.138.183.224:34771\"\n                    },\n                    {\n                        \"Current\": 7331.466667,\n                        \"NetInfoName\": \"wlan0\",\n                        \"PublicIP\": \"113.142.183.133:37034\"\n                    }\n                ],\n                \"Time\": \"1758545160\"\n            },\n            {\n                \"BusinessMetrics\": 1329.733333,\n                \"SlotNetInfo\": [\n                    {\n                        \"Current\": 7064.666667,\n                        \"NetInfoName\": \"rmnet_data5\",\n                        \"PublicIP\": \"123.138.183.224:34771\"\n                    },\n                    {\n                        \"Current\": 8696.8,\n                        \"NetInfoName\": \"wlan0\",\n                        \"PublicIP\": \"113.142.183.133:37034\"\n                    }\n                ],\n                \"Time\": \"1758545220\"\n            },\n            {\n                \"BusinessMetrics\": 497.466667,\n                \"SlotNetInfo\": [\n                    {\n                        \"Current\": 7428.4,\n                        \"NetInfoName\": \"rmnet_data5\",\n                        \"PublicIP\": \"123.138.183.224:34771\"\n                    },\n                    {\n                        \"Current\": 7513.066667,\n                        \"NetInfoName\": \"wlan0\",\n                        \"PublicIP\": \"113.142.183.133:37034\"\n                    }\n                ],\n                \"Time\": \"1758545280\"\n            },\n            {\n                \"BusinessMetrics\": 1156.933333,\n                \"SlotNetInfo\": [\n                    {\n                        \"Current\": 9330.933333,\n                        \"NetInfoName\": \"rmnet_data5\",\n                        \"PublicIP\": \"123.138.183.224:34771\"\n                    },\n                    {\n                        \"Current\": 8388.133333,\n                        \"NetInfoName\": \"wlan0\",\n                        \"PublicIP\": \"113.142.183.133:37034\"\n                    }\n                ],\n                \"Time\": \"1758545340\"\n            },\n            {\n                \"BusinessMetrics\": 3181.866667,\n                \"SlotNetInfo\": [\n                    {\n                        \"Current\": 8754,\n                        \"NetInfoName\": \"rmnet_data5\",\n                        \"PublicIP\": \"123.138.183.224:34771\"\n                    },\n                    {\n                        \"Current\": 9718.666667,\n                        \"NetInfoName\": \"wlan0\",\n                        \"PublicIP\": \"113.142.183.133:37034\"\n                    }\n                ],\n                \"Time\": \"1758545400\"\n            },\n            {\n                \"BusinessMetrics\": -1,\n                \"SlotNetInfo\": [\n                    {\n                        \"Current\": -1,\n                        \"NetInfoName\": \"rmnet_data5\",\n                        \"PublicIP\": \"123.138.183.224:34771\"\n                    },\n                    {\n                        \"Current\": -1,\n                        \"NetInfoName\": \"wlan0\",\n                        \"PublicIP\": \"113.142.183.133:37034\"\n                    }\n                ],\n                \"Time\": \"1758545460\"\n            }\n        ],\n        \"RequestId\": \"09975f22-b4fc-45a6-81d4-67236cb9e867\"\n    }\n}",
+        "title": "根据DeviceName（testdev）获取流量监控信息"
+      }
+    ],
     "GetPublicKey": [
       {
         "document": "",
@@ -220,6 +252,14 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetStatisticData\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"DeviceId\": \"mna-test1\",\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692,\n    \"AccessRegion\": \"MC\",\n    \"GatewayType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req\",\n        \"FilePath\": \"http://geekyang-cos-1257943044.cos-internal.ap-guangzhou.tencentcos.cn/test/175527768616861696.xlsx\"\n    }\n}",
         "title": "获取指定id的设备流量用量统计文件"
+      }
+    ],
+    "GetStatisticDataByName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetStatisticDataByName\n<公共请求参数>\n\n{\n    \"DeviceName\": \"testdev\",\n    \"BeginTime\": 1758545194,\n    \"EndTime\": 1758545494,\n    \"TimeGranularity\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FilePath\": \"https://mpacc-1258344699.cos.ap-shanghai.myqcloud.com/statistics/testdev-2025-09-22%2020%3A46-2025-09-22%2020%3A51.xlsx?x-cos-security-token=TfRjI9hDAEj4c2nMNCQKiC495t11CCzad4e0e6c241aa5cf62b038eed7e49c655XMbo81wiOFLLUV_j-puJ5E9ajhe5nUOkkzYcnsjUnzckINvTGegHSDluG1j1S8dcGgsfmKeTC1Lwy7MqFaz8SNy70rxYcLPyjXyRBLabas71dCw1T0ExJ7WZ9QVdt_BpN2r4QHEjrrGwgrFMl0G8-WXK5p1K379GIU1EGoFQbtAyarcS7bSY4YZqJJoJLc5xbV06-EhZBmc8xuRWkb9qy7xb5hpvcHIhwVImuLt_kphCN0aqmiAvF8c3SGk_vJfWhNd_oggWwiI7DF7tdivwwQ&q-sign-algorithm=sha1&q-ak=AKIDS0QpMFsyDxyeBVCgef5olc8hdJY8NcM-xjLQ8NHRe_xU69TYvm_fuE4ZS2PQX_NI&q-sign-time=1758545599%3B1758549199&q-key-time=1758545599%3B1758549199&q-header-list=host&q-url-param-list=x-cos-security-token&q-signature=e615939623f175b592937beff2f5071e25c27d56\",\n        \"RequestId\": \"3337c8e8-9f5d-4d1f-93e7-0180e3f37ce4\"\n    }\n}",
+        "title": "根据DeviceName（testdev）获取用量统计数据下载链接"
       }
     ],
     "GetVendorHardware": [

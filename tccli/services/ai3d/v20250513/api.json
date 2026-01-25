@@ -730,6 +730,15 @@
           "name": "File",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "组件生成模型版本，默认为1.0，可选项：1.0，1.5；",
+          "example": "1.0",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

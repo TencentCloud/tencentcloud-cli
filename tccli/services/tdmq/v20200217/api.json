@@ -3458,6 +3458,15 @@
           "name": "SubscriptionExpirationTimeEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5132,6 +5141,24 @@
           "name": "PulsarTopicMessageType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主题标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "defaultPolicy/timingwheelPolicy不传默认是社区版本延迟消息策略",
+          "example": "defaultPolicy",
+          "member": "string",
+          "name": "DelayMessagePolicy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12435,6 +12462,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15027,6 +15064,15 @@
           "name": "AckTimeOut",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "defaultPolicy/timingwheelPolicy不传默认是社区版本延迟消息策略",
+          "example": "defaultPolicy",
+          "member": "string",
+          "name": "DelayMessagePolicy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16006,7 +16052,7 @@
         },
         {
           "disabled": false,
-          "document": "最大主题分区数",
+          "document": "可以创建的最大主题数",
           "example": "4000",
           "member": "uint64",
           "name": "MaxTopics",
@@ -16036,10 +16082,50 @@
         },
         {
           "disabled": false,
-          "document": "商品最大延迟消息数量。0代表没有限制\t",
+          "document": "最大延迟消息数量。0代表没有限制\t",
           "example": "2000000",
           "member": "int64",
           "name": "MaxDelayedMessages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以创建的最大主题分区数",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxTopicsPartitioned",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单broker最大链接数",
+          "example": "1",
+          "member": "int64",
+          "name": "BrokerMaxConnections",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单IP最大链接数",
+          "example": "1",
+          "member": "int64",
+          "name": "BrokerMaxConnectionsPerIp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性存储集群最大存储规格；固定存储该值为0",
+          "example": "1",
+          "member": "int64",
+          "name": "MaximumElasticStorage",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -21830,6 +21916,26 @@
           "name": "PulsarTopicMessageType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "defaultPolicy/timingwheelPolicy不传默认是社区版本延迟消息策略",
+          "example": "defaultPolicy",
+          "member": "string",
+          "name": "DelayMessagePolicy",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
