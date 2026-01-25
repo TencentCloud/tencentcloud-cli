@@ -3544,6 +3544,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用的集群；可以是集群id,也可以是All",
+          "example": "All",
+          "member": "string",
+          "name": "UsedCluster",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cidr，只有当IsDirectConnect为true时才生效",
+          "example": "172.21.160.0/20",
+          "member": "string",
+          "name": "CIDR",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为专线接入场景",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDirectConnect",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

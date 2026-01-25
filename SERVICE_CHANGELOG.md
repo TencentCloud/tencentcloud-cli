@@ -1,44 +1,10 @@
-# Release 3.0.1354.1
+# Release 3.0.1355.1
 
-## 智能顾问(advisor) 版本：2020-07-21
+## 腾讯混元生3D(ai3d) 版本：2025-05-13
 
-### 第 25 次发布
+### 第 11 次发布
 
-发布时间：2026-01-23 01:08:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateAdvisorAuthorization](http://document.tencentcloudapi.woa.com/document/product/1660/88756)
-
-
-
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 109 次发布
-
-发布时间：2026-01-23 01:13:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/555/88759)
-* [RefundInstance](http://document.tencentcloudapi.woa.com/document/product/555/88758)
-* [RenewInstance](http://document.tencentcloudapi.woa.com/document/product/555/88757)
-
-
-
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 88 次发布
-
-发布时间：2026-01-23 01:20:35
+发布时间：2026-01-26 01:07:52
 
 本次发布包含了以下内容：
 
@@ -46,72 +12,40 @@
 
 修改接口：
 
-* [DescribeEngineUpdateDetail](http://document.tencentcloudapi.woa.com/document/product/1132/85228)
+* [SubmitHunyuan3DPartJob](http://document.tencentcloudapi.woa.com/document/product/1800/88298)
 
-	* 新增出参：EngineMaintainStatus
+	* 新增入参：Model
 
+
+
+
+## 大模型安全网关(apis) 版本：2024-08-01
+
+### 第 4 次发布
+
+发布时间：2026-01-26 01:10:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTokenLogs](http://document.tencentcloudapi.woa.com/document/product/1805/88761)
 
 新增数据结构：
 
-* [UpdateMaintainInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#UpdateMaintainInfo)
+* [DescribeTokenCountVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeTokenCountVO)
+* [DescribeTokenLogsItemVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeTokenLogsItemVO)
+* [DescribeTokenLogsVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeTokenLogsVO)
 
 
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## 负载均衡(clb) 版本：2023-04-17
 
-### 第 127 次发布
+### 第 5 次发布
 
-发布时间：2026-01-23 01:38:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [LoadAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadAutoScaleStrategy)
-
-	* 新增成员：GraceDownProtectTime
-
-* [TimeAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#TimeAutoScaleStrategy)
-
-	* 新增成员：GraceDownProtectTime
-
-
-
-
-## 高性能计算平台(thpc) 版本：2023-03-21
-
-### 第 26 次发布
-
-发布时间：2026-01-23 02:13:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [QueueConfig](http://document.tencentcloudapi.woa.com/document/product/1701/80209#QueueConfig)
-
-	* 新增成员：LaunchTemplateIds
-
-
-
-
-## 高性能计算平台(thpc) 版本：2022-04-01
-
-
-
-## 高性能计算平台(thpc) 版本：2021-11-09
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 118 次发布
-
-发布时间：2026-01-23 02:17:10
+发布时间：2026-01-26 01:22:31
 
 本次发布包含了以下内容：
 
@@ -119,18 +53,18 @@
 
 修改接口：
 
-* [CreateCloudModeration](http://document.tencentcloudapi.woa.com/document/product/647/87228)
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/83856)
 
-	* <font color="#dd0000">**修改入参**：</font>ModerationStorageParams
-
-
+	* 新增入参：SetIds
 
 
-## 私有网络(vpc) 版本：2017-03-12
 
-### 第 238 次发布
 
-发布时间：2026-01-23 02:20:29
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 81 次发布
+
+发布时间：2026-01-26 01:21:17
 
 本次发布包含了以下内容：
 
@@ -138,12 +72,182 @@
 
 修改接口：
 
-* [DescribeSubnets](http://document.tencentcloudapi.woa.com/document/product/215/15784)
+* [CreateTargetGroup](http://document.tencentcloudapi.woa.com/document/product/214/40559)
 
-	* 新增入参：MaxResults, NextToken
+	* 新增入参：SnatEnable, SrcPortAlgorithm
 
-	* 新增出参：NextToken
 
+
+
+## 暴露面管理服务(ctem) 版本：2023-11-28
+
+### 第 13 次发布
+
+发布时间：2026-01-26 01:25:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeBannerData
+* DescribePortGroups
+* DescribeVulAssetData
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* PortGroup
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 22 次发布
+
+发布时间：2026-01-26 01:42:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SubnetInfo](http://document.tencentcloudapi.woa.com/document/product/1716/81241#SubnetInfo)
+
+	* 新增成员：UsedCluster, CIDR, IsDirectConnect
+
+
+
+
+## 网关负载均衡(gwlb) 版本：2024-09-06
+
+### 第 9 次发布
+
+发布时间：2026-01-26 01:43:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTargetGroup](http://document.tencentcloudapi.woa.com/document/product/1776/85071)
+
+	* 新增入参：SrcPortAlgorithm
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 30 次发布
+
+发布时间：2026-01-26 01:54:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetDestIPByName](http://document.tencentcloudapi.woa.com/document/product/1385/88766)
+* [GetFlowStatisticByName](http://document.tencentcloudapi.woa.com/document/product/1385/88765)
+* [GetMonitorDataByName](http://document.tencentcloudapi.woa.com/document/product/1385/88764)
+* [GetNetMonitorByName](http://document.tencentcloudapi.woa.com/document/product/1385/88763)
+* [GetStatisticDataByName](http://document.tencentcloudapi.woa.com/document/product/1385/88762)
+
+新增数据结构：
+
+* [DestIpInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#DestIpInfo)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 145 次发布
+
+发布时间：2026-01-26 01:57:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ProcessImage](http://document.tencentcloudapi.woa.com/document/product/862/85380)
+
+	* 新增入参：StdExtInfo
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 171 次发布
+
+发布时间：2026-01-26 02:12:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1179/46081)
+
+	* 新增入参：Tags
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46088)
+
+	* 新增入参：Tags, DelayMessagePolicy
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46085)
+
+	* 新增入参：DelayMessagePolicy
+
+
+修改数据结构：
+
+* [Environment](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Environment)
+
+	* 新增成员：Tags
+
+* [PulsarProClusterSpecInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterSpecInfo)
+
+	* 新增成员：MaxTopicsPartitioned, BrokerMaxConnections, BrokerMaxConnectionsPerIp, MaximumElasticStorage
+
+* [Topic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Topic)
+
+	* 新增成员：Tags, DelayMessagePolicy
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+
+### 第 13 次发布
+
+发布时间：2026-01-26 02:24:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/87707#DatabaseInfo)
+
+	* 新增成员：DatasourceId, DatasourceType
+
+* [TableInfo](http://document.tencentcloudapi.woa.com/document/product/1607/87707#TableInfo)
+
+	* 新增成员：CatalogName, DatasourceId, DatasourceType
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
 
 

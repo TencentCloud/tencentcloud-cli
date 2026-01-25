@@ -18,7 +18,7 @@
     ],
     "CreateTargetGroup": [
       {
-        "document": "",
+        "document": "创建目标组",
         "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-ojtgv3oh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eab511f4-8f43-42ff-896b-0ee4cdf83493\",\n        \"TargetGroupId\": \"lbtg-fxh5qtdy\"\n    }\n}",
         "title": "创建目标组"

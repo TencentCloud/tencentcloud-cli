@@ -161,6 +161,13 @@
       "output": "DescribeMcpServersResponse",
       "status": "online"
     },
+    "DescribeTokenLogs": {
+      "document": "查询token计量日志",
+      "input": "DescribeTokenLogsRequest",
+      "name": "查询token日志",
+      "output": "DescribeTokenLogsResponse",
+      "status": "online"
+    },
     "DisableByPassMcpSecurityRule": {
       "document": "禁用绕过mcp 安全规则",
       "input": "DisableByPassMcpSecurityRuleRequest",
@@ -3503,6 +3510,252 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeTokenCountVO": {
+      "document": "token总量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求token消耗",
+          "example": "0",
+          "member": "int64",
+          "name": "ReqTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应token消耗",
+          "example": "0",
+          "member": "int64",
+          "name": "ResTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总的token消耗",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求总量",
+          "example": "0",
+          "member": "int64",
+          "name": "ReqCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeTokenLogsItemVO": {
+      "document": "查询token日志的出参，每一项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日期时间戳，秒",
+          "example": "1764518400000",
+          "member": "int64",
+          "name": "Time",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求消耗token数",
+          "example": "0",
+          "member": "int64",
+          "name": "ReqTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消耗token数",
+          "example": "0",
+          "member": "int64",
+          "name": "ResTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总体消耗token数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求总量",
+          "example": "0",
+          "member": "int64",
+          "name": "ReqCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeTokenLogsRequest": {
+      "document": "DescribeTokenLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例",
+          "example": "ins-a7af1980",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳，毫秒",
+          "example": "1764518400000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，毫秒",
+          "example": "1767196799999",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不填的就是查总量，填写的话会附带查曲线，间隔minute hour day week month",
+          "example": "minute",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API分组ID列表",
+          "example": "[\"dex\"]",
+          "member": "string",
+          "name": "PaasIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "API ID列表",
+          "example": "[\"srv-0101\"]",
+          "member": "string",
+          "name": "ServiceIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型ID列表",
+          "example": "[\"tar-0101\"]",
+          "member": "string",
+          "name": "ModelIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否被tms检测到，不填写的话查所有，填写的话就是做定向过滤",
+          "example": "true",
+          "member": "bool",
+          "name": "TmsBlock",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "tmsCheck为true时，执行动作watch，intercept",
+          "example": "[\"watch\"]",
+          "member": "string",
+          "name": "TmsActions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "tmsCheck为true时，检测范围request，response",
+          "example": "[\"request\"]",
+          "member": "string",
+          "name": "TmsScopes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenLogsResponse": {
+      "document": "DescribeTokenLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果集",
+          "example": "无",
+          "member": "DescribeTokenLogsVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenLogsVO": {
+      "document": "查询token日志的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "无",
+          "member": "DescribeTokenLogsItemVO",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总量",
+          "example": "无",
+          "member": "DescribeTokenCountVO",
+          "name": "Sum",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

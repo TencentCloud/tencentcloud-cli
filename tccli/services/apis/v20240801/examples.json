@@ -184,6 +184,14 @@
         "title": "查询mcp server列表"
       }
     ],
+    "DescribeTokenLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenLogs\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"StartTime\": 1764518400000,\n    \"EndTime\": 1767196799999\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"Sum\": {\n                \"ReqCount\": 0,\n                \"ReqTokens\": 0,\n                \"ResTokens\": 0,\n                \"TotalTokens\": 0\n            }\n        },\n        \"RequestId\": \"450c8c76-187d-4ed5-b2c0-5bc9b8f36480\"\n    }\n}",
+        "title": "查询token统计日志"
+      }
+    ],
     "DisableByPassMcpSecurityRule": [
       {
         "document": "禁用绕过mcp 安全规则",

@@ -777,7 +777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
+          "document": "<p>负载均衡实例的网络类型：<br>OPEN：公网属性， INTERNAL：内网属性。</p>",
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
@@ -786,7 +786,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。",
+          "document": "<p>负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。</p>",
           "example": "1",
           "member": "int64",
           "name": "Forward",
@@ -795,7 +795,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-60 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。",
+          "document": "<p>负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-80 个英文字母、汉字等国际通用语言字符，数字，连接线“-”、下划线“_”等常见字符（禁止Unicode补充字符，如emoji表情、生僻汉字等）。注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。</p>",
           "example": "test-cvm-bussiness",
           "member": "string",
           "name": "LoadBalancerName",
@@ -804,7 +804,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778) 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。",
+          "document": "<p>负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 <a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a> 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。</p>",
           "example": "vpc-30xq****",
           "member": "string",
           "name": "VpcId",
@@ -813,7 +813,7 @@
         },
         {
           "disabled": false,
-          "document": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。",
+          "document": "<p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。</p>",
           "example": "subnet-dva8****",
           "member": "string",
           "name": "SubnetId",
@@ -822,7 +822,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 接口获取。不填此参数则视为默认项目。",
+          "document": "<p>负载均衡实例所属的项目 ID，可以通过 <a href=\"https://cloud.tencent.com/document/api/651/78725\">DescribeProject</a> 接口获取。不填此参数则视为默认项目。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -831,7 +831,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，不区分大小写，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。",
+          "document": "<p>仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，不区分大小写，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。</p>",
           "example": "IPV4",
           "member": "string",
           "name": "AddressIPVersion",
@@ -840,7 +840,7 @@
         },
         {
           "disabled": false,
-          "document": "创建负载均衡的个数，默认值 1。",
+          "document": "<p>创建负载均衡的个数，默认值 1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Number",
@@ -849,7 +849,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网且IP版本为IPv4的负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区。目前仅广州、上海、南京、北京、成都、深圳金融、中国香港、首尔、法兰克福、新加坡地域的 IPv4 版本的 CLB 支持主备可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主可用区的列表。【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】",
+          "document": "<p>仅适用于公网且IP版本为IPv4的负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1<br>注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区。目前仅广州、上海、南京、北京、成都、深圳金融、中国香港、首尔、法兰克福、新加坡地域的 IPv4 版本的 CLB 支持主备可用区。可通过 <a href=\"https://cloud.tencent.com/document/api/214/70213\">DescribeResources</a> 接口查询一个地域的主可用区的列表。【如果您需要体验该功能，请通过 <a href=\"https://console.cloud.tencent.com/workorder/category\">工单申请</a>】</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "MasterZoneId",
@@ -858,7 +858,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网且IP版本为IPv4的负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。",
+          "document": "<p>仅适用于公网且IP版本为IPv4的负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ZoneId",
@@ -867,7 +867,7 @@
         },
         {
           "disabled": false,
-          "document": "网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。",
+          "document": "<p>网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。</p>",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -876,7 +876,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213)  接口查询一个地域所支持的Isp。",
+          "document": "<p>仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 <a href=\"https://cloud.tencent.com/document/api/214/70213\">DescribeResources</a>  接口查询一个地域所支持的Isp。</p>",
           "example": "CMCC",
           "member": "string",
           "name": "VipIsp",
@@ -885,7 +885,7 @@
         },
         {
           "disabled": false,
-          "document": "购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。",
+          "document": "<p>购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -894,7 +894,7 @@
         },
         {
           "disabled": false,
-          "document": "指定VIP申请负载均衡。此参数选填，不填写此参数时自动分配VIP。IPv4和IPv6类型支持此参数，IPv6 NAT64类型不支持。\n注意：当指定VIP创建内网实例、或公网IPv6 BGP实例时，若VIP不属于指定VPC子网的网段内时，会创建失败；若VIP已被占用，也会创建失败。",
+          "document": "<p>指定VIP申请负载均衡。此参数选填，不填写此参数时自动分配VIP。IPv4和IPv6类型支持此参数，IPv6 NAT64类型不支持。<br>注意：当指定VIP创建内网实例、或公网IPv6 BGP实例时，若VIP不属于指定VPC子网的网段内时，会创建失败；若VIP已被占用，也会创建失败。</p>",
           "example": "139.X.X.X",
           "member": "string",
           "name": "Vip",
@@ -903,7 +903,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE），带宽包的属性即为其结算方式。非上移用户购买的 IPv6 负载均衡实例，且运营商类型非 BGP 时 ，不支持指定具体带宽包id。",
+          "document": "<p>带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE），带宽包的属性即为其结算方式。非上移用户购买的 IPv6 负载均衡实例，且运营商类型非 BGP 时 ，不支持指定具体带宽包id。</p>",
           "example": "bwp-pnbe****",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -912,7 +912,7 @@
         },
         {
           "disabled": false,
-          "document": "独占型实例信息。若创建独占型的内网负载均衡实例，则此参数必填。",
+          "document": "<p>独占型实例信息。若创建独占型的内网负载均衡实例，则此参数必填。</p>",
           "example": "无",
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
@@ -921,7 +921,7 @@
         },
         {
           "disabled": false,
-          "document": "性能容量型规格。\n<ul><li>若需要创建性能容量型实例，则此参数必填，取值范围：<ul><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)。",
+          "document": "<p>性能容量型规格。</p><ul><li>若需要创建性能容量型实例，则此参数必填，取值范围：<ul><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)。",
           "example": "clb.c3.medium",
           "member": "string",
           "name": "SlaType",
@@ -930,7 +930,7 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>",
           "example": "23494*****",
           "member": "string",
           "name": "ClientToken",
@@ -939,7 +939,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持绑定跨地域/跨Vpc绑定IP的功能。",
+          "document": "<p>是否支持绑定跨地域/跨Vpc绑定IP的功能。</p>",
           "example": "true",
           "member": "bool",
           "name": "SnatPro",
@@ -948,7 +948,7 @@
         },
         {
           "disabled": false,
-          "document": "开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。",
+          "document": "<p>开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。</p>",
           "example": "无",
           "member": "SnatIp",
           "name": "SnatIps",
@@ -957,7 +957,7 @@
         },
         {
           "disabled": false,
-          "document": "Stgw独占集群的标签。",
+          "document": "<p>Stgw独占集群的标签。</p>",
           "example": "ziyan",
           "member": "string",
           "name": "ClusterTag",
@@ -966,7 +966,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网且IP版本为IPv4的负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1\n注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主/备可用区的列表。【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】",
+          "document": "<p>仅适用于公网且IP版本为IPv4的负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1<br>注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 <a href=\"https://cloud.tencent.com/document/api/214/70213\">DescribeResources</a> 接口查询一个地域的主/备可用区的列表。【如果您需要体验该功能，请通过 <a href=\"https://console.cloud.tencent.com/workorder/category\">工单申请</a>】</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "SlaveZoneId",
@@ -975,7 +975,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。",
+          "document": "<p>EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。</p>",
           "example": "eip-1111****",
           "member": "string",
           "name": "EipAddressId",
@@ -984,7 +984,7 @@
         },
         {
           "disabled": false,
-          "document": "Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。",
+          "document": "<p>Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。</p>",
           "example": "true",
           "member": "bool",
           "name": "LoadBalancerPassToTarget",
@@ -993,7 +993,7 @@
         },
         {
           "disabled": false,
-          "document": "网络出口",
+          "document": "<p>网络出口</p>",
           "example": "center_egress1",
           "member": "string",
           "name": "Egress",
@@ -1002,7 +1002,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的预付费相关属性",
+          "document": "<p>负载均衡实例的预付费相关属性</p>",
           "example": "无",
           "member": "LBChargePrepaid",
           "name": "LBChargePrepaid",
@@ -1011,7 +1011,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。",
+          "document": "<p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。</p>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "LBChargeType",
@@ -1020,7 +1020,7 @@
         },
         {
           "disabled": false,
-          "document": "七层访问日志主题ID",
+          "document": "<p>七层访问日志主题ID</p>",
           "example": "9ec21ce7-a71b-4ba7-afb1-c1bd630233**",
           "member": "string",
           "name": "AccessLogTopicId",
@@ -1029,12 +1029,21 @@
         },
         {
           "disabled": false,
-          "document": "是否开启七层高级路由",
+          "document": "<p>是否开启七层高级路由</p>",
           "example": "false",
           "member": "bool",
           "name": "AdvancedRoute",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>独占集群ID</p><p>取值范围：[1, 200]</p>",
+          "example": "[12]",
+          "member": "int64",
+          "name": "SetIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1044,7 +1053,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "由负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。",
+          "document": "<p>由负载均衡实例唯一 ID 组成的数组。<br>存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。</p>",
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -1054,7 +1063,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号。",
+          "document": "<p>订单号。</p>",
           "example": "2022XXXX",
           "member": "string",
           "name": "DealName",

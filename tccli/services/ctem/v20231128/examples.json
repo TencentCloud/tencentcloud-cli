@@ -256,14 +256,6 @@
         "title": "相关资产"
       }
     ],
-    "DescribeBannerData": [
-      {
-        "document": "查看指纹数据",
-        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBannerData\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"VulId\": \"SC-2023-0677\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"04656472-76ae-4bed-b8fb-e46991bb5334\"\n    }\n}",
-        "title": "查看指纹数据"
-      }
-    ],
     "DescribeConfigs": [
       {
         "document": "查看目录爆破数据",
@@ -472,14 +464,6 @@
         "title": "查看端口服务组件列表"
       }
     ],
-    "DescribePortGroups": [
-      {
-        "document": "查看端口分组数据",
-        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePortGroups\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"93bd57f9-9593-4528-87be-1e3abf2d61b0\",\n        \"Total\": 0\n    }\n}",
-        "title": "查看端口分组数据"
-      }
-    ],
     "DescribePorts": [
       {
         "document": "查看端口数据",
@@ -606,14 +590,6 @@
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"AppId\": 1300055108,\n        \"Groups\": [\n            \"暴露面管理\"\n        ],\n        \"Id\": 1300055108,\n        \"LoginMode\": \"yunapi\",\n        \"Name\": \"600000560604\",\n        \"NickName\": \"1300055108\",\n        \"Remark\": \"\",\n        \"RequestId\": \"05241abc-66c6-47cf-8260-db6ab3c1388f\",\n        \"Uin\": \"600000560604\"\n    }\n}",
         "title": "用户信息"
-      }
-    ],
-    "DescribeVulAssetData": [
-      {
-        "document": "获取漏洞资产数据",
-        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulAssetData\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"VulId\": \"SC-2023-0677\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"28087cae-adb2-43d7-adaf-f6e996251f54\"\n    }\n}",
-        "title": "获取漏洞资产数据"
       }
     ],
     "DescribeVulGroups": [
