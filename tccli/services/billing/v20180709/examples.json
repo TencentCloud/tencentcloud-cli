@@ -506,6 +506,14 @@
         "title": "查询归集规则详情"
       }
     ],
+    "DescribeRenewInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRenewInstances\n<公共请求参数>\n\n{\n    \"MaxResults\": 10,\n    \"NextToken\": \"VDAwMSu3Y69lZhLwW1bRxLiwKafWBv_6TqKBnp-YH12b0uWcwTBf3DIK7Myza6EVdhDKoFGpKANnZkfmmLy5K8uH1lJYqyvuT_mSXc8VoOdX-8kcKJrB3JbyW9dM0edrKm3Q\",\n    \"Reverse\": true,\n    \"RenewFlagList\": [\n        \"DISABLE_NOTIFY_AND_MANUAL_RENEW\"\n    ],\n    \"InstanceIdList\": [\n        \"std_storage-20241106185002290002691-0\"\n    ],\n    \"ExpireTimeStart\": \"2025-06-26 00:38:46\",\n    \"ExpireTimeEnd\": \"2025-09-27 15:38:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"ExpireTime\": \"2025-07-06 23:59:59\",\n                \"InstanceId\": \"std_storage-20241106185002290002691-0\",\n                \"InstanceName\": \"\",\n                \"ProductCode\": \"p_cos\",\n                \"ProductName\": \"COS u5bf9u8c61u5b58u50a8\",\n                \"ProjectName\": \"u9ed8u8ba4u9879u76ee\",\n                \"RegionCode\": \"ap-others\",\n                \"RenewFlag\": \"DISABLE_NOTIFY_AND_MANUAL_RENEW\",\n                \"RenewPeriod\": 1,\n                \"RenewPeriodUnit\": \"m\",\n                \"Status\": \"NORMAL\",\n                \"SubProductCode\": \"sp_cos_pkg_std_new\"\n            }\n        ],\n        \"NextToken\": null,\n        \"RequestId\": \"6e1a3451-b75c-4d7d-bbbd-e363682ab0af\"\n    }\n}",
+        "title": "示例 1"
+      }
+    ],
     "DescribeSavingPlanResourceInfo": [
       {
         "document": "查询名下可共享的sp资源详细",

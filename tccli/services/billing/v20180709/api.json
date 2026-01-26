@@ -385,6 +385,13 @@
       "output": "DescribeGatherRuleDetailResponse",
       "status": "online"
     },
+    "DescribeRenewInstances": {
+      "document": "注意事项：\n1、本接口支持查询已接入续费管理页的包年包月实例，包括运行中、已隔离（部分产品不支持）\n2、子用户使用该接口时，应具备QcloudFinanceRenewManageFullAccess权限策略。",
+      "input": "DescribeRenewInstancesRequest",
+      "name": "查询续费实例",
+      "output": "DescribeRenewInstancesResponse",
+      "status": "online"
+    },
     "DescribeSavingPlanResourceInfo": {
       "document": "查询节省计划详情",
       "input": "DescribeSavingPlanResourceInfoRequest",
@@ -15845,6 +15852,107 @@
       ],
       "type": "object"
     },
+    "DescribeRenewInstancesRequest": {
+      "document": "DescribeRenewInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页的最大实例条数。 取值范围：1~100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。",
+          "example": "VDAwMSu3Y69lZhLwW1bRxLiwKafWBv_6TqKBnp-YH12b0uWcwTBf3DIK7Myza6EVdhDKoFGpKANnZkfmmLy5K8uH1lJYqyvuT_mSXc8VoOdX-8kcKJrB3JbyW9dM0edrKm3Q",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取实例的排序方向。枚举值如下：\nfalse=正序（默认）\ntrue=倒序",
+          "example": "true",
+          "member": "bool",
+          "name": "Reverse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "续费标识。多个值用英文逗号分隔。枚举值如下：\nNOTIFY_AND_MANUAL_RENEW：手动续费\nNOTIFY_AND_AUTO_RENEW：自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：到期不续",
+          "example": "[\"DISABLE_NOTIFY_AND_MANUAL_RENEW\"]",
+          "member": "string",
+          "name": "RenewFlagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。多个ID用英文逗号分隔，最多不超过100个。",
+          "example": "[\"std_storage-20241106185002290002691-0\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "到期时间段起，格式为yyyy-MM-dd HH:mm:ss。",
+          "example": "2025-06-26 00:38:46",
+          "member": "string",
+          "name": "ExpireTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "到期时间段止，格式为yyyy-MM-dd HH:mm:ss。",
+          "example": "2025-09-27 15:38:46",
+          "member": "string",
+          "name": "ExpireTimeEnd",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRenewInstancesResponse": {
+      "document": "DescribeRenewInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例汇总列表。",
+          "example": "无",
+          "member": "RenewInstance",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询返回结果下一页的令牌。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VDAwMSu3Y69lZhLwW1bRxLiwKafWBv_6TqKBnp-YH12b0uWcwTBf3DIK7Myza6EVdhDKoFGpKANnZkfmmLy5K8uH1lJYqyvuT_mSXc8VoOdX-8kcKJrB3JbyW9dM0edrKm3Q",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSavingPlanResourceInfoRequest": {
       "document": "DescribeSavingPlanResourceInfo请求参数结构体",
       "members": [
@@ -18046,6 +18154,144 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewInstance": {
+      "document": "资源实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码",
+          "example": "",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RegionCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态：\nNORMAL 正常，\nISOLATED 已隔离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续费标识：\nNOTIFY_AND_MANUAL_RENEW 手动续费，\nNOTIFY_AND_AUTO_RENEW 自动续费，\nDISABLE_NOTIFY_AND_MANUAL_RENEW 到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例别名：用户在控制台为实例设置的名称，如果未设置，则默认为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品，例如：云服务器 CVM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称：实例归属的项目，用户在控制台给实例自主分配项目，未分配则是默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费周期长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "RenewPeriod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费周期单位：y 年，m 月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RenewPeriodUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RenewInstanceRequest": {
       "document": "RenewInstance请求参数结构体",

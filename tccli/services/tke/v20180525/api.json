@@ -1337,6 +1337,13 @@
       "output": "EnableControlPlaneLogsResponse",
       "status": "online"
     },
+    "EnableEksEventPersistence": {
+      "document": "Eks集群开启事件持久化功能",
+      "input": "EnableEksEventPersistenceRequest",
+      "name": "Eks集群开启事件持久化功能",
+      "output": "EnableEksEventPersistenceResponse",
+      "status": "online"
+    },
     "EnableEncryptionProtection": {
       "document": "开启加密数据保护，需要先开启KMS能力，完成KMS授权",
       "input": "EnableEncryptionProtectionRequest",
@@ -17354,6 +17361,60 @@
     },
     "EnableControlPlaneLogsResponse": {
       "document": "EnableControlPlaneLogs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEksEventPersistenceRequest": {
+      "document": "EnableEksEventPersistence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-cluserid",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cls服务的logsetID",
+          "example": "cddc14ab-947c-4326-87b9-7b226f371xsl",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cls服务的topicID",
+          "example": "11305b73-15f1-42fe-9256-5b1495e40231",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic所在region",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "TopicRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEksEventPersistenceResponse": {
+      "document": "EnableEksEventPersistence返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

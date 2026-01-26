@@ -2350,7 +2350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "传入region列表",
+          "document": "<p>传入region列表</p>",
           "example": "[4]",
           "member": "int64",
           "name": "Regions",
@@ -2365,7 +2365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的可用区列表",
+          "document": "<p>支持的可用区列表</p>",
           "example": "无",
           "member": "RegionZoneInfo",
           "name": "ZoneSet",

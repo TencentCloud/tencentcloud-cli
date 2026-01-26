@@ -1642,6 +1642,14 @@
         "title": "创建插件日志采集配置"
       }
     ],
+    "EnableEksEventPersistence": [
+      {
+        "document": "Eks集群开启事件采集功能",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEksEventPersistence\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx\",\n    \"ClusterId\": \"xxx\",\n    \"LogsetId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "Eks集群开启事件采集功能示例"
+      }
+    ],
     "EnableEncryptionProtection": [
       {
         "document": "开启加密数据保护",

@@ -322,17 +322,17 @@
     ],
     "DescribeMessageByTopic": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageByTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g839agr2\",\n    \"Topic\": \"home/room3\",\n    \"StartTime\": 1745828681259\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE48935F932F004D\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:48:34\"\n            },\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE48935FA6B80050\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:48:39\"\n            },\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE48935FBA410057\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:48:44\"\n            },\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE4893603732005C\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:49:16\"\n            }\n        ],\n        \"RequestId\": \"6af56edc-5085-4583-8366-7f125c973603\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageByTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mwe5jvvr\",\n    \"Topic\": \"abc/1\",\n    \"StartTime\": 1769419861944\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientId\": \"client-1\",\n                \"MessageId\": \"1539703B00486587524C8485D83769D5\",\n                \"OriginTopic\": \"abc/1\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": 1769420164152\n            }\n        ],\n        \"RequestId\": \"242a41d4-65f2-4a6d-863e-8d8b7b00f0fb\"\n    }\n}",
         "title": "示例"
       }
     ],
     "DescribeMessageDetails": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageDetails\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g839agr2\",\n    \"MessageId\": \"15397032005D639FEE4893603732005C\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Body\": \"this is body\",\n        \"ClientId\": \"client1\",\n        \"MessageId\": \"15397032005D639FEE4893603732005C\",\n        \"OriginTopic\": \"home/room3\",\n        \"Qos\": \"1\",\n        \"RequestId\": \"ba5d5d6a-64c9-40cf-8889-21efed76389d\",\n        \"StoreTimestamp\": \"1745828681259\",\n        \"UserProperties\": [\n            {\n                \"Key\": \"key1\",\n                \"Value\": \"value-1\"\n            },\n            {\n                \"Key\": \"key2\",\n                \"Value\": \"value-2\"\n            }\n        ]\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageDetails\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mwe5jvvr\",\n    \"MessageId\": \"1539703B00486587524C8485D83769D5\",\n    \"Subscription\": \"abc/1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Body\": \"{\\n  \\\"msg\\\": \\\"hello\\\"\\n}\",\n        \"ClientId\": \"client-1\",\n        \"ContentType\": \"\",\n        \"CorrelationData\": \"\",\n        \"MessageExpiryInterval\": 0,\n        \"MessageId\": \"1539703B00486587524C8485D83769D5\",\n        \"OriginTopic\": \"abc/1\",\n        \"PayloadFormatIndicator\": 0,\n        \"Qos\": \"1\",\n        \"ResponseTopic\": \"\",\n        \"StoreTimestamp\": 1769420164152,\n        \"SubscriptionIdentifier\": \"\",\n        \"UserProperties\": [],\n        \"RequestId\": \"6e12518d-ea5e-47e5-b837-73fe1616bbf7\"\n    }\n}",
         "title": "示例"
       }
     ],

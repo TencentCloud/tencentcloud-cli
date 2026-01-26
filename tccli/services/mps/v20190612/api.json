@@ -36100,7 +36100,18 @@
         },
         {
           "disabled": false,
-          "document": "字体类型，支持：\n<li>hei.ttf：黑体</li>\n<li>song.ttf：宋体</li>\n<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>\n<li>msyh.ttf：微软雅黑</li>\n<li>msyhbd.ttf：微软雅黑加粗</li>\n<li>hkjgt.ttf：华康金刚体</li>\n<li>dhttx.ttf：典黑体特细</li>\n<li>xqgdzt.ttf：喜鹊古字典体</li>\n<li>qpcyt.ttf：巧拼超圆体</li>\n<li>arial.ttf：仅支持英文</li>\n<li>dinalternate.ttf：DIN Alternate Bold</li>\n<li>helveticalt.ttf：Helvetica</li>\n<li>helveticains.ttf：Helvetica Inserat</li>\n<li>trajanpro.ttf：TrajanPro-Bold</li>\n<li>korean.ttf：韩语</li>\n<li>japanese.ttf：日语</li>\n<li>thai.ttf：泰语</li>\n默认：hei.ttf 黑体。注意：楷体推荐使用kai.ttf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "压制字幕字体文件的输入信息，目前仅支持url和cos。都填时url优先于cos。填了FontFileInput时FontFileInput优先于FontType\n",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "FontFileInput",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字体类型，支持：\n<li>hei.ttf：黑体</li>\n<li>song.ttf：宋体</li>\n<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>\n<li>msyh.ttf：微软雅黑</li>\n<li>msyhbd.ttf：微软雅黑加粗</li>\n<li>hkjgt.ttf：华康金刚体</li>\n<li>dhttx.ttf：典黑体特细</li>\n<li>xqgdzt.ttf：喜鹊古字典体</li>\n<li>qpcyt.ttf：巧拼超圆体</li>\n<li>arial.ttf：仅支持英文</li>\n<li>dinalternate.ttf：DIN Alternate Bold</li>\n<li>helveticalt.ttf：Helvetica</li>\n<li>helveticains.ttf：Helvetica Inserat</li>\n<li>trajanpro.ttf：TrajanPro-Bold</li>\n<li>korean.ttf：韩语</li>\n<li>japanese.ttf：日语</li>\n<li>thai.ttf：泰语</li>\n默认：hei.ttf 黑体。\n<br>注意：\n<li>楷体推荐使用kai.ttf</li>\n<li>填了FontFileInput时FontFileInput优先</li>\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kai.ttf",
           "member": "string",
           "name": "FontType",
@@ -36111,7 +36122,7 @@
         },
         {
           "disabled": false,
-          "document": "字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。\n默认源视频高度的5%。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字体大小，不指定则以字幕文件中为准。支持像素和百分比格式：\n\n- 像素：Npx，N范围：(0,4096]。\n- 百分百：N%，N范围：(0,100]；例如10%表示字幕字体大小=10%*源视频高度。\n\n不填且字幕文件无设置时，默认源视频高度的5%。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50px",
           "member": "string",
           "name": "FontSize",
@@ -36166,7 +36177,7 @@
         },
         {
           "disabled": false,
-          "document": "底板的宽度，单位为像素，取值范围：[0,4096]。\n默认源视频宽像素的90%。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "底板的宽度，正整数。\n- 代表像素时，取值范围：[0,4096]。\n- 代表百分数时，[0, 100]。\n开启底板且不填此值时，默认源视频宽像素的90%。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1920",
           "member": "int64",
           "name": "BoardWidth",
@@ -36177,7 +36188,7 @@
         },
         {
           "disabled": false,
-          "document": "底板的高度。单位为像素，取值范围：[0,4096]。\n默认为源视频高像素的15%。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "底板的高度，正整数。\n- 代表像素时，取值范围：[0,4096]。\n- 代表百分数时，[0, 100]。\n开启底板且不填此值时，默认为源视频高像素的15%。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "BoardHeight",
@@ -36210,91 +36221,146 @@
         },
         {
           "disabled": false,
-          "document": "描边宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描边宽度。浮点数。\n- 代表像素值时， [0, 1000]。\n- 代表百分数时，[0, 100]。\n不填默认源视频高度的0.3%。\n",
           "example": "1.0",
           "member": "float",
           "name": "OutlineWidth",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描边颜色。6位16进制RGB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描边颜色。6位16进制RGB。不填默认黑色。\n",
           "example": "0x000000",
           "member": "string",
           "name": "OutlineColor",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描边透明度。(0，1] 正浮点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描边透明度。(0，1] 正浮点数。不填默认1，完全不透明\n",
           "example": "0.8",
           "member": "float",
           "name": "OutlineAlpha",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "阴影宽度。浮点数  [0, 1000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阴影宽度。浮点数。\n- 代表像素值时， [0, 1000]。\n- 代表百分数时，[0, 100]。\n不填默认无阴影。\n",
           "example": "1.0",
           "member": "float",
           "name": "ShadowWidth",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "阴影颜色。6位16进制RGB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阴影颜色。6位16进制RGB。不填默认黑色（有设置阴影的情况下）\n",
           "example": "0x000000",
           "member": "string",
           "name": "ShadowColor",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "阴影透明度。(0，1] 正浮点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阴影透明度。(0，1] 正浮点数。不填默认1，完全不透明（有设置阴影的情况下）\n",
           "example": "0.9",
           "member": "float",
           "name": "ShadowAlpha",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "行间距。正整数  [0, 1000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行间距。正整数。\n- 代表像素值时， [0, 1000]。\n- 代表百分数时，[0, 100]。不填默认0。\n",
           "example": "5",
           "member": "int64",
           "name": "LineSpacing",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对齐方式，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。不填默认底部对齐。\n",
           "example": "bottom",
           "member": "string",
           "name": "Alignment",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认0。为1时BoardWidth代表百分之几，以视频宽为基准\n",
+          "example": "1",
+          "member": "int64",
+          "name": "BoardWidthUnit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认0。为1时BoardHeight代表百分之几，以视频高为基准\n",
+          "example": "1",
+          "member": "int64",
+          "name": "BoardHeightUnit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认0。为1时OutlineWidth代表百分之几，以视频高为基准\n",
+          "example": "1",
+          "member": "int64",
+          "name": "OutlineWidthUnit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认0。为1时ShadowWidth代表百分之几，以视频高为基准\n",
+          "example": "1",
+          "member": "int64",
+          "name": "ShadowWidthUnit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认0。为1时LineSpacing代表百分之几，以视频高为基准\n",
+          "example": "1",
+          "member": "int64",
+          "name": "LineSpacingUnit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
