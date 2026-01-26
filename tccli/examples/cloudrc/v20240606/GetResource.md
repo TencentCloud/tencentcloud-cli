@@ -32,7 +32,9 @@ Input:
 ```
 tccli cloudrc GetResource --cli-unfold-argument  \
     --ViewId vw-6wyborpx \
-    --ResourceUniqueId FWbAi7F/AulKZmxsA2mNOA==
+    --ProductKey cam::cvm::instance \
+    --RegionCode ap-guangzhou \
+    --ResourceId ins-xxxxxxxx
 ```
 
 Output: 
@@ -42,10 +44,12 @@ Output:
         "ResourceUniqueId": "FWbAi7F/AulKZmxsA2mNOA==",
         "ResourceId": "ins-wxeo34kf",
         "ResourceAlias": "未命名",
-        "Uin": 909619400,
+        "Uin": 123456789,
         "ProductKey": "cam::cvm::instance",
         "RegionId": 1,
+        "RegionCode": "ap-guangzhou",
         "ZoneId": 100002,
+        "ZoneCode": "ap-guangzhou-2",
         "PayMode": 1,
         "CreateTime": "2023-07-08 02:54:33",
         "BusinessFields": [
@@ -73,7 +77,7 @@ Output:
                 "Description": null,
                 "Unit": null,
                 "Type": "string",
-                "Value": "10.12.0.22",
+                "Value": "127.0.0.1",
                 "ValueEnumName": null
             },
             {

@@ -1,38 +1,34 @@
 **Example 1: 示例**
 
-示例
+
 
 Input: 
 
 ```
 tccli mqtt DescribeMessageDetails --cli-unfold-argument  \
-    --InstanceId mqtt-g839agr2 \
-    --MessageId 15397032005D639FEE4893603732005C
+    --InstanceId mqtt-mwe5jvvr \
+    --MessageId 1539703B00486587524C8485D83769D5 \
+    --Subscription abc/1
 ```
 
 Output: 
 ```
 {
-    "Error": null,
-    "RequestId": null,
     "Response": {
-        "Body": "this is body",
-        "ClientId": "client1",
-        "MessageId": "15397032005D639FEE4893603732005C",
-        "OriginTopic": "home/room3",
+        "Body": "{\n  \"msg\": \"hello\"\n}",
+        "ClientId": "client-1",
+        "ContentType": "",
+        "CorrelationData": "",
+        "MessageExpiryInterval": 0,
+        "MessageId": "1539703B00486587524C8485D83769D5",
+        "OriginTopic": "abc/1",
+        "PayloadFormatIndicator": 0,
         "Qos": "1",
-        "RequestId": "ba5d5d6a-64c9-40cf-8889-21efed76389d",
-        "StoreTimestamp": "1745828681259",
-        "UserProperties": [
-            {
-                "Key": "key1",
-                "Value": "value-1"
-            },
-            {
-                "Key": "key2",
-                "Value": "value-2"
-            }
-        ]
+        "ResponseTopic": "",
+        "StoreTimestamp": 1769420164152,
+        "SubscriptionIdentifier": "",
+        "UserProperties": [],
+        "RequestId": "6e12518d-ea5e-47e5-b837-73fe1616bbf7"
     }
 }
 ```

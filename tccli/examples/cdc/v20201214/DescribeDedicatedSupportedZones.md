@@ -19,12 +19,6 @@ Output:
                 "RegionId": 4,
                 "Zones": [
                     {
-                        "Zone": "ap-shanghai-1",
-                        "ZoneId": 200001,
-                        "ZoneName": "上海一区",
-                        "ZoneState": "AVAILABLE"
-                    },
-                    {
                         "Zone": "ap-shanghai-2",
                         "ZoneId": 200002,
                         "ZoneName": "上海二区",

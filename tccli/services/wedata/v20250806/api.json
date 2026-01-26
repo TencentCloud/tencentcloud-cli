@@ -21,6 +21,13 @@
       "output": "AuthorizeDataSourceResponse",
       "status": "online"
     },
+    "AuthorizePrivileges": {
+      "document": "Catalog模式下授权",
+      "input": "AuthorizePrivilegesRequest",
+      "name": "Wedata3.0-Catalog模式下授权",
+      "output": "AuthorizePrivilegesResponse",
+      "status": "online"
+    },
     "CreateCodeFile": {
       "document": "新建代码文件",
       "input": "CreateCodeFileRequest",
@@ -756,6 +763,13 @@
       "output": "ListOpsWorkflowsResponse",
       "status": "online"
     },
+    "ListPermissions": {
+      "document": "获取可授权权限详情",
+      "input": "ListPermissionsRequest",
+      "name": "获取资源的权限详情",
+      "output": "ListPermissionsResponse",
+      "status": "online"
+    },
     "ListProcessLineage": {
       "document": "获取资产血缘信息",
       "input": "ListProcessLineageRequest",
@@ -1041,6 +1055,13 @@
       "input": "RevokeDataSourceAuthorizationRequest",
       "name": "回收数据源权限",
       "output": "RevokeDataSourceAuthorizationResponse",
+      "status": "online"
+    },
+    "RevokePrivileges": {
+      "document": "Catalog模式下授权回收",
+      "input": "RevokePrivilegesRequest",
+      "name": "Wedata3.0-Catalog模式下授权回收",
+      "output": "RevokePrivilegesResponse",
       "status": "online"
     },
     "RunSQLScript": {
@@ -1928,6 +1949,126 @@
         }
       ],
       "type": "object"
+    },
+    "AuthorizePrivilegesRequest": {
+      "document": "AuthorizePrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源数组\nResourceType：来源于TCCATALOG模块的GetGrantPrivilegesSTD接口中返回的ResourceType，并改为首字母大写，例如METALAKE对应Metalake\nResourceUri，取决于 ResourceType，Metalake时固定为default，其他类别采用catalog的三段式结构，例如\n- Metalake，固定为default\n- Catalog，取catalogName\n- Schema，取catalogName.SchemaName\n- Table,，取catalogName.SchemaName.TableName\n",
+          "example": "无",
+          "member": "PrivilegeResource",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "授权主体数组，SubjectType及对应SubjectValue取值规则\n- User 用户\n    - 取自DescribeTenantUserList中的UserId\n- Project 项目\n    - 取自DescribeUserProjects中的ProjectId\n- Role 角色（项目级角色）\n    - 先调用DescribeUserProjects获取项目ID（ProjectId），再调用DescribeRoleList中的角色ID（RoleId），拼装为$ProjectId.$ProjectId. RoleId，例如\"3085649716411588608.308335260274237440\"\n- GlobalRole （平台级角色）\n    - AllAccountUsers 全部用户\n    - 其他ID，取自DescribeTenantRole中的RoleId",
+          "example": "无",
+          "member": "Subject",
+          "name": "Subjects",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "权限点，来源于TCCATALOG模块的GetGrantPrivilegesSTD接口中返回的各类Privileges中的NAME",
+          "example": "无",
+          "member": "PrivilegeInfo",
+          "name": "Privileges",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AuthorizePrivilegesResponse": {
+      "document": "AuthorizePrivileges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "无",
+          "member": "AuthorizePrivilegesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuthorizePrivilegesRsp": {
+      "document": "openapi授权返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量授权结果",
+          "example": "",
+          "member": "bool",
+          "name": "OverallSuccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权详情列表",
+          "example": "",
+          "member": "AuthorizeResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuthorizeResult": {
+      "document": "AuthorizeResult授权结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "PrivilegeResource",
+          "name": "Resource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BackfillInstance": {
       "document": "单次补录实例详情",
@@ -9465,6 +9606,34 @@
       ],
       "type": "object"
     },
+    "GetResourcePrivilegeDetailRsp": {
+      "document": "GetResourcePrivilegeDetailRsp",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限详情列表",
+          "example": "",
+          "member": "ResourcePrivilegeDetail",
+          "name": "Details",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总计",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetSQLFolderRequest": {
       "document": "GetSQLFolder请求参数结构体",
       "members": [
@@ -11202,7 +11371,7 @@
         {
           "disabled": false,
           "document": "当前资源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "LineageResource",
           "name": "Resource",
           "output_required": false,
@@ -11218,6 +11387,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上游数量",
+          "example": "1",
+          "member": "int64",
+          "name": "DownStreamCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下游数量",
+          "example": "1",
+          "member": "int64",
+          "name": "UpStreamCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13436,6 +13625,70 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPermissionsRequest": {
+      "document": "ListPermissions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源\nResourceType：来源于TCCATALOG模块的GetGrantPrivilegesSTD接口中返回的ResourceType，并改为首字母大写，例如METALAKE对应Metalake\nResourceUri，取决于 ResourceType，Metalake时固定为default，其他类别采用catalog的三段式结构，例如\n- Metalake，固定为default\n- Catalog，取catalogName\n- Schema，取catalogName.SchemaName\n- Table,，取catalogName.SchemaName.TableName",
+          "example": "无",
+          "member": "PrivilegeResource",
+          "name": "Resource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件(此参数还未支持)",
+          "example": "无",
+          "member": "SecurityFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段(此参数还未支持)",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页参数(此参数还未支持)",
+          "example": "无",
+          "member": "Page",
+          "name": "Page",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPermissionsResponse": {
+      "document": "ListPermissions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取资源权限详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetResourcePrivilegeDetailRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18455,6 +18708,34 @@
       ],
       "usage": "both"
     },
+    "Page": {
+      "document": "页码参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PageRoles": {
       "document": "角色列表分页信息",
       "members": [
@@ -18649,6 +18930,194 @@
         }
       ],
       "type": "object"
+    },
+    "PrivilegeInfo": {
+      "document": "权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为读取权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "IsRead",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为管理权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "IsManage",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否拥有此权限，检查权限时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "Granted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "继承自哪个资源，查询权限详情时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "PrivilegeResource",
+          "name": "InheritedObject",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "否继承获得，查询权限详情时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "Inherited",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为编辑权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "IsEdit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否元数据权限（前端展示）",
+          "example": "",
+          "member": "bool",
+          "name": "IsMetaDataPermission",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CatalogID(废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CatalogID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称(废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间ID(废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "WorkSpaceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间名称(废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrivilegeResource": {
+      "document": "权限资源模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型 Catalog、Schema等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源URI\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ResourceUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Project": {
       "document": "项目信息",
@@ -23729,6 +24198,45 @@
       ],
       "usage": "in"
     },
+    "ResourcePrivilegeDetail": {
+      "document": "ResourcePrivilegeDetail",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源",
+          "example": "",
+          "member": "PrivilegeResource",
+          "name": "Resource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主体",
+          "example": "",
+          "member": "SubjectInfo",
+          "name": "SubjectDetails",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限详情",
+          "example": "",
+          "member": "PrivilegeInfo",
+          "name": "PermissionDetails",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ResourceResult": {
       "document": "资源组操作结果",
       "members": [
@@ -23867,6 +24375,87 @@
         }
       ],
       "type": "object"
+    },
+    "RevokePrivilegesRequest": {
+      "document": "RevokePrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源数组，数据来源于ListPermissions接口返回的Resource中的ResourceType和ResourceUri",
+          "example": "无",
+          "member": "PrivilegeResource",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "授权回收主体数组，参数组装需要注意：\n1.SubjectType 和SubjectValues的取值参考ListPermissions接口中返回SubjectDetails中的SubjectType和SubjectValue\n2.批量回收时，Subjects数组长度需要与权限点Privileges长度一致，并且数据一一对应",
+          "example": "无",
+          "member": "Subject",
+          "name": "Subjects",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "权限点，Name来源于ListPermissions接口返回的PermissionDetails中的Name，例如：BROWSE 、GRANT_PRIVILEGES",
+          "example": "无",
+          "member": "PrivilegeInfo",
+          "name": "Privileges",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokePrivilegesResponse": {
+      "document": "RevokePrivileges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回",
+          "example": "无",
+          "member": "RevokePrivilegesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokePrivilegesRsp": {
+      "document": "openapi回收授权返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "",
+          "member": "bool",
+          "name": "OverallSuccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情列表",
+          "example": "",
+          "member": "AuthorizeResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RunSQLScriptRequest": {
       "document": "RunSQLScript请求参数结构体",
@@ -24376,6 +24965,34 @@
       ],
       "usage": "both"
     },
+    "SecurityFilter": {
+      "document": "数据安全使用的filter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "values\n",
+          "example": "",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SetSuccessTaskInstancesAsyncRequest": {
       "document": "SetSuccessTaskInstancesAsync请求参数结构体",
       "members": [
@@ -24610,6 +25227,84 @@
         }
       ],
       "type": "object"
+    },
+    "Subject": {
+      "document": "Subject主体信息，授权/回收主体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主体类型",
+          "example": "",
+          "member": "string",
+          "name": "SubjectType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主体列表",
+          "example": "",
+          "member": "string",
+          "name": "SubjectValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SubjectInfo": {
+      "document": "SubjectInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主体类型",
+          "example": "",
+          "member": "string",
+          "name": "SubjectType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题类型展示名",
+          "example": "",
+          "member": "string",
+          "name": "SubjectTypeDisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主体id",
+          "example": "",
+          "member": "string",
+          "name": "SubjectValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主体名",
+          "example": "",
+          "member": "string",
+          "name": "SubjectValueDisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SubmitTaskRequest": {
       "document": "SubmitTask请求参数结构体",

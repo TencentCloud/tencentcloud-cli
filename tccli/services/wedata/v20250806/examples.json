@@ -24,6 +24,14 @@
         "title": "成功调用"
       }
     ],
+    "AuthorizePrivileges": [
+      {
+        "document": "openapi授权",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuthorizePrivileges\n<公共请求参数>\n\n{\n    \"Resources\": [\n        {\n            \"ResourceType\": \"CATALOG\",\n            \"ResourceUri\": \"tclake_lakehouse_catalog_table_mayxxiao_64longlonglonglonglonglo\"\n        }\n    ],\n    \"Subjects\": [\n        {\n            \"SubjectType\": \"User\",\n            \"SubjectValues\": [\n                \"700002130525\"\n            ]\n        }\n    ],\n    \"Privileges\": [\n        {\n            \"Name\": \"USE_CATALOG\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"OverallSuccess\": true,\n            \"Results\": [\n                {\n                    \"Reason\": \"\",\n                    \"Resource\": {\n                        \"ResourceType\": \"CATALOG\",\n                        \"ResourceUri\": \"tclake_lakehouse_catalog_table_mayxxiao_64longlonglonglonglonglo\"\n                    },\n                    \"Result\": true\n                }\n            ]\n        },\n        \"RequestId\": \"66718386-3bca-4664-8c69-2ad088a69fc6\"\n    }\n}",
+        "title": "openapi授权"
+      }
+    ],
     "CreateCodeFile": [
       {
         "document": "",
@@ -1098,6 +1106,14 @@
         "title": "获取工作流列表"
       }
     ],
+    "ListPermissions": [
+      {
+        "document": "openapi权限列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPermissions\n<公共请求参数>\n\n{\n    \"Resource\": {\n        \"ResourceType\": \"Catalog\",\n        \"ResourceUri\": \"sa_tb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Details\": [\n                {\n                    \"PermissionDetails\": [\n                        {\n                            \"CatalogID\": \"\",\n                            \"CatalogName\": \"\",\n                            \"Description\": \"\",\n                            \"DisplayName\": \"use schema\",\n                            \"Granted\": false,\n                            \"Inherited\": false,\n                            \"InheritedObject\": {\n                                \"ResourceType\": \"Catalog\",\n                                \"ResourceUri\": \"sa_tb\"\n                            },\n                            \"IsEdit\": false,\n                            \"IsManage\": false,\n                            \"IsMetaDataPermission\": false,\n                            \"IsRead\": false,\n                            \"Name\": \"USE_SCHEMA\",\n                            \"WorkSpaceID\": \"\",\n                            \"WorkSpaceName\": \"\"\n                        }\n                    ],\n                    \"Resource\": {\n                        \"ResourceType\": \"Catalog\",\n                        \"ResourceUri\": \"sa_tb\"\n                    },\n                    \"SubjectDetails\": [\n                        {\n                            \"SubjectType\": \"User\",\n                            \"SubjectTypeDisplayName\": \"用户\",\n                            \"SubjectValue\": \"700002285834\",\n                            \"SubjectValueDisplayName\": \"linaszzhang\"\n                        }\n                    ]\n                }\n            ],\n            \"TotalCount\": 4\n        },\n        \"RequestId\": \"3d9fc7dc-2155-4227-a7ec-456dc39d99f2\"\n    }\n}",
+        "title": "openapi权限列表"
+      }
+    ],
     "ListProcessLineage": [
       {
         "document": "",
@@ -1454,6 +1470,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeDataSourceAuthorization\n<公共请求参数>\n\n{\n    \"DataSourceId\": \"65377\",\n    \"RevokeProjectId\": \"2956525852619374592\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"c15b5370-4aaa-447d-87ff-269b5737e7b0\"\n    }\n}",
         "title": "成功调用"
+      }
+    ],
+    "RevokePrivileges": [
+      {
+        "document": "openapi回收权限",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokePrivileges\n<公共请求参数>\n\n{\n    \"Resources\": [\n        {\n            \"ResourceType\": \"CATALOG\",\n            \"ResourceUri\": \"tclake_lakehouse_catalog_table_mayxxiao_64longlonglonglonglonglo\"\n        }\n    ],\n    \"Subjects\": [\n        {\n            \"SubjectType\": \"User\",\n            \"SubjectValues\": [\n                \"700002130525\"\n            ]\n        }\n    ],\n    \"Privileges\": [\n        {\n            \"Name\": \"SELECT_TABLE\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"OverallSuccess\": true,\n            \"Results\": [\n                {\n                    \"Reason\": \"\",\n                    \"Resource\": {\n                        \"ResourceType\": \"CATALOG\",\n                        \"ResourceUri\": \"tclake_lakehouse_catalog_table_mayxxiao_64longlonglonglonglonglo\"\n                    },\n                    \"Result\": true\n                }\n            ]\n        },\n        \"RequestId\": \"17b4ff0e-bc89-4169-b9cb-8581565a9dfe\"\n    }\n}",
+        "title": "openapi回收权限"
       }
     ],
     "RunSQLScript": [

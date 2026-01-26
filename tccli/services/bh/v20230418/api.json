@@ -5351,6 +5351,15 @@
         },
         {
           "disabled": false,
+          "document": "主机绑定的堡垒机服务ID集合  未绑定的通过Filters进行传递",
+          "example": "[\"bh-sass-dhxaidaad\"]",
+          "member": "string",
+          "name": "ResourceIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
@@ -5396,8 +5405,17 @@
         },
         {
           "disabled": false,
+          "document": "过滤条件,支持 BindingStatus｜VpcId ｜InstanceId ｜DeviceAccount ｜ManageDimension｜DomainId｜Ip｜Name",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系",
-          "example": "[\"TagKey\":\"业务部\"，“ TagValue”:[\"研发部\", \"运营部\"]]",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -5422,7 +5440,7 @@
         {
           "disabled": false,
           "document": "资产组成员列表",
-          "example": "[{\"Id\":1,\"Name\":\"运维主机\"}]",
+          "example": "无",
           "member": "Device",
           "name": "DeviceSet",
           "output_required": true,
@@ -7833,6 +7851,232 @@
       ],
       "type": "object"
     },
+    "LDAPSetting": {
+      "document": "LDAP配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启LDAP认证，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器地址",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备用服务器地址",
+          "example": "10.10.10.2",
+          "member": "string",
+          "name": "IpBackup",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "389",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SSL，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSL",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Base DN",
+          "example": "true",
+          "member": "string",
+          "name": "BaseDN",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号",
+          "example": "test-account",
+          "member": "string",
+          "name": "AdminAccount",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户属性",
+          "example": "test-attr",
+          "member": "string",
+          "name": "AttributeUser",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名属性",
+          "example": "test-username",
+          "member": "string",
+          "name": "AttributeUserName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动同步，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSync",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "覆盖用户信息，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Overwrite",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步周期，30～60000之间的整数",
+          "example": "true",
+          "member": "uint64",
+          "name": "SyncPeriod",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否同步全部，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "SyncAll",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步OU列表",
+          "example": "无",
+          "member": "string",
+          "name": "SyncUnitSet",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组织单元属性",
+          "example": "unit",
+          "member": "string",
+          "name": "AttributeUnit",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户姓名属性",
+          "example": "realname",
+          "member": "string",
+          "name": "AttributeRealName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号属性",
+          "example": "phone",
+          "member": "string",
+          "name": "AttributePhone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱属性",
+          "example": "email",
+          "member": "string",
+          "name": "AttributeEmail",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求LDAP服务的堡垒机实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bh-saas-xxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "net-xxxxxxxx",
+          "member": "string",
+          "name": "DomainId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LoginEvent": {
       "document": "登录日志",
       "members": [
@@ -7898,6 +8142,56 @@
         }
       ],
       "usage": "out"
+    },
+    "LoginSetting": {
+      "document": "登录安全设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录会话超时，10分钟，20分钟，30分钟，默认20分钟",
+          "example": "20",
+          "member": "uint64",
+          "name": "TimeOut",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连续密码错误次数，超过锁定账号，3-5",
+          "example": "3",
+          "member": "uint64",
+          "name": "LockThreshold",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号锁定时长，10分钟，20分钟，30分钟",
+          "example": "10",
+          "member": "uint64",
+          "name": "LockTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户多少天不活跃，账号自动锁定",
+          "example": "180",
+          "member": "uint64",
+          "name": "InactiveUserLock",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyAccessWhiteListAutoStatusRequest": {
       "document": "ModifyAccessWhiteListAutoStatus请求参数结构体",
@@ -8318,16 +8612,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "双因子认证，0-不开启，1-OTP，2-短信，3-USB Key",
+          "document": "双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key（只有ResourceType=1且AuthModeGM不传时有效，其他情况不能为3）    \n备注：AuthMode和AuthModeGM至少有一个有效传参",
           "example": "1",
           "member": "uint64",
           "name": "AuthMode",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "资源类型，0：普通 1：国密",
+          "document": "国密双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key\n备注：AuthMode和AuthModeGM至少有一个有效传参，AuthModeGM优先级高于ResourceType",
+          "example": "2",
+          "member": "uint64",
+          "name": "AuthModeGM",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，0：普通（暂停使用，由AuthMode和AuthModeGM传参决定） 1：国密\n",
           "example": "0",
           "member": "int64",
           "name": "ResourceType",
@@ -9438,6 +9741,89 @@
       ],
       "type": "object"
     },
+    "OAuthSetting": {
+      "document": "OAuth认证配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启OAuth认证",
+          "example": "false",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OAuth认证方式。",
+          "example": "OAuth",
+          "member": "string",
+          "name": "AuthMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OAuth认证客户端Id。",
+          "example": "0oai8ntest",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth认证授权码URL。",
+          "example": "https://bh/v1/authorize",
+          "member": "string",
+          "name": "CodeUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth令牌URL。",
+          "example": "https://bh/v1/token",
+          "member": "string",
+          "name": "TokenUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth用户信息URL。",
+          "example": "https://bh/v1/userinfo",
+          "member": "string",
+          "name": "UserInfoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用Okta认证时指定范围。",
+          "example": "[\"openid\",\"email\"]",
+          "member": "string",
+          "name": "Scopes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OperationEvent": {
       "document": "操作日志",
       "members": [
@@ -9619,6 +10005,56 @@
         }
       ],
       "usage": "out"
+    },
+    "PasswordSetting": {
+      "document": "密码要求设置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密码最小长度，8-20，默认8。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MinLength",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码复杂度，0不限制，1包含字母和数字，2至少包括大写字母、小写字母、数字、特殊符号，默认2。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Complexity",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码有效期，0不限制，30天，90天，180天。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ValidTerm",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查最近n次密码设置是否存在相同密码，2-10，默认5。",
+          "example": "5",
+          "member": "uint64",
+          "name": "CheckHistory",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ReconnectionSetting": {
       "document": "运维资产重连次数",
@@ -12206,6 +12642,61 @@
     "SecuritySetting": {
       "document": "系统安全设置",
       "members": [
+        {
+          "disabled": false,
+          "document": "认证方式设置",
+          "example": "无",
+          "member": "AuthModeSetting",
+          "name": "AuthMode",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码安全设置",
+          "example": "无",
+          "member": "PasswordSetting",
+          "name": "Password",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登录安全设置",
+          "example": "无",
+          "member": "LoginSetting",
+          "name": "Login",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "LDAP配置信息",
+          "example": "无",
+          "member": "LDAPSetting",
+          "name": "LDAP",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OAuth配置信息",
+          "example": "无",
+          "member": "OAuthSetting",
+          "name": "OAuth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "国密认证方式设置",

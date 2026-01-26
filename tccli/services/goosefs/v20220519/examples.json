@@ -64,6 +64,14 @@
         "title": "获取文件系统的客户端挂载命令"
       }
     ],
+    "BuildCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-1f2yq7b5\",\n    \"VpcId\": \"vpc-5owubpl0\",\n    \"SubnetId\": \"vpc-5owubpl0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"x-c60-1f2yq7b5-client-cluster-1\",\n        \"RequestId\": \"ce997012-2519-4e6a-b9b3-95ce81fc7ea6\"\n    }\n}",
+        "title": "新建客户端集群"
+      }
+    ],
     "BuildCvmResource": [
       {
         "document": "创建预留资源",
@@ -74,10 +82,10 @@
     ],
     "CreateDataRepositoryTask": [
       {
-        "document": "创建上传文件系统数据到存储桶任务",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataRepositoryTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"my_test_task\",\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"Bucket\": \"mybucket-1250000\",\n    \"TaskPath\": \"aaa/bbb\",\n    \"TaskType\": \"FS_TO_BUCKET\",\n    \"RepositoryType\": \"MSP_AFM\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"c1a2b3f4\",\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
-        "title": "创建上传文件系统数据到存储桶任务"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataRepositoryTask\n<公共请求参数>\n\n{\n    \"TaskType\": \"COS_TO_FS\",\n    \"Bucket\": \"bucket-123456\",\n    \"FileSystemId\": \"x-c60-v321qq3\",\n    \"TaskPath\": \"test/\",\n    \"TaskName\": \"预热任务\",\n    \"EnableDataFlowSubPath\": true,\n    \"DataFlowSubPath\": \"dst/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"x_task_1769158823183\",\n        \"RequestId\": \"7bc315dc-c3fa-4c23-b719-30e382d36afb\"\n    }\n}",
+        "title": "创建数据流动任务示例"
       }
     ],
     "CreateFileSystem": [
@@ -102,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a1b2c3d4\",\n    \"SubnetInfo\": {\n        \"VpcId\": \"vpc-a1b2c3d4\",\n        \"SubnetId\": \"subnet-a1b2c3d4\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "为客户端节点删除跨vpc子网访问能力"
+      }
+    ],
+    "DeleteCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-w953d0pt\",\n    \"ClusterId\": \"x-c60-w953d0pt-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b503a94a-15af-41f0-81fd-8c35ad3d7274\"\n    }\n}",
+        "title": "删除客户端管理集群"
       }
     ],
     "DeleteFileSystem": [
@@ -166,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterAttributeList\": [\n            {\n                \"ClusterId\": \"g_cvm_744ikj5x\",\n                \"Name\": \"MyTestFS\",\n                \"Status\": \"alive\",\n                \"Type\": \"goosefs\",\n                \"VpcId\": \"vpc-123\",\n                \"SubnetId\": \"subnet-123\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"Description\": \"my test fs\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Tag\": [\n                    {\n                        \"Value\": \"production\",\n                        \"Key\": \"env\"\n                    }\n                ],\n                \"GooseFSAttribute\": {\n                    \"ClusterHighAvailability\": \"是\",\n                    \"ClusterDeployType\": \"INDEPENDENT_CLUSTER\",\n                    \"GooseFSCloudAuth\": true,\n                    \"InstanceType\": \"CVM\",\n                    \"TkeClusterId\": \"xxx\",\n                    \"ClientNumber\": 111,\n                    \"GooseFSNodeList\": [\n                        {\n                            \"NodeIp\": \"10.0.0.1\",\n                            \"InstanceId\": \"xxx\",\n                            \"InstanceType\": \"CVM\",\n                            \"NodeType\": \"Master\",\n                            \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"Status\": \"Success\",\n                            \"GroupId\": \"xxx\",\n                            \"NetworkId\": \"xxx\",\n                            \"Services\": [\n                                {\n                                    \"ServiceName\": \"master\",\n                                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                                    \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                                    \"Status\": \"Running\",\n                                    \"KeepAlive\": false,\n                                    \"ConfigChanged\": false\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ],\n        \"TotalCount\": 30,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "列出 GooseFS 集群"
+      }
+    ],
+    "DescribeCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-412s8jlp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClientNum\": 0,\n                \"ClusterId\": \"x-c60-412s8jlp\",\n                \"ClusterName\": \"test_cluster\",\n                \"ClusterType\": 0,\n                \"ManagerNodes\": [\n                    {\n                        \"ClusterId\": \"x-c60-412s8jlp\",\n                        \"InitialPassword\": \"*****\",\n                        \"NodeInstanceId\": \"ins-20jxbhdb\",\n                        \"NodeIp\": \"10.1.16.93\"\n                    }\n                ],\n                \"Status\": 0,\n                \"SubnetId\": \"subnet-ekn2txsv\",\n                \"VpcId\": \"vpc-q6lm145g\"\n            }\n        ],\n        \"RequestId\": \"13448a6b-8145-4f4a-960d-3db9427b6357\"\n    }\n}",
+        "title": "查询文件系统的客户端集群"
       }
     ],
     "DescribeCvmResource": [
