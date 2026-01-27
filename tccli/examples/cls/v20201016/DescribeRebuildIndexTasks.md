@@ -23,7 +23,7 @@ Output:
                 "RemainTime": 1000,
                 "CreateTime": 1234567890111,
                 "UpdateTime": 0,
-                "Progress": 0.0
+                "Progress": 0
             }
         ],
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"

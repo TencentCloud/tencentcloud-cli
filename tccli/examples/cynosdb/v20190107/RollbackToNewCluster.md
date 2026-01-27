@@ -11,6 +11,7 @@ tccli cynosdb RollbackToNewCluster --cli-unfold-argument  \
     --ProjectId 0 \
     --PayMode 0 \
     --OriginalClusterId cynosdbmysql-0fs2nhc7 \
+    --FromSaveBackup False \
     --RollbackId 64142 \
     --InstanceInitInfos.0.Cpu 1 \
     --InstanceInitInfos.0.Memory 1 \

@@ -7,7 +7,8 @@ Input:
 ```
 tccli gs InstallAndroidInstancesAppWithURL --cli-unfold-argument  \
     --AndroidInstanceIds cai-251006279-6c8fJh1iNOc \
-    --AndroidAppURL https://test.cos.ap-nanjing.myqcloud.com/tmp/177.apk
+    --AndroidAppURL https://test.cos.ap-nanjing.myqcloud.com/tmp/177.apk \
+    --AndroidAppMD5 fa9af5f509423f9add5c5a7e472dde4d
 ```
 
 Output: 

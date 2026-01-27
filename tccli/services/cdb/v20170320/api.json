@@ -13062,7 +13062,7 @@
         {
           "disabled": false,
           "document": "同步库表需要字段，本次查询起点id，不包含该条记录",
-          "example": "无",
+          "example": "143782",
           "member": "uint64",
           "name": "LastRouteId",
           "required": false,
@@ -13071,9 +13071,27 @@
         {
           "disabled": false,
           "document": "相对updateTimestamp延迟时长",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Delay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为 0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次请求返回的数量，默认值为 2000，最大值为 2000。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
           "required": false,
           "type": "int"
         }
@@ -13085,23 +13103,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询到的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询到的实例数量",
           "example": "3",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"AppId\": 2134234, \"UInstanceId\": \"cdb-test\", \"ResourceId\": \"aaa-bba-ccd\", \"RouteName\": \"测试实例\", \"Vip\": \"15.48.76.28\", \"Vport\": 3306, \"CdbType\": \"CUSTOM\", \"CdbMem\": 8, \"CdbVolume\": 500, \"Cpu\": 4, \"CdbVip\": \"10.13.27.63\", \"CdbVport\": \"34506\"}",
+          "document": "实例详情列表",
+          "example": "无",
           "member": "InstanceSampleInfo",
           "name": "Items",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13342,7 +13360,7 @@
         {
           "disabled": false,
           "document": "目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。",
-          "example": "2",
+          "example": "2.0",
           "member": "float",
           "name": "DstCpu",
           "required": true,
@@ -13432,7 +13450,7 @@
         {
           "disabled": false,
           "document": "独享集群 CDB 实例的节点分布情况。",
-          "example": " [{\"Node\": dch-fexbu7pp,\"SlaveNodeOne\": \"dch-cawss6q\",\"SlaveNodeTwo\": \"dch-bsxj39l\"}]",
+          "example": "无",
           "member": "NodeDistribution",
           "name": "NodeDistribution",
           "required": false,
@@ -13440,8 +13458,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。",
-          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
+          "document": "云盘版的节点拓扑配置。Nodeld 信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。",
+          "example": "无",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -13473,6 +13491,15 @@
           "name": "SlaveZoneId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否小版本升级 1 是 0 否",
+          "example": "1",
+          "member": "int64",
+          "name": "UpgradeSubversion",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17224,223 +17251,223 @@
       "members": [
         {
           "disabled": false,
-          "document": "APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "APPID",
           "example": "234514",
           "member": "uint64",
           "name": "AppId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID",
           "example": "cdb-test",
           "member": "string",
           "name": "UInstanceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例资源ID—— 实例长ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例资源ID—— 实例长ID",
           "example": "aaa-bbb-ccc",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "测试实例",
           "member": "string",
           "name": "RouteName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例VPC IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例VPC IP",
           "example": "30.15.48.136",
           "member": "string",
           "name": "Vip",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例VPC IP的port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例VPC IP的port",
           "example": "3306",
           "member": "uint64",
           "name": "Vport",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型",
           "example": "CUSTOM",
           "member": "string",
           "name": "CdbType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例内存大小",
           "example": "8",
           "member": "uint64",
           "name": "CdbMem",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例磁盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例磁盘大小",
           "example": "5000",
           "member": "uint64",
           "name": "CdbVolume",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例CPU核数",
           "example": "4",
           "member": "float",
           "name": "Cpu",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例的TGWIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的TGWIP",
           "example": "10.31.48.56",
           "member": "string",
           "name": "CdbVip",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TGW地址port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TGW地址port",
           "example": "12405",
           "member": "uint64",
           "name": "CdbVport",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1",
           "example": "实例类型",
           "member": "uint64",
           "name": "InstType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1",
           "example": "是状态",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1",
           "example": "项目ID",
           "member": "uint64",
           "name": "ProjectId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "2024-03-10 10:35:20\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "2024-03-10 10:35:20",
           "example": "实例添加时间",
           "member": "string",
           "name": "AddTimeStamp",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "2024-03-10 10:35:20\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "2024-03-10 10:35:20",
           "example": "最后一次修改实例时间",
           "member": "string",
           "name": "ModTimeStamp",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "2024-03-10 10:35:20\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "2024-03-10 10:35:20",
           "example": "实例到期时间",
           "member": "string",
           "name": "Deadline",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "2019-09-24 03:19:36\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "2019-09-24 03:19:36",
           "example": "隔离实例时间",
           "member": "string",
           "name": "IsolateTimeStamp",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "354\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "354",
           "example": "OSSClusterId",
           "member": "uint64",
           "name": "OssClusterId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "3",
           "example": "实例节点总数",
           "member": "uint64",
           "name": "InstanceNodes",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "800010001\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "800010001",
           "example": "ParamVersionFlow",
           "member": "uint64",
           "name": "ParamVersionFlow",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18159,10 +18186,19 @@
         },
         {
           "disabled": true,
-          "document": "是否跳过校验密码复杂度",
+          "document": "该字段已废弃。",
           "example": "false",
           "member": "bool",
           "name": "SkipValidatePassword",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过校验密码复杂度",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipPasswordValidate",
           "required": false,
           "type": "bool"
         }
@@ -25862,6 +25898,15 @@
           "name": "DataCheckSensitive",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小版本升级 1 是 0否",
+          "example": "1",
+          "member": "int64",
+          "name": "UpgradeSubversion",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

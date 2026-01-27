@@ -808,10 +808,10 @@
     ],
     "DescribeInstanceInfo": [
       {
-        "document": "查询给定实例详情",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInfo\n<公共请求参数>\n\n{\n    \"UInstanceIds\": [\n        \"cdb-test1\",\n        \"cdb-tests\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AddTimeStamp\": \"2024-04-10 20:14:59\",\n                \"AppId\": 251237298,\n                \"CdbMem\": 4000,\n                \"CdbType\": \"CLOUD_NATIVE_CLUSTER\",\n                \"CdbVip\": \"\",\n                \"CdbVolume\": 200,\n                \"CdbVport\": 0,\n                \"Cpu\": 2,\n                \"Deadline\": \"0001-01-01 00:00:00\",\n                \"InstType\": 1,\n                \"InstanceNodes\": 3,\n                \"IsolateTimeStamp\": \"0001-01-01 00:00:00\",\n                \"ModTimeStamp\": \"2024-04-10 20:19:58\",\n                \"OssClusterId\": 628,\n                \"ParamVersionFlow\": 800010001,\n                \"ProjectId\": 0,\n                \"ResourceId\": \"7ccb8d85-01c8-48db-a29d-5dd6b495767a\",\n                \"RouteName\": \"勿删_by_pxy\",\n                \"Status\": 1,\n                \"UInstanceId\": \"cdb-qy870gaz\",\n                \"Vip\": \"172.16.0.82\",\n                \"Vport\": 3306\n            }\n        ],\n        \"RequestId\": \"4ee4303e-5c75-4c70-be5f-9f5b6a266abc\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询给定实例详情"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInfo\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AddTimeStamp\": \"2025-10-14 14:51:37\",\n                \"AppId\": 251434123,\n                \"CdbMem\": 4000,\n                \"CdbType\": \"CLOUD_NATIVE_CLUSTER\",\n                \"CdbVip\": \"\",\n                \"CdbVolume\": 100,\n                \"CdbVport\": 0,\n                \"Cpu\": 2,\n                \"Deadline\": \"0001-01-01 00:00:00\",\n                \"InstType\": 1,\n                \"InstanceNodes\": 2,\n                \"IsolateTimeStamp\": \"0001-01-01 00:00:00\",\n                \"ModTimeStamp\": \"2025-10-14 14:51:37\",\n                \"OssClusterId\": 0,\n                \"ProjectId\": 0,\n                \"ResourceId\": \"\",\n                \"RouteName\": \"cdb1081853xx\",\n                \"Status\": 0,\n                \"UInstanceId\": \"cdb-44yrfxxx\",\n                \"Vip\": \"10.0.x.x\",\n                \"Vport\": 3306\n            }\n        ],\n        \"TotalCount\": 144,\n        \"RequestId\": \"9a873a27-bc6d-4b0e-8213-a20690157533\"\n    }\n}",
+        "title": "查询实例信息"
       }
     ],
     "DescribeInstanceParamRecords": [

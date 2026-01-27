@@ -35,7 +35,18 @@ Output:
         },
         "LogicCrossRegionsConfigUpdateTime": "",
         "RequestId": "e0127059-bb40-4308-a67d-c3bcddba372e",
-        "ReserveDuration": 604800
+        "ReserveDuration": 604800,
+        "SnapshotSecondaryBackupConfig": {
+            "BackupCustomAutoTime": false,
+            "BackupIntervalTime": 0,
+            "BackupTimeBeg": 0,
+            "BackupTimeEnd": 0,
+            "BackupTriggerStrategy": "",
+            "BackupWeekDays": null,
+            "CrossRegions": null,
+            "CrossRegionsEnable": "",
+            "ReserveDuration": 0
+        }
     }
 }
 ```

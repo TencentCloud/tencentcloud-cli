@@ -28,6 +28,13 @@
       "output": "CreateClusterSnapshotResponse",
       "status": "online"
     },
+    "CreateCollector": {
+      "document": "用于创建Beats采集器",
+      "input": "CreateCollectorRequest",
+      "name": "创建Beats采集器",
+      "output": "CreateCollectorResponse",
+      "status": "online"
+    },
     "CreateCosMigrateToServerlessInstance": {
       "document": "cos迁移流程",
       "input": "CreateCosMigrateToServerlessInstanceRequest",
@@ -2107,6 +2114,133 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCollectorRequest": {
+      "document": "CreateCollector请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "test",
+          "member": "string",
+          "name": "CollectorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器版本（支持\"6.8.15\"、\"7.10.2\"）",
+          "example": "7.10.2",
+          "member": "string",
+          "name": "CollectorVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器类型（支持filebeat、metricbeat、heartbeat、auditbeat、packetbeat）",
+          "example": "filebeat",
+          "member": "string",
+          "name": "CollectorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出的ES实例信息",
+          "example": "无",
+          "member": "CollectorOutputInstance",
+          "name": "OutputInstance",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "采集器配置",
+          "example": "无",
+          "member": "CollectorConfigInfo",
+          "name": "CollectorConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集器下发的CVM实例ID列表",
+          "example": "[\"ins-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CVMInstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集目标类型，CVM或者TKE",
+          "example": "TKE",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器集群ID，采集目标为TKE时必填",
+          "example": "cls-xxxxxxx",
+          "member": "string",
+          "name": "ContainerClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器配置，采集目标为TKE时必填",
+          "example": "无",
+          "member": "CollectorTarget",
+          "name": "CollectorTargets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "容器类型，tke/eks",
+          "example": "eks",
+          "member": "string",
+          "name": "ContainerClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCollectorResponse": {
+      "document": "CreateCollector返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器ID",
+          "example": "coll-xxxxxx",
+          "member": "string",
+          "name": "CollectorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -6799,6 +6799,15 @@
           "name": "InstanceRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定时是否设置EIP在网卡可见。取值：true、false，默认值为 false。当绑定 CVM 实例、EKS 弹性集群时，可设定此参数为 true。",
+          "example": "true",
+          "member": "bool",
+          "name": "EipVisibleOnEni",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6980,6 +6989,15 @@
           "name": "PrivateIPv6Address",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定时是否设置EIPv6在网卡可见。取值：true、false，默认值为 false。当绑定 CVM 实例、EKS 弹性集群时，可设定此参数为 true。",
+          "example": "true",
+          "member": "bool",
+          "name": "EipVisibleOnEni",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11009,7 +11027,7 @@
           "document": "TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。",
           "example": "120",
           "member": "uint64",
-          "name": "TcpTimeWaitTimeout",
+          "name": "TCPTimeWaitTimeout",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

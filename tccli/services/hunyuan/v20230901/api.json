@@ -204,7 +204,7 @@
       "status": "online"
     },
     "SubmitHunyuanTo3DProJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n【Model】参数中选择3.1，即可接入混元 3D 3.1 模型，几何精度与纹理细节全面升级，支持输入八视图。\n默认提供3个并发，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "SubmitHunyuanTo3DProJobRequest",
       "name": "提交混元生3D专业版任务",
       "output": "SubmitHunyuanTo3DProJobResponse",
@@ -4428,7 +4428,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1；\n选择3.1版本时，LowPoly参数不可用。",
+          "document": "混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1；\n选择3.1版本时，【LowPoly】、【Sketch】参数不可用。",
           "example": "3.0",
           "member": "string",
           "name": "Model",

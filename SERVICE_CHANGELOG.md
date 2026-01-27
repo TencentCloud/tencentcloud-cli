@@ -1,49 +1,10 @@
-# Release 3.0.1356.1
+# Release 3.0.1357.1
 
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+## 应用性能监控(apm) 版本：2021-06-22
 
-### 第 29 次发布
+### 第 21 次发布
 
-发布时间：2026-01-27 01:11:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85250)
-
-	* 新增入参：ResourceIdSet, Filters
-
-* [ModifyAuthModeSetting](http://document.tencentcloudapi.woa.com/document/product/1780/87963)
-
-	* 新增入参：AuthModeGM
-
-	* <font color="#dd0000">**修改入参**：</font>AuthMode
-
-
-新增数据结构：
-
-* [LDAPSetting](http://document.tencentcloudapi.woa.com/document/product/1780/85236#LDAPSetting)
-* [LoginSetting](http://document.tencentcloudapi.woa.com/document/product/1780/85236#LoginSetting)
-* [OAuthSetting](http://document.tencentcloudapi.woa.com/document/product/1780/85236#OAuthSetting)
-* [PasswordSetting](http://document.tencentcloudapi.woa.com/document/product/1780/85236#PasswordSetting)
-
-修改数据结构：
-
-* [SecuritySetting](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SecuritySetting)
-
-	* 新增成员：AuthMode, Password, Login, LDAP, OAuth
-
-
-
-
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 110 次发布
-
-发布时间：2026-01-27 01:12:48
+发布时间：2026-01-28 01:10:15
 
 本次发布包含了以下内容：
 
@@ -51,49 +12,23 @@
 
 新增接口：
 
-* [DescribeRenewInstances](http://document.tencentcloudapi.woa.com/document/product/555/88767)
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1463/88778)
 
 新增数据结构：
 
-* [RenewInstance](http://document.tencentcloudapi.woa.com/document/product/555/19183#RenewInstance)
+* [AndCondition](http://document.tencentcloudapi.woa.com/document/product/1463/64927#AndCondition)
+* [Condition](http://document.tencentcloudapi.woa.com/document/product/1463/64927#Condition)
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1463/64927#InstanceInfo)
+* [OrCondition](http://document.tencentcloudapi.woa.com/document/product/1463/64927#OrCondition)
+* [OrderByField](http://document.tencentcloudapi.woa.com/document/product/1463/64927#OrderByField)
 
 
 
-## 资源中心(cloudrc) 版本：2024-06-06
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 2 次发布
+### 第 52 次发布
 
-发布时间：2026-01-27 01:22:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [GetResource](http://document.tencentcloudapi.woa.com/document/product/1782/86999)
-
-	* 新增入参：ProductKey, RegionCode, ResourceId
-
-	* <font color="#dd0000">**修改入参**：</font>ResourceUniqueId
-
-	* 新增出参：RegionCode, ZoneCode
-
-
-修改数据结构：
-
-* [ResourcesSummary](http://document.tencentcloudapi.woa.com/document/product/1782/87013#ResourcesSummary)
-
-	* 新增成员：RegionCode, ZoneCode
-
-
-
-
-## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
-
-### 第 23 次发布
-
-发布时间：2026-01-27 01:41:45
+发布时间：2026-01-28 01:15:46
 
 本次发布包含了以下内容：
 
@@ -101,86 +36,15 @@
 
 新增接口：
 
-* [BuildCustomerCluster](http://document.tencentcloudapi.woa.com/document/product/1716/88770)
-* [DeleteCustomerCluster](http://document.tencentcloudapi.woa.com/document/product/1716/88769)
-* [DescribeCustomerCluster](http://document.tencentcloudapi.woa.com/document/product/1716/88768)
-
-修改接口：
-
-* [CreateDataRepositoryTask](http://document.tencentcloudapi.woa.com/document/product/1716/80524)
-
-	* 新增入参：EnableDataFlowSubPath, DataFlowSubPath
-
-
-新增数据结构：
-
-* [CustomerClusterAttr](http://document.tencentcloudapi.woa.com/document/product/1716/81241#CustomerClusterAttr)
+* [CopyAutoSnapshotPolicyCrossAccount](http://document.tencentcloudapi.woa.com/document/product/362/88779)
 
 
 
-## 高性能应用服务(hai) 版本：2023-08-12
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 17 次发布
+### 第 156 次发布
 
-发布时间：2026-01-27 01:43:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ItemPrice](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPrice)
-
-	* 新增成员：OriginPrice, DiscountPrice
-
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 146 次发布
-
-发布时间：2026-01-27 01:56:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#SubtitleTemplate)
-
-	* 新增成员：FontFileInput, BoardWidthUnit, BoardHeightUnit, OutlineWidthUnit, ShadowWidthUnit, LineSpacingUnit
-
-
-
-
-## 容器服务(tke) 版本：2022-05-01
-
-
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 112 次发布
-
-发布时间：2026-01-27 02:14:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [EnableEksEventPersistence](http://document.tencentcloudapi.woa.com/document/product/457/88771)
-
-
-
-## 实时互动-工业能源版(trro) 版本：2022-03-25
-
-### 第 11 次发布
-
-发布时间：2026-01-27 02:17:38
+发布时间：2026-01-28 01:16:29
 
 本次发布包含了以下内容：
 
@@ -188,18 +52,30 @@
 
 修改接口：
 
-* [DescribeDeviceList](http://document.tencentcloudapi.woa.com/document/product/1714/80477)
+* [DescribeInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/87042)
 
-	* 新增入参：RegisterType
+	* 新增入参：Offset, Limit
+
+* [DescribeInstanceUpgradeType](http://document.tencentcloudapi.woa.com/document/product/236/84161)
+
+	* 新增入参：UpgradeSubversion
+
+* [ModifyAccountPassword](http://document.tencentcloudapi.woa.com/document/product/236/17497)
+
+	* 新增入参：SkipPasswordValidate
+
+* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15876)
+
+	* 新增入参：UpgradeSubversion
 
 
 
 
-## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 14 次发布
+### 第 152 次发布
 
-发布时间：2026-01-27 02:23:50
+发布时间：2026-01-28 01:29:34
 
 本次发布包含了以下内容：
 
@@ -207,34 +83,246 @@
 
 新增接口：
 
-* [AuthorizePrivileges](http://document.tencentcloudapi.woa.com/document/product/1607/88774)
-* [ListPermissions](http://document.tencentcloudapi.woa.com/document/product/1607/88776)
-* [RevokePrivileges](http://document.tencentcloudapi.woa.com/document/product/1607/88773)
+* [DeleteClusterSaveBackup](http://document.tencentcloudapi.woa.com/document/product/1003/88783)
+* [DescribeRedoLogs](http://document.tencentcloudapi.woa.com/document/product/1003/88782)
+* [DescribeSaveBackupClusters](http://document.tencentcloudapi.woa.com/document/product/1003/88781)
+* [ModifySnapBackupCrossRegionConfig](http://document.tencentcloudapi.woa.com/document/product/1003/88780)
+
+修改接口：
+
+* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48094)
+
+	* 新增出参：SnapshotSecondaryBackupConfig
+
+* [IsolateCluster](http://document.tencentcloudapi.woa.com/document/product/1003/48082)
+
+	* 新增入参：SaveBackup
+
+* [IsolateInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48081)
+
+	* 新增入参：SaveBackup
+
+* [ModifyBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48090)
+
+	* 新增入参：SnapshotSecondaryBackupConfig
+
+* [RollbackToNewCluster](http://document.tencentcloudapi.woa.com/document/product/1003/83588)
+
+	* 新增入参：FromSaveBackup
+
 
 新增数据结构：
 
-* [AuthorizePrivilegesRsp](http://document.tencentcloudapi.woa.com/document/product/1607/87707#AuthorizePrivilegesRsp)
-* [AuthorizeResult](http://document.tencentcloudapi.woa.com/document/product/1607/87707#AuthorizeResult)
-* [GetResourcePrivilegeDetailRsp](http://document.tencentcloudapi.woa.com/document/product/1607/87707#GetResourcePrivilegeDetailRsp)
-* [Page](http://document.tencentcloudapi.woa.com/document/product/1607/87707#Page)
-* [PrivilegeInfo](http://document.tencentcloudapi.woa.com/document/product/1607/87707#PrivilegeInfo)
-* [PrivilegeResource](http://document.tencentcloudapi.woa.com/document/product/1607/87707#PrivilegeResource)
-* [ResourcePrivilegeDetail](http://document.tencentcloudapi.woa.com/document/product/1607/87707#ResourcePrivilegeDetail)
-* [RevokePrivilegesRsp](http://document.tencentcloudapi.woa.com/document/product/1607/87707#RevokePrivilegesRsp)
-* [SecurityFilter](http://document.tencentcloudapi.woa.com/document/product/1607/87707#SecurityFilter)
-* [Subject](http://document.tencentcloudapi.woa.com/document/product/1607/87707#Subject)
-* [SubjectInfo](http://document.tencentcloudapi.woa.com/document/product/1607/87707#SubjectInfo)
+* [BackupConfigInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BackupConfigInfo)
+* [BackupRegionAndIds](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BackupRegionAndIds)
+* [QuerySimpleFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QuerySimpleFilter)
+* [RedoLogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RedoLogItem)
+* [SaveBackupClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaveBackupClusterInfo)
+* [SnapshotBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SnapshotBackupConfig)
 
 修改数据结构：
 
-* [LineageNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1607/87707#LineageNodeInfo)
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
 
-	* 新增成员：DownStreamCount, UpStreamCount
-
-
+	* 新增成员：IsOpenTDE
 
 
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 101 次发布
+
+发布时间：2026-01-28 01:40:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCollector](http://document.tencentcloudapi.woa.com/document/product/845/88785)
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 50 次发布
+
+发布时间：2026-01-28 01:43:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InstallAndroidInstancesAppWithURL](http://document.tencentcloudapi.woa.com/document/product/1162/86952)
+
+	* 新增入参：AndroidAppMD5
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 51 次发布
+
+发布时间：2026-01-28 01:56:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSRVConnectionDomain](http://document.tencentcloudapi.woa.com/document/product/240/88789)
+* [DisableSRVConnectionUrl](http://document.tencentcloudapi.woa.com/document/product/240/88788)
+* [EnableSRVConnectionUrl](http://document.tencentcloudapi.woa.com/document/product/240/88787)
+* [ModifySRVConnectionUrl](http://document.tencentcloudapi.woa.com/document/product/240/88786)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## NLP 技术(nlp) 版本：2019-04-08
+
+### 第 15 次发布
+
+发布时间：2026-01-28 02:00:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ClassifyContent
+* ComposeCouplet
+* EvaluateSentenceSimilarity
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Category
+* SentencePair
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 41 次发布
+
+发布时间：2026-01-28 02:10:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTagRetentionRule](http://document.tencentcloudapi.woa.com/document/product/1141/54803)
+
+	* 新增入参：AdvancedRuleItems
+
+	* <font color="#dd0000">**修改入参**：</font>RetentionRule
+
+* [DeleteRepository](http://document.tencentcloudapi.woa.com/document/product/1141/42724)
+
+	* 新增入参：ForceDelete
+
+* [ModifyTagRetentionRule](http://document.tencentcloudapi.woa.com/document/product/1141/54798)
+
+	* 新增入参：AdvancedRuleItems
+
+	* <font color="#dd0000">**修改入参**：</font>RetentionRule
+
+
+新增数据结构：
+
+* [FilterSelector](http://document.tencentcloudapi.woa.com/document/product/1141/41603#FilterSelector)
+* [RetentionRuleItem](http://document.tencentcloudapi.woa.com/document/product/1141/41603#RetentionRuleItem)
+
+修改数据结构：
+
+* [RetentionPolicy](http://document.tencentcloudapi.woa.com/document/product/1141/41603#RetentionPolicy)
+
+	* 新增成员：AdvancedRuleItems
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 47 次发布
+
+发布时间：2026-01-28 02:11:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* AddAndPublishNetworkFirewallPolicyDetail
+* AddAndPublishNetworkFirewallPolicyYamlDetail
+* AddNetworkFirewallPolicyDetail
+* AddNetworkFirewallPolicyYamlDetail
+* CheckNetworkFirewallPolicyYaml
+* ConfirmNetworkFirewallPolicy
+* CreateNetworkFirewallClusterRefresh
+* CreateNetworkFirewallPolicyDiscover
+* CreateNetworkFirewallPublish
+* CreateNetworkFirewallUndoPublish
+* DeleteNetworkFirewallPolicyDetail
+* DescribeNetworkFirewallAuditRecord
+* DescribeNetworkFirewallClusterList
+* DescribeNetworkFirewallClusterRefreshStatus
+* DescribeNetworkFirewallNamespaceLabelList
+* DescribeNetworkFirewallNamespaceList
+* DescribeNetworkFirewallPodLabelsList
+* DescribeNetworkFirewallPolicyDetail
+* DescribeNetworkFirewallPolicyDiscover
+* DescribeNetworkFirewallPolicyList
+* DescribeNetworkFirewallPolicyStatus
+* DescribeNetworkFirewallPolicyYamlDetail
+* UpdateAndPublishNetworkFirewallPolicyDetail
+* UpdateAndPublishNetworkFirewallPolicyYamlDetail
+* UpdateNetworkFirewallPolicyDetail
+* UpdateNetworkFirewallPolicyYamlDetail
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 239 次发布
+
+发布时间：2026-01-28 02:23:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssociateAddress](http://document.tencentcloudapi.woa.com/document/product/215/16700)
+
+	* 新增入参：EipVisibleOnEni
+
+* [AssociateIPv6Address](http://document.tencentcloudapi.woa.com/document/product/215/85464)
+
+	* 新增入参：EipVisibleOnEni
+
+
+修改数据结构：
+
+* [ConnectionStateTimeouts](http://document.tencentcloudapi.woa.com/document/product/215/15824#ConnectionStateTimeouts)
+
+	* 新增成员：TCPTimeWaitTimeout
+
+	* <font color="#dd0000">**删除成员**：</font>TcpTimeWaitTimeout
+
 
 
 
