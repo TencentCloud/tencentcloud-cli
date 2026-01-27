@@ -292,6 +292,14 @@
         "title": "创建一个发起转码和采样截图任务的任务流模板"
       }
     ],
+    "CreateProcessImageAsyncTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcessImageAsyncTemplate\n<公共请求参数>\n\n{\n    \"ProcessImageConfigure\": {\n        \"EncodeConfig\": {\n            \"Format\": \"PNG\"\n        },\n        \"EnhanceConfig\": {\n            \"AdvancedSuperResolution\": {\n                \"Switch\": \"ON\",\n                \"Type\": \"super\",\n                \"Mode\": \"fixed\",\n                \"Width\": 1920,\n                \"Height\": 1080\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 30023,\n        \"RequestId\": \"e35641c1-4b92-49e8-9786-06d20161b5d7\"\n    }\n}",
+        "title": "创建高级超分模板"
+      }
+    ],
     "CreateQualityInspectTemplate": [
       {
         "document": "创建音画质检测模板。",
@@ -574,6 +582,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DeleteProcedureTemplate\n&Name=我的一个任务流\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "删除指定名字的任务流模板"
+      }
+    ],
+    "DeleteProcessImageAsyncTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProcessImageAsyncTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 4,\n    \"SubAppId\": 221073\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a42fdcc-49f0-4a9c-8452-bdfbf9fe599e\"\n    }\n}",
+        "title": "删除图像异步处理模板"
       }
     ],
     "DeleteQualityInspectTemplate": [
@@ -1008,6 +1024,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeProcedureTemplates\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"ProcedureTemplateSet\": [\n            {\n                \"Name\": \"我的任务流A\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"我的任务流A\",\n                \"UpdateTime\": \"2018-10-01T18:00:00\",\n                \"CreateTime\": \"2018-10-01T18:00:00\",\n                \"MediaProcessTask\": {\n                    \"TranscodeTaskSet\": [\n                        {\n                            \"Definition\": 20,\n                            \"WatermarkSet\": [],\n                            \"MosaicSet\": [],\n                            \"TraceWatermark\": {\n                                \"Switch\": \"OFF\",\n                                \"Definition\": 0\n                            },\n                            \"StartTimeOffset\": 0,\n                            \"CopyRightWatermark\": {\n                                \"Text\": \"\"\n                            },\n                            \"HeadTailSet\": [],\n                            \"EndTimeOffset\": 0\n                        },\n                        {\n                            \"Definition\": 30,\n                            \"WatermarkSet\": [],\n                            \"MosaicSet\": [],\n                            \"TraceWatermark\": {\n                                \"Switch\": \"OFF\",\n                                \"Definition\": 0\n                            },\n                            \"StartTimeOffset\": 0,\n                            \"CopyRightWatermark\": {\n                                \"Text\": \"\"\n                            },\n                            \"HeadTailSet\": [],\n                            \"EndTimeOffset\": 0\n                        },\n                        {\n                            \"Definition\": 40,\n                            \"WatermarkSet\": [],\n                            \"MosaicSet\": [],\n                            \"TraceWatermark\": {\n                                \"Switch\": \"OFF\",\n                                \"Definition\": 0\n                            },\n                            \"StartTimeOffset\": 0,\n                            \"CopyRightWatermark\": {\n                                \"Text\": \"\"\n                            },\n                            \"HeadTailSet\": [],\n                            \"EndTimeOffset\": 0\n                        }\n                    ],\n                    \"AnimatedGraphicTaskSet\": [],\n                    \"SnapshotByTimeOffsetTaskSet\": [],\n                    \"SampleSnapshotTaskSet\": [],\n                    \"ImageSpriteTaskSet\": [],\n                    \"CoverBySnapshotTaskSet\": []\n                },\n                \"AiContentReviewTask\": null,\n                \"AiAnalysisTask\": null,\n                \"AiRecognitionTaskSet\": [],\n                \"MiniProgramPublishTask\": null,\n                \"ReviewAudioVideoTask\": null\n            },\n            {\n                \"Name\": \"我的任务流B\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"我的任务流B\",\n                \"UpdateTime\": \"2018-10-01T18:00:00\",\n                \"CreateTime\": \"2018-10-01T18:00:00\",\n                \"MediaProcessTask\": {\n                    \"TranscodeTaskSet\": [\n                        {\n                            \"Definition\": 20,\n                            \"WatermarkSet\": [],\n                            \"MosaicSet\": [],\n                            \"TraceWatermark\": {\n                                \"Switch\": \"OFF\",\n                                \"Definition\": 0\n                            },\n                            \"StartTimeOffset\": 0,\n                            \"CopyRightWatermark\": {\n                                \"Text\": \"\"\n                            },\n                            \"HeadTailSet\": [],\n                            \"EndTimeOffset\": 0\n                        },\n                        {\n                            \"Definition\": 30,\n                            \"WatermarkSet\": [],\n                            \"MosaicSet\": [],\n                            \"TraceWatermark\": {\n                                \"Switch\": \"OFF\",\n                                \"Definition\": 0\n                            },\n                            \"StartTimeOffset\": 0,\n                            \"CopyRightWatermark\": {\n                                \"Text\": \"\"\n                            },\n                            \"HeadTailSet\": [],\n                            \"EndTimeOffset\": 0\n                        },\n                        {\n                            \"Definition\": 40,\n                            \"WatermarkSet\": [],\n                            \"MosaicSet\": [],\n                            \"TraceWatermark\": {\n                                \"Switch\": \"OFF\",\n                                \"Definition\": 0\n                            },\n                            \"StartTimeOffset\": 0,\n                            \"CopyRightWatermark\": {\n                                \"Text\": \"\"\n                            },\n                            \"HeadTailSet\": [],\n                            \"EndTimeOffset\": 0\n                        }\n                    ],\n                    \"AnimatedGraphicTaskSet\": [],\n                    \"SnapshotByTimeOffsetTaskSet\": [],\n                    \"SampleSnapshotTaskSet\": [],\n                    \"ImageSpriteTaskSet\": [],\n                    \"CoverBySnapshotTaskSet\": []\n                },\n                \"AiContentReviewTask\": null,\n                \"AiAnalysisTask\": null,\n                \"AiRecognitionTaskSet\": [],\n                \"MiniProgramPublishTask\": null,\n                \"ReviewAudioVideoTask\": null\n            },\n            {\n                \"Name\": \"我的任务流C\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"我的任务流C\",\n                \"UpdateTime\": \"2018-10-01T18:00:00\",\n                \"CreateTime\": \"2018-10-01T18:00:00\",\n                \"MediaProcessTask\": null,\n                \"AiContentReviewTask\": {\n                    \"Definition\": 10\n                },\n                \"AiAnalysisTask\": null,\n                \"AiRecognitionTaskSet\": [],\n                \"MiniProgramPublishTask\": null,\n                \"ReviewAudioVideoTask\": null\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "查询所有的任务流模板"
+      }
+    ],
+    "DescribeProcessImageAsyncTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessImageAsyncTemplates\n<公共请求参数>\n\n{\n    \"SubAppId\": 221073,\n    \"Definitions\": [\n        7\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ProcessImageAsyncTemplateSet\": [\n            {\n                \"Comment\": \"testcomment\",\n                \"CreateTime\": \"2026-01-20T03:02:33Z\",\n                \"Definition\": 7,\n                \"Name\": \"test3\",\n                \"ProcessImageConfigure\": {\n                    \"EncodeConfig\": {\n                        \"Format\": \"PNG\",\n                        \"Quality\": 100\n                    },\n                    \"EnhanceConfig\": {\n                        \"AdvancedSuperResolution\": {\n                            \"Height\": 720,\n                            \"Mode\": \"percent\",\n                            \"Percent\": 2,\n                            \"Switch\": \"ON\",\n                            \"Type\": \"standard\",\n                            \"Width\": 1280\n                        },\n                        \"ColorEnhance\": {\n                            \"Switch\": \"ON\",\n                            \"Type\": \"weak\"\n                        },\n                        \"Denoise\": {\n                            \"Switch\": \"ON\",\n                            \"Type\": \"weak\"\n                        },\n                        \"FaceEnhance\": {\n                            \"Intensity\": 1,\n                            \"Switch\": \"ON\"\n                        },\n                        \"ImageQualityEnhance\": {\n                            \"Switch\": \"ON\",\n                            \"Type\": \"weak\"\n                        },\n                        \"LowLightEnhance\": {\n                            \"Switch\": \"ON\",\n                            \"Type\": \"normal\"\n                        },\n                        \"SharpEnhance\": {\n                            \"Intensity\": 1,\n                            \"Switch\": \"ON\"\n                        },\n                        \"SuperResolution\": null\n                    }\n                },\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2026-01-26T09:21:49Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"08cfed0c-2b5a-41bf-b0dd-b1985db203d8\"\n    }\n}",
+        "title": "查询图片异步处理模板列表"
       }
     ],
     "DescribeQualityInspectTemplates": [
@@ -1576,6 +1600,14 @@
         "title": "修改素材样本-delete"
       }
     ],
+    "ModifyProcessImageAsyncTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProcessImageAsyncTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 7,\n    \"SubAppId\": 221073,\n    \"Name\": \"test3\",\n    \"Comment\": \"testcomment\",\n    \"ProcessImageConfigure\": {\n        \"EncodeConfig\": {\n            \"Format\": \"JPEG\",\n            \"Quality\": 100\n        },\n        \"EnhanceConfig\": {\n            \"SuperResolution\": {\n                \"Switch\": \"ON\",\n                \"Type\": \"lq\",\n                \"Size\": 2\n            },\n            \"Denoise\": {\n                \"Switch\": \"ON\",\n                \"Type\": \"weak\"\n            },\n            \"ImageQualityEnhance\": {\n                \"Switch\": \"ON\",\n                \"Type\": \"weak\"\n            },\n            \"ColorEnhance\": {\n                \"Switch\": \"ON\",\n                \"Type\": \"weak\"\n            },\n            \"SharpEnhance\": {\n                \"Switch\": \"ON\",\n                \"Intensity\": 1\n            },\n            \"FaceEnhance\": {\n                \"Switch\": \"ON\",\n                \"Intensity\": 1\n            },\n            \"LowLightEnhance\": {\n                \"Switch\": \"ON\",\n                \"Type\": \"normal\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"108471cb-3414-4309-ac74-24443116ddda\"\n    }\n}",
+        "title": "修改模板配置"
+      }
+    ],
     "ModifyQualityInspectTemplate": [
       {
         "document": "修改音画质检测模板。",
@@ -1732,6 +1764,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ProcessImage\n&FileId=5285485487985271487\n&Operation=ContentReview\n&ContentReviewInput.Definition=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ContentReviewResultSet\": [\n            {\n                \"Type\": \"Porn.Image\",\n                \"PornImageResult\": {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"sexy\"\n                },\n                \"TerrorismImageResult\": null,\n                \"PoliticalImageResult\": null,\n                \"PornOcrResult\": null,\n                \"TerrorismOcrResult\": null,\n                \"PoliticalOcrResult\": null\n            }\n        ]\n    }\n}",
         "title": "发起图片处理智能识别任务"
+      }
+    ],
+    "ProcessImageAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessImageAsync\n<公共请求参数>\n\n{\n    \"SubAppId\": 221073,\n    \"FileId\": \"966263618924724112\",\n    \"ImageTaskInput\": {\n        \"Definition\": 7\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"221073-ProcessImageAsync-aada17cb6859b9051afe22383fa596d7t\",\n        \"RequestId\": \"4b91e385-e5b1-4e46-9172-f9188c560ef9\"\n    }\n}",
+        "title": "发起图片异步处理"
       }
     ],
     "ProcessMedia": [

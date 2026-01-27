@@ -40,6 +40,14 @@
         "title": "给单块盘绑定定期快照策略"
       }
     ],
+    "CopyAutoSnapshotPolicyCrossAccount": [
+      {
+        "document": "自动快照策略跨账号复制",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyAutoSnapshotPolicyCrossAccount\n<公共请求参数>\n{\"AutoSnapshotPolicyIds\": [\"asp-ljylgbyo\"], \"TargetAccountUin\": \"597568700\"}\n\n{\n    \"AutoSnapshotPolicyIds\": [\n        \"asp-1h6gs2\"\n    ],\n    \"TargetAccountUin\": \"1044849112\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicyIds\": [\n            \"asp-1h6gs2\"\n        ],\n        \"TargetAccountUin\": \"1044849112\",\n        \"RequestId\": \"sfqw134-fcdsf21-e534f42-12few\"\n    }\n}",
+        "title": "自动快照策略跨账号复制"
+      }
+    ],
     "CopySnapshotCrossRegions": [
       {
         "document": "将快照从广州复制到北京",

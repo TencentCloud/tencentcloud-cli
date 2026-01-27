@@ -6,19 +6,23 @@ Input:
 
 ```
 tccli tcr CreateTagRetentionRule --cli-unfold-argument  \
-    --RegistryId tcr-12345 \
+    --RegistryId tcr-40s86s0j \
     --NamespaceId 1 \
-    --CronSetting weekly \
-    --RetentionRule.Key latestPushedK \
-    --RetentionRule.Value 20 \
-    --Disabled true
+    --CronSetting manual \
+    --AdvancedRuleItems.0.RetentionPolicy.Key latestPushedK \
+    --AdvancedRuleItems.0.RetentionPolicy.Value 7 \
+    --AdvancedRuleItems.0.TagFilter.Decoration matches \
+    --AdvancedRuleItems.0.TagFilter.Pattern v* \
+    --AdvancedRuleItems.0.RepositoryFilter.Decoration repoMatches \
+    --AdvancedRuleItems.0.RepositoryFilter.Pattern test-* \
+    --Disabled False
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "c8bf292d-38c7-49d9-8da3-737d08160cfc"
+        "RequestId": "831c375a-0beb-4ed3-b3b9-33926ebc2a8b"
     }
 }
 ```

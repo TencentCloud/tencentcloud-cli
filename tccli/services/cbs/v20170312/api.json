@@ -35,6 +35,13 @@
       "output": "BindAutoSnapshotPolicyResponse",
       "status": "online"
     },
+    "CopyAutoSnapshotPolicyCrossAccount": {
+      "document": "针对白名单内用户实现自动快照策略的跨账号复制功能",
+      "input": "CopyAutoSnapshotPolicyCrossAccountRequest",
+      "name": "自动快照策略的跨账号复制",
+      "output": "CopyAutoSnapshotPolicyCrossAccountResponse",
+      "status": "online"
+    },
     "CopySnapshotCrossRegions": {
       "document": "本接口（CopySnapshotCrossRegions）用于快照跨地域复制。\n\n* 本接口为异步接口，当跨地域复制的请求下发成功后会返回一个新的快照ID，此时快照未立即复制到目标地域，可请求目标地域的[DescribeSnapshots](/document/product/362/15647)接口查询新快照的状态，判断是否复制完成。如果快照的状态为“NORMAL”，表示快照复制完成。\n* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2025年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。",
       "input": "CopySnapshotCrossRegionsRequest",
@@ -1044,6 +1051,62 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyAutoSnapshotPolicyCrossAccountRequest": {
+      "document": "CopyAutoSnapshotPolicyCrossAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要备份的定期快照策略ID列表",
+          "example": "[\"asp-ljylgbyo\"]",
+          "member": "string",
+          "name": "AutoSnapshotPolicyIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目标账户uin",
+          "example": "597568700",
+          "member": "string",
+          "name": "TargetAccountUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyAutoSnapshotPolicyCrossAccountResponse": {
+      "document": "CopyAutoSnapshotPolicyCrossAccount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已备份的定期快照策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"asp-ljylgbyo\"]",
+          "member": "string",
+          "name": "AutoSnapshotPolicyIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标账户uin",
+          "example": "597568700",
+          "member": "string",
+          "name": "TargetAccountUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CopySnapshotCrossRegionsRequest": {
       "document": "CopySnapshotCrossRegions请求参数结构体",

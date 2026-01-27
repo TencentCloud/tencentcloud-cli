@@ -182,6 +182,13 @@
       "output": "CreateProcedureTemplateResponse",
       "status": "online"
     },
+    "CreateProcessImageAsyncTemplate": {
+      "document": "创建用户自定义图像异步处理模板，数量上限：50。暂时不支持 HLS 格式。",
+      "input": "CreateProcessImageAsyncTemplateRequest",
+      "name": "创建图片异步处理模板",
+      "output": "CreateProcessImageAsyncTemplateResponse",
+      "status": "online"
+    },
     "CreateQualityInspectTemplate": {
       "document": "创建音画质检测模板。",
       "input": "CreateQualityInspectTemplateRequest",
@@ -397,6 +404,13 @@
       "input": "DeleteProcedureTemplateRequest",
       "name": "删除任务流模板",
       "output": "DeleteProcedureTemplateResponse",
+      "status": "online"
+    },
+    "DeleteProcessImageAsyncTemplate": {
+      "document": "删除用户自定义图像异步处理模板。\n\n注意：模板 ID 为 10000 以下的为系统预置模板，不允许删除。",
+      "input": "DeleteProcessImageAsyncTemplateRequest",
+      "name": "删除图片异步处理模板",
+      "output": "DeleteProcessImageAsyncTemplateResponse",
       "status": "online"
     },
     "DeleteQualityInspectTemplate": {
@@ -742,6 +756,13 @@
       "output": "DescribeProcedureTemplatesResponse",
       "status": "online"
     },
+    "DescribeProcessImageAsyncTemplates": {
+      "document": "根据图像异步处理模板唯一标识，获取图像异步处理模板详情列表。返回结果包含符合条件的所有用户自定义图像异步处理模板。",
+      "input": "DescribeProcessImageAsyncTemplatesRequest",
+      "name": "获取图片异步处理模板列表",
+      "output": "DescribeProcessImageAsyncTemplatesResponse",
+      "status": "online"
+    },
     "DescribeQualityInspectTemplates": {
       "document": "获取音画质检测模板列表。",
       "input": "DescribeQualityInspectTemplatesRequest",
@@ -1085,6 +1106,13 @@
       "output": "ModifyPersonSampleResponse",
       "status": "online"
     },
+    "ModifyProcessImageAsyncTemplate": {
+      "document": "修改用户自定义图像异步处理模板。\n\n注意：模板 ID 10000 以下的为系统预置模板，不允许修改。",
+      "input": "ModifyProcessImageAsyncTemplateRequest",
+      "name": "修改图片异步处理模板",
+      "output": "ModifyProcessImageAsyncTemplateResponse",
+      "status": "online"
+    },
     "ModifyQualityInspectTemplate": {
       "document": "修改音画质检测模板。",
       "input": "ModifyQualityInspectTemplateRequest",
@@ -1195,6 +1223,13 @@
       "input": "ProcessImageRequest",
       "name": "图片处理",
       "output": "ProcessImageResponse",
+      "status": "online"
+    },
+    "ProcessImageAsync": {
+      "document": "该接口用于图片处理任务",
+      "input": "ProcessImageAsyncRequest",
+      "name": "图片异步处理",
+      "output": "ProcessImageAsyncResponse",
       "status": "online"
     },
     "ProcessMedia": {
@@ -2084,6 +2119,78 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedSuperResolutionConfig": {
+      "document": "超分配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型，可选值：\n<li>standard：通用超分</li>\n<li>super：高级超分。</li>\n默认值：standard。",
+          "example": "standard",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出图片模式，默认percent。\n<li> aspect: 超分至指定宽高的较大矩形。</li>\n<li> fixed: 超分至固定宽高，强制缩放。</li>\n<li> percent: 超分倍率，可以为小数。</li>",
+          "example": "percent",
+          "member": "string",
+          "name": "Mode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超分倍率，可以为小数。",
+          "example": "2.0",
+          "member": "float",
+          "name": "Percent",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标图片宽度，不能超过4096。",
+          "example": "1280",
+          "member": "int64",
+          "name": "Width",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标图片高度，不能超过4096。",
+          "example": "720",
+          "member": "int64",
+          "name": "Height",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9477,6 +9584,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI换衣的提示词。",
+          "example": "衬衫打开一点",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12927,6 +13045,70 @@
       ],
       "type": "object"
     },
+    "CreateProcessImageAsyncTemplateRequest": {
+      "document": "CreateProcessImageAsyncTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片异步处理任务配置。",
+          "example": "无",
+          "member": "ProcessImageAsyncTask",
+          "name": "ProcessImageConfigure",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板名称，长度限制：64 个字符。",
+          "example": "智能分析模板",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板描述信息，长度限制：256 个字符。",
+          "example": "模板1",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProcessImageAsyncTemplateResponse": {
+      "document": "CreateProcessImageAsyncTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片异步处理模板唯一标识。",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateQualityInspectTemplateRequest": {
       "document": "CreateQualityInspectTemplate请求参数结构体",
       "members": [
@@ -15064,6 +15246,42 @@
     },
     "DeleteProcedureTemplateResponse": {
       "document": "DeleteProcedureTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProcessImageAsyncTemplateRequest": {
+      "document": "DeleteProcessImageAsyncTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片异步处理模板唯一标识。",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProcessImageAsyncTemplateResponse": {
+      "document": "DeleteProcessImageAsyncTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18240,6 +18458,80 @@
       ],
       "type": "object"
     },
+    "DescribeProcessImageAsyncTemplatesRequest": {
+      "document": "DescribeProcessImageAsyncTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板唯一标识过滤条件，数组长度最大值：100。",
+          "example": "[30]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProcessImageAsyncTemplatesResponse": {
+      "document": "DescribeProcessImageAsyncTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板详情列表。",
+          "example": "无",
+          "member": "ProcessImageAsyncTemplateItem",
+          "name": "ProcessImageAsyncTemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQualityInspectTemplatesRequest": {
       "document": "DescribeQualityInspectTemplates请求参数结构体",
       "members": [
@@ -19576,6 +19868,16 @@
           "example": "无",
           "member": "SceneAigcVideoTask",
           "name": "SceneAigcVideoTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。",
+          "example": "无",
+          "member": "ProcessImageAsync",
+          "name": "ProcessImageAsyncTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -23299,6 +23601,156 @@
       ],
       "usage": "in"
     },
+    "ImageDenoiseConfig": {
+      "document": "图片降噪配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型，可选值：\n<li>weak</li>\n<li>strong</li>\n默认值：weak。",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageEncodeConfig": {
+      "document": "图片编码格式参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片格式，取值范围：JPEG、PNG、BMP、WebP，缺省为原图格式。不支持动画。",
+          "example": "JPEG",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片的相对质量，取值范围：1 - 100，数值以原图质量为标准，缺省为原图质量。",
+          "example": "50",
+          "member": "int64",
+          "name": "Quality",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageEnhanceConfig": {
+      "document": "图片增强参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "超分配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SuperResolutionInfo",
+          "name": "SuperResolution",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高级超分配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedSuperResolutionConfig",
+          "name": "AdvancedSuperResolution",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "降噪配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageDenoiseConfig",
+          "name": "Denoise",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "综合增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageQualityEnhanceInfo",
+          "name": "ImageQualityEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "色彩增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ColorEnhanceInfo",
+          "name": "ColorEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "细节增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SharpEnhanceInfo",
+          "name": "SharpEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "人脸增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FaceEnhanceInfo",
+          "name": "FaceEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低光照增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LowLightEnhanceInfo",
+          "name": "LowLightEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageOperation": {
       "document": "单个图片处理操作。",
       "members": [
@@ -23522,6 +23974,34 @@
           "example": "1",
           "member": "uint64",
           "name": "ShortEdge",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageSceneAigcEncodeConfig": {
+      "document": "图片编码格式参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片格式，取值范围：JPEG、PNG，缺省为原图格式。不支持动画。",
+          "example": "JPEG",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片的相对质量，取值范围：1 - 100，数值以原图质量为标准，缺省为原图质量。",
+          "example": "1",
+          "member": "int64",
+          "name": "Quality",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -29709,6 +30189,69 @@
       ],
       "type": "object"
     },
+    "ModifyProcessImageAsyncTemplateRequest": {
+      "document": "ModifyProcessImageAsyncTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片异步处理模板唯一标识。",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板名称，长度限制：64 个字符。",
+          "example": "MyAIAnalysisTemplate",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板描述信息，长度限制：256 个字符。",
+          "example": "my AI analysis template",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理配置。",
+          "example": "无",
+          "member": "ProcessImageAsyncTask",
+          "name": "ProcessImageConfigure",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProcessImageAsyncTemplateResponse": {
+      "document": "ModifyProcessImageAsyncTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyQualityInspectTemplateRequest": {
       "document": "ModifyQualityInspectTemplate请求参数结构体",
       "members": [
@@ -32678,6 +33221,490 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProcessImageAsync": {
+      "document": "图片异步处理任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "251007502-ProcessImageAsync-ca5fdd3e74c6bd1b28974b6c136de507t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>",
+          "example": "FINISH",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。源异常时返回非0错误码，返回0时请使用各个具体任务的 ErrCode。",
+          "example": "70000",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "fail",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理任务的输入信息。",
+          "example": "无",
+          "member": "ProcessImageAsyncInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理任务的输出信息。",
+          "example": "无",
+          "member": "ProcessImageAsyncOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "mySessionId",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "mySessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProcessImageAsyncInput": {
+      "document": "图片异步处理任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理的FileId。",
+          "example": "237957913124",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片处理参数。",
+          "example": "无",
+          "member": "ProcessImageAsyncTaskInput",
+          "name": "ImageTaskInput",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片处理任务的输出媒体文件配置。",
+          "example": "无",
+          "member": "ProcessImageAsyncOutputConfig",
+          "name": "OutputConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProcessImageAsyncOutput": {
+      "document": "图片异步处理任务的输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片异步处理任务的输出文件信息。",
+          "example": "无",
+          "member": "ProcessImageAsyncOutputFileInfo",
+          "name": "FileInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProcessImageAsyncOutputConfig": {
+      "document": "图片异步处理任务的输出媒体文件配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "myfile",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClassId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "0000-00-00T00:00:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProcessImageAsyncOutputFileInfo": {
+      "document": "图片异步处理任务的输出文件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "myfile",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "ClassId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2025-12-28T00:35:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，例如 mp4、flv 等。",
+          "example": "png",
+          "member": "string",
+          "name": "FileType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件播放地址。",
+          "example": "http://251007502.vod-qcloud.com/1a1***1510859450449/aigcImageGenFile.png",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件 ID。当 StorageMode 为 Permanent 时有效。",
+          "example": "3704211***450449",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出视频的元信息。当 StorageMode 为 Permanent 时有效。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProcessImageAsyncRequest": {
+      "document": "ProcessImageAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "251007502",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要进行图片处理的FileId。",
+          "example": "966263618924724112",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理参数。",
+          "example": "无",
+          "member": "ProcessImageAsyncTaskInput",
+          "name": "ImageTaskInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理任务的输出媒体文件配置。",
+          "example": "无",
+          "member": "ProcessImageAsyncOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "mysession",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "mySessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "10",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "myextinfo",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessImageAsyncResponse": {
+      "document": "ProcessImageAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "251007502-ProcessImage***2782aff1e896673f1ft",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessImageAsyncTask": {
+      "document": "图片异步处理配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片转码输出配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageEncodeConfig",
+          "name": "EncodeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageEnhanceConfig",
+          "name": "EnhanceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ProcessImageAsyncTaskInput": {
+      "document": "图片处理配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片异步处理模板ID。",
+          "example": "7",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProcessImageAsyncTemplateItem": {
+      "document": "图片异步处理模板详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片异步处理模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型。",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板名称。",
+          "example": "MyTemplate",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板描述信息。",
+          "example": "This is MyTemplate.",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2025-03-25T10:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2025-03-25T10:00:00Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理模板配置。",
+          "example": "无",
+          "member": "ProcessImageAsyncTask",
+          "name": "ProcessImageConfigure",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -38262,6 +39289,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出图片编码格式参数。**仅AI换衣场景有效。**",
+          "example": "无",
+          "member": "ImageSceneAigcEncodeConfig",
+          "name": "EncodeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

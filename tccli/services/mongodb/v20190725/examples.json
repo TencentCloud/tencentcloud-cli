@@ -262,6 +262,14 @@
         "title": "查询日志"
       }
     ],
+    "DescribeSRVConnectionDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSRVConnectionDomain\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-3ap*****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"SRV connection has not enabled.\"\n        },\n        \"RequestId\": \"ac6aebb4-fddc-4a7c-9ce2-00359c74ce67\"\n    }\n}",
+        "title": "实例未开启SRV链接"
+      }
+    ],
     "DescribeSecurityGroup": [
       {
         "document": "查询当前实例已绑定的全部安全组",
@@ -302,12 +310,34 @@
         "title": "获取当前实例是否已开启数据加密"
       }
     ],
+    "DisableSRVConnectionUrl": [
+      {
+        "document": "关闭成功，返回任务 ID。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableSRVConnectionUrl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-gnu9vvnr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1709799295,\n        \"RequestId\": \"763eb658-5b5a-4dff-ae17-9d86695655cd\"\n    }\n}",
+        "title": "关闭实例的SRV访问地址。"
+      }
+    ],
     "DropDBInstanceParamTpl": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DropDBInstanceParamTpl\n<公共请求参数>\n\n{\n    \"TplId\": \"tpl-b2l1n0886\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"33bb57b9-4090-40d8-a608-22299973063f\"\n    }\n}",
         "title": "删除参数模板"
+      }
+    ],
+    "EnableSRVConnectionUrl": [
+      {
+        "document": "开启成功，返回任务 ID。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableSRVConnectionUrl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-gnu9vvnr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1709799293,\n        \"RequestId\": \"289f0372-6311-4679-9947-485d6de7c227\"\n    }\n}",
+        "title": "开启实例SRV连接地址。"
+      },
+      {
+        "document": "实例的SRV访问地址已开启。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableSRVConnectionUrl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-gnu9vvnr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"SRV connection has enabled.\"\n        },\n        \"RequestId\": \"ad34dcec-b457-439f-8968-56109168efe2\"\n    }\n}",
+        "title": "开启实例的SRV访问地址。"
       }
     ],
     "EnableTransparentDataEncryption": [
@@ -440,6 +470,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p6umb\",\n    \"InstanceParams\": [\n        {\n            \"Value\": \"operation.profiling.slowOpThresholdMs\",\n            \"Key\": \"operation.profiling.slowOpThresholdMs\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Changed\": true,\n        \"RequestId\": \"e51b4590-db7b-4835-9899-1f5c33f92fbf\",\n        \"TaskId\": 0\n    }\n}",
         "title": "修改mongoDB实例参数"
+      }
+    ],
+    "ModifySRVConnectionUrl": [
+      {
+        "document": "修改成功，返回任务 ID。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySRVConnectionUrl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-gnu9vvnr\",\n    \"CustomDomain\": \"myinstancedomain\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1709799294,\n        \"RequestId\": \"e799e11c-c615-49c0-8b24-67b5fb45820f\"\n    }\n}",
+        "title": "修改实例的SRV连接地址的TTL时间。"
       }
     ],
     "OfflineIsolatedDBInstance": [

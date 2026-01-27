@@ -191,8 +191,8 @@
     "CreateTagRetentionRule": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateTagRetentionRule\n&RegistryId=tcr-12345\n&NamespaceId=1\n&CronSetting=weekly\n&RetentionRule.Key=latestPushedK\n&RetentionRule.Value=20\n&Disabled=true\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8bf292d-38c7-49d9-8da3-737d08160cfc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTagRetentionRule\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-40s86s0j\",\n    \"NamespaceId\": 1,\n    \"CronSetting\": \"manual\",\n    \"AdvancedRuleItems\": [\n        {\n            \"RetentionPolicy\": {\n                \"Key\": \"latestPushedK\",\n                \"Value\": 7\n            },\n            \"TagFilter\": {\n                \"Decoration\": \"matches\",\n                \"Pattern\": \"v*\"\n            },\n            \"RepositoryFilter\": {\n                \"Decoration\": \"repoMatches\",\n                \"Pattern\": \"test-*\"\n            }\n        }\n    ],\n    \"Disabled\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"831c375a-0beb-4ed3-b3b9-33926ebc2a8b\"\n    }\n}",
         "title": "创建版本保留规则"
       }
     ],
@@ -334,10 +334,22 @@
     ],
     "DeleteRepository": [
       {
+        "document": "当镜像仓库不存在镜像时，删除镜像仓库",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRepository\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-40s86s0j\",\n    \"NamespaceName\": \"dev\",\n    \"RepositoryName\": \"nginx\",\n    \"ForceDelete\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b04639d7-cd4e-4ea7-b0b8-cf962fdcfcbe\"\n    }\n}",
+        "title": "删除不存在镜像的镜像仓库"
+      },
+      {
         "document": "删除镜像仓库以及仓库内的镜像列表",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRepository\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"private\",\n    \"RepositoryName\": \"golang\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca2eddea-14cc-4c3f-96e5-de50fd1fd4c0\"\n    }\n}",
         "title": "删除镜像仓库"
+      },
+      {
+        "document": "删除存在镜像的仓库时，参数ForceDelete=false，删除失败",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRepository\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dc0dgswk\",\n    \"NamespaceName\": \"dev\",\n    \"RepositoryName\": \"nginx\",\n    \"ForceDelete\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.PreconditionFailed\",\n            \"Message\": \"repository is not empty, cannot delete without ForceDelete=true\"\n        },\n        \"RequestId\": \"824a3cdf-f20d-44bd-ac63-d132d64e0c9c\"\n    }\n}",
+        "title": "删除镜像仓库调用失败"
       }
     ],
     "DeleteRepositoryPersonal": [
@@ -687,8 +699,8 @@
     "DescribeTagRetentionRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagRetentionRules\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"ns2\",\n    \"Limit\": 10,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e5adfc9-766a-49c9-bd18-c8c0ca8c9050\",\n        \"RetentionPolicyList\": [\n            {\n                \"CronSetting\": \"daily\",\n                \"Disabled\": true,\n                \"NamespaceName\": \"ns2\",\n                \"NextExecutionTime\": \"2025-01-03T06:00:00+08:00\",\n                \"RetentionId\": 18,\n                \"RetentionRuleList\": [\n                    {\n                        \"Key\": \"latestPushedK\",\n                        \"Value\": 10\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagRetentionRules\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dc0dgswk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RetentionPolicyList\": [\n            {\n                \"AdvancedRuleItems\": [\n                    {\n                        \"RepositoryFilter\": {\n                            \"Decoration\": \"repoMatches\",\n                            \"Pattern\": \"*1\"\n                        },\n                        \"RetentionPolicy\": {\n                            \"Key\": \"latestPushedK\",\n                            \"Value\": 7\n                        },\n                        \"TagFilter\": {\n                            \"Decoration\": \"matches\",\n                            \"Pattern\": \"v*\"\n                        }\n                    }\n                ],\n                \"CronSetting\": \"manual\",\n                \"Disabled\": true,\n                \"NamespaceName\": \"dev\",\n                \"NextExecutionTime\": \"0001-01-01T00:00:00Z\",\n                \"RetentionId\": 2,\n                \"RetentionRuleList\": [\n                    {\n                        \"Key\": \"latestPushedK\",\n                        \"Value\": 7\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"daafdd9a-b0cc-4f36-8522-c901874cb38e\"\n    }\n}",
         "title": "查询镜像版本保留规则"
       }
     ],
@@ -898,6 +910,12 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyTagRetentionRule\n&RegistryId=tcr-12345\n&RetentionId=1\n&NamespaceId=1\n&CronSetting=weekly\n&RetentionRule.Key=latestPushedK\n&RetentionRule.Value=20\n&Disabled=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8bf292d-38c7-49d9-8da3-737d08160cfc\"\n    }\n}",
         "title": "更新版本保留规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTagRetentionRule\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-40s86s0j\",\n    \"NamespaceId\": 1,\n    \"CronSetting\": \"manual\",\n    \"RetentionId\": 2,\n    \"AdvancedRuleItems\": [\n        {\n            \"RetentionPolicy\": {\n                \"Key\": \"latestPushedK\",\n                \"Value\": 6\n            },\n            \"TagFilter\": {\n                \"Decoration\": \"matches\",\n                \"Pattern\": \"v\"\n            },\n            \"RepositoryFilter\": {\n                \"Decoration\": \"repoMatches\",\n                \"Pattern\": \"test-*\"\n            }\n        }\n    ],\n    \"Disabled\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc30804-6a67-4e6b-8cdb-35f97f28b8df\"\n    }\n}",
+        "title": "更新高级版本保留策略"
       }
     ],
     "ModifyUserPasswordPersonal": [

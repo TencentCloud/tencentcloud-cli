@@ -1,18 +1,18 @@
 {
   "actions": {
     "AddAndPublishNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略添加并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略添加并发布任务",
       "input": "AddAndPublishNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略添加并发布任务",
       "output": "AddAndPublishNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddAndPublishNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络创建Yaml网络策略并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建Yaml网络策略并发布任务",
       "input": "AddAndPublishNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络创建Yaml网络策略并发布任务",
       "output": "AddAndPublishNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddAssetImageRegistryRegistryDetail": {
       "document": "新增单个镜像仓库详细信息",
@@ -99,25 +99,25 @@
       "status": "online"
     },
     "AddNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略添加任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略添加任务",
       "input": "AddNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略添加任务",
       "output": "AddNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络创建Yaml网络策略添加任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建Yaml网络策略添加任务",
       "input": "AddNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络创建Yaml网络策略添加任务",
       "output": "AddNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CheckNetworkFirewallPolicyYaml": {
-      "document": "容器网络创建检查Yaml网络策略任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建检查Yaml网络策略任务",
       "input": "CheckNetworkFirewallPolicyYamlRequest",
       "name": "容器网络创建检查Yaml网络策略任务",
       "output": "CheckNetworkFirewallPolicyYamlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CheckRepeatAssetImageRegistry": {
       "document": "检查单个镜像仓库名是否重复",
@@ -127,11 +127,11 @@
       "status": "online"
     },
     "ConfirmNetworkFirewallPolicy": {
-      "document": "容器网络创建网络策略确认任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略确认任务",
       "input": "ConfirmNetworkFirewallPolicyRequest",
       "name": "容器网络创建网络策略确认任务",
       "output": "ConfirmNetworkFirewallPolicyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAbnormalProcessRulesExportJob": {
       "document": "创建异常进程规则导出任务",
@@ -288,32 +288,32 @@
       "status": "online"
     },
     "CreateNetworkFirewallClusterRefresh": {
-      "document": "容器网络集群下发刷新任务",
+      "document": "功能已下线待三合一重构\n\n容器网络集群下发刷新任务",
       "input": "CreateNetworkFirewallClusterRefreshRequest",
       "name": "容器网络集群下发刷新任务",
       "output": "CreateNetworkFirewallClusterRefreshResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateNetworkFirewallPolicyDiscover": {
-      "document": "容器网络集群网络策略创建自动发现任务",
+      "document": "功能已下线待三合一重构\n\n容器网络集群网络策略创建自动发现任务",
       "input": "CreateNetworkFirewallPolicyDiscoverRequest",
       "name": "容器网络集群网络策略创建自动发现任务",
       "output": "CreateNetworkFirewallPolicyDiscoverResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateNetworkFirewallPublish": {
-      "document": "容器网络创建网络策略发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略发布任务",
       "input": "CreateNetworkFirewallPublishRequest",
       "name": "容器网络创建网络策略发布任务",
       "output": "CreateNetworkFirewallPublishResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateNetworkFirewallUndoPublish": {
-      "document": "容器网络创建网络策略撤销任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略撤销任务",
       "input": "CreateNetworkFirewallUndoPublishRequest",
       "name": "容器网络创建网络策略撤销任务",
       "output": "CreateNetworkFirewallUndoPublishResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateOrModifyPostPayCores": {
       "document": "CreateOrModifyPostPayCores  创建或者编辑弹性计费上限",
@@ -484,11 +484,11 @@
       "status": "online"
     },
     "DeleteNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略删除任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略删除任务",
       "input": "DeleteNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略删除任务",
       "output": "DeleteNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteRaspRules": {
       "document": "删除漏洞防御白名单",
@@ -1303,81 +1303,81 @@
       "status": "online"
     },
     "DescribeNetworkFirewallAuditRecord": {
-      "document": "查询集群策略审计列表",
+      "document": "功能已下线待三合一重构\n\n查询集群策略审计列表",
       "input": "DescribeNetworkFirewallAuditRecordRequest",
       "name": "查询集群策略审计列表",
       "output": "DescribeNetworkFirewallAuditRecordResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallClusterList": {
-      "document": "查询集群策略列表",
+      "document": "功能已下线待三合一重构\n\n查询集群策略列表",
       "input": "DescribeNetworkFirewallClusterListRequest",
       "name": "查询集群策略列表",
       "output": "DescribeNetworkFirewallClusterListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallClusterRefreshStatus": {
-      "document": "容器网络查询资产任务进度",
+      "document": "功能已下线待三合一重构\n\n容器网络查询资产任务进度",
       "input": "DescribeNetworkFirewallClusterRefreshStatusRequest",
       "name": "容器网络查询资产任务进度",
       "output": "DescribeNetworkFirewallClusterRefreshStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallNamespaceLabelList": {
-      "document": "查询集群网络空间标签列表",
+      "document": "功能已下线待三合一重构\n\n查询集群网络空间标签列表",
       "input": "DescribeNetworkFirewallNamespaceLabelListRequest",
       "name": "查询集群网络空间标签列表",
       "output": "DescribeNetworkFirewallNamespaceLabelListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallNamespaceList": {
-      "document": "查询集群网络空间列表",
+      "document": "功能已下线待三合一重构\n\n查询集群网络空间列表",
       "input": "DescribeNetworkFirewallNamespaceListRequest",
       "name": "查询集群网络空间列表",
       "output": "DescribeNetworkFirewallNamespaceListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPodLabelsList": {
-      "document": "查询集群网络pod标签",
+      "document": "功能已下线待三合一重构\n\n查询集群网络pod标签",
       "input": "DescribeNetworkFirewallPodLabelsListRequest",
       "name": "查询集群网络pod标签",
       "output": "DescribeNetworkFirewallPodLabelsListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyDetail": {
-      "document": "容器网络集群查看策略详情",
+      "document": "功能已下线待三合一重构\n\n容器网络集群查看策略详情",
       "input": "DescribeNetworkFirewallPolicyDetailRequest",
       "name": "容器网络集群查看策略详情",
       "output": "DescribeNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyDiscover": {
-      "document": "容器网络查询网络策略自动发现任务进度",
+      "document": "功能已下线待三合一重构\n\n容器网络查询网络策略自动发现任务进度",
       "input": "DescribeNetworkFirewallPolicyDiscoverRequest",
       "name": "容器网络查询网络策略自动发现任务进度",
       "output": "DescribeNetworkFirewallPolicyDiscoverResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyList": {
-      "document": "查询集群网络策略列表",
+      "document": "功能已下线待三合一重构\n\n查询集群网络策略列表",
       "input": "DescribeNetworkFirewallPolicyListRequest",
       "name": "查询集群网络策略列表",
       "output": "DescribeNetworkFirewallPolicyListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyStatus": {
-      "document": "容器网络查询网络策略策略执行状态",
+      "document": "功能已下线待三合一重构\n\n容器网络查询网络策略策略执行状态",
       "input": "DescribeNetworkFirewallPolicyStatusRequest",
       "name": "容器网络查询网络策略策略执行状态",
       "output": "DescribeNetworkFirewallPolicyStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络集群查看Yaml网络策略详情",
+      "document": "功能已下线待三合一重构\n\n容器网络集群查看Yaml网络策略详情",
       "input": "DescribeNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络集群查看Yaml网络策略详情",
       "output": "DescribeNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNewestVul": {
       "document": "查询最新披露漏洞列表",
@@ -2346,18 +2346,18 @@
       "status": "online"
     },
     "UpdateAndPublishNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略更新并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略更新并发布任务",
       "input": "UpdateAndPublishNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略更新并发布任务",
       "output": "UpdateAndPublishNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateAndPublishNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络更新Yaml网络策略并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络更新Yaml网络策略并发布任务",
       "input": "UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络更新Yaml网络策略并发布任务",
       "output": "UpdateAndPublishNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateAssetImageRegistryRegistryDetail": {
       "document": "更新单个镜像仓库详细信息",
@@ -2374,18 +2374,18 @@
       "status": "online"
     },
     "UpdateNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略更新任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略更新任务",
       "input": "UpdateNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略更新任务",
       "output": "UpdateNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络更新Yaml网络策略任务",
+      "document": "功能已下线待三合一重构\n\n容器网络更新Yaml网络策略任务",
       "input": "UpdateNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络更新Yaml网络策略任务",
       "output": "UpdateNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

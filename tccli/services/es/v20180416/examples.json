@@ -24,6 +24,14 @@
         "title": "集群快照手动创建"
       }
     ],
+    "CreateCollector": [
+      {
+        "document": "根据输入参数创建采集器",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCollector\n<公共请求参数>\n\n{\n    \"CollectorType\": \"filebeat\",\n    \"OutputInstance\": {\n        \"InstanceId\": \"es-xxxxxxxx\",\n        \"Type\": \"elasticsearch\"\n    },\n    \"CVMInstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ],\n    \"CollectorConfigs\": [\n        {\n            \"FileContent\": \"test\",\n            \"FileName\": \"filebeat.yml\"\n        }\n    ],\n    \"CollectorName\": \"test\",\n    \"CollectorVersion\": \"7.10.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CollectorId\": \"coll-0xxxxxxx\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\n    }\n}",
+        "title": "创建采集器"
+      }
+    ],
     "CreateCosMigrateToServerlessInstance": [
       {
         "document": "",

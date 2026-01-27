@@ -942,7 +942,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRebuildIndexTasks\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-xxxx-f3d609f5e0ea\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RebuildTasks\": [\n            {\n                \"TaskId\": \"02f3e53d-d120-477e-xxxx-cbed37247d97\",\n                \"Status\": 0,\n                \"StatusMessage\": \"\",\n                \"StartTime\": 1234567890123,\n                \"EndTime\": 1234567890234,\n                \"RemainTime\": 1000,\n                \"CreateTime\": 1234567890111,\n                \"UpdateTime\": 0,\n                \"Progress\": 0.0\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RebuildTasks\": [\n            {\n                \"TaskId\": \"02f3e53d-d120-477e-xxxx-cbed37247d97\",\n                \"Status\": 0,\n                \"StatusMessage\": \"\",\n                \"StartTime\": 1234567890123,\n                \"EndTime\": 1234567890234,\n                \"RemainTime\": 1000,\n                \"CreateTime\": 1234567890111,\n                \"UpdateTime\": 0,\n                \"Progress\": 0\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取索引重建任务列表"
       }
     ],

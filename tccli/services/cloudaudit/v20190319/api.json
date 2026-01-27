@@ -313,7 +313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
+          "document": "<p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>",
           "example": "操作审计",
           "member": "string",
           "name": "Name",
@@ -322,7 +322,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪集状态（未开启：0；开启：1）",
+          "document": "<p>跟踪集状态（未开启：0；开启：1）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -331,8 +331,8 @@
         },
         {
           "disabled": false,
-          "document": "数据投递存储（目前支持 cos、cls）",
-          "example": "cos",
+          "document": "<p>数据投递存储（目前支持 cos、cls 、ckafka）</p>",
+          "example": "无",
           "member": "Storage",
           "name": "Storage",
           "required": true,
@@ -340,7 +340,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
+          "document": "<p>跟踪事件类型（读：Read；写：Write；全部：*）</p>",
           "example": "Read",
           "member": "string",
           "name": "ActionType",
@@ -349,7 +349,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）",
+          "document": "<p>跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）</p>",
           "example": "cos",
           "member": "string",
           "name": "ResourceType",
@@ -358,8 +358,8 @@
         },
         {
           "disabled": false,
-          "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"*\"]；指定ResourceType时，支持全部接口：[\"*\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
-          "example": "[*]",
+          "document": "<p>跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[&quot;*&quot;]；指定ResourceType时，支持全部接口：[&quot;*&quot;]；支持部分接口：[&quot;cos&quot;, &quot;cls&quot;]，接口列表上限10个）</p>",
+          "example": "[\"AddUser\"]",
           "member": "string",
           "name": "EventNames",
           "required": true,
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) ",
+          "document": "<p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>",
           "example": "1",
           "member": "uint64",
           "name": "TrackForAllMembers",
@@ -376,7 +376,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "20250707_163212_1hxWz5otqS7akePfoX1xlWem1AuUVUGP",
           "member": "string",
           "name": "ExportId",
@@ -391,7 +391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集 ID",
+          "document": "<p>跟踪集 ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "TrackId",
@@ -413,7 +413,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
+          "document": "<p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>",
           "example": "audit_test",
           "member": "string",
           "name": "Name",
@@ -422,7 +422,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪集状态（未开启：0；开启：1）",
+          "document": "<p>跟踪集状态（未开启：0；开启：1）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -431,8 +431,8 @@
         },
         {
           "disabled": false,
-          "document": "数据投递存储（目前支持 cos、cls）",
-          "example": "cos",
+          "document": "<p>数据投递存储（目前支持 cos、cls、ckafka）</p>",
+          "example": "无",
           "member": "Storage",
           "name": "Storage",
           "required": true,
@@ -440,8 +440,8 @@
         },
         {
           "disabled": false,
-          "document": "数据过滤条件",
-          "example": "{\"ResourceFields\":[{\"ResourceType\":\"cam\",\"ActionType\":\"*\",\"EventNames\":[\"AddSubAccount\",\"AddSubAccountCheckingMFA\"]},{\"ResourceType\":\"cvm\",\"ActionType\":\"*\",\"EventNames\":[\"*\"]},{\"ResourceType\":\"tke\",\"ActionType\":\"*\",\"EventNames\":[\"*\"]}]}",
+          "document": "<p>数据过滤条件</p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -449,7 +449,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) ",
+          "document": "<p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>",
           "example": "1",
           "member": "uint64",
           "name": "TrackForAllMembers",
@@ -464,7 +464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集 ID",
+          "document": "<p>跟踪集 ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "TrackId",
@@ -1559,7 +1559,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集 ID",
+          "document": "<p>跟踪集 ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "TrackId",
@@ -1568,7 +1568,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
+          "document": "<p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>",
           "example": "操作审计",
           "member": "string",
           "name": "Name",
@@ -1577,7 +1577,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
+          "document": "<p>跟踪事件类型（读：Read；写：Write；全部：*）</p>",
           "example": "Read",
           "member": "string",
           "name": "ActionType",
@@ -1586,7 +1586,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）",
+          "document": "<p>跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）</p>",
           "example": "cos",
           "member": "string",
           "name": "ResourceType",
@@ -1595,7 +1595,7 @@
         },
         {
           "disabled": false,
-          "document": "跟踪集状态（未开启：0；开启：1）",
+          "document": "<p>跟踪集状态（未开启：0；开启：1）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -1604,8 +1604,8 @@
         },
         {
           "disabled": false,
-          "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"*\"]；指定ResourceType时，支持全部接口：[\"*\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
-          "example": "1",
+          "document": "<p>跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[&quot;*&quot;]；指定ResourceType时，支持全部接口：[&quot;*&quot;]；支持部分接口：[&quot;cos&quot;, &quot;cls&quot;]，接口列表上限10个）</p>",
+          "example": "[\"AddUser\"]",
           "member": "string",
           "name": "EventNames",
           "required": false,
@@ -1613,8 +1613,8 @@
         },
         {
           "disabled": false,
-          "document": "数据投递存储（目前支持 cos、cls）",
-          "example": "cos",
+          "document": "<p>数据投递存储（目前支持 cos、cls、ckafka）</p>",
+          "example": "无",
           "member": "Storage",
           "name": "Storage",
           "required": false,
@@ -1622,7 +1622,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)",
+          "document": "<p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>",
           "example": "1",
           "member": "uint64",
           "name": "TrackForAllMembers",
@@ -1862,7 +1862,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储类型（目前支持 cos、cls）",
+          "document": "<p>存储类型（目前支持 cos、cls、ckafka）</p>",
           "example": "cos",
           "member": "string",
           "name": "StorageType",
@@ -1873,7 +1873,7 @@
         },
         {
           "disabled": false,
-          "document": "存储所在地域",
+          "document": "<p>存储所在地域</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "StorageRegion",
@@ -1884,7 +1884,7 @@
         },
         {
           "disabled": false,
-          "document": "存储名称(cos：存储名称为用户自定义的存储桶名称，不包含\"-APPID\"，仅支持小写字母、数字以及中划线\"-\"的组合，不能超过50字符，且不支持中划线\"-\"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)",
+          "document": "<p>存储名称(cos：存储名称为用户自定义的存储桶名称，不包含&quot;-APPID&quot;，仅支持小写字母、数字以及中划线&quot;-&quot;的组合，不能超过50字符，且不支持中划线&quot;-&quot;开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符； ckafka： ckafka实例ID/topic. 举例：ckafka-xxxxxx/tencent_test_audit_log)</p>",
           "example": "audit",
           "member": "string",
           "name": "StorageName",
@@ -1895,7 +1895,7 @@
         },
         {
           "disabled": false,
-          "document": "存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符",
+          "document": "<p>存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符</p>",
           "example": "audit",
           "member": "string",
           "name": "StoragePrefix",
@@ -1906,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "被指定存储用户ID",
+          "document": "<p>被指定存储用户ID</p>",
           "example": "23424",
           "member": "string",
           "name": "StorageAccountId",
@@ -1917,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "被指定存储用户appid",
+          "document": "<p>被指定存储用户appid</p>",
           "example": "3545646",
           "member": "string",
           "name": "StorageAppId",
@@ -1928,7 +1928,7 @@
         },
         {
           "disabled": false,
-          "document": "是否压缩。\n1:压缩  2:不压缩",
+          "document": "<p>是否压缩。<br>1:压缩  2:不压缩</p>",
           "example": "1",
           "member": "uint64",
           "name": "Compress",

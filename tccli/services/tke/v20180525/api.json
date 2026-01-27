@@ -19689,7 +19689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "kms id，可以在密钥管理控制台获取",
+          "document": "自定义密钥,当不指定KeyId时，采用默认生成密钥（TKE-KMS）",
           "example": "38098f4c-f5ef-11ed-8c28-525400b4ad52",
           "member": "string",
           "name": "KeyId",
@@ -19698,7 +19698,7 @@
         },
         {
           "disabled": false,
-          "document": "kms 地域",
+          "document": "默认生成密钥或自定义密钥地域信息",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "KmsRegion",

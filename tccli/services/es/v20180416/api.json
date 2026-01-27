@@ -21,6 +21,13 @@
       "output": "CreateClusterSnapshotResponse",
       "status": "online"
     },
+    "CreateCollector": {
+      "document": "用于创建Beats采集器",
+      "input": "CreateCollectorRequest",
+      "name": "创建Beats采集器",
+      "output": "CreateCollectorResponse",
+      "status": "online"
+    },
     "CreateCosMigrateToServerlessInstance": {
       "document": "cos迁移流程",
       "input": "CreateCosMigrateToServerlessInstanceRequest",
@@ -974,6 +981,341 @@
       ],
       "usage": "out"
     },
+    "CollectorConfigInfo": {
+      "document": "采集器配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器的主配置文件名，如filebeat.yml，metricbeat.yml等",
+          "example": "filebeat.yml",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器的主配置文件内容",
+          "example": "input",
+          "member": "string",
+          "name": "FileContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CollectorOutputInstance": {
+      "document": "采集器输出的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器输出的实例类型（支持elasticsearch、logstash）",
+          "example": "elasticsearch",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出的实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到的ES实例的用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "ESUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到的ES实例的密码",
+          "example": "hiQ7*******hjko",
+          "member": "string",
+          "name": "ESUserPasswd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableMonitoring",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableDashboard",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的vip",
+          "example": "1.1.1.1:9092",
+          "member": "string",
+          "name": "KafkaEndpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例中的Topic",
+          "example": "test_topic",
+          "member": "string",
+          "name": "KafkaTopic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的版本号",
+          "example": "1.1.1",
+          "member": "string",
+          "name": "KafkaVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic id",
+          "example": "\t topic-xxxx",
+          "member": "string",
+          "name": "SesTopicId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic name",
+          "example": "123232-xxxxx",
+          "member": "string",
+          "name": "SesTopicName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic address",
+          "example": "dip.tencentcloudmq.com:6000",
+          "member": "string",
+          "name": "SesTopicAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "iu8n1yd44zln",
+          "member": "string",
+          "name": "SesTopicUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "hiQ7*******hjko",
+          "member": "string",
+          "name": "SesTopicPasswd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "5044",
+          "member": "uint64",
+          "name": "LogstashListenPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CollectorTarget": {
+      "document": "容器日志采集配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集配置名称",
+          "example": "testnew",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间列表，包括Include包含和Exclude不包含选项，两者都为空时等同于全部命名空间(包含当前所有的以及未来创建的)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "Namespaces",
+          "name": "Namespaces",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PodLabel",
+          "name": "PodLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器名称，支持小写字母、数字、连接符-、下划线_，最多支持63个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ES索引名称前缀，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称的前缀，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "IndexPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志内容过滤，以逗号分隔，支持大小写字母、数字、连接符-、下划线_以及逗号，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a,b",
+          "member": "string",
+          "name": "LogFilters",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高级配置，可自定义采集规则，最多支持2048个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx12se\"\"",
+          "member": "string",
+          "name": "ConfigContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的Topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "KafkaTopic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ES索引名称，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "niginx",
+          "member": "string",
+          "name": "IndexAlias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "container",
+          "member": "string",
+          "name": "InputType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志采集host路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/log",
+          "member": "string",
+          "name": "InputPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "inputs.tail_files\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "InputsTailFiles",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CommonIndexInfo": {
       "document": "普通索引信息列表",
       "members": [
@@ -1434,6 +1776,124 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCollectorRequest": {
+      "document": "CreateCollector请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "test",
+          "member": "string",
+          "name": "CollectorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器版本（支持\"6.8.15\"、\"7.10.2\"）",
+          "example": "7.10.2",
+          "member": "string",
+          "name": "CollectorVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器类型（支持filebeat、metricbeat、heartbeat、auditbeat、packetbeat）",
+          "example": "filebeat",
+          "member": "string",
+          "name": "CollectorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出的ES实例信息",
+          "example": "无",
+          "member": "CollectorOutputInstance",
+          "name": "OutputInstance",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "采集器配置",
+          "example": "无",
+          "member": "CollectorConfigInfo",
+          "name": "CollectorConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集器下发的CVM实例ID列表",
+          "example": "[\"ins-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CVMInstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集目标类型，CVM或者TKE",
+          "example": "TKE",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器集群ID，采集目标为TKE时必填",
+          "example": "cls-xxxxxxx",
+          "member": "string",
+          "name": "ContainerClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器配置，采集目标为TKE时必填",
+          "example": "无",
+          "member": "CollectorTarget",
+          "name": "CollectorTargets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCollectorResponse": {
+      "document": "CreateCollector返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器ID",
+          "example": "coll-xxxxxx",
+          "member": "string",
+          "name": "CollectorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9329,6 +9789,34 @@
       ],
       "type": "object"
     },
+    "Namespaces": {
+      "document": "TKE命名空间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含的命名空间的列表，单个命名空间支持小写字母、数字、连接符-、下划线_，最多支持63个字符",
+          "example": "[\"default\",\"kube-node-lease\",\"kube-public\",\"kube-system\"]",
+          "member": "string",
+          "name": "Include",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不包含的命名空间列表，单个命名空间支持小写字母、数字、连接符-、下划线_，最多支持63个字符",
+          "example": "[\"ac\"]",
+          "member": "string",
+          "name": "Exclude",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NodeInfo": {
       "document": "集群中一种节点类型（如热数据节点，冷数据节点，专用主节点等）的规格描述信息，包括节点类型，节点个数，节点规格，磁盘类型，磁盘大小等, Type不指定时默认为热数据节点；如果节点为master节点，则DiskType和DiskSize参数会被忽略（主节点无数据盘）",
       "members": [
@@ -10037,6 +10525,32 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PodLabel": {
+      "document": "Pod标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键，支持大小写字母、数字、以及-_./，最多支持63个字符",
+          "example": "k8s-app",
+          "member": "string",
+          "name": "LabelKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值，支持大小写字母、数字、以及-_./，最多支持63个字符",
+          "example": "nginx",
+          "member": "string",
+          "name": "LabelValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

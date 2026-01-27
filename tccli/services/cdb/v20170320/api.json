@@ -11984,7 +11984,7 @@
         {
           "disabled": false,
           "document": "目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。",
-          "example": "2",
+          "example": "2.0",
           "member": "float",
           "name": "DstCpu",
           "required": true,
@@ -12074,7 +12074,7 @@
         {
           "disabled": false,
           "document": "独享集群 CDB 实例的节点分布情况。",
-          "example": " [{\"Node\": dch-fexbu7pp,\"SlaveNodeOne\": \"dch-cawss6q\",\"SlaveNodeTwo\": \"dch-bsxj39l\"}]",
+          "example": "无",
           "member": "NodeDistribution",
           "name": "NodeDistribution",
           "required": false,
@@ -12082,8 +12082,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。",
-          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
+          "document": "云盘版的节点拓扑配置。Nodeld 信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。",
+          "example": "无",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -16076,7 +16076,7 @@
         },
         {
           "disabled": true,
-          "document": "是否跳过校验密码复杂度",
+          "document": "该字段已废弃。",
           "example": "false",
           "member": "bool",
           "name": "SkipValidatePassword",

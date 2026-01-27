@@ -2359,7 +2359,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主实例iD",
+          "document": "<p>主实例iD</p>",
           "example": "tcr-test123",
           "member": "string",
           "name": "RegistryId",
@@ -2368,7 +2368,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的Id",
+          "document": "<p>命名空间的Id</p>",
           "example": "1",
           "member": "int64",
           "name": "NamespaceId",
@@ -2377,16 +2377,7 @@
         },
         {
           "disabled": false,
-          "document": "保留策略",
-          "example": "无",
-          "member": "RetentionRule",
-          "name": "RetentionRule",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "执行周期，当前只能选择： manual;daily;weekly;monthly",
+          "document": "<p>执行周期，当前只能选择： manual;daily;weekly;monthly</p>",
           "example": "manual",
           "member": "string",
           "name": "CronSetting",
@@ -2395,7 +2386,25 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用规则，默认值为false",
+          "document": "<p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级版本保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRuleItem",
+          "name": "AdvancedRuleItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用规则，默认值为false</p>",
           "example": "false",
           "member": "bool",
           "name": "Disabled",
@@ -3170,7 +3179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
@@ -3179,7 +3188,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的名称",
+          "document": "<p>命名空间的名称</p>",
           "example": "private",
           "member": "string",
           "name": "NamespaceName",
@@ -3188,12 +3197,21 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库的名称",
+          "document": "<p>镜像仓库的名称</p>",
           "example": "golang",
           "member": "string",
           "name": "RepositoryName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认值为true，表示无论仓库是否存在镜像都直接删除；false代表删除仓库前需检查是否存在镜像。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceDelete",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5778,7 +5796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主实例iD",
+          "document": "<p>主实例iD</p>",
           "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
@@ -5787,7 +5805,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的名称",
+          "document": "<p>命名空间的名称</p>",
           "example": "ns2",
           "member": "string",
           "name": "NamespaceName",
@@ -5796,7 +5814,7 @@
         },
         {
           "disabled": false,
-          "document": "分页PageSize",
+          "document": "<p>分页PageSize</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5805,7 +5823,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Page",
+          "document": "<p>分页Page</p>",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -5820,8 +5838,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本保留策略列表",
-          "example": "[{},{}]",
+          "document": "<p>版本保留策略列表</p>",
+          "example": "无",
           "member": "RetentionPolicy",
           "name": "RetentionPolicyList",
           "output_required": true,
@@ -5830,7 +5848,7 @@
         },
         {
           "disabled": false,
-          "document": "版本保留策略总数",
+          "document": "<p>版本保留策略总数</p>",
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
@@ -6474,6 +6492,34 @@
         }
       ],
       "usage": "in"
+    },
+    "FilterSelector": {
+      "document": "过滤选择器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤规则类型，在tag过滤中，可选值为matches（匹配），excludes(排除)，在仓库过滤中，可选值为repoMatches（仓库匹配），repoExcludes（仓库排除）</p>",
+          "example": "matches",
+          "member": "string",
+          "name": "Decoration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤表达式</p>",
+          "example": "v*",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GCJobInfo": {
       "document": "GC 执行信息",
@@ -7694,7 +7740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主实例iD",
+          "document": "<p>主实例iD</p>",
           "example": "tcr-test123",
           "member": "string",
           "name": "RegistryId",
@@ -7703,7 +7749,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的Id，必须填写原有的命名空间id",
+          "document": "<p>命名空间的Id，必须填写原有的命名空间id</p>",
           "example": "1",
           "member": "int64",
           "name": "NamespaceId",
@@ -7712,16 +7758,7 @@
         },
         {
           "disabled": false,
-          "document": "保留策略",
-          "example": "无",
-          "member": "RetentionRule",
-          "name": "RetentionRule",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "执行周期，必须填写为原来的设置",
+          "document": "<p>执行周期，必须填写为原来的设置</p>",
           "example": "manual",
           "member": "string",
           "name": "CronSetting",
@@ -7730,7 +7767,7 @@
         },
         {
           "disabled": false,
-          "document": "规则Id",
+          "document": "<p>规则Id</p>",
           "example": "1",
           "member": "int64",
           "name": "RetentionId",
@@ -7739,7 +7776,25 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用规则",
+          "document": "<p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRuleItem",
+          "name": "AdvancedRuleItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用规则</p>",
           "example": "false",
           "member": "bool",
           "name": "Disabled",
@@ -9075,7 +9130,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本保留策略Id",
+          "document": "<p>版本保留策略Id</p>",
           "example": "1",
           "member": "int64",
           "name": "RetentionId",
@@ -9085,7 +9140,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的名称",
+          "document": "<p>命名空间的名称</p>",
           "example": "mytest",
           "member": "string",
           "name": "NamespaceName",
@@ -9095,7 +9150,7 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
+          "document": "<p>规则列表</p>",
           "example": "无",
           "member": "RetentionRule",
           "name": "RetentionRuleList",
@@ -9105,7 +9160,17 @@
         },
         {
           "disabled": false,
-          "document": "定期执行方式",
+          "document": "<p>高级保留规则列表</p>",
+          "example": "无",
+          "member": "RetentionRuleItem",
+          "name": "AdvancedRuleItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定期执行方式</p>",
           "example": "manual",
           "member": "string",
           "name": "CronSetting",
@@ -9115,7 +9180,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用规则",
+          "document": "<p>是否启用规则</p>",
           "example": "false",
           "member": "bool",
           "name": "Disabled",
@@ -9125,7 +9190,7 @@
         },
         {
           "disabled": false,
-          "document": "基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用",
+          "document": "<p>基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用</p>",
           "example": "2021-02-03",
           "member": "string",
           "name": "NextExecutionTime",
@@ -9159,6 +9224,45 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RetentionRuleItem": {
+      "document": "版本保留规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本保留规则</p>",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签过滤器</p>",
+          "example": "无",
+          "member": "FilterSelector",
+          "name": "TagFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库过滤器</p>",
+          "example": "无",
+          "member": "FilterSelector",
+          "name": "RepositoryFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

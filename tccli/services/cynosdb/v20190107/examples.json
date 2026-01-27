@@ -246,6 +246,14 @@
         "title": "创建数据库"
       }
     ],
+    "DeleteClusterSaveBackup": [
+      {
+        "document": "Delete Cluster Save Backup",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterSaveBackup\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-0fs2nhc7\",\n    \"SaveBackupId\": 64142\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be38b494-263a-45f7-b6f3-ecbd66ac75bb\",\n        \"TaskId\": 19297\n    }\n}",
+        "title": "删除保留备份"
+      }
+    ],
     "DeleteParamTemplate": [
       {
         "document": "删除参数模板",
@@ -334,7 +342,7 @@
       {
         "document": "Describe Backup Config",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-aws1kpv6\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupFreq\": [\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\"\n        ],\n        \"BackupTimeBeg\": 7200,\n        \"BackupTimeEnd\": 21600,\n        \"BackupType\": \"snapshot\",\n        \"LogicBackupConfig\": {\n            \"LogicBackupEnable\": \"OFF\",\n            \"LogicBackupTimeBeg\": 0,\n            \"LogicBackupTimeEnd\": 0,\n            \"LogicCrossRegions\": null,\n            \"LogicCrossRegionsEnable\": \"\",\n            \"LogicReserveDuration\": 0\n        },\n        \"LogicCrossRegionsConfigUpdateTime\": \"\",\n        \"RequestId\": \"e0127059-bb40-4308-a67d-c3bcddba372e\",\n        \"ReserveDuration\": 604800\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupFreq\": [\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\",\n            \"full\"\n        ],\n        \"BackupTimeBeg\": 7200,\n        \"BackupTimeEnd\": 21600,\n        \"BackupType\": \"snapshot\",\n        \"LogicBackupConfig\": {\n            \"LogicBackupEnable\": \"OFF\",\n            \"LogicBackupTimeBeg\": 0,\n            \"LogicBackupTimeEnd\": 0,\n            \"LogicCrossRegions\": null,\n            \"LogicCrossRegionsEnable\": \"\",\n            \"LogicReserveDuration\": 0\n        },\n        \"LogicCrossRegionsConfigUpdateTime\": \"\",\n        \"RequestId\": \"e0127059-bb40-4308-a67d-c3bcddba372e\",\n        \"ReserveDuration\": 604800,\n        \"SnapshotSecondaryBackupConfig\": {\n            \"BackupCustomAutoTime\": false,\n            \"BackupIntervalTime\": 0,\n            \"BackupTimeBeg\": 0,\n            \"BackupTimeEnd\": 0,\n            \"BackupTriggerStrategy\": \"\",\n            \"BackupWeekDays\": null,\n            \"CrossRegions\": null,\n            \"CrossRegionsEnable\": \"\",\n            \"ReserveDuration\": 0\n        }\n    }\n}",
         "title": "查看备份配置"
       }
     ],
@@ -664,6 +672,14 @@
         "title": "查询数据库代理规格"
       }
     ],
+    "DescribeRedoLogs": [
+      {
+        "document": "Describe Redo Logs",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRedoLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-gfo7ejhl\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RedoLogs\": [\n            {\n                \"BackupTime\": \"2025-09-22 14:35:44\",\n                \"FileName\": \"backupT_lowcase_202509221241_20250922143544\",\n                \"FileSize\": 738914945,\n                \"FinishTime\": \"2025-09-22 14:36:44\",\n                \"RedoCrossRegions\": [\n                    {\n                        \"BackupId\": 22822,\n                        \"BackupRegion\": \"ap-guangzhou\"\n                    }\n                ],\n                \"RedoLogId\": 22822,\n                \"StartTime\": \"2025-09-22 14:35:44\",\n                \"Status\": \"success\"\n            },\n            {\n                \"BackupTime\": \"2025-09-22 14:18:22\",\n                \"FileName\": \"backupT_lowcase_202509221241_20250922141822\",\n                \"FileSize\": 739166672,\n                \"FinishTime\": \"2025-09-22 14:19:23\",\n                \"RedoCrossRegions\": [\n                    {\n                        \"BackupId\": 22818,\n                        \"BackupRegion\": \"ap-guangzhou\"\n                    }\n                ],\n                \"RedoLogId\": 22818,\n                \"StartTime\": \"2025-09-22 14:18:22\",\n                \"Status\": \"success\"\n            }\n        ],\n        \"RequestId\": \"813bd72c-a8c4-4e99-badf-0136e8e6ba89\",\n        \"TotalCount\": 12\n    }\n}",
+        "title": "redo日志列表"
+      }
+    ],
     "DescribeResourcePackageDetail": [
       {
         "document": "查询资源包使用详情\n",
@@ -710,6 +726,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSSLStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-jd510000\",\n    \"InstanceId\": \"cynosdbmysql-ins-906n0000\"\n}",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"download_url\",\n        \"IsOpenSSL\": \"yes\",\n        \"RequestId\": \"baa4f39e-47c0-4400-bff2-1d6062b70748\"\n    }\n}",
         "title": "查询实例SSL状态"
+      }
+    ],
+    "DescribeSaveBackupClusters": [
+      {
+        "document": "Describe Save Backup Clusters",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSaveBackupClusters\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3885b16b-9a20-4a56-8c01-688f7e69a4f1\",\n        \"SaveBackupClusterInfos\": [\n            {\n                \"BackupId\": 0,\n                \"BackupTime\": \"0001-01-01 00:00:00\",\n                \"ClusterId\": \"cynosdbmysql-2e9qy0ob\",\n                \"ClusterName\": \"cynosdbmysql-2e9qy0ob\",\n                \"DbMode\": \"NORMAL\",\n                \"DbVersion\": \"5.7\",\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询遗留备份集群信息"
       }
     ],
     "DescribeServerlessInstanceSpecs": [
@@ -1110,6 +1134,14 @@
         "title": "变更serverless策略"
       }
     ],
+    "ModifySnapBackupCrossRegionConfig": [
+      {
+        "document": "Modify Snap Backup Cross Region Config",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapBackupCrossRegionConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-gfo7ejhl\",\n    \"CrossRegionsEnable\": \"OFF\",\n    \"CrossRegions\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be38b494-263a-45f7-b6f3-ecbd66ac65bb\",\n        \"TaskId\": 49297\n    }\n}",
+        "title": "修改快照备份跨地域配置"
+      }
+    ],
     "ModifyVipVport": [
       {
         "document": "",
@@ -1281,7 +1313,7 @@
     "RollbackToNewCluster": [
       {
         "document": "Rollback To New Cluster",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackToNewCluster\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ClusterName\": \"\",\n    \"ProjectId\": 0,\n    \"PayMode\": 0,\n    \"OriginalClusterId\": \"cynosdbmysql-0fs2nhc7\",\n    \"RollbackId\": 64142,\n    \"InstanceInitInfos\": [\n        {\n            \"Cpu\": 1,\n            \"Memory\": 1,\n            \"DeviceType\": \"common\",\n            \"InstanceType\": \"rw\",\n            \"InstanceCount\": 1\n        }\n    ],\n    \"UniqVpcId\": \"vpc-ns1jr6ff\",\n    \"UniqSubnetId\": \"subnet-gncsqeuq\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackToNewCluster\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ClusterName\": \"\",\n    \"ProjectId\": 0,\n    \"PayMode\": 0,\n    \"OriginalClusterId\": \"cynosdbmysql-0fs2nhc7\",\n    \"FromSaveBackup\": false,\n    \"RollbackId\": 64142,\n    \"InstanceInitInfos\": [\n        {\n            \"Cpu\": 1,\n            \"Memory\": 1,\n            \"DeviceType\": \"common\",\n            \"InstanceType\": \"rw\",\n            \"InstanceCount\": 1\n        }\n    ],\n    \"UniqVpcId\": \"vpc-ns1jr6ff\",\n    \"UniqSubnetId\": \"subnet-gncsqeuq\"\n}",
         "output": "{\n    \"Response\": {\n        \"BigDealIds\": [],\n        \"ClusterIds\": [],\n        \"DealNames\": [\n            \"20250928456021591536011\"\n        ],\n        \"RequestId\": \"0c646e65-3597-44d7-b68b-d43391eedb33\",\n        \"ResourceIds\": [],\n        \"TranId\": \"20250928456021591536021\"\n    }\n}",
         "title": "回档到新集群"
       }

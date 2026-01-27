@@ -4624,7 +4624,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "[\"cai-1300055477-ea99qwovyrq\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -4633,10 +4633,19 @@
         {
           "disabled": false,
           "document": "安卓应用下载 URL",
-          "example": "无",
+          "example": "https://test.cos.ap-nanjing.myqcloud.com/tmp/177.apk",
           "member": "string",
           "name": "AndroidAppURL",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用MD5码值（32位小写十六进制字符串）",
+          "example": "fa9af5f509423f9add5c5a7e472dde4d",
+          "member": "string",
+          "name": "AndroidAppMD5",
+          "required": false,
           "type": "string"
         }
       ],

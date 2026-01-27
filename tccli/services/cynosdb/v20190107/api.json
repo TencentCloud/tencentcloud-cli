@@ -210,6 +210,13 @@
       "output": "DeleteClusterDatabaseResponse",
       "status": "online"
     },
+    "DeleteClusterSaveBackup": {
+      "document": "本接口（DeleteClusterSaveBackup）用于为集群删除遗留备份",
+      "input": "DeleteClusterSaveBackupRequest",
+      "name": "删除保留备份",
+      "output": "DeleteClusterSaveBackupResponse",
+      "status": "online"
+    },
     "DeleteParamTemplate": {
       "document": "本接口（DeleteParamTemplate）用于删除用户创建的参数模板。",
       "input": "DeleteParamTemplateRequest",
@@ -560,6 +567,13 @@
       "output": "DescribeProxySpecsResponse",
       "status": "online"
     },
+    "DescribeRedoLogs": {
+      "document": "本接口（DescribeRedoLogs）用于查询redo日志列表。",
+      "input": "DescribeRedoLogsRequest",
+      "name": "redo日志列表",
+      "output": "DescribeRedoLogsResponse",
+      "status": "online"
+    },
     "DescribeResourcePackageDetail": {
       "document": "本接口（DescribeResourcePackageDetail）用于查询资源包使用详情。",
       "input": "DescribeResourcePackageDetailRequest",
@@ -600,6 +614,13 @@
       "input": "DescribeSSLStatusRequest",
       "name": "查询实例SSL状态",
       "output": "DescribeSSLStatusResponse",
+      "status": "online"
+    },
+    "DescribeSaveBackupClusters": {
+      "document": "本接口（DescribeSaveBackupClusters）用于查询遗留备份集群信息。",
+      "input": "DescribeSaveBackupClustersRequest",
+      "name": "遗留备份列表",
+      "output": "DescribeSaveBackupClustersResponse",
       "status": "online"
     },
     "DescribeServerlessInstanceSpecs": {
@@ -943,6 +964,13 @@
       "input": "ModifyServerlessStrategyRequest",
       "name": "修改serverless策略",
       "output": "ModifyServerlessStrategyResponse",
+      "status": "online"
+    },
+    "ModifySnapBackupCrossRegionConfig": {
+      "document": "本接口（ModifySnapBackupCrossRegionConfig）用于修改指定集群的快照备份跨地域配置。",
+      "input": "ModifySnapBackupCrossRegionConfigRequest",
+      "name": "修改快照备份跨地域配置",
+      "output": "ModifySnapBackupCrossRegionConfigResponse",
       "status": "online"
     },
     "ModifyVipVport": {
@@ -2439,6 +2467,111 @@
       ],
       "usage": "out"
     },
+    "BackupConfigInfo": {
+      "document": "备份设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "系统自动时间",
+          "example": "true",
+          "member": "bool",
+          "name": "BackupCustomAutoTime",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "example": "0",
+          "member": "uint64",
+          "name": "BackupTimeBeg",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "example": "0",
+          "member": "uint64",
+          "name": "BackupTimeEnd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"full\"]",
+          "member": "string",
+          "name": "BackupWeekDays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "间隔时间",
+          "example": "0",
+          "member": "int64",
+          "name": "BackupIntervalTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000",
+          "example": "604800",
+          "member": "uint64",
+          "name": "ReserveDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份开启\nyes-开启\nno-关闭",
+          "example": "OFF",
+          "member": "string",
+          "name": "CrossRegionsEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-chengdu\"]",
+          "member": "string",
+          "name": "CrossRegions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动数据备份触发策略，periodically:自动周期备份,frequent:高频备份",
+          "example": "periodically",
+          "member": "string",
+          "name": "BackupTriggerStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BackupFileInfo": {
       "document": "备份文件信息",
       "members": [
@@ -2681,6 +2814,32 @@
         }
       ],
       "usage": "both"
+    },
+    "BackupRegionAndIds": {
+      "document": "备份文件所在地域及ID",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "BackupRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份ID",
+          "example": "2004212",
+          "member": "int64",
+          "name": "BackupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BillingResourceInfo": {
       "document": "计费资源信息",
@@ -7105,6 +7264,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启透明加密",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOpenTDE",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8981,6 +9150,52 @@
       ],
       "type": "object"
     },
+    "DeleteClusterSaveBackupRequest": {
+      "document": "DeleteClusterSaveBackup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbpg-45knmnra",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保留备份文件ID，推荐使用",
+          "example": "18762",
+          "member": "int64",
+          "name": "SaveBackupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterSaveBackupResponse": {
+      "document": "DeleteClusterSaveBackup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "87261",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteParamTemplateRequest": {
       "document": "DeleteParamTemplate请求参数结构体",
       "members": [
@@ -9815,6 +10030,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级快照备份配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupConfigInfo",
+          "name": "SnapshotSecondaryBackupConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12756,6 +12981,98 @@
       ],
       "type": "object"
     },
+    "DescribeRedoLogsRequest": {
+      "document": "DescribeRedoLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-23fdf132",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2022-02-01 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "redolog文件名",
+          "example": "[\"backup-1\"]",
+          "member": "string",
+          "name": "FileNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedoLogsResponse": {
+      "document": "DescribeRedoLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "redo日志信息",
+          "example": "无",
+          "member": "RedoLogItem",
+          "name": "RedoLogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourcePackageDetailRequest": {
       "document": "DescribeResourcePackageDetail请求参数结构体",
       "members": [
@@ -13207,6 +13524,71 @@
           "name": "DownloadUrl",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSaveBackupClustersRequest": {
+      "document": "DescribeSaveBackupClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索条件",
+          "example": "无",
+          "member": "QuerySimpleFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSaveBackupClustersResponse": {
+      "document": "DescribeSaveBackupClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "遗留备份信息",
+          "example": "无",
+          "member": "SaveBackupClusterInfo",
+          "name": "SaveBackupClusterInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15691,6 +16073,15 @@
           "name": "IsolateReason",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保留备份,true-保留（会产生费用）",
+          "example": "false",
+          "member": "bool",
+          "name": "SaveBackup",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15774,6 +16165,15 @@
           "name": "IsolateReason",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保留备份",
+          "example": "false",
+          "member": "bool",
+          "name": "SaveBackup",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16415,6 +16815,15 @@
           "name": "DeleteAutoLogicBackup",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "二级快照备份参数",
+          "example": "无",
+          "member": "SnapshotBackupConfig",
+          "name": "SnapshotSecondaryBackupConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -18233,6 +18642,61 @@
           "disabled": false,
           "document": "任务id",
           "example": "178153",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapBackupCrossRegionConfigRequest": {
+      "document": "ModifySnapBackupCrossRegionConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-45knmnra",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启跨地域快照备份ON/OFF",
+          "example": "ON",
+          "member": "string",
+          "name": "CrossRegionsEnable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照备份所跨地域",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "CrossRegions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapBackupCrossRegionConfigResponse": {
+      "document": "ModifySnapBackupCrossRegionConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "234321",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -21049,6 +21513,125 @@
       ],
       "usage": "in"
     },
+    "QuerySimpleFilter": {
+      "document": "模糊查询过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "[\"ClusterId\"]",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "字段值",
+          "example": "[\"cynosdbmysql-sa23fdf1\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊匹配，true-是，false否",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "RedoLogItem": {
+      "document": "redo日志详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "redo-1ad",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小",
+          "example": "200",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份时间",
+          "example": "2020-2-20",
+          "member": "string",
+          "name": "BackupTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "redoLogId",
+          "example": "23331",
+          "member": "int64",
+          "name": "RedoLogId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域信息",
+          "example": "[                     {                         \"BackupId\": 5950,                         \"BackupRegion\": \"ap-shenzhen\"                     }                 ]",
+          "member": "BackupRegionAndIds",
+          "name": "RedoCrossRegions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2020-2-20",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成时间",
+          "example": "20203-20",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RefundResourcePackageRequest": {
       "document": "RefundResourcePackage请求参数结构体",
       "members": [
@@ -22481,6 +23064,15 @@
           "name": "AutoArchive",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否从保存备份中恢复",
+          "example": "false",
+          "member": "bool",
+          "name": "FromSaveBackup",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -22879,6 +23471,122 @@
         }
       ],
       "usage": "out"
+    },
+    "SaveBackupClusterInfo": {
+      "document": "遗留备份列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "遗照备份id",
+          "example": "40342",
+          "member": "int64",
+          "name": "BackupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-sfl123fd",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "kdff-cc",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份时间",
+          "example": "2023-5-20",
+          "member": "string",
+          "name": "BackupTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Db类型(NORMAL, SERVERLESS)",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DbMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态",
+          "example": "offlined",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SearchClusterDatabasesRequest": {
       "document": "SearchClusterDatabases请求参数结构体",
@@ -23500,6 +24208,89 @@
         }
       ],
       "usage": "out"
+    },
+    "SnapshotBackupConfig": {
+      "document": "快照备份设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "系统自动时间",
+          "example": "false",
+          "member": "bool",
+          "name": "BackupCustomAutoTime",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "example": "7200",
+          "member": "uint64",
+          "name": "BackupTimeBeg",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "example": "21600",
+          "member": "uint64",
+          "name": "BackupTimeEnd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份",
+          "example": "[\"none\",\"full\",\"none\",\"full\",\"none\",\"full\",\"none\"] ",
+          "member": "string",
+          "name": "BackupWeekDays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "间隔时间",
+          "example": "4",
+          "member": "int64",
+          "name": "BackupIntervalTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600247=604800，最大为158112000",
+          "example": "604800",
+          "member": "uint64",
+          "name": "ReserveDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动数据备份触发策略，periodically:自动周期备份,frequent:高频备份",
+          "example": "periodically",
+          "member": "string",
+          "name": "BackupTriggerStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "StartCLSDeliveryRequest": {
       "document": "StartCLSDelivery请求参数结构体",
