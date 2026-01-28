@@ -70,6 +70,13 @@
       "output": "BuildCvmResourceResponse",
       "status": "online"
     },
+    "CancelLoadTask": {
+      "document": "取消单个预热任务，仅任务在 waiting、running 状态时可以调用此接口。注意，该接口需要 GooseFS 集群版本 ≥ 1.5.1。",
+      "input": "CancelLoadTaskRequest",
+      "name": "取消 GooseFS 预热任务",
+      "output": "CancelLoadTaskResponse",
+      "status": "online"
+    },
     "CreateDataRepositoryTask": {
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
@@ -89,6 +96,13 @@
       "input": "CreateFilesetRequest",
       "name": "创建Fileset",
       "output": "CreateFilesetResponse",
+      "status": "online"
+    },
+    "CreateLoadTask": {
+      "document": "GooseFS 预热相关接口，用于下发，列出，查询，修改预热任务。用于元数据预热、数据预热场景。 注意，该接口需要 GooseFS 集群版本 ≥ 1.5.1。",
+      "input": "CreateLoadTaskRequest",
+      "name": "创建 GooseFS 预热任务",
+      "output": "CreateLoadTaskResponse",
       "status": "online"
     },
     "DeleteCrossVpcSubnetSupportForClientNode": {
@@ -217,6 +231,13 @@
       "output": "DescribeImageAttributesResponse",
       "status": "online"
     },
+    "DescribeLoadTask": {
+      "document": "查询单个预热任务执行情况。注意，该接口需要 GooseFS 集群版本 ≥ 1.5.1。",
+      "input": "DescribeLoadTaskRequest",
+      "name": "查询 GooseFS 预热任务",
+      "output": "DescribeLoadTaskResponse",
+      "status": "online"
+    },
     "DetachFileSystemBucket": {
       "document": "解绑文件系统与Bucket的映射",
       "input": "DetachFileSystemBucketRequest",
@@ -229,6 +250,13 @@
       "input": "ExpandCapacityRequest",
       "name": "扩展文件系统容量",
       "output": "ExpandCapacityResponse",
+      "status": "online"
+    },
+    "ListLoadTasks": {
+      "document": "列出该集群下所有预热任务。注意，该接口需要 GooseFS 集群版本 ≥ 1.5.1。",
+      "input": "ListLoadTasksRequest",
+      "name": "列出 GooseFS 预热任务",
+      "output": "ListLoadTasksResponse",
       "status": "online"
     },
     "MarkCvmResource": {
@@ -285,6 +313,13 @@
       "input": "UpdateFilesetGeneralConfigRequest",
       "name": "修改Fileset通用配置",
       "output": "UpdateFilesetGeneralConfigResponse",
+      "status": "online"
+    },
+    "UpdateLoadTaskPriority": {
+      "document": "变更已有 GooseFS 预热任务配置，仅任务状态为 waiting 时可调用该接口。注意，该接口需要 GooseFS 集群版本 ≥ 1.5.1。",
+      "input": "UpdateLoadTaskPriorityRequest",
+      "name": "变更 GooseFS 预热任务优先级",
+      "output": "UpdateLoadTaskPriorityResponse",
       "status": "online"
     }
   },
@@ -819,6 +854,42 @@
     },
     "BuildCvmResourceResponse": {
       "document": "BuildCvmResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelLoadTaskRequest": {
+      "document": "CancelLoadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "g_cvm_**g97c61",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预热任务 ID",
+          "example": "00453915-1c85-4e3c-8e14-237416beb76b",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelLoadTaskResponse": {
+      "document": "CancelLoadTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1516,6 +1587,52 @@
           "member": "string",
           "name": "FsetId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadTaskRequest": {
+      "document": "CreateLoadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "g_cvm_hi052k4l",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建预热任务参数",
+          "example": "无",
+          "member": "LoadTaskCreationAttrs",
+          "name": "LoadTaskCreationAttrs",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadTaskResponse": {
+      "document": "CreateLoadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预热任务 ID",
+          "example": "baae4888-62e5-4027-bd56-070e82b2a584",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2436,6 +2553,52 @@
       ],
       "type": "object"
     },
+    "DescribeLoadTaskRequest": {
+      "document": "DescribeLoadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "g_cvm_7kg3li69",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预热任务 ID",
+          "example": "7f22ba8e-ca92-40e4-a277-18461e481808",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadTaskResponse": {
+      "document": "DescribeLoadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预热任务参数",
+          "example": "无",
+          "member": "LoadTaskAttrs",
+          "name": "LoadTaskAttrs",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetachFileSystemBucketRequest": {
       "document": "DetachFileSystemBucket请求参数结构体",
       "members": [
@@ -2471,6 +2634,78 @@
         }
       ],
       "type": "object"
+    },
+    "DistributedLoadAttrs": {
+      "document": "数据预热任务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预热类型，枚举值 LoadByPath｜LoadByList",
+          "example": "LoadByList",
+          "member": "string",
+          "name": "LoadType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过相同文件，默认为 true",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipIfExists",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预热路径，入参单条挂载路径",
+          "example": "/goosefs_path/",
+          "member": "string",
+          "name": "LoadByPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通过文件列表批量预热，入参为 cos://bucket-appid/ 开头的 COS 路径，且仅支持 txt 格式文件，长度不能超过255个字符",
+          "example": "cos://goosefs-beijing-**********/api_test/temp/test_distributedload_args_loadbylist_is_file_txt/load_list.txt",
+          "member": "string",
+          "name": "LoadByList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "副本数配置，枚举值，可选值 SingleReplica（单副本，默认）｜MaxReplica（最大副本）",
+          "example": "SingleReplica",
+          "member": "string",
+          "name": "Replica",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步执行元数据预热，并基于预热后的元数据执行 DistributedLoad。默认为 false",
+          "example": "true",
+          "member": "bool",
+          "name": "MetadataSync",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExpandCapacityRequest": {
       "document": "ExpandCapacity请求参数结构体",
@@ -3436,6 +3671,293 @@
       ],
       "usage": "in"
     },
+    "ListLoadTasksRequest": {
+      "document": "ListLoadTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "g_cvm_hlg97c61",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务创建起始时间戳，默认为3天前：当前时间戳-86400*3",
+          "example": "1767859318",
+          "member": "uint64",
+          "name": "StartTimestamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务变更时间戳",
+          "example": "1767859328",
+          "member": "uint64",
+          "name": "EndTimestamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选任务状态，枚举Waiting,Running,Canceled,Completed。默认返回所有任务",
+          "example": "Completed",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选优先级任务，默认返回所有任务",
+          "example": "1",
+          "member": "uint64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLoadTasksResponse": {
+      "document": "ListLoadTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预热任务参数",
+          "example": "无",
+          "member": "LoadTaskAttrs",
+          "name": "LoadTaskList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数总量",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoadTaskAttrs": {
+      "document": "预热任务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预热任务 ID",
+          "example": "dd4bf5c2-24dd-45ea-b4c7-01539edd0227",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预热任务类型，枚举值，MetadataLoad｜DistributedLoad",
+          "example": "DistributedLoad",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务描述，支持中文",
+          "example": "priority为0（小于最小值）测试",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1",
+          "example": "666",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据预热任务参数，用于仅预热元数据时入参",
+          "example": "无",
+          "member": "MetadataLoadAttrs",
+          "name": "MetadataLoadAttrs",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据预热任务参数",
+          "example": "无",
+          "member": "DistributedLoadAttrs",
+          "name": "DistributedLoadAttrs",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "将任务执行报告写入 COS 的路径，如果不需要报告则入参空",
+          "example": "cos://**********-bj-**********/report/",
+          "member": "string",
+          "name": "ReportPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "枚举，Completed，Running，Waiting，Cancelled",
+          "example": "Running",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息 ",
+          "example": "{\"SuccessfulPaths\":1,\"FailedPaths\":0,\"LoadingTime\":1,\"LoadingTraffic\":0}",
+          "member": "string",
+          "name": "TaskMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预热任务创建时间",
+          "example": "2026-01-12T10:20:57+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预热任务变更时间",
+          "example": "2026-01-12T10:27:56+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务提交账号，子账号或服务角色 ID",
+          "example": "10001*******",
+          "member": "string",
+          "name": "Requester",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoadTaskCreationAttrs": {
+      "document": "创建预热任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预热任务类型，枚举值，MetadataLoad｜DistributedLoad",
+          "example": "DistributedLoad",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1",
+          "example": "666",
+          "member": "uint64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务描述，支持中文",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元数据预热任务参数，用于仅预热元数据时入参",
+          "example": "无",
+          "member": "MetadataLoadAttrs",
+          "name": "MetadataLoadAttrs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据预热任务参数",
+          "example": "无",
+          "member": "DistributedLoadAttrs",
+          "name": "DistributedLoadAttrs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "将任务执行报告写入 COS 的路径，如果不需要报告则入参空",
+          "example": "cos://**********-nj-**********/test.txt",
+          "member": "string",
+          "name": "ReportPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ManagedMasterConfig": {
       "document": "托管 Master 的配置信息",
       "members": [
@@ -3593,6 +4115,56 @@
         }
       ],
       "type": "object"
+    },
+    "MetadataLoadAttrs": {
+      "document": "元数据预热参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预热类型，枚举值 LoadByPath｜LoadByList",
+          "example": "LoadByList",
+          "member": "string",
+          "name": "LoadType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过相同文件，默认为 true",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipIfExists",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预热路径，入参单条挂载路径，长度不能超过255个字符",
+          "example": "/goosefs_path/",
+          "member": "string",
+          "name": "LoadByPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通过文件列表批量预热，入参为 cos://bucket-appid/ 开头的 COS 路径，且仅支持 txt 格式文件，长度不能超过255个字符",
+          "example": "cos://goosefs-beijing-**********/api_test/temp/test_metadata_args_loadbylist_is_file_csv/*************",
+          "member": "string",
+          "name": "LoadByList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyDataRepositoryBandwidthRequest": {
       "document": "ModifyDataRepositoryBandwidth请求参数结构体",
@@ -4021,6 +4593,51 @@
     },
     "UpdateFilesetResponse": {
       "document": "UpdateFileset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLoadTaskPriorityRequest": {
+      "document": "UpdateLoadTaskPriority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "g_cvm_36brs5g2",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预热任务 ID",
+          "example": "2c4a3356-28d5-4f87-98c3-78745b5d6bbf",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1",
+          "example": "666",
+          "member": "uint64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLoadTaskPriorityResponse": {
+      "document": "UpdateLoadTaskPriority返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

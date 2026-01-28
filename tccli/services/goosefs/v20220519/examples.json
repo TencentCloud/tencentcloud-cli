@@ -80,6 +80,14 @@
         "title": "创建预留资源"
       }
     ],
+    "CancelLoadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_**g97c61\",\n    \"TaskId\": \"00453915-1c85-4e3c-8e14-237416beb76b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb8f4991-1b5d-4411-a3db-38b909fff528\"\n    }\n}",
+        "title": "取消任务预热"
+      }
+    ],
     "CreateDataRepositoryTask": [
       {
         "document": "",
@@ -102,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetName\": \"fset_test_006\",\n    \"FsetDir\": \"/fset_test_006/\",\n    \"QuotaSizeLimit\": \"1024G\",\n    \"QuotaFilesLimit\": \"1024\",\n    \"AuditState\": \"enable\"\n}",
         "output": "{\n    \"Response\": {\n        \"FsetId\": \"fset_1745742041947\",\n        \"RequestId\": \"1c44ae43-f00d-460f-a093-469c407b6fb5\"\n    }\n}",
         "title": "创建FIleset"
+      }
+    ],
+    "CreateLoadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_hi052k4l\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"DistributedLoad\",\n        \"Priority\": 666,\n        \"MetadataLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"SkipIfExists\": false,\n            \"LoadByPath\": \"/goosefs_path/\"\n        },\n        \"DistributedLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/goosefs_path/\",\n            \"Replica\": \"SingleReplica\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"baae4888-62e5-4027-bd56-070e82b2a584\",\n        \"RequestId\": \"0174dedd-9c61-47aa-9ee9-1c5f901f8262\"\n    }\n}",
+        "title": "创建预热任务"
       }
     ],
     "DeleteCrossVpcSubnetSupportForClientNode": [
@@ -248,6 +264,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeLoadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_7kg3li69\",\n    \"TaskId\": \"7f22ba8e-ca92-40e4-a277-18461e481808\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadTaskAttrs\": {\n            \"CreateTime\": \"2025-10-31T11:36:59+08:00\",\n            \"Description\": \"ceshi\",\n            \"DistributedLoadAttrs\": {\n                \"LoadByList\": \"\",\n                \"LoadByPath\": \"/test\",\n                \"LoadType\": \"LoadByPath\",\n                \"MetadataSync\": false,\n                \"Replica\": \"SingleReplica\",\n                \"SkipIfExists\": false\n            },\n            \"MetadataLoadAttrs\": {\n                \"LoadByList\": \"\",\n                \"LoadByPath\": \"\",\n                \"LoadType\": \"\",\n                \"SkipIfExists\": false\n            },\n            \"ModifyTime\": \"2025-10-31T11:37:49+08:00\",\n            \"Priority\": 66,\n            \"ReportPath\": \"\",\n            \"Requester\": \"100000000001\",\n            \"State\": \"Completed\",\n            \"TaskId\": \"7f22ba8e-ca92-40e4-a277-18461e481808\",\n            \"TaskMessage\": \"\",\n            \"TaskType\": \"DistributedLoad\"\n        },\n        \"RequestId\": \"5dec7f7b-2b0b-4d1f-b94d-8ac23bc0ed80\"\n    }\n}",
+        "title": "查询目标预热任务"
+      }
+    ],
     "DetachFileSystemBucket": [
       {
         "document": "解绑文件系统与Bucket的映射",
@@ -262,6 +286,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCapacity\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"ExpandedCapacity\": 4680\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "扩展文件系统容量"
+      }
+    ],
+    "ListLoadTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLoadTasks\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_hlg97c61\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"StartTimestamp\": 1767859318,\n    \"EndTimestamp\": 1767859328\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadTaskList\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"3a0256cf-ddb6-4273-ae44-205a007707ed\"\n    }\n}",
+        "title": "列出预热任务信息"
       }
     ],
     "MarkCvmResource": [
@@ -326,6 +358,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFilesetGeneralConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"EnforceQuotaOnRoot\": \"yes\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"351d5641-a330-45ef-beec-8174cb9115fb\"\n    }\n}",
         "title": "修改Fileset通用配置"
+      }
+    ],
+    "UpdateLoadTaskPriority": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateLoadTaskPriority\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_36brs5g2\",\n    \"TaskId\": \"2c4a3356-28d5-4f87-98c3-78745b5d6bbf\",\n    \"Priority\": 666\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2650658c-e716-4ba0-b96a-2f9cfbcb5cb1\"\n    }\n}",
+        "title": "修改目标预热任务优先级"
       }
     ]
   },

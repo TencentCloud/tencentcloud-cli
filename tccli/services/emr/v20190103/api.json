@@ -779,6 +779,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "conf的类型，kv代表值是字符串，值应该从ConfValue中读取，option代表值是可选列表，值应该从ConfValueList中读取",
+          "example": "kv, option",
+          "member": "string",
+          "name": "ConfType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置值，值为字符串列表",
+          "example": "[\"rayClustera\"]",
+          "member": "string",
+          "name": "ConfValueList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数属性值",
+          "example": "无",
+          "member": "AiParametersAttribute",
+          "name": "Attribute",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1066,6 +1096,32 @@
         }
       ],
       "type": "object"
+    },
+    "AiParametersAttribute": {
+      "document": "参数属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否为预设参数",
+          "example": "true",
+          "member": "bool",
+          "name": "Preset",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为必需参数",
+          "example": "true",
+          "member": "bool",
+          "name": "Required",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AllNodeResourceSpec": {
       "document": "资源描述",

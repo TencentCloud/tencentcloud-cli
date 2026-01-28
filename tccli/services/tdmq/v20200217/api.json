@@ -8051,7 +8051,7 @@
         {
           "disabled": false,
           "document": "CMQ 队列名称列表过滤",
-          "example": "testqueue1",
+          "example": "[\"testqueue1\"]",
           "member": "string",
           "name": "QueueNameList",
           "required": false,
@@ -8069,7 +8069,7 @@
         {
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
-          "example": "[{\"Name\":\"tag:aa\",\"Values\":[\"bb\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -8290,7 +8290,7 @@
         {
           "disabled": false,
           "document": "CMQ 主题名称列表过滤",
-          "example": "topic1",
+          "example": "[\"topic1\"]",
           "member": "string",
           "name": "TopicNameList",
           "required": false,
@@ -8308,7 +8308,7 @@
         {
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
-          "example": "[{\"Name\":\"tag:aa\",\"Values\":[\"bb\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,

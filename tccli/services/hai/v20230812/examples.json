@@ -127,6 +127,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"jkfdlja-jkljj-enka-lkjkj-aneknn\"\n    }\n}",
         "title": "销毁hai实例"
       }
+    ],
+    "UpdateServiceConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceConfigs\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-3m6xrkjj\",\n    \"TargetReplicas\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bea1c2c8-b839-42d2-9458-4c3a2cffac4b\"\n    }\n}",
+        "title": "UpdateServiceConfigs"
+      }
     ]
   },
   "version": "1.0"
