@@ -16421,7 +16421,7 @@
         {
           "disabled": false,
           "document": "搜索关键词。",
-          "example": "groupName",
+          "example": "app_lane",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -16444,6 +16444,15 @@
           "name": "RuleIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询全部标记",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

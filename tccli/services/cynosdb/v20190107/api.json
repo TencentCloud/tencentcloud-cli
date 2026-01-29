@@ -4022,7 +4022,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型",
+          "document": "实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "exclusive",
           "member": "string",
           "name": "InstanceDeviceType",
@@ -7859,7 +7859,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型",
+          "document": "实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
@@ -14709,7 +14709,7 @@
         },
         {
           "disabled": false,
-          "document": "机器类型",
+          "document": "实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "common",
           "member": "string",
           "name": "DeviceType",
@@ -15640,7 +15640,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型",
+          "document": "实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
@@ -17741,7 +17741,7 @@
         },
         {
           "disabled": false,
-          "document": "变配前实例机器类型",
+          "document": "变配前实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "exclusive",
           "member": "string",
           "name": "OldDeviceType",
@@ -17751,7 +17751,7 @@
         },
         {
           "disabled": false,
-          "document": "变配后实例机器类型",
+          "document": "变配后实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",

@@ -448,11 +448,11 @@
       "output": "ReplaceActivityRecordResponse",
       "status": "online"
     },
-    "SearchClsLog": {
-      "document": "搜索CLS日志，TCB角色密钥访问",
-      "input": "SearchClsLogRequest",
-      "name": "搜索CLS日志",
-      "output": "SearchClsLogResponse",
+    "RunSql": {
+      "document": "执行SQL语句",
+      "input": "RunSqlRequest",
+      "name": "执行SQL语句",
+      "output": "RunSqlResponse",
       "status": "online"
     },
     "UnfreezeCloudBaseRunServers": {
@@ -3914,6 +3914,39 @@
         }
       ],
       "usage": "out"
+    },
+    "DbInstance": {
+      "document": "数据库连接器实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "mikejliu-test01-5g7t7mwx7b84b3eb",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MySQL 连接器实例 ID；`\"default\"` 或为空表示使用 TCB 环境的默认连接器",
+          "example": "default",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名；为空时使用连接器配置的默认数据库名",
+          "example": "classicmodels",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "DeleteCloudBaseProjectLatestVersionRequest": {
       "document": "DeleteCloudBaseProjectLatestVersion请求参数结构体",
@@ -9435,118 +9468,6 @@
       ],
       "usage": "both"
     },
-    "LogObject": {
-      "document": "CLS日志单条信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日志属于的 topic ID",
-          "example": "aafef2ab-19bc-4868-bd10-bd4a6e4146d6",
-          "member": "string",
-          "name": "TopicId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志主题的名字",
-          "example": "topic_env-xxyyzzaa",
-          "member": "string",
-          "name": "TopicName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志时间",
-          "example": "1736237493",
-          "member": "string",
-          "name": "Timestamp",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志内容",
-          "example": "log-content",
-          "member": "string",
-          "name": "Content",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "采集路径",
-          "example": "/data/log/my-log-file.log",
-          "member": "string",
-          "name": "FileName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志来源设备",
-          "example": "my-platform",
-          "member": "string",
-          "name": "Source",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "LogResObject": {
-      "document": "CLS日志结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "获取更多检索结果的游标",
-          "example": "ctxjd84kjgkd7834kgj3875483jkdjfkd",
-          "member": "string",
-          "name": "Context",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "搜索结果是否已经全部返回",
-          "example": "false",
-          "member": "bool",
-          "name": "ListOver",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志内容信息",
-          "example": "无",
-          "member": "LogObject",
-          "name": "Results",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志聚合结果",
-          "example": "[\"string\"]",
-          "member": "string",
-          "name": "AnalysisRecords",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "LogServiceInfo": {
       "document": "云日志服务相关信息",
       "members": [
@@ -10406,13 +10327,22 @@
       ],
       "type": "object"
     },
-    "SearchClsLogRequest": {
-      "document": "SearchClsLog请求参数结构体",
+    "RunSqlRequest": {
+      "document": "RunSql请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "环境唯一ID",
-          "example": "env-aabbccdd",
+          "document": "要执行的SQL语句",
+          "example": "CREATE TABLE users (id BIGINT PRIMARY KEY AUTO_INCREMENT)",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "lowcode-2gx6pjs59ddd3cea",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -10420,81 +10350,56 @@
         },
         {
           "disabled": false,
-          "document": "查询起始时间条件",
-          "example": "2023-01-01 00:00:00",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询结束时间条件",
-          "example": "2023-01-01 01:00:00",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044",
-          "example": "fun",
-          "member": "string",
-          "name": "QueryString",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "单次要返回的日志条数，单次返回的最大条数为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围",
-          "example": "ctxxu4igkldjkjiut4jkgdjsk",
-          "member": "string",
-          "name": "Context",
+          "document": "数据库连接器实例信息",
+          "example": "无",
+          "member": "DbInstance",
+          "name": "DbInstance",
           "required": false,
-          "type": "string"
+          "type": "object"
         },
         {
           "disabled": false,
-          "document": "按时间排序 asc（升序）或者 desc（降序），默认为 desc",
-          "example": "asc",
-          "member": "string",
-          "name": "Sort",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否使用Lucene语法，默认为false",
+          "document": "是否只读；当 `true` 时仅允许以 `SELECT/WITH/SHOW/DESCRIBE/DESC/EXPLAIN` 开头的 SQL",
           "example": "false",
           "member": "bool",
-          "name": "UseLucene",
+          "name": "ReadOnly",
           "required": false,
           "type": "bool"
         }
       ],
       "type": "object"
     },
-    "SearchClsLogResponse": {
-      "document": "SearchClsLog返回参数结构体",
+    "RunSqlResponse": {
+      "document": "RunSql返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "日志内容结果",
-          "example": "无",
-          "member": "LogResObject",
-          "name": "LogResults",
-          "output_required": true,
-          "type": "object",
+          "document": "查询结果行，每个元素为 JSON 字符串",
+          "example": "[\"{\\\"Collation\\\":null,\\\"Comment\\\":\\\"主键ID\\\",\\\"Default\\\":null,\\\"Extra\\\":\\\"auto_increment\\\",\\\"Field\\\":\\\"id\\\",\\\"Key\\\":\\\"PRI\\\",\\\"Null\\\":\\\"NO\\\",\\\"Privileges\\\":\\\"select,insert,update,references\\\",\\\"Type\\\":\\\"bigint(20)\\\"}\"]",
+          "member": "string",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列元数据信息，每个元素为 JSON 字符串，字段包含 `name/databaseType/nullable/length/precision/scale`",
+          "example": "[\"{\\\"databaseType\\\":\\\"VARCHAR\\\",\\\"length\\\":0,\\\"name\\\":\\\"Field\\\",\\\"nullable\\\":false,\\\"precision\\\":0,\\\"scale\\\":0}\"]",
+          "member": "string",
+          "name": "Infos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "受影响的行数（INSERT/UPDATE/DELETE 等语句）",
+          "example": "0",
+          "member": "int64",
+          "name": "RowsAffected",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

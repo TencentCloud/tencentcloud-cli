@@ -25,7 +25,7 @@ Output:
                     "Enable": true,
                     "LaneId": "lane-ynmlnwm4",
                     "Priority": 1,
-                    "Remark": "",
+                    "Remark": "this is desc",
                     "RuleId": "lane-r-v6ewp385",
                     "RuleName": "rule_app",
                     "RuleTagList": null,

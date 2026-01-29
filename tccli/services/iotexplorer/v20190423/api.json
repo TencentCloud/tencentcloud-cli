@@ -70,13 +70,6 @@
       "output": "CallDeviceActionSyncResponse",
       "status": "online"
     },
-    "CancelAssignTWeCallLicense": {
-      "document": "业务已下线\n\n取消分配",
-      "input": "CancelAssignTWeCallLicenseRequest",
-      "name": "取消分配TWeCall",
-      "output": "CancelAssignTWeCallLicenseResponse",
-      "status": "deprecated"
-    },
     "ChangeP2PRoute": {
       "document": "p2p路线切换（此接口目前处于内测接口，可以联系申请加白 ）",
       "input": "ChangeP2PRouteRequest",
@@ -138,6 +131,13 @@
       "input": "CreateDeviceChannelRequest",
       "name": "创建设备通道",
       "output": "CreateDeviceChannelResponse",
+      "status": "online"
+    },
+    "CreateDeviceSDPAnswer": {
+      "document": "创建设备SDP应答",
+      "input": "CreateDeviceSDPAnswerRequest",
+      "name": "创建设备SDP应答",
+      "output": "CreateDeviceSDPAnswerResponse",
       "status": "online"
     },
     "CreateExternalSourceAIServiceTask": {
@@ -2543,33 +2543,6 @@
       ],
       "usage": "both"
     },
-    "CancelAssignTWeCallLicenseRequest": {
-      "document": "CancelAssignTWeCallLicense请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "订单号",
-          "example": "2024020213642",
-          "member": "string",
-          "name": "PkgId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CancelAssignTWeCallLicenseResponse": {
-      "document": "CancelAssignTWeCallLicense返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ChangeP2PRouteRequest": {
       "document": "ChangeP2PRoute请求参数结构体",
       "members": [
@@ -3888,6 +3861,61 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceSDPAnswerRequest": {
+      "document": "CreateDeviceSDPAnswer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "product",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "device",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SDP提议",
+          "example": "v=0\\r\\no=- 1769412238477114228",
+          "member": "string",
+          "name": "SDPOffer",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceSDPAnswerResponse": {
+      "document": "CreateDeviceSDPAnswer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SDP应答",
+          "example": "v=0\r\no=- 1769412238477114229",
+          "member": "string",
+          "name": "SDPAnswer",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -13545,6 +13573,15 @@
         },
         {
           "disabled": false,
+          "document": "智能体名称",
+          "example": "默认",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "产品ID",
           "example": "LPIOACT1NG",
           "member": "string",
@@ -19675,7 +19712,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "产品信息列表",
           "example": "无",
           "member": "TalkProductInfo",
@@ -19706,6 +19743,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已关联产品信息列表",
+          "example": "无",
+          "member": "TalkProductInfo",
+          "name": "BoundProducts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19716,7 +19764,7 @@
         {
           "disabled": false,
           "document": "会话超时（秒），指连接会话的时间，例如30秒是指会话在30秒后断开",
-          "example": "",
+          "example": "7200",
           "member": "int64",
           "name": "SessionTimeout",
           "output_required": false,
@@ -19727,7 +19775,7 @@
         {
           "disabled": false,
           "document": "允许打断",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "InterruptionEnabled",
           "output_required": false,
@@ -19738,7 +19786,7 @@
         {
           "disabled": false,
           "document": "最大上下文",
-          "example": "",
+          "example": "3000",
           "member": "int64",
           "name": "MaxContextTokens",
           "output_required": false,
@@ -19749,7 +19797,7 @@
         {
           "disabled": false,
           "document": "空闲检测配置",
-          "example": "",
+          "example": "无",
           "member": "TalkIdleDetectionConfigInfo",
           "name": "IdleDetection",
           "output_required": false,
@@ -19760,7 +19808,7 @@
         {
           "disabled": false,
           "document": "是否启用情绪识别",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "EmotionEnabled",
           "output_required": false,
@@ -19771,7 +19819,7 @@
         {
           "disabled": false,
           "document": "是否启用语义vad",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "SemanticVADEnabled",
           "output_required": false,
@@ -19782,7 +19830,7 @@
         {
           "disabled": false,
           "document": "语义vad灵敏度， 1-慢 2-适中 3-快",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "SemanticVADSensitivity",
           "output_required": false,
@@ -19793,7 +19841,7 @@
         {
           "disabled": false,
           "document": "VAD 静默检测时间， 当开启语义vad此配置失效",
-          "example": "",
+          "example": "500",
           "member": "int64",
           "name": "SilenceTime",
           "output_required": false,
@@ -19804,7 +19852,7 @@
         {
           "disabled": false,
           "document": "是否启用噪声过滤",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "NoiseFilterEnabled",
           "output_required": false,
@@ -19814,8 +19862,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长记忆，默认开启",
-          "example": "",
+          "document": "是否开启长记忆，默认关闭",
+          "example": "true",
           "member": "bool",
           "name": "LongTermMemoryEnabled",
           "output_required": false,
@@ -19826,7 +19874,7 @@
         {
           "disabled": false,
           "document": "系统提示词，仅当未配置LLMConfig时使用",
-          "example": "",
+          "example": "# 身份与角色 1. 你的名字叫\"QQ鹅仔\"，你是一个陪伴用户的忠实伙伴，内心充满好奇和温暖。 2. 你的目标是成为用户最贴心的朋友，提供情感陪伴和有用的帮助。",
           "member": "string",
           "name": "SystemPrompt",
           "output_required": false,
@@ -19837,7 +19885,7 @@
         {
           "disabled": false,
           "document": "开机问候语，如果未配置默认不开启",
-          "example": "",
+          "example": "你好呀，我是\"QQ鹅仔\"，今天过的怎么样呀？",
           "member": "string",
           "name": "GreetingMessage",
           "output_required": false,
@@ -19848,7 +19896,7 @@
         {
           "disabled": false,
           "document": "系统默认音色，当配置复刻音色时，默认值为200000000",
-          "example": "",
+          "example": "601015",
           "member": "int64",
           "name": "DefaultVoiceType",
           "output_required": false,
@@ -19859,7 +19907,7 @@
         {
           "disabled": false,
           "document": "复刻音色",
-          "example": "",
+          "example": "WATCH-00999345",
           "member": "string",
           "name": "FastVoiceType",
           "output_required": false,
@@ -21477,8 +21525,10 @@
           "example": "query1",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -21486,11 +21536,13 @@
           "example": "快递员",
           "member": "string",
           "name": "Query",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "VisionDetectedObject": {
       "document": "目标检测算法检测到的目标详情",
@@ -21784,8 +21836,10 @@
           "example": "zh",
           "member": "string",
           "name": "OutputLang",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -21793,8 +21847,10 @@
           "example": "en",
           "member": "string",
           "name": "AlternativeOutputLang",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -21802,8 +21858,10 @@
           "example": "Single",
           "member": "string",
           "name": "MultiCameraLayout",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -21811,8 +21869,10 @@
           "example": "[\"child_falling\", \"baby_crying\"]",
           "member": "string",
           "name": "DetectTypes",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -21820,11 +21880,13 @@
           "example": "无",
           "member": "VisionCustomDetectQuery",
           "name": "CustomDetectQueries",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "WXDeviceInfo": {
       "document": "微信硬件设备信息",

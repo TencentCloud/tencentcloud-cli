@@ -111,6 +111,13 @@
       "name": "销毁实例",
       "output": "TerminateInstancesResponse",
       "status": "online"
+    },
+    "UpdateServiceConfigs": {
+      "document": "本接口(UpdateServiceConfigs)用于更新服务配置",
+      "input": "UpdateServiceConfigsRequest",
+      "name": "更新服务配置",
+      "output": "UpdateServiceConfigsResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -1907,6 +1914,42 @@
     },
     "TerminateInstancesResponse": {
       "document": "TerminateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceConfigsRequest": {
+      "document": "UpdateServiceConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "svc-3m6xrkjj",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "期望副本数",
+          "example": "2",
+          "member": "int64",
+          "name": "TargetReplicas",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceConfigsResponse": {
+      "document": "UpdateServiceConfigs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

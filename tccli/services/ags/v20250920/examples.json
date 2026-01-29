@@ -80,6 +80,22 @@
         "title": "查询沙箱工具列表"
       }
     ],
+    "PauseSandboxInstance": [
+      {
+        "document": "暂停沙箱实例",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
+        "title": "暂停沙箱实例"
+      }
+    ],
+    "ResumeSandboxInstance": [
+      {
+        "document": "恢复沙箱实例",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
+        "title": "恢复沙箱实例"
+      }
+    ],
     "StartSandboxInstance": [
       {
         "document": "",

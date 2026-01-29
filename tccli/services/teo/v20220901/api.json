@@ -890,7 +890,7 @@
       "status": "online"
     },
     "DescribeTimingL4Data": {
-      "document": "本接口（DescribeTimingL4Data）用于查询四层时序流量数据列表。",
+      "document": "<p>本接口（<code>DescribeTimingL4Data</code>）用于查询四层时序数据列表。</p>",
       "input": "DescribeTimingL4DataRequest",
       "name": "查询四层流量时序数据",
       "output": "DescribeTimingL4DataResponse",
@@ -14448,7 +14448,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标，取值有：\n<li>l4Flow_connections: 访问并发连接数；</li>\n<li>l4Flow_flux: 访问总流量；</li>\n<li>l4Flow_inFlux: 访问入流量；</li>\n<li>l4Flow_outFlux: 访问出流量；</li>\n<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>\n<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>",
+          "document": "查询指标，取值有：\n<ul><li>**l4Flow_flux**: 访问总流量，单位：Byte，指标值类型：Integer；</li>\n<li>**l4Flow_inFlux**: 访问入流量，单位：Byte，指标值类型：Integer；</li>\n<li>**l4Flow_outFlux**: 访问出流量，单位：Byte，指标值类型：Integer；</li>\n<li>**l4Flow_inBandwidth**: 访问入向带宽峰值，单位：bps，指标值类型：Integer；</li>\n<li>**l4Flow_outBandwidth**: 访问出向带宽峰值，单位：bps，指标值类型：Integer；</li>\n<li>**l4Flow_connections**: 访问并发连接数，单位：个，指标值类型：Integer ；</li>\n<li>**l4Flow_newConnectionsRate**: 新建连接数速率，单位：个/秒，指标值类型： Float，保留两位小数。</li></ul>**注意**：<ul><li><code> Integer</code> 值类型的指标将从  <code>Data.N.TypeValue</code> 返回对应时序数据；</li>\n<li><code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。</li></ul>",
           "example": "[\"l4Flow_connections\"]",
           "member": "string",
           "name": "MetricNames",
@@ -14461,7 +14461,7 @@
           "example": "[\"zone-2rntun0a1z6t\",\"zone-323urc8a9j0q\"]",
           "member": "string",
           "name": "ZoneIds",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {
@@ -14475,7 +14475,7 @@
         },
         {
           "disabled": false,
-          "document": "查询时间粒度，取值有：\n<li>min: 1分钟 ；</li>\n<li>5min: 5分钟 ；</li>\n<li>hour: 1小时 ；</li>\n<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。",
+          "document": "查询时间粒度，取值有：\n<ul><li>**min**: 1分钟 ；</li>\n<li>**5min**: 5分钟 ；</li>\n<li>**hour**: 1小时 ；</li>\n<li>**day**: 1天 。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以 <code>min</code> 粒度查询，2天范围内以 <code>5min</code> 粒度查询，7天范围内以 <code>hour</code> 粒度查询，超过7天以 <code>day</code> 粒度查询。",
           "example": "hour",
           "member": "string",
           "name": "Interval",
@@ -14484,7 +14484,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详细的过滤条件Key值如下：\n<li>ruleId：按照转发规则 ID 进行过滤。</li>\n<li>proxyId：按照四层代理实例 ID 进行过滤。</li>",
+          "document": "过滤条件，详细的过滤条件Key值如下：\n<ul><li>**ruleId**：按照转发规则 ID 进行过滤。</li>\n<li>**proxyId**：按照四层代理实例 ID 进行过滤。</li></ul>",
           "example": "无",
           "member": "QueryCondition",
           "name": "Filters",
@@ -14492,7 +14492,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。",
           "example": "mainland",
           "member": "string",
@@ -14518,7 +14518,7 @@
         },
         {
           "disabled": false,
-          "document": "四层时序流量数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>四层时序流量数据列表。<br>对于不同的查询指标，根据指标值类型的不同，会从不同的参数返回时序数据。<br>目前存在的值类型有以下两种：</p><ul><li><strong>Integer</strong>：<code>Integer</code> 值类型的指标将从 <code>Data.N.TypeValue</code> 返回对应时序数据。<br>对应的查询指标 <code>MetricName</code> 有：<ul><li><code>l4Flow_flux</code>：访问总流量；</li><li><code>l4Flow_inFlux</code>：访问入流量；</li><li><code>l4Flow_outFlux</code>：访问出流量；</li><li><code>l4Flow_inBandwidth</code>：访问入向带宽峰值；</li><li><code>l4Flow_outBandwidth</code>：访问出向带宽峰值；</li><li><code>l4Flow_connections</code>：访问并发连接数。</li></ul></li><li><strong>Float</strong>：<code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。<br>对应的查询指标 <code>MetricName</code> 有：<ul><li><code>l4Flow_newConnectionsRate</code>：新建连接数速率。</li></ul></li>\n</ul><p>本接口暂不支持指定维度查询，默认按主账号汇总返回数据，即 <code>Data.N.TypeKey = AppId</code>，AppId 是腾讯云主账号唯一标识，N 恒等于 1。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TimingDataRecord",
           "name": "Data",
@@ -17110,6 +17110,88 @@
         }
       ],
       "usage": "both"
+    },
+    "FloatTimingDataItem": {
+      "document": "统计曲线数据项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据对应时间点，采用 unix 秒级时间戳。",
+          "example": "1767302100",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体数值。",
+          "example": "0.05",
+          "member": "float",
+          "name": "Value",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FloatTimingTypeValue": {
+      "document": "时序类型详细数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据和。",
+          "example": "2.609999",
+          "member": "float",
+          "name": "Sum",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大值。",
+          "example": "0.15",
+          "member": "float",
+          "name": "Max",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均值。",
+          "example": "0.02",
+          "member": "float",
+          "name": "Avg",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名。",
+          "example": "l4Flow_newConnectionsRate",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详细数据。",
+          "example": "无",
+          "member": "FloatTimingDataItem",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FollowOrigin": {
       "document": "缓存遵循源站配置。",
@@ -29217,17 +29299,27 @@
           "example": "l7Flow_flux",
           "member": "string",
           "name": "TypeKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详细时序数据。",
-          "example": "[1,2,3]",
+          "document": "<code>Integer</code> 类型的详细时序数据，查询指标值类型为 <code>Integer</code> 指标会由本字段返回对应时序数据。<br> **注意**：若查询指标未明确说明指标值类型，默认由本字段返回数据。",
+          "example": "无",
           "member": "TimingTypeValue",
           "name": "TypeValue",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<code>Float</code> 类型的详细时序数据，查询指标值类型为 <code>Float</code> 指标会由本字段返回对应时序数据。",
+          "example": "无",
+          "member": "FloatTimingTypeValue",
+          "name": "FloatTypeValue",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         }

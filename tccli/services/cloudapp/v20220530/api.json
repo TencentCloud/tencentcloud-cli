@@ -313,6 +313,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品供应商 UIN</p>",
+          "example": "700002335211",
+          "member": "string",
+          "name": "ProviderUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 创建来源 ID</p>",
+          "example": "ordersn:11:1",
+          "member": "string",
+          "name": "CreateSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

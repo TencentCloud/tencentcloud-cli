@@ -1612,7 +1612,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要操作的房间id",
+          "document": "<p>要操作的房间id</p>",
           "example": "100",
           "member": "string",
           "name": "RoomId",
@@ -1621,7 +1621,7 @@
         },
         {
           "disabled": false,
-          "document": "剔除类型 1-删除房间 2-剔除用户",
+          "document": "<p>剔除类型 1-删除房间 2-剔除用户</p>",
           "example": "2",
           "member": "uint64",
           "name": "DeleteType",
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "应用id",
+          "document": "<p>应用id</p>",
           "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
@@ -1639,7 +1639,7 @@
         },
         {
           "disabled": false,
-          "document": "要剔除的用户列表（整型）",
+          "document": "<p>要剔除的用户列表（整型）</p>",
           "example": "[\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "string",
           "name": "Uids",
@@ -1648,7 +1648,7 @@
         },
         {
           "disabled": false,
-          "document": "要剔除的用户列表（字符串类型）",
+          "document": "<p>要剔除的用户列表（字符串类型）</p>",
           "example": "[\"Andy\",\"John\"]",
           "member": "string",
           "name": "StrUids",
@@ -1663,7 +1663,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "剔除房间或成员的操作结果",
+          "document": "<p>剔除房间或成员的操作结果</p>",
           "example": "无",
           "member": "DeleteResult",
           "name": "DeleteResult",
@@ -1897,7 +1897,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "GME应用ID",
+          "document": "<p>GME应用ID</p>",
           "example": "140000001",
           "member": "uint64",
           "name": "BizId",
@@ -1906,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
+          "document": "<p>数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>",
           "example": "2019-08-01",
           "member": "date",
           "name": "StartDate",
@@ -1915,7 +1915,7 @@
         },
         {
           "disabled": false,
-          "document": "数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
+          "document": "<p>数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>",
           "example": "2019-08-03",
           "member": "date",
           "name": "EndDate",
@@ -1924,7 +1924,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText",
+          "document": "<p>要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText</p>",
           "example": "[\"RealTimeSpeech\\r\\n\",\"VoiceMessage\\r\\n\"]",
           "member": "string",
           "name": "Services",
@@ -1955,7 +1955,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用用量统计数据",
+          "document": "<p>应用用量统计数据</p>",
           "example": "无",
           "member": "DescribeAppStatisticsResp",
           "name": "Data",
@@ -2414,7 +2414,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
+          "document": "<p>应用ID，登录<a href=\"https://console.cloud.tencent.com/gamegme\">控制台 - 服务管理</a>创建应用得到的AppID</p>",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -2423,7 +2423,7 @@
         },
         {
           "disabled": false,
-          "document": "房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
+          "document": "<p>房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>",
           "example": "[1234, 2345]",
           "member": "uint64",
           "name": "RoomIds",
@@ -2432,8 +2432,8 @@
         },
         {
           "disabled": false,
-          "document": "字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
-          "example": "[\"1234\", \"2345\"]",
+          "document": "<p>字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>",
+          "example": "[\"100982048\", \"100982049\"]",
           "member": "string",
           "name": "StrRoomIds",
           "required": false,
@@ -2447,7 +2447,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果, 0成功, 非0失败",
+          "document": "<p>操作结果, 0成功, 非0失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "Result",
@@ -2457,7 +2457,7 @@
         },
         {
           "disabled": false,
-          "document": "房间用户信息",
+          "document": "<p>房间用户信息</p>",
           "example": "无",
           "member": "RoomUser",
           "name": "RoomUsers",
@@ -3204,7 +3204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "进行中的任务taskid（StartRecord接口返回）。",
+          "document": "<p>进行中的任务taskid（StartRecord接口返回）。</p>",
           "example": "446192236330927912",
           "member": "uint64",
           "name": "TaskId",
@@ -3213,7 +3213,7 @@
         },
         {
           "disabled": false,
-          "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
+          "document": "<p>录制类型：1代表单流 2代表混流 3代表单流和混流。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordMode",
@@ -3222,7 +3222,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID。",
+          "document": "<p>应用ID。</p>",
           "example": "3400352518",
           "member": "uint64",
           "name": "BizId",
@@ -3231,7 +3231,7 @@
         },
         {
           "disabled": false,
-          "document": "指定订阅流白名单或者黑名单。",
+          "document": "<p>指定订阅流白名单或者黑名单。</p>",
           "example": "无",
           "member": "SubscribeRecordUserIds",
           "name": "SubscribeRecordUserIds",
@@ -4219,7 +4219,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID。",
+          "document": "<p>应用ID。</p>",
           "example": "3400352518",
           "member": "uint64",
           "name": "BizId",
@@ -4228,7 +4228,7 @@
         },
         {
           "disabled": false,
-          "document": "房间ID。",
+          "document": "<p>房间ID。</p>",
           "example": "1987",
           "member": "string",
           "name": "RoomId",
@@ -4237,7 +4237,7 @@
         },
         {
           "disabled": false,
-          "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
+          "document": "<p>录制类型：1代表单流 2代表混流 3代表单流和混流。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordMode",
@@ -4246,7 +4246,7 @@
         },
         {
           "disabled": false,
-          "document": "指定订阅流白名单或者黑名单（不传默认订阅房间内所有音频流）。",
+          "document": "<p>指定订阅流白名单或者黑名单（不传默认订阅房间内所有音频流）。</p>",
           "example": "无",
           "member": "SubscribeRecordUserIds",
           "name": "SubscribeRecordUserIds",
@@ -4261,7 +4261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务taskid。",
+          "document": "<p>任务taskid。</p>",
           "example": "446192236330927912",
           "member": "uint64",
           "name": "TaskId",

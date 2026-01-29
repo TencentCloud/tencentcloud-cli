@@ -5080,6 +5080,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群审计开关状态：\n已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed",
+          "example": "Closed",
+          "member": "string",
+          "name": "ClusterAuditStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入状态:\n未接入: AccessedNone\n已防护: AccessedDefended\n未防护: AccessedInstalled\n部分防护: AccessedPartialDefence\n接入异常: AccessedException\n卸载异常: AccessedUninstallException\n接入中: AccessedInstalling\n卸载中: AccessedUninstalling",
+          "example": "AccessedNone",
+          "member": "string",
+          "name": "AccessedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

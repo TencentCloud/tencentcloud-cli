@@ -12206,6 +12206,15 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板拓展参数。",
+          "example": "{\"FilterConfig\":{\"Switch\":\"ON\", \"FilterParam\":\"TransformConfig:params=model=scale&l=2560&s=1440\"}}",
+          "member": "string",
+          "name": "StdExtInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -33344,6 +33353,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务执行进度。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

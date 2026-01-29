@@ -104,14 +104,6 @@
         "title": "同步调用设备行为，设备不在线。"
       }
     ],
-    "CancelAssignTWeCallLicense": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAssignTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgId\": \"2024020236215\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3edc0o-456yghy\"\n    }\n}",
-        "title": "成功取消分配"
-      }
-    ],
     "ChangeP2PRoute": [
       {
         "document": "切换p2p线路",
@@ -248,6 +240,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ChannelId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
         "title": "创建设备通道示例"
+      }
+    ],
+    "CreateDeviceSDPAnswer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceSDPAnswer\n<公共请求参数>\n\n{\n    \"ProductId\": \"product\",\n    \"DeviceName\": \"device\",\n    \"SDPOffer\": \"v=0\\\\r\\\\no=- 1769412238477114228\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SDPAnswer\": \"v=0\\r\\no=- 1769412238477114229\",\n        \"RequestId\": \"0c4746c2-c06d-4849-a106-113956941993\"\n    }\n}",
+        "title": "创建设备SDP应答"
       }
     ],
     "CreateExternalSourceAIServiceTask": [
