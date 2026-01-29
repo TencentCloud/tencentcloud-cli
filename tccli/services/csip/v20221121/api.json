@@ -16352,7 +16352,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改集团账号状态，1 开启， 2关闭",
+          "document": "修改集团账号状态，1 开启， 0关闭",
           "example": "1",
           "member": "int64",
           "name": "Status",

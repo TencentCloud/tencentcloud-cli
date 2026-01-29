@@ -80,6 +80,28 @@
         "title": "创建静态托管资源"
       }
     ],
+    "CreateTable": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=CreateTable\n&TableName=adsia\n&Tag=tnt-nl7hjzasw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"C563943B-3BEA-FE92-29FE-591EAEB7871F\"\n    }\n}",
+        "title": "新建表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTable\n<公共请求参数>\n\n{\n    \"TableName\": \"demo_users\",\n    \"Tag\": \"mongo_conn\",\n    \"PermissionInfo\": {\n        \"AclTag\": \"ADMINONLY\",\n        \"EnvId\": \"lowcode-2gqvfid5936609f4\"\n    },\n    \"EnvId\": \"lowcode-2gqvfid5936609f4\",\n    \"MongoConnector\": {\n        \"InstanceId\": \"mongo_conn\",\n        \"DatabaseName\": \"demo_db\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c42cd0e-0836-4b69-8bb0-204415b41a56\"\n    }\n}",
+        "title": "新建表-使用MongoDB连接器"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"EnvId\": \"test-envId\",\n    \"Name\": \"zhangsan\",\n    \"Uid\": \"1001\",\n    \"Type\": \"internalUser\",\n    \"Password\": \"Abc@123456\",\n    \"UserStatus\": \"ACTIVE\",\n    \"NickName\": \"张三\",\n    \"Phone\": \"13800138000\",\n    \"Email\": \"zhangsan@example.com\",\n    \"AvatarUrl\": \"https://example.com/avatars/zhangsan.jpg\",\n    \"Description\": \"研发部门员工\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Uid\": \"1001\"\n        },\n        \"RequestId\": \"af638232-4d1c-4e41-b959-ea3dbe5de0be\"\n    }\n}",
+        "title": "创建用户"
+      }
+    ],
     "DeleteCloudBaseProjectLatestVersion": [
       {
         "document": "",
@@ -102,6 +124,28 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGatewayVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayId\": \"gw-002\",\n    \"VersionName\": \"gw-002-001\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "删除网关某版本接口示例"
+      }
+    ],
+    "DeleteTable": [
+      {
+        "document": "使用环境内默认连接器",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DeleteTable\n&TableName=adise\n&Tag=tnt-nl7hjzasw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a54946c-0b9f-4dd7-b354-b0dc49185517\"\n    }\n}",
+        "title": "删除表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTable\n<公共请求参数>\n\n{\n    \"TableName\": \"demo_users\",\n    \"Tag\": \"mongo_conn\",\n    \"EnvId\": \"lowcode-2gqvfid5936609f4\",\n    \"MongoConnector\": {\n        \"InstanceId\": \"mongo_conn\",\n        \"DatabaseName\": \"demo_db\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a8dae16-1625-48ca-a409-535ccdb14fce\"\n    }\n}",
+        "title": "删除表-使用MongoDB连接器"
+      }
+    ],
+    "DeleteUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUsers\n<公共请求参数>\n\n{\n    \"EnvId\": \"testenv-123\",\n    \"Uids\": [\n        \"19837204372934434\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FailedCount\": 0,\n            \"SuccessCount\": 1\n        },\n        \"RequestId\": \"563b4e8e-7898-401d-95b1-c86bbaecc6b3\"\n    }\n}",
+        "title": "删除用户"
       }
     ],
     "DeleteWxGatewayRoute": [
@@ -376,12 +420,42 @@
         "title": "查询1分钱抵扣详情"
       }
     ],
+    "DescribeTable": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeTable\n&TableName=adisa\n&Tag=tnt-a5a7a8aeu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Indexes\": [\n            {\n                \"Name\": \"example-index-0\",\n                \"Size\": 16384,\n                \"Unique\": false,\n                \"Keys\": [\n                    {\n                        \"Name\": \"key0\",\n                        \"Direction\": \"1\"\n                    }\n                ],\n                \"Accesses\": {\n                    \"Ops\": 0,\n                    \"Since\": \"2019-03-05T19:47:53.797+08:00\"\n                }\n            },\n            {\n                \"Name\": \"_id_\",\n                \"Size\": 36864,\n                \"Unique\": true,\n                \"Keys\": [\n                    {\n                        \"Name\": \"_id\",\n                        \"Direction\": \"1\"\n                    }\n                ],\n                \"Accesses\": {\n                    \"Ops\": 0,\n                    \"Since\": \"2019-02-28T11:46:20.919+08:00\"\n                }\n            }\n        ],\n        \"IndexNum\": 2,\n        \"RequestId\": \"b9872df9-b00e-497d-9fdd-33338f0f64b4\"\n    }\n}",
+        "title": "查询表信息"
+      },
+      {
+        "document": "查询连接器内的表信息",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTable\n<公共请求参数>\n\n{\n    \"TableName\": \"luke_test\",\n    \"EnvId\": \"lowcode-1g1ac0pjd4eca700\",\n    \"MongoConnector\": {\n        \"InstanceId\": \"luke_test2\",\n        \"DatabaseName\": \"adise\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IndexNum\": 2,\n        \"Indexes\": [\n            {\n                \"Accesses\": {\n                    \"Ops\": 0,\n                    \"Since\": \"2025-12-09T16:37:19.051+08:00\"\n                },\n                \"Keys\": [\n                    {\n                        \"Direction\": \"1\",\n                        \"Name\": \"_id\"\n                    }\n                ],\n                \"Name\": \"_id_\",\n                \"Size\": 36864,\n                \"Unique\": false\n            },\n            {\n                \"Accesses\": {\n                    \"Ops\": 2,\n                    \"Since\": \"2025-12-09T16:37:19.083+08:00\"\n                },\n                \"Keys\": [\n                    {\n                        \"Direction\": \"1\",\n                        \"Name\": \"_openid\"\n                    }\n                ],\n                \"Name\": \"_openid_1\",\n                \"Size\": 36864,\n                \"Unique\": false\n            }\n        ],\n        \"RequestId\": \"1c71e3a6-c0ef-411c-819a-5321e3480800\"\n    }\n}",
+        "title": "查询表信息-使用MongoDB连接器"
+      }
+    ],
+    "DescribeTables": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeTables\n&MgoOffset=0\n&MgoLimit=20\n&Tag=tnt-xxxxxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ce5365a-af8c-4859-a0dd-a4bfe1f2a3d8\",\n        \"Tables\": [\n            {\n                \"TableName\": \"adise\",\n                \"Count\": 12,\n                \"Size\": 899,\n                \"IndexCount\": 1,\n                \"IndexSize\": 36864\n            },\n            {\n                \"TableName\": \"test2\",\n                \"Count\": 1,\n                \"Size\": 36,\n                \"IndexCount\": 1,\n                \"IndexSize\": 16384\n            },\n            {\n                \"TableName\": \"test3\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 1,\n                \"IndexSize\": 4096\n            },\n            {\n                \"TableName\": \"test4\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 1,\n                \"IndexSize\": 4096\n            }\n        ],\n        \"Pager\": {\n            \"Offset\": 0,\n            \"Limit\": 20,\n            \"Total\": 4\n        }\n    }\n}",
+        "title": "查询所有表信息"
+      }
+    ],
     "DescribeUserActivityInfo": [
       {
         "document": "查询用户活动信息",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeUserActivityInfo\n&ActivityId=1\n&ChannelToken=ssss\n&Channel=qc_console\n&GroupId=5d8f5ds45\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"Tag\": \"as48sdf45d\",\n        \"Notes\": \"1,2,3\",\n        \"ActivityTimeLeft\": 1,\n        \"GroupTimeLeft\": 1,\n        \"NickNameList\": \"a,b,c\"\n    }\n}",
         "title": "查询用户活动信息"
+      }
+    ],
+    "DescribeUserList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserList\n<公共请求参数>\n\n{\n    \"EnvId\": \"test_envId\",\n    \"PageNo\": 1,\n    \"PageSize\": 10,\n    \"Name\": \"zhang\",\n    \"NickName\": \"张\",\n    \"Phone\": \"13900139000\",\n    \"Email\": \"zhangsan@example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 100,\n            \"UserList\": [\n                {\n                    \"AvatarUrl\": \"https://example.com/avatars/zhangsan.jpg\",\n                    \"Description\": \"研发部门技术总监\",\n                    \"Email\": \"zhangsan@example.com\",\n                    \"Name\": \"zhangsan\",\n                    \"NickName\": \"张三\",\n                    \"Phone\": \"13800138000\",\n                    \"Type\": \"internalUser\",\n                    \"Uid\": \"1001\",\n                    \"UserStatus\": \"ACTIVE\"\n                }\n            ]\n        },\n        \"RequestId\": \"eb985f06-ebb2-4d1f-a224-2f5bdc0c4eb4\"\n    }\n}",
+        "title": "查询用户列表"
       }
     ],
     "DescribeWxGatewayRoutes": [
@@ -448,6 +522,20 @@
         "title": "批量冻结"
       }
     ],
+    "ListTables": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=ListTables\n&MgoOffset=0\n&MgoLimit=20\n&Tag=tnt-nl7hjzasw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ce5365a-af8c-4859-a0dd-a4bfe1f2a3d8\",\n        \"Tables\": [\n            {\n                \"TableName\": \"aris\",\n                \"Count\": 12,\n                \"Size\": 899,\n                \"IndexCount\": 1,\n                \"IndexSize\": 36864\n            },\n            {\n                \"TableName\": \"test2\",\n                \"Count\": 1,\n                \"Size\": 36,\n                \"IndexCount\": 1,\n                \"IndexSize\": 16384\n            },\n            {\n                \"TableName\": \"test3\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 1,\n                \"IndexSize\": 4096\n            },\n            {\n                \"TableName\": \"test4\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 1,\n                \"IndexSize\": 4096\n            }\n        ],\n        \"Pager\": {\n            \"Offset\": 0,\n            \"Limit\": 20,\n            \"Total\": 4\n        }\n    }\n}",
+        "title": "查询表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTables\n<公共请求参数>\n\n{\n    \"MgoLimit\": 10,\n    \"MgoOffset\": 0,\n    \"Tag\": \"mongo_conn\",\n    \"ShowHidden\": false,\n    \"EnvId\": \"lowcode-2gqvfid5936609f4\",\n    \"MongoConnector\": {\n        \"InstanceId\": \"mongo_conn\",\n        \"DatabaseName\": \"demo_db\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee8f0898-b446-44cd-8773-676d8758c45c\",\n        \"Pager\": {\n            \"Offset\": 0,\n            \"Limit\": 10,\n            \"Total\": 2\n        },\n        \"Tables\": [\n            {\n                \"TableName\": \"demo_db\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 1,\n                \"IndexSize\": 4096\n            },\n            {\n                \"TableName\": \"demo_users\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 2,\n                \"IndexSize\": 8192\n            }\n        ]\n    }\n}",
+        "title": "查询表-使用MongoDB连接器"
+      }
+    ],
     "ModifyCloudBaseRunServerFlowConf": [
       {
         "document": "",
@@ -494,6 +582,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatewayVersionTraffic\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayId\": \"gw-002\",\n    \"VersionsWeight\": [\n        {\n            \"VersionName\": \"versionName-xxx\",\n            \"Weight\": 50\n        },\n        {\n            \"VersionName\": \"versionName-yyy\",\n            \"Weight\": 50\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "设置网关版本的流量比例接口实例"
+      }
+    ],
+    "ModifyUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"EnvId\": \"testenv-123\",\n    \"Uid\": \"1\",\n    \"Name\": \"test_user_01\",\n    \"Type\": \"internalUser\",\n    \"Password\": \"test123@\",\n    \"UserStatus\": \"ACTIVE\",\n    \"NickName\": \"test_user_01\",\n    \"Phone\": \"18xxxx9078\",\n    \"Email\": \"example@qq.com\",\n    \"AvatarUrl\": \"https://example.avatat\",\n    \"Description\": \"测试账号\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Success\": true\n        },\n        \"RequestId\": \"76c0ca0f-4cf2-4f89-80b9-cdbf9ab7dd77\"\n    }\n}",
+        "title": "更新用户信息"
       }
     ],
     "ReinstateEnv": [
@@ -550,6 +646,26 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnfreezeCloudBaseRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-sdfsdf\",\n    \"ServerNameList\": [\n        \"server\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailServerList\": [\n            \"server\"\n        ],\n        \"Result\": \"succ\",\n        \"RequestId\": \"sdfsfdf\"\n    }\n}",
         "title": "批量解冻服务"
+      }
+    ],
+    "UpdateTable": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=UpdateTable\n&TableName=adise\n&Tag=tnt-jas2zvl90\n&CreateIndexes.0.IndexName=test-index\n&CreateIndexes.0.MgoKeySchema.MgoIndexKeys.0.Name=adise\n&CreateIndexes.0.MgoKeySchema.MgoIndexKeys.0.Direction=1\n&CreateIndexes.0.MgoKeySchema.MgoIsUnique=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"C563943B-3BEA-FE92-29FE-591EAEB7871F\"\n    }\n}",
+        "title": "创建索引"
+      },
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=UpdateTable\n&TableName=adise\n&Tag=tnt-jas2zvl90\n&DropIndexes.0.IndexName=testIndex\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"C563943B-3BEA-FE92-29FE-591EAEB7871F\"\n    }\n}",
+        "title": "删除索引"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTable\n<公共请求参数>\n\n{\n    \"TableName\": \"test2\",\n    \"CreateIndexes\": [\n        {\n            \"IndexName\": \"adise\",\n            \"MgoKeySchema\": {\n                \"MgoIndexKeys\": [\n                    {\n                        \"Name\": \"adise\",\n                        \"Direction\": \"1\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"EnvId\": \"lowcode-1g1ac0pjd4eca700\",\n    \"MongoConnector\": {\n        \"InstanceId\": \"luke_test2\",\n        \"DatabaseName\": \"adise\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5811a2a8-a892-4600-a7dc-96bf1c4b28ab\"\n    }\n}",
+        "title": "创建索引-使用MongoDB连接器"
       }
     ]
   },

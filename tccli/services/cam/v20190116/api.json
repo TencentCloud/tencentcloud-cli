@@ -2263,7 +2263,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。",
-          "example": "openid",
+          "example": "[\"openid\"]",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -2277,6 +2277,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话会默认置0",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3194,6 +3203,16 @@
           "name": "Description",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7631,7 +7650,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。",
-          "example": "openid",
+          "example": "[\"openid\"]",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -7645,6 +7664,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

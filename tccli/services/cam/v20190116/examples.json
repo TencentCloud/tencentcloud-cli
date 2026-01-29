@@ -139,7 +139,7 @@
     "CreateUserOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth***.cn/\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCi******\",\n    \"ClientId\": \"61adcf00620c31e3***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n    \"Scope\": [\n        \"openidScope.1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth***.cn/\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCi******\",\n    \"ClientId\": \"61adcf00620c31e3***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n    \"Scope\": [\n        \"openidScope.1\"\n    ],\n    \"AutoRotateKey\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a70d447-3c04-43c0-94ca-db899d4d05ac\"\n    }\n}",
         "title": "添加用户OIDC配置"
       }
@@ -300,7 +300,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserOIDCConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Description\": \"描述信息\",\n        \"ProviderType\": 12,\n        \"IdentityUrl\": \"https://tencent.auth**.cn/\",\n        \"IdentityKey\": \"ewogICAgImtleXMiOiBbC****\",\n        \"ClientId\": \"61adcf00620c31e3d***\",\n        \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n        \"Scope\": [\n            \"openid\",\n            \"email\"\n        ],\n        \"ResponseType\": \"id_token\",\n        \"ResponseMode\": \"form_post\",\n        \"MappingFiled\": \"sub\",\n        \"Status\": 11,\n        \"RequestId\": \"e00eaca1-57b4-49e7-978d-648c5f1b9bd3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"描述信息\",\n        \"ProviderType\": 12,\n        \"IdentityUrl\": \"https://tencent.auth**.cn/\",\n        \"IdentityKey\": \"ewogICAgImtleXMiOiBbC****\",\n        \"ClientId\": \"61adcf00620c31e3d***\",\n        \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n        \"Scope\": [\n            \"openid\",\n            \"email\"\n        ],\n        \"ResponseType\": \"id_token\",\n        \"ResponseMode\": \"form_post\",\n        \"MappingFiled\": \"sub\",\n        \"Status\": 11,\n        \"AutoRotateKey\": 1,\n        \"RequestId\": \"e00eaca1-57b4-49e7-978d-648c5f1b9bd3\"\n    }\n}",
         "title": "获取用户OIDC配置"
       }
     ],
@@ -735,7 +735,7 @@
     "UpdateUserOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth**.com\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"key\",\n    \"ClientId\": \"cbaefefes9823***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.com\",\n    \"Scope\": [\n        \"email\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth**.com\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"key\",\n    \"ClientId\": \"cbaefefes9823***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.com\",\n    \"Scope\": [\n        \"email\"\n    ],\n    \"AutoRotateKey\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"10a20884-070e-48a8-aa40-9ed295a33ea2\"\n    }\n}",
         "title": "修改用户OIDC配置"
       }

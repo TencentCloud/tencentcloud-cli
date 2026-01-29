@@ -70,6 +70,13 @@
       "output": "InquirePriceRunInstancesResponse",
       "status": "online"
     },
+    "InquirePriceUpdateServiceConfigs": {
+      "document": "本接口(InquirePriceUpdateServiceConfigs)用于更新服务配置询价",
+      "input": "InquirePriceUpdateServiceConfigsRequest",
+      "name": "更新服务配置询价",
+      "output": "InquirePriceUpdateServiceConfigsResponse",
+      "status": "online"
+    },
     "ResetInstancesPassword": {
       "document": "本接口 (ResetInstancesPassword) 用于重置实例的用户密码。",
       "input": "ResetInstancesPasswordRequest",
@@ -858,6 +865,33 @@
           "document": "发货参数对应的价格组合，当DryRun=True，会返回空",
           "example": "{\"Price\":{\"CloudDiskPrice\":{\"DiscountUnitPrice\":0.01,\"UnitPrice\":0.01},\"InstancePrice\":{\"DiscountUnitPrice\":1,\"UnitPrice\":1}}}",
           "member": "Price",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceUpdateServiceConfigsRequest": {
+      "document": "InquirePriceUpdateServiceConfigs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "InquirePriceUpdateServiceConfigsResponse": {
+      "document": "InquirePriceUpdateServiceConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发货参数对应的价格组合。",
+          "example": "无",
+          "member": "ServicePriceDetail",
           "name": "Price",
           "output_required": true,
           "type": "object",
@@ -1747,6 +1781,22 @@
         }
       ],
       "usage": "both"
+    },
+    "ServicePriceDetail": {
+      "document": "推理集群费用数据结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推理集群价格信息\t",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "ServicePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StartInstanceRequest": {
       "document": "StartInstance请求参数结构体",

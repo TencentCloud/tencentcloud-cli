@@ -5824,11 +5824,20 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "MasterZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
           "required": false,
           "type": "string"
         }

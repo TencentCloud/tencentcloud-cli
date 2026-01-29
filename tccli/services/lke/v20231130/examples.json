@@ -711,7 +711,7 @@
     "ModifyDocAttrRange": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1742501052613230592\",\n    \"DocBizIds\": [\n        \"1747174616331976704\"\n    ],\n    \"AttrLabels\": [\n        {\n            \"AttributeBizId\": \"1759039436899221504\",\n            \"Source\": 1,\n            \"LabelBizIds\": [\n                \"0\"\n            ]\n        }\n    ],\n    \"AttrRange\": 2\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDocAttrRange\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1742501052613230592\",\n    \"DocBizIds\": [\n        \"1747174616331976704\"\n    ],\n    \"AttrLabels\": [\n        {\n            \"AttributeBizId\": \"1759039436899221504\",\n            \"Source\": 1,\n            \"LabelBizIds\": [\n                \"0\"\n            ]\n        }\n    ],\n    \"AttrRange\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3338103-3165-49c0-b218-245be865cca5\"\n    }\n}",
         "title": "批量修改文档的适用范围"
       }

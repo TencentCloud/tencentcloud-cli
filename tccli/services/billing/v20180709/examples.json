@@ -613,6 +613,14 @@
         "output": "{\n    \"Response\": {\n        \"OrderIdList\": [\n            \"20251201*********\"\n        ],\n        \"RequestId\": \"9792e525-4002-4fb2-8a35-74ebf854bee7\"\n    }\n}",
         "title": "续费实例"
       }
+    ],
+    "SetRenewal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetRenewal\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_cos\",\n    \"RegionCode\": \"ap-others\",\n    \"InstanceId\": \"std_storage-20240902185001827926251-1\",\n    \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n    \"RenewPeriod\": \"3\",\n    \"RenewPeriodUnit\": \"m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [],\n        \"RequestId\": \"6a5c90f0-10e8-4586-97f7-abafa2e46dcf\"\n    }\n}",
+        "title": "示例 1"
+      }
     ]
   },
   "version": "1.0"

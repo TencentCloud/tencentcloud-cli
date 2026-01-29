@@ -942,6 +942,14 @@
         "title": "示例-普通企业绑定角色"
       }
     ],
+    "CreateLMInformationExtractionTaskFieldFeedback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLMInformationExtractionTaskFieldFeedback\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtGEUUxxxmcwqRz\"\n    },\n    \"Id\": \"yDxxxx\",\n    \"Feedback\": {\n        \"Result\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1757576271425719631\"\n    }\n}",
+        "title": "创建合同智能提取结果字段反馈"
+      }
+    ],
     "CreateLegalSealQrCode": [
       {
         "document": "获取创建法人章二维码",
@@ -1210,6 +1218,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"NeedRelievedFlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"RelievedApproverReceiptId\": \"yDRSRUUgygj6rqouUuO4zjESlnSFPcIE\",\n            \"ApproverSignRole\": \"自定义的签署方角色(供应商)\",\n            \"ApproverSignComponentType\": \"SIGN_SIGNATURE\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方以作赔偿\",\n        \"OriginalOtherSettlement\": \"原合同中的补充条款依然生效\",\n        \"OtherDeals\": \"解除后1天内部签署新的合同\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwgkUU7y***********zWBfv\",\n        \"RequestId\": \"s1688099393764508839\"\n    }\n}",
         "title": "发起解除协议（替换原流程中本企业的参与人并指定签署人角色、签署控件）"
+      }
+    ],
+    "CreateRiskIdentificationTaskFeedback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRiskIdentificationTaskFeedback\n<公共请求参数>\n\n{\n    \"RiskId\": \"yDtzlUUckpfqqvp9Uxx\",\n    \"FeedbackResult\": 2,\n    \"Reason\": \"审查不准确\",\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3o2rzmUxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1763618858585513085\"\n    }\n}",
+        "title": "创建合同审查任务反馈"
       }
     ],
     "CreateSchemeUrl": [
@@ -1870,6 +1886,14 @@
         "title": "示例-查询企业角色列表（返回角色对应的权限树）"
       }
     ],
+    "DescribeLMInformationExtractionTaskFieldFeedback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLMInformationExtractionTaskFieldFeedback\n<公共请求参数>\n\n{\n    \"TaskId\": \"yDtzNUUckpf2nfh6UEcTcQVvNxxx\",\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3o2rzmUxHsV0xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1763690910938836088\",\n        \"SubTaskFeedbackList\": [\n            {\n                \"FeedbackList\": [\n                    {\n                        \"Id\": \"yDtzNUUckpf2nfh7UEcTcQVCcnmxgiuu\",\n                        \"Info\": {\n                            \"Reason\": {\n                                \"ReasonContent\": \"\",\n                                \"ReasonType\": 0\n                            },\n                            \"Result\": 0\n                        }\n                    }\n                ],\n                \"SubTaskId\": \"yDtzNUUckpf2nfheUEcTcQVydamvsAeY\"\n            }\n        ],\n        \"TaskId\": \"yDtzNUUckpf2nfh6UEcTcQVvNViPazOG\"\n    }\n}",
+        "title": "查询合同智能提取任务字段反馈"
+      }
+    ],
     "DescribeOrganizationAuthStatus": [
       {
         "document": "查询企业认证状态",
@@ -1920,6 +1944,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePersonCertificate\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"Agent\": {},\n    \"UserInfo\": {\n        \"IdCardType\": \"ID_CARD\",\n        \"Name\": \"张三\",\n        \"IdCardNumber\": \"37000019890303000X\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied\",\n            \"Message\": \"个人未开通自动签\"\n        },\n        \"RequestId\": \"s169529xxxxx135883849\"\n    }\n}",
         "title": "查询个人自动签证书-用户未开通自动签"
+      }
+    ],
+    "DescribeRiskIdentificationTaskFeedback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskIdentificationTaskFeedback\n<公共请求参数>\n\n{\n    \"TaskId\": \"yDtzlUUckpfqqv89Ux7RXxxx\",\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3o2rzmUxHsV0xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FeedbackList\": [\n            {\n                \"FeedbackResult\": 0,\n                \"Reason\": \"\",\n                \"RiskId\": \"yDtzlUUckpfqqvn7Ux7RX5xxx\"\n            },\n            {\n                \"FeedbackResult\": 2,\n                \"Reason\": \"审查不准确\",\n                \"RiskId\": \"yDtzlUUckpfqqvp9Uxxx\"\n            }\n        ],\n        \"RequestId\": \"676edecf-3176-4c29-a235-a58f233a6265\"\n    }\n}",
+        "title": "查询合同审查任务反馈信息"
       }
     ],
     "DescribeSignFaceVideo": [

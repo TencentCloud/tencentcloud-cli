@@ -468,6 +468,13 @@
       "name": "续费实例",
       "output": "RenewInstanceResponse",
       "status": "online"
+    },
+    "SetRenewal": {
+      "document": "注意事项：\n1、本接口支持对包年包月实例设置自动续费模式及周期\n2、可通过实例查询接口获取到产品编码、地域编码\n3、子用户使用该接口时，应具备QcloudFinanceRenewManageFullAccess权限策略。",
+      "input": "SetRenewalRequest",
+      "name": "设置续费参数",
+      "output": "SetRenewalResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -17606,6 +17613,42 @@
       ],
       "type": "object"
     },
+    "OperateRsp": {
+      "document": "资源操作返回详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度操作失败code码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源操作失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OrderDto": {
       "document": "字段排序",
       "members": [
@@ -18371,6 +18414,88 @@
           "example": "[\"20251201**********\"]",
           "member": "string",
           "name": "OrderIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetRenewalRequest": {
+      "document": "SetRenewal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品编码。",
+          "example": "p_cos",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域编码。",
+          "example": "ap-others",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID，仅支持指定一个。",
+          "example": "std_storage-20240902185001827926251-1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费标识。枚举值如下：\nNOTIFY_AND_MANUAL_RENEW：手动续费\nNOTIFY_AND_AUTO_RENEW：自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：到期不续",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费周期长度，不填写时默认按产品侧设置的默认值\n如果是月，支持：1-11\n如果是年，支持：1-5\n实际按产品侧支持的范围为主",
+          "example": "3",
+          "member": "string",
+          "name": "RenewPeriod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费周期单位，不填写时默认按产品侧设置的默认值\ny 年，m 月\n实际按产品侧支持的范围为主",
+          "example": "m",
+          "member": "string",
+          "name": "RenewPeriodUnit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetRenewalResponse": {
+      "document": "SetRenewal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作失败时的实例列表。",
+          "example": "无",
+          "member": "OperateRsp",
+          "name": "InstanceList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

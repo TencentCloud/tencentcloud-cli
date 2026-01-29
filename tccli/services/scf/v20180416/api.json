@@ -5616,7 +5616,7 @@
         {
           "disabled": false,
           "document": "Trigger信息",
-          "example": "{\"Apigw\":10,\"Ckafka\":10,\"Clb\":10,\"Cls\":10,\"Cm\":10,\"Cmq\":10,\"Cos\":10,\"Eb\":10,\"Mps\":10,\"Timer\":10,\"Total\":110,\"Vod\":10}",
+          "example": "无",
           "member": "TriggerCount",
           "name": "Trigger",
           "output_required": true,

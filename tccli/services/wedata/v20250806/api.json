@@ -24,7 +24,7 @@
     "AuthorizePrivileges": {
       "document": "Catalog模式下授权",
       "input": "AuthorizePrivilegesRequest",
-      "name": "Wedata3.0-Catalog模式下授权",
+      "name": "授权",
       "output": "AuthorizePrivilegesResponse",
       "status": "online"
     },
@@ -1060,7 +1060,7 @@
     "RevokePrivileges": {
       "document": "Catalog模式下授权回收",
       "input": "RevokePrivilegesRequest",
-      "name": "Wedata3.0-Catalog模式下授权回收",
+      "name": "回收权限",
       "output": "RevokePrivilegesResponse",
       "status": "online"
     },
@@ -13640,7 +13640,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源\nResourceType：来源于TCCATALOG模块的GetGrantPrivilegesSTD接口中返回的ResourceType，并改为首字母大写，例如METALAKE对应Metalake\nResourceUri，取决于 ResourceType，Metalake时固定为default，其他类别采用catalog的三段式结构，例如\n- Metalake，固定为default\n- Catalog，取catalogName\n- Schema，取catalogName.SchemaName\n- Table,，取catalogName.SchemaName.TableName",
+          "document": "资源\nResourceType：来源于TCCATALOG模块的GetGrantPrivilegesSTD接口中返回的ResourceType，并改为首字母大写，例如METALAKE对应Metalake\nResourceUri，取决于 ResourceType，Metalake时固定为default，其他类别采用catalog的三段式结构，例如\n- Metalake，固定为default\n- Catalog，取catalogName\n- Schema，取catalogName.SchemaName\n- Table，取catalogName.SchemaName.TableName",
           "example": "无",
           "member": "PrivilegeResource",
           "name": "Resource",

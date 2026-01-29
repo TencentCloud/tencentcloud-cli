@@ -17479,7 +17479,7 @@
         },
         {
           "disabled": false,
-          "document": "容量",
+          "document": "存储用量",
           "example": "1.0",
           "member": "float",
           "name": "SpaceUsedSize",
@@ -17535,6 +17535,16 @@
           "name": "Status",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管存储桶标签列表",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -20141,6 +20151,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限来源是否为管理员",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAdminPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21260,6 +21281,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表过期策略",
+          "example": "",
+          "member": "TableExpirationPolicy",
+          "name": "TableExpiration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -23409,6 +23441,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TableExpirationPolicy": {
+      "document": "表过期策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用策略",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表过期时间，单位：天",
+          "example": "30",
+          "member": "uint64",
+          "name": "Expiration",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -189,6 +189,13 @@
       "output": "DescribeDataReportCountResponse",
       "status": "online"
     },
+    "DescribeDataReportCountV2": {
+      "document": "获取项目上报量",
+      "input": "DescribeDataReportCountV2Request",
+      "name": "获取上报量v2",
+      "output": "DescribeDataReportCountV2Response",
+      "status": "online"
+    },
     "DescribeDataSetUrlStatistics": {
       "document": "获取DescribeDataSetUrlStatistics信息",
       "input": "DescribeDataSetUrlStatisticsRequest",
@@ -4033,6 +4040,79 @@
           "disabled": false,
           "document": "返回值",
           "example": "\"{\\\"request_id\\\":\\\"dc0ca023-0c87-4ab2-aee2-fde2aa196e9e\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":1,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataReportCountV2Request": {
+      "document": "DescribeDataReportCountV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）",
+          "example": "custom",
+          "member": "string",
+          "name": "ReportType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rum-abc",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataReportCountV2Response": {
+      "document": "DescribeDataReportCountV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
