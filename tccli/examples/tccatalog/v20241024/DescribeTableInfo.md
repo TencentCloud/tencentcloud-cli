@@ -152,7 +152,8 @@ Output:
                     "Key": "owner",
                     "Value": "zYBEmJFg"
                 }
-            ]
+            ],
+            "TableType": "Managed"
         }
     }
 }

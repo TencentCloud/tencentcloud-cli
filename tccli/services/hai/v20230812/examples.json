@@ -80,6 +80,14 @@
         "title": "发货询价"
       }
     ],
+    "InquirePriceUpdateServiceConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceUpdateServiceConfigs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"ServicePrice\": {\n                \"Amount\": 1,\n                \"ChargeUnit\": \"HOUR\",\n                \"Discount\": 100,\n                \"DiscountPrice\": 33.38,\n                \"OriginPrice\": 33.38\n            }\n        },\n        \"RequestId\": \"6246e723-1260-4bbe-bede-ae2267769e56\"\n    }\n}",
+        "title": "InquirePriceUpdateServiceConfigs"
+      }
+    ],
     "ResetInstancesPassword": [
       {
         "document": "实例重置密码",

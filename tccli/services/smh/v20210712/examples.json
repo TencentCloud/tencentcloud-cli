@@ -3,7 +3,7 @@
     "CreateLibrary": [
       {
         "document": "创建媒体库",
-        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLibrary\n<公共请求参数>\n\n{\n    \"Name\": \"名称\",\n    \"Remark\": \"备注\",\n    \"LibraryExtension\": {\n        \"IsFileLibrary\": \"true\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLibrary\n<公共请求参数>\n\n{\n    \"Name\": \"名称\",\n    \"Remark\": \"备注\",\n    \"LibraryExtension\": {\n        \"IsFileLibrary\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"LibraryId\": \"smh0q8nrvsg7t6y6\",\n        \"RequestId\": \"1586674e-e04c-4315-943a-c282b5f8ed6b\"\n    }\n}",
         "title": "创建媒体库"
       }
@@ -59,7 +59,7 @@
     "ModifyLibrary": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibrary\n<公共请求参数>\n\n{\n    \"Remark\": \"新备注\",\n    \"LibraryId\": \"smh1jjexrwwoa9ok\",\n    \"LibraryExtension\": {\n        \"EnableFileHistory\": \"true\",\n        \"UseRecycleBin\": \"true\"\n    },\n    \"Name\": \"新名字\"\n}",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibrary\n<公共请求参数>\n\n{\n    \"Remark\": \"新备注\",\n    \"LibraryId\": \"smh1jjexrwwoa9ok\",\n    \"LibraryExtension\": {\n        \"EnableFileHistory\": true,\n        \"UseRecycleBin\": true\n    },\n    \"Name\": \"新名字\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dfefe57-2188-4e66-b5ef-07e493b003ce\"\n    }\n}",
         "title": "修改媒体库配置项"
       }

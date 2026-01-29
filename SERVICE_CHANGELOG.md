@@ -1,10 +1,10 @@
-# Release 3.0.1358.1
+# Release 3.0.1359.1
 
-## Agent 沙箱服务(ags) 版本：2025-09-20
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 4 次发布
+### 第 111 次发布
 
-发布时间：2026-01-29 01:07:40
+发布时间：2026-01-30 01:12:15
 
 本次发布包含了以下内容：
 
@@ -12,129 +12,19 @@
 
 新增接口：
 
-* [PauseSandboxInstance](http://document.tencentcloudapi.woa.com/document/product/1804/88791)
-* [ResumeSandboxInstance](http://document.tencentcloudapi.woa.com/document/product/1804/88790)
-
-
-
-## 云应用(cloudapp) 版本：2022-05-30
-
-### 第 9 次发布
-
-发布时间：2026-01-29 01:22:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [License](http://document.tencentcloudapi.woa.com/document/product/1767/84242#License)
-
-	* 新增成员：ProviderUin, CreateSource
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 128 次发布
-
-发布时间：2026-01-29 01:54:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [SetRenewal](http://document.tencentcloudapi.woa.com/document/product/555/88803)
 
 新增数据结构：
 
-* [AiParametersAttribute](http://document.tencentcloudapi.woa.com/document/product/589/33981#AiParametersAttribute)
-
-修改数据结构：
-
-* [AIExtParameters](http://document.tencentcloudapi.woa.com/document/product/589/33981#AIExtParameters)
-
-	* 新增成员：ConfType, ConfValueList, Attribute
+* [OperateRsp](http://document.tencentcloudapi.woa.com/document/product/555/19183#OperateRsp)
 
 
 
+## 应用云渲染(car) 版本：2022-01-10
 
-## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+### 第 15 次发布
 
-### 第 24 次发布
-
-发布时间：2026-01-29 01:58:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CancelLoadTask](http://document.tencentcloudapi.woa.com/document/product/1716/88797)
-* [CreateLoadTask](http://document.tencentcloudapi.woa.com/document/product/1716/88796)
-* [DescribeLoadTask](http://document.tencentcloudapi.woa.com/document/product/1716/88795)
-* [ListLoadTasks](http://document.tencentcloudapi.woa.com/document/product/1716/88794)
-* [UpdateLoadTaskPriority](http://document.tencentcloudapi.woa.com/document/product/1716/88793)
-
-新增数据结构：
-
-* [DistributedLoadAttrs](http://document.tencentcloudapi.woa.com/document/product/1716/81241#DistributedLoadAttrs)
-* [LoadTaskAttrs](http://document.tencentcloudapi.woa.com/document/product/1716/81241#LoadTaskAttrs)
-* [LoadTaskCreationAttrs](http://document.tencentcloudapi.woa.com/document/product/1716/81241#LoadTaskCreationAttrs)
-* [MetadataLoadAttrs](http://document.tencentcloudapi.woa.com/document/product/1716/81241#MetadataLoadAttrs)
-
-
-
-## 高性能应用服务(hai) 版本：2023-08-12
-
-### 第 18 次发布
-
-发布时间：2026-01-29 02:00:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [UpdateServiceConfigs](http://document.tencentcloudapi.woa.com/document/product/1750/88799)
-
-
-
-## 智能导诊(ig) 版本：2021-05-18
-
-### 第 2 次发布
-
-发布时间：2026-01-29 02:01:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetLLMDiagnosisDrug](http://document.tencentcloudapi.woa.com/document/product/1779/88801)
-* [QueryDrugInstructions](http://document.tencentcloudapi.woa.com/document/product/1779/88800)
-
-新增数据结构：
-
-* [DrugCardInfo](http://document.tencentcloudapi.woa.com/document/product/1779/88802#DrugCardInfo)
-* [DrugInstructionInfo](http://document.tencentcloudapi.woa.com/document/product/1779/88802#DrugInstructionInfo)
-* [GuessQuestion](http://document.tencentcloudapi.woa.com/document/product/1779/88802#GuessQuestion)
-* [HighlightWordInfo](http://document.tencentcloudapi.woa.com/document/product/1779/88802#HighlightWordInfo)
-* [LLMDiagnosisDrugData](http://document.tencentcloudapi.woa.com/document/product/1779/88802#LLMDiagnosisDrugData)
-* [ReferResourceInfo](http://document.tencentcloudapi.woa.com/document/product/1779/88802#ReferResourceInfo)
-* [StandardDrugCardInfo](http://document.tencentcloudapi.woa.com/document/product/1779/88802#StandardDrugCardInfo)
-* [StandardDrugInstructionInfo](http://document.tencentcloudapi.woa.com/document/product/1779/88802#StandardDrugInstructionInfo)
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 147 次发布
-
-发布时间：2026-01-29 02:16:05
+发布时间：2026-01-30 01:15:27
 
 本次发布包含了以下内容：
 
@@ -142,25 +32,150 @@
 
 修改接口：
 
-* [CreateProcessImageTemplate](http://document.tencentcloudapi.woa.com/document/product/862/88149)
+* [CreateApplication](http://document.tencentcloudapi.woa.com/document/product/1710/81861)
 
-	* 新增入参：StdExtInfo
+	* 新增入参：ApplicationTags
 
+
+新增数据结构：
+
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1710/81862#Tag)
 
 修改数据结构：
 
-* [ScheduleQualityControlTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleQualityControlTaskResult)
+* [UserApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationInfo)
 
-	* 新增成员：Progress
+	* 新增成员：ApplicationTags
+
+* [UserMobileApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserMobileApplicationInfo)
+
+	* 新增成员：ApplicationTags
 
 
 
 
-## 容器安全服务(tcss) 版本：2020-11-01
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 48 次发布
+### 第 157 次发布
 
-发布时间：2026-01-29 02:30:27
+发布时间：2026-01-30 01:16:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloneInstance](http://document.tencentcloudapi.woa.com/document/product/236/50424)
+
+	* 新增入参：Zone
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 148 次发布
+
+发布时间：2026-01-30 01:33:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [TableExpirationPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableExpirationPolicy)
+
+修改数据结构：
+
+* [LakeFsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFsInfo)
+
+	* 新增成员：TagList
+
+* [Policy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#Policy)
+
+	* 新增成员：IsAdminPolicy
+
+* [SmartOptimizerPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SmartOptimizerPolicy)
+
+	* 新增成员：TableExpiration
+
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 19 次发布
+
+发布时间：2026-01-30 01:43:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InquirePriceUpdateServiceConfigs](http://document.tencentcloudapi.woa.com/document/product/1750/88804)
+
+新增数据结构：
+
+* [ServicePriceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ServicePriceDetail)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 45 次发布
+
+发布时间：2026-01-30 02:03:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDataReportCountV2](http://document.tencentcloudapi.woa.com/document/product/1464/88805)
+
+
+
+## 统一Catalog服务(tccatalog) 版本：2024-10-24
+
+### 第 8 次发布
+
+发布时间：2026-01-30 02:07:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [PostgreSQLConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#PostgreSQLConnection)
+
+修改数据结构：
+
+* [ColumnInfo](http://document.tencentcloudapi.woa.com/document/product/1785/85705#ColumnInfo)
+
+	* 新增成员：TypeText
+
+* [ConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#ConnectionConfig)
+
+	* 新增成员：PostgreSQLConnection
+
+* [TableInfo](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TableInfo)
+
+	* 新增成员：TableType
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 119 次发布
+
+发布时间：2026-01-30 02:18:08
 
 本次发布包含了以下内容：
 
@@ -168,10 +183,33 @@
 
 修改数据结构：
 
-* [AssetClusterListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#AssetClusterListItem)
+* [SliceParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#SliceParams)
 
-	* 新增成员：ClusterAuditStatus, AccessedStatus
+	* 新增成员：SliceImageType
 
+
+
+
+## 腾讯混元生视频(vclm) 版本：2024-05-23
+
+### 第 12 次发布
+
+发布时间：2026-01-30 02:19:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SubmitVideoEditJob](http://document.tencentcloudapi.woa.com/document/product/1766/88563)
+
+	* 新增入参：VideoEditParam
+
+
+新增数据结构：
+
+* [VideoEditParam](http://document.tencentcloudapi.woa.com/document/product/1766/87515#VideoEditParam)
 
 
 

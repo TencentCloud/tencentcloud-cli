@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb UpgradeDbInstanceVersion --cli-unfold-argument  \
-    --InstanceId cmgo-p8vnipr5 \
+    --InstanceId cmgo-p8vn**** \
     --MongoVersion MONGO_42_WT
 ```
 

@@ -8,7 +8,7 @@ Input:
 tccli smh CreateLibrary --cli-unfold-argument  \
     --Name 名称 \
     --Remark 备注 \
-    --LibraryExtension.IsFileLibrary true
+    --LibraryExtension.IsFileLibrary True
 ```
 
 Output: 

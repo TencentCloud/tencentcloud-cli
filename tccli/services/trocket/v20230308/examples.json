@@ -234,10 +234,10 @@
     ],
     "DescribeClusterListOp": [
       {
-        "document": "1",
+        "document": "查询集群列表",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Code\": 20000,\n    \"DataSources\": 0,\n    \"Message\": \"OK!\",\n    \"RequestId\": \"85bf89ac-aa06-49bc-9b5e-xxx\",\n    \"Response\": {\n        \"RequestId\": \"85bf89ac-aa06-49bc-9b5e-ed8a6ad11b04\"\n    },\n    \"TotalCount\": 49\n}",
-        "title": "1"
+        "title": "查询集群列表"
       }
     ],
     "DescribeConsumerClient": [

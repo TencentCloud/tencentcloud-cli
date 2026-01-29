@@ -2999,7 +2999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询起始位置，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3008,8 +3008,8 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量",
-          "example": "10",
+          "document": "查询结果限制数量，默认20。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3027,7 +3027,7 @@
         {
           "disabled": false,
           "document": "集群类型列表",
-          "example": "无",
+          "example": "[\"Broker\"]",
           "member": "string",
           "name": "ClusterTypes",
           "required": false,
@@ -3036,7 +3036,7 @@
         {
           "disabled": false,
           "document": "是否包含已删除数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "HasDeletedData",
           "required": false,
@@ -3045,7 +3045,7 @@
         {
           "disabled": false,
           "document": "room名",
-          "example": "无",
+          "example": "cd-room-test1",
           "member": "string",
           "name": "RoomName",
           "required": false,
@@ -3063,7 +3063,7 @@
         {
           "disabled": false,
           "document": "集群名",
-          "example": "无",
+          "example": "rmq-shsdwe8ksdr",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -3081,7 +3081,7 @@
         {
           "disabled": false,
           "document": "共享or独占",
-          "example": "无",
+          "example": "共享",
           "member": "string",
           "name": "ShareType",
           "required": false,

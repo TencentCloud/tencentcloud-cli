@@ -2128,6 +2128,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型sqlType格式",
+          "example": "",
+          "member": "string",
+          "name": "TypeText",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2215,7 +2226,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "内置hive数据",
           "example": "复杂类型",
           "member": "TccConnection",
@@ -2226,7 +2237,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "wedata模型数据目录连接信息",
           "example": "{\"Url\":\"http://1.0.0.0\"}",
           "member": "WeDataModelConnection",
@@ -2242,6 +2253,17 @@
           "example": "复杂类型",
           "member": "LakeHouseConnection",
           "name": "LakeHouseConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PostgreSQL数据源链接信息",
+          "example": "",
+          "member": "PostgreSQLConnection",
+          "name": "PostgreSQLConnection",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -6714,7 +6736,7 @@
         {
           "disabled": false,
           "document": "table 信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Name\":\"user\",\"Comment\":\"user 表信息\"}",
+          "example": "无",
           "member": "TableInfo",
           "name": "Table",
           "output_required": false,
@@ -12553,6 +12575,100 @@
       ],
       "usage": "both"
     },
+    "PostgreSQLConnection": {
+      "document": "PostgreSQL连接参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名字",
+          "example": "",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络信息",
+          "example": "",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Privilege": {
       "document": "具体权限信息",
       "members": [
@@ -14545,6 +14661,16 @@
           "example": "",
           "member": "string",
           "name": "FormatType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表类型：内部表、外部表",
+          "example": "",
+          "member": "string",
+          "name": "TableType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

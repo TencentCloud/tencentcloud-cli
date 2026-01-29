@@ -84,3 +84,52 @@ Output:
 }
 ```
 
+**Example 2: 示例二**
+
+携带资源并行度
+
+Input: 
+
+```
+tccli dlc GetOptimizerPolicy --cli-unfold-argument  \
+    --SmartPolicy.BaseInfo.Uin 1000******03 \
+    --SmartPolicy.BaseInfo.PolicyType Catalog \
+    --SmartPolicy.BaseInfo.Catalog wd_catalog09
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SmartOptimizerPolicy": {
+            "Inherit": "none",
+            "Resources": [
+                {
+                    "AttributionType": "group",
+                    "Name": "test_qzzhu",
+                    "ResourceConf": {
+                        "Parallelism": 16
+                    },
+                    "ResourceGroupName": "",
+                    "ResourceType": "BATCH"
+                }
+            ],
+            "Written": {
+                "AdvancePolicy": {
+                    "BeforeDays": 7,
+                    "CompactEnable": "enable",
+                    "DeleteEnable": "enable",
+                    "ExpiredSnapshotsIntervalMin": 60,
+                    "MinInputFiles": 12,
+                    "RemoveOrphanIntervalMin": 1440,
+                    "RetainLast": 1,
+                    "TargetFileSizeBytes": 134217728
+                },
+                "WrittenEnable": "enable"
+            }
+        },
+        "RequestId": "cd4428b4-68fd-4738-9715-018882120a3f"
+    }
+}
+```
+

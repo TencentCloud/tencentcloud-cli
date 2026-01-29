@@ -1,6 +1,6 @@
-**Example 1: 1**
+**Example 1: 查询集群列表**
 
-1
+查询集群列表
 
 Input: 
 

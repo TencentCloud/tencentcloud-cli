@@ -83,7 +83,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体库名称，最多 50 个字符",
+          "document": "<p>媒体库名称，最多 50 个字符</p>",
           "example": "家庭云盘",
           "member": "string",
           "name": "Name",
@@ -92,7 +92,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，最多 250 个字符",
+          "document": "<p>备注，最多 250 个字符</p>",
           "example": "用于家庭内部共享",
           "member": "string",
           "name": "Remark",
@@ -101,7 +101,7 @@
         },
         {
           "disabled": false,
-          "document": "存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。",
+          "document": "<p>存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。</p>",
           "example": "demo-bucket-13000000000",
           "member": "string",
           "name": "BucketName",
@@ -110,7 +110,7 @@
         },
         {
           "disabled": false,
-          "document": "存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。",
+          "document": "<p>存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
@@ -119,7 +119,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库配置项，部分参数新建后不可更改",
+          "document": "<p>媒体库配置项，部分参数新建后不可更改</p>",
           "example": "无",
           "member": "LibraryExtension",
           "name": "LibraryExtension",
@@ -134,7 +134,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体库 ID",
+          "document": "<p>媒体库 ID</p>",
           "example": "smhfoobar",
           "member": "string",
           "name": "LibraryId",
@@ -1039,7 +1039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体库 ID",
+          "document": "<p>媒体库 ID</p>",
           "example": "smh3ptyc9mscifdi",
           "member": "string",
           "name": "LibraryId",
@@ -1048,7 +1048,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库名称，最多 50 个字符。如不传则不修改。",
+          "document": "<p>媒体库名称，最多 50 个字符。如不传则不修改。</p>",
           "example": "家庭云盘",
           "member": "string",
           "name": "Name",
@@ -1057,7 +1057,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，最多 250 个字符。如不传则不修改。",
+          "document": "<p>备注，最多 250 个字符。如不传则不修改。</p>",
           "example": "用于家庭内部共享",
           "member": "string",
           "name": "Remark",
@@ -1066,7 +1066,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。",
+          "document": "<p>媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。</p>",
           "example": "无",
           "member": "LibraryExtension",
           "name": "LibraryExtension",

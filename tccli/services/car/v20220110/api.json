@@ -294,7 +294,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "并发包ID",
+          "document": "<p>并发包ID</p>",
           "example": "cac-j6x242r6",
           "member": "string",
           "name": "ConcurrentId",
@@ -311,7 +311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "\"cap-op8pfan8\"",
           "member": "string",
           "name": "ProjectId",
@@ -322,7 +322,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称",
+          "document": "<p>项目名称</p>",
           "example": "\"project_name\"",
           "member": "string",
           "name": "Name",
@@ -333,7 +333,7 @@
         },
         {
           "disabled": false,
-          "document": "项目描述",
+          "document": "<p>项目描述</p>",
           "example": "\"project test\"",
           "member": "string",
           "name": "Description",
@@ -344,7 +344,7 @@
         },
         {
           "disabled": false,
-          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清",
+          "document": "<p>项目运行需要的并发类型。<br>S1：小型应用云渲染并发<br>M1：中型应用云渲染并发<br>L1：大型应用云渲染并发<br>L2：大型应用云渲染并发<br>XL2：超大型应用云渲染并发<br>MM1_HD：性能型云ARM并发-高清<br>MM1_FHD：性能型云ARM并发-超清</p>",
           "example": "L1",
           "member": "string",
           "name": "Type",
@@ -355,7 +355,7 @@
         },
         {
           "disabled": false,
-          "document": "云应用ID",
+          "document": "<p>云应用ID</p>",
           "example": "\"app-a1b2c3d4\"",
           "member": "string",
           "name": "ApplicationId",
@@ -366,7 +366,7 @@
         },
         {
           "disabled": false,
-          "document": "预启动",
+          "document": "<p>预启动</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPreload",
@@ -377,7 +377,7 @@
         },
         {
           "disabled": false,
-          "document": "已配置并发数",
+          "document": "<p>已配置并发数</p>",
           "example": "0",
           "member": "int64",
           "name": "Amount",
@@ -388,7 +388,7 @@
         },
         {
           "disabled": false,
-          "document": "使用中的并发数",
+          "document": "<p>使用中的并发数</p>",
           "example": "0",
           "member": "int64",
           "name": "Using",
@@ -399,7 +399,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态，NoConcurrent-未配置并发包，Online-已上线，其他状态为云应用的状态：applicationCreating-创建中，applicationCreateFail-创建失败，applicationDeleting-删除中，applicationNoConfigured-启动参数未配置",
+          "document": "<p>应用状态，NoConcurrent-未配置并发包，Online-已上线，其他状态为云应用的状态：applicationCreating-创建中，applicationCreateFail-创建失败，applicationDeleting-删除中，applicationNoConfigured-启动参数未配置</p>",
           "example": "\"NoConcurrent\"",
           "member": "string",
           "name": "ApplicationStatus",
@@ -410,7 +410,7 @@
         },
         {
           "disabled": false,
-          "document": "应用启动参数",
+          "document": "<p>应用启动参数</p>",
           "example": "\"param -b\"",
           "member": "string",
           "name": "ApplicationParams",
@@ -421,7 +421,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "\"2024-06-20T08:55:38.255Z\"",
           "member": "string",
           "name": "CreateTime",
@@ -432,7 +432,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "\"app_name\"",
           "member": "string",
           "name": "ApplicationName",
@@ -443,7 +443,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率，格式为“宽x高”，例如1920x1080",
+          "document": "<p>分辨率，格式为“宽x高”，例如1920x1080</p>",
           "example": "“1920x1080”",
           "member": "string",
           "name": "Resolution",
@@ -454,7 +454,7 @@
         },
         {
           "disabled": false,
-          "document": "项目类型。\nSHARED：共享，所有应用共享\nEXCLUSIVE（默认值）：独享，一个应用独享",
+          "document": "<p>项目类型。<br>SHARED：共享，所有应用共享<br>EXCLUSIVE（默认值）：独享，一个应用独享</p>",
           "example": "SHARED",
           "member": "string",
           "name": "ProjectType",
@@ -465,7 +465,7 @@
         },
         {
           "disabled": false,
-          "document": "用途。\nEXPERIENCE：体验",
+          "document": "<p>用途。<br>EXPERIENCE：体验</p>",
           "example": "EXPERIENCE",
           "member": "string",
           "name": "Purpose",
@@ -476,8 +476,8 @@
         },
         {
           "disabled": false,
-          "document": "应用分发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔、 eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）",
-          "example": "ap-chinese-mainland",
+          "document": "<p>应用分发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔、 eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）</p>",
+          "example": "[\"ap-chinese-mainland\"]",
           "member": "string",
           "name": "ApplicationRegions",
           "output_required": true,
@@ -487,8 +487,8 @@
         },
         {
           "disabled": false,
-          "document": "并发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔 、eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）",
-          "example": "ap-chinese-mainland",
+          "document": "<p>并发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔 、eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）</p>",
+          "example": "[\"ap-chinese-mainland\"]",
           "member": "string",
           "name": "ConcurrentRegions",
           "output_required": true,
@@ -498,7 +498,7 @@
         },
         {
           "disabled": false,
-          "document": "项目类别。\nDESKTOP: 桌面端，默认值\nMOBILE：移动端",
+          "document": "<p>项目类别。<br>DESKTOP: 桌面端，默认值<br>MOBILE：移动端</p>",
           "example": "MOBILE",
           "member": "string",
           "name": "ProjectCategory",
@@ -664,7 +664,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目名称，用户自定义",
+          "document": "<p>项目名称，用户自定义</p>",
           "example": "南头古城",
           "member": "string",
           "name": "Name",
@@ -673,7 +673,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的应用Id",
+          "document": "<p>绑定的应用Id</p>",
           "example": "app-xacbxs",
           "member": "string",
           "name": "ApplicationId",
@@ -682,7 +682,7 @@
         },
         {
           "disabled": false,
-          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清\nC1_FHD：旗舰型云ARM并发\nC2_FHD：增强型云ARM并发",
+          "document": "<p>项目运行需要的并发类型。<br>S1：小型应用云渲染并发<br>M1：中型应用云渲染并发<br>L1：大型应用云渲染并发<br>L2：大型应用云渲染并发<br>XL2：超大型应用云渲染并发<br>MM1_HD：性能型云ARM并发-高清<br>MM1_FHD：性能型云ARM并发-超清<br>C1_FHD：旗舰型云ARM并发<br>C2_FHD：增强型云ARM并发</p>",
           "example": "L1",
           "member": "string",
           "name": "Type",
@@ -691,7 +691,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启预热，默认为false",
+          "document": "<p>是否开启预热，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPreload",
@@ -700,7 +700,7 @@
         },
         {
           "disabled": false,
-          "document": "应用启动参数",
+          "document": "<p>应用启动参数</p>",
           "example": "-p params",
           "member": "string",
           "name": "ApplicationParams",
@@ -709,7 +709,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率，格式为“宽x高”，例如1920x1080",
+          "document": "<p>分辨率，格式为“宽x高”，例如1920x1080</p>",
           "example": "1920x1080",
           "member": "string",
           "name": "Resolution",
@@ -718,7 +718,7 @@
         },
         {
           "disabled": false,
-          "document": "项目类型。\nSHARED：共享，所有应用共享\nEXCLUSIVE（默认值）：独享，一个应用独享",
+          "document": "<p>项目类型。<br>SHARED：共享，所有应用共享<br>EXCLUSIVE（默认值）：独享，一个应用独享</p>",
           "example": "SHARED",
           "member": "string",
           "name": "ProjectType",
@@ -727,7 +727,7 @@
         },
         {
           "disabled": false,
-          "document": "帧率",
+          "document": "<p>帧率</p>",
           "example": "30",
           "member": "int64",
           "name": "FPS",
@@ -736,7 +736,7 @@
         },
         {
           "disabled": false,
-          "document": "应用等待预期动时长",
+          "document": "<p>应用等待预启动时长</p>",
           "example": "30",
           "member": "string",
           "name": "PreloadDuration",
@@ -745,7 +745,7 @@
         },
         {
           "disabled": false,
-          "document": "等待重连时长",
+          "document": "<p>等待重连时长</p>",
           "example": "10",
           "member": "string",
           "name": "ReconnectTimeout",
@@ -754,7 +754,7 @@
         },
         {
           "disabled": false,
-          "document": "最小码率（单位 Mbps）",
+          "document": "<p>最小码率（单位 Mbps）</p>",
           "example": "0",
           "member": "int64",
           "name": "MinBitrate",
@@ -763,7 +763,7 @@
         },
         {
           "disabled": false,
-          "document": "最大码率（单位 Mbps）",
+          "document": "<p>最大码率（单位 Mbps）</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxBitrate",
@@ -772,7 +772,7 @@
         },
         {
           "disabled": false,
-          "document": "上行音频选项。\nDisableMixIntoStreamPush：推流不混入上行音频\n",
+          "document": "<p>上行音频选项。<br>DisableMixIntoStreamPush：推流不混入上行音频</p>",
           "example": "DisableMixIntoStreamPush",
           "member": "string",
           "name": "UpstreamAudioOption",
@@ -781,7 +781,7 @@
         },
         {
           "disabled": false,
-          "document": "视频编码配置",
+          "document": "<p>视频编码配置</p>",
           "example": "无",
           "member": "VideoEncodeConfig",
           "name": "VideoEncodeConfig",
@@ -790,7 +790,7 @@
         },
         {
           "disabled": false,
-          "document": "XR 应用分辨率上限。\n如果项目的并发类型为 L、L2，最大上限为 5000；如果项目的并发类型为 XL2，最大上限为 6000",
+          "document": "<p>XR 应用分辨率上限。<br>如果项目的并发类型为 L、L2，最大上限为 5000；如果项目的并发类型为 XL2，最大上限为 6000</p>",
           "example": "5000",
           "member": "uint64",
           "name": "XRMaxWidth",
@@ -799,7 +799,7 @@
         },
         {
           "disabled": false,
-          "document": "背景图 COS 文件 Id",
+          "document": "<p>背景图 COS 文件 Id</p>",
           "example": "cf-abcd1234",
           "member": "string",
           "name": "BackgroundImageCOSFileId",
@@ -808,7 +808,7 @@
         },
         {
           "disabled": false,
-          "document": "项目类别。\nDESKTOP: 桌面端，默认值\nMOBILE：移动端",
+          "document": "<p>项目类别。<br>DESKTOP: 桌面端，默认值<br>MOBILE：移动端</p>",
           "example": "MOBILE",
           "member": "string",
           "name": "ProjectCategory",
@@ -817,7 +817,7 @@
         },
         {
           "disabled": false,
-          "document": "禁用编码列表",
+          "document": "<p>禁用编码列表</p>",
           "example": "[\"H265\"]",
           "member": "string",
           "name": "DisableVideoCodecs",
@@ -832,7 +832,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的项目ID",
+          "document": "<p>生成的项目ID</p>",
           "example": "cap-lhze1cs5",
           "member": "string",
           "name": "ProjectId",
@@ -854,7 +854,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "\"app_name\"",
           "member": "string",
           "name": "ApplicationName",
@@ -863,12 +863,21 @@
         },
         {
           "disabled": false,
-          "document": "应用类型（云 3D: Application3D、 云 XR: ApplicationXR、云 APK: ApplicationAPK）",
+          "document": "<p>应用类型（云 3D: Application3D、 云 XR: ApplicationXR、云 APK: ApplicationAPK）</p>",
           "example": "\"Application3D\"",
           "member": "string",
           "name": "ApplicationType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ApplicationTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -878,7 +887,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 Id",
+          "document": "<p>应用 Id</p>",
           "example": "\"app-a1b2c3\"",
           "member": "string",
           "name": "ApplicationId",
@@ -2532,6 +2541,34 @@
       ],
       "type": "object"
     },
+    "Tag": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签键</p>",
+          "example": "qcs:tag:createdBy",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "移动应用3",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UnbindConcurrentPackagesFromProjectRequest": {
       "document": "UnbindConcurrentPackagesFromProject请求参数结构体",
       "members": [
@@ -2599,7 +2636,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 Id",
+          "document": "<p>应用 Id</p>",
           "example": "\"app-r3fsr45g\"",
           "member": "string",
           "name": "ApplicationId",
@@ -2609,7 +2646,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "\"name\"",
           "member": "string",
           "name": "ApplicationName",
@@ -2619,7 +2656,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型（云 3D: Application3D 、 云 XR: ApplicationXR、 云 Web: ApplicationWeb）",
+          "document": "<p>应用类型（云 3D: Application3D 、 云 XR: ApplicationXR、 云 Web: ApplicationWeb）</p>",
           "example": "\"Application3D\"",
           "member": "string",
           "name": "ApplicationType",
@@ -2629,7 +2666,7 @@
         },
         {
           "disabled": false,
-          "document": "应用运行程序路径",
+          "document": "<p>应用运行程序路径</p>",
           "example": "\"applicatoin/bin/xx.exe\"",
           "member": "string",
           "name": "ApplicationExePath",
@@ -2639,7 +2676,7 @@
         },
         {
           "disabled": false,
-          "document": "应用进程列表",
+          "document": "<p>应用进程列表</p>",
           "example": "\"xx.exe|test.exe\"",
           "member": "string",
           "name": "ApplicationInterList",
@@ -2649,7 +2686,7 @@
         },
         {
           "disabled": false,
-          "document": "应用启动参数",
+          "document": "<p>应用启动参数</p>",
           "example": "\"-b -xxx\"",
           "member": "string",
           "name": "ApplicationParams",
@@ -2659,7 +2696,7 @@
         },
         {
           "disabled": false,
-          "document": "应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、ApplicationNoConfigured 主执行程序路径未配置）",
+          "document": "<p>应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、ApplicationNoConfigured 主执行程序路径未配置）</p>",
           "example": "\"ApplicationDeleting\"",
           "member": "string",
           "name": "ApplicationRunStatus",
@@ -2669,7 +2706,7 @@
         },
         {
           "disabled": false,
-          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、ApplicationUpdateNormal 无）",
+          "document": "<p>应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、ApplicationUpdateNormal 无）</p>",
           "example": "\"ApplicationUpdateCreating\"",
           "member": "string",
           "name": "ApplicationUpdateStatus",
@@ -2679,8 +2716,8 @@
         },
         {
           "disabled": false,
-          "document": "应用创建时间",
-          "example": "\"2022-02-15T01:51:55.786Z\"",
+          "document": "<p>应用创建时间</p>",
+          "example": "2024-03-13T06:10:03Z",
           "member": "datetime_iso",
           "name": "ApplicationCreateTime",
           "output_required": true,
@@ -2689,8 +2726,8 @@
         },
         {
           "disabled": false,
-          "document": "应用版本列表",
-          "example": "\"\"",
+          "document": "<p>应用版本列表</p>",
+          "example": "无",
           "member": "UserApplicationVersion",
           "name": "ApplicationVersions",
           "output_required": true,
@@ -2699,8 +2736,8 @@
         },
         {
           "disabled": false,
-          "document": "应用基础数据",
-          "example": "\"\"",
+          "document": "<p>应用基础数据</p>",
+          "example": "无",
           "member": "ApplicationBaseInfo",
           "name": "ApplicationBaseInfo",
           "output_required": true,
@@ -2709,7 +2746,7 @@
         },
         {
           "disabled": false,
-          "document": "应用更新进度",
+          "document": "<p>应用更新进度</p>",
           "example": "100",
           "member": "int64",
           "name": "ApplicationUpdateProgress",
@@ -2719,7 +2756,7 @@
         },
         {
           "disabled": false,
-          "document": "应用性质（PUBLIC 公共应用 、PRIVATE 用户应用）",
+          "document": "<p>应用性质（PUBLIC 公共应用 、PRIVATE 用户应用）</p>",
           "example": "\"PRIVATE\"",
           "member": "string",
           "name": "ApplicationNature",
@@ -2729,10 +2766,20 @@
         },
         {
           "disabled": false,
-          "document": "应用仓库列表",
-          "example": "\"\"",
+          "document": "<p>应用仓库列表</p>",
+          "example": "无",
           "member": "UserApplicationStore",
           "name": "ApplicationStores",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ApplicationTags",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2928,7 +2975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 Id",
+          "document": "<p>应用 Id</p>",
           "example": "\"app-a1b2c3\"",
           "member": "string",
           "name": "ApplicationId",
@@ -2938,7 +2985,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "\"name\"",
           "member": "string",
           "name": "ApplicationName",
@@ -2948,7 +2995,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型（云 APK: ApplicationAPK）",
+          "document": "<p>应用类型（云 APK: ApplicationAPK）</p>",
           "example": "\"ApplicationAPK\"",
           "member": "string",
           "name": "ApplicationType",
@@ -2958,7 +3005,7 @@
         },
         {
           "disabled": false,
-          "document": "应用运行状态（ApplicationRunning 正常运行、ApplicationNoPackage 无可用包体）",
+          "document": "<p>应用运行状态（ApplicationRunning 正常运行、ApplicationNoPackage 无可用包体）</p>",
           "example": "\"ApplicationRunning\"",
           "member": "string",
           "name": "ApplicationRunStatus",
@@ -2968,7 +3015,7 @@
         },
         {
           "disabled": false,
-          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、ApplicationUpdateNormal 无）",
+          "document": "<p>应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、ApplicationUpdateNormal 无）</p>",
           "example": "\"ApplicationUpdateCreating\"",
           "member": "string",
           "name": "ApplicationUpdateStatus",
@@ -2978,8 +3025,8 @@
         },
         {
           "disabled": false,
-          "document": "应用创建时间",
-          "example": "\"2022-02-15T01:51:55.786Z\"",
+          "document": "<p>应用创建时间</p>",
+          "example": "2024-03-13T06:10:03Z",
           "member": "datetime_iso",
           "name": "ApplicationCreateTime",
           "output_required": true,
@@ -2988,8 +3035,8 @@
         },
         {
           "disabled": false,
-          "document": "应用版本列表",
-          "example": "\"\"",
+          "document": "<p>应用版本列表</p>",
+          "example": "无",
           "member": "UserApplicationVersion",
           "name": "ApplicationVersions",
           "output_required": true,
@@ -2998,12 +3045,22 @@
         },
         {
           "disabled": false,
-          "document": "应用性质（PUBLIC 公共应用 、PRIVATE 用户应用）",
+          "document": "<p>应用性质（PUBLIC 公共应用 、PRIVATE 用户应用）</p>",
           "example": "\"PRIVATE\"",
           "member": "string",
           "name": "ApplicationNature",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ApplicationTags",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

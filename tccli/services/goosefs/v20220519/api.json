@@ -2662,7 +2662,7 @@
         },
         {
           "disabled": false,
-          "document": "预热路径，入参单条挂载路径",
+          "document": "预热路径，入参单条挂载路径。入参数LoadType为LoadByPath，该参数不应为空",
           "example": "/goosefs_path/",
           "member": "string",
           "name": "LoadByPath",
@@ -2673,7 +2673,7 @@
         },
         {
           "disabled": false,
-          "document": "通过文件列表批量预热，入参为 cos://bucket-appid/ 开头的 COS 路径，且仅支持 txt 格式文件，长度不能超过255个字符",
+          "document": "通过文件列表批量预热，入参为 cos://bucket-appid/ 开头的 COS 路径，且仅支持 txt 格式文件，长度不能超过255个字符。入参数LoadType为LoadByList，该参数不应为空",
           "example": "cos://goosefs-beijing-**********/api_test/temp/test_distributedload_args_loadbylist_is_file_txt/load_list.txt",
           "member": "string",
           "name": "LoadByList",
@@ -3817,7 +3817,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据预热任务参数，用于仅预热元数据时入参",
+          "document": "元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。",
           "example": "无",
           "member": "MetadataLoadAttrs",
           "name": "MetadataLoadAttrs",
@@ -3827,7 +3827,7 @@
         },
         {
           "disabled": false,
-          "document": "数据预热任务参数",
+          "document": "数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。",
           "example": "无",
           "member": "DistributedLoadAttrs",
           "name": "DistributedLoadAttrs",
@@ -3903,7 +3903,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预热任务类型，枚举值，MetadataLoad｜DistributedLoad",
+          "document": "预热任务类型，枚举值，MetadataLoad｜DistributedLoad。",
           "example": "DistributedLoad",
           "member": "string",
           "name": "TaskType",
@@ -3930,7 +3930,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据预热任务参数，用于仅预热元数据时入参",
+          "document": "元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。",
           "example": "无",
           "member": "MetadataLoadAttrs",
           "name": "MetadataLoadAttrs",
@@ -3939,7 +3939,7 @@
         },
         {
           "disabled": false,
-          "document": "数据预热任务参数",
+          "document": "数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。",
           "example": "无",
           "member": "DistributedLoadAttrs",
           "name": "DistributedLoadAttrs",
@@ -4143,7 +4143,7 @@
         },
         {
           "disabled": false,
-          "document": "预热路径，入参单条挂载路径，长度不能超过255个字符",
+          "document": "预热路径，入参单条挂载路径，长度不能超过255个字符。入参数LoadType为LoadByPath，该参数不应为空",
           "example": "/goosefs_path/",
           "member": "string",
           "name": "LoadByPath",
@@ -4154,7 +4154,7 @@
         },
         {
           "disabled": false,
-          "document": "通过文件列表批量预热，入参为 cos://bucket-appid/ 开头的 COS 路径，且仅支持 txt 格式文件，长度不能超过255个字符",
+          "document": "通过文件列表批量预热，入参为 cos://bucket-appid/ 开头的 COS 路径，且仅支持 txt 格式文件，长度不能超过255个字符。入参数LoadType为LoadByList，该参数不应为空",
           "example": "cos://goosefs-beijing-**********/api_test/temp/test_metadata_args_loadbylist_is_file_csv/*************",
           "member": "string",
           "name": "LoadByList",
