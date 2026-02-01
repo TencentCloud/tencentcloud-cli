@@ -389,7 +389,131 @@ Output:
 }
 ```
 
-**Example 4: 创建含有动态签署人流程，签署方不指定具体的签署人**
+**Example 4: 创建一份签署方拖拽签署区域的合同**
+
+1.签署方包括本方子客企业(需要传递 OrganzationOpenId，和 OpenId)、他方SaaS企业(需要传递 NotChannelOrganization = true)和个人（Approvers中有三个ApproverInfo元素）。
+2.所有签署方企业都不包允许有签署控件。
+3.设置当前流程为可拖拽（SignBeanTag）。
+4.本合同为无序签署（Unordered传递为true）。
+
+Input: 
+
+```
+tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Unordered True \
+    --FlowName 签署时拖拽签署控件合同 \
+    --SignBeanTag 1 \
+    --FlowType 示例合同 \
+    --FlowApprovers.0.ApproverType ORGANIZATION \
+    --FlowApprovers.0.OrganizationOpenId org_dianziqian \
+    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.Name 典子谦 \
+    --FlowApprovers.0.Mobile 13200000000 \
+    --FlowApprovers.0.OpenId n9527 \
+    --FlowApprovers.0.NotifyType NONE \
+    --FlowApprovers.0.PreReadTime 10 \
+    --FlowApprovers.1.ApproverType ORGANIZATION \
+    --FlowApprovers.1.NotChannelOrganization True \
+    --FlowApprovers.1.OrganizationName 张三示例企业 \
+    --FlowApprovers.1.Name 张三 \
+    --FlowApprovers.1.Mobile 18888888888 \
+    --FlowApprovers.1.NotifyType NONE \
+    --FlowApprovers.1.PreReadTime 10 \
+    --FlowApprovers.2.ApproverType PERSON \
+    --FlowApprovers.2.NotifyType NONE \
+    --FlowApprovers.2.Name 李四 \
+    --FlowApprovers.2.Mobile 15100000000 \
+    --FlowApprovers.2.PreReadTime 10 \
+    --FileIds yDR4yUUgyg1qqlj7UuO4zjES3G9Shoxk
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiivxUyngyQvCtRL9F1iX",
+                "SignId": "yDCm3UUckpuhiiv7UyngyQvweoRnofAx"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiiv4UyngyQvw4w7nChfk",
+                "SignId": "yDCm3UUckpuhiivuUyngyQvCexPDjr49"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiivbUyngyQvxPc40bmBS",
+                "SignId": "yDCm3UUckpuhiivaUyngyQvTjdVbIqsr"
+            }
+        ],
+        "FlowId": "yDCm3UUckpuhiiv9UyngyQvE2eRmVW3M",
+        "RequestId": "s1726285140721667651"
+    }
+}
+```
+
+**Example 5: 创建只有个人C端签署, 签署人需要人脸校验认证的合同流程**
+
+1.只有一个个人C端参与人 (Approvers只有一个ApproverInfo元素)
+2.签署区的指定通过绝对定位表达 (SignComponents中Component元素指定具体ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage的方式)
+3.C端参与人只有一个签名签署控件(SignComponents只有一个Component元素, 且这个元素的ComponentType是SIGN_SIGNATURE)
+4.C端签署人需要人脸校验来签署合同 (ApproverSignTypes属性设置成[1]表示只能通过人脸识别校验来签署合同)
+
+Input: 
+
+```
+tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId 110101200610116558 \
+    --FlowName 西瓜采购协议(16:18:47) \
+    --FlowApprovers.0.Name 张三 \
+    --FlowApprovers.0.Mobile 18888888888 \
+    --FlowApprovers.0.ApproverType PERSON \
+    --FlowApprovers.0.ApproverSignTypes 1 \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.0.ComponentWidth 112 \
+    --FlowApprovers.0.SignComponents.0.ComponentHeight 40 \
+    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosX 146.15625 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosY 472.78125 \
+    --FlowApprovers.0.SignComponents.0.ComponentValue  \
+    --FileIds yDSLoUUckpob089cUxVoXTn9T1cRb8W7 \
+    --Unordered True \
+    --Components.0.ComponentPage 1 \
+    --Components.0.ComponentPosX 360 \
+    --Components.0.ComponentPosY 360 \
+    --Components.0.ComponentWidth 100 \
+    --Components.0.ComponentHeight 100 \
+    --Components.0.ComponentType TEXT \
+    --Components.0.ComponentValue 我是一个单行文本 \
+    --Components.0.FileIndex 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhii1vUyngyQvwQVL5QVup",
+                "SignId": "yDCm3UUckpuhii1tUyngyQvupb93iMFu"
+            }
+        ],
+        "FlowId": "yDCm3UUckpuhii1aUyngyQvu5Rn80ewb",
+        "RequestId": "s1726295273067158522"
+    }
+}
+```
+
+**Example 6: 创建含有动态签署人流程，签署方不指定具体的签署人**
 
 创建一个B2C流程，两方签署方不指定具体的签署人
 注： 
@@ -453,7 +577,7 @@ Output:
 }
 ```
 
-**Example 5: 处方单场景**
+**Example 7: 处方单场景**
 
 1.处方单场景的"典子谦"医生需要自动签(典子谦参与人的ApproverType设置成PERSON_AUTO_SIGN, 并且AutoSignScene设置成E_PRESCRIPTION_AUTO_SIGN表明是处方单场景)
 2.处方单的患者张三需要手工签署(张三参与人的ApproverType设置成PERSON)
@@ -535,12 +659,14 @@ Output:
 }
 ```
 
-**Example 6: 创建一份签署方拖拽签署区域的合同**
+**Example 8: 文件发起 使用关键字定位 签署方含有签批控件**
 
-1.签署方包括本方子客企业(需要传递 OrganzationOpenId，和 OpenId)、他方SaaS企业(需要传递 NotChannelOrganization = true)和个人（Approvers中有三个ApproverInfo元素）。
-2.所有签署方企业都不包允许有签署控件。
-3.设置当前流程为可拖拽（SignBeanTag）。
-4.本合同为无序签署（Unordered传递为true）。
+1.通过PDF文件发起合同 
+2.使用的是关键字定位
+3.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+4.指定C端签署方为个人【张三】 
+5.B 端签署有签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 通过在 Component 中的 ComponentExtra:指定, 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可
+6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION),未传ComponentExtra,系统自动生成签批子控件.
 
 Input: 
 
@@ -549,31 +675,41 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
-    --Unordered True \
-    --FlowName 签署时拖拽签署控件合同 \
-    --SignBeanTag 1 \
-    --FlowType 示例合同 \
+    --FlowName 文件发起-签批 \
     --FlowApprovers.0.ApproverType ORGANIZATION \
     --FlowApprovers.0.OrganizationOpenId org_dianziqian \
-    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.OpenId n9527 \
     --FlowApprovers.0.Name 典子谦 \
     --FlowApprovers.0.Mobile 13200000000 \
-    --FlowApprovers.0.OpenId n9527 \
-    --FlowApprovers.0.NotifyType NONE \
-    --FlowApprovers.0.PreReadTime 10 \
-    --FlowApprovers.1.ApproverType ORGANIZATION \
-    --FlowApprovers.1.NotChannelOrganization True \
-    --FlowApprovers.1.OrganizationName 张三示例企业 \
+    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.0.GenerateMode KEYWORD \
+    --FlowApprovers.0.SignComponents.0.OffsetX 0 \
+    --FlowApprovers.0.SignComponents.0.OffsetY 0 \
+    --FlowApprovers.0.SignComponents.0.RelativeLocation Right \
+    --FlowApprovers.0.SignComponents.0.ComponentId 甲方（盖章） \
+    --FlowApprovers.0.SignComponents.0.ComponentExtra {"ChildrenComponents":[{"ComponentType":"SIGN_SIGNATURE","ComponentName":"个人签名","Placeholder":"请签名","ComponentOffsetX":10,"ComponentOffsetY":30,"ComponentWidth":119,"ComponentHeight":43,"ComponentExtra":"{\"ComponentTypeLimit\":[\"SYSTEM_ESIGN\"]}"},{"ComponentType":"SIGN_SELECTOR","ComponentName":"审批意见","Placeholder":"","ComponentOffsetX":50,"ComponentOffsetY":130,"ComponentWidth":120,"ComponentHeight":43,"ComponentExtra":"{\"Values\":[\"同意\",\"不同意\",\"待定\"],\"FontSize\":12,\"FontAlign\":\"Left\",\"Font\":\"黑体\",\"MultiSelect\":false}"},{"ComponentType":"SIGN_MULTI_LINE_TEXT","ComponentName":"顺便留个言呗","Placeholder":"","ComponentOffsetX":150,"ComponentOffsetY":300,"ComponentWidth":200,"ComponentHeight":86,"ComponentExtra":""}]} \
+    --FlowApprovers.0.SignComponents.0.ComponentHeight 234 \
+    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --FlowApprovers.0.SignComponents.0.ComponentWidth 210 \
+    --FlowApprovers.0.SignComponents.0.ComponentRequired False \
+    --FlowApprovers.1.ApproverType PERSON \
     --FlowApprovers.1.Name 张三 \
     --FlowApprovers.1.Mobile 18888888888 \
-    --FlowApprovers.1.NotifyType NONE \
-    --FlowApprovers.1.PreReadTime 10 \
-    --FlowApprovers.2.ApproverType PERSON \
-    --FlowApprovers.2.NotifyType NONE \
-    --FlowApprovers.2.Name 李四 \
-    --FlowApprovers.2.Mobile 15100000000 \
-    --FlowApprovers.2.PreReadTime 10 \
-    --FileIds yDR4yUUgyg1qqlj7UuO4zjES3G9Shoxk
+    --FlowApprovers.1.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.1.SignComponents.0.GenerateMode KEYWORD \
+    --FlowApprovers.1.SignComponents.0.OffsetX 0 \
+    --FlowApprovers.1.SignComponents.0.OffsetY 0 \
+    --FlowApprovers.1.SignComponents.0.RelativeLocation Right \
+    --FlowApprovers.1.SignComponents.0.ComponentId 已方（盖章） \
+    --FlowApprovers.1.SignComponents.0.ComponentHeight 234 \
+    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --FlowApprovers.1.SignComponents.0.ComponentWidth 210 \
+    --FlowApprovers.1.SignComponents.0.ComponentRequired False \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
+    --Unordered True
 ```
 
 Output: 
@@ -583,35 +719,28 @@ Output:
         "Approvers": [
             {
                 "ApproverRoleName": "",
-                "RecipientId": "yDCm3UUckpuhiivxUyngyQvCtRL9F1iX",
-                "SignId": "yDCm3UUckpuhiiv7UyngyQvweoRnofAx"
+                "RecipientId": "yDCdoUUckp7ltep9Uyq2ikIypsCCIqXS",
+                "SignId": "yDCdoUUckp7ltepxUyq2ikIE79iVjD2I"
             },
             {
                 "ApproverRoleName": "",
-                "RecipientId": "yDCm3UUckpuhiiv4UyngyQvw4w7nChfk",
-                "SignId": "yDCm3UUckpuhiivuUyngyQvCexPDjr49"
-            },
-            {
-                "ApproverRoleName": "",
-                "RecipientId": "yDCm3UUckpuhiivbUyngyQvxPc40bmBS",
-                "SignId": "yDCm3UUckpuhiivaUyngyQvTjdVbIqsr"
+                "RecipientId": "yDCdoUUckp7ltep7Uyq2ikIuzVkVXNut",
+                "SignId": "yDCdoUUckp7ltep4Uyq2ikI1baBbI9zJ"
             }
         ],
-        "FlowId": "yDCm3UUckpuhiiv9UyngyQvE2eRmVW3M",
-        "RequestId": "s1726285140721667651"
+        "FlowId": "yDCdoUUckp7ltepfUyq2ikI8VC2s92zT",
+        "RequestId": "s1732015258075060878"
     }
 }
 ```
 
-**Example 7: 通过文件发起B2C合同-控件使用绝对定位方式**
+**Example 9: 文件发起 签署方含有签批控件**
 
 1.通过PDF文件发起合同 
 2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
-3.通过绝对对位方式指定【典子谦示例企业】的签署控件为印章控件，控件位置为该文件的第1页，横坐标160，纵坐标260的位置，控件高宽为119x119（公章大小） 
-4.指定C端签署方为个人【李四】，联系电话为【15100000000】 
-5.通过绝对对位方式指定【李四】的签署控件为手写签名控件，控件位置为该文件的第1页，横坐标60，纵坐标260的位置，控件高宽为119x43（推荐的手写签名大小） 
-6.通过绝对定位方式在合同文件的第1页，横坐标360，纵坐标360的位置放置一个单行文本控件，并写入内容【我是一个单行文本】
- 7.完成合同发起
+3.指定C端签署方为个人【张三】 
+4.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 在 Component 中的  "ComponentExtra": "{\"Children\":[\"ComponentId_29\",\"ComponentId_27\",\"ComponentId_28\",\"ComponentId_30\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)，批注附言(SIGN_MULTI_LINE_TEXT)
+5.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含三个子控件, 在 Component 中的  "ComponentExtra": "{\"Children\":[\"ComponentId_19\",\"ComponentId_17\",\"ComponentId_18\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)
 
 Input: 
 
@@ -620,46 +749,130 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
-    --FlowName 通过文件发起合同 \
-    --FlowDescription 通过文件发起合同 \
-    --Unordered False \
-    --FlowType 示例合同 \
-    --Deadline 1830268800 \
+    --FlowName 文件发起-签批 \
     --FlowApprovers.0.ApproverType ORGANIZATION \
     --FlowApprovers.0.OrganizationOpenId org_dianziqian \
-    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
     --FlowApprovers.0.OpenId n9527 \
     --FlowApprovers.0.Name 典子谦 \
     --FlowApprovers.0.Mobile 13200000000 \
+    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.SignComponents.0.ComponentId ComponentId_1 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosY 260 \
+    --FlowApprovers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
     --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
     --FlowApprovers.0.SignComponents.0.ComponentPosX 160 \
-    --FlowApprovers.0.SignComponents.0.ComponentPosY 260 \
-    --FlowApprovers.0.SignComponents.0.ComponentHeight 119 \
-    --FlowApprovers.0.SignComponents.0.ComponentWidth 119 \
-    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
-    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SEAL \
-    --FlowApprovers.0.SignComponents.0.ComponentValue  \
+    --FlowApprovers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowApprovers.0.SignComponents.1.ComponentId ComponentId_2 \
+    --FlowApprovers.0.SignComponents.1.ComponentPosY 360 \
+    --FlowApprovers.0.SignComponents.1.ComponentWidth 100 \
+    --FlowApprovers.0.SignComponents.1.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.1.ComponentType SIGN_DATE \
+    --FlowApprovers.0.SignComponents.1.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.1.ComponentPosX 160 \
+    --FlowApprovers.0.SignComponents.1.ComponentHeight 50 \
+    --FlowApprovers.0.SignComponents.2.ComponentExtra {"Children":["ComponentId_29","ComponentId_27","ComponentId_28","ComponentId_30"]} \
+    --FlowApprovers.0.SignComponents.2.ComponentHeight 211 \
+    --FlowApprovers.0.SignComponents.2.ComponentId ComponentId_26 \
+    --FlowApprovers.0.SignComponents.2.ComponentName 签批1 \
+    --FlowApprovers.0.SignComponents.2.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.2.ComponentPosX 180 \
+    --FlowApprovers.0.SignComponents.2.ComponentPosY 478 \
+    --FlowApprovers.0.SignComponents.2.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --FlowApprovers.0.SignComponents.2.ComponentWidth 210 \
+    --FlowApprovers.0.SignComponents.2.ComponentRequired False \
+    --FlowApprovers.0.SignComponents.3.ComponentExtra {"Values":["审批通过","审批不通过"],"FontSize":12,"FontAlign":"Left","Font":"黑体","MultiSelect":false} \
+    --FlowApprovers.0.SignComponents.3.ComponentHeight 20 \
+    --FlowApprovers.0.SignComponents.3.ComponentId ComponentId_29 \
+    --FlowApprovers.0.SignComponents.3.ComponentName 审批意见 \
+    --FlowApprovers.0.SignComponents.3.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.3.ComponentPosX 180 \
+    --FlowApprovers.0.SignComponents.3.ComponentPosY 567 \
+    --FlowApprovers.0.SignComponents.3.ComponentRequired True \
+    --FlowApprovers.0.SignComponents.3.ComponentType SIGN_SELECTOR \
+    --FlowApprovers.0.SignComponents.3.ComponentWidth 210 \
+    --FlowApprovers.0.SignComponents.4.ComponentExtra {"Date":true,"isAfterCut":true} \
+    --FlowApprovers.0.SignComponents.4.ComponentHeight 43 \
+    --FlowApprovers.0.SignComponents.4.ComponentId ComponentId_27 \
+    --FlowApprovers.0.SignComponents.4.ComponentName 个人签名/印章 \
+    --FlowApprovers.0.SignComponents.4.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.4.ComponentPosX 185 \
+    --FlowApprovers.0.SignComponents.4.ComponentPosY 478 \
+    --FlowApprovers.0.SignComponents.4.ComponentRequired True \
+    --FlowApprovers.0.SignComponents.4.ComponentType SIGN_SIGNATURE \
+    --FlowApprovers.0.SignComponents.4.ComponentWidth 119 \
+    --FlowApprovers.0.SignComponents.5.ComponentExtra {"Format":"yyyy年m月d日","Gaps":"2,2","FontSize":12,"FontAlign":"Center","Font":"黑体","isAfterCut":true} \
+    --FlowApprovers.0.SignComponents.5.ComponentHeight 20 \
+    --FlowApprovers.0.SignComponents.5.ComponentId ComponentId_28 \
+    --FlowApprovers.0.SignComponents.5.ComponentName 签署日期 \
+    --FlowApprovers.0.SignComponents.5.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.5.ComponentPosX 185 \
+    --FlowApprovers.0.SignComponents.5.ComponentPosY 541 \
+    --FlowApprovers.0.SignComponents.5.ComponentRequired True \
+    --FlowApprovers.0.SignComponents.5.ComponentType SIGN_DATE \
+    --FlowApprovers.0.SignComponents.5.ComponentWidth 119 \
+    --FlowApprovers.0.SignComponents.6.ComponentExtra {"FontSize":12,"FontAlign":"Left","VerticalAlign":"Top","Font":"黑体"} \
+    --FlowApprovers.0.SignComponents.6.ComponentHeight 54 \
+    --FlowApprovers.0.SignComponents.6.ComponentId ComponentId_30 \
+    --FlowApprovers.0.SignComponents.6.ComponentName 批注附言 \
+    --FlowApprovers.0.SignComponents.6.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.6.ComponentPosX 180 \
+    --FlowApprovers.0.SignComponents.6.ComponentPosY 635 \
+    --FlowApprovers.0.SignComponents.6.ComponentRequired True \
+    --FlowApprovers.0.SignComponents.6.ComponentType SIGN_MULTI_LINE_TEXT \
+    --FlowApprovers.0.SignComponents.6.ComponentWidth 210 \
     --FlowApprovers.1.ApproverType PERSON \
-    --FlowApprovers.1.NotifyType NONE \
-    --FlowApprovers.1.Name 李四 \
-    --FlowApprovers.1.Mobile 15100000000 \
-    --FlowApprovers.1.PreReadTime 10 \
-    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.0.ComponentPosX 60 \
+    --FlowApprovers.1.Name 张三 \
+    --FlowApprovers.1.Mobile 18888888888 \
     --FlowApprovers.1.SignComponents.0.ComponentPosY 260 \
-    --FlowApprovers.1.SignComponents.0.ComponentWidth 119 \
-    --FlowApprovers.1.SignComponents.0.ComponentHeight 43 \
+    --FlowApprovers.1.SignComponents.0.ComponentWidth 100 \
     --FlowApprovers.1.SignComponents.0.FileIndex 0 \
     --FlowApprovers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
-    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq \
-    --Components.0.ComponentPage 1 \
-    --Components.0.ComponentPosX 360 \
-    --Components.0.ComponentPosY 360 \
-    --Components.0.ComponentWidth 100 \
-    --Components.0.ComponentHeight 100 \
-    --Components.0.ComponentType TEXT \
-    --Components.0.ComponentValue 我是一个单行文本 \
-    --Components.0.FileIndex 0
+    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.0.ComponentPosX 160 \
+    --FlowApprovers.1.SignComponents.0.ComponentHeight 100 \
+    --FlowApprovers.1.SignComponents.1.ComponentExtra {"Children":["ComponentId_19","ComponentId_17","ComponentId_18"]} \
+    --FlowApprovers.1.SignComponents.1.ComponentHeight 211 \
+    --FlowApprovers.1.SignComponents.1.ComponentId ComponentId_16 \
+    --FlowApprovers.1.SignComponents.1.ComponentName 签批1 \
+    --FlowApprovers.1.SignComponents.1.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.1.ComponentPosX 280 \
+    --FlowApprovers.1.SignComponents.1.ComponentPosY 478 \
+    --FlowApprovers.1.SignComponents.1.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --FlowApprovers.1.SignComponents.1.ComponentWidth 210 \
+    --FlowApprovers.1.SignComponents.2.ComponentExtra {"Values":["审批通过","审批不通过"],"FontSize":12,"FontAlign":"Left","Font":"黑体","MultiSelect":false} \
+    --FlowApprovers.1.SignComponents.2.ComponentHeight 20 \
+    --FlowApprovers.1.SignComponents.2.ComponentId ComponentId_19 \
+    --FlowApprovers.1.SignComponents.2.ComponentName 审批意见 \
+    --FlowApprovers.1.SignComponents.2.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.2.ComponentPosX 280 \
+    --FlowApprovers.1.SignComponents.2.ComponentPosY 567 \
+    --FlowApprovers.1.SignComponents.2.ComponentRequired True \
+    --FlowApprovers.1.SignComponents.2.ComponentType SIGN_SELECTOR \
+    --FlowApprovers.1.SignComponents.2.ComponentWidth 210 \
+    --FlowApprovers.1.SignComponents.3.ComponentExtra {"Format":"yyyy年m月d日","Gaps":"2,2","FontSize":12,"FontAlign":"Center","Font":"黑体","isAfterCut":true} \
+    --FlowApprovers.1.SignComponents.3.ComponentHeight 20 \
+    --FlowApprovers.1.SignComponents.3.ComponentId ComponentId_18 \
+    --FlowApprovers.1.SignComponents.3.ComponentName 签署日期 \
+    --FlowApprovers.1.SignComponents.3.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.3.ComponentPosX 285 \
+    --FlowApprovers.1.SignComponents.3.ComponentPosY 541 \
+    --FlowApprovers.1.SignComponents.3.ComponentRequired True \
+    --FlowApprovers.1.SignComponents.3.ComponentType SIGN_DATE \
+    --FlowApprovers.1.SignComponents.3.ComponentWidth 119 \
+    --FlowApprovers.1.SignComponents.4.ComponentExtra {"Date":true,"isAfterCut":true} \
+    --FlowApprovers.1.SignComponents.4.ComponentHeight 43 \
+    --FlowApprovers.1.SignComponents.4.ComponentId ComponentId_17 \
+    --FlowApprovers.1.SignComponents.4.ComponentName 个人签名/印章 \
+    --FlowApprovers.1.SignComponents.4.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.4.ComponentPosX 285 \
+    --FlowApprovers.1.SignComponents.4.ComponentPosY 478 \
+    --FlowApprovers.1.SignComponents.4.ComponentRequired True \
+    --FlowApprovers.1.SignComponents.4.ComponentType SIGN_SIGNATURE \
+    --FlowApprovers.1.SignComponents.4.ComponentWidth 119 \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
+    --Unordered True
 ```
 
 Output: 
@@ -680,146 +893,6 @@ Output:
         ],
         "FlowId": "yDCm3UUckpuhiiw2UyngyQv8OPSX8qYD",
         "RequestId": "s1726284341125380532"
-    }
-}
-```
-
-**Example 8: 通过文件发起B2C合同-控件使用关键字定位方式**
-
-1.通过PDF文件发起合同 
-2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
-3.通过绝对对位方式指定【典子谦示例企业】的签署控件为印章控件，控件类型为【KEYWORD】关键字类型，并设置关键字为【签名】，关键字查找顺序为【Positive-正序】关键字位置模式为【Middle-居中】，控件高宽为119x119（公章大小） 
-4.指定C端签署方为个人【李四】，联系电话为【15100000000】 
-5.通过绝对对位方式指定【李四】的签署控件为手写签名控件，控件位置为该文件的第1页，横坐标60，纵坐标260的位置，控件高宽为119x43（推荐的手写签名大小） 
-6.通过绝对定位方式在合同文件的第1页，横坐标360，纵坐标360的位置放置一个单行文本控件，并写入内容【我是一个单行文本】 
-7.完成合同发起
-
-Input: 
-
-```
-tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --FlowName 通过文件发起合同-关键字定位 \
-    --FlowDescription 通过文件发起合同 \
-    --Unordered False \
-    --FlowType 示例合同 \
-    --Deadline 1830268800 \
-    --FlowApprovers.0.ApproverType ORGANIZATION \
-    --FlowApprovers.0.OrganizationOpenId org_dianziqian \
-    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
-    --FlowApprovers.0.OpenId n9527 \
-    --FlowApprovers.0.Name 典子谦 \
-    --FlowApprovers.0.Mobile 13200000000 \
-    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.0.ComponentPosX 0 \
-    --FlowApprovers.0.SignComponents.0.ComponentPosY 0 \
-    --FlowApprovers.0.SignComponents.0.ComponentWidth 119 \
-    --FlowApprovers.0.SignComponents.0.ComponentHeight 119 \
-    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
-    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SEAL \
-    --FlowApprovers.0.SignComponents.0.GenerateMode KEYWORD \
-    --FlowApprovers.0.SignComponents.0.ComponentId 签名 \
-    --FlowApprovers.0.SignComponents.0.KeywordOrder Positive \
-    --FlowApprovers.0.SignComponents.0.RelativeLocation Middle \
-    --FlowApprovers.1.ApproverType PERSON \
-    --FlowApprovers.1.NotifyType NONE \
-    --FlowApprovers.1.Name 李四 \
-    --FlowApprovers.1.Mobile 15100000000 \
-    --FlowApprovers.1.PreReadTime 10 \
-    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.0.ComponentPosX 60 \
-    --FlowApprovers.1.SignComponents.0.ComponentPosY 260 \
-    --FlowApprovers.1.SignComponents.0.ComponentWidth 119 \
-    --FlowApprovers.1.SignComponents.0.ComponentHeight 43 \
-    --FlowApprovers.1.SignComponents.0.FileIndex 0 \
-    --FlowApprovers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
-    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq \
-    --Components.0.ComponentPage 1 \
-    --Components.0.ComponentPosX 360 \
-    --Components.0.ComponentPosY 360 \
-    --Components.0.ComponentWidth 100 \
-    --Components.0.ComponentHeight 100 \
-    --Components.0.ComponentType TEXT \
-    --Components.0.ComponentValue 我是一个单行文本 \
-    --Components.0.FileIndex 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Approvers": [
-            {
-                "ApproverRoleName": "",
-                "RecipientId": "yDCm3UUckpuhiivjUyngyQvwaZ4Hg4MJ",
-                "SignId": "yDCm3UUckpuhiiv8UyngyQvy5NE74xeK"
-            },
-            {
-                "ApproverRoleName": "",
-                "RecipientId": "yDCm3UUckpuhiivhUyngyQvuSNWvTWW3",
-                "SignId": "yDCm3UUckpuhiiv2UyngyQvwKnI8ePPG"
-            }
-        ],
-        "FlowId": "yDCm3UUckpuhiivqUyngyQvB0ZL8Vhvu",
-        "RequestId": "s1726285565082734481"
-    }
-}
-```
-
-**Example 9: 创建只有个人C端签署, 签署人需要人脸校验认证的合同流程**
-
-1.只有一个个人C端参与人 (Approvers只有一个ApproverInfo元素)
-2.签署区的指定通过绝对定位表达 (SignComponents中Component元素指定具体ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage的方式)
-3.C端参与人只有一个签名签署控件(SignComponents只有一个Component元素, 且这个元素的ComponentType是SIGN_SIGNATURE)
-4.C端签署人需要人脸校验来签署合同 (ApproverSignTypes属性设置成[1]表示只能通过人脸识别校验来签署合同)
-
-Input: 
-
-```
-tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId 110101200610116558 \
-    --FlowName 西瓜采购协议(16:18:47) \
-    --FlowApprovers.0.Name 张三 \
-    --FlowApprovers.0.Mobile 18888888888 \
-    --FlowApprovers.0.ApproverType PERSON \
-    --FlowApprovers.0.ApproverSignTypes 1 \
-    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
-    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
-    --FlowApprovers.0.SignComponents.0.ComponentWidth 112 \
-    --FlowApprovers.0.SignComponents.0.ComponentHeight 40 \
-    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.0.ComponentPosX 146.15625 \
-    --FlowApprovers.0.SignComponents.0.ComponentPosY 472.78125 \
-    --FlowApprovers.0.SignComponents.0.ComponentValue  \
-    --FileIds yDSLoUUckpob089cUxVoXTn9T1cRb8W7 \
-    --Unordered True \
-    --Components.0.ComponentPage 1 \
-    --Components.0.ComponentPosX 360 \
-    --Components.0.ComponentPosY 360 \
-    --Components.0.ComponentWidth 100 \
-    --Components.0.ComponentHeight 100 \
-    --Components.0.ComponentType TEXT \
-    --Components.0.ComponentValue 我是一个单行文本 \
-    --Components.0.FileIndex 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Approvers": [
-            {
-                "ApproverRoleName": "",
-                "RecipientId": "yDCm3UUckpuhii1vUyngyQvwQVL5QVup",
-                "SignId": "yDCm3UUckpuhii1tUyngyQvupb93iMFu"
-            }
-        ],
-        "FlowId": "yDCm3UUckpuhii1aUyngyQvu5Rn80ewb",
-        "RequestId": "s1726295273067158522"
     }
 }
 ```
@@ -1087,13 +1160,12 @@ Output:
 }
 ```
 
-**Example 11: 文件发起 签署方含有签批控件**
+**Example 11: 通过文件发起B2C合同-使用关键字设置虚拟控件**
 
 1.通过PDF文件发起合同 
 2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
 3.指定C端签署方为个人【张三】 
-4.B 端签署人 有两个签署控件， 分别是签名控件和签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 在 Component 中的  "ComponentExtra": "{\"Children\":[\"ComponentId_29\",\"ComponentId_27\",\"ComponentId_28\",\"ComponentId_30\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)，批注附言(SIGN_MULTI_LINE_TEXT)
-5.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含三个子控件, 在 Component 中的  "ComponentExtra": "{\"Children\":[\"ComponentId_19\",\"ComponentId_17\",\"ComponentId_18\"]}" 体现 ， 包括 审批意见(SIGN_SELECTOR)，个人签名(SIGN_SIGNATURE)，签署日期(SIGN_DATE)
+4.B 端签署人 有使用虚拟控件(VIRTUAL_COMBINATION)，其中虚拟控件包含一个子控件,  目前只支持勾选框控件(SubType:CHECK_BOX_GROUP)子控件为CHECK_BOX在 Component 中的 "ComponentExtra": "{\"SubType\":\"CHECK_BOX_GROUP\",\"MultiSelect\":true,\"ChildrenComponents\":[{\"ComponentType\":\"CHECK_BOX\",\"ComponentHeight\":20,\"ComponentWidth\":20,\"ComponentPage\":1,\"ComponentOffsetX\":10,\"ComponentOffsetY\":30,\"ComponentName\":\"选择1\"},{\"ComponentType\":\"CHECK_BOX\",\"ComponentHeight\":20,\"ComponentWidth\":20,\"ComponentPage\":1,\"ComponentOffsetX\":40,\"ComponentOffsetY\":30,\"ComponentName\":\"选择2\"}]}" 体现 。
 
 Input: 
 
@@ -1113,117 +1185,295 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowApprovers.0.SignComponents.0.ComponentPosY 260 \
     --FlowApprovers.0.SignComponents.0.ComponentWidth 100 \
     --FlowApprovers.0.SignComponents.0.FileIndex 0 \
-    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SEAL \
     --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
     --FlowApprovers.0.SignComponents.0.ComponentPosX 160 \
     --FlowApprovers.0.SignComponents.0.ComponentHeight 100 \
-    --FlowApprovers.0.SignComponents.1.ComponentId ComponentId_2 \
-    --FlowApprovers.0.SignComponents.1.ComponentPosY 360 \
-    --FlowApprovers.0.SignComponents.1.ComponentWidth 100 \
-    --FlowApprovers.0.SignComponents.1.FileIndex 0 \
-    --FlowApprovers.0.SignComponents.1.ComponentType SIGN_DATE \
-    --FlowApprovers.0.SignComponents.1.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.1.ComponentPosX 160 \
-    --FlowApprovers.0.SignComponents.1.ComponentHeight 50 \
-    --FlowApprovers.0.SignComponents.2.ComponentExtra {"Children":["ComponentId_29","ComponentId_27","ComponentId_28","ComponentId_30"]} \
-    --FlowApprovers.0.SignComponents.2.ComponentHeight 211 \
-    --FlowApprovers.0.SignComponents.2.ComponentId ComponentId_26 \
-    --FlowApprovers.0.SignComponents.2.ComponentName 签批1 \
-    --FlowApprovers.0.SignComponents.2.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.2.ComponentPosX 180 \
-    --FlowApprovers.0.SignComponents.2.ComponentPosY 478 \
-    --FlowApprovers.0.SignComponents.2.ComponentType SIGN_VIRTUAL_COMBINATION \
-    --FlowApprovers.0.SignComponents.2.ComponentWidth 210 \
-    --FlowApprovers.0.SignComponents.2.ComponentRequired False \
-    --FlowApprovers.0.SignComponents.3.ComponentExtra {"Values":["审批通过","审批不通过"],"FontSize":12,"FontAlign":"Left","Font":"黑体","MultiSelect":false} \
-    --FlowApprovers.0.SignComponents.3.ComponentHeight 20 \
-    --FlowApprovers.0.SignComponents.3.ComponentId ComponentId_29 \
-    --FlowApprovers.0.SignComponents.3.ComponentName 审批意见 \
-    --FlowApprovers.0.SignComponents.3.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.3.ComponentPosX 180 \
-    --FlowApprovers.0.SignComponents.3.ComponentPosY 567 \
-    --FlowApprovers.0.SignComponents.3.ComponentRequired True \
-    --FlowApprovers.0.SignComponents.3.ComponentType SIGN_SELECTOR \
-    --FlowApprovers.0.SignComponents.3.ComponentWidth 210 \
-    --FlowApprovers.0.SignComponents.4.ComponentExtra {"Date":true,"isAfterCut":true} \
-    --FlowApprovers.0.SignComponents.4.ComponentHeight 43 \
-    --FlowApprovers.0.SignComponents.4.ComponentId ComponentId_27 \
-    --FlowApprovers.0.SignComponents.4.ComponentName 个人签名/印章 \
-    --FlowApprovers.0.SignComponents.4.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.4.ComponentPosX 185 \
-    --FlowApprovers.0.SignComponents.4.ComponentPosY 478 \
-    --FlowApprovers.0.SignComponents.4.ComponentRequired True \
-    --FlowApprovers.0.SignComponents.4.ComponentType SIGN_SIGNATURE \
-    --FlowApprovers.0.SignComponents.4.ComponentWidth 119 \
-    --FlowApprovers.0.SignComponents.5.ComponentExtra {"Format":"yyyy年m月d日","Gaps":"2,2","FontSize":12,"FontAlign":"Center","Font":"黑体","isAfterCut":true} \
-    --FlowApprovers.0.SignComponents.5.ComponentHeight 20 \
-    --FlowApprovers.0.SignComponents.5.ComponentId ComponentId_28 \
-    --FlowApprovers.0.SignComponents.5.ComponentName 签署日期 \
-    --FlowApprovers.0.SignComponents.5.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.5.ComponentPosX 185 \
-    --FlowApprovers.0.SignComponents.5.ComponentPosY 541 \
-    --FlowApprovers.0.SignComponents.5.ComponentRequired True \
-    --FlowApprovers.0.SignComponents.5.ComponentType SIGN_DATE \
-    --FlowApprovers.0.SignComponents.5.ComponentWidth 119 \
-    --FlowApprovers.0.SignComponents.6.ComponentExtra {"FontSize":12,"FontAlign":"Left","VerticalAlign":"Top","Font":"黑体"} \
-    --FlowApprovers.0.SignComponents.6.ComponentHeight 54 \
-    --FlowApprovers.0.SignComponents.6.ComponentId ComponentId_30 \
-    --FlowApprovers.0.SignComponents.6.ComponentName 批注附言 \
-    --FlowApprovers.0.SignComponents.6.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.6.ComponentPosX 180 \
-    --FlowApprovers.0.SignComponents.6.ComponentPosY 635 \
-    --FlowApprovers.0.SignComponents.6.ComponentRequired True \
-    --FlowApprovers.0.SignComponents.6.ComponentType SIGN_MULTI_LINE_TEXT \
-    --FlowApprovers.0.SignComponents.6.ComponentWidth 210 \
+    --FlowApprovers.0.Components.0.ComponentType VIRTUAL_COMBINATION \
+    --FlowApprovers.0.Components.0.ComponentId 甲方（盖章） \
+    --FlowApprovers.0.Components.0.GenerateMode KEYWORD \
+    --FlowApprovers.0.Components.0.ComponentHeight 120 \
+    --FlowApprovers.0.Components.0.ComponentWidth 120 \
+    --FlowApprovers.0.Components.0.ComponentPage 1 \
+    --FlowApprovers.0.Components.0.ComponentPosX 10 \
+    --FlowApprovers.0.Components.0.ComponentPosY 127 \
+    --FlowApprovers.0.Components.0.ComponentName 选择 \
+    --FlowApprovers.0.Components.0.ComponentExtra {"SubType":"CHECK_BOX_GROUP","MultiSelect":true,"ChildrenComponents":[{"ComponentType":"CHECK_BOX","ComponentHeight":20,"ComponentWidth":20,"ComponentPage":1,"ComponentOffsetX":10,"ComponentOffsetY":20,"ComponentName":"选择1"},{"ComponentType":"CHECK_BOX","ComponentHeight":19,"ComponentWidth":19,"ComponentPage":1,"ComponentOffsetX":40,"ComponentOffsetY":30,"ComponentName":"选择2"}]} \
     --FlowApprovers.1.ApproverType PERSON \
     --FlowApprovers.1.Name 张三 \
     --FlowApprovers.1.Mobile 18888888888 \
+    --FlowApprovers.1.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.1.SignComponents.0.GenerateMode KEYWORD \
+    --FlowApprovers.1.SignComponents.0.OffsetX 0 \
+    --FlowApprovers.1.SignComponents.0.OffsetY 0 \
+    --FlowApprovers.1.SignComponents.0.RelativeLocation Right \
+    --FlowApprovers.1.SignComponents.0.ComponentId 已方（盖章） \
+    --FlowApprovers.1.SignComponents.0.ComponentHeight 234 \
+    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
+    --FlowApprovers.1.SignComponents.0.ComponentWidth 210 \
+    --FlowApprovers.1.SignComponents.0.ComponentRequired False \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
+    --Unordered True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiivjUyngyQvwaZ4Hg4MJ",
+                "SignId": "yDCm3UUckpuhiiv8UyngyQvy5NE74xeK"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiivhUyngyQvuSNWvTWW3",
+                "SignId": "yDCm3UUckpuhiiv2UyngyQvwKnI8ePPG"
+            }
+        ],
+        "FlowId": "yDCm3UUckpuhiivqUyngyQvB0ZL8Vhvu",
+        "RequestId": "s1726285565082734481"
+    }
+}
+```
+
+**Example 12: 通过文件发起B2C合同-控件使用关键字定位方式**
+
+1.通过PDF文件发起合同 
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+3.通过绝对对位方式指定【典子谦示例企业】的签署控件为印章控件，控件类型为【KEYWORD】关键字类型，并设置关键字为【签名】，关键字查找顺序为【Positive-正序】关键字位置模式为【Middle-居中】，控件高宽为119x119（公章大小） 
+4.指定C端签署方为个人【李四】，联系电话为【15100000000】 
+5.通过绝对对位方式指定【李四】的签署控件为手写签名控件，控件位置为该文件的第1页，横坐标60，纵坐标260的位置，控件高宽为119x43（推荐的手写签名大小） 
+6.通过绝对定位方式在合同文件的第1页，横坐标360，纵坐标360的位置放置一个单行文本控件，并写入内容【我是一个单行文本】 
+7.完成合同发起
+
+Input: 
+
+```
+tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --FlowName 通过文件发起合同-关键字定位 \
+    --FlowDescription 通过文件发起合同 \
+    --Unordered False \
+    --FlowType 示例合同 \
+    --Deadline 1830268800 \
+    --FlowApprovers.0.ApproverType ORGANIZATION \
+    --FlowApprovers.0.OrganizationOpenId org_dianziqian \
+    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.OpenId n9527 \
+    --FlowApprovers.0.Name 典子谦 \
+    --FlowApprovers.0.Mobile 13200000000 \
+    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosX 0 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosY 0 \
+    --FlowApprovers.0.SignComponents.0.ComponentWidth 119 \
+    --FlowApprovers.0.SignComponents.0.ComponentHeight 119 \
+    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowApprovers.0.SignComponents.0.GenerateMode KEYWORD \
+    --FlowApprovers.0.SignComponents.0.ComponentId 签名 \
+    --FlowApprovers.0.SignComponents.0.KeywordOrder Positive \
+    --FlowApprovers.0.SignComponents.0.RelativeLocation Middle \
+    --FlowApprovers.1.ApproverType PERSON \
+    --FlowApprovers.1.NotifyType NONE \
+    --FlowApprovers.1.Name 李四 \
+    --FlowApprovers.1.Mobile 15100000000 \
+    --FlowApprovers.1.PreReadTime 10 \
+    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.0.ComponentPosX 60 \
     --FlowApprovers.1.SignComponents.0.ComponentPosY 260 \
-    --FlowApprovers.1.SignComponents.0.ComponentWidth 100 \
+    --FlowApprovers.1.SignComponents.0.ComponentWidth 119 \
+    --FlowApprovers.1.SignComponents.0.ComponentHeight 43 \
     --FlowApprovers.1.SignComponents.0.FileIndex 0 \
     --FlowApprovers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq \
+    --Components.0.ComponentPage 1 \
+    --Components.0.ComponentPosX 360 \
+    --Components.0.ComponentPosY 360 \
+    --Components.0.ComponentWidth 100 \
+    --Components.0.ComponentHeight 100 \
+    --Components.0.ComponentType TEXT \
+    --Components.0.ComponentValue 我是一个单行文本 \
+    --Components.0.FileIndex 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiivjUyngyQvwaZ4Hg4MJ",
+                "SignId": "yDCm3UUckpuhiiv8UyngyQvy5NE74xeK"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiivhUyngyQvuSNWvTWW3",
+                "SignId": "yDCm3UUckpuhiiv2UyngyQvwKnI8ePPG"
+            }
+        ],
+        "FlowId": "yDCm3UUckpuhiivqUyngyQvB0ZL8Vhvu",
+        "RequestId": "s1726285565082734481"
+    }
+}
+```
+
+**Example 13: 通过文件发起B2C合同-控件使用绝对定位方式**
+
+1.通过PDF文件发起合同 
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+3.通过绝对对位方式指定【典子谦示例企业】的签署控件为印章控件，控件位置为该文件的第1页，横坐标160，纵坐标260的位置，控件高宽为119x119（公章大小） 
+4.指定C端签署方为个人【李四】，联系电话为【15100000000】 
+5.通过绝对对位方式指定【李四】的签署控件为手写签名控件，控件位置为该文件的第1页，横坐标60，纵坐标260的位置，控件高宽为119x43（推荐的手写签名大小） 
+6.通过绝对定位方式在合同文件的第1页，横坐标360，纵坐标360的位置放置一个单行文本控件，并写入内容【我是一个单行文本】
+ 7.完成合同发起
+
+Input: 
+
+```
+tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --FlowName 通过文件发起合同 \
+    --FlowDescription 通过文件发起合同 \
+    --Unordered False \
+    --FlowType 示例合同 \
+    --Deadline 1830268800 \
+    --FlowApprovers.0.ApproverType ORGANIZATION \
+    --FlowApprovers.0.OrganizationOpenId org_dianziqian \
+    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.OpenId n9527 \
+    --FlowApprovers.0.Name 典子谦 \
+    --FlowApprovers.0.Mobile 13200000000 \
+    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosX 160 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosY 260 \
+    --FlowApprovers.0.SignComponents.0.ComponentHeight 119 \
+    --FlowApprovers.0.SignComponents.0.ComponentWidth 119 \
+    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowApprovers.0.SignComponents.0.ComponentValue  \
+    --FlowApprovers.1.ApproverType PERSON \
+    --FlowApprovers.1.NotifyType NONE \
+    --FlowApprovers.1.Name 李四 \
+    --FlowApprovers.1.Mobile 15100000000 \
+    --FlowApprovers.1.PreReadTime 10 \
     --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.0.ComponentPosX 160 \
-    --FlowApprovers.1.SignComponents.0.ComponentHeight 100 \
-    --FlowApprovers.1.SignComponents.1.ComponentExtra {"Children":["ComponentId_19","ComponentId_17","ComponentId_18"]} \
-    --FlowApprovers.1.SignComponents.1.ComponentHeight 211 \
-    --FlowApprovers.1.SignComponents.1.ComponentId ComponentId_16 \
-    --FlowApprovers.1.SignComponents.1.ComponentName 签批1 \
-    --FlowApprovers.1.SignComponents.1.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.1.ComponentPosX 280 \
-    --FlowApprovers.1.SignComponents.1.ComponentPosY 478 \
-    --FlowApprovers.1.SignComponents.1.ComponentType SIGN_VIRTUAL_COMBINATION \
-    --FlowApprovers.1.SignComponents.1.ComponentWidth 210 \
-    --FlowApprovers.1.SignComponents.2.ComponentExtra {"Values":["审批通过","审批不通过"],"FontSize":12,"FontAlign":"Left","Font":"黑体","MultiSelect":false} \
-    --FlowApprovers.1.SignComponents.2.ComponentHeight 20 \
-    --FlowApprovers.1.SignComponents.2.ComponentId ComponentId_19 \
-    --FlowApprovers.1.SignComponents.2.ComponentName 审批意见 \
-    --FlowApprovers.1.SignComponents.2.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.2.ComponentPosX 280 \
-    --FlowApprovers.1.SignComponents.2.ComponentPosY 567 \
-    --FlowApprovers.1.SignComponents.2.ComponentRequired True \
-    --FlowApprovers.1.SignComponents.2.ComponentType SIGN_SELECTOR \
-    --FlowApprovers.1.SignComponents.2.ComponentWidth 210 \
-    --FlowApprovers.1.SignComponents.3.ComponentExtra {"Format":"yyyy年m月d日","Gaps":"2,2","FontSize":12,"FontAlign":"Center","Font":"黑体","isAfterCut":true} \
-    --FlowApprovers.1.SignComponents.3.ComponentHeight 20 \
-    --FlowApprovers.1.SignComponents.3.ComponentId ComponentId_18 \
-    --FlowApprovers.1.SignComponents.3.ComponentName 签署日期 \
-    --FlowApprovers.1.SignComponents.3.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.3.ComponentPosX 285 \
-    --FlowApprovers.1.SignComponents.3.ComponentPosY 541 \
-    --FlowApprovers.1.SignComponents.3.ComponentRequired True \
-    --FlowApprovers.1.SignComponents.3.ComponentType SIGN_DATE \
-    --FlowApprovers.1.SignComponents.3.ComponentWidth 119 \
-    --FlowApprovers.1.SignComponents.4.ComponentExtra {"Date":true,"isAfterCut":true} \
-    --FlowApprovers.1.SignComponents.4.ComponentHeight 43 \
-    --FlowApprovers.1.SignComponents.4.ComponentId ComponentId_17 \
-    --FlowApprovers.1.SignComponents.4.ComponentName 个人签名/印章 \
-    --FlowApprovers.1.SignComponents.4.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.4.ComponentPosX 285 \
-    --FlowApprovers.1.SignComponents.4.ComponentPosY 478 \
-    --FlowApprovers.1.SignComponents.4.ComponentRequired True \
-    --FlowApprovers.1.SignComponents.4.ComponentType SIGN_SIGNATURE \
-    --FlowApprovers.1.SignComponents.4.ComponentWidth 119 \
+    --FlowApprovers.1.SignComponents.0.ComponentPosX 60 \
+    --FlowApprovers.1.SignComponents.0.ComponentPosY 260 \
+    --FlowApprovers.1.SignComponents.0.ComponentWidth 119 \
+    --FlowApprovers.1.SignComponents.0.ComponentHeight 43 \
+    --FlowApprovers.1.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq \
+    --Components.0.ComponentPage 1 \
+    --Components.0.ComponentPosX 360 \
+    --Components.0.ComponentPosY 360 \
+    --Components.0.ComponentWidth 100 \
+    --Components.0.ComponentHeight 100 \
+    --Components.0.ComponentType TEXT \
+    --Components.0.ComponentValue 我是一个单行文本 \
+    --Components.0.FileIndex 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiiwrUyngyQvEAAG8aSuj",
+                "SignId": "yDCm3UUckpuhiiwlUyngyQvEVt11WQd6"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiiw5UyngyQvvbypsA2N5",
+                "SignId": "yDCm3UUckpuhiiw0UyngyQvxIu5Rvq2L"
+            }
+        ],
+        "FlowId": "yDCm3UUckpuhiiw2UyngyQv8OPSX8qYD",
+        "RequestId": "s1726284341125380532"
+    }
+}
+```
+
+**Example 14: 通过文件发起B2C合同-设置虚拟控件**
+
+1.通过PDF文件发起合同 
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+3.指定C端签署方为个人【张三】 
+4.B 端签署人 有使用虚拟控件(VIRTUAL_COMBINATION)，其中虚拟控件包含一个子控件,  目前只支持勾选框控件(SubType:CHECK_BOX_GROUP)子控件为CHECK_BOX在 Component 中的 "ComponentExtra": "{\"Children\":[\"ComponentId_29\",\"ComponentId_27\",\"ComponentId_28\"]}" 体现。
+
+Input: 
+
+```
+tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --FlowName 文件发起-签批 \
+    --FlowApprovers.0.ApproverType ORGANIZATION \
+    --FlowApprovers.0.OrganizationOpenId org_dianziqian \
+    --FlowApprovers.0.OpenId n9527 \
+    --FlowApprovers.0.Name 典子谦 \
+    --FlowApprovers.0.Mobile 13200000000 \
+    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
+    --FlowApprovers.0.SignComponents.0.ComponentId ComponentId_1 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosY 260 \
+    --FlowApprovers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
+    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.0.SignComponents.0.ComponentPosX 160 \
+    --FlowApprovers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowApprovers.0.Components.0.ComponentType VIRTUAL_COMBINATION \
+    --FlowApprovers.0.Components.0.ComponentId ComponentId_1 \
+    --FlowApprovers.0.Components.0.ComponentHeight 120 \
+    --FlowApprovers.0.Components.0.ComponentWidth 120 \
+    --FlowApprovers.0.Components.0.ComponentPage 1 \
+    --FlowApprovers.0.Components.0.FileIndex 0 \
+    --FlowApprovers.0.Components.0.ComponentPosX 100 \
+    --FlowApprovers.0.Components.0.ComponentPosY 100 \
+    --FlowApprovers.0.Components.0.ComponentName 选择 \
+    --FlowApprovers.0.Components.0.ComponentExtra {"SubType":"CHECK_BOX_GROUP","MultiSelect":true,"Children":["ComponentId_11","ComponentId_10"]} \
+    --FlowApprovers.0.Components.1.ComponentType CHECK_BOX \
+    --FlowApprovers.0.Components.1.ComponentId ComponentId_10 \
+    --FlowApprovers.0.Components.1.ComponentHeight 20 \
+    --FlowApprovers.0.Components.1.ComponentWidth 20 \
+    --FlowApprovers.0.Components.1.ComponentPage 1 \
+    --FlowApprovers.0.Components.1.FileIndex 0 \
+    --FlowApprovers.0.Components.1.ComponentPosX 110 \
+    --FlowApprovers.0.Components.1.ComponentPosY 100 \
+    --FlowApprovers.0.Components.1.ComponentName 选择1 \
+    --FlowApprovers.0.Components.2.ComponentType CHECK_BOX \
+    --FlowApprovers.0.Components.2.ComponentId ComponentId_11 \
+    --FlowApprovers.0.Components.2.ComponentHeight 20 \
+    --FlowApprovers.0.Components.2.ComponentWidth 20 \
+    --FlowApprovers.0.Components.2.ComponentPage 1 \
+    --FlowApprovers.0.Components.2.FileIndex 0 \
+    --FlowApprovers.0.Components.2.ComponentPosX 140 \
+    --FlowApprovers.0.Components.2.ComponentPosY 100 \
+    --FlowApprovers.0.Components.2.ComponentName 选择2 \
+    --FlowApprovers.1.ApproverType PERSON \
+    --FlowApprovers.1.Name 张三 \
+    --FlowApprovers.1.Mobile 18888888888 \
+    --FlowApprovers.1.SignComponents.0.ComponentExtra {"Date":true,"isAfterCut":true} \
+    --FlowApprovers.1.SignComponents.0.ComponentHeight 43 \
+    --FlowApprovers.1.SignComponents.0.ComponentId ComponentId_17 \
+    --FlowApprovers.1.SignComponents.0.ComponentName 个人签名/印章 \
+    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
+    --FlowApprovers.1.SignComponents.0.ComponentPosX 285 \
+    --FlowApprovers.1.SignComponents.0.ComponentPosY 478 \
+    --FlowApprovers.1.SignComponents.0.ComponentRequired True \
+    --FlowApprovers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FlowApprovers.1.SignComponents.0.ComponentWidth 119 \
     --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
     --Unordered True
 ```
@@ -1250,14 +1500,9 @@ Output:
 }
 ```
 
-**Example 12: 文件发起 使用关键字定位 签署方含有签批控件**
+**Example 15: 通过文件发起动态签署合同，不设置签署方**
 
-1.通过PDF文件发起合同 
-2.使用的是关键字定位
-3.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
-4.指定C端签署方为个人【张三】 
-5.B 端签署有签批控件(SIGN_VIRTUAL_COMBINATION)，其中签批控件包含四个子控件, 通过在 Component 中的 ComponentExtra:指定, 但是关键字跟绝对定位的区别在于 关键字方式只用传递SIGN_VIRTUAL_COMBINATION 一个签署控件即可
-6.C 端签署人 有一个签批控件(SIGN_VIRTUAL_COMBINATION),未传ComponentExtra,系统自动生成签批子控件.
+通过文件发起动态签署合同，不设置签署方
 
 Input: 
 
@@ -1266,61 +1511,21 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
-    --FlowName 文件发起-签批 \
-    --FlowApprovers.0.ApproverType ORGANIZATION \
-    --FlowApprovers.0.OrganizationOpenId org_dianziqian \
-    --FlowApprovers.0.OpenId n9527 \
-    --FlowApprovers.0.Name 典子谦 \
-    --FlowApprovers.0.Mobile 13200000000 \
-    --FlowApprovers.0.OrganizationName 典子谦示例企业 \
-    --FlowApprovers.0.SignComponents.0.FileIndex 0 \
-    --FlowApprovers.0.SignComponents.0.GenerateMode KEYWORD \
-    --FlowApprovers.0.SignComponents.0.OffsetX 0 \
-    --FlowApprovers.0.SignComponents.0.OffsetY 0 \
-    --FlowApprovers.0.SignComponents.0.RelativeLocation Right \
-    --FlowApprovers.0.SignComponents.0.ComponentId 甲方（盖章） \
-    --FlowApprovers.0.SignComponents.0.ComponentExtra {"ChildrenComponents":[{"ComponentType":"SIGN_SIGNATURE","ComponentName":"个人签名","Placeholder":"请签名","ComponentOffsetX":10,"ComponentOffsetY":30,"ComponentWidth":119,"ComponentHeight":43,"ComponentExtra":"{\"ComponentTypeLimit\":[\"SYSTEM_ESIGN\"]}"},{"ComponentType":"SIGN_SELECTOR","ComponentName":"审批意见","Placeholder":"","ComponentOffsetX":50,"ComponentOffsetY":130,"ComponentWidth":120,"ComponentHeight":43,"ComponentExtra":"{\"Values\":[\"同意\",\"不同意\",\"待定\"],\"FontSize\":12,\"FontAlign\":\"Left\",\"Font\":\"黑体\",\"MultiSelect\":false}"},{"ComponentType":"SIGN_MULTI_LINE_TEXT","ComponentName":"顺便留个言呗","Placeholder":"","ComponentOffsetX":150,"ComponentOffsetY":300,"ComponentWidth":200,"ComponentHeight":86,"ComponentExtra":""}]} \
-    --FlowApprovers.0.SignComponents.0.ComponentHeight 234 \
-    --FlowApprovers.0.SignComponents.0.ComponentPage 1 \
-    --FlowApprovers.0.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
-    --FlowApprovers.0.SignComponents.0.ComponentWidth 210 \
-    --FlowApprovers.0.SignComponents.0.ComponentRequired False \
-    --FlowApprovers.1.ApproverType PERSON \
-    --FlowApprovers.1.Name 张三 \
-    --FlowApprovers.1.Mobile 18888888888 \
-    --FlowApprovers.1.SignComponents.0.FileIndex 0 \
-    --FlowApprovers.1.SignComponents.0.GenerateMode KEYWORD \
-    --FlowApprovers.1.SignComponents.0.OffsetX 0 \
-    --FlowApprovers.1.SignComponents.0.OffsetY 0 \
-    --FlowApprovers.1.SignComponents.0.RelativeLocation Right \
-    --FlowApprovers.1.SignComponents.0.ComponentId 已方（盖章） \
-    --FlowApprovers.1.SignComponents.0.ComponentHeight 234 \
-    --FlowApprovers.1.SignComponents.0.ComponentPage 1 \
-    --FlowApprovers.1.SignComponents.0.ComponentType SIGN_VIRTUAL_COMBINATION \
-    --FlowApprovers.1.SignComponents.0.ComponentWidth 210 \
-    --FlowApprovers.1.SignComponents.0.ComponentRequired False \
-    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
-    --Unordered True
+    --FlowName 通过文件发起合同 \
+    --FlowDescription 通过文件发起合同 \
+    --Unordered False \
+    --FlowType 示例合同 \
+    --Deadline 1830268800 \
+    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq \
+    --OpenDynamicSignFlow True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Approvers": [
-            {
-                "ApproverRoleName": "",
-                "RecipientId": "yDCdoUUckp7ltep9Uyq2ikIypsCCIqXS",
-                "SignId": "yDCdoUUckp7ltepxUyq2ikIE79iVjD2I"
-            },
-            {
-                "ApproverRoleName": "",
-                "RecipientId": "yDCdoUUckp7ltep7Uyq2ikIuzVkVXNut",
-                "SignId": "yDCdoUUckp7ltep4Uyq2ikI1baBbI9zJ"
-            }
-        ],
-        "FlowId": "yDCdoUUckp7ltepfUyq2ikI8VC2s92zT",
-        "RequestId": "s1732015258075060878"
+        "FlowId": "yDCm3UUckpuhiiw2UyngyQv8OPSX8qYD",
+        "RequestId": "s1726284341125380532"
     }
 }
 ```
