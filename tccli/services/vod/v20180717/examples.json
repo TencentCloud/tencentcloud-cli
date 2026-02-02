@@ -106,6 +106,14 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAigcApiToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcApiToken\n<公共请求参数>\n\n{\n    \"SubAppId\": 251006666\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\",\n        \"ApiToken\": \"hGjH1dsBbjUbT9Cu\"\n    }\n}",
+        "title": "创建AIGC API Token"
+      }
+    ],
     "CreateAigcCustomElement": [
       {
         "document": "",
@@ -468,6 +476,14 @@
         "title": "删除转自适应码流模板"
       }
     ],
+    "DeleteAigcApiToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAigcApiToken\n<公共请求参数>\n\n{\n    \"SubAppId\": 251006666,\n    \"ApiToken\": \"dqFQejeK2BMU8PRmc57gx9OSGKa72PwN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除 AIGC API Token"
+      }
+    ],
     "DeleteAnimatedGraphicsTemplate": [
       {
         "document": "",
@@ -714,6 +730,22 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\n&Definitions.0=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"Custom\",\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DrmType\": \"\",\n                \"DrmKeyProvider\": \"VOD\",\n                \"SegmentType\": \"ts\",\n                \"DisableHigherVideoResolution\": 0,\n                \"DisableHigherVideoBitrate\": 0,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 128\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 720,\n                            \"Height\": 1080,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 12500,\n                            \"Vcrf\": 23,\n                            \"Gop\": 0,\n                            \"PreserveHDRSwitch\": \"OFF\",\n                            \"CodecTag\": \"hvc1\"\n                        },\n                        \"RemoveAudio\": 0,\n                        \"TEHDConfig\": {\n                            \"MaxVideoBitrate\": 10000,\n                            \"Type\": \"TEHD-100\"\n                        }\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询转自适应码流模板列表"
+      }
+    ],
+    "DescribeAigcApiTokens": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcApiTokens\n<公共请求参数>\n\n{\n    \"SubAppId\": 251006666\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\",\n        \"ApiTokens\": [\n            \"dqFQejeK2BMU8PRmc57gx9OSGKa72PwN\",\n            \"8Tul4P4EiJKZ80AfF11HApbYSyK4uj1e\"\n        ]\n    }\n}",
+        "title": "查询 AIGC API Token 列表。"
+      }
+    ],
+    "DescribeAigcFaceInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcFaceInfo\n<公共请求参数>\n\n{\n    \"SubAppId\": 251007502,\n    \"FileInfos\": [\n        {\n            \"Type\": \"Url\",\n            \"Url\": \"https://150*************myqcloud.com/a288b1b2vodtran*************/ee8d47************700322201/v.f100020.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FaceInfoSet\": [\n            {\n                \"FaceInfoList\": [\n                    {\n                        \"EndTime\": 8300,\n                        \"FaceId\": \"0\",\n                        \"FaceImage\": \"https://p4-***********.com/ksc2/PwuLBM-5dzj_j1G7Rknhv_y0AJnN3Dbcc_OLXsEBfQbx7bGOUdOVBuJ5wKif7oKOSiGyDYi2lVSohyo-lUOJfNI-9BloWg0hz-hQ4Kprbl8.jpg?cacheKey=ChtzZWN1cml0eS5rbGluZy5tZXRhX2VuY3J5cHQSYIQuk1zV3s4miMifxDwaHLonhr-U2j-wtS1-Rh1DG9rNFOY184QrnGDu-OtDbWejcQcX6C_j8ymp3g8vCLmZitMpyyA9ayaYeYVuPWEKG_hTFaby9KV9xh7o-Dw_yzSrhhoSI394zzPJZ_uhWSjkByU4CYy1IiAmL-aebPeMm7WkoDpRUJQS1q1nmIauc4OI_7ly72QRXygFMAE&x-kcdn-pid=112757&pkey=AAUchViCWGXo5LLMOiMgoZSHnS5dHjJ529n4C4o-4lHRPI9ArlFppz7ON5xvp1NZKaciNO0puXbdtPUqq3Y1Lryw55fANTDmMO8vkVcxGKevc-Ros3qJD1rGJlarXjnqkks\",\n                        \"StartTime\": 0\n                    }\n                ],\n                \"SessionId\": \"845692****60512089\"\n            }\n        ],\n        \"RequestId\": \"509ed24c-7a76-4328-98b2-a8e2428dd858\"\n    }\n}",
+        "title": "获取人脸信息"
       }
     ],
     "DescribeAigcUsageData": [

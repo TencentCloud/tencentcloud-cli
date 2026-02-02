@@ -17952,8 +17952,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码\n\n",
-          "example": "无",
+          "document": "页码 从1开始\n",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -17961,8 +17961,8 @@
         },
         {
           "disabled": false,
-          "document": "每页数量\n",
-          "example": "无",
+          "document": "页大小 默认15 最大100\n",
+          "example": "15",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -17971,7 +17971,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "\"1952993275700732800\"",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -17980,7 +17980,7 @@
         {
           "disabled": false,
           "document": "查询内容\n",
-          "example": "无",
+          "example": "\"name\"",
           "member": "string",
           "name": "Query",
           "required": false,
@@ -17989,7 +17989,7 @@
         {
           "disabled": false,
           "document": "分类ID\n",
-          "example": "无",
+          "example": "\"1734144647474577408\"",
           "member": "string",
           "name": "CateBizId",
           "required": false,
@@ -17997,8 +17997,8 @@
         },
         {
           "disabled": false,
-          "document": "校验状态\n",
-          "example": "无",
+          "document": "校验状态的枚举值\n",
+          "example": "[1,2,3]",
           "member": "uint64",
           "name": "AcceptStatus",
           "required": false,
@@ -18006,8 +18006,8 @@
         },
         {
           "disabled": false,
-          "document": "发布状态\n",
-          "example": "无",
+          "document": "发布状态的枚举值\n",
+          "example": "[2,3,4,7,8,9,11]",
           "member": "uint64",
           "name": "ReleaseStatus",
           "required": false,
@@ -18016,7 +18016,7 @@
         {
           "disabled": false,
           "document": "文档ID\n",
-          "example": "无",
+          "example": "\"19517346915356272\"",
           "member": "string",
           "name": "DocBizId",
           "required": false,
@@ -18025,7 +18025,7 @@
         {
           "disabled": false,
           "document": "QAID\n",
-          "example": "无",
+          "example": "\"19517346915356272\"",
           "member": "string",
           "name": "QaBizId",
           "required": false,
@@ -18034,7 +18034,7 @@
         {
           "disabled": false,
           "document": "来源\n",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Source",
           "required": false,
@@ -18043,7 +18043,7 @@
         {
           "disabled": false,
           "document": "查询答案\n",
-          "example": "无",
+          "example": "\"name\"",
           "member": "string",
           "name": "QueryAnswer",
           "required": false,
@@ -18052,11 +18052,20 @@
         {
           "disabled": false,
           "document": "查询类型 filename 名称、 attribute 标签",
-          "example": "无",
+          "example": "\"filename\"",
           "member": "string",
           "name": "QueryType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问答生效域检索，不检索不传。枚举值如下：\n1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

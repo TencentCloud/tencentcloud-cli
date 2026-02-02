@@ -2119,7 +2119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文本描述。 \n算法将根据输入的文本智能生成与之相关的图像。 \n不能为空，推荐使用中文。最多可传1024个 utf-8 字符。",
+          "document": "<p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>",
           "example": "雨中, 竹林, 小路",
           "member": "string",
           "name": "Prompt",
@@ -2128,7 +2128,16 @@
         },
         {
           "disabled": false,
-          "document": "生成图分辨率，默认1024:1024：\n - 宽高维度均在 [512, 2048] 像素范围内;\n - 宽高乘积（即图像面积）不超过 1024×1024 像素;",
+          "document": "<p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>",
+          "example": "[\"https://xxx.jpeg\"]",
+          "member": "string",
+          "name": "Images",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>",
           "example": "1024:1024",
           "member": "string",
           "name": "Resolution",
@@ -2137,7 +2146,7 @@
         },
         {
           "disabled": false,
-          "document": "随机种子，默认随机。\n不传：随机种子生成。\n正数：固定种子生成。\n扩写开启时固定种子不生效，将保持随机。",
+          "document": "<p>随机种子，默认随机。<br>不传：随机种子生成。<br>正数：固定种子生成。<br>扩写开启时固定种子不生效，将保持随机。</p>",
           "example": "148237123",
           "member": "int64",
           "name": "Seed",
@@ -2146,7 +2155,7 @@
         },
         {
           "disabled": false,
-          "document": "为生成结果图添加显式水印标识的开关，默认为1。  \n1：添加。  \n0：不添加。  \n其他数值：默认按1处理。  \n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "document": "<p>为生成结果图添加显式水印标识的开关，默认为1。<br>1：添加。<br>0：不添加。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>",
           "example": "1",
           "member": "int64",
           "name": "LogoAdd",
@@ -2155,7 +2164,7 @@
         },
         {
           "disabled": false,
-          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "document": "<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>",
           "example": "无",
           "member": "LogoParam",
           "name": "LogoParam",
@@ -2164,7 +2173,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。\n0：关闭改写\n1：开启改写\n建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)\n示例值：1",
+          "document": "<p>是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。<br>0：关闭改写<br>1：开启改写<br>建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：<a href=\"https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE\">改写</a><br>示例值：1</p>",
           "example": "0",
           "member": "int64",
           "name": "Revise",
@@ -2179,7 +2188,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID。",
+          "document": "<p>任务 ID。</p>",
           "example": "1259388371-1764399486-fd7b5e60-b633-11f0-827b-52540087afa5-0",
           "member": "string",
           "name": "JobId",

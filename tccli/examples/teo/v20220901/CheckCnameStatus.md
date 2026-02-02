@@ -1,13 +1,13 @@
-**Example 1: 查询域名 CNAME 状态**
+**Example 1: 校验域名 CNAME 配置状态**
 
-
+对接入域名：test.qq.com 进行 CNAME 配置状态校验，校验的结果为 active（已正确完成 CNAME 配置），EdgeOne 为接入域名分配的指定 CNAME 域名为：test.qq.com.eo.dnse0.com。
 
 Input: 
 
 ```
 tccli teo CheckCnameStatus --cli-unfold-argument  \
-    --RecordNames example.qq.com \
-    --ZoneId zone-20hyebgyfsko
+    --ZoneId zone-20hyebgyfsko \
+    --RecordNames example.qq.com
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "CnameStatus": [
             {
                 "RecordName": "test.qq.com",
-                "Cname": "test.qq.com.acc.tyxcdn.com",
+                "Cname": "test.qq.com.eo.dnse0.com",
                 "Status": "active"
             }
         ],

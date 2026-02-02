@@ -1050,6 +1050,13 @@
       "output": "StopStreamLinkFlowResponse",
       "status": "online"
     },
+    "SyncDubbing": {
+      "document": "# 同步配音接口\n## 音色克隆\n## 语音合成",
+      "input": "SyncDubbingRequest",
+      "name": "同步配音",
+      "output": "SyncDubbingResponse",
+      "status": "online"
+    },
     "TextTranslation": {
       "document": "文本翻译",
       "input": "TextTranslationRequest",
@@ -36518,6 +36525,118 @@
         }
       ],
       "usage": "in"
+    },
+    "SyncDubbingRequest": {
+      "document": "SyncDubbing请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合成文本，语音合成时必填，文本长度不超过2000字符",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文本语言，不填默认中文。\n当前支持语言：\nzh\t中文 (Chinese)\nen\t英语 (English)\nja\t日语 (Japanese)\nde\t德语 (German)\nfr\t法语 (French)\nko\t韩语 (Korean)\nru\t俄语 (Russian)\nuk\t乌克兰语 (Ukrainian)\npt\t葡萄牙语 (Portuguese)\nit\t意大利语 (Italian)\nes\t西班牙语 (Spanish)\nid\t印度尼西亚语 (Indonesian)\nnl\t荷兰语 (Dutch)\ntr\t土耳其语 (Turkish)\nfil\t菲律宾语 (Filipino)\nms\t马来语 (Malay)\nel\t希腊语 (Greek)\nfi\t芬兰语 (Finnish)\nhr\t克罗地亚语 (Croatian)\nsk\t斯洛伐克语 (Slovak)\npl\t波兰语 (Polish)\nsv\t瑞典语 (Swedish)\nhi\t印地语 (Hindi)\nbg\t保加利亚语 (Bulgarian)\nro\t罗马尼亚语 (Romanian)\nar\t阿拉伯语 (Arabic)\ncs\t捷克语 (Czech)\nda\t丹麦语 (Danish)\nta\t泰米尔语 (Tamil)\nhun\t匈牙利语（Hungarian）\nvi\t越南语（Vietnamese）\nno\t挪威语（Norwegian）\nyue\t粤语（Cantonese）\nth\t泰语（Thai）\nhe\t希伯来语（Hebrew）\nca\t加泰罗尼亚语（Catalan）\nnn\t尼诺斯克语（Nynorsk）\naf\t阿非利卡语（Afrikaans）\nfa\t波斯语（Persian）\nsl\t斯洛文尼亚语（Slovenian）\n",
+          "example": "zh",
+          "member": "string",
+          "name": "TextLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音色Id，指定音色合成时填写，支持系统音色和克隆音色。",
+          "example": "s1_2GSzVAf00hl7+A+LJTNvVI6nFJB0qliIvR8wntPeaniVSstd7Z4E4UL8Hky3azMHVlDSps1zWW4nJ7ll9w==",
+          "member": "string",
+          "name": "VoiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "克隆音频base64编码。",
+          "example": "UklGRoxnAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YWhnAABBAEUAQwBFAEcARwBKAEsASABLAEsASQBNAEoASQBMAEwASwBNAE0ASwBLAEsATABKAEoASwBLAEwASgBLAEwA",
+          "member": "string",
+          "name": "AudioData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "克隆音频语言，默认中文。\n当前支持语言同TextLang",
+          "example": "zh",
+          "member": "string",
+          "name": "AudioLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数，json字符串",
+          "example": "{\"engine\": \"\"}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncDubbingResponse": {
+      "document": "SyncDubbing返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，成功时返回0",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息，成功时返回success",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合成音频的base64编码，wav格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UklGRuxnAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YchnAABBAEUAQwBFA",
+          "member": "string",
+          "name": "AudioData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆的音色Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "s1_2GSzVAf00hl7+A+LJTNvVI6nFJB0qliIvR8wntPeaniVSstd7Z4E4UL8Hky3azMHVlDSps1zWW4nJ7ll9w==",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TEHDConfig": {
       "document": "极速高清参数配置。",

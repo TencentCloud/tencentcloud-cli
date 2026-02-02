@@ -29,9 +29,9 @@
       "status": "online"
     },
     "CheckCnameStatus": {
-      "document": "校验域名 CNAME 状态",
+      "document": "当站点接入类型为 CNAME 接入类型时，要求该站点下的所有接入域名必须按照 EdgeOne 分配的指定 CNAME 域名完成 CNAME 记录配置。\n您可以通过本接口获取 EdgeOne 为接入域名分配的指定 CNAME 域名，并且可以通过本接口完成对接入域名的 CNAME 配置状态的校验。",
       "input": "CheckCnameStatusRequest",
-      "name": "校验域名 CNAME 状态",
+      "name": "校验域名 CNAME 配置状态",
       "output": "CheckCnameStatusResponse",
       "status": "online"
     },
@@ -1394,6 +1394,34 @@
     "serviceShortName": "teo"
   },
   "objects": {
+    "AICrawlerDetection": {
+      "document": "AI 爬虫检测的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AI 爬虫检测是否开启。取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI 爬虫检测的执行动作，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值仅支持：\n<li>Deny：拦截；</li>\n<li>Monitor：观察；</li>\n<li>Allow：放行；</li>\n<li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 仅支持 JSChallenge 和 ManagedChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "APIResource": {
       "document": "API 资源。",
       "members": [
@@ -3919,6 +3947,34 @@
       ],
       "usage": "both"
     },
+    "BotManagementLite": {
+      "document": "Web 安全的基础 BOT 规则结构。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人机校验页的具体配置。",
+          "example": "无",
+          "member": "CAPTCHAPageChallenge",
+          "name": "CAPTCHAPageChallenge",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI爬虫检测的具体配置。",
+          "example": "无",
+          "member": "AICrawlerDetection",
+          "name": "AICrawlerDetection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BotPortraitRule": {
       "document": "bot 用户画像规则",
       "members": [
@@ -4363,6 +4419,23 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CAPTCHAPageChallenge": {
+      "document": "人机校验页的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人机校验页是否开启，取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5103,7 +5176,7 @@
         },
         {
           "disabled": false,
-          "document": "加速域名列表。",
+          "document": "需要检测 CNAME 配置状态的域名列表，可以为：<li>加速域名;</li><li>别称域名。</li>",
           "example": "[\"example.qq.com\"]",
           "member": "string",
           "name": "RecordNames",
@@ -5118,7 +5191,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加速域名 CNAME 状态信息列表。",
+          "document": "接入域名的 CNAME 配置状态信息列表。",
           "example": "无",
           "member": "CnameStatus",
           "name": "CnameStatus",
@@ -5653,11 +5726,11 @@
       "usage": "both"
     },
     "CnameStatus": {
-      "document": "CNAME 状态",
+      "document": "接入域名 CNAME 配置状态",
       "members": [
         {
           "disabled": false,
-          "document": "记录名称。",
+          "document": "接入域名。",
           "example": "test.qq.com",
           "member": "string",
           "name": "RecordName",
@@ -5667,17 +5740,17 @@
         },
         {
           "disabled": false,
-          "document": "CNAME 地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test.qq.com.acc.tyxcdn.com",
+          "document": "EdgeOne 分配给接入域名的 CNAME。",
+          "example": "test.qq.com.eo.dnse0.com",
           "member": "string",
           "name": "Cname",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CNAME 状态信息，取值有：\n<li>active：生效；</li>\n<li>moved：不生效；</li>",
+          "document": "CNAME 配置状态校验结果，取值有：\n<li>active：表示接入域名已正确配置到 EdgeOne 为其分配的指定 CNAME；</li>\n<li>moved：表示接入域名未配置到 EdgeOne 为其分配的指定 CNAME；</li>\n<li>invalid：表示接入域名配置的 CNAME 为 EdgeOne 为其他域名分配的 CNAME，会导致服务异常，请修改为 EdgeOne 为该接入域名提供的指定 CNAME，您可通过本结构体的 Cname 字段获取 EdgeOne 为该接入域名提供的 CNAME。</li>",
           "example": "active",
           "member": "string",
           "name": "Status",
@@ -28149,7 +28222,7 @@
         {
           "disabled": false,
           "document": "自定义规则配置。",
-          "example": "参考 CustomRules 示例",
+          "example": "无",
           "member": "CustomRules",
           "name": "CustomRules",
           "output_required": false,
@@ -28160,7 +28233,7 @@
         {
           "disabled": false,
           "document": "托管规则配置。",
-          "example": "参考 ManagedRules 示例",
+          "example": "无",
           "member": "ManagedRules",
           "name": "ManagedRules",
           "output_required": false,
@@ -28171,7 +28244,7 @@
         {
           "disabled": false,
           "document": "HTTP DDOS 防护配置。",
-          "example": "参考 HttpDDoSProtection 示例",
+          "example": "无",
           "member": "HttpDDoSProtection",
           "name": "HttpDDoSProtection",
           "output_required": false,
@@ -28182,7 +28255,7 @@
         {
           "disabled": false,
           "document": "速率限制规则配置。",
-          "example": "参考 RateLimitingRules 示例",
+          "example": "无",
           "member": "RateLimitingRules",
           "name": "RateLimitingRules",
           "output_required": false,
@@ -28193,7 +28266,7 @@
         {
           "disabled": false,
           "document": "例外规则配置。",
-          "example": "参考 ExceptionRules 示例",
+          "example": "无",
           "member": "ExceptionRules",
           "name": "ExceptionRules",
           "output_required": false,
@@ -28204,9 +28277,20 @@
         {
           "disabled": false,
           "document": "Bot 管理配置。",
-          "example": "参考 BotManagement 示例",
+          "example": "无",
           "member": "BotManagement",
           "name": "BotManagement",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础 Bot 管理配置。",
+          "example": "无",
+          "member": "BotManagementLite",
+          "name": "BotManagementLite",
           "output_required": false,
           "required": false,
           "type": "object",

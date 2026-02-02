@@ -2576,21 +2576,21 @@
         },
         {
           "disabled": false,
-          "document": "收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。",
-          "example": "[\"destination@mail.qcloud.com\"]",
-          "member": "string",
-          "name": "Destination",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "邮件主题",
           "example": "YourTestSubject",
           "member": "string",
           "name": "Subject",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。\nDestination/Cc/Bcc三个参数必须至少存在一个。",
+          "example": "[\"destination@mail.qcloud.com\"]",
+          "member": "string",
+          "name": "Destination",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,

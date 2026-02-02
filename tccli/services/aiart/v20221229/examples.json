@@ -155,9 +155,9 @@
     "SubmitTextToImageJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextToImageJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"小狗\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"1344213737283272704\",\n        \"RequestId\": \"af61e1d4-0931-4dc5-b5a9-eb89bae54616\"\n    }\n}",
-        "title": "提交文生图任务"
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextToImageJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"生成一张配图**一个日历显示‘Monday’，旁边有一个闹钟指向7:00，窗外阳光明媚代表早晨，书包放在桌边。画面无文字。**；\\\\n风格要求：**真实风格**，色彩鲜亮、温暖、饱和度高。\\\\n画面细节：线条简洁流畅，背景柔和，聚焦主体。\\\\n视觉效果：摄影风，适合儿童教学用途。\\\\n\\\\n要求点：\\\\n- 如果涉及人物的话，人物形象积极健康，充满活力和阳光感；\\\\n- 图片中的场景、人物都必须是真实世界的事物，不要出现幻想、想象、虚拟等非真实世界的事物；\\\\n- 图片不得包含任何文本（数字、单词、符号、句子等），如果上面提示词有的话，也要去掉；\\\\n- 图片内容必须精准匹配描述，避免错误元素（如逻辑不符，图片表示跳出箱子、正确项却为跳进箱子）；\\\\n- 生成注意符合生活常识（如太阳应出现在室外，而不是房间里面，如大象出现在野外，不在桌子上）；\\\\n- 涉及到钟表显示，使用电子表，不要使用指针钟表；\\\\n- 图片中的元素比较精简，不要堆砌多个元素、模糊重点；\",\n    \"Resolution\": \"1248:832\",\n    \"Revise\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"251197765-1769741457-80b5b8df-fd86-11f0-ad04-525400647112-0\",\n        \"RequestId\": \"ee8f21db-e724-4333-8130-e0520ac73e4f\"\n    }\n}",
+        "title": "正常调用场景"
       }
     ],
     "SubmitTextToImageProJob": [

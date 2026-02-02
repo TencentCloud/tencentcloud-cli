@@ -1679,7 +1679,112 @@ Output:
 }
 ```
 
-**Example 18: 错误示例：签署人姓名格式传递错误，导致合同创建失败，不扣费用。**
+**Example 18: 通过文件发起B2C合同-设置虚拟控件**
+
+1.通过PDF文件发起合同 
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】 
+3.指定C端签署方为个人【张三】 
+4.B 端签署人 有使用虚拟控件(VIRTUAL_COMBINATION)，其中虚拟控件包含一个子控件,  目前只支持勾选框控件(SubType:CHECK_BOX_GROUP)子控件为CHECK_BOX
+   以下方式只能选一种
+   方式1：在 Component 中的 "ComponentExtra": "{\"Children\":[\"ComponentId_29\",\"ComponentId_27\",\"ComponentId_28\"]}" 体现 ， 
+   方式2：在 Component 中的 "ComponentExtra": "{\"SubType\":\"CHECK_BOX_GROUP\",\"MultiSelect\":true,\"ChildrenComponents\":[{\"ComponentType\":\"CHECK_BOX\",\"ComponentHeight\":20,\"ComponentWidth\":20,\"ComponentPage\":1,\"ComponentOffsetX\":10,\"ComponentOffsetY\":30,\"ComponentName\":\"选择1\"},{\"ComponentType\":\"CHECK_BOX\",\"ComponentHeight\":20,\"ComponentWidth\":20,\"ComponentPage\":1,\"ComponentOffsetX\":40,\"ComponentOffsetY\":30,\"ComponentName\":\"选择2\"}]}" 体现 ，
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId yDxbTUyKQWPt5NUuO4zjEuyFAyOX3v9C \
+    --FlowName 文件发起-签批 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --Approvers.0.SignComponents.0.ComponentHeight 119 \
+    --Approvers.0.SignComponents.0.ComponentWidth 119 \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentPosX 219 \
+    --Approvers.0.SignComponents.0.ComponentPosY 157 \
+    --Approvers.0.SignComponents.0.ComponentName 企业印章 \
+    --Approvers.0.SignComponents.0.ComponentRequired True \
+    --Approvers.0.Components.0.ComponentType VIRTUAL_COMBINATION \
+    --Approvers.0.Components.0.ComponentId ComponentId_1 \
+    --Approvers.0.Components.0.ComponentHeight 120 \
+    --Approvers.0.Components.0.ComponentWidth 120 \
+    --Approvers.0.Components.0.ComponentPage 1 \
+    --Approvers.0.Components.0.FileIndex 0 \
+    --Approvers.0.Components.0.ComponentPosX 100 \
+    --Approvers.0.Components.0.ComponentPosY 100 \
+    --Approvers.0.Components.0.ComponentName 选择 \
+    --Approvers.0.Components.0.ComponentExtra {"SubType":"CHECK_BOX_GROUP","MultiSelect":true,"Children":["ComponentId_11","ComponentId_10"]} \
+    --Approvers.0.Components.1.ComponentType VIRTUAL_COMBINATION \
+    --Approvers.0.Components.1.ComponentId 甲方（盖章） \
+    --Approvers.0.Components.1.GenerateMode KEYWORD \
+    --Approvers.0.Components.1.ComponentHeight 120 \
+    --Approvers.0.Components.1.ComponentWidth 120 \
+    --Approvers.0.Components.1.ComponentPage 1 \
+    --Approvers.0.Components.1.FileIndex 0 \
+    --Approvers.0.Components.1.ComponentPosX 10 \
+    --Approvers.0.Components.1.ComponentPosY 127 \
+    --Approvers.0.Components.1.ComponentName 选择 \
+    --Approvers.0.Components.1.ComponentExtra {"SubType":"CHECK_BOX_GROUP","MultiSelect":true,"ChildrenComponents":[{"ComponentType":"CHECK_BOX","ComponentHeight":20,"ComponentWidth":20,"ComponentPage":1,"ComponentOffsetX":10,"ComponentOffsetY":30,"ComponentName":"选择1"},{"ComponentType":"CHECK_BOX","ComponentHeight":20,"ComponentWidth":20,"ComponentPage":1,"ComponentOffsetX":40,"ComponentOffsetY":30,"ComponentName":"选择2"}]} \
+    --Approvers.0.Components.2.ComponentType CHECK_BOX \
+    --Approvers.0.Components.2.ComponentId ComponentId_10 \
+    --Approvers.0.Components.2.ComponentHeight 20 \
+    --Approvers.0.Components.2.ComponentWidth 20 \
+    --Approvers.0.Components.2.ComponentPage 1 \
+    --Approvers.0.Components.2.FileIndex 0 \
+    --Approvers.0.Components.2.ComponentPosX 110 \
+    --Approvers.0.Components.2.ComponentPosY 100 \
+    --Approvers.0.Components.2.ComponentName 选择1 \
+    --Approvers.0.Components.3.ComponentType CHECK_BOX \
+    --Approvers.0.Components.3.ComponentId ComponentId_11 \
+    --Approvers.0.Components.3.ComponentHeight 20 \
+    --Approvers.0.Components.3.ComponentWidth 20 \
+    --Approvers.0.Components.3.ComponentPage 1 \
+    --Approvers.0.Components.3.FileIndex 0 \
+    --Approvers.0.Components.3.ComponentPosX 140 \
+    --Approvers.0.Components.3.ComponentPosY 100 \
+    --Approvers.0.Components.3.ComponentName 选择2 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 160 \
+    --Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ \
+    --Unordered True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiigxUyngyQvyHhcuKe8j",
+                "SignId": "yDCm3UUckpuhiig3UyngyQvuGnj2Dmlb"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCm3UUckpuhiigbUyngyQv8CgR9QvQ5",
+                "SignId": "yDCm3UUckpuhiig1UyngyQvBDiyvQ5Qw"
+            }
+        ],
+        "FlowId": "yDCm3UUckpuhiigkUyngyQvus30o8lsI",
+        "PreviewUrl": "",
+        "RequestId": "s1726301013319902854"
+    }
+}
+```
+
+**Example 19: 错误示例：签署人姓名格式传递错误，导致合同创建失败，不扣费用。**
 
 1. 如果签署人姓名传递了非法的字符串，将会提示错误。
 2. 合同发起失败，不会生成flowId。
@@ -1720,7 +1825,7 @@ Output:
 }
 ```
 
-**Example 19: 集团企业代表子公司创建仅具有个人C端签署的合同流程，签署人可选择人脸验证、密码验证或短信验证码验证**
+**Example 20: 集团企业代表子公司创建仅具有个人C端签署的合同流程，签署人可选择人脸验证、密码验证或短信验证码验证**
 
 1. 只有一个个人C端参与者（Approvers中仅有一个ApproverInfo元素）。
 2. 通过绝对定位来指定签署区域（SignComponents中的Component元素指定具体的ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage方式）。

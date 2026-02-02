@@ -56,6 +56,13 @@
       "output": "CreateAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "CreateAigcApiToken": {
+      "document": "创建AIGC调用API的Token。创建后数据同步有延时，约30秒后可查询或删除。",
+      "input": "CreateAigcApiTokenRequest",
+      "name": "创建AIGC API Token",
+      "output": "CreateAigcApiTokenResponse",
+      "status": "online"
+    },
     "CreateAigcCustomElement": {
       "document": "调用该接口，针对指定模型进行主体创建。",
       "input": "CreateAigcCustomElementRequest",
@@ -315,6 +322,13 @@
       "output": "DeleteAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "DeleteAigcApiToken": {
+      "document": "删除 AIGC API Token",
+      "input": "DeleteAigcApiTokenRequest",
+      "name": "删除 AIGC API Token",
+      "output": "DeleteAigcApiTokenResponse",
+      "status": "online"
+    },
     "DeleteAnimatedGraphicsTemplate": {
       "document": "删除用户自定义转动图模板。",
       "input": "DeleteAnimatedGraphicsTemplateRequest",
@@ -509,6 +523,20 @@
       "input": "DescribeAdaptiveDynamicStreamingTemplatesRequest",
       "name": "获取转自适应码流模板列表",
       "output": "DescribeAdaptiveDynamicStreamingTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeAigcApiTokens": {
+      "document": "查询 AIGC API Token 列表。创建或删除后数据同步有延时，约30秒后可查询最新数据。",
+      "input": "DescribeAigcApiTokensRequest",
+      "name": "查询 AIGC API Token 列表",
+      "output": "DescribeAigcApiTokensResponse",
+      "status": "online"
+    },
+    "DescribeAigcFaceInfo": {
+      "document": "该接口用于获取 AIGC 人脸信息。注意，调用本接口会产生人脸识别费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。",
+      "input": "DescribeAigcFaceInfoRequest",
+      "name": "获取 AIGC 人脸信息",
+      "output": "DescribeAigcFaceInfoResponse",
       "status": "online"
     },
     "DescribeAigcUsageData": {
@@ -1903,8 +1931,19 @@
         },
         {
           "disabled": false,
+          "document": "数字水印。",
+          "example": "无",
+          "member": "BlindWatermarkInput",
+          "name": "BlindWatermark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。",
-          "example": "z8gnl*H",
+          "example": "[\"z8gnl*H\"]",
           "member": "string",
           "name": "SubtitleSet",
           "output_required": true,
@@ -7102,6 +7141,111 @@
       ],
       "usage": "in"
     },
+    "AigcFaceIdentityInfo": {
+      "document": "人脸身份信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频中的人脸 ID。同一个人脸在视频中间隔超过1s时会视作不同 ID。",
+          "example": "0",
+          "member": "string",
+          "name": "FaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "从视频中截取的人脸示意图。",
+          "example": "https://***.com/***.jpg",
+          "member": "string",
+          "name": "FaceImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该人脸可对口型区间的起点时间，可作为对口型最佳开始时间。单位：毫秒。",
+          "example": "0",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该人脸可对口型区间的终点时间；注：此结果存在毫秒级误差，会长于实际区间终点。单位：毫秒。",
+          "example": "8300",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcFaceInfo": {
+      "document": "AIGC 人脸信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主体 ID。需自行记录下返回的主体 ID。",
+          "example": "8457*********21633",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸信息列表。",
+          "example": "无",
+          "member": "AigcFaceIdentityInfo",
+          "name": "FaceInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcFaceInputFileInfo": {
+      "document": "AIGC 人脸输入文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> ",
+          "example": "File",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。",
+          "example": "9662*********84062",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。",
+          "example": "https://************************.com/********************************************************/*********.mp4",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "AigcImageOutputConfig": {
       "document": "AIGC 生图任务的输出媒体文件配置。",
       "members": [
@@ -7433,7 +7577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 URL；</li> ",
+          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> ",
           "example": "File",
           "member": "string",
           "name": "Type",
@@ -7751,6 +7895,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> \n目前支持的模型有 Vidu，其他模型暂不支持。",
+          "example": "Disabled",
+          "member": "string",
+          "name": "LogoAdd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8010,7 +8165,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 URL；</li> ",
+          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> ",
           "example": "File",
           "member": "string",
           "name": "Type",
@@ -9381,6 +9536,23 @@
         }
       ],
       "usage": "in"
+    },
+    "BlindWatermarkInput": {
+      "document": "媒体处理任务中的数字水印参数类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BlurConfigureInfo": {
       "document": "视频画面模糊检测的控制参数。",
@@ -11366,6 +11538,43 @@
       ],
       "type": "object"
     },
+    "CreateAigcApiTokenRequest": {
+      "document": "CreateAigcApiToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "251006666",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcApiTokenResponse": {
+      "document": "CreateAigcApiToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API的Token",
+          "example": "hGjH1dsBbjUbT9Cu",
+          "member": "string",
+          "name": "ApiToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAigcCustomElementRequest": {
       "document": "CreateAigcCustomElement请求参数结构体",
       "members": [
@@ -11589,7 +11798,7 @@
         },
         {
           "disabled": false,
-          "document": "模型版本。取值：<li>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；</li><li>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、O1；</li><li>当 ModelName 是 Jimeng，可选值为 3.0pro；</li><li>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo；</li><li>当 ModelName 是 GV，可选值为 3.1、3.1-Fast；</li><li>当 ModelName 是 OS，可选值为 2.0；</li><li>当 ModelName 是 Hunyuan，可选值为 1.5；</li><li>当 ModelName 是 Mingmou，可选值为 1.0；</li>",
+          "document": "模型版本。取值：<li>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；</li><li>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、O1；</li><li>当 ModelName 是 Jimeng，可选值为 3.0pro；</li><li>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo；</li><li>当 ModelName 是 GV，可选值为 3.1、3.1-fast；</li><li>当 ModelName 是 OS，可选值为 2.0；</li><li>当 ModelName 是 Hunyuan，可选值为 1.5；</li><li>当 ModelName 是 Mingmou，可选值为 1.0；</li>",
           "example": "3.1",
           "member": "string",
           "name": "ModelVersion",
@@ -11670,7 +11879,7 @@
         },
         {
           "disabled": false,
-          "document": "场景类型。取值如下：\n<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li>\n<li>其他 ModelName 暂不支持。</li>",
+          "document": "场景类型。取值如下：\n<li>当 ModelName 为 Kling 时：\n    motion_control 表示动作控制；\n    avatar_i2v 表示数字人；\n    lip_sync 表示对口型；</li>\n<li>其他 ModelName 暂不支持。</li>",
           "example": "motion_control",
           "member": "string",
           "name": "SceneType",
@@ -14770,6 +14979,42 @@
       ],
       "type": "object"
     },
+    "DeleteAigcApiTokenRequest": {
+      "document": "DeleteAigcApiToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "251006666",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "API 的 Token",
+          "example": "dqFQejeK2BMU8PRmc57gx9OSGKa72PwN",
+          "member": "string",
+          "name": "ApiToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAigcApiTokenResponse": {
+      "document": "DeleteAigcApiToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAnimatedGraphicsTemplateRequest": {
       "document": "DeleteAnimatedGraphicsTemplate请求参数结构体",
       "members": [
@@ -15915,6 +16160,89 @@
           "example": "无",
           "member": "AdaptiveDynamicStreamingTemplate",
           "name": "AdaptiveDynamicStreamingTemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcApiTokensRequest": {
+      "document": "DescribeAigcApiTokens请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "251006666",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcApiTokensResponse": {
+      "document": "DescribeAigcApiTokens返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Token 列表",
+          "example": "[\"dqFQejeK2BMU8PRmc57gx9OSGKa72PwN\", \"8Tul4P4EiJKZ80AfF11HApbYSyK4uj1e\"]",
+          "member": "string",
+          "name": "ApiTokens",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcFaceInfoRequest": {
+      "document": "DescribeAigcFaceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "251007502",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取人脸信息的输入视频信息，最多包含一个文件。",
+          "example": "无",
+          "member": "AigcFaceInputFileInfo",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcFaceInfoResponse": {
+      "document": "DescribeAigcFaceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人脸信息。",
+          "example": "无",
+          "member": "AigcFaceInfo",
+          "name": "FaceInfoSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -19544,7 +19872,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li>",
+          "document": "任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -19878,6 +20206,16 @@
           "example": "无",
           "member": "ProcessImageAsync",
           "name": "ProcessImageAsyncTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。",
+          "example": "无",
+          "member": "ExtractBlindWatermarkTask",
+          "name": "ExtractBlindWatermarkTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -21935,6 +22273,36 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。",
+          "example": "无",
+          "member": "ExtractBlindWatermarkTask",
+          "name": "ExtractBlindWatermarkComplete",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。",
+          "example": "无",
+          "member": "SceneAigcImageTask",
+          "name": "SceneAigcImageCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。",
+          "example": "无",
+          "member": "ProcessImageAsyncTask",
+          "name": "ProcessImageAsyncCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22020,6 +22388,188 @@
         }
       ],
       "type": "object"
+    },
+    "ExtractBlindWatermarkInputInfo": {
+      "document": "提取盲水印输入信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提取数字水印输入类型，可选值：<li>FILEID：文件媒资ID；</li><li>URL：文件url；</li>",
+          "example": "FILEID",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要提取的文件媒资ID",
+          "example": "966263618844004026",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要提取的视频文件url",
+          "example": "http://video.com/a.mp4",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtractBlindWatermarkTask": {
+      "document": "提取视频数字水印任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体处理任务 ID。",
+          "example": "125xxx65-ExtractBlindWatermark-bffb15f07530b57bc1aabb01fac74bca",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务流状态，取值：\n<li>WAITING：等待中；</li>\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "NULL",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取数字水印的文件输入信息。",
+          "example": "无",
+          "member": "ExtractBlindWatermarkInputInfo",
+          "name": "InputInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li> <li>blind-ab：ab版权数字水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标记是否检测到水印，如果该参数为true， Result字段将返回水印提取结果，如果该参数为false，Result字段不会返回。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDetected",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取出的数字水印内容，当没有检测到水印时该字段不会返回。",
+          "example": "数字水印文本",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "溯源水印提取出的播放者的 ID，以十六进制表示，共6位。",
+          "example": "abc123",
+          "member": "string",
+          "name": "ResultUV",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取数字水印配置。",
+          "example": "无",
+          "member": "ExtractBlindWatermarkTaskConfig",
+          "name": "ExtractBlindWatermarkConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "202410011900***tmsd",
+          "member": "string",
+          "name": "SessionContext",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "6bb56a09278740bc80c5dc6dab783eff",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExtractBlindWatermarkTaskConfig": {
+      "document": "提取视频转码数字水印任务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当提取数字水印类型为blind-abseq时有效，用于指定输入视频的切片时长，单位：毫秒。\n如果不填默认切片时长为5秒。",
+          "example": "5000",
+          "member": "int64",
+          "name": "SegmentDuration",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExtractCopyRightWatermarkRequest": {
       "document": "ExtractCopyRightWatermark请求参数结构体",
@@ -42787,6 +43337,17 @@
           "member": "CopyRightWatermarkInput",
           "name": "CopyRightWatermark",
           "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印。",
+          "example": "无",
+          "member": "BlindWatermarkInput",
+          "name": "BlindWatermark",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false

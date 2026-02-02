@@ -11404,14 +11404,14 @@
         },
         {
           "disabled": false,
-          "document": "元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据信息",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12101,13 +12101,13 @@
         },
         {
           "disabled": false,
-          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12532,14 +12532,14 @@
         },
         {
           "disabled": false,
-          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
