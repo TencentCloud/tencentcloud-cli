@@ -7,11 +7,11 @@ Input:
 ```
 tccli tdmq ModifyRocketMQGroup --cli-unfold-argument  \
     --Remark 测试修改消费组 \
-    --BroadcastEnable false \
+    --BroadcastEnable False \
     --ClusterId rocketmq-2p9vx3ax9jxg \
     --GroupId test_group \
     --RetryMaxTimes 16 \
-    --ReadEnable true \
+    --ReadEnable True \
     --NamespaceId test_namespace
 ```
 

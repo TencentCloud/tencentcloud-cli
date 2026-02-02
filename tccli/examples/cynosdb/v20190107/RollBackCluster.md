@@ -23,7 +23,7 @@ Output:
 {
     "Response": {
         "RequestId": "347698da-03e4-4078-8d96-9a8b219c01a5",
-        "FlowId": "147283"
+        "FlowId": 147283
     }
 }
 ```

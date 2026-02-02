@@ -43,7 +43,7 @@ Output:
                 "ConsumerType": "PUSH",
                 "TPS": 20,
                 "GroupType": "TCP",
-                "SubscribeTopicNum": "1"
+                "SubscribeTopicNum": 1
             }
         ]
     }
