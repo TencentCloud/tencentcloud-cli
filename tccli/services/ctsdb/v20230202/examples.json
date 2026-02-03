@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeClusterDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctsdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Cluster\": {\n            \"AccountID\": \"Tnog5Q==\",\n            \"AppID\": 251223625,\n            \"ClusterID\": \"ctsdbi-p39mhwnt\",\n            \"Components\": [\n                {\n                    \"Cpu\": 2,\n                    \"Disk\": 0,\n                    \"ID\": 332,\n                    \"InstanceID\": \"ctsdbi-p39mhwnt\",\n                    \"Memory\": 8,\n                    \"Name\": \"\",\n                    \"Networks\": [\n                        {\n                            \"Port\": 8086,\n                            \"SubnetId\": \"subnet-qdkd825s\",\n                            \"VIP\": \"10.200.18.28\",\n                            \"VpcId\": \"vpc-ncirw84v\"\n                        }\n                    ],\n                    \"Replicas\": 3,\n                    \"Shards\": 1,\n                    \"State\": 0,\n                    \"Type\": \"gateway\"\n                }\n            ],\n            \"CreatedAt\": \"2025-12-23T03:26:51Z\",\n            \"ExpiredAt\": null,\n            \"IsolatedAt\": null,\n            \"Name\": \"jacob-test\",\n            \"Networks\": [],\n            \"Region\": \"ap-beijing\",\n            \"RenewFlag\": 0,\n            \"Security\": [],\n            \"ShutdownAt\": null,\n            \"Status\": 0,\n            \"Tags\": [],\n            \"Type\": 1,\n            \"UpdatedAt\": \"2025-12-23T03:30:29Z\"\n        },\n        \"RequestId\": \"41350874-99a8-41f5-a1ca-b254ba36ab09\"\n    }\n}",
+        "title": "查询成功"
+      }
+    ],
     "DescribeClusters": [
       {
         "document": "查询实例列表",

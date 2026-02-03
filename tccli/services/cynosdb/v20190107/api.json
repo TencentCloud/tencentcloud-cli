@@ -7,6 +7,20 @@
       "output": "ActivateInstanceResponse",
       "status": "online"
     },
+    "ActivateLibraDBCluster": {
+      "document": "解除分析集群隔离状态",
+      "input": "ActivateLibraDBClusterRequest",
+      "name": "解除分析集群隔离",
+      "output": "ActivateLibraDBClusterResponse",
+      "status": "online"
+    },
+    "ActivateLibraDBInstance": {
+      "document": "本接口（ActivateLibraDBInstance）用于解除已隔离的只读分析引擎实例。",
+      "input": "ActivateLibraDBInstanceRequest",
+      "name": "解除只读分析引擎隔离",
+      "output": "ActivateLibraDBInstanceResponse",
+      "status": "online"
+    },
     "AddClusterSlaveZone": {
       "document": "本接口（AddClusterSlaveZone）用于对集群开启多可用区部署。",
       "input": "AddClusterSlaveZoneRequest",
@@ -33,6 +47,13 @@
       "input": "BindClusterResourcePackagesRequest",
       "name": "为集群绑定资源包",
       "output": "BindClusterResourcePackagesResponse",
+      "status": "online"
+    },
+    "CheckCreateLibraDBInstance": {
+      "document": "本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例",
+      "input": "CheckCreateLibraDBInstanceRequest",
+      "name": "校验集群是否可以添加只读分析引擎",
+      "output": "CheckCreateLibraDBInstanceResponse",
       "status": "online"
     },
     "CloseAuditService": {
@@ -140,6 +161,20 @@
       "output": "CreateIntegrateClusterResponse",
       "status": "online"
     },
+    "CreateLibraDBClusterAccounts": {
+      "document": "本接口（CreateLibraDBClusterAccounts）用于创建分析集群账号",
+      "input": "CreateLibraDBClusterAccountsRequest",
+      "name": "创建分析集群账号",
+      "output": "CreateLibraDBClusterAccountsResponse",
+      "status": "online"
+    },
+    "CreateLibraDBClusters": {
+      "document": "创建 TDSQL-C 分析集群",
+      "input": "CreateLibraDBClustersRequest",
+      "name": "创建分析集群",
+      "output": "CreateLibraDBClustersResponse",
+      "status": "online"
+    },
     "CreateParamTemplate": {
       "document": "本接口（CreateParamTemplate）用于创建参数模板。",
       "input": "CreateParamTemplateRequest",
@@ -215,6 +250,20 @@
       "input": "DeleteClusterSaveBackupRequest",
       "name": "删除保留备份",
       "output": "DeleteClusterSaveBackupResponse",
+      "status": "online"
+    },
+    "DeleteLibraDBCluster": {
+      "document": "删除 TDSQL-C 分析集群",
+      "input": "DeleteLibraDBClusterRequest",
+      "name": "删除 TDSQL-C 分析集群",
+      "output": "DeleteLibraDBClusterResponse",
+      "status": "online"
+    },
+    "DeleteLibraDBClusterAccounts": {
+      "document": "本接口（DeleteLibraDBClusterAccounts）用于删除分析集群账号",
+      "input": "DeleteLibraDBClusterAccountsRequest",
+      "name": "删除分析集群账号",
+      "output": "DeleteLibraDBClusterAccountsResponse",
       "status": "online"
     },
     "DeleteParamTemplate": {
@@ -518,6 +567,97 @@
       "output": "DescribeIsolatedInstancesResponse",
       "status": "online"
     },
+    "DescribeLibraDBClusterAccountAllPrivileges": {
+      "document": "本接口（DescribeLibraDBClusterAccountAllPrivileges）用于查询分析集群账号全部权限",
+      "input": "DescribeLibraDBClusterAccountAllPrivilegesRequest",
+      "name": "查询分析集群账号全部权限",
+      "output": "DescribeLibraDBClusterAccountAllPrivilegesResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBClusterAccountPrivileges": {
+      "document": "本接口（DescribeLibraDBClusterAccountPrivileges）用于查询分析集群账号权限",
+      "input": "DescribeLibraDBClusterAccountPrivilegesRequest",
+      "name": "查询分析集群账号权限",
+      "output": "DescribeLibraDBClusterAccountPrivilegesResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBClusterAccounts": {
+      "document": "本接口（DescribeLibraDBClusterAccounts）用于查询分析集群账号",
+      "input": "DescribeLibraDBClusterAccountsRequest",
+      "name": "查询分析集群账号",
+      "output": "DescribeLibraDBClusterAccountsResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBClusterAutoMapRule": {
+      "document": "本接口（DescribeLibraDBClusterAutoMapRule）用于查看分析集群高级映射规则",
+      "input": "DescribeLibraDBClusterAutoMapRuleRequest",
+      "name": "查询分析集群高级映射规则",
+      "output": "DescribeLibraDBClusterAutoMapRuleResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBClusterDetail": {
+      "document": "查询 TDSQL-C 分析集群信息",
+      "input": "DescribeLibraDBClusterDetailRequest",
+      "name": "查询分析集群详情",
+      "output": "DescribeLibraDBClusterDetailResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBClusterTableMapping": {
+      "document": "本接口（ModifyLibraDBForwardConfig）用于查看分析集群库表映射关系",
+      "input": "DescribeLibraDBClusterTableMappingRequest",
+      "name": "查询分析集群库表映射",
+      "output": "DescribeLibraDBClusterTableMappingResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBClusters": {
+      "document": "查询分析集群列表",
+      "input": "DescribeLibraDBClustersRequest",
+      "name": "查询分析集群列表",
+      "output": "DescribeLibraDBClustersResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBDataSource": {
+      "document": "本接口（DescribeLibraDBDataSource）用于查询分析集群的源实例信息",
+      "input": "DescribeLibraDBDataSourceRequest",
+      "name": "查询分析引擎数据源信息",
+      "output": "DescribeLibraDBDataSourceResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBForwardConfig": {
+      "document": "本接口（DescribeLibraDBForwardConfig）用于查询分析引擎转发参数",
+      "input": "DescribeLibraDBForwardConfigRequest",
+      "name": "查询只读分析引擎转发参数",
+      "output": "DescribeLibraDBForwardConfigResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBInstanceDetail": {
+      "document": "本接口(DescribeLibraDBInstanceDetail)用于查询只读分析引擎详情",
+      "input": "DescribeLibraDBInstanceDetailRequest",
+      "name": "查询只读分析引擎实例详情",
+      "output": "DescribeLibraDBInstanceDetailResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBInstanceSpecs": {
+      "document": "本接口(DescribeLibraDBInstanceSpecs)用于查询只读分析引擎在该地域支持的规格列表信息",
+      "input": "DescribeLibraDBInstanceSpecsRequest",
+      "name": "查询只读分析引擎规格列表",
+      "output": "DescribeLibraDBInstanceSpecsResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBSlowLogs": {
+      "document": "本接口（DescribeLibraDBSlowLogs）为只读分析引擎的慢 SQL 明细查询接口",
+      "input": "DescribeLibraDBSlowLogsRequest",
+      "name": "查询分析引擎慢日志",
+      "output": "DescribeLibraDBSlowLogsResponse",
+      "status": "online"
+    },
+    "DescribeLibraDBVersion": {
+      "document": "查询只读分析引擎支持的版本列表",
+      "input": "DescribeLibraDBVersionRequest",
+      "name": "查询分析引擎内核版本",
+      "output": "DescribeLibraDBVersionResponse",
+      "status": "online"
+    },
     "DescribeMaintainPeriod": {
       "document": "本接口（DescribeMaintainPeriod）用于查询实例维护时间窗。",
       "input": "DescribeMaintainPeriodRequest",
@@ -672,6 +812,13 @@
       "output": "DisassociateSecurityGroupsResponse",
       "status": "online"
     },
+    "DownloadLibraDBClusterList": {
+      "document": "下载分析集群列表",
+      "input": "DownloadLibraDBClusterListRequest",
+      "name": "下载分析集群列表",
+      "output": "DownloadLibraDBClusterListResponse",
+      "status": "online"
+    },
     "ExportInstanceErrorLogs": {
       "document": "此接口（ExportInstanceErrorLogs）用于导出实例错误日志。",
       "input": "ExportInstanceErrorLogsRequest",
@@ -740,6 +887,20 @@
       "input": "IsolateInstanceRequest",
       "name": "隔离实例",
       "output": "IsolateInstanceResponse",
+      "status": "online"
+    },
+    "IsolateLibraDBCluster": {
+      "document": "隔离 TDSQL-C 分析集群",
+      "input": "IsolateLibraDBClusterRequest",
+      "name": "隔离分析集群",
+      "output": "IsolateLibraDBClusterResponse",
+      "status": "online"
+    },
+    "IsolateLibraDBInstance": {
+      "document": "本接口(IsolateLibraDBInstance)用于隔离的只读分析引擎实例。",
+      "input": "IsolateLibraDBInstanceRequest",
+      "name": "隔离只读分析引擎",
+      "output": "IsolateLibraDBInstanceResponse",
       "status": "online"
     },
     "ModifyAccountDescription": {
@@ -910,6 +1071,62 @@
       "output": "ModifyInstanceUpgradeLimitDaysResponse",
       "status": "online"
     },
+    "ModifyLibraDBClusterAccountDescription": {
+      "document": "本接口（ModifyLibraDBClusterAccountDescription）用于修改分析集群账号描述",
+      "input": "ModifyLibraDBClusterAccountDescriptionRequest",
+      "name": "修改分析集群账号描述",
+      "output": "ModifyLibraDBClusterAccountDescriptionResponse",
+      "status": "online"
+    },
+    "ModifyLibraDBClusterAccountHost": {
+      "document": "本接口（ModifyLibraDBClusterAccountHost）用于修改分析集群账号的可登录主机信息",
+      "input": "ModifyLibraDBClusterAccountHostRequest",
+      "name": "修改分析集群账号支持的登录主机",
+      "output": "ModifyLibraDBClusterAccountHostResponse",
+      "status": "online"
+    },
+    "ModifyLibraDBClusterAccountPrivilege": {
+      "document": "本接口（ModifyLibraDBClusterAccountPrivilege）用于修改分析集群账号权限",
+      "input": "ModifyLibraDBClusterAccountPrivilegeRequest",
+      "name": "修改分析集群账号权限",
+      "output": "ModifyLibraDBClusterAccountPrivilegeResponse",
+      "status": "online"
+    },
+    "ModifyLibraDBClusterDataSource": {
+      "document": "本接口（ModifyLibraDBClusterDataSource）用于修改 TDSQL-C 分析集群数据源",
+      "input": "ModifyLibraDBClusterDataSourceRequest",
+      "name": "修改分析集群数据源",
+      "output": "ModifyLibraDBClusterDataSourceResponse",
+      "status": "online"
+    },
+    "ModifyLibraDBClusterName": {
+      "document": "修改分析集群名称",
+      "input": "ModifyLibraDBClusterNameRequest",
+      "name": "修改分析集群名称",
+      "output": "ModifyLibraDBClusterNameResponse",
+      "status": "online"
+    },
+    "ModifyLibraDBClusterProject": {
+      "document": "修改分析集群项目 ID",
+      "input": "ModifyLibraDBClusterProjectRequest",
+      "name": "修改分析集群的项目 ID",
+      "output": "ModifyLibraDBClusterProjectResponse",
+      "status": "online"
+    },
+    "ModifyLibraDBClusterReplicationObject": {
+      "document": "本接口（ModifyLibraDBClusterReplicationObject）用于修改分析集群同步对象",
+      "input": "ModifyLibraDBClusterReplicationObjectRequest",
+      "name": "修改分析集群的同步对象",
+      "output": "ModifyLibraDBClusterReplicationObjectResponse",
+      "status": "online"
+    },
+    "ModifyLibraDBForwardConfig": {
+      "document": "本接口（ModifyLibraDBForwardConfig）用于修改只读分析实例自动转发参数",
+      "input": "ModifyLibraDBForwardConfigRequest",
+      "name": "修改只读分析引擎自动转发参数",
+      "output": "ModifyLibraDBForwardConfigResponse",
+      "status": "online"
+    },
     "ModifyMaintainPeriodConfig": {
       "document": "本接口（ModifyMaintainPeriodConfig）用于修改维护时间配置。",
       "input": "ModifyMaintainPeriodConfigRequest",
@@ -992,6 +1209,20 @@
       "input": "OfflineInstanceRequest",
       "name": "销毁实例",
       "output": "OfflineInstanceResponse",
+      "status": "online"
+    },
+    "OfflineLibraDBCluster": {
+      "document": "下线分析集群",
+      "input": "OfflineLibraDBClusterRequest",
+      "name": "下线分析集群",
+      "output": "OfflineLibraDBClusterResponse",
+      "status": "online"
+    },
+    "OfflineLibraDBInstance": {
+      "document": "本接口(OfflineLibraDBInstance)用于下线的只读分析引擎实例。",
+      "input": "OfflineLibraDBInstanceRequest",
+      "name": "下线只读分析引擎",
+      "output": "OfflineLibraDBInstanceResponse",
       "status": "online"
     },
     "OpenAuditService": {
@@ -1078,6 +1309,13 @@
       "output": "RenewClustersResponse",
       "status": "online"
     },
+    "RenewLibraDBClusters": {
+      "document": "续费分析集群",
+      "input": "RenewLibraDBClustersRequest",
+      "name": "续费分析集群",
+      "output": "RenewLibraDBClustersResponse",
+      "status": "online"
+    },
     "ReplayInstanceAuditLog": {
       "document": "回放实例审计日志",
       "input": "ReplayInstanceAuditLogRequest",
@@ -1092,11 +1330,25 @@
       "output": "ResetAccountPasswordResponse",
       "status": "online"
     },
+    "ResetLibraDBClusterAccountPassword": {
+      "document": "修改分析集群账号密码",
+      "input": "ResetLibraDBClusterAccountPasswordRequest",
+      "name": "修改分析集群账号密码",
+      "output": "ResetLibraDBClusterAccountPasswordResponse",
+      "status": "online"
+    },
     "RestartInstance": {
       "document": "本接口（RestartInstance）用于重启实例。",
       "input": "RestartInstanceRequest",
       "name": "重启实例",
       "output": "RestartInstanceResponse",
+      "status": "online"
+    },
+    "RestartLibraDBInstance": {
+      "document": "重启只读分析引擎",
+      "input": "RestartLibraDBInstanceRequest",
+      "name": "重启只读分析引擎",
+      "output": "RestartLibraDBInstanceResponse",
       "status": "online"
     },
     "ResumeServerless": {
@@ -1139,6 +1391,13 @@
       "input": "SearchClusterTablesRequest",
       "name": "搜索集群数据表列表",
       "output": "SearchClusterTablesResponse",
+      "status": "online"
+    },
+    "SetLibraDBClusterRenewFlag": {
+      "document": "设置 TDSQL-C 分析集群是否续费",
+      "input": "SetLibraDBClusterRenewFlagRequest",
+      "name": "设置分析集群续费模式",
+      "output": "SetLibraDBClusterRenewFlagResponse",
       "status": "online"
     },
     "SetRenewFlag": {
@@ -1492,6 +1751,89 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateLibraDBClusterRequest": {
+      "document": "ActivateLibraDBCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateLibraDBClusterResponse": {
+      "document": "ActivateLibraDBCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flow id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateLibraDBInstanceRequest": {
+      "document": "ActivateLibraDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例 ID 列表",
+          "example": "[\"cynosdbmysql-libradb-ins-mhrc48ym\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateLibraDBInstanceResponse": {
+      "document": "ActivateLibraDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "147183",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2467,6 +2809,67 @@
       ],
       "usage": "out"
     },
+    "AutoMapRule": {
+      "document": "高级映射，自动映射规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端实例Id",
+          "example": "libradb-ins-xxx",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端数据库正则",
+          "example": "database1",
+          "member": "string",
+          "name": "SrcDatabaseRegex",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端表正则",
+          "example": "table1",
+          "member": "string",
+          "name": "SrcTableRegex",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标端数据库正则",
+          "example": "DB1",
+          "member": "string",
+          "name": "DstDatabaseRegex",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标端表正则",
+          "example": "table1",
+          "member": "string",
+          "name": "DstTableRegex",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BackupConfigInfo": {
       "document": "备份设置",
       "members": [
@@ -3054,7 +3457,7 @@
         {
           "disabled": false,
           "document": "binlog所跨地域",
-          "example": "['ap-shanghai']",
+          "example": "[\"ap-shanghai\"]",
           "member": "string",
           "name": "CrossRegions",
           "output_required": false,
@@ -3580,6 +3983,108 @@
         }
       ],
       "usage": "in"
+    },
+    "CheckCreateLibraDBInstanceRequest": {
+      "document": "CheckCreateLibraDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-6gtlgm5l",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "libradb-ins-qvni5111",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckCreateLibraDBInstanceResponse": {
+      "document": "CheckCreateLibraDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整体校验状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CheckItem",
+          "name": "CheckItem",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckItem": {
+      "document": "校验项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Item",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该项的校验结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验不通过的详细说明和修改建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验不通过的详细说明和修改建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpectedValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CloseAuditServiceRequest": {
       "document": "CloseAuditService请求参数结构体",
@@ -4555,7 +5060,7 @@
         {
           "disabled": false,
           "document": "备份的表, 只在 BackupType 为 logic 时有效",
-          "example": "[{\"Database\": \"db1\",\"Tables\": [\"table1\"]}]",
+          "example": "无",
           "member": "DatabaseTables",
           "name": "BackupTables",
           "required": false,
@@ -5586,6 +6091,299 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLibraDBClusterAccountsRequest": {
+      "document": "CreateLibraDBClusterAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群id",
+          "example": "libradb-i794jfvg",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户信息",
+          "example": "无",
+          "member": "NewAccount",
+          "name": "Accounts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加密方式",
+          "example": "hash",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLibraDBClusterAccountsResponse": {
+      "document": "CreateLibraDBClusterAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLibraDBClustersRequest": {
+      "document": "CreateLibraDBClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-6\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例初始化信息",
+          "example": "无",
+          "member": "LibraDBInstanceInitInfo",
+          "name": "InstanceInitInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户密码",
+          "example": "\"autotest1\"",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下单模式",
+          "example": "0",
+          "member": "string",
+          "name": "DealMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密方法",
+          "example": "hash",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "LibraDBVersion 版本，缺省为最新版本",
+          "example": "2410",
+          "member": "string",
+          "name": "LibraDBVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订单来源",
+          "example": "\"autotest\"",
+          "member": "string",
+          "name": "OrderSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "0",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组",
+          "example": "[\"secrtury-a3df313\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时长",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间单位",
+          "example": "s",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例创建绑定Tag数组信息",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群所在vpcId",
+          "example": "vpc-nnakli31",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群所在SubnetId",
+          "example": "subnet-558rhwt2",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "3306",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLibraDBClustersResponse": {
+      "document": "CreateLibraDBClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预付费总订单号",
+          "example": "[\"20250515625002861909831\" ]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "[\"libradb-xxx\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每个资源对应一个dealName，业务需要根据dealName保证发货接口幂等",
+          "example": "[\"20250515625002861909831\" ]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "冻结流水",
+          "example": "asfasdf",
+          "member": "string",
+          "name": "TranId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "[\"libradb-ins-xxx\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8698,6 +9496,122 @@
       ],
       "usage": "out"
     },
+    "DataSourceItem": {
+      "document": "数据源项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端实例ID",
+          "example": "cynosmysql-ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端集群ID",
+          "example": "cynosmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端数据库类型",
+          "example": "cynos",
+          "member": "string",
+          "name": "DBType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端数据库IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端数据库端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源实例地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端实例可用区",
+          "example": "ap-guangzhou-9",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端主账号uin",
+          "example": "10002",
+          "member": "string",
+          "name": "SrcUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号类型",
+          "example": "other",
+          "member": "string",
+          "name": "AccountMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步任务状态",
+          "example": "running",
+          "member": "string",
+          "name": "ReplicationJobStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DatabasePrivileges": {
       "document": "数据库权限列表",
       "members": [
@@ -9183,6 +10097,79 @@
           "example": "87261",
           "member": "int64",
           "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLibraDBClusterAccountsRequest": {
+      "document": "DeleteLibraDBClusterAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群id",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Accounts",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLibraDBClusterAccountsResponse": {
+      "document": "DeleteLibraDBClusterAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLibraDBClusterRequest": {
+      "document": "DeleteLibraDBCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLibraDBClusterResponse": {
+      "document": "DeleteLibraDBCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flow id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10249,7 +11236,7 @@
         {
           "disabled": false,
           "document": "备份ID",
-          "example": "172365",
+          "example": "[172365]",
           "member": "int64",
           "name": "BackupIds",
           "required": false,
@@ -10303,7 +11290,7 @@
         {
           "disabled": false,
           "document": "备份文件名，模糊查询",
-          "example": "sls_20241028221204",
+          "example": "[\"sls_20241028221204\"]",
           "member": "string",
           "name": "FileNames",
           "required": false,
@@ -10312,7 +11299,7 @@
         {
           "disabled": false,
           "document": "备份备注名，模糊查询",
-          "example": "一区备份",
+          "example": "[\"一区备份\"]",
           "member": "string",
           "name": "BackupNames",
           "required": false,
@@ -10321,7 +11308,7 @@
         {
           "disabled": false,
           "document": "快照备份Id列表",
-          "example": "[\"1883726\",\"1883728\"]",
+          "example": "[1883726,1883728]",
           "member": "int64",
           "name": "SnapshotIdList",
           "required": false,
@@ -10364,7 +11351,7 @@
         {
           "disabled": false,
           "document": "备份文件列表",
-          "example": "[{ \"BackupId\": 1951161,\"BackupMethod\": \"auto\",\"BackupName\": \"\",\"BackupStatus\": \"success\",\"BackupType\": \"logic\",\"FileName\": \"20241114022138\",\"FileSize\": 1715049,\"FinishTime\": \"2024-11-14 02:22:20\",\"SnapShotType\": \"full\",\"SnapshotId\": 1951161,\"SnapshotTime\": \"2024-11-14 02:21:38\",\"StartTime\": \"2024-11-14 02:21:38\"}]",
+          "example": "无",
           "member": "BackupFileInfo",
           "name": "BackupList",
           "output_required": true,
@@ -12394,6 +13381,1180 @@
       ],
       "type": "object"
     },
+    "DescribeLibraDBClusterAccountAllPrivilegesRequest": {
+      "document": "DescribeLibraDBClusterAccountAllPrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群id",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterAccountAllPrivilegesResponse": {
+      "document": "DescribeLibraDBClusterAccountAllPrivileges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"GRANT CREATE, ALTER ON *.* TO 'andy'@'%'\",\"GRANT DROP, EXECUTE ON `andy1`.* TO 'andy'@'%'\",\"GRANT UPDATE, SHOW VIEW ON `andy2`.`user1` TO 'andy'@'%'\"]",
+          "member": "string",
+          "name": "PrivilegeStatements",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全局权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"CREATE\",\"ALTER\"]",
+          "member": "string",
+          "name": "GlobalPrivileges",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabasePrivileges",
+          "name": "DatabasePrivileges",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TablePrivileges",
+          "name": "TablePrivileges",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterAccountPrivilegesRequest": {
+      "document": "DescribeLibraDBClusterAccountPrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名",
+          "example": "admin",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机名",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "Db1",
+          "member": "string",
+          "name": "Db",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "table",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "table1",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterAccountPrivilegesResponse": {
+      "document": "DescribeLibraDBClusterAccountPrivileges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"SELECT\"]",
+          "member": "string",
+          "name": "Privileges",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterAccountsRequest": {
+      "document": "DescribeLibraDBClusterAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群id",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名",
+          "example": "[\"admin1\", \"admin2\"]",
+          "member": "string",
+          "name": "AccountNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊匹配关键字",
+          "example": "admin",
+          "member": "string",
+          "name": "AccountRegular",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机名",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "Hosts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterAccountsResponse": {
+      "document": "DescribeLibraDBClusterAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号信息",
+          "example": "无",
+          "member": "Account",
+          "name": "AccountSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterAutoMapRuleRequest": {
+      "document": "DescribeLibraDBClusterAutoMapRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群ID",
+          "example": "libradb-a405lyzg",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分析实例ID",
+          "example": "libradb-ins-80lwcxnx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterAutoMapRuleResponse": {
+      "document": "DescribeLibraDBClusterAutoMapRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "高级映射规则",
+          "example": "无",
+          "member": "AutoMapRule",
+          "name": "AutoMapRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterDetailRequest": {
+      "document": "DescribeLibraDBClusterDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "\"libradb-xxx\"",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取更多服务器信息，可选值yes no",
+          "example": "yes",
+          "member": "string",
+          "name": "GetServerInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterDetailResponse": {
+      "document": "DescribeLibraDBClusterDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群信息",
+          "example": "无",
+          "member": "LibraDBClusterDetail",
+          "name": "Detail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterTableMappingRequest": {
+      "document": "DescribeLibraDBClusterTableMapping请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群ID",
+          "example": "libradb-d41df31",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分析引擎实例ID",
+          "example": "libradb-ins-fr1af41",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "libradb-n1",
+          "member": "string",
+          "name": "NodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面记录限制",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "源端schema列表",
+          "example": "[\"s1\", \"s2\"]",
+          "member": "string",
+          "name": "SrcSchemas",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "源端表列表",
+          "example": "[\"t1\", \"t2\"]",
+          "member": "string",
+          "name": "SrcTableName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态列表",
+          "example": "[\"normal\"]",
+          "member": "string",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "映射数据库名称",
+          "example": "[\"ms1\", \"ms2\"]",
+          "member": "string",
+          "name": "MapSchemas",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "映射表名",
+          "example": "[\"mt1\", \"mt2\"]",
+          "member": "string",
+          "name": "MapTableName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询映射数据库名称不为空的记录",
+          "example": "false",
+          "member": "bool",
+          "name": "MapSchemaNotEmpty",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询映射表名不为空的记录",
+          "example": "false",
+          "member": "bool",
+          "name": "MapTableNameNotEmpty",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClusterTableMappingResponse": {
+      "document": "DescribeLibraDBClusterTableMapping返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库映射信息",
+          "example": "无",
+          "member": "TableMappingObject",
+          "name": "TableMappings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClustersRequest": {
+      "document": "DescribeLibraDBClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "cluster",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方法",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "QueryFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBClustersResponse": {
+      "document": "DescribeLibraDBClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群信息",
+          "example": "无",
+          "member": "LibraDBClusterSet",
+          "name": "ClusterSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBDataSourceRequest": {
+      "document": "DescribeLibraDBDataSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群ID",
+          "example": "libradb-af341d4",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例ID",
+          "example": "libradb-ins-fb3d444",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBDataSourceResponse": {
+      "document": "DescribeLibraDBDataSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceItem",
+          "name": "DataSourceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBForwardConfigRequest": {
+      "document": "DescribeLibraDBForwardConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例id",
+          "example": "libradb-ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBForwardConfigResponse": {
+      "document": "DescribeLibraDBForwardConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启转发",
+          "example": "\"AUTO\"/\"NONE\"",
+          "member": "string",
+          "name": "ForwardMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForwardInstanceInfo",
+          "name": "ForwardList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBInstanceDetailRequest": {
+      "document": "DescribeLibraDBInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-csmr78sn",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例 ID",
+          "example": "\"cynosdbmysql-libradb-ins-mhrc48ym\"]",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBInstanceDetailResponse": {
+      "document": "DescribeLibraDBInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10003***252",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "134431132",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdbmysql-bdcl1n11",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "andy",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdbmysql-ins-ifq10f11",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdbmysql-ins-ifq10f11",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1303453",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Libra分析引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2404.15.1",
+          "member": "string",
+          "name": "LibraDBVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Storage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_TCS",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Common",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "libradbRo",
+          "member": "string",
+          "name": "InstanceRole",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-11-07 15:01:21",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-11-06 15:01:21",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "售卖方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "售卖开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10-07 15:01:21",
+          "member": "string",
+          "name": "PeriodStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "售卖结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-11-07 15:01:21",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续费标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NetType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-5l7l5q11",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-b5v6i111",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "虚拟IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.1.1.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceNetInfo",
+          "name": "InstanceNetInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例节点信息",
+          "example": "无",
+          "member": "LibraDBNodeInfo",
+          "name": "NodeInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例节点个数",
+          "example": "2",
+          "member": "uint64",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBInstanceSpecsRequest": {
+      "document": "DescribeLibraDBInstanceSpecs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLibraDBInstanceSpecsResponse": {
+      "document": "DescribeLibraDBInstanceSpecs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该地域实例规格信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RegionInstanceSpecInfo",
+          "name": "InstanceSpecSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBSlowLogsRequest": {
+      "document": "DescribeLibraDBSlowLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例 ID",
+          "example": "libradb-ins-i4vsg0tw",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间,1753171200。",
+          "example": "1753171200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间,1753171200。",
+          "example": "1753171200",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志单页条数限制:0-200。",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志分页，大于0。",
+          "example": "100",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志排序方式，DESC-降序，ASC-升序。",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志排序条件。",
+          "example": "User",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBSlowLogsResponse": {
+      "document": "DescribeLibraDBSlowLogs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibraDBVersionRequest": {
+      "document": "DescribeLibraDBVersion请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLibraDBVersionResponse": {
+      "document": "DescribeLibraDBVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本列表",
+          "example": "无",
+          "member": "LibraDBVersion",
+          "name": "VersionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMaintainPeriodRequest": {
       "document": "DescribeMaintainPeriod请求参数结构体",
       "members": [
@@ -13463,7 +15624,7 @@
         {
           "disabled": false,
           "document": "可回档时间范围",
-          "example": "[{\"TimeRangeStart\": \"2019-01-13 02:12:05\",\"TimeRangeEnd\": \"2019-01-20 02:10:12\"}]",
+          "example": "无",
           "member": "RollbackTimeRange",
           "name": "RollbackTimeRanges",
           "output_required": true,
@@ -14020,6 +16181,89 @@
       ],
       "type": "object"
     },
+    "DownloadLibraDBClusterListRequest": {
+      "document": "DownloadLibraDBClusterList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制数",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "cluster",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，desc,asc,DESC,ASC",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "QueryFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadLibraDBClusterListResponse": {
+      "document": "DownloadLibraDBClusterList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群信息",
+          "example": "无",
+          "member": "LibraClusterSet",
+          "name": "ClusterSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ErrorLogItemExport": {
       "document": "错误日志导出格式",
       "members": [
@@ -14474,6 +16718,34 @@
         }
       ],
       "type": "object"
+    },
+    "ForwardInstanceInfo": {
+      "document": "转发实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdbmysql-hlu0mqfh",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转发实例地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GdnTaskInfo": {
       "document": "全球数据库任务信息",
@@ -15816,6 +18088,199 @@
       ],
       "usage": "out"
     },
+    "InstanceSet": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库模式",
+          "example": "无",
+          "member": "string",
+          "name": "DbMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数",
+          "example": "4",
+          "member": "int64",
+          "name": "InstanceCpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "libradbRo",
+          "member": "string",
+          "name": "InstanceDeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "libradb-ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "16",
+          "member": "int64",
+          "name": "InstanceMemory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例角色",
+          "example": "libradbRo",
+          "member": "string",
+          "name": "InstanceRole",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "running",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "InstanceStatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬盘",
+          "example": "100",
+          "member": "int64",
+          "name": "InstanceStorage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬盘类型",
+          "example": "CLOUD_TCS",
+          "member": "string",
+          "name": "InstanceStorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型",
+          "example": "LibraDB",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "持续的时间",
+          "example": "3600",
+          "member": "int64",
+          "name": "MaintainDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行开始时间(距离0点的秒数)",
+          "example": "10920",
+          "member": "int64",
+          "name": "MaintainStartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以执行的时间，枚举值：[\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\", \"Sat\", \"Sun\"]",
+          "example": "[\"Mon\"]",
+          "member": "string",
+          "name": "MaintainWeekDays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "[\"libradb-node-0\"]",
+          "member": "string",
+          "name": "NodeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例任务",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "InstanceTasks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceSpec": {
       "document": "实例可售卖规格详细信息，创建实例时Cpu/Memory确定实例规格，存储可选大小为[MinStorageSize,MaxStorageSize]",
       "members": [
@@ -16210,6 +18675,1666 @@
       ],
       "type": "object"
     },
+    "IsolateLibraDBClusterRequest": {
+      "document": "IsolateLibraDBCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "隔离原因类型",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "IsolateReasonTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "隔离原因",
+          "example": "\"测试完成，需要隔离\"",
+          "member": "string",
+          "name": "IsolateReason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateLibraDBClusterResponse": {
+      "document": "IsolateLibraDBCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flow id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回订单号",
+          "example": "[\"632415780\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateLibraDBInstanceRequest": {
+      "document": "IsolateLibraDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例 ID 列表",
+          "example": "[\"cynosdbmysql-libradb-ins-mhrc48ym\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否是强制隔离",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceIsolate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "隔离原因类型",
+          "example": "[12]",
+          "member": "int64",
+          "name": "IsolateReasonTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "隔离原因",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "IsolateReason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateLibraDBInstanceResponse": {
+      "document": "IsolateLibraDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "147286",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20241104\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LibraClusterSet": {
+      "document": "libra集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-05-25 19:23:31",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例信息",
+          "example": "无",
+          "member": "LibraInstanceSet",
+          "name": "InstanceSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间",
+          "example": "2021-05-25 19:23:31",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识，1为自动续费，0为到期不续",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储大小",
+          "example": "100",
+          "member": "int64",
+          "name": "Storage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用容量",
+          "example": "100",
+          "member": "int64",
+          "name": "UsedStorage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vip地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vport端口",
+          "example": "4000",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LibraDBClusterDetail": {
+      "document": "libra集群详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "“libradb-xxx”",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "“libradb-xxx”",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储大小",
+          "example": "20",
+          "member": "int64",
+          "name": "Storage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC名称",
+          "example": "\"Default-VPC\"",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc唯一id",
+          "example": "\"vpc-xxx\"",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网名称",
+          "example": "\"Default-Subnet\"",
+          "member": "string",
+          "name": "SubnetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "\"subnet-xxx\"",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "\"5.7\"",
+          "member": "string",
+          "name": "DbVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用容量",
+          "example": "100",
+          "member": "int64",
+          "name": "UsedStorage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vip地址",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vport端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群只读实例的vip地址和vport端口",
+          "example": "无",
+          "member": "RoAddr",
+          "name": "RoAddr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cynos版本",
+          "example": "\"2.0.21\"",
+          "member": "string",
+          "name": "CynosVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否冻结",
+          "example": "no",
+          "member": "string",
+          "name": "IsFreeze",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区",
+          "example": "\"ap-guangzhou-3\"",
+          "member": "string",
+          "name": "MasterZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例集合",
+          "example": "无",
+          "member": "InstanceSet",
+          "name": "InstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本标签",
+          "example": "无",
+          "member": "string",
+          "name": "CynosVersionTag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不支持添加ro yes-不支持添加ro， no/null/\"\" 支持添加ro",
+          "example": "no",
+          "member": "string",
+          "name": "NoSupportAddRo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "\"ap-guangzhou-3\"",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物理可用区",
+          "example": "\"ap-guangzhou-3\"",
+          "member": "string",
+          "name": "PhysicalZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LibraDBClusterSet": {
+      "document": "集群列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cynos版本",
+          "example": "2.0.21",
+          "member": "string",
+          "name": "CynosVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本标签",
+          "example": "无",
+          "member": "string",
+          "name": "CynosVersionTag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例数量",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否冻结",
+          "example": "no",
+          "member": "string",
+          "name": "IsFreeze",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络地址",
+          "example": "无",
+          "member": "NetAddr",
+          "name": "NetAddrs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间\n",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识，1为自动续费，0为到期不续",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储大小，单位为G",
+          "example": "100",
+          "member": "int64",
+          "name": "Storage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户id",
+          "example": "123",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vip地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc唯一id",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vport端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "MasterZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物理可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "PhysicalZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LibraDBClusterSrcInfo": {
+      "document": "libra分析集群源数据库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端类型",
+          "example": "cynos",
+          "member": "string",
+          "name": "SrcInstanceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络类型",
+          "example": "local",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端实例ID",
+          "example": "cynosmysql-ins-1",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端集群ID",
+          "example": "cynosmysql-xxx",
+          "member": "string",
+          "name": "SrcClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "3306",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "rootroot",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端sql_mode",
+          "example": "no_rows",
+          "member": "string",
+          "name": "SqlMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端应用id",
+          "example": "10008",
+          "member": "int64",
+          "name": "SrcAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端账号",
+          "example": "10007",
+          "member": "string",
+          "name": "SrcUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端子账号",
+          "example": "10006",
+          "member": "string",
+          "name": "SrcSubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "other",
+          "member": "string",
+          "name": "AccountMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端实例地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对源端实例的操作",
+          "example": "add",
+          "member": "string",
+          "name": "Operation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LibraDBInstanceInitInfo": {
+      "document": "libra实例初始化信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cpu",
+          "example": "4",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "16",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬盘",
+          "example": "100",
+          "member": "int64",
+          "name": "StorageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储类型",
+          "example": "CLOUD_TCS",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "common",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例版本",
+          "example": "2410",
+          "member": "string",
+          "name": "LibraDBVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例数量",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "subnet id",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "4000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买实例副本数",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplicasNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LibraDBNodeInfo": {
+      "document": "LibraDB 节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "LibraDB节点ID",
+          "example": "libradbn-1",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据同步中",
+          "example": "syncing",
+          "member": "string",
+          "name": "DataStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位 G",
+          "example": "16",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘大小，单位G",
+          "example": "100",
+          "member": "uint64",
+          "name": "Storage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无主键",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LibraDBVersion": {
+      "document": "LibraDB 版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "1.2404.1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本tag",
+          "example": "stable",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以使用该版本",
+          "example": "true",
+          "member": "bool",
+          "name": "HasPermission",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LibraInstanceSet": {
+      "document": "libra实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库模式",
+          "example": "无",
+          "member": "string",
+          "name": "DbMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数",
+          "example": "4",
+          "member": "int64",
+          "name": "InstanceCpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "LibraRo",
+          "member": "string",
+          "name": "InstanceDeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组id",
+          "example": "123",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "libradb-ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "16",
+          "member": "int64",
+          "name": "InstanceMemory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "1",
+          "member": "int64",
+          "name": "InstancePayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费结束时间",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "InstancePeriodEndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例角色",
+          "example": "libradbRo",
+          "member": "string",
+          "name": "InstanceRole",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "normal",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "InstanceStatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络类型",
+          "example": "tcp",
+          "member": "string",
+          "name": "NetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网id",
+          "example": "sunet-xxx",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpcid",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "虚拟ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "虚拟端口",
+          "example": "4000",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网区域",
+          "example": "无",
+          "member": "string",
+          "name": "WanDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "WanIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网port",
+          "example": "4000",
+          "member": "int64",
+          "name": "WanPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网状态",
+          "example": "无",
+          "member": "string",
+          "name": "WanStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬盘",
+          "example": "16",
+          "member": "int64",
+          "name": "InstanceStorage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬盘类型",
+          "example": "CLOUD_TCS",
+          "member": "string",
+          "name": "InstanceStorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogFilter": {
+      "document": "日志过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤项。",
+          "example": "User",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。支持以下条件： WINC-包含（分词维度）， WEXC-不包含（分词维度）, INC - 包含, EXC - 不包含, EQS - 等于, NEQ - 不等于, RA - 范围。",
+          "example": "INC",
+          "member": "string",
+          "name": "Compare",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤的值。反向查询时，多个值之前是且的关系，正向查询多个值是或的关系",
+          "example": "[\"user-name\"]",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "LogRuleTemplateInfo": {
       "document": "审计日志命中规则模板的基本信息",
       "members": [
@@ -16373,6 +20498,107 @@
         }
       ],
       "usage": "out"
+    },
+    "MigrateDBItem": {
+      "document": "同步库表对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表迁移模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MigrateTableMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MigrateTableItem",
+          "name": "Tables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MigrateObject": {
+      "document": "同步数据对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库迁移模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MigrateDBMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MigrateDBItem",
+          "name": "Databases",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MigrateOpt": {
+      "document": "同步对象详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含数据库表信息",
+          "example": "无",
+          "member": "MigrateObject",
+          "name": "DatabaseTables",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MigrateTableItem": {
+      "document": "同步数据表名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifiableInfo": {
       "document": "参数是否可修改的详细信息",
@@ -17946,6 +22172,432 @@
       ],
       "type": "object"
     },
+    "ModifyLibraDBClusterAccountDescriptionRequest": {
+      "document": "ModifyLibraDBClusterAccountDescription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群id",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名",
+          "example": "Admin",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "管理员",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机名",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterAccountDescriptionResponse": {
+      "document": "ModifyLibraDBClusterAccountDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterAccountHostRequest": {
+      "document": "ModifyLibraDBClusterAccountHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群id",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号信息",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "主机名",
+          "example": "%",
+          "member": "string",
+          "name": "NewHost",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterAccountHostResponse": {
+      "document": "ModifyLibraDBClusterAccountHost返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterAccountPrivilegeRequest": {
+      "document": "ModifyLibraDBClusterAccountPrivilege请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "全局权限",
+          "example": "[\"SELECT\"]",
+          "member": "string",
+          "name": "GlobalPrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库权限",
+          "example": "无",
+          "member": "DatabasePrivileges",
+          "name": "DatabasePrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "表权限",
+          "example": "无",
+          "member": "TablePrivileges",
+          "name": "TablePrivileges",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterAccountPrivilegeResponse": {
+      "document": "ModifyLibraDBClusterAccountPrivilege返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterDataSourceRequest": {
+      "document": "ModifyLibraDBClusterDataSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群ID",
+          "example": "libradb-1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例ID",
+          "example": "libradb-ins-1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源端信息",
+          "example": "无",
+          "member": "LibraDBClusterSrcInfo",
+          "name": "SrcInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterDataSourceResponse": {
+      "document": "ModifyLibraDBClusterDataSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "77712",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterNameRequest": {
+      "document": "ModifyLibraDBClusterName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "testcluster",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterNameResponse": {
+      "document": "ModifyLibraDBClusterName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterProjectRequest": {
+      "document": "ModifyLibraDBClusterProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID 列表",
+          "example": "[\"libradb-xxx\"]",
+          "member": "string",
+          "name": "ClusterIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目 ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterProjectResponse": {
+      "document": "ModifyLibraDBClusterProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群列表",
+          "example": "[\"libradb-xxx\"]",
+          "member": "string",
+          "name": "AffectedClusterIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterReplicationObjectRequest": {
+      "document": "ModifyLibraDBClusterReplicationObject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群ID",
+          "example": "libradb-cluster-1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例 ID",
+          "example": "libradb-ins-1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "映射模式",
+          "example": "NoRule,DefaultRule,CustomRule",
+          "member": "string",
+          "name": "ForceDefaultMapRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步对象",
+          "example": "无",
+          "member": "ReplicationObject",
+          "name": "Objects",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动映射规则",
+          "example": "无",
+          "member": "AutoMapRule",
+          "name": "AutoMapRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否按照最新映射规则刷新存量映射关系",
+          "example": "false",
+          "member": "bool",
+          "name": "RefreshMapping",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBClusterReplicationObjectResponse": {
+      "document": "ModifyLibraDBClusterReplicationObject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBForwardConfigRequest": {
+      "document": "ModifyLibraDBForwardConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例Id",
+          "example": "libradb-ins-1v4okeuw",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发模式",
+          "example": "AUTO;NONE",
+          "member": "string",
+          "name": "ForwardMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发实例列表",
+          "example": "无",
+          "member": "ForwardInstanceInfo",
+          "name": "ForwardList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraDBForwardConfigResponse": {
+      "document": "ModifyLibraDBForwardConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMaintainPeriodConfigRequest": {
       "document": "ModifyMaintainPeriodConfig请求参数结构体",
       "members": [
@@ -19141,6 +23793,89 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OfflineLibraDBClusterRequest": {
+      "document": "OfflineLibraDBCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OfflineLibraDBClusterResponse": {
+      "document": "OfflineLibraDBCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flow id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OfflineLibraDBInstanceRequest": {
+      "document": "OfflineLibraDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例 ID 列表",
+          "example": "[\"cynosdbmysql-libradb-ins-mhrc48ym\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OfflineLibraDBInstanceResponse": {
+      "document": "OfflineLibraDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "147288",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -21592,7 +26327,7 @@
         {
           "disabled": false,
           "document": "跨地域信息",
-          "example": "[                     {                         \"BackupId\": 5950,                         \"BackupRegion\": \"ap-shenzhen\"                     }                 ]",
+          "example": "无",
           "member": "BackupRegionAndIds",
           "name": "RedoCrossRegions",
           "output_required": false,
@@ -21668,6 +26403,112 @@
         }
       ],
       "type": "object"
+    },
+    "RegionInstanceSpecInfo": {
+      "document": "该地域实例规格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最小存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MinStorageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxStorageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有库存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "HasStock",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MinReplicaNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxReplicaNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区库存信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneStockInfo4Libra",
+          "name": "ZoneStockInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ReloadBalanceProxyNodeRequest": {
       "document": "ReloadBalanceProxyNode请求参数结构体",
@@ -21875,6 +26716,110 @@
       ],
       "type": "object"
     },
+    "RenewLibraDBClustersRequest": {
+      "document": "RenewLibraDBClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间间隔",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间单位",
+          "example": "s",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订单模式",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewLibraDBClustersResponse": {
+      "document": "RenewLibraDBClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预付费总订单号",
+          "example": "[\"791364134978\"]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "冻结流水",
+          "example": "791364134978",
+          "member": "string",
+          "name": "TranId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单名称",
+          "example": "[\"79136413497833\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "[\"libradb-xxx\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "[\"libradb-xxx\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReplayInstanceAuditLogRequest": {
       "document": "ReplayInstanceAuditLog请求参数结构体",
       "members": [
@@ -21975,6 +26920,67 @@
       ],
       "type": "object"
     },
+    "ReplicationObject": {
+      "document": "分析引擎同步对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynos",
+          "member": "string",
+          "name": "SrcInstanceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端集群Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosmysql-123",
+          "member": "string",
+          "name": "SrcClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosmysql-ins-123",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "复制任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdc-1234",
+          "member": "string",
+          "name": "ReplicationJobId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同步对象详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MigrateOpt",
+          "name": "MigrateObjects",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ResetAccountPasswordRequest": {
       "document": "ResetAccountPassword请求参数结构体",
       "members": [
@@ -22019,6 +27025,69 @@
     },
     "ResetAccountPasswordResponse": {
       "document": "ResetAccountPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetLibraDBClusterAccountPasswordRequest": {
+      "document": "ResetLibraDBClusterAccountPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID",
+          "example": "libradb-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "“fasdd33fd”",
+          "member": "string",
+          "name": "AccountPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "root",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密方式",
+          "example": "hash",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetLibraDBClusterAccountPasswordResponse": {
+      "document": "ResetLibraDBClusterAccountPassword返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22095,6 +27164,43 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartLibraDBInstanceRequest": {
+      "document": "RestartLibraDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "只读分析引擎实例 ID",
+          "example": "cynosdbmysql-libradb-ins-mhrc48ym",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartLibraDBInstanceResponse": {
+      "document": "RestartLibraDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "147263",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22196,6 +27302,34 @@
       ],
       "type": "object"
     },
+    "RoAddr": {
+      "document": "只读实例地址",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "4000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RollBackClusterRequest": {
       "document": "RollBackCluster请求参数结构体",
       "members": [
@@ -22247,7 +27381,7 @@
         {
           "disabled": false,
           "document": "回档数据库列表",
-          "example": "[{\"OldDatabase\": \"db1\",\"NewDatabase\": \"dbnew\"}]",
+          "example": "无",
           "member": "RollbackDatabase",
           "name": "RollbackDatabases",
           "required": false,
@@ -22256,7 +27390,7 @@
         {
           "disabled": false,
           "document": "回档数据库表列表",
-          "example": "[{\"Database\": \"db1\",\"Tables\": [{\"OldTable\": \"tb1\",\"NewTable\": \"tbnew\"}]}]",
+          "example": "无",
           "member": "RollbackTable",
           "name": "RollbackTables",
           "required": false,
@@ -23905,6 +29039,52 @@
       ],
       "usage": "out"
     },
+    "SetLibraDBClusterRenewFlagRequest": {
+      "document": "SetLibraDBClusterRenewFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析集群 ID 列表",
+          "example": "[\"libradb-xxx\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "续费标记 0:正常续费  1:自动续费 2:到期不续",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetLibraDBClusterRenewFlagResponse": {
+      "document": "SetLibraDBClusterRenewFlag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SetRenewFlagRequest": {
       "document": "SetRenewFlag请求参数结构体",
       "members": [
@@ -24636,6 +29816,133 @@
         }
       ],
       "type": "object"
+    },
+    "TableMappingObject": {
+      "document": "表映射关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端实例Id",
+          "example": "cynosmysql-123",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "sbtest",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "warehouse",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "映射数据库名称",
+          "example": "sbtest",
+          "member": "string",
+          "name": "MapDatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "映射表名",
+          "example": "warehouse",
+          "member": "string",
+          "name": "MapTableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步状态",
+          "example": "processing",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步进度",
+          "example": "100.0",
+          "member": "float",
+          "name": "Process",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "延迟",
+          "example": "100",
+          "member": "int64",
+          "name": "Lag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "同步中",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为主表",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPrimary",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "虚拟列填充值",
+          "example": "name",
+          "member": "string",
+          "name": "VirtualColValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TablePrivileges": {
       "document": "mysql表权限",
@@ -25540,6 +30847,32 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneStockInfo4Libra": {
+      "document": "Libra所售卖的地域库存信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有库存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "HasStock",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -8,6 +8,22 @@
         "title": "恢复实例访问"
       }
     ],
+    "ActivateLibraDBCluster": [
+      {
+        "document": "恢复隔离中的分析集群",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateLibraDBCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i8okw971\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 2105105,\n        \"RequestId\": \"bcfd81ac-c322-4038-ab58-6018dac7e33a\"\n    }\n}",
+        "title": "恢复隔离中的分析集群"
+      }
+    ],
+    "ActivateLibraDBInstance": [
+      {
+        "document": "本接口（ActivateLibraDBInstance）用于解除已隔离的只读分析引擎实例。",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ActivateLibraDBInstance\n&ClusterId=cynosdbmysql-bzxxrmtq\n&InstanceIdList.0=cynosdbmysql-libradb-ins-mhrc48ym\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd5759b5-89e9-483c-b79c-d99b27c33192\",\n        \"FlowId\": 147183\n    }\n}",
+        "title": "解除只读分析引擎实例的隔离状态"
+      }
+    ],
     "AddClusterSlaveZone": [
       {
         "document": "开启多可用区部署",
@@ -38,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindClusterResourcePackages\n<公共请求参数>\n\n{\n    \"PackageIds\": [\n        \"package- abcd1234\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-1234abcd\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456789-123456-123456789\"\n    }\n}",
         "title": "为集群绑定资源包"
+      }
+    ],
+    "CheckCreateLibraDBInstance": [
+      {
+        "document": "本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCreateLibraDBInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-6474meew\",\n    \"InstanceId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"Status\": \"\",\n        \"CheckItem\": [\n            {}\n        ]\n    }\n}",
+        "title": "校验集群是否可以添加只读分析引擎"
       }
     ],
     "CloseAuditService": [
@@ -160,6 +184,22 @@
         "title": "创建集成集群"
       }
     ],
+    "CreateLibraDBClusterAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLibraDBClusterAccounts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\",\n    \"Accounts\": [\n        {\n            \"AccountName\": \"Admin\",\n            \"AccountPassword\": \"Admin*111\",\n            \"Host\": \"%\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f7d312b6-48bb-4c10-84f5-4774072355fe\"\n    }\n}",
+        "title": "创建账号"
+      }
+    ],
+    "CreateLibraDBClusters": [
+      {
+        "document": "用于新建一个 TDSQL-C 分析集群",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLibraDBClusters\n<公共请求参数>\n\n{\n    \"Count\": 1,\n    \"Zone\": \"ap-guangzhou-7\",\n    \"InstanceInitInfos\": [\n        {\n            \"Cpu\": 4,\n            \"Memory\": 16,\n            \"StorageSize\": 20,\n            \"StorageType\": \"\",\n            \"InstanceType\": \"Common\",\n            \"LibraDBVersion\": \"\",\n            \"InstanceCount\": 1,\n            \"VpcId\": \"vpc-nnakli31\",\n            \"SubnetId\": \"subnet-558rhwt2\",\n            \"Port\": 3306\n        }\n    ],\n    \"AdminPassword\": \"root123\",\n    \"ClusterName\": \"duckduckgogogo\",\n    \"DealMode\": \"0\",\n    \"OrderSource\": \"autotest\",\n    \"PayMode\": 1,\n    \"ProjectId\": \"0\",\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"autotest\",\n            \"TagValue\": \"autotest\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"20250515625002861909831\"\n        ],\n        \"ClusterIds\": [],\n        \"DealNames\": [\n            \"20250515625002861909861\"\n        ],\n        \"RequestId\": \"cf0a271a-4c08-42e8-96e2-d00ca6167e48\",\n        \"ResourceIds\": [],\n        \"TranId\": \"\"\n    }\n}",
+        "title": "新建 TDSQL-C 分析集群"
+      }
+    ],
     "CreateParamTemplate": [
       {
         "document": "创建参数模板",
@@ -252,6 +292,22 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterSaveBackup\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-0fs2nhc7\",\n    \"SaveBackupId\": 64142\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be38b494-263a-45f7-b6f3-ecbd66ac75bb\",\n        \"TaskId\": 19297\n    }\n}",
         "title": "删除保留备份"
+      }
+    ],
+    "DeleteLibraDBCluster": [
+      {
+        "document": "彻底下线 TDSQL-C 分析集群",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLibraDBCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i8okw971\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 2105108,\n        \"RequestId\": \"fe34045a-0fa2-4507-b8a6-6dd5a527faf0\"\n    }\n}",
+        "title": "删除 TDSQL-C 分析集群"
+      }
+    ],
+    "DeleteLibraDBClusterAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLibraDBClusterAccounts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\",\n    \"Accounts\": [\n        {\n            \"AccountName\": \"Admin\",\n            \"Host\": \"%\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b813e2cc-814e-43d3-9cb4-02986ba485b3\"\n    }\n}",
+        "title": "删除分析集群账号"
       }
     ],
     "DeleteParamTemplate": [
@@ -610,6 +666,110 @@
         "title": "查询回收站实例列表"
       }
     ],
+    "DescribeLibraDBClusterAccountAllPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBClusterAccountAllPrivileges\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\",\n    \"Account\": {\n        \"AccountName\": \"admin\",\n        \"Host\": \"127.0.0.1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DatabasePrivileges\": null,\n        \"GlobalPrivileges\": [\n            \"SELECT\"\n        ],\n        \"PrivilegeStatements\": null,\n        \"TablePrivileges\": null,\n        \"RequestId\": \"83c02582-a157-4bcf-a33d-b190c033c627\"\n    }\n}",
+        "title": "查询分析集群账号权限"
+      }
+    ],
+    "DescribeLibraDBClusterAccountPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBClusterAccountAllPrivileges\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\",\n    \"AccountName\": \"admin\",\n    \"Host\": \"127.0.0.1\",\n    \"Db\": \"Database1\",\n    \"Type\": \"*\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Privileges\": [\n            \"SELECT\"\n        ],\n        \"RequestId\": \"83c02582-a157-4bcf-a33d-b190c033c627\"\n    }\n}",
+        "title": "查询分析集群账号权限"
+      }
+    ],
+    "DescribeLibraDBClusterAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBClusterAccounts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountSet\": [\n            {\n                \"AccountName\": \"root\",\n                \"CreateTime\": \"2025-12-25 16:20:05\",\n                \"Description\": \"\",\n                \"Host\": \"%\",\n                \"MaxUserConnections\": 0,\n                \"UpdateTime\": \"2025-12-25 16:22:41\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"353a315c-71c3-4a39-a5d8-c1055f1f176d\"\n    }\n}",
+        "title": "查询分析集群账号"
+      }
+    ],
+    "DescribeLibraDBClusterAutoMapRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBClusterAutoMapRule\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-a405lyzg\",\n    \"InstanceId\": \"libradb-ins-80lwcxnx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMapRules\": [],\n        \"RequestId\": \"8417f19e-5b18-4d8f-87fb-440c99191038\"\n    }\n}",
+        "title": "查询分析集群自动映射规则"
+      }
+    ],
+    "DescribeLibraDBClusterDetail": [
+      {
+        "document": "查看分析集群的详细信息",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i8okw971\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"ClusterId\": \"libradb-i8okw971\",\n            \"ClusterName\": \"libradb-i8okw971\",\n            \"CreateTime\": \"2025-05-15 15:42:58\",\n            \"CynosVersion\": \"\",\n            \"CynosVersionTag\": \"\",\n            \"DbVersion\": \"1.2404.21.0\",\n            \"InstanceSet\": [\n                {\n                    \"DbMode\": \"\",\n                    \"InstanceCpu\": 4,\n                    \"InstanceDeviceType\": \"Common\",\n                    \"InstanceId\": \"libradb-ins-6231eq34\",\n                    \"InstanceMemory\": 16,\n                    \"InstanceName\": \"libradb-ins-6231eq34\",\n                    \"InstanceRole\": \"libradbRo\",\n                    \"InstanceStatus\": \"running\",\n                    \"InstanceStatusDesc\": \"运行中\",\n                    \"InstanceStorage\": 20,\n                    \"InstanceStorageType\": \"CLOUD_TCS\",\n                    \"InstanceType\": \"libradbRo\",\n                    \"MaintainDuration\": 3600,\n                    \"MaintainStartTime\": 10800,\n                    \"MaintainWeekDays\": [\n                        \"Mon\",\n                        \"Tue\",\n                        \"Wed\",\n                        \"Thu\",\n                        \"Fri\",\n                        \"Sat\",\n                        \"Sun\"\n                    ],\n                    \"NodeList\": [\n                        \"libradbn-0\"\n                    ]\n                }\n            ],\n            \"IsFreeze\": \"no\",\n            \"MasterZone\": \"ap-guangzhou-7\",\n            \"NoSupportAddRo\": \"\",\n            \"PayMode\": 0,\n            \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n            \"PhysicalZone\": \"\",\n            \"ProjectID\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"RenewFlag\": 0,\n            \"RoAddr\": [\n                {\n                    \"IP\": \"172.16.0.67\",\n                    \"Port\": 3306\n                }\n            ],\n            \"Status\": \"running\",\n            \"StatusDesc\": \"运行中\",\n            \"Storage\": 20,\n            \"SubnetId\": \"subnet-558rhwt2\",\n            \"SubnetName\": \"Default-Subnet\",\n            \"Tasks\": [],\n            \"UsedStorage\": 0,\n            \"Vip\": \"172.16.0.67\",\n            \"VpcId\": \"vpc-nnakli31\",\n            \"VpcName\": \"Default-VPC\",\n            \"Vport\": 3306,\n            \"Zone\": \"\"\n        },\n        \"RequestId\": \"7d579362-a249-4dd0-9cf3-d1c68af42d2b\"\n    }\n}",
+        "title": "查看 TDSQL-C 分析集群详情"
+      }
+    ],
+    "DescribeLibraDBClusterTableMapping": [
+      {
+        "document": "查看分析集群库表映射关系",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBClusterTableMapping\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-ln26puh1\",\n    \"InstanceId\": \"libradb-ins-4v4hcwgs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"253f5807-47f3-478a-b2d0-5de7bf3774f7\",\n        \"TableMappings\": [],\n        \"TotalCnt\": 0\n    }\n}",
+        "title": "查看分析集群库表映射关系"
+      }
+    ],
+    "DescribeLibraDBClusters": [
+      {
+        "document": "查询 TDSQL-C  分析集群列表",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBClusters\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"AppId\": 1251966477,\n                \"ClusterId\": \"libradb-e9p7dqqm\",\n                \"ClusterName\": \"按量计费\",\n                \"CreateTime\": \"2025-06-20 17:01:53\",\n                \"CynosVersion\": \"\",\n                \"CynosVersionTag\": \"\",\n                \"DbVersion\": \"3.2503.1.0\",\n                \"InstanceNum\": 1,\n                \"IsFreeze\": \"no\",\n                \"MasterZone\": \"ap-qingyuan-1\",\n                \"NetAddrs\": [\n                    {\n                        \"Description\": \"\",\n                        \"InstanceGroupId\": \"\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-mfsl0rqo\",\n                        \"UniqVpcId\": \"vpc-95mugkpt\",\n                        \"Vip\": \"192.168.254.39\",\n                        \"Vport\": 3306,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"PhysicalZone\": \"\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-qingyuan\",\n                \"RenewFlag\": 0,\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 100,\n                \"SubnetId\": \"subnet-mfsl0rqo\",\n                \"Tasks\": [],\n                \"Uin\": \"3374998458\",\n                \"UpdateTime\": \"2025-06-23 17:42:21\",\n                \"Vip\": \"192.168.254.39\",\n                \"VpcId\": \"vpc-95mugkpt\",\n                \"Vport\": 3306,\n                \"Zone\": \"\"\n            }\n        ],\n        \"RequestId\": \"e22849e3-a047-4ad8-9d4d-c6929eeec965\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询 TDSQL-C  分析集群列表"
+      }
+    ],
+    "DescribeLibraDBDataSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBDataSource\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-r3ochnd5\",\n    \"InstanceId\": \"libradb-ins-c3dp0s9o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSourceList\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-djhes6w5\",\n                \"DBType\": \"cynos\",\n                \"IP\": \"\",\n                \"InstanceId\": \"cynosdbmysql-ins-348bdpck\",\n                \"Port\": 0\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-jogwvkth\",\n                \"DBType\": \"cynos\",\n                \"IP\": \"\",\n                \"InstanceId\": \"cynosdbmysql-ins-ht2tdr9s\",\n                \"Port\": 0\n            }\n        ],\n        \"RequestId\": \"3d9cfef6-b56d-43de-80e8-d9602e9a94b8\"\n    }\n}",
+        "title": "查看分析集群数据源信息"
+      }
+    ],
+    "DescribeLibraDBForwardConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBForwardConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"libradb-ins-ex0klgmh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ForwardList\": [\n            {\n                \"InstanceId\": \"cynosdbmysql-ins-62lfwjfx\",\n                \"Region\": \"ap-qingyuan\"\n            }\n        ],\n        \"ForwardMode\": \"AUTO\",\n        \"RequestId\": \"64d9f1c8-3993-47be-bfea-d63943d08248\"\n    }\n}",
+        "title": "查询分析实例转发参数配置"
+      }
+    ],
+    "DescribeLibraDBInstanceDetail": [
+      {
+        "document": "本接口（DescribeLibraDBInstanceDetail）用于查询只读分析引擎实例详情",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBInstanceDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-9xl6z5m1\",\n    \"InstanceId\": \"libradb-ins-3v7ejwba\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 1300274166,\n        \"ClusterId\": \"cynosdbmysql-xxx\",\n        \"ClusterName\": \"test_cluster\",\n        \"Cpu\": 8,\n        \"CreateTime\": \"2025-04-07 16:26:29\",\n        \"InstanceId\": \"libradb-ins-3v7ejwba\",\n        \"InstanceName\": \"test_1\",\n        \"InstanceNetInfo\": {\n            \"InstanceGroupId\": \"cynosdbmysql-grp-xxx\",\n            \"InstanceGroupType\": \"libradbRo\",\n            \"NetType\": 1,\n            \"SubnetId\": \"subnet-xxxx\",\n            \"Vip\": \"10.0.0.34\",\n            \"VpcId\": \"vpc-dfa31dd1\",\n            \"Vport\": 2000,\n            \"WanDomain\": \"\",\n            \"WanIP\": \"\",\n            \"WanPort\": 0,\n            \"WanStatus\": \"init\"\n        },\n        \"InstanceRole\": \"libradbRo\",\n        \"InstanceType\": \"Common\",\n        \"LibraDBVersion\": \"1.2404.21.0\",\n        \"Memory\": 32,\n        \"NetType\": 0,\n        \"NodeCount\": 1,\n        \"NodeInfo\": [\n            {\n                \"Cpu\": 8,\n                \"DataStatus\": \"Running\",\n                \"Memory\": 32,\n                \"Message\": \"\",\n                \"NodeId\": \"libradbn-0\",\n                \"Status\": \"normal\",\n                \"Storage\": 20\n            }\n        ],\n        \"PayMode\": 0,\n        \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n        \"PeriodStartTime\": \"2025-04-07 16:26:28\",\n        \"ProjectId\": 0,\n        \"Region\": \"ap-guangzhou\",\n        \"RenewFlag\": 1,\n        \"RequestId\": \"e760a135-4e85-42a0-99e8-8496f1a5ed0c\",\n        \"ResourceTags\": [],\n        \"Status\": \"running\",\n        \"StatusDesc\": \"运行中\",\n        \"Storage\": 20,\n        \"StorageType\": \"CLOUD_TCS\",\n        \"SubnetId\": \"\",\n        \"Uin\": \"700001143625\",\n        \"UpdateTime\": \"2025-04-07 16:29:05\",\n        \"Vip\": \"\",\n        \"VpcId\": \"\",\n        \"Vport\": 0,\n        \"Zone\": \"ap-guangzhou-7\"\n    }\n}",
+        "title": "查询只读分析引擎实例详情"
+      }
+    ],
+    "DescribeLibraDBInstanceSpecs": [
+      {
+        "document": "本接口(DescribeLibraDBInstanceSpecs)用于查询只读分析引擎在该地域支持的规格列表信息",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBInstanceSpecs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSpecSet\": [\n            {\n                \"Cpu\": 128,\n                \"HasStock\": true,\n                \"InstanceType\": \"common\",\n                \"MaxReplicaNum\": 1,\n                \"MaxStorageSize\": 15000,\n                \"Memory\": 512,\n                \"MinReplicaNum\": 1,\n                \"MinStorageSize\": 100,\n                \"StorageType\": \"CLOUD_TCS\",\n                \"ZoneStockInfos\": []\n            },\n            {\n                \"Cpu\": 4,\n                \"HasStock\": true,\n                \"InstanceType\": \"common\",\n                \"MaxReplicaNum\": 1,\n                \"MaxStorageSize\": 7000,\n                \"Memory\": 16,\n                \"MinReplicaNum\": 1,\n                \"MinStorageSize\": 100,\n                \"StorageType\": \"CLOUD_TCS\",\n                \"ZoneStockInfos\": []\n            },\n            {\n                \"Cpu\": 8,\n                \"HasStock\": true,\n                \"InstanceType\": \"common\",\n                \"MaxReplicaNum\": 1,\n                \"MaxStorageSize\": 7000,\n                \"Memory\": 32,\n                \"MinReplicaNum\": 1,\n                \"MinStorageSize\": 100,\n                \"StorageType\": \"CLOUD_TCS\",\n                \"ZoneStockInfos\": []\n            },\n            {\n                \"Cpu\": 16,\n                \"HasStock\": true,\n                \"InstanceType\": \"common\",\n                \"MaxReplicaNum\": 1,\n                \"MaxStorageSize\": 15000,\n                \"Memory\": 64,\n                \"MinReplicaNum\": 1,\n                \"MinStorageSize\": 100,\n                \"StorageType\": \"CLOUD_TCS\",\n                \"ZoneStockInfos\": []\n            },\n            {\n                \"Cpu\": 32,\n                \"HasStock\": true,\n                \"InstanceType\": \"common\",\n                \"MaxReplicaNum\": 1,\n                \"MaxStorageSize\": 15000,\n                \"Memory\": 128,\n                \"MinReplicaNum\": 1,\n                \"MinStorageSize\": 100,\n                \"StorageType\": \"CLOUD_TCS\",\n                \"ZoneStockInfos\": []\n            },\n            {\n                \"Cpu\": 64,\n                \"HasStock\": true,\n                \"InstanceType\": \"common\",\n                \"MaxReplicaNum\": 1,\n                \"MaxStorageSize\": 15000,\n                \"Memory\": 256,\n                \"MinReplicaNum\": 1,\n                \"MinStorageSize\": 100,\n                \"StorageType\": \"CLOUD_TCS\",\n                \"ZoneStockInfos\": []\n            },\n            {\n                \"Cpu\": 96,\n                \"HasStock\": true,\n                \"InstanceType\": \"common\",\n                \"MaxReplicaNum\": 1,\n                \"MaxStorageSize\": 15000,\n                \"Memory\": 384,\n                \"MinReplicaNum\": 1,\n                \"MinStorageSize\": 100,\n                \"StorageType\": \"CLOUD_TCS\",\n                \"ZoneStockInfos\": []\n            }\n        ],\n        \"RequestId\": \"62071f40-549c-11ef-807f-195586da5700\"\n    }\n}",
+        "title": "查询只读分析引擎在该地域支持的规格列表信息"
+      }
+    ],
+    "DescribeLibraDBSlowLogs": [
+      {
+        "document": "查询只读分析引擎慢日志明细",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBSlowLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"libradb-ins-i4vsg0tw\",\n    \"StartTime\": \"1753171200\",\n    \"EndTime\": \"1753171200\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"billing-request-id-77800646\"\n    }\n}",
+        "title": "查询只读分析引擎慢日志明细"
+      }
+    ],
+    "DescribeLibraDBVersion": [
+      {
+        "document": "查询只读分析引擎的内核版本",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraDBVersion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cde9959-cf79-4e50-ac59-bb45ebe1634a\",\n        \"VersionList\": [\n            {\n                \"HasPermission\": true,\n                \"Tag\": \"stable\",\n                \"Version\": \"1.2404.21.0\"\n            },\n            {\n                \"HasPermission\": true,\n                \"Tag\": \"beta\",\n                \"Version\": \"test.119382630\"\n            },\n            {\n                \"HasPermission\": true,\n                \"Tag\": \"beta\",\n                \"Version\": \"1.2404.11.0\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeLibraDBVersion"
+      }
+    ],
     "DescribeMaintainPeriod": [
       {
         "document": "",
@@ -792,6 +952,14 @@
         "title": "安全组批量绑定云资源"
       }
     ],
+    "DownloadLibraDBClusterList": [
+      {
+        "document": "查看 TDSQL-C分析集群列表",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadLibraDBClusterList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-80jv0tgn\",\n                \"ClusterName\": \"内核_1.2404.21.0_0\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-80f54u73\",\n                        \"InstanceId\": \"libradb-ins-7d5sa2qi\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-7d5sa2qi\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"running\",\n                        \"InstanceStatusDesc\": \"运行中\",\n                        \"InstanceStorage\": 14,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.69\",\n                        \"Vport\": 3307,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 1,\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 14,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.69\",\n                \"Vport\": 3307\n            },\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-8gtc896t\",\n                \"ClusterName\": \"内核_1.2404.21.0_1\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-ed1anndp\",\n                        \"InstanceId\": \"libradb-ins-ag7bj07o\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-ag7bj07o\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"running\",\n                        \"InstanceStatusDesc\": \"运行中\",\n                        \"InstanceStorage\": 14,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.68\",\n                        \"Vport\": 3307,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 1,\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 14,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.68\",\n                \"Vport\": 3307\n            },\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-i8okw971\",\n                \"ClusterName\": \"duckduckgogogo\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-3y4xkenx\",\n                        \"InstanceId\": \"libradb-ins-6231eq34\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-6231eq34\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"running\",\n                        \"InstanceStatusDesc\": \"运行中\",\n                        \"InstanceStorage\": 20,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.67\",\n                        \"Vport\": 3306,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 0,\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 20,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.67\",\n                \"Vport\": 3306\n            },\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-lr1andl9\",\n                \"ClusterName\": \"_202504221150\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-k38ncwfx\",\n                        \"InstanceId\": \"libradb-ins-bivqnt26\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-bivqnt26\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"running\",\n                        \"InstanceStatusDesc\": \"运行中\",\n                        \"InstanceStorage\": 20,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.64\",\n                        \"Vport\": 3306,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 0,\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 20,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.64\",\n                \"Vport\": 3306\n            },\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-bqywwgqp\",\n                \"ClusterName\": \"libradb-bqywwgqp\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-20dug0z7\",\n                        \"InstanceId\": \"libradb-ins-698y8oya\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-698y8oya\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"creating\",\n                        \"InstanceStatusDesc\": \"创建中\",\n                        \"InstanceStorage\": 20,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.63\",\n                        \"Vport\": 3306,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 0,\n                \"Status\": \"creating\",\n                \"StatusDesc\": \"创建中\",\n                \"Storage\": 20,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.63\",\n                \"Vport\": 3306\n            },\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-7dm4j9tx\",\n                \"ClusterName\": \"edison_libra_cluster_0\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-3g3loqbh\",\n                        \"InstanceId\": \"libradb-ins-g0qln86o\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-g0qln86o\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"creating\",\n                        \"InstanceStatusDesc\": \"创建中\",\n                        \"InstanceStorage\": 13,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.61\",\n                        \"Vport\": 3307,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 1,\n                \"Status\": \"creating\",\n                \"StatusDesc\": \"创建中\",\n                \"Storage\": 13,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.61\",\n                \"Vport\": 3307\n            },\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-hgl460lr\",\n                \"ClusterName\": \"edison_libra_cluster_1\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-6kvf8jav\",\n                        \"InstanceId\": \"libradb-ins-f0wqweae\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-f0wqweae\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"creating\",\n                        \"InstanceStatusDesc\": \"创建中\",\n                        \"InstanceStorage\": 13,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.62\",\n                        \"Vport\": 3307,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 1,\n                \"Status\": \"creating\",\n                \"StatusDesc\": \"创建中\",\n                \"Storage\": 13,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.62\",\n                \"Vport\": 3307\n            },\n            {\n                \"AppId\": 1300274166,\n                \"ClusterId\": \"libradb-7drs3ypz\",\n                \"ClusterName\": \"_202504221150\",\n                \"CreateTime\": \"\",\n                \"DbVersion\": \"1.2404.21.0\",\n                \"InstanceSet\": [\n                    {\n                        \"DbMode\": \"\",\n                        \"InstanceCpu\": 4,\n                        \"InstanceDeviceType\": \"Common\",\n                        \"InstanceGroupId\": \"cynosdbmysql-grp-gxjduamv\",\n                        \"InstanceId\": \"libradb-ins-432ihin0\",\n                        \"InstanceMemory\": 16,\n                        \"InstanceName\": \"libradb-ins-432ihin0\",\n                        \"InstancePayMode\": 0,\n                        \"InstancePeriodEndTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                        \"InstanceRole\": \"libradbRo\",\n                        \"InstanceStatus\": \"creating\",\n                        \"InstanceStatusDesc\": \"创建中\",\n                        \"InstanceStorage\": 20,\n                        \"InstanceStorageType\": \"CLOUD_TCS\",\n                        \"NetType\": \"libradbRo\",\n                        \"UniqSubnetId\": \"subnet-558rhwt2\",\n                        \"UniqVpcId\": \"vpc-nnakli31\",\n                        \"Vip\": \"172.16.0.60\",\n                        \"Vport\": 3306,\n                        \"WanDomain\": \"\",\n                        \"WanIP\": \"\",\n                        \"WanPort\": 0,\n                        \"WanStatus\": \"init\"\n                    }\n                ],\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"ProjectID\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"RenewFlag\": 0,\n                \"Status\": \"creating\",\n                \"StatusDesc\": \"创建中\",\n                \"Storage\": 20,\n                \"UsedStorage\": 0,\n                \"Vip\": \"172.16.0.60\",\n                \"Vport\": 3306\n            }\n        ],\n        \"RequestId\": \"66b0f00c-d5bf-48b0-a0de-f76566e3ca31\",\n        \"TotalCount\": 22\n    }\n}",
+        "title": "下载分析集群列表"
+      }
+    ],
     "ExportInstanceErrorLogs": [
       {
         "document": "导出错误日志",
@@ -870,6 +1038,22 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateInstance\n<公共请求参数>\n\n{\n    \"InstanceIdList\": [\n        \"cynosdbmysql-ixgbd0di\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-ins-bzkxxrmt\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"DealNames\": [\n            \"23456\"\n        ],\n        \"FlowId\": 123\n    }\n}",
         "title": "隔离实例"
+      }
+    ],
+    "IsolateLibraDBCluster": [
+      {
+        "document": "隔离 TDSQL-C 分析集群",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateLibraDBCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i8okw971\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [],\n        \"FlowId\": 2105104,\n        \"RequestId\": \"7c895589-8bf4-46f8-8a30-97d2af784194\"\n    }\n}",
+        "title": "隔离 TDSQL-C 分析集群"
+      }
+    ],
+    "IsolateLibraDBInstance": [
+      {
+        "document": "隔离只读分析引擎实例",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateLibraDBInstance\n<公共请求参数>\n\n{\n    \"InstanceIdList\": [\n        \"libradb-ins-mhrc48ym\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-ins-bzkxxrmt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123,\n        \"DealNames\": [\n            \"sads\"\n        ]\n    }\n}",
+        "title": "隔离只读分析引擎实例"
       }
     ],
     "ModifyAccountDescription": [
@@ -1064,6 +1248,70 @@
         "title": "修改实例小版本升级限制时间"
       }
     ],
+    "ModifyLibraDBClusterAccountDescription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBClusterAccountDescription\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\",\n    \"AccountName\": \"admin\",\n    \"Host\": \"127.0.0.1\",\n    \"Description\": \"管理员\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"80a96cb7-85f0-4949-bf7f-4d359791abd3\"\n    }\n}",
+        "title": "修改分析集群账号描述"
+      }
+    ],
+    "ModifyLibraDBClusterAccountHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBClusterAccountHost\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\",\n    \"Account\": {\n        \"AccountName\": \"admin\",\n        \"Host\": \"%\"\n    },\n    \"NewHost\": \"127.0.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43272810-fd16-4ebb-9c3d-cd09d9969e53\"\n    }\n}",
+        "title": "修改分析集群账号主机"
+      }
+    ],
+    "ModifyLibraDBClusterAccountPrivilege": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBClusterAccountPrivilege\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i794jfvg\",\n    \"Account\": {\n        \"AccountName\": \"admin\",\n        \"Host\": \"127.0.0.1\"\n    },\n    \"GlobalPrivileges\": [\n        \"SELECT\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ea944a8-fd25-438a-a892-55bb073c60b7\"\n    }\n}",
+        "title": "修改分析集群账号权限"
+      }
+    ],
+    "ModifyLibraDBClusterDataSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBClusterDataSource\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-r32u74w9\",\n    \"InstanceId\": \"libradb-ins-0p7mxy28\",\n    \"SrcInfo\": [\n        {\n            \"SrcInstanceType\": \"cynos\",\n            \"SrcInstanceId\": \"cynosmysql-ins-123\",\n            \"SrcClusterId\": \"cynosmysql-123\",\n            \"AccessType\": \"vpc\",\n            \"IP\": \"127.0.0.1\",\n            \"Port\": \"3306\",\n            \"User\": \"root\",\n            \"Password\": \"root456\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 2105088,\n        \"RequestId\": \"7a24788f-f857-4751-a5aa-a06d676da24c\"\n    }\n}",
+        "title": "修改分析集群数据源"
+      }
+    ],
+    "ModifyLibraDBClusterName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBClusterName\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i8okw971\",\n    \"ClusterName\": \"duckduckgogogo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd938932-2e3c-4233-9e00-050da346e992\"\n    }\n}",
+        "title": "修改集群名称"
+      }
+    ],
+    "ModifyLibraDBClusterProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBClusterProject\n<公共请求参数>\n\n{\n    \"ClusterIdSet\": [\n        \"libradb-i8okw971\"\n    ],\n    \"ProjectId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AffectedClusterIdSet\": [\n            \"libradb-i8okw971\"\n        ],\n        \"RequestId\": \"6efb3d4f-fcb4-4f4b-8e43-459520443ae7\"\n    }\n}",
+        "title": "修改分析集群项目 ID"
+      }
+    ],
+    "ModifyLibraDBClusterReplicationObject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBClusterReplicationObject\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-r32u74w9\",\n    \"InstanceId\": \"libradb-ins-0p7mxy28\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 2105089,\n        \"RequestId\": \"b3453c0d-cc0b-4733-b1b0-842b46c4e882\"\n    }\n}",
+        "title": "修改分析集群的同步对象"
+      }
+    ],
+    "ModifyLibraDBForwardConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibraDBForwardConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"libradb-ins-ex0klgmh\",\n    \"ForwardMode\": \"AUTO\",\n    \"ForwardList\": [\n        {\n            \"InstanceId\": \"cynosdbmysql-ins-62lfwjfx\",\n            \"Region\": \"ap-qingyuan\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cbe293d6-fa37-46dc-a1f5-4781dd1af254\"\n    }\n}",
+        "title": "修改分析实例转发配置"
+      }
+    ],
     "ModifyMaintainPeriodConfig": [
       {
         "document": "",
@@ -1166,6 +1414,22 @@
         "title": "销毁实例"
       }
     ],
+    "OfflineLibraDBCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OfflineLibraDBCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i8okw971\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 2105107,\n        \"RequestId\": \"1d4245e3-eca5-4b1f-b90c-3f49c9cf66ef\"\n    }\n}",
+        "title": "下线 TDSQL-C 分析集群"
+      }
+    ],
+    "OfflineLibraDBInstance": [
+      {
+        "document": "下线只读分析引擎",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DeleteLibraDBInstance\n&ClusterId=cynosdbmysql-bzxxrmtq\n&InstanceIdList.0=cynosdbmysql-libradb-ins-mhrc48ym\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123\n    }\n}",
+        "title": "下线只读分析引擎"
+      }
+    ],
     "OpenAuditService": [
       {
         "document": "开通审计",
@@ -1262,6 +1526,14 @@
         "title": "续费集群"
       }
     ],
+    "RenewLibraDBClusters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewLibraDBClusters\n<公共请求参数>\n\n{\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"ClusterId\": \"libradb-2yza6dpd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"20250624625002997262491\"\n        ],\n        \"ClusterIds\": [],\n        \"DealNames\": [\n            \"20250624625002997244161\"\n        ],\n        \"RequestId\": \"6aaf5b2f-1dc2-46fc-93c6-74921cb996bd\",\n        \"ResourceIds\": [],\n        \"TranId\": \"\"\n    }\n}",
+        "title": "续费分析集群"
+      }
+    ],
     "ReplayInstanceAuditLog": [
       {
         "document": "回放实例审计日志",
@@ -1278,12 +1550,28 @@
         "title": "修改数据库账号密码"
       }
     ],
+    "ResetLibraDBClusterAccountPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetLibraDBClusterAccountPassword\n<公共请求参数>\n\n{\n    \"ClusterId\": \"libradb-i8okw971\",\n    \"AccountPassword\": \"aQvlNPVkdtbh708\",\n    \"AccountName\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20f664c0-8d0d-4a4b-950b-3955c909b228\"\n    }\n}",
+        "title": "修改分析集群账号密码"
+      }
+    ],
     "RestartInstance": [
       {
         "document": "重启实例",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=RestartInstance\n&InstanceId=\"cynosdbmysql-ins-qwerasd\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\",\n        \"FlowId\": \"147262\"\n    }\n}",
         "title": "重启实例"
+      }
+    ],
+    "RestartLibraDBInstance": [
+      {
+        "document": "重启Libra RO实例",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=RestartLibraDBInstance\n&InstanceId=\"cynosdbmysql-libradb-ins-mhrc48ym\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "重启Libra RO实例"
       }
     ],
     "ResumeServerless": [
@@ -1306,7 +1594,7 @@
       {
         "document": "集群回档",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollBackCluster\n<公共请求参数>\n\n{\n    \"RollbackId\": 1,\n    \"ClusterId\": \"cynosdbmysql-j9i41hff\",\n    \"ExpectTimeThresh\": 1,\n    \"RollbackStrategy\": \"snapRollback\",\n    \"RollbackTables\": [\n        {\n            \"Tables\": [\n                {\n                    \"OldTable\": \"old_table\",\n                    \"NewTable\": \"new_table\"\n                }\n            ],\n            \"Database\": \"old_db1\"\n        }\n    ],\n    \"ExpectTime\": \"2022-01-20 00:00:00\",\n    \"RollbackDatabases\": [\n        {\n            \"NewDatabase\": \"new_db2\",\n            \"OldDatabase\": \"old_db2\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\",\n        \"FlowId\": \"147283\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\",\n        \"FlowId\": 147283\n    }\n}",
         "title": "集群回档"
       }
     ],
@@ -1332,6 +1620,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwerasd\",\n    \"Database\": \"testDb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Tables\": []\n    }\n}",
         "title": "搜索集群数据表列表"
+      }
+    ],
+    "SetLibraDBClusterRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetLibraDBClusterRenewFlag\n<公共请求参数>\n\n{\n    \"ResourceIds\": [\n        \"libradb-ln26puh1\"\n    ],\n    \"AutoRenewFlag\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"bf3ec59e-1973-4ee8-9c05-715af4fd3fac\"\n    }\n}",
+        "title": "修改分析集群续费模式"
       }
     ],
     "SetRenewFlag": [

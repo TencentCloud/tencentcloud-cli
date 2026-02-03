@@ -1525,6 +1525,17 @@
         },
         {
           "disabled": false,
+          "document": "cos多AZ备份 0 单AZ; 1 多AZ",
+          "example": "0",
+          "member": "uint64",
+          "name": "MultiAz",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "策略创建时间",
           "example": "2022-12-10 08:34:48",
           "member": "string",
@@ -1760,6 +1771,15 @@
           "name": "RemoteCosRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos多AZ备份 0 单AZ; 1 多AZ",
+          "example": "0",
+          "member": "uint64",
+          "name": "MultiAz",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10501,6 +10521,30 @@
       ],
       "usage": "out"
     },
+    "OtherConfig": {
+      "document": "updateInstance使用的额外的EsConfig和JvmHeapConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "es的yml额外配置",
+          "example": "{\"indices.fielddata.cache.size\":\"16%\"}",
+          "member": "string",
+          "name": "EsConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es的jvm heap config",
+          "example": "{\"NodeGroupType\":\"hotData\",\"NewJvmHeap\":4099}",
+          "member": "string",
+          "name": "JvmHeapConfig",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "OutboundPublicAcl": {
       "document": "节点出站访问信息",
       "members": [
@@ -12174,6 +12218,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cos多AZ备份 0 单AZ; 1 多AZ\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MultiAz",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13053,6 +13108,15 @@
           "name": "AutoScaleDiskDeleteNodeTypeList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "其他附加配置，jvm或者yml",
+          "example": "无",
+          "member": "OtherConfig",
+          "name": "OtherConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

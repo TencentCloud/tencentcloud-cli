@@ -1051,7 +1051,7 @@
       "status": "online"
     },
     "SyncDubbing": {
-      "document": "# 同步配音接口\n## 音色克隆\n## 语音合成",
+      "document": "同步接口，返回克隆音色Id或合成音频结果",
       "input": "SyncDubbingRequest",
       "name": "同步配音",
       "output": "SyncDubbingResponse",

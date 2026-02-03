@@ -7,6 +7,13 @@
       "output": "DescribeLicenseResponse",
       "status": "online"
     },
+    "IssueLicense": {
+      "document": "颁发 License",
+      "input": "IssueLicenseRequest",
+      "name": "颁发 License",
+      "output": "IssueLicenseResponse",
+      "status": "online"
+    },
     "VerifyLicense": {
       "document": "从软件进程读取 LICENSE。",
       "input": "VerifyLicenseRequest",
@@ -110,6 +117,69 @@
         }
       ],
       "usage": "in"
+    },
+    "IssueLicenseRequest": {
+      "document": "IssueLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云应用实例 ID</p>",
+          "example": "cloudapp-i9sp7jii",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云应用颁发的 License 授权 ID。系统中唯一，伙伴可通过 License 颁发的订阅接口中获取</p>",
+          "example": "100040308038:pkg-n4v3hdhs:cloudapp-i9sp7jii:m81491718",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 的详细数据</p>",
+          "example": "无",
+          "member": "PartnerLicenseData",
+          "name": "LicenseData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 的激活模式</p>枚举值：<ul><li> immediate ： 立即激活</li><li> scheduled： 指定时间激活</li></ul>",
+          "example": "scheduled",
+          "member": "string",
+          "name": "ActivateMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>激活时间，指定时间激活时需要传该字段</p>",
+          "example": "2026-01-15T15:15:00+08:00",
+          "member": "datetime_iso",
+          "name": "ActivateAt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IssueLicenseResponse": {
+      "document": "IssueLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "License": {
       "document": "表示应用实例的软件授权，包含颁发信息、激活信息等内容。",
@@ -371,6 +441,34 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PartnerLicenseData": {
+      "document": "License 内容信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>License 文本内容。可传入密钥、证书等文本型 License 内容，二进制内容请进行 base64 编码</p>",
+          "example": "121212",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 的额外信息，JSON 字符串格式</p>",
+          "example": "{\"aaaa\":!111}",
+          "member": "string",
+          "name": "ExtraData",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

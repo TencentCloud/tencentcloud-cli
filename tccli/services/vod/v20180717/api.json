@@ -91,6 +91,13 @@
       "output": "CreateAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "CreateBlindWatermarkTemplate": {
+      "document": "创建用户自定义数字水印模板。",
+      "input": "CreateBlindWatermarkTemplateRequest",
+      "name": "创建数字水印模板",
+      "output": "CreateBlindWatermarkTemplateResponse",
+      "status": "online"
+    },
     "CreateCLSLogset": {
       "document": "由 VOD 创建新的日志集。",
       "input": "CreateCLSLogsetRequest",
@@ -336,6 +343,13 @@
       "output": "DeleteAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "DeleteBlindWatermarkTemplate": {
+      "document": "删除用户自定义数字水印模板。",
+      "input": "DeleteBlindWatermarkTemplateRequest",
+      "name": "删除数字水印模板",
+      "output": "DeleteBlindWatermarkTemplateResponse",
+      "status": "online"
+    },
     "DeleteCLSTopic": {
       "document": "删除点播开通的日志主题。",
       "input": "DeleteCLSTopicRequest",
@@ -558,6 +572,13 @@
       "input": "DescribeAnimatedGraphicsTemplatesRequest",
       "name": "获取转动图模板列表",
       "output": "DescribeAnimatedGraphicsTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeBlindWatermarkTemplates": {
+      "document": "查询用户自定义数字水印模板。",
+      "input": "DescribeBlindWatermarkTemplatesRequest",
+      "name": "获取数字水印模板列表",
+      "output": "DescribeBlindWatermarkTemplatesResponse",
       "status": "online"
     },
     "DescribeCDNStatDetails": {
@@ -945,6 +966,13 @@
       "output": "ExecuteFunctionResponse",
       "status": "online"
     },
+    "ExtractBlindWatermark": {
+      "document": "用于发起提取视频数字水印任务，提取结果可以通过DescribeTaskDetail查询。",
+      "input": "ExtractBlindWatermarkRequest",
+      "name": "提取视频数字水印",
+      "output": "ExtractBlindWatermarkResponse",
+      "status": "online"
+    },
     "ExtractCopyRightWatermark": {
       "document": "如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。",
       "input": "ExtractCopyRightWatermarkRequest",
@@ -1041,6 +1069,13 @@
       "input": "ModifyAnimatedGraphicsTemplateRequest",
       "name": "修改转动图模板",
       "output": "ModifyAnimatedGraphicsTemplateResponse",
+      "status": "online"
+    },
+    "ModifyBlindWatermarkTemplate": {
+      "document": "修改用户自定义数字水印模板，数字水印类型不允许修改。",
+      "input": "ModifyBlindWatermarkTemplateRequest",
+      "name": "修改数字水印模板",
+      "output": "ModifyBlindWatermarkTemplateResponse",
       "status": "online"
     },
     "ModifyClass": {
@@ -1857,6 +1892,16 @@
           "name": "CopyRightWatermarkText",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板id。",
+          "example": "10000",
+          "member": "int64",
+          "name": "BlindWatermarkDefinition",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9554,6 +9599,82 @@
       ],
       "usage": "both"
     },
+    "BlindWatermarkTemplate": {
+      "document": "数字水印模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-nagra：NAGRA取证水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板名称。",
+          "example": "数字水印模板1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板文本内容，长度不超过64个字符。",
+          "example": "水印文本内容",
+          "member": "string",
+          "name": "TextContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板描述信息。",
+          "example": "数字水印模板",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2025-08-01T18:00:00+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2025-08-01T18:00:00+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BlurConfigureInfo": {
       "document": "视频画面模糊检测的控制参数。",
       "members": [
@@ -12042,6 +12163,79 @@
           "document": "转动图模板唯一标识。",
           "example": "1008",
           "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlindWatermarkTemplateRequest": {
+      "document": "CreateBlindWatermarkTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-nagra：NAGRA水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印文字内容，长度不超过64个字符，NAGRA水印类型的模板创建后不支持修改文字内容。",
+          "example": "数字水印文本",
+          "member": "string",
+          "name": "TextContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板名称，支持中文、英文、数字、_、-和. 六种格式，长度限制：64 个字符。",
+          "example": "数字水印模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板描述信息，长度限制：256 个字符。",
+          "example": "数字水印模板",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlindWatermarkTemplateResponse": {
+      "document": "CreateBlindWatermarkTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "20000",
+          "member": "int64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
@@ -15051,6 +15245,42 @@
       ],
       "type": "object"
     },
+    "DeleteBlindWatermarkTemplateRequest": {
+      "document": "DeleteBlindWatermarkTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlindWatermarkTemplateResponse": {
+      "document": "DeleteBlindWatermarkTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCLSTopicRequest": {
       "document": "DeleteCLSTopic请求参数结构体",
       "members": [
@@ -16427,6 +16657,89 @@
           "example": "无",
           "member": "AnimatedGraphicsTemplate",
           "name": "AnimatedGraphicsTemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlindWatermarkTemplatesRequest": {
+      "document": "DescribeBlindWatermarkTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[10,20,30]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-nagra：Nagra取证水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlindWatermarkTemplatesResponse": {
+      "document": "DescribeBlindWatermarkTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板详情列表。",
+          "example": "无",
+          "member": "BlindWatermarkTemplate",
+          "name": "BlindWatermarkTemplateSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -22427,6 +22740,97 @@
         }
       ],
       "usage": "both"
+    },
+    "ExtractBlindWatermarkRequest": {
+      "document": "ExtractBlindWatermark请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-trace：溯源ab序列水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体处理的文件输入信息。",
+          "example": "无",
+          "member": "ExtractBlindWatermarkInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "添加水印时的点播应用 ID。注意不管是传入FILEID还是URL，都必须与添加水印时的SubAppId吻合才能提取到水印。",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "提取数字水印任务配置",
+          "example": "无",
+          "member": "ExtractBlindWatermarkTaskConfig",
+          "name": "ExtractBlindWatermarkConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标识来源上下文，用于透传用户请求信息，在 ExtractBlindWatermarkComplete 回调和任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "202410011900***tmsd\t",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "6bb56a09278740bc80c5dc6dab783eff",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtractBlindWatermarkResponse": {
+      "document": "ExtractBlindWatermark返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "125xxx65-ExtractBlindWatermark-bffb15f07530b57bc1aabb01fac74bca",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExtractBlindWatermarkTask": {
       "document": "提取视频数字水印任务信息",
@@ -29068,6 +29472,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板id。",
+          "example": "10000",
+          "member": "int64",
+          "name": "BlindWatermarkDefinition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29627,6 +30041,69 @@
     },
     "ModifyAnimatedGraphicsTemplateResponse": {
       "document": "ModifyAnimatedGraphicsTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlindWatermarkTemplateRequest": {
+      "document": "ModifyBlindWatermarkTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板名称，支持 中文、英文、数字、_、-和. 六种格式，长度限制：64 个字符。",
+          "example": "数字水印模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板描述信息，长度限制：256 个字符。",
+          "example": "数字水印模板",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印文字内容，长度不超过64个字符，NAGRA水印类型的模板不支持修改文字内容。",
+          "example": "数字水印文本",
+          "member": "string",
+          "name": "TextContent",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlindWatermarkTemplateResponse": {
+      "document": "ModifyBlindWatermarkTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

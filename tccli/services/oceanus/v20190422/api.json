@@ -8197,7 +8197,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "setats serialId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>setats serialId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "setats-dx1",
           "member": "string",
           "name": "SetatsSerialId",
@@ -8208,7 +8208,7 @@
         },
         {
           "disabled": false,
-          "document": "1  // 停止\n2  // 运行中\n3  // 初始化中\n4  // 扩容中\n5  // Warehoouse未配置\n6  // Warehoouse配置中\n7  // 重启中\n-2 // 已删除(集群被销毁时更新为此状态)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1  // 停止<br>2  // 运行中<br>3  // 初始化中<br>4  // 扩容中<br>5  // Warehoouse未配置<br>6  // Warehoouse配置中<br>7  // 重启中<br>-2 // 已删除(集群被销毁时更新为此状态)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -8219,7 +8219,7 @@
         },
         {
           "disabled": false,
-          "document": "setats warehouse\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>setats warehouse</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Warehouse",
           "name": "Warehouse",
@@ -8230,7 +8230,7 @@
         },
         {
           "disabled": false,
-          "document": "setats master 机器规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>setats master 机器规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SetatsCvmInfo",
           "name": "MasterInfo",
@@ -8241,7 +8241,7 @@
         },
         {
           "disabled": false,
-          "document": "setats worker规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>setats worker规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SetatsCvmInfo",
           "name": "WorkerInfo",
@@ -8252,7 +8252,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -8263,7 +8263,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动续费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -8274,7 +8274,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-11-11 11:11:11",
           "member": "string",
           "name": "ExpireTime",
@@ -8285,7 +8285,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间 秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>过期时间 秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "854",
           "member": "string",
           "name": "SecondsUntilExpiry",
@@ -8296,7 +8296,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-11-11 11:11:11",
           "member": "string",
           "name": "CreateTime",
@@ -8307,7 +8307,7 @@
         },
         {
           "disabled": false,
-          "document": "manager url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>manager url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1:6072",
           "member": "string",
           "name": "ManagerUrl",
@@ -8318,7 +8318,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>隔离时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-11-11 11:11:11",
           "member": "string",
           "name": "IsolatedTime",
@@ -8326,6 +8326,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Setats集群自己的id</p>",
+          "example": "cluster-owner",
+          "member": "string",
+          "name": "OwnerClusterGroupSerialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>setats 集群类型</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Setats UI url</p>",
+          "example": "setatsui.com",
+          "member": "string",
+          "name": "SetatsUiUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>setats镜像版本</p>",
+          "example": "0.6-dev",
+          "member": "string",
+          "name": "ImageVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9300,7 +9344,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -9311,7 +9355,7 @@
         },
         {
           "disabled": false,
-          "document": "location\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>location</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cos",
           "member": "string",
           "name": "Location",
@@ -9322,7 +9366,7 @@
         },
         {
           "disabled": false,
-          "document": "catalogtype\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>catalogtype</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hadoop",
           "member": "string",
           "name": "CatalogType",
@@ -9333,7 +9377,7 @@
         },
         {
           "disabled": false,
-          "document": "uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>uri</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "uri",
           "member": "string",
           "name": "Uri",
@@ -9344,7 +9388,7 @@
         },
         {
           "disabled": false,
-          "document": "warehouse url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>warehouse url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hdfs://HDFS1018835/usr/setats",
           "member": "string",
           "name": "WarehouseUrl",
@@ -9355,7 +9399,7 @@
         },
         {
           "disabled": false,
-          "document": "认证方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>认证方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kerberos",
           "member": "string",
           "name": "Authentication",
@@ -9366,7 +9410,7 @@
         },
         {
           "disabled": false,
-          "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceRefLatest",
           "name": "ResourceRefs",
@@ -9377,7 +9421,7 @@
         },
         {
           "disabled": false,
-          "document": "hive warehouse uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>hive warehouse uri</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "thrift://172.28.22.40:7004",
           "member": "string",
           "name": "HiveUri",
@@ -9388,14 +9432,25 @@
         },
         {
           "disabled": false,
-          "document": "高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"\"}",
+          "document": "<p>高级参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Property",
           "name": "Properties",
           "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>hive cata 类型</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "HiveCatalogType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

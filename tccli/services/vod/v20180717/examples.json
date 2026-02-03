@@ -146,6 +146,14 @@
         "title": "创建转动图模板"
       }
     ],
+    "CreateBlindWatermarkTemplate": [
+      {
+        "document": "创建数字水印模板",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlindWatermarkTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"数字水印模板1\",\n    \"Comment\": \"数字水印\",\n    \"Type\": \"blind-nagra\",\n    \"TextContent\": \"数字水印文字\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 10,\n        \"RequestId\": \"93dda61a-c2c5-465d-a78c-0860997fb01b\"\n    }\n}",
+        "title": "创建数字水印模板"
+      }
+    ],
     "CreateCLSLogset": [
       {
         "document": "",
@@ -492,6 +500,14 @@
         "title": "删除转动图模板"
       }
     ],
+    "DeleteBlindWatermarkTemplate": [
+      {
+        "document": "删除用户自定义数字水印模板",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlindWatermarkTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除用户自定义数字水印模板"
+      }
+    ],
     "DeleteCLSTopic": [
       {
         "document": "",
@@ -770,6 +786,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeAnimatedGraphicsTemplates\n&Definitions.0=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AnimatedGraphicsTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"转动图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"Width\": 960,\n                \"Format\": \"gif\",\n                \"Fps\": 30,\n                \"Quality\": 75,\n                \"ResolutionAdaptive\": \"open\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获转动图模板列表"
+      }
+    ],
+    "DescribeBlindWatermarkTemplates": [
+      {
+        "document": "查询用户自定义数字水印模板",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlindWatermarkTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        10,\n        20,\n        30\n    ],\n    \"Type\": \"blind-basic\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlindWatermarkTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"blind-basic\",\n                \"Name\": \"数字水印模板1\",\n                \"Comment\": \"测试模板\",\n                \"TextContent\": \"文字内容\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "查询用户自定义数字水印模板"
       }
     ],
     "DescribeCDNStatDetails": [
@@ -1320,6 +1344,14 @@
         "title": "A 客户发起定制的视频处理"
       }
     ],
+    "ExtractBlindWatermark": [
+      {
+        "document": "发起提取视频数字水印任务",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExtractBlindWatermark\n<公共请求参数>\n\n{\n    \"Type\": \"blind-basic\",\n    \"InputInfo\": {\n        \"Type\": \"URL\",\n        \"Url\": \"http://test.cos.com/video.mp4\"\n    },\n    \"ExtractBlindWatermarkConfig\": {\n        \"SegmentDuration\": 5000\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2134541-fdc5-4b08-bf2d-97f7d6678b44\",\n        \"TaskId\": \"24000105-ExtractBlindWatermark-xxxxxx\"\n    }\n}",
+        "title": "发起提取视频数字水印任务"
+      }
+    ],
     "ExtractCopyRightWatermark": [
       {
         "document": "用于提取版权水印。",
@@ -1472,6 +1504,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ModifyAnimatedGraphicsTemplate\n&Definition=10001\n&Name=转动图模板1\n&Width=540\n&Height=960\n&Fps=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改转动图模板"
+      }
+    ],
+    "ModifyBlindWatermarkTemplate": [
+      {
+        "document": "修改数字水印模板",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlindWatermarkTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 10,\n    \"Name\": \"数字水印模板2\",\n    \"Comment\": \"数字水印2\",\n    \"TextContent\": \"数字水印文字内容2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改数字水印模板"
       }
     ],
     "ModifyClass": [

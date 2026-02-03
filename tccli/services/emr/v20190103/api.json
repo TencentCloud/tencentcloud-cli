@@ -3751,7 +3751,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n51:表示STARROCKS-V1.4.0\n54:表示STARROCKS-V2.0.0\n27:表示KAFKA-V1.0.0\n50:表示KAFKA-V2.0.0\n16:表示EMR-V2.3.0\n20:表示EMR-V2.5.0\n30:表示EMR-V2.6.0\n38:表示EMR-V2.7.0\n25:表示EMR-V3.1.0\n33:表示EMR-V3.2.1\n34:表示EMR-V3.3.0\n37:表示EMR-V3.4.0\n44:表示EMR-V3.5.0\n53:表示EMR-V3.6.0",
+          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n51:表示STARROCKS-V1.4.0\n54:表示STARROCKS-V2.0.0\n27:表示KAFKA-V1.0.0\n50:表示KAFKA-V2.0.0\n16:表示EMR-V2.3.0\n20:表示EMR-V2.5.0\n30:表示EMR-V2.6.0\n38:表示EMR-V2.7.0\n25:表示EMR-V3.1.0\n33:表示EMR-V3.2.1\n34:表示EMR-V3.3.0\n37:表示EMR-V3.4.0\n44:表示EMR-V3.5.0\n53:表示EMR-V3.6.0\n58:表示EMR-3.6.1\n59:表示EMR-serverless-1.0.0\n60:表示EMR-TKE-1.1.0\n61:表示SR-V2.1.0\n62:表示SR-V2.1.0-SharedData\n63:表示SR-V2.1.0.tlinux\n64:表示统一元数据管理项目\n65:表示EMR-TKE-AI-1.0.0\n66:表示RSS-1.0.0\n67:表示SR-V2.2.0\n68:表示SR-V2.2.0.tlinux\n69:表示EMR-AI-1.1.0\n70:表示SR-V2.2.1\n71:表示EMR-3.7.0\n72:表示EMR-serverless-1.0.1\n73:表示KAFKA-2.0.1\n74:表示SR-V2.2.2\n75:表示EMR-TKE-AI-1.1.0\n76:表示EMR-V3.7.1\n77:表示SERVERLESS-TCBASE-1.0.0\n78:表示EMR-V3.6.2\n79:表示STARROCKS-V2.2.2\n80:表示EMR-AI-V1.1.1\n",
           "example": "4",
           "member": "uint64",
           "name": "ProductId",

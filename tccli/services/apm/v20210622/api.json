@@ -930,6 +930,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动性能剖析配置",
+          "example": "无",
+          "member": "AutoProfilingConfig",
+          "name": "AutoProfilingConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1210,6 +1220,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动性能剖析任务配置",
+          "example": "无",
+          "member": "AutoProfilingConfig",
+          "name": "AutoProfilingConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -2168,6 +2189,78 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AutoProfilingConfig": {
+      "document": "自动性能剖析配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自动CPU剖析任务开关",
+          "example": "true",
+          "member": "bool",
+          "name": "CpuProfilingEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动内存剖析任务开关",
+          "example": "true",
+          "member": "bool",
+          "name": "MemoryProfilingEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动CPU剖析任务阈值",
+          "example": "80",
+          "member": "int64",
+          "name": "CpuProfilingThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动内存剖析任务阈值",
+          "example": "80",
+          "member": "int64",
+          "name": "MemoryProfilingThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU自动剖析任务时长",
+          "example": "60000",
+          "member": "int64",
+          "name": "CpuProfilingDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存自动剖析任务时长",
+          "example": "60000",
+          "member": "int64",
+          "name": "MemoryProfilingDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -4768,6 +4861,15 @@
           "name": "LogSpanIdKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动性能剖析任务配置",
+          "example": "无",
+          "member": "AutoProfilingConfig",
+          "name": "AutoProfilingConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

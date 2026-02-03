@@ -9918,6 +9918,15 @@
         },
         {
           "disabled": false,
+          "document": "访问密钥，注意：不支持临时密钥的情况",
+          "example": "AKID****z0c",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "过滤器",
           "example": "无",
           "member": "Filter",
