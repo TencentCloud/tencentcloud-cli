@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb CreateAuditLogFile --cli-unfold-argument  \
-    --InstanceId cmgo-qwer**** \
+    --InstanceId cmgo-qwe***** \
     --StartTime 2021-07-12 10:29:20 \
     --EndTime 2021-07-13 15:29:20
 ```

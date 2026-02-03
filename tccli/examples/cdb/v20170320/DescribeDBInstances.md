@@ -181,6 +181,7 @@ Output:
                 "MaxDelayTime": 0,
                 "InstanceName": "cdbandy",
                 "Cpu": 8,
+                "CpuModel": "Hygon",
                 "DrInfo": [
                     {
                         "Status": 0,

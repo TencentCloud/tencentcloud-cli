@@ -578,7 +578,7 @@
         {
           "disabled": false,
           "document": "架构ID",
-          "example": "无",
+          "example": "arch-2bxxxx49",
           "member": "string",
           "name": "ArchId",
           "required": true,
@@ -587,7 +587,7 @@
         {
           "disabled": false,
           "document": "用户名，用于记录访问记录",
-          "example": "无",
+          "example": "username",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -596,7 +596,7 @@
         {
           "disabled": false,
           "document": "版本ID，为空则为最新版",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "VersionId",
           "required": false,
@@ -605,7 +605,7 @@
         {
           "disabled": false,
           "document": "插件标识",
-          "example": "无",
+          "example": "8bdaxxxx-xxxx-xxxx-xxxx-8431648fxxxx",
           "member": "string",
           "name": "PluginKey",
           "required": false,
@@ -620,7 +620,7 @@
         {
           "disabled": false,
           "document": "架构图ID",
-          "example": "无",
+          "example": "arch-xxxxxxx",
           "member": "string",
           "name": "ArchId",
           "output_required": true,
@@ -630,7 +630,7 @@
         {
           "disabled": false,
           "document": "SVG字符串",
-          "example": "无",
+          "example": "<svg x>",
           "member": "string",
           "name": "Svg",
           "output_required": false,

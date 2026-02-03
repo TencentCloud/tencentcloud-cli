@@ -1329,7 +1329,7 @@
     "ParseLiveStreamProcessNotification": [
       {
         "document": "回调包体描述",
-        "input": "https://mps.tencentcloudapi.com/?Action=ParseLiveStreamProcessNotification\r\n&Content={\"NotificationType\":\"AiReviewResult\",XXX\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ParseLiveStreamProcessNotification\n&Content={\"NotificationType\":\"AiReviewResult\",XXX\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NotificationType\": \"AiReviewResult\",\n        \"TaskId\": \"2459149217-procedure-live-xxx51da009t0\",\n        \"ProcessEofInfo\": null,\n        \"AiReviewResultInfo\": {\n            \"ResultSet\": [\n                {\n                    \"Type\": \"VoicePorn\",\n                    \"ImagePornResultSet\": [],\n                    \"ImageTerrorismResultSet\": [],\n                    \"ImagePoliticalResultSet\": [],\n                    \"VoicePornResultSet\": [\n                        {\n                            \"StartPtsTime\": 0.266,\n                            \"EndPtsTime\": 4.146,\n                            \"Confidence\": 98,\n                            \"Suggestion\": \"block\",\n                            \"Label\": \"sexual_moan\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"AiRecognitionResultInfo\": null,\n        \"AiAnalysisResultInfo\": null,\n        \"AiQualityControlResultInfo\": null,\n        \"SessionId\": \"\",\n        \"SessionContext\": \"\",\n        \"RequestId\": \"335bdaa3-db0e-46ce-9946-51941d9cb0f5\"\n    }\n}",
         "title": "解析直播流事件通知内容"
       }

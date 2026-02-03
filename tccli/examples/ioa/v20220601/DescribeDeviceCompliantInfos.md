@@ -1,4 +1,32 @@
-**Example 1: 示例1**
+**Example 1: DescribeDeviceCompliantInfo**
+
+DescribeDeviceCompliantInfo
+
+Input: 
+
+```
+tccli ioa DescribeDeviceCompliantInfos --cli-unfold-argument  \
+    --GroupId 1 \
+    --DomainInstanceId 13 \
+    --OsType 0 \
+    --OnlineStatus 1 \
+    --ResultStatus 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "内部服务错误，请稍后重试。"
+        },
+        "RequestId": "5fb53dd5-0b63-4bfe-af36-ccdefb53a46a"
+    }
+}
+```
+
+**Example 2: 示例1**
 
 
 
@@ -26,34 +54,6 @@ Output:
             },
             "Items": []
         }
-    }
-}
-```
-
-**Example 2: DescribeDeviceCompliantInfo**
-
-DescribeDeviceCompliantInfo
-
-Input: 
-
-```
-tccli ioa DescribeDeviceCompliantInfos --cli-unfold-argument  \
-    --GroupId 1 \
-    --DomainInstanceId 13 \
-    --OsType 0 \
-    --OnlineStatus 1 \
-    --ResultStatus 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InternalError",
-            "Message": "内部服务错误，请稍后重试。"
-        },
-        "RequestId": "5fb53dd5-0b63-4bfe-af36-ccdefb53a46a"
     }
 }
 ```

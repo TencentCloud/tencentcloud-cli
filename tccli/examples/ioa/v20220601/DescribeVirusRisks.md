@@ -35,6 +35,7 @@ Input:
 
 ```
 tccli ioa DescribeVirusRisks --cli-unfold-argument  \
+    --DomainInstanceId 13 \
     --Mid 123456 \
     --Condition.PageSize 10 \
     --Condition.PageNum 0

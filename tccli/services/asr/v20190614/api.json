@@ -3003,7 +3003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频格式 0: pcm, 1: wav",
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
           "example": "0",
           "member": "int64",
           "name": "VoiceFormat",
@@ -3012,7 +3012,7 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "document": "<p>音频采样率，目前支持16000，单位：Hz，必填</p>",
           "example": "16000",
           "member": "int64",
           "name": "SampleRate",
@@ -3021,17 +3021,17 @@
         },
         {
           "disabled": false,
-          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M",
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
           "example": "UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "说话人昵称  不超过32字节",
-          "example": "小明",
+          "document": "<p>说话人昵称  不超过32字节</p>",
+          "example": "李九州",
           "member": "string",
           "name": "SpeakerNick",
           "required": false,
@@ -3039,10 +3039,19 @@
         },
         {
           "disabled": false,
-          "document": "分组id, 仅支持大小写字母和下划线的组合，不超过128个字符",
+          "document": "<p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p>",
           "example": "group_A",
           "member": "string",
           "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "\"https://xxx-test-xxx.cos.ap-nanjing.myqcloud.com/%E5%A3%Bxxxxx%E6%8D%AE/xxxx.mp3\"",
+          "member": "string",
+          "name": "AudioUrl",
           "required": false,
           "type": "string"
         }
@@ -3054,7 +3063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说话人基本数据",
+          "document": "<p>说话人基本数据</p>",
           "example": "无",
           "member": "VoicePrintBaseData",
           "name": "Data",
@@ -3149,7 +3158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频格式 0: pcm, 1: wav",
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
           "example": "0",
           "member": "int64",
           "name": "VoiceFormat",
@@ -3158,7 +3167,7 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率 目前仅支持16000 单位Hz",
+          "document": "<p>音频采样率 目前仅支持16000 单位Hz</p>",
           "example": "16000",
           "member": "int64",
           "name": "SampleRate",
@@ -3167,7 +3176,7 @@
         },
         {
           "disabled": false,
-          "document": "说话人id， 说话人唯一标识",
+          "document": "<p>说话人id， 说话人唯一标识</p>",
           "example": "sdsafjasj*****sdfasfjj",
           "member": "string",
           "name": "VoicePrintId",
@@ -3176,19 +3185,28 @@
         },
         {
           "disabled": false,
-          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
           "example": "ADDAFASAFASA",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "说话人昵称  不超过32字节",
+          "document": "<p>说话人昵称  不超过32字节</p>",
           "example": "小明",
           "member": "string",
           "name": "SpeakerNick",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "https://adison-testxxxx.cos.ap-nanjing.myqcloud.com/%E5%xx%B0%E7xxx%BA%B9%E6%95%B0%E6%8D%AE/xxxx.wav",
+          "member": "string",
+          "name": "AudioUrl",
           "required": false,
           "type": "string"
         }
@@ -3200,7 +3218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说话人基础数据",
+          "document": "<p>说话人基础数据</p>",
           "example": "无",
           "member": "VoicePrintBaseData",
           "name": "Data",
@@ -3258,7 +3276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频格式 0: pcm, 1: wav",
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
           "example": "0",
           "member": "int64",
           "name": "VoiceFormat",
@@ -3267,7 +3285,7 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "document": "<p>音频采样率，目前支持16000，单位：Hz，必填</p>",
           "example": "16000",
           "member": "int64",
           "name": "SampleRate",
@@ -3276,20 +3294,29 @@
         },
         {
           "disabled": false,
-          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
-          "example": "ADKFG****ALDHASG",
+          "document": "<p>说话人id, 说话人唯一标识</p>",
+          "example": "dasdagfd****sdsada",
           "member": "string",
-          "name": "Data",
+          "name": "VoicePrintId",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "说话人id, 说话人唯一标识",
-          "example": "dasdagfd****sdsada",
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
+          "example": "ADKFG****ALDHASG",
           "member": "string",
-          "name": "VoicePrintId",
-          "required": true,
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "https://xxxxtest-xxxx.cos.ap-nanjing.myqcloud.com/%E5%A3%B0%E7%BA%B9%E6%95%xxxxxD%AE/test.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3300,7 +3327,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说话人验证数据",
+          "document": "<p>说话人验证数据</p>",
           "example": "无",
           "member": "VoicePrintVerifyData",
           "name": "Data",

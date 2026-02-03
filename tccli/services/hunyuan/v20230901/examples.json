@@ -102,6 +102,22 @@
         "title": "创建会话"
       }
     ],
+    "Describe3DSmartTopologyJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Describe3DSmartTopologyJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1405140131170074624\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"OBJ\",\n                \"Url\": \"https://cos.ap-singapore.tencentcos.cn/xxx.obj\"\n            }\n        ],\n        \"Status\": \"DONE\",\n        \"RequestId\": \"75882497-fd9d-4b80-a2c0-1d7abf86e040\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeHunyuanTo3DUVJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHunyuanTo3DUVJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1315932989749215232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"5fec6e4d-9780-4372-815a-15490cb2ed5a\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"OBJ\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.obj\"\n            },\n            {\n                \"Type\": \"FBX\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.fbx\"\n            },\n            {\n                \"Type\": \"IMAGE\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.png\"\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "查询UV展示任务示例"
+      }
+    ],
     "FilesDeletions": [
       {
         "document": "删除文件。",
@@ -222,6 +238,14 @@
         "title": "查询任务调用示例"
       }
     ],
+    "QueryHunyuanTo3DTextureEditJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DTextureEditJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1315932989749215232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"5fec6e4d-9780-4372-815a-15490cb2ed5a\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"OBJ\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.obj\"\n            },\n            {\n                \"Type\": \"FBX\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.fbx\"\n            },\n            {\n                \"Type\": \"IMAGE\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.png\"\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "查询纹理编辑任务示例"
+      }
+    ],
     "ReportUsage": [
       {
         "document": "",
@@ -244,6 +268,14 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetPayMode\n<公共请求参数>\n\n{\n    \"PayMode\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9723dd95-d217-46ff-a556-2cc760142737\"\n    }\n}",
         "title": "调用成功"
+      }
+    ],
+    "Submit3DSmartTopologyJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Submit3DSmartTopologyJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.glb\",\n        \"Type\": \"GLB\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1405140131170074624\",\n        \"RequestId\": \"f1dcd98c-47d2-47fe-81f2-26f4e0fec5d7\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "SubmitHunyuan3DPartJob": [
@@ -284,6 +316,22 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DRapidJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1335141824121323520\",\n        \"RequestId\": \"5f84f1df-7a29-4f93-8dc0-d9e6dea6bff9\"\n    }\n}",
         "title": "提交任务调用示例"
+      }
+    ],
+    "SubmitHunyuanTo3DTextureEditJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DTextureEditJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Type\": \"FBX\",\n        \"Url\": \"https://vcg-test-1258344699.cos.ap-guangzhou.myqcloud.com/test/3d/test.fbx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1384898587778465792\",\n        \"RequestId\": \"5265eb4a-0f4f-4cb1-9b3d-d9f1fb9347d2\"\n    }\n}",
+        "title": "提交纹理编辑任务示例"
+      }
+    ],
+    "SubmitHunyuanTo3DUVJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DUVJob\n<公共请求参数>\n\n{\n    \"File\": {\n        \"Type\": \"GLB\",\n        \"Url\": \"https://vcg-test-1258344699.cos.ap-guangzhou.myqcloud.com/test/3d/test.glb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1384898587778465792\",\n        \"RequestId\": \"5265eb4a-0f4f-4cb1-9b3d-d9f1fb9347d2\"\n    }\n}",
+        "title": "提交UV展开任务示例"
       }
     ],
     "TextToImageLite": [

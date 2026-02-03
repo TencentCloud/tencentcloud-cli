@@ -3323,6 +3323,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行",
+          "example": "true",
+          "member": "bool",
+          "name": "IsHighAvailability",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3518,6 +3528,15 @@
           "name": "VpcCniType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "IsHighAvailability",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -22171,6 +22190,15 @@
           "name": "ClusterProperty",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行",
+          "example": "true",
+          "member": "bool",
+          "name": "IsHighAvailability",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -22246,6 +22274,16 @@
           "name": "ClusterProperty",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行",
+          "example": "true",
+          "member": "bool",
+          "name": "IsHighAvailability",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

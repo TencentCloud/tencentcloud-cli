@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli asr VoicePrintEnroll --cli-unfold-argument  \
-    --VoiceFormat 0 \
+    --VoiceFormat 1 \
     --SampleRate 16000 \
-    --SpeakerNick ross \
-    --Data UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E
+    --SpeakerNick 李九州 \
+    --AudioUrl https://xxx-test-xxx.cos.ap-nanjing.myqcloud.com/%E5%A3%Bxxxxx%E6%8D%AE/xxxx.mp3
 ```
 
 Output: 
@@ -17,10 +17,10 @@ Output:
 {
     "Response": {
         "Data": {
-            "VoicePrintId": "db24a3e3-7926-5xxxxxxf01",
-            "SpeakerNick": "ross"
+            "SpeakerNick": "李九州",
+            "VoicePrintId": "23eda848-9c0a-xxxx-8b00-39df9c9617e7"
         },
-        "RequestId": "dbxxxxxxe3-7926-5xxxxxxf01"
+        "RequestId": "cb82a203-xxxxx-43ec-b12a-d9dba5efd577"
     }
 }
 ```

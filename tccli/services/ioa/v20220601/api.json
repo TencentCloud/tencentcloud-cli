@@ -3018,272 +3018,332 @@
         {
           "disabled": false,
           "document": "设备状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "BlackListStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "账号分组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "研发组",
           "member": "string",
           "name": "AccountGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分组名地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "全网账号.研发组",
           "member": "string",
           "name": "GroupNamePath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "接入状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "State",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最后登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "LastLoginTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "接入设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "12:12:23:23",
           "member": "string",
           "name": "MacAddress",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "string",
           "name": "UserSource",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "主机名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "PC-lucy",
           "member": "string",
           "name": "HostName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "user1",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "23.13.94.11",
           "member": "string",
           "name": "IP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "操作系统类别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "0",
           "member": "string",
           "name": "OsType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "票据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "dafehfe.dfe12k.121i,1",
           "member": "string",
           "name": "Ticket",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "票据过期",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设备名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "ADFEFKJI2",
           "member": "string",
           "name": "DeviceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "123",
           "member": "int64",
           "name": "TimeStamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最后登出时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "LastLogoutTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "研发组",
           "member": "string",
           "name": "GroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设备类别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2",
           "member": "string",
           "name": "DeviceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "登录人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "user2",
           "member": "string",
           "name": "LoginUser",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "0",
           "member": "string",
           "name": "Os",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "3.12.12.44",
           "member": "string",
           "name": "ClientIP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2025-11-12 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1213133434343212",
           "member": "string",
           "name": "DeviceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设备使用者用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "somebody PC",
           "member": "string",
           "name": "DeviceUserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "GroupId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NGN终端开关是否开启",
+          "example": "2",
+          "member": "int64",
+          "name": "NgnSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NGN客户端代理模式",
+          "example": "PAC,WFP",
+          "member": "string",
+          "name": "NgnMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上线带宽单位 Bps",
+          "example": "23",
+          "member": "int64",
+          "name": "CurrentUploadTraffic",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下线带宽单位 Bps",
+          "example": "43",
+          "member": "int64",
+          "name": "CurrentDownloadTraffic",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端本地ip",
+          "example": "192.168.1.1,192.168.1.2",
+          "member": "string",
+          "name": "ClientLocalIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用有效期，ms",
+          "example": "18271767361",
+          "member": "int64",
+          "name": "BlackStatusDeadline",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3635,6 +3695,61 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有权",
+          "example": "未分类资产",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近登录账号的账号",
+          "example": "cc",
+          "member": "string",
+          "name": "IOAUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近登录账号部门",
+          "example": "cc",
+          "member": "string",
+          "name": "AccountGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备本地IP列表",
+          "example": "10.67.33.21",
+          "member": "string",
+          "name": "LocalIpList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备唯一标识",
+          "example": "C541951B73E564FDD66EFAB55F2784BC696073F602",
+          "member": "string",
+          "name": "Mid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5691,6 +5806,193 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动锁屏合规结果",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoLockResult",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规结果状态",
+          "example": "2",
+          "member": "int64",
+          "name": "AutoLockStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动锁屏合规详情",
+          "example": "qwe",
+          "member": "string",
+          "name": "AutoLockDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mac安全响应和系统文件合规结果",
+          "example": "1",
+          "member": "int64",
+          "name": "InstallSysSafeFileResult",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mac安全响应和系统文件合规结果状态",
+          "example": "1",
+          "member": "int64",
+          "name": "InstallSysSafeFileResultStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mac安全响应和系统文件合规详情",
+          "example": "qw",
+          "member": "string",
+          "name": "InstallSysSafeFileDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端名称合规结果",
+          "example": "1",
+          "member": "int64",
+          "name": "ComputerNameResult",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端名称合规结果状态",
+          "example": "2",
+          "member": "int64",
+          "name": "ComputerNameStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端名称合规详情",
+          "example": "qw",
+          "member": "string",
+          "name": "ComputerNameDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户信息合规结果",
+          "example": "1",
+          "member": "int64",
+          "name": "UserInfoResult",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户信息合规状态",
+          "example": "1",
+          "member": "int64",
+          "name": "UserInfoStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户信息合规详情",
+          "example": "ew",
+          "member": "string",
+          "name": "UserInfoDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "1",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有权： 1、公司资产\n               2、私人资产",
+          "example": "1",
+          "member": "int64",
+          "name": "ClassAsset",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地ip",
+          "example": "1",
+          "member": "string",
+          "name": "LocalIpList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统类型",
+          "example": "1",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近登录部门",
+          "example": "1",
+          "member": "string",
+          "name": "AccountGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5701,7 +6003,7 @@
         {
           "disabled": false,
           "document": "Filters 条件过滤",
-          "example": "参考Filter",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "output_required": false,
@@ -5712,7 +6014,7 @@
         {
           "disabled": false,
           "document": "FilterGroups 条件过滤组",
-          "example": "参考FilterGroup",
+          "example": "无",
           "member": "FilterGroup",
           "name": "FilterGroups",
           "output_required": false,
@@ -5723,7 +6025,7 @@
         {
           "disabled": false,
           "document": "Sort 排序字段",
-          "example": "参考Sort",
+          "example": "无",
           "member": "Sort",
           "name": "Sort",
           "output_required": false,
@@ -5752,6 +6054,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复杂查询规则条件查询项（支持任意层级AND/OR组合）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RulePayload",
+          "name": "RulePayload",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则模式：0-使用旧的FilterGroups，1-使用新的RulePayload\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RulePayloadMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8572,7 +8896,7 @@
         {
           "disabled": false,
           "document": "资源名称",
-          "example": "无",
+          "example": "dd",
           "member": "string",
           "name": "ServiceName",
           "required": false,
@@ -8581,7 +8905,7 @@
         {
           "disabled": false,
           "document": "资源协议类型 http https",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "BackendScheme",
           "required": false,
@@ -8590,7 +8914,7 @@
         {
           "disabled": false,
           "document": "web资源-内网地址",
-          "example": "无",
+          "example": "10.3.2.4",
           "member": "string",
           "name": "ServiceAddress",
           "required": false,
@@ -8599,7 +8923,7 @@
         {
           "disabled": false,
           "document": "web资源-内网端口 端口不限制",
-          "example": "无",
+          "example": "80",
           "member": "string",
           "name": "ServicePort",
           "required": false,
@@ -8608,7 +8932,7 @@
         {
           "disabled": false,
           "document": "web资源-内网路径",
-          "example": "无",
+          "example": "/",
           "member": "string",
           "name": "BackendPath",
           "required": false,
@@ -8617,7 +8941,7 @@
         {
           "disabled": false,
           "document": "资源组ID(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AreaId",
           "required": false,
@@ -8626,7 +8950,7 @@
         {
           "disabled": false,
           "document": "web资源-前端协议",
-          "example": "无",
+          "example": "https",
           "member": "string",
           "name": "FrontScheme",
           "required": false,
@@ -8635,7 +8959,7 @@
         {
           "disabled": false,
           "document": "web资源-前端host",
-          "example": "无",
+          "example": "443",
           "member": "string",
           "name": "FrontHost",
           "required": false,
@@ -8644,7 +8968,7 @@
         {
           "disabled": false,
           "document": "web资源-前端路径 默认\"/\"",
-          "example": "无",
+          "example": "/",
           "member": "string",
           "name": "FrontPath",
           "required": false,
@@ -8653,7 +8977,7 @@
         {
           "disabled": false,
           "document": "web资源-自定义host",
-          "example": "无",
+          "example": "hr.qq.com:8080",
           "member": "string",
           "name": "CustomHost",
           "required": false,
@@ -8662,7 +8986,7 @@
         {
           "disabled": false,
           "document": "web资源类型：0-应用 1-API(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "WebGwResourceType",
           "required": false,
@@ -8671,7 +8995,7 @@
         {
           "disabled": false,
           "document": "web资源-如果选择API类型资源，则需要配置密钥(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "APISecretId",
           "required": false,
@@ -8680,7 +9004,7 @@
         {
           "disabled": false,
           "document": "web资源-前端协议是HTTPS类型，需要配置证书",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "SSLCertId",
           "required": false,
@@ -8689,7 +9013,7 @@
         {
           "disabled": false,
           "document": "web资源-是否启用依赖地址：0-不启用 1-启用(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "EnableDependentAddr",
           "required": false,
@@ -8698,7 +9022,7 @@
         {
           "disabled": false,
           "document": "web资源-依赖地址的后端服务器地址",
-          "example": "无",
+          "example": "http://10.0.33.2",
           "member": "string",
           "name": "DependentAddr",
           "required": false,
@@ -8707,7 +9031,7 @@
         {
           "disabled": false,
           "document": "for saas\n连接器组ID",
-          "example": "无",
+          "example": "connectid",
           "member": "string",
           "name": "ConnectorGroupId",
           "required": false,
@@ -8716,7 +9040,7 @@
         {
           "disabled": false,
           "document": "web资源-是否禁用外网访问：0-可通过外网访问 1-不能通过外网访问(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DisableFront",
           "required": false,
@@ -8725,7 +9049,7 @@
         {
           "disabled": false,
           "document": "web资源-租户自定义域名",
-          "example": "无",
+          "example": "hr.qq.com",
           "member": "string",
           "name": "CustomDomain",
           "required": false,
@@ -8734,7 +9058,7 @@
         {
           "disabled": false,
           "document": "web资源-证书key",
-          "example": "无",
+          "example": "key",
           "member": "string",
           "name": "CertPrivateKey",
           "required": false,
@@ -8743,7 +9067,7 @@
         {
           "disabled": false,
           "document": "web资源-证书",
-          "example": "无",
+          "example": "cert",
           "member": "string",
           "name": "CertPublicKey",
           "required": false,
@@ -8752,9 +9076,18 @@
         {
           "disabled": false,
           "document": "web资源-前端端口(只支持32位)",
-          "example": "无",
+          "example": "80",
           "member": "int64",
           "name": "FrontPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "web免鉴权：1-鉴权 2-免鉴权",
+          "example": "1",
+          "member": "int64",
+          "name": "WebGwNoAuth",
           "required": false,
           "type": "int"
         }
@@ -12661,6 +12994,24 @@
           "name": "OsType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "0",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分组类型 1-终端分组 2-组织架构(账号分组) 3/4-虚拟分组",
+          "example": "0",
+          "member": "int64",
+          "name": "GroupType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13612,320 +13963,44 @@
       "members": [
         {
           "disabled": false,
-          "document": "web资源-如果选择API类型资源，则需要配置密钥(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "业务资源id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
-          "name": "APISecretId",
+          "name": "ServiceId",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "零信任网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "SmartGateNames",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-前端host(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "FrontPort",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关连通性状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "DetectState",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-前端协议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "FrontScheme",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-后端协议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "BackendScheme",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-依赖地址的后端服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "DependentAddr",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关连通性信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "DetectInfo",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-是否启用依赖地址：0-不启用 1-启用(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "EnableDependentAddr",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-是否禁用外网访问：0-可通过外网访问 1-不能通过外网访问(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "DisableFront",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关连通性创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "DetectTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "业务资源最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "UpdateTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-租户自定义域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "CustomDomain",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "访问类型:0-NGN 1-web(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "AccessType",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "CustomHost",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "业务资源等级(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "Levels",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-前端协议是HTTPS类型，需要配置证书\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "SSLCertId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源类型：0-应用 1-API(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "WebGwResourceType",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-Cname状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "CnameStatus",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "绑定的连接器组的名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ConnectorGroupName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "说明字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "绑定的连接器组Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ConnectorGroupId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源模块ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "AreaId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源连通性可达最后的检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ReachableTime",
-          "required": false,
-          "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "业务资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "dd",
           "member": "string",
           "name": "ServiceName",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "零信任网关id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "SmartGateIds",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关连通性(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "DirectConn",
-          "required": false,
-          "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源类型:ip,domain,ip_section，对应ip，域名，ip段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "ip",
           "member": "string",
           "name": "ServiceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "web资源-关联证书ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "CertificateId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "业务资源协议类型,3：所有,2：UDP，1：TCP(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "Protocol",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源连通性可达状态,0：未检测，1：未连通，2：已连通\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "ReachableState",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-后端路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "业务资源地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
           "member": "string",
-          "name": "BackendPath",
+          "name": "ServiceAddress",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13933,49 +14008,10 @@
         {
           "disabled": false,
           "document": "业务资源端口 all,1-65535\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "80",
           "member": "string",
           "name": "ServicePort",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-前端host\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "FrontHost",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "业务资源id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "ServiceId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "业务资源地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ServiceAddress",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "web资源-前端路径 默认\"/\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "FrontPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13983,25 +14019,390 @@
         {
           "disabled": false,
           "document": "业务资源创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2026-02-03 17:48:06",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "所属资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "业务资源最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-02-03 17:48:06",
           "member": "string",
-          "name": "AreaName",
+          "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说明字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源模块ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "零信任网关id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[10,10]",
+          "member": "int64",
+          "name": "SmartGateIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务资源协议类型,3：所有,2：UDP，1：TCP(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Protocol",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务资源等级(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Levels",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "零信任网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "SmartGateNames",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关连通性(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DirectConn",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关连通性状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DetectState",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关连通性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "info",
+          "member": "string",
+          "name": "DetectInfo",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关连通性创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0001-01-01 00:00:00",
+          "member": "string",
+          "name": "DetectTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的连接器组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ConnectorGroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的连接器组的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group",
+          "member": "string",
+          "name": "ConnectorGroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源连通性可达最后的检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "time",
+          "member": "string",
+          "name": "ReachableTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源连通性可达状态,0：未检测，1：未连通，2：已连通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReachableState",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问类型:0-NGN 1-web(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-后端协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "BackendScheme",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-后端路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "BackendPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-前端协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https",
+          "member": "string",
+          "name": "FrontScheme",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-前端host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hr",
+          "member": "string",
+          "name": "FrontHost",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-前端host(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "443",
+          "member": "int64",
+          "name": "FrontPort",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-前端路径 默认\"/\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "FrontPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-是否禁用外网访问：0-可通过外网访问 1-不能通过外网访问(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DisableFront",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-租户自定义域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hr.qq.com",
+          "member": "string",
+          "name": "CustomDomain",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hr.qq.com",
+          "member": "string",
+          "name": "CustomHost",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-Cname状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CnameStatus",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-关联证书ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CertificateId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源类型：0-应用 1-API(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WebGwResourceType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-如果选择API类型资源，则需要配置密钥(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "APISecretId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "area",
+          "member": "string",
+          "name": "AreaName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-前端协议是HTTPS类型，需要配置证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SSLCertId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-是否启用依赖地址：0-不启用 1-启用(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableDependentAddr",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web资源-依赖地址的后端服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://10.0.2.3",
+          "member": "string",
+          "name": "DependentAddr",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "web免鉴权：1-鉴权 2-免鉴权",
+          "example": "1",
+          "member": "int64",
+          "name": "WebGwNoAuth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DescribeBusinessResourcePageRsp": {
       "document": "业务资源分页返回对象",
@@ -16136,7 +16537,17 @@
     },
     "DescribeDLPSendFileTrendAnalyseRequest": {
       "document": "DescribeDLPSendFileTrendAnalyse请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDLPSendFileTrendAnalyseResponse": {
@@ -16510,7 +16921,7 @@
         {
           "disabled": false,
           "document": " 设备组id",
-          "example": "无",
+          "example": "14",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -16537,7 +16948,7 @@
         {
           "disabled": false,
           "document": " 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -16546,7 +16957,7 @@
         {
           "disabled": false,
           "document": " 在线状态，0：全部，1：离线，2：在线(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "OnlineStatus",
           "required": false,
@@ -16555,9 +16966,18 @@
         {
           "disabled": false,
           "document": " 合规状态，0：未开启合规检测设备，1：已合规设备，2：未合规设备，3:未知状态（开启的合规检测子项中没有不合规的结果，但是有一项检测失败）-1：全部设备，非必传，不传默认为0(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ResultStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": " Comment: 合规风险，0：未开启合规检测设备，1：已合规设备，2：未合规设备，50：低危，200:中危，500:高危 非必传，不传默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
           "required": false,
           "type": "int"
         }
@@ -17101,6 +17521,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "滤条件、分页参数\n<li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按账号分组过滤。</li>\n排序条件\n<li>Itime - string - 是否必填：否 - 排序支持：是 - 按账号分组创建时间排序。</li>\n<li>Utime - string - 是否必填：否 - 排序支持：是 - 按账号分组更新时间排序。</li>",
           "example": "无",
           "member": "Condition",
@@ -17111,7 +17540,7 @@
         {
           "disabled": false,
           "document": "终端父分组id",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ParentId",
           "required": false,
@@ -17120,7 +17549,7 @@
         {
           "disabled": false,
           "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -17129,11 +17558,20 @@
         {
           "disabled": false,
           "document": "终端分组ids",
-          "example": "无",
+          "example": "[10]",
           "member": "int64",
           "name": "GroupsIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新版范围组件",
+          "example": "1",
+          "member": "int64",
+          "name": "NewScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17881,6 +18319,15 @@
           "name": "VirtualGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新版范围组件",
+          "example": "1",
+          "member": "int64",
+          "name": "NewScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18501,7 +18948,7 @@
         {
           "disabled": false,
           "document": "终端组id",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "GroupId",
           "required": false,
@@ -18510,7 +18957,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "2026-01-28 00:00:00",
           "member": "string",
           "name": "BeginTime",
           "required": false,
@@ -18519,9 +18966,18 @@
         {
           "disabled": false,
           "document": "截止时间",
-          "example": "无",
+          "example": "2026-02-03 23:59:59",
           "member": "string",
           "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导出顺序，和Condition中字段一样",
+          "example": "Name",
+          "member": "string",
+          "name": "ExportOrder",
           "required": false,
           "type": "string"
         }
@@ -19846,6 +20302,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "条件过滤",
           "example": "无",
           "member": "Condition",
@@ -19856,7 +20321,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识码",
-          "example": "无",
+          "example": "48C149287F165BF7A687D59E196C939A69819FF9",
           "member": "string",
           "name": "Mid",
           "required": false,
@@ -19865,7 +20330,7 @@
         {
           "disabled": false,
           "document": "是否为下载: true为下载 ，default为false",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Dump",
           "required": false,
@@ -19879,6 +20344,24 @@
           "name": "OsType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2026-01-04 16:30:31",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2026-02-03 16:30:31",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23380,7 +23863,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "1770048000",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -23389,7 +23872,7 @@
         {
           "disabled": false,
           "document": "每页数目",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -23398,7 +23881,7 @@
         {
           "disabled": false,
           "document": "日志ID UserLogin-用户登录日志 IAMLogin-IAM登录日志 NGNAccess-终端访问日志 Access-代理访问日志 NGNTicket-NGN小票日志 DynamicAccess-动态访问日志",
-          "example": "无",
+          "example": "EndpointVirusKill",
           "member": "string",
           "name": "LogId",
           "required": true,
@@ -23407,7 +23890,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
@@ -23416,7 +23899,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "1770134399",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -23424,8 +23907,17 @@
         },
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Department",
           "required": false,
@@ -23434,7 +23926,7 @@
         {
           "disabled": false,
           "document": "终端分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "EndpointGroup",
           "required": false,
@@ -23452,9 +23944,27 @@
         {
           "disabled": false,
           "document": "终端类型",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新过滤条件",
+          "example": "无",
+          "member": "LogCondition",
+          "name": "RulePayload",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤模式 1使用RulePayload",
+          "example": "1",
+          "member": "int64",
+          "name": "RulePayloadMode",
           "required": false,
           "type": "int"
         }
@@ -28845,7 +29355,7 @@
         {
           "disabled": false,
           "document": "列表Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -28856,7 +29366,7 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -28867,7 +29377,7 @@
         {
           "disabled": false,
           "document": "任务Seq\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "string",
           "name": "Seq",
           "output_required": true,
@@ -28878,7 +29388,7 @@
         {
           "disabled": false,
           "document": "计算机名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "string",
           "name": "ComputerName",
           "output_required": true,
@@ -28889,7 +29399,7 @@
         {
           "disabled": false,
           "document": "Ip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "Ip",
           "output_required": true,
@@ -28900,7 +29410,7 @@
         {
           "disabled": false,
           "document": "Mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "00aabb",
           "member": "string",
           "name": "Mac",
           "output_required": true,
@@ -28911,7 +29421,7 @@
         {
           "disabled": false,
           "document": "所在分组Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "GroupId",
           "output_required": true,
@@ -28922,7 +29432,7 @@
         {
           "disabled": false,
           "document": "所在分组Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -28933,7 +29443,7 @@
         {
           "disabled": false,
           "document": "设备唯一Mid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "11aabb",
           "member": "string",
           "name": "Mid",
           "output_required": true,
@@ -28944,7 +29454,7 @@
         {
           "disabled": false,
           "document": "任务状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -28955,7 +29465,7 @@
         {
           "disabled": false,
           "document": "任务结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -28966,7 +29476,7 @@
         {
           "disabled": false,
           "document": "业务BusinessId(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "BusinessId",
           "output_required": true,
@@ -28977,13 +29487,24 @@
         {
           "disabled": false,
           "document": "长链接推送状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PushStatus",
           "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统类型",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -30746,6 +31267,15 @@
           "name": "OnlineStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新版范围组件",
+          "example": "1",
+          "member": "int64",
+          "name": "NewScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -30837,6 +31367,15 @@
     "DescribeVirusRisksRequest": {
       "document": "DescribeVirusRisks请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "设备唯一标识",
@@ -34021,7 +34560,17 @@
     },
     "ExportDLPFileRequest": {
       "document": "ExportDLPFile请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ExportDLPFileResponse": {
@@ -35013,7 +35562,7 @@
         },
         {
           "disabled": false,
-          "document": "任务版本：v2 - 自定义组的批量导入绑定。其他业务不要传递该字段，保持为空",
+          "document": "任务版本。默认不要传递该字段（为保兼容），保持为空。\n目前支持传递v2（安全性更高）的业务有：\n1）批量导入账号自定义组\n2）一键上手批量创建策略",
           "example": "v2",
           "member": "string",
           "name": "TaskVersion",
@@ -35632,6 +36181,72 @@
           "example": "leizi的电脑",
           "member": "string",
           "name": "RemarkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统名称",
+          "example": "1",
+          "member": "string",
+          "name": "Os",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统版本",
+          "example": "11.0.26200",
+          "member": "string",
+          "name": "OsVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型 未定义 公司 个人",
+          "example": "未分类资产",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组部门",
+          "example": "入域组",
+          "member": "string",
+          "name": "AccountGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变更信息ID",
+          "example": "182356",
+          "member": "int64",
+          "name": "Hid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地ip",
+          "example": "10.42.204.35,192.168.43.1,192.168.61.1",
+          "member": "string",
+          "name": "LocalIpList",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -38347,7 +38962,17 @@
     },
     "ModifyDLPRiskStatusRequest": {
       "document": "ModifyDLPRiskStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ModifyDLPRiskStatusResponse": {
@@ -40331,7 +40956,7 @@
         {
           "disabled": false,
           "document": "资源id(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ServiceId",
           "required": false,
@@ -40340,7 +40965,7 @@
         {
           "disabled": false,
           "document": "资源名称",
-          "example": "无",
+          "example": "dd",
           "member": "string",
           "name": "ServiceName",
           "required": false,
@@ -40349,7 +40974,7 @@
         {
           "disabled": false,
           "document": "for saas 连接器组ID",
-          "example": "无",
+          "example": "groupid",
           "member": "string",
           "name": "ConnectorGroupId",
           "required": false,
@@ -40358,7 +40983,7 @@
         {
           "disabled": false,
           "document": "资源协议类型 http https",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "BackendScheme",
           "required": false,
@@ -40367,7 +40992,7 @@
         {
           "disabled": false,
           "document": "web资源-内网地址",
-          "example": "无",
+          "example": "10.0.3.2",
           "member": "string",
           "name": "ServiceAddress",
           "required": false,
@@ -40376,7 +41001,7 @@
         {
           "disabled": false,
           "document": "web资源-内网端口 端口不限制",
-          "example": "无",
+          "example": "80",
           "member": "string",
           "name": "ServicePort",
           "required": false,
@@ -40385,7 +41010,7 @@
         {
           "disabled": false,
           "document": "web资源-内网路径",
-          "example": "无",
+          "example": "/",
           "member": "string",
           "name": "BackendPath",
           "required": false,
@@ -40394,7 +41019,7 @@
         {
           "disabled": false,
           "document": "资源组ID(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AreaId",
           "required": false,
@@ -40403,7 +41028,7 @@
         {
           "disabled": false,
           "document": "web资源-前端协议",
-          "example": "无",
+          "example": "https",
           "member": "string",
           "name": "FrontScheme",
           "required": false,
@@ -40412,7 +41037,7 @@
         {
           "disabled": false,
           "document": "web资源-前端host",
-          "example": "无",
+          "example": "443",
           "member": "string",
           "name": "FrontHost",
           "required": false,
@@ -40421,7 +41046,7 @@
         {
           "disabled": false,
           "document": "web资源-前端路径 默认\"/\"",
-          "example": "无",
+          "example": "/",
           "member": "string",
           "name": "FrontPath",
           "required": false,
@@ -40430,7 +41055,7 @@
         {
           "disabled": false,
           "document": "web资源-自定义host",
-          "example": "无",
+          "example": "hr.qq.com",
           "member": "string",
           "name": "CustomHost",
           "required": false,
@@ -40439,7 +41064,7 @@
         {
           "disabled": false,
           "document": "web资源类型：0-应用 1-API(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "WebGwResourceType",
           "required": false,
@@ -40448,7 +41073,7 @@
         {
           "disabled": false,
           "document": "web资源-如果选择API类型资源，则需要配置密钥(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "APISecretId",
           "required": false,
@@ -40457,7 +41082,7 @@
         {
           "disabled": false,
           "document": "web资源-前端协议是HTTPS类型，需要配置证书",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "SSLCertId",
           "required": false,
@@ -40466,7 +41091,7 @@
         {
           "disabled": false,
           "document": "web资源-是否启用依赖地址：0-不启用 1-启用(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "EnableDependentAddr",
           "required": false,
@@ -40475,7 +41100,7 @@
         {
           "disabled": false,
           "document": "web资源-依赖地址的后端服务器地址",
-          "example": "无",
+          "example": "http://10.0.3.2",
           "member": "string",
           "name": "DependentAddr",
           "required": false,
@@ -40484,7 +41109,7 @@
         {
           "disabled": false,
           "document": "web资源-是否禁用外网访问：0-可通过外网访问 1-不能通过外网访问(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DisableFront",
           "required": false,
@@ -40493,7 +41118,7 @@
         {
           "disabled": false,
           "document": "web资源-租户自定义域名",
-          "example": "无",
+          "example": "hr.qq.com",
           "member": "string",
           "name": "CustomDomain",
           "required": false,
@@ -40502,7 +41127,7 @@
         {
           "disabled": false,
           "document": "web资源-证书key",
-          "example": "无",
+          "example": "key",
           "member": "string",
           "name": "CertPrivateKey",
           "required": false,
@@ -40511,7 +41136,7 @@
         {
           "disabled": false,
           "document": "web资源-证书",
-          "example": "无",
+          "example": "cert",
           "member": "string",
           "name": "CertPublicKey",
           "required": false,
@@ -40520,9 +41145,18 @@
         {
           "disabled": false,
           "document": "web资源-前端端口(只支持32位)",
-          "example": "无",
+          "example": "443",
           "member": "int64",
           "name": "FrontPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "web资源-web免鉴权：1-鉴权 2-免鉴权",
+          "example": "1",
+          "member": "int64",
+          "name": "WebGwNoAuth",
           "required": false,
           "type": "int"
         }
@@ -43175,6 +43809,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略应用高危终端数（合规使用）",
+          "example": "0",
+          "member": "int64",
+          "name": "HighRiskDeviceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略应用中危终端数（合规使用）",
+          "example": "0",
+          "member": "int64",
+          "name": "MiddleRiskDeviceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略应用低危终端数（合规使用）",
+          "example": "0",
+          "member": "int64",
+          "name": "LowRiskDeviceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -43874,6 +44541,95 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RulePayload": {
+      "document": "条件筛选",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RulePayloadItem",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条件关系 or/and\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "or",
+          "member": "string",
+          "name": "RelateOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RulePayloadItem": {
+      "document": "条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LocalIpList",
+          "member": "string",
+          "name": "FieldKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选项（eq:等于,neq:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ilike",
+          "member": "string",
+          "name": "Option",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"VMware-Win11x\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "嵌套条件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RulePayloadItem",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RelateOption 关系操作符（and/or），用于根级别条件关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "and",
+          "member": "string",
+          "name": "RelateOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
