@@ -17,6 +17,7 @@ Output:
     "Response": {
         "RequestId": "6088f081-3e69-421e-9bbe-b91510af0414",
         "Log": "{\"other\":{}}",
+        "FullReqLog": "",
         "ParameterList": [],
         "Scene": "waf",
         "SensitiveFields": [],

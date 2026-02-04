@@ -392,7 +392,7 @@
       {
         "document": "获取Api请求详情信息",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Method\": \"POST\",\n    \"ApiName\": \"/test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6088f081-3e69-421e-9bbe-b91510af0414\",\n        \"Log\": \"{\\\"other\\\":{}}\",\n        \"ParameterList\": [],\n        \"Scene\": \"waf\",\n        \"SensitiveFields\": [],\n        \"IsActive\": false,\n        \"IpCount\": 0,\n        \"RegionCount\": 0,\n        \"EventCount\": 0,\n        \"SensitiveCount\": 0,\n        \"RspLog\": \"{\\\"other\\\":{}}\",\n        \"Level\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6088f081-3e69-421e-9bbe-b91510af0414\",\n        \"Log\": \"{\\\"other\\\":{}}\",\n        \"FullReqLog\": \"\",\n        \"ParameterList\": [],\n        \"Scene\": \"waf\",\n        \"SensitiveFields\": [],\n        \"IsActive\": false,\n        \"IpCount\": 0,\n        \"RegionCount\": 0,\n        \"EventCount\": 0,\n        \"SensitiveCount\": 0,\n        \"RspLog\": \"{\\\"other\\\":{}}\",\n        \"Level\": 0\n    }\n}",
         "title": "获取Api请求详情信息"
       }
     ],
@@ -657,9 +657,9 @@
     "DescribeHistogram": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHistogram\n<公共请求参数>\n\n{\n    \"FromTime\": \"2024-11-03 00:00:00\",\n    \"ToTime\": \"2024-11-03 15:17:00\",\n    \"Host\": \"all\",\n    \"Source\": \"access\",\n    \"QueryField\": \"ip\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Histogram\": [\n            \"{\\\"count\\\":43,\\\"ip\\\":\\\"128.14.129.10\\\"}\",\n            \"{\\\"count\\\":43,\\\"ip\\\":\\\"8.220.210.24\\\"}\",\n            \"{\\\"count\\\":42,\\\"ip\\\":\\\"185.191.126.248\\\"}\",\n            \"{\\\"count\\\":40,\\\"ip\\\":\\\"141.98.11.178\\\"}\",\n            \"{\\\"count\\\":33,\\\"ip\\\":\\\"9.190.110.251\\\"}\"\n        ],\n        \"RequestId\": \"cce2cdd7-8e54-4c08-b669-648adb1b49c1\"\n    }\n}",
-        "title": "查询Bot数量"
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHistogram\n<公共请求参数>\n\n{\n    \"FromTime\": \"2026-02-03 00:00:00\",\n    \"ToTime\": \"2026-02-03 20:00:00\",\n    \"QueryField\": \"ip\",\n    \"Source\": \"access\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Histogram\": [\n            \"{\\\"count\\\":200,\\\"ip\\\":\\\"222.12.11.104\\\"}\"\n        ],\n        \"RequestId\": \"26b5b437-b2a1-4019-b06d-37e7fdfd460d\"\n    }\n}",
+        "title": "测试数据"
       }
     ],
     "DescribeHost": [
@@ -1635,9 +1635,9 @@
     "UpsertCCRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertCCRule\n<公共请求参数>\n\n{\n    \"RuleId\": 0,\n    \"Domain\": \"www.testwaf.com\",\n    \"Edition\": \"sparta-waf\",\n    \"Name\": \"ccrule\",\n    \"Status\": 1,\n    \"Advance\": \"0\",\n    \"Limit\": \"60\",\n    \"Type\": 0,\n    \"Interval\": \"60\",\n    \"Url\": \"\",\n    \"MatchFunc\": 0,\n    \"ActionType\": \"22\",\n    \"Priority\": 50,\n    \"ValidTime\": 600,\n    \"OptionsArr\": \"[{\\\"key\\\":\\\"URL\\\",\\\"args\\\":[\\\"=L2Nj\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}]\",\n    \"EventId\": \"\",\n    \"LogicalOp\": \"and\",\n    \"CelRule\": \"\",\n    \"LimitMethod\": \"\",\n    \"ActionRatio\": 100,\n    \"PageId\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fb2ee72-103d-4d0f-b583-6af98aa2f442\",\n        \"Data\": \"\",\n        \"RuleId\": 1900037990\n    }\n}",
-        "title": "添加CC规则"
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertCCRule\n<公共请求参数>\n\n{\n    \"Domain\": \"yyxz.1030.testwaf.com\",\n    \"Name\": \"测试使用\",\n    \"Status\": 1,\n    \"Advance\": \"0\",\n    \"Limit\": \"60\",\n    \"Interval\": \"60\",\n    \"ActionType\": \"22\",\n    \"Priority\": 50,\n    \"ValidTime\": 600,\n    \"Url\": \"\",\n    \"MatchFunc\": 0,\n    \"OptionsArr\": \"[{\\\"key\\\":\\\"URL\\\",\\\"args\\\":[\\\"=L2NjdGVzdA\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}]\",\n    \"Edition\": \"sparta-waf\",\n    \"Type\": 0,\n    \"EventId\": \"\",\n    \"RuleId\": 0,\n    \"LimitMethod\": \"\",\n    \"CelRule\": \"\",\n    \"LogicalOp\": \"and\",\n    \"PageId\": \"\",\n    \"ActionRatio\": 100,\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 1769529600,\n                \"EndDateTime\": 1771776000\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RuleId\": 0,\n        \"RequestId\": \"707d8c2c-413f-49b7-a03a-39aa61a07202\"\n    }\n}",
+        "title": "新建cc规则示例"
       }
     ],
     "UpsertIpAccessControl": [

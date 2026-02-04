@@ -18817,6 +18817,28 @@
         },
         {
           "disabled": false,
+          "document": "是否已修订",
+          "example": "false",
+          "member": "bool",
+          "name": "IsMark",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已忽略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsIgnore",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "审查依据",
           "example": "通用商业合同审查清单{特殊类型合同补充要点}, 系统审查要求。",
           "member": "string",
@@ -18890,6 +18912,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级别名",
+          "example": "HIGH",
+          "member": "string",
+          "name": "RiskLevelAliasName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

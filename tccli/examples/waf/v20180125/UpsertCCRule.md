@@ -1,4 +1,4 @@
-**Example 1: 添加CC规则**
+**Example 1: 新建cc规则示例**
 
 
 
@@ -6,36 +6,40 @@ Input:
 
 ```
 tccli waf UpsertCCRule --cli-unfold-argument  \
-    --RuleId 0 \
-    --Domain www.testwaf.com \
-    --Edition sparta-waf \
-    --Name ccrule \
+    --Domain yyxz.1030.testwaf.com \
+    --Name 测试使用 \
     --Status 1 \
     --Advance 0 \
     --Limit 60 \
-    --Type 0 \
     --Interval 60 \
-    --Url  \
-    --MatchFunc 0 \
     --ActionType 22 \
     --Priority 50 \
     --ValidTime 600 \
-    --OptionsArr [{"key":"URL","args":["=L2Nj"],"match":"0","encodeflag":true}] \
+    --Url  \
+    --MatchFunc 0 \
+    --OptionsArr [{"key":"URL","args":["=L2NjdGVzdA"],"match":"0","encodeflag":true}] \
+    --Edition sparta-waf \
+    --Type 0 \
     --EventId  \
-    --LogicalOp and \
-    --CelRule  \
+    --RuleId 0 \
     --LimitMethod  \
+    --CelRule  \
+    --LogicalOp and \
+    --PageId  \
     --ActionRatio 100 \
-    --PageId 
+    --JobType TimedJob \
+    --JobDateTime.Timed.0.StartDateTime 1769529600 \
+    --JobDateTime.Timed.0.EndDateTime 1771776000 \
+    --JobDateTime.TimeTZone UTC+8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8fb2ee72-103d-4d0f-b583-6af98aa2f442",
         "Data": "",
-        "RuleId": 1900037990
+        "RuleId": 0,
+        "RequestId": "707d8c2c-413f-49b7-a03a-39aa61a07202"
     }
 }
 ```

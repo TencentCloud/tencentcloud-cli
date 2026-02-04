@@ -1002,7 +1002,7 @@
       "status": "online"
     },
     "ProcessLiveStream": {
-      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译、物体识别、游戏打点）。\n* 智能内容分析（新闻实时拆条）。\n* 质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）。\n* 录制\n\n直播流处理事件通知支持HTTP回调，也支持实时写入用户指定的消息队列 CMQ 中，用户从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
+      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译、物体识别、游戏打点）。\n* 智能内容分析（拆条，集锦）。\n* 质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）。\n* 录制\n\n直播流处理事件通知支持HTTP回调，也支持实时写入用户指定的消息队列 CMQ 中，用户从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
       "input": "ProcessLiveStreamRequest",
       "name": "对直播流发起处理",
       "output": "ProcessLiveStreamResponse",
@@ -2436,7 +2436,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskCutoutResult",
           "name": "CutoutTask",
@@ -2446,7 +2446,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析成片任务的查询结果，当任务类型为Reel时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskReelResult",
           "name": "ReelTask",
@@ -2707,7 +2707,7 @@
       "usage": "out"
     },
     "AiAnalysisTaskCutoutResult": {
-      "document": "视频抠图结果数据结构",
+      "document": "视频智能抠图结果数据结构",
       "members": [
         {
           "disabled": false,
@@ -3593,16 +3593,26 @@
       "usage": "out"
     },
     "AiAnalysisTaskReelOutput": {
-      "document": "智能成片结果信息",
+      "document": "AI解说二创结果信息",
       "members": [
         {
           "disabled": false,
-          "document": "成片视频路径。",
+          "document": "解说视频路径。",
           "example": "/output/dub-result-0.mp4",
           "member": "string",
           "name": "VideoPath",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解说视频路径列表。\n\n**注意**：\n1. 当返回一个文件时，`VideoPath `返回一个文件路径，`VideoPaths `也会填充同样路径的一个元素。\n2. 当返回多个文件时，`VideoPath `返回为空字符串，`VideoPaths `返回多文件路径列表。",
+          "example": "[\"/output/dub-result-0.mp4\", \"/output/dub-result-1.mp4\"]",
+          "member": "string",
+          "name": "VideoPaths",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3617,7 +3627,7 @@
         },
         {
           "disabled": false,
-          "document": "成片视频存储位置。",
+          "document": "解说视频存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -3629,7 +3639,7 @@
       "usage": "out"
     },
     "AiAnalysisTaskReelResult": {
-      "document": "智能成片结果类型",
+      "document": "AI解说二创结果类型",
       "members": [
         {
           "disabled": false,
@@ -3663,7 +3673,7 @@
         },
         {
           "disabled": false,
-          "document": "智能成片任务输入。",
+          "document": "AI解说二创任务输入。",
           "example": "无",
           "member": "AiAnalysisTaskReelInput",
           "name": "Input",
@@ -3673,7 +3683,7 @@
         },
         {
           "disabled": false,
-          "document": "智能成片任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI解说二创任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskReelOutput",
           "name": "Output",
@@ -3947,6 +3957,26 @@
           "name": "VideoComprehensionAnalysisResult",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频（音频）理解扩展信息",
+          "example": "{\"reasoningContent\":\"Okay, here's how I would summarize this video, reflecting my thought process as I would analyze the scene:\\n\\nAs a seasoned observer of human dynamics\"}",
+          "member": "string",
+          "name": "VideoComprehensionExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频分镜理解结果",
+          "example": "无",
+          "member": "VideoComprehensionResultItem",
+          "name": "VideoComprehensionResultList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8451,7 +8481,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。\n注意：当InputInfo.Type为URL时，该参数是必填项",
+          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。\n注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -8505,7 +8535,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
+          "document": "资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。",
           "example": "vts-24000123-0",
           "member": "string",
           "name": "ResourceId",
@@ -8950,6 +8980,16 @@
           "example": "2025-08-01T18:00:00+08:00",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强",
+          "example": "default",
+          "member": "string",
+          "name": "Strength",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10914,6 +10954,15 @@
           "example": "数字水印模板",
           "member": "string",
           "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印强度。\ndefault: 默认，高清画质和抗性平衡\nstronger:画质清晰，抗性较强\nstrongest:画质一般，抗性最强",
+          "example": "default",
+          "member": "string",
+          "name": "Strength",
           "required": false,
           "type": "string"
         }
@@ -18998,7 +19047,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "起始日期。使用 ISO 日期格式。",
           "example": "2019-07-02T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -23488,6 +23537,120 @@
       ],
       "usage": "out"
     },
+    "LiveSmartSubtitleResult": {
+      "document": "直播智能字幕结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别文本。",
+          "example": "Hello",
+          "member": "string",
+          "name": "Text",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译片段起始的 PTS 时间，单位：秒。",
+          "example": "8.764",
+          "member": "float",
+          "name": "StartPTSTime",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译片段终止的 PTS 时间，单位：秒。",
+          "example": "15.977",
+          "member": "float",
+          "name": "EndPTSTime",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译文本。",
+          "example": "你好",
+          "member": "string",
+          "name": "Trans",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译开始UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-21T10:11:52Z",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "翻译结束UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-21T10:12:52Z\t",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "稳态标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SteadyState",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "websocket与trtc实时翻译的UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bot",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveSmartSubtitlesTaskInput": {
+      "document": "直播智能字幕输入结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板 ID 。\t",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户扩展字段，一般场景不用填。",
+          "example": "{\"ParaTest\":\"test\"}",
+          "member": "string",
+          "name": "UserExtPara",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LiveStreamAiAnalysisResultInfo": {
       "document": "直播流分析结果",
       "members": [
@@ -24079,6 +24242,22 @@
           "name": "Label",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveStreamAiSmartSubtitleResultInfo": {
+      "document": "直播智能字幕结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播智能字幕任务结果列表。",
+          "example": "无",
+          "member": "LiveSmartSubtitleResult",
+          "name": "SmartSubtitleResult",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -27492,6 +27671,15 @@
           "name": "TextContent",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强",
+          "example": "default",
+          "member": "string",
+          "name": "Strength",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -29755,7 +29943,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播流处理结果类型，包含：\n<li>AiReviewResult：内容审核结果；</li>\n<li>AiRecognitionResult：内容识别结果；</li>\n<li>LiveRecordResult：直播录制结果；</li>\n<li>AiQualityControlResult：媒体质检结果；</li>\n<li>AiAnalysisResult：内容分析结果；</li>\n<li>ProcessEof：直播流处理结束。</li>",
+          "document": "直播流处理结果类型，包含：\n<li>AiReviewResult：内容审核结果；</li>\n<li>AiRecognitionResult：内容识别结果；</li>\n<li>LiveRecordResult：直播录制结果；</li>\n<li>AiQualityControlResult：媒体质检结果；</li>\n<li>AiAnalysisResult：内容分析结果；</li>\n<li>AiSmartSubtitleResult：智能字幕结果；</li>\n<li>ProcessEof：直播流处理结束。</li>",
           "example": "ProcessEof",
           "member": "string",
           "name": "NotificationType",
@@ -29832,6 +30020,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕结果，当 NotificationType 为 AiSmartSubtitleResult 时有效。",
+          "example": "无",
+          "member": "LiveStreamAiSmartSubtitleResultInfo",
+          "name": "AiSmartSubtitleResultInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -30849,8 +31047,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。\ntrtc地址如下：\n trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`\n`<roomid>` 为trtc的房间号id, 为数字\n`<sdkappid>` 为trtc的sdk app id\n`<userid>` 为服务进入房间的用户id,可以区分谁是机器人\n<`usersig>` 为trtc 用户的签名",
-          "example": "http://www.abc.com/abc.m3u8",
+          "document": "直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。\ntrtc地址如下：\n trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`\n`<roomid>` 为trtc的房间号id, 为数字\n`<sdkappid>` 为trtc的sdk app id\n`<userid>` 为服务进入房间的用户id,可以区分谁是机器人\n<`usersig>` 为trtc 用户的签名\n\nwebrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)\n\nsrt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)\n\n",
+          "example": "http://www.adc.com/adc.m3u8",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -30877,7 +31075,7 @@
         {
           "disabled": false,
           "document": "直播流处理生成的文件输出的目标目录，如`/movie/201909/`，如果不填为 `/` 目录。",
-          "example": "无",
+          "example": "/tmp/",
           "member": "string",
           "name": "OutputDir",
           "required": false,
@@ -30921,8 +31119,17 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "智能字幕任务参数。",
           "example": "无",
+          "member": "LiveSmartSubtitlesTaskInput",
+          "name": "SmartSubtitlesTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "sdsxxx-xxxx",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -30931,7 +31138,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "无",
+          "example": "ceckxxxxx",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -30940,7 +31147,7 @@
         {
           "disabled": false,
           "document": "直播编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若对直播流发起处理（ProcessLiveStream）有输出，将覆盖原有编排的默认输出。</li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessLiveStream）有设置，将覆盖原有编排的默认回调。",
-          "example": "无",
+          "example": "450001",
           "member": "int64",
           "name": "ScheduleId",
           "required": false,
@@ -36988,31 +37195,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。",
-          "example": "",
+          "document": "数据所在时间区间的开始时间，使用 ISO 日期格式。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。",
+          "example": "2025-10-02T00:00:00+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务数。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务用量。",
-          "example": "",
+          "example": "472",
           "member": "int64",
           "name": "Usage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -38621,6 +38828,62 @@
         }
       ],
       "usage": "both"
+    },
+    "VideoComprehensionResultItem": {
+      "document": "视频分镜理解结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分镜片段起始时间（单位：秒）\n",
+          "example": "48.733334",
+          "member": "float",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分镜片段结束时间（单位：秒）",
+          "example": "54.166668",
+          "member": "float",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分镜片段标题",
+          "example": "有人都以为她出事了，没想到她才是最终赢家",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分镜片段信息描述",
+          "example": "朋友焦急地冲过来查看情况，以为她遇到了危险。没想到她只是淡定一笑，原来一切尽在她的掌握之中。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分镜片段关键词",
+          "example": "[\"剧情\",\"反转\",\"爽文\",\"霸气\"]",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VideoDBEntryTaskResult": {
       "document": "视频检索入库任务的结果",

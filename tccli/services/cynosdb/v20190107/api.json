@@ -29428,7 +29428,7 @@
         {
           "disabled": false,
           "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份",
-          "example": "[\"none\",\"full\",\"none\",\"full\",\"none\",\"full\",\"none\"] ",
+          "example": "[\"none\",\"full\",\"none\",\"full\",\"none\",\"full\",\"none\"]",
           "member": "string",
           "name": "BackupWeekDays",
           "output_required": false,
@@ -29460,7 +29460,7 @@
         },
         {
           "disabled": false,
-          "document": "动数据备份触发策略，periodically:自动周期备份,frequent:高频备份",
+          "document": "自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份",
           "example": "periodically",
           "member": "string",
           "name": "BackupTriggerStrategy",

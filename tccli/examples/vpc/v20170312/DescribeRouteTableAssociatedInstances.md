@@ -29,9 +29,7 @@ Output:
                 "RouteTableId": "ccnrtb-3230jx4x",
                 "InstanceName": "rubytest",
                 "State": "0",
-                "InstanceRegion": [
-                    "ap-guangzhou"
-                ],
+                "InstanceRegion": "ap-guangzhou",
                 "InstanceUin": "329087131"
             }
         ],

@@ -328,6 +328,14 @@
         "title": "查询话机列表信息"
       }
     ],
+    "DescribeFlashSMSList": [
+      {
+        "document": "查询闪信记录列表",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlashSMSList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1500098920,\n    \"StartTimestamp\": 1769730111,\n    \"EndTimestamp\": 1769749111,\n    \"SessionId\": \"15adb830-****-****-****-20c7d825d845\",\n    \"DeliveryNumber\": \"00860755******88\",\n    \"ServingNumber\": \"0086021******07\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlashSMSList\": [\n            {\n                \"ArriveTimestamp\": 1769738753,\n                \"DeliveryMessage\": \"success\",\n                \"DeliveryNumber\": \"0086158******69\",\n                \"DeliveryStatus\": 1,\n                \"DeliveryTimestamp\": 1769738751,\n                \"ServingNumber\": \"0086021******07\",\n                \"SessionId\": \"b6801264-****-****-****-8ffd29033e32\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"3e9a5b29-5d5c-491b-885c-05f3ea6c3b0e\"\n    }\n}",
+        "title": "查询闪信记录列表"
+      }
+    ],
     "DescribeIMCdrList": [
       {
         "document": "获取包括全媒体和文本会话两种类型的服务记录",

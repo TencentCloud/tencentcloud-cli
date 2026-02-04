@@ -287,6 +287,13 @@
       "output": "DescribeExtensionsResponse",
       "status": "online"
     },
+    "DescribeFlashSMSList": {
+      "document": "获取闪信记录列表",
+      "input": "DescribeFlashSMSListRequest",
+      "name": "查询闪信投递列表",
+      "output": "DescribeFlashSMSListResponse",
+      "status": "online"
+    },
     "DescribeIMCdrList": {
       "document": "获取包括全媒体和文本会话两种类型的服务记录。",
       "input": "DescribeIMCdrListRequest",
@@ -603,6 +610,16 @@
           "name": "AIAgentName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体变量名列表",
+          "example": "[\"orderId\"]",
+          "member": "string",
+          "name": "VariableNames",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5333,6 +5350,125 @@
       ],
       "type": "object"
     },
+    "DescribeFlashSMSListRequest": {
+      "document": "DescribeFlashSMSList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1500098920",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "example": "1769730111",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。",
+          "example": "1769749111",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "闪信投递号码（被叫号码）",
+          "example": "00860755******88",
+          "member": "string",
+          "name": "DeliveryNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "呼叫关联的系统号码",
+          "example": "0086021******07",
+          "member": "string",
+          "name": "ServingNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "15adb830-****-****-****-20c7d825d845",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递结果 1 为成功，其他为失败",
+          "example": "1",
+          "member": "int64",
+          "name": "DeliveryStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlashSMSListResponse": {
+      "document": "DescribeFlashSMSList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "闪信记录列表",
+          "example": "无",
+          "member": "FlashSMSRecord",
+          "name": "FlashSMSList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIMCdrListRequest": {
       "document": "DescribeIMCdrList请求参数结构体",
       "members": [
@@ -7466,6 +7602,89 @@
         }
       ],
       "usage": "in"
+    },
+    "FlashSMSRecord": {
+      "document": "闪信记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "a021c341-19aa-47dc-972c-262c75399c77",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "闪信投递号码（被叫）",
+          "example": "0086158******69",
+          "member": "string",
+          "name": "DeliveryNumber",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼叫关联的系统号码",
+          "example": "0086021******07",
+          "member": "string",
+          "name": "ServingNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递状态，1 表示成功，其他表示失败",
+          "example": "1",
+          "member": "int64",
+          "name": "DeliveryStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递失败原因",
+          "example": "success",
+          "member": "string",
+          "name": "DeliveryMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递时间戳，Unix 秒级时间戳",
+          "example": "1769613044",
+          "member": "int64",
+          "name": "DeliveryTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "送达时间（送达成功），Unix 秒级时间戳",
+          "example": "1769613046",
+          "member": "int64",
+          "name": "ArriveTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ForceMemberOfflineRequest": {
       "document": "ForceMemberOffline请求参数结构体",

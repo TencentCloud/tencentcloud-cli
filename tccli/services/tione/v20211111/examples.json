@@ -58,10 +58,10 @@
     ],
     "CreateTrainingModel": [
       {
-        "document": "导入模型请求",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrainingModel\n<公共请求参数>\n\n{\n    \"TrainingJobName\": \"test-job\",\n    \"TrainingJobId\": \"train-608753141184489472\",\n    \"TrainingModelVersion\": \"v1\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"test-key\",\n            \"TagValue\": \"test-value\"\n        }\n    ],\n    \"ModelMoveMode\": \"COPY\",\n    \"TrainingModelIndex\": \"test123\",\n    \"ReasoningEnvironment\": \"tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch-gpu:py38-torch1.9.0-cu111-tiacc3.0.0-2.0.2\",\n    \"ReasoningEnvironmentId\": \"pytorch1.9.0-py38(gpu)\",\n    \"TrainingModelName\": \"test-model\",\n    \"AlgorithmFramework\": \"PYTORCH\",\n    \"ImportMethod\": \"MODEL\",\n    \"ReasoningEnvironmentSource\": \"SYSTEM\",\n    \"TrainingModelCosPath\": {\n        \"Paths\": [\n            \"test/output/train-608753141184489472/model/\"\n        ],\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"test-bucket\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": \"m-664968589676184576\",\n        \"RequestId\": \"ced11c16-fd5a-4f12-8a0b-17c7f0b14659\",\n        \"TrainingModelVersionId\": \"mv-v1-664975193381340160\"\n    }\n}",
-        "title": "导入模型请求"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrainingModel\n<公共请求参数>\n\n{\n    \"ImportMethod\": \"MODEL\",\n    \"TrainingModelName\": \"test-0203-05\",\n    \"Tags\": [],\n    \"TrainingModelVersion\": \"v1\",\n    \"ModelFormat\": \"PYTORCH\",\n    \"AlgorithmFramework\": \"PYTORCH\",\n    \"TrainingModelSource\": \"CFS\",\n    \"ReasoningEnvironmentSource\": \"SYSTEM\",\n    \"ReasoningImageInfo\": {\n        \"ImageType\": \"PRE_SET\",\n        \"ImageUrl\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:vllm-0.9.1-ti-20250703\",\n        \"RegistryRegion\": \"\",\n        \"RegistryId\": \"\"\n    },\n    \"ReasoningEnvironment\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:vllm-0.9.1-ti-20250703\",\n    \"ReasoningEnvironmentId\": \"vllm(0.9.1)\",\n    \"AutoClean\": \"false\",\n    \"ModelCleanPeriod\": 1,\n    \"MaxReservedModels\": 24\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"m-1511805105118762624\",\n        \"TrainingModelVersionId\": \"mv-v1-1511805105118762625\",\n        \"RequestId\": \"2569dfaf-131f-45f9-a5b5-dbf4d0db8d35\"\n    }\n}",
+        "title": "创建模型"
       }
     ],
     "CreateTrainingTask": [
@@ -122,10 +122,10 @@
     ],
     "DeleteTrainingModel": [
       {
-        "document": "删除模型请求",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrainingModel\n<公共请求参数>\n\n{\n    \"TrainingModelId\": \"m-660879334503305216\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ced11c16-fd5a-4f12-8a0b-17c7f0b14659\"\n    }\n}",
-        "title": "删除模型请求"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrainingModel\n<公共请求参数>\n\n{\n    \"TrainingModelId\": \"m-1508893456133569280\",\n    \"ModelVersionType\": \"NORMAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9aec7e2-aae8-423e-8260-e7e73c20b9c1\"\n    }\n}",
+        "title": "删除模型"
       }
     ],
     "DeleteTrainingModelVersion": [

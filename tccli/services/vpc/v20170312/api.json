@@ -19723,6 +19723,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19732,6 +19733,7 @@
           "example": "无",
           "member": "InstanceBind",
           "name": "InstanceBindSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19786,6 +19788,7 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19795,6 +19798,7 @@
           "example": "无",
           "member": "RouteSelectionPolicy",
           "name": "RouteSelectionPolicySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -545,6 +545,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有权",
+          "example": "未分类资产",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -583,7 +594,7 @@
         {
           "disabled": false,
           "document": "Filters 条件过滤",
-          "example": "参考Filter",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "output_required": false,
@@ -594,7 +605,7 @@
         {
           "disabled": false,
           "document": "FilterGroups 条件过滤组",
-          "example": "参考FilterGroup",
+          "example": "无",
           "member": "FilterGroup",
           "name": "FilterGroups",
           "output_required": false,
@@ -605,7 +616,7 @@
         {
           "disabled": false,
           "document": "Sort 排序字段",
-          "example": "参考Sort",
+          "example": "无",
           "member": "Sort",
           "name": "Sort",
           "output_required": false,
@@ -634,6 +645,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复杂查询规则条件查询项（支持任意层级AND/OR组合）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RulePayload",
+          "name": "RulePayload",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则模式：0-使用旧的FilterGroups，1-使用新的RulePayload\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RulePayloadMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1705,6 +1738,24 @@
           "example": "0",
           "member": "int64",
           "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "0",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分组类型 1-终端分组 2-组织架构(账号分组) 3/4-虚拟分组",
+          "example": "0",
+          "member": "int64",
+          "name": "GroupType",
           "required": false,
           "type": "int"
         }
@@ -5713,6 +5764,95 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RulePayload": {
+      "document": "条件筛选",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RulePayloadItem",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条件关系 or/and\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "or",
+          "member": "string",
+          "name": "RelateOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RulePayloadItem": {
+      "document": "条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LocalIpList",
+          "member": "string",
+          "name": "FieldKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选项（eq:等于,neq:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ilike",
+          "member": "string",
+          "name": "Option",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"VMware-Win11x\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "嵌套条件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RulePayloadItem",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RelateOption 关系操作符（and/or），用于根级别条件关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "and",
+          "member": "string",
+          "name": "RelateOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -19,7 +19,7 @@
     "CreateAuditLogFile": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qwer****\",\n    \"StartTime\": \"2021-07-12 10:29:20\",\n    \"EndTime\": \"2021-07-13 15:29:20\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qwe*****\",\n    \"StartTime\": \"2021-07-12 10:29:20\",\n    \"EndTime\": \"2021-07-13 15:29:20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FileName\": \"test.csv\"\n    }\n}",
         "title": "创建审计日志文件"
       }

@@ -15349,6 +15349,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TDSQL引擎参数",
+          "example": "Hygon-1",
+          "member": "string",
+          "name": "CpuModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

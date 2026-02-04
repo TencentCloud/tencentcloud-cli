@@ -8445,7 +8445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享单元ID。",
+          "document": "<p>共享单元ID。</p>",
           "example": "shareUnit-xhre**ra2p",
           "member": "string",
           "name": "UnitId",
@@ -8455,7 +8455,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元名称。",
+          "document": "<p>共享单元名称。</p>",
           "example": "myShareUnit",
           "member": "string",
           "name": "Name",
@@ -8465,7 +8465,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元管理员Uin。",
+          "document": "<p>共享单元管理员Uin。</p>",
           "example": "222222222222",
           "member": "int64",
           "name": "Uin",
@@ -8475,7 +8475,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元管理员OwnerUin。",
+          "document": "<p>共享单元管理员OwnerUin。</p>",
           "example": "111111111111",
           "member": "int64",
           "name": "OwnerUin",
@@ -8485,7 +8485,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元地域。",
+          "document": "<p>共享单元地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
@@ -8495,7 +8495,7 @@
         },
         {
           "disabled": false,
-          "document": "描述。",
+          "document": "<p>描述。</p>",
           "example": "share unit",
           "member": "string",
           "name": "Description",
@@ -8505,7 +8505,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2021-03-05 12:21:21",
           "member": "string",
           "name": "CreateTime",
@@ -8515,7 +8515,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元资源数。",
+          "document": "<p>共享单元资源数。</p>",
           "example": "10",
           "member": "int64",
           "name": "ShareResourceNum",
@@ -8525,7 +8525,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元成员数。",
+          "document": "<p>共享单元成员数。</p>",
           "example": "1",
           "member": "int64",
           "name": "ShareMemberNum",
@@ -8535,10 +8535,20 @@
         },
         {
           "disabled": false,
-          "document": "共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号",
+          "document": "<p>共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号</p>",
           "example": "1",
           "member": "uint64",
           "name": "ShareScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享单元部门数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ShareNodeNum",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

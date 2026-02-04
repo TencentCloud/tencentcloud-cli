@@ -1804,9 +1804,9 @@
     ],
     "ModifyClusterAttribute": [
       {
-        "document": "修改集群属性",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"AutoUpgradeClusterLevel\": {\n        \"IsAutoUpgrade\": true\n    },\n    \"ClusterName\": \"tke\",\n    \"ProjectId\": 0,\n    \"ClusterDesc\": \"tke\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"ClusterLevel\": \"L5\",\n    \"ClusterProperty\": {\n        \"NodeNameType\": \"lan-ip\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"ClusterName\": \"tke\",\n        \"ProjectId\": 0,\n        \"ClusterDesc\": \"tke\",\n        \"QGPUShareEnable\": true,\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ClusterLevel\": \"L5\",\n        \"ClusterProperty\": {\n            \"NodeNameType\": \"lan-ip\"\n        }\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"AutoUpgradeClusterLevel\": {\n        \"IsAutoUpgrade\": true\n    },\n    \"ClusterName\": \"tke\",\n    \"ProjectId\": 0,\n    \"ClusterDesc\": \"tke\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"ClusterLevel\": \"L5\",\n    \"ClusterProperty\": {\n        \"NodeNameType\": \"lan-ip\"\n    },\n    \"IsHighAvailability\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"ClusterName\": \"tke\",\n        \"ProjectId\": 0,\n        \"ClusterDesc\": \"tke\",\n        \"QGPUShareEnable\": true,\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ClusterLevel\": \"L5\",\n        \"ClusterProperty\": {\n            \"NodeNameType\": \"lan-ip\"\n        },\n        \"IsHighAvailability\": true\n    }\n}",
         "title": "修改集群属性"
       }
     ],

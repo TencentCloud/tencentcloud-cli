@@ -1321,7 +1321,7 @@
     "ParseLiveStreamProcessNotification": [
       {
         "document": "回调包体描述",
-        "input": "https://mps.tencentcloudapi.com/?Action=ParseLiveStreamProcessNotification\r\n&Content={\"NotificationType\":\"AiReviewResult\",XXX\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ParseLiveStreamProcessNotification\n&Content={\"NotificationType\":\"AiReviewResult\",XXX\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NotificationType\": \"AiReviewResult\",\n        \"TaskId\": \"2459149217-procedure-live-xxx51da009t0\",\n        \"ProcessEofInfo\": null,\n        \"AiReviewResultInfo\": {\n            \"ResultSet\": [\n                {\n                    \"Type\": \"VoicePorn\",\n                    \"ImagePornResultSet\": [],\n                    \"ImageTerrorismResultSet\": [],\n                    \"ImagePoliticalResultSet\": [],\n                    \"VoicePornResultSet\": [\n                        {\n                            \"StartPtsTime\": 0.266,\n                            \"EndPtsTime\": 4.146,\n                            \"Confidence\": 98,\n                            \"Suggestion\": \"block\",\n                            \"Label\": \"sexual_moan\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"AiRecognitionResultInfo\": null,\n        \"AiAnalysisResultInfo\": null,\n        \"AiQualityControlResultInfo\": null,\n        \"SessionId\": \"\",\n        \"SessionContext\": \"\",\n        \"RequestId\": \"335bdaa3-db0e-46ce-9946-51941d9cb0f5\"\n    }\n}",
         "title": "解析直播流事件通知内容"
       }
@@ -1351,7 +1351,7 @@
     "ProcessLiveStream": [
       {
         "document": "对 URL 为 http://www.abc.com/abc.m3u8 的直播流发起内容识别任务。",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessLiveStream\n<公共请求参数>\n\n{\n    \"Url\": \"http://www.abc.com/abc.m3u8\",\n    \"AiRecognitionTask\": {\n        \"Definition\": \"10\"\n    },\n    \"TaskNotifyConfig\": {\n        \"CmqRegion\": \"gz\",\n        \"CmqModel\": \"Queue\",\n        \"QueueName\": \"queue-125717729292\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessLiveStream\n<公共请求参数>\n\n{\n    \"Url\": \"http://www.abc.com/abc.m3u8\",\n    \"AiRecognitionTask\": {\n        \"Definition\": 10\n    },\n    \"TaskNotifyConfig\": {\n        \"CmqRegion\": \"gz\",\n        \"CmqModel\": \"Queue\",\n        \"QueueName\": \"queue-125717729292\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-live-procedure-813dc41e6fdc22dcf24aa6e9c61cp92\"\n    }\n}",
         "title": "发起直播流识别任务"
       }

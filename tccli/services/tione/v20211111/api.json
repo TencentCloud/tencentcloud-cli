@@ -2046,7 +2046,7 @@
         {
           "disabled": false,
           "document": "训练任务名称",
-          "example": "无",
+          "example": "test-0203-05",
           "member": "string",
           "name": "TrainingJobName",
           "required": false,
@@ -2055,7 +2055,7 @@
         {
           "disabled": false,
           "document": "模型来源cos目录，以/结尾",
-          "example": "a2",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "TrainingModelCosPath",
           "required": false,
@@ -2136,7 +2136,7 @@
         {
           "disabled": false,
           "document": "模型存储cos目录",
-          "example": "a2",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "ModelOutputPath",
           "required": false,
@@ -2494,6 +2494,15 @@
           "name": "CodeRepos",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "网络暴露配置",
+          "example": "无",
+          "member": "ExposeNetworkConfig",
+          "name": "ExposeNetworkConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3743,7 +3752,7 @@
         {
           "disabled": false,
           "document": "删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有",
-          "example": "NORMAL ",
+          "example": "NORMAL",
           "member": "string",
           "name": "ModelVersionType",
           "required": false,
@@ -5837,6 +5846,34 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExposeNetworkConfig": {
+      "document": "暴露网络配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ssh配置",
+          "example": "无",
+          "member": "SSHConfig",
+          "name": "SSHConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器端口暴露到公网配置",
+          "example": "无",
+          "member": "ExposePortConfig",
+          "name": "ExposePortConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -13540,6 +13577,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "暴露网络配置",
+          "example": "无",
+          "member": "ExposeNetworkConfig",
+          "name": "ExposeNetworkConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13893,13 +13940,13 @@
           "member": "CFSConfig",
           "name": "CFSConfig",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "挂载源类型，CFS、COS，默认为CFS",
+          "document": "挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS",
           "example": "CFS",
           "member": "string",
           "name": "VolumeSourceType",
@@ -13918,6 +13965,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂载数据源时的配置信息",
+          "example": "无",
+          "member": "PublicDataSourceFS",
+          "name": "PublicDataSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

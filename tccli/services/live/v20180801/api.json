@@ -4283,7 +4283,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入图层。取值范围[1，16]。\n1)背景流（即大主播画面或画布）的 image_layer 填1。\n2)纯音频混流，该参数也需填。\n注意：不同输入，该值不可重复",
+          "document": "<p>输入图层。取值范围[1，16]。<br>1)背景流（即大主播画面或画布）的 image_layer 填1。<br>2)纯音频混流，该参数也需填。<br>注意：不同输入，该值不可重复</p>",
           "example": "1",
           "member": "int64",
           "name": "ImageLayer",
@@ -4292,7 +4292,7 @@
         },
         {
           "disabled": false,
-          "document": "输入类型。取值范围[0，5]。\n不填默认为0。\n0表示输入流为音视频。\n2表示输入流为图片。\n3表示输入流为画布。 \n4表示输入流为音频。\n5表示输入流为纯视频。",
+          "document": "<p>输入类型。取值范围[0，5]。<br>不填默认为0。<br>0表示输入流为音视频。<br>2表示输入流为图片。<br>3表示输入流为画布。<br>4表示输入流为音频。<br>5表示输入流为纯视频。</p>",
           "example": "0",
           "member": "int64",
           "name": "InputType",
@@ -4301,7 +4301,7 @@
         },
         {
           "disabled": false,
-          "document": "输入画面在输出时的高度。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为输入流的高度。\n使用百分比时，期望输出为（百分比 * 背景高）。",
+          "document": "<p>输入画面在输出时的高度。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为输入流的高度。<br>使用百分比时，期望输出为（百分比 * 背景高）。</p>",
           "example": "720",
           "member": "float",
           "name": "ImageHeight",
@@ -4310,7 +4310,7 @@
         },
         {
           "disabled": false,
-          "document": "输入画面在输出时的宽度。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为输入流的宽度。\n使用百分比时，期望输出为（百分比 * 背景宽）。",
+          "document": "<p>输入画面在输出时的宽度。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为输入流的宽度。<br>使用百分比时，期望输出为（百分比 * 背景宽）。</p>",
           "example": "1024",
           "member": "float",
           "name": "ImageWidth",
@@ -4319,7 +4319,7 @@
         },
         {
           "disabled": false,
-          "document": "输入在输出画面的X偏移。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为0。\n相对于大主播背景画面左上角的横向偏移。 \n使用百分比时，期望输出为（百分比 * 背景宽）。",
+          "document": "<p>输入在输出画面的X偏移。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为0。<br>相对于大主播背景画面左上角的横向偏移。<br>使用百分比时，期望输出为（百分比 * 背景宽）。</p>",
           "example": "0",
           "member": "float",
           "name": "LocationX",
@@ -4328,7 +4328,7 @@
         },
         {
           "disabled": false,
-          "document": "输入在输出画面的Y偏移。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为0。\n相对于大主播背景画面左上角的纵向偏移。 \n使用百分比时，期望输出为（百分比 * 背景宽）",
+          "document": "<p>输入在输出画面的Y偏移。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为0。<br>相对于大主播背景画面左上角的纵向偏移。<br>使用百分比时，期望输出为（百分比 * 背景宽）</p>",
           "example": "0",
           "member": "float",
           "name": "LocationY",
@@ -4337,7 +4337,7 @@
         },
         {
           "disabled": false,
-          "document": "当InputType为3(画布)时，该值表示画布的颜色。\n常用的颜色有：\n红色：0xCC0033。\n黄色：0xCC9900。\n绿色：0xCCCC33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
+          "document": "<p>当InputType为3(画布)时，该值表示画布的颜色。<br>常用的颜色有：<br>红色：0xCC0033。<br>黄色：0xCC9900。<br>绿色：0xCCCC33。<br>蓝色：0x99CCFF。<br>黑色：0x000000。<br>白色：0xFFFFFF。<br>灰色：0x999999。</p>",
           "example": "0xFFFFFF",
           "member": "string",
           "name": "Color",
@@ -4346,12 +4346,21 @@
         },
         {
           "disabled": false,
-          "document": "当InputType为2(图片)时，该值是水印ID。",
+          "document": "<p>当InputType为2(图片)时，该值是水印ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "WatermarkId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当InputType为8时，该值是动效贴片的URL</p>",
+          "example": "https://www.example.com/webpage",
+          "member": "string",
+          "name": "WebPageUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

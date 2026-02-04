@@ -1,6 +1,6 @@
 **Example 1: 修改集群属性**
 
-修改集群属性
+
 
 Input: 
 
@@ -12,7 +12,8 @@ tccli tke ModifyClusterAttribute --cli-unfold-argument  \
     --ClusterDesc tke \
     --ClusterId cls-7ph3twqe \
     --ClusterLevel L5 \
-    --ClusterProperty.NodeNameType lan-ip
+    --ClusterProperty.NodeNameType lan-ip \
+    --IsHighAvailability True
 ```
 
 Output: 
@@ -30,7 +31,8 @@ Output:
         "ClusterLevel": "L5",
         "ClusterProperty": {
             "NodeNameType": "lan-ip"
-        }
+        },
+        "IsHighAvailability": true
     }
 }
 ```

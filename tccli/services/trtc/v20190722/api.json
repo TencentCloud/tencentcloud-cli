@@ -9493,7 +9493,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
-          "example": "1400***000",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -9519,7 +9519,7 @@
         },
         {
           "disabled": false,
-          "document": "是否转码，0表示无需转码，1表示需要转码。\n注：混流是必须转码，这个参数需设置为1。",
+          "document": "是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。",
           "example": "1",
           "member": "uint64",
           "name": "WithTranscoding",
@@ -9529,7 +9529,7 @@
         {
           "disabled": false,
           "document": "更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。",
-          "example": "{\"SubscribeAudioList\":[{\"UserInfo\":{\"UserId\":\"***\",\"RoomId\":\"123456\",\"RoomIdType\":0}}]}",
+          "example": "无",
           "member": "McuAudioParams",
           "name": "AudioParams",
           "required": false,
@@ -9538,7 +9538,7 @@
         {
           "disabled": false,
           "document": "更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。",
-          "example": "{\"VideoEncode\":{\"Width\":1920,\"Height\":1080,\"Fps\":15,\"BitRate\":2400,\"Gop\":2},\"LayoutParams\":{\"MixLayoutMode\":3}}",
+          "example": "无",
           "member": "McuVideoParams",
           "name": "VideoParams",
           "required": false,
@@ -9547,7 +9547,7 @@
         {
           "disabled": false,
           "document": "更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。",
-          "example": "{\"UserMediaStream\":{\"UserInfo\":{\"UserId\":\"***\",\"RoomId\":\"123456\",\"RoomIdType\":1}}",
+          "example": "无",
           "member": "SingleSubscribeParams",
           "name": "SingleSubscribeParams",
           "required": false,
@@ -9556,7 +9556,7 @@
         {
           "disabled": false,
           "document": "更新转推的CDN参数。不填表示不更新此参数。",
-          "example": "[{\"PublishCdnUrl\":\"rtmp://*****&txTime=1735806639\",\"IsTencentCdn\":1}]",
+          "example": "无",
           "member": "McuPublishCdnParam",
           "name": "PublishCdnParams",
           "required": false,
@@ -9565,7 +9565,7 @@
         {
           "disabled": false,
           "document": "混流SEI参数",
-          "example": "{\"LayoutVolume\":{\"PayloadType\":243,\"FollowIdr\":1}}",
+          "example": "无",
           "member": "McuSeiParams",
           "name": "SeiParams",
           "required": false,
@@ -9574,7 +9574,7 @@
         {
           "disabled": false,
           "document": "回推房间信息",
-          "example": "[{\"RoomId\":\"123456\",\"RoomIdType\":0,\"UserId\":\"trtc_user_fb\",\"UserSig\":\"eJw1jdEKgj***AEOjOFw_\"}]",
+          "example": "无",
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",
           "required": false,

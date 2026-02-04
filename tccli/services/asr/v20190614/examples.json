@@ -257,8 +257,8 @@
     "VoicePrintEnroll": [
       {
         "document": "通过一段音频数据进行说话人注册",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintEnroll\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"SpeakerNick\": \"ross\",\n    \"Data\": \"UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"db24a3e3-7926-5xxxxxxf01\",\n            \"SpeakerNick\": \"ross\"\n        },\n        \"RequestId\": \"dbxxxxxxe3-7926-5xxxxxxf01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintEnroll\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 1,\n    \"SampleRate\": 16000,\n    \"SpeakerNick\": \"李九州\",\n    \"AudioUrl\": \"https://xxx-test-xxx.cos.ap-nanjing.myqcloud.com/%E5%A3%Bxxxxx%E6%8D%AE/xxxx.mp3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SpeakerNick\": \"李九州\",\n            \"VoicePrintId\": \"23eda848-9c0a-xxxx-8b00-39df9c9617e7\"\n        },\n        \"RequestId\": \"cb82a203-xxxxx-43ec-b12a-d9dba5efd577\"\n    }\n}",
         "title": "注册说话人"
       }
     ],
@@ -273,17 +273,17 @@
     "VoicePrintUpdate": [
       {
         "document": "更新说话人的音频和昵称",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintUpdate\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 0,\n    \"SpeakerNick\": \"小明\",\n    \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\",\n    \"Data\": \"UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\",\n            \"SpeakerNick\": \"小明\"\n        },\n        \"RequestId\": \"676a22c********3625b0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintUpdate\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 1,\n    \"SampleRate\": 16000,\n    \"VoicePrintId\": \"0928d167-dcd0-44b6xxxx-85d303273a72\",\n    \"SpeakerNick\": \"张三\",\n    \"AudioUrl\": \"https://adison-testxxxx.cos.ap-nanjing.myqcloud.com/%E5%xx%B0%E7xxx%BA%B9%E6%95%B0%E6%8D%AE/xxxx.wav\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SpeakerNick\": \"张三\",\n            \"VoicePrintId\": \"0928d167-xxxx44b6-9465-85d303273a72\"\n        },\n        \"RequestId\": \"9ac61e25-3860-xxxxx-9b48-61a3c69ea408\"\n    }\n}",
         "title": "说话人更新"
       }
     ],
     "VoicePrintVerify": [
       {
-        "document": "验证音频和说话人id是否一致",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintVerify\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"VoicePrintId\": \"KJHGUGKGGGFGYFVDA\",\n    \"Data\": \"UklGRiRTBwBXQVZFZm10IBAA\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"KJHGUG****GGFGYFVDA\",\n            \"Score\": \"60.0\",\n            \"Decision\": 1\n        },\n        \"RequestId\": \"dasdasdadsdas*****dasdada\"\n    }\n}",
-        "title": "说话人验证"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintVerify\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 1,\n    \"SampleRate\": 16000,\n    \"VoicePrintId\": \"0928d167-dcd0-xxxx-85d303273a72\",\n    \"AudioUrl\": \"https://xxxx-test-xxxx.cos.ap-nanjing.myqcloud.com/%E5%A3%BxxxxE6%95%B0%E6%8D%AE/test.wav\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Decision\": 1,\n            \"Score\": \"100.0\",\n            \"VoicePrintId\": \"0928d167-dcd0-xxxx-9465-85d303273a72\"\n        },\n        \"RequestId\": \"be2ce6ff-b1ab-xxxx-9c17-876a73d6f56f\"\n    }\n}",
+        "title": "说话人认证"
       }
     ]
   },

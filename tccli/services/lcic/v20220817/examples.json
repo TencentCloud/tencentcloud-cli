@@ -106,10 +106,10 @@
     ],
     "CreateRoom": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"abcdfdsf\",\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abcdfgdf\",\n    \"SdkAppId\": 1,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"TurnOffMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abcdfgd\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abcxdfgdfg\"\n    ],\n    \"AudienceType\": 1,\n    \"RecordLayout\": 1,\n    \"GroupId\": \"abcdfgdf\",\n    \"InteractionMode\": 1,\n    \"VideoOrientation\": 1,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 1,\n    \"EnableDirectControl\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RoomId\": 1,\n        \"RequestId\": \"abcdfgdfgfdrg\"\n    }\n}",
-        "title": "创建课堂"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"测试课堂\",\n    \"StartTime\": 1798768800,\n    \"EndTime\": 1798772400,\n    \"SdkAppId\": 3322111,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"SubType\": \"videodoc\",\n    \"TeacherId\": \"2qkMhWixIzNQC7UizlM7NabCdef\",\n    \"AutoMic\": 1,\n    \"RecordLayout\": 9\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomId\": 345678011,\n        \"RequestId\": \"efee43a2-704f-4b45-b62d-abcdefg12345\"\n    }\n}",
+        "title": "创建支持页面录制的1小时标清直播1V1小班课"
       }
     ],
     "CreateSupervisor": [
@@ -506,16 +506,16 @@
     ],
     "ModifyRoom": [
       {
-        "document": "修改类型",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 368760996,\n    \"SdkAppId\": 3520371,\n    \"InteractionMode\": 0,\n    \"VideoOrientation\": 0,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50034c8f-cd77-43f2-815e-afe990fb023d\"\n    }\n}",
-        "title": "示例"
-      },
-      {
         "document": "修改房间参数示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 301234567,\n    \"StartTime\": 1704074400,\n    \"EndTime\": 1704076200,\n    \"TeacherId\": \"2i5WfUzRRC2Eb2uNmLNv96gzxCv\",\n    \"Name\": \"myClass\",\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"videodoc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc\"\n    ],\n    \"SdkAppId\": 1,\n    \"GroupId\": \"301234567\",\n    \"EnableDirectControl\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "修改房间"
+      },
+      {
+        "document": "修改类型",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 368760996,\n    \"SdkAppId\": 3520371,\n    \"InteractionMode\": 0,\n    \"VideoOrientation\": 0,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50034c8f-cd77-43f2-815e-afe990fb023d\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyUserProfile": [

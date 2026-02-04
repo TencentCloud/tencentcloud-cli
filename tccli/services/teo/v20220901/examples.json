@@ -90,16 +90,34 @@
     ],
     "CreateAccelerationDomain": [
       {
+        "document": "创建加速域名并使用指定的共享 CNAME。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"www.example.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"1.1.1.1\"\n    },\n    \"OriginProtocol\": \"FOLLOW\",\n    \"HttpOriginPort\": 80,\n    \"HttpsOriginPort\": 443,\n    \"IPv6Status\": \"follow\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnershipVerification\": null,\n        \"RequestId\": \"3d310306-f298-439a-9daa-29eec8490769\"\n    }\n}",
+        "title": "创建使用共享 CNAME 的加速域名"
+      },
+      {
+        "document": "创建源站类型为 AWS S3，开启私有访问，鉴权算法版本为 AWS signature v2 的加速域名。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"qq.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"AWS_S3\",\n        \"Origin\": \"test.s3.ap-east-1.amazonaws.com\",\n        \"PrivateAccess\": \"on\",\n        \"PrivateParameters\": [\n            {\n                \"Name\": \"AccessKeyId\",\n                \"Value\": \"nMirpdWhhT6bxPsaFwYM1SzQrTest\"\n            },\n            {\n                \"Name\": \"SecretAccessKey\",\n                \"Value\": \"AKID***********************************************\"\n            },\n            {\n                \"Name\": \"SignatureVersion\",\n                \"Value\": \"v2\"\n            },\n            {\n                \"Name\": \"Region\",\n                \"Value\": \"ap-east-1\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "创建源站类型为 AWS S3 的加速域名"
+      },
+      {
+        "document": "创建源站类型为云点播的加速域名，并指定回源范围为当前源站对应的 VOD应用内所有文件。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-36oiczk333c3\",\n    \"DomainName\": \"vbt-06.bennyddeng.work\",\n    \"OriginInfo\": {\n        \"OriginType\": \"VOD\",\n        \"Origin\": \"220643\",\n        \"VodOriginScope\": \"all\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnershipVerification\": null,\n        \"RequestId\": \"ec58b4d5-9154-4fd8-a148-7b39af634f2b\"\n    }\n}",
+        "title": "创建源站类型为云点播的加速域名，回源范围：all"
+      },
+      {
+        "document": "创建源站类型为云点播的加速域名，并指定回源范围为当前源站对应的 VOD 应用下某一个存储桶内的文件。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-36oiczk333c3\",\n    \"DomainName\": \"vbt-05.bennyddeng.work\",\n    \"OriginInfo\": {\n        \"OriginType\": \"VOD\",\n        \"Origin\": \"220643\",\n        \"VodOriginScope\": \"bucket\",\n        \"VodBucketId\": \"9n15dnlrwu800zh\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnershipVerification\": null,\n        \"RequestId\": \"8e26894c-e6f5-43ae-be0e-ef2377b88ea6\"\n    }\n}",
+        "title": "创建源站类型为云点播的加速域名，回源范围：bucket"
+      },
+      {
         "document": "创建源站类型为域名的加速域名。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"qq.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"www.test.com\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "创建源站类型为域名的加速域名"
-      },
-      {
-        "document": "创建源站类型为 AWS S3，开启私有访问，鉴权算法版本为 AWS signature v2 的加速域名。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"qq.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"AWS_S3\",\n        \"Origin\": \"test.s3.ap-east-1.amazonaws.com\",\n        \"PrivateAccess\": \"on\",\n        \"PrivateParameters\": [\n            {\n                \"Name\": \"AccessKeyId\",\n                \"Value\": \"AKID***********************************************\"\n            },\n            {\n                \"Name\": \"SecretAccessKey\",\n                \"Value\": \"nMirpdWhhT6bxPsaFwYM1SzQrTest\"\n            },\n            {\n                \"Name\": \"SignatureVersion\",\n                \"Value\": \"v2\"\n            },\n            {\n                \"Name\": \"Region\",\n                \"Value\": \"ap-east-1\"\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
-        "title": "创建源站类型为 AWS S3 的加速域名"
       }
     ],
     "CreateAliasDomain": [
