@@ -1009,7 +1009,7 @@
       "status": "online"
     },
     "ProcessLiveStream": {
-      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译、物体识别、游戏打点）。\n* 智能内容分析（新闻实时拆条）。\n* 质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）。\n* 录制\n\n直播流处理事件通知支持HTTP回调，也支持实时写入用户指定的消息队列 CMQ 中，用户从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
+      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译、物体识别、游戏打点）。\n* 智能内容分析（拆条，集锦）。\n* 质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）。\n* 录制\n\n直播流处理事件通知支持HTTP回调，也支持实时写入用户指定的消息队列 CMQ 中，用户从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
       "input": "ProcessLiveStreamRequest",
       "name": "对直播流发起处理",
       "output": "ProcessLiveStreamResponse",
@@ -9042,6 +9042,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强",
+          "example": "default",
+          "member": "string",
+          "name": "Strength",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11099,6 +11109,15 @@
           "example": "数字水印模板",
           "member": "string",
           "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印强度。\ndefault: 默认，高清画质和抗性平衡\nstronger:画质清晰，抗性较强\nstrongest:画质一般，抗性最强",
+          "example": "default",
+          "member": "string",
+          "name": "Strength",
           "required": false,
           "type": "string"
         }
@@ -24077,6 +24096,34 @@
       ],
       "usage": "out"
     },
+    "LiveSmartSubtitlesTaskInput": {
+      "document": "直播智能字幕输入结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板 ID 。\t",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户扩展字段，一般场景不用填。",
+          "example": "{\"ParaTest\":\"test\"}",
+          "member": "string",
+          "name": "UserExtPara",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LiveStreamAiAnalysisResultInfo": {
       "document": "直播流分析结果",
       "members": [
@@ -28204,6 +28251,15 @@
           "name": "TextContent",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强",
+          "example": "default",
+          "member": "string",
+          "name": "Strength",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -31684,8 +31740,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。\ntrtc地址如下：\n trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`\n`<roomid>` 为trtc的房间号id, 为数字\n`<sdkappid>` 为trtc的sdk app id\n`<userid>` 为服务进入房间的用户id,可以区分谁是机器人\n<`usersig>` 为trtc 用户的签名",
-          "example": "http://www.abc.com/abc.m3u8",
+          "document": "直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。\ntrtc地址如下：\n trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`\n`<roomid>` 为trtc的房间号id, 为数字\n`<sdkappid>` 为trtc的sdk app id\n`<userid>` 为服务进入房间的用户id,可以区分谁是机器人\n<`usersig>` 为trtc 用户的签名\n\nwebrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)\n\nsrt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)\n\n",
+          "example": "http://www.adc.com/adc.m3u8",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -31712,7 +31768,7 @@
         {
           "disabled": false,
           "document": "直播流处理生成的文件输出的目标目录，如`/movie/201909/`，如果不填为 `/` 目录。",
-          "example": "无",
+          "example": "/tmp/",
           "member": "string",
           "name": "OutputDir",
           "required": false,
@@ -31756,8 +31812,17 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "智能字幕任务参数。",
           "example": "无",
+          "member": "LiveSmartSubtitlesTaskInput",
+          "name": "SmartSubtitlesTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "sdsxxx-xxxx",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -31766,7 +31831,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "无",
+          "example": "ceckxxxxx",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -31775,7 +31840,7 @@
         {
           "disabled": false,
           "document": "直播编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若对直播流发起处理（ProcessLiveStream）有输出，将覆盖原有编排的默认输出。</li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessLiveStream）有设置，将覆盖原有编排的默认回调。",
-          "example": "无",
+          "example": "450001",
           "member": "int64",
           "name": "ScheduleId",
           "required": false,
@@ -37892,31 +37957,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。",
-          "example": "",
+          "document": "数据所在时间区间的开始时间，使用 ISO 日期格式。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。",
+          "example": "2025-10-02T00:00:00+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务数。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务用量。",
-          "example": "",
+          "example": "472",
           "member": "int64",
           "name": "Usage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

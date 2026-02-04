@@ -98,6 +98,13 @@
       "output": "DescribeApmServiceMetricResponse",
       "status": "online"
     },
+    "DescribeApmVulnerabilityCount": {
+      "document": "查询漏洞指标",
+      "input": "DescribeApmVulnerabilityCountRequest",
+      "name": "查询漏洞指标",
+      "output": "DescribeApmVulnerabilityCountResponse",
+      "status": "online"
+    },
     "DescribeApmVulnerabilityDetail": {
       "document": "查询漏洞详情",
       "input": "DescribeApmVulnerabilityDetailRequest",
@@ -3539,6 +3546,109 @@
           "example": "1",
           "member": "int64",
           "name": "WarningCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmVulnerabilityCountRequest": {
+      "document": "DescribeApmVulnerabilityCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "APM业务系统ID",
+          "example": "apm-CVfliqa8U",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "APM应用名称",
+          "example": "java-order-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秒级时间戳",
+          "example": "1728910000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "秒级时间戳",
+          "example": "1728910000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询的数据类型，攻击检测为“attack_detect”",
+          "example": "attack_detect",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmVulnerabilityCountResponse": {
+      "document": "DescribeApmVulnerabilityCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含漏洞指标以及业务系统个数",
+          "example": "无",
+          "member": "ApmMetricRecord",
+          "name": "VulnerabilityList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总漏洞个数",
+          "example": "10",
+          "member": "int64",
+          "name": "VulnerabilityCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "严重漏洞个数",
+          "example": "5",
+          "member": "int64",
+          "name": "ImportantVulnerabilityCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高危漏洞个数",
+          "example": "5",
+          "member": "int64",
+          "name": "CriticalVulnerabilityCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

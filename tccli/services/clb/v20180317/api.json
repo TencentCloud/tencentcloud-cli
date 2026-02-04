@@ -3623,7 +3623,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。默认值：TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。如需设置超过取值范围的值请通过 <a href=\"https://console.cloud.tencent.com/workorder/category\">工单申请</a>。</p>",
+          "document": "<p>空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。默认值：TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。如需设置超过取值范围的值请通过 <a href=\"https://console.cloud.tencent.com/workorder/category\">工单申请</a>。</p><p>取值范围：[10, 1980]</p><p>单位：秒</p><p>默认值：900</p><p>TCP监听器默认值为900s，UDP监听器默认值为300s。取值范围：共享型实例和独占型实例支持：10-900，性能容量型实例支持：10-1980。</p>",
           "example": "900",
           "member": "int64",
           "name": "IdleConnectTimeout",
@@ -7119,7 +7119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组ID数组。",
+          "document": "<p>目标组ID数组。</p>",
           "example": "[\"lbtg-5xu****\"]",
           "member": "string",
           "name": "TargetGroupIds",
@@ -7128,7 +7128,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。",
+          "document": "<p>过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7137,7 +7137,7 @@
         },
         {
           "disabled": false,
-          "document": "显示的偏移起始量。",
+          "document": "<p>显示的偏移起始量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -7146,7 +7146,7 @@
         },
         {
           "disabled": false,
-          "document": "显示条数限制，默认为20。",
+          "document": "<p>每页显示条目数。</p><p>取值范围：[0, 100]</p><p>默认值：20</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -7155,7 +7155,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组类型，默认为空，网关负载均衡类型的目标组为gwlb",
+          "document": "<p>目标组类型，默认为空，网关负载均衡类型的目标组为gwlb</p>",
           "example": "gwlb",
           "member": "string",
           "name": "Type",
@@ -7170,7 +7170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "显示的结果数量。",
+          "document": "<p>显示的结果数量。</p>",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -7180,7 +7180,7 @@
         },
         {
           "disabled": false,
-          "document": "显示的目标组信息集合。",
+          "document": "<p>显示的目标组信息集合。</p>",
           "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
@@ -11166,7 +11166,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>空闲连接超时时间，此参数仅适用于TCP/UDP监听器，单位：秒。TCP监听器默认值：900，UDP监听器默认值：300s。取值范围：共享型实例和独占型实例支持：10～900，性能容量型实例支持：10~1980。如需设置超过1980s，请通过 <a href=\"https://console.cloud.tencent.com/workorder/category\">工单申请</a>,最大可设置到3600s。</p>",
+          "document": "<p>空闲连接超时时间，此参数仅适用于TCP/UDP监听器。如需设置超过1980s，请通过 <a href=\"https://console.cloud.tencent.com/workorder/category\">工单申请</a>,最大可设置到3600s。</p><p>取值范围：[10, 1980]</p><p>单位：秒</p><p>默认值：900</p><p>TCP监听器默认值：900，UDP监听器默认值：300s。取值范围：共享型实例和独占型实例支持：10～900，性能容量型实例支持：10~1980。</p>",
           "example": "900",
           "member": "int64",
           "name": "IdleConnectTimeout",
@@ -14153,7 +14153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组ID",
+          "document": "<p>目标组ID</p>",
           "example": "lbtg-xxxxxxxx",
           "member": "string",
           "name": "TargetGroupId",
@@ -14163,7 +14163,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的vpcid",
+          "document": "<p>目标组的vpcid</p>",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -14173,7 +14173,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的名字",
+          "document": "<p>目标组的名字</p>",
           "example": "Name",
           "member": "string",
           "name": "TargetGroupName",
@@ -14183,7 +14183,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的默认端口，全监听目标组此字段返回0，表示无效端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "uint64",
           "name": "Port",
@@ -14193,7 +14193,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的创建时间",
+          "document": "<p>目标组的创建时间</p>",
           "example": "2022-03-23 10:37:16",
           "member": "datetime",
           "name": "CreatedTime",
@@ -14203,7 +14203,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的修改时间",
+          "document": "<p>目标组的修改时间</p>",
           "example": "2022-03-23 10:37:16",
           "member": "datetime",
           "name": "UpdatedTime",
@@ -14213,7 +14213,7 @@
         },
         {
           "disabled": false,
-          "document": "关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AssociationItem",
           "name": "AssociatedRule",
@@ -14223,7 +14223,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组后端转发协议, 仅v2新版目标组返回有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -14233,7 +14233,7 @@
         },
         {
           "disabled": false,
-          "document": "调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：\n<ur>\n<li>WRR:按权重轮询。</li>\n<li>LEAST_CONN:最小连接数。</li>\n<li>IP_HASH:按IP哈希。</li>\n</ur>\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WRR",
           "member": "string",
           "name": "ScheduleAlgorithm",
@@ -14243,7 +14243,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康检查详情。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TargetGroupHealthCheck",
           "name": "HealthCheck",
@@ -14253,7 +14253,7 @@
         },
         {
           "disabled": false,
-          "document": "探测异常时是否自动更新权重为0, 仅GWLB类型目标组返回有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>探测异常时是否自动更新权重为0, 仅GWLB类型目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoUpdateWeight",
@@ -14263,7 +14263,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持全死全活, 仅GWLB类型目标组返回有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持全死全活, 仅GWLB类型目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AllDeadToAlive",
@@ -14273,7 +14273,7 @@
         },
         {
           "disabled": false,
-          "document": "健康探测是否启用巨帧, 仅GWLB类型目标组返回有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康探测是否启用巨帧, 仅GWLB类型目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "JumboFrame",
@@ -14283,7 +14283,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。",
+          "document": "<p>目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。</p>",
           "example": "v1",
           "member": "string",
           "name": "TargetGroupType",
@@ -14293,7 +14293,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组已关联的规则数。",
+          "document": "<p>目标组已关联的规则数。</p>",
           "example": "60",
           "member": "int64",
           "name": "AssociatedRuleCount",
@@ -14303,7 +14303,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组内的实例数量。",
+          "document": "<p>目标组内的实例数量。</p>",
           "example": "1",
           "member": "int64",
           "name": "RegisteredInstancesCount",
@@ -14313,7 +14313,7 @@
         },
         {
           "disabled": false,
-          "document": "标签。",
+          "document": "<p>标签。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tag",
@@ -14323,7 +14323,7 @@
         },
         {
           "disabled": false,
-          "document": "默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
@@ -14333,7 +14333,7 @@
         },
         {
           "disabled": false,
-          "document": "是否全监听目标组。",
+          "document": "<p>是否全监听目标组。</p>",
           "example": "true",
           "member": "bool",
           "name": "FullListenSwitch",
@@ -14343,7 +14343,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。",
+          "document": "<p>是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>",
           "example": "true",
           "member": "bool",
           "name": "KeepaliveEnable",
@@ -14353,7 +14353,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。",
+          "document": "<p>会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>",
           "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
@@ -14363,7 +14363,7 @@
         },
         {
           "disabled": false,
-          "document": "IP版本。",
+          "document": "<p>IP版本。</p>",
           "example": "IPv4",
           "member": "string",
           "name": "IpVersion",
@@ -14373,7 +14373,7 @@
         },
         {
           "disabled": false,
-          "document": "流量分发方式\n\n- STATELESS：无状态\n- STATEFUL： 有状态(仅GWLB目标组支持)",
+          "document": "<p>流量分发方式</p><ul><li>STATELESS：无状态</li><li>STATEFUL： 有状态(仅GWLB目标组支持)</li></ul>",
           "example": "STATEFUL",
           "member": "string",
           "name": "ForwardingMode",
@@ -14383,7 +14383,7 @@
         },
         {
           "disabled": false,
-          "document": "TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。(仅GWLB目标组支持)",
+          "document": "<p>TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。(仅GWLB目标组支持)</p>",
           "example": "100",
           "member": "int64",
           "name": "TcpIdleConnectTimeout",
@@ -14393,7 +14393,7 @@
         },
         {
           "disabled": false,
-          "document": "其他协议连接空闲超时时间，可配置5s-180s，默认120s(仅GWLB目标组支持)",
+          "document": "<p>其他协议连接空闲超时时间，可配置5s-180s，默认120s(仅GWLB目标组支持)</p>",
           "example": "100",
           "member": "int64",
           "name": "OthersIdleConnectTimeout",
@@ -14403,7 +14403,7 @@
         },
         {
           "disabled": false,
-          "document": "重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。(仅GWLB目标组支持)",
+          "document": "<p>重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。(仅GWLB目标组支持)</p>",
           "example": "true",
           "member": "bool",
           "name": "RescheduleUnbindRs",
@@ -14413,7 +14413,7 @@
         },
         {
           "disabled": false,
-          "document": "解绑RS后开启重调度的时间，可配置0s-3600s，默认0s(仅GWLB目标组支持)",
+          "document": "<p>解绑RS后开启重调度的时间，可配置0s-3600s，默认0s(仅GWLB目标组支持)</p>",
           "example": "100",
           "member": "int64",
           "name": "RescheduleUnbindRsStartTime",
@@ -14423,7 +14423,7 @@
         },
         {
           "disabled": false,
-          "document": "重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。(仅GWLB目标组支持)",
+          "document": "<p>重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。(仅GWLB目标组支持)</p>",
           "example": "true",
           "member": "bool",
           "name": "RescheduleUnhealthy",
@@ -14433,12 +14433,22 @@
         },
         {
           "disabled": false,
-          "document": "后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s(仅GWLB目标组支持)",
+          "document": "<p>后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s(仅GWLB目标组支持)</p>",
           "example": "100",
           "member": "int64",
           "name": "RescheduleUnhealthyStartTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源端口选择算法</p><ul><li>L3_HASH：三元组Hash</li><li>RANDOM：随机选择</li><li>L4_HASH：五元祖Hash</li></ul>",
+          "example": "L4_HASH",
+          "member": "string",
+          "name": "SrcPortAlgorithm",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

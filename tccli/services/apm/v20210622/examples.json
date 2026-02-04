@@ -118,6 +118,14 @@
         "title": "成功获取APM应用指标"
       }
     ],
+    "DescribeApmVulnerabilityCount": [
+      {
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmVulnerabilityCount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-ewyzCXlxj\",\n    \"ServiceName\": \"java-order-service\",\n    \"StartTime\": 1729226000,\n    \"EndTime\": 1729226657\n}",
+        "output": "{\n    \"Response\": {\n        \"CriticalVulnerabilityCount\": 1,\n        \"ImportantVulnerabilityCount\": 0,\n        \"RequestId\": \"164a8edf-7267-4f20-9c55-e7b97c3e0ec4\",\n        \"VulnerabilityCount\": 1,\n        \"VulnerabilityList\": [\n            {\n                \"Fields\": [\n                    {\n                        \"CompareVal\": \"\",\n                        \"CompareVals\": null,\n                        \"Key\": \"instance_count\",\n                        \"LastPeriodValue\": null,\n                        \"Unit\": \"\",\n                        \"Value\": 1\n                    }\n                ],\n                \"Tags\": [\n                    {\n                        \"Key\": \"instrumentation.name\",\n                        \"Value\": \"tomcat\"\n                    },\n                    {\n                        \"Key\": \"version\",\n                        \"Value\": \"10.9.0\"\n                    },\n                    {\n                        \"Key\": \"cve.id\",\n                        \"Value\": \"CVE-0000-2222\"\n                    },\n                    {\n                        \"Key\": \"level\",\n                        \"Value\": \"critical\"\n                    },\n                    {\n                        \"Key\": \"score\",\n                        \"Value\": \"15\"\n                    },\n                    {\n                        \"Key\": \"vul.name\",\n                        \"Value\": \"漏洞名称\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeApmVulnerabilityDetail": [
       {
         "document": "成功示例",

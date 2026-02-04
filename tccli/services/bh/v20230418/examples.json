@@ -749,9 +749,9 @@
     "RunOperationTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunOperationTask\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eww-2ew-qedekmsv-1qew\"\n    }\n}",
-        "title": "执行运维任务示例"
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunOperationTask\n<公共请求参数>\n\n{\n    \"Id\": 16789840\n}",
+        "output": "{\n    \"Response\": {\n        \"SubTaskId\": \"8bef2187-64a3-4ce1-9265-cbd175e95e22\",\n        \"RequestId\": \"2ea497fa-965e-4593-bd28-c950b8c64261\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "SearchAuditLog": [

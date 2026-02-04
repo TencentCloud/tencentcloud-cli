@@ -20,7 +20,11 @@ Output:
                 "Port": 443,
                 "CreatedTime": "2019-07-30 16:04:22",
                 "UpdatedTime": "2019-07-30 16:04:22",
-                "AssociatedRule": null
+                "AssociatedRule": null,
+                "Protocol": "TCP",
+                "ScheduleAlgorithm": "WRR",
+                "IpVersion": "IPv6",
+                "HealthCheck": null
             },
             {
                 "TargetGroupId": "lbtg-5xunivs0",
@@ -29,7 +33,11 @@ Output:
                 "Port": 19999,
                 "CreatedTime": "2019-07-14 16:18:43",
                 "UpdatedTime": "2019-07-29 11:37:10",
-                "AssociatedRule": null
+                "AssociatedRule": null,
+                "Protocol": "TCP",
+                "ScheduleAlgorithm": "WRR",
+                "IpVersion": "IPv6",
+                "HealthCheck": null
             }
         ],
         "RequestId": "ed30f949-2bea-48a6-8ba0-7f2f33743d4d"
