@@ -28,6 +28,30 @@ Output:
                 "CreatedOn": "2023-09-18T07:41:05Z",
                 "IsFake": 0,
                 "LockStatus": "enable",
+                "NSDetail": {
+                    "CnameSpeedUp": "enabled",
+                    "IsFake": 0,
+                    "NameServers": [
+                        "ns1.teodns.com.",
+                        "ns2.teodns.com."
+                    ],
+                    "OriginalNameServers": [
+                        "ns1.example.com.",
+                        "ns2.example.com."
+                    ],
+                    "VanityNameServers": {
+                        "Switch": "on",
+                        "Servers": [
+                            "ns1.teodns.com.",
+                            "ns2.teodns.com."
+                        ]
+                    },
+                    "VanityNameServersIps": []
+                },
+                "CNAMEDetail": {
+                    "IsFake": 0
+                },
+                "DNSPodDetail": null,
                 "ModifiedOn": "2023-09-18T07:41:50Z",
                 "NameServers": [
                     "ns1.teodns.com.",
@@ -93,7 +117,21 @@ Output:
                 "Tags": [],
                 "Type": "full",
                 "VanityNameServers": null,
-                "VanityNameServersIps": []
+                "VanityNameServersIps": [],
+                "WorkModeInfos": [
+                    {
+                        "ConfigGroupType": "l7_acceleration",
+                        "WorkMode": "version_control"
+                    },
+                    {
+                        "ConfigGroupType": "edge_functions",
+                        "WorkMode": "version_control"
+                    },
+                    {
+                        "ConfigGroupType": "web_security",
+                        "WorkMode": "immediate_effect"
+                    }
+                ]
             }
         ],
         "RequestId": "641a08e3-2ef7-407c-9c2f-2a9928741df5"

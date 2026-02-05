@@ -1,6 +1,6 @@
 **Example 1: 查询边缘函数触发规则列表**
 
-
+查询站点 zone-293e7s5jne1i 下的函数规则。
 
 Input: 
 
@@ -32,8 +32,23 @@ Output:
                         ]
                     }
                 ],
-                "FunctionId": "ef-n1j14wfm",
-                "FunctionName": "testfunction",
+                "TriggerType": "region",
+                "RegionMappingSelections": [
+                    {
+                        "FunctionId": "ef-1pakhnuy",
+                        "Regions": [
+                            "CN"
+                        ]
+                    },
+                    {
+                        "FunctionId": "ef-1wekxwnu",
+                        "Regions": [
+                            "Default"
+                        ]
+                    }
+                ],
+                "FunctionId": "",
+                "FunctionName": "",
                 "Priority": 2,
                 "Remark": "my function rule",
                 "CreateTime": "2023-04-19T07:32:09Z",

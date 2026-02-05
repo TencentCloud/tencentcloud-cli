@@ -1,13 +1,12 @@
-**Example 1: 备份实例接口**
+**Example 1: 发起备份任务**
 
-备份实例接口
+
 
 Input: 
 
 ```
 tccli mongodb CreateBackupDBInstance --cli-unfold-argument  \
-    --InstanceId cmgo-ayxpky6l \
-    --BackupRemark remarkInfo \
+    --InstanceId cmgo-xxxxxx \
     --BackupMethod 0
 ```
 
@@ -15,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "AsyncRequestId": "1680780049",
-        "RequestId": "1df930fb-eb7e-4e3f-bcab-15a1aa5fede0"
+        "AsyncRequestId": "1750660112000249",
+        "RequestId": "fa4e07a8-4452-4490-94f4-bbac1f220256"
     }
 }
 ```

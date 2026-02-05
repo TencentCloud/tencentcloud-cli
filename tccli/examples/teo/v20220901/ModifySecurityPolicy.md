@@ -124,7 +124,94 @@ tccli teo ModifySecurityPolicy --cli-unfold-argument  \
     --SecurityPolicy.ManagedRules.DetectionOnly on \
     --SecurityPolicy.ManagedRules.ManagedRuleGroups.0.GroupId wafmanagedrulegroup-vulnerability-scanners \
     --SecurityPolicy.ManagedRules.ManagedRuleGroups.0.SensitivityLevel wafmanagedrule-sensitivity-level-extreme \
-    --SecurityPolicy.ManagedRules.ManagedRuleGroups.0.Action.Name Monitor
+    --SecurityPolicy.ManagedRules.ManagedRuleGroups.0.Action.Name Monitor \
+    --SecurityPolicy.ManagedRules.FrequentScanningProtection.Enabled on \
+    --SecurityPolicy.ManagedRules.FrequentScanningProtection.Action.Name Deny \
+    --SecurityPolicy.ManagedRules.FrequentScanningProtection.CountBy http.request.ip \
+    --SecurityPolicy.ManagedRules.FrequentScanningProtection.BlockThreshold 100 \
+    --SecurityPolicy.ManagedRules.FrequentScanningProtection.CountingPeriod 10s \
+    --SecurityPolicy.ManagedRules.FrequentScanningProtection.ActionDuration 60s \
+    --SecurityPolicy.BotManagement.Enabled on \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Name Bot自定义规则##1 \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Condition ${http.request.bot.search_engine_bot_id} in ['1843332521'] \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Enabled on \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Action.0.SecurityAction.Name Deny \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Action.0.Weight 20 \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Action.1.SecurityAction.Name Monitor \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Action.1.Weight 80 \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.0.Priority 30 \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Name Bot自定义规则##2 \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Condition ${http.request.bot.user_agent_feature_id} in ['1843332521'] and ${http.request.bot.client_reputation_name} in ['cyber-attack@low'] \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Enabled on \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Action.0.SecurityAction.ChallengeActionParameters.ChallengeOption JSChallenge \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Action.0.SecurityAction.Name Challenge \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Action.0.Weight 70 \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Action.1.SecurityAction.Name Monitor \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Action.1.Weight 30 \
+    --SecurityPolicy.BotManagement.CustomRules.Rules.1.Priority 40 \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SourceIDC.BaseAction.Name Deny \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SourceIDC.BotManagementActionOverrides.0.Action.Name Allow \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SourceIDC.BotManagementActionOverrides.0.Ids 8868370050 8868370049 \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SourceIDC.BotManagementActionOverrides.1.Action.Name Disabled \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SourceIDC.BotManagementActionOverrides.1.Ids 8868370054 8868370055 \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SearchEngineBots.BaseAction.ChallengeActionParameters.ChallengeOption JSChallenge \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SearchEngineBots.BaseAction.Name Challenge \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SearchEngineBots.BotManagementActionOverrides.0.Action.Name Allow \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SearchEngineBots.BotManagementActionOverrides.0.Ids 9126905505 9126905506 \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SearchEngineBots.BotManagementActionOverrides.1.Action.Name Disabled \
+    --SecurityPolicy.BotManagement.BasicBotSettings.SearchEngineBots.BotManagementActionOverrides.1.Ids 9126905514 9126905515 \
+    --SecurityPolicy.BotManagement.BasicBotSettings.KnownBotCategories.BaseAction.Name Disabled \
+    --SecurityPolicy.BotManagement.BasicBotSettings.KnownBotCategories.BotManagementActionOverrides.0.Action.Name Allow \
+    --SecurityPolicy.BotManagement.BasicBotSettings.KnownBotCategories.BotManagementActionOverrides.0.Ids 9395241960 \
+    --SecurityPolicy.BotManagement.BasicBotSettings.KnownBotCategories.BotManagementActionOverrides.1.Action.Name Monitor \
+    --SecurityPolicy.BotManagement.BasicBotSettings.KnownBotCategories.BotManagementActionOverrides.1.Ids 9395241965 9395241966 \
+    --SecurityPolicy.BotManagement.BasicBotSettings.IPReputation.Enabled on \
+    --SecurityPolicy.BotManagement.BasicBotSettings.IPReputation.IPReputationGroup.BaseAction.Name Deny \
+    --SecurityPolicy.BotManagement.BasicBotSettings.IPReputation.IPReputationGroup.BotManagementActionOverrides.0.Ids IPREP_WEB_AND_DDOS_ATTACKERS_LOW IPREP_PROXIES_AND_ANONYMIZERS_HIGH IPREP_WEB_SCRAPERS_AND_TRAFFIC_BOTS_MID \
+    --SecurityPolicy.BotManagement.BasicBotSettings.IPReputation.IPReputationGroup.BotManagementActionOverrides.0.Action.Name Disabled \
+    --SecurityPolicy.BotManagement.BasicBotSettings.IPReputation.IPReputationGroup.BotManagementActionOverrides.1.Ids IPREP_WEB_AND_DDOS_ATTACKERS_HIGH IPREP_ATO_ATTACKERS_MID IPREP_WEB_SCRAPERS_AND_TRAFFIC_BOTS_LOW \
+    --SecurityPolicy.BotManagement.BasicBotSettings.IPReputation.IPReputationGroup.BotManagementActionOverrides.1.Action.ChallengeActionParameters.ChallengeOption ManagedChallenge \
+    --SecurityPolicy.BotManagement.BasicBotSettings.IPReputation.IPReputationGroup.BotManagementActionOverrides.1.Action.Name Challenge \
+    --SecurityPolicy.BotManagement.BasicBotSettings.BotIntelligence.Enabled on \
+    --SecurityPolicy.BotManagement.BasicBotSettings.BotIntelligence.BotRatings.HighRiskBotRequestsAction.Name Deny \
+    --SecurityPolicy.BotManagement.BasicBotSettings.BotIntelligence.BotRatings.LikelyBotRequestsAction.Name Monitor \
+    --SecurityPolicy.BotManagement.BasicBotSettings.BotIntelligence.BotRatings.HumanRequestsAction.Name Allow \
+    --SecurityPolicy.BotManagement.BasicBotSettings.BotIntelligence.BotRatings.VerifiedBotRequestsAction.ChallengeActionParameters.ChallengeOption JSChallenge \
+    --SecurityPolicy.BotManagement.BasicBotSettings.BotIntelligence.BotRatings.VerifiedBotRequestsAction.Name Challenge \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Id 2181409112 \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Name Bot主动特征识别##1 \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Condition ${http.request.method} in ['POST'] \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Enabled on \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.MaxNewSessionTriggerConfig.MaxNewSessionCountInterval 10s \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.MaxNewSessionTriggerConfig.MaxNewSessionCountThreshold 300 \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.IssueNewBotSessionCookie on \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionExpiredAction.DenyActionParameters.Stall on \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionExpiredAction.Name Deny \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionInvalidAction.AllowActionParameters.MinDelayTime 5s \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionInvalidAction.Name Allow \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionRateControl.Enabled on \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionRateControl.HighRateSessionAction.Name Deny \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionRateControl.LowRateSessionAction.Name Allow \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionRateControl.LowRateSessionAction.AllowActionParameters.MaxDelayTime 5s \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.BotSessionValidation.SessionRateControl.MidRateSessionAction.Name Monitor \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.BotClientAction.Name Allow \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.BotClientAction.AllowActionParameters.MinDelayTime 5s \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.ChallengeNotFinishedAction.Name Deny \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.ChallengeTimeoutAction.Name Monitor \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.CryptoChallengeDelayBefore 500ms \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.CryptoChallengeIntensity medium \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.MaxChallengeCountInterval 10s \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.0.Action.ClientBehaviorDetection.MaxChallengeCountThreshold 1000 \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Id 2181409113 \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Name Bot主动特征识别##2 \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Condition ${http.request.uri.path} match ['zzz'] \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Enabled on \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Action.BotSessionValidation.IssueNewBotSessionCookie off \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Action.BotSessionValidation.SessionExpiredAction.DenyActionParameters.Stall on \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Action.BotSessionValidation.SessionExpiredAction.Name Deny \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Action.BotSessionValidation.SessionInvalidAction.AllowActionParameters.MaxDelayTime 5s \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Action.BotSessionValidation.SessionInvalidAction.Name Allow \
+    --SecurityPolicy.BotManagement.BrowserImpersonationDetection.Rules.1.Action.BotSessionValidation.SessionRateControl.Enabled off
 ```
 
 Output: 

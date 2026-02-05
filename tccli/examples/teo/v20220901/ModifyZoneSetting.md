@@ -61,3 +61,24 @@ Output:
 }
 ```
 
+**Example 4: 修改网络错误日志记录配置**
+
+修改网络错误日志记录配置。
+
+Input: 
+
+```
+tccli teo ModifyZoneSetting --cli-unfold-argument  \
+    --ZoneId zone-3ivyxdb1d1kt \
+    --NetworkErrorLogging.Switch on
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e2c073b0-4859-4848-88f9-e357c81172cf"
+    }
+}
+```
+

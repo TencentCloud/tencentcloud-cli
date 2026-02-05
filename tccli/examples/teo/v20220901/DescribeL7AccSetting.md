@@ -115,6 +115,9 @@ Output:
                 "Grpc": {
                     "Switch": "off"
                 },
+                "NetworkErrorLogging": {
+                    "Switch": "on"
+                },
                 "AccelerateMainland": {
                     "Switch": "off"
                 },

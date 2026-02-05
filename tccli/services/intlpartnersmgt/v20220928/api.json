@@ -1246,6 +1246,15 @@
           "name": "Extended",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户的真实名称，个人客户填写姓名，企业客户填写企业全称。\n",
+          "example": "亿xxxxx公司1111",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1260,6 +1269,16 @@
           "member": "string",
           "name": "Uin",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定结果",
+          "example": "success",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

@@ -26,14 +26,14 @@ Output:
                     {
                         "Max": 100,
                         "Metric": "ddos_attackMaxBandwidth",
-                        "Avg": 100.0,
+                        "Avg": 100,
                         "Detail": [
                             {
                                 "Timestamp": 1660010100,
                                 "Value": 100
                             }
                         ],
-                        "Sum": 100.0
+                        "Sum": 100
                     }
                 ],
                 "Key": "ddos_attackMaxBandwidth"

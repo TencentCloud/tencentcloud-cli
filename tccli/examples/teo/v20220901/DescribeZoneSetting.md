@@ -69,6 +69,9 @@ Output:
             "Grpc": {
                 "Switch": "off"
             },
+            "NetworkErrorLogging": {
+                "Switch": "on"
+            },
             "Https": {
                 "ApplyType": "none",
                 "CertInfo": [],

@@ -1,17 +1,16 @@
-**Example 1: 查询四层时序流量数据**
+**Example 1: 查询四层时序并发连接数指标时序数据**
 
-
+查询 ZoneId = zone-28kw53cmc6ky 的站点下，全部四层实例在 2025-10-01T08:00:00+08:00 ~ 2025-10-01T10:00:00+08:00 期间的并发连接数时序数据。
 
 Input: 
 
 ```
 tccli teo DescribeTimingL4Data --cli-unfold-argument  \
-    --EndTime 2022-08-29T19:17:59+08:00 \
-    --Interval day \
-    --Area mainland \
-    --StartTime 2022-07-31T00:00:00+08:00 \
-    --MetricNames l4Flow_inFlux \
-    --ZoneIds zone-28kw53cmc6ky
+    --ZoneIds zone-28kw53cmc6ky \
+    --StartTime 2025-10-01T08:00:00+08:00 \
+    --EndTime 2025-10-01T10:00:00+08:00 \
+    --Interval hour \
+    --MetricNames l4Flow_connections
 ```
 
 Output: 
@@ -24,20 +23,24 @@ Output:
                 "TypeKey": "251227260",
                 "TypeValue": [
                     {
-                        "Avg": 740563,
+                        "Avg": 16,
                         "Detail": [
                             {
-                                "Timestamp": 1659139200,
-                                "Value": 0
+                                "Timestamp": 1759276800,
+                                "Value": 15
                             },
                             {
-                                "Timestamp": 1659225600,
+                                "Timestamp": 1759280400,
+                                "Value": 17
+                            },
+                            {
+                                "Timestamp": 1759284000,
                                 "Value": 0
                             }
                         ],
-                        "Max": 6319079,
-                        "MetricName": "l4Flow_inFlux",
-                        "Sum": 22957455
+                        "Max": 17,
+                        "MetricName": "l4Flow_connections",
+                        "Sum": 32
                     }
                 ]
             }
@@ -47,196 +50,19 @@ Output:
 }
 ```
 
-**Example 2: 根据四层代理ID查询四层流量数据**
+**Example 2: 根据四层代理转发规则 ID 查询访问总流量时序数据**
 
-
-
-Input: 
-
-```
-tccli teo DescribeTimingL4Data --cli-unfold-argument  \
-    --EndTime 2022-08-29T19:17:59+08:00 \
-    --Interval day \
-    --Area mainland \
-    --StartTime 2022-07-31T00:00:00+08:00 \
-    --MetricNames l4Flow_inFlux \
-    --ZoneIds zone-28kw53cmc6ky \
-    --Filters.0.Key proxyId \
-    --Filters.0.Operator equals \
-    --Filters.0.Value sid-2c2uug8ubfmn
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "962792de-3bfe-483d-99a7-3cfde0467495",
-        "Data": [
-            {
-                "TypeKey": "zone-28kw53cmc6ky",
-                "TypeValue": [
-                    {
-                        "Avg": 267,
-                        "Detail": [
-                            {
-                                "Timestamp": 1671669600,
-                                "Value": 390
-                            },
-                            {
-                                "Timestamp": 1671669900,
-                                "Value": 740
-                            },
-                            {
-                                "Timestamp": 1671670200,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671670500,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671670800,
-                                "Value": 562
-                            },
-                            {
-                                "Timestamp": 1671671100,
-                                "Value": 690
-                            },
-                            {
-                                "Timestamp": 1671671400,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671671700,
-                                "Value": 1353
-                            },
-                            {
-                                "Timestamp": 1671672000,
-                                "Value": 1291
-                            },
-                            {
-                                "Timestamp": 1671672300,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671672600,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671672900,
-                                "Value": 300
-                            },
-                            {
-                                "Timestamp": 1671673200,
-                                "Value": 453
-                            },
-                            {
-                                "Timestamp": 1671673500,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671673800,
-                                "Value": 19
-                            },
-                            {
-                                "Timestamp": 1671674100,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671674400,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671674700,
-                                "Value": 204
-                            },
-                            {
-                                "Timestamp": 1671675000,
-                                "Value": 530
-                            },
-                            {
-                                "Timestamp": 1671675300,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671675600,
-                                "Value": 975
-                            },
-                            {
-                                "Timestamp": 1671675900,
-                                "Value": 777
-                            },
-                            {
-                                "Timestamp": 1671676200,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671676500,
-                                "Value": 530
-                            },
-                            {
-                                "Timestamp": 1671676800,
-                                "Value": 320
-                            },
-                            {
-                                "Timestamp": 1671677100,
-                                "Value": 303
-                            },
-                            {
-                                "Timestamp": 1671677400,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671677700,
-                                "Value": 183
-                            },
-                            {
-                                "Timestamp": 1671678000,
-                                "Value": 320
-                            },
-                            {
-                                "Timestamp": 1671678300,
-                                "Value": 670
-                            },
-                            {
-                                "Timestamp": 1671678600,
-                                "Value": 131
-                            },
-                            {
-                                "Timestamp": 1671678900,
-                                "Value": 804
-                            },
-                            {
-                                "Timestamp": 1671679200,
-                                "Value": 131
-                            }
-                        ],
-                        "Max": 31540,
-                        "MetricName": "l4Flow_outFlux",
-                        "Sum": 147864
-                    }
-                ]
-            }
-        ],
-        "TotalCount": 1
-    }
-}
-```
-
-**Example 3: 根据转发规则ID查询四层流量数据**
-
-
+查询 ZoneId = zone-28kw53cmc6ky 的站点下， RuleId = rule-033950bf-6fc4-11ed-8ab2-525400a22580 的四层实例转发规则 在 2025-10-01T08:00:00+08:00 ~ 2025-10-01T10:00:00+08:00 期间的访问总流量时序数据。
 
 Input: 
 
 ```
 tccli teo DescribeTimingL4Data --cli-unfold-argument  \
-    --EndTime 2022-08-29T19:17:59+08:00 \
-    --Interval day \
-    --Area mainland \
-    --StartTime 2022-07-31T00:00:00+08:00 \
-    --MetricNames l4Flow_inFlux \
     --ZoneIds zone-28kw53cmc6ky \
+    --StartTime 2025-10-01T08:00:00+08:00 \
+    --EndTime 2025-10-01T10:00:00+08:00 \
+    --Interval hour \
+    --MetricNames l4Flow_flux \
     --Filters.0.Key ruleId \
     --Filters.0.Operator equals \
     --Filters.0.Value rule-033950bf-6fc4-11ed-8ab2-525400a22580
@@ -249,147 +75,84 @@ Output:
         "RequestId": "962792de-3bfe-483d-99a7-3cfde0467495",
         "Data": [
             {
-                "TypeKey": "zone-28kw53cmc6ky",
+                "TypeKey": "251227260",
                 "TypeValue": [
                     {
-                        "Avg": 267,
+                        "Avg": 5640,
                         "Detail": [
                             {
                                 "Timestamp": 1671669600,
-                                "Value": 390
+                                "Value": 3900
                             },
                             {
                                 "Timestamp": 1671669900,
-                                "Value": 740
-                            },
-                            {
-                                "Timestamp": 1671670200,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671670500,
-                                "Value": 0
+                                "Value": 7400
                             },
                             {
                                 "Timestamp": 1671670800,
-                                "Value": 562
-                            },
-                            {
-                                "Timestamp": 1671671100,
-                                "Value": 690
-                            },
-                            {
-                                "Timestamp": 1671671400,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671671700,
-                                "Value": 1353
-                            },
-                            {
-                                "Timestamp": 1671672000,
-                                "Value": 1291
-                            },
-                            {
-                                "Timestamp": 1671672300,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671672600,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671672900,
-                                "Value": 300
-                            },
-                            {
-                                "Timestamp": 1671673200,
-                                "Value": 453
-                            },
-                            {
-                                "Timestamp": 1671673500,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671673800,
-                                "Value": 19
-                            },
-                            {
-                                "Timestamp": 1671674100,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671674400,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671674700,
-                                "Value": 204
-                            },
-                            {
-                                "Timestamp": 1671675000,
-                                "Value": 530
-                            },
-                            {
-                                "Timestamp": 1671675300,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671675600,
-                                "Value": 975
-                            },
-                            {
-                                "Timestamp": 1671675900,
-                                "Value": 777
-                            },
-                            {
-                                "Timestamp": 1671676200,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671676500,
-                                "Value": 530
-                            },
-                            {
-                                "Timestamp": 1671676800,
-                                "Value": 320
-                            },
-                            {
-                                "Timestamp": 1671677100,
-                                "Value": 303
-                            },
-                            {
-                                "Timestamp": 1671677400,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1671677700,
-                                "Value": 183
-                            },
-                            {
-                                "Timestamp": 1671678000,
-                                "Value": 320
-                            },
-                            {
-                                "Timestamp": 1671678300,
-                                "Value": 670
-                            },
-                            {
-                                "Timestamp": 1671678600,
-                                "Value": 131
-                            },
-                            {
-                                "Timestamp": 1671678900,
-                                "Value": 804
-                            },
-                            {
-                                "Timestamp": 1671679200,
-                                "Value": 131
+                                "Value": 5620
                             }
                         ],
-                        "Max": 31540,
-                        "MetricName": "l4Flow_outFlux",
-                        "Sum": 147864
+                        "Max": 7400,
+                        "MetricName": "l4Flow_flux",
+                        "Sum": 16920
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 1
+    }
+}
+```
+
+**Example 3: 根据四层实例 ID 查询新建连接数速率时序数据**
+
+查询 ZoneId = zone-28kw53cmc6ky 的站点下， ProxyId = sid-3kr5me8zidha 的四层实例 在 2025-10-01T08:00:00+08:00 ~ 2025-10-01T10:00:00+08:00 期间的新建连接数速率时序数据。
+注意：因为本次查询的指标 MetricNames 中 l4Flow_newConnectionsRate 的值类型为 Float，所以从 Data.N.FloatTypeValue 返回 l4Flow_newConnectionsRate 指标对应的时序数据。
+
+Input: 
+
+```
+tccli teo DescribeTimingL4Data --cli-unfold-argument  \
+    --ZoneIds zone-28kw53cmc6ky \
+    --StartTime 2025-10-01T08:00:00+08:00 \
+    --EndTime 2025-10-01T10:00:00+08:00 \
+    --Interval hour \
+    --MetricNames l4Flow_newConnectionsRate \
+    --Filters.0.Key proxyId \
+    --Filters.0.Operator equals \
+    --Filters.0.Value sid-3kr5me8zidha
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "962792de-3bfe-483d-99a7-3cfde0467495",
+        "Data": [
+            {
+                "TypeKey": "251227260",
+                "TypeValue": [],
+                "FloatTypeValue": [
+                    {
+                        "Avg": 1.56,
+                        "Detail": [
+                            {
+                                "Timestamp": 1671669600,
+                                "Value": 1.08
+                            },
+                            {
+                                "Timestamp": 1671669900,
+                                "Value": 2.05
+                            },
+                            {
+                                "Timestamp": 1671670800,
+                                "Value": 1.56
+                            }
+                        ],
+                        "Max": 2.05,
+                        "MetricName": "l4Flow_newConnectionsRate",
+                        "Sum": 4.69
                     }
                 ]
             }

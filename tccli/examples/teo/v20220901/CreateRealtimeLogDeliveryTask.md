@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli teo CreateRealtimeLogDeliveryTask --cli-unfold-argument  \
-    --ZoneId zone-xxxxx \
+    --ZoneId zone-2z55fgysdtmc \
     --TaskName test_log_task \
     --TaskType cls \
     --EntityList domain.example.com \
@@ -40,7 +40,7 @@ Input:
 
 ```
 tccli teo CreateRealtimeLogDeliveryTask --cli-unfold-argument  \
-    --ZoneId zone-xxxxx \
+    --ZoneId zone-2z55fgysdtmc \
     --TaskName test_log_task \
     --TaskType custom_endpoint \
     --EntityList domain.example.com \
@@ -55,6 +55,74 @@ tccli teo CreateRealtimeLogDeliveryTask --cli-unfold-argument  \
     --CustomEndpoint.CompressType gzip \
     --CustomEndpoint.Headers.0.Name Vendor \
     --CustomEndpoint.Headers.0.Value EdgeOne
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskId": "26580056-1187-43ed-b2c7-ecdb5bae0b46",
+        "RequestId": "5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703"
+    }
+}
+```
+
+**Example 3: 创建目的地为AWS S3 兼容存储桶的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的站点加速日志，包含字段有 RequestID、ClientIP、RequestTime 以及从 Accept-Language 请**
+
+创建目的地为AWS S3 兼容存储桶的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的、请求最终安全处置方式为拦截或挑战的站点加速日志，包含字段有 RequestID、ClientIP、RequestTime，不开启日志采样，开启日志投递压缩，并且在投递日志时携带自定义请求头 Vendor，值固定为 EdgeOne，存储桶选择的是 腾讯云的 COS。
+
+Input: 
+
+```
+tccli teo CreateRealtimeLogDeliveryTask --cli-unfold-argument  \
+    --ZoneId zone-2z55fgysdtmc \
+    --TaskName test_log_task \
+    --TaskType s3 \
+    --EntityList domain.example.com \
+    --LogType domain \
+    --Area mainland \
+    --Fields RequestID ClientIP RequestTime \
+    --CustomFields.0.Name ReqHeader \
+    --CustomFields.0.Value Accept-Language \
+    --CustomFields.0.Enabled True \
+    --Sample 605 \
+    --S3.Endpoint https://example.cos.ap-guangzhou.myqcloud.com \
+    --S3.Region ap-guangzhou \
+    --S3.Bucket example-bucket-4-1310765013/example-4-1310765013/logs/EdgeOne/test \
+    --S3.CompressType  \
+    --S3.AccessId 你的存储桶访问密钥 ID \
+    --S3.AccessKey 你的存储桶访问密钥 KEY
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskId": "26580056-1187-43ed-b2c7-ecdb5bae0b46",
+        "RequestId": "5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703"
+    }
+}
+```
+
+**Example 4: 创建推送目的地为 EdgeOne 日志分析的日志投递任务**
+
+创建目的地为 EdgeOne 日志分析 的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的站点加速日志，包含字段有 RequestID、ClientIP、RequestTime 以及从 Accept-Language 请求头中提取的字段值，配置采样比例为 60.5%。
+
+Input: 
+
+```
+tccli teo CreateRealtimeLogDeliveryTask --cli-unfold-argument  \
+    --ZoneId zone-2z55fgysdtmc \
+    --TaskName test_log_task \
+    --TaskType log_analysis \
+    --EntityList domain.example.com \
+    --LogType domain \
+    --Area mainland \
+    --Fields RequestID ClientIP RequestTime \
+    --CustomFields.0.Name ReqHeader \
+    --CustomFields.0.Value Accept-Language \
+    --CustomFields.0.Enabled True \
+    --Sample 605
 ```
 
 Output: 
