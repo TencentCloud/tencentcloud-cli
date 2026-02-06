@@ -4370,13 +4370,59 @@
       ],
       "usage": "out"
     },
+    "EyeFinalItem": {
+      "document": "眼科子结构 平均后结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>球镜</p>",
+          "example": "无",
+          "member": "BaseItem3",
+          "name": "Sph",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>柱镜</p>",
+          "example": "无",
+          "member": "BaseItem3",
+          "name": "Cyl",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>轴位</p>",
+          "example": "无",
+          "member": "BaseItem3",
+          "name": "Ax",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>等效球镜</p>",
+          "example": "无",
+          "member": "BaseItem2",
+          "name": "Se",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EyeItem": {
       "document": "眼科结构体",
       "members": [
         {
           "disabled": false,
-          "document": "左眼",
-          "example": "object",
+          "document": "<p>左眼</p>",
+          "example": "无",
           "member": "EyeChildItem",
           "name": "Left",
           "output_required": false,
@@ -4385,8 +4431,8 @@
         },
         {
           "disabled": false,
-          "document": "右眼",
-          "example": "object",
+          "document": "<p>右眼</p>",
+          "example": "无",
           "member": "EyeChildItem",
           "name": "Right",
           "output_required": false,
@@ -4395,10 +4441,30 @@
         },
         {
           "disabled": false,
-          "document": "瞳距",
-          "example": "object",
+          "document": "<p>瞳距</p>",
+          "example": "无",
           "member": "BaseItem2",
           "name": "Pd",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>右眼平均后结果</p>",
+          "example": "无",
+          "member": "EyeFinalItem",
+          "name": "RightFinal",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>左眼平均后结果</p>",
+          "example": "无",
+          "member": "EyeFinalItem",
+          "name": "LeftFinal",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

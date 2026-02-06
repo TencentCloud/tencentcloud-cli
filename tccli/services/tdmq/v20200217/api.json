@@ -119,6 +119,13 @@
       "output": "CreateRocketMQGroupResponse",
       "status": "online"
     },
+    "CreateRocketMQGroupV2": {
+      "document": "创建 RocketMQ 消费组。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。创建 5.x 集群消费组的接口文档见 [CreateConsumerGroup](https://cloud.tencent.com/document/api/1493/97943)。",
+      "input": "CreateRocketMQGroupV2Request",
+      "name": "创建 RocketMQ 消费组",
+      "output": "CreateRocketMQGroupV2Response",
+      "status": "online"
+    },
     "CreateRocketMQNamespace": {
       "document": "创建 RocketMQ 命名空间。\n当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。",
       "input": "CreateRocketMQNamespaceRequest",
@@ -4391,6 +4398,105 @@
     },
     "CreateRocketMQGroupResponse": {
       "document": "CreateRocketMQGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQGroupV2Request": {
+      "document": "CreateRocketMQGroupV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "example": "test_ns",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费",
+          "example": "true",
+          "member": "bool",
+          "name": "ReadEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启广播消费",
+          "example": "true",
+          "member": "bool",
+          "name": "BroadcastEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rocketmq-4k4orqgq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "test remark info.",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Group类型（TCP/HTTP）",
+          "example": "TCP",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Group最大重试次数",
+          "example": "16",
+          "member": "uint64",
+          "name": "RetryMaxTimes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQGroupV2Response": {
+      "document": "CreateRocketMQGroupV2返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -1,0 +1,1947 @@
+{
+  "actions": {
+    "CancelIsolateDBInstances": {
+      "document": "本接口（CancelIsolateDBInstances）提供批量解除隔离实例功能",
+      "input": "CancelIsolateDBInstancesRequest",
+      "name": "批量解除隔离实例",
+      "output": "CancelIsolateDBInstancesResponse",
+      "status": "online"
+    },
+    "CreateDBSBackup": {
+      "document": "创建实例备份集",
+      "input": "CreateDBSBackupRequest",
+      "name": "创建实例备份",
+      "output": "CreateDBSBackupResponse",
+      "status": "online"
+    },
+    "DeleteDBSBackupSets": {
+      "document": "删除实例备份集",
+      "input": "DeleteDBSBackupSetsRequest",
+      "name": "清理实例备份",
+      "output": "DeleteDBSBackupSetsResponse",
+      "status": "online"
+    },
+    "DescribeBillingEnable": {
+      "document": "已无地方调用\n\n本接口（DescribeBillingEnable）用于查询计费是否开启",
+      "input": "DescribeBillingEnableRequest",
+      "name": "查询计费是否开启",
+      "output": "DescribeBillingEnableResponse",
+      "status": "offline"
+    },
+    "DescribeDBParameters": {
+      "document": "本接口（DescribeDBParameters）用于获取实例的当前参数设置。",
+      "input": "DescribeDBParametersRequest",
+      "name": "查看实例参数",
+      "output": "DescribeDBParametersResponse",
+      "status": "online"
+    },
+    "DescribeDBSAvailableRecoveryTime": {
+      "document": "可恢复时间查询",
+      "input": "DescribeDBSAvailableRecoveryTimeRequest",
+      "name": "获取可恢复时间",
+      "output": "DescribeDBSAvailableRecoveryTimeResponse",
+      "status": "online"
+    },
+    "DescribeDBSCloneInstances": {
+      "document": "查询实例克隆列表",
+      "input": "DescribeDBSCloneInstancesRequest",
+      "name": "查询实例克隆列表",
+      "output": "DescribeDBSCloneInstancesResponse",
+      "status": "online"
+    },
+    "DescribeDBSecurityGroups": {
+      "document": "本接口（DescribeDBSecurityGroups）用于查询实例安全组信息",
+      "input": "DescribeDBSecurityGroupsRequest",
+      "name": "查询实例安全组信息",
+      "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDatabaseObjects": {
+      "document": "本接口（DescribeDatabaseObjects）用于查询云数据库实例的数据库中的对象列表，包含表、存储过程、视图和函数。",
+      "input": "DescribeDatabaseObjectsRequest",
+      "name": "查询数据库对象列表",
+      "output": "DescribeDatabaseObjectsResponse",
+      "status": "online"
+    },
+    "DescribeDatabaseTable": {
+      "document": "冗余接口，无人调用\n\n本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。",
+      "input": "DescribeDatabaseTableRequest",
+      "name": "查询数据库表信息",
+      "output": "DescribeDatabaseTableResponse",
+      "status": "offline"
+    },
+    "DescribeFlow": {
+      "document": "本接口（DescribeFlow）用于查询异步任务流程状态",
+      "input": "DescribeFlowRequest",
+      "name": "查询流程状态",
+      "output": "DescribeFlowResponse",
+      "status": "online"
+    },
+    "DestroyInstances": {
+      "document": "本接口（DestroyInstances）提供批量销毁实例功能",
+      "input": "DestroyInstancesRequest",
+      "name": "批量销毁实例",
+      "output": "DestroyInstancesResponse",
+      "status": "online"
+    },
+    "IsolateDBInstance": {
+      "document": "本接口（IsolateDBInstance）提供批量隔离实例功能",
+      "input": "IsolateDBInstanceRequest",
+      "name": "批量隔离实例",
+      "output": "IsolateDBInstanceResponse",
+      "status": "online"
+    },
+    "ModifyAutoRenewFlag": {
+      "document": "本接口（ModifyAutoRenewFlag）用于修改自动续费标志",
+      "input": "ModifyAutoRenewFlagRequest",
+      "name": "修改自动续费标志",
+      "output": "ModifyAutoRenewFlagResponse",
+      "status": "online"
+    },
+    "ModifyBinlogStatus": {
+      "document": "接口功能已被 ModifyInstanceCdc 完全覆盖\n\n修改binlog状态",
+      "input": "ModifyBinlogStatusRequest",
+      "name": "修改binlog状态",
+      "output": "ModifyBinlogStatusResponse",
+      "status": "offline"
+    },
+    "ModifyDBInstanceSecurityGroups": {
+      "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组",
+      "input": "ModifyDBInstanceSecurityGroupsRequest",
+      "name": "修改云数据库安全组",
+      "output": "ModifyDBInstanceSecurityGroupsResponse",
+      "status": "online"
+    },
+    "ModifyDBParameters": {
+      "document": "本接口（ModifyDBParameters）用于修改实例参数。",
+      "input": "ModifyDBParametersRequest",
+      "name": "修改实例参数",
+      "output": "ModifyDBParametersResponse",
+      "status": "online"
+    },
+    "ModifyDBSBackupPolicy": {
+      "document": "修改实例备份策略",
+      "input": "ModifyDBSBackupPolicyRequest",
+      "name": "修改实例备份策略",
+      "output": "ModifyDBSBackupPolicyResponse",
+      "status": "online"
+    },
+    "ModifyDBSBackupSetComment": {
+      "document": "修改备份集备注",
+      "input": "ModifyDBSBackupSetCommentRequest",
+      "name": "修改实例备份备注名",
+      "output": "ModifyDBSBackupSetCommentResponse",
+      "status": "online"
+    },
+    "ModifyInstanceName": {
+      "document": "本接口（ModifyInstanceName）提供修改实例名称功能",
+      "input": "ModifyInstanceNameRequest",
+      "name": "修改实例名称",
+      "output": "ModifyInstanceNameResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-11-22",
+    "api_brief": "新技术形态产品的实例管理API，包括生命周期，管理功能等；",
+    "serviceNameCN": "TDSQL",
+    "serviceShortName": "tdmysql"
+  },
+  "objects": {
+    "ArchiveLogInterval": {
+      "document": "可恢复时间区间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-18 00:00:57",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MajorVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MinorVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-18 00:00:57",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BackupPolicyModelInput": {
+      "document": "修改备份策略对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份结束时间</p>",
+          "example": "04:00",
+          "member": "string",
+          "name": "BackupEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份方式  physical 物理备份 snapshot 快照备份</p>",
+          "example": "physical",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份开始时间</p>",
+          "example": "00:00",
+          "member": "string",
+          "name": "BackupStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启全量备份</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFull",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启日志备份</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全备保留时间,目前只能设置7天</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "FullRetentionPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-b8dfc518",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志保留天数，目前只能设置保留7天</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "LogRetentionPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一周的哪几天进行备份</p>",
+          "example": "0,1,2,3,4,5,6",
+          "member": "string",
+          "name": "PeriodTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储类型:COS,SNAPSHOT</p>枚举值：<ul><li> COS： COS存储</li><li> SNAPSHOT： 云盘快照</li></ul>",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "CancelIsolateDBInstancesRequest": {
+      "document": "CancelIsolateDBInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要隔离的实例ID列表",
+          "example": "[\"tdsql3-d8fffc3c\",\"tdsql3-d8fffc4s\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelIsolateDBInstancesResponse": {
+      "document": "CancelIsolateDBInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解除隔离成功实例Id列表",
+          "example": "\"tdsql3-d8fffc3c\"",
+          "member": "string",
+          "name": "SuccessInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解除隔离失败实例Id列表",
+          "example": "\"tdsql3-d8fffc4s\"",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloneInstanceModel": {
+      "document": "克隆实例对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "克隆任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloneEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆记录ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CloneId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloneInsType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloneInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆实例是否已经删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CloneInstanceIsDeleted",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "CloneProgress",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloneStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloneStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloneTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "克隆类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloneType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DBType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConstraintRange": {
+      "document": "约束类型值的范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "约束类型为section时的最小值",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "约束类型为section时的最大值",
+          "example": "\"2\"",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDBSBackupRequest": {
+      "document": "CreateDBSBackup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份方式：physical、snapshot 这个值和DescribeDBSBackupPolicy接口返回的backupMethod保持一致</p>枚举值：<ul><li> physical： 物理备份</li><li> snapshot： 快照备份</li></ul>",
+          "example": "physical",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份类型：暂时只支持full</p>",
+          "example": "full",
+          "member": "string",
+          "name": "BackupType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-f31c034x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份备注</p>",
+          "example": "mybak",
+          "member": "string",
+          "name": "BackupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBSBackupResponse": {
+      "document": "CreateDBSBackup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份集ID</p>",
+          "example": "6454534321",
+          "member": "int64",
+          "name": "BackupSetId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSuccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DBParamValue": {
+      "document": "云数据库参数信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "\"lower_case_table_names\"",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DatabaseFunction": {
+      "document": "数据库函数信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "123",
+          "member": "string",
+          "name": "Func",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DatabaseProcedure": {
+      "document": "数据库存储过程信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储过程名称",
+          "example": "123",
+          "member": "string",
+          "name": "Proc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DatabaseTable": {
+      "document": "数据库表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "123",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DatabaseView": {
+      "document": "数据库视图信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图名称",
+          "example": "123",
+          "member": "string",
+          "name": "View",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteDBSBackupSetsRequest": {
+      "document": "DeleteDBSBackupSets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-f31c034x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份集列表 ,值来自 DescribeDBSBackupSets 接口返回</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "BackupSetIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDBSBackupSetsResponse": {
+      "document": "DeleteDBSBackupSets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>本次实际删除的备份数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Deleted",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否全部删除成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSuccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要删除的备份总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingEnableRequest": {
+      "document": "DescribeBillingEnable请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBillingEnableResponse": {
+      "document": "DescribeBillingEnable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBParametersRequest": {
+      "document": "DescribeDBParameters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql3-ow728lmc。",
+          "example": "tdsql3-ow728lmc",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBParametersResponse": {
+      "document": "DescribeDBParameters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql3-ow728lmc。",
+          "example": "tdsql3-ow728lmc",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求实例的当前参数值",
+          "example": "无",
+          "member": "ParamDesc",
+          "name": "Params",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSAvailableRecoveryTimeRequest": {
+      "document": "DescribeDBSAvailableRecoveryTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>db实例ID</p>",
+          "example": "tdsql3-d2ba1f6b",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>",
+          "example": "36154356969282",
+          "member": "int64",
+          "name": "BackupSetId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSAvailableRecoveryTimeResponse": {
+      "document": "DescribeDBSAvailableRecoveryTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-18 00:00:57",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>可恢复时间区间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ArchiveLogInterval",
+          "name": "Intervals",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-18 00:00:57",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSCloneInstancesRequest": {
+      "document": "DescribeDBSCloneInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源实例ID</p>",
+          "example": "tdsql3-b4d8fd2c",
+          "member": "string",
+          "name": "SourceInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎类型</p>",
+          "example": "tdstore",
+          "member": "string",
+          "name": "DBType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束创建时间</p>",
+          "example": "2024-11-25 10:10:00",
+          "member": "string",
+          "name": "EndCreateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆类型: PITR 时间点 BackupSet 备份集</p>",
+          "example": "PITR",
+          "member": "string",
+          "name": "FilterCloneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询数量[0,200]</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询偏移量[0,INF]</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段: CloneTime,CreateTime</p>",
+          "example": "CloneTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序类型:ASC,DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始创建时间</p>",
+          "example": "2024-11-24 10:10:00",
+          "member": "string",
+          "name": "StartCreateTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSCloneInstancesResponse": {
+      "document": "DescribeDBSCloneInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>克隆列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloneInstanceModel",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsRequest": {
+      "document": "DescribeDBSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "tdsql3eb2w7dto",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsResponse": {
+      "document": "DescribeDBSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组详情。",
+          "example": "无",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例VIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VPort",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseObjectsRequest": {
+      "document": "DescribeDatabaseObjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql3-42f40429.",
+          "example": "tdsql3-42f40429",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "example": "mysql",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseObjectsResponse": {
+      "document": "DescribeDatabaseObjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "透传入参。",
+          "example": "tdsql3-42f40429",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称。",
+          "example": "mysql",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "DatabaseTable",
+          "name": "Tables",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseView",
+          "name": "Views",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储过程列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseProcedure",
+          "name": "Procs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "函数列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseFunction",
+          "name": "Funcs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseTableRequest": {
+      "document": "DescribeDatabaseTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql3-ow7t8lmc。",
+          "example": "tdsql3-52s53yyh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "example": "test",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名称，通过 DescribeDatabaseObjects 接口获取。",
+          "example": "persons",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseTableResponse": {
+      "document": "DescribeDatabaseTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "tdsql3-52s53yyh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称。",
+          "example": "test",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "persons",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableColumn",
+          "name": "Cols",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowRequest": {
+      "document": "DescribeFlow请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFlowResponse": {
+      "document": "DescribeFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstancesRequest": {
+      "document": "DestroyInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要隔离的实例ID列表",
+          "example": "[\"tdsql3-d8fffc3c\",\"tdsql3-d8fffc4s\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstancesResponse": {
+      "document": "DestroyInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解除隔离成功实例Id列表",
+          "example": "\"tdsql3-d8fffc3c\"",
+          "member": "string",
+          "name": "SuccessInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解除隔离失败实例Id列表",
+          "example": "\"tdsql3-d8fffc4s\"",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDBInstanceRequest": {
+      "document": "IsolateDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要隔离的实例ID列表",
+          "example": "[\"tdsql3-d8fffc3c\",\"tdsql3-d8fffc4s\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDBInstanceResponse": {
+      "document": "IsolateDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "隔离成功实例Id列表",
+          "example": "\"tdsql3-d8fffc3c\"",
+          "member": "string",
+          "name": "SuccessInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离失败实例Id列表",
+          "example": "\"tdsql3-d8fffc4s\"",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoRenewFlagRequest": {
+      "document": "ModifyAutoRenewFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的实例列表",
+          "example": "[\"tdsql3-e234db15\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "1表示开启自动续费，0为关闭自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoRenewFlagResponse": {
+      "document": "ModifyAutoRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBinlogStatusRequest": {
+      "document": "ModifyBinlogStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "tdsql3-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1打开0关闭",
+          "example": "1/0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBinlogStatusResponse": {
+      "document": "ModifyBinlogStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flow的流程id",
+          "example": "123457",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupsRequest": {
+      "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "tdsql3-eb2w7dto",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
+          "example": "[\"sg-ajr1jzgj\\n\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupsResponse": {
+      "document": "ModifyDBInstanceSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBParametersRequest": {
+      "document": "ModifyDBParameters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql3-ow728lmc。",
+          "example": "tdsql3-ige1a5k3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数列表，每一个元素是Param和Value的组合",
+          "example": "无",
+          "member": "DBParamValue",
+          "name": "Params",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBParametersResponse": {
+      "document": "ModifyDBParameters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "123",
+          "example": "任务ID",
+          "member": "int64",
+          "name": "TaskID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBSBackupPolicyRequest": {
+      "document": "ModifyDBSBackupPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份策略",
+          "example": "无",
+          "member": "BackupPolicyModelInput",
+          "name": "BackupPolicy",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tdsql3-b8dfc518",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBSBackupPolicyResponse": {
+      "document": "ModifyDBSBackupPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSuccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "Modify backup policy successfully",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBSBackupSetCommentRequest": {
+      "document": "ModifyDBSBackupSetComment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-f31c034x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupSetId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份备注</p>",
+          "example": "my-backup",
+          "member": "string",
+          "name": "NewBackupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBSBackupSetCommentResponse": {
+      "document": "ModifyDBSBackupSetComment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSuccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改信息</p>",
+          "example": "Modify backup set successfully",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNameRequest": {
+      "document": "ModifyInstanceName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的实例id",
+          "example": "\"tdsql3-e732378b\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的实例名称，要求长度1-60，允许包含中文、英文大小写、数字、-、_",
+          "example": "\"new-instance-name\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNameResponse": {
+      "document": "ModifyInstanceName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParamConstraint": {
+      "document": "参数约束",
+      "members": [
+        {
+          "disabled": false,
+          "document": "约束类型,如枚举enum，区间section",
+          "example": "\"enum\"",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "约束类型为enum时的可选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"REPEATABLE-READ,SERIALIZABLE,READ-COMMITTED,READ-UNCOMMITTED\"",
+          "member": "string",
+          "name": "Enum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "约束类型为section时的范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConstraintRange",
+          "name": "Range",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "约束类型为string时的可选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0,1\"",
+          "member": "string",
+          "name": "String",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ParamDesc": {
+      "document": "DB参数描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名字",
+          "example": "\"long_query_time\"",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前参数值",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设置过的值，参数生效后，该值和value一样。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2\"",
+          "member": "string",
+          "name": "SetValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统默认值",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamConstraint",
+          "name": "Constraint",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有设置过值，false:没有设置过值，true:有设置过值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HaveSetValue",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true:需要重启",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedRestart",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityGroup": {
+      "document": "安全组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组名称",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组备注",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入站规则",
+          "example": "无",
+          "member": "SecurityGroupBound",
+          "name": "Inbound",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站规则",
+          "example": "无",
+          "member": "SecurityGroupBound",
+          "name": "Outbound",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityGroupBound": {
+      "document": "安全出入口规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源 IP 或 IP 段，例如192.168.0.0/16",
+          "example": "无",
+          "member": "string",
+          "name": "CidrIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略，ACCEPT 或者 DROP",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "无",
+          "member": "string",
+          "name": "PortRange",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络协议，支持 UDP、TCP 等",
+          "example": "无",
+          "member": "string",
+          "name": "IpProtocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableColumn": {
+      "document": "数据库列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名称",
+          "example": "123",
+          "member": "string",
+          "name": "Col",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列类型",
+          "example": "123",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

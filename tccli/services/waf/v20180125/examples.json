@@ -388,6 +388,14 @@
         "title": "获取信息防泄漏规则列表"
       }
     ],
+    "DescribeApiAggregateTopN": [
+      {
+        "document": "示例描述",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiAggregateTopN\n<公共请求参数>\n\n{\n    \"TopN\": \"5\",\n    \"Domain\": \"hzh.qcloud.com\",\n    \"StartTs\": \"666123231\",\n    \"EndTs\": \"666123156\",\n    \"Dimension\": \"attack_type\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02e6870f-89b6-4e7b-b738-942ef9bfd1e5\",\n        \"Data\": [\n            {\n                \"Key\": \"luffy\",\n                \"Value\": 100,\n                \"Label\": \"custom\"\n            }\n        ]\n    }\n}",
+        "title": "获取Api安全模块的访问日志聚合topN"
+      }
+    ],
     "DescribeApiDetail": [
       {
         "document": "获取Api请求详情信息",

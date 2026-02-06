@@ -8609,7 +8609,7 @@
           "example": "vpc-m7sr81gh",
           "member": "string",
           "name": "NetworkInstanceId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

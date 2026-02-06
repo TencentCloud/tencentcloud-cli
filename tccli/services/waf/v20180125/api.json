@@ -329,6 +329,13 @@
       "output": "DescribeAntiInfoLeakageRulesResponse",
       "status": "online"
     },
+    "DescribeApiAggregateTopN": {
+      "document": "获取Api安全模块的访问日志聚合topN",
+      "input": "DescribeApiAggregateTopNRequest",
+      "name": "获取Api安全模块的访问日志聚合topN",
+      "output": "DescribeApiAggregateTopNResponse",
+      "status": "online"
+    },
     "DescribeApiDetail": {
       "document": "获取Api请求详情信息",
       "input": "DescribeApiDetailRequest",
@@ -4730,6 +4737,45 @@
       ],
       "usage": "both"
     },
+    "BotDataFilter": {
+      "document": "搜索框内容，冒号前面是key, 冒号是操作，值是最后一位，操作（冒号）默认是相等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询维度",
+          "example": "engine",
+          "member": "string",
+          "name": "Entity",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": "=",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作值，多个值用",
+          "example": "ucb",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BotIdConfig": {
       "document": "BOT-ID规则信息",
       "members": [
@@ -6154,6 +6200,42 @@
           "name": "DisableMultiJson",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotTopItem": {
+      "document": "bot的topN复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对应的key",
+          "example": "monitor",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应的值",
+          "example": "88",
+          "member": "uint64",
+          "name": "Value",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "key对应的展示描述语",
+          "example": "监控",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10474,6 +10556,97 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeApiAggregateTopNRequest": {
+      "document": "DescribeApiAggregateTopN请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要的Top数，默认5， 最大值100",
+          "example": "10",
+          "member": "uint64",
+          "name": "TopN",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1224256678",
+          "member": "uint64",
+          "name": "StartTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1224256679",
+          "member": "uint64",
+          "name": "EndTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询TOP的维度名",
+          "example": "ip",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "BotDataFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询全域名的三个特殊图标",
+          "example": "true",
+          "member": "bool",
+          "name": "GlobalFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAggregateTopNResponse": {
+      "document": "DescribeApiAggregateTopN返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "topN结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BotTopItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeApiDetailRequest": {
       "document": "DescribeApiDetail请求参数结构体",

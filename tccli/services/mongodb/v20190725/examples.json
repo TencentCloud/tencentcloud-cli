@@ -26,10 +26,10 @@
     ],
     "CreateBackupDBInstance": [
       {
-        "document": "备份实例接口",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateBackupDBInstance\n&InstanceId=cmgo-ayxpky6l\n&BackupRemark=remarkInfo\n&BackupMethod=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"1680780049\",\n        \"RequestId\": \"1df930fb-eb7e-4e3f-bcab-15a1aa5fede0\"\n    }\n}",
-        "title": "备份实例接口"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-xxxxxx\",\n    \"BackupMethod\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"1750660112000249\",\n        \"RequestId\": \"fa4e07a8-4452-4490-94f4-bbac1f220256\"\n    }\n}",
+        "title": "发起备份任务"
       }
     ],
     "CreateBackupDownloadTask": [
@@ -130,10 +130,10 @@
     ],
     "DescribeBackupRules": [
       {
-        "document": "查询实例的自动备份规则信息",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupMethod\": 0,\n        \"BackupSaveTime\": 7,\n        \"BackupTime\": 1,\n        \"RequestId\": \"07ec4290-d682-11ed-aa06-f56fb86dae78\"\n    }\n}",
-        "title": "查询实例的自动备份规则信息"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-xxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ActiveWeekdays\": \"0,1,2,3,4,5,6\",\n        \"AlertThreshold\": 0,\n        \"BackupFrequency\": 12,\n        \"BackupMethod\": 0,\n        \"BackupSaveTime\": 7,\n        \"BackupTime\": 0,\n        \"BackupTotalSize\": {\n            \"FreeQuota\": 10737418240,\n            \"OplogSize\": 602372,\n            \"SnapshotSize\": 28916\n        },\n        \"BackupVersion\": 1,\n        \"LongTermActiveDays\": \"\",\n        \"LongTermExpiredDays\": 0,\n        \"LongTermInterval\": \"\",\n        \"OplogExpiredDays\": 0,\n        \"RequestId\": \"b544304c-e8eb-4819-8715-05a005c010ca\"\n    }\n}",
+        "title": "获取实例备份规则"
       }
     ],
     "DescribeClientConnections": [
@@ -539,9 +539,9 @@
     "SetBackupRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetBackupRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"BackupFrequency\": 24,\n    \"BackupTime\": 22,\n    \"BackupMethod\": 1,\n    \"BackupRetentionPeriod\": 7,\n    \"Notify\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58f3a6a0-2330-11ef-ad75-7139c2c3f68c\"\n    }\n}",
-        "title": "设置实例的自动备份规则"
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetBackupRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-xxxxxx\",\n    \"BackupMethod\": 0,\n    \"BackupFrequency\": 12,\n    \"BackupRetentionPeriod\": 7,\n    \"BackupVersion\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e9c4e16-f7a5-4db1-8978-3f92e8ca4790\"\n    }\n}",
+        "title": "设置备份规则"
       }
     ],
     "SetDBInstanceDeletionProtection": [

@@ -7340,7 +7340,7 @@
         },
         {
           "disabled": false,
-          "document": "生成图片的分辨率。\n\n* GEM 2.5 可选值：1K、2K、4K；\n* GEM 3.0 可选值：1K、2K、4K；\n* Vidu q2 可选值：1080p、2K、4K，默认1080p；\n* Kling 2.1 可选值：1k、2k；\n* Hunyuan 3.0 可选值：768:768、768:1024、1024:768、1024:1024、720:1280、1280:720、768:1280、1280:768，不传默认使用1024:1024。",
+          "document": "生成图片的分辨率。\n\n* GEM 2.5 可选值：1K、2K、4K，默认1K；\n* GEM 3.0 可选值：1K、2K、4K，默认1K；\n* Vidu q2 可选值：1080p、2K、4K，默认1080p；\n* Kling 2.1 可选值：1k、2k，默认1k；\n* Hunyuan 3.0 可选值：720P、1080P、2K、4K。",
           "example": "1024x1024",
           "member": "string",
           "name": "Resolution",
@@ -7351,7 +7351,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所生成图片的宽高比。\n<li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>\n<li>当 ModelName 是 Qwen，则暂不支持。</li>\n<li>当 ModelName 是 Hunyuan，则暂不支持。</li>\n<li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>\n<li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>",
+          "document": "指定所生成图片的宽高比。\n<li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>\n<li>当 ModelName 是 Qwen，则暂不支持。</li>\n<li>当 ModelName 是 Hunyuan，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>\n<li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>\n<li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -7401,7 +7401,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AI生图场景类型，可选值：\n- change_clothes：AI换衣。\n- product_image：AI生商品图。",
+          "document": "AI生图场景类型，可选值：\n- change_clothes：AI换衣。\n- product_image：AI生商品图。\n- outpainting: AI扩图。",
           "example": "change_clothes",
           "member": "string",
           "name": "Type",
@@ -7774,8 +7774,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Gem2.5</li>\n<li>Gem3.0_1K</li>\n<li>Gem3.0_2K</li>\n<li>Gem3.0_4K</li>\n<li>Sora2</li>\n<li>Veo3.1Fast</li>\n<li>Veo3.1Standard</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>KlingO1_1080P</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>KlingO1_720P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>ViduQ2_720P</li>\n<li>ViduQ2_1080P</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_1080P</li>\n<li>ViduQ2_720P_OffPeak</li>\n<li>ViduQ2_1080P_OffPeak</li>\n<li>ViduQ2turbo_720P_OffPeak</li>\n<li>ViduQ2turbo_1080P_OffPeak</li>\n<li>ViduQ2pro_720P_OffPeak</li>\n<li>ViduQ2pro_1080P_OffPeak</li>\n<li>Hunyuan1.5_720P</li>\n<li>Hunyuan1.5_1080P</li>\n<li>Hunyuan3.0_1K</li>\n<li>Hunyuan3.0_2K</li>\n<li>Hunyuan3.0_4K</li>\n<li>Mingmou1.0_1080P</li>\n<li>Mingmou1.0_1K</li>\n<li>Mingmou1.0_2K</li>\n<li>Mingmou1.0_4K</li>\n<li>Mingmou1.0_720P</li>\n<li> unknown</li>",
-          "example": "Gem2.5",
+          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Hunyuan3.0_1K</li>\n<li>Hunyuan3.0_2K</li>\n<li>Hunyuan3.0_4K</li>\n<li>Mingmou1.0_1K</li>\n<li>Mingmou1.0_2K</li>\n<li>Mingmou1.0_4K</li>\n<li>ViduQ2_T2i_1080P</li>\n<li>ViduQ2_T2i_2K</li>\n<li>ViduQ2_T2i_4K</li>\n<li>ViduQ2_I2i_1080P</li>\n<li>ViduQ2_I2i_2K</li>\n<li>ViduQ2_I2i_4K</li>\n<li>ViduQ2_Refer2i_1080P</li>\n<li>ViduQ2_Refer2i_2K</li>\n<li>ViduQ2_Refer2i_4K</li>\n<li>Kling2.1_T2i_1K2K</li>\n<li>Kling2.1_T2i_4K</li>\n<li>Kling2.1_Refer2i_1K</li>\n<li>Kling2.1_Refer2i_2K</li>\n<li>Kling2.1_Refer2i_4K</li>\n<li>Veo3.1Standard</li>\n<li>Veo3.1Fast</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>KlingO1_720P</li>\n<li>KlingO1_1080P</li>\n<li>KlingO1_NoVideo_720P</li>\n<li>KlingO1_NoVideo_1080P</li>\n<li>Kling2.6</li>\n<li>Kling2.6Sound</li>\n<li>Kling2.6MotionControl_720P</li>\n<li>Kling2.6MotionControl_1080P</li>\n<li>Kling_Avatar_I2v_720P</li>\n<li>Kling_Avatar_I2v_1080P</li>\n<li>Kling_Identifyface</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>ViduQ2_720P</li>\n<li>ViduQ2_720P_OffPeak</li>\n<li>ViduQ2_1080P</li>\n<li>ViduQ2_1080P_OffPeak</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_720P_OffPeak</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2pro_1080P_OffPeak</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_720P_OffPeak</li>\n<li>ViduQ2turbo_1080P</li>\n<li>ViduQ2turbo_1080P_OffPeak</li>\n<li>ViduQ3pro_720P</li>\n<li>ViduQ3pro_720P_OffPeak</li>\n<li>ViduQ3pro_1080P</li>\n<li>ViduQ3pro_1080P_OffPeak</li>\n<li>Vidu_TemplateEffect</li>\n<li>Hunyuan1.5_720P</li>\n<li>Hunyuan1.5_1080P</li>\n<li>Mingmou1.0_720P</li>\n<li>Mingmou1.0_1080P</li>\n<li>ImageProductImage</li>\n<li>ImageChangeClothes</li>\n<li>VideoProductShowcase</li>\n<li>ImageOutPainting</li>\n<li>unknown</li>",
+          "example": "ViduQ2_720P",
           "member": "string",
           "name": "Specification",
           "output_required": true,
@@ -16509,7 +16509,7 @@
         },
         {
           "disabled": false,
-          "document": "AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li>",
+          "document": "AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li><li> Text：文本。</li>",
           "example": "Image",
           "member": "string",
           "name": "AigcType",
@@ -40309,7 +40309,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所生成图片的宽高比。输入格式为 W:H。\n\n仅生商品图场景有效，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9",
+          "document": "指定所生成图片的宽高比。输入格式为 W:H。\n本字段在以下场景有效：\n* 生商品图场景，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9\n* AI扩图场景。可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9、21:9，可以配合 ImageWidth 和 ImageHeight 使用，规则如下： \n    1. 仅指定 AspectRatio 时，根据原图输入进行自适应调整。\n    2. 指定 AspectRatio 和 ImageWidth 时，ImageHeight  由两者计算得出，反亦是如此。\n    3. 当AspectRatio、ImageWidth、ImageHeight 同时指定的时候，优先使用ImageWidth、ImageHeight。",
           "example": "1:1",
           "member": "string",
           "name": "AspectRatio",
@@ -40327,6 +40327,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出图像宽度，**仅AI扩图场景有效**。",
+          "example": "1920",
+          "member": "uint64",
+          "name": "ImageWidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出图像高度，**仅AI扩图场景有效**。",
+          "example": "1080",
+          "member": "uint64",
+          "name": "ImageHeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

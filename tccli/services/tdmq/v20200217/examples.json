@@ -142,6 +142,14 @@
         "title": "创建订阅组"
       }
     ],
+    "CreateRocketMQGroupV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQGroup\n<公共请求参数>\n\n{\n    \"Remark\": \"测试创建\",\n    \"BroadcastEnable\": \"false\",\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"RetryMaxTimes\": \"16\",\n    \"Namespace\": \"test_namespace\",\n    \"ReadEnable\": \"true\",\n    \"GroupType\": \"TCP\",\n    \"GroupId\": \"test_group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
+        "title": "创建消费组"
+      }
+    ],
     "CreateRocketMQNamespace": [
       {
         "document": "创建命名空间",

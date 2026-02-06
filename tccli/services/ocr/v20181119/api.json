@@ -77,6 +77,13 @@
       "output": "DescribeExtractDocAgentJobResponse",
       "status": "online"
     },
+    "DescribeQuestionMarkAgentJob": {
+      "document": "用于试题批改Agent查询任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。\n\n默认接口请求并发限制：10题/分钟。",
+      "input": "DescribeQuestionMarkAgentJobRequest",
+      "name": "试题批改Agent（查询任务）",
+      "output": "DescribeQuestionMarkAgentJobResponse",
+      "status": "online"
+    },
     "DriverLicenseOCR": {
       "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍告警功能。同时支持识别交管12123 APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
       "input": "DriverLicenseOCRRequest",
@@ -516,6 +523,13 @@
       "input": "SubmitExtractDocAgentJobRequest",
       "name": "提交文档抽取Agent任务",
       "output": "SubmitExtractDocAgentJobResponse",
+      "status": "online"
+    },
+    "SubmitQuestionMarkAgentJob": {
+      "document": "用于试题批改Agent提交任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。\n\n默认接口请求并发限制：10题/分钟。",
+      "input": "SubmitQuestionMarkAgentJobRequest",
+      "name": "试题批改Agent（提交任务）",
+      "output": "SubmitQuestionMarkAgentJobResponse",
       "status": "online"
     },
     "TableOCR": {
@@ -1290,6 +1304,78 @@
         }
       ],
       "usage": "out"
+    },
+    "AnswerInfo": {
+      "document": "单题所有答案区域批改信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "手写答案内容，比如选择题的手写的选项、填空题的手写内容",
+          "example": "A",
+          "member": "string",
+          "name": "HandwriteInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "答案是否正确",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCorrect",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "答案分析结果\n",
+          "example": "正确",
+          "member": "string",
+          "name": "AnswerAnalysis",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "答案区域的4个角点坐标, 是个长度为8的数组\n\n[0,1,2,3,4,5,6,7]\n\n(0,1) 左上角坐标\n(2,3) 右上角坐标\n(4,5) 右下角坐标\n(6,7) 左下角坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,1,2,3,4,5,6,7]",
+          "member": "int64",
+          "name": "HandwriteInfoPositions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回正确答案内容\n\nQuestionConfigMap配置了（“TrueAnswer”：1）才生效返回",
+          "example": "B",
+          "member": "string",
+          "name": "RightAnswer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回题目的知识点内容\n\nQuestionConfigMap配置了（“KnowledgePoints”：1）才生效返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"形近字辨析\"]",
+          "member": "string",
+          "name": "KnowledgePoints",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ArithmeticOCRRequest": {
       "document": "ArithmeticOCR请求参数结构体",
@@ -3131,6 +3217,83 @@
           "name": "ThoughtContent",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuestionMarkAgentJobRequest": {
+      "document": "DescribeQuestionMarkAgentJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务唯一ID。由服务端生成。\t",
+          "example": "1334797167793684480",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuestionMarkAgentJobResponse": {
+      "document": "DescribeQuestionMarkAgentJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.PDFParseFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "PDF解析失败。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "DONE",
+          "member": "string",
+          "name": "JobStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Angle",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "试题批改信息",
+          "example": "无",
+          "member": "MarkInfo",
+          "name": "MarkInfos",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -10390,6 +10553,45 @@
       ],
       "usage": "out"
     },
+    "MarkInfo": {
+      "document": "整张试卷所有题目批改信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "题目的题干信息 \n\n",
+          "example": "1+1=?",
+          "member": "string",
+          "name": "MarkItemTitle",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批改答案列表（每个小题存在多个答案，比如多个填空区域答案，循序按照从左到右，从上到下排列）",
+          "example": "无",
+          "member": "AnswerInfo",
+          "name": "AnswerInfos",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "嵌套题目结构（如果有多层嵌套则会返回子题信息，如果没有嵌套题目则返回空）",
+          "example": "无",
+          "member": "MarkInfo",
+          "name": "MarkInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MedicalInvoice": {
       "document": "医疗票据信息",
       "members": [
@@ -17452,6 +17654,117 @@
           "example": "1334797167793684480",
           "member": "string",
           "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitQuestionMarkAgentJobRequest": {
+      "document": "SubmitQuestionMarkAgentJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。  示例值：/9j/4AAQSkZJRg.....s97n//2Q==",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。  示例值：https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "表示整张试卷批改需要先切题，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "BoolSingleQuestion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": true,
+          "document": "默认false 表示关闭深度思考  true 表示打开深度思考，更深层次推理分析，速度更慢",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeepThink",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "题目信息输出配置，当key对应为true表示开启配置开关。     当key为KnowledgePoints value为true 表示输出每道题结构信息中输出知识点内容；当key为TrueAnswer  value为true 表示输出每道题的正确答案 ；当key为ReturnAnswerPosition  value为false表示不输出手写答案坐标（降低处理耗时，按需输出）； 设置方式参考  {\"KnowledgePoints\":true,\"TrueAnswer\":true}",
+          "example": "{\"KnowledgePoints\":true, \"TrueAnswer\": true}",
+          "member": "string",
+          "name": "QuestionConfigMap",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅有单题有效，如果切题有多题则不生效，单题批改的时候作为参考答案输入到批改模型中",
+          "example": "D",
+          "member": "string",
+          "name": "ReferenceAnswer",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitQuestionMarkAgentJobResponse": {
+      "document": "SubmitQuestionMarkAgentJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务唯一ID。由服务端生成.",
+          "example": "1334797167793684480",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）",
+          "example": "无",
+          "member": "QuestionInfo",
+          "name": "QuestionInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "题目切题数量，作为计费题目数总量",
+          "example": "2",
+          "member": "string",
+          "name": "QuestionCount",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

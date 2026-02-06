@@ -1139,6 +1139,42 @@
       ],
       "usage": "out"
     },
+    "BackupTotalSize": {
+      "document": "实例备份总大小",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全量备份总大小，单位字节",
+          "example": "1024",
+          "member": "int64",
+          "name": "SnapshotSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量备份总大小",
+          "example": "1024",
+          "member": "int64",
+          "name": "OplogSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费额度",
+          "example": "1024",
+          "member": "int64",
+          "name": "FreeQuota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClientConnection": {
       "document": "客户端连接信息，包括客户端IP和连接数",
       "members": [
@@ -2916,6 +2952,16 @@
         },
         {
           "disabled": false,
+          "document": "备份频率。备份时间间隔，单位小时。取值12，24",
+          "example": "24",
+          "member": "int64",
+          "name": "BackupFrequency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "自动备份开始时间。",
           "example": "1",
           "member": "uint64",
@@ -2926,11 +2972,91 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。\n- 0：逻辑备份。\n- 1：物理备份。",
+          "document": "备份方式。\n- 0：逻辑备份。\n- 1：物理备份。\n- 3：快照备份。\n**说明**:\n1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。\n2. 实例开通存储加密，则备份方式不能为物理备份。",
           "example": "1",
           "member": "uint64",
           "name": "BackupMethod",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周几备份，0-6，逗号分割",
+          "example": "0,1,2,3",
+          "member": "string",
+          "name": "ActiveWeekdays",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "长期备份周期。weekly-按周，monthly-按月，空不开启。",
+          "example": "monthly",
+          "member": "string",
+          "name": "LongTermInterval",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "长期备份的日期，周0-6，月1-31",
+          "example": "0,1",
+          "member": "string",
+          "name": "LongTermActiveDays",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "长期备份保留时间",
+          "example": "30",
+          "member": "int64",
+          "name": "LongTermExpiredDays",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量备份保留时间",
+          "example": "7",
+          "member": "int64",
+          "name": "OplogExpiredDays",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份版本号。0-旧备份方式，1-高级备份",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份大小",
+          "example": "无",
+          "member": "BackupTotalSize",
+          "name": "BackupTotalSize",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警额度",
+          "example": "100",
+          "member": "int64",
+          "name": "AlertThreshold",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8077,7 +8203,7 @@
         },
         {
           "disabled": false,
-          "document": "长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。\n- 不开启（默认）：不启用长期保留功能。\n- 按周保留： 指定为 weekly。\n- 按月保留： 指定为 monthly。",
+          "document": "长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval",
           "example": "monthly",
           "member": "string",
           "name": "LongTermUnit",
@@ -8122,10 +8248,28 @@
         },
         {
           "disabled": false,
-          "document": "设置备份数据集存储空间使用率的告警阈值。\n- 单位：%。\n-  默认值：100。\n- 取值范围：[50,300]。",
+          "document": "设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold",
           "example": "100",
           "member": "int64",
           "name": "AlarmWaterLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。",
+          "example": "monthly",
+          "member": "string",
+          "name": "LongTermInterval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。",
+          "example": "100",
+          "member": "int64",
+          "name": "AlertThreshold",
           "required": false,
           "type": "int"
         }

@@ -1,0 +1,177 @@
+{
+  "actions": {
+    "CancelIsolateDBInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelIsolateDBInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql3-d8fffc3c\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessInstanceIds\": [\n            \"tdsql3-d8fffc3c\",\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"FailedInstanceIds\": [\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
+        "title": "批量隔离实例"
+      }
+    ],
+    "CreateDBSBackup": [
+      {
+        "document": "手工创建一个备份集",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-xxx\",\n    \"BackupMethod\": \"physical\",\n    \"BackupType\": \"full\",\n    \"BackupName\": \"test-backup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"BackupSetId\": 0,\n        \"RequestId\": \"fsafdsfasdfasdfsd\"\n    }\n}",
+        "title": "创建备份集"
+      }
+    ],
+    "DeleteDBSBackupSets": [
+      {
+        "document": "删除一个手工备份集",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupSets\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdstore-dfasfa\",\n    \"BackupSetIdList\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Total\": 0,\n        \"Deleted\": 0,\n        \"RequestId\": \"f234c20b-d71a-4abe-af8c-a8ef15df73d8\"\n    }\n}",
+        "title": "删除备份集"
+      }
+    ],
+    "DescribeBillingEnable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingEnable\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "查询"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingEnable\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f656ed5f-e408-439c-bcc6-1fae1a126a69\"\n    }\n}",
+        "title": "查询计费开关"
+      }
+    ],
+    "DescribeDBParameters": [
+      {
+        "document": "",
+        "input": "https://tdmysql.tencentcloudapi.com/?Action=DescribeDBParameters\n&InstanceId=tdsql3-ige1a5k3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"tdsql3-ige1a5k3\",\n        \"Params\": [\n            {\n                \"Default\": \"1\",\n                \"SetValue\": \"\",\n                \"Value\": \"1\",\n                \"Param\": \"auto_increment_increment\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"65535\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                },\n                \"HaveSetValue\": false,\n                \"NeedRestart\": true,\n                \"Description\": \"\"\n            },\n            {\n                \"Default\": \"ON\",\n                \"SetValue\": \"\",\n                \"Description\": \"\",\n                \"Value\": \"ON\",\n                \"Param\": \"autocommit\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF\",\n                    \"Type\": \"enum\"\n                },\n                \"HaveSetValue\": false,\n                \"NeedRestart\": true\n            }\n        ],\n        \"RequestId\": \"914db412-d6e6-47ad-8e62-d06e02e52a56\"\n    }\n}",
+        "title": "获取数据库当前参数"
+      }
+    ],
+    "DescribeDBSAvailableRecoveryTime": [
+      {
+        "document": "可恢复时间查询",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableRecoveryTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdpg-qw8te1qw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2024-10-16 12:00:00\",\n        \"EndTime\": \"2024-10-21 12:00:00\",\n        \"Intervals\": [\n            {\n                \"StartTime\": \"2024-10-16 12:00:00\",\n                \"EndTime\": \"2024-10-21 12:00:00\",\n                \"MajorVersion\": \"18.3\",\n                \"MinorVersion\": \"18.3.0\"\n            }\n        ],\n        \"RequestId\": \"ea784d7e-cdcc-41e0-bc6b-4532815d6bf2\"\n    }\n}",
+        "title": "可恢复时间查询"
+      }
+    ],
+    "DescribeDBSCloneInstances": [
+      {
+        "document": "查询实例克隆列表",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSCloneInstances\n<公共请求参数>\n\n{\n    \"SourceInstanceId\": \"tdsql3-86b3580b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CloneEndTime\": \"2025-12-24 11:40:15\",\n                \"CloneId\": 652,\n                \"CloneInsType\": \"Normal\",\n                \"CloneInstanceId\": \"tdsql3-c0dba2de\",\n                \"CloneInstanceIsDeleted\": false,\n                \"CloneProgress\": 100,\n                \"CloneStartTime\": \"2025-12-24 11:15:35\",\n                \"CloneStatus\": \"Recovered\",\n                \"CloneTime\": \"2025-12-24 11:10:53\",\n                \"CloneType\": \"BackupSet\",\n                \"CreateTime\": \"2025-12-24 11:15:35\",\n                \"DBType\": \"tdstore\",\n                \"Region\": \"ap-chengdu\",\n                \"SourceInstanceId\": \"tdsql3-86b3580b\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"76d4fb20-084c-46fb-99f2-6e32dfa420ea\"\n    }\n}",
+        "title": "查询实例克隆列表"
+      }
+    ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "查询实例安全组",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-be88fd7f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2024-06-14 17:54:00\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"DROP\",\n                        \"CidrIp\": \"::/0\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-bbu5xxm3\",\n                \"SecurityGroupName\": \"default\",\n                \"SecurityGroupRemark\": \"System created security group\"\n            }\n        ],\n        \"RequestId\": \"9690ec5d-4969-4bd9-ab0a-221437f617f5\",\n        \"VIP\": \"10.0.0.25\",\n        \"VPort\": \"3306\"\n    }\n}",
+        "title": "查询实例安全组"
+      }
+    ],
+    "DescribeDatabaseObjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseObjects\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-01d1c3ed\",\n    \"DbName\": \"sys\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DbName\": \"mysql\",\n        \"Funcs\": null,\n        \"InstanceId\": \"tdsql3-01d1c3ed\",\n        \"Procs\": null,\n        \"RequestId\": \"0e864abd-7dbb-468c-bbd0-fe8346bfdaf2\",\n        \"Tables\": [\n            {\n                \"Table\": \"memory_global_by_current_bytes\"\n            }\n        ],\n        \"Views\": null\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeDatabaseTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseTable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-01d1c3ed\",\n    \"Table\": \"user\",\n    \"DbName\": \"my-db\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Cols\": [\n            {\n                \"Col\": \"Host\",\n                \"Type\": \"char(60)\"\n            }\n        ],\n        \"DbName\": \"mysql\",\n        \"InstanceId\": \"tdsql3-01d1c3ed\",\n        \"RequestId\": \"d70d9f4e-80d8-459f-8771-73e87bd553c1\",\n        \"Table\": \"user\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseTable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-2123sasd\",\n    \"Table\": \"dasf\",\n    \"DbName\": \"adsf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Cols\": null,\n        \"DbName\": \"\",\n        \"InstanceId\": \"\",\n        \"RequestId\": \"5cdd7082-d8b9-4e4c-87ea-aabe45c91b3e\",\n        \"Table\": \"\"\n    }\n}",
+        "title": "11"
+      }
+    ],
+    "DescribeFlow": [
+      {
+        "document": "查询flow",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlow\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce9140d0-da19-497f-8a3b-d8f2ac27d52a\"\n    }\n}",
+        "title": "查询flow状态"
+      }
+    ],
+    "DestroyInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql3-d8fffc3c\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessInstanceIds\": [\n            \"tdsql3-d8fffc3c\",\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"FailedInstanceIds\": [\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
+        "title": "批量隔离实例"
+      }
+    ],
+    "IsolateDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDBInstance\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql3-d8fffc3c\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessInstanceIds\": [\n            \"tdsql3-d8fffc3c\",\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"FailedInstanceIds\": [\n            \"tdsql3-d8fffc4s\"\n        ],\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
+        "title": "批量隔离实例"
+      }
+    ],
+    "ModifyAutoRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoRenewFlag\n<公共请求参数>\n\n{\n    \"AutoRenewFlag\": \"1\",\n    \"InstanceIds\": [\n        \"tdsql3-ec8b11f8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7a16c18-afce-4746-86c7-2040e0238b0b\"\n    }\n}",
+        "title": "修改"
+      }
+    ],
+    "ModifyBinlogStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-f0e5ff5b\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9ddd5d0-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
+        "title": "ModifyBinlogStatus"
+      }
+    ],
+    "ModifyDBInstanceSecurityGroups": [
+      {
+        "document": "修改实例安全组",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-be88fd7f\",\n    \"SecurityGroupIds\": [\n        \"sg-bbu5xxm3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dab65c4d-b0c3-427f-b39e-3323606bba06\"\n    }\n}",
+        "title": "修改实例安全组"
+      }
+    ],
+    "ModifyDBParameters": [
+      {
+        "document": "",
+        "input": "https://tdmysql.tencentcloudapi.com/?Action=ModifyDBParameters\n&InstanceId=tdsql-ige1a5k3\n&Params.0.Param=character_set_server\n&Params.0.Value=utf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskID\": 123\n    }\n}",
+        "title": "修改数据库参数"
+      }
+    ],
+    "ModifyDBSBackupPolicy": [
+      {
+        "document": "修改实例备份策略",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-31l2r0yn912rg\",\n    \"BackupPolicy\": {\n        \"FullRetentionPeriod\": 7,\n        \"LogRetentionPeriod\": 8,\n        \"PeriodTime\": \"0,1,2,3,4,5,6\",\n        \"BackupMethod\": \"physical\",\n        \"BackupStartTime\": \"00:00\",\n        \"BackupEndTime\": \"04:00\",\n        \"StorageType\": \"COS\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Msg\": \"Modify backup policy successfully\",\n        \"RequestId\": \"5cf77a8a-94e8-4fae-8abf-a48284f75606\"\n    }\n}",
+        "title": "修改实例备份策略"
+      }
+    ],
+    "ModifyDBSBackupSetComment": [
+      {
+        "document": "修改备份集备注",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupSetComment\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-31l2r0yn912rg\",\n    \"BackupSetId\": 28217173338212,\n    \"NewBackupName\": \"test-manual\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Msg\": \"Modify backup set successfully\",\n        \"RequestId\": \"fa6a683c-5625-402b-9ab1-7b2a82a85fee\"\n    }\n}",
+        "title": "修改备份集备注"
+      }
+    ],
+    "ModifyInstanceName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceName\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-e732378b\",\n    \"InstanceName\": \"new-instance-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9ddd5d0-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
+        "title": "修改实例名称"
+      }
+    ]
+  },
+  "version": "1.0"
+}

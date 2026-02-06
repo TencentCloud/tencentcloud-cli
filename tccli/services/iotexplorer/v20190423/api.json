@@ -5301,6 +5301,15 @@
           "name": "InstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义工具配置，最多可创建10个",
+          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"type\":\"object\",\"properties\":{\"device_id\":{\"type\":\"string\",\"description\":\"设备ID\"}},\"required\":[\"device_id\"]}}}]",
+          "member": "string",
+          "name": "CustomTools",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17178,6 +17187,15 @@
           "name": "AgentConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义工具配置，最多可创建10个",
+          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"type\":\"object\",\"properties\":{\"device_id\":{\"type\":\"string\",\"description\":\"设备ID\"}},\"required\":[\"device_id\"]}}}]",
+          "member": "string",
+          "name": "CustomTools",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19753,6 +19771,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义工具列表，最多可创建10个",
+          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"properties\":{\"device_id\":{\"description\":\"设备ID\",\"type\":\"string\"}},\"required\":[\"device_id\"],\"type\":\"object\"}}}]",
+          "member": "string",
+          "name": "CustomTools",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

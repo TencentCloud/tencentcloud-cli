@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateNoticeContentTmpl": {
+      "document": "创建自定义通知内容模板",
+      "input": "CreateNoticeContentTmplRequest",
+      "name": "创建通知内容模板",
+      "output": "CreateNoticeContentTmplResponse",
+      "status": "online"
+    },
     "DescribeAlarmNotifyHistories": {
       "document": "按需查询告警的通知历史",
       "input": "DescribeAlarmNotifyHistoriesRequest",
@@ -15,6 +22,70 @@
     "serviceShortName": "monitor"
   },
   "objects": {
+    "CreateNoticeContentTmplRequest": {
+      "document": "CreateNoticeContentTmpl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名称",
+          "example": "自定义内容模板",
+          "member": "string",
+          "name": "TmplName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板内容",
+          "example": "无",
+          "member": "NoticeContentTmplItem",
+          "name": "TmplContents",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板语言 en/zh",
+          "example": "zh",
+          "member": "string",
+          "name": "TmplLanguage",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNoticeContentTmplResponse": {
+      "document": "CreateNoticeContentTmpl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义内容模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "TmplID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAlarmNotifyHistoriesRequest": {
       "document": "DescribeAlarmNotifyHistories请求参数结构体",
       "members": [
@@ -96,6 +167,201 @@
       ],
       "type": "object"
     },
+    "DingDingRobotNoticeTmpl": {
+      "document": "钉钉机器人内容模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容模板",
+          "example": "告警通知模板{{.PolicyName}}",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题模板",
+          "example": "标题{{.PolicyName}}",
+          "member": "string",
+          "name": "TitleTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DingDingRobotNoticeTmplMatcher": {
+      "document": "钉钉机器人通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid;\nTrigger 告警触发; Recovery 告警恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板配置",
+          "example": "无",
+          "member": "DingDingRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FeiShuRobotNoticeTmpl": {
+      "document": "飞书机器人内容模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容模板",
+          "example": "告警通知模板{{.PolicyName}}",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题模板",
+          "example": "标题{{.PolicyName}}",
+          "member": "string",
+          "name": "TitleTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FeiShuRobotNoticeTmplMatcher": {
+      "document": "飞书机器人通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid;\nTrigger 告警触发; Recovery 告警恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板配置",
+          "example": "无",
+          "member": "FeiShuRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NoticeContentTmplItem": {
+      "document": "内容通知模板元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "官网通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmplMatcher",
+          "name": "QCloudYehe",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业微信机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WeWorkRobotNoticeTmplMatcher",
+          "name": "WeWorkRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "钉钉机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DingDingRobotNoticeTmplMatcher",
+          "name": "DingDingRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "飞书机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FeiShuRobotNoticeTmplMatcher",
+          "name": "FeiShuRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义Webhook通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebhookNoticeTmplMatcher",
+          "name": "Webhook",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Teams机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TeamsRobotNoticeTmplMatcher",
+          "name": "TeamsRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "PagerDutyRobot机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PagerDutyRobotNoticeTmplMatcher",
+          "name": "PagerDutyRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PageByNoParams": {
       "document": "分页请求参数",
       "members": [
@@ -120,6 +386,475 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PagerDutyRobotNoticeTmpl": {
+      "document": "告警通知自定义PagerDutyRobot内容模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求体模板 仅支持json",
+          "example": "e3sibmFtZSI6ICJ7ey5zdGFmZn19In0=",
+          "member": "string",
+          "name": "Body",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求头 暂时未支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PagerDutyRobotNoticeTmplHeader",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标题模板",
+          "example": "标题",
+          "member": "string",
+          "name": "TitleTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PagerDutyRobotNoticeTmplHeader": {
+      "document": "告警通知自定义PagerDutyRobot模板中的请求体头部描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "http请求中header的key",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "http请求中header的value",
+          "example": "[\"v1\", \"v2\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PagerDutyRobotNoticeTmplMatcher": {
+      "document": "告警通知自定义PagerDutyRobot的通知内容模板匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid; Trigger 告警触发; Recovery 告警恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义PagerDutyRobot内容模板",
+          "example": "无",
+          "member": "PagerDutyRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QCloudYeheNoticeTmpl": {
+      "document": "官网通知内容模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "邮件通知渠道",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmplItem",
+          "name": "Email",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业微信通知渠道",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmplItem",
+          "name": "QYWX",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "短信通知渠道",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmplItem",
+          "name": "SMS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音通知渠道",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmplItem",
+          "name": "Voice",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "微信通知渠道",
+          "example": "无",
+          "member": "QCloudYeheWeChatNoticeTmplItem",
+          "name": "WeChat",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站内信通知渠道",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmplItem",
+          "name": "Site",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安灯通知渠道",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmplItem",
+          "name": "Andon",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QCloudYeheNoticeTmplItem": {
+      "document": "官网通知内容模板元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容模板",
+          "example": "告警通知模板{{.PolicyName}}",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "告警通知模板{{.PolicyName}}",
+          "member": "string",
+          "name": "TitleTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QCloudYeheNoticeTmplMatcher": {
+      "document": "官网内容通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid;\nTrigger 告警触发; Recovery 告警恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板配置",
+          "example": "无",
+          "member": "QCloudYeheNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QCloudYeheWeChatNoticeTmplItem": {
+      "document": "官网通知内容模板元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警内容模板",
+          "example": "{{.content}}",
+          "member": "string",
+          "name": "AlarmContentTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警对象模板",
+          "example": "{{.object}}",
+          "member": "string",
+          "name": "AlarmObjectTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警地域模板",
+          "example": "{{.region_fmt}}",
+          "member": "string",
+          "name": "AlarmRegionTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警时间模板",
+          "example": "触发时间{{.first_trigger_time_fmt}}",
+          "member": "string",
+          "name": "AlarmTimeTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TeamsRobotNoticeTmpl": {
+      "document": "企业微信机器人内容模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容模板",
+          "example": "告警通知模板{{.PolicyName}}",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TeamsRobotNoticeTmplMatcher": {
+      "document": "企业微信机器人通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid;\nTrigger 告警触发; Recovery 告警恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板配置",
+          "example": "无",
+          "member": "TeamsRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WeWorkRobotNoticeTmpl": {
+      "document": "企业微信机器人内容模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容模板",
+          "example": "告警通知模板{{.PolicyName}}",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WeWorkRobotNoticeTmplMatcher": {
+      "document": "企业微信机器人通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid;\nTrigger 告警触发; Recovery 告警恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板配置",
+          "example": "无",
+          "member": "WeWorkRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WebhookNoticeTmpl": {
+      "document": "告警通知自定义Webhook内容模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求体",
+          "example": "e3sibmFtZSI6ICJ7ey5zdGFmZn19In0=",
+          "member": "string",
+          "name": "Body",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求体的类型，非必填、默认为JSON\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "application/json",
+          "member": "string",
+          "name": "BodyContentType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\": \"k\", \"Values\": [\"v\"]}",
+          "member": "WebhookNoticeTmplHeader",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WebhookNoticeTmplHeader": {
+      "document": "告警通知自定义Webhook模板中的请求体头部描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "http请求中header的key",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "http请求中header的value",
+          "example": "[\"v1\", \"v2\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WebhookNoticeTmplMatcher": {
+      "document": "告警通知自定义Webhook的通知内容模板匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid; Trigger 告警触发; Recovery 告警恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义Webhook内容模板",
+          "example": "无",
+          "member": "WebhookNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
