@@ -6,33 +6,46 @@ Input:
 
 ```
 tccli tcr DescribeTagRetentionRules --cli-unfold-argument  \
-    --RegistryId tcr-dg284imq \
-    --NamespaceName ns2 \
-    --Limit 10 \
-    --Offset 1
+    --RegistryId tcr-dc0dgswk
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3e5adfc9-766a-49c9-bd18-c8c0ca8c9050",
         "RetentionPolicyList": [
             {
-                "CronSetting": "daily",
+                "AdvancedRuleItems": [
+                    {
+                        "RepositoryFilter": {
+                            "Decoration": "repoMatches",
+                            "Pattern": "*1"
+                        },
+                        "RetentionPolicy": {
+                            "Key": "latestPushedK",
+                            "Value": 7
+                        },
+                        "TagFilter": {
+                            "Decoration": "matches",
+                            "Pattern": "v*"
+                        }
+                    }
+                ],
+                "CronSetting": "manual",
                 "Disabled": true,
-                "NamespaceName": "ns2",
-                "NextExecutionTime": "2025-01-03T06:00:00+08:00",
-                "RetentionId": 18,
+                "NamespaceName": "dev",
+                "NextExecutionTime": "0001-01-01T00:00:00Z",
+                "RetentionId": 2,
                 "RetentionRuleList": [
                     {
                         "Key": "latestPushedK",
-                        "Value": 10
+                        "Value": 7
                     }
                 ]
             }
         ],
-        "TotalCount": 1
+        "TotalCount": 2,
+        "RequestId": "daafdd9a-b0cc-4f36-8522-c901874cb38e"
     }
 }
 ```

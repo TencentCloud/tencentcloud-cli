@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cls CheckRechargeKafkaServer --cli-unfold-argument  \
-    --KafkaType 1 \
-    --ServerAddr test.cls.tencentyun.com:9095 \
-    --IsEncryptionAddr False
+    --KafkaType 0 \
+    --KafkaInstance ckafka-8j4ro59xx \
+    --UserKafkaMeta.KafkaVersion 2.0.0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx",
-        "Status": 0
+        "Status": 0,
+        "RequestId": "add346ce-36c5-4961-917f-c020b5fc4bfd"
     }
 }
 ```

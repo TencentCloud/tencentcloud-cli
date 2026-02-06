@@ -26,10 +26,10 @@
     ],
     "CreateAutoSnapshotPolicy": [
       {
-        "document": "创建文件系统快照策略",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"DayOfWeek\": \"1,2\",\n    \"Hour\": \"2,4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"AutoSnapshotPolicyId\": \"asp-12345\"\n    }\n}",
-        "title": "创建文件系统快照策略"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"Hour\": \"1\",\n    \"PolicyName\": \"abd\",\n    \"DayOfWeek\": \"1\",\n    \"AliveDays\": 1,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"u90e8u95e8\",\n            \"TagValue\": \"u4e91u4ea7u54c1u4e00u90e8\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicyId\": \"asp-fglw8r91\",\n        \"RequestId\": \"0c37adaf-f6bc-4fca-b387-454ea93127e1\"\n    }\n}",
+        "title": "创建快照策略"
       }
     ],
     "CreateCfsFileSystem": [
@@ -67,7 +67,7 @@
     "CreateDataFlow": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataFlow\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-44d53b63e\",\n    \"SourceStorageType\": \"S3_COS\",\n    \"SourceStorageAddress\": \"https://aileen-data-flow-1251000004.cos.ap-guangzhou.myqcloud.com\",\n    \"SourcePath\": \"test3\",\n    \"TargetPath\": \"/cfs/test11\",\n    \"SecretId\": \"AKIDbzzYj65vue75sC1yg8P4cyBHBpLk\",\n    \"SecretKey\": \"onE8m9NN82ik6h3FCvXt2uc3Sjp\",\n    \"DataFlowName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataFlow\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-44d53b63e\",\n    \"SourceStorageType\": \"S3_COS\",\n    \"SourceStorageAddress\": \"https://aileen-data-flow-1251000004.cos.ap-guangzhou.myqcloud.com\",\n    \"SourcePath\": \"test3\",\n    \"TargetPath\": \"/cfs/test11\",\n    \"SecretId\": \"AKIDbzzYj65vue75sC1yg8P4cyBHBpLk\",\n    \"SecretKey\": \"onE8m9NN82ik6h3FCvXt2uc3Sjp\",\n    \"DataFlowName\": \"abctest\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataFlowId\": \"cfs-dataflow-4f827203\",\n        \"RequestId\": \"c5369436-a47c-4504-9cfa-f1f40c2c969f\"\n    }\n}",
         "title": "创建数据流动"
       }
@@ -109,7 +109,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"AutoSnapshotPolicyId\": \"asp-12345\"\n    }\n}",
-        "title": "删除策略"
+        "title": "删除定期快照策略"
       }
     ],
     "DeleteCfsFileSystem": [
@@ -168,14 +168,6 @@
         "title": "删除迁移任务"
       }
     ],
-    "DeleteMountTarget": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMountTarget\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"MountTargetId\": \"mount-12345\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
-        "title": "删除挂载点"
-      }
-    ],
     "DeleteUserQuota": [
       {
         "document": "",
@@ -196,7 +188,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableZoneInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RegionZones\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"gz\",\n                \"RegionCnName\": \"广州\",\n                \"RegionStatus\": \"AVAILABLE\",\n                \"Zones\": [\n                    {\n                        \"Zone\": \"ap-guangzhou-2\",\n                        \"ZoneId\": 100002,\n                        \"ZoneName\": \"广州二区\",\n                        \"ZoneCnName\": \"广州二区\",\n                        \"Types\": [\n                            {\n                                \"Type\": \"SD\",\n                                \"Prepayment\": true,\n                                \"Protocols\": [\n                                    {\n                                        \"Protocol\": \"NFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    }\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-3\",\n                        \"ZoneId\": 100003,\n                        \"ZoneName\": \"广州三区\",\n                        \"ZoneCnName\": \"广州三区\",\n                        \"Types\": [\n                            {\n                                \"Type\": \"SD\",\n                                \"Prepayment\": true,\n                                \"Protocols\": [\n                                    {\n                                        \"Protocol\": \"NFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    }\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-4\",\n                        \"ZoneId\": 100004,\n                        \"ZoneName\": \"广州四区\",\n                        \"ZoneCnName\": \"广州四区\",\n                        \"Types\": [\n                            {\n                                \"Type\": \"SD\",\n                                \"Prepayment\": true,\n                                \"Protocols\": [\n                                    {\n                                        \"Protocol\": \"NFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"a7493b9c-8650-409a-a950-8d4afa18b5ec\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RegionZones\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionCnName\": \"广州\",\n                \"RegionName\": \"gz\",\n                \"RegionStatus\": \"AVAILABLE\",\n                \"Zones\": [\n                    {\n                        \"Types\": [\n                            {\n                                \"Prepayment\": true,\n                                \"Protocols\": [\n                                    {\n                                        \"Protocol\": \"NFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    },\n                                    {\n                                        \"Protocol\": \"CIFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    }\n                                ],\n                                \"Type\": \"SD\"\n                            }\n                        ],\n                        \"Zone\": \"ap-guangzhou-3\",\n                        \"ZoneCnName\": \"广州三区\",\n                        \"ZoneId\": 100003,\n                        \"ZoneName\": \"广州三区\"\n                    },\n                    {\n                        \"Types\": [\n                            {\n                                \"Prepayment\": true,\n                                \"Protocols\": [\n                                    {\n                                        \"Protocol\": \"NFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    },\n                                    {\n                                        \"Protocol\": \"CIFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    }\n                                ],\n                                \"Type\": \"SD\"\n                            }\n                        ],\n                        \"Zone\": \"ap-guangzhou-4\",\n                        \"ZoneCnName\": \"广州四区\",\n                        \"ZoneId\": 100004,\n                        \"ZoneName\": \"广州四区\"\n                    },\n                    {\n                        \"Types\": [\n                            {\n                                \"Prepayment\": true,\n                                \"Protocols\": [\n                                    {\n                                        \"Protocol\": \"NFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    },\n                                    {\n                                        \"Protocol\": \"CIFS\",\n                                        \"SaleStatus\": \"saling\"\n                                    }\n                                ],\n                                \"Type\": \"SD\"\n                            }\n                        ],\n                        \"Zone\": \"ap-guangzhou-6\",\n                        \"ZoneCnName\": \"广州六区\",\n                        \"ZoneId\": 100006,\n                        \"ZoneName\": \"广州六区\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f3585511-5134-43f2-ba14-b4b528119fa3\"\n    }\n}",
         "title": "查询区域可用情况"
       }
     ],
@@ -433,7 +425,7 @@
     "UpdateCfsFileSystemSizeLimit": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsFileSystemSizeLimit\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\",\n    \"FsLimit\": \"1000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsFileSystemSizeLimit\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\",\n    \"FsLimit\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "更新文件系统存储容量限制"
       }

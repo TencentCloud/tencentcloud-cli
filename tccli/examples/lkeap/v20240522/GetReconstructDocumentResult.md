@@ -25,3 +25,29 @@ Output:
 }
 ```
 
+**Example 2: 任务处理失败示例**
+
+
+
+Input: 
+
+```
+tccli lkeap GetReconstructDocumentResult --cli-unfold-argument  \
+    --TaskId 25adcef61750343903609
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FailedPages": [],
+        "RequestId": "a37b0d0b-c3af-44bd-iuiu-632442644a80",
+        "Status": "Failed",
+        "Error": {
+            "Code": "InvalidParameter.FileURLInvalid",
+            "Message": "url download failed"
+        }
+    }
+}
+```
+

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf AssociateConfigWithGroup --cli-unfold-argument  \
-    --ConfigId dddd
+    --ConfigId apm-busi-log-cfg-maeprb6v
 ```
 
 Output: 

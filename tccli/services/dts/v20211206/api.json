@@ -1,7 +1,7 @@
 {
   "actions": {
     "CompleteMigrateJob": {
-      "document": "本接口（CompleteMigrateJob）用于完成数据迁移任务。\n选择采用增量迁移方式的任务, 需要在迁移进度进入准备完成阶段后, 调用本接口, 停止迁移增量数据。\n通过DescribeMigrationJobs接口查询到任务的状态为准备完成（Status=\"readyComplete\"）时，此时可以调用本接口完成迁移任务。\n",
+      "document": "本接口（CompleteMigrateJob）用于完成数据迁移任务。\n选择采用增量迁移方式的任务, 需要在迁移进度进入准备完成阶段后, 调用本接口, 停止迁移增量数据。\n通过DescribeMigrationJobs接口查询到任务的状态为准备完成（Status=\"readyComplete\"）时，此时可以调用本接口完成迁移任务。",
       "input": "CompleteMigrateJobRequest",
       "name": "完成数据迁移任务",
       "output": "CompleteMigrateJobResponse",
@@ -50,16 +50,16 @@
       "status": "online"
     },
     "CreateConsumerGroup": {
-      "document": "为订阅实例创建消费者组",
+      "document": "为订阅实例创建消费者组。\n只有状态为运行中的实例支持创建消费组。",
       "input": "CreateConsumerGroupRequest",
       "name": "创建消费组",
       "output": "CreateConsumerGroupResponse",
       "status": "online"
     },
     "CreateMigrateCheckJob": {
-      "document": "校验迁移任务，\n在开始迁移前, 必须调用本接口创建校验迁移任务, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrationCheckJob查看，\n校验成功后,迁移任务若有修改, 则必须重新校验并通过后, 才能开始迁移\n",
+      "document": "创建校验迁移任务，\n在开始迁移前, 必须调用本接口创建校验迁移任务, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrationCheckJob查看，\n校验成功后,迁移任务若有修改, 则必须重新校验并通过后, 才能开始迁移",
       "input": "CreateMigrateCheckJobRequest",
-      "name": "校验迁移任务",
+      "name": "创建校验迁移任务",
       "output": "CreateMigrateCheckJobResponse",
       "status": "online"
     },
@@ -91,6 +91,13 @@
       "output": "CreateSubscribeCheckJobResponse",
       "status": "online"
     },
+    "CreateSyncCompareTask": {
+      "document": "本接口用于创建数据对比任务，创建成功后会返回数据对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9，创建成功后可通过StartSyncCompare启动一致性校验任务",
+      "input": "CreateSyncCompareTaskRequest",
+      "name": "创建同步一致性校验任务",
+      "output": "CreateSyncCompareTaskResponse",
+      "status": "online"
+    },
     "CreateSyncJob": {
       "document": "创建一个同步任务",
       "input": "CreateSyncJobRequest",
@@ -112,6 +119,13 @@
       "output": "DeleteConsumerGroupResponse",
       "status": "online"
     },
+    "DeleteSyncCompareTask": {
+      "document": "删除一致性校验任务。当一致性校验任务状态为success、failed、canceled 时可以执行此操作。",
+      "input": "DeleteSyncCompareTaskRequest",
+      "name": "删除同步一致性校验任务",
+      "output": "DeleteSyncCompareTaskResponse",
+      "status": "online"
+    },
     "DescribeCheckSyncJobResult": {
       "document": "查询同步校验任务结果，检查必要参数和周边配置",
       "input": "DescribeCheckSyncJobResultRequest",
@@ -127,7 +141,7 @@
       "status": "online"
     },
     "DescribeCompareTasks": {
-      "document": "查询一致性校验任务列表，调用该接口后可通过接口`DescribeCompareTasks` 查询一致性校验任务列表来获得启动后的状态。",
+      "document": "查询一致性校验任务列表。",
       "input": "DescribeCompareTasksRequest",
       "name": "查询一致性校验任务列表",
       "output": "DescribeCompareTasksResponse",
@@ -210,6 +224,20 @@
       "output": "DescribeSubscribeReturnableResponse",
       "status": "online"
     },
+    "DescribeSyncCompareReport": {
+      "document": "查询一致性校验任务详情",
+      "input": "DescribeSyncCompareReportRequest",
+      "name": "查询同步一致性校验任务详情",
+      "output": "DescribeSyncCompareReportResponse",
+      "status": "online"
+    },
+    "DescribeSyncCompareTasks": {
+      "document": "查询一致性校验任务列表。通过该接口可查看改任务下所有一致性校验任务。",
+      "input": "DescribeSyncCompareTasksRequest",
+      "name": "查询同步一致性校验任务列表",
+      "output": "DescribeSyncCompareTasksResponse",
+      "status": "online"
+    },
     "DescribeSyncJobs": {
       "document": "查询同步任务信息",
       "input": "DescribeSyncJobsRequest",
@@ -239,7 +267,7 @@
       "status": "online"
     },
     "IsolateMigrateJob": {
-      "document": " 隔离退还数据迁移服务。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。对于计费任务，在任务隔离后可进行解除隔离(RecoverMigrationJob)操作或直接进行下线销毁(DestroyMigrateJob)操作。对于不计费任务，调用此接口会直接销毁任务，无法进行恢复操作。",
+      "document": "隔离退还数据迁移服务。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。对于计费任务，在任务隔离后可进行解除隔离(RecoverMigrateJob)操作或直接进行下线销毁(DestroyMigrateJob)操作。对于不计费任务，调用此接口会直接销毁任务，无法进行恢复操作。",
       "input": "IsolateMigrateJobRequest",
       "name": "隔离数据迁移任务",
       "output": "IsolateMigrateJobResponse",
@@ -253,7 +281,7 @@
       "status": "online"
     },
     "IsolateSyncJob": {
-      "document": "隔离同步任务，隔离后可通过查询同步任务信息接口DescribeSyncJobs获取隔离后状态。在任务隔离后可进行解除隔离(RecoverSyncJob)操作或直接进行下线操作。对于不计费任务，调用此接口后会直接删除任务，无法进行恢复操作。",
+      "document": "隔离同步任务，隔离后可通过查询同步任务信息接口DescribeSyncJobs获取隔离后状态。在任务隔离后可进行解除隔离(RecoverSyncJob)操作或直接进行下线(DestroySyncJob)操作。对于不计费任务，调用此接口后会直接删除任务，无法进行恢复操作。",
       "input": "IsolateSyncJobRequest",
       "name": "隔离同步任务",
       "output": "IsolateSyncJobResponse",
@@ -288,7 +316,7 @@
       "status": "online"
     },
     "ModifyMigrateJobSpec": {
-      "document": "调整实例规格，此接口只支持按量计费任务的调整。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
+      "document": "调整实例规格，此接口只支持按量计费任务的调整，且仅在计费或者待计费状态下支持修改。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
       "input": "ModifyMigrateJobSpecRequest",
       "name": "调整实例规格",
       "output": "ModifyMigrateJobSpecResponse",
@@ -302,7 +330,7 @@
       "status": "online"
     },
     "ModifyMigrateRateLimit": {
-      "document": "用户在发现迁移任务对用户的数据库的负载影响较大时、可通过该接口限制任务的传输速率",
+      "document": "用户在发现迁移任务对用户的数据库的负载影响较大时、可通过该接口限制任务的传输速率；此操作仅在任务运行中可执行。",
       "input": "ModifyMigrateRateLimitRequest",
       "name": "修改迁移任务的传输速率",
       "output": "ModifyMigrateRateLimitResponse",
@@ -316,7 +344,7 @@
       "status": "online"
     },
     "ModifyMigrationJob": {
-      "document": "配置迁移服务，配置成功后可通过`CreateMigrationCheckJob` 创建迁移校验任务接口发起校验任务，只有校验通过才能启动迁移任务。",
+      "document": "配置迁移服务，配置成功后可通过`CreateMigrateCheckJob` 创建迁移校验任务接口发起校验任务，只有校验通过才能启动迁移任务。",
       "input": "ModifyMigrationJobRequest",
       "name": "配置迁移服务",
       "output": "ModifyMigrationJobResponse",
@@ -341,6 +369,20 @@
       "input": "ModifySubscribeObjectsRequest",
       "name": "修改订阅对象",
       "output": "ModifySubscribeObjectsResponse",
+      "status": "online"
+    },
+    "ModifySyncCompareTask": {
+      "document": "修改一致性校验任务，在任务创建后启动之前，可修改一致性校验参数",
+      "input": "ModifySyncCompareTaskRequest",
+      "name": "修改同步一致性校验任务",
+      "output": "ModifySyncCompareTaskResponse",
+      "status": "online"
+    },
+    "ModifySyncCompareTaskName": {
+      "document": "修改同步一致性校验任务名称",
+      "input": "ModifySyncCompareTaskNameRequest",
+      "name": "修改同步一致性校验任务名称",
+      "output": "ModifySyncCompareTaskNameResponse",
       "status": "online"
     },
     "ModifySyncJobConfig": {
@@ -379,7 +421,7 @@
       "status": "online"
     },
     "RecoverSyncJob": {
-      "document": "解除隔离同步任务，任务在已隔离状态下可调用该接口解除隔离状态任务，同时可通过查询同步任务信息接口DescribeSyncJobs，获取操作后状态。",
+      "document": "解除隔离同步任务，任务在已隔离状态下可调用该接口解除隔离状态任务，同时可通过查询同步任务信息接口DescribeSyncJobs，获取操作后状态。注意，此接口只支持按量计费实例。",
       "input": "RecoverSyncJobRequest",
       "name": "解除隔离同步任务",
       "output": "RecoverSyncJobResponse",
@@ -393,10 +435,17 @@
       "status": "online"
     },
     "ResetSubscribe": {
-      "document": "本接口(ResetSubscribe)用于重置订阅实例，重置后，可以重新配置订阅任务。\n可以调用 DescribeSubscribeDetail 查询订阅信息判断是否置成功。当SubsStatus变为notStarted时，表示重置成功。",
+      "document": "本接口(ResetSubscribe)用于重置订阅实例，重置后，可以重新配置订阅任务。\n可以调用 [DescribeSubscribeDetail](https://cloud.tencent.com/document/product/571/102944) 查询订阅信息判断是否置成功。当SubsStatus变为notStarted时，表示重置成功。",
       "input": "ResetSubscribeRequest",
       "name": "重置订阅任务",
       "output": "ResetSubscribeResponse",
+      "status": "online"
+    },
+    "ResetSyncJob": {
+      "document": "重置已经结束的同步任务，重置后可以重新配置启动任务。",
+      "input": "ResetSyncJobRequest",
+      "name": "重置任务",
+      "output": "ResetSyncJobResponse",
       "status": "online"
     },
     "ResizeSyncJob": {
@@ -407,7 +456,7 @@
       "status": "online"
     },
     "ResumeMigrateJob": {
-      "document": "重试数据迁移任务，针对异常情况可进行重试，对于redis在失败时也可重试。注意：此操作跳过校验阶段，直接重新发起任务，相当于从StartMigrationJob开始执行。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
+      "document": "重试数据迁移任务，针对异常情况可进行重试，对于redis在失败时也可重试。",
       "input": "ResumeMigrateJobRequest",
       "name": "重试迁移任务",
       "output": "ResumeMigrateJobResponse",
@@ -442,14 +491,14 @@
       "status": "online"
     },
     "StartCompare": {
-      "document": "启动一致性校验任务，启动之前需要先通过接口`CreateCompareTask` 创建一致性校验任务，启动后可通过接口`DescribeCompareTasks` 查询一致性校验任务列表来获得启动后的状态",
+      "document": "启动一致性校验任务，启动之前需要先通过接口 [CreateCompareTask](https://cloud.tencent.com/document/product/571/82093) 创建一致性校验任务，启动后可通过接口 [DescribeCompareTasks](https://cloud.tencent.com/document/product/571/82088) 查询一致性校验任务列表来获得启动后的状态",
       "input": "StartCompareRequest",
       "name": "启动一致性校验任务",
       "output": "StartCompareResponse",
       "status": "online"
     },
     "StartMigrateJob": {
-      "document": "本接口（StartMigrationJob）用于启动迁移任务。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
+      "document": "本接口（StartMigrateJob）用于启动迁移任务。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
       "input": "StartMigrateJobRequest",
       "name": "启动数据迁移任务",
       "output": "StartMigrateJobResponse",
@@ -469,6 +518,13 @@
       "output": "StartSubscribeResponse",
       "status": "online"
     },
+    "StartSyncCompare": {
+      "document": "启动一致性校验任务，启动之前需要先通过接口`CreateSyncCompareTask` 创建一致性校验任务，启动后可通过接口`DescribeSyncCompareTasks` 查询一致性校验任务列表来获得启动后的状态",
+      "input": "StartSyncCompareRequest",
+      "name": "启动同步一致性校验任务",
+      "output": "StartSyncCompareResponse",
+      "status": "online"
+    },
     "StartSyncJob": {
       "document": "启动同步任务",
       "input": "StartSyncJobRequest",
@@ -484,10 +540,17 @@
       "status": "online"
     },
     "StopMigrateJob": {
-      "document": "本接口（StopMigrateJob）用于终止数据迁移任务。\n调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
+      "document": "本接口（StopMigrateJob）用于终止数据迁移任务。当任务状态为运行中、准备运行、准备完成、错误、暂停、未知等状态时可调用此接口终止任务。\n调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
       "input": "StopMigrateJobRequest",
       "name": "终止数据迁移任务",
       "output": "StopMigrateJobResponse",
+      "status": "online"
+    },
+    "StopSyncCompare": {
+      "document": "终止一致性校验任务",
+      "input": "StopSyncCompareRequest",
+      "name": "终止同步一致性校验任务",
+      "output": "StopSyncCompareResponse",
       "status": "online"
     },
     "StopSyncJob": {
@@ -916,6 +979,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表结构不一致详情，pg用",
+          "example": "无",
+          "member": "DifferenceSchemaDetail",
+          "name": "DifferenceSchema",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象owner不一致详情，pg用",
+          "example": "无",
+          "member": "DifferenceOwnerDetail",
+          "name": "DifferenceOwner",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1077,6 +1160,50 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对比类型：builtin（内置校验）、independent（独立校验）。默认为builtin，mongodb及redis链路不支持独立校验。",
+          "example": "builtin",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) ",
+          "example": "[\"full\",\"increment\"]",
+          "member": "string",
+          "name": "CompareMode",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复检次数",
+          "example": "3",
+          "member": "int64",
+          "name": "ReCheckTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复检时间间隔，单位为分钟，取值 1-60",
+          "example": "5",
+          "member": "int64",
+          "name": "ReCheckInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1115,6 +1242,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "id>10",
+          "member": "string",
+          "name": "FilterCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时区选择。如 \"+08:00\", \"-08:00\", \"+00:00\"（空值等价于\"+00:00\"）\t",
+          "example": "+08:00",
+          "member": "string",
+          "name": "FilterTimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1314,7 +1463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
@@ -1350,7 +1499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -1428,6 +1577,24 @@
           "name": "ExtraAttr",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "vpc-2hfu26a7",
+          "member": "string",
+          "name": "ConsumerVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "subnet id",
+          "example": "subnet-3gnpluam",
+          "member": "string",
+          "name": "ConsumerSubnetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1449,7 +1616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23",
+          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -1458,7 +1625,7 @@
         },
         {
           "disabled": false,
-          "document": "源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云),注意具体可选值依赖当前链路",
+          "document": "源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云),注意具体可选值依赖当前链路",
           "example": "cdb",
           "member": "string",
           "name": "SrcAccessType",
@@ -1467,7 +1634,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、ckafka(CKafka实例),注意具体可选值依赖当前链路",
+          "document": "目标端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、ckafka(CKafka实例),注意具体可选值依赖当前链路",
           "example": "extranet",
           "member": "string",
           "name": "DstAccessType",
@@ -1539,7 +1706,7 @@
         },
         {
           "disabled": false,
-          "document": "源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。",
+          "document": "源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "SrcInfos",
@@ -1566,7 +1733,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。",
+          "document": "目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等，mongodb使用此参数透传。",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "DstInfos",
@@ -1631,7 +1798,7 @@
         },
         {
           "disabled": false,
-          "document": "条件覆盖操作",
+          "document": "条件覆盖操作，目前仅支持>",
           "example": ">",
           "member": "string",
           "name": "ConditionOperator",
@@ -1642,7 +1809,7 @@
         },
         {
           "disabled": false,
-          "document": "条件覆盖优先级处理",
+          "document": "条件覆盖优先级处理，支持类型有>,<,=",
           "example": ">",
           "member": "string",
           "name": "ConditionOrderInSrcAndDst",
@@ -1667,6 +1834,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验对象选择。枚举值：sameAsMigrate-与迁移同步任务相同、custom-用户自定义，搭配Objects操作",
+          "example": "custom",
+          "member": "string",
+          "name": "ObjectMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatabaseTableObject",
+          "name": "Objects",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验配置",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1676,7 +1876,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-xxxxxxxx",
           "member": "string",
           "name": "JobId",
@@ -1703,7 +1903,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-xxxxxx",
           "member": "string",
           "name": "JobId",
@@ -1730,7 +1930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-n8deuq7e",
           "member": "string",
           "name": "JobId",
@@ -1757,7 +1957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 Id",
+          "document": "任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-p1sposne",
           "member": "string",
           "name": "JobId",
@@ -1830,7 +2030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例id",
+          "document": "订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-jvxbbos7c0",
           "member": "string",
           "name": "SubscribeId",
@@ -1893,7 +2093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
@@ -1920,7 +2120,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql",
+          "document": "源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -1929,7 +2129,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql",
+          "document": "目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -1956,7 +2156,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格，包括：small、medium、large、xlarge、2xlarge",
+          "document": "实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)",
           "example": "large",
           "member": "string",
           "name": "InstanceClass",
@@ -2020,7 +2220,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "sync-cxsasdaq",
           "member": "string",
           "name": "JobId",
@@ -2047,7 +2247,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -2134,6 +2334,15 @@
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例规格，当前仅支持small、medium、large",
+          "example": "small",
+          "member": "string",
+          "name": "InstanceClass",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2150,6 +2359,79 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSyncCompareTaskRequest": {
+      "document": "CreateSyncCompareTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-p1sposne",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据对比任务名称，若为空则默认给CompareTaskId相同值",
+          "example": "compare_test",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， 默认为此项配置)，custom(自定义模式)",
+          "example": "sameAsMigrate",
+          "member": "string",
+          "name": "ObjectMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比对象，当ObjectMode值为custom时，此项需要填写",
+          "example": "无",
+          "member": "CompareObject",
+          "name": "Objects",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验选项",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSyncCompareTaskResponse": {
+      "document": "CreateSyncCompareTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompareTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2210,7 +2492,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务规格，Standard:标准版",
+          "document": "同步任务规格，Standard:标准版，目前仅支持Standard规格。",
           "example": "Standard",
           "member": "string",
           "name": "Specification",
@@ -2289,7 +2571,7 @@
         {
           "disabled": false,
           "document": "同步任务ids",
-          "example": "sync-btso140",
+          "example": "[\"sync-btso140\"]",
           "member": "string",
           "name": "JobIds",
           "output_required": true,
@@ -2321,7 +2603,7 @@
         },
         {
           "disabled": false,
-          "document": "实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路",
+          "document": "实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云服务器自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路",
           "example": "cdb",
           "member": "string",
           "name": "AccessType",
@@ -2376,7 +2658,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数为数组类型，可以传多个键值对结构对象。\nMongoDB可定义如下的参数：\n'AuthDatabase':'admin',\n'AuthFlag': \"1\",\n'AuthMechanism':\"SCRAM-SHA-1\",\n\"fetchMethod\":\"oplog\",\n\"connectMode\":\"srv\",\n\"EncryptedConnProtocol\":\"mongo_atlas_ssl\"；\n其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。",
+          "document": "此参数为数组类型，可以传多个键值对结构对象。\nMongoDB可定义如下的参数：\n'AuthDatabase':'admin',    //认证库\n'AuthFlag': \"1\",       //实例是否需要认证，\"0\": 不用认证；\"1\":需要认证\n'AuthMechanism':\"SCRAM-SHA-1\",    //实例认证方式\n\"fetchMethod\":\"oplog\",    //fetchMethod表示迁移方式，支持oplog、change_stream\n\"connectMode\":\"srv\",    //外网srv连接模式\n\"EncryptedConnProtocol\":\"mongo_atlas_ssl\"；    //加密连接方式\n其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
@@ -2895,6 +3177,56 @@
       ],
       "usage": "both"
     },
+    "DBOpFilter": {
+      "document": "库/表/视图级别的 DDL/DML 白名单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则生效的库名",
+          "example": "je***",
+          "member": "string",
+          "name": "DbName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "库级 DDL/DML 过滤规则",
+          "example": "无",
+          "member": "OpFilter",
+          "name": "OpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表级 DDL/DML 过滤信息",
+          "example": "无",
+          "member": "TableFilter",
+          "name": "Tables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图级 DDL/DML 过滤信息",
+          "example": "无",
+          "member": "ViewFilter",
+          "name": "Views",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Database": {
       "document": "需要同步的库表对象",
       "members": [
@@ -3115,7 +3447,7 @@
         },
         {
           "disabled": false,
-          "document": "高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。\n\n> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"trigger\"]",
           "member": "string",
           "name": "AdvancedObjects",
@@ -3160,7 +3492,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
           "example": "dts-8yv4w2i1",
           "member": "string",
           "name": "JobId",
@@ -3169,7 +3501,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
+          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9。可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
@@ -3196,7 +3528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -3205,7 +3537,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。",
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "consumer-grp-subs-9jyki7hniw-test",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -3214,7 +3546,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。",
+          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "account-subs-9jyki7hniw-test",
           "member": "string",
           "name": "AccountName",
@@ -3236,12 +3568,48 @@
       ],
       "type": "object"
     },
+    "DeleteSyncCompareTaskRequest": {
+      "document": "DeleteSyncCompareTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "无",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSyncCompareTaskResponse": {
+      "document": "DeleteSyncCompareTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCheckSyncJobResultRequest": {
       "document": "DescribeCheckSyncJobResult请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填",
+          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -3297,7 +3665,7 @@
         {
           "disabled": false,
           "document": "步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "StepInfos",
+          "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
           "output_required": true,
@@ -3318,7 +3686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -3327,7 +3695,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 Id",
+          "document": "校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
           "example": "dts-amm1jw5q-cmp-bmuum7jk",
           "member": "string",
           "name": "CompareTaskId",
@@ -3446,7 +3814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "迁移任务 Id，可通过 [DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084) 接口获取。\n",
           "example": "dts-e7ukka6g",
           "member": "string",
           "name": "JobId",
@@ -3529,7 +3897,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例id",
+          "document": "订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-47damshnra",
           "member": "string",
           "name": "SubscribeId",
@@ -3594,7 +3962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库类型，如mysql,redis等",
+          "document": "数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。",
           "example": "mysql",
           "member": "string",
           "name": "DatabaseType",
@@ -3612,7 +3980,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库实例ID",
+          "document": "云数据库实例ID，可通过对应业务实例列表获取实例信息。",
           "example": "cdb-ktexpqjo",
           "member": "string",
           "name": "InstanceId",
@@ -3621,7 +3989,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库名称",
+          "document": "云数据库名称，可通过对应业务实例列表获取实例信息。",
           "example": "cdb-name1",
           "member": "string",
           "name": "InstanceName",
@@ -3722,7 +4090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1ewjspuw",
           "member": "string",
           "name": "JobId",
@@ -3789,7 +4157,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -4218,7 +4586,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-csasweee",
           "member": "string",
           "name": "JobId",
@@ -4295,7 +4663,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -4341,7 +4709,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "subs-l4d3a7izai",
           "member": "string",
           "name": "SubscribeId",
@@ -4376,7 +4744,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行状态，可能值为 running,failed,success",
+          "document": "任务运行状态，可能值为 running(运行中),failed(失败),success(成功),unknown(未知状态)。",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -4438,7 +4806,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例ID",
+          "document": "订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -4732,6 +5100,46 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "数据订阅版本, 当前支持kafka和kafkaPro（专业版）",
+          "example": "kafka",
+          "member": "string",
+          "name": "SubscribeVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费端地址所在vpc",
+          "example": "vpc-r9rir3i9",
+          "member": "string",
+          "name": "ConsumerVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费端地址所在子网",
+          "example": "subnet-jgyd4txs",
+          "member": "string",
+          "name": "ConsumerSubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例规格",
+          "example": "small",
+          "member": "string",
+          "name": "InstanceClass",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4900,7 +5308,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -4942,12 +5350,233 @@
       ],
       "type": "object"
     },
+    "DescribeSyncCompareReportRequest": {
+      "document": "DescribeSyncCompareReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-amm1jw5q",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "校验任务 Id",
+          "example": "sync-amm1jw5q-cmp-bmuum7jk",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "校验不一致结果的 limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "DifferenceLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不一致的 Offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "DifferenceOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，不一致的库名",
+          "example": "db1",
+          "member": "string",
+          "name": "DifferenceDB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，不一致的表名",
+          "example": "t1",
+          "member": "string",
+          "name": "DifferenceTable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "未校验的 Limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "SkippedLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "未校验的 Offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "SkippedOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，未校验的库名",
+          "example": "db1",
+          "member": "string",
+          "name": "SkippedDB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，未校验的表名",
+          "example": "t1",
+          "member": "string",
+          "name": "SkippedTable",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncCompareReportResponse": {
+      "document": "DescribeSyncCompareReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一致性校验摘要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareAbstractInfo",
+          "name": "Abstract",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareDetailInfo",
+          "name": "Detail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "增量校验阶段的摘要",
+          "example": "无",
+          "member": "IncCompareAbstractInfo",
+          "name": "IncAbstract",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncCompareTasksRequest": {
+      "document": "DescribeSyncCompareTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-e7ukka6g",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页设置，表示每页显示多少条任务，默认为 20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "校验任务 ID",
+          "example": "sync-5ftw8366-compare-n0pee6pc",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
+          "example": "[\"running\"]",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncCompareTasksResponse": {
+      "document": "DescribeSyncCompareTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareTaskItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSyncJobsRequest": {
       "document": "DescribeSyncJobs请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id，如sync-werwfs23",
+          "document": "同步任务id，如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-n3gh7md9",
           "member": "string",
           "name": "JobId",
@@ -4956,7 +5585,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务id列表，如sync-werwfs23",
+          "document": "同步任务id列表，如[\"sync-n3gh7md9\"]",
           "example": "[\"sync-n3gh7md9\"]",
           "member": "string",
           "name": "JobIds",
@@ -4974,7 +5603,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，可以取值为CreateTime",
+          "document": "排序字段，目前仅支持CreateTime字段排序",
           "example": "CreateTime",
           "member": "string",
           "name": "Order",
@@ -5010,8 +5639,8 @@
         },
         {
           "disabled": false,
-          "document": "状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped",
-          "example": "Running",
+          "document": "状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)",
+          "example": "[\"Running\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -5028,7 +5657,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，如mysql2mysql：msyql同步到mysql",
+          "document": "任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb",
           "example": "mysql2mysql",
           "member": "string",
           "name": "JobType",
@@ -5111,7 +5740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -5138,7 +5767,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-j7bt5sid",
           "member": "string",
           "name": "JobId",
@@ -5165,7 +5794,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -5364,6 +5993,16 @@
         },
         {
           "disabled": false,
+          "document": "创建时间",
+          "example": "2023-10-26 18:49:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "更新时间",
           "example": "2023-10-26 18:54:40",
           "member": "string",
@@ -5543,6 +6182,32 @@
       ],
       "usage": "out"
     },
+    "DifferenceOwnerDetail": {
+      "document": "pg owner不一致性详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "owner不一致总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OwnerDifference",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DifferenceRowDetail": {
       "document": "mongodb行数校验不一致性详情结果",
       "members": [
@@ -5561,6 +6226,32 @@
           "document": "不一致列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RowsCountDifference",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DifferenceSchemaDetail": {
+      "document": "表结构不一致信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表结构不一致的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表结构不一致信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SchemaDifference",
           "name": "Items",
           "output_required": false,
           "type": "list",
@@ -6462,12 +7153,68 @@
       ],
       "usage": "out"
     },
+    "IncCompareAbstractInfo": {
+      "document": "增量校验阶段的摘要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增量起始位点",
+          "example": "2025-06-03 12:00:00",
+          "member": "string",
+          "name": "StartPosition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量当前位点",
+          "example": "2025-06-03 12:00:00",
+          "member": "string",
+          "name": "CurrentPosition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已校验行数",
+          "example": "100",
+          "member": "uint64",
+          "name": "CheckedRecord",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致行数",
+          "example": "10",
+          "member": "uint64",
+          "name": "DiffRecord",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致表的数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiffTable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "IsolateMigrateJobRequest": {
       "document": "IsolateMigrateJob请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -6494,7 +7241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例ID",
+          "document": "订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -6521,7 +7268,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -6744,7 +7491,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json",
+          "document": "投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json,debezium",
           "example": "Avro,Json",
           "member": "string",
           "name": "DataType",
@@ -6782,6 +7529,17 @@
           "member": "TopicRule",
           "name": "TopicRules",
           "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持：\"canalOfficialFormat\":\"on\"表示打开Canal兼容功能，默认不带。",
+          "example": "无",
+          "member": "KeyValuePairOption",
+          "name": "DataOption",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -6823,7 +7581,7 @@
         {
           "disabled": false,
           "document": "任务的所有操作列表",
-          "example": "[\"view\",\"modify\",\"check\",\"start\",\"configure\",\"stop\",\"complete\",\"",
+          "example": "[\"view\",\"modify\",\"check\",\"start\",\"configure\",\"stop\",\"complete\",\"modifyPosition\"]",
           "member": "string",
           "name": "AllAction",
           "output_required": true,
@@ -6992,14 +7750,14 @@
         },
         {
           "disabled": false,
-          "document": "数据一致性校验选项， 默认为不开启一致性校验",
+          "document": "数据一致性校验选项， 默认为不开启一致性校验\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConsistencyOption",
           "name": "Consistency",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7036,7 +7794,7 @@
         },
         {
           "disabled": false,
-          "document": "其他附加信息，对于特定库可设置额外参数，Redis可定义如下的参数: \n[\"DstWriteMode\":normal, \t目标库写入模式,可取值clearData(清空目标实例数据)、overwrite(以覆盖写的方式执行任务)、normal(跟正常流程一样，不做额外动作) \t\"IsDstReadOnly\":true, \t是否在迁移时设置目标库只读,true(设置只读)、false(不设置只读) \t\"ClientOutputBufferHardLimit\":512, \t从机缓冲区的硬性容量限制(MB) \t\"ClientOutputBufferSoftLimit\":512, \t从机缓冲区的软性容量限制(MB) \t\"ClientOutputBufferPersistTime\":60, 从机缓冲区的软性限制持续时间(秒) \t\"ReplBacklogSize\":512, \t环形缓冲区容量限制(MB) \t\"ReplTimeout\":120，\t\t复制超时时间(秒) \t\"IsExpireKey\":\"true\",过期key自动淘汰]",
+          "document": "其他附加信息，对于特定库可设置额外参数，Redis可定义如下的参数: \n[\"DstWriteMode\":normal, \t目标库写入模式,可取值clearData(清空目标实例数据)、overwrite(以覆盖写的方式执行任务)、normal(要求目标端为空，否则校验不通过) ，不显示指定默认以覆盖写的方式执行任务\t\"IsDstReadOnly\":true, \t是否在迁移时设置目标库只读,true(设置只读)、false(不设置只读) \t\"ClientOutputBufferHardLimit\":512, \t从机缓冲区的硬性容量限制(MB) \t\"ClientOutputBufferSoftLimit\":512, \t从机缓冲区的软性容量限制(MB) \t\"ClientOutputBufferPersistTime\":60, 从机缓冲区的软性限制持续时间(秒) \t\"ReplBacklogSize\":512, \t环形缓冲区容量限制(MB) \t\"ReplTimeout\":120，\t\t复制超时时间(秒) \t\"IsExpireKey\":\"true\",过期key自动淘汰]",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
@@ -7103,7 +7861,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-8yv4w2i1",
           "member": "string",
           "name": "JobId",
@@ -7112,7 +7870,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
+          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
@@ -7148,7 +7906,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 Id",
+          "document": "任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-45jhpmjh",
           "member": "string",
           "name": "JobId",
@@ -7157,7 +7915,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
+          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-45jhpmjh-cmp-k7uhq1v3",
           "member": "string",
           "name": "CompareTaskId",
@@ -7220,7 +7978,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7229,7 +7987,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。",
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "consumer-grp-subs-9jyki7hniw-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -7238,7 +7996,7 @@
         },
         {
           "disabled": false,
-          "document": "账户名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。",
+          "document": "账户名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "account-subs-9jyki7hniw-jason",
           "member": "string",
           "name": "AccountName",
@@ -7274,7 +8032,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7283,7 +8041,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}",
+          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "account-subs-9jyki7hniw-jason",
           "member": "string",
           "name": "AccountName",
@@ -7292,7 +8050,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "consumer-grp-subs-9jyki7hniw-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -7328,7 +8086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-j7bt5sid",
           "member": "string",
           "name": "JobId",
@@ -7364,7 +8122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务id",
+          "document": "迁移任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-7itt1j4w",
           "member": "string",
           "name": "JobId",
@@ -7400,7 +8158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务ID",
+          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
           "example": "dts-saasxa",
           "member": "string",
           "name": "JobId",
@@ -7472,7 +8230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务id，如：dts-2rgv0f09",
+          "document": "迁移任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-7itt1j4w",
           "member": "string",
           "name": "JobId",
@@ -7508,7 +8266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1ewjspuw",
           "member": "string",
           "name": "JobId",
@@ -7607,7 +8365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例ID",
+          "document": "订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7643,7 +8401,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7679,7 +8437,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7697,7 +8455,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的订阅数据库表信息。会覆盖原来的订阅对象，所以除非 SubscribeObjectType = 0或2，否则改字段必填。",
+          "document": "修改后的订阅数据库表信息。会覆盖原来的订阅对象，所以除非 SubscribeObjectType = 0或2，否则该字段必填。",
           "example": "无",
           "member": "ModifiedSubscribeObject",
           "name": "Objects",
@@ -7746,12 +8504,129 @@
       ],
       "type": "object"
     },
+    "ModifySyncCompareTaskNameRequest": {
+      "document": "ModifySyncCompareTaskName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-8yv4w2i1",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "sync-8yv4w2i1-cmp-37skmii9",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验任务名称",
+          "example": "cmp_test",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncCompareTaskNameResponse": {
+      "document": "ModifySyncCompareTaskName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncCompareTaskRequest": {
+      "document": "ModifySyncCompareTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "无",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， 默认为此项配置)、custom(自定义)，注意自定义对比对象必须是迁移对象的子集",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比对象，若CompareObjectMode取值为custom，则此项必填",
+          "example": "无",
+          "member": "CompareObject",
+          "name": "Objects",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验选项",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncCompareTaskResponse": {
+      "document": "ModifySyncCompareTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySyncJobConfigRequest": {
       "document": "ModifySyncJobConfig请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "sync-adasasww",
           "member": "string",
           "name": "JobId",
@@ -7796,8 +8671,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务ID",
-          "example": "dts-saasxa",
+          "document": "同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
+          "example": "sync-saasxa",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -7814,7 +8689,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务全量导出的 Rps 限制、需要大于 0",
+          "document": "同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000",
           "example": "20000",
           "member": "int64",
           "name": "DumpRps",
@@ -7955,6 +8830,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "库/表/视图级 DML/DDL 白名单",
+          "example": "无",
+          "member": "DBOpFilter",
+          "name": "DatabasesOpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7990,7 +8876,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，ON-启用，OFF-不启用。",
           "example": "ON",
           "member": "string",
           "name": "Status",
@@ -8002,12 +8888,40 @@
       ],
       "usage": "both"
     },
+    "OpFilter": {
+      "document": "DDL/DML 过滤规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DML 白名单",
+          "example": "[\"Insert\"]",
+          "member": "string",
+          "name": "OpTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DDL 白名单",
+          "example": "无",
+          "member": "DdlOption",
+          "name": "DdlOptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Options": {
       "document": "数据同步中的选项",
       "members": [
         {
           "disabled": false,
-          "document": "同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)",
+          "document": "同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。",
           "example": "Full",
           "member": "string",
           "name": "InitType",
@@ -8063,7 +8977,7 @@
         {
           "disabled": false,
           "document": "冲突处理的详细选项，如条件覆盖中的条件行和条件操作",
-          "example": "ConflictHandleOption",
+          "example": "无",
           "member": "ConflictHandleOption",
           "name": "ConflictHandleOption",
           "output_required": true,
@@ -8074,7 +8988,7 @@
         {
           "disabled": false,
           "document": "DDL同步选项，具体描述要同步哪些DDL\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "DdlOption",
+          "example": "无",
           "member": "DdlOption",
           "name": "DdlOptions",
           "output_required": true,
@@ -8085,7 +8999,7 @@
         {
           "disabled": false,
           "document": "kafka同步选项",
-          "example": "KafkaOption",
+          "example": "无",
           "member": "KafkaOption",
           "name": "KafkaOption",
           "output_required": true,
@@ -8096,7 +9010,7 @@
         {
           "disabled": false,
           "document": "任务限速信息",
-          "example": "RateLimitOption",
+          "example": "无",
           "member": "RateLimitOption",
           "name": "RateLimitOption",
           "output_required": true,
@@ -8151,6 +9065,72 @@
       ],
       "usage": "both"
     },
+    "OwnerDifference": {
+      "document": "pg对象owner不一致信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象所在库",
+          "example": "db1",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象所在schema",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象名",
+          "example": "tab1",
+          "member": "string",
+          "name": "ObjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象类型",
+          "example": "tableSchema",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库对象owner",
+          "example": "root",
+          "member": "string",
+          "name": "SrcOwner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标库对象owner",
+          "example": "user_123",
+          "member": "string",
+          "name": "DstOwner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PartitionAssignment": {
       "document": "数据订阅中kafka消费者组的分区分配情况。该数据是实时查询的，如果需要最新数据，需重新掉接口查询。",
       "members": [
@@ -8182,7 +9162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-xxxxxxxx",
           "member": "string",
           "name": "JobId",
@@ -8209,7 +9189,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-xxxxxx",
           "member": "string",
           "name": "JobId",
@@ -8493,7 +9473,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-7o16y2qy",
           "member": "string",
           "name": "JobId",
@@ -8520,7 +9500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23",
+          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -8547,7 +9527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例id",
+          "document": "订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "subs-7l2ly86kao",
           "member": "string",
           "name": "SubscribeId",
@@ -8556,7 +9536,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的kafka topic",
+          "document": "订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "topic-subs-7l2ly86kao-cdb-5jr9ms95",
           "member": "string",
           "name": "TopicName",
@@ -8565,7 +9545,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。",
           "example": "consumer-grp-subs-7l2ly86kao-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -8574,7 +9554,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改offset的分区编号",
+          "document": "需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。",
           "example": "[0,1,2,3]",
           "member": "int64",
           "name": "PartitionNos",
@@ -8619,7 +9599,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -8641,12 +9621,39 @@
       ],
       "type": "object"
     },
+    "ResetSyncJobRequest": {
+      "document": "ResetSyncJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要重置的同步任务ID。",
+          "example": "sync-4ftuz3d2",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetSyncJobResponse": {
+      "document": "ResetSyncJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResizeSyncJobRequest": {
       "document": "ResizeSyncJob请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -8655,7 +9662,7 @@
         },
         {
           "disabled": false,
-          "document": "任务规格",
+          "document": "任务规格，可选值包括micro,small,medium,large",
           "example": "small",
           "member": "string",
           "name": "NewInstanceClass",
@@ -8682,7 +9689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
@@ -8692,7 +9699,7 @@
         {
           "disabled": false,
           "document": "恢复任务的模式，目前的取值有：clearData 清空目标实例数据，overwrite 以覆盖写的方式执行任务，normal 跟正常流程一样，不做额外动作；注意，clearData、overwrite仅对redis生效，normal仅针对非redis链路生效",
-          "example": "overwrite ",
+          "example": "overwrite",
           "member": "string",
           "name": "ResumeOption",
           "required": false,
@@ -8718,7 +9725,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -8745,7 +9752,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-09vy1os1",
           "member": "string",
           "name": "JobId",
@@ -8841,12 +9848,68 @@
       ],
       "usage": "out"
     },
+    "SchemaDifference": {
+      "document": "结构不一致详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结构不一致的表所在库",
+          "example": "db1",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结构不一致的表所在schema",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结构不一致的表",
+          "example": "tab1",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库表结构",
+          "example": "create table tab1...",
+          "member": "string",
+          "name": "SrcSchema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标库表结构",
+          "example": "create table tab1...",
+          "member": "string",
+          "name": "DstSchema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SkipCheckItemRequest": {
       "document": "SkipCheckItem请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
@@ -8855,7 +9918,7 @@
         },
         {
           "disabled": false,
-          "document": "需要跳过校验项的步骤id，需要通过DescribeMigrationCheckJob接口返回StepInfo[i].StepId字段获取，例如：[\"OptimizeCheck\"]",
+          "document": "需要跳过校验项的步骤id，需要通过[DescribeMigrationCheckJob](https://cloud.tencent.com/document/product/571/82086)接口返回StepInfo[i].StepId字段获取，例如：[\"OptimizeCheck\"]",
           "example": "[\"OptimizeCheck\"]",
           "member": "string",
           "name": "StepIds",
@@ -8901,7 +9964,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id，如：sync-4ddgid2",
+          "document": "任务id，如：sync-4ddgid2，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-4ddgid2",
           "member": "string",
           "name": "JobId",
@@ -9009,7 +10072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "迁移任务 ID，可通过 [DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084) 接口获取。\n",
           "example": "dts-8yv4w2i1",
           "member": "string",
           "name": "JobId",
@@ -9018,7 +10081,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
+          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过 [DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084) 接口获取。\n",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
@@ -9045,7 +10108,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
@@ -9072,7 +10135,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-csasssww",
           "member": "string",
           "name": "JobId",
@@ -9099,7 +10162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -9121,12 +10184,48 @@
       ],
       "type": "object"
     },
+    "StartSyncCompareRequest": {
+      "document": "StartSyncCompare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-8yv4w2i1",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "sync-8yv4w2i1-cmp-37skmii9",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartSyncCompareResponse": {
+      "document": "StartSyncCompare返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartSyncJobRequest": {
       "document": "StartSyncJob请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -9404,7 +10503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -9413,7 +10512,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
+          "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
@@ -9422,7 +10521,7 @@
         },
         {
           "disabled": false,
-          "document": "是否强制停止。如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果",
+          "document": "是否强制停止。默认值为false，表示不强制停止；如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果",
           "example": "true",
           "member": "bool",
           "name": "ForceStop",
@@ -9449,7 +10548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
@@ -9471,12 +10570,57 @@
       ],
       "type": "object"
     },
+    "StopSyncCompareRequest": {
+      "document": "StopSyncCompare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-amm1jw5q",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "sync-8yv4w2i1-cmp-37skmii9",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制停止。如果填true，迁移任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceStop",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "StopSyncCompareResponse": {
+      "document": "StopSyncCompare返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopSyncJobRequest": {
       "document": "StopSyncJob请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-n8deuq7e",
           "member": "string",
           "name": "JobId",
@@ -9569,7 +10713,7 @@
         },
         {
           "disabled": false,
-          "document": "当前步骤状态，可能值为 notStarted,running,finished,failed",
+          "document": "当前步骤状态，可能值为 notStarted-未开始，running-运行中，finished-已完成，failed-失败，unknown-未知",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -9821,7 +10965,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅版本, 当前只支持 kafka 版本。",
+          "document": "数据订阅版本, 当前支持kafka和kafkaPro（专业版）",
           "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
@@ -9848,6 +10992,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例规格",
+          "example": "small",
+          "member": "string",
+          "name": "InstanceClass",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10142,7 +11296,7 @@
         {
           "disabled": false,
           "document": "支持的所有操作",
-          "example": "[\"pause\",\"stop\",\"limitRate\",\"view\",\"resize\",\"isolate\",\"postPay2prePay\",\"configureOptObj\"]",
+          "example": "[\"pause（暂停）\",\"stop（终止）\",\"limitRate（限速）\",\"view（查看）\",\"resize（调整规格）\",\"isolate（隔离）\",\"postPay2prePay（按量转包年包月）\",\"configureOptObj（修改同步对象）\"]",
           "member": "string",
           "name": "AllActions",
           "output_required": true,
@@ -10152,7 +11306,7 @@
         {
           "disabled": false,
           "document": "当前状态能进行的操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"pause\",\"stop\",\"limitRate\",\"view\",\"resize\",\"isolate\",\"postPay2prePay\",\"configureOptObj\"]",
+          "example": "[\"pause（暂停）\",\"stop（终止）\",\"limitRate（限速）\",\"view（查看）\",\"resize（调整规格）\",\"isolate（隔离）\",\"postPay2prePay（按量转包年包月）\",\"configureOptObj（修改同步对象）\"]",
           "member": "string",
           "name": "Actions",
           "output_required": true,
@@ -10211,7 +11365,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等",
+          "document": "源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -10221,7 +11375,7 @@
         },
         {
           "disabled": false,
-          "document": "源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)",
+          "document": "源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)",
           "example": "cdb",
           "member": "string",
           "name": "SrcAccessType",
@@ -10251,7 +11405,7 @@
         },
         {
           "disabled": false,
-          "document": "源端信息，多节点数据库使用",
+          "document": "源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "SrcInfos",
@@ -10271,7 +11425,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等",
+          "document": "目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -10311,7 +11465,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息，多节点数据库使用",
+          "document": "目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "DstInfos",
@@ -10530,6 +11684,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TableFilter": {
+      "document": "表级 DDL/DML 过滤信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则生效的表名",
+          "example": "order_details",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表级 DDL/DML 过滤规则",
+          "example": "无",
+          "member": "OpFilter",
+          "name": "OpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -10861,6 +12043,34 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ViewFilter": {
+      "document": "视图级 DDL/DML 过滤信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则生效的视图名",
+          "example": "order_full_details",
+          "member": "string",
+          "name": "ViewName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图级 DDL/DML 过滤规则",
+          "example": "无",
+          "member": "OpFilter",
+          "name": "OpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -16,7 +16,7 @@ Output:
         "ClusterInfo": {
             "ClusterId": "rocketmq-rd3545bkkj49",
             "ClusterName": "rocket-order-cluster",
-            "Region": "华南地区",
+            "Region": "ap-guangzhou",
             "CreateTime": 1729478721,
             "Remark": "info- remark",
             "PublicEndPoint": "rocketmq.access.public.com:9867",
@@ -59,7 +59,7 @@ Output:
             "NodeCount": 1,
             "NodeDistribution": [
                 {
-                    "ZoneName": "广东一区",
+                    "ZoneName": "广州一区",
                     "ZoneId": "100001",
                     "NodeCount": 1
                 }

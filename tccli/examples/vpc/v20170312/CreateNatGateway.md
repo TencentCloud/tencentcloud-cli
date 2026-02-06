@@ -50,6 +50,7 @@ Output:
                 "Zone": "ap-guangzhou-2",
                 "ExclusiveGatewayBandwidth": 1,
                 "IsExclusive": true,
+                "StrictSnatMode": false,
                 "SmartScheduleMode": false,
                 "DedicatedClusterId": "",
                 "NatProductVersion": 1,
@@ -61,7 +62,8 @@ Output:
                         "Key": "city",
                         "Value": "shanghai"
                     }
-                ]
+                ],
+                "DeletionProtectionEnabled": false
             }
         ],
         "TotalCount": 1,
@@ -78,7 +80,6 @@ Input:
 
 ```
 tccli vpc CreateNatGateway --cli-unfold-argument  \
-    --SubnetId subnet-q1b8fsg \
     --AddressCount 1 \
     --NatGatewayName xiaooliang_test \
     --VpcId vpc-bohigpb7 \
@@ -108,11 +109,13 @@ Output:
                 "SecurityGroupSet": [],
                 "SourceIpTranslationNatRuleSet": [],
                 "IsExclusive": false,
+                "StrictSnatMode": false,
                 "SmartScheduleMode": false,
                 "DedicatedClusterId": "",
                 "RestrictState": "NORMAL",
                 "NatProductVersion": 2,
-                "ExclusiveGatewayBandwidth": 0
+                "ExclusiveGatewayBandwidth": 0,
+                "DeletionProtectionEnabled": false
             }
         ],
         "TotalCount": 1,

@@ -1,4 +1,33 @@
-**Example 1: 创建HTTPS监听器，并绑定已有证书**
+**Example 1: 创建HTTPS监听器，并同时绑定新建的证书**
+
+创建HTTPS监听器，并同时绑定新建的证书
+
+Input: 
+
+```
+tccli clb CreateListener --cli-unfold-argument  \
+    --Protocol HTTPS \
+    --Ports 7573 \
+    --Certificate.SSLMode UNIDIRECTIONAL \
+    --Certificate.CertContent -----BEGINCERTIFICATE-----\nxxxxxxxxxxxxxxxxxxxxxxx\n-----ENDCERTIFICATE----- \
+    --Certificate.CertName my-cert \
+    --Certificate.CertKey -----BEGINRSAPRIVATEKEY-----\nxxxxxxxxxxxxxxxxxxxxxxxx\n-----ENDRSAPRIVATEKEY----- \
+    --LoadBalancerId lb-cuxw2rm0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ListenerIds": [
+            "lbl-bzfmg9m6"
+        ],
+        "RequestId": "6082314c-030c-429d-9eae-2dc6b159b5b9"
+    }
+}
+```
+
+**Example 2: 创建HTTPS监听器，并绑定已有证书**
 
 创建HTTPS监听器，并绑定已有证书
 
@@ -25,7 +54,7 @@ Output:
 }
 ```
 
-**Example 2: 创建TCP监听器的同时设置健康检查信息**
+**Example 3: 创建TCP监听器的同时设置健康检查信息**
 
 创建TCP监听器的同时设置健康检查信息
 
@@ -51,35 +80,6 @@ Output:
             "lbl-lbbxvq26"
         ],
         "RequestId": "fff13c83-dcb5-481a-ba7c-30e92c276c19"
-    }
-}
-```
-
-**Example 3: 创建HTTPS监听器，并同时绑定新建的证书**
-
-创建HTTPS监听器，并同时绑定新建的证书
-
-Input: 
-
-```
-tccli clb CreateListener --cli-unfold-argument  \
-    --Protocol HTTPS \
-    --Ports 7573 \
-    --Certificate.SSLMode UNIDIRECTIONAL \
-    --Certificate.CertContent -----BEGINCERTIFICATE-----\nxxxxxxxxxxxxxxxxxxxxxxx\n-----ENDCERTIFICATE----- \
-    --Certificate.CertName my-cert \
-    --Certificate.CertKey -----BEGINRSAPRIVATEKEY-----\nxxxxxxxxxxxxxxxxxxxxxxxx\n-----ENDRSAPRIVATEKEY----- \
-    --LoadBalancerId lb-cuxw2rm0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ListenerIds": [
-            "lbl-bzfmg9m6"
-        ],
-        "RequestId": "6082314c-030c-429d-9eae-2dc6b159b5b9"
     }
 }
 ```
@@ -134,6 +134,36 @@ Output:
             "lbl-4udz130k"
         ],
         "RequestId": "8f272cef-14ff-458c-b67e-1bd21bd2942b"
+    }
+}
+```
+
+**Example 6: 创建监听器，开启重新调度功能**
+
+
+
+Input: 
+
+```
+tccli clb CreateListener --cli-unfold-argument  \
+    --LoadBalancerId lb-fd9kpk4s \
+    --Ports 5689 \
+    --Protocol tcp \
+    --RescheduleTargetZeroWeight True \
+    --RescheduleUnhealthy True \
+    --RescheduleExpandTarget True \
+    --RescheduleStartTime 25 \
+    --RescheduleInterval 50
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ListenerIds": [
+            "lbl-1sf4yxie"
+        ],
+        "RequestId": "6aa274e5-ff78-4e9e-b13c-30a9e21b107e"
     }
 }
 ```

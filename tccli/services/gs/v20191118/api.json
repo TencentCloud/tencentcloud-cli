@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BackUpAndroidInstance": {
+      "document": "备份安卓实例。该接口需要联系我们开通内网存储才能使用。",
+      "input": "BackUpAndroidInstanceRequest",
+      "name": "备份安卓实例",
+      "output": "BackUpAndroidInstanceResponse",
+      "status": "online"
+    },
     "BackUpAndroidInstanceToStorage": {
       "document": "备份云手机数据到指定存储，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果是备份到 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。",
       "input": "BackUpAndroidInstanceToStorageRequest",
@@ -47,6 +54,13 @@
       "input": "CreateAndroidInstanceADBRequest",
       "name": "创建安卓实例 ADB 连接",
       "output": "CreateAndroidInstanceADBResponse",
+      "status": "online"
+    },
+    "CreateAndroidInstanceAcceleratorToken": {
+      "document": "创建安卓实例加速Token",
+      "input": "CreateAndroidInstanceAcceleratorTokenRequest",
+      "name": "创建安卓实例加速Token",
+      "output": "CreateAndroidInstanceAcceleratorTokenResponse",
       "status": "online"
     },
     "CreateAndroidInstanceImage": {
@@ -133,6 +147,13 @@
       "output": "DeleteAndroidInstanceBackupFilesResponse",
       "status": "online"
     },
+    "DeleteAndroidInstanceBackups": {
+      "document": "批量删除安卓实例备份",
+      "input": "DeleteAndroidInstanceBackupsRequest",
+      "name": "批量删除安卓实例备份",
+      "output": "DeleteAndroidInstanceBackupsResponse",
+      "status": "online"
+    },
     "DeleteAndroidInstanceImages": {
       "document": "删除安卓实例镜像",
       "input": "DeleteAndroidInstanceImagesRequest",
@@ -159,6 +180,13 @@
       "input": "DescribeAndroidInstanceAppsRequest",
       "name": "查询安卓实例应用",
       "output": "DescribeAndroidInstanceAppsResponse",
+      "status": "online"
+    },
+    "DescribeAndroidInstanceBackups": {
+      "document": "查询安卓实例备份列表",
+      "input": "DescribeAndroidInstanceBackupsRequest",
+      "name": "查询安卓实例备份列表",
+      "output": "DescribeAndroidInstanceBackupsResponse",
       "status": "online"
     },
     "DescribeAndroidInstanceImages": {
@@ -222,6 +250,27 @@
       "input": "DisableAndroidInstancesAppRequest",
       "name": "批量禁用安卓实例应用",
       "output": "DisableAndroidInstancesAppResponse",
+      "status": "online"
+    },
+    "DisconnectAndroidInstance": {
+      "document": "断开安卓实例",
+      "input": "DisconnectAndroidInstanceRequest",
+      "name": "断开安卓实例",
+      "output": "DisconnectAndroidInstanceResponse",
+      "status": "online"
+    },
+    "DisconnectAndroidInstanceAccelerator": {
+      "document": "断开安卓实例加速节点",
+      "input": "DisconnectAndroidInstanceAcceleratorRequest",
+      "name": "断开安卓实例加速节点",
+      "output": "DisconnectAndroidInstanceAcceleratorResponse",
+      "status": "online"
+    },
+    "DistributeAndroidInstanceImageToHosts": {
+      "document": "分发安卓实例镜像至宿主机",
+      "input": "DistributeAndroidInstanceImageToHostsRequest",
+      "name": "分发安卓实例镜像到宿主机",
+      "output": "DistributeAndroidInstanceImageToHostsResponse",
       "status": "online"
     },
     "DistributeFileToAndroidInstances": {
@@ -392,6 +441,13 @@
       "output": "RestartAndroidInstancesAppResponse",
       "status": "online"
     },
+    "RestoreAndroidInstance": {
+      "document": "还原安卓实例。该接口需要联系我们开通内网存储才能使用。",
+      "input": "RestoreAndroidInstanceRequest",
+      "name": "还原安卓实例",
+      "output": "RestoreAndroidInstanceResponse",
+      "status": "online"
+    },
     "RestoreAndroidInstanceFromStorage": {
       "document": "使用指定存储数据还原云手机，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果还原数据来自 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。",
       "input": "RestoreAndroidInstanceFromStorageRequest",
@@ -528,7 +584,7 @@
   },
   "metadata": {
     "apiVersion": "2019-11-18",
-    "api_brief": "介绍如何使用API对云游戏操作，包括尝试锁定机器、创建会话或强制退出游戏等。",
+    "api_brief": "## 概述\n腾讯云云游戏依托腾讯丰富的边缘计算节点、灵活的 GPU 虚拟化技术、稳定低延时的音视频互动能力，为游戏开发者提供一站式的云游戏 PaaS 解决方案。云游戏的游戏逻辑和渲染运算都在云端完成，并将渲染后的结果编码为音视频流通过网络传输给终端，终端则将用户的操作信息传输给云端和游戏进行实时交互。\n开发者无需适配不同的软硬件平台，即可快速部署上线，让玩家在各类终端和场景下，无需安装即可获得3A级的游戏体验。\n\n本章节介绍的云游戏 API 接口均为 API 3.0 接口。\n您可以调用 API 对云游戏进行操作，例如请求资源、创建会话。\n云游戏支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1162/40729)。\n\n## 术语表\n云游戏 API 接口的常见术语请参见下表：\n\n| 术语 | 描述 | \n|---------|---------|\n| APPID | 开发者访问 COS 服务时拥有的用户维度唯一资源标识，用以标识资源，可在 [API 密钥管理](https://console.cloud.tencent.com/capi) 页面获取。 | \n| SecretId | 开发者拥有的项目身份识别 ID，用于身份认证，可在 [API 密钥管理](https://console.cloud.tencent.com/capi) 页面获取。 | \n| SecretKey | 开发者拥有的项目身份密钥，可在 [API 密钥管理](https://console.cloud.tencent.com/capi) 页面获取。 | \n| AndroidInstances | 云手机实例，指在云端运行的独立虚拟手机环境，包含完整的安卓操作系统及基础应用。用户可通过网络远程操控实例，实现应用运行、数据存储等功能，每个实例拥有独立计算资源与存储空间。 | \n| AndroidInstanceImage | 云手机镜像，指云手机实例的操作系统模板，包含预装软件及系统配置。用户可通过镜像批量创建环境一致的云手机实例，显著提升部署效率，支持自定义镜像备份与迁移。 | \n| AndroidInstanceApp | 云手机应用，指运行于云手机实例中的安卓应用程序（APK），用户可通过云端调度实现应用的安装、卸载。应用数据存储在云端，无需本地设备支持。 | \n| GameArchive | 云游戏云端游中使用，指游戏存档。 | \n| PublishStream | 云游戏云端游中使用，指云端推流。会将云端实例中运行的游戏画面推流到云直播或指定的第三方地址。 | \n\n\n## API 快速入门\n您可以使用 API Explorer 工具在线调用 API。\n本文以创建会话为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n1. 进入 [API Explorer](https://console.cloud.tencent.com/api/explorer) 工具页面。更多 API Explorer 工具使用信息，请参见 [使用 API Explorer](https://cloud.tencent.com/document/product/1278/46697)。\n2. 调用 [创建会话](https://console.cloud.tencent.com/api/explorer?Product=gs&Version=2019-11-18&Action=CreateSession) 接口，在已经购买云游戏云端游资源和获取 GameId 后，输入 UserId 和 GameId 发起调用，即可获得创建会话的请求响应结果。",
     "serviceNameCN": "云游戏",
     "serviceShortName": "gs"
   },
@@ -957,6 +1013,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务状态。\nIDLE：未连接\nESTABLISHED：连接中",
+          "example": "ESTABLISHED",
+          "member": "string",
+          "name": "ServiceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1070,6 +1137,72 @@
       ],
       "usage": "both"
     },
+    "AndroidInstanceBackup": {
+      "document": "安卓实例备份",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份ID",
+          "example": "backup-1a2b",
+          "member": "string",
+          "name": "BackupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份状态",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大小，单位 Byte",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份的安卓实例 ID",
+          "example": "cai-1a2b3c4d",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-07-02T10:15:36Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AndroidInstanceDevice": {
       "document": "安卓实例设备信息",
       "members": [
@@ -1125,6 +1258,32 @@
         }
       ],
       "usage": "both"
+    },
+    "AndroidInstanceHostTask": {
+      "document": "安卓实例宿主机任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "a28c6f9c-e794-4d48-b711-d17e51a5d745",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机序列号",
+          "example": "RK5838P1262201165",
+          "member": "string",
+          "name": "HostSerialNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AndroidInstanceImage": {
       "document": "安卓实例镜像信息",
@@ -1432,7 +1591,7 @@
         {
           "disabled": false,
           "document": "安卓实例 ID",
-          "example": "cai_abcd1234",
+          "example": "cai_a1b2",
           "member": "string",
           "name": "AndroidInstanceId",
           "output_required": false,
@@ -1461,9 +1620,75 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标文件名",
+          "example": "file_name",
+          "member": "string",
+          "name": "DestinationFileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "BackUpAndroidInstanceRequest": {
+      "document": "BackUpAndroidInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例ID",
+          "example": "cai-1a2b3c4d",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包含的路径，支持仅含一个通配符*，通配符不能出现在路径开始",
+          "example": "[ \"/data/tmp/\"]",
+          "member": "string",
+          "name": "Includes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要排除路径，支持仅含一个通配符*，通配符不能出现在路径开始",
+          "example": "[ \"/data/tmp/\"]",
+          "member": "string",
+          "name": "Excludes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BackUpAndroidInstanceResponse": {
+      "document": "BackUpAndroidInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份 ID",
+          "example": "backup-1a2b",
+          "member": "string",
+          "name": "BackupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BackUpAndroidInstanceToStorageRequest": {
       "document": "BackUpAndroidInstanceToStorage请求参数结构体",
@@ -1950,6 +2175,72 @@
       ],
       "type": "object"
     },
+    "CreateAndroidInstanceAcceleratorTokenRequest": {
+      "document": "CreateAndroidInstanceAcceleratorToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 列表。每次请求的实例的上限为 500。",
+          "example": "[ \"cai-a1b2c3d4\" ]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户IP，可以根据该 IP 选择就近加速点。如果不填，将自动选择就近加速点。",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIP",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidInstanceAcceleratorTokenResponse": {
+      "document": "CreateAndroidInstanceAcceleratorToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "token",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加速信息",
+          "example": "e30=",
+          "member": "string",
+          "name": "AcceleratorInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安卓实例错误列表。列表包含有问题的安卓实例 ID 以及发生的错误信息。",
+          "example": "无",
+          "member": "AndroidInstanceError",
+          "name": "AndroidInstanceErrors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAndroidInstanceImageRequest": {
       "document": "CreateAndroidInstanceImage请求参数结构体",
       "members": [
@@ -2209,7 +2500,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求的实例的上限为 500。",
-          "example": "[ \"cai-abcd1234\" ]",
+          "example": "[ \"cai-a1b2c3d4\" ]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -2221,6 +2512,24 @@
           "example": "12h",
           "member": "string",
           "name": "ExpirationDuration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式。\nSTANDARD：默认值，标准模式\nACCELERATED：加速模式，该模式需要开通加速服务才能生效",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 IP。在加速模式下，该字段必填。",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIP",
           "required": false,
           "type": "string"
         }
@@ -2626,7 +2935,7 @@
         },
         {
           "disabled": false,
-          "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
+          "document": "【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
@@ -2849,6 +3158,33 @@
       ],
       "type": "object"
     },
+    "DeleteAndroidInstanceBackupsRequest": {
+      "document": "DeleteAndroidInstanceBackups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份ID列表",
+          "example": "[\"backup-1a2b\"]",
+          "member": "string",
+          "name": "BackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAndroidInstanceBackupsResponse": {
+      "document": "DeleteAndroidInstanceBackups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAndroidInstanceImagesRequest": {
       "document": "DeleteAndroidInstanceImages请求参数结构体",
       "members": [
@@ -3012,6 +3348,71 @@
           "name": "Apps",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAndroidInstanceBackupsRequest": {
+      "document": "DescribeAndroidInstanceBackups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份ID列表",
+          "example": "[\"backup-1a2b\"]",
+          "member": "string",
+          "name": "BackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAndroidInstanceBackupsResponse": {
+      "document": "DescribeAndroidInstanceBackups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份列表",
+          "example": "无",
+          "member": "AndroidInstanceBackup",
+          "name": "Backups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3639,6 +4040,115 @@
       ],
       "type": "object"
     },
+    "DisconnectAndroidInstanceAcceleratorRequest": {
+      "document": "DisconnectAndroidInstanceAccelerator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cai-1a2b",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。用户 ID 为空，将断开该实例的所有用户连接；用户 ID 不为空，只断开该用户的连接。",
+          "example": "user-001",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisconnectAndroidInstanceAcceleratorResponse": {
+      "document": "DisconnectAndroidInstanceAccelerator返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisconnectAndroidInstanceRequest": {
+      "document": "DisconnectAndroidInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cai-1a2b",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisconnectAndroidInstanceResponse": {
+      "document": "DisconnectAndroidInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAndroidInstanceImageToHostsRequest": {
+      "document": "DistributeAndroidInstanceImageToHosts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "宿主机序列号数组",
+          "example": "[\"RK5838P1262201165\"]",
+          "member": "string",
+          "name": "HostSerialNumbers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例镜像 ID",
+          "example": "image-a5drda9q",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAndroidInstanceImageToHostsResponse": {
+      "document": "DistributeAndroidInstanceImageToHosts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务集合",
+          "example": "无",
+          "member": "AndroidInstanceHostTask",
+          "name": "TaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DistributeFileToAndroidInstancesRequest": {
       "document": "DistributeFileToAndroidInstances请求参数结构体",
       "members": [
@@ -3667,6 +4177,15 @@
           "member": "string",
           "name": "DestinationDirectory",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标文件名",
+          "example": "file_name",
+          "member": "string",
+          "name": "DestinationFileName",
+          "required": false,
           "type": "string"
         }
       ],
@@ -4064,6 +4583,15 @@
           "name": "AndroidAppVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安装方式。\nCLEAR_DATA 默认，清理数据\nKEEP_DATA 保留数据",
+          "example": "CLEAR_DATA",
+          "member": "string",
+          "name": "InstallationMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4096,7 +4624,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "[\"cai-1300055477-ea99qwovyrq\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -4105,10 +4633,19 @@
         {
           "disabled": false,
           "document": "安卓应用下载 URL",
-          "example": "无",
+          "example": "https://test.cos.ap-nanjing.myqcloud.com/tmp/177.apk",
           "member": "string",
           "name": "AndroidAppURL",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用MD5码值（32位小写十六进制字符串）",
+          "example": "fa9af5f509423f9add5c5a7e472dde4d",
+          "member": "string",
+          "name": "AndroidAppMD5",
+          "required": false,
           "type": "string"
         }
       ],
@@ -4721,6 +5258,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效时长。如果不填该字段，默认为永久。支持 s（秒）、m（分）、h（小时）、d（天）等单位，比如 12h 表示 12 小时，1h2m3s 表示一小时两分三秒",
+          "example": "12h",
+          "member": "string",
+          "name": "ExpirationDuration",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5005,6 +5551,52 @@
           "disabled": false,
           "document": "实例任务 ID",
           "example": "taskid-abcd",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreAndroidInstanceRequest": {
+      "document": "RestoreAndroidInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID",
+          "example": "cai-1a2b3c4d",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份 ID",
+          "example": "backup-1a2b",
+          "member": "string",
+          "name": "BackupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreAndroidInstanceResponse": {
+      "document": "RestoreAndroidInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例任务 ID",
+          "example": "任务 ID",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -5747,7 +6339,7 @@
         },
         {
           "disabled": false,
-          "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
+          "document": "【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
@@ -5860,6 +6452,15 @@
           "example": "/sdcard/Download/",
           "member": "string",
           "name": "DestinationDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标文件名",
+          "example": "file_name",
+          "member": "string",
+          "name": "DestinationFileName",
           "required": false,
           "type": "string"
         }

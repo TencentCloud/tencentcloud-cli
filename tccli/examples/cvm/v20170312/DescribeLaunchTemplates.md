@@ -18,7 +18,7 @@ Output:
             {
                 "LatestVersionNumber": 12,
                 "LaunchTemplateId": "lt-q9t8j8eg",
-                "LaunchTemplateName": "未命名foo\"'\"'''\"\"",
+                "LaunchTemplateName": "MyLaunchTemplateName",
                 "DefaultVersionNumber": 5,
                 "LaunchTemplateVersionCount": 8,
                 "CreatedBy": "251009920",

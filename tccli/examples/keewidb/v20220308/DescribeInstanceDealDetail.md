@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli keewidb DescribeInstanceDealDetail --cli-unfold-argument  \
-    --DealIds 138172054
+    --DealName 20250925297021530748195
 ```
 
 Output: 

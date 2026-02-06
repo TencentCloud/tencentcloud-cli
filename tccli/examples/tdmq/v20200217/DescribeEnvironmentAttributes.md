@@ -1,4 +1,4 @@
-**Example 1: 列出指定命名空间属性**
+**Example 1: 查询命名空间详情**
 
 
 
@@ -6,23 +6,25 @@ Input:
 
 ```
 tccli tdmq DescribeEnvironmentAttributes --cli-unfold-argument  \
-    --EnvironmentId devNs \
-    --ClusterId pulsar-5r59xd4vnx
+    --EnvironmentId felixsshi-ns \
+    --ClusterId pulsar-35mrz4xb3az
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "MsgTTL": 2000,
-        "RateInByte": 0,
+        "EnvironmentId": "felixsshi-ns",
+        "MsgTTL": 3600,
+        "RateInByte": 52428800,
         "RateInSize": 0,
+        "Remark": "",
         "Replicas": 2,
-        "RetentionHours": 0,
-        "RetentionSize": 0,
-        "EnvironmentId": "test1",
-        "Remark": "备注",
-        "RequestId": "dec113a8-599a-4e70-b143-14425d48ffc4"
+        "RetentionHours": 24,
+        "RetentionSize": 10,
+        "SubscriptionExpirationTime": 1440,
+        "SubscriptionExpirationTimeEnable": true,
+        "RequestId": "ded83ac0-49a9-4472-8a89-a05b193ead37"
     }
 }
 ```

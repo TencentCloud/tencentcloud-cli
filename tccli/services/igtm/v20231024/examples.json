@@ -12,7 +12,7 @@
       {
         "document": "创建免费版套餐",
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"example-test-instance\",\n    \"Domain\": \"igtm.example.com\",\n    \"AccessType\": \"custom\",\n    \"AccessDomain\": \"example.com\",\n    \"AccessSubDomain\": \"access.igtm\",\n    \"GlobalTtl\": 300,\n    \"PackageType\": \"Free\",\n    \"Remark\": \"测试实例\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec040ddf-7c7d-4aef-9e0d-6f3105fa0a4c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"gtm-xxxxxxxx\",\n        \"RequestId\": \"ec040ddf-7c7d-4aef-9e0d-6f3105fa0a4c\"\n    }\n}",
         "title": "创建免费版套餐"
       }
     ],
@@ -40,6 +40,26 @@
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控ping\",\n    \"CheckProtocol\": \"PING\",\n    \"CheckInterval\": 60,\n    \"Timeout\": 2,\n    \"FailTimes\": 0,\n    \"FailRate\": 50,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"PingNum\": 20,\n    \"PacketLossRate\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorId\": 91,\n        \"RequestId\": \"93ba54c1-a533-42bb-aab5-458aef4b1666\"\n    }\n}",
         "title": "监控器ping协议"
+      }
+    ],
+    "CreatePackageAndPay": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePackageAndPay\n<公共请求参数>\n\n{\n    \"DealType\": \"CREATE\",\n    \"GoodsType\": \"ULTIMATE\",\n    \"GoodsNum\": 1,\n    \"AutoRenew\": 1,\n    \"TimeSpan\": 1,\n    \"AutoVoucher\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"079d26c3-15a0-4ce0-836d-7307776860e1\",\n        \"ResourceIds\": [\n            \"ins-ojwefnyfigv\"\n        ]\n    }\n}",
+        "title": "购买套餐"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePackageAndPay\n<公共请求参数>\n\n{\n    \"DealType\": \"RENEW\",\n    \"GoodsType\": \"ULTIMATE\",\n    \"GoodsNum\": 1,\n    \"AutoRenew\": 1,\n    \"ResourceId\": \"ins-ojwefnyfigv\",\n    \"TimeSpan\": 1,\n    \"AutoVoucher\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"079d26c3-15a0-4ce0-836d-7307776860e1\",\n        \"ResourceIds\": [\n            \"ins-ojwefnyfigv\"\n        ]\n    }\n}",
+        "title": "续费套餐"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePackageAndPay\n<公共请求参数>\n\n{\n    \"DealType\": \"MODIFY\",\n    \"GoodsType\": \"STANDARD\",\n    \"GoodsNum\": 1,\n    \"AutoRenew\": 1,\n    \"ResourceId\": \"ins-lntftyrifqx\",\n    \"TimeSpan\": 1,\n    \"NewPackageType\": \"ULTIMATE\",\n    \"AutoVoucher\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"183a7455-6a2c-4e17-816d-e45e880230fe\",\n        \"ResourceIds\": [\n            \"ins-lntftyrifqx\"\n        ]\n    }\n}",
+        "title": "变配套餐"
       }
     ],
     "CreateStrategy": [
@@ -133,7 +153,7 @@
     "DescribeInstanceDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDetail\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-dsdd123xdo\"\n}",
         "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"gtm-dsdd123xdo\",\n            \"InstanceName\": \"测试实例\",\n            \"Domain\": \"gtmtest.com\",\n            \"AccessType\": \"CUSTOM\",\n            \"AccessSubDomain\": \"access-gtm\",\n            \"AccessDomain\": \"gtmtest.com\",\n            \"GlobalTtl\": 600,\n            \"PackageType\": \"ULTIMATE\",\n            \"WorkingStatus\": \"NORMAL\",\n            \"Status\": \"ENABLED\",\n            \"IsCnameConfigured\": false,\n            \"Remark\": \"备注信息\",\n            \"StrategyNum\": 0,\n            \"AddressPoolNum\": 0,\n            \"MonitorNum\": 0,\n            \"ResourceId\": \"ins-oxrvmnl4yrd\",\n            \"NotifyEventSet\": [],\n            \"CreatedOn\": \"2024-07-19 15:40:19\",\n            \"UpdatedOn\": \"2024-07-19 15:40:19\"\n        },\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "实例详情"
       }
@@ -205,7 +225,7 @@
     "ModifyInstanceConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceConfig\": {\n        \"InstanceName\": \"测试实例 1\",\n        \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n        \"AccessType\": \"CUSTOM\",\n        \"AccessDomain\": \"exmaple-access.com\",\n        \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n        \"Remark\": \"测试实例\",\n        \"GlobalTtl\": 300\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-xxxxxxxxxxx\",\n    \"InstanceConfig\": {\n        \"InstanceName\": \"测试实例 1\",\n        \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n        \"AccessType\": \"CUSTOM\",\n        \"AccessDomain\": \"exmaple-access.com\",\n        \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n        \"Remark\": \"测试实例\",\n        \"GlobalTtl\": 300\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceName\": \"测试实例 1\",\n            \"InstanceId\": \"gtm-xxxxxxxxxxx\",\n            \"ResourceId\": \"\",\n            \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n            \"AccessType\": \"CUSTOM\",\n            \"AccessDomain\": \"exmaple-access.com\",\n            \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n            \"GlobalTtl\": 300,\n            \"PackageType\": \"FREE\",\n            \"WorkingStatus\": \"NORMAL\",\n            \"Status\": \"ENABLED\",\n            \"Remark\": \"测试实例\",\n            \"StrategyNum\": 0,\n            \"AddressPoolNum\": 0,\n            \"MonitorNum\": 0,\n            \"CreatedOn\": \"2023-12-20 06:43:16\",\n            \"UpdatedOn\": \"2023-12-26 20:00:03\",\n            \"NotifyEventSet\": []\n        },\n        \"RequestId\": \"be7d3d39-82cf-41e8-9b60-151e9745c422\"\n    }\n}",
         "title": "修改实例配置"
       }
@@ -216,6 +236,14 @@
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": 1,\n    \"MonitorName\": \"测试监控器\",\n    \"CheckProtocol\": \"PING\",\n    \"CheckInterval\": 1,\n    \"Timeout\": 1,\n    \"FailTimes\": 1,\n    \"FailRate\": 1,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"PingNum\": 1,\n    \"TcpPort\": 1,\n    \"Host\": \"url\",\n    \"Path\": \"/path\",\n    \"ReturnCodeThreshold\": 1,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\",\n    \"PacketLossRate\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "修改监控器"
+      }
+    ],
+    "ModifyPackageAutoRenew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageAutoRenew\n<公共请求参数>\n\n{\n    \"ResourceId\": \"task-muqyohplgqld\",\n    \"AutoRenew\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7f146a6-53b7-4647-80fe-cfc3df35e3ef\",\n        \"ResourceIds\": [\n            \"task-muqyohplgqld\"\n        ]\n    }\n}",
+        "title": "设置自动续费"
       }
     ],
     "ModifyStrategy": [

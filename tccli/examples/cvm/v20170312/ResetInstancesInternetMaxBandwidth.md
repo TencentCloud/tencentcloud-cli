@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cvm ResetInstancesInternetMaxBandwidth --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy \
+    --InstanceIds ins-dyhinflx \
     --InternetAccessible.InternetMaxBandwidthOut 10 \
-    --StartTime 2017-03-15 \
-    --EndTime 2017-03-16
+    --StartTime 2025-11-18 \
+    --EndTime 2025-11-19
 ```
 
 Output: 

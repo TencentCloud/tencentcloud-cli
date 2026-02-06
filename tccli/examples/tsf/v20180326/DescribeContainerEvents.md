@@ -8,6 +8,7 @@ Input:
 tccli tsf DescribeContainerEvents --cli-unfold-argument  \
     --ResourceType instance \
     --ResourceId test-event-6f46bcb6b-sxfcr \
+    --GroupId group-9yn2q8yd \
     --Offset 0 \
     --Limit 20
 ```

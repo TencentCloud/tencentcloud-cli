@@ -7,7 +7,7 @@ Input:
 ```
 tccli wedata DescribeRuleExecResults --cli-unfold-argument  \
     --RuleGroupExecId 1 \
-    --ProjectId 123456
+    --ProjectId 3049457820947678
 ```
 
 Output: 
@@ -56,7 +56,7 @@ Output:
                     "TargetObjectDataType": null,
                     "TargetObjectValue": null,
                     "TemplateName": "数据产出及时性",
-                    "TriggerResult": "无"
+                    "TriggerResult": "阻断任务成功"
                 }
             ],
             "TotalCount": 1

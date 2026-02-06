@@ -150,7 +150,7 @@
   },
   "metadata": {
     "apiVersion": "2023-09-01",
-    "api_brief": "## 概述\n腾讯混元大模型（Tencent Hunyuan）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。\n\n## 术语表\n\n| 术语 | 说明 | \n|---------|---------|\n| 并发任务数 | 并发任务数（并发）指能同时处理的任务数量，如果并发任务数为1，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。 | \n| API 密钥 | API 密钥是用户访问腾讯云 API 进行身份验证时需要用到的安全凭证，由 SecretId 和 SecretKey 一起组成。 | \n\n## 使用限制\n对于 API 接口的参数限制，请参考各接口文档中的参数说明。\n\n## API 快速入门\n您可以使用 API Explorer 工具在线调用 API。\n本文以创建应用为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n1.进入 [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions) 页面。更多 API Explorer 工具使用信息，请参见[文档](https://cloud.tencent.com/document/product/1278/46697) 。\n2.调用 [ChatCompletions](https://cloud.tencent.com/document/product/1729/105701) 接口，调用腾讯混元大模型。",
+    "api_brief": "## 概述\n腾讯混元大模型（Tencent HY）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。",
     "serviceNameCN": "腾讯混元大模型",
     "serviceShortName": "hunyuan"
   },
@@ -303,7 +303,7 @@
         {
           "disabled": false,
           "document": "说明：\n1. 影响输出文本的多样性。模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。\n2. 取值区间为 [0.0, 1.0]。取值越大，生成文本的多样性越强。",
-          "example": "无",
+          "example": "1.0",
           "member": "float",
           "name": "TopP",
           "required": false,
@@ -312,7 +312,7 @@
         {
           "disabled": false,
           "document": "说明：\n1. 影响模型输出多样性，模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。\n2. 取值区间为 [0.0, 2.0]。较高的数值会使输出更加多样化和不可预测，而较低的数值会使其更加集中和确定。",
-          "example": "无",
+          "example": "0.6",
           "member": "float",
           "name": "Temperature",
           "required": false,
@@ -391,7 +391,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。",
           "example": "false",
           "member": "bool",
@@ -420,7 +420,7 @@
         {
           "disabled": false,
           "document": "自定义结束生成字符串\n\n调用 OpenAI 的接口时，如果您指定了 `stop` 参数, 模型会停止在匹配到 `stop` 的内容之前。\n在调用混元接口时，会停止在匹配到 `stop` 的内容之后。\n\n**说明：**\n未来我们可能会修改此行为以便和 OpenAI 保持一致。\n但是目前有使用该参数的情况下，开发者需要注意该参数是否会对应用造成影响，以及未来该行为调整时带来的影响。",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "Stop",
           "required": false,
@@ -436,7 +436,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档",
           "example": "false",
           "member": "bool",
@@ -456,7 +456,7 @@
         {
           "disabled": false,
           "document": "用户传入Topic",
-          "example": "无",
+          "example": "闲聊",
           "member": "string",
           "name": "TopicChoice",
           "required": false,
@@ -570,7 +570,7 @@
         {
           "disabled": false,
           "document": "推荐问答。",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "RecommendedQuestions",
           "output_required": false,
@@ -628,7 +628,7 @@
         },
         {
           "disabled": false,
-          "document": "源语言。\n支持语言列表: 1. 简体中文：zh，2. 粤语：yue，3. 英语：en，4. 法语：fr，5. 葡萄牙语：pt，6. 西班牙语：es，7. 日语：ja，8. 土耳其语：tr，9. 俄语：ru，10. 阿拉伯语：ar，11. 韩语：ko，12. 泰语：th，13. 意大利语：it，14. 德语：de，15. 越南语：vi，16. 马来语：ms，17. 印尼语：id",
+          "document": "源语言。\n支持语言列表: \n简体中文：zh，繁体中文：zh-TR，粤语：yue，英语：en，法语：fr，葡萄牙语：pt，西班牙语：es，日语：ja，土耳其语：tr，俄语：ru，阿拉伯语：ar，韩语：ko，泰语：th，意大利语：it，德语：de，越南语：vi，马来语：ms，印尼语：id\n以下语种仅 hunyuan-translation 模型支持：\n菲律宾语：fil，印地语：hi，波兰语：pl，捷克语：cs，荷兰语：nl，高棉语：km，缅甸语：my，波斯语：fa，古吉拉特语：gu，乌尔都语：ur，泰卢固语：te，马拉地语：mr，希伯来语：he，孟加拉语：bn，泰米尔语：ta，乌克兰语：uk，藏语：bo，哈萨克语：kk，蒙古语：mn，维吾尔语：ug",
           "example": "en",
           "member": "string",
           "name": "Source",
@@ -637,7 +637,7 @@
         },
         {
           "disabled": false,
-          "document": "目标语言。\n支持语言列表: 1. 简体中文：zh，2. 粤语：yue，3. 英语：en，4. 法语：fr，5. 葡萄牙语：pt，6. 西班牙语：es，7. 日语：ja，8. 土耳其语：tr，9. 俄语：ru，10. 阿拉伯语：ar，11. 韩语：ko，12. 泰语：th，13. 意大利语：it，14. 德语：de，15. 越南语：vi，16. 马来语：ms，17. 印尼语：id",
+          "document": "目标语言。\n支持语言列表: \n简体中文：zh，繁体中文：zh-TR，粤语：yue，英语：en，法语：fr，葡萄牙语：pt，西班牙语：es，日语：ja，土耳其语：tr，俄语：ru，阿拉伯语：ar，韩语：ko，泰语：th，意大利语：it，德语：de，越南语：vi，马来语：ms，印尼语：id\n以下语种仅 hunyuan-translation 模型支持：\n菲律宾语：fil，印地语：hi，波兰语：pl，捷克语：cs，荷兰语：nl，高棉语：km，缅甸语：my，波斯语：fa，古吉拉特语：gu，乌尔都语：ur，泰卢固语：te，马拉地语：mr，希伯来语：he，孟加拉语：bn，泰米尔语：ta，乌克兰语：uk，藏语：bo，哈萨克语：kk，蒙古语：mn，维吾尔语：ug",
           "example": "zh",
           "member": "string",
           "name": "Target",
@@ -794,11 +794,11 @@
       "usage": "out"
     },
     "Content": {
-      "document": "可以传入多种类型的内容，如图片、文本。",
+      "document": "可以传入多种类型的内容，目前支持文本、图片、视频。",
       "members": [
         {
           "disabled": false,
-          "document": "内容类型\n注意：\n需包含至少一个 Type 为\"text\"的参数。\n参数值可选范围：[text\", \"image_url\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容类型\n注意：\n需包含至少一个 Type 为\"text\"的参数。\n参数值可选范围：[\"text\", \"image_url\",\"video_url\",\"video_frames\"]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "text",
           "member": "string",
           "name": "Type",
@@ -809,7 +809,7 @@
         },
         {
           "disabled": false,
-          "document": "当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 image_url 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "下面图片中是哪个公司的 Logo？",
           "member": "string",
           "name": "Text",
@@ -820,10 +820,32 @@
         },
         {
           "disabled": false,
-          "document": "图片的url，当 Type 为 image_url 时使用，表示具体的图片内容\n如\"https://example.com/1.png\" 或 图片的base64（注意 \"data:image/jpeg;base64,\" 为必要部分）：\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......\"。当 Type 为 text 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片的url，当 Type 为 image_url 时使用，表示具体的图片内容\n如\"https://example.com/1.png\" 或 图片的base64（注意 \"data:image/jpeg;base64,\" 为必要部分）：\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......\"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageUrl",
           "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当 Type 为 video_url 时使用，标识具体的视频链接内容，如\"https://your-video-path.mp4\"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoUrl",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoFrames",
+          "name": "VideoFrames",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -2370,7 +2392,7 @@
         },
         {
           "disabled": false,
-          "document": "多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Content",
           "name": "Contents",
@@ -2641,6 +2663,22 @@
           "name": "Num",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PromptTokensDetails": {
+      "document": "输入token的详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存 token 的数量。",
+          "example": "0",
+          "member": "string",
+          "name": "CachedTokens",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4144,6 +4182,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入 token 的详情。",
+          "example": "无",
+          "member": "PromptTokensDetails",
+          "name": "PromptTokensDetails",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4172,6 +4220,51 @@
       ],
       "usage": "in"
     },
+    "VideoFrames": {
+      "document": "当type为video_frames时使用，标识具体的视频内图像帧内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频图像帧列表，图像帧传url，最大支持传入数量为512帧",
+          "example": "[\"https://cloudcache.tencent-cloud.com/qcloud/ui/portal-set/build/About/images/bg-product-series_87d.png\"]",
+          "member": "string",
+          "name": "Frames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoUrl": {
+      "document": "当type为video_url时使用，标识具体的视频链接内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频的url，如\"https://your-video-path.mp4\"，视频文件大小不超过100M。",
+          "example": "https://your-video-path.mp4",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制视频抽帧频率，取值范围为 0.1 ~5，表示每隔 1/fps 秒抽取一帧，默认为 1s抽取一帧",
+          "example": "1.0",
+          "member": "float",
+          "name": "Fps",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "WebSearchOptions": {
       "document": "知识注入相关的参数信息",
       "members": [
@@ -4199,6 +4292,24 @@
           "example": "true",
           "member": "bool",
           "name": "Processes",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启图文混排",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启音乐",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableMusic",
           "required": false,
           "type": "bool"
         }

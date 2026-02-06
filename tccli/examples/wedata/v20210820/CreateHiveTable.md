@@ -11,7 +11,8 @@ tccli wedata CreateHiveTable --cli-unfold-argument  \
     --Incharge 1 \
     --DatasourceId 1 \
     --Privilege 0 \
-    --DDLSql Y3JlYXRlIHRhYmxlIHRlc3QxKGlkIGJpZ2ludCkK
+    --DDLSql Y3JlYXRlIHRhYmxlIHRlc3QxKGlkIGJpZ2ludCkK \
+    --Type HIVE
 ```
 
 Output: 

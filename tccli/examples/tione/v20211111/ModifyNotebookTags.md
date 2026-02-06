@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tione ModifyNotebookTags --cli-unfold-argument  \
-    --Id abc \
-    --Tags.0.TagKey abc \
-    --Tags.0.TagValue abc
+    --Id  \
+    --Tags.0.TagKey  \
+    --Tags.0.TagValue 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": ""
     }
 }
 ```

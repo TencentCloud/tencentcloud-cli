@@ -8,12 +8,28 @@
         "title": "检查cos迁移索引元数据"
       }
     ],
+    "CreateAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\",\n    \"CosBackup\": {\n        \"IsAutoBackup\": true,\n        \"BackupTime\": \"01:00\",\n        \"SnapshotName\": \"test2\",\n        \"EsRepositoryType\": 0,\n        \"StorageDuration\": 3,\n        \"AutoBackupInterval\": 1,\n        \"CosRetention\": 0,\n        \"RemoteCos\": 0,\n        \"StrategyName\": \"mypolicy2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"99593835-47fd-401d-b59f-9f84e641737c\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "CreateClusterSnapshot": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxx\",\n    \"SnapshotName\": \"es-xxx-test_20240912\",\n    \"Indices\": \"kibana_sample_data_flights\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-xxx\",\n        \"RequestId\": \"16eaxxxx-xxxx-xxxx-xxxx-xxxxxe45ae3c\"\n    }\n}",
         "title": "集群快照手动创建"
+      }
+    ],
+    "CreateCollector": [
+      {
+        "document": "根据输入参数创建采集器",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCollector\n<公共请求参数>\n\n{\n    \"CollectorType\": \"filebeat\",\n    \"OutputInstance\": {\n        \"InstanceId\": \"es-xxxxxxxx\",\n        \"Type\": \"elasticsearch\"\n    },\n    \"CVMInstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ],\n    \"CollectorConfigs\": [\n        {\n            \"FileContent\": \"test\",\n            \"FileName\": \"filebeat.yml\"\n        }\n    ],\n    \"CollectorName\": \"test\",\n    \"CollectorVersion\": \"7.10.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CollectorId\": \"coll-0xxxxxxx\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\n    }\n}",
+        "title": "创建采集器"
       }
     ],
     "CreateCosMigrateToServerlessInstance": [
@@ -35,7 +51,7 @@
     "CreateInstance": [
       {
         "document": "根据输入参数创建ES集群实例",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"EsVersion\": \"6.4.3\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"3\",\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": \"100\",\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"2\",\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"Password\": \"ascq23***********cjaw\",\n    \"InstanceName\": \"es_test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"EsVersion\": \"6.4.3\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 3,\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": 100,\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 2,\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"Password\": \"ascq23***********cjaw\",\n    \"InstanceName\": \"es_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-abc234\",\n        \"RequestId\": \"ab\",\n        \"DealName\": \"ab\"\n    }\n}",
         "title": "创建ES集群实例"
       }
@@ -43,7 +59,7 @@
     "CreateLogstashInstance": [
       {
         "document": "根据输入参数创建Logstash实例",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogstashInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"LogstashVersion\": \"6.8.13\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"DiskType\": \"CLOUD_SSD\",\n    \"NodeNum\": \"3\",\n    \"DiskSize\": \"100\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"NodeType\": \"LOGSTASH.S1.SMALL2\",\n    \"InstanceName\": \"logstash_test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogstashInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"LogstashVersion\": \"6.8.13\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"DiskType\": \"CLOUD_SSD\",\n    \"NodeNum\": 3,\n    \"DiskSize\": 100,\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"NodeType\": \"LOGSTASH.S1.SMALL2\",\n    \"InstanceName\": \"logstash_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"ls-xxxxxx\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\n    }\n}",
         "title": "创建Logstash实例"
       }
@@ -62,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessSpaceV2\n<公共请求参数>\n\n{\n    \"SpaceName\": \"spaceName\",\n    \"VpcInfo\": [\n        {\n            \"VpcId\": \"vpc-feafeaf\",\n            \"SubnetId\": \"subnet-feafaffg\",\n            \"VpcUid\": 1,\n            \"SubnetUid\": 1,\n            \"AvailableIpAddressCount\": 0\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-1\",\n    \"KibanaWhiteIpList\": [\n        \"127.0.0.1\"\n    ],\n    \"ZoneId\": 100001\n}",
         "output": "{\n    \"Response\": {\n        \"SpaceId\": \"space-feafaefgg\",\n        \"RequestId\": \"40f4f780-9969-42f9-8bd9-ccf0d1f2591a\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\",\n    \"StrategyName\": [\n        \"mypolicy2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"da7761e2-33fc-4640-b875-9b08f6e766aa\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "DeleteClusterSnapshot": [
@@ -118,6 +142,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessSpaceUser\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-efafeafe\",\n    \"Username\": \"admin\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40f4f780-9969-42f9-8bd9-ccf0d1f2591a\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CosBackupList\": [\n            {\n                \"AutoBackupInterval\": 12,\n                \"BackupTime\": \"01:00\",\n                \"CosRetention\": 0,\n                \"CreateTime\": \"2025-11-12 18:02:39\",\n                \"EsRepositoryType\": 0,\n                \"Indices\": \"\",\n                \"IsAutoBackup\": true,\n                \"PaasEsRepository\": \"ES_AUTO_BACKUP_ap-beijing\",\n                \"RemoteCos\": 1,\n                \"RemoteCosRegion\": \"ap-beijing\",\n                \"RetainUntilDate\": \"\",\n                \"RetentionGraceTime\": 0,\n                \"SnapshotName\": \"zzxtest\",\n                \"StorageDuration\": 3,\n                \"StrategyName\": \"mypolicy\",\n                \"UserEsRepository\": \"\"\n            }\n        ],\n        \"RequestId\": \"2206ef18-73f2-4e8f-a237-621664885fcc\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "DescribeClusterSnapshot": [
@@ -280,12 +312,28 @@
         "title": "智能运维诊断集群"
       }
     ],
+    "ExportIpTraceLog": [
+      {
+        "document": "只返回IP和访问时间",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IpTraceList\": [\n            {\n                \"NodeIp\": \"127.0.0.1\",\n                \"Ip\": \"127.0.0.1\",\n                \"Timestamp\": 171939488883\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "导出IP溯源日志原始数据"
+      }
+    ],
     "GetDiagnoseSettings": [
       {
         "document": "查看智能运维配置",
         "input": "https://es.tencentcloudapi.com/?Action=GetDiagnoseSettings\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Count\": 0,\n        \"DiagnoseJobMetas\": [\n            {\n                \"JobZhName\": \"1\",\n                \"JobDescription\": \"1\",\n                \"JobName\": \"1\"\n            }\n        ],\n        \"CronTime\": \"1\",\n        \"RequestId\": \"1\",\n        \"MaxCount\": 0\n    }\n}",
         "title": "查看智能运维配置"
+      }
+    ],
+    "GetIpTraceStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasddassd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OpenIpTrace\": false,\n        \"FilterKibanaIp\": false,\n        \"DurationTime\": 0,\n        \"IpTraceConfig\": {\n            \"EnableRequest\": false,\n            \"EnableResponse\": false,\n            \"EnableRequestBody\": false,\n            \"EnableResponseBody\": false,\n            \"RemoteIpInclude\": [\n                \"\"\n            ],\n            \"RemoteIpExclude\": [\n                \"\"\n            ],\n            \"UriInclude\": [\n                \"\"\n            ],\n            \"UriExclude\": [\n                \"\"\n            ]\n        },\n        \"LastStartTime\": \"2020-12-28 14:37:36\",\n        \"LastEndTime\": \"2020-12-28 14:37:36\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询IP溯源状态"
       }
     ],
     "GetRequestTargetNodeTypes": [
@@ -307,9 +355,25 @@
     "InstallInstanceModel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallInstanceModel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"UsrCosModelUrlList\": [\n        \"https://modeltestxxxx-sh-12560502xx.cos.ap-shanghai.myqcloud.com/bge-base-zh-v1.5.zip\"\n    ],\n    \"ModelNames\": [\n        \"wit-test\"\n    ],\n    \"TaskTypes\": [\n        \"text_embedding\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6c1d15f-5eab-11ef-9b1d-525400a23f29\",\n        \"FlowId\": \"17279\"\n    }\n}",
-        "title": "安装模型调用示例"
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallInstanceModel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-ria27gbk\",\n    \"ModelNames\": [\n        \"bge-base-zh-v1.5\"\n    ],\n    \"TaskTypes\": [\n        \"text_embedding\"\n    ],\n    \"ModelDescription\": \"test model\",\n    \"ModelSourceType\": \"PlatformModel\",\n    \"UploadedCosPaths\": [\n        \"/UserModels/common/bge-base-zh-v1.5.tar.gz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"4294967526\",\n        \"RequestId\": \"efbad3b5-5548-47bb-a88a-173adf833c26\"\n    }\n}",
+        "title": "模型安装接口调用样例"
+      }
+    ],
+    "ModifyAutoBackUpCommonInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackUpCommonInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"602b7b48-25ac-465c-a0bf-b6a7196ca869\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "ModifyAutoBackUpStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackUpStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-m6d4maox\",\n    \"StrategyName\": \"mypolicy2\",\n    \"CosBackup\": {\n        \"IsAutoBackup\": true,\n        \"BackupTime\": \"01:00\",\n        \"SnapshotName\": \"test2\",\n        \"EsRepositoryType\": 0,\n        \"StorageDuration\": 4,\n        \"AutoBackupInterval\": 12,\n        \"CosRetention\": 0,\n        \"RemoteCos\": 0,\n        \"StrategyName\": \"mypolicy2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"794affac-7f0b-4ff1-8737-8c5aff2401c1\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "ModifyEsVipSecurityGroup": [
@@ -318,6 +382,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEsVipSecurityGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-3p7lkvxx\",\n    \"SecurityGroupIds\": [\n        \"sg-1\",\n        \"sg-2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "修改集群VIP绑定的安全组信息"
+      }
+    ],
+    "QueryIpTraceLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IpTraceLogList\": [\n            {\n                \"Timestamp\": \"\",\n                \"RemoteIp\": \"127.0.0.1\",\n                \"TraceType\": \"req\",\n                \"NetType\": \"Public\",\n                \"Message\": \"\",\n                \"Uri\": \"message\",\n                \"PublicIp\": \"null\",\n                \"ReqTypeOrRspStatus\": \"\",\n                \"NodeIp\": \"127.0.0.1\"\n            }\n        ],\n        \"Total\": 12,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询IP溯源日志"
       }
     ],
     "RestartInstance": [
@@ -387,7 +459,7 @@
     "UpdateDiagnoseSettings": [
       {
         "document": "开启智能运维",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDiagnoseSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"Status\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDiagnoseSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "开启智能运维"
       }
@@ -410,20 +482,14 @@
     ],
     "UpdateInstance": [
       {
-        "document": "重置指定ES集群实例Kibana密码",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"Password\": \"newPwd_123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
-        "title": "重置Kibana密码"
-      },
-      {
         "document": "用以对集群的节点规格（核数、内存大小）和磁盘大小进行扩缩容操作（当前仅支持纵向扩容）",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"DiskSize\": \"150\",\n    \"NodeType\": \"ES.S1.MEDIUM4\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"DiskSize\": 150,\n    \"NodeType\": \"ES.S1.MEDIUM4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "ES集群纵向扩缩容"
       },
       {
         "document": "用以对指定ES集群实例进行横向扩缩容，纵向扩缩容，增加专用主节点，专用主节点横向扩缩容，纵向扩缩容等操作，NodeInfoList要传递目标的全量节点信息",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"3\",\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": \"100\",\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"2\",\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 3,\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": 100,\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 2,\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "ES集群节点规格变更"
       },
@@ -438,6 +504,20 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"EsConfig\": \"{\\\"action.destructive_requires_name\\\":\\\"true\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "修改ES集群实例配置"
+      },
+      {
+        "document": "重置指定ES集群实例Kibana密码",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"Password\": \"newPwd_123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
+        "title": "重置Kibana密码"
+      }
+    ],
+    "UpdateIpTraceStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasdadas\",\n    \"FilterKibanaIp\": false,\n    \"OpenIpTrace\": false,\n    \"DurationTime\": 0,\n    \"IpTraceConfig\": {\n        \"EnableRequest\": false,\n        \"EnableResponse\": false,\n        \"EnableRequestBody\": false,\n        \"EnableResponseBody\": false,\n        \"RemoteIpInclude\": [\n            \"\"\n        ],\n        \"RemoteIpExclude\": [\n            \"\"\n        ],\n        \"UriInclude\": [\n            \"\"\n        ],\n        \"UriExclude\": [\n            \"\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "更新ES集群IP溯源状态"
       }
     ],
     "UpdateJdk": [

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bi DeleteDatasource --cli-unfold-argument  \
-    --ProjectId 1 \
-    --Id 56
+    --Id 1982493789748932 \
+    --ProjectId 1982493789748932
 ```
 
 Output: 
@@ -30,8 +30,8 @@ Input:
 
 ```
 tccli bi DeleteDatasource --cli-unfold-argument  \
-    --ProjectId 1 \
-    --Id 1
+    --Id 1982493789748932 \
+    --ProjectId 1982493789748932
 ```
 
 Output: 

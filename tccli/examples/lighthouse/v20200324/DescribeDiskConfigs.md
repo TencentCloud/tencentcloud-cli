@@ -7,7 +7,7 @@ Input:
 ```
 tccli lighthouse DescribeDiskConfigs --cli-unfold-argument  \
     --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-2
+    --Filters.0.Values ap-guangzhou-3
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "DiskConfigSet": [
             {
-                "Zone": "ap-guangzhou-2",
+                "Zone": "ap-guangzhou-3",
                 "DiskType": "CLOUD_PREMIUM",
                 "MaxDiskSize": 1000,
                 "MinDiskSize": 10,
@@ -24,7 +24,7 @@ Output:
                 "DiskSalesState": "SOLD_OUT"
             },
             {
-                "Zone": "ap-guangzhou-2",
+                "Zone": "ap-guangzhou-3",
                 "DiskType": "CLOUD_SSD",
                 "MaxDiskSize": 1000,
                 "MinDiskSize": 20,

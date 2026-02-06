@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeRedisTopBigKeys --cli-unfold-argument  \
-    --InstanceId cdb-test \
+    --InstanceId crs-occia4d6 \
     --Date 2022-04-12 \
     --Product redis
 ```
@@ -26,7 +26,8 @@ Output:
                 "Encoding": "skiplist",
                 "ExpireTime": 0,
                 "MaxElementSize": 34431,
-                "Key": "test-key"
+                "Key": "test-key",
+                "Db": 0
             }
         ],
         "Timestamp": 162072183

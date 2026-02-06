@@ -42,6 +42,20 @@
       "output": "DescribeClusterInstancesResponse",
       "status": "online"
     },
+    "DescribeClusterMachines": {
+      "document": "查询托原生点列表",
+      "input": "DescribeClusterMachinesRequest",
+      "name": "查询原生节点列表",
+      "output": "DescribeClusterMachinesResponse",
+      "status": "online"
+    },
+    "DescribeClusters": {
+      "document": "查询集群列表",
+      "input": "DescribeClustersRequest",
+      "name": "查询集群列表",
+      "output": "DescribeClustersResponse",
+      "status": "online"
+    },
     "DescribeHealthCheckPolicies": {
       "document": "查询健康检测策略",
       "input": "DescribeHealthCheckPoliciesRequest",
@@ -68,6 +82,13 @@
       "input": "DescribeNodePoolsRequest",
       "name": "查询 TKE 节点池列表",
       "output": "DescribeNodePoolsResponse",
+      "status": "online"
+    },
+    "ModifyClusterMachine": {
+      "document": "修改原生节点",
+      "input": "ModifyClusterMachineRequest",
+      "name": "修改原生节点",
+      "output": "ModifyClusterMachineResponse",
       "status": "online"
     },
     "ModifyHealthCheckPolicy": {
@@ -229,6 +250,112 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Cluster": {
+      "document": "集群信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "集群",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群描述",
+          "example": "示例集群",
+          "member": "string",
+          "name": "ClusterDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群版本（默认值为1.10.5）",
+          "example": "1.20.6",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
+          "example": "INDEPENDENT_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Upgrading 升级中,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 欠费隔离中,ResourceIsolated 欠费已隔离,ResourceReverse 冲正恢复中,Abnormal 异常)",
+          "example": "Running",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-16T07:42:57Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群等级，针对托管集群生效\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L5",
+          "member": "string",
+          "name": "ClusterLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群所在vpc的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -455,6 +582,15 @@
         },
         {
           "disabled": false,
+          "document": "qgpu开关",
+          "example": "true",
+          "member": "bool",
+          "name": "QGPUEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "节点池ssh公钥id数组",
           "example": "[\"sky-6esd9xe\",\"sky-shjixw8\"]",
           "member": "string",
@@ -468,6 +604,24 @@
           "example": "NativeCVM或者Native",
           "member": "string",
           "name": "MachineType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池安装节点自动化助手开关",
+          "example": "false",
+          "member": "bool",
+          "name": "AutomationService",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池密码",
+          "example": "Paas@123",
+          "member": "string",
+          "name": "Password",
           "required": false,
           "type": "string"
         }
@@ -498,7 +652,7 @@
         {
           "disabled": false,
           "document": "节点池类型",
-          "example": "Hosted",
+          "example": "Native、External",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -551,7 +705,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池创建参数",
+          "document": "原生节点池创建参数（Type字段设置为Native时需填写）",
           "example": "无",
           "member": "CreateNativeNodePoolParam",
           "name": "Native",
@@ -915,6 +1069,170 @@
           "member": "string",
           "name": "Errors",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterMachinesRequest": {
+      "document": "DescribeClusterMachines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点过滤条件，支持以下过滤条件：\n·  NodePoolsName\n    按照【节点池名】进行过滤。\n    类型：String\n    必选：否\n\n·  NodePoolsId\n    按照【节点池id】进行过滤。\n    类型：String\n    必选：否\n\n·  tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认0",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条数，默认20，最大为100",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterMachinesResponse": {
+      "document": "DescribeClusterMachines返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点池节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Machine",
+          "name": "Machines",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID列表(为空时，\n表示获取账号下所有集群)",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条数，默认20，最大为100",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "·  ClusterName\n    按照【集群名】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterType\n    按照【集群类型】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterStatus\n    按照【集群状态】进行过滤。\n    类型：String\n    必选：否\n\n·  Tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  vpc-id\n    按照【VPC】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-key\n    按照【标签键】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-value\n    按照【标签值】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型，例如：MANAGED_CLUSTER",
+          "example": "MANAGED_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群总个数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群信息列表",
+          "example": "无",
+          "member": "Cluster",
+          "name": "Clusters",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息集合",
+          "example": "无",
+          "member": "string",
+          "name": "Errors",
           "type": "list",
           "value_allowed_null": false
         },
@@ -1849,18 +2167,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费计费周期，单位（月）：\n1，2，3，4，5，，6，7， 8，9，10，11，12，24，36，48，60",
+          "document": "后付费计费周期，单位（月）：\n1，2，3，4，5，6，7， 8，9，10，11，12，24，36，48，60",
           "example": "1",
           "member": "uint64",
           "name": "Period",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费续费方式：\n- NOTIFY_AND_AUTO_RENEW：通知用户过期，且自动续费 (默认）\n- NOTIFY_AND_MANUAL_RENEW：通知用户过期，但不自动续费\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知用户过期，也不自动续费\n",
+          "document": "预付费续费方式：\n- NOTIFY_AND_AUTO_RENEW：通知用户过期，且自动续费 \n- NOTIFY_AND_MANUAL_RENEW：通知用户过期，但不自动续费(默认)\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知用户过期，也不自动续费\n",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -2022,6 +2340,202 @@
         }
       ],
       "usage": "both"
+    },
+    "Machine": {
+      "document": "节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "np-xxxxxxxx-7j9rt",
+          "member": "string",
+          "name": "MachineName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Machine 状态",
+          "example": "Running",
+          "member": "string",
+          "name": "MachineState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Machine 所在可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；",
+          "example": "PrepaidChargeType",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-05-20 10:03:19",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Machine 登录状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Opened",
+          "member": "string",
+          "name": "LoginStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启缩容保护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsProtectedFromScaleIn",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Machine 名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testmachine",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数，单位：核",
+          "example": "1",
+          "member": "uint64",
+          "name": "CPU",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU核数，单位：核\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "GPU",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点计费模式（已弃用）",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点内存容量，单位：`GB`",
+          "example": "50",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点系统盘配置信息",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽相关信息设置",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型所属机型族",
+          "example": "S2",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点内网 IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "LanIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包年包月节点计费过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-01 20:28:52",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MachineSetScaling": {
       "document": "节点池弹性伸缩配置",
@@ -2196,6 +2710,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyClusterMachineRequest": {
+      "document": "ModifyClusterMachine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-52mrjmcy",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名列表",
+          "example": "[\"np-6tpr9q6e-2gt8l\"]",
+          "member": "string",
+          "name": "MachineNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "machine的display name",
+          "example": "tke-np-6tpr9q6e-1",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统盘的信息",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "节点预付费信息",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterMachineResponse": {
+      "document": "ModifyClusterMachine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyHealthCheckPolicyRequest": {
       "document": "ModifyHealthCheckPolicy请求参数结构体",
@@ -3819,7 +4396,7 @@
         {
           "disabled": false,
           "document": "机型列表",
-          "example": "S2.4XLARGE48",
+          "example": "[\"S2.4XLARGE48\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -3833,6 +4410,15 @@
           "name": "Replicas",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否更新存量节点",
+          "example": "false",
+          "member": "bool",
+          "name": "UpdateExistedNode",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -3854,12 +4440,39 @@
         },
         {
           "disabled": false,
+          "document": "节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest",
+          "example": "Newest",
+          "member": "string",
+          "name": "DeletePolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "节点池 GPU 配置",
-          "example": "[{\"InstanceType\":\"GN7Large.32\",\"GPUParams\":{\"Driver\":\"450.104.51\"}}]",
+          "example": "无",
           "member": "GPUConfig",
           "name": "GPUConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池安装自动化助手开关状态",
+          "example": "true",
+          "member": "bool",
+          "name": "AutomationService",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池密码",
+          "example": "Paas@123",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

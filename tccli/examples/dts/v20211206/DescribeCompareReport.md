@@ -46,7 +46,8 @@ Output:
             "Options": {
                 "Method": "dataCheck",
                 "SampleRate": 100,
-                "ThreadCount": 1
+                "ThreadCount": 1,
+                "Type": "builtin"
             },
             "SkippedTables": 0,
             "SrcSampleRows": 0,
@@ -67,7 +68,15 @@ Output:
                 "Items": null,
                 "TotalCount": 0
             },
+            "DifferenceOwner": {
+                "Items": null,
+                "TotalCount": 0
+            },
             "DifferenceRow": {
+                "Items": null,
+                "TotalCount": 0
+            },
+            "DifferenceSchema": {
                 "Items": null,
                 "TotalCount": 0
             },

@@ -26,8 +26,8 @@ tccli emr CreateInstance --cli-unfold-argument  \
     --Placement.Zone ap-guangzhou-3 \
     --SupportHA 0 \
     --TimeSpan 3600 \
-    --VPCSettings.SubnetId subnet-xxxxxxx \
-    --VPCSettings.VpcId vpc-xxxxxx \
+    --VPCSettings.SubnetId subnet-sf1314 \
+    --VPCSettings.VpcId vpc-dfa11 \
     --LoginSettings.Password tencent@cloud123 \
     --PayMode 0 \
     --AutoRenew 0 \

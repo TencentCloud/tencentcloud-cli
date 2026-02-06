@@ -474,7 +474,7 @@
           "example": "16783",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -511,7 +511,7 @@
           "example": "10856",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -539,7 +539,7 @@
         {
           "disabled": false,
           "document": "实例访问密码。\n实例为免密访问，则无需设置该参数。",
-          "example": "zy456987",
+          "example": "Mypassword1",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -630,7 +630,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品版本。\n14：当前仅支持混合存储版。",
+          "document": "<p>产品版本。14：极速版。</p>",
           "example": "14",
           "member": "uint64",
           "name": "TypeId",
@@ -639,7 +639,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络唯一ID。\n请登录控制台在私有网络列表查询，如：vpc-azlk3***。",
+          "document": "<p>私有网络唯一ID。请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>",
           "example": "vpc-azlk31bs",
           "member": "string",
           "name": "UniqVpcId",
@@ -648,7 +648,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络所属子网唯一ID。\n请登录控制台在私有网络列表查询，如：subnet-8abje***。",
+          "document": "<p>私有网络所属子网唯一ID。请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>",
           "example": "subnet-8abjechk",
           "member": "string",
           "name": "UniqSubnetId",
@@ -657,7 +657,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>",
+          "document": "<p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
@@ -666,7 +666,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。",
+          "document": "<p>实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -675,7 +675,7 @@
         },
         {
           "disabled": false,
-          "document": "选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。",
+          "document": "<p>选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -684,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。",
+          "document": "<p>分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。</p>",
           "example": "3",
           "member": "int64",
           "name": "ShardNum",
@@ -693,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。",
+          "document": "<p>副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。</p>",
           "example": "1",
           "member": "int64",
           "name": "ReplicasNum",
@@ -702,7 +702,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存容量，单位：GB。\nKeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。",
+          "document": "<p>实例内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
           "example": "8",
           "member": "int64",
           "name": "MachineMemory",
@@ -711,7 +711,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区ID。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>",
+          "document": "<p>实例所属的可用区ID。<ul><li>具体取值，请参见<a href=\"https://cloud.tencent.com/document/product/239/4106\">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>",
           "example": "100006",
           "member": "uint64",
           "name": "ZoneId",
@@ -720,7 +720,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区名称。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>",
+          "document": "<p>实例所属的可用区名称。<ul><li>具体取值，请参见<a href=\"https://cloud.tencent.com/document/product/239/4106\">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "ZoneName",
@@ -729,7 +729,7 @@
         },
         {
           "disabled": false,
-          "document": "创建实例的名称。\n仅支持长度小于60的中文、英文或者数字，短划线\"-\"、下划线\"_\"。",
+          "document": "<p>创建实例的名称。仅支持长度小于60的中文、英文或者数字，短划线\"-\"、下划线\"_\"。</p>",
           "example": "myInstance",
           "member": "string",
           "name": "InstanceName",
@@ -738,7 +738,7 @@
         },
         {
           "disabled": false,
-          "document": "指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul>",
+          "document": "<p>指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul></p>",
           "example": "false",
           "member": "bool",
           "name": "NoAuth",
@@ -747,7 +747,7 @@
         },
         {
           "disabled": false,
-          "document": "实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li>\n<li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种。</li><li>不能以\"/\"开头。</li></ul></li></ul>",
+          "document": "<p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以\"/\"开头。</li></ul></li></ul></p>",
           "example": "123456MyP@ssword",
           "member": "string",
           "name": "Password",
@@ -756,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义端口。默认为6379，范围[1024,65535]。",
+          "document": "<p>自定义端口。默认为6379，范围[1024,65535]。</p>",
           "example": "6378",
           "member": "uint64",
           "name": "VPort",
@@ -765,7 +765,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul>",
+          "document": "<p>包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul></p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
@@ -774,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "给实例设置安全组 ID 数组。",
+          "document": "<p>给实例设置安全组 ID 数组。</p>",
           "example": "[\"sg-bmadczm1\"]",
           "member": "string",
           "name": "SecurityGroupIdList",
@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "给实例绑定标签。",
+          "document": "<p>给实例绑定标签。</p>",
           "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
@@ -792,7 +792,7 @@
         },
         {
           "disabled": false,
-          "document": "混合存储版，单分片持久化内存容量，单位：GB。\nKeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。",
+          "document": "<p>极速版，单分片持久化内存容量。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>单位：GB。",
           "example": "16",
           "member": "int64",
           "name": "MemSize",
@@ -801,7 +801,7 @@
         },
         {
           "disabled": false,
-          "document": "每个分片硬盘的容量。单位：GB。\n每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。",
+          "document": "<p>每个分片硬盘的容量。单位：GB。每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
           "example": "100",
           "member": "int64",
           "name": "DiskSize",
@@ -810,7 +810,7 @@
         },
         {
           "disabled": false,
-          "document": "计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。",
+          "document": "<p>计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
           "example": "2",
           "member": "int64",
           "name": "MachineCpu",
@@ -819,7 +819,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。",
+          "document": "<p>项目id，取值以用户账户&gt;用户账户相关接口查询&gt;项目列表返回的projectId为准。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -828,7 +828,7 @@
         },
         {
           "disabled": false,
-          "document": "数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul>",
+          "document": "<p>数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul></p>",
           "example": "ON",
           "member": "string",
           "name": "Compression",
@@ -842,9 +842,9 @@
       "document": "CreateInstances返回参数结构体",
       "members": [
         {
-          "disabled": false,
-          "document": "交易 ID。",
-          "example": "199878234",
+          "disabled": true,
+          "document": "<p>交易 ID。</p>",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -853,12 +853,22 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID 。",
-          "example": "kee-7djvzcnx",
+          "document": "<p>实例 ID 。</p>",
+          "example": "[\"kee-7djvzcnx\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单号。    </p>",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -894,7 +904,7 @@
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"]",
           "member": "string",
           "name": "WeekDays",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -904,7 +914,7 @@
           "example": "05:00-06:00",
           "member": "string",
           "name": "TimePeriod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -914,7 +924,7 @@
           "example": "7",
           "member": "int64",
           "name": "BackupStorageDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -924,7 +934,7 @@
           "example": "3",
           "member": "int64",
           "name": "BinlogStorageDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1242,7 +1252,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1252,7 +1262,7 @@
           "example": "无",
           "member": "BinlogInfo",
           "name": "BackupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1269,13 +1279,22 @@
       "document": "DescribeInstanceDealDetail请求参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。",
           "example": "[\"8159037\"]\t",
           "member": "string",
           "name": "DealIds",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "订单号，订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealName。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1289,6 +1308,7 @@
           "example": "无",
           "member": "TradeDealDetail",
           "name": "DealDetails",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1468,7 +1488,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1478,7 +1498,7 @@
           "example": "无",
           "member": "InstanceParamHistory",
           "name": "InstanceParamHistory",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1592,7 +1612,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1602,7 +1622,7 @@
           "example": "无",
           "member": "ReplicaGroup",
           "name": "ReplicaGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2077,7 +2097,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2087,7 +2107,7 @@
           "example": "无",
           "member": "InstanceProxySlowlogDetail",
           "name": "InstanceProxySlowLogDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2365,7 +2385,7 @@
           "example": "无",
           "member": "TendisSlowLogDetail",
           "name": "TendisSlowLogDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2375,7 +2395,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2412,7 +2432,7 @@
           "example": "6954227",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2444,12 +2464,22 @@
       "document": "DestroyPrepaidInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易ID。",
-          "example": "6977675",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3749,7 +3779,7 @@
           "example": "3",
           "member": "int64",
           "name": "BackupStorageDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3759,7 +3789,7 @@
           "example": "7",
           "member": "int64",
           "name": "BinlogStorageDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3769,7 +3799,7 @@
           "example": "01:00-02:00",
           "member": "string",
           "name": "TimePeriod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3779,7 +3809,7 @@
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"]",
           "member": "string",
           "name": "WeekDays",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3834,7 +3864,7 @@
           "example": "95027",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3925,7 +3955,7 @@
           "example": "true",
           "member": "bool",
           "name": "Changed",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3935,7 +3965,7 @@
           "example": "327",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3989,7 +4019,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月计费的续费模式。<b>InstanceIds</b>数组和<b>AutoRenews</b>数组中的修改值对应。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
+          "document": "包年包月计费的续费模式。<b>InstanceIds</b>数组和<b>AutoRenews</b>数组中的修改值对应。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul>",
           "example": "[1,0]",
           "member": "int64",
           "name": "AutoRenews",
@@ -4053,7 +4083,7 @@
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4562,11 +4592,22 @@
       "document": "RenewInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易 ID。",
-          "example": "6977675",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4650,7 +4691,7 @@
         {
           "disabled": false,
           "document": "设置新密码。<ul><li>当参数<b>NoAuth</b>设置为<b>true</b>，切换为免密实例时，可不设置该参数。</li><li>密码复杂度要求：<ul><li>长度8 - 30位, 推荐使用12位以上的密码。</li><li>不能以\"/\"开头。</li>\n<li>至少包含以下两项：<ul><li>小写字母a - z</li><li>大写字母A - Z</li><li>数字0 - 9</li><li>()~!@#$%^&*-+=_|{}[]:;<>,.?/</li></ul></li></ul></li></ul>",
-          "example": "zy456987",
+          "example": "Mypassword",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -4677,7 +4718,7 @@
           "example": "16657",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5171,11 +5212,22 @@
       "document": "UpgradeInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易ID。",
-          "example": "301310691",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

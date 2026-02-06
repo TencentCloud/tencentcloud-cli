@@ -30,12 +30,6 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"IsMark\": \"no\",\n    \"GroupId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainInfo\": {\n            \"Id\": 62,\n            \"Punycode\": \"dnspod.com\",\n            \"Domain\": \"dnspod.com\",\n            \"GradeNsList\": [\n                \"source.dnspod.net\",\n                \"low.dnspod.net\"\n            ]\n        }\n    }\n}",
         "title": "添加域名"
-      },
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"iceice.club\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"674a208e-4829-4c2d-a519-a85f2f9bb223\",\n        \"DomainInfo\": {\n            \"GradeNsList\": [\n                \"eunice.dnspod.net\",\n                \"country.dnspod.net\"\n            ],\n            \"Id\": 15,\n            \"Punycode\": \"iceice.club\",\n            \"Domain\": \"iceice.club\"\n        }\n    }\n}",
-        "title": "CreateDomain_success"
       }
     ],
     "CreateDomainAlias": [
@@ -544,7 +538,7 @@
       {
         "document": "获取账户信息",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"UserInfo\": {\n            \"Nick\": \"jionly\",\n            \"Id\": 5299600,\n            \"Email\": \"qcloud_uin_100000000328@qcloud.com\",\n            \"Status\": \"enabled\",\n            \"Telephone\": \"187****3214\",\n            \"EmailVerified\": \"yes\",\n            \"TelephoneVerified\": \"yes\",\n            \"UserGrade\": \"DP_Free\",\n            \"RealName\": \"王小云\",\n            \"WechatBinded\": \"no\",\n            \"Uin\": 100000000328,\n            \"FreeNs\": [\n                \"hannah.dnspod.net\",\n                \"perch.dnspod.net\"\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b7a2ed1-0f04-4cf6-b5b1-b77f91572f34\",\n        \"UserInfo\": {\n            \"AllowTransferIn\": false,\n            \"Email\": \"qcloud_uin_123456@qcloud.com\",\n            \"EmailVerified\": \"yes\",\n            \"FreeNs\": [\n                \"v4u4f.dnspod.net\",\n                \"c6b8q.dnspod.net\"\n            ],\n            \"Id\": 123456,\n            \"Nick\": \"\",\n            \"RealName\": \"\",\n            \"Status\": \"enabled\",\n            \"Telephone\": \"\",\n            \"TelephoneVerified\": \"yes\",\n            \"Uin\": 123456,\n            \"UserGrade\": \"DP_Free\",\n            \"WechatBinded\": \"no\"\n        }\n    }\n}",
         "title": "获取账户信息"
       }
     ],
@@ -572,6 +566,14 @@
         "title": "下载快照"
       }
     ],
+    "ModifyDomainCNAMESpeedupStatusBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainCNAMESpeedupStatusBatch\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"dnspod.com\",\n        \"dnspod.cn\"\n    ],\n    \"Status\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b73e095d-87d8-4a4f-b78b-f1aec07202ff\",\n        \"JobId\": 1817401\n    }\n}",
+        "title": "批量修改域名CNAME加速状态"
+      }
+    ],
     "ModifyDomainCustomLine": [
       {
         "document": "修改域名的自定义线路",
@@ -594,6 +596,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainOwner\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"Account\": \"100000000328\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "域名过户"
+      }
+    ],
+    "ModifyDomainRecursiveStatusBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainRecursiveStatusBatch\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"dnspod.com\",\n        \"dnspod.cn\"\n    ],\n    \"Status\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff6e1e46-2a6e-4290-bb45-f71379938209\",\n        \"JobId\": 1817425\n    }\n}",
+        "title": "批量修改域名递归解析加速状态"
       }
     ],
     "ModifyDomainRemark": [
@@ -656,6 +666,38 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageAutoRenew\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"enable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
         "title": "解析套餐开启自动续费"
+      }
+    ],
+    "ModifyPackageDomain": [
+      {
+        "document": " 成功1",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"ResourceId\": \"64e4dbbd\",\n    \"Operation\": \"change\",\n    \"DomainId\": 12615187,\n    \"NewDomainId\": 12615183\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37ef03f4-f151-432e-b2db-f8664a4ee137\"\n    }\n}",
+        "title": "成功1"
+      },
+      {
+        "document": " 成功示例",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"ResourceId\": \"6392cb9b\",\n    \"Operation\": \"change\",\n    \"DomainId\": 12600866,\n    \"NewDomainId\": 12611925\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"152ca659-d453-481e-8be3-f0f04d783a24\"\n    }\n}",
+        "title": "成功示例"
+      },
+      {
+        "document": " 套餐更换域名",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"Operation\": \"change\",\n    \"DomainId\": 203232,\n    \"NewDomainId\": 4975354\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\"\n    }\n}",
+        "title": "套餐更换域名"
+      },
+      {
+        "document": " 套餐绑定域名",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"Operation\": \"bind\",\n    \"ResourceId\": \"a4d4cec3\",\n    \"NewDomainId\": 4975354\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\"\n    }\n}",
+        "title": "套餐绑定域名"
+      },
+      {
+        "document": " 套餐解绑域名",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"Operation\": \"unbind\",\n    \"ResourceId\": \"a4d4cec3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\"\n    }\n}",
+        "title": "套餐解绑域名"
       }
     ],
     "ModifyRecord": [

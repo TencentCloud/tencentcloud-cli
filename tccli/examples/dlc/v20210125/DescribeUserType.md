@@ -12,7 +12,7 @@ Output:
 {
     "Response": {
         "UserType": "ADMIN",
-        "RequestId": "1312-j1jf1920fl023na9sa-vanc"
+        "RequestId": "b85d3d2e-70fe-406b-824a-2fca7eb38fc4"
     }
 }
 ```

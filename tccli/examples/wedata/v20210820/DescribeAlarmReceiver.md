@@ -8,8 +8,8 @@ Input:
 tccli wedata DescribeAlarmReceiver --cli-unfold-argument  \
     --AlarmRecipientName 用户A \
     --PageSize 1 \
-    --ProjectId 123 \
-    --MessageId 123 \
+    --ProjectId 12948023 \
+    --MessageId 124089323 \
     --AlarmTime 2023-11-10 18:31:06 \
     --AlarmId 1 \
     --PageNumber 1 \
@@ -34,7 +34,7 @@ Output:
                 "WecomGroup": 1
             }
         ],
-        "RequestId": "123",
+        "RequestId": "1fs3g-g0903-fsd0",
         "TotalCount": 1
     }
 }

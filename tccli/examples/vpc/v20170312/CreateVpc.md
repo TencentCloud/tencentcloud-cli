@@ -21,6 +21,7 @@ Output:
             "VpcId": "vpc-2ln96dly",
             "DomainName": "TEST",
             "Ipv6CidrBlock": "2001::85b:3c51:f5ff:ffdb",
+            "EnableRouteVpcPublish": false,
             "Ipv6CidrBlockSet": [
                 {
                     "IPv6CidrBlock": "2001::85b:3c51:f5ff:ffd3",

@@ -8,105 +8,105 @@
       "status": "online"
     },
     "CreateConsumerGroup": {
-      "document": "创建消费组",
+      "document": "创建消费组。\n当前 API 适用集群：5.x 集群。4.x 集群的创建消费组接口文档见 [CreateRocketMQGroup](https://cloud.tencent.com/document/api/1179/63428)。",
       "input": "CreateConsumerGroupRequest",
       "name": "创建消费组",
       "output": "CreateConsumerGroupResponse",
       "status": "online"
     },
     "CreateInstance": {
-      "document": "创建 RocketMQ 5.x 集群",
+      "document": "创建 RocketMQ 5.x 集群。\n当前 API 适用集群：5.x 集群。创建 4.x 专享/通用集群的接口文档见 [CreateRocketMQVipInstance](https://cloud.tencent.com/document/product/1179/95721)。",
       "input": "CreateInstanceRequest",
       "name": "创建集群",
       "output": "CreateInstanceResponse",
       "status": "online"
     },
     "CreateMQTTInsPublicEndpoint": {
-      "document": "为MQTT实例创建公网接入点",
+      "document": "下线trocket下mqtt接口\n\n为MQTT实例创建公网接入点",
       "input": "CreateMQTTInsPublicEndpointRequest",
       "name": "为MQTT实例创建公网接入点",
       "output": "CreateMQTTInsPublicEndpointResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMQTTInstance": {
-      "document": "购买新的MQTT实例",
+      "document": "下线trocket下mqtt接口\n\n购买新的MQTT实例",
       "input": "CreateMQTTInstanceRequest",
       "name": "购买MQTT实例",
       "output": "CreateMQTTInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMQTTTopic": {
-      "document": "创建主题",
+      "document": "下线trocket下mqtt接口\n\n创建主题",
       "input": "CreateMQTTTopicRequest",
       "name": "创建MQTT主题",
       "output": "CreateMQTTTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMQTTUser": {
-      "document": "添加mqtt角色",
+      "document": "下线trocket下mqtt接口\n\n添加mqtt角色",
       "input": "CreateMQTTUserRequest",
       "name": "添加MQTT角色",
       "output": "CreateMQTTUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateRole": {
-      "document": "添加角色",
+      "document": "添加角色。\n当前 API 适用集群：5.x 集群。4.x 集群的创建角色接口文档见 [CreateRocketMQRole](https://cloud.tencent.com/document/product/1179/107538)，给角色授权接口文档见 [CreateRocketMQEnvironmentRole](https://cloud.tencent.com/document/product/1179/107539)。",
       "input": "CreateRoleRequest",
       "name": "创建角色",
       "output": "CreateRoleResponse",
       "status": "online"
     },
     "CreateTopic": {
-      "document": "创建主题",
+      "document": "创建 RocketMQ 主题。\n当前 API 适用集群：5.x 集群。4.x 集群的创建主题接口文档见 [CreateRocketMQTopic](https://cloud.tencent.com/document/api/1179/63426)",
       "input": "CreateTopicRequest",
       "name": "创建主题",
       "output": "CreateTopicResponse",
       "status": "online"
     },
     "DeleteConsumerGroup": {
-      "document": "删除消费组。消费者组删除后，消费者组的所有配置和相关数据都会被清空，且无法找回。删除后，在线的消费者客户端会出现报错，建议您提前下线客户端。",
+      "document": "删除消费组。消费者组删除后，消费者组的所有配置和相关数据都会被清空，且无法找回。删除后，在线的消费者客户端会出现报错，建议您提前下线客户端。\n当前 API 适用集群：5.x 集群。4.x 集群的删除消费组接口文档见 [DeleteRocketMQGroup](https://cloud.tencent.com/document/api/1179/63424)。",
       "input": "DeleteConsumerGroupRequest",
       "name": "删除消费组",
       "output": "DeleteConsumerGroupResponse",
       "status": "online"
     },
     "DeleteInstance": {
-      "document": "删除 RocketMQ 5.x 集群，删除前请先删除正在使用的主题、消费组和角色信息。",
+      "document": "删除 RocketMQ 5.x 集群，删除前请先删除正在使用的主题、消费组和角色信息。\n当前 API 适用集群：5.x 集群。删除 4.x 集群接口文档见 [DeleteRocketMQVipInstance](https://cloud.tencent.com/document/product/1179/95802)。",
       "input": "DeleteInstanceRequest",
       "name": "删除集群",
       "output": "DeleteInstanceResponse",
       "status": "online"
     },
     "DeleteMQTTInsPublicEndpoint": {
-      "document": "删除MQTT实例的公网接入点",
+      "document": "下线trocket下mqtt接口\n\n删除MQTT实例的公网接入点",
       "input": "DeleteMQTTInsPublicEndpointRequest",
       "name": "删除MQTT实例的公网接入点",
       "output": "DeleteMQTTInsPublicEndpointResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteMQTTInstance": {
-      "document": "删除MQTT实例",
+      "document": "下线trocket下mqtt接口\n\n删除MQTT实例",
       "input": "DeleteMQTTInstanceRequest",
       "name": "删除MQTT实例",
       "output": "DeleteMQTTInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteMQTTTopic": {
-      "document": "删除MQTT主题",
+      "document": "下线trocket下mqtt接口\n\n删除MQTT主题",
       "input": "DeleteMQTTTopicRequest",
       "name": "删除MQTT主题",
       "output": "DeleteMQTTTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteMQTTUser": {
-      "document": "删除MQTT访问用户",
+      "document": "下线trocket下mqtt接口\n\n删除MQTT访问用户",
       "input": "DeleteMQTTUserRequest",
       "name": "删除MQTT角色",
       "output": "DeleteMQTTUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteRole": {
-      "document": "删除角色。请确保该角色相关信息不在当前代码中被使用。删除角色后，原先使用该角色进行生产或消费消息的密钥（AccessKey 和 SecretKey）将立即失效。",
+      "document": "删除角色。请确保该角色相关信息不在当前代码中被使用。删除角色后，原先使用该角色进行生产或消费消息的密钥（AccessKey 和 SecretKey）将立即失效。\n当前 API 适用集群：5.x 集群。4.x 集群的删除角色接口文档见 [DeleteRocketMQRoles](https://cloud.tencent.com/document/product/1179/107536)，删除角色授权接口文档见 [DeleteRocketMQEnvironmentRoles](https://cloud.tencent.com/document/product/1179/107537)。",
       "input": "DeleteRoleRequest",
       "name": "删除角色",
       "output": "DeleteRoleResponse",
@@ -120,42 +120,42 @@
       "status": "online"
     },
     "DeleteTopic": {
-      "document": "删除主题。主题删除后，主题的所有配置和相关数据都会被清空，且无法找回。",
+      "document": "删除主题。主题删除后，主题的所有配置和相关数据都会被清空，且无法找回。\n当前 API 适用集群：5.x 集群。4.x 集群的删除主题接口文档见 [DeleteRocketMQTopic](https://cloud.tencent.com/document/api/1179/63423)。",
       "input": "DeleteTopicRequest",
       "name": "删除主题",
       "output": "DeleteTopicResponse",
       "status": "online"
     },
     "DescribeConsumerClient": {
-      "document": "查询消费者客户端详情",
+      "document": "查询消费者客户端详情。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费者客户端详情接口文档见 [DescribeRocketMQConsumerConnectionDetail](https://cloud.tencent.com/document/product/1179/102490)。",
       "input": "DescribeConsumerClientRequest",
       "name": "查询消费者客户端详情",
       "output": "DescribeConsumerClientResponse",
       "status": "online"
     },
     "DescribeConsumerClientList": {
-      "document": "查询消费组下的客户端连接列表。",
+      "document": "查询消费组下的客户端连接列表。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费组下的客户端列表接口文档见 [DescribeRocketMQConsumerConnections](https://cloud.tencent.com/document/product/1179/100460)。",
       "input": "DescribeConsumerClientListRequest",
       "name": "查询消费组下的客户端连接列表",
       "output": "DescribeConsumerClientListResponse",
       "status": "online"
     },
     "DescribeConsumerGroup": {
-      "document": "查询消费组详情",
+      "document": "查询消费组详情。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费组详情接口文档见 [DescribeRocketMQConsumerConnections](https://cloud.tencent.com/document/product/1179/100460)。",
       "input": "DescribeConsumerGroupRequest",
       "name": "查询消费组详情",
       "output": "DescribeConsumerGroupResponse",
       "status": "online"
     },
     "DescribeConsumerGroupList": {
-      "document": "获取消费组列表，Filter参数使用说明如下：\n\n- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n- ConsumeMessageOrderly，投递顺序性，枚举值如下：\n    - true 顺序投递\n    - false 并发投递\n\nFilters示例： \n[{ \"Name\": \"ConsumeMessageOrderly\", \"Values\": [\"true\"] }]",
+      "document": "获取消费组列表，Filter参数使用说明如下：\n\n- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n- ConsumeMessageOrderly，投递顺序性，枚举值如下：\n    - true 顺序投递\n    - false 并发投递\n\nFilters示例： \n[{ \"Name\": \"ConsumeMessageOrderly\", \"Values\": [\"true\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的获取消费组列表接口文档见 [DescribeRocketMQGroups](https://cloud.tencent.com/document/api/1179/63420)。",
       "input": "DescribeConsumerGroupListRequest",
       "name": "查询消费组列表",
       "output": "DescribeConsumerGroupListResponse",
       "status": "online"
     },
     "DescribeConsumerLag": {
-      "document": "查询指定消费组堆积数。",
+      "document": "查询指定消费组堆积数。\n当前 API 适用集群：4.x 集群和 5.x 集群。",
       "input": "DescribeConsumerLagRequest",
       "name": "查询指定消费组堆积数",
       "output": "DescribeConsumerLagResponse",
@@ -169,7 +169,7 @@
       "status": "online"
     },
     "DescribeInstance": {
-      "document": "查询 RocketMQ 5.x 集群信息。",
+      "document": "查询 RocketMQ 5.x 集群信息。\n当前 API 适用集群：5.x 集群。查询 4.x 专享/通用集群信息的接口文档见 [DescribeRocketMQVipInstanceDetail](https://cloud.tencent.com/document/product/1179/86725)。",
       "input": "DescribeInstanceRequest",
       "name": "查询集群信息",
       "output": "DescribeInstanceResponse",
@@ -183,105 +183,105 @@
       "status": "online"
     },
     "DescribeMQTTClient": {
-      "document": "查询 MQTT 客户端详情",
+      "document": "下线trocket下mqtt接口\n\n查询 MQTT 客户端详情",
       "input": "DescribeMQTTClientRequest",
       "name": "查询 MQTT 客户端详情",
       "output": "DescribeMQTTClientResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTInsPublicEndpoints": {
-      "document": "查询MQTT实例公网接入点",
+      "document": "下线trocket下mqtt接口\n\n查询MQTT实例公网接入点",
       "input": "DescribeMQTTInsPublicEndpointsRequest",
       "name": "查询MQTT实例公网接入点",
       "output": "DescribeMQTTInsPublicEndpointsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTInsVPCEndpoints": {
-      "document": "查询MQTT实例公网接入点",
+      "document": "下线trocket下mqtt接口\n\n查询MQTT实例公网接入点",
       "input": "DescribeMQTTInsVPCEndpointsRequest",
       "name": "查询MQTT实例VPC接入点",
       "output": "DescribeMQTTInsVPCEndpointsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTInstance": {
-      "document": "查询实例信息",
+      "document": "下线trocket下mqtt接口\n\n查询实例信息",
       "input": "DescribeMQTTInstanceRequest",
       "name": "查询MQTT实例详情信息",
       "output": "DescribeMQTTInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTInstanceCert": {
-      "document": "查询MQTT集群证书列表",
+      "document": "下线trocket下mqtt接口\n\n查询MQTT集群证书列表",
       "input": "DescribeMQTTInstanceCertRequest",
       "name": "查询MQTT集群证书列表",
       "output": "DescribeMQTTInstanceCertResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTInstanceList": {
-      "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n3. InstanceStatus，实例状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
+      "document": "下线trocket下mqtt接口\n\n获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n3. InstanceStatus，实例状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
       "input": "DescribeMQTTInstanceListRequest",
       "name": "获取MQTT实例列表",
       "output": "DescribeMQTTInstanceListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTMessage": {
-      "document": "查询MQTT消息详情",
+      "document": "下线trocket下mqtt接口\n\n查询MQTT消息详情",
       "input": "DescribeMQTTMessageRequest",
       "name": "查询MQTT消息",
       "output": "DescribeMQTTMessageResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTMessageList": {
-      "document": "查询消息列表，如查询死信，请设置ConsumerGroup参数",
+      "document": "下线trocket下mqtt接口\n\n查询消息列表，如查询死信，请设置ConsumerGroup参数",
       "input": "DescribeMQTTMessageListRequest",
       "name": "查询MQTT消息列表",
       "output": "DescribeMQTTMessageListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTProductSKUList": {
-      "document": "获取产品售卖规格",
+      "document": "下线trocket下mqtt接口\n\n获取产品售卖规格",
       "input": "DescribeMQTTProductSKUListRequest",
       "name": "获取MQTT产品售卖规格",
       "output": "DescribeMQTTProductSKUListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTTopic": {
-      "document": "查询mqtt主题详情",
+      "document": "下线trocket下mqtt接口\n\n查询mqtt主题详情",
       "input": "DescribeMQTTTopicRequest",
       "name": "查询MQTT主题详情",
       "output": "DescribeMQTTTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTTopicList": {
-      "document": "获取主题列表，Filter参数使用说明如下：\n\n1. TopicName，主题名称模糊搜索\n2. TopicType，主题类型查询，支持多选，可选值：Normal,Order,Transaction,DelayScheduled",
+      "document": "下线trocket下mqtt接口\n\n获取主题列表，Filter参数使用说明如下：\n\n1. TopicName，主题名称模糊搜索\n2. TopicType，主题类型查询，支持多选，可选值：Normal,Order,Transaction,DelayScheduled",
       "input": "DescribeMQTTTopicListRequest",
       "name": "查询MQTT主题列表",
       "output": "DescribeMQTTTopicListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMQTTUserList": {
-      "document": "查询用户列表，Filter参数使用说明如下：\n\n1. Username，用户名称模糊搜索",
+      "document": "下线trocket下mqtt接口\n\n查询用户列表，Filter参数使用说明如下：\n\n1. Username，用户名称模糊搜索",
       "input": "DescribeMQTTUserListRequest",
       "name": "查询MQTT用户列表",
       "output": "DescribeMQTTUserListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMessage": {
-      "document": "查询消息详情",
+      "document": "查询消息详情。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消息详情接口文档见 [DescribeRocketMQMsg](https://cloud.tencent.com/document/product/1179/91055)。",
       "input": "DescribeMessageRequest",
       "name": "查询消息详情",
       "output": "DescribeMessageResponse",
       "status": "online"
     },
     "DescribeMessageList": {
-      "document": "查询消息列表。如果查询死信消息，请设置ConsumerGroup参数。",
+      "document": "查询消息列表。如果查询死信消息，请设置ConsumerGroup参数。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消息列表接口文档见 [DescribeRocketMQTopicMsgs](https://cloud.tencent.com/document/product/1179/97761)。",
       "input": "DescribeMessageListRequest",
       "name": "查询消息列表",
       "output": "DescribeMessageListResponse",
       "status": "online"
     },
     "DescribeMessageTrace": {
-      "document": "根据消息 ID 查询消息轨迹。",
+      "document": "根据消息 ID 查询消息轨迹。\n当前 API 适用集群：5.x 集群。4.x 集群查询消息轨迹接口文档见 [DescribeRocketMQMsgTrace](https://cloud.tencent.com/document/product/1179/97760)。",
       "input": "DescribeMessageTraceRequest",
       "name": "查询消息轨迹",
       "output": "DescribeMessageTraceResponse",
@@ -315,6 +315,13 @@
       "output": "DescribeMigrationTaskListResponse",
       "status": "online"
     },
+    "DescribeProducerList": {
+      "document": "查询主题关联的生产者列表信息，Filters支持以下筛选条件：\n- ClientIP，客户端IP\n- ClientID，客户端ID\n当前 API 适用集群：5.x 集群。4.x 集群的查询生产者客户端列表接口文档见 [DescribeRocketMQProducers](https://cloud.tencent.com/document/api/1179/122749)。",
+      "input": "DescribeProducerListRequest",
+      "name": "查询生产者信息列表",
+      "output": "DescribeProducerListResponse",
+      "status": "online"
+    },
     "DescribeProductSKUs": {
       "document": "查询产品售卖规格，针对 RocketMQ 5.x 集群。",
       "input": "DescribeProductSKUsRequest",
@@ -323,7 +330,7 @@
       "status": "online"
     },
     "DescribeRoleList": {
-      "document": "查询角色列表，Filter参数使用说明如下：\n\n- RoleName 角色名称，支持模糊搜索，从本接口返回值或控制台获得\n- AccessKey AccessKey，支持模糊搜索，从本接口返回值或控制台获得\n\nFilters示例： \n[{ \"Name\": \"RoleName\", \"Values\": [\"test_role\"] }]",
+      "document": "查询角色列表，Filter参数使用说明如下：\n\n- RoleName 角色名称，支持模糊搜索，从本接口返回值或控制台获得\n- AccessKey AccessKey，支持模糊搜索，从本接口返回值或控制台获得\n\nFilters示例： \n[{ \"Name\": \"RoleName\", \"Values\": [\"test_role\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的查询角色列表接口文档见 [DescribeRocketMQRoles](https://cloud.tencent.com/document/product/1179/107534)，查询角色授权列表接口文档见 [DescribeRocketMQEnvironmentRoles](https://cloud.tencent.com/document/product/1179/107535)。",
       "input": "DescribeRoleListRequest",
       "name": "查询角色列表",
       "output": "DescribeRoleListResponse",
@@ -351,14 +358,14 @@
       "status": "online"
     },
     "DescribeTopicList": {
-      "document": "获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得\n- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段\n\nFilters示例：\n [{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]",
+      "document": "获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得\n- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段\n\nFilters示例：\n [{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的获取主题列表接口文档见 [DescribeRocketMQTopics](https://cloud.tencent.com/document/api/1179/63418)。",
       "input": "DescribeTopicListRequest",
       "name": "查询主题列表",
       "output": "DescribeTopicListResponse",
       "status": "online"
     },
     "DescribeTopicListByGroup": {
-      "document": "根据消费组获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。\n\nFilters示例： \n[{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]",
+      "document": "查询消费组订阅的主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。\n\nFilters示例： \n[{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费组订阅的主题列表接口文档见 [DescribeRocketMQTopicsByGroup](https://cloud.tencent.com/document/product/1179/108863)。",
       "input": "DescribeTopicListByGroupRequest",
       "name": "查询消费组订阅的主题列表",
       "output": "DescribeTopicListByGroupResponse",
@@ -386,14 +393,14 @@
       "status": "online"
     },
     "ModifyConsumerGroup": {
-      "document": "修改消费组属性",
+      "document": "修改消费组属性。\n当前 API 适用集群：5.x 集群。4.x 集群的修改消费组属性接口文档见 [ModifyRocketMQGroup](https://cloud.tencent.com/document/api/1179/63416)。",
       "input": "ModifyConsumerGroupRequest",
       "name": "修改消费组属性",
       "output": "ModifyConsumerGroupResponse",
       "status": "online"
     },
     "ModifyInstance": {
-      "document": "修改 RocketMQ 5.x 集群属性，仅支持修改运行中的集群。",
+      "document": "修改 RocketMQ 5.x 集群属性，仅支持修改运行中的集群。\n当前 API 适用集群：5.x 集群。修改 4.x 集群属性的接口文档见 [ModifyRocketMQInstance](https://cloud.tencent.com/document/product/1179/108862)。",
       "input": "ModifyInstanceRequest",
       "name": "修改集群属性",
       "output": "ModifyInstanceResponse",
@@ -407,49 +414,49 @@
       "status": "online"
     },
     "ModifyMQTTInsPublicEndpoint": {
-      "document": "更新MQTT实例公网接入点",
+      "document": "下线trocket下mqtt接口\n\n更新MQTT实例公网接入点",
       "input": "ModifyMQTTInsPublicEndpointRequest",
       "name": "更新MQTT实例公网接入点",
       "output": "ModifyMQTTInsPublicEndpointResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyMQTTInstance": {
-      "document": "修改实例属性",
+      "document": "下线trocket下mqtt接口\n\n修改实例属性",
       "input": "ModifyMQTTInstanceRequest",
       "name": "修改MQTT实例属性",
       "output": "ModifyMQTTInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyMQTTInstanceCertBinding": {
-      "document": "更新MQTT集群绑定证书\n参数传空，则为删除证书",
+      "document": "下线trocket下mqtt接口\n\n更新MQTT集群绑定证书\n参数传空，则为删除证书",
       "input": "ModifyMQTTInstanceCertBindingRequest",
       "name": "更新MQTT集群证书证书",
       "output": "ModifyMQTTInstanceCertBindingResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyMQTTTopic": {
-      "document": "修改主题属性",
+      "document": "下线trocket下mqtt接口\n\n修改主题属性",
       "input": "ModifyMQTTTopicRequest",
       "name": "修改MQTT主题属性",
       "output": "ModifyMQTTTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyMQTTUser": {
-      "document": "修改MQTT角色",
+      "document": "下线trocket下mqtt接口\n\n修改MQTT角色",
       "input": "ModifyMQTTUserRequest",
       "name": "修改MQTT角色",
       "output": "ModifyMQTTUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyRole": {
-      "document": "修改角色",
+      "document": "修改角色。\n当前 API 适用集群：5.x 集群。4.x 集群的修改角色接口文档见 [ModifyRocketMQRole](https://cloud.tencent.com/document/product/1179/107532)，修改角色的授权接口文档见 [ModifyRocketMQEnvironmentRole](https://cloud.tencent.com/document/product/1179/107533)。",
       "input": "ModifyRoleRequest",
       "name": "修改角色",
       "output": "ModifyRoleResponse",
       "status": "online"
     },
     "ModifyTopic": {
-      "document": "修改主题属性",
+      "document": "修改主题属性。\n当前 API 适用集群：5.x 集群。4.x 集群的修改主题属性接口文档见 [ModifyRocketMQTopic](https://cloud.tencent.com/document/api/1179/63414)。",
       "input": "ModifyTopicRequest",
       "name": "修改主题属性",
       "output": "ModifyTopicResponse",
@@ -463,14 +470,14 @@
       "status": "online"
     },
     "ResendDeadLetterMessage": {
-      "document": "重新发送死信消息",
+      "document": "重新发送死信消息。\n当前 API 适用集群：5.x集群。4.x 集群的重发死信消息接口文档见 [RetryRocketMQDlqMessage](https://cloud.tencent.com/document/api/1179/114595)。",
       "input": "ResendDeadLetterMessageRequest",
       "name": "重新发送死信消息",
       "output": "ResendDeadLetterMessageResponse",
       "status": "online"
     },
     "ResetConsumerGroupOffset": {
-      "document": "重置消费位点",
+      "document": "重置消费位点。\n当前 API 适用集群：5.x 集群。4.x 集群的重置消费位点接口文档见 [ResetRocketMQConsumerOffSet](https://cloud.tencent.com/document/api/1179/71662)。",
       "input": "ResetConsumerGroupOffsetRequest",
       "name": "重置消费位点",
       "output": "ResetConsumerGroupOffsetResponse",
@@ -482,11 +489,25 @@
       "name": "回滚主题迁移进度至上一阶段",
       "output": "RollbackMigratingTopicStageResponse",
       "status": "online"
+    },
+    "SendMessage": {
+      "document": "发送 RocketMQ 消息，该接口仅用于控制台发送少量测试消息，不保证 SLA，且云 API 存在限流，在真实业务场景下，请使用 RocketMQ SDK 发送消息。\n当前 API 适用集群：5.x 集群。4.x 集群的发送消息接口文档见 [SendRocketMQMessage](https://cloud.tencent.com/document/api/1179/94179)。",
+      "input": "SendMessageRequest",
+      "name": "发送消息",
+      "output": "SendMessageResponse",
+      "status": "online"
+    },
+    "VerifyMessageConsumption": {
+      "document": "消息消费验证。\n当前 API 适用集群：5.x 集群。4.x 集群的消息消费验证接口文档见 [VerifyRocketMQConsume](https://cloud.tencent.com/document/api/1179/101061)。",
+      "input": "VerifyMessageConsumptionRequest",
+      "name": "消息消费验证",
+      "output": "VerifyMessageConsumptionResponse",
+      "status": "online"
     }
   },
   "metadata": {
     "apiVersion": "2023-03-08",
-    "api_brief": "介绍如何使用云API 对消息队列 RocketMQ进行操作，包括消息回溯，修改主题，创建订阅关系等。",
+    "api_brief": "介绍如何使用云 API 对消息队列 RocketMQ进行操作，包括消息回溯，修改主题，创建订阅关系等。",
     "serviceNameCN": "消息队列 RocketMQ 版",
     "serviceShortName": "trocket"
   },
@@ -608,7 +629,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "req-123456",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -728,14 +749,25 @@
         },
         {
           "disabled": false,
-          "document": "1753153590\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "创建时间",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1753153590",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2085,6 +2117,15 @@
         },
         {
           "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
           "example": "无",
           "member": "Filter",
@@ -2847,6 +2888,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "proxy节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "proxy调度详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneScheduledItem",
+          "name": "ZoneScheduledList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4540,7 +4601,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件列表",
+          "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4549,7 +4610,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询起始位置，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4558,7 +4619,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量",
+          "document": "查询结果限制数量，默认20。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4590,6 +4651,89 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProducerListRequest": {
+      "document": "DescribeProducerList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量，默认20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProducerListResponse": {
+      "document": "DescribeProducerList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产者信息列表",
+          "example": "无",
+          "member": "ProducerInfo",
+          "name": "ProducerList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4937,6 +5081,15 @@
         },
         {
           "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
           "example": "无",
           "member": "Filter",
@@ -5243,7 +5396,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，是否忽略当前检查",
+          "document": "是否忽略当前检查",
           "example": "true",
           "member": "bool",
           "name": "IgnoreCheck",
@@ -5253,7 +5406,7 @@
         {
           "disabled": false,
           "document": "命名空间，仅迁移至4.x集群有效，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
-          "example": "tdmq-default",
+          "example": "ns1",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5550,7 +5703,7 @@
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"TagKey\": \"test_key\",         \"TagValue\": \"test_value\"     } ]",
+          "example": "无",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
@@ -5656,6 +5809,26 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1754029376000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性TPS开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ScaledTpsEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6776,6 +6949,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费状态来源，枚举值如下：\n\n- DIFF_OFFSET：通过服务端offset计算\n- TRACE_REPORT：通过上报的轨迹判断",
+          "example": "DIFF_OFFSET",
+          "member": "string",
+          "name": "ConsumeStatusSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6882,7 +7065,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "xxx",
+          "example": "88cce1ff-b043-404f-8dc5-2cfea60bfd31",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -6892,7 +7075,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rmq-xxxx",
+          "example": "rmq-1rgrxm9a8",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -6932,7 +7115,7 @@
         {
           "disabled": false,
           "document": "任务状态： 0，迁移中 1，迁移成功 2，迁移完成，只有部分数据完成迁移",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -6942,7 +7125,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "1758510006847",
           "member": "int64",
           "name": "CreateTime",
           "output_required": true,
@@ -6966,20 +7149,11 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
-          "example": "test_group",
-          "member": "string",
-          "name": "ConsumerGroup",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "是否开启消费",
           "example": "true",
           "member": "bool",
           "name": "ConsumeEnable",
-          "required": false,
+          "required": true,
           "type": "bool"
         },
         {
@@ -6988,8 +7162,17 @@
           "example": "true",
           "member": "bool",
           "name": "ConsumeMessageOrderly",
-          "required": false,
+          "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7653,6 +7836,72 @@
       ],
       "usage": "out"
     },
+    "ProducerInfo": {
+      "document": "生产者信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端ID\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "169.254.165.243@a3c02f03-5b27-425f-8632-83d1e9f7010b",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端IP\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ClientIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端语言 \n- JAVA((byte) 0)\n- CPP((byte) 1) \n- DOTNET((byte) 2) \n- PYTHON((byte) 3)\n- DELPHI((byte) 4)\n- ERLANG((byte) 5)\n- RUBY((byte) 6)\n- OTHER((byte) 7)\n- HTTP((byte) 8)\n- GO((byte) 9)\n- PHP((byte) 10)\n- OMS((byte) 11)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JAVA",
+          "member": "string",
+          "name": "Language",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端版本\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后生产时间，**Unix时间戳（秒）**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1602032034",
+          "member": "uint64",
+          "name": "LastUpdateTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产者客户端协议类型，枚举如下：\n\n- grpc：GRpc协议\n- remoting：Remoting协议\n- http：HTTP协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "remoting",
+          "member": "string",
+          "name": "ChannelProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ProductSKU": {
       "document": "商品售卖信息",
       "members": [
@@ -8134,6 +8383,79 @@
     "RollbackMigratingTopicStageResponse": {
       "document": "RollbackMigratingTopicStage返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMessageRequest": {
+      "document": "SendMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息内容",
+          "example": "This is a normal message for Apache RocketMQ.",
+          "member": "string",
+          "name": "MsgBody",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息Key",
+          "example": "test_key",
+          "member": "string",
+          "name": "MsgKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息Tag",
+          "example": "test_tag",
+          "member": "string",
+          "name": "MsgTag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMessageResponse": {
+      "document": "SendMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "1EAE3915000721B8D17C2C5BB31638D1",
+          "member": "string",
+          "name": "MsgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8872,6 +9194,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8912,6 +9245,69 @@
       ],
       "usage": "out"
     },
+    "VerifyMessageConsumptionRequest": {
+      "document": "VerifyMessageConsumption请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "10.185.22.31@7#782332544",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "1464F14500017DAF6ECC79CA6CAA0288",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyMessageConsumptionResponse": {
+      "document": "VerifyMessageConsumption返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "VpcInfo": {
       "document": "VPC信息",
       "members": [
@@ -8935,6 +9331,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ZoneScheduledItem": {
+      "document": "proxy调度时各个可用区有无调度任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "16001",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有剔除的调度任务且没有切回的可用区时，该值为true，反之为false",
+          "example": "true",
+          "member": "bool",
+          "name": "NodePermWipeFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

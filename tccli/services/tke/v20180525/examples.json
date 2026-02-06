@@ -48,6 +48,14 @@
         "title": "取消集群应用"
       }
     ],
+    "CancelUpgradePlan": [
+      {
+        "document": "取消一个集群组件的升级计划",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelUpgradePlan\n<公共请求参数>\n\n{\n    \"ClusterID\": \"cls-3n90hta2\",\n    \"PlanID\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "取消集群升级计划"
+      }
+    ],
     "CheckEdgeClusterCIDR": [
       {
         "document": "",
@@ -106,7 +114,7 @@
       {
         "document": "创建托管集群外网访问端口",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterEndpointVip\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestFlowId\": \"100000\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestFlowId\": 100000,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建托管集群外网访问端口"
       }
     ],
@@ -124,6 +132,14 @@
         "title": "添加集群节点(多块数据盘）"
       }
     ],
+    "CreateClusterMaintenanceWindowAndExclusions": [
+      {
+        "document": "创建集群维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterMaintenanceWindowAndExclusions\n<公共请求参数>\n\n{\n    \"ClusterID\": \"cls-3n90hta2\",\n    \"MaintenanceTime\": \"20:00:00\",\n    \"Duration\": 4,\n    \"DayOfWeek\": [\n        \"MO\",\n        \"TU\",\n        \"WE\",\n        \"TH\",\n        \"FR\"\n    ],\n    \"Exclusions\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "创建集群维护窗口和排除项"
+      }
+    ],
     "CreateClusterNodePool": [
       {
         "document": "",
@@ -135,7 +151,7 @@
     "CreateClusterRelease": [
       {
         "document": "集群创建应用",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterRelease\n<公共请求参数>\n\n{\n    \"ChartFrom\": \"tke\",\n    \"Name\": \"app-05\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Namespace\": \"lwj\",\n    \"Chart\": \"redis\",\n    \"ChartVersion\": \"10.5.3\",\n    \"ChartNamespace\": \"helm-public\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterRelease\n<公共请求参数>\n\n{\n    \"ChartFrom\": \"tke-market\",\n    \"Name\": \"app-05\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Namespace\": \"lwj\",\n    \"Chart\": \"redis\",\n    \"ChartVersion\": \"10.5.3\",\n    \"ChartNamespace\": \"helm-public\"\n}",
         "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Condition\": \"\",\n            \"CreatedTime\": \"2020-04-15T14:44:42Z\",\n            \"ID\": \"0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb\",\n            \"Name\": \"app-05\",\n            \"Namespace\": \"lwj\",\n            \"Status\": \"pending-install\",\n            \"UpdatedTime\": \"2020-04-15T14:44:42Z\"\n        },\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
         "title": "集群创建应用"
       }
@@ -220,6 +236,14 @@
         "title": "弹性集群创建日志采集规则"
       }
     ],
+    "CreateGlobalMaintenanceWindowAndExclusions": [
+      {
+        "document": "创建一个全局维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalMaintenanceWindowAndExclusions\n<公共请求参数>\n\n{\n    \"TargetRegions\": [\n        \"*\"\n    ],\n    \"MaintenanceTime\": \"20:00:00\",\n    \"Duration\": 4,\n    \"DayOfWeek\": [\n        \"MO\",\n        \"TU\",\n        \"WE\",\n        \"TH\",\n        \"FR\"\n    ],\n    \"Exclusions\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"ID\": 10\n    }\n}",
+        "title": "创建全局维护窗口和排除项"
+      }
+    ],
     "CreateImageCache": [
       {
         "document": "",
@@ -247,14 +271,8 @@
     "CreatePrometheusClusterAgent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Agents\": [\n        {\n            \"Region\": \"abc\",\n            \"ClusterType\": \"abc\",\n            \"ClusterId\": \"abc\",\n            \"InClusterPodConfig\": {\n                \"HostNet\": true,\n                \"NodeSelector\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"Tolerations\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Operator\": \"abc\",\n                        \"Effect\": \"abc\"\n                    }\n                ]\n            },\n            \"EnableExternal\": true,\n            \"ExternalLabels\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"NotInstallBasicScrape\": true,\n            \"NotScrape\": true\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
-        "title": "关联集群"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2tghe0lv\",\n    \"Agents\": [\n        {\n            \"Region\": \"ap-beijing\",\n            \"EnableExternal\": \"false\",\n            \"ClusterId\": \"cls-ou716dcp\",\n            \"NotScrape\": \"true\",\n            \"ClusterType\": \"eks\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"562197b9-5253-4981-ab2c-8c648fc5dec8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2tghe0lv\",\n    \"Agents\": [\n        {\n            \"Region\": \"ap-beijing\",\n            \"EnableExternal\": false,\n            \"ClusterId\": \"cls-ou716dcp\",\n            \"NotScrape\": true,\n            \"ClusterType\": \"eks\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"562197b9-5253-4981-yb2c-8c648fc5dec8\"\n    }\n}",
         "title": "关联eks集群"
       }
     ],
@@ -318,6 +336,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceSpec\": {\n        \"Type\": \"common\",\n        \"Cpu\": 1,\n        \"Memory\": 2\n    },\n    \"InstanceCount\": 1,\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    },\n    \"ClientToken\": \"my-unique-token\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"adbb030e-163e-44c6-a940-fb42190d0d56\",\n        \"ReservedInstanceIds\": [\n            \"eksri-mloz4700\"\n        ]\n    }\n}",
         "title": "创建通用型预留券"
+      }
+    ],
+    "CreateRollOutSequence": [
+      {
+        "document": "创建一个集群发布序列",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRollOutSequence\n<公共请求参数>\n\n{\n    \"Name\": \"test1\",\n    \"SequenceFlows\": [\n        {\n            \"Tags\": [\n                \"Test\"\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                \"Pre-Production\"\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                \"Production\"\n            ],\n            \"SoakTime\": 86400\n        }\n    ],\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "创建发布序列"
       }
     ],
     "CreateTKEEdgeCluster": [
@@ -384,11 +410,19 @@
         "title": "删除集群中的实例"
       }
     ],
+    "DeleteClusterMaintenanceWindowAndExclusion": [
+      {
+        "document": "删除一个集群维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterMaintenanceWindowAndExclusion\n<公共请求参数>\n\n{\n    \"ClusterID\": \"cls-3n90hta2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "删除集群维护窗口和排除项"
+      }
+    ],
     "DeleteClusterNodePool": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"KeepInstance\": \"true\",\n    \"NodePoolIds\": [\n        \"np-e55paxnt\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d174dcb6-659b-4ab6-9533-e470a7d91e43\"\n    }\n}",
+        "document": "删除节点池",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-7tz3n309\",\n    \"NodePoolIds\": [\n        \"np-e55paxnt\"\n    ],\n    \"KeepInstance\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ebc80be1-c6a7-4c1f-870e-74eba8471969\"\n    }\n}",
         "title": "删除节点池"
       }
     ],
@@ -462,6 +496,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeClusterInstances\n&ClusterId=cls-2wds9k9p\n&InstanceIds.0=cvm-xgj3ca32\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
         "title": "删除边缘计算实例"
+      }
+    ],
+    "DeleteGlobalMaintenanceWindowAndExclusion": [
+      {
+        "document": "删除一个全局维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalMaintenanceWindowAndExclusion\n<公共请求参数>\n\n{\n    \"ID\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "删除全局维护窗口和排除项"
       }
     ],
     "DeleteImageCaches": [
@@ -572,12 +614,28 @@
         "title": "退还预留券实例"
       }
     ],
+    "DeleteRollOutSequence": [
+      {
+        "document": "删除一个集群发布序列",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRollOutSequence\n<公共请求参数>\n\n{\n    \"ID\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "删除发布序列"
+      }
+    ],
     "DeleteTKEEdgeCluster": [
       {
         "document": "删除边缘计算集群",
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteTKEEdgeCluster\r\n&ClusterId=cls-2wds9k9p\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除边缘计算集群"
+      }
+    ],
+    "DeleteUserPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserPermissions\n<公共请求参数>\n\n{\n    \"TargetUin\": \"700002308532\",\n    \"Permissions\": [\n        {\n            \"ClusterId\": \"cls-n17663rk\",\n            \"RoleName\": \"tke:admin\",\n            \"RoleType\": \"cluster\",\n            \"IsCustom\": false,\n            \"Namespace\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eadd88e9-6a5a-48e9-828c-4cfc4bae8910\"\n    }\n}",
+        "title": "删除admin权限"
       }
     ],
     "DescribeAddon": [
@@ -650,6 +708,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAuthenticationOptions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-7ph3twqe\"\n}",
         "output": "{\n    \"Response\": {\n        \"LatestOperationState\": \"\",\n        \"OIDCConfig\": {\n            \"AutoCreateClientId\": null,\n            \"AutoCreateOIDCConfig\": null,\n            \"AutoInstallPodIdentityWebhookAddon\": null\n        },\n        \"RequestId\": \"844ea54c-4271-48a7-b6da-686f44782d91\",\n        \"ServiceAccounts\": {\n            \"AutoCreateDiscoveryAnonymousAuth\": null,\n            \"Issuer\": \"https://kubernetes.default.svc.cluster.local\",\n            \"JWKSURI\": null,\n            \"UseTKEDefault\": null\n        }\n    }\n}",
         "title": "查看集群认证配置"
+      }
+    ],
+    "DescribeClusterAvailableExtraArgs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAvailableExtraArgs\n<公共请求参数>\n\n{\n    \"ClusterVersion\": \"1.20.6\",\n    \"ClusterType\": \"MANAGED_CLUSTER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"1.20.6\",\n        \"ClusterType\": \"MANAGED_CLUSTER\",\n        \"AvailableExtraArgs\": {\n            \"KubeAPIServer\": [\n                {\n                    \"Name\": \"max-mutating-requests-inflight\",\n                    \"Type\": \"int\",\n                    \"Usage\": \"The maximum number of mutating requests in flight at a given time. When the server exceeds this, it rejects requests. Zero for no limit. (default 200)\",\n                    \"Default\": \"200\"\n                }\n            ],\n            \"KubeControllerManager\": [\n                {\n                    \"Name\": \"kube-api-burst\",\n                    \"Type\": \"int32\",\n                    \"Usage\": \"Burst to use while talking with kubernetes apiserver. (default 30)\",\n                    \"Default\": \"30\"\n                }\n            ],\n            \"KubeScheduler\": [],\n            \"Kubelet\": []\n        },\n        \"RequestId\": \"74f06cc7-145d-4a3c-91ec-318561dd4b4d\"\n    }\n}",
+        "title": "查询集群可用的自定义参数"
       }
     ],
     "DescribeClusterCommonNames": [
@@ -740,6 +806,14 @@
         "title": "查询集群变配记录"
       }
     ],
+    "DescribeClusterMaintenanceWindowAndExclusions": [
+      {
+        "document": "获取集群维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterMaintenanceWindowAndExclusions\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"TotalCount\": 1,\n        \"MaintenanceWindowAndExclusions\": [\n            {\n                \"ClusterID\": \"cls-12345678\",\n                \"ClusterName\": \"test1\",\n                \"Region\": \"ap-guangzhou\",\n                \"MaintenanceTime\": \"20:00:00\",\n                \"Duration\": 3,\n                \"DayOfWeek\": [\n                    \"MO\",\n                    \"WE\"\n                ],\n                \"Exclusions\": []\n            }\n        ]\n    }\n}",
+        "title": "获取集群维护窗口和排除项"
+      }
+    ],
     "DescribeClusterNodePoolDetail": [
       {
         "document": "查询节点池详情",
@@ -759,7 +833,7 @@
     "DescribeClusterPendingReleases": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterPendingReleases\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterPendingReleases\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
         "output": "{\n    \"Response\": {\n        \"Limit\": 1,\n        \"Offset\": 0,\n        \"ReleaseSet\": [\n            {\n                \"Condition\": \"install release error: host must be a URL or a host:port pair: \\\"https://\\\"\",\n                \"CreatedTime\": \"2020-04-15T09:07:22Z\",\n                \"ID\": \"8aa09a63-8b9a-461f-8c5b-bd7872abdc37\",\n                \"Name\": \"app-01\",\n                \"Namespace\": \"lwj\",\n                \"Status\": \"failed\",\n                \"UpdatedTime\": \"2020-04-15T09:07:22Z\"\n            }\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\",\n        \"Total\": 1\n    }\n}",
         "title": "查询集群安装中应用列表"
       }
@@ -768,7 +842,7 @@
       {
         "document": "查询集群已安装应用详情",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReleaseDetails\n<公共请求参数>\n\n{\n    \"Namespace\": \"default\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-name\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Name\": \"app-name\",\n            \"Namespace\": \"default\",\n            \"Version\": \"1\",\n            \"Status\": \"deployed\",\n            \"Description\": \"Install complete\",\n            \"Notes\": \"\",\n            \"Config\": \"key1=v1,key2=v2\",\n            \"Manifest\": \"\",\n            \"ChartVersion\": \"10.5.3\",\n            \"ChartName\": \"redis\",\n            \"ChartDescription\": \"Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.\",\n            \"AppVersion\": \"5.0.7\",\n            \"FirstDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n            \"LastDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n            \"ChartFrom\": \"other\",\n            \"ChartURL\": \"\",\n            \"ComputedValues\": \"\",\n            \"Resources\": \"\"\n        },\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Name\": \"app-name\",\n            \"Namespace\": \"default\",\n            \"Version\": 1,\n            \"Status\": \"deployed\",\n            \"Description\": \"Install complete\",\n            \"Notes\": \"\",\n            \"Config\": \"key1=v1,key2=v2\",\n            \"Manifest\": \"\",\n            \"ChartVersion\": \"10.5.3\",\n            \"ChartName\": \"redis\",\n            \"ChartDescription\": \"Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.\",\n            \"AppVersion\": \"5.0.7\",\n            \"FirstDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n            \"LastDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n            \"ChartFrom\": \"other\",\n            \"ChartURL\": \"\",\n            \"ComputedValues\": \"\",\n            \"Resources\": \"\"\n        },\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "查询集群已安装应用详情"
       }
     ],
@@ -776,7 +850,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReleaseHistory\n<公共请求参数>\n\n{\n    \"Namespace\": \"default\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-name\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ReleaseHistorySet\": [\n            {\n                \"Name\": \"app-name\",\n                \"Namespace\": \"default\",\n                \"Revision\": \"1\",\n                \"Status\": \"deployed\",\n                \"Chart\": \"redis-10.5.3\",\n                \"AppVersion\": \"5.0.7\",\n                \"UpdatedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n                \"Description\": \"\"\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReleaseHistorySet\": [\n            {\n                \"Name\": \"app-name\",\n                \"Namespace\": \"default\",\n                \"Revision\": 1,\n                \"Status\": \"deployed\",\n                \"Chart\": \"redis-10.5.3\",\n                \"AppVersion\": \"5.0.7\",\n                \"UpdatedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n                \"Description\": \"\"\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\",\n        \"Total\": 1\n    }\n}",
         "title": "查询集群已安装应用版本历史"
       }
     ],
@@ -786,6 +860,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReleases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
         "output": "{\n    \"Response\": {\n        \"Limit\": 0,\n        \"Offset\": 0,\n        \"ReleaseSet\": [\n            {\n                \"Name\": \"app-name\",\n                \"Description\": \"This is app description\",\n                \"Namespace\": \"default\",\n                \"Revision\": \"1\",\n                \"Status\": \"deployed\",\n                \"ChartName\": \"redis\",\n                \"ChartVersion\": \"10.5.3\",\n                \"AppVersion\": \"5.0.7\",\n                \"UpdatedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\"\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\",\n        \"Total\": 1\n    }\n}",
         "title": "查询集群已安装应用列表"
+      }
+    ],
+    "DescribeClusterRollOutSequenceTags": [
+      {
+        "document": "获取集群发布序列标签",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRollOutSequenceTags\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"TotalCount\": 1,\n        \"ClusterTags\": [\n            {\n                \"ClusterID\": \"cls-12345678\",\n                \"Region\": \"ap-guangzhou\",\n                \"Tags\": [\n                    \"Test\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取集群发布序列标签"
       }
     ],
     "DescribeClusterRouteTables": [
@@ -842,6 +924,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"AutoUpgradeClusterLevel\": true,\n                \"ClusterDescription\": \"tke\",\n                \"ClusterEtcdNodeNum\": 0,\n                \"ClusterId\": \"cls-ayzfpv5c\",\n                \"ClusterLevel\": \"L5\",\n                \"ClusterMaterNodeNum\": 1,\n                \"ClusterName\": \"yctest\",\n                \"ClusterNetworkSettings\": {\n                    \"CiliumMode\": \"tunnel\",\n                    \"ClusterCIDR\": \"10.12.0.0/14\",\n                    \"Cni\": true,\n                    \"IgnoreClusterCIDRConflict\": false,\n                    \"IgnoreServiceCIDRConflict\": false,\n                    \"Ipv6ServiceCIDR\": \"fd00:100::/112\",\n                    \"Ipvs\": false,\n                    \"IsDualStack\": false,\n                    \"KubeProxyMode\": \"ipvs\",\n                    \"MaxClusterServiceNum\": 1024,\n                    \"MaxNodePodNum\": 64,\n                    \"ServiceCIDR\": \"10.15.252.0/22\",\n                    \"Subnets\": null,\n                    \"VpcId\": \"vpc-7modfjc3\"\n                },\n                \"ClusterNodeNum\": 2,\n                \"ClusterOs\": \"tlinux3.1x86_64\",\n                \"ClusterStatus\": \"Running\",\n                \"ClusterType\": \"MANAGED_CLUSTER\",\n                \"ClusterVersion\": \"1.24.4\",\n                \"ContainerRuntime\": \"containerd\",\n                \"CreatedTime\": \"2022-12-27T07:46:13Z\",\n                \"DeletionProtection\": true,\n                \"EnableExternalNode\": false,\n                \"ImageId\": \"img-2wds9k9p\",\n                \"OsCustomizeType\": \"GENERAL\",\n                \"ProjectId\": 0,\n                \"Property\": \"{\\\"NodeNameType\\\":\\\"lan-ip\\\",\\\"NetworkType\\\":\\\"GR\\\"}\",\n                \"QGPUShareEnable\": false,\n                \"RuntimeVersion\": \"1.4.3\",\n                \"TagSpecification\": null\n            }\n        ],\n        \"RequestId\": \"583e6c4b-ff24-42f8-87f1-37e4c00d81b7\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询集群列表"
+      }
+    ],
+    "DescribeControlPlaneLogs": [
+      {
+        "document": "查询插件日志采集配置时调用",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeControlPlaneLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"Name\": \"karpenter\",\n                \"LogLevel\": 2,\n                \"LogSetId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n                \"TopicRegion\": \"ap-guangzhou\",\n                \"TopicId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\"\n            }\n        ],\n        \"RequestId\": \"583e6c4b-ff24-42f8-87f1-37e4c00d81b7\"\n    }\n}",
+        "title": "查询插件日志采集配置"
       }
     ],
     "DescribeECMInstances": [
@@ -980,11 +1070,19 @@
         "title": "查看开启第三方节点池配置信息"
       }
     ],
+    "DescribeGlobalMaintenanceWindowAndExclusions": [
+      {
+        "document": "获取全局维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalMaintenanceWindowAndExclusions\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"TotalCount\": 1,\n        \"MaintenanceWindowAndExclusions\": [\n            {\n                \"ID\": 1,\n                \"TargetRegions\": [\n                    \"*\"\n                ],\n                \"MaintenanceTime\": \"20:00:00\",\n                \"Duration\": 3,\n                \"DayOfWeek\": [\n                    \"MO\",\n                    \"WE\"\n                ],\n                \"Exclusions\": []\n            }\n        ]\n    }\n}",
+        "title": "获取全局维护窗口和排除项"
+      }
+    ],
     "DescribeIPAMD": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPAMD\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-8k33qz0w\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DisableVpcCniMode\": false,\n        \"EnableCustomizedPodCidr\": false,\n        \"EnableIPAMD\": false,\n        \"Phase\": \"running\",\n        \"Reason\": \"\",\n        \"RequestId\": \"c692a3b6-11cd-4a9d-8e36-409545d332a2\",\n        \"SubnetIds\": [\n            \"subnet-imgoatdg\"\n        ],\n        \"ClaimExpiredDuration\": \"300s\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClaimExpiredDuration\": \"0s\",\n        \"DisableVpcCniMode\": false,\n        \"EnableCustomizedPodCidr\": true,\n        \"EnableIPAMD\": true,\n        \"EnableTrunkingENI\": false,\n        \"Phase\": \"running\",\n        \"Reason\": \"\",\n        \"RequestId\": \"93f7457a-4c95-4e23-b75f-e3bdbf1ab81e\",\n        \"SubnetIds\": [\n            \"subnet-7fxdi13h\",\n            \"subnet-502b2uw9\"\n        ]\n    }\n}",
         "title": "获取eniipamd组件信息"
       }
     ],
@@ -1023,7 +1121,7 @@
     "DescribeMasterComponent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckComponentVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMasterComponent\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"Component\": \"kube-apiserver\",\n        \"Status\": \"Shutdown\"\n    }\n}",
         "title": "获取kube-apiserver状态"
       }
@@ -1040,7 +1138,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpenPolicyList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-gzzr1v5t\",\n    \"Category\": \"baseline\"\n}",
-        "output": "{\n    \"Response\": {\n        \"OpenPolicyInfoList\": [\n            {\n                \"EnforcementAction\": \"deny\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockclusterdeletion\",\n                \"Name\": \"block-cluster-deletion-rule\",\n                \"PolicyCategory\": \"cluster\",\n                \"PolicyDesc\": \"集群中存在任意节点（普通节点、原生节点、注册节点），需先下线节点后方可删除\",\n                \"PolicyName\": \"存在节点的集群不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blocknamespacedeletion\",\n                \"Name\": \"block-namespace-deletion-rule\",\n                \"PolicyCategory\": \"namespace\",\n                \"PolicyDesc\": \"命名空间内如果存在pod、service、ingress、pvc，需清空上述资源后方可删除\",\n                \"PolicyName\": \"存在workload、服务与路由、存储对象的命名空间不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockcrddeletion\",\n                \"Name\": \"block-crd-deletion-rule\",\n                \"PolicyCategory\": \"configuration\",\n                \"PolicyDesc\": \"crd定义的apiversion下如果有创建cr资源，则清空cr后方可删除crd\",\n                \"PolicyName\": \"存在cr的crd不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockpvdeletion\",\n                \"Name\": \"block-pv-deletion-rule\",\n                \"PolicyCategory\": \"storage\",\n                \"PolicyDesc\": \"pv如果处于bound状态，则不允许被删除\",\n                \"PolicyName\": \"绑定状态的pv不允许删除\"\n            },\n            {\n                \"EnforcementAction\": \"dryrun\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockservicewithingressdeletion\",\n                \"Name\": \"block-service-with-ingress-deletion-rule\",\n                \"PolicyCategory\": \"network\",\n                \"PolicyDesc\": \"ingress-controller前端svc，如果存在ingress配置，则svc不允许删除\",\n                \"PolicyName\": \"应用了ingress规则的svc不允许删除\"\n            }\n        ],\n        \"RequestId\": \"224782f1-c990-4383-8f21-bb369c9ca396\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GatekeeperStatus\": 1,\n        \"OpenPolicyInfoList\": [\n            {\n                \"ConstraintYamlExample\": \"\",\n                \"EnabledStatus\": \"open\",\n                \"EnforcementAction\": \"deny\",\n                \"EventNums\": 0,\n                \"Kind\": \"blockclusterdeletion\",\n                \"Name\": \"block-cluster-deletion-rule\",\n                \"OpenConstraintInfoList\": [\n                    {\n                        \"EventNums\": 0,\n                        \"Name\": \"block-cluster-deletion-rule\",\n                        \"YamlDetail\": \"\"\n                    }\n                ],\n                \"PolicyCategory\": \"cluster\",\n                \"PolicyDesc\": \"集群中存在任意节点（普通节点、原生节点、注册节点），需先下线节点后方可删除\",\n                \"PolicyName\": \"存在节点的集群不允许删除\"\n            }\n        ],\n        \"RequestId\": \"224782f1-c990-4383-8f21-bb369c9ca396\"\n    }\n}",
         "title": "查询策略列表"
       }
     ],
@@ -1352,11 +1450,19 @@
         "title": "获取集群资源使用量"
       }
     ],
+    "DescribeRollOutSequences": [
+      {
+        "document": "获取集群发布序列",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRollOutSequences\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"TotalCount\": 1,\n        \"Sequences\": [\n            {\n                \"ID\": 1,\n                \"Name\": \"test1\",\n                \"SequenceFlows\": [\n                    {\n                        \"Tags\": [\n                            \"Test\"\n                        ],\n                        \"SoakTime\": 86400\n                    },\n                    {\n                        \"Tags\": [\n                            \"Pre-Production\"\n                        ],\n                        \"SoakTime\": 86400\n                    },\n                    {\n                        \"Tags\": [\n                            \"Production\"\n                        ],\n                        \"SoakTime\": 86400\n                    }\n                ],\n                \"Enabled\": true\n            }\n        ]\n    }\n}",
+        "title": "获取发布序列"
+      }
+    ],
     "DescribeRouteTableConflicts": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRouteTableConflicts\n<公共请求参数>\n\n{\n    \"RouteTableCidrBlock\": \"10.4.0.0/16\",\n    \"VpcId\": \"vpc-e55paxnt\"\n}",
-        "output": "{\n    \"Response\": {\n        \"HasConflict\": false,\n        \"RouteTableConflictSet\": [\n            {\n                \"RouteTableType\": \"CcsCluster\",\n                \"RouteTableCidrBlock\": \"172.20.0.0/16\",\n                \"RouteTableName\": \"tke-test\",\n                \"RouteTableId\": \"cls-e55paxnt\"\n            }\n        ],\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"HasConflict\": false,\n        \"RouteTableConflictSet\": [\n            {\n                \"RouteTableType\": \"CcsCluster\",\n                \"RouteTableCidrBlock\": \"172.20.0.0/16\",\n                \"RouteTableName\": \"tke-test\",\n                \"RouteTableId\": \"rtb-e55paxnt\"\n            }\n        ],\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询路由表冲突列表"
       }
     ],
@@ -1408,6 +1514,38 @@
         "title": "获取边缘脚本链接"
       }
     ],
+    "DescribeTasks": [
+      {
+        "document": "查询任务相关信息",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"Name\": \"ClusterId\",\n            \"Values\": [\n                \"cls-xxxxx\"\n            ]\n        },\n        {\n            \"Name\": \"TaskType\",\n            \"Values\": [\n                \"master_upgrade\"\n            ]\n        }\n    ],\n    \"Latest\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Tasks\": [\n            {\n                \"LifeState\": \"xx\",\n                \"TargetObj\": \"xx\",\n                \"Param\": \"xx\",\n                \"TaskType\": \"xx\",\n                \"LastError\": \"xx\",\n                \"ClusterID\": \"xx\",\n                \"CreatedAt\": \"xx\",\n                \"UpdatedAt\": \"xx\",\n                \"TaskID\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询任务相关信息"
+      }
+    ],
+    "DescribeUpgradeTaskDetail": [
+      {
+        "document": "获取升级任务详情",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpgradeTaskDetail\n<公共请求参数>\n\n{\n    \"ID\": 1,\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"TotalCount\": 1,\n        \"UpgradePlans\": [\n            {\n                \"ID\": 1,\n                \"ClusterID\": \"cls-12345678\",\n                \"ClusterName\": \"test1\",\n                \"PlanedStartAt\": \"2025-01-01 20:00:00\",\n                \"UpgradeStartAt\": \"2025-01-01 20:00:00\",\n                \"UpgradeEndAt\": \"2025-01-01 20:01:00\",\n                \"Status\": \"Succeed\"\n            }\n        ]\n    }\n}",
+        "title": "获取升级任务详情"
+      }
+    ],
+    "DescribeUpgradeTasks": [
+      {
+        "document": "获取计划升级任务",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpgradeTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"TotalCount\": 1,\n        \"UpgradeTasks\": [\n            {\n                \"ID\": 1,\n                \"Name\": \"coredns基线化升级\",\n                \"Component\": \"coredns\",\n                \"RelatedResources\": [\n                    \"coredns\"\n                ],\n                \"UpgradeImpact\": \"集群域名解析延迟有抖动\",\n                \"PlanedStartAt\": \"2025-01-05 20:00:00\",\n                \"CreatedAt\": \"2025-01-02 20:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "获取计划升级任务"
+      }
+    ],
+    "DescribeUserPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPermissions\n<公共请求参数>\n\n{\n    \"TargetUin\": \"700002308532\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Permissions\": [\n            {\n                \"ClusterId\": \"cls-n17663rk\",\n                \"IsCustom\": false,\n                \"Namespace\": \"\",\n                \"RoleName\": \"tke:admin\",\n                \"RoleType\": \"cluster\"\n            }\n        ],\n        \"TargetUin\": \"700002308532\",\n        \"RequestId\": \"6c830591-6462-43c6-8740-28c1e03c2b45\"\n    }\n}",
+        "title": "查询子账号权限"
+      }
+    ],
     "DescribeVersions": [
       {
         "document": "",
@@ -1420,7 +1558,7 @@
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeVpcCniPodLimits\n&Zone=ap-guangzhou-3,\n&InstanceFamily=S5,\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"PodLimitsInstanceSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.SMALL2\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 1\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.SMALL4\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 1\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.MEDIUM4\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 3\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.MEDIUM8\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 3\n                }\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 25,\n        \"PodLimitsInstanceSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.12XLARGE96\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.LARGE8\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 27,\n                    \"TKERouteENIStaticIP\": 27,\n                    \"TKEDirectENI\": 19,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.12XLARGE128\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.2XLARGE32\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 95,\n                    \"TKERouteENIStaticIP\": 95,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.LARGE16\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 27,\n                    \"TKERouteENIStaticIP\": 27,\n                    \"TKEDirectENI\": 19,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.2XLARGE16\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 95,\n                    \"TKERouteENIStaticIP\": 95,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.4XLARGE64\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.40XLARGE320\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 22,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.MEDIUM4\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 27,\n                    \"TKERouteENIStaticIP\": 27,\n                    \"TKEDirectENI\": 9,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.16XLARGE128\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.20XLARGE160\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.8XLARGE64\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.SMALL1\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 5,\n                    \"TKERouteENIStaticIP\": 5,\n                    \"TKEDirectENI\": 4,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.32XLARGE256\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 22,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.SMALL4\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 5,\n                    \"TKERouteENIStaticIP\": 5,\n                    \"TKEDirectENI\": 4,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.16XLARGE256\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.MEDIUM2\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 27,\n                    \"TKERouteENIStaticIP\": 27,\n                    \"TKEDirectENI\": 9,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.22XLARGE192\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.16XLARGE192\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.MEDIUM8\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 27,\n                    \"TKERouteENIStaticIP\": 27,\n                    \"TKEDirectENI\": 9,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.22XLARGE224\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.4XLARGE32\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.4XLARGE16\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 273,\n                    \"TKERouteENIStaticIP\": 273,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.2XLARGE8\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 95,\n                    \"TKERouteENIStaticIP\": 95,\n                    \"TKEDirectENI\": 39,\n                    \"TKESubENI\": 100\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"SA2\",\n                \"InstanceType\": \"SA2.SMALL2\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 5,\n                    \"TKERouteENIStaticIP\": 5,\n                    \"TKEDirectENI\": 4,\n                    \"TKESubENI\": 100\n                }\n            }\n        ],\n        \"RequestId\": \"0902e5fd-5b71-4ea7-b61b-1a281f7b48c6\"\n    }\n}",
         "title": "查询广州3区下的S5实例族机型可支持的 VPC-CNI Pod 数量"
       }
     ],
@@ -1438,6 +1576,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DisableClusterDeletionProtection\r\n&ClusterId=cls-2wds9k9p\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "关闭集群删除保护"
+      }
+    ],
+    "DisableControlPlaneLogs": [
+      {
+        "document": "删除插件日志采集配置时调用",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableControlPlaneLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\",\n    \"ComponentNames\": [\n        \"karpenter\"\n    ],\n    \"DeleteLogSetAndTopic\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除插件日志采集配置"
       }
     ],
     "DisableEncryptionProtection": [
@@ -1486,6 +1632,22 @@
         "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterDeletionProtection\r\n&ClusterId=cls-2wds9k9p\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "启用集群删除保护"
+      }
+    ],
+    "EnableControlPlaneLogs": [
+      {
+        "document": "创建插件日志采集配置时调用",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableControlPlaneLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\",\n    \"Components\": [\n        {\n            \"LogLevel\": 2,\n            \"LogSetId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n            \"Name\": \"kapenter\",\n            \"TopicId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n            \"TopicRegion\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "创建插件日志采集配置"
+      }
+    ],
+    "EnableEksEventPersistence": [
+      {
+        "document": "Eks集群开启事件采集功能",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEksEventPersistence\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx\",\n    \"ClusterId\": \"xxx\",\n    \"LogsetId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "Eks集群开启事件采集功能示例"
       }
     ],
     "EnableEncryptionProtection": [
@@ -1550,6 +1712,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=GetUpgradeInstanceProgress\n&ClusterId=cls-e55paxnt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Done\": 0,\n        \"LifeState\": \"running\",\n        \"Instances\": [\n            {\n                \"InstanceID\": \"ins-wggphft5\",\n                \"LifeState\": \"paused\",\n                \"StartAt\": \"2021-02-08T16:29:46+08:00\",\n                \"EndAt\": \"2021-02-08T16:39:46+08:00\",\n                \"CheckResult\": {\n                    \"CheckPass\": false,\n                    \"Items\": [\n                        {\n                            \"Namespace\": \"default\",\n                            \"WorkLoadKind\": \"ReplicaSet\",\n                            \"WorkLoadName\": \"kubernetes-proxy-67fd23cf4d\",\n                            \"Before\": 1,\n                            \"After\": 0,\n                            \"Pods\": [\n                                \"kubernetes-proxy-67fd23cf4d-2tcxw\"\n                            ]\n                        }\n                    ],\n                    \"SinglePods\": []\n                },\n                \"Detail\": [\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"precheck failed\",\n                        \"LifeState\": \"failed\",\n                        \"StartAt\": \"2023-02-08T08:29:51Z\",\n                        \"Step\": \"preCheck\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"drain\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"remove\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"reset\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"postCheck\"\n                    }\n                ]\n            }\n        ],\n        \"ClusterStatus\": {\n            \"PodTotal\": 10,\n            \"NotReadyPod\": 0\n        },\n        \"RequestId\": \"b224fa4b-fedf-4061-baa9-d547ew858df\"\n    }\n}",
         "title": "查询升级状态"
+      }
+    ],
+    "GrantUserPermissions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantUserPermissions\n<公共请求参数>\n\n{\n    \"TargetUin\": \"700002308532\",\n    \"Permissions\": [\n        {\n            \"ClusterId\": \"cls-n17663rk\",\n            \"RoleName\": \"tke:admin\",\n            \"RoleType\": \"cluster\",\n            \"IsCustom\": false,\n            \"Namespace\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2be08f4-dbf9-420b-aeaa-108ce91ce0f0\"\n    }\n}",
+        "title": "授予admin权限"
       }
     ],
     "InstallAddon": [
@@ -1634,9 +1804,9 @@
     ],
     "ModifyClusterAttribute": [
       {
-        "document": "修改集群属性",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"AutoUpgradeClusterLevel\": {\n        \"IsAutoUpgrade\": true\n    },\n    \"ClusterName\": \"tke\",\n    \"ProjectId\": 0,\n    \"ClusterDesc\": \"tke\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"ClusterLevel\": \"L5\",\n    \"ClusterProperty\": {\n        \"NodeNameType\": \"lan-ip\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"ClusterName\": \"tke\",\n        \"ProjectId\": 0,\n        \"ClusterDesc\": \"tke\",\n        \"QGPUShareEnable\": true,\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ClusterLevel\": \"L5\",\n        \"ClusterProperty\": {\n            \"NodeNameType\": \"lan-ip\"\n        }\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"AutoUpgradeClusterLevel\": {\n        \"IsAutoUpgrade\": true\n    },\n    \"ClusterName\": \"tke\",\n    \"ProjectId\": 0,\n    \"ClusterDesc\": \"tke\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"ClusterLevel\": \"L5\",\n    \"ClusterProperty\": {\n        \"NodeNameType\": \"lan-ip\"\n    },\n    \"IsHighAvailability\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"ClusterName\": \"tke\",\n        \"ProjectId\": 0,\n        \"ClusterDesc\": \"tke\",\n        \"QGPUShareEnable\": true,\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ClusterLevel\": \"L5\",\n        \"ClusterProperty\": {\n            \"NodeNameType\": \"lan-ip\"\n        },\n        \"IsHighAvailability\": true\n    }\n}",
         "title": "修改集群属性"
       }
     ],
@@ -1656,6 +1826,22 @@
         "title": "修改托管集群外网端口的安全策略"
       }
     ],
+    "ModifyClusterExtraArgs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterExtraArgs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"ClusterExtraArgs\": {\n        \"KubeAPIServer\": [\n            \"feature-gates=CustomResourceSubresources=true\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7d741a2-e028-48bc-8c27-7be9e3e350db\"\n    }\n}",
+        "title": "更新集群自定义参数"
+      }
+    ],
+    "ModifyClusterExtraArgsTaskState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterExtraArgsState\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-da481xax\",\n    \"Operation\": \"abort\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ec3f44c-3460-4c61-89e4-fe97f14c3fc7\"\n    }\n}",
+        "title": "暂停或者取消集群更新参数任务"
+      }
+    ],
     "ModifyClusterImage": [
       {
         "document": "",
@@ -1664,12 +1850,28 @@
         "title": "修改集群镜像"
       }
     ],
+    "ModifyClusterMaintenanceWindowAndExclusions": [
+      {
+        "document": "更新一个集群维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterMaintenanceWindowAndExclusions\n<公共请求参数>\n\n{\n    \"ClusterID\": \"cls-3n90hta2\",\n    \"MaintenanceTime\": \"20:00:00\",\n    \"Duration\": 4,\n    \"DayOfWeek\": [\n        \"MO\",\n        \"WE\"\n    ],\n    \"Exclusions\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "更新集群维护窗口和排除项"
+      }
+    ],
     "ModifyClusterNodePool": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d174dcb6-659b-4ab6-9533-e470a7d91e43\"\n    }\n}",
         "title": "编辑节点池"
+      }
+    ],
+    "ModifyClusterRollOutSequenceTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterRollOutSequenceTags\n<公共请求参数>\n\n{\n    \"ClusterID\": \"cls-3n90hta2\",\n    \"Tags\": [\n        {\n            \"Key\": \"Env\",\n            \"Value\": \"Test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "更新集群发布序列标签"
       }
     ],
     "ModifyClusterRuntimeConfig": [
@@ -1696,10 +1898,18 @@
         "title": "修改超级节点池"
       }
     ],
+    "ModifyGlobalMaintenanceWindowAndExclusions": [
+      {
+        "document": "更新一个全局维护窗口和排除项",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalMaintenanceWindowAndExclusions\n<公共请求参数>\n\n{\n    \"ID\": 1,\n    \"TargetRegions\": [\n        \"*\"\n    ],\n    \"MaintenanceTime\": \"20:00:00\",\n    \"Duration\": 4,\n    \"DayOfWeek\": [\n        \"MO\",\n        \"WE\"\n    ],\n    \"Exclusions\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "更新全局维护窗口和排除项"
+      }
+    ],
     "ModifyMasterComponent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckComponentVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\",\n    \"Operation\": \"shutdown\",\n    \"DryRun\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMasterComponent\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\",\n    \"Operation\": \"shutdown\",\n    \"DryRun\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
         "title": "停机kube-apiserver"
       }
@@ -1708,14 +1918,14 @@
       {
         "document": "修改节点池关联伸缩组的期望实例数示例",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolDesiredCapacityAboutAsg\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"DesiredCapacity\": 6,\n    \"NodePoolId\": \"np-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed\"\n    }\n}",
         "title": "修改节点池关联伸缩组的期望实例数示例"
       }
     ],
     "ModifyNodePoolInstanceTypes": [
       {
         "document": "修改节点池机型",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolInstanceTypes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceTypes\": [\n        \"ins-e55paxnt\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolInstanceTypes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceTypes\": [\n        \"S6.MEDIUM4\",\n        \"S5.MEDIUM4\",\n        \"SA3.MEDIUM4\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d174dcb6-659b-4ab6-9533-e470a7d91e43\"\n    }\n}",
         "title": "修改节点池机型"
       }
@@ -1830,6 +2040,14 @@
         "title": "资源 ID 不存在"
       }
     ],
+    "ModifyRollOutSequence": [
+      {
+        "document": "更新一个集群发布序列",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRollOutSequence\n<公共请求参数>\n\n{\n    \"ID\": 1,\n    \"Name\": \"test1\",\n    \"SequenceFlows\": [\n        {\n            \"Tags\": [\n                \"Test\"\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                \"Pre-Production\"\n            ],\n            \"SoakTime\": 86400\n        },\n        {\n            \"Tags\": [\n                \"Production\"\n            ],\n            \"SoakTime\": 86400\n        }\n    ],\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "title": "更新发布序列"
+      }
+    ],
     "RemoveNodeFromNodePool": [
       {
         "document": "移出节点池节点",
@@ -1857,7 +2075,7 @@
     "RollbackClusterRelease": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackClusterRelease\n<公共请求参数>\n\n{\n    \"Namespace\": \"lwj\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-05\",\n    \"Revision\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackClusterRelease\n<公共请求参数>\n\n{\n    \"Namespace\": \"lwj\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-05\",\n    \"Revision\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Condition\": \"\",\n            \"CreatedTime\": \"2020-04-15T14:44:42Z\",\n            \"ID\": \"0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb\",\n            \"Name\": \"app-05\",\n            \"Namespace\": \"lwj\",\n            \"Status\": \"pending-rollback\",\n            \"UpdatedTime\": \"2020-04-15T14:44:42Z\"\n        },\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
         "title": "回滚集群应用"
       }
@@ -1889,9 +2107,17 @@
     "SetNodePoolNodeProtection": [
       {
         "document": "当触发缩容时（包括手动和自动），节点不会被伸缩组从集群中移除",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodePoolNodeProtection\n<公共请求参数>\n\n{\n    \"ProtectedFromScaleIn\": \"true\",\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceIds\": [\n        \"ins-e55paxnt\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodePoolNodeProtection\n<公共请求参数>\n\n{\n    \"ProtectedFromScaleIn\": true,\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceIds\": [\n        \"ins-e55paxnt\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
         "output": "{\n    \"Response\": {\n        \"SucceedInstanceIds\": [\n            \"ins-rvob5o5\"\n        ],\n        \"FailedInstanceIds\": [\n            \"ins-abocc5o\"\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "给节点池中的节点设置移出保护"
+      }
+    ],
+    "SwitchClusterEndpoint": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=SwitchClusterEndpoint\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "切换集群网络访问链路为直连"
       }
     ],
     "SyncPrometheusTemp": [
@@ -1954,7 +2180,7 @@
         "title": "更新tke-log-agent组件参数"
       },
       {
-        "document": "用户可以通过RawValues参数更新cluster-autoscaler组件支持的自定义配置参数，比如关闭缩容，可以将 {\"extraArgs\":{\"scale-down-enabled\":false}}  进行base64编码后放入到 RawValues 参数中。cluster-autoscaler组件支持的自定义配置参数说明如下：\n```\n{\n  \"extraArgs\": {\n    \"expander\": string, 扩容策略，例如：random\n    \"ignore-daemonsets-utilization\": bool, ds类型不计入利用率，例如：false\n    \"max-empty-bulk-delete\": int, 空节点最大并发缩容数，例如：10\n    \"scale-down-delay-after-add\": string, 扩容后再触发缩容等待时间，例如：10m\n    \"scale-down-enabled\": bool, 开启缩容能力，例如：false\n    \"scale-down-unneeded-time\": string, 节点连续空闲触发缩容时间，例如：10m\n    \"scale-down-utilization-threshold\": float, 触发缩容节点利用率阈值，例如：0.5\n    \"skip-nodes-with-local-storage\": bool, 不缩容包含本地存储的节点，例如：true\n    \"skip-nodes-with-system-pods\": bool 不缩容kube-system namespace下非DaemonSet管理的Pod的节点，例如：ture\n  }\n}\n```",
+        "document": "用户可以通过RawValues参数更新cluster-autoscaler组件支持的自定义配置参数，比如关闭缩容，可以将 {\"extraArgs\":{\"scale-down-enabled\":false}}  进行base64编码后放入到 RawValues 参数中。cluster-autoscaler组件支持的自定义配置参数说明如下：\n```\n{\n  \"extraArgs\": {\n    \"expander\": string, 扩容策略，例如：random\n    \"ignore-daemonsets-utilization\": bool, ds类型不计入利用率，例如：false\n    \"max-empty-bulk-delete\": int, 空节点最大并发缩容数，例如：10\n    \"scale-down-delay-after-add\": string, 扩容后再触发缩容等待时间，例如：10m\n    \"scale-down-enabled\": bool, 开启缩容能力，例如：false\n    \"scale-down-unneeded-time\": string, 节点连续空闲触发缩容时间，例如：10m\n    \"scale-down-utilization-threshold\": float, 触发缩容节点利用率阈值，例如：0.5\n    \"skip-nodes-with-local-storage\": bool, 不缩容包含本地存储的节点，例如：true\n    \"skip-nodes-with-system-pods\": bool 不缩容kube-system namespace下非DaemonSet管理的Pod的节点，例如：true\n  }\n}\n```",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-qbc3zefo\",\n    \"AddonName\": \"cluster-autoscaler\",\n    \"RawValues\": \"eyJleHRyYUFyZ3MiOnsic2NhbGUtZG93bi1lbmFibGVkIjpmYWxzZX19\",\n    \"UpdateStrategy\": \"merge\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0a2e412-6e5e-4a93-9a22-edf5102e9eae\"\n    }\n}",
         "title": "更新cluster-autoscaler参数"
@@ -1963,14 +2189,14 @@
     "UpdateClusterKubeconfig": [
       {
         "document": "更新集群的kubeconfig信息",
-        "input": "https://tke.tencentcloudapi.com/?Action=UpdateClusterKubeconfig\r\n&ClusterId=cls-65r1c5nu\r\n&SubAccounts.0=1385968384757\r\n&SubAccounts.1=1385968384757\r\n&SubAccounts.2=1385968384757\r\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=UpdateClusterKubeconfig\n&ClusterId=cls-65r1c5nu\n&SubAccounts.0=1385968384757\n&SubAccounts.1=1385968384757\n&SubAccounts.2=1385968384757\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"UpdatedSubAccounts\": [\n            \"1385968384757\",\n            \"1385968384757\",\n            \"1385968384757\"\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
         "title": "更新集群的kubeconfig信息"
       }
     ],
     "UpdateClusterVersion": [
       {
-        "document": "升级集群到指定版本",
+        "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=UpdateClusterVersion\n&ClusterId=cls-e55paxnt\n&DstVersion=1.18.4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "升级集群到指定版本"

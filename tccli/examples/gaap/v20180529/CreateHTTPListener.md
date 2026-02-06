@@ -1,22 +1,22 @@
 **Example 1: 创建HTTP监听器**
 
-创建HTTP监听器
+
 
 Input: 
 
 ```
 tccli gaap CreateHTTPListener --cli-unfold-argument  \
-    --ProxyId link-cuxw2rm0 \
-    --ListenerName listener-1 \
-    --Port 443
+    --ListenerName listener-name \
+    --Port 8091 \
+    --ProxyId link-p9888rix
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9aeda369-17c7-429f-be39-745c1e92fc71",
-        "ListenerId": "listener-o0f3at99"
+        "ListenerId": "listener-9vub5ymx",
+        "RequestId": "788e2374-283f-4aaa-ab74-49042e84383e"
     }
 }
 ```

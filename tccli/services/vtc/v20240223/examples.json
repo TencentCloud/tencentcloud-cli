@@ -11,7 +11,7 @@
     "DescribeVideoTranslateJob": [
       {
         "document": "调用失败示例",
-        "input": "POST / HTTP/1.1\nHost: vtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoTranslateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"111\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoTranslateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"vlSYvQkMM0KwPuoakawm0tPrREwc2p7c\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.JobNotExist\",\n            \"Message\": \"任务不存在。\"\n        },\n        \"RequestId\": \"78254ad1-c184-4e9e-b5a0-9d3fc435576b\"\n    }\n}",
         "title": "调用失败示例"
       },

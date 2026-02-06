@@ -189,6 +189,20 @@
       "output": "DescribeHBaseTableOverviewResponse",
       "status": "online"
     },
+    "DescribeHBaseTableRequestMetric": {
+      "document": "Hbase的表粒度读取和写入速率",
+      "input": "DescribeHBaseTableRequestMetricRequest",
+      "name": "获取Hbase表级监控表的读写请求指标",
+      "output": "DescribeHBaseTableRequestMetricResponse",
+      "status": "online"
+    },
+    "DescribeHBaseTableStoreSizeMetric": {
+      "document": "查询Hbase的表粒度StoreSize大小监控指标数据",
+      "input": "DescribeHBaseTableStoreSizeMetricRequest",
+      "name": "获取Hbase表级监控表的StoreSize监控指标数据",
+      "output": "DescribeHBaseTableStoreSizeMetricResponse",
+      "status": "online"
+    },
     "DescribeHDFSStorageInfo": {
       "document": "查询HDFS存储文件信息",
       "input": "DescribeHDFSStorageInfoRequest",
@@ -222,6 +236,13 @@
       "input": "DescribeInspectionTaskResultRequest",
       "name": "获取巡检任务结果列表",
       "output": "DescribeInspectionTaskResultResponse",
+      "status": "online"
+    },
+    "DescribeInstanceOplog": {
+      "document": "获取实例操作日志",
+      "input": "DescribeInstanceOplogRequest",
+      "name": "获取实例操作日志",
+      "output": "DescribeInstanceOplogResponse",
       "status": "online"
     },
     "DescribeInstanceRenewNodes": {
@@ -1190,14 +1211,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算资源高级设置",
+          "document": "计算资源高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ComputeResourceAdvanceParams",
           "name": "ComputeResourceAdvanceParams",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1375,7 +1396,7 @@
         {
           "disabled": false,
           "document": "集群实例ID。",
-          "example": "emr-123",
+          "example": "240143022",
           "member": "int64",
           "name": "ClusterId",
           "output_required": true,
@@ -1506,8 +1527,19 @@
         },
         {
           "disabled": false,
+          "document": "对应的计算组",
+          "example": "test11",
+          "member": "string",
+          "name": "WarehouseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "伸缩组状态",
-          "example": "name",
+          "example": "1",
           "member": "int64",
           "name": "GroupStatus",
           "output_required": false,
@@ -1539,14 +1571,14 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组更多设置",
+          "document": "伸缩组更多设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AutoScaleGroupAdvanceAttrs",
           "name": "ExtraAdvanceAttrs",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1716,7 +1748,7 @@
         {
           "disabled": false,
           "document": "该云盘当前被挂载到的CVM实例InstanceId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[ins-1111111,ins-2222222]",
+          "example": "[\"ins-1111111\",\"ins-2222222\"]",
           "member": "string",
           "name": "InstanceIdList",
           "output_required": true,
@@ -1761,6 +1793,26 @@
           "name": "UnderwriteExpiredTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘额外性能值，单位：MB/s",
+          "example": "10",
+          "member": "int64",
+          "name": "ThroughputPerformance",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2130,6 +2182,17 @@
           "member": "Disk",
           "name": "Disks",
           "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容忍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Toleration",
+          "name": "Tolerations",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3244,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6----fae36063280\n示例值：a9a90aa6----fae36063280",
+          "document": "客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280\n示例值：a9a90aa6fae36063280",
           "example": "a9a90aa6----fae36063280",
           "member": "string",
           "name": "ClientToken",
@@ -3254,7 +3317,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
-          "example": "{\"SubnetId\":\"subnet-xxxx3hi2\",\"VpcId\":\"vpc-xxxx1fu7\"}",
+          "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
           "required": false,
@@ -3298,8 +3361,8 @@
         },
         {
           "disabled": false,
-          "document": "登陆密码，LoginSettings中的Password字段",
-          "example": "{\"Password\":\"xxxxxxxx\"}",
+          "document": "登录密码，LoginSettings中的Password字段",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -3322,6 +3385,33 @@
           "name": "ZoneId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通审计",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组来源IP",
+          "example": "10.0.0.0/0",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3417,7 +3507,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
-          "example": "sg-xxxxxxxxxx",
+          "example": "[\"sg-test\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -3557,6 +3647,33 @@
           "name": "LoadBalancerId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本：mysql8/tdsql8/mysql5",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通数据库审计",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全指定来源ip",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3634,7 +3751,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n51:表示STARROCKS-V1.4.0\n54:表示STARROCKS-V2.0.0\n27:表示KAFKA-V1.0.0\n50:表示KAFKA-V2.0.0\n16:表示EMR-V2.3.0\n20:表示EMR-V2.5.0\n30:表示EMR-V2.6.0\n38:表示EMR-V2.7.0\n25:表示EMR-V3.1.0\n33:表示EMR-V3.2.1\n34:表示EMR-V3.3.0\n37:表示EMR-V3.4.0\n44:表示EMR-V3.5.0\n53:表示EMR-V3.6.0",
+          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n51:表示STARROCKS-V1.4.0\n54:表示STARROCKS-V2.0.0\n27:表示KAFKA-V1.0.0\n50:表示KAFKA-V2.0.0\n16:表示EMR-V2.3.0\n20:表示EMR-V2.5.0\n30:表示EMR-V2.6.0\n38:表示EMR-V2.7.0\n25:表示EMR-V3.1.0\n33:表示EMR-V3.2.1\n34:表示EMR-V3.3.0\n37:表示EMR-V3.4.0\n44:表示EMR-V3.5.0\n53:表示EMR-V3.6.0\n58:表示EMR-3.6.1\n59:表示EMR-serverless-1.0.0\n60:表示EMR-TKE-1.1.0\n61:表示SR-V2.1.0\n62:表示SR-V2.1.0-SharedData\n63:表示SR-V2.1.0.tlinux\n64:表示统一元数据管理项目\n65:表示EMR-TKE-AI-1.0.0\n66:表示RSS-1.0.0\n67:表示SR-V2.2.0\n68:表示SR-V2.2.0.tlinux\n69:表示EMR-AI-1.1.0\n70:表示SR-V2.2.1\n71:表示EMR-3.7.0\n72:表示EMR-serverless-1.0.1\n73:表示KAFKA-2.0.1\n74:表示SR-V2.2.2\n75:表示EMR-TKE-AI-1.1.0\n76:表示EMR-V3.7.1\n77:表示SERVERLESS-TCBASE-1.0.0\n78:表示EMR-V3.6.2\n79:表示STARROCKS-V2.2.2\n80:表示EMR-AI-V1.1.1\n",
           "example": "4",
           "member": "uint64",
           "name": "ProductId",
@@ -3946,6 +4063,33 @@
           "name": "LoadBalancerId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型：mysql8/tdsql8",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通审计：0:不开通,1:开通",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组指定来源ip",
+          "example": "10.0.0.0/8",
+          "member": "string",
+          "name": "SgIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4041,7 +4185,7 @@
         {
           "disabled": false,
           "document": "预付费参数",
-          "example": "{     \"Period\": {       \"TimeSpan\": 1,       \"TimeUnit\": \"m\"     },     \"AutoRenewFlag\": 2   }",
+          "example": "无",
           "member": "PrePaySetting",
           "name": "PrePaySetting",
           "required": false,
@@ -5050,7 +5194,7 @@
         {
           "disabled": false,
           "document": "用户所有的标签键列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"\\u6d4b\\u8bd5\\u4e00\\u4e0b\",\"alex_test\",\"beckwuxingjia\",\"ghghghg\",\"tag_auth_test\",\"test\",\"beckwu\",\"emr\",\"lg\",\"bk\"]",
+          "example": "[\"alex_test\",\"beckwuxingjia\"]",
           "member": "string",
           "name": "TagKeys",
           "output_required": true,
@@ -5727,6 +5871,170 @@
       ],
       "type": "object"
     },
+    "DescribeHBaseTableRequestMetricRequest": {
+      "document": "DescribeHBaseTableRequestMetric请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-lvr4kbpk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Hbase表名",
+          "example": "hbase_meta",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Hbase的RegionServer服务",
+          "example": "127.0.0.1:6003",
+          "member": "string",
+          "name": "RegionServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取监控的数据粒度",
+          "example": "5m",
+          "member": "string",
+          "name": "Downsample",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询监控数据起始时间戳",
+          "example": "1764826199",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询监控数据结束时间戳",
+          "example": "1764828199",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHBaseTableRequestMetricResponse": {
+      "document": "DescribeHBaseTableRequestMetric返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Hbase监控指标返回包装结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HBaseMetricData",
+          "name": "MetricDataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHBaseTableStoreSizeMetricRequest": {
+      "document": "DescribeHBaseTableStoreSizeMetric请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-lvr4kbpk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Hbase表名",
+          "example": "hbase_meta",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Hbase的RegionServer服务",
+          "example": "127.0.0.1:6003",
+          "member": "string",
+          "name": "RegionServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取监控的数据粒度",
+          "example": "5m",
+          "member": "string",
+          "name": "Downsample",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询监控数据起始时间戳",
+          "example": "1764826199",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询监控数据结束时间戳",
+          "example": "1764828199",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHBaseTableStoreSizeMetricResponse": {
+      "document": "DescribeHBaseTableStoreSizeMetric返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Hbase监控指标返回包装结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HBaseMetricData",
+          "name": "MetricDataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHDFSStorageInfoRequest": {
       "document": "DescribeHDFSStorageInfo请求参数结构体",
       "members": [
@@ -6215,6 +6523,136 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceOplogRequest": {
+      "document": "DescribeInstanceOplog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例ID",
+          "example": "emr-0sfuq468",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开头时间时间戳",
+          "example": "1708505169",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结尾时间时间戳",
+          "example": "1708505169",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索项数组",
+          "example": "[{SearchType: \"operation\", SearchValue: \"缩容|扩容\"}]",
+          "member": "SearchItem",
+          "name": "SearchFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群、节点、组件",
+          "example": "集群",
+          "member": "string",
+          "name": "Operand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一般、危险、高危",
+          "example": "一般",
+          "member": "string",
+          "name": "SecurityLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOplogResponse": {
+      "document": "DescribeInstanceOplog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作日志数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作日志列表",
+          "example": "无",
+          "member": "OperationLog",
+          "name": "LogList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作对象筛选项数组",
+          "example": "[\"集群\",\"节点\",\"组件\"]",
+          "member": "string",
+          "name": "OperandList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全级别筛选数组",
+          "example": "[\"一般\",\"危险\",\"高危\"]",
+          "member": "string",
+          "name": "SecurityLevelList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceRenewNodesRequest": {
       "document": "DescribeInstanceRenewNodes请求参数结构体",
       "members": [
@@ -6338,6 +6776,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认0为普通集群，2为tke集群",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6469,7 +6916,7 @@
         {
           "disabled": false,
           "document": "实例关联的标签键列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test-tag",
+          "example": "[\"test-tag\"]",
           "member": "string",
           "name": "TagKeys",
           "output_required": true,
@@ -6509,7 +6956,7 @@
           "example": "JobFlowFinish",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6519,7 +6966,7 @@
           "example": "无",
           "member": "JobResult",
           "name": "Details",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6630,7 +7077,7 @@
         {
           "disabled": false,
           "document": "节点CVM实例Id列表",
-          "example": "[ins-xxx,inx-xxx]",
+          "example": "[\"ins-xxx\",\"inx-xxx\"]",
           "member": "string",
           "name": "CvmInstanceIds",
           "required": true,
@@ -6639,7 +7086,7 @@
         {
           "disabled": false,
           "document": "查询云盘的过滤条件",
-          "example": "[{\"Name\":\"disk-id\",\"Values\":[\"disk-123ddesx\"]},{\"Name\":\"disk-name\",\"Values\":[\"test1\"]}]",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -6671,6 +7118,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "场景值：\nModifyDiskExtraPerformance ：调整数据盘额外性能",
+          "example": "ModifyDiskExtraPerformance",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6704,6 +7160,16 @@
           "example": "200",
           "member": "uint64",
           "name": "MaxSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘最大额外性能值",
+          "example": "300",
+          "member": "int64",
+          "name": "MaxThroughputPerformance",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7521,7 +7987,7 @@
         {
           "disabled": false,
           "document": "'配置状态，-2：配置失败，-1:配置过期，1：已同步', -99 '全部'",
-          "example": "null",
+          "example": "-99",
           "member": "int64",
           "name": "ConfStatus",
           "required": false,
@@ -7556,7 +8022,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组件名称，都是大写例如YARN",
+          "document": "服务组件名称应采用全大写形式（例如：YARN），api调用时须与 ServiceGroupType 在两者之中任选其一并保证必填。",
           "example": "\"YARN\"",
           "member": "string",
           "name": "ServiceName",
@@ -7619,7 +8085,7 @@
         {
           "disabled": false,
           "document": "集群所有节点的别名序列化",
-          "example": "null",
+          "example": "eyJjb21tb24iOiJjb21tb24iLCJjb3JlIjoiY29yZSIsIm1hc3RlciI6Im1hc3RlciIsInRiOiJ0YXNrIn0=",
           "member": "string",
           "name": "AliasInfo",
           "output_required": true,
@@ -7629,7 +8095,7 @@
         {
           "disabled": false,
           "document": "支持的FlagNode列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "[ \t\t\"master\", \t\t\"core\", \t\t\"task\", \t\t\"common\", \t\t\"router\" \t] ",
           "member": "string",
           "name": "SupportNodeFlagFilterList",
           "output_required": true,
@@ -8792,7 +9258,7 @@
         {
           "disabled": false,
           "document": "集群地域",
-          "example": "集群地域",
+          "example": "1",
           "member": "uint64",
           "name": "ZoneId",
           "output_required": true,
@@ -9042,7 +9508,7 @@
         {
           "disabled": false,
           "document": "体外客户端组件信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"hdfs-2.8.5\",true]",
+          "example": "无",
           "member": "SoftDependInfo",
           "name": "OutSideSoftInfo",
           "output_required": true,
@@ -9933,6 +10399,52 @@
       ],
       "usage": "both"
     },
+    "HBaseMetricData": {
+      "document": "HBase监控数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名称，如 read_request_rate",
+          "example": "",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标描述，如 read request rate",
+          "example": "",
+          "member": "string",
+          "name": "MetricDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳数组",
+          "example": "",
+          "member": "int64",
+          "name": "Timestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数值数组",
+          "example": "",
+          "member": "float",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HealthStatus": {
       "document": "进程健康状态",
       "members": [
@@ -10559,7 +11071,7 @@
         {
           "disabled": false,
           "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：<li>ProductId为2(EMR-V2.0.1)的时候，必选组件包括：hdfs-2.7.3,yarn-2.7.3,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为16(EMR-V2.3.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.5.5,knox-1.2.0</li><li>ProductId为20(EMR-V2.5.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为30(EMR-V2.6.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为38(EMR-V2.7.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为57(EMR-V2.8.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为7(EMR-V3.0.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为25(EMR-V3.1.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为31(EMR-V3.1.1)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为28(EMR-V3.2.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为33(EMR-V3.2.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为34(EMR-V3.3.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为37(EMR-V3.4.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为44(EMR-V3.5.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为53(EMR-V3.6.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为58(EMR-V3.6.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.46,knox-1.6.1</li><li>ProductId为47(EMR-V4.0.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li>",
-          "example": "[hdfs-2.7.3]",
+          "example": "[\"hdfs-2.7.3\"]",
           "member": "string",
           "name": "Software",
           "required": true,
@@ -10663,6 +11175,24 @@
           "name": "MultiZoneSettings",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:不开通审计；1:开通审计",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11989,6 +12519,17 @@
         },
         {
           "disabled": false,
+          "document": "是否开启任务保护",
+          "example": "true",
+          "member": "bool",
+          "name": "GraceDownProtectFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "绑定标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -12045,7 +12586,7 @@
         {
           "disabled": false,
           "document": "启动进程列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "7",
+          "example": "[98]",
           "member": "int64",
           "name": "ServiceNodeInfo",
           "output_required": true,
@@ -12056,7 +12597,7 @@
         {
           "disabled": false,
           "document": "节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "HDFS",
+          "example": "[98]",
           "member": "int64",
           "name": "SoftDeployInfo",
           "output_required": true,
@@ -12095,6 +12636,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务保护时间",
+          "example": "60",
+          "member": "int64",
+          "name": "GraceDownProtectTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -13209,6 +13761,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集群字符串ID",
+          "example": "emr-o88f3whr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户信息列表",
           "example": "[\"user1\"]",
           "member": "string",
@@ -13287,6 +13848,15 @@
           "name": "PassWord",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步密码",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncPwd",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14788,6 +15358,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为特殊的数据盘，如：单副本盘",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSpecialDisk",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15212,6 +15793,102 @@
       ],
       "usage": "both"
     },
+    "OperationLog": {
+      "document": "操作日志描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例ID",
+          "example": "269553004",
+          "member": "int64",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作名称",
+          "example": "扩容",
+          "member": "string",
+          "name": "Operation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作类型",
+          "example": "3",
+          "member": "int64",
+          "name": "OperationType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型",
+          "example": "1",
+          "member": "int64",
+          "name": "UserType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者",
+          "example": "700000446528",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作时间",
+          "example": "2025-11-05 15:02:27",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作对象",
+          "example": "集群",
+          "member": "string",
+          "name": "Operand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作详情",
+          "example": "节点信息: S2.2XLARGE16*1(master), SA2.LARGE16*2(core)",
+          "member": "string",
+          "name": "OperationDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全级别",
+          "example": "一般",
+          "member": "string",
+          "name": "SecurityLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Order": {
       "document": "描述排序，用于排序.",
       "members": [
@@ -15236,6 +15913,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OtherAccountInfo": {
+      "document": "其他账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "其他账号UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700000446533",
+          "member": "string",
+          "name": "OtherUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其他账号授权角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EMR-CROSS-ACCOUNT-ROLE",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -15761,7 +16466,7 @@
         {
           "disabled": false,
           "document": "Pod节点数据目录挂载信息。",
-          "example": "[\"/data\"]",
+          "example": "无",
           "member": "PodVolume",
           "name": "PodVolumes",
           "output_required": true,
@@ -15822,6 +16527,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他账号授权信息",
+          "example": "无",
+          "member": "OtherAccountInfo",
+          "name": "OtherAccountInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -18089,6 +18805,15 @@
           "name": "NodeMarks",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "扩容指定计算组名称",
+          "example": "default_warehouse",
+          "member": "string",
+          "name": "WarehouseName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18139,7 +18864,7 @@
         {
           "disabled": false,
           "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1731867961-23673-5000362",
+          "example": "[\"1731867961-23673-5000362\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": false,
@@ -18437,6 +19162,15 @@
           "name": "NodeMarks",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "扩容指定计算组",
+          "example": "default_warehouse",
+          "member": "string",
+          "name": "WarehouseName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19852,6 +20586,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "ANALYSIS_ERR",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20245,6 +20989,34 @@
       ],
       "usage": "both"
     },
+    "TagInfo": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "tag-key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "tag-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Taint": {
       "document": "Kubernetes Taint",
       "members": [
@@ -20599,7 +21371,7 @@
         {
           "disabled": false,
           "document": "时间扩缩容重复策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "无",
           "member": "RepeatStrategy",
           "name": "RepeatStrategy",
           "output_required": true,
@@ -20610,7 +21382,7 @@
         {
           "disabled": false,
           "document": "策略唯一ID。",
-          "example": "1 ",
+          "example": "1",
           "member": "uint64",
           "name": "StrategyId",
           "output_required": true,
@@ -20638,6 +21410,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启任务保护",
+          "example": "true",
+          "member": "bool",
+          "name": "GraceDownProtectFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -20749,6 +21532,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务保护时间",
+          "example": "60",
+          "member": "int64",
+          "name": "GraceDownProtectTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -20776,6 +21570,67 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Toleration": {
+      "document": "Tolerations",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": "Equal",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "污点排斥效果",
+          "example": "NoSchedule",
+          "member": "string",
+          "name": "Effect",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "驱逐等待时间",
+          "example": "300",
+          "member": "int64",
+          "name": "TolerationSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -21050,6 +21905,16 @@
           "name": "WrittenBytes",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Error日志",
+          "example": "",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

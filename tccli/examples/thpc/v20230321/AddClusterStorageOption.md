@@ -12,9 +12,7 @@ tccli thpc AddClusterStorageOption --cli-unfold-argument  \
     --StorageOption.CFSOptions.0.Protocol NFS 4.0 \
     --StorageOption.CFSOptions.0.StorageType SD \
     --StorageOption.CFSOptions.1.LocalPath /tmp/ \
-    --StorageOption.CFSOptions.1.RemotePath 172.30.2.180@tcp0:/4fe1839b/cfs \
-    --StorageOption.CFSOptions.1.Protocol TURBO \
-    --StorageOption.CFSOptions.1.StorageType TB
+    --StorageOption.CFSOptions.1.FileSystemId cfs-odp2ivgf
 ```
 
 Output: 

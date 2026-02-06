@@ -11,7 +11,7 @@
     "AddCdnDomain": [
       {
         "document": "新增加速域名",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCdnDomain\n<公共请求参数>\n\n{\n    \"Origin\": {\n        \"OriginType\": \"ip\",\n        \"Origins\": [\n            \"1.1.1.1\"\n        ]\n    },\n    \"ProjectId\": \"0\",\n    \"Domain\": \"www.test.com\",\n    \"ServiceType\": \"web\",\n    \"Area\": \"mainland\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCdnDomain\n<公共请求参数>\n\n{\n    \"Origin\": {\n        \"OriginType\": \"ip\",\n        \"Origins\": [\n            \"1.1.1.1\"\n        ]\n    },\n    \"ProjectId\": 0,\n    \"Domain\": \"www.test.com\",\n    \"ServiceType\": \"web\",\n    \"Area\": \"mainland\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\n    }\n}",
         "title": "新增加速域名"
       }
@@ -22,14 +22,6 @@
         "input": "https://cdn.tencentcloudapi.com/?Action=CreateClsLogTopic\n&Channel=cdn\n&TopicName=topic-name\n&LogsetId=57460798-8723-45e3-9c75-a0599ef9143a\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\n        \"TopicId\": \"2feewq3-g327-0457-a12m-2e22e5df1111\"\n    }\n}",
         "title": "创建日志主题"
-      }
-    ],
-    "CreateDiagnoseUrl": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDiagnoseUrl\n<公共请求参数>\n\n{\n    \"Url\": \"http://www.test.com/test.txt\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\n        \"DiagnoseLink\": \"http://cdn.cloud.tencent.com/self_diagnose/a49ecccd\"\n    }\n}",
-        "title": "添加诊断URL"
       }
     ],
     "CreateEdgePackTask": [
@@ -68,7 +60,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeBillingData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"BillingData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2bb261c-1476-4190-93ba-b3c9bae51249\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"BillingData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
         "title": "计费数据查询"
       }
     ],
@@ -76,7 +68,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=flux\n&Domains.0=www.test.com\n&Project=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test.com\",\n                \"CdnData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d634fc17-365b-43db-8479-568b8b0167eb\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test.com\",\n                \"CdnData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
         "title": "查询Cdn访问数据"
       }
     ],
@@ -110,14 +102,6 @@
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCertDomains\n<公共请求参数>\n\n{\n    \"Cert\": \"\\\\u65e0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\",\n        \"Domains\": [\n            \"test.tencentyun.com\",\n            \"httpstest.tencentyun.com\"\n        ],\n        \"CertifiedDomains\": [\n            \"httpstest.tencentyun.com\"\n        ]\n    }\n}",
         "title": "提取SSL证书中的可配置域名"
-      }
-    ],
-    "DescribeDiagnoseReport": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiagnoseReport\n<公共请求参数>\n\n{\n    \"ReportId\": \"9597132511111\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\n        \"BaskInfo\": {\n            \"Data\": [\n                {\n                    \"Key\": \"report_id\",\n                    \"KeyText\": \"报告ID\",\n                    \"Value\": \"report content\",\n                    \"ValueText\": \"report content\"\n                },\n                {\n                    \"Key\": \"diagnose_url\",\n                    \"KeyText\": \"诊断URL\",\n                    \"Value\": \"http://www.test.com/1.txt\",\n                    \"ValueText\": \"http://www.test.com/1.txt\"\n                },\n                {\n                    \"Key\": \"diagnose_time\",\n                    \"KeyText\": \"诊断时间\",\n                    \"Value\": \"2020-09-21 12:00:16\",\n                    \"ValueText\": \"2020-09-21 12:00:16\"\n                }\n            ],\n            \"Status\": \"ok\"\n        },\n        \"CnameInfo\": {\n            \"Status\": \"ok\",\n            \"Data\": [\n                {\n                    \"Key\": \"cname\",\n                    \"KeyText\": \"解析配置\",\n                    \"Value\": \"CNAMEu2003www.test.com.cdn.dnsv1.com<br>\",\n                    \"ValueText\": \"CNAMEu2003www.test.com.cdn.dnsv1.com<br>\"\n                }\n            ]\n        },\n        \"ClientInfo\": {\n            \"Status\": \"ok\",\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"客户端IP\",\n                    \"Value\": \"1.1.1.1\",\n                    \"ValueText\": \"1.1.1.1\"\n                },\n                {\n                    \"Key\": \"prov_isp\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"广东省-中国电信\",\n                    \"ValueText\": \"广东省-中国电信\"\n                },\n                {\n                    \"Key\": \"request\",\n                    \"KeyText\": \"请求详情\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ]\n        },\n        \"DnsInfo\": {\n            \"Data\": [\n                {\n                    \"Key\": \"dns\",\n                    \"KeyText\": \"DNS IP\",\n                    \"Value\": \"183.3.229.15u2003广东省-中国电信<br>219.133.40.12u2003广东省-中国电信<br>\",\n                    \"ValueText\": \"183.3.229.15u2003广东省-中国电信<br>219.133.40.12u2003广东省-中国电信<br>\"\n                }\n            ],\n            \"Status\": \"ok\"\n        },\n        \"NetworkInfo\": {\n            \"Status\": \"ok\",\n            \"Data\": [\n                {\n                    \"Key\": \"network\",\n                    \"KeyText\": \"探测延迟\",\n                    \"Value\": \"123ms\",\n                    \"ValueText\": \"123ms\"\n                }\n            ]\n        },\n        \"OcNodeInfo\": {\n            \"Status\": \"error\",\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"节点IP\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"area\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"code\",\n                    \"KeyText\": \"状态码\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"md5\",\n                    \"KeyText\": \"文件MD5\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"hit\",\n                    \"KeyText\": \"命中情况\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"solution\",\n                    \"KeyText\": \"解决方案\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ]\n        },\n        \"MidNodeInfo\": {\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"节点IP\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"area\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"hit\",\n                    \"KeyText\": \"命中情况\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ],\n            \"Status\": \"initial\"\n        },\n        \"OriginInfo\": {\n            \"Status\": \"initial\",\n            \"Data\": [\n                {\n                    \"Key\": \"ip\",\n                    \"KeyText\": \"源站IP\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"area\",\n                    \"KeyText\": \"所在区域\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"fwd_host\",\n                    \"KeyText\": \"回源host\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"code\",\n                    \"KeyText\": \"状态码\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                },\n                {\n                    \"Key\": \"md5\",\n                    \"KeyText\": \"文件MD5\",\n                    \"Value\": \"--\",\n                    \"ValueText\": \"--\"\n                }\n            ]\n        },\n        \"PurgeInfo\": {\n            \"Status\": \"ok\",\n            \"Data\": [\n                {\n                    \"Key\": \"purge\",\n                    \"KeyText\": \"刷新详情\",\n                    \"Value\": \"检测中\",\n                    \"ValueText\": \"检测中\"\n                },\n                {\n                    \"Key\": \"solution\",\n                    \"KeyText\": \"解决方案\",\n                    \"Value\": \"无需检测\",\n                    \"ValueText\": \"无需检测\"\n                }\n            ]\n        }\n    }\n}",
-        "title": "获取诊断报告"
       }
     ],
     "DescribeDistrictIspData": [
@@ -272,14 +256,6 @@
         "title": "违规历史查询"
       }
     ],
-    "DisableCaches": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DisableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"CacheOptResult\": {\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ],\n            \"FailUrls\": []\n        },\n        \"TaskId\": \"9597132570124\"\n    }\n}",
-        "title": "封禁示例"
-      }
-    ],
     "DisableClsLogTopic": [
       {
         "document": "",
@@ -296,28 +272,12 @@
         "title": "拷贝参考域名的配置至新域名"
       }
     ],
-    "EnableCaches": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=EnableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasdascsa721d8ha8chsa\",\n        \"CacheOptResult\": {\n            \"FailUrls\": [],\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ]\n        },\n        \"TaskId\": \"1632627566746100176\"\n    }\n}",
-        "title": "解封示例"
-      }
-    ],
     "EnableClsLogTopic": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=EnableClsLogTopic\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\"\n    }\n}",
         "title": "启动日志主题投递"
-      }
-    ],
-    "GetDisableRecords": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=GetDisableRecords\n&StartTime=2018-12-12 10:24:00\n&EndTime=2018-12-14 10:24:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"UrlRecordList\": [\n            {\n                \"Status\": \"enable\",\n                \"RealUrl\": \"https://www.example.com/7349199.txt\",\n                \"CreateTime\": \"2018-12-13 12:25:07\",\n                \"UpdateTime\": \"2018-12-13 12:25:07\"\n            },\n            {\n                \"Status\": \"disable\",\n                \"RealUrl\": \"http://www.example.com/v1/example1.jpg\",\n                \"CreateTime\": \"2018-12-13 14:40:59\",\n                \"UpdateTime\": \"2018-12-13 14:40:59\"\n            }\n        ]\n    }\n}",
-        "title": "获取示例"
       }
     ],
     "ListClsLogTopics": [
@@ -336,19 +296,11 @@
         "title": "获取主题下绑定的域名列表"
       }
     ],
-    "ListDiagnoseReport": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDiagnoseReport\n<公共请求参数>\n\n{\n    \"KeyWords\": \"test.com/\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3eee570-0d5f-46b2-89a3-160f4e654eaf\",\n        \"Data\": [\n            {\n                \"DiagnoseUrl\": \"http://www.test.com/2.txt\",\n                \"DiagnoseLink\": \"http://cdn.cloud.tencent.com/self_diagnose/xx2\",\n                \"CreateTime\": \"2020-09-21 12:00:08\",\n                \"ExpireDate\": \"2020-09-22 12:00:08\",\n                \"Area\": \"manland\",\n                \"VisitCount\": 9,\n                \"ClientList\": [\n                    {\n                        \"CreateTime\": \"2020-09-21 12:00:16\",\n                        \"ReportId\": \"1\",\n                        \"DiagnoseTag\": \"xx2\",\n                        \"ClientInfo\": [\n                            {\n                                \"ProvName\": \"广东省\",\n                                \"Country\": \"中国\",\n                                \"IspName\": \"中国电信\",\n                                \"Ip\": \"1.1.1.1\"\n                            }\n                        ],\n                        \"FinalDiagnose\": 2\n                    }\n                ]\n            }\n        ]\n    }\n}",
-        "title": "获取诊断任务列表"
-      }
-    ],
     "ListTopClsLogData": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListTopClsLogData\n&Channel=cdn\n&LogsetId=4242424-8723-45e3-9c75-a0599ef9143a\n&TopicIds=57460798-8723-45e3-9c75-a0599ef9143a,57460798-8723-45e3-9c75-22242141\n&StartTime=2019-11-18 00:00:00\n&EndTime=2019-11-18 00:10:00\n&Domain=www.test.com\n&Url=/abc/123.jpg\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"242144aeff-8723-45e3-9c75-a0599ef9143a\",\n        \"Data\": [\n            {\n                \"ClientIp\": \"1.1.1.1\",\n                \"Time\": \"2019-11-18 00:00:00\",\n                \"Request\": 300,\n                \"Count\": \"2\"\n            },\n            {\n                \"ClientIp\": \"2.2.2.2\",\n                \"Time\": \"2019-11-18 00:00:01\",\n                \"Request\": 200,\n                \"Count\": \"1\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"IpCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"242144aeff-8723-45e3-9c75-a0599ef9143a\",\n        \"Data\": [\n            {\n                \"ClientIp\": \"1.1.1.1\",\n                \"Time\": \"2019-11-18 00:00:00\",\n                \"Request\": 300,\n                \"Count\": 2\n            },\n            {\n                \"ClientIp\": \"2.2.2.2\",\n                \"Time\": \"2019-11-18 00:00:01\",\n                \"Request\": 200,\n                \"Count\": 1\n            }\n        ],\n        \"TotalCount\": 3,\n        \"IpCount\": 2\n    }\n}",
         "title": "通过CLS日志计算Top信息"
       }
     ],

@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateAsyncRecognitionTask": {
-      "document": "本接口用于对语音流进行准实时识别，通过异步回调来返回识别结果。适用于直播审核等场景。\n<br>• 支持rtmp、rtsp等流媒体协议，以及各类基于http协议的直播流(不支持hls)\n<br>• 音频流时长无限制，服务会自动拉取音频流数据，若连续10分钟拉不到流数据时，服务会终止识别任务\n<br>• 服务通过回调的方式来提供识别结果，用户需要提供CallbackUrl。回调时机为一小段话(最长15秒)回调一次。\n<br>• 签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>• 默认单账号限制并发数为20路，如您有提高并发限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "本接口用于对语音流进行准实时识别，通过异步回调来返回识别结果。适用于直播审核等场景。\n<br>• 支持rtmp、rtsp等流媒体协议，以及各类基于http协议的直播流(不支持hls)\n<br>• 音频流时长无限制，服务会自动拉取音频流数据，若连续10分钟拉不到流或流数据无人声时，服务会终止识别任务\n<br>• 服务通过回调的方式来提供识别结果，用户需要提供CallbackUrl。回调时机为一小段话(最长15秒)回调一次。\n<br>• 签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>• 默认单账号限制并发数为20路，如您有提高并发限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "CreateAsyncRecognitionTaskRequest",
       "name": "语音流异步识别任务创建",
       "output": "CreateAsyncRecognitionTaskResponse",
@@ -416,7 +416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎模型类型。\n• 16k_zh：中文普通话通用；\n• 16k_en：英语；\n• 16k_yue：粤语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_ar：阿拉伯语；\n• 16k_es：西班牙语；\n• 16k_hi：印地语；\n• 16k_fr：法语；\n• 16k_de：德语；",
+          "document": "引擎模型类型。\n• 16k_zh：中文普通话通用；\n• 16k_en：英语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_ar：阿拉伯语；\n• 16k_es：西班牙语；\n• 16k_hi：印地语；\n• 16k_fr：法语；\n• 16k_de：德语；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineType",
@@ -607,7 +607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎模型类型\n识别引擎采用分级计费方案，标记为“大模型版”的引擎适用大模型计费方案，[点击这里](https://cloud.tencent.com/document/product/1093/35686) 查看产品计费说明\n\n电话通讯场景引擎：\n**注意：电话通讯场景，请务必使用以下8k引擎**\n• 8k_zh：中文电话通讯；\n• 8k_en：英文电话通讯；\n• 8k_zh_large：中文电话场景专用大模型引擎。通过显著提升模型参数规模与语言建模能力，实现对电话音频中复杂场景（如口音干扰、背景噪声）的高精度识别，识别准确率较常规版本大幅提升。[点击这里](https://console.cloud.tencent.com/asr/demonstrate) 对比常规版本与普方大模型效果；\n\n注意：如您有电话通讯场景识别需求，但发现需求语种仅支持16k，可将8k音频传入下方16k引擎，亦能获取识别结果。但**16k引擎并非基于电话通讯数据训练，无法承诺此种调用方式的识别效果，需由您自行验证识别结果是否可用**\n\n通用场景引擎：\n**注意：除电话通讯场景以外的其它识别场景，请务必使用以下16k引擎**\n• **16k_zh：**中文普通话通用引擎，支持中文普通话和少量英语，使用丰富的中文普通话语料训练，覆盖场景广泛，适用于除电话通讯外的所有中文普通话识别场景；\n• **16k_zh_large：**普方英大模型引擎【大模型版】。当前模型同时支持中文、英文、[多种中文方言](https://cloud.tencent.com/document/product/1093/35682)等语言的识别，模型参数量极大，语言模型性能增强，针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升，[点击这里](https://console.cloud.tencent.com/asr/demonstrate) 对比中文普通话常规版本与普方英大模型版本的识别效果；\n• **16k_multi_lang：**多语种大模型引擎【大模型版】。当前模型同时支持英语、日语、韩语、阿拉伯语、菲律宾语、法语、印地语、印尼语、马来语、葡萄牙语、西班牙语、泰语、土耳其语、越南语、德语的识别，可实现15个语种的自动识别(句子/段落级别)；\n• **16k_zh_dialect：**中文普通话+多方言混合引擎，除普通话外支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；\n• **16k_zh_en**：中英大模型引擎【大模型版】。当前模型同时支持中文、英语识别，模型参数量极大，语言模型性能增强，针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升;\n• **16k_en：**英语；\n• **16k_yue：**粤语；\n• **16k_zh-PY：**中英粤混合引擎，使用一个引擎同时识别中文普通话、英语、粤语三个语言;\n• **16k_zh-TW**：中文繁体；\n• **16k_ja：**日语；\n• **16k_ko：**韩语；\n• **16k_vi：**越南语；\n• **16k_ms：**马来语；\n• **16k_id：**印度尼西亚语；\n• **16k_fil：**菲律宾语；\n• **16k_th：**泰语；\n• **16k_pt：**葡萄牙语；\n• **16k_tr：**土耳其语；\n• **16k_ar：**阿拉伯语；\n• **16k_es：**西班牙语；\n• **16k_hi：**印地语；\n• **16k_fr：**法语；\n• **16k_zh_medical：**中文医疗引擎；\n• **16k_de：**德语；",
+          "document": "引擎模型类型\n识别引擎采用分级计费方案，标记为“大模型版”的引擎适用大模型计费方案，[点击这里](https://cloud.tencent.com/document/product/1093/35686) 查看产品计费说明\n\n电话通讯场景引擎：\n**注意：电话通讯场景，请务必使用以下8k引擎**\n• 8k_zh：中文电话通讯；\n• 8k_en：英文电话通讯；\n• 8k_zh_large：中文电话场景专用大模型引擎【大模型版】。当前模型同时支持中文、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话、闽南语、客家话、粤语、南宁话方言识别，通过显著提升模型参数规模与语言建模能力，实现对电话音频中复杂场景（如口音干扰、背景噪声）的高精度识别，识别准确率较常规版本大幅提升。[点击这里](https://console.cloud.tencent.com/asr/demonstrate) 对比常规版本与普方大模型效果；\n\n注意：如您有电话通讯场景识别需求，但发现需求语种仅支持16k，可将8k音频传入下方16k引擎，亦能获取识别结果。但**16k引擎并非基于电话通讯数据训练，无法承诺此种调用方式的识别效果，需由您自行验证识别结果是否可用**\n\n通用场景引擎：\n**注意：除电话通讯场景以外的其它识别场景，请务必使用以下16k引擎**\n• **16k_zh_en**：中英粤+9种方言大模型引擎【大模型版】。当前模型同时支持中文、英语、粤语、四川、陕西、河南、上海、湖南、湖北、安徽、闽南和潮汕方言识别，模型参数量极大，语言模型性能增强，针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升;\n• **16k_zh_large：**普方英大模型引擎【大模型版】。当前模型同时支持中文、英文、[多种中文方言](https://cloud.tencent.com/document/product/1093/35682)等语言的识别，模型参数量极大，语言模型性能增强，针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升，[点击这里](https://console.cloud.tencent.com/asr/demonstrate) 对比中文普通话常规版本与普方英大模型版本的识别效果；\n• **16k_multi_lang：**多语种大模型引擎【大模型版】。当前模型同时支持英语、日语、韩语、阿拉伯语、菲律宾语、法语、印地语、印尼语、马来语、葡萄牙语、西班牙语、泰语、土耳其语、越南语、德语的识别，可实现15个语种的自动识别(句子/段落级别)；\n• **16k_zh：**中文普通话通用引擎，支持中文普通话和少量英语，使用丰富的中文普通话语料训练，覆盖场景广泛，适用于除电话通讯外的所有中文普通话识别场景；\n• **16k_en：**英语；\n• **16k_yue：**粤语；\n• **16k_zh-PY：**中英粤混合引擎，使用一个引擎同时识别中文普通话、英语、粤语三个语言;\n• **16k_zh-TW**：中文繁体；\n• **16k_ja：**日语；\n• **16k_ko：**韩语；\n• **16k_vi：**越南语；\n• **16k_ms：**马来语；\n• **16k_id：**印度尼西亚语；\n• **16k_fil：**菲律宾语；\n• **16k_th：**泰语；\n• **16k_pt：**葡萄牙语；\n• **16k_tr：**土耳其语；\n• **16k_ar：**阿拉伯语；\n• **16k_es：**西班牙语；\n• **16k_hi：**印地语；\n• **16k_fr：**法语；\n• **16k_zh_medical：**中文医疗引擎；\n• **16k_de：**德语；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineModelType",
@@ -625,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "识别结果返回样式\n0：基础识别结果（仅包含有效人声时间戳，无词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)）；\n1：基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值，**不含标点**）；\n2：基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点）；\n3：基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点），且识别结果按标点符号分段，**适用字幕场景**；\n4：**【增值付费功能】**基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点），且识别结果按nlp语义分段，**适用会议、庭审记录转写等场景**，仅支持8k_zh/16k_zh引擎\n5：**【增值付费功能】**基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点），并输出口语转书面语转写结果，该结果去除语气词、重复词、精简冗余表达，并修正发言人口误，实现口语转书面语的效果，**适用于线上、线下会议直接总结为书面会议纪要的场景**，仅支持8k_zh/16k_zh引擎\n\n注意：\n如果传入参数值4，需确保账号已购买[语义分段资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值4，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)**\n如果传入参数值5，需确保账号已购买[口语转书面语资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值5，将自动计费[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)**",
+          "document": "识别结果返回样式\n0：基础识别结果（仅包含有效人声时间戳，无词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)）；\n1：基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值，**不含标点**）；\n2：基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点）；\n3：基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点），且识别结果按标点符号分段，**适用字幕场景**；\n4：**【增值付费功能】**基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点），且识别结果按nlp语义分段，**适用会议、庭审记录转写等场景**，仅支持8k_zh/16k_zh引擎\n5：**【增值付费功能】**基础识别结果之上，增加词粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)（包含词级别时间戳、语速值和标点），并输出口语转书面语转写结果，该结果去除语气词、重复词、精简冗余表达，并修正发言人口误，实现口语转书面语的效果，**适用于线上、线下会议直接总结为书面会议纪要的场景**，仅支持8k_zh/16k_zh引擎\n\n注意：\n以下引擎仅支持参数值设置为0：16k_multi_lang、16k_ja、16k_ko、16k_vi、16k_ms、16k_id、16k_fil、16k_th、16k_pt、16k_tr、16k_ar、16k_es、16k_hi、16k_fr、16k_zh_medical、16k_de\n如果传入参数值4，需确保账号已购买[语义分段资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值4，将[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)**\n如果传入参数值5，需确保账号已购买[口语转书面语资源包](https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b)，或账号开启后付费；**若当前账号已开启后付费功能，并传入参数值5，将自动计费[自动计费](https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852)**",
           "example": "0",
           "member": "uint64",
           "name": "ResTextFormat",
@@ -679,7 +679,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启说话人分离\n0：不开启；\n1：开启（仅支持以下引擎：8k_zh/16k_zh/16k_ms/16k_en/16k_id/16k_zh_large/16k_zh_dialect，且ChannelNum=1时可用）；\n默认值为 0\n\n注意：\n8k双声道电话音频请按 **ChannelNum 识别声道数** 的参数描述使用默认值",
+          "document": "是否开启说话人分离\n0：不开启；\n1：开启（仅支持以下引擎：8k_zh/8k_zh_large/16k_zh/16k_ms/16k_en/16k_id/16k_zh_large/16k_zh_dialect/16k_zh_en，且ChannelNum=1时可用）；\n3: 开启角色分离，需配合SpeakerRoles参数使用（增值服务，仅支持16k_zh_en引擎，可支持传入声纹对录音文件内的说话人进行角色认证）\n默认值为 0\n\n注意：\n8k双声道电话音频请按 **ChannelNum 识别声道数** 的参数描述使用默认值",
           "example": "0",
           "member": "int64",
           "name": "SpeakerDiarization",
@@ -688,7 +688,7 @@
         },
         {
           "disabled": false,
-          "document": "说话人分离人数\n**需配合开启说话人分离使用，不开启无效**，取值范围：0-10\n0：自动分离（最多分离出20个人）；\n1-10：指定人数分离；\n默认值为 0",
+          "document": "说话人分离人数\n**需配合开启说话人分离使用，不开启无效**，取值范围：0-10\n0：自动分离（最多分离出20个人）；\n1-10：指定人数分离；\n默认值为 0\n注:16k引擎不支持指定人数分离",
           "example": "0",
           "member": "int64",
           "name": "SpeakerNumber",
@@ -820,6 +820,15 @@
           "name": "ReplaceTextId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启角色分离能力\n配合SpeakerDiarization: 3 使用，ASR增值服务，可传入一组声纹信息进行角色认证，仅支持16k_zh_en引擎。\n需传入SpeakerRoleInfo数据组，确定说话人的角色信息，涉及RoleAudioUrl和RoleName两个参数。 \nRoleAudioUrl：需要认证角色的声纹音频地址，建议30s内的纯净人声，最长不能超过45s。 \nRoleName：需要认证角色的名称，若匹配成功，会替换话者分离中的SpeakerID。 \n示例： \n\"{\\\"EngineModelType\\\":\\\"16k_zh_en\\\",\\\"ChannelNum\\\":1,\\\"ResTextFormat\\\":1,\\\"SourceType\\\":0,\\\"Url\\\":\\\"需要进行ASR识别的音频链接\\\",\\\"SpeakerDiarization\\\":3,\\\"SpeakerRoles\\\":[{\\\"RoleAudioUrl\\\":\\\"需要认证角色的声纹音频地址\\\",\\\"RoleName\\\":\\\"需要认证角色的名称\\\"}]}\"",
+          "example": "无",
+          "member": "SpeakerRoleInfo",
+          "name": "SpeakerRoles",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2017,7 +2026,7 @@
         {
           "disabled": false,
           "document": "语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。",
-          "example": "无",
+          "example": "dGVzdA==",
           "member": "string",
           "name": "Data",
           "required": false,
@@ -2107,7 +2116,7 @@
         {
           "disabled": false,
           "document": "临时热词表：该参数用于提升识别准确率。\n单个热词限制：\"热词|权重\"，单个热词不超过30个字符（最多10个汉字），权重1-11或者100，如：“腾讯云|5” 或 “ASR|11”；\n临时热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；\n参数 hotword_list（临时热词表） 与 hotword_id（热词表） 区别：\nhotword_id：热词表。需要先在控制台或接口创建热词表，获得对应hotword_id传入参数来使用热词功能；\nhotword_list：临时热词表。每次请求时直接传入临时热词表来使用热词功能，云端不保留临时热词表。适用于有极大量热词需求的用户；\n注意：\n• 如果同时传入了 hotword_id 和 hotword_list，会优先使用 hotword_list；\n• 热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。\n• 热词权重设置为100时，当前热词开启热词增强同音替换功能（仅支持8k_zh,16k_zh），举例：热词配置“蜜制|100”时，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。建议仅将重要且必须生效的热词设置到100，设置过多权重为100的热词将影响整体字准率。",
-          "example": "无",
+          "example": "腾讯云|10,语音识别|5,ASR|11",
           "member": "string",
           "name": "HotwordList",
           "required": false,
@@ -2121,6 +2130,15 @@
           "name": "InputSampleRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "替换词id。用于调用对应的替换词表。",
+          "example": "976dfea2a*****537c8",
+          "member": "string",
+          "name": "ReplaceTextId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2161,7 +2179,7 @@
         {
           "disabled": false,
           "document": "词时间戳列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "array",
+          "example": "无",
           "member": "SentenceWord",
           "name": "WordList",
           "output_required": true,
@@ -2294,6 +2312,30 @@
         }
       ],
       "type": "object"
+    },
+    "SpeakerRoleInfo": {
+      "document": "说话人注册角色声纹信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频url地址，建议不超过30秒，最大45秒",
+          "example": "http://cosname.url",
+          "member": "string",
+          "name": "RoleAudioUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不超过30字节",
+          "example": "角色名称",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "Task": {
       "document": "[录音文件识别](https://cloud.tencent.com/document/product/1093/37823#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)、[实时语音异步识别](https://cloud.tencent.com/document/product/1093/52061#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)请求的返回数据",
@@ -2961,7 +3003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频格式 0: pcm, 1: wav",
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
           "example": "0",
           "member": "int64",
           "name": "VoiceFormat",
@@ -2970,7 +3012,7 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "document": "<p>音频采样率，目前支持16000，单位：Hz，必填</p>",
           "example": "16000",
           "member": "int64",
           "name": "SampleRate",
@@ -2979,17 +3021,17 @@
         },
         {
           "disabled": false,
-          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M",
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
           "example": "UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "说话人昵称  不超过32字节",
-          "example": "小明",
+          "document": "<p>说话人昵称  不超过32字节</p>",
+          "example": "李九州",
           "member": "string",
           "name": "SpeakerNick",
           "required": false,
@@ -2997,10 +3039,19 @@
         },
         {
           "disabled": false,
-          "document": "分组id, 仅支持大小写字母和下划线的组合，不超过128个字符",
+          "document": "<p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p>",
           "example": "group_A",
           "member": "string",
           "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "\"https://xxx-test-xxx.cos.ap-nanjing.myqcloud.com/%E5%A3%Bxxxxx%E6%8D%AE/xxxx.mp3\"",
+          "member": "string",
+          "name": "AudioUrl",
           "required": false,
           "type": "string"
         }
@@ -3012,7 +3063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说话人基本数据",
+          "document": "<p>说话人基本数据</p>",
           "example": "无",
           "member": "VoicePrintBaseData",
           "name": "Data",
@@ -3107,7 +3158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频格式 0: pcm, 1: wav",
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
           "example": "0",
           "member": "int64",
           "name": "VoiceFormat",
@@ -3116,7 +3167,7 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率 目前仅支持16000 单位Hz",
+          "document": "<p>音频采样率 目前仅支持16000 单位Hz</p>",
           "example": "16000",
           "member": "int64",
           "name": "SampleRate",
@@ -3125,7 +3176,7 @@
         },
         {
           "disabled": false,
-          "document": "说话人id， 说话人唯一标识",
+          "document": "<p>说话人id， 说话人唯一标识</p>",
           "example": "sdsafjasj*****sdfasfjj",
           "member": "string",
           "name": "VoicePrintId",
@@ -3134,19 +3185,28 @@
         },
         {
           "disabled": false,
-          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
           "example": "ADDAFASAFASA",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "说话人昵称  不超过32字节",
+          "document": "<p>说话人昵称  不超过32字节</p>",
           "example": "小明",
           "member": "string",
           "name": "SpeakerNick",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "https://adison-testxxxx.cos.ap-nanjing.myqcloud.com/%E5%xx%B0%E7xxx%BA%B9%E6%95%B0%E6%8D%AE/xxxx.wav",
+          "member": "string",
+          "name": "AudioUrl",
           "required": false,
           "type": "string"
         }
@@ -3158,7 +3218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说话人基础数据",
+          "document": "<p>说话人基础数据</p>",
           "example": "无",
           "member": "VoicePrintBaseData",
           "name": "Data",
@@ -3216,7 +3276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频格式 0: pcm, 1: wav",
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
           "example": "0",
           "member": "int64",
           "name": "VoiceFormat",
@@ -3225,7 +3285,7 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "document": "<p>音频采样率，目前支持16000，单位：Hz，必填</p>",
           "example": "16000",
           "member": "int64",
           "name": "SampleRate",
@@ -3234,20 +3294,29 @@
         },
         {
           "disabled": false,
-          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
-          "example": "ADKFG****ALDHASG",
+          "document": "<p>说话人id, 说话人唯一标识</p>",
+          "example": "dasdagfd****sdsada",
           "member": "string",
-          "name": "Data",
+          "name": "VoicePrintId",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "说话人id, 说话人唯一标识",
-          "example": "dasdagfd****sdsada",
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
+          "example": "ADKFG****ALDHASG",
           "member": "string",
-          "name": "VoicePrintId",
-          "required": true,
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "https://xxxxtest-xxxx.cos.ap-nanjing.myqcloud.com/%E5%A3%B0%E7%BA%B9%E6%95%xxxxxD%AE/test.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3258,7 +3327,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说话人验证数据",
+          "document": "<p>说话人验证数据</p>",
           "example": "无",
           "member": "VoicePrintVerifyData",
           "name": "Data",

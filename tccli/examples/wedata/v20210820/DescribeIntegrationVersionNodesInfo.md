@@ -7,7 +7,7 @@ Input:
 ```
 tccli wedata DescribeIntegrationVersionNodesInfo --cli-unfold-argument  \
     --TaskId ap-|cos-|file.dg \
-    --ProjectId 123 \
+    --ProjectId ProjectId \
     --TaskVersionPath YXAtfGNvcy18ZmlsZV94eC5kZw== \
     --TaskVersion 202310060503283
 ```
@@ -69,11 +69,11 @@ Output:
                 ],
                 "ExtConfig": [
                     {
-                        "Name": "x",
+                        "Name": "Name",
                         "Value": "300"
                     },
                     {
-                        "Name": "y",
+                        "Name": "Name",
                         "Value": "260"
                     },
                     {
@@ -108,7 +108,7 @@ Output:
                         {
                             "Id": "597853056",
                             "Name": "name",
-                            "Value": "test",
+                            "Value": "Value",
                             "Type": "String",
                             "Alias": "name",
                             "Comment": "名称",
@@ -150,9 +150,9 @@ Output:
                     {
                         "Id": "597853056",
                         "Name": "name",
-                        "Value": "test",
+                        "Value": "Value",
                         "Type": "String",
-                        "Alias": "name",
+                        "Alias": "Alias",
                         "Comment": "名称",
                         "Properties": [
                             {

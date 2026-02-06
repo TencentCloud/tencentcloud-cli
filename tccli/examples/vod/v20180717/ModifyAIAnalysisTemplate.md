@@ -19,16 +19,17 @@ Output:
 }
 ```
 
-**Example 2: 开启智能封面任务**
+**Example 2: 同时开启一项和关闭一项内容分析任务**
 
-修改自定义音视频内容分析模板，开启智能封面任务。
+修改自定义音视频内容分析模板，开启智能标签任务，关闭智能封面任务。
 
 Input: 
 
 ```
 tccli vod ModifyAIAnalysisTemplate --cli-unfold-argument  \
+    --TagConfigure.Switch ON \
     --Definition 30 \
-    --CoverConfigure.Switch ON
+    --CoverConfigure.Switch OFF
 ```
 
 Output: 
@@ -40,17 +41,16 @@ Output:
 }
 ```
 
-**Example 3: 同时开启一项和关闭一项内容分析任务**
+**Example 3: 开启智能封面任务**
 
-修改自定义音视频内容分析模板，开启智能标签任务，关闭智能封面任务。
+修改自定义音视频内容分析模板，开启智能封面任务。
 
 Input: 
 
 ```
 tccli vod ModifyAIAnalysisTemplate --cli-unfold-argument  \
-    --TagConfigure.Switch ON \
     --Definition 30 \
-    --CoverConfigure.Switch OFF
+    --CoverConfigure.Switch ON
 ```
 
 Output: 

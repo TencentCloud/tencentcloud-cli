@@ -6,29 +6,29 @@ Input:
 
 ```
 tccli gaap DescribeHTTPListeners --cli-unfold-argument  \
-    --ProxyId link-pl5ee4db \
-    --Limit 20 \
-    --Offset 0
+    --ProxyId link-p9888rix \
+    --Offset 0 \
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3c48a850-4559-4132-8113-d075a235da2d",
-        "TotalCount": 1,
         "ListenerSet": [
             {
-                "ListenerId": "listener-kuwra6qh",
+                "CreateTime": 1768205444,
+                "GroupId": null,
+                "ListenerId": "listener-9vub5ymx",
                 "ListenerName": "listener-name",
-                "Port": 80,
-                "CreateTime": 1729568991,
+                "ListenerStatus": 0,
+                "Port": 8091,
                 "Protocol": "HTTP",
-                "ListenerStatus": 1,
-                "ProxyId": "link-pl5ee4db",
-                "GroupId": null
+                "ProxyId": "link-p9888rix"
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "b101e45d-34ea-44e8-b735-b0c5487a7ae1"
     }
 }
 ```

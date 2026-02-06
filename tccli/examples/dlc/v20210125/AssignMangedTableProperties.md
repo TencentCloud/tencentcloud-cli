@@ -30,6 +30,16 @@ tccli dlc AssignMangedTableProperties --cli-unfold-argument  \
     --TableBaseInfo.SmartPolicy.Policy.Resources.0.Favor.0.Table table_ai \
     --TableBaseInfo.SmartPolicy.Policy.Resources.0.Status 1 \
     --TableBaseInfo.SmartPolicy.Policy.Written.WrittenEnable enable \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.CompactEnable enable \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.DeleteEnable enable \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.MinInputFiles 5 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.TargetFileSizeBytes 134217728 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.RetainLast 5 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.BeforeDays 2 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.ExpiredSnapshotsIntervalMin 600 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.RemoveOrphanIntervalMin 1440 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.CowCompactEnable disable \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.CompactStrategy binpack \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.LifecycleEnable disable \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.Expiration 0 \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.DropTable True \

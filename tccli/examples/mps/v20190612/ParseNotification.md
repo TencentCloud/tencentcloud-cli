@@ -38,7 +38,7 @@ Output:
                         "Codec": "aac",
                         "Channel": 0,
                         "Loudness": 0,
-                        "Codecs": "abc"
+                        "Codecs": "mp4a.40.2"
                     }
                 ],
                 "Bitrate": 1021028,
@@ -55,11 +55,11 @@ Output:
                         "Fps": 23,
                         "Height": 480,
                         "Width": 640,
-                        "ColorPrimaries": "abc",
-                        "ColorSpace": "abc",
-                        "ColorTransfer": "abc",
-                        "HdrType": "abc",
-                        "Codecs": "abc"
+                        "ColorPrimaries": "bt470bg",
+                        "ColorSpace": "gbr",
+                        "ColorTransfer": "bt709",
+                        "HdrType": "sdr",
+                        "Codecs": "avc1.ffe100"
                     }
                 ],
                 "Width": 640
@@ -89,16 +89,16 @@ Output:
                         },
                         "Output": {
                             "OutputStorage": {
-                                "Type": "abc",
+                                "Type": "COS",
                                 "CosOutputStorage": {
-                                    "Bucket": "abc",
-                                    "Region": "abc"
+                                    "Bucket": "test-123",
+                                    "Region": "ap-nanjing"
                                 },
                                 "S3OutputStorage": {
-                                    "S3Bucket": "abc",
-                                    "S3Region": "abc",
-                                    "S3SecretId": "abc",
-                                    "S3SecretKey": "abc"
+                                    "S3Bucket": "test-223",
+                                    "S3Region": "us-east-1",
+                                    "S3SecretId": "TEST**************K5W",
+                                    "S3SecretKey": "testab****************0SS"
                                 }
                             },
                             "Path": "/movie/201907/WildAnimal_transcode_20.mp4",
@@ -116,11 +116,11 @@ Output:
                                     "Fps": 24,
                                     "Height": 480,
                                     "Width": 640,
-                                    "ColorPrimaries": "abc",
-                                    "ColorSpace": "abc",
-                                    "ColorTransfer": "abc",
-                                    "HdrType": "abc",
-                                    "Codecs": "abc"
+                                    "ColorPrimaries": "bt470bg",
+                                    "ColorSpace": "gbr",
+                                    "ColorTransfer": "bt709",
+                                    "HdrType": "sdr",
+                                    "Codecs": "avc1.ffe100"
                                 }
                             ],
                             "AudioStreamSet": [
@@ -130,7 +130,7 @@ Output:
                                     "SamplingRate": 44100,
                                     "Channel": 0,
                                     "Loudness": 0,
-                                    "Codecs": "abc"
+                                    "Codecs": "mp4a.40.2"
                                 }
                             ],
                             "Definition": 0
@@ -139,7 +139,8 @@ Output:
                     "AnimatedGraphicTask": null,
                     "SnapshotByTimeOffsetTask": null,
                     "SampleSnapshotTask": null,
-                    "ImageSpriteTask": null
+                    "ImageSpriteTask": null,
+                    "AdaptiveDynamicStreamingTask": null
                 }
             ],
             "AiQualityControlTaskResult": null,

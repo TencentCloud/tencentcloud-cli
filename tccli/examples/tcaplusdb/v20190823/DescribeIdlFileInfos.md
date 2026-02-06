@@ -6,125 +6,25 @@ Input:
 
 ```
 tccli tcaplusdb DescribeIdlFileInfos --cli-unfold-argument  \
-    --TableGroupIds xx \
-    --ClusterId 5674209986 \
-    --Limit 0 \
-    --IdlFileIds xx \
-    --Offset 0
+    --ClusterId 5674209986
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "IdlFileInfos": [
             {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 600,
-                "FileName": "tb_example_modify",
-                "FileSize": 292,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 548,
-                "FileName": "tb_example",
-                "FileSize": 298,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 549,
-                "FileName": "tb_example",
-                "FileSize": 298,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 550,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 551,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 552,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 553,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 559,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 560,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 561,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 562,
-                "FileName": "tb_example",
-                "FileSize": 267,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 563,
-                "FileName": "tb_example",
-                "FileSize": 380,
-                "FileType": "PROTO"
-            },
-            {
-                "FileContent": null,
-                "FileExtType": "proto",
-                "FileId": 564,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
+                "FileName": "filename",
+                "FileType": "tdr",
+                "FileExtType": "tdr",
+                "FileSize": 1321230,
+                "FileId": 1,
+                "FileContent": "content"
             }
         ],
-        "RequestId": "1b6a5d3f-beb3-4380-9b6d-3d9f2d83654c",
-        "TotalCount": 13
+        "RequestId": "1898921-12142"
     }
 }
 ```
@@ -137,11 +37,8 @@ Input:
 
 ```
 tccli tcaplusdb DescribeIdlFileInfos --cli-unfold-argument  \
-    --TableGroupIds xx \
     --ClusterId 5674209986 \
-    --Limit 0 \
-    --IdlFileIds 564 \
-    --Offset 0
+    --IdlFileIds 564
 ```
 
 Output: 

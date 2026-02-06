@@ -14,7 +14,8 @@ tccli cam UpdateUserOIDCConfig --cli-unfold-argument  \
     --ClientId cbaefefes9823*** \
     --MappingFiled sub \
     --AuthorizationEndpoint https://tencent.auth**.com \
-    --Scope email
+    --Scope email \
+    --AutoRotateKey 1
 ```
 
 Output: 

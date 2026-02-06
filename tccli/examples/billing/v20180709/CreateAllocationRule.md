@@ -9,13 +9,13 @@ tccli billing CreateAllocationRule --cli-unfold-argument  \
     --RuleList.Name 测试1 \
     --RuleList.Type 2 \
     --RuleList.RatioDetail.0.Ratio 25 \
-    --RuleList.RatioDetail.0.NodeId 6 \
+    --RuleList.RatioDetail.0.NodeId 39926927 \
     --RuleList.RatioDetail.1.Ratio 25 \
-    --RuleList.RatioDetail.1.NodeId 7 \
+    --RuleList.RatioDetail.1.NodeId 39926928 \
     --RuleList.RatioDetail.2.Ratio 25 \
-    --RuleList.RatioDetail.2.NodeId 8 \
+    --RuleList.RatioDetail.2.NodeId 39926929 \
     --RuleList.RatioDetail.3.Ratio 25 \
-    --RuleList.RatioDetail.3.NodeId 9 \
+    --RuleList.RatioDetail.3.NodeId 39926930 \
     --RuleList.RuleDetail.Connectors and \
     --RuleList.RuleDetail.Children.0.RuleKey ownerUin \
     --RuleList.RuleDetail.Children.0.Operator in \
@@ -36,8 +36,8 @@ Output:
 ```
 {
     "Response": {
-        "Id": 33,
-        "RequestId": "aab8393d-ceba-44e2-819f-6d4fd0ebf987"
+        "Id": 287620,
+        "RequestId": "71ff6535-bbbd-41f9-8b88-24395a59ef7b"
     }
 }
 ```

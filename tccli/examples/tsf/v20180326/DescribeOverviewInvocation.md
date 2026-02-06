@@ -6,6 +6,8 @@ Input:
 
 ```
 tccli tsf DescribeOverviewInvocation --cli-unfold-argument  \
+    --NamespaceId namespace-xxx \
+    --Type SumReqAmount \
     --StartTime '2019-05-28 17:45:43' \
     --EndTime '2019-05-29 17:45:43'
 ```

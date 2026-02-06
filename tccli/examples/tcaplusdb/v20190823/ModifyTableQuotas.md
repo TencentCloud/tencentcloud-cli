@@ -20,23 +20,26 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "bb90baab-4189-4d01-9e92-250b57c571b3",
+        "TotalCount": 1,
         "TableResults": [
             {
-                "Error": null,
-                "TableGroupId": "101",
-                "TableIdlType": null,
                 "TableInstanceId": "tcaplus-1f224454",
+                "TaskId": "12313",
                 "TableName": "tb_example",
-                "TableType": null,
-                "TaskId": null,
+                "TableType": "2",
+                "TableIdlType": "1",
+                "TableGroupId": "3242",
+                "Error": {
+                    "Code": "",
+                    "Message": ""
+                },
                 "TaskIds": [
-                    "5674209986-1201",
-                    "5674209986-1202"
-                ]
+                    "32525"
+                ],
+                "ApplicationId": "32252"
             }
         ],
-        "TotalCount": 1
+        "RequestId": "1252232"
     }
 }
 ```

@@ -441,7 +441,7 @@
         {
           "disabled": false,
           "document": "应用程序软件包的远程存储路径",
-          "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/",
+          "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/demon_job.tar.gz",
           "member": "string",
           "name": "PackagePath",
           "output_required": false,
@@ -2145,7 +2145,7 @@
         {
           "disabled": false,
           "document": "可用区信息",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -3230,7 +3230,7 @@
       "usage": "both"
     },
     "Filter": {
-      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州六区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-6\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
       "members": [
         {
           "disabled": false,
@@ -3244,7 +3244,7 @@
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "[\"ap-guangzhou-2\"]",
+          "example": "[\"ap-guangzhou-6\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -3285,6 +3285,17 @@
           "member": "string",
           "name": "MountOptionParameter",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。",
+          "example": "COSFS",
+          "member": "string",
+          "name": "MountType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3480,7 +3491,7 @@
         {
           "disabled": false,
           "document": "可用区。",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -5047,8 +5058,8 @@
         },
         {
           "disabled": false,
-          "document": "系统盘ID。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。",
-          "example": "disk-xyzw1234",
+          "document": "系统盘ID。\n该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。",
+          "example": "disk-xyzw1a3x",
           "member": "string",
           "name": "DiskId",
           "output_required": false,

@@ -43,16 +43,16 @@
       "status": "online"
     },
     "CreateAIAgentCall": {
-      "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
+      "document": "用于创建**一次性的智能体外呼通话**。你可以在管理端-智能体管理中，新建语音智能体，进行 [对话流程配置](https://cloud.tencent.com/document/product/679/119796) 。该接口可调用配置完成的智能体发起单次的外呼任务。若需创建批量智能体外呼任务，请参考文档 [创建自动外呼任务](https://cloud.tencent.com/document/product/679/69194)。\n\n该功能需购买语音智能体通话套餐，并且仅限自有电话号码使用。详情请参考 [语音智能体通话购买指引](https://cloud.tencent.com/document/product/679/125953)。",
       "input": "CreateAIAgentCallRequest",
-      "name": "创建智能体通话",
+      "name": "创建单次智能体通话",
       "output": "CreateAIAgentCallResponse",
       "status": "online"
     },
     "CreateAICall": {
-      "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
+      "document": "用于 **直接调用AI模型** 发起 **单次** 外呼通话，支持通过API参数直接配置模型、提示词、语音等全部通话要素。\n\n该功能需购买语音智能体通话套餐，并且仅限自有电话号码使用。详情请参考 [语音智能体通话购买指引](https://cloud.tencent.com/document/product/679/125953)。",
       "input": "CreateAICallRequest",
-      "name": "创建AI通话",
+      "name": "创建单次智能体通话 - 自携模型",
       "output": "CreateAICallResponse",
       "status": "online"
     },
@@ -71,9 +71,9 @@
       "status": "online"
     },
     "CreateAutoCalloutTask": {
-      "document": "创建自动外呼任务",
+      "document": "用于**创建批量自动外呼通话**，系统将根据任务配置，自动向指定的**被叫号码列表**发起外呼通话。该接口可调用配置完成的智能体发起批量的外呼任务，你可以在管理端-智能体管理中，新建语音智能体，进行 [对话流程配置](https://cloud.tencent.com/document/product/679/119796)。若需创建单次智能体外呼任务，请参考文档 [创建单次智能体通话](https://cloud.tencent.com/document/product/679/115681)。\n\n该功能需购买语音智能体通话套餐，并且仅限自有电话号码使用。详情请参考 [语音智能体通话购买指引](https://cloud.tencent.com/document/product/679/125953)。",
       "input": "CreateAutoCalloutTaskRequest",
-      "name": "创建自动外呼任务",
+      "name": "创建批量自动外呼任务",
       "output": "CreateAutoCalloutTaskResponse",
       "status": "online"
     },
@@ -182,17 +182,31 @@
       "output": "DeleteStaffResponse",
       "status": "online"
     },
+    "DescribeAIAgentInfoList": {
+      "document": "本接口用于分页查询指定实例（SdkAppId）下已配置的智能体信息列表，包括智能体ID和名称等基本信息。",
+      "input": "DescribeAIAgentInfoListRequest",
+      "name": "查询智能体信息列表",
+      "output": "DescribeAIAgentInfoListResponse",
+      "status": "online"
+    },
+    "DescribeAIAnalysisResult": {
+      "document": "获取 AI 会话分析结果",
+      "input": "DescribeAIAnalysisResultRequest",
+      "name": "获取 AI 会话分析结果",
+      "output": "DescribeAIAnalysisResultResponse",
+      "status": "online"
+    },
     "DescribeAICallExtractResult": {
-      "document": "获取 AI 通话内容提取结果。",
+      "document": "本接口用于：在语音智能体通话结束后，通过 Session ID 查询指定会话的 **话后标签** 结果。相关话后标签需提前在管理端完成配置，具体说明请参见 [话后标签](https://cloud.tencent.com/document/product/679/119800) 。",
       "input": "DescribeAICallExtractResultRequest",
-      "name": "查询 AI 通话内容提取结果",
+      "name": "查询智能体通话话后标签数据",
       "output": "DescribeAICallExtractResultResponse",
       "status": "online"
     },
     "DescribeAILatency": {
-      "document": "获取 AI 时延信息",
+      "document": "调用该接口，可以通过 Session ID 查询指定会话在特定时间段内，AI服务的处理时延明细与统计数据，时延信息包括：\n- 端到端（ETE）时延：统计从用户语音输入到 AI 返回完整响应的整体耗时。\n- 自动语音识别（ASR）时延：统计语音输入被识别为文本所需的处理耗时。\n- 大语言模型（LLM）时延：统计 AI 模型生成文本内容的推理耗时。\n- 语音合成（TTS）时延：统计文本转换为语音音频的合成耗时。",
       "input": "DescribeAILatencyRequest",
-      "name": "获取 AI 耗时",
+      "name": "查询智能体通话中 AI 服务时延信息",
       "output": "DescribeAILatencyResponse",
       "status": "online"
     },
@@ -211,7 +225,7 @@
       "status": "online"
     },
     "DescribeAutoCalloutTask": {
-      "document": "查询自动外呼任务详情",
+      "document": "用于通过 TaskId 查询**自动外呼任务的详细信息**，包括任务基础配置、起止时间、外呼名单、执行状态以及实际通话情况等。\n该接口通常与 [创建批量自动外呼任务](https://cloud.tencent.com/document/product/679/69194) 配合使用，用于在任务创建后查看任务配置是否生效、任务当前状态，以及后续执行过程中的实时进展。",
       "input": "DescribeAutoCalloutTaskRequest",
       "name": "查询自动外呼任务详情",
       "output": "DescribeAutoCalloutTaskResponse",
@@ -271,6 +285,13 @@
       "input": "DescribeExtensionsRequest",
       "name": "查询话机列表信息",
       "output": "DescribeExtensionsResponse",
+      "status": "online"
+    },
+    "DescribeFlashSMSList": {
+      "document": "获取闪信记录列表",
+      "input": "DescribeFlashSMSListRequest",
+      "name": "查询闪信投递列表",
+      "output": "DescribeFlashSMSListResponse",
       "status": "online"
     },
     "DescribeIMCdrList": {
@@ -336,6 +357,13 @@
       "output": "DescribeProtectedTelCdrResponse",
       "status": "online"
     },
+    "DescribeSessionDetail": {
+      "document": "获取通话详情",
+      "input": "DescribeSessionDetailRequest",
+      "name": "查询通话详情",
+      "output": "DescribeSessionDetailResponse",
+      "status": "online"
+    },
     "DescribeSkillGroupInfoList": {
       "document": "获取技能组信息列表",
       "input": "DescribeSkillGroupInfoListRequest",
@@ -348,6 +376,13 @@
       "input": "DescribeStaffInfoListRequest",
       "name": "获取坐席信息列表",
       "output": "DescribeStaffInfoListResponse",
+      "status": "online"
+    },
+    "DescribeStaffStatusHistory": {
+      "document": "查询座席状态历史",
+      "input": "DescribeStaffStatusHistoryRequest",
+      "name": "查询座席状态历史",
+      "output": "DescribeStaffStatusHistoryResponse",
       "status": "online"
     },
     "DescribeStaffStatusMetrics": {
@@ -441,11 +476,25 @@
       "output": "ModifyStaffPasswordResponse",
       "status": "online"
     },
+    "PauseAutoCalloutTask": {
+      "document": "用于通过 TaskId **暂停一个正在执行的自动外呼任务**。调用该接口后，任务将被临时中断，不再发起新的外呼请求；已发起的通话不受影响。\n暂停后的任务可通过 [恢复暂停的自动外呼任务](https://cloud.tencent.com/document/product/679/125356) 接口继续执行。如需永久终止任务，请参考 [停止自动外呼任务](https://cloud.tencent.com/document/product/679/69192)。",
+      "input": "PauseAutoCalloutTaskRequest",
+      "name": "暂停自动外呼任务",
+      "output": "PauseAutoCalloutTaskResponse",
+      "status": "online"
+    },
     "PausePredictiveDialingCampaign": {
       "document": "暂停预测式外呼任务",
       "input": "PausePredictiveDialingCampaignRequest",
       "name": "暂停预测式外呼任务",
       "output": "PausePredictiveDialingCampaignResponse",
+      "status": "online"
+    },
+    "PlaySoundCall": {
+      "document": "对与座席通话中的会话，进行放音",
+      "input": "PlaySoundCallRequest",
+      "name": "通话中放音",
+      "output": "PlaySoundCallResponse",
       "status": "online"
     },
     "ResetExtensionPassword": {
@@ -462,11 +511,25 @@
       "output": "RestoreMemberOnlineResponse",
       "status": "online"
     },
+    "ResumeAutoCalloutTask": {
+      "document": "用于通过 TaskId **恢复一个已被暂停的自动外呼任务**。该接口适用于在调用 [暂停自动外呼任务](https://cloud.tencent.com/document/product/679/125357) 后，需继续执行剩余外呼计划的场景。调用成功后，任务将从暂停状态恢复，重新发起未完成的外呼请求。",
+      "input": "ResumeAutoCalloutTaskRequest",
+      "name": "恢复暂停的自动外呼任务",
+      "output": "ResumeAutoCalloutTaskResponse",
+      "status": "online"
+    },
     "ResumePredictiveDialingCampaign": {
       "document": "恢复预测式外呼任务",
       "input": "ResumePredictiveDialingCampaignRequest",
       "name": "恢复预测式外呼任务",
       "output": "ResumePredictiveDialingCampaignResponse",
+      "status": "online"
+    },
+    "SetStaffStatus": {
+      "document": "设置 staff 状态",
+      "input": "SetStaffStatusRequest",
+      "name": "设置 staff 状态",
+      "output": "SetStaffStatusResponse",
       "status": "online"
     },
     "StopAutoCalloutTask": {
@@ -526,6 +589,68 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "AIAgentInfo": {
+      "document": "智能体信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体ID",
+          "example": "69",
+          "member": "uint64",
+          "name": "AIAgentId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体名称",
+          "example": "新智能体",
+          "member": "string",
+          "name": "AIAgentName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体变量名列表",
+          "example": "[\"orderId\"]",
+          "member": "string",
+          "name": "VariableNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AIAnalysisResult": {
+      "document": "AI会话分析结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "summary: 会话小结\nmood: 情绪分析\nintention: 意向提取",
+          "example": "summary",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI会话分析结果",
+          "example": "会话小结结果",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AICallExtractConfigElement": {
       "document": "AI 通话提取配置项",
       "members": [
@@ -1171,7 +1296,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态：\n0初始：任务创建，呼叫未开始\n1运行中\n2 已完成：任务中所有呼叫完成\n3结束中：任务到期，但仍有部分呼叫未结束\n4已结束：任务到期终止",
+          "document": "任务状态：\n0初始：任务创建，呼叫未开始\n1运行中\n2 已完成：任务中所有呼叫完成\n3结束中：任务到期，但仍有部分呼叫未结束\n4已结束：任务到期终止\n5已暂停：可恢复继续执行",
           "example": "1",
           "member": "uint64",
           "name": "State",
@@ -1186,6 +1311,16 @@
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1221,6 +1356,15 @@
           "name": "CallInInterface",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "绑定号码类型: inner: 内线号码 | number: 正常线路号码",
+          "example": "number",
+          "member": "string",
+          "name": "NumberType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1304,20 +1448,20 @@
           "type": "string"
         },
         {
-          "disabled": true,
-          "document": "绑定技能组列表",
-          "example": "[1,2,3,4,5,6]",
-          "member": "int64",
-          "name": "SkillGroupList",
-          "required": false,
-          "type": "list"
-        },
-        {
           "disabled": false,
           "document": "绑定技能组列表(必填)",
           "example": "[{\"SkillGroupId\":100,\"Priority\":1},{\"SkillGroupId\":200,\"Priority\":2}]",
           "member": "StaffSkillGroupList",
           "name": "StaffSkillGroupList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "绑定技能组列表",
+          "example": "[1,2,3,4,5,6]",
+          "member": "int64",
+          "name": "SkillGroupList",
           "required": false,
           "type": "list"
         }
@@ -1530,7 +1674,7 @@
         {
           "disabled": false,
           "document": "被叫号码",
-          "example": "008613012345678",
+          "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "Callee",
           "required": true,
@@ -1548,7 +1692,7 @@
         {
           "disabled": false,
           "document": "参数",
-          "example": "{\"foo\":\"bar\"}",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -2039,7 +2183,7 @@
         {
           "disabled": false,
           "document": "会话 ID",
-          "example": "无",
+          "example": "7cb26a84-83b2-42d8-a19b-7dae78e9b78e",
           "member": "string",
           "name": "SessionId",
           "required": true,
@@ -2056,8 +2200,8 @@
         },
         {
           "disabled": false,
-          "document": "控制命令，目前支持命令如下：\n\n- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本",
-          "example": "无",
+          "document": "控制命令，目前支持命令如下：\n\n- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本\n- InvokeLLM，服务端发送文本给大模型，触发对话",
+          "example": "ServerPushText",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -2069,6 +2213,15 @@
           "example": "无",
           "member": "ServerPushText",
           "name": "ServerPushText",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=\"1\"",
+          "example": "无",
+          "member": "InvokeLLM",
+          "name": "InvokeLLM",
           "required": false,
           "type": "object"
         }
@@ -2129,7 +2282,7 @@
         {
           "disabled": true,
           "document": "提示词变量",
-          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "example": "无",
           "member": "Variable",
           "name": "PromptVariables",
           "required": false,
@@ -2138,11 +2291,20 @@
         {
           "disabled": false,
           "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
-          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2184,7 +2346,7 @@
         {
           "disabled": false,
           "document": "被叫号码",
-          "example": "008613012345678",
+          "example": "0086xxx",
           "member": "string",
           "name": "Callee",
           "required": true,
@@ -2247,7 +2409,7 @@
         {
           "disabled": false,
           "document": "主叫号码列表",
-          "example": "[008613912341234, 008613912341235]",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "Callers",
           "required": false,
@@ -2381,7 +2543,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>和VoiceType字段需要选填一个，这里是使用自己自定义的TTS，VoiceType是系统内置的一些音色</p>\n<ul>\n<li>Tencent TTS<br>\n配置请参考<a href=\"https://cloud.tencent.com/document/product/1073/92668#55924b56-1a73-4663-a7a1-a8dd82d6e823\" target=\"_blank\">腾讯云TTS文档链接</a></li>\n</ul>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{ \n       &quot;TTSType&quot;: &quot;tencent&quot;, // String TTS类型, 目前支持&quot;tencent&quot; 和 “minixmax”， 其他的厂商支持中\n       &quot;AppId&quot;: &quot;您的应用ID&quot;, // String 必填\n       &quot;SecretId&quot;: &quot;您的密钥ID&quot;, // String 必填\n       &quot;SecretKey&quot;:  &quot;您的密钥Key&quot;, // String 必填\n       &quot;VoiceType&quot;: 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见语音合成计费概述。完整的音色 ID 列表请参见语音合成音色列表。\n       &quot;Speed&quot;: 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换，可参考 语速转换\n       &quot;Volume&quot;: 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。\n       &quot;PrimaryLanguage&quot;: 1, // Integer 可选 主要语言 1-中文（默认） 2-英文 3-日文\n       &quot;FastVoiceType&quot;: &quot;xxxx&quot;   //  可选参数， 快速声音复刻的参数 \n  }\n</code></pre>\n\n  </div></div><ul>\n<li>Minimax TTS<br>\n配置请参考<a href=\"https://platform.minimaxi.com/document/T2A%20V2?key=66719005a427f0c8a5701643\" target=\"_blank\">Minimax TTS文档链接</a>。注意Minimax TTS存在频率限制，超频可能会导致回答卡顿，<a href=\"https://platform.minimaxi.com/document/Rate%20limits?key=66b19417290299a26b234572\" target=\"_blank\">Minimax TTS频率限制相关文档链接</a>。</li>\n</ul>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n        &quot;TTSType&quot;: &quot;minimax&quot;,  // String TTS类型, \n        &quot;Model&quot;: &quot;speech-01-turbo&quot;,\n        &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,\n        &quot;APIKey&quot;: &quot;eyxxxx&quot;,\n        &quot;GroupId&quot;: &quot;181000000000000&quot;,\n        &quot;VoiceType&quot;:&quot;female-tianmei-jingpin&quot;,\n        &quot;Speed&quot;: 1.2\n}\n</code></pre>\n</div></div><ul>\n<li>火山 TTS</li>\n</ul>\n<p>配置音色类型参考<a href=\"https://www.volcengine.com/docs/6561/162929\" target=\"_blank\">火山TTS文档链接</a><br>\n语音合成音色列表–语音技术-火山引擎<br>\n大模型语音合成音色列表–语音技术-火山引擎</p>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n    &quot;TTSType&quot;: &quot;volcengine&quot;,  // 必填：String TTS类型\n    &quot;AppId&quot; : &quot;xxxxxxxx&quot;,   // 必填：String 火山引擎分配的Appid\n    &quot;Token&quot; : &quot;TY9d4sQXHxxxxxxx&quot;, // 必填： String类型 火山引擎的访问token\n    &quot;Speed&quot; : 1.0,            // 可选参数 语速，默认为1.0\n    &quot;Volume&quot;: 1.0,            // 可选参数， 音量大小， 默认为1.0\n    &quot;Cluster&quot; : &quot;volcano_tts&quot;, // 可选参数，业务集群, 默认是 volcano_tts\n    &quot;VoiceType&quot; : &quot;zh_male_aojiaobazong_moon_bigtts&quot;   // 音色类型， 默认为大模型语音合成的音色。 如果使用普通语音合成，则需要填写对应的音色类型。 音色类型填写错误会导致没有声音。\n}\n</code></pre>\n\n</div></div><ul>\n<li>Azure TTS<br>\n配置请参考<a href=\"https://docs.azure.cn/zh-cn/ai-services/speech-service/speech-synthesis-markup-voice\" target=\"_blank\">AzureTTS文档链接</a></li>\n</ul>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n    &quot;TTSType&quot;: &quot;azure&quot;, // 必填：String TTS类型\n    &quot;SubscriptionKey&quot;: &quot;xxxxxxxx&quot;, // 必填：String 订阅的Key\n    &quot;Region&quot;: &quot;chinanorth3&quot;,  // 必填：String 订阅的地区\n    &quot;VoiceName&quot;: &quot;zh-CN-XiaoxiaoNeural&quot;, // 必填：String 音色名必填\n    &quot;Language&quot;: &quot;zh-CN&quot;, // 必填：String 合成的语言  \n    &quot;Rate&quot;: 1 // 选填：float 语速  0.5～2 默认为 1\n}\n</code></pre>\n\n</div></div><ul>\n<li>自定义</li>\n</ul>\n<p>TTS<br>\n具体协议规范请参考<a href=\"https://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo5a1xajYANQAiAbdAFw\" target=\"_blank\">腾讯文档</a></p>\n<div><div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n  &quot;TTSType&quot;: &quot;custom&quot;, // String 必填\n  &quot;APIKey&quot;: &quot;ApiKey&quot;, // String 必填 用来鉴权\n  &quot;APIUrl&quot;: &quot;http://0.0.0.0:8080/stream-audio&quot; // String，必填，TTS API URL\n  &quot;AudioFormat&quot;: &quot;wav&quot;, // String, 非必填，期望输出的音频格式，如mp3， ogg_opus，pcm，wav，默认为 wav，目前只支持pcm和wav，\n  &quot;SampleRate&quot;: 16000,  // Integer，非必填，音频采样率，默认为16000(16k)，推荐值为16000\n  &quot;AudioChannel&quot;: 1,    // Integer，非必填，音频通道数，取值：1 或 2  默认为1  \n}\n</code></pre>\n\n</div></div>",
+          "document": "<p>和VoiceType字段需要选填一个，这里是使用自己自定义的TTS，VoiceType是系统内置的一些音色</p>\n<ul>\n<li>Tencent TTS<br>\n配置请参考<a href=\"https://cloud.tencent.com/document/product/1073/92668#55924b56-1a73-4663-a7a1-a8dd82d6e823\" target=\"_blank\">腾讯云TTS文档链接</a></li>\n</ul>\n<div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{ \n       &quot;TTSType&quot;: &quot;tencent&quot;, // String TTS类型, 目前支持&quot;tencent&quot; 和 “minixmax”， 其他的厂商支持中\n       &quot;AppId&quot;: &quot;您的应用ID&quot;, // String 必填\n       &quot;SecretId&quot;: &quot;您的密钥ID&quot;, // String 必填\n       &quot;SecretKey&quot;:  &quot;您的密钥Key&quot;, // String 必填\n       &quot;VoiceType&quot;: 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见语音合成计费概述。完整的音色 ID 列表请参见语音合成音色列表。\n       &quot;Speed&quot;: 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换，可参考 语速转换\n       &quot;Volume&quot;: 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。\n       &quot;PrimaryLanguage&quot;: 1, // Integer 可选 主要语言 1-中文（默认） 2-英文 3-日文\n       &quot;FastVoiceType&quot;: &quot;xxxx&quot;   //  可选参数， 快速声音复刻的参数 \n  }\n</code></pre>\n </div><ul>\n<li>Minimax TTS<br>\n配置请参考<a href=\"https://platform.minimaxi.com/document/T2A%20V2?key=66719005a427f0c8a5701643\" target=\"_blank\"> Minimax TTS 文档链接</a>。注意 Minimax TTS 存在频率限制，超频可能会导致回答卡顿，<a href=\"https://platform.minimaxi.com/document/Rate%20limits?key=66b19417290299a26b234572\" target=\"_blank\">Minimax TTS频率限制相关文档链接</a>。</li>\n</ul>\n<div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n        &quot;TTSType&quot;: &quot;minimax&quot;,  // String TTS类型, \n        &quot;Model&quot;: &quot;speech-01-turbo&quot;,\n        &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,\n        &quot;APIKey&quot;: &quot;eyxxxx&quot;,\n        &quot;GroupId&quot;: &quot;181000000000000&quot;,\n        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,\n        &quot;Speed&quot;: 1.2\n}\n</code></pre>\n</div><ul>\n<li>火山 TTS</li>\n</ul>\n<p>配置音色类型参考<a href=\"https://www.volcengine.com/docs/6561/162929\" target=\"_blank\">火山TTS文档链接</a><br>\n语音合成音色列表–语音技术-火山引擎<br>\n大模型语音合成音色列表–语音技术-火山引擎</p>\n<div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n    &quot;TTSType&quot;: &quot;volcengine&quot;,  // 必填：String TTS类型\n    &quot;AppId&quot; : &quot;xxxxxxxx&quot;,   // 必填：String 火山引擎分配的Appid\n    &quot;Token&quot; : &quot;TY9d4sQXHxxxxxxx&quot;, // 必填： String类型 火山引擎的访问token\n    &quot;Speed&quot; : 1.0,            // 可选参数 语速，默认为1.0\n    &quot;Volume&quot;: 1.0,            // 可选参数， 音量大小， 默认为1.0\n    &quot;Cluster&quot; : &quot;volcano_tts&quot;, // 可选参数，业务集群, 默认是 volcano_tts\n    &quot;VoiceType&quot; : &quot;zh_male_aojiaobazong_moon_bigtts&quot;   // 音色类型， 默认为大模型语音合成的音色。 如果使用普通语音合成，则需要填写对应的音色类型。 音色类型填写错误会导致没有声音。\n}\n</code></pre>\n</div><ul>\n<li>Azure TTS<br>\n配置请参考<a href=\"https://docs.azure.cn/zh-cn/ai-services/speech-service/speech-synthesis-markup-voice\" target=\"_blank\">AzureTTS文档链接</a></li>\n</ul>\n<div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n    &quot;TTSType&quot;: &quot;azure&quot;, // 必填：String TTS类型\n    &quot;SubscriptionKey&quot;: &quot;xxxxxxxx&quot;, // 必填：String 订阅的Key\n    &quot;Region&quot;: &quot;chinanorth3&quot;,  // 必填：String 订阅的地区\n    &quot;VoiceName&quot;: &quot;zh-CN-XiaoxiaoNeural&quot;, // 必填：String 音色名必填\n    &quot;Language&quot;: &quot;zh-CN&quot;, // 必填：String 合成的语言  \n    &quot;Rate&quot;: 1 // 选填：float 语速  0.5～2 默认为 1\n}\n</code></pre>\n</div><ul>\n<li>自定义TTS</li>\n</ul>\n<p>具体协议规范请参考<a href=\"https://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo5a1xajYANQAiAbdAFw\" target=\"_blank\">腾讯文档</a></p>\n<div class=\"v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class\"><pre class=\"v-md-prism-\"><code>{\n  &quot;TTSType&quot;: &quot;custom&quot;, // String 必填\n  &quot;APIKey&quot;: &quot;ApiKey&quot;, // String 必填 用来鉴权\n  &quot;APIUrl&quot;: &quot;http://0.0.0.0:8080/stream-audio&quot; // String，必填，TTS API URL\n  &quot;AudioFormat&quot;: &quot;wav&quot;, // String, 非必填，期望输出的音频格式，如mp3， ogg_opus，pcm，wav，默认为 wav，目前只支持pcm和wav，\n  &quot;SampleRate&quot;: 16000,  // Integer，非必填，音频采样率，默认为16000(16k)，推荐值为16000\n  &quot;AudioChannel&quot;: 1,    // Integer，非必填，音频通道数，取值：1 或 2  默认为1  \n}\n</code></pre>\n</div>",
           "example": "{ \"TTSType\": \"azure\", \"SubscriptionKey\": \"xx\", \"Region\": \"chinanorth3\", \"VoiceName\": \"zh-CN-\", \"Language\": \"zh-CN\", \"Rate\": 1 }",
           "member": "string",
           "name": "CustomTTSConfig",
@@ -2391,7 +2553,7 @@
         {
           "disabled": true,
           "document": "提示词变量",
-          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "example": "无",
           "member": "Variable",
           "name": "PromptVariables",
           "required": false,
@@ -2409,7 +2571,7 @@
         {
           "disabled": false,
           "document": "通话内容提取配置",
-          "example": "[{\"InfoType\": \"Boolean\", \"InfoName\": \"兴趣\", \"InfoContent\": \"用户是否对产品感兴趣\"}]",
+          "example": "无",
           "member": "AICallExtractConfigElement",
           "name": "ExtractConfig",
           "required": false,
@@ -2418,7 +2580,7 @@
         {
           "disabled": false,
           "document": "模型温度控制",
-          "example": "0",
+          "example": "0.1",
           "member": "float",
           "name": "Temperature",
           "required": false,
@@ -2427,7 +2589,7 @@
         {
           "disabled": false,
           "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
-          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -2459,6 +2621,60 @@
           "name": "ToneWord",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合规提示音， \n该参数传true（默认）表示通话开始播放摩斯码，提示对话内容为 AI 生成。\n该参数传false表示关闭合规提示音。该参数传false则代表您知晓并同意以下协议：\n我方充分知悉和理解，根据[《网络安全法》](https://www.cac.gov.cn/2016-11/07/c_1119867116.htm)[《互联网信息服务深度合成管理规定》](https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm)[《生成式人工智能服务管理暂行办法》](https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm)[《人工智能生成合成内容标识办法》](https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm)的法律法规的规定，对人工智能生成合成内容应当添加显式标识和隐式标识。我方基于业务需求，请腾讯云对生成合成内容不添加显式标识，我方承诺合法合规使用生成合成内容，避免造成混淆、误认；如果使用生成合成内容对公众提供服务的，或通过网络传播的，我方将自觉主动添加符合法律规定和国家标准要求的显式标识，承担人工智能生成合成内容标识的法律义务。我方未能恰当、合理地履行人工智能内容标识义务造成不良后果的，或遭受主管部门责罚的，相关责任由我方完全承担。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableComplianceAudio",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启语音信箱识别",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableVoicemailDetection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "识别到对端为语音信箱时的行为，当EnableVoicemailDetection为True时生效\n0: 挂断电话（默认）",
+          "example": "0",
+          "member": "uint64",
+          "name": "VoicemailAction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "大模型拓展参数， 格式为json字符串",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "LLMExtraBody",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最大通话时长， 默认不限制。单位毫秒(ms)",
+          "example": "600000",
+          "member": "uint64",
+          "name": "MaxCallDurationMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 **仅自携号码支持当前参数**",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2673,7 +2889,7 @@
         {
           "disabled": false,
           "document": "被叫号码列表",
-          "example": "[008613912341234,008613912341235]",
+          "example": "[\"0086139xxxxxxxx\",\"0086130xxxxxxxxx\"]",
           "member": "string",
           "name": "Callees",
           "required": true,
@@ -2682,7 +2898,7 @@
         {
           "disabled": false,
           "document": "主叫号码列表",
-          "example": "[008601012345678]",
+          "example": "[\"0086010xxxxxxxx\"]",
           "member": "string",
           "name": "Callers",
           "required": true,
@@ -2735,8 +2951,8 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量（仅高级版支持）",
-          "example": "{\"a\":1}",
+          "document": "自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -2744,7 +2960,7 @@
         },
         {
           "disabled": false,
-          "document": "UUI",
+          "document": "用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处",
           "example": "foobar",
           "member": "string",
           "name": "UUI",
@@ -2754,7 +2970,7 @@
         {
           "disabled": false,
           "document": "被叫属性",
-          "example": "[{\"Callee\":\"foobar\",\"UUI\":\"11\",\"Variables\":{\"foo\":\"bar\"}}]",
+          "example": "无",
           "member": "CalleeAttribute",
           "name": "CalleeAttributes",
           "required": false,
@@ -2772,7 +2988,7 @@
         {
           "disabled": false,
           "document": "可用时间段",
-          "example": "[{\"StartTime\":\"09:00:00\",\"EndTime\":\"11:30:00\"},{\"StartTime\":\"14:00:00\",\"EndTime\":\"18:00:00\"}]",
+          "example": "无",
           "member": "TimeRange",
           "name": "AvailableTime",
           "required": false,
@@ -2784,6 +3000,24 @@
           "example": "5845",
           "member": "int64",
           "name": "AIAgentId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务失败重试时间间隔，重试间隔 600秒～86400 秒",
+          "example": "600",
+          "member": "int64",
+          "name": "RetryInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
           "required": false,
           "type": "int"
         }
@@ -2890,7 +3124,7 @@
         },
         {
           "disabled": false,
-          "document": "客服用户 ID，一般为客服邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF",
+          "document": "座席邮箱，确保已经绑定了手机号 https://cloud.tencent.com/document/product/679/76067#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "UserId",
@@ -3173,7 +3407,7 @@
         {
           "disabled": false,
           "document": "主叫号码列表",
-          "example": "[00861,00862]",
+          "example": "[\"008602155066897\"]",
           "member": "string",
           "name": "Callers",
           "required": false,
@@ -3182,7 +3416,7 @@
         {
           "disabled": false,
           "document": "自定义变量",
-          "example": "{\"name\":\"foo-bar\"}",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -3196,6 +3430,15 @@
           "name": "UUI",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3260,6 +3503,24 @@
           "name": "Prefix",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国内长途手机前缀码",
+          "example": "0",
+          "member": "string",
+          "name": "MobileNddPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同市固话去掉区号",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalNumberTrimAC",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3310,7 +3571,7 @@
         {
           "disabled": false,
           "document": "被叫列表，支持 E.164 或不带国家码形式的号码",
-          "example": "+8613012345678",
+          "example": "[\"+8613012345678\"]",
           "member": "string",
           "name": "Callees",
           "required": true,
@@ -3319,7 +3580,7 @@
         {
           "disabled": false,
           "document": "主叫列表，使用管理端展示的号码格式",
-          "example": "0086075586013388",
+          "example": "[\"0086075586013388\"]",
           "member": "string",
           "name": "Callers",
           "required": true,
@@ -3354,7 +3615,7 @@
         },
         {
           "disabled": false,
-          "document": "预期呼损率，百分比，5 - 50",
+          "document": "预期呼损率，百分比，0 - 50",
           "example": "10",
           "member": "int64",
           "name": "ExpectedAbandonRate",
@@ -3409,7 +3670,7 @@
         {
           "disabled": false,
           "document": "自定义变量",
-          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -3427,7 +3688,7 @@
         {
           "disabled": false,
           "document": "被叫属性",
-          "example": "[{\"Callee\":\"13012345678\",\"UUI\":\"foobar\",\"Variables\":[{\"Key\":\"foo\":\"Value\":\"bar\"}]}]",
+          "example": "无",
           "member": "CalleeAttribute",
           "name": "CalleeAttributes",
           "required": false,
@@ -3445,7 +3706,7 @@
         {
           "disabled": false,
           "document": "可用时间段",
-          "example": "[{\"StartTime\":\"09:00:00\",\"EndTime\":\"11:30:00\"},{\"StartTime\":\"14:00:00\",\"EndTime\":\"18:00:00\"}]",
+          "example": "无",
           "member": "TimeRange",
           "name": "AvailableTime",
           "required": false,
@@ -3629,21 +3890,21 @@
         },
         {
           "disabled": false,
+          "document": "用户签名数据，必填字段，为标准 JSON 格式",
+          "example": "参考下文示例",
+          "member": "string",
+          "name": "ClientData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "有效期，单位秒，不超过 1 小时",
           "example": "3600",
           "member": "int64",
           "name": "ExpiredTime",
           "required": true,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "用户签名数据，必填字段，为标准 JSON 格式",
-          "example": "参考下文示例",
-          "member": "string",
-          "name": "ClientData",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -3812,6 +4073,135 @@
           "member": "string",
           "name": "OnlineStaffList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAgentInfoListRequest": {
+      "document": "DescribeAIAgentInfoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400692008",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸，上限 100",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，从 0 开始",
+          "example": "5",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAgentInfoListResponse": {
+      "document": "DescribeAIAgentInfoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体信息列表",
+          "example": "无",
+          "member": "AIAgentInfo",
+          "name": "AIAgentInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体总数量",
+          "example": "373",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAnalysisResultRequest": {
+      "document": "DescribeAIAnalysisResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查找起始时间\t",
+          "example": "1737350008",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1737350008",
+          "example": "1737350008",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAnalysisResultResponse": {
+      "document": "DescribeAIAnalysisResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AI会话分析结果",
+          "example": "无",
+          "member": "AIAnalysisResult",
+          "name": "ResultList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4262,7 +4652,7 @@
         {
           "disabled": false,
           "document": "被叫信息列表",
-          "example": "[{\"State\":1,\"Callee\":\"foobar\",\"Sessions\":[\"foobar\"]}]",
+          "example": "无",
           "member": "AutoCalloutTaskCalleeInfo",
           "name": "Callees",
           "output_required": true,
@@ -4281,11 +4671,21 @@
         },
         {
           "disabled": false,
-          "document": "任务状态 0初始 1运行中 2已完成 3结束中 4已终止",
+          "document": "任务状态 0初始 1运行中 2已完成 3结束中 4已终止 5已暂停",
           "example": "1",
           "member": "uint64",
           "name": "State",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "example": "15",
+          "member": "int64",
+          "name": "MaxRingTimeoutSecond",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4938,6 +5338,125 @@
           "member": "ExtensionInfo",
           "name": "ExtensionList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlashSMSListRequest": {
+      "document": "DescribeFlashSMSList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1500098920",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "example": "1769730111",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。",
+          "example": "1769749111",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "闪信投递号码（被叫号码）",
+          "example": "00860755******88",
+          "member": "string",
+          "name": "DeliveryNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "呼叫关联的系统号码",
+          "example": "0086021******07",
+          "member": "string",
+          "name": "ServingNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "15adb830-****-****-****-20c7d825d845",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递结果 1 为成功，其他为失败",
+          "example": "1",
+          "member": "int64",
+          "name": "DeliveryStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlashSMSListResponse": {
+      "document": "DescribeFlashSMSList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "闪信记录列表",
+          "example": "无",
+          "member": "FlashSMSRecord",
+          "name": "FlashSMSList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5857,6 +6376,290 @@
       ],
       "type": "object"
     },
+    "DescribeSessionDetailRequest": {
+      "document": "DescribeSessionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通话的 session id",
+          "example": "6164325c-39aa-45dc-83e2-2ecbc9b37ad5",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "example": "1756372067",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。",
+          "example": "1756372167",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionDetailResponse": {
+      "document": "DescribeSessionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主叫号码",
+          "example": "0086130xxxxxxxx",
+          "member": "string",
+          "name": "Caller",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被叫号码",
+          "example": "0086010xxxxxxxx",
+          "member": "string",
+          "name": "Callee",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫",
+          "example": "1",
+          "member": "int64",
+          "name": "CallType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳，Unix 秒级时间戳",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "StartTimeStamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "振铃时间戳，UNIX 秒级时间戳",
+          "example": "1611631885",
+          "member": "int64",
+          "name": "RingTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接听时间戳，UNIX 秒级时间戳",
+          "example": "1611631891",
+          "member": "int64",
+          "name": "AcceptTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，UNIX 秒级时间戳",
+          "example": "1611631991",
+          "member": "int64",
+          "name": "EndedTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进入排队时间，Unix 秒级时间戳",
+          "example": "1611631889",
+          "member": "int64",
+          "name": "QueuedTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "StaffUserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参考 DescribeTelCdr 接口 EndStatus 字段",
+          "example": "1",
+          "member": "int64",
+          "name": "EndStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排队技能组 ID",
+          "example": "203",
+          "member": "int64",
+          "name": "QueuedSkillGroupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排队技能组名称",
+          "example": "销售组",
+          "member": "string",
+          "name": "QueuedSkillGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录音链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接",
+          "example": "https://xxxxx",
+          "member": "string",
+          "name": "RecordURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录音转存第三方 COS 链接",
+          "example": "https://xxxxx",
+          "member": "string",
+          "name": "CustomRecordURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录音文本信息链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接",
+          "example": "https://xxxxx",
+          "member": "string",
+          "name": "AsrURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音留言录音链接",
+          "example": "[\"https://xxxxx\"]",
+          "member": "string",
+          "name": "VoicemailRecordURL",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关",
+          "example": "[\"https://xxxxx\"]",
+          "member": "string",
+          "name": "VoicemailAsrURL",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IVR 按键信息",
+          "example": "无",
+          "member": "IVRKeyPressedElement",
+          "name": "IVRKeyPressed",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满意度按键信息",
+          "example": "无",
+          "member": "IVRKeyPressedElement",
+          "name": "PostIVRKeyPressed",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂机方 seat 座席 user 用户 system 系统",
+          "example": "user",
+          "member": "string",
+          "name": "HungUpSide",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义数据（User-to-User Interface）",
+          "example": "foo-bar",
+          "member": "string",
+          "name": "UUI",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通话中的事件列表",
+          "example": "无",
+          "member": "SessionEvent",
+          "name": "Events",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务参与者列表",
+          "example": "无",
+          "member": "ServeParticipant",
+          "name": "ServeParticipants",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSkillGroupInfoListRequest": {
       "document": "DescribeSkillGroupInfoList请求参数结构体",
       "members": [
@@ -6029,6 +6832,88 @@
           "member": "StaffInfo",
           "name": "StaffList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffStatusHistoryRequest": {
+      "document": "DescribeStaffStatusHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "StaffUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "example": "1753925234",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于 7 天。",
+          "example": "1753926234",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页检索时使用的游标",
+          "example": "foo-and-bar",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸",
+          "example": "1000",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffStatusHistoryResponse": {
+      "document": "DescribeStaffStatusHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席状态数据",
+          "example": "无",
+          "member": "StaffStatus",
+          "name": "Data",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6242,6 +7127,33 @@
           "type": "int"
         },
         {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸（必填），上限 100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码（必填），从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
           "disabled": true,
           "document": "实例 ID（废弃）",
           "example": "11",
@@ -6265,33 +7177,6 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
-          "example": "1400000000",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页尺寸（必填），上限 100",
-          "example": "100",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页页码（必填），从 0 开始",
-          "example": "0",
-          "member": "int64",
-          "name": "PageNumber",
           "required": false,
           "type": "int"
         },
@@ -6531,6 +7416,51 @@
       ],
       "usage": "out"
     },
+    "EventStaffDetail": {
+      "document": "座席事件相关详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席数据",
+          "example": "无",
+          "member": "EventStaffElement",
+          "name": "Staffs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EventStaffElement": {
+      "document": "座席信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席邮箱账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "Mail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席工号",
+          "example": "9527",
+          "member": "string",
+          "name": "StaffNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExtensionInfo": {
       "document": "话机信息",
       "members": [
@@ -6672,6 +7602,89 @@
         }
       ],
       "usage": "in"
+    },
+    "FlashSMSRecord": {
+      "document": "闪信记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "a021c341-19aa-47dc-972c-262c75399c77",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "闪信投递号码（被叫）",
+          "example": "0086158******69",
+          "member": "string",
+          "name": "DeliveryNumber",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼叫关联的系统号码",
+          "example": "0086021******07",
+          "member": "string",
+          "name": "ServingNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递状态，1 表示成功，其他表示失败",
+          "example": "1",
+          "member": "int64",
+          "name": "DeliveryStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递失败原因",
+          "example": "success",
+          "member": "string",
+          "name": "DeliveryMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递时间戳，Unix 秒级时间戳",
+          "example": "1769613044",
+          "member": "int64",
+          "name": "DeliveryTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "送达时间（送达成功），Unix 秒级时间戳",
+          "example": "1769613046",
+          "member": "int64",
+          "name": "ArriveTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ForceMemberOfflineRequest": {
       "document": "ForceMemberOffline请求参数结构体",
@@ -7069,6 +8082,30 @@
       ],
       "usage": "both"
     },
+    "InvokeLLM": {
+      "document": "调用服务端主动发起请求到LLM",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求LLM的内容",
+          "example": "今天天气怎么样",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许该文本打断机器人说话",
+          "example": "false",
+          "member": "bool",
+          "name": "Interrupt",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "Message": {
       "document": "单条消息",
       "members": [
@@ -7268,6 +8305,24 @@
           "name": "Prefix",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国内长途手机前缀码",
+          "example": "0",
+          "member": "string",
+          "name": "MobileNddPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同市固话去掉区号",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalNumberTrimAC",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7527,6 +8582,15 @@
           "example": "{+E.164}",
           "member": "string",
           "name": "OutboundCalleeFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商号码",
+          "example": "66660000",
+          "member": "string",
+          "name": "CarrierPhoneNumber",
           "required": false,
           "type": "string"
         }
@@ -7891,6 +8955,42 @@
       ],
       "usage": "out"
     },
+    "PauseAutoCalloutTaskRequest": {
+      "document": "PauseAutoCalloutTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "16498",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc\n",
+          "example": "1400692008",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseAutoCalloutTaskResponse": {
+      "document": "PauseAutoCalloutTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PausePredictiveDialingCampaignRequest": {
       "document": "PausePredictiveDialingCampaign请求参数结构体",
       "members": [
@@ -7993,6 +9093,60 @@
       ],
       "usage": "out"
     },
+    "PlaySoundCallRequest": {
+      "document": "PlaySoundCall请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400692008",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "f3be95fb-2786-466a-beab-5e3d8cb76272",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频文件 ID，参见管理端-电话客服-放音文件管理",
+          "example": "27500",
+          "member": "int64",
+          "name": "FileId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "放音次数，默认 1 次",
+          "example": "1",
+          "member": "int64",
+          "name": "PlayTimes",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "PlaySoundCallResponse": {
+      "document": "PlaySoundCall返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetExtensionPasswordRequest": {
       "document": "ResetExtensionPassword请求参数结构体",
       "members": [
@@ -8065,6 +9219,42 @@
     },
     "RestoreMemberOnlineResponse": {
       "document": "RestoreMemberOnline返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeAutoCalloutTaskRequest": {
+      "document": "ResumeAutoCalloutTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "16497",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400692008",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeAutoCalloutTaskResponse": {
+      "document": "ResumeAutoCalloutTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8407,8 +9597,8 @@
         },
         {
           "disabled": false,
-          "document": "结束状态",
-          "example": "ok unconnected seatGiveUp seatForward outboundForward ivrGiveUp ",
+          "document": "结束状态\n\n中文详情[参考](https://www.tencentcloud.com/zh/document/product/1229/71847)\n\n英文详情[参考](https://www.tencentcloud.com/document/product/1229/71847?lang=en)",
+          "example": "ok seatGiveUp seatForward outboundForward ivrGiveUp",
           "member": "string",
           "name": "EndStatusString",
           "output_required": true,
@@ -8536,6 +9726,207 @@
         }
       ],
       "usage": "in"
+    },
+    "SessionEvent": {
+      "document": "通话事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件时间戳，Unix 秒级时间戳",
+          "example": "1756372067",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型，目前支持 StaffHold StaffUnhold StaffMute StaffUnmute",
+          "example": "StaffHold",
+          "member": "string",
+          "name": "EventType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席相关事件详情",
+          "example": "无",
+          "member": "EventStaffDetail",
+          "name": "StaffEventDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SetStaffStatusItem": {
+      "document": "创建 staff 的信息 item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "",
+          "member": "string",
+          "name": "StaffUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态，free 示闲 notReady 示忙 rest 小休\t",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果设置小休状态，这里是原因",
+          "example": "",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "SetStaffStatusRequest": {
+      "document": "SetStaffStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400692008",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置座席状态列表，最大个数 10",
+          "example": "无",
+          "member": "SetStaffStatusItem",
+          "name": "StaffStatusList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetStaffStatusResponse": {
+      "document": "SetStaffStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设置座席状态应答列表",
+          "example": "无",
+          "member": "SetStaffStatusRspItem",
+          "name": "StaffStatusList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetStaffStatusRspItem": {
+      "document": "设置 staff 状态应答 item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "",
+          "member": "string",
+          "name": "StaffUserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，参考协议整体错误码",
+          "example": "",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前状态",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前状态如果是小休，这里是原因",
+          "example": "",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "之前状态",
+          "example": "",
+          "member": "string",
+          "name": "PreviousStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "之前状态如果是小休，这里是原因",
+          "example": "",
+          "member": "string",
+          "name": "PreviousReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SkillGroupInfoItem": {
       "document": "技能组信息",
@@ -8885,6 +10276,89 @@
       ],
       "usage": "in"
     },
+    "StaffStatus": {
+      "document": "座席状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询使用的游标，分页场景使用",
+          "example": "foo-and-bar",
+          "member": "string",
+          "name": "Cursor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态时间戳，Unix 秒级时间戳",
+          "example": "1756297161",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线",
+          "example": "free",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态关联的会话 Id",
+          "example": "aaed24da-c8a5-412f-a346-157f2316ae75",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小休原因",
+          "example": "会议",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席邮箱",
+          "example": "101@qq.com",
+          "member": "string",
+          "name": "StaffEmail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席工号",
+          "example": "10001",
+          "member": "string",
+          "name": "StaffNo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StaffStatusExtra": {
       "document": "座席状态补充信息",
       "members": [
@@ -9129,7 +10603,7 @@
         {
           "disabled": false,
           "document": "主叫号码",
-          "example": "008613012345678",
+          "example": "0086010xxxxxxxx",
           "member": "string",
           "name": "Caller",
           "output_required": true,
@@ -9139,7 +10613,7 @@
         {
           "disabled": false,
           "document": "被叫号码",
-          "example": "008613012345670",
+          "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "Callee",
           "output_required": true,
@@ -9209,7 +10683,7 @@
         {
           "disabled": false,
           "document": "座席信息",
-          "example": "0",
+          "example": "无",
           "member": "SeatUserInfo",
           "name": "SeatUser",
           "output_required": true,
@@ -9218,7 +10692,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常通话\n\n电话呼入&呼出\t0\t        error\t                异常结束\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       排队时用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       振铃时用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n\n电话呼出             108\t        restrictedCallee\t被叫因高风险受限\n\n电话呼出             109\t        tooManyRequest\t    外呼超频限制\n\n电话呼出             110\t        restrictedArea\t    外呼区域限制\n\n电话呼出             111\t        restrictedTime\t外呼时间限制\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t 被叫未接听\n\n电话呼出            203\t    userReject\t被叫拒接挂断\n\n电话呼出\t          204\t    powerOff\t被叫关机\n\n电话呼出           205            numberNotExist\t被叫空号\n\n电话呼出\t         206\t           busy\t被叫忙\n\n电话呼出   \t        207\t           outOfCredit\t被叫欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t被叫不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n电话呼出        212     carrierBlocked      运营商拦截",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        **正常通话**\n\n电话呼入\t             102\t        ivrGiveUp\t        **IVR期间用户放弃**\n\n电话呼入\t             103\t        waitingGiveUp\t       **排队时用户放弃**\n\n电话呼入\t             104\t        ringingGiveUp\t       **振铃时用户放弃**\n\n电话呼入\t             105\t        noSeatOnline\t       **无座席在线**\n\n电话呼入              106\t       notWorkTime\t       **非工作时间**   \n\n电话呼入\t            107\t       ivrEnd\t               **IVR全自动结束(无人工介入)**\n\n电话呼入\t            100\t      blackList **黑名单(系统侧)**\n\n电话呼出             108\t        restrictedCallee\t**全局外呼风险号码拦截(系统侧)**\n\n电话呼出             109\t        tooManyRequest\t    **外呼频控拦截(系统侧)**\n\n电话呼出             110\t        restrictedArea\t    **外呼地域拦截(系统侧)**\n\n电话呼出             111\t        restrictedTime\t**外呼时段拦截(系统侧)**\n                         \n电话呼出             202            notAnswer\t **被叫未接听**\n\n电话呼出            203\t    userReject\t**被叫拒接挂断**\n\n电话呼出\t          204\t    powerOff\t**被叫关机**\n\n电话呼出           205            numberNotExist\t**被叫空号**\n\n电话呼出\t         206\t           busy\t**被叫忙**\n\n电话呼出   \t        207\t           outOfCredit\t**被叫欠费**\n\n电话呼出\t         208\t           operatorError\t**运营商线路异常**\n\n电话呼出         \t209\t           callerCancel\t**主叫取消**\n\n电话呼出\t        210\t           notInService\t**被叫不在服务区**\n\n电话呼入&呼出\t211    clientError    **座席客户端错误**\n\n电话呼出        212     carrierBlocked      **运营商拦截**\n\n电话呼出        213     callReminder      **提示来电提醒**\n\n电话呼出        215     numberInvalid      **被叫号码无效**\n\n电话呼出        216     callRestricted      **提示呼叫受限**\n\n电话呼出        217     calleeRestricted      **被叫黑名单受限**\n\n电话呼出        218     areaRestricted      **被叫区域受限**\n\n电话呼出        219     promptCallForwarding      **提示呼叫转移**\n\n电话呼出        220     callerCancelWhileRing      **振铃中主叫取消**\n\n电话呼出        221     callerCancelWithoutRing      **未振铃被叫号码异常**\n\n电话呼出        222     voiceMailReached      **语音信箱挂断**\n\n音频呼入        501     callConflict      **VoIP用户呼叫冲突终止**\n\n音频呼入        502     clientTimeout      **VoIP用户客户端超时**\n\n音频呼入        503     voipClientError      **VoIP用户客户端错误**\n\n中文详情[参考](https://www.tencentcloud.com/zh/document/product/1229/71847)\n\n英文详情[参考](https://www.tencentcloud.com/document/product/1229/71847?lang=en)",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
@@ -9309,7 +10783,7 @@
         {
           "disabled": false,
           "document": "服务参与者列表",
-          "example": "0",
+          "example": "无",
           "member": "ServeParticipant",
           "name": "ServeParticipants",
           "output_required": true,
@@ -9328,7 +10802,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常通话\n\n电话呼入&呼出\t0\t        error\t                异常结束\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       排队时用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       振铃时用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n\n电话呼出             108\t        restrictedCallee\t被叫因高风险受限\n\n电话呼出             109\t        tooManyRequest\t    外呼超频限制\n\n电话呼出             110\t        restrictedArea\t    外呼区域限制\n\n电话呼出             111\t        restrictedTime\t外呼时间限制\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t 被叫未接听\n\n电话呼出            203\t    userReject\t被叫拒接挂断\n\n电话呼出\t          204\t    powerOff\t被叫关机\n\n电话呼出           205            numberNotExist\t被叫空号\n\n电话呼出\t         206\t           busy\t被叫忙\n\n电话呼出   \t        207\t           outOfCredit\t被叫欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t被叫不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n电话呼出        212     carrierBlocked      运营商拦截",
+          "document": "参考 EndStatus 字段",
           "example": "ok",
           "member": "string",
           "name": "EndStatusString",
@@ -9359,7 +10833,7 @@
         {
           "disabled": false,
           "document": "后置IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）",
-          "example": "0",
+          "example": "无",
           "member": "IVRKeyPressedElement",
           "name": "PostIVRKeyPressed",
           "output_required": true,
@@ -9389,7 +10863,7 @@
         {
           "disabled": false,
           "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
-          "example": "008613XXXX5678",
+          "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "ProtectedCaller",
           "output_required": true,
@@ -9399,7 +10873,7 @@
         {
           "disabled": false,
           "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
-          "example": "008613XXXX5678",
+          "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "ProtectedCallee",
           "output_required": true,
@@ -9429,7 +10903,7 @@
         {
           "disabled": false,
           "document": "IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）",
-          "example": "0",
+          "example": "无",
           "member": "IVRKeyPressedElement",
           "name": "IVRKeyPressedEx",
           "output_required": true,
@@ -9504,6 +10978,26 @@
           "name": "VoicemailAsrURL",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果是智能体相关通话，这里是智能体 ID",
+          "example": "9527",
+          "member": "int64",
+          "name": "AIAgentId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果是智能体相关通话，这里是智能体名称",
+          "example": "新款智能体销售",
+          "member": "string",
+          "name": "AIAgentName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

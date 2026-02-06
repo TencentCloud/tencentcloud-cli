@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr HKIDCardOCR --cli-unfold-argument  \
-    --ReturnHeadImage false \
+    --ReturnHeadImage False \
     --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 

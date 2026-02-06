@@ -1,5 +1,19 @@
 {
   "actions": {
+    "DescribeLicense": {
+      "document": "# DescribeLicense\n\n客户根据请求的参数获取当前名下的许可证信息\n\n```json\n{\n  \"Filters\": [\n    {\n      \"Name\": \"QueryType\",\n      \"Values\": [\"IncludeAddition\"]\n    }\n  ]\n}\n```\n\n返回的内容结构如下：\n\n- Response.RequestId 为当前请求的唯一 id\n- Response.Token 为 license 信息 jwt 加密后的 token 串\n\n```json\n{\n  \"Response\": {\n    \"RequestId\": \"cd15813b-adff-460e-b9fc-64579e96412d\",\n    \"Token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjkzMjQ4MTc5ODAsImlhdCI6MTc1NjE3Nzk4MCwiaXNzIjoibGljZW5zZS1zZXJ2aWNlIiwicGF5bG9hZCI6eyJNYWluTGljZW5zZSI6eyJMaWNlbnNlTW9kZSI6IlN1YnNjcmlwdGlvbiIsIkJpbGxpbmdNb2RlIjoxLCJDcmVhdGVTb3VyY2UiOiJTTjE3MTk0MDc1NDc0SEJETSIsIkF1dGhvcml6ZWRDbG91ZGFwcFJvbGVJZCI6IjcwMDAwMTgzMzgwNiIsIkF1dGhvcml6ZWRDbG91ZGFwcElkIjoiY2xvdWRhcHAtc2V3ZWM2cHMiLCJBdXRob3JpemVkVXNlclVpbiI6IjcwMDAwMDkxODE1NiIsIkxpZmVTcGFuVW5pdCI6IlkiLCJMaWZlU3BhbiI6MzY1LCJTb2Z0d2FyZVBhY2thZ2VJZCI6InBrZy0xZ2xlaG9tNyIsIlNvZnR3YXJlUGFja2FnZVZlcnNpb24iOiIwLjAuMSIsIkF1dGhvcml6ZWRTcGVjaWZpY2F0aW9uIjpbeyJQYXJhbUtleSI6InZlcnNpb24iLCJQYXJhbUtleU5hbWUiOiLniYjmnKwiLCJQYXJhbVZhbHVlIjoiYmFzaWMiLCJQYXJhbVZhbHVlTmFtZSI6IuWfuuehgOeJiCJ9LHsiUGFyYW1LZXkiOiJzaXplIiwiUGFyYW1LZXlOYW1lIjoi6KeE5qC8IiwiUGFyYW1WYWx1ZSI6IjEwMCIsIlBhcmFtVmFsdWVOYW1lIjoiMTAw5Lq66KeE5qihIn1dLCJQcm92aWRlcklkIjoxMDAwMDAwNzEsIlByb3ZpZGVyVWluIjoiNzAwMDAwOTE4MTU2IiwiSXNzdWVEYXRlIjoiMjAyNC0wNi0yNlQyMToxMjozMiswODowMCIsIkFjdGl2YXRpb25EYXRlIjoiMjAyNC0wNi0yNlQyMToxMjozNSswODowMCIsIkV4cGlyYXRpb25EYXRlIjoiMjM4OS0wNi0yNlQyMToxMjozNSswODowMCIsIkxpY2Vuc2VTdGF0dXMiOiJBY3RpdmUiLCJMaWNlbnNlSWQiOiI3MDAwMDA5MTgxNTY6cGtnLTFnbGVob203OmNsb3VkYXBwLXNld2VjNnBzOjgwMDciLCJMaWNlbnNlVHlwZSI6IlN0YW5kYXJkIiwiTGljZW5zZUxldmVsIjoiTWFzdGVyIn0sIkFkZGl0aW9uTGljZW5zZXMiOltdLCJUaW1lc3RhbXAiOiIyMDI1LTA4LTI2VDExOjEzOjAwKzA4OjAwIn19.G8Lx49xZBW0Rh3lRA15XzZ-PzLJj0bAxwnklx0pTjrHWxqxQdETAdGfU_QaGI_WZfYh2IVbFcwHnRLiRj6pQb4guCMpCbcsgL28BRS4g1wnaFhjcyEQLLtpDdz4_lPnOR2VHHvnfwhLZtccAgsRpeedPMBK1hwO9D3WKisQg2LcIr0V-QB8gmgIqqyqrLW6z37QpjgB4ZyJ5bIC1J-0-VmghskA04xnQRPdGJtlyBhjzVjeDxBq5JOqm3Am0Nqu1jyTd3MuYgSRwJqkDyjVBOGFGGy6mZCIYnxU_ET6-0ZEendqYwXDkpYG4rZZv5YmRCXiSESYz0zx4czwmFWkw-TjRSvUQBxBfsoDcAgyzpY7zBOTnbrr7DyoMvVnnHo7vb0if8_vkub6o0MuRnvdDYxNJtnTtlIScCadWAIvWUQ1DlUw2kzS-h9Ju2h7JhKw9cUeutu0X_6V4arZu9JlgWT9Ns7BtS9Y5JxgQOd36Aan39Rwohy_BrVwjOkbvDuTFLc_yNUlNdq5T2GNbDjABCmi73CGhCuWyPgtRs4ftpPugDRrTe4E95F224jdhf7I0He-nY4i1MoVjz8Zzm4v0vH67cMfcu0XVhs7ywvmu5tBSwm0uuhAXFFIbSrgEzuadxNhSi6qVCFNLnjiPYplK1M9mxG8Hc-fU-0A0TPepx8Q\"\n  }\n}\n```\n\n验签过程：\n对 Response.Token 内容使用公钥进行解码转换得到许可结构体信息，返回的内容结构如下，其中 paylod 中的信息为许可证信息结构：\n\n```json\n{\n  \"exp\": 9324758169,\n  \"iat\": 1756118169,\n  \"iss\": \"license-service\",\n  \"payload\": {\n    \"MainLicense\": {\n      \"LicenseMode\": \"Subscription\",\n      \"BillingMode\": 1,\n      \"CreateSource\": \"SN1719406931EJJ1E\",\n      \"AuthorizedCloudappRoleId\": \"700001833621\",\n      \"AuthorizedCloudappId\": \"cloudapp-992nqg9u\",\n      \"AuthorizedUserUin\": \"700001833621\",\n      \"LifeSpanUnit\": \"Y\",\n      \"LifeSpan\": 365,\n      \"SoftwarePackageId\": \"pkg-1glehom7\",\n      \"SoftwarePackageVersion\": \"0.0.1\",\n      \"AuthorizedSpecification\": [\n        {\n          \"ParamKey\": \"version\",\n          \"ParamKeyName\": \"版本\",\n          \"ParamValue\": \"basic\",\n          \"ParamValueName\": \"基础版\"\n        },\n        {\n          \"ParamKey\": \"size\",\n          \"ParamKeyName\": \"规格\",\n          \"ParamValue\": \"100\",\n          \"ParamValueName\": \"100 人规模\"\n        }\n      ],\n      \"ProviderId\": 100000071,\n      \"ProviderUin\": \"700000918156\",\n      \"IssueDate\": \"2024-06-26T21:02:16+08:00\",\n      \"ActivationDate\": \"2024-06-26T21:02:19+08:00\",\n      \"ExpirationDate\": \"2389-06-26T21:02:19+08:00\",\n      \"LicenseStatus\": \"Active\",\n      \"LicenseId\": \"700000918156:pkg-1glehom7:cloudapp-992nqg9u:3988\",\n      \"LicenseType\": \"Standard\",\n      \"LicenseLevel\": \"Master\"\n    },\n    \"AdditionLicenses\": [\n      {\n        \"LicenseMode\": \"Subscription\",\n        \"BillingMode\": 1,\n        \"CreateSource\": \"SN1719406931EJJ1E\",\n        \"AuthorizedCloudappRoleId\": \"700001833621\",\n        \"AuthorizedCloudappId\": \"cloudapp-992nqg9u\",\n        \"AuthorizedUserUin\": \"700001833621\",\n        \"LifeSpanUnit\": \"Y\",\n        \"LifeSpan\": 365,\n        \"SoftwarePackageId\": \"pkg-1glehom7\",\n        \"SoftwarePackageVersion\": \"0.0.1\",\n        \"AuthorizedSpecification\": [\n          {\n            \"ParamKey\": \"version\",\n            \"ParamKeyName\": \"版本\",\n            \"ParamValue\": \"basic\",\n            \"ParamValueName\": \"基础版\"\n          },\n          {\n            \"ParamKey\": \"size\",\n            \"ParamKeyName\": \"规格\",\n            \"ParamValue\": \"100\",\n            \"ParamValueName\": \"100 人规模\"\n          }\n        ],\n        \"ProviderId\": 100000071,\n        \"ProviderUin\": \"700000918156\",\n        \"IssueDate\": \"2024-06-26T21:02:16+08:00\",\n        \"ActivationDate\": \"2024-06-26T21:02:19+08:00\",\n        \"ExpirationDate\": \"2389-06-26T21:02:19+08:00\",\n        \"LicenseStatus\": \"Active\",\n        \"LicenseId\": \"700000918156:pkg-1glehom7:cloudapp-992nqg9u:3988\",\n        \"LicenseType\": \"Standard\",\n        \"LicenseLevel\": \"Master\"\n      }\n    ],\n    \"Timestamp\": \"2025-08-25T18:36:09+08:00\"\n  }\n}\n```",
+      "input": "DescribeLicenseRequest",
+      "name": "获取license信息",
+      "output": "DescribeLicenseResponse",
+      "status": "online"
+    },
+    "IssueLicense": {
+      "document": "颁发 License",
+      "input": "IssueLicenseRequest",
+      "name": "颁发 License",
+      "output": "IssueLicenseResponse",
+      "status": "online"
+    },
     "VerifyLicense": {
       "document": "从软件进程读取 LICENSE。",
       "input": "VerifyLicenseRequest",
@@ -15,12 +29,164 @@
     "serviceShortName": "cloudapp"
   },
   "objects": {
+    "DescribeLicenseRequest": {
+      "document": "DescribeLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可选过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseResponse": {
+      "document": "DescribeLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "针对上面raw的签名",
+          "example": "eyJhbGciOi",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisplayMetadata": {
+      "document": "元数据展示信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>展示的名称</p>",
+          "example": "颁发机构",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示的值</p>",
+          "example": "YUNAPI 接口",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤 ID、名称、状态等\n\n- 若存在多个 Filter 时，Filter间的关系为逻辑与（AND）关系。\n- 若同一个 Filter 存在多个 Values，同一 Filter 下 Values 间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "IssueLicenseRequest": {
+      "document": "IssueLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云应用实例 ID</p>",
+          "example": "cloudapp-i9sp7jii",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云应用颁发的 License 授权 ID。系统中唯一，伙伴可通过 License 颁发的订阅接口中获取</p>",
+          "example": "100040308038:pkg-n4v3hdhs:cloudapp-i9sp7jii:m81491718",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 的详细数据</p>",
+          "example": "无",
+          "member": "PartnerLicenseData",
+          "name": "LicenseData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 的激活模式</p>枚举值：<ul><li> immediate ： 立即激活</li><li> scheduled： 指定时间激活</li></ul>",
+          "example": "scheduled",
+          "member": "string",
+          "name": "ActivateMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>激活时间，指定时间激活时需要传该字段</p>",
+          "example": "2026-01-15T15:15:00+08:00",
+          "member": "datetime_iso",
+          "name": "ActivateAt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IssueLicenseResponse": {
+      "document": "IssueLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "License": {
       "document": "表示应用实例的软件授权，包含颁发信息、激活信息等内容。",
       "members": [
         {
           "disabled": false,
-          "document": "License ID",
+          "document": "<p>License ID</p>",
           "example": "LICENSE_CLOUDAPP_A95275D8",
           "member": "string",
           "name": "LicenseId",
@@ -30,7 +196,7 @@
         },
         {
           "disabled": false,
-          "document": "软件授权模式。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>Permanent</td><td>永久授权。该授权不受有效期限制。</td></tr><tr><td>Subscription</td><td>订阅授权。授权如果过了有效期，则会进入过期状态。</td></tr><tr><td>Accept</td><td>验收期授权。用于需要验收的软件处于验收期间的授权，授权如果过了验收有效期，则会进入过期状态。</td></tr></tbody></table>",
+          "document": "<p>软件授权模式。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>Permanent</td><td>永久授权。该授权不受有效期限制。</td></tr><tr><td>Subscription</td><td>订阅授权。授权如果过了有效期，则会进入过期状态。</td></tr><tr><td>Accept</td><td>验收期授权。用于需要验收的软件处于验收期间的授权，授权如果过了验收有效期，则会进入过期状态。</td></tr></tbody></table></p>",
           "example": "Subscription",
           "member": "string",
           "name": "LicenseMode",
@@ -40,7 +206,7 @@
         },
         {
           "disabled": false,
-          "document": "软件的授权状态。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>Issued</td><td>已颁发，等待激活。一般来说，如果软件已经在运行，不会出现该状态。</td></tr><tr><td>Active</td><td>授权在有效期内，这是软件运行期间最常见的状态。</td></tr><tr><td>Expired</td><td>授权已过期。订阅类的软件授权有有效期，如果服务器时间已晚于有效期，则会进入过期状态。</td></tr><tr><td>Isolated</td><td>授权已隔离。有截止日期的授权，当用户授权到期时，先进入此状态，用户可以去续费，超过7天不续费则授权进入Destroyed状态。</td></tr><tr><td>Destroyed</td><td>授权已失效/销毁。用户如果退货软件，则授权会自动失效。</td></tr></tbody></table>",
+          "document": "<p>软件的授权状态。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>Issued</td><td>已颁发，等待激活。一般来说，如果软件已经在运行，不会出现该状态。</td></tr><tr><td>Active</td><td>授权在有效期内，这是软件运行期间最常见的状态。</td></tr><tr><td>Expired</td><td>授权已过期。订阅类的软件授权有有效期，如果服务器时间已晚于有效期，则会进入过期状态。</td></tr><tr><td>Isolated</td><td>授权已隔离。有截止日期的授权，当用户授权到期时，先进入此状态，用户可以去续费，超过7天不续费则授权进入Destroyed状态。</td></tr><tr><td>Destroyed</td><td>授权已失效/销毁。用户如果退货软件，则授权会自动失效。</td></tr></tbody></table></p>",
           "example": "Active",
           "member": "string",
           "name": "LicenseStatus",
@@ -50,7 +216,7 @@
         },
         {
           "disabled": false,
-          "document": "软件供应方 ID。",
+          "document": "<p>软件供应方 ID。</p>",
           "example": "1000",
           "member": "uint64",
           "name": "ProviderId",
@@ -60,7 +226,7 @@
         },
         {
           "disabled": false,
-          "document": "软件包 ID。",
+          "document": "<p>软件包 ID。</p>",
           "example": "pkg-kby01bv4",
           "member": "string",
           "name": "SoftwarePackageId",
@@ -70,7 +236,7 @@
         },
         {
           "disabled": false,
-          "document": "软件包版本。",
+          "document": "<p>软件包版本。</p>",
           "example": "1.0.0",
           "member": "string",
           "name": "SoftwarePackageVersion",
@@ -80,7 +246,7 @@
         },
         {
           "disabled": false,
-          "document": "被授权的用户 UIN。",
+          "document": "<p>被授权的用户 UIN。</p>",
           "example": "100008888888",
           "member": "string",
           "name": "AuthorizedUserUin",
@@ -90,7 +256,7 @@
         },
         {
           "disabled": false,
-          "document": "被授权的应用实例 ID。",
+          "document": "<p>被授权的应用实例 ID。</p>",
           "example": "cloudapp-95t785d8",
           "member": "string",
           "name": "AuthorizedCloudappId",
@@ -100,7 +266,7 @@
         },
         {
           "disabled": false,
-          "document": "被授权的角色 ID。",
+          "document": "<p>被授权的角色 ID。</p>",
           "example": "4000008000060000",
           "member": "string",
           "name": "AuthorizedCloudappRoleId",
@@ -110,7 +276,7 @@
         },
         {
           "disabled": false,
-          "document": "被授权的软件规格，具体字段请参考结构SaleParam",
+          "document": "<p>被授权的软件规格，具体字段请参考结构SaleParam</p>",
           "example": "无",
           "member": "SaleParam",
           "name": "AuthorizedSpecification",
@@ -120,7 +286,7 @@
         },
         {
           "disabled": false,
-          "document": "被授权的软件的计费模式。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>1</td><td>线上计费，软件的授权从腾讯云线上购买，支持续费、退款等操作。</td></tr><tr><td>2</td><td>线下计费，软件的授权线下签订合同购买，定向客户交付，无法从线上续费和退款。</td></tr><tr><td>4</td><td>免费</td></tr></tbody></table>",
+          "document": "<p>被授权的软件的计费模式。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>1</td><td>线上计费，软件的授权从腾讯云线上购买，支持续费、退款等操作。</td></tr><tr><td>2</td><td>线下计费，软件的授权线下签订合同购买，定向客户交付，无法从线上续费和退款。</td></tr><tr><td>4</td><td>免费</td></tr></tbody></table></p>",
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
@@ -130,7 +296,7 @@
         },
         {
           "disabled": false,
-          "document": "授权时长（单位由LifeSpanUnit确定，枚举值有Y年/M月/D日三种）",
+          "document": "<p>授权时长（单位由LifeSpanUnit确定，枚举值有Y年/M月/D日三种）</p>",
           "example": "1",
           "member": "int64",
           "name": "LifeSpan",
@@ -140,7 +306,7 @@
         },
         {
           "disabled": false,
-          "document": "授权颁发时间。",
+          "document": "<p>授权颁发时间。</p>",
           "example": "2024-06-29T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "IssueDate",
@@ -150,7 +316,7 @@
         },
         {
           "disabled": false,
-          "document": "授权激活时间，如从未激活则返回 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权激活时间，如从未激活则返回 null。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-06-30T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "ActivationDate",
@@ -160,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "授权过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-06-30T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpirationDate",
@@ -170,7 +336,7 @@
         },
         {
           "disabled": false,
-          "document": "授权时长单位，枚举值有Y年/M月/D日三种",
+          "document": "<p>授权时长单位，枚举值有Y年/M月/D日三种</p>",
           "example": "Y",
           "member": "string",
           "name": "LifeSpanUnit",
@@ -180,7 +346,7 @@
         },
         {
           "disabled": false,
-          "document": "授权的类型：Standard正式版/Development开发版/Trial体验版",
+          "document": "<p>授权的类型：Standard正式版/Development开发版/Trial体验版</p>",
           "example": "Standard",
           "member": "string",
           "name": "LicenseType",
@@ -190,16 +356,123 @@
         },
         {
           "disabled": false,
-          "document": "授权的层级：Master 主授权；Child 子授权/增强型授权",
+          "document": "<p>授权的层级：Master 主授权；Child 子授权/增强型授权</p>",
           "example": "Master",
           "member": "string",
           "name": "LicenseLevel",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 内容信息</p>",
+          "example": "无",
+          "member": "LicenseData",
+          "name": "LicenseData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 颁发地址</p>",
+          "example": "http://127.0.0.1/license/issuing",
+          "member": "string",
+          "name": "IssueURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品供应商 UIN</p>",
+          "example": "700002335211",
+          "member": "string",
+          "name": "ProviderUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 创建来源 ID</p>",
+          "example": "ordersn:11:1",
+          "member": "string",
+          "name": "CreateSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "LicenseData": {
+      "document": "License 内容信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>License 文本内容。支持密钥、证书等文本形式，二进制的密钥需要伙伴进行 base64 转码</p>",
+          "example": "dszxczxc-zcx-cx--xc-zcx--",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署服务输出信息，基于部署签发 License 时需要该参数。</p>",
+          "example": "{\"output\":\"deploy.data\"}",
+          "member": "string",
+          "name": "DeploymentOutput",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 前端展示信息。key、value 形式，比如可传入，颁发机构：XXXX 有限公司</p>",
+          "example": "无",
+          "member": "DisplayMetadata",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PartnerLicenseData": {
+      "document": "License 内容信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>License 文本内容。可传入密钥、证书等文本型 License 内容，二进制内容请进行 base64 编码</p>",
+          "example": "121212",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>License 的额外信息，JSON 字符串格式</p>",
+          "example": "{\"aaaa\":!111}",
+          "member": "string",
+          "name": "ExtraData",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SaleParam": {
       "document": "表示商品 SKU 的单个售卖参数",
@@ -225,6 +498,28 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数 Id",
+          "example": "PARAM_BHFHICABHI3452",
+          "member": "string",
+          "name": "ParamId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值 Id",
+          "example": "PARAM_BHFHICABHI0423",
+          "member": "string",
+          "name": "ParamValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -258,6 +553,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模块ID",
+          "example": "PARAM_BHFHICABHI000",
+          "member": "string",
+          "name": "ModuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块key",
+          "example": "phone",
+          "member": "string",
+          "name": "ModuleKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块名称",
+          "example": "手机模块",
+          "member": "string",
+          "name": "ModuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

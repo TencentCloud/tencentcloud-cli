@@ -16,7 +16,7 @@ tccli wedata DescribeInstanceList --cli-unfold-argument  \
     --SortCol name \
     --TaskTypeList 0 \
     --StateList 0 \
-    --Keyword 123
+    --Keyword 12e3
 ```
 
 Output: 
@@ -26,11 +26,11 @@ Output:
         "Data": "true",
         "InstanceList": [
             {
-                "CostTime": "1234",
+                "CostTime": "12634",
                 "CurRunDate": "2022-04-10 19:38:37",
                 "CycleType": "2",
                 "DoFlag": 0,
-                "InCharge": "1231",
+                "InCharge": "12131",
                 "LastLog": "LastLog",
                 "SchedulerDesc": "descripe",
                 "StartTime": "2022-04-10 19:38:37",

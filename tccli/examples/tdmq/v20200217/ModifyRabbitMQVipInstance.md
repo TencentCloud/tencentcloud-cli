@@ -1,21 +1,21 @@
-**Example 1: 修改RabbitMQ专享版实例**
+**Example 1: 修改 RabbitMQ 专享版实例**
 
-修改RabbitMQ专享版实例
+
 
 Input: 
 
 ```
 tccli tdmq ModifyRabbitMQVipInstance --cli-unfold-argument  \
-    --InstanceId amqp-jero744g \
-    --Remark 生产使用集群
+    --InstanceId amqp-44ordrrj \
+    --ClusterName 生产实例名称
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0",
-        "InstanceId": "amqp-jero744g"
+        "InstanceId": "amqp-44ordrrj",
+        "RequestId": "47638f78-d85a-46aa-a43d-59db21bc7c72"
     }
 }
 ```

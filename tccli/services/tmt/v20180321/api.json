@@ -110,6 +110,34 @@
       ],
       "usage": "out"
     },
+    "Coord": {
+      "document": "坐标详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "X坐标",
+          "example": "10",
+          "member": "int64",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Y坐标",
+          "example": "10",
+          "member": "int64",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FileTranslateRequest": {
       "document": "FileTranslate请求参数结构体",
       "members": [
@@ -343,7 +371,7 @@
         },
         {
           "disabled": false,
-          "document": "目标语言，支持语言列表：\n\n- 中文：zh\n- 繁体（台湾）：zh-TW\n- 繁体（香港）：zh-HK\n- 英文：en\n- 日语：ja\n- 韩语：ko\n- 泰语：th\n- 越南语：vi\n- 俄语：ru\n- 德语：de\n- 法语：fr\n- 阿拉伯语：ar\n- 西班牙语：es\n- 意大利语：it\n- 印度尼西亚语：id\n- 马来西亚语：ms\n- 葡萄牙语：pt\n- 土耳其语：tr\n- ",
+          "document": "目标语言，支持语言列表：\n\n- 中文：zh\n- 繁体（中国台湾）：zh-TW\n- 繁体（中国香港）：zh-HK\n- 英文：en\n- 日语：ja\n- 韩语：ko\n- 泰语：th\n- 越南语：vi\n- 俄语：ru\n- 德语：de\n- 法语：fr\n- 阿拉伯语：ar\n- 西班牙语：es\n- 意大利语：it\n- 印度尼西亚语：id\n- 马来西亚语：ms\n- 葡萄牙语：pt\n- 土耳其语：tr\n- ",
           "example": "en",
           "member": "string",
           "name": "Target",
@@ -418,7 +446,7 @@
         {
           "disabled": false,
           "document": "逆时针图片角度，取值范围为0-359",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "Angle",
           "output_required": false,
@@ -428,7 +456,7 @@
         {
           "disabled": false,
           "document": "翻译详情信息",
-          "example": "[{\"BoundingBox\":{\"Height\":26,\"Width\":240,\"X\":532,\"Y\":53},\"LineHeight\":23,\"LinesCount\":1,\"SourceLineText\":\"你好\",\"TargetLineText\":\"hello\"}]",
+          "example": "无",
           "member": "TransDetail",
           "name": "TransDetails",
           "output_required": false,
@@ -667,6 +695,45 @@
         }
       ],
       "type": "object"
+    },
+    "RotateParagraphRect": {
+      "document": "段落文本旋转信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "段落文本坐标",
+          "example": "无",
+          "member": "Coord",
+          "name": "Coord",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旋转角度",
+          "example": "1.0",
+          "member": "float",
+          "name": "TiltAngle",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "段落文本信息是否有效",
+          "example": "true",
+          "member": "bool",
+          "name": "Valid",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SpeechTranslateRequest": {
       "document": "SpeechTranslate请求参数结构体",
@@ -1131,7 +1198,7 @@
         {
           "disabled": false,
           "document": "段落文本框位置",
-          "example": "{           \"Height\": 26,           \"Width\": 356,           \"X\": 527,           \"Y\": 25         }",
+          "example": "无",
           "member": "BoundingBox",
           "name": "BoundingBox",
           "output_required": false,
@@ -1166,6 +1233,16 @@
           "name": "SpamCode",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "段落文本旋转信息，只在valid为true时表示坐标有效",
+          "example": "无",
+          "member": "RotateParagraphRect",
+          "name": "RotateParagraphRect",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

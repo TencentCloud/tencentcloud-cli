@@ -11,7 +11,7 @@ tccli organization ListRoleAssignments --cli-unfold-argument  \
     --MaxResults 30 \
     --NextToken  \
     --TargetType MemeberUin \
-    --TargetUin 10000238922 \
+    --TargetUin 10000000002 \
     --PrincipalType User \
     --PrincipalId u-ss342md**
 ```
@@ -28,7 +28,7 @@ Output:
             {
                 "RoleConfigurationId": "ec-swidn****",
                 "RoleConfigurationName": "conf1",
-                "TargetUin": 100000322,
+                "TargetUin": 10000000002,
                 "TargetType": "MemberUin",
                 "TargetName": "user1",
                 "PrincipalId": "u-ssiisn***",

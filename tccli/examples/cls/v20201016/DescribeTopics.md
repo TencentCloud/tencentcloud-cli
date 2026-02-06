@@ -18,6 +18,7 @@ Output:
         "Topics": [
             {
                 "AssumerName": "",
+                "AssumerUin": 0,
                 "AutoSplit": true,
                 "BizType": 0,
                 "CreateTime": "2024-12-26 19:28:55",
@@ -29,11 +30,13 @@ Output:
                 "HotPeriod": 0,
                 "Index": true,
                 "IsWebTracking": false,
+                "KeyId": "",
                 "LogsetId": "fd0605ca-xxxx-xxxx-xxxx-592e5233c2db",
                 "MaxSplitPartitions": 50,
                 "MigrationStatus": 0,
                 "PartitionCount": 1,
                 "Period": 1,
+                "RoleName": "",
                 "Status": true,
                 "StorageType": "hot",
                 "SubAssumerName": "",

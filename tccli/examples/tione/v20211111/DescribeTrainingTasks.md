@@ -24,64 +24,64 @@ Output:
     "Response": {
         "TrainingTaskSet": [
             {
-                "Id": "abc",
-                "Name": "abc",
-                "FrameworkName": "abc",
-                "FrameworkVersion": "abc",
-                "FrameworkEnvironment": "abc",
-                "ChargeType": "abc",
-                "ChargeStatus": "abc",
-                "ResourceGroupId": "abc",
+                "Id": "train-fd",
+                "Name": "testname",
+                "FrameworkName": "pytorch",
+                "FrameworkVersion": "v1",
+                "FrameworkEnvironment": "testenv",
+                "ChargeType": "PREPAID",
+                "ChargeStatus": "PAID",
+                "ResourceGroupId": "rsg-dfs",
                 "ResourceConfigInfos": [
                     {
-                        "Role": "abc",
+                        "Role": "worker",
                         "Cpu": 1,
                         "Memory": 1,
-                        "GpuType": "abc",
+                        "GpuType": "A100",
                         "Gpu": 1,
-                        "InstanceType": "abc",
+                        "InstanceType": "instype-a",
                         "InstanceNum": 1,
-                        "InstanceTypeAlias": "abc",
+                        "InstanceTypeAlias": "instype-ab",
                         "RDMAConfig": {
                             "Enable": true
                         }
                     }
                 ],
-                "TrainingMode": "abc",
-                "Status": "abc",
+                "TrainingMode": "DDP",
+                "Status": "RUNNING",
                 "RuntimeInSeconds": 1,
-                "CreateTime": "abc",
-                "StartTime": "abc",
-                "EndTime": "abc",
+                "CreateTime": "2025-11-21 00:00:00",
+                "StartTime": "2025-11-21 00:00:00",
+                "EndTime": "2025-11-21 01:00:00",
                 "Output": {
-                    "Bucket": "abc",
-                    "Region": "abc",
+                    "Bucket": "testbucket",
+                    "Region": "ap-nanjing",
                     "Paths": [
-                        "abc"
+                        "/"
                     ]
                 },
-                "FailureReason": "abc",
-                "UpdateTime": "abc",
-                "BillingInfo": "abc",
-                "ResourceGroupName": "abc",
+                "FailureReason": "",
+                "UpdateTime": "2025-11-21 00:00:00",
+                "BillingInfo": "",
+                "ResourceGroupName": "rsg-fsdf",
                 "ImageInfo": {
-                    "ImageType": "abc",
-                    "ImageUrl": "abc",
-                    "RegistryRegion": "abc",
-                    "RegistryId": "abc"
+                    "ImageType": "TCR",
+                    "ImageUrl": "image/url",
+                    "RegistryRegion": "ap-nanjing",
+                    "RegistryId": "tcr-234"
                 },
-                "Message": "abc",
+                "Message": "test message",
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key",
+                        "TagValue": "value"
                     }
                 ],
-                "CallbackUrl": "abc"
+                "CallbackUrl": "callback/url"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "fdsljfl-dfsafds-xxf"
     }
 }
 ```

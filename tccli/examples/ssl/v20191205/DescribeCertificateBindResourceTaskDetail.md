@@ -1,4 +1,4 @@
-**Example 1: 证书关联云资源详情**
+**Example 1: 查询证书绑定的云资源**
 
 
 
@@ -6,246 +6,206 @@ Input:
 
 ```
 tccli ssl DescribeCertificateBindResourceTaskDetail --cli-unfold-argument  \
-    --TaskId 758439 \
-    --Limit 0 \
-    --Offset 10
+    --TaskId 37710177
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CLB": [
+        "APIGATEWAY": [
             {
+                "Error": "",
+                "InstanceList": [],
                 "Region": "ap-guangzhou",
-                "InstanceList": [
-                    {
-                        "LoadBalancerId": "lb-*****",
-                        "LoadBalancerName": "lb-zrh",
-                        "Listeners": [
-                            {
-                                "ListenerId": "lbl-*****",
-                                "ListenerName": "lb-zrh",
-                                "SniSwitch": 1,
-                                "Protocol": "https",
-                                "Certificate": {
-                                    "CertId": "T***jdj",
-                                    "DnsNames": [
-                                        "www.test.com"
-                                    ],
-                                    "CertCaId": "T***jdj",
-                                    "SSLMode": "mutual"
-                                },
-                                "Rules": [
-                                    {
-                                        "LocationId": "/test",
-                                        "Domain": "www.test.com",
-                                        "IsMatch": true,
-                                        "Certificate": {
-                                            "CertId": "hr***jdj",
-                                            "DnsNames": [
-                                                "www.test.com"
-                                            ],
-                                            "CertCaId": "hr***jdj",
-                                            "SSLMode": "mutual"
-                                        },
-                                        "NoMatchDomains": [
-                                            "www.test2.com"
-                                        ]
-                                    }
-                                ],
-                                "NoMatchDomains": [
-                                    "www.test2.com"
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "TotalCount": 1,
-                "Error": ""
+                "TotalCount": 0
             }
         ],
         "CDN": [
             {
-                "TotalCount": 1,
-                "InstanceList": [
-                    {
-                        "Domain": "www.test.com",
-                        "CertId": "T***jdj",
-                        "Status": "online",
-                        "HttpsBillingSwitch": "on"
-                    }
-                ],
-                "Error": ""
+                "Error": "",
+                "InstanceList": [],
+                "TotalCount": 0
             }
         ],
-        "WAF": [
+        "CLB": [
             {
+                "Error": "",
+                "InstanceList": [],
                 "Region": "ap-guangzhou",
-                "InstanceList": [
-                    {
-                        "Domain": "www.test.com",
-                        "CertId": "T***jdj",
-                        "Keepalive": 1
-                    }
-                ],
-                "TotalCount": 1,
-                "Error": ""
+                "TotalCount": 0
             }
         ],
+        "COS": [
+            {
+                "Error": "",
+                "InstanceList": [],
+                "Region": "ap-nanjing",
+                "TotalCount": 0
+            }
+        ],
+        "CacheTime": "2025-12-12 15:42:46",
         "DDOS": [
             {
-                "TotalCount": 1,
+                "Error": "",
+                "InstanceList": [],
+                "TotalCount": 0
+            }
+        ],
+        "GAAP": [
+            {
+                "Error": "",
                 "InstanceList": [
                     {
-                        "Domain": "www.test.com",
-                        "InstanceId": "ddos-*****",
-                        "Protocol": "https",
-                        "CertId": "T***jdj",
-                        "VirtualPort": "443"
+                        "InstanceId": "ga-9ri8fhos",
+                        "InstanceName": "ssltest",
+                        "ListenerList": [
+                            {
+                                "CertIdList": [
+                                    "TVPV0B8A"
+                                ],
+                                "ListenerId": "lsr-g1f9fth1",
+                                "ListenerName": "ssl",
+                                "ListenerStatus": "ACTIVE",
+                                "NoMatchDomains": [
+                                    "xinge-test-2020112002.cn"
+                                ],
+                                "Protocol": "HTTPS"
+                            }
+                        ]
                     }
                 ],
-                "Error": ""
+                "TotalCount": 1
             }
         ],
         "LIVE": [
             {
-                "TotalCount": 1,
-                "InstanceList": [
-                    {
-                        "Domain": "www.test.com",
-                        "CertId": "T***jdj",
-                        "Status": 0
-                    }
-                ],
-                "Error": ""
+                "Error": "",
+                "InstanceList": [],
+                "TotalCount": 0
             }
         ],
-        "VOD": [
+        "MQTT": [
             {
+                "Error": "",
                 "InstanceList": [
                     {
-                        "Domain": "www.test.com",
-                        "CertId": "T***jdj"
-                    }
-                ],
-                "TotalCount": 1,
-                "Error": ""
-            }
-        ],
-        "TKE": [
-            {
-                "Region": "ap-guangzhou",
-                "InstanceList": [
-                    {
-                        "ClusterId": "cls-***",
-                        "ClusterName": "zrh",
-                        "NamespaceList": [
-                            {
-                                "Name": "zrh",
-                                "SecretList": [
-                                    {
-                                        "Name": "secret-***",
-                                        "CertId": "T***jdj",
-                                        "IngressList": [
-                                            {
-                                                "IngressName": "ins-****",
-                                                "TlsDomains": [
-                                                    "www.test.com"
-                                                ],
-                                                "Domains": [
-                                                    "www.test.com"
-                                                ]
-                                            }
-                                        ],
-                                        "NoMatchDomains": [
-                                            "www.test2.com"
-                                        ]
-                                    }
-                                ]
-                            }
+                        "CaCertIdList": [
+                            "QmRR1PkY"
                         ],
-                        "ClusterType": "tke",
-                        "ClusterVersion": "1.16"
+                        "InstanceId": "mqtt-9xgzvm2g",
+                        "InstanceName": "ssl",
+                        "InstanceStatus": "RUNNING",
+                        "NoMatchDomains": [
+                            "xinge-test-2020112002.cn"
+                        ],
+                        "ServerCertIdList": [
+                            "N6MDRovP"
+                        ]
                     }
                 ],
-                "TotalCount": 1,
-                "Error": ""
+                "Region": "ap-guangzhou",
+                "TotalCount": 1
             }
         ],
-        "APIGATEWAY": [
+        "SCF": [
             {
-                "Region": "ap-guangzhou",
+                "Error": "",
                 "InstanceList": [
                     {
-                        "ServiceId": "service-*****",
-                        "ServiceName": "svc-zrh",
-                        "Domain": "www.test.com",
-                        "CertId": "T***jdj",
-                        "Protocol": "https"
+                        "CertificateId": "TVPV0B8A",
+                        "Domain": "xinge-test-2020112002.cn",
+                        "Protocol": "HTTP&HTTPS",
+                        "Region": "ap-guangzhou"
                     }
                 ],
-                "TotalCount": 1,
-                "Error": ""
+                "Region": "ap-guangzhou",
+                "TotalCount": 1
             }
         ],
+        "Status": 1,
         "TCB": [
             {
-                "Region": "ap-guangzhou",
-                "Error": "",
                 "Environments": [
                     {
-                        "Environment": {
-                            "ID": "TCB-*****",
-                            "Source": "cdn",
-                            "Name": "test-*****",
-                            "Status": "online"
-                        },
                         "AccessService": {
-                            "InstanceList": [
-                                {
-                                    "Domain": "www.test.com",
-                                    "Status": 0,
-                                    "UnionStatus": 0,
-                                    "IsPreempted": true,
-                                    "ICPStatus": 0,
-                                    "OldCertificateId": "jd***jdj"
-                                }
-                            ],
+                            "InstanceList": [],
                             "TotalCount": 0
                         },
+                        "Environment": {
+                            "ID": "dns-ssl-8gdfg2h1ff43c5ab",
+                            "Name": "dns-ssl",
+                            "Source": "qcloud",
+                            "Status": "NORMAL"
+                        },
                         "HostService": {
-                            "InstanceList": [
-                                {
-                                    "Domain": "www.test.com",
-                                    "Status": "online",
-                                    "DNSStatus": "online",
-                                    "OldCertificateId": "jd***jdj"
-                                }
-                            ],
+                            "InstanceList": [],
                             "TotalCount": 0
                         }
                     }
-                ]
+                ],
+                "Error": "",
+                "Region": "ap-guangzhou"
+            }
+        ],
+        "TDMQ": [
+            {
+                "Error": "",
+                "InstanceList": [
+                    {
+                        "CaCertId": "RDU0LL2y",
+                        "CertId": "TVPV0B8A",
+                        "InstanceId": "amqp-7dx2ozor",
+                        "InstanceName": "ssl",
+                        "InstanceStatus": "HEALTHY",
+                        "NoMatchDomains": [
+                            "xinge-test-2020112002.cn"
+                        ]
+                    }
+                ],
+                "Region": "ap-guangzhou",
+                "TotalCount": 1
             }
         ],
         "TEO": [
             {
-                "InstanceList": [
-                    {
-                        "Host": "www.test.com",
-                        "CertId": "T***jdj",
-                        "ZoneId": "zone-*****",
-                        "Status": "online"
-                    }
-                ],
-                "TotalCount": 1,
-                "Error": ""
+                "Error": "",
+                "InstanceList": [],
+                "TotalCount": 0
             }
         ],
-        "Status": 1,
-        "CacheTime": "2023-10-12 12:00:00",
-        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
+        "TKE": [
+            {
+                "Error": "",
+                "InstanceList": [],
+                "Region": "ap-guangzhou-lwy-cft",
+                "TotalCount": 0
+            }
+        ],
+        "TSE": [
+            {
+                "Error": "",
+                "InstanceList": [],
+                "Region": "ap-guangzhou",
+                "TotalCount": 0
+            }
+        ],
+        "VOD": [
+            {
+                "Error": "",
+                "InstanceList": [],
+                "TotalCount": 0
+            }
+        ],
+        "WAF": [
+            {
+                "Error": "",
+                "InstanceList": [],
+                "Region": "ap-guangzhou",
+                "TotalCount": 0
+            }
+        ],
+        "RequestId": "c1fc42bb-93b5-405b-81a8-75625bd56195"
     }
 }
 ```

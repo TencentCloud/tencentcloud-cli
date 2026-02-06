@@ -55,12 +55,12 @@ Output:
                 "Tenant": {},
                 "Tags": [
                     {
-                        "Key": "test",
-                        "Value": "示例"
+                        "Key": "运营产品",
+                        "Value": "数据库"
                     }
                 ],
                 "Security": [
-                    "test"
+                    "sg-xxxxxxx"
                 ]
             }
         ],

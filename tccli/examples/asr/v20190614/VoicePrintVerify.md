@@ -1,15 +1,15 @@
-**Example 1: 说话人验证**
+**Example 1: 说话人认证**
 
-验证音频和说话人id是否一致
+
 
 Input: 
 
 ```
 tccli asr VoicePrintVerify --cli-unfold-argument  \
-    --VoiceFormat 0 \
+    --VoiceFormat 1 \
     --SampleRate 16000 \
-    --VoicePrintId KJHGUGKGGGFGYFVDA \
-    --Data UklGRiRTBwBXQVZFZm10IBAA
+    --VoicePrintId 0928d167-dcd0-xxxx-85d303273a72 \
+    --AudioUrl https://xxxx-test-xxxx.cos.ap-nanjing.myqcloud.com/%E5%A3%BxxxxE6%95%B0%E6%8D%AE/test.wav
 ```
 
 Output: 
@@ -17,11 +17,11 @@ Output:
 {
     "Response": {
         "Data": {
-            "VoicePrintId": "KJHGUG****GGFGYFVDA",
-            "Score": "60.0",
-            "Decision": 1
+            "Decision": 1,
+            "Score": "100.0",
+            "VoicePrintId": "0928d167-dcd0-xxxx-9465-85d303273a72"
         },
-        "RequestId": "dasdasdadsdas*****dasdada"
+        "RequestId": "be2ce6ff-b1ab-xxxx-9c17-876a73d6f56f"
     }
 }
 ```

@@ -18,7 +18,7 @@ Output:
     "Response": {
         "Data": {
             "Score": "100.0",
-            "Decision": "1"
+            "Decision": 1
         },
         "RequestId": "dsadasdasdasdasad"
     }

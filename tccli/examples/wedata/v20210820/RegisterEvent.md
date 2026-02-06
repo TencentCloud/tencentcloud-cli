@@ -1,21 +1,21 @@
-**Example 1: 注册事件**
+**Example 1: 成功示例**
 
-注册事件
+成功示例
 
 Input: 
 
 ```
 tccli wedata RegisterEvent --cli-unfold-argument  \
-    --ProjectId 1492511691706699776 \
-    --Name test_event_11 \
-    --EventType TIME_SERIES \
+    --ProjectId 1460947878944567296 \
+    --Name xxxxx2 \
     --EventSubType DAY \
-    --EventBroadcastType SINGLE \
+    --EventBroadcastType BROADCAST \
+    --TimeUnit DAYS \
+    --Owner jaydenjhu \
+    --EventType TIME_SERIES \
     --DimensionFormat yyyyMMdd \
     --TimeToLive 30 \
-    --TimeUnit DAYS \
-    --Owner micofywang \
-    --Description test
+    --Description ffdsafasdf
 ```
 
 Output: 
@@ -27,7 +27,7 @@ Output:
             "ErrorId": null,
             "Result": true
         },
-        "RequestId": "d43d2a97-0522-4917-a471-dbc0a8b3c318"
+        "RequestId": "ff9b1b3e-bf16-45d0-ac93-ab093dc2db8c"
     }
 }
 ```

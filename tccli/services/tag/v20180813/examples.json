@@ -185,7 +185,7 @@
     "GetTagKeys": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTagKeys\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"oaWvQ5SFPGhUtWMA3LKTKgryBtKrDB215AUhaE**********\",\n    \"MaxResults\": \"10\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTagKeys\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"oaWvQ5SFPGhUtWMA3LKTKgryBtKrDB215AUhaE**********\",\n    \"MaxResults\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"kF-AjkqVQoB_9GwaBebsjvXudAjBadBTakA1WqPbwR66KjGE0INYQhQ**********\",\n        \"TagKeys\": [\n            \"testKey1\",\n            \"testKey2\"\n        ],\n        \"RequestId\": \"104eeaa2-c268-43e5-b073-0fade*******\"\n    }\n}",
         "title": "查询标签键列表"
       }
@@ -193,7 +193,7 @@
     "GetTagValues": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTagValues\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"CvHxL9Up8UzmIeLZKL-pSEjfF0aDNyMkn5kyTyn2M*********\",\n    \"TagKeys\": [\n        \"key1\"\n    ],\n    \"MaxResults\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTagValues\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"CvHxL9Up8UzmIeLZKL-pSEjfF0aDNyMkn5kyTyn2M*********\",\n    \"TagKeys\": [\n        \"key1\"\n    ],\n    \"MaxResults\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"j5YP3W_BJau_FcWBKPPHzvDItG01rHqMuKyxW*********\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"value1\"\n            }\n        ],\n        \"RequestId\": \"7337c479-d89b-4c4c-be6d-c7*********\"\n    }\n}",
         "title": "查询标签值列表"
       }
@@ -201,7 +201,7 @@
     "GetTags": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTags\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"Ab9jDQQcwdAXTyU2IUabQzkIKltlrX19nJCB8MIuJD9Ck8*********\",\n    \"MaxResults\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTags\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"Ab9jDQQcwdAXTyU2IUabQzkIKltlrX19nJCB8MIuJD9Ck8*********\",\n    \"MaxResults\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"t1eWpVGSKbAxvaIwRPttZIQq-Eu7e2hWKvN5iMyULmtF*********\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"value1\"\n            },\n            {\n                \"TagKey\": \"key2\",\n                \"TagValue\": \"value2\"\n            }\n        ],\n        \"RequestId\": \"0ba573a8-0fdc-44eb-96d7-8f7f*********\"\n    }\n}",
         "title": "查询标签列表"
       }

@@ -6,20 +6,21 @@ Input:
 
 ```
 tccli wedata GetFileInfo --cli-unfold-argument  \
-    --ProjectId 1486804694126882816 \
-    --FilePath /datastudio/project/1486804694126882816/hui/111.sql
+    --ProjectId 1470547050521227264 \
+    --FilePath /datastudio/project/1470547050521227264/test.sql
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "915a8a1f-04d8-463c-9687-9bd3a696b7ce",
+        "RequestId": "b65844ce-b928-4c45-97c6-4c97505c98c9",
         "UserFileInfo": {
             "Bucket": "wedata-fusion-dev-1257305158",
-            "CreateTime": "2023-05-18 20:24:32",
+            "CreateTime": "2025-08-08 11:34:54",
             "DeleteName": null,
             "DeleteOwner": null,
+            "EncodeExtraInfo": "eyJEYXRhc291cmNlVHlwZSI6IkhJVkUiLCJEYXRhc291cmNlSWQiOjYxNTIzLCJHcm91cElkIjoiMjAyNDAyMjIyMTI3MTk4MzM3NDMiLCJSZXNvdXJjZVF1ZXVlIjoiIiwiQ29tcHV0ZVJlc291cmNlIjoiIiwiRGF0YWJhc2VOYW1lIjoiIiwiQ29uZlBhcmFtcyI6eyJSZXNvdXJjZUNvbmZQYXJhbXMiOnt9fSwiQ29tcHV0ZVJlc291cmNlVHlwZSI6IiJ9",
             "ExtraInfo": [
                 {
                     "ParamKey": "DatasourceType",
@@ -27,15 +28,15 @@ Output:
                 },
                 {
                     "ParamKey": "DatasourceId",
-                    "ParamValue": "8445"
+                    "ParamValue": "61523"
                 },
                 {
                     "ParamKey": "GroupId",
-                    "ParamValue": ""
+                    "ParamValue": "20240222212719833743"
                 },
                 {
                     "ParamKey": "ResourceQueue",
-                    "ParamValue": "root.default"
+                    "ParamValue": ""
                 },
                 {
                     "ParamKey": "ComputeResource",
@@ -48,25 +49,29 @@ Output:
                 {
                     "ParamKey": "ConfParams",
                     "ParamValue": "&&&ResourceConfParams=&&&}}"
+                },
+                {
+                    "ParamKey": "ComputeResourceType",
+                    "ParamValue": ""
                 }
             ],
             "FileExtensionType": "sql",
-            "FileName": "111.sql",
-            "LocalPath": "/datastudio/project/hui/111.sql",
+            "FileName": "test.sql",
+            "LocalPath": "/datastudio/project/test.sql",
             "LocalTempPath": null,
             "Md5Value": null,
-            "Operator": null,
-            "OperatorName": null,
-            "Owner": "100028579427",
-            "OwnerName": "hhhuilli",
-            "PathDepth": 4,
-            "ProjectId": "1486804694126882816",
+            "Operator": "100042680225",
+            "OperatorName": "jasonzcwang",
+            "Owner": "100042680225",
+            "OwnerName": "jasonzcwang",
+            "PathDepth": 3,
+            "ProjectId": "1470547050521227264",
             "Region": "ap-nanjing",
-            "RemotePath": "/datastudio/project/1486804694126882816/hui/111.sql",
-            "ResourceId": "3adddc91-21e2-494d-a207-1ee4c70d77f4",
+            "RemotePath": "/datastudio/project/1470547050521227264/test.sql",
+            "ResourceId": "42f78795-2c79-4507-9ce2-eb9d8e177d8e",
             "Size": null,
             "Type": "project",
-            "UpdateTime": "2023-05-18 20:25:55",
+            "UpdateTime": "2025-08-08 11:35:23",
             "ZipPath": null
         }
     }

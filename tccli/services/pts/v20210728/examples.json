@@ -51,8 +51,8 @@
     "CreateEnvironment": [
       {
         "document": "创建环境",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-123-xyz\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-1a2b3c4d\",\n    \"Name\": \"env-name\",\n    \"Description\": \"env-description\",\n    \"EnvVars\": [\n        {\n            \"Name\": \"name-1\",\n            \"Value\": \"value-1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-1a2b3c4d\",\n        \"RequestId\": \"abc-123-xyz\"\n    }\n}",
         "title": "创建环境"
       }
     ],

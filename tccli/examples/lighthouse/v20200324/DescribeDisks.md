@@ -35,6 +35,7 @@ Output:
                 "LatestOperationRequestId": "54118bb6-7206-43f7-bf53-b77a394ad51e",
                 "CreatedTime": "2021-08-25T08:50:57Z",
                 "ExpiredTime": "2021-10-28T09:11:37Z",
+                "Tags": [],
                 "IsolatedTime": null
             }
         ],

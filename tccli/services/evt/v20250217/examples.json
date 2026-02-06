@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "CompleteApproval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteApproval\n<公共请求参数>\n\n{\n    \"ApprovalId\": \"A202507150000000000000\",\n    \"NodeId\": \"AN202507150000000000000\",\n    \"Result\": 1,\n    \"Opinion\": \"通过\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a057f127-ee97-43fc-9b60-07cd420c1111\"\n    }\n}",
+        "title": "完成审批任务"
+      }
+    ],
+    "CreateRoleUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoleUser\n<公共请求参数>\n\n{\n    \"RoleSystemId\": 81764213873244,\n    \"UserId\": \"user\",\n    \"Username\": \"name\",\n    \"Enabled\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e56eec58-c446-44d0-917b-a0df066a4f50\",\n        \"UserId\": \"user\"\n    }\n}",
+        "title": "创建用户"
+      }
+    ],
+    "DeleteRoleUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleUser\n<公共请求参数>\n\n{\n    \"RoleSystemId\": 81761812481151,\n    \"UserId\": \"212121\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f7fff7b-d812-4779-891b-5f8385d3b433\"\n    }\n}",
+        "title": "删除自定义用户"
+      }
+    ],
+    "PutEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutEvent\n<公共请求参数>\n\n{\n    \"PluginId\": \"plugin-D*******\",\n    \"Data\": \"**\",\n    \"Source\": \"操作审计\",\n    \"TargetUin\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"76db4f4c-9d32-4156-87a6-32a6b7d0a4d9\"\n    }\n}",
+        "title": "推送事件"
+      }
+    ],
+    "PutMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"EventId\": \"event-sdiq\",\n    \"Data\": \"{\\\"testkey\\\":\\\"testvalue\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TicketId\": \"ticket-sydinq\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "推送消息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,30 +1,41 @@
-**Example 1: 获取账户余额示例**
+**Example 1: 查余额用例返回验证**
 
-
+查余额返回临时额度验证
 
 Input: 
 
 ```
-tccli billing DescribeAccountBalance --cli-unfold-argument ```
+tccli billing DescribeAccountBalance --cli-unfold-argument  \
+    --TempCredit True
+```
 
 Output: 
 ```
 {
     "Response": {
-        "Uin": "90961",
-        "RealBalance": 9647442,
-        "CashAccountBalance": 1299806668,
+        "Balance": 0,
+        "CashAccountBalance": 0,
+        "CreditAmount": 10000000000,
+        "CreditBalance": 10000000000,
+        "FreezeAmount": 0,
         "IncomeIntoAccountBalance": 0,
-        "PresentAccountBalance": 209512,
-        "FreezeAmount": 1290368738,
-        "OweAmount": 0,
-        "RequestId": "1323",
         "IsAllowArrears": true,
         "IsCreditLimited": true,
-        "Balance": -6188426,
-        "CreditAmount": 200,
-        "CreditBalance": -6188226,
-        "RealCreditBalance": -6188226
+        "OweAmount": 0,
+        "PresentAccountBalance": 0,
+        "RealBalance": 0,
+        "RealCreditBalance": 10000000000,
+        "TempAmountInfoList": [
+            {
+                "EndTime": "2026-11-16 00:00:00",
+                "StartTime": "2025-11-01 00:00:00",
+                "TempAmount": 200000,
+                "Uin": "600000561284"
+            }
+        ],
+        "TempCredit": 0,
+        "Uin": 600000561284,
+        "RequestId": "8590441d-6e17-4afe-8ca4-f75cec86e290"
     }
 }
 ```

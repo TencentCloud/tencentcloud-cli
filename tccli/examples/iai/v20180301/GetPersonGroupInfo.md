@@ -1,31 +1,4 @@
-**Example 1: 错误示例**
-
-人员ID不存在
-
-Input: 
-
-```
-tccli iai GetPersonGroupInfo --cli-unfold-argument  \
-    --PersonId 1002 \
-    --Offset 0 \
-    --Limit 10 \
-    --Version 2018-03-01
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.PersonIdNotExist",
-            "Message": "人员ID不存在。"
-        },
-        "RequestId": "98330f25-eb2e-432a-a30c-3830774210c1"
-    }
-}
-```
-
-**Example 2: 获取人员归属信息接口**
+**Example 1: 获取人员归属信息接口**
 
 
 
@@ -35,14 +8,14 @@ Input:
 tccli iai GetPersonGroupInfo --cli-unfold-argument  \
     --PersonId 2001 \
     --Offset 0 \
-    --Limit 10 \
-    --Version 2018-03-01
+    --Limit 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "GroupNum": 1,
         "PersonGroupInfos": [
             {
                 "GroupId": "ZhuYuanDormitoryNo1",
@@ -54,12 +27,13 @@ Output:
                 ]
             }
         ],
+        "FaceModelVersion": "3.0",
         "RequestId": "671f0a1d-2b35-47c4-b9d1-b18053f71a04"
     }
 }
 ```
 
-**Example 3: 获取人员归属信息接口-2**
+**Example 2: 获取人员归属信息接口-2**
 
 
 
@@ -69,14 +43,14 @@ Input:
 tccli iai GetPersonGroupInfo --cli-unfold-argument  \
     --PersonId 1001 \
     --Offset 0 \
-    --Limit 10 \
-    --Version 2018-03-01
+    --Limit 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "GroupNum": 1,
         "PersonGroupInfos": [
             {
                 "GroupId": "TencentShenZhenEmployee",
@@ -87,7 +61,34 @@ Output:
                 ]
             }
         ],
+        "FaceModelVersion": "3.0",
         "RequestId": "b7a505ad-4a85-42da-97b3-886c7999fb76"
+    }
+}
+```
+
+**Example 3: 错误示例**
+
+人员ID不存在
+
+Input: 
+
+```
+tccli iai GetPersonGroupInfo --cli-unfold-argument  \
+    --PersonId 1002 \
+    --Offset 0 \
+    --Limit 10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.PersonIdNotExist",
+            "Message": "人员ID不存在。"
+        },
+        "RequestId": "98330f25-eb2e-432a-a30c-3830774210c1"
     }
 }
 ```

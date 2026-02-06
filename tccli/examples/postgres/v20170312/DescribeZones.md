@@ -15,36 +15,36 @@ Output:
         "TotalCount": 3,
         "ZoneSet": [
             {
-                "Zone": "ap-guangzhou-2",
-                "ZoneName": "广州二区",
-                "ZoneId": 100002,
-                "ZoneState": "AVAILABLE",
-                "ZoneSupportIpv6": 0,
-                "StandbyZoneSet": [
-                    "ap-guangzhou-2",
-                    "ap-guangzhou-3"
-                ]
+                "StandbyZoneSet": null,
+                "Zone": "ap-guangzhou-1",
+                "ZoneId": 100001,
+                "ZoneName": "广州一区",
+                "ZoneState": "UNAVAILABLE",
+                "ZoneSupportIpv6": 0
             },
             {
-                "Zone": "ap-guangzhou-3",
-                "ZoneName": "广州三区",
-                "ZoneId": 100003,
-                "ZoneState": "AVAILABLE",
-                "ZoneSupportIpv6": 0,
                 "StandbyZoneSet": [
-                    "ap-guangzhou-2",
-                    "ap-guangzhou-3"
-                ]
+                    "ap-guangzhou-4",
+                    "ap-guangzhou-6",
+                    "ap-guangzhou-7"
+                ],
+                "Zone": "ap-guangzhou-7",
+                "ZoneId": 100007,
+                "ZoneName": "广州七区",
+                "ZoneState": "AVAILABLE",
+                "ZoneSupportIpv6": 0
             },
             {
+                "StandbyZoneSet": [
+                    "ap-guangzhou-4",
+                    "ap-guangzhou-6",
+                    "ap-guangzhou-7"
+                ],
                 "Zone": "ap-guangzhou-4",
-                "ZoneName": "广州四区",
                 "ZoneId": 100004,
+                "ZoneName": "广州四区",
                 "ZoneState": "AVAILABLE",
-                "ZoneSupportIpv6": 0,
-                "StandbyZoneSet": [
-                    "ap-guangzhou-4"
-                ]
+                "ZoneSupportIpv6": 0
             }
         ]
     }

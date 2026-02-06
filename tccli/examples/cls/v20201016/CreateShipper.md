@@ -18,6 +18,8 @@ tccli cls CreateShipper --cli-unfold-argument  \
     --FilterRules.0.Value 172.16 \
     --Partition /%Y/%m/%d/%H/ \
     --Compress.Format none \
+    --RoleArn  \
+    --ExternalId  \
     --Content.Format json \
     --Content.Json.EnableTag True \
     --Content.Json.MetaFields __SOURCE__ __FILENAME__ __HOSTNAME__ __TIMESTAMP__ \

@@ -23,7 +23,7 @@ Output:
 ```
 {
     "Response": {
-        "DealId": "crs-7xij3fjf",
+        "DealName": "20250825297021530591847",
         "InstanceIds": [
             "crs-7xij3fjf"
         ],
@@ -57,7 +57,7 @@ Output:
         "InstanceIds": [
             "crs-kic39axx"
         ],
-        "DealId": "crs-kic39axx"
+        "DealName": "20250825297021530591847"
     }
 }
 ```

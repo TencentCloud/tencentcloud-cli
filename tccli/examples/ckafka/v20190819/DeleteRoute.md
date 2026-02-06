@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnMessage": "ok",
+            "ReturnMessage": "success",
             "ReturnCode": "0",
             "Data": {
                 "FlowId": 0,

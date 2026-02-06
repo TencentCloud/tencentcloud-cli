@@ -27,7 +27,17 @@ Output:
     "Response": {
         "List": [
             {
+                "Description": "string",
+                "HandlingStatus": 0,
+                "HubName": "string",
                 "Id": 0,
+                "Keyword": "string",
+                "Name": "string",
+                "Remark": "string",
+                "RiskLevel": 0,
+                "Screenshot": "string",
+                "Source": "string",
+                "Suggestion": "string",
                 "Url": "string"
             }
         ],

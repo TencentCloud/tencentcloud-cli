@@ -186,14 +186,6 @@
         "title": "获取视频扩展信息"
       }
     ],
-    "DescribeCityWorkspaceList": [
-      {
-        "document": "成功返回示例",
-        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCityWorkspaceList\n<公共请求参数>\n\n{\n    \"AdministrativeCodeSet\": [\n        \"002\"\n    ],\n    \"ApplicationToken\": \"YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec9a85c9-b887-4481-a318-1c41f7d46733\",\n        \"Result\": {\n            \"WorkspaceSet\": [\n                {\n                    \"WorkspaceId\": 1016,\n                    \"ChineseName\": \"华南园区项目\",\n                    \"Description\": \"华南园区项目\",\n                    \"Status\": 0,\n                    \"ParkName\": \"园区简称\",\n                    \"ParkNum\": \"001\",\n                    \"AdministrativeDetailSet\": [\n                        {\n                            \"AdministrativeTypeCode\": \"QH01\",\n                            \"AdministrativeCode\": \"440000\",\n                            \"AdministrativeName\": \"广东省\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
-        "title": "通过行政区id获取项目空间信息"
-      }
-    ],
     "DescribeDeviceGroupList": [
       {
         "document": "测试环境demo",
@@ -516,7 +508,7 @@
       {
         "document": "成功响应",
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoRecordStream\n<公共请求参数>\n\n{\n    \"WID\": \"c0e3f641-6ec6-444e-8ac9-3cfecc755cb0\",\n    \"Protocol\": \"hls\",\n    \"StartTime\": 1693466137,\n    \"EndTime\": 1693466144,\n    \"PlayBackRate\": 1,\n    \"WorkspaceId\": 1016,\n    \"ApplicationToken\": \"wA9bELuI4oulQCBK876UDBxe00dNcxQW\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2beb0875-c859-4fde-a46e-5dbdf1421f14\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2beb0875-c859-4fde-a46e-5dbdf1421f14\",\n        \"Result\": {\n            \"FLV\": \"\",\n            \"HLS\": \"https://t-video.twins.tencent.com:443/hls1935/xxx\",\n            \"RAW\": {\n                \"IP\": \"\",\n                \"InnerIP\": \"\",\n                \"NATIP\": \"\",\n                \"Port\": 0,\n                \"SM4Vector\": \"\",\n                \"StreamEnKey\": \"\",\n                \"StreamToken\": \"\"\n            },\n            \"RTMP\": \"\",\n            \"Stream\": \"c0e3f641-6ec6-444e-8ac9-3cfecc755cb0_2beb0875\",\n            \"WebRTC\": \"\"\n        }\n    }\n}",
         "title": "历史流"
       }
     ],

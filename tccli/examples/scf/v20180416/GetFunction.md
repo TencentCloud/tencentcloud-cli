@@ -91,6 +91,7 @@ Output:
         "AsyncRunEnable": "FALSE",
         "TraceEnable": "FALSE",
         "ProtocolParams": null,
+        "InstanceConcurrencyConfig": null,
         "IntranetConfig": {
             "IpFixed": "DISABLE"
         },

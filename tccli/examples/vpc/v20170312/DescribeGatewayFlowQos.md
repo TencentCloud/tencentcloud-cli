@@ -18,7 +18,8 @@ Output:
                 "VpcId": "vpc-mrzkofih",
                 "IpAddress": "10.0.0.12",
                 "Bandwidth": 10,
-                "CreateTime": "2020-01-01 10:00:00"
+                "CreateTime": "2020-01-01 10:00:00",
+                "InBandwidth": 10
             }
         ],
         "TotalCount": 1,

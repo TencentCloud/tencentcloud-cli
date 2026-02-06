@@ -50,7 +50,7 @@
       "status": "online"
     },
     "ChannelCreateBatchSignUrl": {
-      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId。<font color=\"red\">请确保此OrganizationOpenId对应子客已经认证，且OpenId对应员工此子客下已经实名</font>。Name，Mobile, IdCard等信息此时可以不传，系统会查询此OpenId实名信息自动补充。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
+      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId，以及该员工的Name，Mobile等信息。如果此子客企业未认证，则除了上述参数之外，需要传递OrganizationName（子客企业名称）。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
       "input": "ChannelCreateBatchSignUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "ChannelCreateBatchSignUrlResponse",
@@ -288,7 +288,7 @@
       "status": "online"
     },
     "ChannelDescribeSignFaceVideo": {
-      "document": "该接口用于在使用视频认证方式签署合同后，获取用户的签署人脸认证视频。\n\n1. 该接口**仅适用于在H5端签署**的合同，**在通过视频认证后**获取认证的视频内容。\n2. 该接口**不支持小程序端**的签署认证的视频获取。\n3. 请在**签署完成后的三天内**获取视频，**过期后将无法获取**。\n\n**注意：该接口需要开通白名单，请联系客户经理开通后使用。**",
+      "document": "该接口用于在使用视频认证方式签署合同后，获取用户的签署人脸认证视频。\n\n1. 该接口**仅适用于在H5端签署**的合同，**在通过视频认证后**获取认证的视频内容。\n2. 该接口**不支持小程序端**的签署认证的视频获取。\n3. 请在**签署完成后的24小时内**获取视频，**过期后将无法获取**。\n\n**注意：该接口需要开通白名单，请联系客户经理开通后使用。**",
       "input": "ChannelDescribeSignFaceVideoRequest",
       "name": "查询签署认证人脸视频",
       "output": "ChannelDescribeSignFaceVideoResponse",
@@ -449,7 +449,7 @@
       "status": "online"
     },
     "CreateModifyAdminAuthorizationUrl": {
-      "document": "本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。\n\n注意:\n1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!授权书审核结果回调](https://qian.tencent.com/developers/partner/callback_types_staffs#%E5%9B%9B-%E6%8E%88%E6%9D%83%E4%B9%A6%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到",
+      "document": "本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。\n\n注意:\n1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!授权书失效回调](https://qian.tencent.com/developers/partner/callback_types_staffs#%E5%9B%9B-%E6%8E%88%E6%9D%83%E4%B9%A6%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到",
       "input": "CreateModifyAdminAuthorizationUrlRequest",
       "name": "生成变更超管授权书链接",
       "output": "CreateModifyAdminAuthorizationUrlResponse",
@@ -575,14 +575,14 @@
       "status": "online"
     },
     "DescribeUsage": {
-      "document": "此接口（DescribeUsage）用于获取此应用下子客企业的合同消耗数量。\n\n<font color=\"red\">此接口即将下线， 请使用新接口</font>  [查询渠道计费消耗情况](https://qian.tencent.com/developers/partnerApis/fee/ChannelDescribeBillUsageDetail)\n\n注: 此接口**每日限频50次**，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
+      "document": "此接口（DescribeUsage）用于获取此应用下子客企业的合同消耗数量。\n\n<font color=\"red\">此接口于 2026 年 2 月 3 日下线</font>， 请使用新接口:<a   href=\"https://qian.tencent.com/developers/partnerApis/fee/ChannelDescribeBillUsageDetail\">查询渠道计费消耗情况 </a>\n\n注: 此接口**每日限频50次**，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
       "input": "DescribeUsageRequest",
       "name": "合同消耗数量查询",
       "output": "DescribeUsageResponse",
       "status": "online"
     },
     "DescribeUserFlowType": {
-      "document": "查询用户模版类型，分为两种模式：\n<ul>\n<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息</li>\n<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息，被绑定的模版数量</li>\n</ul>",
+      "document": "查询用户模板类型，分为两种模式：\n<ul>\n<li>QueryBindTemplate:false，查询用户合同模板类型，返回用户合同模板类型ID，用户合同模板类型名称，用户合同模板类型描述信息</li>\n<li>QueryBindTemplate:false，查询用户合同模板类型，返回用户合同模板类型ID，用户合同模板类型名称，用户合同模板类型描述信息，被绑定的模板数量</li>\n</ul>",
       "input": "DescribeUserFlowTypeRequest",
       "name": "查询用户合同类型",
       "output": "DescribeUserFlowTypeResponse",
@@ -782,7 +782,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否可以拒签 默认false-可以拒签 true-不可以拒签",
+          "document": "<p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>",
           "example": "true",
           "member": "bool",
           "name": "NoRefuse",
@@ -791,7 +791,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以转发 默认false-可以转发 true-不可以转发",
+          "document": "<p>是否可以转发 默认false-可以转发 true-不可以转发</p>",
           "example": "true",
           "member": "bool",
           "name": "NoTransfer",
@@ -800,7 +800,7 @@
         },
         {
           "disabled": false,
-          "document": "当签署方有多个签署区时候，是否隐藏一键所有的签署区\n\nfalse：（默认）不隐藏\ntrue：隐藏，每个签署区要单独选择印章或者签名",
+          "document": "<p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>",
           "example": "true",
           "member": "bool",
           "name": "HideOneKeySign",
@@ -809,7 +809,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>\n\n注：\n`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`",
+          "document": "<p>签署人信息补充类型，默认无需补充。<ul><li> <strong>1</strong> :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul>注：<code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></p><p>枚举值：</p><ul><li>1： 动态签署人</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "FillType",
@@ -818,7 +818,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人阅读合同限制参数\n <br/>取值：\n<ul>\n<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>\n<li> LimitReadTime，阅读合同仅限制阅读时长</li>\n<li> LimitBottom，阅读合同仅限制必须阅读到底</li>\n<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>\n</ul>",
+          "document": "<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>",
           "example": "LimitBottom",
           "member": "string",
           "name": "FlowReadLimit",
@@ -827,7 +827,7 @@
         },
         {
           "disabled": false,
-          "document": "禁止在签署过程中添加签署日期控件\n <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：\n<ul>\n<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>\n<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>\n</ul>",
+          "document": "<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "ForbidAddSignDate",
@@ -1273,7 +1273,7 @@
       "usage": "in"
     },
     "BatchOrganizationRegistrationTasksDetails": {
-      "document": "批量认证企业任务详情信息，其中包括 TaskId，状态信息等等",
+      "document": "批量认证企业任务详情信息，其中包括 TaskId，状态信息等",
       "members": [
         {
           "disabled": false,
@@ -1900,7 +1900,7 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>\n<li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li>\n</ul>",
+          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li>\n<li>**5**：长效手写签名（包含手写签名）</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>\n<li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li>\n</ul>",
           "example": "[0, 1, 2, 3, 4]",
           "member": "int64",
           "name": "SignatureTypes",
@@ -1945,6 +1945,15 @@
         },
         {
           "disabled": false,
+          "document": "用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。",
+          "example": "5",
+          "member": "int64",
+          "name": "VideoVerifyTimesLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。\n\n注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`",
           "example": "false",
           "member": "bool",
@@ -1954,7 +1963,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`",
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -1969,6 +1978,15 @@
           "name": "PresetApproverInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanSkipReadFlow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2072,7 +2090,7 @@
         },
         {
           "disabled": false,
-          "document": "SaaS平台企业员工签署方的企业名称。目标签署人如果为saas应用企业员工身份，此参数必填。\n\n注：\n<ul>\n<li>请确认该名称与企业营业执照中注册的名称一致。</li>\n<li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>\n<li>请确保此企业已完成腾讯电子签企业认证。</li>\n<li>**若为子客企业员工，请使用OpenId，OrganizationOpenId参数，此参数留空即可**</li>\n</ul>",
+          "document": "SaaS平台企业员工签署方的企业名称。目标签署人如果为saas应用企业员工身份，此参数必填。\n\n注：\n<ul>\n<li>请确认该名称与企业营业执照中注册的名称一致。</li>\n<li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>\n<li>请确保此企业已完成腾讯电子签企业认证。</li>\n<li>**若为子客企业员工，请使用OpenId，OrganizationOpenId参数。如果此子客企业未认证，则此参数需要传子客企业名称**</li>\n</ul>",
           "example": "企业名称",
           "member": "string",
           "name": "OrganizationName",
@@ -2081,7 +2099,7 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的签名类型，可传递以下值：<ul><li>**0**：手写签名</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>不传值的情况则计算所有合同中个人签署区的签名类型，规则如下：<ul><li>1.如果所有合同中所有的个人签署区方式包含多种则是手写</li><li>2.如果所有合同中所有个人签名区签名类型仅为一种则就是那一种签名方式（例如合同1有多个签署区都是指定OCR楷体，合同2中也是多个签署区都是指定OCR楷体...则使用OCR楷体）</li></ul></li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li><li>若签署方为企业员工，此参数无效，签名方式将以合同中为准。</li></ul>",
+          "document": "指定批量签署合同的签名类型，可传递以下值：<ul><li>**0**：手写签名</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>不传值的情况则计算所有合同中个人签署区的签名类型，规则如下：<ul><li>1.如果所有合同中所有的个人签署区方式包含多种则是手写</li><li>2.如果所有合同中所有个人签名区签名类型仅为一种则就是那一种签名方式（例如合同1有多个签署区都是指定OCR楷体，合同2中也是多个签署区都是指定OCR楷体...则使用OCR楷体）</li></ul></li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li></ul>",
           "example": "[0, 1, 2, 3, 4]",
           "member": "int64",
           "name": "SignatureTypes",
@@ -2144,7 +2162,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n注：`1. 合同组暂不支持批量拒签功能。2. 如果是链接直接跳转至详情页（JumpToDetail参数为true），也不支持批量拒签功能`",
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n注：`1. 当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。2. 如果是链接直接跳转至详情页（JumpToDetail参数为true），也不支持批量拒签功能`",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -2556,7 +2574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同的发起企业和发起人信息，<a href=\"https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png\" target=\"_blank\">点击查看合同发起企业和人展示的位置</a>\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>\n</ul>",
+          "document": "<p>合同的发起企业和发起人信息，<a href=\"https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png\" target=\"_blank\">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2565,7 +2583,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
+          "document": "<p>合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>",
           "example": "张三的入职合同",
           "member": "string",
           "name": "FlowName",
@@ -2574,7 +2592,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程描述信息(可自定义此描述)，最大长度1000个字符。",
+          "document": "<p>合同流程描述信息(可自定义此描述)，最大长度1000个字符。</p>",
           "example": "张三2023年入职市场部的合同",
           "member": "string",
           "name": "FlowDescription",
@@ -2583,7 +2601,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的参与方列表, 最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，不同类型的签署方传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)。\n\n如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序, 请确保列表中参与人的顺序符合实际签署顺序。",
+          "document": "<p>合同流程的参与方列表, 最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，不同类型的签署方传参方式可以参考文档 <a href=\"https://qian.tencent.com/developers/partner/flow_approver\">签署方入参指引</a>。</p><p>如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序, 请确保列表中参与人的顺序符合实际签署顺序。</p>",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApprovers",
@@ -2592,7 +2610,7 @@
         },
         {
           "disabled": false,
-          "document": "本合同流程需包含的PDF文件资源编号列表，通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取PDF文件资源编号。\n\n注: `目前，此接口仅支持单个文件发起。`",
+          "document": "<p>本合同流程需包含的PDF文件资源编号列表，通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取PDF文件资源编号。</p><p>注: <code>目前，此接口仅支持单个文件发起。</code></p>",
           "example": "[\"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\"]",
           "member": "string",
           "name": "FileIds",
@@ -2601,7 +2619,7 @@
         },
         {
           "disabled": false,
-          "document": "模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n<li>数据表格等填写控件</li></ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)",
+          "document": "<p>模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体</p><ul><li>单行文本控件</li><li>多行文本控件</li><li>勾选框控件</li><li>数字控件</li><li>图片控件</li><li>数据表格等填写控件</li></ul><p><img src=\"https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png\" alt=\"image\"></p>",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -2610,7 +2628,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。\n如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
+          "document": "<p>合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。<br>如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。</p>",
           "example": "1691574041",
           "member": "int64",
           "name": "Deadline",
@@ -2619,7 +2637,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃，请使用【应用号配置】中的回调地址",
+          "document": "<p>该字段已废弃，请使用【应用号配置】中的回调地址</p>",
           "example": "https://capi.toa.com/callback",
           "member": "string",
           "name": "CallbackUrl",
@@ -2628,7 +2646,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的签署顺序类型：\n<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>\n<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>\n**注**: `有序签署时以传入FlowApprovers数组的顺序作为签署顺序`",
+          "document": "<p>合同流程的签署顺序类型：</p><ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li><li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>**注**: <code>有序签署时以传入FlowApprovers数组的顺序作为签署顺序</code>",
           "example": "false",
           "member": "bool",
           "name": "Unordered",
@@ -2637,7 +2655,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为255个字符，仅限中文、字母、数字和下划线组成。",
+          "document": "<p>合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为255个字符，仅限中文、字母、数字和下划线组成。</p>",
           "example": "入职合同",
           "member": "string",
           "name": "FlowType",
@@ -2646,7 +2664,7 @@
         },
         {
           "disabled": false,
-          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
+          "document": "<p>您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：</p><ul><li>{合同名称}   </li><li>{发起方企业} </li><li>{发起方姓名} </li><li>{签署方N企业}</li><li>{签署方N姓名}</li></ul>其中，N表示签署方的编号，从1开始，不能超过签署人的数量。<p>例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：<code>合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}</code>，则小程序中列表页展示此合同为以下样子</p><p>合同名称：租房合同<br>发起方：腾讯公司(张三)<br>签署方：李四</p>",
           "example": "合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}",
           "member": "string",
           "name": "CustomShowMap",
@@ -2655,7 +2673,7 @@
         },
         {
           "disabled": false,
-          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1000长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/partner/callback_types_contracts_sign\" target=\"_blank\">回调通知</a>模块。",
+          "document": "<p>调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1000长度。</p><p>在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/partner/callback_types_contracts_sign\" target=\"_blank\">回调通知</a>模块。</p>",
           "example": "eyJpZCI6ImNvbWVmIiwibmFtZSI6IuWRseWRseWPqyJ9",
           "member": "string",
           "name": "CustomerData",
@@ -2664,7 +2682,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
+          "document": "<p>发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：</p><ul><li> **false**：（默认）不需要审批，直接签署。</li><li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li><li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>注：<code>此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同</code>",
           "example": "false",
           "member": "bool",
           "name": "NeedSignReview",
@@ -2673,7 +2691,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证，用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n参数说明：可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
+          "document": "<p>签署人校验方式<br>VerifyCheck: 人脸识别（默认）<br>MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）<br>参数说明：可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。</p>",
           "example": "VerifyCheck",
           "member": "string",
           "name": "ApproverVerifyType",
@@ -2682,7 +2700,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方签署控件（印章/签名等）的生成方式：\n<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>\n<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>\n\n**注**: \n1.发起后添加控件功能不支持添加签批控件 \n2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5",
+          "document": "<p>签署方签署控件（印章/签名等）的生成方式：</p><ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li><li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul><p><strong>注</strong>:<br>1.发起后添加控件功能不支持添加签批控件<br>2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5</p>",
           "example": "0",
           "member": "int64",
           "name": "SignBeanTag",
@@ -2691,7 +2709,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n\n<b>注</b>\n1. 抄送人名单中可以包括自然人以及本企业的员工（本企业员工必须已经完成认证并加入企业）。\n2. 请确保抄送人列表中的成员不与任何签署人重复。",
+          "document": "<p>合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。</p><p><b>注</b></p><ol><li>抄送人名单中可以包括自然人以及本企业的员工（本企业员工必须已经完成认证并加入企业）。</li><li>请确保抄送人列表中的成员不与任何签署人重复。</li></ol>",
           "example": "无",
           "member": "CcInfo",
           "name": "CcInfos",
@@ -2700,7 +2718,7 @@
         },
         {
           "disabled": false,
-          "document": "可以设置以下时间节点来给抄送人发送短信通知来查看合同内容：\n<ul><li> **0**：合同发起时通知（默认值）</li>\n<li> **1**：签署完成后通知</li></ul>",
+          "document": "<p>可以设置以下时间节点来给抄送人发送短信通知来查看合同内容：</p><ul><li> **0**：合同发起时通知（默认值）</li><li> **1**：签署完成后通知</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "CcNotifyType",
@@ -2709,7 +2727,7 @@
         },
         {
           "disabled": false,
-          "document": "个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>\n注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`",
+          "document": "<p>个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：</p><ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签）  </li><li> **OTHER** :  通用场景</li></ul>注: <code>个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。</code>",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "AutoSignScene",
@@ -2718,7 +2736,7 @@
         },
         {
           "disabled": true,
-          "document": "操作者的信息，不用传",
+          "document": "<p>操作者的信息，不用传</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2727,7 +2745,7 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "<p>在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:<img src=\"https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png\" alt=\"FlowDisplayType\"></p>",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
@@ -2736,7 +2754,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>",
+          "document": "<p>是否为预览模式，取值如下： <ul><li> <strong>false</strong>：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> <strong>true</strong>：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul></p>",
           "example": "true",
           "member": "bool",
           "name": "NeedPreview",
@@ -2745,7 +2763,7 @@
         },
         {
           "disabled": false,
-          "document": "预览模式下产生的预览链接类型 \n<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>\n<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>\n注: `此参数在NeedPreview 为true时有效`\n",
+          "document": "<p>预览模式下产生的预览链接类型 </p><ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li><li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>注: <code>此参数在NeedPreview 为true时有效</code>",
           "example": "0",
           "member": "int64",
           "name": "PreviewType",
@@ -2754,7 +2772,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启动态合同（动态签署人2.0）\n<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>\n<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>\n",
+          "document": "<p>是否开启动态合同（动态签署人2.0）</p><ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li><li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "OpenDynamicFlow",
@@ -2763,7 +2781,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启动态合同（动态签署人2.0）<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li><li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>",
+          "document": "<p>是否开启动态合同（动态签署人2.0）<ul><li> <strong>false</strong> :(默认) 不开启动态合同（动态签署人2.0）</li><li> <strong>true</strong> :开启动态合同（动态签署人2.0）,发起时不设置签署方，发起后可继续追加合同签署人</li></ul></p>",
           "example": "false",
           "member": "bool",
           "name": "OpenDynamicSignFlow",
@@ -2778,7 +2796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n\n[点击查看FlowId在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)",
+          "document": "<p>合同流程ID，为32位字符串。<br>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</p><p><a href=\"https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png\">点击查看FlowId在控制台上的位置</a></p>",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -2788,7 +2806,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方信息，如角色ID、角色名称等",
+          "document": "<p>签署方信息，如角色ID、角色名称等</p>",
           "example": "无",
           "member": "ApproverItem",
           "name": "Approvers",
@@ -2798,7 +2816,7 @@
         },
         {
           "disabled": false,
-          "document": "预览链接，有效期5分钟\n注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL",
+          "document": "<p>预览链接，有效期5分钟<br>注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL</p>",
           "example": "https://embed.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDAY0UUckp7ouj3qU3GpRQCZvA3aO2l0",
           "member": "string",
           "name": "PreviewUrl",
@@ -3151,6 +3169,15 @@
           "type": "list"
         },
         {
+          "disabled": false,
+          "document": "用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。",
+          "example": "5",
+          "member": "int64",
+          "name": "VideoVerifyTimesLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
           "disabled": true,
           "document": "用户信息，暂未开放",
           "example": "无",
@@ -3260,7 +3287,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。\t",
           "example": "7",
           "member": "int64",
@@ -3280,7 +3307,7 @@
         {
           "disabled": false,
           "document": "指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。",
-          "example": "[ { \"RecipientId\": \"yDwJNUUckpkojrssUxTFHk6xvcX2xigb\", \"Values\": [ \"HANDWRITE\", \"SYSTEM_ESIGN\" ] }, { \"RecipientId\": \"yDwJNUUckpkojrsqUxTFHk6yndh20CpW\", \"Values\": [ \"OCR_ESIGN\" ] } ]\t",
+          "example": "无",
           "member": "ApproverComponentLimitType",
           "name": "ApproverComponentLimitTypes",
           "required": false,
@@ -3289,7 +3316,7 @@
         {
           "disabled": true,
           "document": "已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置\n<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign\n<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83",
-          "example": "无",
+          "example": "http://www.qq.com",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -3330,6 +3357,24 @@
           "name": "FlowNameAppendScannerInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "签署二维码的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成,会在生成的二维码图片上展示，若为空，则使用FlowName\t",
+          "example": "测试签署码",
+          "member": "string",
+          "name": "QrCodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署二维码截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为签署二维码创建后的7天时截止，最长可设置为签署二维码创建后的365天时截止。\t",
+          "example": "1757416261",
+          "member": "int64",
+          "name": "QrCodeExpiredOn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3381,7 +3426,7 @@
         {
           "disabled": false,
           "document": "请指定需执行批量签署的流程ID，数量范围为1-100。 您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。 用户将利用链接对这些合同实施批量操作。\t",
-          "example": "[yDxxxxxxxxxxxxxxxxxxxxxxxx]",
+          "example": "[\"yDxxxxxxxxxxxxxxxxxxxxxxxx\"]",
           "member": "string",
           "name": "FlowIds",
           "required": false,
@@ -3422,6 +3467,33 @@
           "name": "FlowGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "动态签署方领取链接配置。",
+          "example": "无",
+          "member": "DynamicSignOption",
+          "name": "DynamicSignOption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。",
+          "example": "[\"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"]",
+          "member": "string",
+          "name": "RecipientIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3584,7 +3656,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
+          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li>\n<li> **3**：草稿</li>\n</ul>",
           "example": "2",
           "member": "int64",
           "name": "ResourceType",
@@ -3611,7 +3683,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n<li>草稿Id（通过嵌入页面保存草稿后获取草稿Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
           "example": "yDwqFUUckp3em41rUwWPgIBjsYgG5bba",
           "member": "string",
           "name": "ResourceId",
@@ -3648,7 +3720,7 @@
         {
           "disabled": true,
           "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NeedPreview",
           "required": false,
@@ -3718,6 +3790,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。",
+          "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
+          "member": "string",
+          "name": "DraftId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3771,7 +3853,7 @@
           "example": "aHR0cHM6Ly9jYXBpLndvYS5jb20vhaWwlM0ZpZCUzRGVzc2Jhc2ljJTI2dGFiJTNEYXBp..图片base64省略",
           "member": "string",
           "name": "SealImage",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -3813,7 +3895,7 @@
         {
           "disabled": false,
           "document": "该字段已不再使用",
-          "example": "该字段已不再使用",
+          "example": "false",
           "member": "bool",
           "name": "EnableAutoSign",
           "required": false,
@@ -3834,6 +3916,15 @@
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "SceneKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。",
+          "example": "yDtOJUUckpftturtURxNEFKShAukAd2b",
+          "member": "string",
+          "name": "FileId",
           "required": false,
           "type": "string"
         }
@@ -4059,7 +4150,7 @@
         {
           "disabled": false,
           "document": "\n员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。\n员工在贵司业务系统中的唯一身份标识，用于与腾讯电子签账号进行映射，确保在同一企业内不会出现重复。\n该标识最大长度为64位字符串，仅支持包含26个英文字母和数字0-9的字符。\n指定待授权的用户ID数组,电子签的用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权。",
-          "example": "[yDdzlxxxxxopk]",
+          "example": "[\"yDdzlxxxxxopk\"]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -4082,6 +4173,15 @@
           "name": "Organization",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "个性化配置字段，默认不传。",
+          "example": "无",
+          "member": "Option",
+          "name": "Options",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4092,11 +4192,31 @@
         {
           "disabled": false,
           "document": "最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的。\n请求参数填写OpenId时，返回授权成功的 Openid。",
-          "example": "[yDdzlxxxxxopk]",
+          "example": "[\"yDdzlxxxxxopk\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸验证操作人链接，用法可以参考\"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)\"，默认为空。",
+          "example": "/pages/guide/index?to=FACE_IDENTIFY&request_token=yDXXXXXXXXXXXXXX&expired_time=1758888888",
+          "member": "string",
+          "name": "SealOperatorVerifyPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "member": "string",
+          "name": "SealOperatorVerifyQrcodeUrl",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5002,11 +5122,11 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，单页最大支持 100。",
+          "document": "指定分页每页返回的数据条数，单页最大支持 100。默认值为20",
           "example": "10",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -5038,7 +5158,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章类型 , 可选类型如下: <ul><li>**OFFICIAL**: 公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li><li>**LEGAL_PERSON_SEAL**: 法定代表人章;</li><li>**EMPLOYEE_QUALIFICATION_SEAL**: 员工执业章</li></ul>注:  `1.为空时查询所有类型的印章。`",
+          "document": "电子印章类型 , 可选类型如下: <ul><li>**OFFICIAL**: 公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li><li>**LEGAL_PERSON_SEAL**: 法定代表人章;</li><li>**EMPLOYEE_QUALIFICATION_SEAL**: 员工执业章</li><li>**OTHER**: 其他类型印章</li></ul>注:  `1.为空时查询所有类型的印章。`",
           "example": "INVOICE",
           "member": "string",
           "name": "SealTypes",
@@ -5197,7 +5317,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "document": "<p>合同流程ID，为32位字符串。<br>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。<br>可登录腾讯电子签控制台，在 &quot;合同&quot;-&gt;&quot;合同中心&quot; 中查看某个合同的FlowId(在页面中展示为合同ID)。</p>",
           "example": "yDCNsUUckpvqwg3kUyIemOrwQm9ltij5",
           "member": "string",
           "name": "FlowId",
@@ -5206,7 +5326,7 @@
         },
         {
           "disabled": false,
-          "document": "签署参与人在本流程中的编号ID(每个流程不同)，可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。",
+          "document": "<p>签署参与人在本流程中的编号ID(每个流程不同)，可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。</p>",
           "example": "yDxjNUUgydjfeklxUuO4zjEBgCqAHMKu",
           "member": "string",
           "name": "SignId",
@@ -5215,7 +5335,7 @@
         },
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5230,7 +5350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "核身视频结果。",
+          "document": "<p>核身视频结果。</p>",
           "example": "无",
           "member": "DetectInfoVideoData",
           "name": "VideoData",
@@ -5240,7 +5360,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。",
+          "document": "<p>意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。</p>",
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
@@ -5250,7 +5370,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionActionResult",
           "name": "IntentionActionResult",
@@ -5908,6 +6028,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "个性化配置字段，默认不传。",
+          "example": "无",
+          "member": "Option",
+          "name": "Options",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5915,6 +6044,26 @@
     "ChannelUpdateSealStatusResponse": {
       "document": "ChannelUpdateSealStatus返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "人脸验证操作人链接，用法可以参考\"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)\"，默认为空。",
+          "example": "/pages/guide/index?to=FACE_IDENTIFY&request_token=yDXXXXXXXXXXXXXX&expired_time=1758888888",
+          "member": "string",
+          "name": "SealOperatorVerifyPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "member": "string",
+          "name": "SealOperatorVerifyQrcodeUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6078,7 +6227,7 @@
           "example": "true",
           "member": "bool",
           "name": "NotChannelOrganization",
-          "required": true,
+          "required": false,
           "type": "bool"
         },
         {
@@ -6251,7 +6400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "控件唯一ID。\n\n**在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在关键字定位方式下**，ComponentId不仅为控件的ID，也是关键字整词。此方式下可以通过\"^\"来决定是否使用关键字整词匹配能力。\n\n例：\n\n- 如传入的关键字<font color=\"red\">\"^甲方签署^\"</font >，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方（<font color=\"red\">前后不能有其他字符</font >）进行对应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前后可以有其他字符</font >）都会执行相应操作。\n\n\n注：`控件ID可以在一个PDF中不可重复`\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentId在模板页面的位置</a>\n",
+          "document": "<p>控件唯一ID。</p><p><strong>在绝对定位方式方式下</strong>，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。</p><p><strong>在关键字定位方式下</strong>，ComponentId不仅为控件的ID，也是关键字整词。此方式下可以通过&quot;^&quot;来决定是否使用关键字整词匹配能力。</p><p>例：</p><ul><li>如传入的关键字&lt;font color=&quot;red&quot;&gt;&quot;^甲方签署^&quot;，则会在PDF文件中有且仅有&quot;甲方签署&quot;关键字的地方（&lt;font color=&quot;red&quot;&gt;前后不能有其他字符）进行对应操作。</li><li>如传入的关键字为&lt;font color=&quot;red&quot;&gt;&quot;甲方签署&quot;，则PDF文件中每个出现关键字的位置（&lt;font color=&quot;red&quot;&gt;前后可以有其他字符）都会执行相应操作。</li></ul><p>注：<code>控件ID可以在一个PDF中不可重复</code><br><a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentId在模板页面的位置</a></p>",
           "example": "ComponentId",
           "member": "string",
           "name": "ComponentId",
@@ -6262,7 +6411,7 @@
         },
         {
           "disabled": false,
-          "document": "**如果是Component填写控件类型，则可选的字段为**：\n\n<ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li>\n<li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li>\n<li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li>\n<li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li>\n<li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li>\n<li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>\n<li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>\n<li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>\n<li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>\n\n**如果是SignComponent签署控件类型，\n需要根据签署人的类型可选的字段为**\n* 企业方\n<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li>\n<li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PAGING_SIGNATURE</b> : 用户签名骑缝章控件；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_VIRTUAL_COMBINATION</b> : 签批控件。内部最多组合4个特定控件（SIGN_SIGNATURE，SIGN_DATA,SIGN_MULTI_LINE_TEXT,SIGN_SELECTOR），本身不填充任何文字内容</li>\n<li> <b>SIGN_MULTI_LINE_TEXT</b> : 多行文本，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作批注附言</li>\n<li> <b>SIGN_SELECTOR</b> : 选择器，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作审批意见的选择</li>\n<li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul>\n\n\n* 个人方\n<ul><li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PAGING_SIGNATURE</b> : 用户签名骑缝章控件；</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_VIRTUAL_COMBINATION</b> : 签批控件。内部包含最多4个特定控件（SIGN_SIGNATURE，SIGN_DATA,SIGN_MULTI_LINE_TEXT,SIGN_SELECTOR），本身不填充任何文字内容</li>\n<li> <b>SIGN_MULTI_LINE_TEXT</b> : 多行文本，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作批注附言</li>\n<li> <b>SIGN_SELECTOR</b> : 选择器，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作审批意见的选择</li>\n</ul>\n \n注：` 表单域的控件不能作为印章和签名控件`",
+          "document": "<p><strong>如果是Component填写控件类型，则可选的字段为</strong>：</p><ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li><li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li><li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li><li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li><li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li><li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li><li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li><li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li><li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li><li> <b>VIRTUAL_COMBINATION</b> : 虚拟控件，内部特定控件（CHECK_BOX），本身不填充任何文字内容</li></ul><p><strong>如果是SignComponent签署控件类型，<br>需要根据签署人的类型可选的字段为</strong></p><ul><li>企业方<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li><li> <b>SIGN_DATE</b> : 签署日期控件；</li><li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li><li> <b>SIGN_PAGING_SIGNATURE</b> : 用户签名骑缝章控件；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li><li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li><li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li><li> <b>SIGN_VIRTUAL_COMBINATION</b> : 签批控件。内部最多组合4个特定控件（SIGN_SIGNATURE，SIGN_DATA,SIGN_MULTI_LINE_TEXT,SIGN_SELECTOR），本身不填充任何文字内容</li><li> <b>SIGN_MULTI_LINE_TEXT</b> : 多行文本，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作批注附言</li><li> <b>SIGN_SELECTOR</b> : 选择器，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作审批意见的选择</li><li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul></li></ul><ul><li>个人方<ul><li> <b>SIGN_DATE</b> : 签署日期控件；</li><li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li><li> <b>SIGN_PAGING_SIGNATURE</b> : 用户签名骑缝章控件；</li><li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li><li> <b>SIGN_VIRTUAL_COMBINATION</b> : 签批控件。内部包含最多4个特定控件（SIGN_SIGNATURE，SIGN_DATA,SIGN_MULTI_LINE_TEXT,SIGN_SELECTOR），本身不填充任何文字内容</li><li> <b>SIGN_MULTI_LINE_TEXT</b> : 多行文本，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作批注附言</li><li> <b>SIGN_SELECTOR</b> : 选择器，<font color=\"red\">仅可用在签批控件内部作为组合控件，单独无法使用</font>，常用作审批意见的选择</li></ul></li></ul><p>注：<code>表单域的控件不能作为印章和签名控件</code></p>",
           "example": "SIGN_SEAL",
           "member": "string",
           "name": "ComponentType",
@@ -6273,7 +6422,7 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式方式下**，ComponentName为控件名，长度不能超过20，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在表单域定位方式下**，ComponentName不仅为控件名，也是表单域名称。\n\n注：`控件名可以在一个PDF中可以重复`\n\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentName在模板页面的位置</a>",
+          "document": "<p><strong>在绝对定位方式方式下</strong>，ComponentName为控件名，长度不能超过20，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。</p><p><strong>在表单域定位方式下</strong>，ComponentName不仅为控件名，也是表单域名称。</p><p>注：<code>控件名可以在一个PDF中可以重复</code></p><p><a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentName在模板页面的位置</a></p>",
           "example": "ComponentName",
           "member": "string",
           "name": "ComponentName",
@@ -6284,7 +6433,7 @@
         },
         {
           "disabled": false,
-          "document": "如果是<b>填写控件</b>，ComponentRequired表示在填写页面此控件是否必填\n<ul><li>false（默认）：可以不填写</li>\n<li>true ：必须填写此填写控件</li></ul>\n如果是<b>签署控件</b>，签批控件中签署意见等可以不填写， 其他签署控件不受此字段影响",
+          "document": "<p>如果是<b>填写控件</b>，ComponentRequired表示在填写页面此控件是否必填</p><ul><li>false（默认）：可以不填写</li><li>true ：必须填写此填写控件</li></ul>如果是<b>签署控件</b>，签批控件中签署意见等可以不填写， 其他签署控件不受此字段影响",
           "example": "false",
           "member": "bool",
           "name": "ComponentRequired",
@@ -6295,7 +6444,7 @@
         },
         {
           "disabled": false,
-          "document": "**在通过接口拉取控件信息场景下**，为出参参数，此控件归属的参与方的角色ID角色（即RecipientId），**发起合同时候不要填写此字段留空即可**",
+          "document": "<p><strong>在通过接口拉取控件信息场景下</strong>，为出参参数，此控件归属的参与方的角色ID角色（即RecipientId），<strong>发起合同时候不要填写此字段留空即可</strong></p>",
           "example": "ComponentRecipientId",
           "member": "string",
           "name": "ComponentRecipientId",
@@ -6306,7 +6455,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0",
+          "document": "<p><font color=\"red\">【暂未使用】</font>控件所属文件的序号（取值为：0-N）。 目前单文件的情况下，值一直为0</p>",
           "example": "0",
           "member": "int64",
           "name": "FileIndex",
@@ -6317,7 +6466,7 @@
         },
         {
           "disabled": false,
-          "document": "控件生成的方式：\n<ul><li> <b>NORMAL</b> : 绝对定位控件</li>\n<li> <b>FIELD</b> : 表单域</li>\n<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>",
+          "document": "<p>控件生成的方式：</p><ul><li> <b>NORMAL</b> : 绝对定位控件</li><li> <b>FIELD</b> : 表单域</li><li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>",
           "example": "NORMAL",
           "member": "string",
           "name": "GenerateMode",
@@ -6328,8 +6477,8 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式和关键字定位方式下**，指定控件宽度，控件宽度是指控件在PDF文件中的宽度，单位为pt（点）。\n",
-          "example": "10",
+          "document": "<p><strong>在绝对定位方式和关键字定位方式下</strong>，指定控件宽度，控件宽度是指控件在PDF文件中的宽度，单位为pt（点）。</p>",
+          "example": "10.0",
           "member": "float",
           "name": "ComponentWidth",
           "output_required": true,
@@ -6339,8 +6488,8 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式和关键字定位方式下**，指定控件的高度， 控件高度是指控件在PDF文件中的高度，单位为pt（点）。\n",
-          "example": "10",
+          "document": "<p><strong>在绝对定位方式和关键字定位方式下</strong>，指定控件的高度， 控件高度是指控件在PDF文件中的高度，单位为pt（点）。</p>",
+          "example": "10.0",
           "member": "float",
           "name": "ComponentHeight",
           "output_required": true,
@@ -6350,7 +6499,7 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式方式下**，指定控件所在PDF文件上的页码\n**在使用文件发起的情况下**，绝对定位方式的填写控件和签署控件支持使用负数来指定控件在PDF文件上的页码，使用负数时，页码从最后一页开始。例如：ComponentPage设置为-1，即代表在PDF文件的最后一页，以此类推。\n\n注：\n1. 页码编号是从<font color=\"red\">1</font>开始编号的。\n2.  <font color=\"red\">页面编号不能超过PDF文件的页码总数</font>。如果指定的页码超过了PDF文件的页码总数，在填写和签署时会出现错误，导致无法正常进行操作。",
+          "document": "<p><strong>在绝对定位方式方式下</strong>，指定控件所在PDF文件上的页码<br><strong>在使用文件发起的情况下</strong>，绝对定位方式的填写控件和签署控件支持使用负数来指定控件在PDF文件上的页码，使用负数时，页码从最后一页开始。例如：ComponentPage设置为-1，即代表在PDF文件的最后一页，以此类推。</p><p>注：</p><ol><li>页码编号是从<font color=\"red\">1</font>开始编号的。</li><li><font color=\"red\">页面编号不能超过PDF文件的页码总数</font>。如果指定的页码超过了PDF文件的页码总数，在填写和签署时会出现错误，导致无法正常进行操作。</li></ol>",
           "example": "1",
           "member": "int64",
           "name": "ComponentPage",
@@ -6361,8 +6510,8 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。",
-          "example": "10",
+          "document": "<p><strong>在绝对定位方式下</strong>，可以指定控件横向位置的位置，单位为pt（点）。</p>",
+          "example": "10.0",
           "member": "float",
           "name": "ComponentPosX",
           "output_required": true,
@@ -6372,8 +6521,8 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。",
-          "example": "10",
+          "document": "<p><strong>在绝对定位方式下</strong>，可以指定控件纵向位置的位置，单位为pt（点）。</p>",
+          "example": "10.0",
           "member": "float",
           "name": "ComponentPosY",
           "output_required": true,
@@ -6383,7 +6532,7 @@
         },
         {
           "disabled": false,
-          "document": "**在所有的定位方式下**，控件的扩展参数，为<font color=\"red\">JSON格式</font>，不同类型的控件会有部分非通用参数。\n\n<font color=\"red\">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>\n<li> <b>FontSize</b>： 范围6 :72</li>\n<li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>\n<li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>\n<li> <b>FontSize</b>： 范围6 :72</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为WATERMARK时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>\n<li> <b>FontSize</b>： 范围6 :72</li>\n<li> <b>Opacity</b>： 透明度，范围0 :1</li>\n<li> <b>Rotate</b>： 水印旋转角度，范围0 :359</li>\n<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>\n<li> <b>Position</b>： 水印位置，None-平铺（默认值），LeftTop-左上，LeftBottom-左下，RightTop-右上，RightBottom-右下，Center-居中</li>\n<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>\n<b>参数样例</b>：`\"{\\\"Font\\\":\\\"黑体\\\",\\\"FontSize\\\":20,\\\"Opacity\\\":0.1,\\\"Density\\\":2,\\\"SubType\\\":\\\"PERSON_INFO_WATERMARK\\\"}\"`\n\n<font color=\"red\">ComponentType为FILL_IMAGE时</font>，支持以下参数：\n<ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>\n<li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>\n\n<font color=\"red\">ComponentType为SELECTOR时</font>，支持以下参数：\n<ul><li> <b>WordWrap</b>：bool。是否支持选择控件内容自动折行合成。false：不支持（默认）。 true : 支持自动折行合成</li>\n</ul>\n\n<font color=\"red\">ComponentType为SIGN_SIGNATURE、SIGN_PAGING_SIGNATURE类型时</font>，可以**ComponentTypeLimit**参数控制签署方式\n<ul><li> <b>HANDWRITE</b> : 需要实时手写的手写签名</li>\n<li> <b>HANDWRITTEN_ESIGN</b> : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> : AI智能识别手写签名</li>\n<li> <b>ESIGN</b> : 个人印章类型</li>\n<li> <b>SYSTEM_ESIGN</b> : 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）</li>\n<li> <b>IMG_ESIGN</b> : 图片印章(该类型支持用户在签署将上传的PNG格式的图片作为签名)</li></ul>\n<b>参考样例</b>：`{\"ComponentTypeLimit\": [\"SYSTEM_ESIGN\"]}`\n印章的对应关系参考下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)<br><br>\n<font color=\"red\">ComponentType为SIGN_SEAL 或者 SIGN_PAGING_SEAL类型时</font>，可以通过**ComponentTypeLimit**参数控制签署方签署时要使用的印章类型，支持指定以下印章类型\n<ul><li> <b>OFFICIAL</b> :  企业公章</li>\n<li> <b>CONTRACT</b> : 合同专用章</li>\n<li> <b>FINANCE</b> : 财务专用章</li>\n<li> <b>PERSONNEL</b> : 人事专用章</li>\n<li> <b>OTHER</b> : 其他</li>\n</ul>\n<b>参考样例</b>：`{\\\"ComponentTypeLimit\\\":[\\\"PERSONNEL\\\",\\\"FINANCE\\\"]}` 表示改印章签署区,客户需使用人事专用章或财务专用章盖章签署。<br><br>\n\n<font color=\"red\">ComponentType为SIGN_DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b> :字符串类型目前只支持\"黑体\"、\"宋体\"、仿宋，如果不填默认为\"黑体\"</li>\n<li> <b>FontSize</b> : 数字类型，范围6-72，默认值为12</li>\n<li> <b>FontAlign</b> : 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐</li>\n<li> <b>Format</b> : 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。</li>\n<li> <b>Gaps</b> : 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数</li></ul>\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n<b>参数样例</b>： ` \"{\"Format\":\"yyyy m d\",\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"`\n\n<font color=\"red\">ComponentType为SIGN_SEAL、SIGN_SIGNATURE类型时</font>，支持以下参数：\n<ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>\n<b>参数样例</b>：` \"{\"PageRanges\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"`\n\n<font color=\"red\">签署印章旋转功能，当ComponentType为SIGN_SIGNATURE、SIGN_DATE、SIGN_SEAL时</font>，可以通过以下参数设置签署图片的旋转角度：\n<ul><li> <b>Rotate</b>：旋转角度，支持范围：-360：360，为正整数时，为顺时针旋转；为负整数时，为逆时针旋转。</li>\n<li> <b>RotateRelation</b>：旋转关联控件，用于指定关联旋转的控件。例如：让印章控件和签署日期控件按照印章控件为中心旋转（此时，设置印章控件的RotateRelation为日期控件的ComponentId，设置日期签署控件的RotateRelation为印章控件的ComponentId）。</li></ul>\n<b>参数样例</b>：`{\"Rotate\":-30,\"RotateRelation\":\"Component_Id1\"}`\n\n<font color=\"red\">签署印章透明度功能设置，</font>当ComponentType为SIGN_SIGNATURE、SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL时，可以通过以下参数设置签署印章的透明度：\n<ul><li> <b>Opacity</b>：印章透明度，支持范围：0-1，0.7表示70%的透明度，1表示无透明度</li></ul>\n<b>参数样例</b>：`{\"Opacity\":0.7}`\n\n<font color=\"red\">签署印章大小功能设置，</font>当ComponentType为SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL时，可以通过以下参数设置签署时按照实际印章的大小进行签署，如果印章没有设置大小，那么默认会是4.2cm的印章大小：\n<ul><li> <b>UseSealSize</b>：使用印章设置的大小盖章，true表示使用印章设置的大小盖章，false表示使用签署控件的大小进行盖章；不传则为false</li></ul>\n<b>参数样例</b>：`{\"UseSealSize\":true}`\n\n<font color=\"red\">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>\n<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>\n场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置\"IgnoreKeywordError\"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。\n<b>参数样例</b>：` \"{\"IgnoreKeywordError\":1}\"`\n\n\n<font color=\"red\">ComponentType为SIGN_VIRTUAL_COMBINATION时</font>，支持以下参数：\n<ul>\n<li><b>Children:</b> 绝对定位模式下，用来指定此签批控件的组合子控件 </li>\n<b>参数样例</b>：<br>`{\"Children\":[\"ComponentId_29\",\"ComponentId_27\",\"ComponentId_28\",\"ComponentId_30\"]}`\n<li><b>ChildrenComponents:</b> 关键字定位模式下，用来指定此签批控件的组合子控件 </li>\nChildrenComponent结构体定义:\n<table border=\"1\">     <thead>         <tr>             <th>字段名称</th>             <th>类型</th>             <th>描述</th>         </tr>     </thead>     <tbody>         <tr>             <td>ComponentType</td>             <td>string</td>             <td>子控件类型-可选值:SIGN_SIGNATURE,SIGN_DATE,SIGN_SELECTOR,SIGN_MULTI_LINE_TEXT</td>         </tr>         <tr>             <td>ComponentName</td>             <td>string</td>             <td>子控件名称</td>         </tr>         <tr>             <td>Placeholder</td>             <td>string</td>             <td>子控件提示语</td>         </tr>         <tr>             <td>ComponentOffsetX</td>             <td>float</td>             <td>控件偏移位置X（相对于父控件（签批控件的ComponentX））</td>         </tr>         <tr>             <td>ComponentOffsetY</td>             <td>float</td>             <td>控件偏移位置Y 相对于父控件（签批控件的ComponentY））</td>         </tr>         <tr>             <td>ComponentWidth</td>             <td>float</td>             <td>控件宽</td>         </tr>         <tr>             <td>ComponentHeight</td>             <td>float</td>             <td>控件高</td>         </tr>         <tr>             <td>ComponentExtra</td>             <td>string</td>             <td>控件的附属信息，根据ComponentType设置</td>         </tr>     </tbody> </table>\n<b>参数样例</b>：\n\n<pre>\n{\n    \"ChildrenComponents\": [\n        {\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"ComponentName\": \"个人签名\",\n            \"Placeholder\": \"请签名\",\n            \"ComponentOffsetX\": 10,\n            \"ComponentOffsetY\": 30,\n            \"ComponentWidth\": 119,\n            \"ComponentHeight\": 43,\n            \"ComponentExtra\": \"{\\\"ComponentTypeLimit\\\":[\\\"SYSTEM_ESIGN\\\"]}\"\n        },\n        {\n            \"ComponentType\": \"SIGN_SELECTOR\",\n            \"ComponentName\": \"是否同意此协议\",\n            \"Placeholder\": \"\",\n            \"ComponentOffsetX\": 50,\n            \"ComponentOffsetY\": 130,\n            \"ComponentWidth\": 120,\n            \"ComponentHeight\": 43,\n            \"ComponentExtra\": \"{\\\"Values\\\":[\\\"同意\\\",\\\"不同意\\\",\\\"再想想\\\"],\\\"FontSize\\\":12,\\\"FontAlign\\\":\\\"Left\\\",\\\"Font\\\":\\\"黑体\\\",\\\"MultiSelect\\\":false}\"\n        },\n        {\n            \"ComponentType\": \"SIGN_MULTI_LINE_TEXT\",\n            \"ComponentName\": \"批注附言\",\n            \"Placeholder\": \"\",\n            \"ComponentOffsetX\": 150,\n            \"ComponentOffsetY\": 300,\n            \"ComponentWidth\": 200,\n            \"ComponentHeight\": 86,\n            \"ComponentExtra\": \"\"\n        }\n    ]\n}</pre>\n</ul>\n\n",
+          "document": "<p><strong>在所有的定位方式下</strong>，控件的扩展参数，为<font color=\"red\">JSON格式</font>，不同类型的控件会有部分非通用参数。</p><p><font color=\"red\">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：</p><ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li><li> <b>FontSize</b>： 范围6 :72</li><li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li><li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li><li> <b>Bold</b>是否加粗：true/false</li></ul><b>参数样例</b>：<code>{&quot;FontColor&quot;:&quot;255,0,0&quot;,&quot;FontSize&quot;:12,&quot;Bold&quot;:false}</code><p><font color=\"red\">ComponentType为DATE时</font>，支持以下参数：</p><ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li><li> <b>FontSize</b>： 范围6 :72</li></ul><b>参数样例</b>：<code>{&quot;FontColor&quot;:&quot;255,0,0&quot;,&quot;FontSize&quot;:12}</code><p><font color=\"red\">ComponentType为WATERMARK时</font>，支持以下参数：</p><ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li><li> <b>FontSize</b>： 范围6 :72</li><li> <b>Opacity</b>： 透明度，范围0 :1</li><li> <b>Rotate</b>： 水印旋转角度，范围0 :359</li><li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li><li> <b>Position</b>： 水印位置，None-平铺（默认值），LeftTop-左上，LeftBottom-左下，RightTop-右上，RightBottom-右下，Center-居中</li><li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul><b>参数样例</b>：<code>&quot;{\\&quot;Font\\&quot;:\\&quot;黑体\\&quot;,\\&quot;FontSize\\&quot;:20,\\&quot;Opacity\\&quot;:0.1,\\&quot;Density\\&quot;:2,\\&quot;SubType\\&quot;:\\&quot;PERSON_INFO_WATERMARK\\&quot;}&quot;</code><p><font color=\"red\">ComponentType为FILL_IMAGE时</font>，支持以下参数：</p><ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li><li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul><p><font color=\"red\">ComponentType为SELECTOR时</font>，支持以下参数：</p><ul><li> <b>WordWrap</b>：bool。是否支持选择控件内容自动折行合成。false：不支持（默认）。 true : 支持自动折行合成</li></ul><p><font color=\"red\">ComponentType为SIGN_SIGNATURE、SIGN_PAGING_SIGNATURE类型时</font>，可以<strong>ComponentTypeLimit</strong>参数控制签署方式</p><ul><li> <b>HANDWRITE</b> : 需要实时手写的手写签名</li><li> <b>HANDWRITTEN_ESIGN</b> : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li><li> <b>OCR_ESIGN</b> : AI智能识别手写签名</li><li> <b>ESIGN</b> : 个人印章类型</li><li> <b>SYSTEM_ESIGN</b> : 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）</li><li> <b>IMG_ESIGN</b> : 图片印章(该类型支持用户在签署将上传的PNG格式的图片作为签名)</li></ul><b>参考样例</b>：<code>{&quot;ComponentTypeLimit&quot;: [&quot;SYSTEM_ESIGN&quot;]}</code>印章的对应关系参考下图![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)<br><br><font color=\"red\">ComponentType为SIGN_SEAL 或者 SIGN_PAGING_SEAL类型时</font>，可以通过**ComponentTypeLimit**参数控制签署方签署时要使用的印章类型，支持指定以下印章类型<ul><li> <b>OFFICIAL</b> :  企业公章</li><li> <b>CONTRACT</b> : 合同专用章</li><li> <b>FINANCE</b> : 财务专用章</li><li> <b>PERSONNEL</b> : 人事专用章</li><li> <b>OTHER</b> : 其他</li></ul><b>参考样例</b>：<code>{\\&quot;ComponentTypeLimit\\&quot;:[\\&quot;PERSONNEL\\&quot;,\\&quot;FINANCE\\&quot;]}</code> 表示改印章签署区,客户需使用人事专用章或财务专用章盖章签署。<br><br><p><font color=\"red\">ComponentType为SIGN_DATE时</font>，支持以下参数：</p><ul><li> <b>Font</b> :字符串类型目前只支持\"黑体\"、\"宋体\"、仿宋，如果不填默认为\"黑体\"</li><li> <b>FontSize</b> : 数字类型，范围6-72，默认值为12</li><li> <b>FontAlign</b> : 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐</li><li> <b>Format</b> : 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。</li><li> <b>Gaps</b> : 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数</li></ul>如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）<b>参数样例</b>： <code>&quot;{&quot;Format&quot;:&quot;yyyy m d&quot;,&quot;FontSize&quot;:12,&quot;Gaps&quot;:&quot;2,2&quot;, &quot;FontAlign&quot;:&quot;Right&quot;}&quot;</code><p><font color=\"red\">ComponentType为SIGN_SEAL、SIGN_SIGNATURE类型时</font>，支持以下参数：</p><ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul><b>参数样例</b>：<code>&quot;{&quot;PageRanges&quot;:[{&quot;BeginPage&quot;:1,&quot;EndPage&quot;:-1}]}&quot;</code><p><font color=\"red\">签署印章旋转功能，当ComponentType为SIGN_SIGNATURE、SIGN_DATE、SIGN_SEAL时</font>，可以通过以下参数设置签署图片的旋转角度：</p><ul><li> <b>Rotate</b>：旋转角度，支持范围：-360：360，为正整数时，为顺时针旋转；为负整数时，为逆时针旋转。</li><li> <b>RotateRelation</b>：旋转关联控件，用于指定关联旋转的控件。例如：让印章控件和签署日期控件按照印章控件为中心旋转（此时，设置印章控件的RotateRelation为日期控件的ComponentId，设置日期签署控件的RotateRelation为印章控件的ComponentId）。</li></ul><b>参数样例</b>：<code>{&quot;Rotate&quot;:-30,&quot;RotateRelation&quot;:&quot;Component_Id1&quot;}</code><p><font color=\"red\">签署印章透明度功能设置，</font>当ComponentType为SIGN_SIGNATURE、SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL时，可以通过以下参数设置签署印章的透明度：</p><ul><li> <b>Opacity</b>：印章透明度，支持范围：0-1，0.7表示70%的透明度，1表示无透明度</li></ul><b>参数样例</b>：<code>{&quot;Opacity&quot;:0.7}</code><p><font color=\"red\">签署印章大小功能设置，</font>当ComponentType为SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL时，可以通过以下参数设置签署时按照实际印章的大小进行签署，如果印章没有设置大小，那么默认会是4.2cm的印章大小：</p><ul><li> <b>UseSealSize</b>：使用印章设置的大小盖章，true表示使用印章设置的大小盖章，false表示使用签署控件的大小进行盖章；不传则为false</li></ul><b>参数样例</b>：<code>{&quot;UseSealSize&quot;:true}</code><p><font color=\"red\">签署意见功能设置，</font>当ComponentType为SIGN_OPINION时，可以通过以下参数设置签署意见的相关内容：</p><ul><li> <b>Values</b>：签署意见预设的需要用户填写的文本</li><li> <b>ValuesArray</b>：签署意见需要用户按顺序点击的分词（组合后应和Values内容一致）</li></ul><b>参数样例</b>：<code>{&quot;Values&quot;:&quot;我已知晓内容并同意签署&quot;,&quot;ValuesArray&quot;:[&quot;我&quot;,&quot;已知晓&quot;,&quot;内容&quot;,&quot;并&quot;,&quot;同意&quot;,&quot;签署&quot;]}</code><p><font color=\"red\">关键字模式下支持关键字找不到的情况下不进行报错的设置</font></p><ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置\"IgnoreKeywordError\"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。<b>参数样例</b>：<code>&quot;{&quot;IgnoreKeywordError&quot;:1}&quot;</code><p><font color=\"red\">ComponentType为SIGN_VIRTUAL_COMBINATION或者VIRTUAL_COMBINATION时</font>，支持以下参数：</p><ul><li><b>Children:</b> 绝对定位模式下，用来指定此签批控件的组合子控件 </li><b>参数样例</b>：<br><code>{&quot;Children&quot;:[&quot;ComponentId_29&quot;,&quot;ComponentId_27&quot;,&quot;ComponentId_28&quot;,&quot;ComponentId_30&quot;]}</code><li><b>ChildrenComponents:</b> 关键字定位模式下，用来指定此签批控件的组合子控件 </li>ChildrenComponent结构体定义:<table border=\"1\">     <thead>         <tr>             <th>字段名称</th>             <th>类型</th>             <th>描述</th>         </tr>     </thead>     <tbody>         <tr>             <td>ComponentType</td>             <td>string</td>             <td>子控件类型-可选值:SIGN_SIGNATURE,SIGN_DATE,SIGN_SELECTOR,SIGN_MULTI_LINE_TEXT</td>         </tr>         <tr>             <td>ComponentName</td>             <td>string</td>             <td>子控件名称</td>         </tr>         <tr>             <td>Placeholder</td>             <td>string</td>             <td>子控件提示语</td></tr><tr>             <td>ComponentValue</td>             <td>string</td>             <td>子控件值（签署方不可设置）</td>          </tr>         <tr>             <td>ComponentOffsetX</td>             <td>float</td>             <td>控件偏移位置X（相对于父控件（签批控件的ComponentX））</td>         </tr>         <tr>             <td>ComponentOffsetY</td>             <td>float</td>             <td>控件偏移位置Y 相对于父控件（签批控件的ComponentY））</td>         </tr>         <tr>             <td>ComponentWidth</td>             <td>float</td>             <td>控件宽</td>         </tr>         <tr>             <td>ComponentHeight</td>             <td>float</td>             <td>控件高</td>         </tr>         <tr>             <td>ComponentExtra</td>             <td>string</td>             <td>控件的附属信息，根据ComponentType设置</td>         </tr>     </tbody> </table><b>参数样例</b>：<pre>{    \"ChildrenComponents\": [        {            \"ComponentType\": \"SIGN_SIGNATURE\",            \"ComponentName\": \"个人签名\",            \"Placeholder\": \"请签名\",            \"ComponentOffsetX\": 10,            \"ComponentOffsetY\": 30,            \"ComponentWidth\": 119,            \"ComponentHeight\": 43,            \"ComponentExtra\": \"{\\\"ComponentTypeLimit\\\":[\\\"SYSTEM_ESIGN\\\"]}\"        },        {            \"ComponentType\": \"SIGN_SELECTOR\",            \"ComponentName\": \"是否同意此协议\",            \"Placeholder\": \"\",            \"ComponentOffsetX\": 50,            \"ComponentOffsetY\": 130,            \"ComponentWidth\": 120,            \"ComponentHeight\": 43,            \"ComponentExtra\": \"{\\\"Values\\\":[\\\"同意\\\",\\\"不同意\\\",\\\"再想想\\\"],\\\"FontSize\\\":12,\\\"FontAlign\\\":\\\"Left\\\",\\\"Font\\\":\\\"黑体\\\",\\\"MultiSelect\\\":false}\"        },        {            \"ComponentType\": \"SIGN_MULTI_LINE_TEXT\",            \"ComponentName\": \"批注附言\",            \"Placeholder\": \"\",            \"ComponentOffsetX\": 150,            \"ComponentOffsetY\": 300,            \"ComponentWidth\": 200,            \"ComponentHeight\": 86,            \"ComponentExtra\": \"\"        }    ]}</pre></ul>",
           "example": "ComponentExtra",
           "member": "string",
           "name": "ComponentExtra",
@@ -6394,7 +6543,7 @@
         },
         {
           "disabled": false,
-          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\n<ul><li> <b>TEXT</b> : 文本内容</li>\n<li> <b>MULTI_LINE_TEXT</b> : 文本内容， 可以用  \\n 来控制换行位置</li>\n<li> <b>CHECK_BOX</b> : true/false</li>\n<li> <b>FILL_IMAGE、ATTACHMENT</b> : 附件的FileId，需要通过UploadFiles接口上传获取</li>\n<li> <b>SELECTOR</b> : 选项值</li>\n<li> <b>DYNAMIC_TABLE</b>  - 传入json格式的表格内容，详见说明：[数据表格](https://qian.tencent.com/developers/company/dynamic_table)</li>\n<li> <b>DATE</b> : 格式化：xxxx年xx月xx日（例如：2024年05月28日）</li>\n<li> <b>SIGN_SEAL</b> : 印章ID，于控制台查询获取，[点击查看在控制上的位置](https://qcloudimg.tencent-cloud.cn/raw/cd403a5b949fce197fd9e88bb6db1517.png)</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 可以指定印章ID，于控制台查询获取，[点击查看在控制上的位置](https://qcloudimg.tencent-cloud.cn/raw/cd403a5b949fce197fd9e88bb6db1517.png)</li></ul>\n\n\n<b>控件值约束说明</b>：\n<table> <thead> <tr> <th>特殊控件</th> <th>填写约束</th> </tr> </thead> <tbody> <tr> <td>企业全称控件</td> <td>企业名称中文字符中文括号</td> </tr> <tr> <td>统一社会信用代码控件</td> <td>企业注册的统一社会信用代码</td> </tr> <tr> <td>法人名称控件</td> <td>最大50个字符，2到25个汉字或者1到50个字母</td> </tr> <tr> <td>签署意见控件</td> <td>签署意见最大长度为50字符</td> </tr> <tr> <td>签署人手机号控件</td> <td>国内手机号 13,14,15,16,17,18,19号段长度11位</td> </tr> <tr> <td>签署人身份证控件</td> <td>合法的身份证号码检查</td> </tr> <tr> <td>控件名称</td> <td>控件名称最大长度为20字符，不支持表情</td> </tr> <tr> <td>单行文本控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>多行文本控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>勾选框控件</td> <td>选择填字符串true，不选填字符串false</td> </tr> <tr> <td>选择器控件</td> <td>同单行文本控件约束，填写选择值中的字符串</td> </tr> <tr> <td>数字控件</td> <td>请输入有效的数字(可带小数点)</td> </tr> <tr> <td>日期控件</td> <td>格式：yyyy年mm月dd日</td> </tr> <tr> <td>附件控件</td> <td>JPG或PNG图片，上传数量限制，1到6个，最大6个附件，填写上传的资源ID</td> </tr> <tr> <td>图片控件</td> <td>JPG或PNG图片，填写上传的图片资源ID</td> </tr> <tr> <td>邮箱控件</td> <td>有效的邮箱地址, w3c标准</td> </tr> <tr> <td>地址控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>省市区控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>性别控件</td> <td>选择值中的字符串</td> </tr> <tr> <td>学历控件</td> <td>选择值中的字符串</td> </tr><tr> <td>水印控件</td> <td>水印控件设置为CUSTOM_WATERMARK类型时的水印内容</td> </tr> </tbody> </table>\n注：   `部分特殊控件需要在控制台配置模板形式创建`",
+          "document": "<p>控件填充vaule，ComponentType和传入值类型对应关系：</p><ul><li> <b>TEXT</b> : 文本内容</li><li> <b>MULTI_LINE_TEXT</b> : 文本内容， 可以用  \\n 来控制换行位置</li><li> <b>CHECK_BOX</b> : true/false</li><li> <b>FILL_IMAGE、ATTACHMENT</b> : 附件的FileId，需要通过UploadFiles接口上传获取</li><li> <b>SELECTOR</b> : 选项值</li><li> <b>DYNAMIC_TABLE</b>  - 传入json格式的表格内容，详见说明：[数据表格](https://qian.tencent.com/developers/company/dynamic_table)</li><li> <b>DATE</b> : 格式化：xxxx年xx月xx日（例如：2024年05月28日）</li><li> <b>SIGN_SEAL</b> : 印章ID，于控制台查询获取，[点击查看在控制上的位置](https://qcloudimg.tencent-cloud.cn/raw/cd403a5b949fce197fd9e88bb6db1517.png)</li><li> <b>SIGN_PAGING_SEAL</b> : 可以指定印章ID，于控制台查询获取，[点击查看在控制上的位置](https://qcloudimg.tencent-cloud.cn/raw/cd403a5b949fce197fd9e88bb6db1517.png)</li></ul><p><b>控件值约束说明</b>：</p><table> <thead> <tr> <th>特殊控件</th> <th>填写约束</th> </tr> </thead> <tbody> <tr> <td>企业全称控件</td> <td>企业名称中文字符中文括号</td> </tr> <tr> <td>统一社会信用代码控件</td> <td>企业注册的统一社会信用代码</td> </tr> <tr> <td>法人名称控件</td> <td>最大50个字符，2到25个汉字或者1到50个字母</td> </tr> <tr> <td>签署意见控件</td> <td>签署意见最大长度为50字符</td> </tr> <tr> <td>签署人手机号控件</td> <td>国内手机号 13,14,15,16,17,18,19号段长度11位</td> </tr> <tr> <td>签署人身份证控件</td> <td>合法的身份证号码检查</td> </tr> <tr> <td>控件名称</td> <td>控件名称最大长度为20字符，不支持表情</td> </tr> <tr> <td>单行文本控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>多行文本控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>勾选框控件</td> <td>选择填字符串true，不选填字符串false</td> </tr> <tr> <td>选择器控件</td> <td>同单行文本控件约束，填写选择值中的字符串</td> </tr> <tr> <td>数字控件</td> <td>请输入有效的数字(可带小数点)</td> </tr> <tr> <td>日期控件</td> <td>格式：yyyy年mm月dd日</td> </tr> <tr> <td>附件控件</td> <td>JPG或PNG图片，上传数量限制，1到6个，最大6个附件，填写上传的资源ID</td> </tr> <tr> <td>图片控件</td> <td>JPG或PNG图片，填写上传的图片资源ID</td> </tr> <tr> <td>邮箱控件</td> <td>有效的邮箱地址, w3c标准</td> </tr> <tr> <td>地址控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>省市区控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>性别控件</td> <td>选择值中的字符串</td> </tr> <tr> <td>学历控件</td> <td>选择值中的字符串</td> </tr><tr> <td>水印控件</td> <td>水印控件设置为CUSTOM_WATERMARK类型时的水印内容</td> </tr> </tbody> </table>注：   <code>部分特殊控件需要在控制台配置模板形式创建</code>",
           "example": "ComponentValue",
           "member": "string",
           "name": "ComponentValue",
@@ -6405,7 +6554,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">【暂未使用】</font>日期签署控件的字号，默认为 12",
+          "document": "<p><font color=\"red\">【暂未使用】</font>日期签署控件的字号，默认为 12</p>",
           "example": "12",
           "member": "int64",
           "name": "ComponentDateFontSize",
@@ -6416,7 +6565,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">【暂未使用】</font>控件归属的文档的ID， **发起合同时候不要填写此字段留空即可**",
+          "document": "<p><font color=\"red\">【暂未使用】</font>控件归属的文档的ID， <strong>发起合同时候不要填写此字段留空即可</strong></p>",
           "example": "c17bdf9c2a7bdcb32611f4d0200fee3d",
           "member": "string",
           "name": "DocumentId",
@@ -6427,7 +6576,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">【暂未使用】</font>控件描述，用户自定义，不影响合同发起流程",
+          "document": "<p><font color=\"red\">【暂未使用】</font>控件描述，用户自定义，不影响合同发起流程</p>",
           "example": "Desc",
           "member": "string",
           "name": "ComponentDescription",
@@ -6438,8 +6587,8 @@
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行横坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏左或偏右，可以通过调整横坐标方向的参数来使控件位置更加准确。\n注意： `向左调整设置为负数， 向右调整设置成正数`",
-          "example": "0",
+          "document": "<p><strong>如果控件是关键字定位方式</strong>，可以对关键字定位出来的区域进行横坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏左或偏右，可以通过调整横坐标方向的参数来使控件位置更加准确。<br>注意： <code>向左调整设置为负数， 向右调整设置成正数</code></p>",
+          "example": "100.5",
           "member": "float",
           "name": "OffsetX",
           "output_required": true,
@@ -6449,8 +6598,8 @@
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行纵坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏上或偏下，可以通过调整纵坐标方向的参数来使控件位置更加准确。\n注意： `向上调整设置为负数， 向下调整设置成正数`",
-          "example": "0",
+          "document": "<p><strong>如果控件是关键字定位方式</strong>，可以对关键字定位出来的区域进行纵坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏上或偏下，可以通过调整纵坐标方向的参数来使控件位置更加准确。<br>注意： <code>向上调整设置为负数， 向下调整设置成正数</code></p>",
+          "example": "100.5",
           "member": "float",
           "name": "OffsetY",
           "output_required": true,
@@ -6460,7 +6609,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识",
+          "document": "<p><font color=\"red\">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识</p>",
           "example": "componentId1",
           "member": "string",
           "name": "ChannelComponentId",
@@ -6471,7 +6620,7 @@
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，指定关键字排序规则时，可以选择Positive或Reverse两种排序方式。\n<ul><li> <b>Positive</b> :表示正序，即根据关键字在PDF文件内的顺序进行排列</li>\n<li> <b>Reverse</b> :表示倒序，即根据关键字在PDF文件内的反序进行排列</li></ul>\n\n在指定KeywordIndexes时，如果使用Positive排序方式，0代表在PDF内查找内容时，查找到的第一个关键字；如果使用Reverse排序方式，0代表在PDF内查找内容时，查找到的最后一个关键字。",
+          "document": "<p><strong>如果控件是关键字定位方式</strong>，指定关键字排序规则时，可以选择Positive或Reverse两种排序方式。</p><ul><li> <b>Positive</b> :表示正序，即根据关键字在PDF文件内的顺序进行排列</li><li> <b>Reverse</b> :表示倒序，即根据关键字在PDF文件内的反序进行排列</li></ul><p>在指定KeywordIndexes时，如果使用Positive排序方式，0代表在PDF内查找内容时，查找到的第一个关键字；如果使用Reverse排序方式，0代表在PDF内查找内容时，查找到的最后一个关键字。</p>",
           "example": "Positive\\Reverse",
           "member": "string",
           "name": "KeywordOrder",
@@ -6482,7 +6631,7 @@
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，在KeywordPage中指定关键字页码时，将只会在该页码中查找关键字，非该页码的关键字将不会查询出来。如果不设置查找所有页面中的关键字。",
+          "document": "<p><strong>如果控件是关键字定位方式</strong>，在KeywordPage中指定关键字页码时，将只会在该页码中查找关键字，非该页码的关键字将不会查询出来。如果不设置查找所有页面中的关键字。</p>",
           "example": "0",
           "member": "int64",
           "name": "KeywordPage",
@@ -6493,7 +6642,7 @@
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，关键字生成的区域的对齐方式， 可以设置下面的值\n<ul><li> <b>Middle</b> :居中</li>\n<li> <b>Below</b> :正下方</li>\n<li> <b>Right</b> :正右方</li>\n<li> <b>LowerRight</b> :右下角</li>\n<li> <b>UpperRight</b> :右上角。</li></ul>\n示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方",
+          "document": "<p><strong>如果控件是关键字定位方式</strong>，关键字生成的区域的对齐方式， 可以设置下面的值</p><ul><li> <b>Middle</b> :居中</li><li> <b>Below</b> :正下方</li><li> <b>Right</b> :正右方</li><li> <b>LowerRight</b> :右下角</li><li> <b>UpperRight</b> :右上角。</li></ul>示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方",
           "example": "Middle",
           "member": "string",
           "name": "RelativeLocation",
@@ -6504,7 +6653,7 @@
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，关键字索引是指在PDF文件中存在多个相同的关键字时，通过索引指定使用哪一个关键字作为最后的结果。可以通过指定多个索引来同时使用多个关键字。例如，[0,2]表示使用PDF文件内第1个和第3个关键字位置作为最后的结果。\n\n注意：关键字索引是从0开始计数的",
+          "document": "<p><strong>如果控件是关键字定位方式</strong>，关键字索引是指在PDF文件中存在多个相同的关键字时，通过索引指定使用哪一个关键字作为最后的结果。可以通过指定多个索引来同时使用多个关键字。例如，[0,2]表示使用PDF文件内第1个和第3个关键字位置作为最后的结果。</p><p>注意：关键字索引是从0开始计数的</p>",
           "example": "[0]",
           "member": "int64",
           "name": "KeywordIndexes",
@@ -6515,7 +6664,7 @@
         },
         {
           "disabled": false,
-          "document": "填写控件在腾讯电子签小程序填写界面展示的提示信息，例如，在身份证号码填写控件中，提示信息可以设置成“请输入18位身份证号码”。\n注：`签署控件设置此字段无效`",
+          "document": "<p>填写控件在腾讯电子签小程序填写界面展示的提示信息，例如，在身份证号码填写控件中，提示信息可以设置成“请输入18位身份证号码”。<br>注：<code>签署控件设置此字段无效</code></p>",
           "example": "请签名",
           "member": "string",
           "name": "Placeholder",
@@ -6526,7 +6675,7 @@
         },
         {
           "disabled": false,
-          "document": "**web嵌入发起合同场景下**， 是否锁定填写和签署控件值不允许嵌入页面进行编辑\n<ul><li>false（默认）：不锁定控件值，允许在页面编辑控件值</li>\n<li>true：锁定控件值，在页面无法编辑控件值</li></ul>",
+          "document": "<p><strong>web嵌入发起合同场景下</strong>， 是否锁定填写和签署控件值不允许嵌入页面进行编辑</p><ul><li>false（默认）：不锁定控件值，允许在页面编辑控件值</li><li>true：锁定控件值，在页面无法编辑控件值</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "LockComponentValue",
@@ -6537,7 +6686,7 @@
         },
         {
           "disabled": false,
-          "document": "**web嵌入发起合同场景下**，是否禁止移动和删除填写和签署控件\n<ul><li> <b>false（默认）</b> :可以移动和删除控件</li>\n<li> <b>true</b> : 禁止移动和删除控件</li></ul>",
+          "document": "<p><strong>web嵌入发起合同场景下</strong>，是否禁止移动和删除填写和签署控件</p><ul><li> <b>false（默认）</b> :可以移动和删除控件</li><li> <b>true</b> : 禁止移动和删除控件</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "ForbidMoveAndDelete",
@@ -7148,7 +7297,7 @@
         {
           "disabled": false,
           "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png\" target=\"_blank\">Agent.AppId</a></li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>\n</ul>注:\n`1. 企业激活时， 此时的Agent.ProxyOrganizationOpenId将会是企业激活后企业的唯一标识，建议开发者保存企业ProxyOrganizationOpenId，后续各项接口调用皆需要此参数。 `\n`2. 员工认证时， 此时的Agent.ProxyOperator.OpenId将会是员工认证加入企业后的唯一标识，建议开发者保存此员工的OpenId，后续各项接口调用皆需要此参数。 `\n`3. 同渠道应用(Agent.AppId)下，企业唯一标识ProxyOrganizationOpenId需要保持唯一，员工唯一标识OpenId也要保持唯一 (而不是企业下唯一)。 `",
-          "example": " \"Agent\": {         \"ProxyOperator\": {             \"OpenId\": \"n9527\"         },         \"ProxyOrganizationOpenId\": \"org_dianziqian\",         \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"     }",
+          "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": true,
@@ -7228,7 +7377,7 @@
         },
         {
           "disabled": false,
-          "document": "触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：\n<ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>",
+          "document": "<font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。\n触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：\n<ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>",
           "example": "VERIFIED",
           "member": "string",
           "name": "AutoJumpBackEvent",
@@ -7255,7 +7404,7 @@
         },
         {
           "disabled": false,
-          "document": "认证完成跳转链接。\n注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。",
+          "document": "<font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。\n认证完成跳转链接。\n注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。",
           "example": "https://qian.tencent.com/",
           "member": "string",
           "name": "AutoJumpUrl",
@@ -7319,7 +7468,7 @@
         {
           "disabled": false,
           "document": "企业认证时个性化能力信息",
-          "example": "{\"OrganizationAuthorizationOptions\": {          \"BankAccountNumberSame\": true,      \"OrganizationNameSame\": true, \"LegalNameSame\": true, \"UniformSocialCreditCodeSame\": true }}",
+          "example": "无",
           "member": "OrganizationAuthorizationOptions",
           "name": "OrganizationAuthorizationOptions",
           "required": false,
@@ -7337,11 +7486,29 @@
         {
           "disabled": true,
           "document": "无",
-          "example": "    \"Operator\": {         \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"}",
+          "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。\np.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color=\"red\">\"true\" </font>\n如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "example": "无",
+          "member": "JumpEvent",
+          "name": "JumpEvents",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业证照类型：\n<ul>\n<li> **USCC** :(默认)工商组织营业执照</li>\n<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>\n</ul>\n",
+          "example": "USCC",
+          "member": "string",
+          "name": "ProxyOrganizationIdCardType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7471,6 +7638,15 @@
           "example": "请授权注册消防工程师执业印章",
           "member": "string",
           "name": "HintText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 2000长度。在执业章授权完成后的回调场景，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/partner/callback_types_seals#%E5%9B%9B-%E5%91%98%E5%B7%A5%E6%89%A7%E4%B8%9A%E7%AB%A0%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5\">回调通知</a>模块。",
+          "example": "QmFzZTYOIEJhc2U2NCA=",
+          "member": "string",
+          "name": "UserData",
           "required": false,
           "type": "string"
         }
@@ -7803,6 +7979,105 @@
           "name": "ForbidEditWatermark",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起成功后是否预览合同\n<ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "PreviewAfterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起成功之后是否签署合同，仅当前经办人作为签署人时生效\n<ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "SignAfterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏操作步骤: 具体的控件类型如下\n\n<ul><li>1 : 选择文件及签署方</li>\n<li>2 : 补充文件内容</li>\n<li>4 : 发起前合同信息与设置确认</li>\n</ul>\n注：仅对新版页面生效",
+          "example": "[1,2,4]",
+          "member": "uint64",
+          "name": "HideOperationSteps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本企业简称，注：仅对新版页面生效",
+          "example": "典子签企业",
+          "member": "string",
+          "name": "SelfName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起后签署码隐藏，默认false，注：仅对新版页面生效",
+          "example": "false",
+          "member": "bool",
+          "name": "HideSignCodeAfterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起过程中是否保存草稿\t",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedFlowDraft",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注: \n<font color='red'>空数组代表未指定</font>），具体的控件类型如下\n\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
+          "example": "[\"MULTI_LINE_TEXT\"]",
+          "member": "string",
+          "name": "HideComponentTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注: \n<font color='red'>空数组代表未指定</font>），具体的控件类型如下\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
+          "example": "[\"MULTI_LINE_TEXT\"]",
+          "member": "string",
+          "name": "ShowComponentTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": " 禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”\n",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidAddApprover",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "  禁止设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板\n",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditFlowProperties",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起流程的可嵌入页面结果页配置",
+          "example": "无",
+          "member": "CreateResultPageConfig",
+          "name": "ResultPageConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -8108,7 +8383,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationName二选一传入。\n\n注：`被授权企业必须和当前企业在同一应用号下`",
           "example": "yDwFdUUckxxxxxxxxxxxxxXbsvN43W6Kax",
           "member": "string",
@@ -8117,7 +8392,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。\n\n注: \n1. 如果名称中包含英文括号()，请使用中文括号（）代替。\n2. 被授权企业必须和当前企业在同一应用号下",
           "example": "王五示例企业",
           "member": "string",
@@ -8127,7 +8402,7 @@
         },
         {
           "disabled": false,
-          "document": "是否给平台应用授权\n\n<ul>\n<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li>\n<li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>\n</ul>\n\n 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。",
+          "document": "是否给平台应用授权\n\n<ul>\n<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li>\n<li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>\n</ul>\n\n 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。",
           "example": "false",
           "member": "bool",
           "name": "PlatformAppAuthorization",
@@ -8137,7 +8412,7 @@
         {
           "disabled": false,
           "document": "在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：\n\n<ul>\n<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>\n<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>\n<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>\n<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>\n</ul>",
-          "example": "[OFFICIAL, FINANCE]",
+          "example": "[\"OFFICIAL\", \"FINANCE\"]",
           "member": "string",
           "name": "SealTypes",
           "required": false,
@@ -8145,12 +8420,30 @@
         },
         {
           "disabled": false,
-          "document": "在处理授权关系时，授权的方向\n<ul>\n<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>\n<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>\n</ul>",
+          "document": "在处理授权关系时，授权的方向\n<ul>\n<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>\n<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li>\n</ul>",
           "example": "false",
           "member": "bool",
           "name": "AuthToMe",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：`被授权企业必须和当前企业在同一应用号下`",
+          "example": "[\"yDwFdUUckxxxxxxxxxxxxxXbsvN43W6Kax\"]",
+          "member": "string",
+          "name": "AuthorizedOrganizationIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50",
+          "example": "[\"王五示例企业\"]",
+          "member": "string",
+          "name": "AuthorizedOrganizationNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8310,6 +8603,45 @@
       ],
       "type": "object"
     },
+    "CreateResultPageConfig": {
+      "document": "发起流程的可嵌入页面操作结果页配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<ul>\n  <li>0 : 发起审批成功页面（通过接口<a href=\"https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow\" target=\"_blank\">创建发起流程web页面</a>发起时设置了NeedCreateReview参数为true）</li>\n</ul>",
+          "example": "",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果页标题，不超过50字",
+          "example": "",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果页描述，不超过200字",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateSealByImageRequest": {
       "document": "CreateSealByImage请求参数结构体",
       "members": [
@@ -8402,6 +8734,24 @@
           "name": "TaxIdentifyCode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章描述内容",
+          "example": "印章描述说明",
+          "member": "string",
+          "name": "SealDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "个性化配置字段，默认不传。",
+          "example": "无",
+          "member": "Option",
+          "name": "Options",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8425,6 +8775,26 @@
           "example": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a6cdd6******64d4",
           "member": "string",
           "name": "ImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸验证操作人链接，用法可以参考\"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)\"，默认为空。",
+          "example": "/pages/guide/index?to=FACE_IDENTIFY&request_token=yDXXXXXXXXXXXXXX&expired_time=1758888888",
+          "member": "string",
+          "name": "SealOperatorVerifyPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "member": "string",
+          "name": "SealOperatorVerifyQrcodeUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8578,7 +8948,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li></ul>\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
+          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li>\n<li> **4** :合同签署页面更多操作的查看合同基本信息按钮</li>\n<li> **5** :合同签署页面更多操作的撤销按钮</li></ul>\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
           "example": "[0, 1, 2]",
           "member": "int64",
           "name": "Hides",
@@ -8704,6 +9074,15 @@
           "name": "Agent",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "认证流Ids数组 认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。 ",
+          "example": "[\"yDCHHUUckpbdaiqbUxJVsHWy99WG6kTY\"]\t",
+          "member": "string",
+          "name": "AuthorizationIds",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9549,7 +9928,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地\n\n注: `此功能需要开通功能白名单【第三方应用集成企业获取模版PDF下载链接】，使用前请联系对接的客户经理沟通。`",
+          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地\n\n注: `此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。`",
           "example": "false",
           "member": "bool",
           "name": "WithPdfUrl",
@@ -9744,7 +10123,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>\t",
+          "document": "搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。 <ul><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模板类型id列表。</li></ul>\t",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9753,7 +10132,7 @@
         },
         {
           "disabled": false,
-          "document": "查询绑定了模版的用户合同类型\n<ul>\n<li>false（默认值），查询用户合同类型</li>\n<li>true，查询绑定了模版的用户合同类型</li>\n</ul>",
+          "document": "查询绑定了模板的用户合同类型<ul><li>false（默认值），查询用户合同类型</li><li>true，查询绑定了模板的用户合同类型</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "QueryBindTemplate",
@@ -9868,7 +10247,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。 - 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 - 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。 - <font color=\"red\">不建议继续使用</font>，请使用<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId指定合同\t",
+          "document": "合同流程ID，为32位字符串。 \n- FlowId 在通过[ChannelCreateFlowByFiles](https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles) 发起，可以在返回参数FlowId中获取。\n- 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 \n- 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -9931,6 +10310,30 @@
       ],
       "usage": "out"
     },
+    "DynamicSignOption": {
+      "document": "动态签署领取链接配置，当全部签署方均为动态签署方时生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多份合同批量签署时，动态签署领取要求：<ul><li><b>0（默认值）</b>: 可以领取部分合同进入签署。</li><li><b>1 </b>: 必须全部领取进入签署，生成链接的所有合同必须相同经办人完成合同的领取签署。</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "DynamicReceiveType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动态签署方时，预设的企业OpenId，预设企业OpenId后，只允许对应的企业员工进行领取签署。",
+          "example": "ess_online_org_1",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "EmbedUrlOption": {
       "document": "创建嵌入式页面url个性化参数",
       "members": [
@@ -9954,12 +10357,21 @@
         },
         {
           "disabled": false,
-          "document": "跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，",
+          "document": "跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，",
           "example": "true",
-          "member": "string",
+          "member": "bool",
           "name": "SkipUploadFile",
           "required": false,
-          "type": "string"
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏下载文件按钮，默认为false(展示下载文件按钮)\n\n- false: 展示下载文件按钮\n- true: 不展示下载文件按钮\n\n\n\n注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipDownloadFile",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -9967,6 +10379,24 @@
           "example": "true",
           "member": "bool",
           "name": "ForbidEditWatermark",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "印章描述",
+          "example": "合同章",
+          "member": "string",
+          "name": "SealDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止编辑印章描述内容\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditSealDescription",
           "required": false,
           "type": "bool"
         }
@@ -10827,7 +11257,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul><li> **INIT** :合同创建</li>\n<li> **PART** :合同签署中(至少有一个签署方已经签署)</li>\n<li> **REJECT** :合同拒签</li>\n<li> **ALL** :合同签署完成</li>\n<li> **DEADLINE** :合同流签(合同过期)</li>\n<li> **CANCEL** :合同撤回</li>\n<li> **RELIEVED** :解除协议（已解除）</li></ul>\n ",
+          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul><li> **INIT** :合同创建</li>\n<li> **PART** :合同签署中(至少有一个签署方已经签署)</li>\n<li> **REJECT** :合同拒签</li>\n<li> **ALL** :合同签署完成</li>\n<li> **DEADLINE** :合同流签(合同过期)</li>\n<li> **CANCEL** :合同撤回</li>\n<li> **INVALID** : 已失效（签署期间有签署人改名等原因导致）</li>\n<li> **RELIEVED** :解除协议（已解除）</li></ul>\n ",
           "example": "ALL",
           "member": "string",
           "name": "FlowStatus",
@@ -11634,7 +12064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。",
+          "document": "当选择语音问答模式时，系统自动播报的问题文本，最大长度为250个字符。",
           "example": "请问您本次业务是本人自愿办理吗？如是，请回复“我同意”。",
           "member": "string",
           "name": "Question",
@@ -11688,6 +12118,30 @@
         }
       ],
       "usage": "out"
+    },
+    "JumpEvent": {
+      "document": "跳转事件的结构体，其中包括认证期间收录，授权书审核，企业认证的回跳事件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跳转事件枚举，\n* 1 - 企业收录。\n* 2 - 超管授权书审核。\n* 3 - 认证完成。",
+          "example": "1",
+          "member": "uint64",
+          "name": "JumpEventType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。\nEndpoint如果是APP 类型，请传递<font color=\"red\">\"true\"</font>\n如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)\np.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "example": "https://qian.tencent.com/",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyExtendedServiceRequest": {
       "document": "ModifyExtendedService请求参数结构体",
@@ -12072,6 +12526,36 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "印章的真实宽度，单位毫米\t",
+          "example": "42",
+          "member": "int64",
+          "name": "RealWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "印章的真实高度，单位毫米\t",
+          "example": "42",
+          "member": "int64",
+          "name": "RealHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "印章描述",
+          "example": "印章描述内容",
+          "member": "string",
+          "name": "SealDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12108,7 +12592,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业的唯一标识，支持批量(用,分割)，",
+          "document": "第三方平台子客企业的唯一标识，支持批量(用,分割) \n一次批量操作最多支持100个第三方平台子客",
           "example": "org_dianziqian,org_zhangsan",
           "member": "string",
           "name": "ProxyOrganizationOpenIds",
@@ -12141,6 +12625,24 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页每页返回的数据条数，单页最大支持 100。\n不传默认值为 20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12190,7 +12692,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业标识列表",
+          "document": "第三方平台子客企业标识列表，仅在select 模式下返回",
           "example": "[\"org_zhangsan\"]",
           "member": "string",
           "name": "ProxyOrganizationOpenIds",
@@ -12206,6 +12708,16 @@
           "name": "FailMessageList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权的平台子企业数量，OperateType 为select 时返回。",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -12291,6 +12803,34 @@
       ],
       "type": "object"
     },
+    "Option": {
+      "document": "业务逻辑个性化配置字段，默认不传\n\n注: `配置前请联系对接的客户经理沟通确认。`",
+      "members": [
+        {
+          "disabled": false,
+          "document": "个性化配置参数Key字段，对应传入字段的字段名",
+          "example": "SealOperatorVerify",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "个性化配置参数Value字段，对应传入字段的字段值",
+          "example": "true",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OrganizationAuthUrl": {
       "document": "企业批量注册链接信息",
       "members": [
@@ -12310,6 +12850,26 @@
           "example": "企业三要素不通过",
           "member": "string",
           "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业批量注册 传递过来的企业名称，方便客户定位企业\t",
+          "example": "典子谦示例企业",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业批量注册的唯一 Id， 此 Id 可以用在[创建企业批量认证链接-单链接](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)。",
+          "example": "yDCHoUU08m4mnpUxHGGHPv9FScKQsvHb",
+          "member": "string",
+          "name": "SubTaskId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13370,7 +13930,7 @@
       "usage": "in"
     },
     "ReleasedApprover": {
-      "document": "解除协议的签署人，如不指定，默认使用待解除流程(原流程)中的签署人。</br>\n`注意`:\n - 不支持更换C端(个人身份类型)签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n - 目前不支持替换C端(个人身份类型)签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 \n - 当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只传参数ApproverSignRole。\n\n如果需要指定B端(企业身份类型)签署人，其中ReleasedApprover需要传递的参数如下：\n(`ApproverNumber`, `ReleasedApproverRecipientId`这两个二选一), `OrganizationName`, `ApproverType`必传。</br>\n对于其他身份标识：\n- **子客企业指定经办人**：OpenId必传，OrganizationOpenId必传；\n- **非子客企业经办人**：Name、Mobile必传。",
+      "document": "解除协议的签署人，如不指定，默认使用待解除流程(原流程)中的签署人。</br>\n`注意`:\n - 不支持更换C端(个人身份类型)签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n - 目前不支持替换C端(个人身份类型)签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 \n - 当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只传参数ApproverSignRole。\n\n如果需要指定B端(企业身份类型)签署人，其中ReleasedApprover需要传递的参数如下：\n`ApproverNumber`, `OrganizationName`, `ApproverType`必传。</br>\n对于其他身份标识：\n- **子客企业指定经办人**：OpenId必传，OrganizationOpenId必传；\n- **非子客企业经办人**：Name、Mobile必传。",
       "members": [
         {
           "disabled": false,
@@ -13392,7 +13952,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人在原合同中的RecipientId，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo\" target=\"_blank\">DescribeFlowDetailInfo</a>接口查看原流程中的签署人信息，可参考返回结构体<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#flowapproverdetail\" target=\"_blank\">FlowApproverDetail</a>中的RecipientId。\n**注意**：当指定了此参数后，ApproverNumber即失效，会以本参数作为原合同参与人的选取。与ApproverNumber二选一。",
+          "document": "<font color=\"red\">【已废弃】</font>请用ApproverNumber来指定替换的参与方的位置",
           "example": "yDCb7UUckpwm3x62UEXHVn8B2hB9q8hT",
           "member": "string",
           "name": "ReleasedApproverRecipientId",
@@ -13888,7 +14448,7 @@
         },
         {
           "disabled": false,
-          "document": "显示的员工名\n注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息",
+          "document": "显示的员工名\n注意：该字段返回的是打码信息",
           "example": "张三",
           "member": "string",
           "name": "DisplayName",
@@ -13898,8 +14458,8 @@
         },
         {
           "disabled": false,
-          "document": "员工手机号\n注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息",
-          "example": "18888888888",
+          "document": "员工手机号\n注意：该字段返回的是打码信息",
+          "example": "188****8888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -13908,8 +14468,8 @@
         },
         {
           "disabled": false,
-          "document": "员工邮箱",
-          "example": "zhansan@qq.com",
+          "document": "员工邮箱\n注意：该字段返回的是打码信息",
+          "example": "zh****@qq.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -14415,7 +14975,7 @@
         },
         {
           "disabled": false,
-          "document": "模版的用户合同类型",
+          "document": "模板的用户合同类型",
           "example": "无",
           "member": "UserFlowType",
           "name": "UserFlowType",
@@ -14427,7 +14987,7 @@
       "usage": "out"
     },
     "TemplateUserFlowType": {
-      "document": "模版对应的合同类型",
+      "document": "模板对应的合同类型",
       "members": [
         {
           "disabled": false,
@@ -14451,7 +15011,7 @@
         },
         {
           "disabled": false,
-          "document": "每个合同类型绑定的模版数量\t",
+          "document": "每个合同类型绑定的模板数量\t",
           "example": "10",
           "member": "int64",
           "name": "TemplateNum",
@@ -14510,7 +15070,7 @@
         },
         {
           "disabled": false,
-          "document": "\n文件对应业务类型,可以选择的类型如下\n<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li></ul>",
+          "document": "文件对应业务类型,可以选择的类型如下<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",
@@ -14520,7 +15080,7 @@
         {
           "disabled": false,
           "document": "上传文件内容数组，一次最多可上传20个文件。\n\n<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。",
-          "example": "FileInfos",
+          "example": "无",
           "member": "UploadFile",
           "name": "FileInfos",
           "required": false,

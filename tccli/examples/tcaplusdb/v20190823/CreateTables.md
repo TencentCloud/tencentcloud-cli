@@ -19,7 +19,7 @@ tccli tcaplusdb CreateTables --cli-unfold-argument  \
     --SelectedTables.0.TableGroupId 2 \
     --SelectedTables.0.TableName PLAYERONLINECNT \
     --SelectedTables.0.TableType GENERIC \
-    --SelectedTables.0.Memo test
+    --SelectedTables.0.Memo memo
 ```
 
 Output: 

@@ -6,41 +6,41 @@ Input:
 
 ```
 tccli gaap DescribeProxyGroupList --cli-unfold-argument  \
-    --ProjectId 0 \
-    --Limit 20 \
-    --Offset 0
+    --Offset 0 \
+    --Limit 1 \
+    --ProjectId 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "ProxyGroupList": [
             {
-                "GroupId": "lg-nq8hpbvb",
-                "Http3Supported": 1,
-                "FeatureBitmap": 7,
+                "CreateTime": 1768205812,
                 "Domain": null,
-                "GroupName": "勿删-通道组",
+                "FeatureBitmap": 7,
+                "GroupId": "lg-joaaddy1",
+                "GroupName": "group-name-01",
+                "Http3Supported": 1,
                 "ProjectId": 0,
+                "ProxyType": 0,
                 "RealServerRegionInfo": {
-                    "RegionId": "Shanghai",
-                    "RegionName": "上海（原中国大陆-华东大区）",
+                    "FeatureBitmap": 207,
+                    "IDCType": "dc",
                     "RegionArea": "EastChina",
                     "RegionAreaName": "EastChina",
-                    "IDCType": "dc",
-                    "FeatureBitmap": 207,
+                    "RegionId": "Shanghai",
+                    "RegionName": "上海（原中国大陆-华东大区）",
                     "SupportFeature": null
                 },
-                "Status": "RUNNING",
+                "Status": "CHANGING",
                 "TagSet": [],
-                "Version": "3.0",
-                "CreateTime": 1742284135,
-                "ProxyType": 0
+                "Version": "3.0"
             }
         ],
-        "RequestId": "c027bc0f-f904-43e7-8c3f-b1a3cfea0325"
+        "TotalCount": 17,
+        "RequestId": "5fa9ade4-b5b7-4306-9b62-7e67ee3823fc"
     }
 }
 ```

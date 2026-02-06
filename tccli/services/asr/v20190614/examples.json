@@ -195,13 +195,13 @@
     "SentenceRecognition": [
       {
         "document": "用户通过语音Url的方式（SourceType为0）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: SentenceRecognition\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=************************************************************/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"UsrAudioKey\": \"test\",\n    \"SubServiceType\": 2,\n    \"Url\": \"http://tes.cos.ap-guangzhou.myqcloud.com/test.wav\",\n    \"ProjectId\": 0,\n    \"EngSerViceType\": \"8k_zh\",\n    \"VoiceFormat\": \"wav\",\n    \"SourceType\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: SentenceRecognition\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=************************************************************/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"SubServiceType\": 2,\n    \"Url\": \"http://tes.cos.ap-guangzhou.myqcloud.com/test.wav\",\n    \"ProjectId\": 0,\n    \"EngSerViceType\": \"8k_zh\",\n    \"VoiceFormat\": \"wav\",\n    \"SourceType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41ed9283-0c09-46fb-917b-0b83fa95f0be\",\n        \"Result\": \"腾讯云语音识别欢迎您。\",\n        \"AudioDuration\": 2430,\n        \"WordSize\": 4,\n        \"WordList\": [\n            {\n                \"Word\": \"腾讯云\",\n                \"StartTime\": 120,\n                \"EndTime\": 810\n            },\n            {\n                \"Word\": \"语音识别\",\n                \"StartTime\": 810,\n                \"EndTime\": 1530\n            },\n            {\n                \"Word\": \"欢迎\",\n                \"StartTime\": 1530,\n                \"EndTime\": 1890\n            },\n            {\n                \"Word\": \"您\",\n                \"StartTime\": 1890,\n                \"EndTime\": 2250\n            }\n        ]\n    }\n}",
         "title": "通过语音Url来调用接口"
       },
       {
         "document": "用户通过上传语音数据（Data）的方式（SourceType为1）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: SentenceRecognition\nX-TC-Timestamp: 1599140479\nAuthorization: TC3-HMAC-SHA256 Credential=************************************************************/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=aa5e2b8b16ced1ac9f877c9a92dab641dcd940837f5869a9e933688c181094de\n<公共请求参数>\n\n{\n    \"UsrAudioKey\": \"test\",\n    \"SubServiceType\": 2,\n    \"ProjectId\": 0,\n    \"EngSerViceType\": \"8k_zh\",\n    \"VoiceFormat\": \"wav\",\n    \"Data\": \"eGNmYXNkZmFzZmFzZGZhc2RmCg==\",\n    \"SourceType\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: SentenceRecognition\nX-TC-Timestamp: 1599140479\nAuthorization: TC3-HMAC-SHA256 Credential=************************************************************/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=aa5e2b8b16ced1ac9f877c9a92dab641dcd940837f5869a9e933688c181094de\n<公共请求参数>\n\n{\n    \"SubServiceType\": 2,\n    \"ProjectId\": 0,\n    \"EngSerViceType\": \"8k_zh\",\n    \"VoiceFormat\": \"wav\",\n    \"Data\": \"eGNmYXNkZmFzZmFzZGZhc2RmCg==\",\n    \"SourceType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41ed9283-0c09-46fb-917b-0b83fa95f0be\",\n        \"Result\": \"腾讯云语音识别欢迎您。\",\n        \"AudioDuration\": 2430,\n        \"WordSize\": 4,\n        \"WordList\": [\n            {\n                \"Word\": \"腾讯云\",\n                \"StartTime\": 120,\n                \"EndTime\": 810\n            },\n            {\n                \"Word\": \"语音识别\",\n                \"StartTime\": 810,\n                \"EndTime\": 1530\n            },\n            {\n                \"Word\": \"欢迎\",\n                \"StartTime\": 1530,\n                \"EndTime\": 1890\n            },\n            {\n                \"Word\": \"您\",\n                \"StartTime\": 1890,\n                \"EndTime\": 2250\n            }\n        ]\n    }\n}",
         "title": "通过语音数据来调用接口"
       }
@@ -234,7 +234,7 @@
       {
         "document": "比对两段音频的声纹相似度",
         "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintCompare\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"SrcAudioData\": \"AAAAADADAAAAA\",\n    \"DestAudioData\": \"AAAAADADAAAAA\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Score\": \"100.0\",\n            \"Decision\": \"1\"\n        },\n        \"RequestId\": \"dsadasdasdasdasad\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Score\": \"100.0\",\n            \"Decision\": 1\n        },\n        \"RequestId\": \"dsadasdasdasdasad\"\n    }\n}",
         "title": "音频声纹比对"
       }
     ],
@@ -257,8 +257,8 @@
     "VoicePrintEnroll": [
       {
         "document": "通过一段音频数据进行说话人注册",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintEnroll\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"SpeakerNick\": \"ross\",\n    \"Data\": \"UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"db24a3e3-7926-5xxxxxxf01\",\n            \"SpeakerNick\": \"ross\"\n        },\n        \"RequestId\": \"dbxxxxxxe3-7926-5xxxxxxf01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintEnroll\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 1,\n    \"SampleRate\": 16000,\n    \"SpeakerNick\": \"李九州\",\n    \"AudioUrl\": \"https://xxx-test-xxx.cos.ap-nanjing.myqcloud.com/%E5%A3%Bxxxxx%E6%8D%AE/xxxx.mp3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SpeakerNick\": \"李九州\",\n            \"VoicePrintId\": \"23eda848-9c0a-xxxx-8b00-39df9c9617e7\"\n        },\n        \"RequestId\": \"cb82a203-xxxxx-43ec-b12a-d9dba5efd577\"\n    }\n}",
         "title": "注册说话人"
       }
     ],
@@ -273,17 +273,17 @@
     "VoicePrintUpdate": [
       {
         "document": "更新说话人的音频和昵称",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintUpdate\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 0,\n    \"SpeakerNick\": \"小明\",\n    \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\",\n    \"Data\": \"UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\",\n            \"SpeakerNick\": \"小明\"\n        },\n        \"RequestId\": \"676a22c********3625b0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintUpdate\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 1,\n    \"SampleRate\": 16000,\n    \"VoicePrintId\": \"0928d167-dcd0-44b6xxxx-85d303273a72\",\n    \"SpeakerNick\": \"张三\",\n    \"AudioUrl\": \"https://adison-testxxxx.cos.ap-nanjing.myqcloud.com/%E5%xx%B0%E7xxx%BA%B9%E6%95%B0%E6%8D%AE/xxxx.wav\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SpeakerNick\": \"张三\",\n            \"VoicePrintId\": \"0928d167-xxxx44b6-9465-85d303273a72\"\n        },\n        \"RequestId\": \"9ac61e25-3860-xxxxx-9b48-61a3c69ea408\"\n    }\n}",
         "title": "说话人更新"
       }
     ],
     "VoicePrintVerify": [
       {
-        "document": "验证音频和说话人id是否一致",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintVerify\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"VoicePrintId\": \"KJHGUGKGGGFGYFVDA\",\n    \"Data\": \"UklGRiRTBwBXQVZFZm10IBAA\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"KJHGUG****GGFGYFVDA\",\n            \"Score\": \"60.0\",\n            \"Decision\": 1\n        },\n        \"RequestId\": \"dasdasdadsdas*****dasdada\"\n    }\n}",
-        "title": "说话人验证"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintVerify\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 1,\n    \"SampleRate\": 16000,\n    \"VoicePrintId\": \"0928d167-dcd0-xxxx-85d303273a72\",\n    \"AudioUrl\": \"https://xxxx-test-xxxx.cos.ap-nanjing.myqcloud.com/%E5%A3%BxxxxE6%95%B0%E6%8D%AE/test.wav\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Decision\": 1,\n            \"Score\": \"100.0\",\n            \"VoicePrintId\": \"0928d167-dcd0-xxxx-9465-85d303273a72\"\n        },\n        \"RequestId\": \"be2ce6ff-b1ab-xxxx-9c17-876a73d6f56f\"\n    }\n}",
+        "title": "说话人认证"
       }
     ]
   },

@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli tse DescribeNativeGatewayServiceSources --cli-unfold-argument  \
+    --SourceID ins-5ef8277d \
     --SourceName nacos-learn-prod \
     --OrderType AES \
     --Limit 1 \

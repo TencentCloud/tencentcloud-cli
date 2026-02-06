@@ -15,37 +15,77 @@ Output:
     "Response": {
         "Groups": [
             {
-                "ProjectId": 0,
-                "CreateTime": "2022-03-23 12:05:22",
+                "CreateTime": "2022-06-08 17:06:38",
                 "Inbound": [
                     {
-                        "Action": "Describe*",
-                        "CidrIp": "127.0.0.1",
-                        "PortRange": "27017",
-                        "IpProtocol": "tcp",
+                        "Action": "ACCEPT",
+                        "AddressModule": "",
+                        "CidrIp": "**.**.**.**/24",
+                        "Desc": "",
                         "Id": "",
-                        "AddressModule": "",
-                        "ServiceModule": "",
-                        "Desc": "localip"
-                    }
-                ],
-                "Outbound": [
-                    {
-                        "Action": "Describe*",
-                        "CidrIp": "127.0.0.1",
-                        "PortRange": "27017",
                         "IpProtocol": "tcp",
+                        "PortRange": "8086",
+                        "ServiceModule": ""
+                    },
+                    {
+                        "Action": "ACCEPT",
                         "AddressModule": "",
-                        "ServiceModule": "",
-                        "Desc": "localip"
+                        "CidrIp": "**.**.**.**/24",
+                        "Desc": "",
+                        "Id": "",
+                        "IpProtocol": "tcp",
+                        "PortRange": "****",
+                        "ServiceModule": ""
+                    },
+                    {
+                        "Action": "ACCEPT",
+                        "AddressModule": "",
+                        "CidrIp": "**.**.**.**/24",
+                        "Desc": "",
+                        "Id": "",
+                        "IpProtocol": "tcp",
+                        "PortRange": "****",
+                        "ServiceModule": ""
+                    },
+                    {
+                        "Action": "ACCEPT",
+                        "AddressModule": "",
+                        "CidrIp": "**.**.**.**/24",
+                        "Desc": "",
+                        "Id": "",
+                        "IpProtocol": "tcp",
+                        "PortRange": "****",
+                        "ServiceModule": ""
+                    },
+                    {
+                        "Action": "ACCEPT",
+                        "AddressModule": "",
+                        "CidrIp": "**.**.**.**/24",
+                        "Desc": "",
+                        "Id": "",
+                        "IpProtocol": "tcp",
+                        "PortRange": "****",
+                        "ServiceModule": ""
+                    },
+                    {
+                        "Action": "ACCEPT",
+                        "AddressModule": "ipm-pvcdf2ty",
+                        "CidrIp": "",
+                        "Desc": "",
+                        "Id": "",
+                        "IpProtocol": "tcp",
+                        "PortRange": "**,**,**,****,**,****",
+                        "ServiceModule": ""
                     }
                 ],
-                "SecurityGroupId": "sg-cade***",
-                "SecurityGroupName": "sg",
-                "SecurityGroupRemark": "sg-mark"
+                "Outbound": [],
+                "ProjectId": 0,
+                "SecurityGroupId": "sg-0klp****",
+                "SecurityGroupName": "default",
+                "SecurityGroupRemark": "System created security group"
             }
         ],
-        "RequestId": "bc59fa05-d429-4bcf-863f-1f6f99295485"
+        "RequestId": "21d6a495-f46d-4440-bd25-d4e36f51afdd"
     }
 }
 ```

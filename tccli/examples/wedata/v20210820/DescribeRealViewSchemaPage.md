@@ -24,15 +24,15 @@ Output:
     "Response": {
         "Items": [
             {
-                "SchemaName": "abc",
-                "OriginDatabaseName": "abc"
+                "SchemaName": "wedata_schema",
+                "OriginDatabaseName": "wedata_databse"
             }
         ],
         "PageNumber": 1,
         "PageSize": 1,
         "TotalCount": 1,
         "TotalPage": 1,
-        "RequestId": "abc"
+        "RequestId": "478qw-gfdu2-dadfo"
     }
 }
 ```

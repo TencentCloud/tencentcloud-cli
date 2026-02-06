@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata DeleteCustomFunction --cli-unfold-argument  \
-    --ProjectId 1470575647377821696 \
-    --ClusterIdentifier emr-demo \
-    --FunctionId 217377ce-bcc0-446e-afd9-64ef4b707777 \
-    --FunctionType HIVE
+    --ClusterIdentifier DLC_hx756s1y \
+    --FunctionId 4ecf0901-66ff-4fee-8ad4-b628605d0ff8 \
+    --ProjectId 1470547050521227264 \
+    --FunctionType DLC
 ```
 
 Output: 
@@ -17,8 +17,8 @@ Output:
 {
     "Response": {
         "ErrorMessage": null,
-        "FunctionId": "217377ce-bcc0-446e-afd9-64ef4b707391",
-        "RequestId": "3dfeffd0-74b1-4d5d-bcbd-247de85c9815"
+        "FunctionId": "4ecf0901-66ff-4fee-8ad4-b628605d0ff8",
+        "RequestId": "1ac2b0a7-497a-4c7f-883e-8a25f491bdfd"
     }
 }
 ```

@@ -1,35 +1,71 @@
-**Example 1: CreateReadOnlyDBInstance**
+**Example 1: 创建只读实例，使用校验模式**
 
-创建只读实例
+创建只读实例，指定主实例为postgres-abcdef，只校验不实际发起创建
 
 Input: 
 
 ```
 tccli postgres CreateReadOnlyDBInstance --cli-unfold-argument  \
+    --DBVersion 12.22 \
+    --InstanceChargeType POSTPAID_BY_HOUR \
     --InstanceCount 1 \
-    --AutoRenewFlag 1 \
-    --Zone ap-guangzhou-2 \
-    --MasterDBInstanceId Postgres-testmaster \
-    --DBVersion 9.3.5 \
-    --Storage 10 \
+    --MasterDBInstanceId postgres-abcdef \
     --Period 1 \
-    --SpecCode cdb.pg.z1.2g \
-    --InstanceChargeType prepaid \
-    --AutoVoucher 0
+    --ProjectId 1 \
+    --ReadOnlyGroupId  \
+    --SecurityGroupIds sg-iwnfp51z \
+    --SpecCode pg.it.small2 \
+    --Storage 100 \
+    --SubnetId subnet-1i9huswn \
+    --VpcId vpc-8btfafeo \
+    --Zone ap-beijing-4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BillId": "20241205591002398481191",
-        "DBInstanceIdSet": [
-            "pgro-kdkdkx68"
-        ],
+        "BillId": "",
+        "DBInstanceIdSet": [],
+        "DealNames": [],
+        "RequestId": "e0726ee5-3f5f-414c-9976-17e94dd0023e"
+    }
+}
+```
+
+**Example 2: 创建只读实例**
+
+创建只读实例，指定主实例为postgres-abcdef，实际发起创建
+
+Input: 
+
+```
+tccli postgres CreateReadOnlyDBInstance --cli-unfold-argument  \
+    --DBVersion 12.22 \
+    --InstanceChargeType POSTPAID_BY_HOUR \
+    --InstanceCount 1 \
+    --MasterDBInstanceId postgres-abcdef \
+    --Period 1 \
+    --ProjectId 1 \
+    --ReadOnlyGroupId  \
+    --SecurityGroupIds sg-iwnfp51z \
+    --SpecCode pg.it.small2 \
+    --Storage 100 \
+    --SubnetId subnet-1i9huswn \
+    --VpcId vpc-8btfafeo \
+    --Zone ap-beijing-4
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BillId": "2701077795",
+        "DBInstanceIdSet": [],
         "DealNames": [
-            "20241205591002398481181"
+            "20251009929109544409421"
         ],
-        "RequestId": "5ce80f91-a285-4378-8340-332ab4bfe9cd"
+        "RequestId": "f3b13348-be76-4631-8d2f-0c8da1e07958"
     }
 }
 ```

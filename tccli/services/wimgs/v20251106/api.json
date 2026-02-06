@@ -1,0 +1,67 @@
+{
+  "actions": {
+    "SearchByText": {
+      "document": "文搜图接口，本服务将针对您输入的搜索关键词，检索并以JSON形式返回相关图片的标题、宽高、缩略图、内容来源url等信息。",
+      "input": "SearchByTextRequest",
+      "name": "文搜图",
+      "output": "SearchByTextResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-11-06",
+    "api_brief": "用户输入文本描述，模型通过计算文本向量与图像向量的相似度，精准匹配并返回相关图片URL等信息。",
+    "serviceNameCN": "联网图像搜索",
+    "serviceShortName": "wimgs"
+  },
+  "objects": {
+    "SearchByTextRequest": {
+      "document": "SearchByText请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询词",
+          "example": "北京故宫",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchByTextResponse": {
+      "document": "SearchByText返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原始查询词",
+          "example": "car",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果图片列表，格式为json字符串。\n\n- thumbnailUrl：缩略图地址。\n- thumbnailWidth：缩略图宽度。\n- thumbnailHeight：缩略图高度。\n- origPicUrl：原图地址。\n-  origPicWidth：原图宽度。\n- siteUrl：站点地址，原图来源网页URL。\n- siteName：站点名称。\n- title：标题，原图标题或原图来源网页标题。\n- date：内容发布时间。",
+          "example": "[\"{\\\"siteName\\\":\\\"搜狗百科\\\",\\\"title\\\":\\\"the car book\\\"}\"]",
+          "member": "string",
+          "name": "Images",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli wedata RegisterDsEvent --cli-unfold-argument  \
-    --ProjectId 1492511691706699776 \
-    --Name test_event_1 \
+    --ProjectId 1470547050521227264 \
+    --Name event_0811_01 \
     --EventSubType DAY \
     --TimeToLive 30 \
     --TimeUnit DAYS \
-    --Owner micofywang \
-    --Description test
+    --Owner wenjieyao \
+    --Description 1
 ```
 
 Output: 
@@ -21,21 +21,21 @@ Output:
     "Response": {
         "Data": {
             "CreationTs": null,
-            "Description": "test",
+            "Description": "1",
             "DimensionFormat": "yyyyMMdd",
             "EventBroadcastType": "BROADCAST",
             "EventSubType": "DAY",
             "EventType": "TIME_SERIES",
             "Listeners": null,
-            "Name": "test_event_1",
-            "Owner": "micofywang",
-            "ProjectId": "1492511691706699776",
+            "Name": "event_0811_01",
+            "Owner": "wenjieyao",
+            "ProjectId": "1470547050521227264",
             "ProjectName": "",
             "Properties": null,
             "TimeToLive": 30,
             "TimeUnit": "DAYS"
         },
-        "RequestId": "7bf51807-efe1-499a-952f-d6b040effaa0"
+        "RequestId": "bd5bbfc6-41e6-4e8f-a64e-f656b236b779"
     }
 }
 ```

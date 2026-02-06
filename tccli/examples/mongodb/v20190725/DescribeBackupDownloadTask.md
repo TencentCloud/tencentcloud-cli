@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb DescribeBackupDownloadTask --cli-unfold-argument  \
-    --InstanceId cmgo-dygv1rnp \
+    --InstanceId cmgo-fdzf**** \
     --Status 2
 ```
 
@@ -14,17 +14,21 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c41c0c46-7d5a-49b9-832a-557880c1e9ef",
+        "RequestId": "c7c0c495-4826-4938-a6d7-32146cad2632",
         "Tasks": [
             {
-                "BackupName": "cmgo-dygv1rnp_2021-03-26 10:44",
-                "BackupSize": 844,
-                "CreateTime": "2021-03-26 10:47:37",
+                "BackupDesc": "系统后台每日定时自动备份",
+                "BackupMethod": 0,
+                "BackupName": "cmgo-fdzf****_2025-09-23 22:03",
+                "BackupSize": 5747378,
+                "Bucket": "sh-backup-remote-125758****",
+                "CreateTime": "2025-09-24 10:58:55",
                 "Percent": 100,
-                "ReplicaSetId": "cmgo-dygv1rnp_0",
+                "Region": "ap-shanghai",
+                "ReplicaSetId": "cmgo-fdzf******",
                 "Status": 2,
-                "TimeSpend": 0,
-                "Url": "https://mognodb-backup-test-tar-1251937656.cos.ap-guangzhou.myqcloud.com/cmgo-dygv1rnp_2021-03-26%2010%3A44%2Fcmgo-dygv1rnp_0.tar?q-sign-algorithm=sha1&q-ak=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&q-sign-time=1616726859%3B1616813259&q-key-time=1616726859%3B1616813259&q-header-list=host&q-url-param-list=&q-signature=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                "TimeSpend": 1,
+                "Url": "https://sh-backup-remote-tar-**************"
             }
         ],
         "TotalCount": 1

@@ -1,7 +1,7 @@
 {
   "actions": {
     "SearchPro": {
-      "document": "联网搜索API，以json形式向客户提供搜索结果数据，包含标题、摘要、内容来源url等信息",
+      "document": "联网搜索API，以JSON形式向客户提供搜索结果数据，包含标题、摘要、内容来源url等信息",
       "input": "SearchProRequest",
       "name": "联网搜索API",
       "output": "SearchProResponse",
@@ -10,7 +10,7 @@
   },
   "metadata": {
     "apiVersion": "2025-05-08",
-    "api_brief": "联网搜索API，以json形式向客户提供搜索结果数据，包含不仅限于标题、摘要、内容来源url等信息",
+    "api_brief": "联网搜索API，以JSON形式向客户提供搜索结果数据，包含不仅限于标题、摘要、内容来源url等信息",
     "serviceNameCN": "联网搜索API",
     "serviceShortName": "wsa"
   },
@@ -74,7 +74,7 @@
         },
         {
           "disabled": false,
-          "document": "Industry=gov/news/acad，对应党政机关、新闻、学术，**仅限尊享版使用**",
+          "document": "Industry=gov/news/acad/finance，对应党政机关、权威媒体、学术（英文）、金融，**仅限尊享版使用**",
           "example": "news",
           "member": "string",
           "name": "Industry",
@@ -105,6 +105,16 @@
           "name": "Pages",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户版本：standard/premium/lite",
+          "example": "standard",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

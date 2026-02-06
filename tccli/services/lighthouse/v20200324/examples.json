@@ -115,7 +115,7 @@
     "CreateInstances": [
       {
         "document": "用户可以通过调用此接口，创建预付费的轻量应用服务器。",
-        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"BundleId\": \"bundle_gen_03\",\n    \"BlueprintId\": \"lhbp-g0tn7djh\",\n    \"InstanceChargePrepaid\": {\n        \"Period\": \"1\",\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"BundleId\": \"bundle_gen_03\",\n    \"BlueprintId\": \"lhbp-g0tn7djh\",\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"lhins-hx5wjw4g\"\n        ],\n        \"RequestId\": \"232b2817-ec08-43f3-8d78-41b1bfb6082c\"\n    }\n}",
         "title": "通过API创建轻量应用服务器"
       }
@@ -126,6 +126,20 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=CreateKeyPair\n&KeyName=test_create_1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"KeyPair\": {\n            \"KeyId\": \"lhkp-hfenegt1\",\n            \"KeyName\": \"test_create_1\",\n            \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6Zx4q...\",\n            \"AssociatedInstanceIds\": [],\n            \"CreatedTime\": null,\n            \"PrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nMIIEowIBAAKCAQEAumc...\\n-----END RSA PRIVATE KEY-----\"\n        },\n        \"RequestId\": \"02dc35eb-06f0-477f-9b06-c980bc56c18d\"\n    }\n}",
         "title": "创建密钥对"
+      }
+    ],
+    "CreateMcpServer": [
+      {
+        "document": "创建一个新的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"Name\": \"腾讯云 Lighthouse MCP Server\",\n    \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n    \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n    \"Envs\": [\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n            \"Value\": \"YOUR_TENCENT_SECRET_KEY\"\n        },\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n            \"Value\": \"YOUR_TENCENT_SECRET_ID\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerId\": \"lhms-p2dophob\",\n        \"RequestId\": \"54a37c92-9e77-4ba2-a791-925ae44f37f2\"\n    }\n}",
+        "title": "创建MCP Server"
+      },
+      {
+        "document": "演示如何创建一个指定传输类型的MCP Server",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-ah48gaor\",\n    \"Name\": \"Sequential Thinking\",\n    \"Command\": \"bnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItc2VxdWVudGlhbC10aGlua2luZw==\",\n    \"Envs\": [\n        {\n            \"Key\": \"TEST_ENV_KEY\",\n            \"Value\": \"TEST_ENV_VALUE\"\n        }\n    ],\n    \"TransportType\": \"STREAMABLE_HTTP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerId\": \"lhms-9v3z57px\",\n        \"RequestId\": \"9b58cd17-6586-404f-ac93-7b2913024080\"\n    }\n}",
+        "title": "创建MCP Server-指定传输类型"
       }
     ],
     "DeleteBlueprints": [
@@ -204,7 +218,7 @@
       {
         "document": "查询镜像信息",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprints\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-lf6jlx98\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlueprintSet\": [\n            {\n                \"BlueprintId\": \"lhbp-lf6jlx98\",\n                \"DisplayTitle\": \"宝塔Linux面板\",\n                \"DisplayVersion\": \"8.1.0 腾讯云专享版\",\n                \"BlueprintName\": \"btpanel_exclusive\",\n                \"Description\": \"宝塔Linux面板（BT-Panel）是一款简单好用的服务器运维管理面板，支持一键LAMP/LNMP/集群/监控/网站/FTP/数据库/JAVA等100多项服务器管理功能，能够极大提升运维管理效率。宝塔面板腾讯云专享版由腾讯云与堡塔公司联合开发，与普通版相比，专享版默认集成腾讯云COSFS、CDN和DNS解析插件，让用户更便捷的使用宝塔面板对腾讯云产品进行管理和操作。该镜像基于OpenCloudOS 9操作系统。\",\n                \"OsName\": \"OpenCloudOS 9\",\n                \"Platform\": \"OPENCLOUDOS\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"BlueprintType\": \"APP_OS\",\n                \"ImageUrl\": \"https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/tc-console/tea-static-lighthouse/src/styles/slice/bt-panel.svg\",\n                \"RequiredSystemDiskSize\": 20,\n                \"RequiredMemorySize\": 1,\n                \"BlueprintState\": \"NORMAL\",\n                \"SupportAutomationTools\": true,\n                \"ImageId\": \"\",\n                \"CommunityUrl\": \"https://www.bt.cn\",\n                \"GuideUrl\": \"https://cloud.tencent.com/document/product/1207/47425\",\n                \"SceneIdSet\": [\n                    \"lhsc-3bzsddow\"\n                ],\n                \"DockerVersion\": null,\n                \"BlueprintShared\": false,\n                \"CreatedTime\": \"2024-05-08T03:43:06Z\"\n            }\n        ],\n        \"RequestId\": \"817c4e56-36fc-47ff-bfb6-c4462816972b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlueprintSet\": [\n            {\n                \"BlueprintId\": \"lhbp-lf6jlx98\",\n                \"DisplayTitle\": \"宝塔Linux面板\",\n                \"DisplayVersion\": \"8.1.0 腾讯云专享版\",\n                \"BlueprintName\": \"btpanel_exclusive\",\n                \"Description\": \"宝塔Linux面板（BT-Panel）是一款简单好用的服务器运维管理面板，支持一键LAMP/LNMP/集群/监控/网站/FTP/数据库/JAVA等100多项服务器管理功能，能够极大提升运维管理效率。宝塔面板腾讯云专享版由腾讯云与堡塔公司联合开发，与普通版相比，专享版默认集成腾讯云COSFS、CDN和DNS解析插件，让用户更便捷的使用宝塔面板对腾讯云产品进行管理和操作。该镜像基于OpenCloudOS 9操作系统。\",\n                \"OsName\": \"OpenCloudOS 9\",\n                \"Platform\": \"OPENCLOUDOS\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"BlueprintType\": \"APP_OS\",\n                \"ImageUrl\": \"https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/tc-console/tea-static-lighthouse/src/styles/slice/bt-panel.svg\",\n                \"RequiredSystemDiskSize\": 20,\n                \"RequiredMemorySize\": 1,\n                \"BlueprintState\": \"NORMAL\",\n                \"SupportAutomationTools\": true,\n                \"ImageId\": \"\",\n                \"CommunityUrl\": \"https://www.bt.cn\",\n                \"GuideUrl\": \"https://cloud.tencent.com/document/product/1207/47425\",\n                \"SceneIdSet\": [\n                    \"lhsc-3bzsddow\"\n                ],\n                \"DockerVersion\": null,\n                \"BlueprintShared\": false,\n                \"Tags\": [],\n                \"CreatedTime\": \"2024-05-08T03:43:06Z\"\n            }\n        ],\n        \"RequestId\": \"817c4e56-36fc-47ff-bfb6-c4462816972b\"\n    }\n}",
         "title": "查询镜像信息"
       }
     ],
@@ -251,8 +265,8 @@
     "DescribeDiskConfigs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DiskConfigSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"MaxDiskSize\": 1000,\n                \"MinDiskSize\": 10,\n                \"DiskStepSize\": 10,\n                \"DiskSalesState\": \"SOLD_OUT\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"MaxDiskSize\": 1000,\n                \"MinDiskSize\": 20,\n                \"DiskStepSize\": 10,\n                \"DiskSalesState\": \"SOLD_OUT\"\n            }\n        ],\n        \"RequestId\": \"8f8e7988-39e6-4ed6-8e36-135b639e9a3a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-3\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskConfigSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"MaxDiskSize\": 1000,\n                \"MinDiskSize\": 10,\n                \"DiskStepSize\": 10,\n                \"DiskSalesState\": \"SOLD_OUT\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"MaxDiskSize\": 1000,\n                \"MinDiskSize\": 20,\n                \"DiskStepSize\": 10,\n                \"DiskSalesState\": \"SOLD_OUT\"\n            }\n        ],\n        \"RequestId\": \"8f8e7988-39e6-4ed6-8e36-135b639e9a3a\"\n    }\n}",
         "title": "查询磁盘配置"
       }
     ],
@@ -268,7 +282,7 @@
       {
         "document": "查询磁盘",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-p1zflrif\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DiskSet\": [\n            {\n                \"DiskId\": \"lhdisk-p1zflrif\",\n                \"InstanceId\": \"lhins-anxwfvxh\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"DiskName\": \"lhdisk-p1zflrif-system-disk\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"DiskChargeType\": \"PREPAID\",\n                \"DiskSize\": 30,\n                \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n                \"DiskState\": \"ATTACHED\",\n                \"Attached\": true,\n                \"DeleteWithInstance\": false,\n                \"DiskBackupCount\": 1,\n                \"DiskBackupQuota\": 1,\n                \"LatestOperation\": \"DetachDisks\",\n                \"LatestOperationState\": \"FAILED\",\n                \"LatestOperationRequestId\": \"54118bb6-7206-43f7-bf53-b77a394ad51e\",\n                \"CreatedTime\": \"2021-08-25T08:50:57Z\",\n                \"ExpiredTime\": \"2021-10-28T09:11:37Z\",\n                \"IsolatedTime\": null\n            }\n        ],\n        \"RequestId\": \"b362f486-571c-4094-afd5-22a38bd63046\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DiskSet\": [\n            {\n                \"DiskId\": \"lhdisk-p1zflrif\",\n                \"InstanceId\": \"lhins-anxwfvxh\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"DiskName\": \"lhdisk-p1zflrif-system-disk\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"DiskChargeType\": \"PREPAID\",\n                \"DiskSize\": 30,\n                \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n                \"DiskState\": \"ATTACHED\",\n                \"Attached\": true,\n                \"DeleteWithInstance\": false,\n                \"DiskBackupCount\": 1,\n                \"DiskBackupQuota\": 1,\n                \"LatestOperation\": \"DetachDisks\",\n                \"LatestOperationState\": \"FAILED\",\n                \"LatestOperationRequestId\": \"54118bb6-7206-43f7-bf53-b77a394ad51e\",\n                \"CreatedTime\": \"2021-08-25T08:50:57Z\",\n                \"ExpiredTime\": \"2021-10-28T09:11:37Z\",\n                \"Tags\": [],\n                \"IsolatedTime\": null\n            }\n        ],\n        \"RequestId\": \"b362f486-571c-4094-afd5-22a38bd63046\"\n    }\n}",
         "title": "查询磁盘"
       }
     ],
@@ -454,6 +468,22 @@
         "title": "查询用户密钥对列表"
       }
     ],
+    "DescribeMcpServerTemplates": [
+      {
+        "document": "模糊搜索模板",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpServerTemplates\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"name-description\",\n            \"Values\": [\n                \"lighthouse\"\n            ]\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerTemplateSet\": [\n            {\n                \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n                \"CommunityUrl\": \"https://www.npmjs.com/package/lighthouse-mcp-server\",\n                \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n                \"EnvSet\": [\n                    {\n                        \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n                        \"Value\": \"YOUR_TENCENT_SECRET_ID\"\n                    },\n                    {\n                        \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n                        \"Value\": \"YOUR_TENCENT_SECRET_KEY\"\n                    }\n                ],\n                \"IconUrl\": \"https://cloudcache.tencent-cloud.com/qcloud/ui/static/other_external_resource/6e6c2ea3-301f-4ce2-8fd9-3952c6eb04b5.png\",\n                \"Name\": \"腾讯云 Lighthouse MCP Server\",\n                \"PlatformUrl\": \"https://console.cloud.tencent.com/cam/capi\"\n            }\n        ],\n        \"RequestId\": \"3ac46471-af2f-458a-919b-bec201887d6b\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询MCP Server模板列表"
+      }
+    ],
+    "DescribeMcpServers": [
+      {
+        "document": "查询指定实例下的MCP Server列表。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"lhins-5h3s0lht\",\n        \"InstanceName\": \"ai mcp server test\",\n        \"McpServerSet\": [\n            {\n                \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n                \"Config\": \"{\\\"mcpServers\\\":{\\\"腾讯云 Lighthouse MCP Server\\\":{\\\"url\\\":\\\"http://1.14.57.202/lhms-p2dophob/sse\\\"}}}\",\n                \"CreatedTime\": \"2025-08-27T07:33:14Z\",\n                \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n                \"EnvSet\": [\n                    {\n                        \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n                        \"Value\": \"**********\"\n                    },\n                    {\n                        \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n                        \"Value\": \"**********\"\n                    }\n                ],\n                \"IconUrl\": \"https://cloudcache.tencent-cloud.com/qcloud/ui/static/other_external_resource/6e6c2ea3-301f-4ce2-8fd9-3952c6eb04b5.png\",\n                \"McpServerId\": \"lhms-p2dophob\",\n                \"McpServerType\": \"PUBLIC_PACKAGE\",\n                \"Name\": \"腾讯云 Lighthouse MCP Server\",\n                \"ServerUrl\": \"http://1.14.57.202/lhms-p2dophob/sse\",\n                \"State\": \"RUNNING\",\n                \"UpdatedTime\": \"2025-08-27T07:37:43Z\"\n            }\n        ],\n        \"RequestId\": \"fe83a82b-967c-4f58-89d2-9ee20f9dafc5\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询MCP Server列表"
+      }
+    ],
     "DescribeModifyInstanceBundles": [
       {
         "document": "查询实例可修改套餐列表",
@@ -506,7 +536,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ZoneInfoSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"ZoneName\": \"广州二区\",\n                \"InstanceDisplayLabel\": \"NORMAL\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"ZoneName\": \"广州三区\",\n                \"InstanceDisplayLabel\": \"NORMAL\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-4\",\n                \"ZoneName\": \"广州四区\",\n                \"InstanceDisplayLabel\": \"NORMAL\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"5e1bf334-e530-4c26-ab92-d911ab148d3a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneInfoSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"ZoneName\": \"广州三区\",\n                \"InstanceDisplayLabel\": \"NORMAL\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-4\",\n                \"ZoneName\": \"广州四区\",\n                \"InstanceDisplayLabel\": \"NORMAL\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"5e1bf334-e530-4c26-ab92-d911ab148d3a\"\n    }\n}",
         "title": "查询可用区"
       }
     ],
@@ -708,6 +738,14 @@
         "title": "修改实例的续费标识"
       }
     ],
+    "ModifyMcpServer": [
+      {
+        "document": "修改指定MCP Server的信息。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerId\": \"lhms-p2dophob\",\n    \"Name\": \"腾讯云 Lighthouse MCP Server\",\n    \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n    \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n    \"Envs\": [\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n            \"Value\": \"MODIFIED_TENCENT_SECRET_KEY\"\n        },\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n            \"Value\": \"MODIFIED_TENCENT_SECRET_ID\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54b97dbc-e8d3-45f0-b648-2934d76c1cf9\"\n    }\n}",
+        "title": "修改MCP Server信息"
+      }
+    ],
     "ModifySnapshotAttribute": [
       {
         "document": "",
@@ -730,6 +768,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveDockerContainers\n<公共请求参数>\n\n{\n    \"ContainerIds\": [\n        \"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415\"\n    ],\n    \"InstanceId\": \"lhins-nwycpjl3\"\n}",
         "output": "{\n    \"Response\": {\n        \"DockerActivityId\": \"lhda-nn82v77w\",\n        \"RequestId\": \"2c715b55-de1f-4a46-94a8-caeeee86b0f1\"\n    }\n}",
         "title": "删除Docker容器"
+      }
+    ],
+    "RemoveMcpServers": [
+      {
+        "document": "删除指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a50de509-5ecb-40db-9ad2-a01cffc8c3f3\"\n    }\n}",
+        "title": "删除MCP Server"
       }
     ],
     "RenameDockerContainer": [
@@ -820,6 +866,14 @@
         "title": "重启Docker容器"
       }
     ],
+    "RestartMcpServers": [
+      {
+        "document": "重启指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfca933c-ba03-4c91-a03b-db81f79e0419\"\n    }\n}",
+        "title": "重启MCP Server"
+      }
+    ],
     "RunDockerContainers": [
       {
         "document": "",
@@ -852,6 +906,14 @@
         "title": "启动指定ID的实例"
       }
     ],
+    "StartMcpServers": [
+      {
+        "document": "开启指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cee0dea-b7d4-41d2-ad79-4d2a852e6013\"\n    }\n}",
+        "title": "开启MCP Server"
+      }
+    ],
     "StopDockerContainers": [
       {
         "document": "",
@@ -868,11 +930,19 @@
         "title": "关闭实例"
       }
     ],
+    "StopMcpServers": [
+      {
+        "document": "关闭指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cab721b-7a7f-4438-82f9-d19f1bb5a45a\"\n    }\n}",
+        "title": "关闭MCP Server"
+      }
+    ],
     "SyncBlueprint": [
       {
         "document": "向两个地域同步自定义镜像。",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncBlueprint\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-ls883feh\",\n    \"DestinationRegions\": [\n        \"ap-singapore\",\n        \"ap-hongkong\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"647f2a53-c672-45fa-980b-385423898a69\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DestinationRegionBlueprintSet\": [\n            {\n                \"Region\": \"ap-singapore\",\n                \"BlueprintId\": \"lhbp-lf3gjs2f\"\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"BlueprintId\": \"lhbp-lfle246l\"\n            }\n        ],\n        \"RequestId\": \"e35a5b7b-4dfa-49f8-8729-ba5c504807e0\"\n    }\n}",
         "title": "跨地域同步自定义镜像"
       }
     ],

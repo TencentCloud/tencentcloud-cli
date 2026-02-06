@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli cvm DescribeLaunchTemplateVersions --cli-unfold-argument  \
-    --LaunchTemplateId lt-b8v1kcyq
+    --LaunchTemplateId lt-b8v1kcyq \
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
@@ -28,7 +30,7 @@ Output:
                     "InstanceCount": 1,
                     "Placement": {
                         "ProjectId": 0,
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-6"
                     },
                     "SystemDisk": {
                         "DiskSize": 50,
@@ -56,7 +58,7 @@ Output:
                         "InternetMaxBandwidthOut": 100
                     },
                     "InstanceName": "lt_test",
-                    "InstanceType": "S1.SMALL2",
+                    "InstanceType": "S5.16XLARGE256",
                     "DataDisks": [
                         {
                             "Encrypt": false,

@@ -15,12 +15,12 @@ tccli cdc ModifySiteDeviceInfo --cli-unfold-argument  \
     --PowerDrawKva 5 \
     --UplinkSpeedGbps 10 \
     --UplinkCount 2 \
-    --ConditionRequirement true \
-    --DimensionRequirement true \
-    --RedundantNetworking true \
-    --NeedHelp true \
-    --RedundantPower true \
-    --BreakerRequirement true
+    --ConditionRequirement True \
+    --DimensionRequirement True \
+    --RedundantNetworking True \
+    --NeedHelp True \
+    --RedundantPower True \
+    --BreakerRequirement True
 ```
 
 Output: 

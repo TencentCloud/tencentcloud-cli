@@ -12,7 +12,7 @@ tccli waf CreateHost --cli-unfold-argument  \
     --Host.Domain lucainfo.qcloudwaf.com \
     --Host.DomainId waf-d4foqwZy \
     --Host.LoadBalancerSet.0.Protocol HTTP \
-    --Host.LoadBalancerSet.0.Zone 1 \
+    --Host.LoadBalancerSet.0.Zone  \
     --Host.LoadBalancerSet.0.Region gz \
     --Host.LoadBalancerSet.0.LoadBalancerName 门户 \
     --Host.LoadBalancerSet.0.ListenerId lbl-87vxk72 \

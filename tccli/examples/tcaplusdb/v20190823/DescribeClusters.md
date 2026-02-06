@@ -14,58 +14,58 @@ Output:
         "TotalCount": 0,
         "Clusters": [
             {
-                "ClusterName": "abc",
-                "ClusterId": "abc",
-                "Region": "abc",
-                "IdlType": "abc",
-                "NetworkType": "abc",
-                "VpcId": "abc",
-                "SubnetId": "abc",
+                "ClusterName": "clustername",
+                "ClusterId": "145462",
+                "Region": "ap-shanghai",
+                "IdlType": "proto",
+                "NetworkType": "proto",
+                "VpcId": "testvpc",
+                "SubnetId": "testsubnetid",
                 "CreatedTime": "2020-09-22 00:00:00",
-                "Password": "abc",
-                "PasswordStatus": "abc",
-                "ApiAccessId": "abc",
-                "ApiAccessIp": "abc",
+                "Password": "passd1",
+                "PasswordStatus": "1",
+                "ApiAccessId": "accessid",
+                "ApiAccessIp": "accessip",
                 "ApiAccessPort": 0,
-                "OldPasswordExpireTime": "abc",
-                "ApiAccessIpv6": "abc",
+                "OldPasswordExpireTime": "17832322",
+                "ApiAccessIpv6": "",
                 "ClusterType": 0,
                 "ClusterStatus": 0,
-                "ReadCapacityUnit": 0,
-                "WriteCapacityUnit": 0,
-                "DiskVolume": 0,
+                "ReadCapacityUnit": 1000,
+                "WriteCapacityUnit": 1000,
+                "DiskVolume": 10,
                 "ServerList": [
                     {
-                        "ServerUid": "abc",
-                        "MachineType": "abc",
+                        "ServerUid": "1",
+                        "MachineType": "svr",
                         "MemoryRate": 0,
                         "DiskRate": 0,
                         "ReadNum": 0,
                         "WriteNum": 0,
-                        "Version": "abc"
+                        "Version": "1"
                     }
                 ],
                 "ProxyList": [
                     {
-                        "ProxyUid": "abc",
-                        "MachineType": "abc",
+                        "ProxyUid": "2",
+                        "MachineType": "proxy",
                         "ProcessSpeed": 0,
                         "AverageProcessDelay": 0,
                         "SlowProcessSpeed": 0,
-                        "Version": "abc"
+                        "Version": "2"
                     }
                 ],
                 "Censorship": 0,
                 "DbaUins": [
-                    "abc"
+                    "1888232"
                 ],
                 "DataFlowStatus": 0,
                 "KafkaInfo": {
-                    "Address": "abc",
-                    "Topic": "abc",
-                    "User": "abc",
-                    "Password": "abc",
-                    "Instance": "abc",
+                    "Address": "address",
+                    "Topic": "topic",
+                    "User": "usr0",
+                    "Password": "usrpasswd",
+                    "Instance": "instid",
                     "IsVpc": 0
                 },
                 "TxhBackupExpireDay": 1,
@@ -74,7 +74,7 @@ Output:
                 "RestProxyStatus": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1947843-12321"
     }
 }
 ```

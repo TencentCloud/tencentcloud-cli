@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli asr VoicePrintUpdate --cli-unfold-argument  \
-    --VoiceFormat 0 \
-    --SampleRate 0 \
-    --SpeakerNick 小明 \
-    --VoicePrintId 34a0a2b-922f******90302f155a6d \
-    --Data UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E
+    --VoiceFormat 1 \
+    --SampleRate 16000 \
+    --VoicePrintId 0928d167-dcd0-44b6xxxx-85d303273a72 \
+    --SpeakerNick 张三 \
+    --AudioUrl https://adison-testxxxx.cos.ap-nanjing.myqcloud.com/%E5%xx%B0%E7xxx%BA%B9%E6%95%B0%E6%8D%AE/xxxx.wav
 ```
 
 Output: 
@@ -18,10 +18,10 @@ Output:
 {
     "Response": {
         "Data": {
-            "VoicePrintId": "34a0a2b-922f******90302f155a6d",
-            "SpeakerNick": "小明"
+            "SpeakerNick": "张三",
+            "VoicePrintId": "0928d167-xxxx44b6-9465-85d303273a72"
         },
-        "RequestId": "676a22c********3625b0"
+        "RequestId": "9ac61e25-3860-xxxxx-9b48-61a3c69ea408"
     }
 }
 ```

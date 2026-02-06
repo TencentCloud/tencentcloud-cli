@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli igtm DescribeInstanceDetail --cli-unfold-argument ```
+tccli igtm DescribeInstanceDetail --cli-unfold-argument  \
+    --InstanceId gtm-dsdd123xdo
+```
 
 Output: 
 ```

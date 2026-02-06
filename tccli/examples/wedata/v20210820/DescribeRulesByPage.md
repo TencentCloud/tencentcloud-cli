@@ -37,7 +37,7 @@ Output:
                     "SourceObjectValue": "1",
                     "ConditionType": 1,
                     "ConditionExpression": ">",
-                    "CustomSql": "abc",
+                    "CustomSql": "select * from tb1",
                     "CompareRule": {
                         "Items": [
                             {
@@ -56,12 +56,12 @@ Output:
                         "ComputeExpression": "expr"
                     },
                     "AlarmLevel": 1,
-                    "Description": "描述",
+                    "Description": "描述11",
                     "Operator": "zhangsan",
                     "TargetDatabaseId": "70afsdfaasyighb",
                     "TargetDatabaseName": "dbName",
                     "TargetTableId": "8y9uhojt79u",
-                    "TargetTableName": "test",
+                    "TargetTableName": "test1",
                     "TargetConditionExpr": "0",
                     "RelConditionExpr": "sourceTable.id = targetTable.id",
                     "FieldConfig": {
@@ -77,7 +77,7 @@ Output:
                                 "DatabaseId": "7p9gyuih78tgy",
                                 "DatabaseName": "dbTest",
                                 "TableId": "7t8ygihb670ygo",
-                                "TableName": "test",
+                                "TableName": "test11",
                                 "TableKey": "asdfsdf",
                                 "FieldConfig": [
                                     {
@@ -100,12 +100,12 @@ Output:
                     "SourceEngineTypes": [
                         1
                     ],
-                    "TableName": "test",
+                    "TableName": "test1",
                     "TableOwnerName": "zhangsan",
                     "ExecStrategy": {
                         "RuleGroupId": 1,
                         "MonitorType": 1,
-                        "ExecQueue": "test",
+                        "ExecQueue": "test1",
                         "ExecutorGroupId": "6578987685",
                         "ExecutorGroupName": "name",
                         "Tasks": [
@@ -120,7 +120,7 @@ Output:
                         "CycleType": "D",
                         "DelayTime": 1,
                         "CycleStep": 1,
-                        "TaskAction": "abc",
+                        "TaskAction": "1",
                         "ExecEngineType": "HIVE",
                         "ExecPlan": "2024-04-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次",
                         "RuleId": 1,

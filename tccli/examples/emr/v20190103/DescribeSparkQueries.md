@@ -32,7 +32,7 @@ Output:
                 "ScanFileNum": 1,
                 "EndTime": 1711078223,
                 "ScanPartitionNum": 1,
-                "Statement": "select * from hive_table_p2 where dt='20240321.3'",
+                "Statement": "",
                 "Duration": 2924
             }
         ]

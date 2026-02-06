@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DeployContainerGroup --cli-unfold-argument  \
-    --DoNotStart false \
+    --DoNotStart False \
     --MemRequest 1024 \
     --UpdateType 1 \
     --Server ccr.ccs.tencentyun.com \

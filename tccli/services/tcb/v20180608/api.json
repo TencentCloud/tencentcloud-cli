@@ -1,5 +1,19 @@
 {
   "actions": {
+    "BindCloudBaseAccessDomain": {
+      "document": "绑定云开发自定义域名，用于云接入和静态托管",
+      "input": "BindCloudBaseAccessDomainRequest",
+      "name": "绑定云开发自定义域名",
+      "output": "BindCloudBaseAccessDomainResponse",
+      "status": "online"
+    },
+    "BindCloudBaseGWDomain": {
+      "document": "绑定自定义域名",
+      "input": "BindCloudBaseGWDomainRequest",
+      "name": "绑定自定义域名",
+      "output": "BindCloudBaseGWDomainResponse",
+      "status": "online"
+    },
     "BindEnvGateway": {
       "document": "绑定另外一个环境下的网关，callContainer请求可以访问到该网关",
       "input": "BindEnvGatewayRequest",
@@ -35,6 +49,20 @@
       "output": "CreateAuthDomainResponse",
       "status": "online"
     },
+    "CreateBillDeal": {
+      "document": "创建云开发产品计费订单",
+      "input": "CreateBillDealRequest",
+      "name": "创建计费订单",
+      "output": "CreateBillDealResponse",
+      "status": "online"
+    },
+    "CreateCloudBaseGWAPI": {
+      "document": "创建云开发网关API",
+      "input": "CreateCloudBaseGWAPIRequest",
+      "name": "创建云开发网关API",
+      "output": "CreateCloudBaseGWAPIResponse",
+      "status": "online"
+    },
     "CreateCloudBaseRunResource": {
       "document": "开通容器托管的资源，包括集群创建，VPC配置，异步任务创建，镜像托管，Coding等，查看创建结果需要根据DescribeCloudBaseRunResource接口来查看",
       "input": "CreateCloudBaseRunResourceRequest",
@@ -63,13 +91,6 @@
       "output": "CreatePostpayPackageResponse",
       "status": "online"
     },
-    "CreateStandaloneGateway": {
-      "document": "本接口（CreateStandaloneGateway）用于创建独立网关。",
-      "input": "CreateStandaloneGatewayRequest",
-      "name": "创建独立网关",
-      "output": "CreateStandaloneGatewayResponse",
-      "status": "online"
-    },
     "CreateStaticStore": {
       "document": "创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看",
       "input": "CreateStaticStoreRequest",
@@ -77,18 +98,32 @@
       "output": "CreateStaticStoreResponse",
       "status": "online"
     },
-    "CreateWxCloudBaseRunEnv": {
-      "document": "创建微信云托管",
-      "input": "CreateWxCloudBaseRunEnvRequest",
-      "name": "创建微信云托管",
-      "output": "CreateWxCloudBaseRunEnvResponse",
+    "CreateTable": {
+      "document": "本接口(CreateTable)用于创建表，支持创建capped类型集合，暂时不支持分片表",
+      "input": "CreateTableRequest",
+      "name": "创建表",
+      "output": "CreateTableResponse",
       "status": "online"
     },
-    "CreateWxCloudBaseRunServerDBCluster": {
-      "document": "开通微信云托管MySQL数据库服务",
-      "input": "CreateWxCloudBaseRunServerDBClusterRequest",
-      "name": "开通微信云托管MySQL数据库服务",
-      "output": "CreateWxCloudBaseRunServerDBClusterResponse",
+    "CreateUser": {
+      "document": "创建tcb用户",
+      "input": "CreateUserRequest",
+      "name": "创建tcb用户",
+      "output": "CreateUserResponse",
+      "status": "online"
+    },
+    "DeleteCloudBaseGWAPI": {
+      "document": "删除网关API",
+      "input": "DeleteCloudBaseGWAPIRequest",
+      "name": "删除网关API",
+      "output": "DeleteCloudBaseGWAPIResponse",
+      "status": "online"
+    },
+    "DeleteCloudBaseGWDomain": {
+      "document": "删除网关域名",
+      "input": "DeleteCloudBaseGWDomainRequest",
+      "name": "删除网关域名",
+      "output": "DeleteCloudBaseGWDomainResponse",
       "status": "online"
     },
     "DeleteCloudBaseProjectLatestVersion": {
@@ -105,18 +140,25 @@
       "output": "DeleteCloudBaseRunServerVersionResponse",
       "status": "online"
     },
-    "DeleteEndUser": {
-      "document": "删除终端用户",
-      "input": "DeleteEndUserRequest",
-      "name": "删除终端用户",
-      "output": "DeleteEndUserResponse",
-      "status": "online"
-    },
     "DeleteGatewayVersion": {
       "document": "删除网关某版本",
       "input": "DeleteGatewayVersionRequest",
       "name": "删除网关某版本",
       "output": "DeleteGatewayVersionResponse",
+      "status": "online"
+    },
+    "DeleteTable": {
+      "document": "本接口(DeleteTable)用于删除表，删除表后表中数据将会被删除且无法恢复，请谨慎操作",
+      "input": "DeleteTableRequest",
+      "name": "删除表",
+      "output": "DeleteTableResponse",
+      "status": "online"
+    },
+    "DeleteUsers": {
+      "document": "删除tcb用户",
+      "input": "DeleteUsersRequest",
+      "name": "删除tcb用户",
+      "output": "DeleteUsersResponse",
       "status": "online"
     },
     "DeleteWxGatewayRoute": {
@@ -168,6 +210,20 @@
       "output": "DescribeCloudBaseBuildServiceResponse",
       "status": "online"
     },
+    "DescribeCloudBaseGWAPI": {
+      "document": "获取网关API列表",
+      "input": "DescribeCloudBaseGWAPIRequest",
+      "name": "获取网关API列表",
+      "output": "DescribeCloudBaseGWAPIResponse",
+      "status": "online"
+    },
+    "DescribeCloudBaseGWService": {
+      "document": "获取网关服务",
+      "input": "DescribeCloudBaseGWServiceRequest",
+      "name": "获取网关服务",
+      "output": "DescribeCloudBaseGWServiceResponse",
+      "status": "online"
+    },
     "DescribeCloudBaseProjectLatestVersionList": {
       "document": "获取云开发项目列表",
       "input": "DescribeCloudBaseProjectLatestVersionListRequest",
@@ -180,41 +236,6 @@
       "input": "DescribeCloudBaseProjectVersionListRequest",
       "name": "云项目部署版本列表",
       "output": "DescribeCloudBaseProjectVersionListResponse",
-      "status": "online"
-    },
-    "DescribeCloudBaseRunAllVpcs": {
-      "document": "查询环境下所有的vpc列表",
-      "input": "DescribeCloudBaseRunAllVpcsRequest",
-      "name": "查看环境下的所有vpc",
-      "output": "DescribeCloudBaseRunAllVpcsResponse",
-      "status": "online"
-    },
-    "DescribeCloudBaseRunConfForGateWay": {
-      "document": "独立网关中拉取云托管服务对应的配置信息",
-      "input": "DescribeCloudBaseRunConfForGateWayRequest",
-      "name": "独立网关云托管服务配置",
-      "output": "DescribeCloudBaseRunConfForGateWayResponse",
-      "status": "online"
-    },
-    "DescribeCloudBaseRunOneClickTaskExternal": {
-      "document": "查询一键部署任务 （特定接口：外部查询使用）",
-      "input": "DescribeCloudBaseRunOneClickTaskExternalRequest",
-      "name": "查询一键部署任务",
-      "output": "DescribeCloudBaseRunOneClickTaskExternalResponse",
-      "status": "online"
-    },
-    "DescribeCloudBaseRunOperationTypes": {
-      "document": "查询服务、版本和操作类型",
-      "input": "DescribeCloudBaseRunOperationTypesRequest",
-      "name": "查询操作类型接口",
-      "output": "DescribeCloudBaseRunOperationTypesResponse",
-      "status": "online"
-    },
-    "DescribeCloudBaseRunPodList": {
-      "document": "查询云托管服务版本容器列表",
-      "input": "DescribeCloudBaseRunPodListRequest",
-      "name": "查询云托管服务版本容器列表",
-      "output": "DescribeCloudBaseRunPodListResponse",
       "status": "online"
     },
     "DescribeCloudBaseRunResource": {
@@ -238,13 +259,6 @@
       "output": "DescribeCloudBaseRunServerResponse",
       "status": "online"
     },
-    "DescribeCloudBaseRunServerDomainName": {
-      "document": "查询微信云托管服务域名",
-      "input": "DescribeCloudBaseRunServerDomainNameRequest",
-      "name": "查询微信云托管服务域名",
-      "output": "DescribeCloudBaseRunServerDomainNameResponse",
-      "status": "online"
-    },
     "DescribeCloudBaseRunServerVersion": {
       "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
       "input": "DescribeCloudBaseRunServerVersionRequest",
@@ -257,13 +271,6 @@
       "input": "DescribeCloudBaseRunVersionRequest",
       "name": "查询服务版本详情",
       "output": "DescribeCloudBaseRunVersionResponse",
-      "status": "online"
-    },
-    "DescribeCloudBaseRunVersionRsByCondition": {
-      "document": "DescribeCloudBaseRunVersionRsByCondition 获取云托管详情",
-      "input": "DescribeCloudBaseRunVersionRsByConditionRequest",
-      "name": "获取云托管详情",
-      "output": "DescribeCloudBaseRunVersionRsByConditionResponse",
       "status": "online"
     },
     "DescribeCloudBaseRunVersionSnapshot": {
@@ -294,25 +301,11 @@
       "output": "DescribeDownloadFileResponse",
       "status": "online"
     },
-    "DescribeEndUserLoginStatistic": {
-      "document": "获取环境终端用户新增与登录信息",
-      "input": "DescribeEndUserLoginStatisticRequest",
-      "name": "获取终端用户新增与登录信息",
-      "output": "DescribeEndUserLoginStatisticResponse",
-      "status": "online"
-    },
-    "DescribeEndUserStatistic": {
-      "document": "获取终端用户总量与平台分布情况",
-      "input": "DescribeEndUserStatisticRequest",
-      "name": "获取终端用户分布",
-      "output": "DescribeEndUserStatisticResponse",
-      "status": "online"
-    },
-    "DescribeEndUsers": {
-      "document": "获取终端用户列表",
-      "input": "DescribeEndUsersRequest",
-      "name": "获取终端用户列表",
-      "output": "DescribeEndUsersResponse",
+    "DescribeEnvAccountCircle": {
+      "document": "查询环境计费周期",
+      "input": "DescribeEnvAccountCircleRequest",
+      "name": "查询环境计费周期",
+      "output": "DescribeEnvAccountCircleResponse",
       "status": "online"
     },
     "DescribeEnvDealRegion": {
@@ -413,6 +406,13 @@
       "output": "DescribeQuotaDataResponse",
       "status": "online"
     },
+    "DescribeSafeRule": {
+      "document": "查询数据库安全规则",
+      "input": "DescribeSafeRuleRequest",
+      "name": "查询数据库安全规则",
+      "output": "DescribeSafeRuleResponse",
+      "status": "online"
+    },
     "DescribeSmsQuotas": {
       "document": "查询后付费短信资源量\n1 有免费包的返回SmsFreeQuota结构所有字段\n2 没有免费包，有付费包，付费返回复用SmsFreeQuota结构，其中只有 TodayUsedQuota 字段有效\n3 都没有返回为空数组",
       "input": "DescribeSmsQuotasRequest",
@@ -427,18 +427,25 @@
       "output": "DescribeSpecialCostItemsResponse",
       "status": "online"
     },
-    "DescribeStandaloneGateway": {
-      "document": "本接口（DescribeStandaloneGateway）查询小租户网关套餐信息。",
-      "input": "DescribeStandaloneGatewayRequest",
-      "name": "查询小租户网关信息",
-      "output": "DescribeStandaloneGatewayResponse",
+    "DescribeStaticStore": {
+      "document": "查看当前环境下静态托管资源信息，根据返回结果判断静态资源的状态",
+      "input": "DescribeStaticStoreRequest",
+      "name": "查看静态托管资源信息",
+      "output": "DescribeStaticStoreResponse",
       "status": "online"
     },
-    "DescribeStandaloneGatewayPackage": {
-      "document": "本接口（DescribeStandaloneGatewayPackage）用于查询小租户网关套餐信息。",
-      "input": "DescribeStandaloneGatewayPackageRequest",
-      "name": "查询小租户网关套餐信息",
-      "output": "DescribeStandaloneGatewayPackageResponse",
+    "DescribeTable": {
+      "document": "查询表的相关信息，包括索引等信息",
+      "input": "DescribeTableRequest",
+      "name": "查询表信息",
+      "output": "DescribeTableResponse",
+      "status": "online"
+    },
+    "DescribeTables": {
+      "document": "本接口(ListTables)用于查询所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等",
+      "input": "DescribeTablesRequest",
+      "name": "查询所有表信息",
+      "output": "DescribeTablesResponse",
       "status": "online"
     },
     "DescribeUserActivityInfo": {
@@ -448,18 +455,11 @@
       "output": "DescribeUserActivityInfoResponse",
       "status": "online"
     },
-    "DescribeWxCloudBaseRunEnvs": {
-      "document": "查询微信云托管环境信息",
-      "input": "DescribeWxCloudBaseRunEnvsRequest",
-      "name": "查询微信云托管环境信息",
-      "output": "DescribeWxCloudBaseRunEnvsResponse",
-      "status": "online"
-    },
-    "DescribeWxCloudBaseRunSubNets": {
-      "document": "查询微信云托管子网",
-      "input": "DescribeWxCloudBaseRunSubNetsRequest",
-      "name": "查询微信云托管子网",
-      "output": "DescribeWxCloudBaseRunSubNetsResponse",
+    "DescribeUserList": {
+      "document": "查询tcb用户列表",
+      "input": "DescribeUserListRequest",
+      "name": "查询tcb用户列表",
+      "output": "DescribeUserListResponse",
       "status": "online"
     },
     "DescribeWxGatewayRoutes": {
@@ -481,13 +481,6 @@
       "input": "DestroyEnvRequest",
       "name": "销毁环境",
       "output": "DestroyEnvResponse",
-      "status": "online"
-    },
-    "DestroyStandaloneGateway": {
-      "document": "本接口（DestroyStandaloneGateway）用于销毁小租户网关。",
-      "input": "DestroyStandaloneGatewayRequest",
-      "name": "销毁小租户网关",
-      "output": "DestroyStandaloneGatewayResponse",
       "status": "online"
     },
     "DestroyStaticStore": {
@@ -525,6 +518,20 @@
       "output": "FreezeCloudBaseRunServersResponse",
       "status": "online"
     },
+    "ListTables": {
+      "document": "本接口(ListTables)用于查询所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等",
+      "input": "ListTablesRequest",
+      "name": "查询所有表",
+      "output": "ListTablesResponse",
+      "status": "online"
+    },
+    "ModifyCloudBaseGWAPI": {
+      "document": "修改云开发网关API",
+      "input": "ModifyCloudBaseGWAPIRequest",
+      "name": "修改云开发网关API",
+      "output": "ModifyCloudBaseGWAPIResponse",
+      "status": "online"
+    },
     "ModifyCloudBaseRunServerFlowConf": {
       "document": "修改容器内的版本流量配置",
       "input": "ModifyCloudBaseRunServerFlowConfRequest",
@@ -553,13 +560,6 @@
       "output": "ModifyDatabaseACLResponse",
       "status": "online"
     },
-    "ModifyEndUser": {
-      "document": "管理终端用户",
-      "input": "ModifyEndUserRequest",
-      "name": "管理终端用户",
-      "output": "ModifyEndUserResponse",
-      "status": "online"
-    },
     "ModifyEnv": {
       "document": "更新环境信息",
       "input": "ModifyEnvRequest",
@@ -572,6 +572,13 @@
       "input": "ModifyGatewayVersionTrafficRequest",
       "name": "设置网关版本的流量比例",
       "output": "ModifyGatewayVersionTrafficResponse",
+      "status": "online"
+    },
+    "ModifyUser": {
+      "document": "修改tcb用户",
+      "input": "ModifyUserRequest",
+      "name": "更新tcb用户",
+      "output": "ModifyUserResponse",
       "status": "online"
     },
     "ReinstateEnv": {
@@ -588,11 +595,11 @@
       "output": "ReplaceActivityRecordResponse",
       "status": "online"
     },
-    "RollUpdateCloudBaseRunServerVersion": {
-      "document": "针对特定的版本，进行滚动更新",
-      "input": "RollUpdateCloudBaseRunServerVersionRequest",
-      "name": "滚动更新服务版本",
-      "output": "RollUpdateCloudBaseRunServerVersionResponse",
+    "RunSql": {
+      "document": "执行SQL语句",
+      "input": "RunSqlRequest",
+      "name": "执行SQL语句",
+      "output": "RunSqlResponse",
       "status": "online"
     },
     "SearchClsLog": {
@@ -602,25 +609,18 @@
       "output": "SearchClsLogResponse",
       "status": "online"
     },
-    "TurnOffStandaloneGateway": {
-      "document": "本接口（TurnOffStandaloneGateway）用于关闭小租户网关。",
-      "input": "TurnOffStandaloneGatewayRequest",
-      "name": "关闭小租户网关",
-      "output": "TurnOffStandaloneGatewayResponse",
-      "status": "online"
-    },
-    "TurnOnStandaloneGateway": {
-      "document": "本接口（TurnOnStandaloneGateway）用于开启小租户网关。",
-      "input": "TurnOnStandaloneGatewayRequest",
-      "name": "开启小租户网关",
-      "output": "TurnOnStandaloneGatewayResponse",
-      "status": "online"
-    },
     "UnfreezeCloudBaseRunServers": {
       "document": "批量解冻服务",
       "input": "UnfreezeCloudBaseRunServersRequest",
       "name": "批量解冻服务",
       "output": "UnfreezeCloudBaseRunServersResponse",
+      "status": "online"
+    },
+    "UpdateTable": {
+      "document": "本接口(UpdateTable)用于修改表信息，当前可以支持创建和删除索引",
+      "input": "UpdateTableRequest",
+      "name": "修改表索引信息",
+      "output": "UpdateTableResponse",
       "status": "online"
     }
   },
@@ -646,12 +646,32 @@
         },
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "cloud1-c934jltjdkjflsdui",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "活动id",
           "example": "114514",
           "member": "int64",
           "name": "ActivityId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "活动名称（唯一英文标识）",
+          "example": "la-inspire-activity",
+          "member": "string",
+          "name": "ActivityName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -686,12 +706,22 @@
         },
         {
           "disabled": false,
-          "document": "是否软删除",
+          "document": "是否已删除",
           "example": "true",
           "member": "bool",
           "name": "IsDeleted",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "活动参与时间",
+          "example": "2025-12-01T12:34:56+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -859,32 +889,6 @@
       ],
       "usage": "out"
     },
-    "BackendServiceInfo": {
-      "document": "网关服务信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "服务名称",
-          "example": "demo service",
-          "member": "string",
-          "name": "ServiceName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务状态",
-          "example": "running",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "BanConfig": {
       "document": "封禁配置",
       "members": [
@@ -934,6 +938,133 @@
         }
       ],
       "usage": "both"
+    },
+    "BindCloudBaseAccessDomainRequest": {
+      "document": "BindCloudBaseAccessDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务Id，目前是指环境Id",
+          "example": "envid-28383",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云证书Id",
+          "example": "certid-2323",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认1，1 绑定默认Cdn，2 绑定TcbIngress（不经过cdn），4 绑定自定义cdn",
+          "example": "1",
+          "member": "uint64",
+          "name": "BindFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义cdn cname域名",
+          "example": "example.com.dns.com",
+          "member": "string",
+          "name": "CustomCname",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindCloudBaseAccessDomainResponse": {
+      "document": "BindCloudBaseAccessDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务Id，目前是指环境Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "envid-28383",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindCloudBaseGWDomainRequest": {
+      "document": "BindCloudBaseGWDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用多地域",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableRegion",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BindCloudBaseGWDomainResponse": {
+      "document": "BindCloudBaseGWDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindEnvGatewayRequest": {
       "document": "BindEnvGateway请求参数结构体",
@@ -1089,6 +1220,34 @@
       ],
       "usage": "both"
     },
+    "CloudBaseClientQPSPolicy": {
+      "document": "http访问服务客户端限频",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UserID 或 ClientIP 或 None，如果为 None 代表不限制",
+          "example": "UserID",
+          "member": "string",
+          "name": "LimitBy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限制值",
+          "example": "100",
+          "member": "int64",
+          "name": "LimitValue",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CloudBaseCodeRepoDetail": {
       "document": "代码仓库里 Repo的信息描述",
       "members": [
@@ -1227,6 +1386,422 @@
         }
       ],
       "usage": "both"
+    },
+    "CloudBaseGWAPI": {
+      "document": "tcb 网关API",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "test03-new-8gn6tunv19f93965",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API ID",
+          "example": "080f51e5-04bc-4fc0-8f99-1f9d7805f795",
+          "member": "string",
+          "name": "APIId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Path",
+          "example": "/test02",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 类型",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 名",
+          "example": "name01",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API创建时间",
+          "example": "1619619378",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义值通用字段：\nType为1时，该值为空。\nType为2时，该值为容器的代理IP:PORT数组。",
+          "example": "\"json\"",
+          "member": "string",
+          "name": "Custom",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示是否开启认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableAuth",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test03-new-8gn6tunv19f93965",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问类型（该参数暂不对外暴露）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "int64",
+          "name": "AccessType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一发布状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "UnionStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名（*表示所有域名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test03-new-8gn6tunv19f93965-251195466.ap-shanghai.app.tcloudbase",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有路径冲突\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ConflictFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DomainStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启路径透传，默认true表示短路径，即不开启(已弃用)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsShortPath",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径透传，默认0关闭，1开启，2关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PathTransmission",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨域校验，默认0开启，1开启，2关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableCheckAcrossDomain",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "静态托管文件目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
+          "member": "string",
+          "name": "StaticFileDirectory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "QPS策略",
+          "example": "无",
+          "member": "CloudBaseGWAPIQPSPolicy",
+          "name": "QPSPolicy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudBaseGWAPIQPSPolicy": {
+      "document": "http访问服务路由qps策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "qps限额总量",
+          "example": "100",
+          "member": "int64",
+          "name": "QPSTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端限频，如果不限制，LimitBy=None",
+          "example": "无",
+          "member": "CloudBaseClientQPSPolicy",
+          "name": "QPSPerClient",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudBaseGWService": {
+      "document": "网关服务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "fa-0510ol-9gl8xztv9e869cb0",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务域名",
+          "example": "www.xxx.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启时间",
+          "example": "1628151092",
+          "member": "uint64",
+          "name": "OpenTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定状态，1 绑定中；2绑定失败；3绑定成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPreempted",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启多地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRegion",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdn CName地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ax.cdn.dnsv1.com",
+          "member": "string",
+          "name": "Cname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一域名状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "UnionStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CName状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "CnameStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fjsl",
+          "member": "string",
+          "name": "CertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否强制https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceHttps",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "icp黑名单封禁状态，0-未封禁，1-封禁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IcpForbidStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义路由规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "CustomRoutingRules",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定类型，1绑定cdn，2源站，4自定义",
+          "example": "1",
+          "member": "uint64",
+          "name": "BindFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TcbIngress源站cname",
+          "example": "cname",
+          "member": "string",
+          "name": "OriginCname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义cname",
+          "example": "cname",
+          "member": "string",
+          "name": "CustomCname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudBaseOption": {
+      "document": "http service选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CloudBaseProjectVersion": {
       "document": "云开发项目版本",
@@ -1558,142 +2133,6 @@
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "CloudBaseRunForGatewayConf": {
-      "document": "独立网关云托管服务配置信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "是否缩容到0",
-          "example": "false",
-          "member": "bool",
-          "name": "IsZero",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "按百分比灰度的权重",
-          "example": "100",
-          "member": "int64",
-          "name": "Weight",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "按请求/header参数的灰度Key",
-          "example": "value",
-          "member": "string",
-          "name": "GrayKey",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "按请求/header参数的灰度Value",
-          "example": "key",
-          "member": "string",
-          "name": "GrayValue",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否为默认版本(按请求/header参数)",
-          "example": "false",
-          "member": "bool",
-          "name": "IsDefault",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "访问权限，对应二进制分多段，vpc内网｜公网｜oa",
-          "example": "2",
-          "member": "int64",
-          "name": "AccessType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "访问的URL（域名＋路径）列表",
-          "example": "[\"xxxxx\"]",
-          "member": "string",
-          "name": "URLs",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "env_xxxx",
-          "member": "string",
-          "name": "EnvId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务名称",
-          "example": "mapportal",
-          "member": "string",
-          "name": "ServerName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "版本名称",
-          "example": "mapportal-001",
-          "member": "string",
-          "name": "VersionName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "灰度类型：FLOW(权重), URL_PARAMS/HEAD_PARAMS",
-          "example": "Weigth",
-          "member": "string",
-          "name": "GrayType",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CLB的IP:Port",
-          "example": "9.34.54.12:8090",
-          "member": "string",
-          "name": "LbAddr",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "0:http访问服务配置信息, 1: 服务域名",
-          "example": "0/1",
-          "member": "int64",
-          "name": "ConfigType",
-          "required": false,
-          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2318,62 +2757,6 @@
         }
       ],
       "usage": "both"
-    },
-    "CloudBaseRunVersionPod": {
-      "document": "pod信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "webshell链接",
-          "example": "url",
-          "member": "string",
-          "name": "Webshell",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "pod name",
-          "example": "pod",
-          "member": "string",
-          "name": "PodId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "pod ip",
-          "example": "ip",
-          "member": "string",
-          "name": "PodIp",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态",
-          "example": "normal",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "2024-12-12 12:00:00",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "CloudBaseRunVolumeMount": {
       "document": "cfs挂载点",
@@ -3363,6 +3746,186 @@
       ],
       "type": "object"
     },
+    "CreateBillDealRequest": {
+      "document": "CreateBillDeal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateBillDealResponse": {
+      "document": "CreateBillDeal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudBaseGWAPIRequest": {
+      "document": "CreateCloudBaseGWAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Service ID",
+          "example": "env-123",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API Path",
+          "example": "/test",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API类型（1表示云函数，2表示容器）",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "API Name",
+          "example": "servicename",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "APIId，如果非空，表示修改绑定Path",
+          "example": "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx",
+          "member": "string",
+          "name": "APIId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义值通用字段（当Type为容器时必填）",
+          "example": "无",
+          "member": "string",
+          "name": "Custom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证开关 1为开启 2为关闭",
+          "example": "2",
+          "member": "uint64",
+          "name": "AuthSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启多地域",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRegion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用统一域名",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableUnion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "*",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问类型：\"OA\", \"PUBLIC\", \"MINIAPP\", \"VPC\" （不传默认PUBLIC+MINIAPP+VPC）",
+          "example": "[\"OA\", \"PUBLIC\", \"MINIAPP\", \"VPC\"]",
+          "member": "string",
+          "name": "AccessTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启路径透传，默认true表示短路径，即不开启路径透传(已弃用)",
+          "example": "true",
+          "member": "bool",
+          "name": "IsShortPath",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "路径透传，默认0关闭，1开启，2关闭",
+          "example": "2",
+          "member": "uint64",
+          "name": "PathTransmission",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跨域校验，默认0开启，1开启，2关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableCheckAcrossDomain",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "静态托管资源目录",
+          "example": "/TEST",
+          "member": "string",
+          "name": "StaticFileDirectory",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudBaseGWAPIResponse": {
+      "document": "CreateCloudBaseGWAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx",
+          "member": "string",
+          "name": "APIId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCloudBaseRunResourceRequest": {
       "document": "CreateCloudBaseRunResource请求参数结构体",
       "members": [
@@ -3907,6 +4470,30 @@
       ],
       "type": "object"
     },
+    "CreateIndex": {
+      "document": "本类型用于UpdateTable接口中描述待创建索引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引名称",
+          "example": "",
+          "member": "string",
+          "name": "IndexName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引结构",
+          "example": "",
+          "member": "MgoKeySchema",
+          "name": "MgoKeySchema",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "CreatePostpayPackageRequest": {
       "document": "CreatePostpayPackage请求参数结构体",
       "members": [
@@ -4044,88 +4631,6 @@
       ],
       "type": "object"
     },
-    "CreateStandaloneGatewayRequest": {
-      "document": "CreateStandaloneGateway请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "env-test-xxx",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "网关名",
-          "example": "StandaloneGateway",
-          "member": "string",
-          "name": "GatewayAlias",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "私有网络ID",
-          "example": "vpc-nzmimmod",
-          "member": "string",
-          "name": "VpcId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子网ID",
-          "example": "[\"subnet-hpddq58c\"]",
-          "member": "string",
-          "name": "SubnetIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "网关描述",
-          "example": "gateway",
-          "member": "string",
-          "name": "GatewayDesc",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "网关套餐版本",
-          "example": "starter",
-          "member": "string",
-          "name": "PackageVersion",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateStandaloneGatewayResponse": {
-      "document": "CreateStandaloneGateway返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "网关名称",
-          "example": "StandaloneGateway",
-          "member": "string",
-          "name": "GatewayName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateStaticStoreRequest": {
       "document": "CreateStaticStore请求参数结构体",
       "members": [
@@ -4172,116 +4677,60 @@
       ],
       "type": "object"
     },
-    "CreateWxCloudBaseRunEnvRequest": {
-      "document": "CreateWxCloudBaseRunEnv请求参数结构体",
+    "CreateTableRequest": {
+      "document": "CreateTable请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "wx应用Id",
-          "example": "wxappid",
+          "document": "数据表名；长度不超过96个字符，可以为英文字母、数字、下划线(_)和短横线(-)的组合，且不能以下划线开头",
+          "example": "in",
           "member": "string",
-          "name": "WxAppId",
+          "name": "TableName",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符",
-          "example": "env-alias",
+          "document": "FlexDB实例ID，如：tnt-nl7hjzasw",
+          "example": "tnt-nl7hjzasw",
           "member": "string",
-          "name": "Alias",
+          "name": "Tag",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
-          "example": "free",
+          "document": "FlexDB数据库权限信息",
+          "example": "无",
+          "member": "PermissionInfo",
+          "name": "PermissionInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "lowcode-abc",
           "member": "string",
-          "name": "FreeQuota",
+          "name": "EnvId",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "订单标记。建议使用方统一转大小写之后再判断。\nQuickStart：快速启动来源\nActivity：活动来源",
-          "example": "uinq",
-          "member": "string",
-          "name": "Flag",
+          "document": "MongoDB连接器配置",
+          "example": "无",
+          "member": "MongoConnector",
+          "name": "MongoConnector",
           "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "私有网络Id",
-          "example": "vpc-sjdkf",
-          "member": "string",
-          "name": "VpcId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子网列表",
-          "example": "[\"subnet-sfdfd\"]",
-          "member": "string",
-          "name": "SubNetIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "是否打开云调用",
-          "example": "true",
-          "member": "bool",
-          "name": "IsOpenCloudInvoke",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "创建来源：wechat | cloud",
-          "example": "wechat",
-          "member": "string",
-          "name": "Source",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "渠道：wechat | cloud",
-          "example": "wechat",
-          "member": "string",
-          "name": "Channel",
-          "required": false,
-          "type": "string"
+          "type": "object"
         }
       ],
       "type": "object"
     },
-    "CreateWxCloudBaseRunEnvResponse": {
-      "document": "CreateWxCloudBaseRunEnv返回参数结构体",
+    "CreateTableResponse": {
+      "document": "CreateTable返回参数结构体",
       "members": [
-        {
-          "disabled": false,
-          "document": "环境Id",
-          "example": "env-sdfsdf",
-          "member": "string",
-          "name": "EnvId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "后付费订单号",
-          "example": "tran-sdfsdf",
-          "member": "string",
-          "name": "TranId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4291,22 +4740,13 @@
       ],
       "type": "object"
     },
-    "CreateWxCloudBaseRunServerDBClusterRequest": {
-      "document": "CreateWxCloudBaseRunServerDBCluster请求参数结构体",
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "账户密码",
-          "example": "\"123456\"",
-          "member": "string",
-          "name": "AccountPassword",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "\"test\"",
+          "document": "环境id",
+          "example": "test-envId",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -4314,37 +4754,126 @@
         },
         {
           "disabled": false,
-          "document": "微信appid",
-          "example": "\"wx-appid\"",
+          "document": "用户名，用户名规则：1. 长度1-64字符 2. 只能包含大小写英文字母、数字和符号 . _ - 3. 只能以字母或数字开头 4. 不能重复",
+          "example": "zhangsan",
           "member": "string",
-          "name": "WxAppId",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID，最多64字符，如不传则系统自动生成",
+          "example": "1001",
+          "member": "string",
+          "name": "Uid",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "mysql内核版本，支持5.7,8.0",
-          "example": "5.7",
+          "document": "用户类型：internalUser-内部用户、externalUser-外部用户，默认internalUser（内部用户）",
+          "example": "internalUser",
           "member": "string",
-          "name": "DbVersion",
+          "name": "Type",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "0: 大小写敏感\n1: 非大小写敏感\n默认为0",
-          "example": "“1”",
+          "document": "密码，传入Uid时密码可不传。密码规则：1. 长度8-32字符（推荐12位以上） 2. 不能以特殊字符开头 3. 至少包含以下四项中的三项：小写字母a-z、大写字母A-Z、数字0-9、特殊字符()!@#$%^&*\\|?><_-",
+          "example": "Abc@123456",
           "member": "string",
-          "name": "LowerCaseTableName",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户状态：ACTIVE（激活）、BLOCKED（冻结），默认激活",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "UserStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称，长度2-64字符",
+          "example": "张三",
+          "member": "string",
+          "name": "NickName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号，不能重复",
+          "example": "13800138000",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱地址，不能重复",
+          "example": "zhangsan@example.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "头像链接，可访问的公网URL",
+          "example": "https://example.com/avatars/zhangsan.jpg",
+          "member": "string",
+          "name": "AvatarUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户描述，最多200字符",
+          "example": "用户描述",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "CreateWxCloudBaseRunServerDBClusterResponse": {
-      "document": "CreateWxCloudBaseRunServerDBCluster返回参数结构体",
+    "CreateUserResp": {
+      "document": "创建用户返回结果",
       "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "1001",
+          "member": "string",
+          "name": "Uid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果返回",
+          "example": "无",
+          "member": "CreateUserResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4528,6 +5057,174 @@
       ],
       "usage": "out"
     },
+    "DbInstance": {
+      "document": "数据库连接器实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "mikejliu-test01-5g7t7mwx7b84b3eb",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MySQL 连接器实例 ID；`\"default\"` 或为空表示使用 TCB 环境的默认连接器",
+          "example": "default",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名；为空时使用连接器配置的默认数据库名",
+          "example": "classicmodels",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteCloudBaseGWAPIRequest": {
+      "document": "DeleteCloudBaseGWAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API Path",
+          "example": "",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API ID",
+          "example": "",
+          "member": "string",
+          "name": "APIId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API类型",
+          "example": "",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "API Name",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义值字段（Type为2时，传递容器服务名表示需要删除JNSGW）",
+          "example": "",
+          "member": "string",
+          "name": "Custom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudBaseGWAPIResponse": {
+      "document": "DeleteCloudBaseGWAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最终删除API个数",
+          "example": "",
+          "member": "uint64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudBaseGWDomainRequest": {
+      "document": "DeleteCloudBaseGWDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudBaseGWDomainResponse": {
+      "document": "DeleteCloudBaseGWDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除个数",
+          "example": "",
+          "member": "uint64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudBaseProjectLatestVersionRequest": {
       "document": "DeleteCloudBaseProjectLatestVersion请求参数结构体",
       "members": [
@@ -4664,42 +5361,6 @@
       ],
       "type": "object"
     },
-    "DeleteEndUserRequest": {
-      "document": "DeleteEndUser请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "test-23",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户列表，每一项都是uuid",
-          "example": "[\"00000000963b4a85a9b34e2d1fe0c685\\n\"]",
-          "member": "string",
-          "name": "UserList",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteEndUserResponse": {
-      "document": "DeleteEndUser返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DeleteGatewayVersionRequest": {
       "document": "DeleteGatewayVersion请求参数结构体",
       "members": [
@@ -4780,6 +5441,132 @@
           "name": "Result",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableRequest": {
+      "document": "DeleteTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除的表名",
+          "example": "tbl",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FlexDB实例ID",
+          "example": "tnt-nl7hjzasw",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "lowcode-abc",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MongoDB连接器配置",
+          "example": "无",
+          "member": "MongoConnector",
+          "name": "MongoConnector",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableResponse": {
+      "document": "DeleteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersRequest": {
+      "document": "DeleteUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "testenv-123",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tcb用户id列表, 一次最多支持删除100个",
+          "example": "[\"19837204372934434\"]",
+          "member": "string",
+          "name": "Uids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersResp": {
+      "document": "删除tcb用户返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功个数",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败个数",
+          "example": "0",
+          "member": "int64",
+          "name": "FailedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteUsersResponse": {
+      "document": "DeleteUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除用户结果",
+          "example": "无",
+          "member": "DeleteUsersResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -5570,6 +6357,298 @@
       ],
       "type": "object"
     },
+    "DescribeCloudBaseGWAPIRequest": {
+      "document": "DescribeCloudBaseGWAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "envid",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API域名",
+          "example": "www.aaa.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API Path",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API ID",
+          "example": "randstring",
+          "member": "string",
+          "name": "APIId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API类型，1为云函数，2为容器",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "API名，Type为1时为云函数名，Type为2时为容器服务名",
+          "example": "apiname",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的分页参数，用于设置查询的偏移位置，0表示从头开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询的分页参数，用于表示每次查询的最大返回数据量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用多地域",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRegion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用统一域名",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableUnion",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseGWAPIResponse": {
+      "document": "DescribeCloudBaseGWAPI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseGWAPI",
+          "name": "APISet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启http调用",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableService",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果的数据总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询的分页参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询的分页参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseGWServiceRequest": {
+      "document": "DescribeCloudBaseGWService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "envid",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务域名",
+          "example": "hell.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用多地域",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRegion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用统一域名",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableUnion",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseGWServiceResponse": {
+      "document": "DescribeCloudBaseGWService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseGWService",
+          "name": "ServiceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启服务",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableService",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认域名信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcb.com",
+          "member": "string",
+          "name": "DefaultDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启CDN迁移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableUnion",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启跨域校验，默认开启 true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCheckAcrossDomain",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义路由规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "CustomRoutingRules",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认域名绑定类型，1绑定TCB-CDN，2绑定tcbingres（不经过cdn）",
+          "example": "1",
+          "member": "uint64",
+          "name": "AccessFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云接入源站域名",
+          "example": "envid.app-in.tencentcloudbase.com",
+          "member": "string",
+          "name": "OriginDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudBaseProjectLatestVersionListRequest": {
       "document": "DescribeCloudBaseProjectLatestVersionList请求参数结构体",
       "members": [
@@ -5763,423 +6842,6 @@
       ],
       "type": "object"
     },
-    "DescribeCloudBaseRunAllVpcsRequest": {
-      "document": "DescribeCloudBaseRunAllVpcs请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "lotestapi100004",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunAllVpcsResponse": {
-      "document": "DescribeCloudBaseRunAllVpcs返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "所有vpcid",
-          "example": "[\"vpcid-aa\",\"vpcid=bb\"]",
-          "member": "string",
-          "name": "Vpcs",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunConfForGateWayRequest": {
-      "document": "DescribeCloudBaseRunConfForGateWay请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "env-xfsdf",
-          "member": "string",
-          "name": "EnvID",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "vpc信息",
-          "example": "vpc-sdf",
-          "member": "string",
-          "name": "VpcID",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunConfForGateWayResponse": {
-      "document": "DescribeCloudBaseRunConfForGateWay返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "最近更新时间",
-          "example": "2021-01-01 00:00:00",
-          "member": "string",
-          "name": "LastUpTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "CloudBaseRunForGatewayConf",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunOneClickTaskExternalRequest": {
-      "document": "DescribeCloudBaseRunOneClickTaskExternal请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "外部任务Id 最长64字节",
-          "example": "1423443",
-          "member": "string",
-          "name": "ExternalId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunOneClickTaskExternalResponse": {
-      "document": "DescribeCloudBaseRunOneClickTaskExternal返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "外部任务Id",
-          "example": "sdkfldf",
-          "member": "string",
-          "name": "ExternalId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "弃用",
-          "example": "env-sdfsdf",
-          "member": "string",
-          "name": "EnvId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户uin",
-          "example": "10010123123",
-          "member": "string",
-          "name": "UserUin",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务名",
-          "example": "server",
-          "member": "string",
-          "name": "ServerName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "版本名",
-          "example": "version",
-          "member": "string",
-          "name": "VersionName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "2024-12-01 12:00:00",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当前阶段\n微信云托管环境创建阶段：envStage\n存储资源创建阶段：storageStage\n服务创建阶段：serverStage",
-          "example": "envStage",
-          "member": "string",
-          "name": "Stage",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态\nrunning\nstopped\nfailed\nfinished",
-          "example": "running",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "失败原因",
-          "example": "reason",
-          "member": "string",
-          "name": "FailReason",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户envId",
-          "example": "env-sdfsdf",
-          "member": "string",
-          "name": "UserEnvId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "2024-12-01 12:00:00",
-          "member": "string",
-          "name": "StartTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "步骤信息",
-          "example": "无",
-          "member": "OneClickTaskStepInfo",
-          "name": "Steps",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunOperationTypesRequest": {
-      "document": "DescribeCloudBaseRunOperationTypes请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "lotestapi100004",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务名称，精确匹配",
-          "example": "dockerservicename",
-          "member": "string",
-          "name": "ServerName",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunOperationTypesResponse": {
-      "document": "DescribeCloudBaseRunOperationTypes返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "操作类型",
-          "example": "[\"sddf\"]",
-          "member": "string",
-          "name": "Action",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务名列表",
-          "example": "[\"server\"]",
-          "member": "string",
-          "name": "ServerName",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunPodListRequest": {
-      "document": "DescribeCloudBaseRunPodList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境id",
-          "example": "env-sdfsd",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务名",
-          "example": "server-sdfsdf",
-          "member": "string",
-          "name": "ServerName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "版本名",
-          "example": "version",
-          "member": "string",
-          "name": "VersionName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页限制",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页偏移量",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "容器状态",
-          "example": "normal",
-          "member": "string",
-          "name": "Status",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "容器名",
-          "example": "pod",
-          "member": "string",
-          "name": "PodName",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunPodListResponse": {
-      "document": "DescribeCloudBaseRunPodList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "偏移量",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分页大小",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总数",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "容器列表",
-          "example": "无",
-          "member": "CloudBaseRunVersionPod",
-          "name": "PodList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeCloudBaseRunResourceForExtendRequest": {
       "document": "DescribeCloudBaseRunResourceForExtend请求参数结构体",
       "members": [
@@ -6324,90 +6986,6 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunServerDomainNameRequest": {
-      "document": "DescribeCloudBaseRunServerDomainName请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "服务名",
-          "example": "server",
-          "member": "string",
-          "name": "ServerName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境Id",
-          "example": "env-sdfsdf",
-          "member": "string",
-          "name": "UserEnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户Uin",
-          "example": "124324324",
-          "member": "string",
-          "name": "UserUin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "外部Id",
-          "example": "jskdlfjdkf",
-          "member": "string",
-          "name": "ExternalId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunServerDomainNameResponse": {
-      "document": "DescribeCloudBaseRunServerDomainName返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "公网服务域名",
-          "example": "sddf.com",
-          "member": "string",
-          "name": "PublicDomain",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "内部服务域名",
-          "example": "sdjklf.com",
-          "member": "string",
-          "name": "InternalDomain",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "弃用",
-          "example": "domain",
-          "member": "string",
-          "name": "DomainName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7371,51 +7949,6 @@
       ],
       "type": "object"
     },
-    "DescribeCloudBaseRunVersionRsByConditionRequest": {
-      "document": "DescribeCloudBaseRunVersionRsByCondition请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID；EnvId和ClusterId不能同时为空",
-          "example": "tcb_jsxjtcx",
-          "member": "string",
-          "name": "EnvId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集群ID；EnvId和ClusterId不能同时为空",
-          "example": "cls-sfdxerf",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "过滤网关服务开关",
-          "example": "true",
-          "member": "bool",
-          "name": "FilterGwSwitch",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudBaseRunVersionRsByConditionResponse": {
-      "document": "DescribeCloudBaseRunVersionRsByCondition返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeCloudBaseRunVersionSnapshotRequest": {
       "document": "DescribeCloudBaseRunVersionSnapshot请求参数结构体",
       "members": [
@@ -7734,59 +8267,13 @@
       ],
       "type": "object"
     },
-    "DescribeEndUserLoginStatisticRequest": {
-      "document": "DescribeEndUserLoginStatistic请求参数结构体",
+    "DescribeEnvAccountCircleRequest": {
+      "document": "DescribeEnvAccountCircle请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "环境id",
-          "example": "lowcode-123",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "终端用户来源\n<li> qcloud </li>\n<li>miniapp</li>",
-          "example": "miniapp",
-          "member": "string",
-          "name": "Source",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeEndUserLoginStatisticResponse": {
-      "document": "DescribeEndUserLoginStatistic返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境终端用户新增与登录统计",
-          "example": "无",
-          "member": "LoginStatistic",
-          "name": "LoginStatistics",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeEndUserStatisticRequest": {
-      "document": "DescribeEndUserStatistic请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境id",
-          "example": "lowcode-123",
+          "document": "环境ID",
+          "example": "envid-asdafafa",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -7795,101 +8282,27 @@
       ],
       "type": "object"
     },
-    "DescribeEndUserStatisticResponse": {
-      "document": "DescribeEndUserStatistic返回参数结构体",
+    "DescribeEnvAccountCircleResponse": {
+      "document": "DescribeEnvAccountCircle返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "终端用户各平台统计",
-          "example": "无",
-          "member": "PlatformStatistic",
-          "name": "PlatformStatistics",
+          "document": "环境计费周期开始时间",
+          "example": "2025-12-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
           "output_required": true,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "终端用户总数",
-          "example": "19800",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "document": "环境计费周期结束时间",
+          "example": "2025-12-31 23:59:59",
           "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeEndUsersRequest": {
-      "document": "DescribeEndUsers请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "开发者的环境ID",
-          "example": "envid",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "可选参数，偏移量，默认 0",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "可选参数，拉取数量，默认 20",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "按照 uuid 列表过滤，最大个数为100",
-          "example": "[\"00000000963b4a85a9b34e2d1fe0c685\\n\"]",
-          "member": "string",
-          "name": "UUIds",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeEndUsersResponse": {
-      "document": "DescribeEndUsers返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用户总数",
-          "example": "1",
-          "member": "uint64",
-          "name": "Total",
+          "name": "EndTime",
           "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户列表",
-          "example": "无",
-          "member": "EndUserInfo",
-          "name": "Users",
-          "output_required": true,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8956,6 +9369,69 @@
       ],
       "type": "object"
     },
+    "DescribeSafeRuleRequest": {
+      "document": "DescribeSafeRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集合名称",
+          "example": "",
+          "member": "string",
+          "name": "CollectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "微信AppId，微信必传",
+          "example": "",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSafeRuleResponse": {
+      "document": "DescribeSafeRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Rule",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>\n<li> CUSTOM：自定义安全规则</li>",
+          "example": "",
+          "member": "string",
+          "name": "AclTag",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSmsQuotasRequest": {
       "document": "DescribeSmsQuotas请求参数结构体",
       "members": [
@@ -9048,13 +9524,67 @@
       ],
       "type": "object"
     },
-    "DescribeStandaloneGatewayPackageRequest": {
-      "document": "DescribeStandaloneGatewayPackage请求参数结构体",
+    "DescribeStaticStoreRequest": {
+      "document": "DescribeStaticStore请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "env-test-xxx",
+          "example": "",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaticStoreResponse": {
+      "document": "DescribeStaticStore返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "静态托管资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "StaticStoreInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableRequest": {
+      "document": "DescribeTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "demo_users",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FlecDB实例ID",
+          "example": "tnt-xxx",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "lowcode-abc",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -9062,37 +9592,37 @@
         },
         {
           "disabled": false,
-          "document": "套餐版本，包含starter、basic、advanced、enterprise",
-          "example": "starter",
-          "member": "string",
-          "name": "PackageVersion",
+          "document": "MongoDB连接器配置",
+          "example": "无",
+          "member": "MongoConnector",
+          "name": "MongoConnector",
           "required": false,
-          "type": "string"
+          "type": "object"
         }
       ],
       "type": "object"
     },
-    "DescribeStandaloneGatewayPackageResponse": {
-      "document": "DescribeStandaloneGatewayPackage返回参数结构体",
+    "DescribeTableResponse": {
+      "document": "DescribeTable返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "总数",
-          "example": "env-test-xxx",
-          "member": "int64",
-          "name": "Total",
-          "required": true,
-          "type": "int",
+          "document": "索引相关信息",
+          "example": "无",
+          "member": "IndexInfo",
+          "name": "Indexes",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "套餐详情",
-          "example": "starter",
-          "member": "StandaloneGatewayPackageInfo",
-          "name": "StandaloneGatewayPackageList",
-          "required": true,
-          "type": "list",
+          "document": "索引个数",
+          "example": "1",
+          "member": "int64",
+          "name": "IndexNum",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9104,61 +9634,79 @@
       ],
       "type": "object"
     },
-    "DescribeStandaloneGatewayRequest": {
-      "document": "DescribeStandaloneGateway请求参数结构体",
+    "DescribeTablesRequest": {
+      "document": "DescribeTables请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
-          "example": "env-test-xxx",
+          "document": "分页条件",
+          "example": "10",
+          "member": "int64",
+          "name": "MgoLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tnt-abc",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页条件",
+          "example": "0",
+          "member": "int64",
+          "name": "MgoOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "lowcode-abc",
           "member": "string",
           "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "网关名称",
-          "example": "x-tcb-reserved-gw-envoy-demo",
-          "member": "string",
-          "name": "GatewayName",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "网关别名",
-          "example": "gateway-demo",
-          "member": "string",
-          "name": "GatewayAlias",
+          "document": "MongoConnector",
+          "example": "无",
+          "member": "MongoConnector",
+          "name": "MongoConnector",
           "required": false,
-          "type": "string"
+          "type": "object"
         }
       ],
       "type": "object"
     },
-    "DescribeStandaloneGatewayResponse": {
-      "document": "DescribeStandaloneGateway返回参数结构体",
+    "DescribeTablesResponse": {
+      "document": "DescribeTables返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "独立网关信息列表",
+          "document": "表信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "StandaloneGatewayInfo",
-          "name": "StandaloneGatewayList",
-          "required": true,
+          "member": "TableInfo",
+          "name": "Tables",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "总数",
-          "example": "1",
-          "member": "uint64",
-          "name": "Total",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "document": "分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pager",
+          "name": "Pager",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9273,87 +9821,112 @@
       ],
       "type": "object"
     },
-    "DescribeWxCloudBaseRunEnvsRequest": {
-      "document": "DescribeWxCloudBaseRunEnvs请求参数结构体",
+    "DescribeUserListRequest": {
+      "document": "DescribeUserList请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "wx应用Id",
-          "example": "wx-app-id",
+          "document": "环境id",
+          "example": "test_envId",
           "member": "string",
-          "name": "WxAppId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否查询全地域",
-          "example": "true",
-          "member": "bool",
-          "name": "AllRegions",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWxCloudBaseRunEnvsResponse": {
-      "document": "DescribeWxCloudBaseRunEnvs返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "env列表",
-          "example": "[{},{}]",
-          "member": "EnvInfo",
-          "name": "EnvList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWxCloudBaseRunSubNetsRequest": {
-      "document": "DescribeWxCloudBaseRunSubNets请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "VPC id",
-          "example": "vpc-id",
-          "member": "string",
-          "name": "VpcId",
+          "name": "EnvId",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "查询个数限制，不填或小于等于0，等于不限制",
-          "example": "0",
+          "document": "页码，从1开始，默认1",
+          "example": "1",
           "member": "int64",
-          "name": "Limit",
+          "name": "PageNo",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认20，最大100",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，模糊查询",
+          "example": "zhang",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称，模糊查询",
+          "example": "张",
+          "member": "string",
+          "name": "NickName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号，模糊查询",
+          "example": "13900139000",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱，模糊查询",
+          "example": "zhangsan@example.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeWxCloudBaseRunSubNetsResponse": {
-      "document": "DescribeWxCloudBaseRunSubNets返回参数结构体",
+    "DescribeUserListResp": {
+      "document": "查询用户返回结果",
       "members": [
         {
           "disabled": false,
-          "document": "子网Id列表",
-          "example": "[\"subnet-xdsfd\"]",
-          "member": "string",
-          "name": "SubNetIds",
-          "output_required": true,
+          "document": "用户总数",
+          "example": "16",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户列表",
+          "example": "无",
+          "member": "User",
+          "name": "UserList",
+          "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeUserListResponse": {
+      "document": "DescribeUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果返回",
+          "example": "无",
+          "member": "DescribeUserListResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -9567,61 +10140,6 @@
       ],
       "type": "object"
     },
-    "DestroyStandaloneGatewayRequest": {
-      "document": "DestroyStandaloneGateway请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "env-test-xxx",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "网名名称",
-          "example": "x-tcb-reserved-gw-envoy-demo",
-          "member": "string",
-          "name": "GatewayName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否强制释放",
-          "example": "true",
-          "member": "bool",
-          "name": "IsForce",
-          "required": true,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "DestroyStandaloneGatewayResponse": {
-      "document": "DestroyStandaloneGateway返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "删除独立网关状态",
-          "example": "success",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DestroyStaticStoreRequest": {
       "document": "DestroyStaticStore请求参数结构体",
       "members": [
@@ -9667,6 +10185,21 @@
         }
       ],
       "type": "object"
+    },
+    "DropIndex": {
+      "document": "本类型用于UpdateTable接口中描述待删除索引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引名称",
+          "example": "",
+          "member": "string",
+          "name": "IndexName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "EditAuthConfigRequest": {
       "document": "EditAuthConfig请求参数结构体",
@@ -9722,152 +10255,6 @@
       ],
       "type": "object"
     },
-    "EndUserInfo": {
-      "document": "终端用户信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用户唯一ID",
-          "example": "1234-abc-12345",
-          "member": "string",
-          "name": "UUId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "微信ID",
-          "example": "open-wx",
-          "member": "string",
-          "name": "WXOpenId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "qq ID",
-          "example": "open-qq",
-          "member": "string",
-          "name": "QQOpenId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "手机号",
-          "example": "13099998888",
-          "member": "string",
-          "name": "Phone",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "邮箱",
-          "example": "steven@tencent.com",
-          "member": "string",
-          "name": "Email",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "昵称",
-          "example": "steven",
-          "member": "string",
-          "name": "NickName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "性别",
-          "example": "男",
-          "member": "string",
-          "name": "Gender",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "头像地址",
-          "example": "https://www.baidu.com",
-          "member": "string",
-          "name": "AvatarUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "更新时间",
-          "example": "2024-02-02",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "2024-02-02",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否为匿名用户",
-          "example": "true",
-          "member": "bool",
-          "name": "IsAnonymous",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否禁用账户",
-          "example": "true",
-          "member": "bool",
-          "name": "IsDisabled",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否设置过密码",
-          "example": "true",
-          "member": "bool",
-          "name": "HasPassword",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户名",
-          "example": "steven",
-          "member": "string",
-          "name": "UserName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "EnvBillingInfoItem": {
       "document": "环境计费信息",
       "members": [
@@ -9884,7 +10271,7 @@
         {
           "disabled": false,
           "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
-          "example": "Default",
+          "example": "baas_personal",
           "member": "string",
           "name": "PackageId",
           "output_required": true,
@@ -11183,6 +11570,114 @@
       ],
       "usage": "both"
     },
+    "IndexAccesses": {
+      "document": "索引命中信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引命中次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Ops",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中次数从何时开始计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Since",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IndexInfo": {
+      "document": "索引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引大小，单位: 字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Size",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引键值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "Indexkey",
+          "name": "Keys",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引使用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "IndexAccesses",
+          "name": "Accesses",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为唯一索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "Unique",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Indexkey": {
+      "document": "索引的key值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "方向：specify 1 for ascending or -1 for descending",
+          "example": "无",
+          "member": "string",
+          "name": "Direction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "KVPair": {
       "document": "键值对",
       "members": [
@@ -11210,6 +11705,116 @@
         }
       ],
       "usage": "both"
+    },
+    "ListTablesRequest": {
+      "document": "ListTables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页返回数量（0-1000)",
+          "example": "10",
+          "member": "int64",
+          "name": "MgoLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "FlexDB实例ID",
+          "example": "tag-123",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "MgoOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤标签数组，用于过滤表名，可选值如：HIDDEN、WEDA、WEDA_SYSTEM",
+          "example": "[\"HIDDEN\"]",
+          "member": "string",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索查询值",
+          "example": "prefix",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示隐藏表",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowHidden",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "lowcode-abc",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mongo连接器信息",
+          "example": "无",
+          "member": "MongoConnector",
+          "name": "MongoConnector",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTablesResponse": {
+      "document": "ListTables返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableInfo",
+          "name": "Tables",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pager",
+          "name": "Pager",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "LogObject": {
       "document": "CLS日志单条信息",
@@ -11309,6 +11914,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志聚合结果",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "AnalysisRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11379,55 +11994,112 @@
       ],
       "usage": "out"
     },
-    "LoginStatistic": {
-      "document": "终端用户登录新增统计",
+    "MgoIndexKeys": {
+      "document": "本类型用于UpdateTable接口中描述待创建索引信息",
       "members": [
         {
           "disabled": false,
-          "document": "统计类型 新增NEWUSER 和登录 LOGIN",
-          "example": "NEWUSER",
+          "document": "无",
+          "example": "\"\"",
           "member": "string",
-          "name": "StatisticalType",
-          "output_required": true,
+          "name": "Name",
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "统计周期：日DAY，周WEEK，月MONTH",
-          "example": "WEEK",
+          "document": "无",
+          "example": "\"\"",
           "member": "string",
-          "name": "StatisticalCycle",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "统计总量",
-          "example": "2",
-          "member": "uint64",
-          "name": "Count",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "更新时间",
-          "example": "2025-01-01",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": true,
+          "name": "Direction",
           "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "both"
+      "usage": "in"
+    },
+    "MgoKeySchema": {
+      "document": "本类型用于接口中描述待创建索引结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引字段",
+          "example": "无",
+          "member": "MgoIndexKeys",
+          "name": "MgoIndexKeys",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否唯一索引",
+          "example": "无",
+          "member": "bool",
+          "name": "MgoIsUnique",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否稀疏索引",
+          "example": "无",
+          "member": "bool",
+          "name": "MgoIsSparse",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyCloudBaseGWAPIRequest": {
+      "document": "ModifyCloudBaseGWAPI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Service ID",
+          "example": "envId",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API ID",
+          "example": "xxxxxx-xxxxxx-xxxxxx-xxxxxx",
+          "member": "string",
+          "name": "APIId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选项列表，key取值：domain, path。",
+          "example": "无",
+          "member": "CloudBaseOption",
+          "name": "Options",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudBaseGWAPIResponse": {
+      "document": "ModifyCloudBaseGWAPI返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCloudBaseRunServerFlowConfRequest": {
       "document": "ModifyCloudBaseRunServerFlowConf请求参数结构体",
@@ -11719,51 +12391,6 @@
       ],
       "type": "object"
     },
-    "ModifyEndUserRequest": {
-      "document": "ModifyEndUser请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "YourEnvId",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "C端用户端的唯一ID",
-          "example": "8db291f521064c36943482cbd59ecd93",
-          "member": "string",
-          "name": "UUId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "账号的状态\n<li>ENABLE</li>\n<li>DISABLE</li>",
-          "example": "ENABLE",
-          "member": "string",
-          "name": "Status",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyEndUserResponse": {
-      "document": "ModifyEndUser返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyEnvRequest": {
       "document": "ModifyEnv请求参数结构体",
       "members": [
@@ -11845,6 +12472,174 @@
       ],
       "type": "object"
     },
+    "ModifyUserRequest": {
+      "document": "ModifyUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "testenv-123",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户Id, 不做修改",
+          "example": "1",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，用户名规则：1. 长度1-64字符 2. 只能包含大小写英文字母、数字和符号 . _ - 3. 只能以字母或数字开头 4. 不能重复，不传该字段或传空字符不修改",
+          "example": "test_user_01",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户类型：0-内部用户、1-外部用户，默认0（内部用户），不传该字段或传空字符串不修改",
+          "example": "internalUser",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码，传入Uid时密码可不传。密码规则：1. 长度8-32字符（推荐12位以上） 2. 不能以特殊字符开头 3. 至少包含以下四项中的三项：小写字母a-z、大写字母A-Z、数字0-9、特殊字符()!@#$%^&*\\|?><_-，不传该字段或传空字符串不修改",
+          "example": "test123@",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户状态：ACTIVE（激活）、BLOCKED（冻结），默认冻结，不传该字段或传空字符串不修改",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "UserStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称，长度2-64字符，不传该字段不修改，传空字符修改为空",
+          "example": "test_user_01",
+          "member": "string",
+          "name": "NickName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号，11位数字，不传该字段不修改，传空字符串修改为空",
+          "example": "18xxxx9078",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱地址，不传该字段不修改，传空字符修改为空",
+          "example": "example@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "头像链接，可访问的公网URL，不传该字段不修改，传空字符串修改为空",
+          "example": "https://example.avatat",
+          "member": "string",
+          "name": "AvatarUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户描述，最多200字符，不传该字段不修改，传空字符修改为空",
+          "example": "测试账号",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserResp": {
+      "document": "修改用户返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyUserResponse": {
+      "document": "ModifyUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改用户返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyUserResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MongoConnector": {
+      "document": "MongoDB连接器配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器实例ID",
+          "example": "mongo_conn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MongoDB数据库名",
+          "example": "demo_db",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ObjectKV": {
       "document": "Key-Value类型，模拟的 object 类型",
       "members": [
@@ -11872,72 +12667,6 @@
         }
       ],
       "usage": "both"
-    },
-    "OneClickTaskStepInfo": {
-      "document": "一键部署步骤信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "未启动：\"todo\"\n运行中：\"running\"\n失败：\"failed\"\n成功结束：\"finished\"",
-          "example": "\"running\"",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "开始时间",
-          "example": "2021-11-16 01:00:00",
-          "member": "string",
-          "name": "StartTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "2021-11-16 01:00:00",
-          "member": "string",
-          "name": "EndTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "耗时：秒",
-          "example": "10",
-          "member": "int64",
-          "name": "CostTime",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "失败原因",
-          "example": "reason",
-          "member": "string",
-          "name": "FailReason",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "步骤名",
-          "example": "name",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "OrderInfo": {
       "document": "订单信息",
@@ -12121,44 +12850,74 @@
       ],
       "usage": "out"
     },
-    "PlatformStatistic": {
-      "document": "终端用户平台统计信息",
+    "Pager": {
+      "document": "分页信息",
       "members": [
         {
           "disabled": false,
-          "document": "终端用户从属平台",
-          "example": "qcloud",
-          "member": "string",
-          "name": "Platform",
+          "document": "分页偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Offset",
           "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "平台终端用户数",
-          "example": "114514",
-          "member": "uint64",
-          "name": "Count",
-          "output_required": true,
-          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "更新时间",
-          "example": "2024-01-01 00:00:00",
-          "member": "string",
-          "name": "UpdateTime",
+          "document": "每页返回记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Limit",
           "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档集合总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "both"
+      "usage": "out"
+    },
+    "PermissionInfo": {
+      "document": "FlexDB数据库权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "\"READONLY\",   //公有读，私有写。所有用户可读，仅创建者及管理员可写  \n\"PRIVATE\",    //私有读写，仅创建者及管理员可读写  \n\"ADMINWRITE\", //所有用户可读，仅管理员可写  \n\"ADMINONLY\",  //仅管理员可操作  \n\"CUSTOM\",     // 安全规则",
+          "example": "READONLY",
+          "member": "string",
+          "name": "AclTag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "test-env-xxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则",
+          "example": "无",
+          "member": "string",
+          "name": "Rule",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "PostPaidEnvDeductInfo": {
       "document": "后付费计费详情",
@@ -12372,13 +13131,22 @@
       ],
       "type": "object"
     },
-    "RollUpdateCloudBaseRunServerVersionRequest": {
-      "document": "RollUpdateCloudBaseRunServerVersion请求参数结构体",
+    "RunSqlRequest": {
+      "document": "RunSql请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
-          "example": "env-sdfsd",
+          "document": "要执行的SQL语句",
+          "example": "CREATE TABLE users (id BIGINT PRIMARY KEY AUTO_INCREMENT)",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "lowcode-2gx6pjs59ddd3cea",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -12386,335 +13154,56 @@
         },
         {
           "disabled": false,
-          "document": "要替换的版本名称，可以为latest",
-          "example": "version",
-          "member": "string",
-          "name": "VersionName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "枚举（package/repository/image)",
-          "example": "apckage",
-          "member": "string",
-          "name": "UploadType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "repository的类型(coding/gitlab/github)",
-          "example": "coding",
-          "member": "string",
-          "name": "RepositoryType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "流量占比",
-          "example": "90",
-          "member": "int64",
-          "name": "FlowRatio",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "dockerfile地址",
-          "example": ".",
-          "member": "string",
-          "name": "DockerfilePath",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "构建目录",
-          "example": ".",
-          "member": "string",
-          "name": "BuildDir",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "Cpu的大小，单位：核",
-          "example": "2",
-          "member": "string",
-          "name": "Cpu",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "Mem的大小，单位：G",
-          "example": "3",
-          "member": "string",
-          "name": "Mem",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "最小副本数，最小值：0",
-          "example": "11",
-          "member": "string",
-          "name": "MinNum",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "最大副本数",
-          "example": "12",
-          "member": "string",
-          "name": "MaxNum",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "策略类型\ncpu/mem",
-          "example": "cpu",
-          "member": "string",
-          "name": "PolicyType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "策略阈值",
-          "example": "40",
-          "member": "string",
-          "name": "PolicyThreshold",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境变量",
-          "example": "key=value",
-          "member": "string",
-          "name": "EnvParams",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "容器端口",
-          "example": "80",
-          "member": "int64",
-          "name": "ContainerPort",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "服务名称",
-          "example": "server",
-          "member": "string",
-          "name": "ServerName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "repository地址",
-          "example": "address",
-          "member": "string",
-          "name": "Repository",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分支",
-          "example": "master",
-          "member": "string",
-          "name": "Branch",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "版本备注",
-          "example": "remark",
-          "member": "string",
-          "name": "VersionRemark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "代码包名字",
-          "example": "zip",
-          "member": "string",
-          "name": "PackageName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "代码包版本",
-          "example": "234343",
-          "member": "string",
-          "name": "PackageVersion",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "Image的详情",
+          "document": "数据库连接器实例信息",
           "example": "无",
-          "member": "CloudBaseRunImageInfo",
-          "name": "ImageInfo",
+          "member": "DbInstance",
+          "name": "DbInstance",
           "required": false,
           "type": "object"
         },
         {
           "disabled": false,
-          "document": "Github等拉取代码的详情",
-          "example": "无",
-          "member": "CloudBaseCodeRepoDetail",
-          "name": "CodeDetail",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "是否回放流量",
+          "document": "是否只读；当 `true` 时仅允许以 `SELECT/WITH/SHOW/DESCRIBE/DESC/EXPLAIN` 开头的 SQL",
           "example": "false",
           "member": "bool",
-          "name": "IsRebuild",
+          "name": "ReadOnly",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "延迟多长时间开始健康检查（单位s）",
-          "example": "80",
-          "member": "int64",
-          "name": "InitialDelaySeconds",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "cfs挂载信息",
-          "example": "无",
-          "member": "CloudBaseRunVolumeMount",
-          "name": "MountVolumeInfo",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "是否回滚",
-          "example": "false",
-          "member": "bool",
-          "name": "Rollback",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "版本历史名",
-          "example": "name",
-          "member": "string",
-          "name": "SnapshotName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义采集路径",
-          "example": "stdout",
-          "member": "string",
-          "name": "CustomLogs",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否启用统一域名",
-          "example": "false",
-          "member": "bool",
-          "name": "EnableUnion",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "操作备注",
-          "example": "remark",
-          "member": "string",
-          "name": "OperatorRemark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务路径（只会第一次生效）",
-          "example": "path",
-          "member": "string",
-          "name": "ServerPath",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否更新Cls",
-          "example": "false",
-          "member": "bool",
-          "name": "IsUpdateCls",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "自动扩缩容策略组",
-          "example": "无",
-          "member": "HpaPolicy",
-          "name": "PolicyDetail",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
     },
-    "RollUpdateCloudBaseRunServerVersionResponse": {
-      "document": "RollUpdateCloudBaseRunServerVersion返回参数结构体",
+    "RunSqlResponse": {
+      "document": "RunSql返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "succ为成功",
-          "example": "succ",
+          "document": "查询结果行，每个元素为 JSON 字符串",
+          "example": "[\"{\\\"Collation\\\":null,\\\"Comment\\\":\\\"主键ID\\\",\\\"Default\\\":null,\\\"Extra\\\":\\\"auto_increment\\\",\\\"Field\\\":\\\"id\\\",\\\"Key\\\":\\\"PRI\\\",\\\"Null\\\":\\\"NO\\\",\\\"Privileges\\\":\\\"select,insert,update,references\\\",\\\"Type\\\":\\\"bigint(20)\\\"}\"]",
           "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "滚动更新的VersionName",
-          "example": "version",
+          "document": "列元数据信息，每个元素为 JSON 字符串，字段包含 `name/databaseType/nullable/length/precision/scale`",
+          "example": "[\"{\\\"databaseType\\\":\\\"VARCHAR\\\",\\\"length\\\":0,\\\"name\\\":\\\"Field\\\",\\\"nullable\\\":false,\\\"precision\\\":0,\\\"scale\\\":0}\"]",
           "member": "string",
-          "name": "VersionName",
-          "output_required": true,
-          "type": "string",
+          "name": "Infos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作记录id",
-          "example": "aa123",
-          "member": "string",
-          "name": "RunId",
-          "output_required": true,
-          "type": "string",
+          "document": "受影响的行数（INSERT/UPDATE/DELETE 等语句）",
+          "example": "0",
+          "member": "int64",
+          "name": "RowsAffected",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -12758,7 +13247,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044",
+          "document": "查询语句，例如查询云函数：(src:app OR src:system) AND log:\\\"START RequestId*\\\"， 查询云数据库：module:database，查询审批流：module:workflow，查询模型：module:model，查询用户权限：module:auth，以上仅为示例语句，实际使用时请根据具体日志内容进行调整，查询语句需严格遵循CLS（Cloud Log Service）语法规范 详细的语法规则请参考官方档：https://cloud.tencent.com/document/product/614/47044",
           "example": "fun",
           "member": "string",
           "name": "QueryString",
@@ -12928,168 +13417,6 @@
       ],
       "usage": "out"
     },
-    "StandaloneGatewayInfo": {
-      "document": "独立网关信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "独立网关名称",
-          "example": "x-tcb-reserved-gw-envoy-demo",
-          "member": "string",
-          "name": "GatewayName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CPU核心数",
-          "example": "1.0",
-          "member": "float",
-          "name": "CPU",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "内存大小，单位MB",
-          "example": "8",
-          "member": "uint64",
-          "name": "Mem",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "套餐包版本名称",
-          "example": "basic",
-          "member": "string",
-          "name": "PackageVersion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "网关别名",
-          "example": "gateway-alias",
-          "member": "string",
-          "name": "GatewayAlias",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "私有网络ID",
-          "example": "vpc-73afxxfa",
-          "member": "string",
-          "name": "VpcId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "子网ID列表",
-          "example": "[\"subnet-9xnlrqj5\"]",
-          "member": "string",
-          "name": "SubnetIds",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "网关描述",
-          "example": "gateway demo",
-          "member": "string",
-          "name": "GatewayDesc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "网关状态",
-          "example": "running",
-          "member": "string",
-          "name": "GateWayStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "服务信息",
-          "example": "无",
-          "member": "BackendServiceInfo",
-          "name": "ServiceInfo",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "公网CLBIP",
-          "example": "10.0.0.1",
-          "member": "string",
-          "name": "PublicClbIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "内网CLBIP",
-          "example": "10.0.0.1",
-          "member": "string",
-          "name": "InternalClbIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "StandaloneGatewayPackageInfo": {
-      "document": "小租户网关套餐配置",
-      "members": [
-        {
-          "disabled": false,
-          "document": "CPU核心数",
-          "example": "1.0",
-          "member": "float",
-          "name": "CPU",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "内存大小，单位MB",
-          "example": "8",
-          "member": "uint64",
-          "name": "Mem",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "套餐包版本名称",
-          "example": "basic",
-          "member": "string",
-          "name": "PackageVersion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "StaticStorageInfo": {
       "document": "静态CDN资源信息",
       "members": [
@@ -13146,6 +13473,72 @@
       ],
       "usage": "out"
     },
+    "StaticStoreInfo": {
+      "document": "静态托管资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "静态域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CdnDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "COS桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "cos区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Regoin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源状态:init(初始化)/process(处理中)/online(上线)/destroying(销毁中)/offline(下线))\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StorageInfo": {
       "document": "StorageInfo 资源信息",
       "members": [
@@ -13188,6 +13581,62 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableInfo": {
+      "document": "表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表中文档数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表的大小（即表中文档总大小），单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Size",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "IndexCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引占用空间，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "IndexSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13257,116 +13706,6 @@
       ],
       "usage": "both"
     },
-    "TurnOffStandaloneGatewayRequest": {
-      "document": "TurnOffStandaloneGateway请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "env-test-xxx",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "网关名称",
-          "example": "x-tcb-reserved-gw-envoy-demo",
-          "member": "string",
-          "name": "GatewayName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务名称列表",
-          "example": "[\"service-demo\"]",
-          "member": "string",
-          "name": "ServiceNameList",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "TurnOffStandaloneGatewayResponse": {
-      "document": "TurnOffStandaloneGateway返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "关闭独立网关状态",
-          "example": "success",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "TurnOnStandaloneGatewayRequest": {
-      "document": "TurnOnStandaloneGateway请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "env-test-xxx",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "网关名称",
-          "example": "x-tcb-reserved-gw-envoy-demo",
-          "member": "string",
-          "name": "GatewayName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务名称列表",
-          "example": "[\"service-demo\"]",
-          "member": "string",
-          "name": "ServiceNameList",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "TurnOnStandaloneGatewayResponse": {
-      "document": "TurnOnStandaloneGateway返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "小租户网关开启状态",
-          "example": "success",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "UnfreezeCloudBaseRunServersRequest": {
       "document": "UnfreezeCloudBaseRunServers请求参数结构体",
       "members": [
@@ -13422,6 +13761,183 @@
         }
       ],
       "type": "object"
+    },
+    "UpdateTableRequest": {
+      "document": "UpdateTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "demo_users",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FlexDB实例ID",
+          "example": "tnt-nl7hjzasw",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待删除索引信息",
+          "example": "无",
+          "member": "DropIndex",
+          "name": "DropIndexes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待创建索引信息",
+          "example": "无",
+          "member": "CreateIndex",
+          "name": "CreateIndexes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "lowcode-abc",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MongoDB连接器配置",
+          "example": "无",
+          "member": "MongoConnector",
+          "name": "MongoConnector",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTableResponse": {
+      "document": "UpdateTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "User": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "1001",
+          "member": "string",
+          "name": "Uid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型：internalUser-内部用户、externalUser-外部用户",
+          "example": "internalUser",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户状态：ACTIVE（激活）、BLOCKED（冻结）",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "UserStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称",
+          "example": "张三",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "13800138000",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱",
+          "example": "zhangsan@example.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像链接",
+          "example": "https://example.com/avatars/zhangsan.jpg",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户描述",
+          "example": "研发部门技术总监",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "WxGatewayCustomConfig": {
       "document": "安全网关自定义配置",

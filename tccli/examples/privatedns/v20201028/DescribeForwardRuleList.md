@@ -48,8 +48,8 @@ Output:
                 "CreatedAt": "2022-09-09 10:45:44",
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "region",
+                        "TagValue": "ap-guangzhou"
                     }
                 ]
             }

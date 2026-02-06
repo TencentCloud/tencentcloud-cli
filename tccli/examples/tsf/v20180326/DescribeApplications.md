@@ -36,7 +36,7 @@ Output:
                             "Name": "service-config-name",
                             "Ports": [
                                 {
-                                    "TargetPort": "8080",
+                                    "TargetPort": 8080,
                                     "Protocol": "8080"
                                 }
                             ],

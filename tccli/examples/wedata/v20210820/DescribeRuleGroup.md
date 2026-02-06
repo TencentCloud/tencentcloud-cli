@@ -18,6 +18,7 @@ Output:
 {
     "Response": {
         "Data": {
+            "CreateUserName": "zhangsan",
             "CreateTime": null,
             "DatabaseId": null,
             "DatabaseName": "v_vzjfzng",
@@ -33,7 +34,7 @@ Output:
             "RuleGroupId": null,
             "Subscription": null,
             "TableId": "XuKflA-wQbbohxQbg",
-            "TableName": "test",
+            "TableName": "tb",
             "TableOwnerName": "zheyuang",
             "TableOwnerUserId": null,
             "UpdateTime": null

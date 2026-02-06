@@ -122,10 +122,16 @@
     ],
     "SendSms": [
       {
-        "document": "",
+        "document": "发送短信成功。",
         "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSms\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618501234444\",\n        \"+8618501234445\"\n    ],\n    \"SmsSdkAppId\": \"1400006666\",\n    \"SignName\": \"腾讯云\",\n    \"TemplateId\": \"1110\",\n    \"TemplateParamSet\": [\n        \"4370\"\n    ],\n    \"SessionContext\": \"outsid_1729495320_1011\"\n}",
         "output": "{\n    \"Response\": {\n        \"SendStatusSet\": [\n            {\n                \"SerialNo\": \"5000:1045710669157053657849499619\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"Fee\": 1,\n                \"SessionContext\": \"outsid_1729495320_1011\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            },\n            {\n                \"SerialNo\": \"5000:1045710669157053657849499718\",\n                \"PhoneNumber\": \"+8618501234445\",\n                \"Fee\": 1,\n                \"SessionContext\": \"outsid_1729495320_1011\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            }\n        ],\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
-        "title": "请求示例"
+        "title": "发送短信成功示例"
+      },
+      {
+        "document": "发送短信请求中模板参数的个数与申请的模板不一致，返回发送失败。",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSms\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618501234444\",\n        \"+8618501234445\"\n    ],\n    \"SmsSdkAppId\": \"1400006666\",\n    \"SignName\": \"腾讯云\",\n    \"TemplateId\": \"1110\",\n    \"TemplateParamSet\": [\n        \"4370\",\n        \"5\"\n    ],\n    \"SessionContext\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SendStatusSet\": [\n            {\n                \"SerialNo\": \"\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"Fee\": 0,\n                \"SessionContext\": \"\",\n                \"Code\": \"FailedOperation.TemplateParamSetNotMatchApprovedTemplate\",\n                \"Message\": \"request content does not match the template content\",\n                \"IsoCode\": \"\"\n            },\n            {\n                \"SerialNo\": \"\",\n                \"PhoneNumber\": \"+8618501234445\",\n                \"Fee\": 0,\n                \"SessionContext\": \"\",\n                \"Code\": \"FailedOperation.TemplateParamSetNotMatchApprovedTemplat\",\n                \"Message\": \"request content does not match the template content\",\n                \"IsoCode\": \"\"\n            }\n        ],\n        \"RequestId\": \"4e394811-9ebd-4d66-98ee-730b21c4a681\"\n    }\n}",
+        "title": "发送短信失败示例"
       }
     ],
     "SendStatusStatistics": [

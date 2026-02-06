@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ApplyFreeCertificate": {
+      "document": "申请免费证书时，如果您需要通过使用 DNS 委派验证或者文件验证进行申请，您可以调用该接口来进行发起证书申请并根据申请方式来获取对应的验证内容。调用接口的顺序如下：\n第一步：调用 ApplyFreeCertificate，指定申请免费证书的校验方式，获取验证内容；\n第二步：为相应域名按照验证内容配置；\n第三步：调用CheckFreeCertificateVerification 验证，验证通过后即完成免费证书申请；\n第四步：调用ModifyHostsCertificate，下发域名证书为使用 EdgeOne 免费证书配置。\n\n申请方式的介绍可参考文档：[免费证书申请说明](https://cloud.tencent.com/document/product/1552/90437) \n说明：\n- 仅 CNAME 接入模式可调用该接口来指定免费证书申请方式。NS/DNSPod 托管接入模式都是使用自动验证来申请免费证书，无需调用该接口。\n- 如果您需要切换免费证书验证方式，您可以重新调用本接口通过修改 VerificationMethod 字段来进行变更。\n- 同个域名只能申请一本免费证书，在调用本接口后，后台会触发申请免费证书相关任务，您需要在2 天内，完成域名验证信息的相关配置，然后完成证书验证。",
+      "input": "ApplyFreeCertificateRequest",
+      "name": "申请免费证书",
+      "output": "ApplyFreeCertificateResponse",
+      "status": "online"
+    },
     "BindSecurityTemplateToEntity": {
       "document": "操作安全策略模板，支持将域名绑定或换绑到指定的策略模板，或者从指定的策略模板解绑。",
       "input": "BindSecurityTemplateToEntityRequest",
@@ -22,10 +29,24 @@
       "status": "online"
     },
     "CheckCnameStatus": {
-      "document": "校验域名 CNAME 状态",
+      "document": "当站点接入类型为 CNAME 接入类型时，要求该站点下的所有接入域名必须按照 EdgeOne 分配的指定 CNAME 域名完成 CNAME 记录配置。\n您可以通过本接口获取 EdgeOne 为接入域名分配的指定 CNAME 域名，并且可以通过本接口完成对接入域名的 CNAME 配置状态的校验。",
       "input": "CheckCnameStatusRequest",
-      "name": "校验域名 CNAME 状态",
+      "name": "校验域名 CNAME 配置状态",
       "output": "CheckCnameStatusResponse",
+      "status": "online"
+    },
+    "CheckFreeCertificateVerification": {
+      "document": "该接口用于验证免费证书并获取免费证书申请结果。如果验证通过，可通过该接口查询到对应域名申请的免费证书信息，如果申请失败，该接口将返回对应的验证失败信息。\n在触发[申请免费证书接口](https://cloud.tencent.com/document/product/1552/90437)后，您可以通过本接口检查免费证书申请结果。在免费证书申请成功后， 还需要通过[配置域名证书](https://cloud.tencent.com/document/product/1552/80764)接口配置，才能将免费证书部署至加速域上。",
+      "input": "CheckFreeCertificateVerificationRequest",
+      "name": "检查免费证书申请结果",
+      "output": "CheckFreeCertificateVerificationResponse",
+      "status": "online"
+    },
+    "ConfirmMultiPathGatewayOriginACL": {
+      "document": "本接口用于多通道安全加速网关回源 IP 网段发生变更时，确认已将最新回源 IP 网段更新至源站防火墙。",
+      "input": "ConfirmMultiPathGatewayOriginACLRequest",
+      "name": "确认多通道安全加速网关回源 IP 网段更新",
+      "output": "ConfirmMultiPathGatewayOriginACLResponse",
       "status": "online"
     },
     "ConfirmOriginACLUpdate": {
@@ -106,7 +127,7 @@
       "status": "online"
     },
     "CreateFunctionRule": {
-      "document": "创建边缘函数的触发规则。",
+      "document": "创建边缘函数的触发规则。支持通过自定义过滤条件来决定是否需要执行函数，当需要执行函数时，提供了多种选择目标函数的方式，包括：直接指定，基于客户端归属地区选择和基于权重选择。",
       "input": "CreateFunctionRuleRequest",
       "name": "创建边缘函数触发规则",
       "output": "CreateFunctionRuleResponse",
@@ -204,7 +225,7 @@
       "status": "online"
     },
     "CreateRealtimeLogDeliveryTask": {
-      "document": "本接口用于创建实时日志投递任务。本接口有如下限制：\n- 当数据投递类型（LogType）为站点加速日志（七层访问日志）、四层代理日志、边缘函数运行日志时，同一个实体（七层域名、四层代理实例、边缘函数实例）在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到如下实时日志投递任务类型（TaskType）组合中：\n    - 一个推送至腾讯云  CLS 的任务，加上另一个推送至自定义 HTTP(S) 地址的任务；\n    - 一个推送至腾讯云  CLS 的任务，加上另一个推送至 AWS S3 兼容对象存储的任务；\n- 当数据投递类型（LogType）为速率限制和 CC 攻击防护日志、托管规则日志、自定义规则日志、Bot 管理日志时，同一个实体在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到一个实时日志投递任务中。\n\n建议先通过 [DescribeRealtimeLogDeliveryTasks](https://cloud.tencent.com/document/product/1552/104110)  接口根据实体查询实时日志投递任务列表，检查实体是否已经被添加到另一实时日志投递任务中。",
+      "document": "本接口用于创建实时日志投递任务。本接口有如下限制：\n- 当数据投递类型（LogType）为站点加速日志（七层访问日志）、四层代理日志、边缘函数运行日志时，同一个实体（七层域名、四层代理实例、边缘函数实例）在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到如下实时日志投递任务类型（TaskType）组合中：\n    - 一个推送至腾讯云  CLS 的任务，加上另一个推送至自定义 HTTP(S) 地址的任务；\n    - 一个推送至腾讯云  CLS 的任务，加上另一个推送至 AWS S3 兼容对象存储的任务；\n- 当数据投递类型（LogType）为速率限制和 CC 攻击防护日志、托管规则日志、自定义规则日志、Bot 管理日志时，同一个实体在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到一个实时日志投递任务中。\n- 当实时日志投递任务类型（TaskType）为 EdgeOne 日志分析（log_analysis）时，只支持数据投递类型（LogType）为站点加速日志（domain）；在同一站点（ZoneId）和数据投递区域（Area）的组合下，只能添加一个推送至 EdgeOne 日志分析的实时日志投递任务；。\n\n建议先通过 [DescribeRealtimeLogDeliveryTasks](https://cloud.tencent.com/document/product/1552/104110)  接口根据实体查询实时日志投递任务列表，检查实体是否已经被添加到另一实时日志投递任务中。",
       "input": "CreateRealtimeLogDeliveryTaskRequest",
       "name": "创建实时日志投递任务",
       "output": "CreateRealtimeLogDeliveryTaskResponse",
@@ -339,7 +360,7 @@
     "DeleteJustInTimeTranscodeTemplates": {
       "document": "根据站点 id 下唯一的模板标识，删除相应的即时转码模板。",
       "input": "DeleteJustInTimeTranscodeTemplatesRequest",
-      "name": "删除即时转码模版",
+      "name": "删除即时转码模板",
       "output": "DeleteJustInTimeTranscodeTemplatesResponse",
       "status": "online"
     },
@@ -640,7 +661,7 @@
     "DescribeJustInTimeTranscodeTemplates": {
       "document": "根据即时转码模板名字、模板类型或唯一标识，获取即时转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及预置模板。",
       "input": "DescribeJustInTimeTranscodeTemplatesRequest",
-      "name": "获取即时转码模版列表",
+      "name": "获取即时转码模板列表",
       "output": "DescribeJustInTimeTranscodeTemplatesResponse",
       "status": "online"
     },
@@ -691,6 +712,13 @@
       "input": "DescribeMultiPathGatewayLineRequest",
       "name": "查询多通道安全加速网关线路详情",
       "output": "DescribeMultiPathGatewayLineResponse",
+      "status": "online"
+    },
+    "DescribeMultiPathGatewayOriginACL": {
+      "document": "本接口用于查询多通道安全加速网关实例与回源 IP 网段的绑定关系，以及回源 IP 网段详情。若 MultiPathGatewayNextOriginACL 字段有返回值，则需要将最新的回源 IP 网段同步到源站防火墙配置中。",
+      "input": "DescribeMultiPathGatewayOriginACLRequest",
+      "name": "查询多通道安全加速网关源站防护详情",
+      "output": "DescribeMultiPathGatewayOriginACLResponse",
       "status": "online"
     },
     "DescribeMultiPathGatewayRegions": {
@@ -754,6 +782,13 @@
       "input": "DescribePlansRequest",
       "name": "查询套餐信息列表",
       "output": "DescribePlansResponse",
+      "status": "online"
+    },
+    "DescribePrefetchOriginLimit": {
+      "document": "本接口用于查询回源限速限制，该功能白名单内测中。",
+      "input": "DescribePrefetchOriginLimitRequest",
+      "name": "查询预热回源限速限制",
+      "output": "DescribePrefetchOriginLimitResponse",
       "status": "online"
     },
     "DescribePrefetchTasks": {
@@ -855,7 +890,7 @@
       "status": "online"
     },
     "DescribeTimingL4Data": {
-      "document": "本接口（DescribeTimingL4Data）用于查询四层时序流量数据列表。",
+      "document": "<p>本接口（<code>DescribeTimingL4Data</code>）用于查询四层时序数据列表。</p>",
       "input": "DescribeTimingL4DataRequest",
       "name": "查询四层流量时序数据",
       "output": "DescribeTimingL4DataResponse",
@@ -873,6 +908,13 @@
       "input": "DescribeTimingL7CacheDataRequest",
       "name": "查询缓存分析时序数据（待废弃）",
       "output": "DescribeTimingL7CacheDataResponse",
+      "status": "online"
+    },
+    "DescribeTimingL7OriginPullData": {
+      "document": "本接口用以查询七层域名业务的回源时序数据，可以通过指定查询维度 <code>DimensionName</code> 进行分组查询，返回多组时序数据。\n\n<p>单次请求最多返回 <strong>50,000</strong> 个数据项<code> TimingDataItem </code>。数据项总数的计算规则如下：</p>\n<pre>\n   指标个数 * 时间点个数 * 维度值个数 = 数据项总数\n</pre>\n<ul>\n  <li>\n    <strong>指标个数</strong>：<code>MetricNames</code> 的列表长度。\n  </li>\n  <li>\n    <strong>时间点个数</strong>：<code>(EndTime - StartTime) / Interval</code>。\n  </li>\n  <li>\n    <strong>维度值个数</strong>：\n    <ul>\n      <li>当未指定 <code>DimensionName</code> 时，默认按账号维度汇总数据，维度值个数为 1。</li>\n      <li>当 <code>DimensionName = domain</code> 时，维度值个数为 <code>Filters</code> 中 <code>domain</code> 过滤条件指定的域名列表长度。</li>\n      <li>当 <code>DimensionName = origin-status-code-category</code> 时，维度值个数默认为 <code>6</code>。</li>\n      <li>当 <code>DimensionName = origin-status-code</code> 时，维度值个数默认为 <code>600</code>。</li>\n    </ul>\n  </li>\n</ul>\n\n<p><code>DimensionName</code> 可以与 <code>Filters</code> 组合使用，通过在 <code>Filters</code> 中指定 <code>DimensionName</code> 对应的过滤条件以限制维度值个数。</p>\n\n<h3>示例</h3>\n<p>以查询某一小时的具体状态码维度的时序数据为例，假设查询条件如下：</p>\n<ul>\n  <li><code>MetricNames = [\"l7Flow_request_hy\"]</code>（指标个数 = 1）</li>\n  <li><code>StartTime = 2025-10-01T06:00:00+08:00</code>，<code>EndTime = 2025-10-01T06:59:59+08:00</code>，<code>Interval = \"min\"</code>（时间点个数 = 60）</li>\n  <li><code>DimensionName = origin-status-code</code>，<code>Filters = [{\"originStatusCode\": [\"0\", \"4xx\", \"5xx\"]}]</code>（维度值个数 = 201）</li>\n</ul>\n<p>则数据项总数为：</p>\n<pre>1 × 60 × 201 = 12060 </pre>\n<p>未超过限制。</p>\n\n<p><strong>注意</strong>：若查询的数据项总数超过 <strong>50,000</strong>，系统会返回错误 <strong>LimitExceeded.TimingDataItemLimitExceeded</strong>。</p>\n<p>此时，请通过调整入参减少单次查询的数据项至 50,000 以内，可采取的做法有：</p>\n<ol>\n  <li>\n    <strong>减少时间点个数</strong>：\n    <ul>\n      <li>缩短查询时间范围（<code>StartTime</code> 到 <code>EndTime</code> 之间的时间跨度）。</li>\n      <li>选择更大的时间间隔（<code>Interval</code>）。</li>\n    </ul>\n  </li>\n  <li>\n    <strong>减少维度值个数</strong>：\n    <ul>\n      <li>调整 <code>Filters</code>，指定更少的 <code>domain</code> 或 <code>originStatusCode</code> 列表。</li>\n    </ul>\n  </li>\n  <li>\n    <strong>减少指标值个数</strong>：\n    <ul>\n      <li>调整 <code>MetricNames</code>，指定更少的查询指标。</li>\n    </ul>\n  </li>\n</ol>",
+      "input": "DescribeTimingL7OriginPullDataRequest",
+      "name": "查询回源时序数据",
+      "output": "DescribeTimingL7OriginPullDataResponse",
       "status": "online"
     },
     "DescribeTopL7AnalysisData": {
@@ -1093,7 +1135,7 @@
       "status": "online"
     },
     "ModifyFunctionRule": {
-      "document": "修改边缘函数触发规则，支持修改规则条件、执行函数以及描述信息。",
+      "document": "修改边缘函数触发规则，支持修改规则条件、执行函数以及描述信息。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。",
       "input": "ModifyFunctionRuleRequest",
       "name": "修改边缘函数触发规则",
       "output": "ModifyFunctionRuleResponse",
@@ -1190,6 +1232,13 @@
       "output": "ModifyMultiPathGatewaySecretKeyResponse",
       "status": "online"
     },
+    "ModifyMultiPathGatewayStatus": {
+      "document": "更新多通道安全网关状态。",
+      "input": "ModifyMultiPathGatewayStatusRequest",
+      "name": "修改多通道安全加速网关状态",
+      "output": "ModifyMultiPathGatewayStatusResponse",
+      "status": "online"
+    },
     "ModifyOriginACL": {
       "document": "本接口用于对七层加速域名/四层代理实例启用/关闭特定回源 IP 网段回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需变更超过 200 个实例，请通过本接口分批提交。",
       "input": "ModifyOriginACLRequest",
@@ -1209,6 +1258,13 @@
       "input": "ModifyPlanRequest",
       "name": "修改套餐配置",
       "output": "ModifyPlanResponse",
+      "status": "online"
+    },
+    "ModifyPrefetchOriginLimit": {
+      "document": "本接口用于配置回源限速限制，该功能白名单内测中。\n可通过此接口创建、修改与删除预热回源限速限制，每个账号最多支持 100 条限制。",
+      "input": "ModifyPrefetchOriginLimitRequest",
+      "name": "配置预热回源限速限制",
+      "output": "ModifyPrefetchOriginLimitResponse",
       "status": "online"
     },
     "ModifyRealtimeLogDeliveryTask": {
@@ -1295,6 +1351,13 @@
       "output": "ModifyZoneStatusResponse",
       "status": "online"
     },
+    "ModifyZoneWorkMode": {
+      "document": "本接口用于修改站点下各配置模块的工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。",
+      "input": "ModifyZoneWorkModeRequest",
+      "name": "修改站点工作模式",
+      "output": "ModifyZoneWorkModeResponse",
+      "status": "online"
+    },
     "RefreshMultiPathGatewaySecretKey": {
       "document": "通过本接口刷新多通道安全加速网关的密钥。客户基于接入密钥签名接入多通道安全加速网关。每个站点下只有一个密钥，可用于接入该站点下的所有网关，刷新密钥后，原始密钥会失效。",
       "input": "RefreshMultiPathGatewaySecretKeyRequest",
@@ -1331,6 +1394,34 @@
     "serviceShortName": "teo"
   },
   "objects": {
+    "AICrawlerDetection": {
+      "document": "AI 爬虫检测的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AI 爬虫检测是否开启。取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI 爬虫检测的执行动作，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值仅支持：\n<li>Deny：拦截；</li>\n<li>Monitor：观察；</li>\n<li>Allow：放行；</li>\n<li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 仅支持 JSChallenge 和 ManagedChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "APIResource": {
       "document": "API 资源。",
       "members": [
@@ -1516,73 +1607,13 @@
         },
         {
           "disabled": false,
-          "document": "加速域名状态，取值有：\n<li>online：已生效；</li>\n<li>process：部署中；</li>\n<li>offline：已停用；</li>\n<li>forbidden：已封禁；</li>\n<li>init：未生效，待激活站点；</li>",
+          "document": "加速域名状态，取值有：\n<li>online：已生效；</li>\n<li>process：部署中；</li>\n<li>offline：已停用；</li>\n<li>forbidden：已封禁；</li>\n<li>init：未生效，待激活站点。</li>",
           "example": "online",
           "member": "string",
           "name": "DomainStatus",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "源站信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OriginDetail",
-          "name": "OriginDetail",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "回源协议，取值有：\n<li>FOLLOW: 协议跟随；</li>\n<li>HTTP: HTTP协议回源；</li>\n<li>HTTPS: HTTPS协议回源。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "FOLLOW",
-          "member": "string",
-          "name": "OriginProtocol",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "域名证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AccelerationDomainCertificate",
-          "name": "Certificate",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "HTTP回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "80",
-          "member": "uint64",
-          "name": "HttpOriginPort",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "HTTPS回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "443",
-          "member": "uint64",
-          "name": "HttpsOriginPort",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "IPv6状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "follow",
-          "member": "string",
-          "name": "IPv6Status",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1596,7 +1627,17 @@
         },
         {
           "disabled": false,
-          "document": "加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6 状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "follow",
+          "member": "string",
+          "name": "IPv6Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加速域名归属权验证状态，取值有： \n<li>pending：待验证；</li>\n<li>finished：已完成验证。</li>\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pending",
           "member": "string",
           "name": "IdentificationStatus",
@@ -1606,8 +1647,68 @@
         },
         {
           "disabled": false,
+          "document": "加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OwnershipVerification",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源站信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginDetail",
+          "name": "OriginDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源协议，取值有：\n<li>FOLLOW：协议跟随；</li>\n<li>HTTP：HTTP协议回源；</li>\n<li>HTTPS：HTTPS协议回源。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FOLLOW",
+          "member": "string",
+          "name": "OriginProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "HttpOriginPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS 回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "443",
+          "member": "uint64",
+          "name": "HttpsOriginPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加速域名证书信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccelerationDomainCertificate",
+          "name": "Certificate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "创建时间。",
-          "example": "2020-09-22T00:00:00+00:00",
+          "example": "2025-09-17T15:01:14Z",
           "member": "datetime_iso",
           "name": "CreatedOn",
           "output_required": true,
@@ -1617,22 +1718,12 @@
         {
           "disabled": false,
           "document": "修改时间。",
-          "example": "2020-09-22T00:00:00+00:00",
+          "example": "2025-09-17T15:01:14Z",
           "member": "datetime_iso",
           "name": "ModifiedOn",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当域名需要进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OwnershipVerification",
-          "name": "OwnershipVerification",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1642,7 +1733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置证书的模式，取值有： <li>disable：不配置证书；</li> <li>eofreecert：配置 EdgeOne 免费证书；</li> <li>sslcert：配置 SSL 证书。</li>",
+          "document": "配置服务端证书的模式，取值有： <ul><li>disable：不配置服务端证书；</li> <li>eofreecert：通过自动验证申请免费证书并部署。验证方式详见：[申请免费证书支持的验证方式](https://cloud.tencent.com/document/product/1552/90437) - 在 NS 或者 DNSPod 托管接入模式下，仅支持自动验证的方式申请免费证书。 - 当免费证书申请失败时会导致证书部署失败，您可以通过<a href = 'https://cloud.tencent.com/document/product/1552/124806'>检查免费证书申请结果</a>接口获取申请失败原因。</li><li>eofreecert_manual：部署 DNS 委派验证或者文件验证申请的免费证书。在部署免费证书前，您需要触发<a href = 'https://cloud.tencent.com/document/product/1552/124807'>申请免费证书</a>接口申请免费证书。在免费证书申请成功后，你可以通过该枚举值对免费证书进行部署；</li> <ul><li>注意：在对免费证书部署时，需要保证当前已存在申请成功的免费证书。您可以通过<a href = 'https://cloud.tencent.com/document/product/1552/124806'>检查免费证书申请结果</a>接口检查当前是否已存在申请成功的免费证书。</li> </ul> <li>sslcert：配置 SSL 托管服务端证书。</li></ul>",
           "example": "\"ssl\"",
           "member": "string",
           "name": "Mode",
@@ -1675,7 +1766,7 @@
         },
         {
           "disabled": false,
-          "document": "用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。",
+          "document": "用于分别开启/关闭回源双向认证和源站证书校验。回源双向认证的证书用于 EO 回源时携带，源站可选择校验该证书用于确保请求来源于受信任的 EO 节点。源站证书校验开启时，证书配置用于 EO 节点校验源站证书是否可信。",
           "example": "无",
           "member": "UpstreamCertInfo",
           "name": "UpstreamCertInfo",
@@ -2840,6 +2931,71 @@
       ],
       "usage": "both"
     },
+    "ApplyFreeCertificateRequest": {
+      "document": "ApplyFreeCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-343vqcswn9zj",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请免费证书的目标域名。",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请免费证书的验证方式，详细验证方式说明参考[免费证书申请方式说明文档](https://cloud.tencent.com/document/product/1552/90437) ，相关取值有：\n<li>http_challenge：HTTP 访问文件验证方式，通过 HTTP 访问域名指定 URL 获取文件信息以完成免费证书申请验证；</li>\n<li>dns_challenge：DNS 委派验证方式，通过添加指定的主机记录解析指向 EdgeOne 以完成免费证书申请验证。</li>\n注意：在触发本接口后，你需要根据返回的验证信息，完成验证内容配置。配置完成后，还需要通过<a href = 'https://cloud.tencent.com/document/product/1552/124806'>检查免费证书申请结果</a>接口进行验证，验证通过后，即可申请成功。在免费证书申请成功后，你可以调用<a href = 'https://cloud.tencent.com/document/product/1552/80764'>配置域名证书</a>接口为当前域名部署免费证书。",
+          "example": "http_challenge",
+          "member": "string",
+          "name": "VerificationMethod",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFreeCertificateResponse": {
+      "document": "ApplyFreeCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当 VerificationMethod 为 dns_challenge 时，域名申请免费证书的相关验证信息。",
+          "example": "无",
+          "member": "DnsVerification",
+          "name": "DnsVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 VerificationMethod 为 http_challenge 时，域名申请免费证书的相关验证信息。",
+          "example": "无",
+          "member": "FileVerification",
+          "name": "FileVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AscriptionInfo": {
       "document": "站点归属信息",
       "members": [
@@ -3007,6 +3163,67 @@
           "example": "参考 SecurityAction 结构",
           "member": "SecurityAction",
           "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BasicBotSettings": {
+      "document": "Bot 管理的基础配置，对策略关联的所有域名生效。可以通过 CustomRules 进行精细化定制。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端 IP 的来源 IDC 配置，用于处置来自 IDC（数据中心） 的客户端 IP 的访问请求。此类来源请求不是由移动端或浏览器端直接访问。",
+          "example": "无",
+          "member": "SourceIDC",
+          "name": "SourceIDC",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索引擎爬虫配置，用于处置来自搜索引擎爬虫的请求。此类请求的 IP、User-Agent 或 rDNS 结果匹配已知搜索引擎爬虫。",
+          "example": "无",
+          "member": "SearchEngineBots",
+          "name": "SearchEngineBots",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商业或开源工具 UA 特征配置（原 UA 特征规则），用于处置来自已知商业工具或开源工具的访问请求。此类请求的 User-Agent 头部符合已知商业或开源工具特征。",
+          "example": "无",
+          "member": "KnownBotCategories",
+          "name": "KnownBotCategories",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 威胁情报库（原客户端画像分析）配置，用于处置近期访问行为具有特定风险特征的客户端 IP。",
+          "example": "无",
+          "member": "IPReputation",
+          "name": "IPReputation",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 智能分析的具体配置。",
+          "example": "无",
+          "member": "BotIntelligence",
+          "name": "BotIntelligence",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -3441,6 +3658,34 @@
       ],
       "usage": "both"
     },
+    "BotIntelligence": {
+      "document": "Bot 智能分析的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。",
+          "example": "无",
+          "member": "BotRatings",
+          "name": "BotRatings",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 智能分析的具体配置开关。取值有：\n\non：开启；\noff：关闭。",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BotManagedRule": {
       "document": "Bot 规则，下列规则ID可参考接口 DescribeBotManagedRules返回的ID信息",
       "members": [
@@ -3529,10 +3774,199 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端认证规则的定义列表。该功能内测中，如需使用，请提工单或联系智能客服。",
+          "document": "Bot 管理是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 管理的自定义规则，组合各类爬虫和请求行为特征，精准定义 Bot 并配置定制化处置方式。",
+          "example": "无",
+          "member": "BotManagementCustomRules",
+          "name": "CustomRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 管理的基础配置，对策略关联的所有域名生效。可以通过 CustomRules 进行精细化定制。",
+          "example": "无",
+          "member": "BasicBotSettings",
+          "name": "BasicBotSettings",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端认证规则的定义列表。该功能内测中，如需使用，请提工单。",
           "example": "无",
           "member": "ClientAttestationRules",
           "name": "ClientAttestationRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置浏览器伪造识别规则（原主动特征识别规则）。设置注入 JavaScript 的响应页面范围，浏览器校验选项，以及对非浏览器客户端的处置方式。",
+          "example": "无",
+          "member": "BrowserImpersonationDetection",
+          "name": "BrowserImpersonationDetection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotManagementActionOverrides": {
+      "document": "Bot 规则项的具体配置，用于覆盖上层的默认配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Bot 规则组下的具体项，用于改写此单条规则项配置的内容，Ids 所对应的具体信息请参考 DescribeBotManagedRules 接口返回的信息。",
+          "example": "[\"5682929011\"]",
+          "member": "string",
+          "name": "Ids",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ids 中指定 Bot 规则项的处置动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Disabled：未启用，不启用指定规则；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge；</li><li>Allow：放行（仅限Bot基础特征管理）。</li>\n",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotManagementCustomRule": {
+      "document": "Web 安全的 Bot 自定义规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>",
+          "example": "2181399690",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则的名称。",
+          "example": "SampleCustomBotRule",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "example": "${http.request.bot.rating} in ['botrating-likely-bot','botrating-verified-bot']} and ${http.request.ip.client_reputation} in ['rep-attackes.high'] and ${http.request.method} in ['POST']",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则的处置方式。取值有：<li>Monitor：观察；</li><li>Deny：拦截，其中 DenyActionParameters.Name 支持 Deny 和 ReturnCustomPage；</li><li>Challenge：挑战，其中 ChallengeActionParameters.Name 支持 JSChallenge 和 ManagedChallenge；</li><li>Redirect：重定向至 URL。</li>",
+          "example": "无",
+          "member": "SecurityWeightedAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotManagementCustomRules": {
+      "document": "Bot 自定义规则的配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则的列表。使用 ModifySecurityPolicy 修改 Web 防护配置时： <br> <li>  若未指定 SecurityPolicy.BotManagement.CustomRules 中的 Rules 参数，或 Rules 参数长度为零：清空所有 Bot 自定义规则配置。</li> <li> 若 SecurityPolicy.BotManagement 参数中，未指定 CustomRules 参数值：保持已有 Bot 自定义规则配置，不做修改。</li>",
+          "example": "无",
+          "member": "BotManagementCustomRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotManagementLite": {
+      "document": "Web 安全的基础 BOT 规则结构。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人机校验页的具体配置。",
+          "example": "无",
+          "member": "CAPTCHAPageChallenge",
+          "name": "CAPTCHAPageChallenge",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI爬虫检测的具体配置。",
+          "example": "无",
+          "member": "AICrawlerDetection",
+          "name": "AICrawlerDetection",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -3608,6 +4042,117 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotRatings": {
+      "document": "基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "恶意 Bot 请求的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Allow：放行；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "HighRiskBotRequestsAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "疑似 Bot 请求的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Allow：放行；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "LikelyBotRequestsAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "友好 Bot 请求的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Allow：放行；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "VerifiedBotRequestsAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正常 Bot 请求的执行动作。 SecurityAction 的 Name 取值支持：<li>Allow：放行。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "HumanRequestsAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotSessionValidation": {
+      "document": "Cookie 校验和会话跟踪行为具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否更新 Cookie 并校验。取值有：<li>on：更新 Cookie 并校验；</li><li>off：仅校验。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "IssueNewBotSessionCookie",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新 Cookie 并校验时的触发阈值，仅当 IssueNewBotSessionCookie 为 on 时有效。",
+          "example": "无",
+          "member": "MaxNewSessionTriggerConfig",
+          "name": "MaxNewSessionTriggerConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未携带 Cookie 或 Cookie 已过期的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "SessionExpiredAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不合法 Cookie 的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "SessionInvalidAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话速率和周期特征校验的具体配置。",
+          "example": "无",
+          "member": "SessionRateControl",
+          "name": "SessionRateControl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3773,6 +4318,129 @@
       ],
       "usage": "both"
     },
+    "BrowserImpersonationDetection": {
+      "document": "浏览器伪造识别规则（原主动特征识别规则）的配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "浏览器伪造识别规则的列表。使用 ModifySecurityPolicy 修改 Web 防护配置时： <br> <li>  若未指定 SecurityPolicy.BotManagement.BrowserImpersonationDetection 中的 Rules 参数，或 Rules 参数长度为零： 清空所有浏览器伪造识别规则配置。</li> <li> 若 SecurityPolicy.BotManagement 参数中，未指定 BrowserImpersonationDetection 参数值： 保持已有浏览器伪造识别规则配置，不做修改。</li>",
+          "example": "无",
+          "member": "BrowserImpersonationDetectionRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BrowserImpersonationDetectionAction": {
+      "document": "Bot 浏览器校验规则（原主动特征识别规则）的 Action。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cookie 校验和会话跟踪配置。",
+          "example": "无",
+          "member": "BotSessionValidation",
+          "name": "BotSessionValidation",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端行为校验配置。",
+          "example": "无",
+          "member": "ClientBehaviorDetection",
+          "name": "ClientBehaviorDetection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BrowserImpersonationDetectionRule": {
+      "document": "浏览器伪造识别规则（原主动特征识别规则）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "浏览器伪造识别规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BrowserImpersonationDetection 参数中，Rules 列表中未包含的已有规则将被删除。</li>",
+          "example": "2184868170",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "浏览器伪造识别规则的名称。",
+          "example": "LoginValidation",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "浏览器伪造识别规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "浏览器伪造识别规则的具体内容，其中仅支持请求方式（Method）、请求路径（Path）和请求 URL 的配置，需符合表达式语法，详细规范参见产品文档。",
+          "example": "${http.request.path} in ['/api/v3/test','/api/v3/submit'] and ${http.request.method} in ['POST']",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "浏览器伪造识别规则的处置方式，包括 Cookie 校验和会话跟踪配置以及客户端行为校验配置。",
+          "example": "无",
+          "member": "BrowserImpersonationDetectionAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CAPTCHAPageChallenge": {
+      "document": "人机校验页的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人机校验页是否开启，取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CC": {
       "document": "cc配置项。",
       "members": [
@@ -3837,6 +4505,32 @@
         }
       ],
       "usage": "both"
+    },
+    "CNAMEDetail": {
+      "document": "CNAME 接入类型站点参数详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否伪站点，取值有：\n<li> 0：非伪站点；</li>\n<li> 1：伪站点。</li>\n",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归属权验证信息。详情请参考 [站点/域名归属权验证](https://cloud.tencent.com/document/product/1552/70789) 。",
+          "example": "无",
+          "member": "OwnershipVerification",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Cache": {
       "document": "缓存时间设置",
@@ -4482,7 +5176,7 @@
         },
         {
           "disabled": false,
-          "document": "加速域名列表。",
+          "document": "需要检测 CNAME 配置状态的域名列表，可以为：<li>加速域名;</li><li>别称域名。</li>",
           "example": "[\"example.qq.com\"]",
           "member": "string",
           "name": "RecordNames",
@@ -4497,12 +5191,78 @@
       "members": [
         {
           "disabled": false,
-          "document": "加速域名 CNAME 状态信息列表。",
+          "document": "接入域名的 CNAME 配置状态信息列表。",
           "example": "无",
           "member": "CnameStatus",
           "name": "CnameStatus",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFreeCertificateVerificationRequest": {
+      "document": "CheckFreeCertificateVerification请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-28v607hq8d3m",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加速域名，该域名为[申请免费证书](https://cloud.tencent.com/document/product/1552/124807)时使用的域名。",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFreeCertificateVerificationResponse": {
+      "document": "CheckFreeCertificateVerification返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "免费证书申请成功时，该证书颁发给的域名。\n注意：一个域名只允许申请一本免费证书， 如果已经有泛域名申请了免费证书的情况下，其子域名会匹配使用该泛域名证书。",
+          "example": "aa.test.com",
+          "member": "string",
+          "name": "CommonName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费证书申请成功时，该证书使用的签名算法，当前仅支持 RSA 2048。",
+          "example": "RSA 2048",
+          "member": "string",
+          "name": "SignatureAlgorithm",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费证书申请成功时，该证书的过期时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4622,7 +5382,7 @@
         {
           "disabled": false,
           "document": "客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。",
-          "example": "参考 DeviceProfile 结构\t",
+          "example": "无",
           "member": "DeviceProfile",
           "name": "DeviceProfiles",
           "output_required": false,
@@ -4633,7 +5393,7 @@
         {
           "disabled": false,
           "document": "客户端认证未通过的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。",
-          "example": "参考 SecurityAction 结构",
+          "example": "无",
           "member": "SecurityAction",
           "name": "InvalidAttestationAction",
           "output_required": false,
@@ -4667,7 +5427,7 @@
         {
           "disabled": false,
           "document": "认证选项 ID。",
-          "example": "\"challenge-21801232\"",
+          "example": "\"challenge-21820202\"",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -4699,7 +5459,7 @@
         },
         {
           "disabled": false,
-          "document": "认证方法。取值有：\n<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>\n<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>",
+          "document": "认证方法。取值有：\n<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>\n<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>",
           "example": "\"turing-rce\"",
           "member": "string",
           "name": "AttesterSource",
@@ -4736,6 +5496,89 @@
           "example": "无",
           "member": "TCCaptchaOption",
           "name": "TCCaptchaOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClientBehaviorDetection": {
+      "document": "客户端行为校验",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作量证明校验强度。取值有：<li>low：低；</li><li>medium：中；</li><li>high：高。</li>",
+          "example": "high",
+          "member": "string",
+          "name": "CryptoChallengeIntensity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端行为校验的执行方式。取值有：<li>0ms：立即执行；</li><li>100ms：延迟 100ms 执行；</li><li>200ms：延迟 200ms 执行；</li><li>300ms：延迟 300ms 执行；</li><li>400ms：延迟 400ms 执行；</li><li>500ms：延迟 500ms 执行；</li><li>600ms：延迟 600ms 执行；</li><li>700ms：延迟 700ms 执行；</li><li>800ms：延迟 800ms 执行；</li><li>900ms：延迟 900ms 执行；</li><li>1000ms：延迟 1000ms 执行。</li> ",
+          "example": "500ms",
+          "member": "string",
+          "name": "CryptoChallengeDelayBefore",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发阈值统计的时间窗口，取值有：<li>5s：5 秒内；</li><li>10s：10 秒内；</li><li>15s：15 秒内；</li><li>30s：30 秒内；</li><li>60s：60 秒内；</li><li>5m：5 分钟内；</li><li>10m：10 分钟内；</li><li>30m：30 分钟内；</li><li>60m：60 分钟内。</li> ",
+          "example": "10s",
+          "member": "string",
+          "name": "MaxChallengeCountInterval",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发阈值统计的累计次数，取值范围 1 ~ 100000000。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxChallengeCountThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端未启用 JS（未完成检测）时的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "ChallengeNotFinishedAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端检测超时的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "ChallengeTimeoutAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 客户端的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "BotClientAction",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -4883,11 +5726,11 @@
       "usage": "both"
     },
     "CnameStatus": {
-      "document": "CNAME 状态",
+      "document": "接入域名 CNAME 配置状态",
       "members": [
         {
           "disabled": false,
-          "document": "记录名称。",
+          "document": "接入域名。",
           "example": "test.qq.com",
           "member": "string",
           "name": "RecordName",
@@ -4897,17 +5740,17 @@
         },
         {
           "disabled": false,
-          "document": "CNAME 地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test.qq.com.acc.tyxcdn.com",
+          "document": "EdgeOne 分配给接入域名的 CNAME。",
+          "example": "test.qq.com.eo.dnse0.com",
           "member": "string",
           "name": "Cname",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CNAME 状态信息，取值有：\n<li>active：生效；</li>\n<li>moved：不生效；</li>",
+          "document": "CNAME 配置状态校验结果，取值有：\n<li>active：表示接入域名已正确配置到 EdgeOne 为其分配的指定 CNAME；</li>\n<li>moved：表示接入域名未配置到 EdgeOne 为其分配的指定 CNAME；</li>\n<li>invalid：表示接入域名配置的 CNAME 为 EdgeOne 为其他域名分配的 CNAME，会导致服务异常，请修改为 EdgeOne 为该接入域名提供的指定 CNAME，您可通过本结构体的 Cname 字段获取 EdgeOne 为该接入域名提供的 CNAME。</li>",
           "example": "active",
           "member": "string",
           "name": "Status",
@@ -5085,6 +5928,79 @@
       ],
       "usage": "both"
     },
+    "ConfigGroupWorkModeInfo": {
+      "document": "版本管理配置组工作模式信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置组类型，可选项如下：<li>l7_acceleration: 七层加速配置组；</li><li>edge_functions: 边缘函数配置组。</li>",
+          "example": "l7_acceleration",
+          "member": "string",
+          "name": "ConfigGroupType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作模式，可选项如下：<li>immediate_effect: 即时生效模式；</li><li>version_control: 版本管理模式。</li>",
+          "example": "immediate_effect",
+          "member": "string",
+          "name": "WorkMode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfirmMultiPathGatewayOriginACLRequest": {
+      "document": "ConfirmMultiPathGatewayOriginACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-27q0p0bal192",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关 ID。",
+          "example": "mpgw-lbxuhk1oh",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源 IP 版本号。",
+          "example": "1",
+          "member": "int64",
+          "name": "OriginACLVersion",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ConfirmMultiPathGatewayOriginACLResponse": {
+      "document": "ConfirmMultiPathGatewayOriginACL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ConfirmOriginACLUpdateRequest": {
       "document": "ConfirmOriginACLUpdate请求参数结构体",
       "members": [
@@ -5111,6 +6027,23 @@
         }
       ],
       "type": "object"
+    },
+    "ContentCompressionParameters": {
+      "document": "内容压缩配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容压缩配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n当 Switch 为 on 时，将同时支持 brotli 和 gzip 压缩算法。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ContentIdentifier": {
       "document": "内容标识符。该功能仅白名单开放。",
@@ -5223,7 +6156,7 @@
         {
           "disabled": false,
           "document": "加速域名。",
-          "example": "qq.com",
+          "example": "www.example.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -5240,7 +6173,7 @@
         },
         {
           "disabled": false,
-          "document": "回源协议，取值有：\n<li>FOLLOW: 协议跟随；</li>\n<li>HTTP: HTTP协议回源；</li>\n<li>HTTPS: HTTPS协议回源。</li>\n<li>不填默认为： FOLLOW。</li>",
+          "document": "回源协议，取值有：\n<li>FOLLOW：协议跟随；</li>\n<li>HTTP：HTTP 协议回源；</li>\n<li>HTTPS：HTTPS 协议回源。</li>不填默认为：FOLLOW。",
           "example": "FOLLOW",
           "member": "string",
           "name": "OriginProtocol",
@@ -5249,7 +6182,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填默认为80。",
+          "document": "HTTP 回源端口，默认值80，取值：1～65535。\n当 OriginProtocol = FOLLOW 或 HTTP 时生效。",
           "example": "80",
           "member": "uint64",
           "name": "HttpOriginPort",
@@ -5258,7 +6191,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填默认为443。",
+          "document": "HTTPS 回源端口，默认值443，取值：1～65535。\n当 OriginProtocol = FOLLOW 或 HTTPS 时生效。",
           "example": "443",
           "member": "uint64",
           "name": "HttpsOriginPort",
@@ -5267,7 +6200,7 @@
         },
         {
           "disabled": false,
-          "document": "IPv6状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n<li>不填默认为：follow。</li>",
+          "document": "IPv6 状态，取值有：\n<li>follow：遵循站点 IPv6 配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>不填默认为：follow。",
           "example": "follow",
           "member": "string",
           "name": "IPv6Status",
@@ -6022,12 +6955,39 @@
         },
         {
           "disabled": false,
-          "document": "函数 ID，命中触发规则条件后执行的函数。",
+          "document": "函数选择配置类型：\n<li> direct：直接指定执行函数；</li>\n<li> weight：基于权重比选择函数；</li>\n<li> region：基于客户端 IP 的国家/地区选择函数。</li>\n不填时默认为 direct 。",
+          "example": "direct",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。",
           "example": "ef-0agikbrr",
           "member": "string",
           "name": "FunctionId",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。",
+          "example": "无",
+          "member": "FunctionRegionSelection",
+          "name": "RegionMappingSelections",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。",
+          "example": "无",
+          "member": "FunctionWeightedSelection",
+          "name": "WeightedSelections",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6186,7 +7146,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n\n",
+          "document": "是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on",
           "member": "string",
           "name": "Ipv6",
@@ -6195,7 +7155,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "document": "是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "off",
           "member": "string",
           "name": "StaticIp",
@@ -6204,7 +7164,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "document": "是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on",
           "member": "string",
           "name": "AccelerateMainland",
@@ -6212,8 +7172,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。",
+          "disabled": true,
+          "document": "L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。\n本字段已废弃，请使用 DDosProtectionId 字段指定关联的DDoS防护配置。",
           "example": "无",
           "member": "DDosProtectionConfig",
           "name": "DDosProtectionConfig",
@@ -6845,12 +7805,21 @@
         },
         {
           "disabled": false,
-          "document": "要预热的资源列表，每个元素格式类似如下:\nhttp://www.example.com/example.txt。参数值当前必填。\n注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。",
+          "document": "要预热的资源列表，必填。每个元素格式类似如下:\nhttp://www.example.com/example.txt。\n注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
           "name": "Targets",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预热模式，取值有：\n<li>default：默认模式，即预热到中间层；</li>\n<li>edge：边缘预热模式，即预热到边缘和中间层。</li>不填写时，默认值为 default。\n注意事项：\n1.预热至边缘产生的边缘层流量，会计入计费流量；\n2.边缘预热默认分配单独的预热额度 1000 条/天，不消费常规预热额度。\n说明：\n该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
+          "example": "default",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": true,
@@ -6863,7 +7832,7 @@
         },
         {
           "disabled": false,
-          "document": "附带的http头部信息。",
+          "document": "若需要携带 HTTP 头部信息预热，可入参该参数，否则放空即可。",
           "example": "无",
           "member": "Header",
           "name": "Headers",
@@ -6872,7 +7841,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体分片预热控制，取值有：\n<li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>\n<li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。\n\n注意事项：\n1. 支持的描述文件为 M3U8，对应分片为 TS；\n2. 要求描述文件能正常请求，并按行业标准描述分片路径；\n3. 递归解析深度不超过 3 层；\n4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。\n\n该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
+          "document": "媒体分片预热控制，取值有：\n<li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>\n<li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。\n注意事项：\n1. 支持的描述文件为 M3U8，对应分片为 TS；\n2. 要求描述文件能正常请求，并按行业标准描述分片路径；\n3. 递归解析深度不超过 3 层；\n4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。\n说明：\n该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
           "example": "off",
           "member": "string",
           "name": "PrefetchMediaSegments",
@@ -7029,7 +7998,7 @@
         },
         {
           "disabled": false,
-          "document": "实时日志投递任务类型，取值有：\n<li>cls: 推送到腾讯云 CLS；</li>\n<li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>\n<li>s3：推送到 AWS S3 兼容存储桶地址；</li>",
+          "document": "实时日志投递任务类型，取值有：\n<li>cls: 推送到腾讯云 CLS；</li>\n<li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>\n<li>s3：推送到 AWS S3 兼容存储桶地址；</li>\n<li>log_analysis：推送到 EdgeOne 日志分析，该任务类型仅支持“站点加速日志”这一数据投递类型。</li>",
           "example": "cls",
           "member": "string",
           "name": "TaskType",
@@ -7101,7 +8070,7 @@
         },
         {
           "disabled": false,
-          "document": "日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：\n<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>\n<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。",
+          "document": "日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：\n<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>\n<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 或 log_analysis 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。",
           "example": "无",
           "member": "LogFormat",
           "name": "LogFormat",
@@ -7578,7 +8547,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点接入类型。该参数取值如下，不填写时默认为 partial：\n<li>partial：CNAME 接入；</li>\n<li>full：NS 接入；</li>\n<li>noDomainAccess：无域名接入；</li>\n<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>",
+          "document": "站点接入类型。该参数取值如下，不填写时默认为 partial：\n<li>partial：CNAME 接入；</li>\n<li>full：NS 接入；</li>\n<li>noDomainAccess：无域名接入；</li>\n<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内；</li>\n<li>ai：边缘推理接入。</li>",
           "example": "full",
           "member": "string",
           "name": "Type",
@@ -8332,6 +9301,22 @@
         }
       ],
       "usage": "both"
+    },
+    "DNSPodDetail": {
+      "document": "DNSPod 托管类型站点参数详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否伪站点，取值有：\n<li> 0：非伪站点；</li>\n<li> 1：伪站点。</li>\n",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DefaultServerCertInfo": {
       "document": "https 服务端证书配置",
@@ -10382,7 +11367,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -10483,7 +11468,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -10611,7 +11596,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -11396,7 +12381,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters 的上限为 20，Filters.Values 的上限为 20。该参数不填写时，默认返回当前 ZoneId 下有权限的即时转码模板。详细的过滤条件如下：<li>template-name：按照模版名批量进行过滤。例如：mytemplate；</li><li>template-type：按照模板类型批量进行过滤。例如：preset 或 custom。</li><li>template-id：按照模板 ID 批量进行过滤。例如：C1LZ7982VgTpYhJ7M。</li>默认为空。",
+          "document": "过滤条件，Filters 的上限为 20，Filters.Values 的上限为 20。该参数不填写时，默认返回当前 ZoneId 下有权限的即时转码模板。详细的过滤条件如下：<li>template-name：按照模板名批量进行过滤。例如：mytemplate；</li><li>template-type：按照模板类型批量进行过滤。例如：preset 或 custom。</li><li>template-id：按照模板 ID 批量进行过滤。例如：C1LZ7982VgTpYhJ7M。</li>默认为空。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -11859,6 +12844,52 @@
           "member": "MultiPathGatewayLine",
           "name": "Line",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMultiPathGatewayOriginACLRequest": {
+      "document": "DescribeMultiPathGatewayOriginACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-276zs184g93m\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关 ID。",
+          "example": "\"mpgw-lbxuhk1oh\"",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMultiPathGatewayOriginACLResponse": {
+      "document": "DescribeMultiPathGatewayOriginACL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多通道网关实例与回源 IP 网段的绑定关系详情。",
+          "example": "无",
+          "member": "MultiPathGatewayOriginACLInfo",
+          "name": "MultiPathGatewayOriginACLInfo",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12497,12 +13528,86 @@
       ],
       "type": "object"
     },
+    "DescribePrefetchOriginLimitRequest": {
+      "document": "DescribePrefetchOriginLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-3***j8tqd",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目，默认值：20，上限：100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：\n<li>domain-name：按照域名过滤。domain-name 形如：www.qq.com，不支持模糊查询；</li>\n<li>area：按照限制加速区域过滤，不支持模糊查询。可选项：<br> Overseas：全球可用区（不含中国大陆）；<br> MainlandChina：中国大陆可用区。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrefetchOriginLimitResponse": {
+      "document": "DescribePrefetchOriginLimit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源限速限制总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制详情List。",
+          "example": "无",
+          "member": "PrefetchOriginLimit",
+          "name": "Limits",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrefetchTasksRequest": {
       "document": "DescribePrefetchTasks请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "站点ID。该参数必填。",
+          "document": "站点ID。此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "zone-xxx",
           "member": "string",
           "name": "ZoneId",
@@ -12547,7 +13652,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li><li>target：按照目标资源信息进行过滤。target 形如：http://www.qq.com/1.txt，暂不支持多值，不支持模糊查询；</li><li>domains：按照域名行过滤。domains 形如：www.qq.com，不支持模糊查询；</li><li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时<br>   invalid：无效。即源站响应非 2xx 状态码，请检查源站服务。</li>",
+          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li><li>target：按照目标资源信息进行过滤。target 形如：http://www.qq.com/1.txt，暂不支持多值，不支持模糊查询；</li><li>domains：按照域名行过滤。domains 形如：www.qq.com，不支持模糊查询；</li><li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时<br>   canceled：已取消<br>   invalid：无效。即源站响应非 2xx 状态码，请检查源站服务。</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -12594,7 +13699,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。该参数必填。",
+          "document": "站点 ID。此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "zone-xxxxxx",
           "member": "string",
           "name": "ZoneId",
@@ -12639,7 +13744,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li>\n<li>target：按照目标资源信息进行过滤，target 形如：http://www.qq.com/1.txt 或者 tag1，暂不支持多值，支持模糊查询；</li>\n<li>domains：按照域名进行过滤，形如：www.qq.com，不支持模糊查询；</li>\n<li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li>\n<li>type：按照清除缓存类型进行过滤，暂不支持多值，不支持模糊查询。可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname<br>   purge_cache_tag：CacheTag</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li>\n<li>target：按照目标资源信息进行过滤，target 形如：http://www.qq.com/1.txt 或者 tag1，暂不支持多值，支持模糊查询；</li>\n<li>domains：按照域名进行过滤，形如：www.qq.com，不支持模糊查询；</li>\n<li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时<br>   canceled：已取消</li>\n<li>type：按照清除缓存类型进行过滤，暂不支持多值，不支持模糊查询。可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname<br>   purge_cache_tag：CacheTag</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -12713,7 +13818,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有实时日志投递任务信息。详细的过滤条件如下：\n<li>task-id：按照实时日志投递任务 ID进行过滤。不支持模糊查询。</li>\n<li>task-name：按照实时日志投递任务名称进行过滤。支持模糊查询，使用模糊查询时，仅支持填写一个实时日志投递任务名称。</li>\n<li>entity-list：按照实时日志投递任务对应的实体进行过滤。不支持模糊查询。示例值：domain.example.com 或者 sid-2s69eb5wcms7。</li>\n<li>task-type：按照实时日志投递任务类型进行过滤。不支持模糊查询。可选项如下：<br>   cls: 推送到腾讯云 CLS；<br>   custom_endpoint：推送到自定义 HTTP(S) 地址；<br>   s3：推送到 AWS S3 兼容存储桶地址。</li>",
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有实时日志投递任务信息。详细的过滤条件如下：\n<li>task-id：按照实时日志投递任务 ID进行过滤。不支持模糊查询。</li>\n<li>task-name：按照实时日志投递任务名称进行过滤。支持模糊查询，使用模糊查询时，仅支持填写一个实时日志投递任务名称。</li>\n<li>entity-list：按照实时日志投递任务对应的实体进行过滤。不支持模糊查询。示例值：domain.example.com 或者 sid-2s69eb5wcms7。</li>\n<li>task-type：按照实时日志投递任务类型进行过滤。不支持模糊查询。可选项如下：<br>   cls: 推送到腾讯云 CLS；<br>   custom_endpoint：推送到自定义 HTTP(S) 地址；<br>   s3：推送到 AWS S3 兼容存储桶地址；<br>   log_analysis：推送到 EdgeOne 日志分析。</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -13331,7 +14436,7 @@
         {
           "disabled": false,
           "document": "安全策略配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "参考SecurityPolicy结构",
+          "example": "无",
           "member": "SecurityPolicy",
           "name": "SecurityPolicy",
           "output_required": false,
@@ -13416,7 +14521,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标，取值有：\n<li>l4Flow_connections: 访问并发连接数；</li>\n<li>l4Flow_flux: 访问总流量；</li>\n<li>l4Flow_inFlux: 访问入流量；</li>\n<li>l4Flow_outFlux: 访问出流量；</li>\n<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>\n<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>",
+          "document": "查询指标，取值有：\n<ul><li>**l4Flow_flux**: 访问总流量，单位：Byte，指标值类型：Integer；</li>\n<li>**l4Flow_inFlux**: 访问入流量，单位：Byte，指标值类型：Integer；</li>\n<li>**l4Flow_outFlux**: 访问出流量，单位：Byte，指标值类型：Integer；</li>\n<li>**l4Flow_inBandwidth**: 访问入向带宽峰值，单位：bps，指标值类型：Integer；</li>\n<li>**l4Flow_outBandwidth**: 访问出向带宽峰值，单位：bps，指标值类型：Integer；</li>\n<li>**l4Flow_connections**: 访问并发连接数，单位：个，指标值类型：Integer ；</li>\n<li>**l4Flow_newConnectionsRate**: 新建连接数速率，单位：个/秒，指标值类型： Float，保留两位小数。</li></ul>**注意**：<ul><li><code> Integer</code> 值类型的指标将从  <code>Data.N.TypeValue</code> 返回对应时序数据；</li>\n<li><code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。</li></ul>",
           "example": "[\"l4Flow_connections\"]",
           "member": "string",
           "name": "MetricNames",
@@ -13425,11 +14530,11 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点ID，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。\n最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zone-2rntun0a1z6t\",\"zone-323urc8a9j0q\"]",
           "member": "string",
           "name": "ZoneIds",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {
@@ -13443,7 +14548,7 @@
         },
         {
           "disabled": false,
-          "document": "查询时间粒度，取值有：\n<li>min: 1分钟 ；</li>\n<li>5min: 5分钟 ；</li>\n<li>hour: 1小时 ；</li>\n<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。",
+          "document": "查询时间粒度，取值有：\n<ul><li>**min**: 1分钟 ；</li>\n<li>**5min**: 5分钟 ；</li>\n<li>**hour**: 1小时 ；</li>\n<li>**day**: 1天 。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以 <code>min</code> 粒度查询，2天范围内以 <code>5min</code> 粒度查询，7天范围内以 <code>hour</code> 粒度查询，超过7天以 <code>day</code> 粒度查询。",
           "example": "hour",
           "member": "string",
           "name": "Interval",
@@ -13452,7 +14557,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详细的过滤条件Key值如下：\n<li>ruleId：按照转发规则 ID 进行过滤。</li>\n<li>proxyId：按照四层代理实例 ID 进行过滤。</li>",
+          "document": "过滤条件，详细的过滤条件Key值如下：\n<ul><li>**ruleId**：按照转发规则 ID 进行过滤。</li>\n<li>**proxyId**：按照四层代理实例 ID 进行过滤。</li></ul>",
           "example": "无",
           "member": "QueryCondition",
           "name": "Filters",
@@ -13460,7 +14565,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。",
           "example": "mainland",
           "member": "string",
@@ -13486,7 +14591,7 @@
         },
         {
           "disabled": false,
-          "document": "四层时序流量数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>四层时序流量数据列表。<br>对于不同的查询指标，根据指标值类型的不同，会从不同的参数返回时序数据。<br>目前存在的值类型有以下两种：</p><ul><li><strong>Integer</strong>：<code>Integer</code> 值类型的指标将从 <code>Data.N.TypeValue</code> 返回对应时序数据。<br>对应的查询指标 <code>MetricName</code> 有：<ul><li><code>l4Flow_flux</code>：访问总流量；</li><li><code>l4Flow_inFlux</code>：访问入流量；</li><li><code>l4Flow_outFlux</code>：访问出流量；</li><li><code>l4Flow_inBandwidth</code>：访问入向带宽峰值；</li><li><code>l4Flow_outBandwidth</code>：访问出向带宽峰值；</li><li><code>l4Flow_connections</code>：访问并发连接数。</li></ul></li><li><strong>Float</strong>：<code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。<br>对应的查询指标 <code>MetricName</code> 有：<ul><li><code>l4Flow_newConnectionsRate</code>：新建连接数速率。</li></ul></li>\n</ul><p>本接口暂不支持指定维度查询，默认按主账号汇总返回数据，即 <code>Data.N.TypeKey = AppId</code>，AppId 是腾讯云主账号唯一标识，N 恒等于 1。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TimingDataRecord",
           "name": "Data",
@@ -13535,7 +14640,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"*\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -13705,6 +14810,107 @@
       ],
       "type": "object"
     },
+    "DescribeTimingL7OriginPullDataRequest": {
+      "document": "DescribeTimingL7OriginPullData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标列表，取值有:\n<ul><li>l7Flow_outFlux_hy: EdgeOne 节点至源站方向的请求流量，单位：Byte；</li>\n<li>l7Flow_outBandwidth_hy: EdgeOne 节点至源站方向的请求带宽，单位：bps；</li>\n<li>l7Flow_request_hy: EdgeOne 节点至源站方向的请求数，单位：次。</li>\n<li>l7Flow_inFlux_hy: 源站至 EdgeOne 节点方向的响应流量，单位：Byte；</li>\n<li>l7Flow_inBandwidth_hy: 源站至 EdgeOne 节点方向的响应带宽，单位：bps。</li></ul>",
+          "example": "[\"l7Flow_outFlux_hy\"]",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。",
+          "example": "2020-04-29T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间粒度，取值有：\n<ul><li>min: 1分钟；</li><li>5min: 5分钟；</li><li>hour: 1小时；</li><li>day: 1天。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：2 小时范围内以 min 粒度查询，2 天范围内以 5min 粒度查询，7 天范围内以 hour 粒度查询，超过 7 天以 day 粒度查询。",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，详细的过滤条件如下：\n<ul><li><strong>domain</strong>：客户端请求的域名。若按泛域名接入 EdgeOne，则数据中记录为泛域名，而不是具体域名。</li><li><strong>originStatusCode</strong>：回源状态码，仅当 <code>MetricNames = [\"l7Flow_request_hy\"]</code> 时支持本过滤项。<br>对应的 Value 可选项如下：<ul><li><code>1xx</code>：1xx 类型的状态码；</li><li><code>2xx</code>：2xx 类型的状态码；</li><li><code>3xx</code>：3xx 类型的状态码；</li><li><code>4xx</code>：4xx 类型的状态码；</li><li><code>5xx</code>：5xx 类型的状态码；</li><li>在 <code>[0, 600)</code> 范围内的整数（不包括 600）。</li></ul></li></ul>\n**注意**：当 <code>DimensionName</code>  不为空时，仅支持 <code>equals</code> 运算符。",
+          "example": "无",
+          "member": "QueryCondition",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询维度名称，取值有：</p><ul><li><strong>domain</strong>：客户端请求的域名。若按泛域名接入 EdgeOne，则数据中记录为泛域名。<br>使用 domain 维度时必须在 <code>Filters</code> 中包含 <code>domain</code> 过滤项，指定总数不超过 100 个需要查询的域名列表；</li><li><strong>origin-status-code</strong>：回源状态码，如 200、404，<br>仅当 <code>MetricNames = [\"l7Flow_request_hy\"]</code> 时支持本维度；</li><li><strong>origin-status-code-category</strong>：回源状态码类别，如 2xx、4xx，<br>仅当 <code>MetricNames =[\"l7Flow_request_hy\"]</code> 时支持本维度。</li></ul><p>若 <code>DimensionName</code> 入参为空，默认按 <code>AppId</code> 维度汇总，只返回一组数据。</p><p>若 <code>DimensionName</code> 入参不为空，则按照传入的查询维度分组返回对应的时序数据。例如：</p><ul>当 <code>DimensionName = origin-status-code</code> 时：<ul><li>返回数据中 <code>TimingDataRecords.TypeKey</code> 为具体回源状态码，例如 200。</li><li>返回数据中 <code>TimingDataRecords.TypeValue</code> 是该状态码对应的时序数据。</li></ul></ul>\n<strong>注意</strong>：当指定 DimensionName 查询时，禁止并发调用。若超出查询频率限制，会返回错误 <code><strong>InvalidParameter.ActionInProgress</strong></code> 。",
+          "example": "domain",
+          "member": "string",
+          "name": "DimensionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL7OriginPullDataResponse": {
+      "document": "DescribeTimingL7OriginPullData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果的总条数。",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源时序数据列表。",
+          "example": "无",
+          "member": "TimingDataRecord",
+          "name": "TimingDataRecords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopL7AnalysisDataRequest": {
       "document": "DescribeTopL7AnalysisData请求参数结构体",
       "members": [
@@ -13728,7 +14934,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的指标，取值有：\n<li> l7Flow_outFlux_country：按国家/地区维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_province：按中国大陆境内省份维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_statusCode：按状态码维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_domain：按域名维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_url：按 URL Path 维度统计 L7 EdgeOne 响应流量指标; </li>\n<li> l7Flow_outFlux_resourceType：按资源类型维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_sip：按客户端 IP 维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_referers：按 Referer 维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_ua_device：按设备类型维度统计 L7 EdgeOne 响应流量指标; </li>\n<li> l7Flow_outFlux_ua_browser：按浏览器类型维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_ua_os：按操作系统类型维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_ua：按 User-Agent 维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_request_country：按国家/地区维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_province：按中国大陆境内省份维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_statusCode：按状态码维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_domain：按域名维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_url：按 URL Path 维度统计 L7 访问请求数指标; </li>\n<li> l7Flow_request_resourceType：按资源类型维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_sip：按客户端 IP 维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_referer：按 Referer 维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_ua_device：按设备类型维度统计 L7 访问请求数指标; </li>\n<li> l7Flow_request_ua_browser：按浏览器类型维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_ua_os：按操作系统类型维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_ua：按 User-Agent 维度统计 L7 访问请求数指标。</li>",
+          "document": "查询的指标，取值有：\n<li> l7Flow_outFlux_country：按国家/地区维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_province：按中国大陆境内省份维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_statusCode：按状态码维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_domain：按域名维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_url：按 URL Path 维度统计 L7 EdgeOne 响应流量指标; </li>\n<li> l7Flow_outFlux_resourceType：按资源类型维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_sip：按客户端 IP 维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_referers：按 Referer 维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_ua_device：按设备类型维度统计 L7 EdgeOne 响应流量指标; </li>\n<li> l7Flow_outFlux_ua_browser：按浏览器类型维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_ua_os：按操作系统类型维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_outFlux_ua：按 User-Agent 维度统计 L7 EdgeOne 响应流量指标；</li>\n<li> l7Flow_request_country：按国家/地区维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_province：按中国大陆境内省份维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_statusCode：按状态码维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_domain：按域名维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_url：按 URL Path 维度统计 L7 访问请求数指标; </li>\n<li> l7Flow_request_resourceType：按资源类型维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_sip：按客户端 IP 维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_referers：按 Referer 维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_ua_device：按设备类型维度统计 L7 访问请求数指标; </li>\n<li> l7Flow_request_ua_browser：按浏览器类型维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_ua_os：按操作系统类型维度统计 L7 访问请求数指标；</li>\n<li> l7Flow_request_ua：按 User-Agent 维度统计 L7 访问请求数指标。</li>",
           "example": "l7Flow_outFlux_country",
           "member": "string",
           "name": "MetricName",
@@ -13737,11 +14943,11 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"*\"]",
           "member": "string",
           "name": "ZoneIds",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {
@@ -13851,7 +15057,7 @@
           "example": "[\"zone-2ju9lrnpaxol\"]",
           "member": "string",
           "name": "ZoneIds",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {
@@ -14164,7 +15370,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 appid 下有权限的所有站点信息。详细的过滤条件如下：\n<li>zone-name：按照站点名称进行过滤；</li><li>zone-id：按照站点 ID进行过滤。站点 ID 形如：zone-2noz78a8ev6k；</li><li>status：按照站点状态进行过滤；</li><li>tag-key：按照标签键进行过滤；</li><li>tag-value： 按照标签值进行过滤。</li><li>alias-zone-name： 按照同名站点标识进行过滤。</li>模糊查询时支持过滤字段名为 zone-name 或 alias-zone-name。",
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 appid 下有权限的所有站点信息。详细的过滤条件如下：<li>zone-name：按照站点名称进行过滤；</li><li>zone-type：按照站点类型进行过滤。可选项：<br>   full：NS 接入类型；<br>   partial：CNAME 接入类型；<br>   partialComposite：无域名接入类型；<br>   dnsPodAccess：DNSPod 托管接入类型；<br>   pages：Pages 接入类型；<br>   ai：边缘推理接入类型。</li><li>zone-id：按照站点 ID 进行过滤，站点 ID 形如：zone-2noz78a8ev6k；</li><li>status：按照站点状态进行过滤。可选项：<br>   active：NS 已切换；<br>   pending：NS 待切换；<br>   deleted：已删除。</li><li>tag-key：按照标签键进行过滤；</li><li>tag-value： 按照标签值进行过滤；</li><li>alias-zone-name： 按照同名站点标识进行过滤。</li>模糊查询时支持过滤字段名为 zone-name 或 alias-zone-name。",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -14207,7 +15413,7 @@
         },
         {
           "disabled": false,
-          "document": "站点详细信息。",
+          "document": "站点列表详情。",
           "example": "无",
           "member": "Zone",
           "name": "Zones",
@@ -14866,7 +16072,7 @@
       "usage": "both"
     },
     "DnsVerification": {
-      "document": "CNAME 接入，使用 DNS 解析验证时所需的信息。",
+      "document": "站点 CNAME 模式接入验证归属权或域名申请免费证书时，使用 DNS 解析验证时所需的信息。",
       "members": [
         {
           "disabled": false,
@@ -14952,7 +16158,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "[\"zone-2m6jx63f6k3x\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -15044,7 +16250,7 @@
         },
         {
           "disabled": false,
-          "document": "站点ID集合，此参数必填。",
+          "document": "站点ID集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "[\"zone-2nepupfjtjlf\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -15899,11 +17105,11 @@
       "usage": "out"
     },
     "FileVerification": {
-      "document": "CNAME 接入，使用文件验证时所需的信息。",
+      "document": "站点 CNAME 模式接入验证归属权或域名申请免费证书时，使用 HTTP 访问验证文件时所需的信息。",
       "members": [
         {
           "disabled": false,
-          "document": "EdgeOne 后台服务器将通过 Scheme + Host + URL Path 的格式（例如 https://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。该字段为您需要创建的 URL Path 部分。",
+          "document": "EdgeOne 后台服务器将通过 http://{Host}{URL Path} 的格式（例如 http://www.example.com/.well-known/teo-verification/z12h416twn.txt）获取文件验证信息。其中，本字段为您需要创建的 URL Path 部分，Host 为当前加速域名。",
           "example": "/.well-known/teo-verification/z12h416twn.txt",
           "member": "string",
           "name": "Path",
@@ -15977,6 +17183,88 @@
         }
       ],
       "usage": "both"
+    },
+    "FloatTimingDataItem": {
+      "document": "统计曲线数据项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据对应时间点，采用 unix 秒级时间戳。",
+          "example": "1767302100",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体数值。",
+          "example": "0.05",
+          "member": "float",
+          "name": "Value",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FloatTimingTypeValue": {
+      "document": "时序类型详细数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据和。",
+          "example": "2.609999",
+          "member": "float",
+          "name": "Sum",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大值。",
+          "example": "0.15",
+          "member": "float",
+          "name": "Max",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均值。",
+          "example": "0.02",
+          "member": "float",
+          "name": "Avg",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名。",
+          "example": "l4Flow_newConnectionsRate",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详细数据。",
+          "example": "无",
+          "member": "FloatTimingDataItem",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FollowOrigin": {
       "document": "缓存遵循源站配置。",
@@ -16281,6 +17569,34 @@
       ],
       "usage": "both"
     },
+    "FunctionRegionSelection": {
+      "document": "地区策略配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数 ID 。",
+          "example": "ef-0agikbrr",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国家/地区列表。示例值：CN：中国，CN.GD：中国广东。取值请参考：[国家/地区及对应代码枚举](https://cloud.tencent.com/document/product/1552/112542)。",
+          "example": "[\"CN\"]",
+          "member": "string",
+          "name": "Regions",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FunctionRule": {
       "document": "边缘函数触发规则。",
       "members": [
@@ -16306,7 +17622,17 @@
         },
         {
           "disabled": false,
-          "document": "函数 ID，命中触发规则条件后执行的函数。",
+          "document": "函数选择配置类型：\n<li> direct：直接指定执行函数；</li>\n<li> weight：基于权重比选择函数；</li>\n<li> region：基于客户端 IP 的国家/地区选择函数。</li>\n",
+          "example": "direct",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定执行的函数 ID。当 TriggerType 为 direct 时有效。",
           "example": "ef-jjhvk7ec",
           "member": "string",
           "name": "FunctionId",
@@ -16316,22 +17642,32 @@
         },
         {
           "disabled": false,
-          "document": "规则描述。",
-          "example": "鉴权",
+          "document": "指定执行的函数名称。",
+          "example": "TestFunction",
           "member": "string",
-          "name": "Remark",
+          "name": "FunctionName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "函数名称。",
-          "example": "TestFunction",
-          "member": "string",
-          "name": "FunctionName",
-          "output_required": true,
-          "type": "string",
+          "document": "基于客户端 IP 国家/地区的函数选择配置。",
+          "example": "无",
+          "member": "FunctionRegionSelection",
+          "name": "RegionMappingSelections",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基于权重的函数选择配置。",
+          "example": "无",
+          "member": "FunctionWeightedSelection",
+          "name": "WeightedSelections",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -16346,8 +17682,18 @@
         },
         {
           "disabled": false,
+          "document": "规则描述。",
+          "example": "鉴权",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
-          "example": "2017-09-17T16:30:58.410670+00:00",
+          "example": "2017-09-17T16:30:58+00:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -16357,7 +17703,7 @@
         {
           "disabled": false,
           "document": "更新时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
-          "example": "2017-09-17T16:30:58.410670+00:00",
+          "example": "2017-09-17T16:30:58+00:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
           "output_required": true,
@@ -16379,6 +17725,34 @@
           "output_required": true,
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionWeightedSelection": {
+      "document": "权重策略配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数 ID 。",
+          "example": "ef-0agikbrr",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选中权重。取值范围0-100，所有的权重之和需要为100。\n选中概率计算方式为：\nweight/100。例如设置了两个函数 A 和 B ，其中 A 的权重为30，那么 B 的权重必须为70，最终选中 A 的概率为30%，选中 B 的概率为70%。",
+          "example": "30",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": true,
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -17016,7 +18390,7 @@
         },
         {
           "disabled": false,
-          "document": "Tls 版本设置，取值有：\n<li>TLSv1：TLSv1版本；</li>\n<li>TLSV1.1：TLSv1.1版本；</li>\n<li>TLSV1.2：TLSv1.2版本；</li>\n<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。",
+          "document": "Tls 版本设置，取值有：\n<li>TLSv1：TLSv1版本；</li>\n<li>TLSv1.1：TLSv1.1版本；</li>\n<li>TLSv1.2：TLSv1.2版本；</li>\n<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。",
           "example": "[\"TLSv1\", \"TLSv1.1\"]",
           "member": "string",
           "name": "TlsVersion",
@@ -17186,6 +18560,62 @@
         }
       ],
       "usage": "out"
+    },
+    "IPReputation": {
+      "document": "IP 情报库（原客户端画像分析）配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 情报库（原客户端画像分析）。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 情报库（原客户端画像分析）的具体配置内容。",
+          "example": "无",
+          "member": "IPReputationGroup",
+          "name": "IPReputationGroup",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IPReputationGroup": {
+      "document": "IP 情报库（原客户端画像分析）的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 情报库（原客户端画像分析）的执行动作。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Disabled：未启用，不启用指定规则；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "BaseAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 情报库（原客户端画像分析）的具体配置，用于覆盖 BaseAction 中的默认配置。其中 BotManagementActionOverrides 的 Ids 中可以填写：<li>IPREP_WEB_AND_DDOS_ATTACKERS_LOW：网络攻击 - 一般置信度；</li><li>IPREP_WEB_AND_DDOS_ATTACKERS_MID：网络攻击 - 中等置信度；</li><li>IPREP_WEB_AND_DDOS_ATTACKERS_HIGH：网络攻击 - 高置信度；</li><li>IPREP_PROXIES_AND_ANONYMIZERS_LOW：网络代理 - 一般置信度；</li><li>IPREP_PROXIES_AND_ANONYMIZERS_MID：网络代理 - 中等置信度；</li><li>IPREP_PROXIES_AND_ANONYMIZERS_HIGH：网络代理 - 高置信度；</li><li>IPREP_SCANNING_TOOLS_LOW：扫描器 - 一般置信度；</li><li>IPREP_SCANNING_TOOLS_MID：扫描器 - 中等置信度；</li><li>IPREP_SCANNING_TOOLS_HIGH：扫描器 - 高置信度；</li><li>IPREP_ATO_ATTACKERS_LOW：账号接管攻击 - 一般置信度；</li><li>IPREP_ATO_ATTACKERS_MID：账号接管攻击 - 中等置信度；</li><li>IPREP_ATO_ATTACKERS_HIGH：账号接管攻击 - 高置信度；</li><li>IPREP_WEB_SCRAPERS_AND_TRAFFIC_BOTS_LOW：恶意 BOT - 一般置信度；</li><li>IPREP_WEB_SCRAPERS_AND_TRAFFIC_BOTS_MID：恶意 BOT - 中等置信度；</li><li>IPREP_WEB_SCRAPERS_AND_TRAFFIC_BOTS_HIGH：恶意 BOT - 高置信度。</li>",
+          "example": "无",
+          "member": "BotManagementActionOverrides",
+          "name": "BotManagementActionOverrides",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "IPWhitelist": {
       "document": "源站防护IP白名单",
@@ -17845,6 +19275,34 @@
       ],
       "usage": "out"
     },
+    "KnownBotCategories": {
+      "document": "商业或开源工具 UA 特征配置（原 UA 特征规则）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来自已知商业工具或开源工具的访问请求的处置方式。 SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Disabled：未启用，不启用指定规则；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge；</li><li>Allow：放行（待废弃）。</li> ",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "BaseAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定已知商业工具或开源工具的访问请求的处置方式。",
+          "example": "无",
+          "member": "BotManagementActionOverrides",
+          "name": "BotManagementActionOverrides",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "L4OfflineLog": {
       "document": "离线日志详细信息",
       "members": [
@@ -18045,8 +19503,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "安全防护配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "安全防护配置。\n本字段已废弃。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DDosProtectionConfig",
           "name": "DDosProtectionConfig",
@@ -18456,6 +19914,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡被引用实例的列表。",
+          "example": "无",
+          "member": "OriginGroupReference",
+          "name": "References",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18841,16 +20309,18 @@
           "example": "on/off",
           "member": "string",
           "name": "FollowOrigin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "MaxAge 时间设置，单位秒，最大365天。\n注意：时间为0，即不缓存。",
+          "document": "MaxAge 时间设置，单位为秒，取值：0～315360000。\n注意：时间为0，即不缓存。",
           "example": "600",
           "member": "int64",
           "name": "MaxAgeTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18878,6 +20348,34 @@
           "example": "100",
           "member": "int64",
           "name": "CacheTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MaxNewSessionTriggerConfig": {
+      "document": "Bot 管理中校验的触发阈值。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "触发阈值统计的时间窗口，取值有：<li>5s：5 秒内；</li><li>10s：10 秒内；</li><li>15s：15 秒内；</li><li>30s：30 秒内；</li><li>60s：60 秒内；</li><li>5m：5 分钟内；</li><li>10m：10 分钟内；</li><li>30m：30 分钟内；</li><li>60m：60 分钟内。</li> ",
+          "example": "10s",
+          "member": "string",
+          "name": "MaxNewSessionCountInterval",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发阈值统计的累计次数，取值范围 1 ~ 100000000。",
+          "example": "300",
+          "member": "int64",
+          "name": "MaxNewSessionCountThreshold",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -19803,7 +21301,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID。",
+          "document": "规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。",
           "example": "rule-02y3grbu",
           "member": "string",
           "name": "RuleId",
@@ -19821,12 +21319,39 @@
         },
         {
           "disabled": false,
-          "document": "函数 ID，命中触发规则条件后执行的函数，不填写保持原有配置。",
+          "document": "函数选择配置类型：\n<li> direct：直接指定执行函数；</li>\n<li> weight：基于权重比选择函数；</li>\n<li> region：基于客户端 IP 的国家/地区选择函数。</li>\n不填时默认为 direct 。",
+          "example": "direct",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。",
           "example": "ef-jjhvk7ec",
           "member": "string",
           "name": "FunctionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。",
+          "example": "无",
+          "member": "FunctionRegionSelection",
+          "name": "RegionMappingSelections",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。",
+          "example": "无",
+          "member": "FunctionWeightedSelection",
+          "name": "WeightedSelections",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -19867,7 +21392,7 @@
         {
           "disabled": false,
           "document": "需要修改证书配置的加速域名。",
-          "example": "www.test.com",
+          "example": "[\"www.test.com\"]",
           "member": "string",
           "name": "Hosts",
           "required": true,
@@ -19875,8 +21400,8 @@
         },
         {
           "disabled": false,
-          "document": "配置服务端证书的模式，取值有：\n<li>disable：不配置服务端证书；</li>\n<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>\n<li>sslcert：配置 SSL 托管服务端证书；</li>\n不填写表示服务端证书保持原有配置。",
-          "example": "eoFreeCert",
+          "document": "配置服务端证书的模式，取值有：\n<ul><li>disable：不配置服务端证书；</li>\n<li>eofreecert：通过自动验证申请免费证书并部署。验证方式详见：[申请免费证书支持的验证方式](https://cloud.tencent.com/document/product/1552/90437)\n\n- 在 NS 或者 DNSPod 托管接入模式下，仅支持自动验证的方式申请免费证书。\n- 当免费证书申请失败时会导致证书部署失败，您可以通过<a href = 'https://cloud.tencent.com/document/product/1552/124806'>检查免费证书申请结果</a>接口获取申请失败原因。</li>\n</ul><li>eofreecert_manual：部署 DNS 委派验证或者文件验证申请的免费证书。在部署免费证书前，您需要触发<a href = 'https://cloud.tencent.com/document/product/1552/124807'>申请免费证书</a>接口申请免费证书。在免费证书申请成功后，你可以通过该枚举值对免费证书进行部署；</li>\n<ul><li>注意：在对免费证书部署时，需要保证当前已存在申请成功的免费证书。您可以通过<a href = 'https://cloud.tencent.com/document/product/1552/124806'>检查免费证书申请结果</a>接口检查当前是否已存在申请成功的免费证书。</li>\n</ul><li>sslcert：配置 SSL 托管服务端证书。</li>",
+          "example": "eofreecert",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -19885,7 +21410,7 @@
         {
           "disabled": false,
           "document": "SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。",
-          "example": "J2Jsa2uM",
+          "example": "无",
           "member": "ServerCertInfo",
           "name": "ServerCertInfo",
           "required": false,
@@ -19906,6 +21431,15 @@
           "example": "无",
           "member": "MutualTLS",
           "name": "ClientCertInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于分别开启/关闭回源双向认证和源站证书校验。默认关闭，不填写表示保持原有配置。回源双向认证配置当前为白名单内侧中，如需使用，请[联系我们](https://cloud.tencent.com/online-service)。",
+          "example": "无",
+          "member": "UpstreamCertInfo",
+          "name": "UpstreamCertInfo",
           "required": false,
           "type": "object"
         }
@@ -20491,6 +22025,51 @@
       ],
       "type": "object"
     },
+    "ModifyMultiPathGatewayStatusRequest": {
+      "document": "ModifyMultiPathGatewayStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关 ID。",
+          "example": "eo-gw-lb-ahk1js",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-27q0p0bal192",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改网关的启用停用状态，取值有：<li> offline：停用；</li><li> online：启用。</li>",
+          "example": "offline",
+          "member": "string",
+          "name": "GatewayStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMultiPathGatewayStatusResponse": {
+      "document": "ModifyMultiPathGatewayStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOriginACLRequest": {
       "document": "ModifyOriginACL请求参数结构体",
       "members": [
@@ -20708,6 +22287,69 @@
     },
     "ModifyPlanResponse": {
       "document": "ModifyPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrefetchOriginLimitRequest": {
+      "document": "ModifyPrefetchOriginLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3***j8tqd",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加速域名。",
+          "example": "cn2.test-***a.online",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制的加速区域。\n预热时，该加速区域将会受到配置的Bandwidth值限制。取值有：\n<li>Overseas：全球可用区（不含中国大陆）；</li>\n<li>MainlandChina：中国大陆可用区。</li>",
+          "example": "Overseas",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源限速带宽。\n预热时回到源站的带宽上限值，取值范围 100 - 100,000，单位 Mbps。",
+          "example": "100",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制控制开关。\n用于启用/删除本条回源限速限制，取值有：\n<li>on：启用限制；</li>\n<li>off：删除限制。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrefetchOriginLimitResponse": {
+      "document": "ModifyPrefetchOriginLimit返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -21163,7 +22805,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>",
+          "document": "安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 BotManagement 被设置时，SecurityConfig 参数中的 BotConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制、托管规则以及 Bot 管理策略配置建议使用 SecurityPolicy 参数进行设置。</li>",
           "example": "无",
           "member": "SecurityConfig",
           "name": "SecurityConfig",
@@ -21172,8 +22814,8 @@
         },
         {
           "disabled": false,
-          "document": "安全策略配置。对 Web 例外规则、防护自定义策略、速率规则和托管规则配置建议使用，支持表达式语法对安全策略进行配置。",
-          "example": "参考\tSecurityPolicy 结构",
+          "document": "安全策略配置。对 Web 例外规则、防护自定义策略、速率规则、托管规则和 Bot 管理配置建议使用，支持表达式语法对安全策略进行配置。",
+          "example": "无",
           "member": "SecurityPolicy",
           "name": "SecurityPolicy",
           "required": false,
@@ -21523,6 +23165,15 @@
         },
         {
           "disabled": false,
+          "document": "网络错误日志记录配置。不填写表示保持原有配置。",
+          "example": "无",
+          "member": "NetworkErrorLogging",
+          "name": "NetworkErrorLogging",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "图片优化配置。\n不填写表示关闭。",
           "example": "无",
           "member": "ImageOptimize",
@@ -21589,6 +23240,42 @@
     },
     "ModifyZoneStatusResponse": {
       "document": "ModifyZoneStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneWorkModeRequest": {
+      "document": "ModifyZoneWorkMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-27********v1",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本管理配置组工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。",
+          "example": "无",
+          "member": "ConfigGroupWorkModeInfo",
+          "name": "WorkModeInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneWorkModeResponse": {
+      "document": "ModifyZoneWorkMode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -21681,9 +23368,58 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关回源 IP 列表发生了变化是否需要重新确认，取值有：<li>true：回源 IP 列表发生了变化，需要确认；</li><li>false：回源 IP 列表未发生变化，无需确认。</li>",
+          "example": "true",
+          "member": "string",
+          "name": "NeedConfirm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "MultiPathGatewayCurrentOriginACL": {
+      "document": "当前生效的回源 IP 网段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源 IP 网段详情。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "EntireAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号。",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本参数用于记录当前版本生效前是否完成「我已更新至最新回源 IP 网段」的确认。取值有：\n<li>true：已完成更新至最新回源 IP 的确认；</li>\n<li>false：未完成更新至最新回源 IP 的确认；</li>\n注意：本参数返回 false 时，请及时确认您的源站防火墙配置是否已更新至最新的回源 IP 网段，以避免出现回源失败。",
+          "example": "false",
+          "member": "string",
+          "name": "IsPlaned",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MultiPathGatewayLine": {
       "document": "多通道安全网关线路信息",
@@ -21741,6 +23477,95 @@
       ],
       "usage": "out"
     },
+    "MultiPathGatewayNextOriginACL": {
+      "document": "当回源 IP 网段发生更新时，该字段会返回下一个版本将要生效的回源 IP 网段，包含与当前生效的回源 IP 网段的对比。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本号。",
+          "example": "2",
+          "member": "int64",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源 IP 网段详情。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "EntireAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新回源 IP 网段相较于 MultiPathGatewayCurrentOrginACL 中回源 IP 网段新增的部分。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "AddedAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新回源 IP 网段相较于 MultiPathGatewayCurrentOrginACL 中回源 IP 网段删减的部分。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "RemovedAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新回源 IP 网段相较于 MultiPathGatewayCurrentOrginACL 中回源 IP 网段无变化的部分。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "NoChangeAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MultiPathGatewayOriginACLInfo": {
+      "document": "多通道网关示例实例与回源 IP 网段的绑定关系，以及回源 IP 网段详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前生效的回源 IP 网段。",
+          "example": "无",
+          "member": "MultiPathGatewayCurrentOriginACL",
+          "name": "MultiPathGatewayCurrentOriginACL",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当回源 IP 网段发生更新时，该字段会返回下一个版本将要生效的回源 IP 网段，包含与当前回源 IP 网段的对比。无更新时该字段为空。",
+          "example": "无",
+          "member": "MultiPathGatewayNextOriginACL",
+          "name": "MultiPathGatewayNextOriginACL",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MutualTLS": {
       "document": "HTTPS 双向认证。",
       "members": [
@@ -21764,6 +23589,116 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NSDetail": {
+      "document": "NS 接入类型站点参数详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启 CNAME 加速，取值有：\n<li> enabled：开启；</li>\n<li> disabled：关闭。</li>",
+          "example": "enabled",
+          "member": "string",
+          "name": "CnameSpeedUp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否存在同名站点，取值有：\n<li> 0：不存在同名站点；</li>\n<li> 1：已存在同名站点。</li>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归属权验证信息。针对 NS 接入类型的站点，将当前的 NS 服务器切换至腾讯云 EdgeOne 指定的 NS 服务器，即视为通过归属权验证。详情请参考 [站点/域名归属权验证](https://cloud.tencent.com/document/product/1552/70789) 。",
+          "example": "无",
+          "member": "OwnershipVerification",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "由 EdgeOne 检测到的站点当前正在使用的 NS 服务器列表。",
+          "example": "[\"ns1.example.com.\",\"ns2.example.com.\"]",
+          "member": "string",
+          "name": "OriginalNameServers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 EdgeOne 分配的 NS 服务器列表。需要将当前站点 NS 服务器指向该地址，站点才能生效。",
+          "example": "[\"ns1.teodns.com.\",\"ns2.teodns.com.\"]",
+          "member": "string",
+          "name": "NameServers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义 NS 服务器域名信息。如果启用了自定义 NS 服务，需要在域名注册厂商内将 NS 指向该地址。",
+          "example": "无",
+          "member": "VanityNameServers",
+          "name": "VanityNameServers",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义 NS 服务器对应的 IP 地址信息。",
+          "example": "无",
+          "member": "VanityNameServersIps",
+          "name": "VanityNameServersIps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NetworkErrorLogging": {
+      "document": "网络错误日志记录配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启网络错误日志记录配置，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NetworkErrorLoggingParameters": {
+      "document": "网络错误日志记录配置项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络错误日志记录配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -22090,6 +24025,90 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginAuthenticationParameters": {
+      "document": "回源鉴权参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源鉴权请求属性。",
+          "example": "无",
+          "member": "OriginAuthenticationRequestProperties",
+          "name": "RequestProperties",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginAuthenticationRequestProperties": {
+      "document": "回源鉴权请求属性。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设置回源鉴权参数类型，取值有：<li>QueryString：表示设置回源鉴权参数类型为查询字符串；</li><li>Header：表示设置回源鉴权参数类型为请求头。</li>",
+          "example": "Header",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设置回源鉴权类型对应的参数名称。",
+          "example": "X-Test-Auth",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设置回源鉴权类型对应的参数值。",
+          "example": "Test",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginCertificateVerify": {
+      "document": "HTTPS 源站证书校验的模式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站证书校验模式。取值有：<li>disable:禁用源站证书校验。</li><li>custom_ca:使用指定受信任 CA 证书校验。</li>",
+          "example": "custom_ca",
+          "member": "string",
+          "name": "VerificationMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定受信任的 CA 证书列表，源站证书需要由该 CA 签发才能校验通过。 注意：仅当 VerificationMode 为 custom_ca 时，需要传入该参数，指定受信任的CA证书信息。\nOriginCertificateVerify 在 ModifyHostsCertificate 作为入参使用时，该参数传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。\t\n",
+          "example": "无",
+          "member": "CertificateInfo",
+          "name": "CustomCACerts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -22438,7 +24457,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引用服务类型，取值有：\n<li>AccelerationDomain: 加速域名；</li>\n<li>RuleEngine: 规则引擎；</li>\n<li>Loadbalance: 负载均衡；</li>\n<li>ApplicationProxy: 四层代理。</li>",
+          "document": "引用服务类型，取值有：\n<li>acceleration-domain: 加速域名；</li>\n<li>rule-engine: 规则引擎；</li>\n<li>load-balancer: 负载均衡；</li>\n<li>application-proxy: 四层代理。</li>",
           "example": "AccelerationDomain",
           "member": "string",
           "name": "InstanceType",
@@ -22458,11 +24477,41 @@
         },
         {
           "disabled": false,
-          "document": "应用类型的实例名称。",
+          "document": "引用类型的实例名称。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用站点ID。",
+          "example": "zone-1a3x56",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用站点名称。",
+          "example": "example.com",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用站点别名。",
+          "example": "zone-example",
+          "member": "string",
+          "name": "AliasZoneName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -22500,7 +24549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWS_S3：AWS S3 对象存储源站；</li>\n<li>ORIGIN_GROUP：源站组类型源站；</li>\n <li>VOD：云点播；</li>\n<li>SPACE：源站卸载，当前仅白名单开放；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>",
+          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWS_S3：AWS S3 对象存储源站；</li>\n<li>ORIGIN_GROUP：源站组类型源站；</li>\n<li>VOD：云点播；</li>\n<li>SPACE：源站卸载，当前仅白名单开放；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>",
           "example": "ip_domain",
           "member": "string",
           "name": "OriginType",
@@ -22509,7 +24558,7 @@
         },
         {
           "disabled": false,
-          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>\n<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>\n<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>\n<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>\n<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>\n<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>",
+          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>\n<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>\n<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；如果引用了其它站点的源站组，格式为{源站组 ID}@{ZoneID}。例如：og-testorigin@zone-38moq1z10wwwy；</li>\n<li>当 OriginType = VOD 时，该参数为云点播应用 ID；</li>\n<li>当 OriginType = LB 时，该参数为负载均衡实例 ID，该功能当前仅白名单开放；如果引用了其它站点的负载均衡，格式为{负载均衡 ID}@{ZoneID}。例如：lb-2rxpamcyqfzg@zone-38moq1z10wwwy；</li>\n<li>当 OriginType = SPACE 时，该参数为源站卸载空间 ID，该功能当前仅白名单开放。</li>",
           "example": "qq.com",
           "member": "string",
           "name": "Origin",
@@ -22527,7 +24576,7 @@
         },
         {
           "disabled": false,
-          "document": "指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>\n不填写时，默认值为off。",
+          "document": "指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>不填写时，默认值为off。",
           "example": "on",
           "member": "string",
           "name": "PrivateAccess",
@@ -22545,7 +24594,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义回源 HOST 头，该参数仅当 OriginType=IP_DOMAIN 时生效。\n如果 OriginType=COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。\n如果OriginType=ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。\n如果 OriginType=VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。",
+          "document": "自定义回源 HOST 头，该参数仅当 OriginType = IP_DOMAIN 时生效。当 OriginType 是其它类型源站时，不需要传入该参数，否则会报错。\n当 OriginType = COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。\n当 OriginType = ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。\n当 OriginType = VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。",
           "example": "www.tencentcloud.com",
           "member": "string",
           "name": "HostHeader",
@@ -22581,7 +24630,7 @@
         },
         {
           "disabled": false,
-          "document": "云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。\n</li>",
+          "document": "云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件，通过参数 VodBucketId 来指定存储桶。</li>不填写时，默认值为 all。",
           "example": "bucket",
           "member": "string",
           "name": "VodOriginScope",
@@ -22735,6 +24784,23 @@
         }
       ],
       "usage": "out"
+    },
+    "OriginPullProtocolParameters": {
+      "document": "回源 HTTPS 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源协议配置，取值有：\n<li>http：使用 HTTP 协议回源；</li>\n<li>https：使用 HTTPS 协议回源；</li>\n<li>follow：协议跟随。</li>",
+          "example": "https",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OriginRecord": {
       "document": "源站组记录",
@@ -23180,7 +25246,7 @@
         },
         {
           "disabled": false,
-          "document": "最大限制，取值在1MB和500MB之间。单位字节。",
+          "document": "最大限制，该字段仅在 Switch 为 on 时生效，取值在 1MB 和 800MB 之间，单位字节。",
           "example": "10000000",
           "member": "int64",
           "name": "MaxSize",
@@ -23208,7 +25274,7 @@
         },
         {
           "disabled": false,
-          "document": "POST 请求上传文件流式传输最大限制，单位为 Byte，取值：1 * 2<sup>20</sup> Byte～500 * 2<sup>20</sup> Byte。",
+          "document": "POST 请求上传文件流式传输最大限制，该字段仅在 Switch 为 on 时生效，取值在 1MB 和 800MB 之间，单位字节。",
           "example": "10000000",
           "member": "int64",
           "name": "MaxSize",
@@ -23219,6 +25285,72 @@
         }
       ],
       "usage": "both"
+    },
+    "PrefetchOriginLimit": {
+      "document": "回源限速限制详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3***j8tqd",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加速域名。",
+          "example": "cn2.test-***a.online",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制的加速区域。\n预热时，该加速区域将会受到配置的Bandwidth值限制。取值有：\n<li>Overseas：全球可用区（不含中国大陆）；</li>\n<li>MainlandChina：中国大陆可用区。</li>",
+          "example": "Overseas",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速带宽。\n预热时回到源站的带宽上限值，取值范围 100 - 100,000，单位 Mbps。",
+          "example": "100",
+          "member": "int64",
+          "name": "Bandwidth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制创建的时间。",
+          "example": "2025-12-16T07:08:40Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制更新的时间。",
+          "example": "2025-12-16T07:08:40Z",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PrepaidPlanParam": {
       "document": "预付费套餐计费参数",
@@ -23871,7 +26003,7 @@
         },
         {
           "disabled": false,
-          "document": "精准速率限制的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "document": "精准速率限制的具体内容，需符合表达式语法，详细规范参见[产品文档](https://cloud.tencent.com/document/product/1552/125343)。",
           "example": "${http.request.uri.path} in ['/api/v3/test','/api/v3/submit']",
           "member": "string",
           "name": "Condition",
@@ -23882,7 +26014,7 @@
         },
         {
           "disabled": false,
-          "document": "速率阈值请求特征的匹配方式， 当 Enabled 为 on 时，此字段必填。<br /><br />当条件有多个时，将组合多个条件共同进行统计计算，条件最多不可超过5条。取值有：<br/><li><b>http.request.ip</b>：客户端 IP；</li><li><b>http.request.xff_header_ip</b>：客户端 IP（优先匹配 XFF 头部）；</li><li><b>http.request.uri.path</b>：请求的访问路径；</li><li><b>http.request.cookies['session']</b>：名称为session的Cookie，其中session可替换为自己指定的参数；</li><li><b>http.request.headers['user-agent']</b>：名称为user-agent的HTTP头部，其中user-agent可替换为自己指定的参数；</li><li><b>http.request.ja3</b>：请求的JA3指纹；</li><li><b>http.request.uri.query['test']</b>：名称为test的URL查询参数，其中test可替换为自己指定的参数。</li> ",
+          "document": "速率阈值请求特征的匹配方式， 当 Enabled 为 on 时，此字段必填。<br /><br />当条件有多个时，将组合多个条件共同进行统计计算，条件最多不可超过5条。取值有：<br/><li><b>http.request.ip</b>：客户端 IP；</li><li><b>http.request.xff_header_ip</b>：客户端 IP（优先匹配 XFF 头部）；</li><li><b>http.request.uri.path</b>：请求的访问路径；</li><li><b>http.request.cookies['session']</b>：名称为 session 的 Cookie，其中 session 可替换为自己指定的参数；</li><li><b>http.request.headers['user-agent']</b>：名称为 user-agent 的 HTTP 头部，其中 user-agent 可替换为自己指定的参数；</li><li><b>http.request.ja3</b>：请求的 JA3 指纹；</li><li><b>http.request.ja4</b>：请求的 JA4 指纹；</li><li><b>http.request.uri.query['test']</b>：名称为 test 的 URL 查询参数，其中 test 可替换为自己指定的参数。</li> ",
           "example": "http.request.ip",
           "member": "string",
           "name": "CountBy",
@@ -24012,7 +26144,7 @@
         },
         {
           "disabled": false,
-          "document": "实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址。</li>",
+          "document": "实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址；</li><li>log_analysis：推送到 EdgeOne 日志分析。</li>",
           "example": "cls",
           "member": "string",
           "name": "TaskType",
@@ -24063,7 +26195,7 @@
         {
           "disabled": false,
           "document": "投递的自定义字段列表。",
-          "example": "无",
+          "example": "\"无\"",
           "member": "CustomField",
           "name": "CustomFields",
           "output_required": true,
@@ -24073,7 +26205,7 @@
         {
           "disabled": false,
           "document": "日志投递的过滤条件。",
-          "example": "无",
+          "example": "\"无\"",
           "member": "DeliveryCondition",
           "name": "DeliveryConditions",
           "output_required": true,
@@ -24093,7 +26225,7 @@
         {
           "disabled": false,
           "document": "日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：\n<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>\n<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"无\"",
           "member": "LogFormat",
           "name": "LogFormat",
           "output_required": false,
@@ -24103,7 +26235,7 @@
         {
           "disabled": false,
           "document": "CLS 的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"无\"",
           "member": "CLSTopic",
           "name": "CLS",
           "output_required": true,
@@ -24113,7 +26245,7 @@
         {
           "disabled": false,
           "document": "自定义 HTTP 服务的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"无\"",
           "member": "CustomEndpoint",
           "name": "CustomEndpoint",
           "output_required": true,
@@ -24123,7 +26255,7 @@
         {
           "disabled": false,
           "document": "AWS S3 兼容存储桶的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"无\"",
           "member": "S3",
           "name": "S3",
           "output_required": true,
@@ -24370,7 +26502,7 @@
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "无",
+          "example": "2024-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -24380,7 +26512,7 @@
         {
           "disabled": false,
           "document": "生效时间。",
-          "example": "无",
+          "example": "2024-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "EnableTime",
           "output_required": true,
@@ -24390,7 +26522,7 @@
         {
           "disabled": false,
           "document": "失效时间。",
-          "example": "无",
+          "example": "2024-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
           "output_required": true,
@@ -24439,7 +26571,7 @@
         },
         {
           "disabled": false,
-          "document": "地域，取值有：\n<li>mainland：国内；</li>\n<li>overseas：海外。</li>\n<li>global：全球。</li>",
+          "document": "地域，取值有：\n<li>mainland：中国大陆境内；</li>\n<li>overseas：中国大陆境外。</li>\n<li>global：全球。</li>",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -24871,7 +27003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速；</li>\n<li>SetContentIdentifier：设置内容标识符；</li>\n<li>Vary：Vary 特性配置。</li>",
+          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速；</li>\n<li>SetContentIdentifier：设置内容标识符；</li>\n<li>Vary：Vary 特性配置；</li>\n<li>ContentCompression：内容压缩配置；</li>\n<li>OriginAuthentication：回源鉴权配置。</li>",
           "example": "Cache",
           "member": "string",
           "name": "Name",
@@ -25051,6 +27183,17 @@
           "example": "无",
           "member": "ForceRedirectHTTPSParameters",
           "name": "ForceRedirectHTTPSParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源 HTTPS 配置参数，当 Name 取值为 OriginPullProtocol 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginPullProtocolParameters",
+          "name": "OriginPullProtocolParameters",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -25260,6 +27403,28 @@
           "example": "无",
           "member": "VaryParameters",
           "name": "VaryParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容压缩配置参数，当 Name 取值为 ContentCompression 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
+          "example": "无",
+          "member": "ContentCompressionParameters",
+          "name": "ContentCompressionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源鉴权配置参数，当 Name 取值为 OriginAuthentication 时，该参数必填。该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
+          "example": "无",
+          "member": "OriginAuthenticationParameters",
+          "name": "OriginAuthenticationParameters",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -25731,6 +27896,34 @@
       ],
       "usage": "both"
     },
+    "SearchEngineBots": {
+      "document": "搜索引擎规则配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来自搜索引擎爬虫的请求的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Disabled：未启用，不启用指定规则；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge；</li><li>Allow：放行（待废弃）。</li> ",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "BaseAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定搜索引擎爬虫请求的处置方式。",
+          "example": "无",
+          "member": "BotManagementActionOverrides",
+          "name": "BotManagementActionOverrides",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SecEntry": {
       "document": "安全数据Entry返回值",
       "members": [
@@ -25818,7 +28011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全执行的具体动作。取值有：\n<li>Deny：拦截，阻止请求访问站点资源；</li>\n<li>Monitor：观察，仅记录日志；</li>\n<li>Redirect：重定向至 URL；</li>\n<li>Disabled：未启用，不启用指定规则；</li>\n<li>Allow：允许访问，但延迟处理请求；</li>\n<li>Challenge：挑战，响应挑战内容；</li>\n<li>BlockIP：待废弃，IP 封禁；</li>\n<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>\n<li>JSChallenge：待废弃，JavaScript 挑战；</li>\n<li>ManagedChallenge：待废弃，托管挑战。</li>",
+          "document": "安全执行的具体动作。取值有：\n<li>Deny：拦截，阻止请求访问站点资源；</li>\n<li>Monitor：观察，仅记录日志；</li>\n<li>Redirect：重定向至 URL；</li>\n<li>Disabled：未启用，不启用指定规则；</li>\n<li>Allow：允许访问，但延迟处理请求；</li>\n<li>Challenge：挑战，响应挑战内容；</li>\n<li>Trans：放行，允许请求直接访问站点资源；</li>\n<li>BlockIP：待废弃，IP 封禁；</li>\n<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>\n<li>JSChallenge：待废弃，JavaScript 挑战；</li>\n<li>ManagedChallenge：待废弃，托管挑战。</li>",
           "example": "Deny",
           "member": "string",
           "name": "Name",
@@ -26029,7 +28222,7 @@
         {
           "disabled": false,
           "document": "自定义规则配置。",
-          "example": "参考 CustomRules 示例",
+          "example": "无",
           "member": "CustomRules",
           "name": "CustomRules",
           "output_required": false,
@@ -26040,7 +28233,7 @@
         {
           "disabled": false,
           "document": "托管规则配置。",
-          "example": "参考 ManagedRules 示例",
+          "example": "无",
           "member": "ManagedRules",
           "name": "ManagedRules",
           "output_required": false,
@@ -26051,7 +28244,7 @@
         {
           "disabled": false,
           "document": "HTTP DDOS 防护配置。",
-          "example": "参考 HttpDDoSProtection 示例",
+          "example": "无",
           "member": "HttpDDoSProtection",
           "name": "HttpDDoSProtection",
           "output_required": false,
@@ -26062,7 +28255,7 @@
         {
           "disabled": false,
           "document": "速率限制规则配置。",
-          "example": "参考 RateLimitingRules 示例",
+          "example": "无",
           "member": "RateLimitingRules",
           "name": "RateLimitingRules",
           "output_required": false,
@@ -26073,7 +28266,7 @@
         {
           "disabled": false,
           "document": "例外规则配置。",
-          "example": "参考 ExceptionRules 示例",
+          "example": "无",
           "member": "ExceptionRules",
           "name": "ExceptionRules",
           "output_required": false,
@@ -26084,9 +28277,20 @@
         {
           "disabled": false,
           "document": "Bot 管理配置。",
-          "example": "参考 BotManagement 示例",
+          "example": "无",
           "member": "BotManagement",
           "name": "BotManagement",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础 Bot 管理配置。",
+          "example": "无",
+          "member": "BotManagementLite",
+          "name": "BotManagementLite",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -26183,6 +28387,34 @@
       ],
       "usage": "both"
     },
+    "SecurityWeightedAction": {
+      "document": "按权重分配的 SecurityAction。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Bot 自定义规则的处置方式。取值有：<li>Allow：放行，其中 AllowActionParameters 支持 MinDelayTime 和 MaxDelayTime 配置；</li><li>Deny：拦截，其中 DenyActionParameters 中支持 BlockIp、ReturnCustomPage 和 Stall 配置；</li><li>Monitor：观察；</li><li>Challenge：挑战，其中 ChallengeActionParameters.ChallengeOption 支持 JSChallenge 和 ManagedChallenge；</li><li>Redirect：重定向至URL。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "SecurityAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前 SecurityAction 的权重，仅支持 10 ~ 100 且必须为 10 的倍数，其中 Weight 参数全部相加须等于 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ServerCertInfo": {
       "document": "https 服务端证书配置",
       "members": [
@@ -26261,6 +28493,56 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SessionRateControl": {
+      "document": "会话速率和周期特征校验配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话速率和周期特征校验配置是否开启。取值有：<li>on：启用</li><li>off：关闭</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话速率和周期特征校验高风险的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "HighRateSessionAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话速率和周期特征校验中风险的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "MidRateSessionAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话速率和周期特征校验低风险的执行动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，其中 DenyActionParameters 中支持 Stall 配置；</li><li>Monitor：观察；</li><li>Allow：等待后响应，其中 AllowActionParameters 需要 MinDelayTime 和 MaxDelayTime 配置。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "LowRateSessionAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -26533,6 +28815,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SourceIDC": {
+      "document": "IDC 规则配置的具体内容。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来自指定 IDC 请求的处置方式。 SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Disabled：未启用，不启用指定规则；</li><li>Challenge：挑战，其中 ChallengeActionParameters 中的 ChallengeOption 支持 JSChallenge 和 ManagedChallenge；</li><li>Allow：放行（待废弃）。</li>",
+          "example": "参考 SecurityAction 结构",
+          "member": "SecurityAction",
+          "name": "BaseAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定 IDC 请求的处置方式。",
+          "example": "无",
+          "member": "BotManagementActionOverrides",
+          "name": "BotManagementActionOverrides",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -26828,6 +29138,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RCE Channel 的开通地域，目前可选的取值范围：<li>ap-beijing：华北地区（北京）；</li><li>ap-jakarta：亚太东南（雅加达）；</li><li>ap-singapore：亚太东南（新加坡）；</li><li>eu-frankfurt：欧洲地区（法兰克福）；</li><li>na-siliconvalley：美国西部（硅谷）。</li>",
+          "example": "\"ap-beijing\"",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -26973,7 +29294,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新、预热失败描述。",
+          "document": "清除缓存、预热缓存的失败原因描述。",
           "example": "回源失败，可尝试重新提交，或检查源站是否出现以下问题：服务不可用、响应超时、触发限速策略、安全策略限制、网络故障、或达到带宽/连接数上限。",
           "member": "string",
           "name": "FailMessage",
@@ -27073,17 +29394,27 @@
           "example": "l7Flow_flux",
           "member": "string",
           "name": "TypeKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详细时序数据。",
-          "example": "[1,2,3]",
+          "document": "<code>Integer</code> 类型的详细时序数据，查询指标值类型为 <code>Integer</code> 指标会由本字段返回对应时序数据。<br> **注意**：若查询指标未明确说明指标值类型，默认由本字段返回数据。",
+          "example": "无",
           "member": "TimingTypeValue",
           "name": "TypeValue",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<code>Float</code> 类型的详细时序数据，查询指标值类型为 <code>Float</code> 指标会由本字段返回对应时序数据。",
+          "example": "无",
+          "member": "FloatTimingTypeValue",
+          "name": "FloatTypeValue",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -27345,7 +29676,7 @@
       "type": "object"
     },
     "UpstreamCertInfo": {
-      "document": "用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。",
+      "document": "用于分别开启/关闭回源双向认证和源站证书校验。回源双向认证的证书用于 EO 回源时携带，源站可选择校验该证书用于确保请求来源于受信任的 EO 节点。源站证书校验开启时，证书配置用于 EO 节点校验源站证书是否可信。",
       "members": [
         {
           "disabled": false,
@@ -27353,6 +29684,17 @@
           "example": "无",
           "member": "MutualTLS",
           "name": "UpstreamMutualTLS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在源站证书校验场景下，该字段为 EO 节点回源时用于验证的 CA 证书，部署在 EO 节点，用于 EO 节点对服务端证书进行认证。在作为入参使用时，不填写表示保持原有配置。",
+          "example": "无",
+          "member": "OriginCertificateVerify",
+          "name": "UpstreamCertificateVerify",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -27955,7 +30297,7 @@
       "usage": "both"
     },
     "Zone": {
-      "document": "站点信息",
+      "document": "站点详情。",
       "members": [
         {
           "disabled": false,
@@ -27979,37 +30321,27 @@
         },
         {
           "disabled": false,
-          "document": "站点当前使用的 NS 列表。",
-          "example": "[\"ns1.example.com.\",\"ns2.example.com.\"]",
+          "document": "同名站点标识。允许输入数字、英文、\".\" 、\"-\" 和 \"_\" 组合，长度 200 个字符以内。",
+          "example": "zone-example",
           "member": "string",
-          "name": "OriginalNameServers",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "腾讯云分配的 NS 列表。",
-          "example": "[\"ns1.teodns.com.\",\"\"ns2.teodns.com.\"]",
-          "member": "string",
-          "name": "NameServers",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "站点状态，取值有：\n<li> active：NS 已切换； </li>\n<li> pending：NS 未切换；</li>\n<li> moved：NS 已切走；</li>\n<li> deactivated：被封禁。 </li>\n<li> initializing：待绑定套餐。 </li>",
-          "example": "active",
-          "member": "string",
-          "name": "Status",
+          "name": "AliasZoneName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>",
+          "document": "站点加速区域，取值有：\n<li> global：全球可用区；</li>\n<li> mainland：中国大陆可用区；</li>\n<li> overseas：全球可用区（不含中国大陆）。</li>",
+          "example": "overseas",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点接入类型，取值有：\n<li> full：NS 接入类型；</li>\n<li> partial：CNAME 接入类型；</li>\n<li> noDomainAccess：无域名接入类型；</li>\n<li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>\n<li> pages：Pages 类型；</li>\n<li> ai：边缘推理接入类型。</li>",
           "example": "full",
           "member": "string",
           "name": "Type",
@@ -28019,37 +30351,7 @@
         },
         {
           "disabled": false,
-          "document": "站点是否关闭。",
-          "example": "false",
-          "member": "bool",
-          "name": "Paused",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否开启 CNAME 加速，取值有：\n<li> enabled：开启；</li>\n<li> disabled：关闭。</li>",
-          "example": "enabled",
-          "member": "string",
-          "name": "CnameSpeedUp",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CNAME 接入状态，取值有：\n<li> finished：站点已验证；</li>\n<li> pending：站点验证中。</li>",
-          "example": "finished",
-          "member": "string",
-          "name": "CnameStatus",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "资源标签列表。",
+          "document": "站点关联的标签。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -28065,6 +30367,36 @@
           "name": "Resources",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NS 类型站点详情。仅当 Type = full 时返回值。",
+          "example": "无",
+          "member": "NSDetail",
+          "name": "NSDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CNAME 类型站点详情。仅当 Type = partial 时返回值。",
+          "example": "无",
+          "member": "CNAMEDetail",
+          "name": "CNAMEDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNSPod 托管类型站点详情。仅当 Type = dnsPodAccess 时返回值。",
+          "example": "无",
+          "member": "DNSPodDetail",
+          "name": "DNSPodDetail",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -28089,33 +30421,23 @@
         },
         {
           "disabled": false,
-          "document": "站点接入地域，取值有：\n<li> global：全球；</li>\n<li> mainland：中国大陆；</li>\n<li> overseas：境外区域。</li>",
-          "example": "overseas",
+          "document": "站点状态，取值有：\n<li> active：NS 已切换； </li>\n<li> pending：NS 未切换；</li>\n<li> moved：NS 已切走；</li>\n<li> deactivated：被封禁。 </li>\n<li> initializing：待绑定套餐。 </li>",
+          "example": "active",
           "member": "string",
-          "name": "Area",
+          "name": "Status",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户自定义 NS 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "VanityNameServers",
-          "name": "VanityNameServers",
+          "document": "CNAME 接入状态，取值有：\n<li> finished：站点已验证；</li>\n<li> pending：站点验证中。</li>",
+          "example": "finished",
+          "member": "string",
+          "name": "CnameStatus",
           "output_required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "用户自定义 NS IP 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "VanityNameServersIps",
-          "name": "VanityNameServersIps",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -28125,26 +30447,6 @@
           "name": "ActiveStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "站点别名。数字、英文、-和_组合，限制20个字符。",
-          "example": "zone-example",
-          "member": "string",
-          "name": "AliasZoneName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否伪站点，取值有：\n<li> 0：非伪站点；</li>\n<li> 1：伪站点。</li>",
-          "example": "1",
-          "member": "int64",
-          "name": "IsFake",
-          "output_required": true,
-          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -28159,13 +30461,93 @@
         },
         {
           "disabled": false,
-          "document": "归属权验证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "站点是否关闭。",
+          "example": "false",
+          "member": "bool",
+          "name": "Paused",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否伪站点（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：\n<li> 0：非伪站点；</li>\n<li> 1：伪站点。</li>\n",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 CNAME 加速（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段），取值有：\n<li> enabled：开启；</li>\n<li> disabled：关闭。</li>",
+          "example": "enabled",
+          "member": "string",
+          "name": "CnameSpeedUp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归属权验证信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OwnershipVerification",
           "name": "OwnershipVerification",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "站点当前使用的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）",
+          "example": "[\"ns1.example.com.\",\"ns2.example.com.\"]",
+          "member": "string",
+          "name": "OriginalNameServers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云分配的 NS 列表。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）",
+          "example": "[\"ns1.teodns.com.\",\"ns2.teodns.com.\"]",
+          "member": "string",
+          "name": "NameServers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义 NS 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VanityNameServers",
+          "name": "VanityNameServers",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义 NS IP 信息。（该字段为历史保留字段，已不再维护，请根据站点类型参考对应字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VanityNameServersIps",
+          "name": "VanityNameServersIps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本管理配置组工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。",
+          "example": "无",
+          "member": "ConfigGroupWorkModeInfo",
+          "name": "WorkModeInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -28388,6 +30770,17 @@
           "example": "无",
           "member": "GrpcParameters",
           "name": "Grpc",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络错误日志记录配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkErrorLoggingParameters",
+          "name": "NetworkErrorLogging",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -28682,6 +31075,16 @@
           "example": "无",
           "member": "Grpc",
           "name": "Grpc",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络错误日志记录配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkErrorLogging",
+          "name": "NetworkErrorLogging",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true

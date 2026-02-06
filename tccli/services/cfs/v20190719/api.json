@@ -147,13 +147,6 @@
       "output": "DeleteMigrationTaskResponse",
       "status": "online"
     },
-    "DeleteMountTarget": {
-      "document": "本接口（DeleteMountTarget）用于删除挂载点\n说明：2022年6月1日之后创建的CFS文件系统删除时无需单独调用删除挂载点操作，此API仅适用老版本的CFS实例。",
-      "input": "DeleteMountTargetRequest",
-      "name": "删除挂载点",
-      "output": "DeleteMountTargetResponse",
-      "status": "online"
-    },
     "DeleteUserQuota": {
       "document": "指定条件删除文件系统配额（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）",
       "input": "DeleteUserQuotaRequest",
@@ -239,7 +232,7 @@
       "status": "online"
     },
     "DescribeLifecycleDataTask": {
-      "document": "查询生命周期任务的接口",
+      "document": "查询生命周期任务的接口。仅支持查询最近三个月内的任务数据。",
       "input": "DescribeLifecycleDataTaskRequest",
       "name": "查询生命周期任务的接口",
       "output": "DescribeLifecycleDataTaskResponse",
@@ -281,7 +274,7 @@
       "status": "online"
     },
     "DoDirectoryOperation": {
-      "document": "文件系统目录操作接口",
+      "document": "文件系统目录操作接口。当前仅 Turbo 系列文件系统支持调用此接口进行目录操作，通用系列文件系统（含增强型）不支持调用。",
       "input": "DoDirectoryOperationRequest",
       "name": "目录操作接口",
       "output": "DoDirectoryOperationResponse",
@@ -625,7 +618,7 @@
         {
           "disabled": false,
           "document": "文件系统信息",
-          "example": "112",
+          "example": "无",
           "member": "FileSystemByPolicy",
           "name": "FileSystems",
           "output_required": true,
@@ -660,6 +653,16 @@
           "name": "CrossRegionsAliveDays",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照策略标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -697,50 +700,50 @@
         {
           "disabled": false,
           "document": "区域名称，如“ap-beijing”",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域名称，如“bj”",
-          "example": "",
+          "example": "gz",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE",
-          "example": "",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "RegionStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区数组",
-          "example": "",
+          "example": "无",
           "member": "AvailableZone",
           "name": "Zones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域中文名称，如“广州”",
-          "example": "",
+          "example": "广州区",
           "member": "string",
           "name": "RegionCnName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1060,6 +1063,15 @@
           "name": "IntervalDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "快照策略标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1388,7 +1400,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1398,7 +1410,7 @@
           "example": "test_pgroup",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1408,7 +1420,7 @@
           "example": "test_pgroup_desc",
           "member": "string",
           "name": "DescInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1418,7 +1430,7 @@
           "example": "0",
           "member": "int64",
           "name": "BindCfsNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1428,7 +1440,7 @@
           "example": "2019-7-20 10:25:33",
           "member": "string",
           "name": "CDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1661,7 +1673,7 @@
         {
           "disabled": false,
           "document": "文件系统内目标路径",
-          "example": "/cfs/123",
+          "example": "/cfs/12a3",
           "member": "string",
           "name": "TargetPath",
           "required": true,
@@ -1691,6 +1703,51 @@
           "example": "default",
           "member": "string",
           "name": "DataFlowName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 0：不开启自动更新  1：开启自动更新",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRefresh",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
+          "member": "string",
+          "name": "UserKafkaTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户名.示例值：name",
+          "example": "name",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户密码。默认${SecretId}#${SecretKey}。",
+          "example": "xbxcxdxexcxdxa",
+          "member": "string",
+          "name": "Password",
           "required": false,
           "type": "string"
         }
@@ -1766,6 +1823,15 @@
           "name": "DataFlowId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。  ture：覆盖  false：不覆盖（同时也不会释放热存数据）  为空时，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOverwrite",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2112,7 +2178,7 @@
         {
           "disabled": false,
           "document": "目录路径",
-          "example": "/cfs/123",
+          "example": "/cfs/defaule-test",
           "member": "string",
           "name": "TargetPath",
           "output_required": true,
@@ -2148,6 +2214,66 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：不开启自动更新\n\n1：开启自动更新",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRefresh",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
+          "member": "string",
+          "name": "UserKafkaTopic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户名",
+          "example": "name",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动刷新的状态，available：已生效\npending：配置中\nunavailable：失效",
+          "example": "pending",
+          "member": "string",
+          "name": "AutoRefreshStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动刷新开启时间",
+          "example": "2024-10-30 12:43",
+          "member": "string",
+          "name": "AutoRefreshTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2158,7 +2284,7 @@
         {
           "disabled": false,
           "document": "快照策略ID，查询快照策略接口获取,[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208)",
-          "example": "asp-123abc",
+          "example": "asp-xxxxx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "required": true,
@@ -2173,7 +2299,7 @@
         {
           "disabled": false,
           "document": "快照策略ID",
-          "example": "asp-xx",
+          "example": "asp-xxxxx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "output_required": true,
@@ -2445,42 +2571,6 @@
     },
     "DeleteMigrationTaskResponse": {
       "document": "DeleteMigrationTask返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteMountTargetRequest": {
-      "document": "DeleteMountTarget请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "文件系统 ID",
-          "example": "cfs-12345",
-          "member": "string",
-          "name": "FileSystemId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "挂载点 ID",
-          "example": "mount-12345",
-          "member": "string",
-          "name": "MountTargetId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteMountTargetResponse": {
-      "document": "DeleteMountTarget返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3203,7 +3293,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据。",
           "example": "2024-11-19 10:15:37",
           "member": "string",
           "name": "StartTime",
@@ -3212,7 +3302,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。",
           "example": "2024-10-19 10:15:37",
           "member": "string",
           "name": "EndTime",
@@ -3221,7 +3311,7 @@
         },
         {
           "disabled": false,
-          "document": "\t任务ID",
+          "document": "任务ID",
           "example": "c1a2b3f4",
           "member": "string",
           "name": "TaskId",
@@ -3254,6 +3344,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统版本；v3.1: pcfs/hifs v4.0:Turbo",
+          "example": "v3.1",
+          "member": "string",
+          "name": "CfsVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3649,7 +3748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统Id",
+          "document": "文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。",
           "example": "cfs-5xxxyyyzz",
           "member": "string",
           "name": "FileSystemId",
@@ -3658,7 +3757,7 @@
         },
         {
           "disabled": false,
-          "document": "create：创建目录  check：确认目录是否存在",
+          "document": "create：创建目录，等同于mkdir。\ncheck：确认目录是否存在，等同于stat。\nmove：对文件/目录进行重命名，等同于mv。",
           "example": "check",
           "member": "string",
           "name": "OpetationType",
@@ -3676,10 +3775,19 @@
         },
         {
           "disabled": false,
-          "document": "创建目录的权限，若不传，默认为0755  若Operation Type为check，此值无实际意义",
+          "document": "创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。",
           "example": "0777",
           "member": "string",
           "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mv 操作的目标目录名称。路径必须以/cfs/开头",
+          "example": "/cfs/testa",
+          "member": "string",
+          "name": "DestPath",
           "required": false,
           "type": "string"
         }
@@ -3691,7 +3799,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1:成功  0:失败  创建目录的操作，1表示创建成功，0表示创建失败。  确认目录是否存在的操作，1表示目录存在，0表示目录不存在。  说明：创建目录操作若目录已存在，也会返回创建成功。",
+          "document": "1:成功 0:失败。创建目录的操作，1表示创建成功，0表示创建失败。  确认目录是否存在的操作，1表示目录存在，0表示目录不存在。此外，创建目录操作若目录已存在，也会返回创建成功。",
           "example": "1",
           "member": "int64",
           "name": "Result",
@@ -4386,6 +4494,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。\n\nture：覆盖\n\nfalse：不覆盖（同时也不会释放热存数据）\n为空时，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOverwrite",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4451,7 +4570,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据转储后的存储类型",
+          "document": "数据转储后的存储类型。其中：InfrequentAccess：低频介质存储；ColdStorage：冷存储。",
           "example": "InfrequentAccess",
           "member": "string",
           "name": "StorageType",
@@ -4462,7 +4581,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储文件类型",
+          "document": "数据转储文件类型。其中，BIG_FILE：超大文件；STD_FILE：普通文件；SMALL_FILE：小文件；ALL：所有文件。",
           "example": "All",
           "member": "string",
           "name": "FileType",
@@ -4473,7 +4592,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储行为",
+          "document": "数据转储行为。其中，Archive：沉降；Noarchive：不沉降。",
           "example": "Archive",
           "member": "string",
           "name": "Action",
@@ -4484,7 +4603,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DEFAULT_ATIME_14",
           "member": "string",
           "name": "Interval",
@@ -4495,7 +4614,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储文件最大规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1G",
           "member": "string",
           "name": "FileMaxSize",
@@ -4506,7 +4625,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储文件最小规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1M",
           "member": "string",
           "name": "FileMinSize",
@@ -4514,6 +4633,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略类型",
+          "example": "SmartTiering",
+          "member": "string",
+          "name": "PolicyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值范围[10-90]",
+          "example": "90",
+          "member": "uint64",
+          "name": "ExpireThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值范围[10-90]",
+          "example": "80",
+          "member": "uint64",
+          "name": "TargetThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。\n\nture：覆盖\n\nfalse：不覆盖（同时也不会释放热存数据）\n\n为空时，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOverwrite",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4831,6 +4994,51 @@
           "name": "SecretKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
+          "member": "string",
+          "name": "UserKafkaTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "name",
+          "example": "Kafka消费用户名",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户密码",
+          "example": "axxgbadga",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元数据增量更新开关；1开启，0关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRefresh",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5279,6 +5487,7 @@
           "example": "cfs-4xxxxxx",
           "member": "string",
           "name": "FileSystemId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5289,7 +5498,19 @@
           "example": "/data/log/001/",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据流动Id",
+          "example": "cfs-dataflow-xxxxxxxx",
+          "member": "string",
+          "name": "DataFlowId",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5448,7 +5669,7 @@
           "example": "creating",
           "member": "string",
           "name": "CfsServiceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6121,7 +6342,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统ID，目前仅支持标准型文件系统。该参数通过查询文件系统列表获取",
+          "document": "文件系统 ID，此功能需要开白使用，请[提交工单](https://console.cloud.tencent.com/workorder/category?from=ticket-tab)进行申请。当前仅支持通用标准型文件系统设置存储容量上限。该参数通过[查询文件系统](https://cloud.tencent.com/document/product/582/38170)获取。",
           "example": "cfs-abc12345",
           "member": "string",
           "name": "FileSystemId",

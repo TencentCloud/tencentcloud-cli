@@ -7,11 +7,25 @@
       "output": "CheckMigrateIndexMetaDataResponse",
       "status": "online"
     },
+    "CreateAutoBackUpStrategy": {
+      "document": "新建自动备份快照策略",
+      "input": "CreateAutoBackUpStrategyRequest",
+      "name": "新建自动备份快照策略",
+      "output": "CreateAutoBackUpStrategyResponse",
+      "status": "online"
+    },
     "CreateClusterSnapshot": {
       "document": "集群快照手动创建",
       "input": "CreateClusterSnapshotRequest",
       "name": "创建集群快照",
       "output": "CreateClusterSnapshotResponse",
+      "status": "online"
+    },
+    "CreateCollector": {
+      "document": "用于创建Beats采集器",
+      "input": "CreateCollectorRequest",
+      "name": "创建Beats采集器",
+      "output": "CreateCollectorResponse",
       "status": "online"
     },
     "CreateCosMigrateToServerlessInstance": {
@@ -54,6 +68,13 @@
       "input": "CreateServerlessSpaceV2Request",
       "name": "创建Serverless索引项目空间(new)",
       "output": "CreateServerlessSpaceV2Response",
+      "status": "online"
+    },
+    "DeleteAutoBackUpStrategy": {
+      "document": "删除自动备份快照策略",
+      "input": "DeleteAutoBackUpStrategyRequest",
+      "name": "删除自动备份快照策略",
+      "output": "DeleteAutoBackUpStrategyResponse",
       "status": "online"
     },
     "DeleteClusterSnapshot": {
@@ -103,6 +124,13 @@
       "input": "DeleteServerlessSpaceUserRequest",
       "name": "删除Serverless空间子用户",
       "output": "DeleteServerlessSpaceUserResponse",
+      "status": "online"
+    },
+    "DescribeAutoBackUpStrategy": {
+      "document": "获取自动备份快照策略信息",
+      "input": "DescribeAutoBackUpStrategyRequest",
+      "name": "获取快照自动备份策略",
+      "output": "DescribeAutoBackUpStrategyResponse",
       "status": "online"
     },
     "DescribeClusterSnapshot": {
@@ -245,11 +273,25 @@
       "output": "DiagnoseInstanceResponse",
       "status": "online"
     },
+    "ExportIpTraceLog": {
+      "document": "查询IP溯源日志原始数据",
+      "input": "ExportIpTraceLogRequest",
+      "name": "导出IP溯源日志",
+      "output": "ExportIpTraceLogResponse",
+      "status": "online"
+    },
     "GetDiagnoseSettings": {
       "document": "查看智能运维配置",
       "input": "GetDiagnoseSettingsRequest",
       "name": "查看智能运维配置",
       "output": "GetDiagnoseSettingsResponse",
+      "status": "online"
+    },
+    "GetIpTraceStatus": {
+      "document": "查询IP溯源状态",
+      "input": "GetIpTraceStatusRequest",
+      "name": "查询集群IP溯源状态",
+      "output": "GetIpTraceStatusResponse",
       "status": "online"
     },
     "GetRequestTargetNodeTypes": {
@@ -273,11 +315,32 @@
       "output": "InstallInstanceModelResponse",
       "status": "online"
     },
+    "ModifyAutoBackUpCommonInfo": {
+      "document": "修改自动备份快照策略公共信息",
+      "input": "ModifyAutoBackUpCommonInfoRequest",
+      "name": "修改自动备份快照策略公共信息",
+      "output": "ModifyAutoBackUpCommonInfoResponse",
+      "status": "online"
+    },
+    "ModifyAutoBackUpStrategy": {
+      "document": "修改自动备份快照策略",
+      "input": "ModifyAutoBackUpStrategyRequest",
+      "name": "修改自动备份快照策略",
+      "output": "ModifyAutoBackUpStrategyResponse",
+      "status": "online"
+    },
     "ModifyEsVipSecurityGroup": {
       "document": "修改绑定VIP的安全组，传安全组id列表",
       "input": "ModifyEsVipSecurityGroupRequest",
       "name": "修改集群VIP绑定的安全组",
       "output": "ModifyEsVipSecurityGroupResponse",
+      "status": "online"
+    },
+    "QueryIpTraceLog": {
+      "document": "查询IP溯源日志",
+      "input": "QueryIpTraceLogRequest",
+      "name": "查询IP溯源日志",
+      "output": "QueryIpTraceLogResponse",
       "status": "online"
     },
     "RestartInstance": {
@@ -362,6 +425,13 @@
       "input": "UpdateInstanceRequest",
       "name": "更新ES集群实例",
       "output": "UpdateInstanceResponse",
+      "status": "online"
+    },
+    "UpdateIpTraceStatus": {
+      "document": "更新ES集群IP溯源状态",
+      "input": "UpdateIpTraceStatusRequest",
+      "name": "更新IP溯源状态",
+      "output": "UpdateIpTraceStatusResponse",
       "status": "online"
     },
     "UpdateJdk": {
@@ -911,6 +981,341 @@
       ],
       "usage": "out"
     },
+    "CollectorConfigInfo": {
+      "document": "采集器配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器的主配置文件名，如filebeat.yml，metricbeat.yml等",
+          "example": "filebeat.yml",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器的主配置文件内容",
+          "example": "input",
+          "member": "string",
+          "name": "FileContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CollectorOutputInstance": {
+      "document": "采集器输出的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器输出的实例类型（支持elasticsearch、logstash）",
+          "example": "elasticsearch",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出的实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到的ES实例的用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "ESUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到的ES实例的密码",
+          "example": "hiQ7*******hjko",
+          "member": "string",
+          "name": "ESUserPasswd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableMonitoring",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableDashboard",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的vip",
+          "example": "1.1.1.1:9092",
+          "member": "string",
+          "name": "KafkaEndpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例中的Topic",
+          "example": "test_topic",
+          "member": "string",
+          "name": "KafkaTopic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的版本号",
+          "example": "1.1.1",
+          "member": "string",
+          "name": "KafkaVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic id",
+          "example": "\t topic-xxxx",
+          "member": "string",
+          "name": "SesTopicId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic name",
+          "example": "123232-xxxxx",
+          "member": "string",
+          "name": "SesTopicName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic address",
+          "example": "dip.tencentcloudmq.com:6000",
+          "member": "string",
+          "name": "SesTopicAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "iu8n1yd44zln",
+          "member": "string",
+          "name": "SesTopicUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "hiQ7*******hjko",
+          "member": "string",
+          "name": "SesTopicPasswd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "5044",
+          "member": "uint64",
+          "name": "LogstashListenPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CollectorTarget": {
+      "document": "容器日志采集配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集配置名称",
+          "example": "testnew",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间列表，包括Include包含和Exclude不包含选项，两者都为空时等同于全部命名空间(包含当前所有的以及未来创建的)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "Namespaces",
+          "name": "Namespaces",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PodLabel",
+          "name": "PodLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器名称，支持小写字母、数字、连接符-、下划线_，最多支持63个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ES索引名称前缀，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称的前缀，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "IndexPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志内容过滤，以逗号分隔，支持大小写字母、数字、连接符-、下划线_以及逗号，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a,b",
+          "member": "string",
+          "name": "LogFilters",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高级配置，可自定义采集规则，最多支持2048个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx12se\"\"",
+          "member": "string",
+          "name": "ConfigContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的Topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "KafkaTopic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ES索引名称，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "niginx",
+          "member": "string",
+          "name": "IndexAlias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "container",
+          "member": "string",
+          "name": "InputType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志采集host路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/log",
+          "member": "string",
+          "name": "InputPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "inputs.tail_files\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "InputsTailFiles",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CommonIndexInfo": {
       "document": "普通索引信息列表",
       "members": [
@@ -966,6 +1371,17 @@
         },
         {
           "disabled": false,
+          "document": "备份快照前缀",
+          "example": "es-xxxx",
+          "member": "string",
+          "name": "SnapshotName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "0 腾讯云仓库; 1 客户仓库",
           "example": "0",
           "member": "uint64",
@@ -977,10 +1393,32 @@
         },
         {
           "disabled": false,
+          "document": "托管快照仓库名称",
+          "example": "ES_AUTO_BACKUP",
+          "member": "string",
+          "name": "PaasEsRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "客户快照仓库名称",
           "example": "testRepository",
           "member": "string",
           "name": "UserEsRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos存储文件夹目录",
+          "example": "/es_backup/es-xxxx",
+          "member": "string",
+          "name": "CosBasePath",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1006,6 +1444,105 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份锁定 0 不锁定; 1 锁定",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosRetention",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "锁定截止日期 2022-12-10T08:34:48.000Z",
+          "example": "2022-12-10T08:34:48.000Z",
+          "member": "string",
+          "name": "RetainUntilDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "锁定宽限期",
+          "example": "2",
+          "member": "uint64",
+          "name": "RetentionGraceTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份 0 不跨地域; 1 跨地域",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoteCos",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份地域名称 ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RemoteCosRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "mypolicy",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份索引列表，如果不填表示备份所有索引",
+          "example": "*",
+          "member": "string",
+          "name": "Indices",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos多AZ备份 0 单AZ; 1 多AZ",
+          "example": "0",
+          "member": "uint64",
+          "name": "MultiAz",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略创建时间",
+          "example": "2022-12-10 08:34:48",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1087,6 +1624,52 @@
       ],
       "usage": "out"
     },
+    "CreateAutoBackUpStrategyRequest": {
+      "document": "CreateAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackup",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoBackUpStrategyResponse": {
+      "document": "CreateAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 成功; false 失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClusterSnapshotRequest": {
       "document": "CreateClusterSnapshot请求参数结构体",
       "members": [
@@ -1116,6 +1699,87 @@
           "name": "Indices",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0 腾讯云仓库; 1 客户仓库",
+          "example": "0",
+          "member": "uint64",
+          "name": "EsRepositoryType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户快照仓库名称",
+          "example": "UserEsRepository",
+          "member": "string",
+          "name": "UserEsRepository",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天",
+          "example": "3",
+          "member": "uint64",
+          "name": "StorageDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备份锁定 0 不锁定; 1 锁定",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "锁定截止日期 2022-12-10T08:34:48.000Z",
+          "example": "2022-12-10T08:34:48.000Z",
+          "member": "string",
+          "name": "RetainUntilDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "锁定宽限期,单位天",
+          "example": "7",
+          "member": "uint64",
+          "name": "RetentionGraceTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份 0 不跨地域; 1 跨地域",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoteCos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份地域名称 ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RemoteCosRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos多AZ备份 0 单AZ; 1 多AZ",
+          "example": "0",
+          "member": "uint64",
+          "name": "MultiAz",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1132,6 +1796,124 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCollectorRequest": {
+      "document": "CreateCollector请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "test",
+          "member": "string",
+          "name": "CollectorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器版本（支持\"6.8.15\"、\"7.10.2\"）",
+          "example": "7.10.2",
+          "member": "string",
+          "name": "CollectorVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器类型（支持filebeat、metricbeat、heartbeat、auditbeat、packetbeat）",
+          "example": "filebeat",
+          "member": "string",
+          "name": "CollectorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器输出的ES实例信息",
+          "example": "无",
+          "member": "CollectorOutputInstance",
+          "name": "OutputInstance",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "采集器配置",
+          "example": "无",
+          "member": "CollectorConfigInfo",
+          "name": "CollectorConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集器下发的CVM实例ID列表",
+          "example": "[\"ins-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CVMInstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集目标类型，CVM或者TKE",
+          "example": "TKE",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器集群ID，采集目标为TKE时必填",
+          "example": "cls-xxxxxxx",
+          "member": "string",
+          "name": "ContainerClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集器配置，采集目标为TKE时必填",
+          "example": "无",
+          "member": "CollectorTarget",
+          "name": "CollectorTargets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCollectorResponse": {
+      "document": "CreateCollector返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集器ID",
+          "example": "coll-xxxxxx",
+          "member": "string",
+          "name": "CollectorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1598,7 +2380,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启essd 增强型云盘",
+          "document": "硬盘额外性能",
           "example": "0",
           "member": "uint64",
           "name": "DiskEnhance",
@@ -1617,7 +2399,7 @@
         {
           "disabled": false,
           "document": "cdcId，使用cdc子网时传递",
-          "example": "cluster-xxxxxx\t",
+          "example": "cluster-xxxxxx",
           "member": "string",
           "name": "CdcId",
           "required": false,
@@ -1680,7 +2462,7 @@
         {
           "disabled": false,
           "document": "是否开启kibana公网访问，不传默认开启",
-          "example": "\"false\"",
+          "example": "false",
           "member": "string",
           "name": "EnableKibanaPublicAccess",
           "required": false,
@@ -2185,6 +2967,52 @@
       ],
       "usage": "both"
     },
+    "DeleteAutoBackUpStrategyRequest": {
+      "document": "DeleteAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "[\"mypolicy2\"]",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoBackUpStrategyResponse": {
+      "document": "DeleteAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 成功; false 失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterSnapshotRequest": {
       "document": "DeleteClusterSnapshot请求参数结构体",
       "members": [
@@ -2465,6 +3293,43 @@
       ],
       "type": "object"
     },
+    "DescribeAutoBackUpStrategyRequest": {
+      "document": "DescribeAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoBackUpStrategyResponse": {
+      "document": "DescribeAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackupList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterSnapshotRequest": {
       "document": "DescribeClusterSnapshot请求参数结构体",
       "members": [
@@ -2514,7 +3379,7 @@
         {
           "disabled": false,
           "document": "快照备份详情列表",
-          "example": "返回[]",
+          "example": "无",
           "member": "Snapshots",
           "name": "Snapshots",
           "output_required": false,
@@ -2880,6 +3745,51 @@
           "name": "OrderByType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志级别",
+          "example": "[\"INFO\"]",
+          "member": "string",
+          "name": "LogLevels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "[\"167890354315\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引名",
+          "example": "index",
+          "member": "string",
+          "name": "IndexName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引分片",
+          "example": "[index][0]",
+          "member": "string",
+          "name": "ShardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志查询耗时",
+          "example": "100",
+          "member": "uint64",
+          "name": "QueryCost",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2900,7 +3810,7 @@
         {
           "disabled": false,
           "document": "日志详细信息列表",
-          "example": "[{}]",
+          "example": "无",
           "member": "InstanceLog",
           "name": "InstanceLogList",
           "output_required": true,
@@ -3539,7 +4449,7 @@
         {
           "disabled": false,
           "document": "实例名称列表",
-          "example": "testnew",
+          "example": "[\"my-logstash-1\"]",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
@@ -3584,7 +4494,7 @@
         {
           "disabled": false,
           "document": "VpcId 筛选项",
-          "example": "vpc-imhajivf",
+          "example": "[\"vpc-imhajivf\"]",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -3696,7 +4606,7 @@
         {
           "disabled": false,
           "document": "索引名",
-          "example": "[\"test\"]",
+          "example": "[\"abc-abcdefgh\"]",
           "member": "string",
           "name": "IndexNames",
           "required": false,
@@ -3750,7 +4660,7 @@
         {
           "disabled": false,
           "document": "索引空间ID列表",
-          "example": "[space-12345]",
+          "example": "[\"space-13489\"]",
           "member": "string",
           "name": "SpaceIds",
           "required": false,
@@ -4220,7 +5130,7 @@
         {
           "disabled": false,
           "document": "cos 快照信息列表",
-          "example": "[{\"CosBucket\":\"es-ap-beijing\"}]",
+          "example": "无",
           "member": "CosSnapShotInfo",
           "name": "CosSnapshotInfoList",
           "output_required": false,
@@ -5351,6 +6261,142 @@
       ],
       "usage": "in"
     },
+    "ExportIpTraceLogRequest": {
+      "document": "ExportIpTraceLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ES集群ID",
+          "example": "es-xasdsfsa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "访问IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Request/Response 请求/返回, 非必填",
+          "example": "[\"Request\"]",
+          "member": "string",
+          "name": "TraceType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Public/Private 公网访问/内网访问, 非必填",
+          "example": "[\"Public\"]",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填",
+          "example": "[\"OK\",\"GET\"]",
+          "member": "string",
+          "name": "ReqTypeOrRspStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键字模糊查询，支持Lucene Query String",
+          "example": "message:abc",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "uri搜索",
+          "example": "/index/_search",
+          "member": "string",
+          "name": "Uri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "NodeIp",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportIpTraceLogResponse": {
+      "document": "ExportIpTraceLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP时间列表",
+          "example": "无",
+          "member": "IpTimePair",
+          "name": "IpTraceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Failures": {
       "document": "索引备份失败的数据结构",
       "members": [
@@ -5478,6 +6524,93 @@
       ],
       "type": "object"
     },
+    "GetIpTraceStatusRequest": {
+      "document": "GetIpTraceStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "es-xassddsa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetIpTraceStatusResponse": {
+      "document": "GetIpTraceStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启IP溯源",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenIpTrace",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源开启持续时间，单位：秒",
+          "example": "300",
+          "member": "int64",
+          "name": "DurationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源配置",
+          "example": "无",
+          "member": "IpTraceConfig",
+          "name": "IpTraceConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次执行时间",
+          "example": "2024-12-28 14:35:31",
+          "member": "string",
+          "name": "LastStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次关闭时间",
+          "example": "2024-12-29 14:35:31",
+          "member": "string",
+          "name": "LastEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤Kibana节点IP",
+          "example": "false",
+          "member": "bool",
+          "name": "FilterKibanaIp",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRequestTargetNodeTypesRequest": {
       "document": "GetRequestTargetNodeTypes请求参数结构体",
       "members": [
@@ -5514,6 +6647,34 @@
         }
       ],
       "type": "object"
+    },
+    "GpuInfo": {
+      "document": "节点Gpu信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Gpu块数",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Gpu类型",
+          "example": "Nvidia T4",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "IndexMetaField": {
       "document": "索引元数据字段",
@@ -5977,7 +7138,7 @@
         {
           "disabled": false,
           "document": "客户指定安装的模型名称，可为空，默认为模型文件名",
-          "example": "[******]",
+          "example": "[\"test1\"]",
           "member": "string",
           "name": "ModelNames",
           "required": false,
@@ -5991,6 +7152,42 @@
           "name": "TaskTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "HuggingFace模型名称",
+          "example": "[\"BAAI/bge-base-zh-v1.5\"]",
+          "member": "string",
+          "name": "HuggingFaceModelNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型描述",
+          "example": "bge-v2-m3",
+          "member": "string",
+          "name": "ModelDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型来源：UserModel、HuggingFace和PlatformModel",
+          "example": "PlatformModel",
+          "member": "string",
+          "name": "ModelSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已上传的模型路径",
+          "example": "[\"/UserModels/common/bge-reranker-v2-m3.tar.gz\"]",
+          "member": "string",
+          "name": "UploadedCosPaths",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6001,7 +7198,7 @@
         {
           "disabled": false,
           "document": "发起异步流程的flowId",
-          "example": "1111111",
+          "example": "1725",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
@@ -6979,6 +8176,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为CDZLite可用区",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCdzLite",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群内网tcp地址",
+          "example": "10.1.2.3:9300",
+          "member": "string",
+          "name": "EsPrivateTcpUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7035,9 +8252,277 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引名",
+          "example": "index",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引分片",
+          "example": "[index][0]",
+          "member": "string",
+          "name": "Shard",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引查询耗时",
+          "example": "100",
+          "member": "string",
+          "name": "QueryCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "IpTimePair": {
+      "document": "节点IP、访问IP、访问时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳，毫秒",
+          "example": "173122344",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IpTraceConfig": {
+      "document": "IP溯源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRequest",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableResponse",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求消息体溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRequestBody",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回消息体溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableResponseBody",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIpInclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIpExclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除uri",
+          "example": "[\"/idx/_search*\"]",
+          "member": "string",
+          "name": "UriInclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含uri",
+          "example": "[\"/abc/_search*\"]",
+          "member": "string",
+          "name": "UriExclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IpTraceLogEntry": {
+      "document": "IP溯源日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "RemoteIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "溯源类型rsp/req",
+          "example": "rsp",
+          "member": "string",
+          "name": "TraceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问网络类型，公网/私网",
+          "example": "Public",
+          "member": "string",
+          "name": "NetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始消息",
+          "example": "[o.e.h.HttpTracer ] [1720516351009725632] [147501421][null][OK][application/json; charset=UTF-8][308090] sent response to [Netty4HttpChannel{localAddress=/9.118.68.121:9200, remoteAddress=/10.13.90.41:58078}] success [false]",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问uri",
+          "example": "/idx/_search",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "null",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求类型或返回状态",
+          "example": "OK",
+          "member": "string",
+          "name": "ReqTypeOrRspStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "JobParam": {
       "document": "智能运维诊断参数",
@@ -8216,6 +9701,78 @@
       ],
       "usage": "out"
     },
+    "ModifyAutoBackUpCommonInfoRequest": {
+      "document": "ModifyAutoBackUpCommonInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyAutoBackUpCommonInfoResponse": {
+      "document": "ModifyAutoBackUpCommonInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoBackUpStrategyRequest": {
+      "document": "ModifyAutoBackUpStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-m6d4maox",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前策略名称",
+          "example": "mypolicy2",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackup",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoBackUpStrategyResponse": {
+      "document": "ModifyAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 成功; false 失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEsVipSecurityGroupRequest": {
       "document": "ModifyEsVipSecurityGroup请求参数结构体",
       "members": [
@@ -8251,6 +9808,34 @@
         }
       ],
       "type": "object"
+    },
+    "Namespaces": {
+      "document": "TKE命名空间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含的命名空间的列表，单个命名空间支持小写字母、数字、连接符-、下划线_，最多支持63个字符",
+          "example": "[\"default\",\"kube-node-lease\",\"kube-public\",\"kube-system\"]",
+          "member": "string",
+          "name": "Include",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不包含的命名空间列表，单个命名空间支持小写字母、数字、连接符-、下划线_，最多支持63个字符",
+          "example": "[\"ac\"]",
+          "member": "string",
+          "name": "Exclude",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NodeInfo": {
       "document": "集群中一种节点类型（如热数据节点，冷数据节点，专用主节点等）的规格描述信息，包括节点类型，节点个数，节点规格，磁盘类型，磁盘大小等, Type不指定时默认为热数据节点；如果节点为master节点，则DiskType和DiskSize参数会被忽略（主节点无数据盘）",
@@ -8367,13 +9952,24 @@
         },
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬盘额外性能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DiskEnhance",
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点Gpu信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GpuInfo",
+          "name": "GpuInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -8925,6 +10521,30 @@
       ],
       "usage": "out"
     },
+    "OtherConfig": {
+      "document": "updateInstance使用的额外的EsConfig和JvmHeapConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "es的yml额外配置",
+          "example": "{\"indices.fielddata.cache.size\":\"16%\"}",
+          "member": "string",
+          "name": "EsConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es的jvm heap config",
+          "example": "{\"NodeGroupType\":\"hotData\",\"NewJvmHeap\":4099}",
+          "member": "string",
+          "name": "JvmHeapConfig",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "OutboundPublicAcl": {
       "document": "节点出站访问信息",
       "members": [
@@ -8949,6 +10569,32 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PodLabel": {
+      "document": "Pod标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键，支持大小写字母、数字、以及-_./，最多支持63个字符",
+          "example": "k8s-app",
+          "member": "string",
+          "name": "LabelKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值，支持大小写字母、数字、以及-_./，最多支持63个字符",
+          "example": "nginx",
+          "member": "string",
+          "name": "LabelValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8998,6 +10644,152 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryIpTraceLogRequest": {
+      "document": "QueryIpTraceLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ES集群ID",
+          "example": "es-xasdsfsa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "访问IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Request/Response 请求/返回, 非必填",
+          "example": "[\"Request\"]",
+          "member": "string",
+          "name": "TraceType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Public/Private 公网访问/内网访问, 非必填",
+          "example": "[\"Public\"]",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填",
+          "example": "[\"OK\",\"GET\"]",
+          "member": "string",
+          "name": "ReqTypeOrRspStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键字模糊查询，支持Lucene Query String",
+          "example": "message:abc",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Uri搜索",
+          "example": "/index/_search",
+          "member": "string",
+          "name": "Uri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "NodeIp",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryIpTraceLogResponse": {
+      "document": "QueryIpTraceLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "123",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源日志列表",
+          "example": "无",
+          "member": "IpTraceLogEntry",
+          "name": "IpTraceLogList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RestartInstanceRequest": {
       "document": "RestartInstance请求参数结构体",
@@ -9857,7 +11649,7 @@
         {
           "disabled": false,
           "document": "空间白名单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"WhiteIpList\":[\"127.0.0.1\"],\"BlackIpList\":[]}",
+          "example": "无",
           "member": "EsAcl",
           "name": "KibanaPublicAcl",
           "output_required": false,
@@ -9887,7 +11679,7 @@
         {
           "disabled": false,
           "document": "空间vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"VpcId\":\"vpc-xxxxxxx\",\"SubnetId\":\"subnet-xxxxxxx\",\"VpcUid\":11111111,\"SubnetUid\":11111111,\"AvailableIpAddressCount\":0}]",
+          "example": "无",
           "member": "VpcInfo",
           "name": "VpcInfo",
           "output_required": false,
@@ -9957,7 +11749,7 @@
         {
           "disabled": false,
           "document": "0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0:普通集群；1:T-Search集群",
+          "example": "0",
           "member": "int64",
           "name": "ClusterType",
           "output_required": false,
@@ -9967,12 +11759,32 @@
         {
           "disabled": false,
           "document": "空间标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "key:value",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启mcp服务",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableMcpAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mcp的访问地址",
+          "example": "http://ip:port/sse",
+          "member": "string",
+          "name": "McpAccess",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10234,7 +12046,7 @@
         {
           "disabled": false,
           "document": "备份失败的索引分片和失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{...}]",
+          "example": "无",
           "member": "Failures",
           "name": "Failures",
           "output_required": false,
@@ -10251,6 +12063,171 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 腾讯云仓库; 1 客户仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EsRepositoryType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管快照仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PaasEsRepository",
+          "member": "string",
+          "name": "PaasEsRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户快照仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UserEsRepository",
+          "member": "string",
+          "name": "UserEsRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "StorageDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动备份频率, 如果是0,则等效24\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "AutoBackupInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份锁定 0 不锁定; 1 锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosRetention",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锁定截止日期 2022-12-10T08:34:48.000Z\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-12-10T08:34:48.000Z",
+          "member": "string",
+          "name": "RetainUntilDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锁定宽限期,单位天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RetentionGraceTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已经备份锁定 0 不锁定; 1 锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsLocked",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份 0 不跨地域; 1 跨地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoteCos",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份地域名称 ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RemoteCosRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份加密 0 不加密; 1 加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosEncryption",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kms密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "das-asdasd-asda",
+          "member": "string",
+          "name": "KmsKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mypolicy",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cos多AZ备份 0 单AZ; 1 多AZ\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MultiAz",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -10766,7 +12743,7 @@
         {
           "disabled": false,
           "document": "可视化组件（Kibana、Cerebro）的公网访问策略",
-          "example": "{\"WhiteIpList\":[\"123.207.123.2xx\"]}",
+          "example": "无",
           "member": "EsAcl",
           "name": "EsAcl",
           "required": false,
@@ -10775,7 +12752,7 @@
         {
           "disabled": false,
           "document": "已废弃请使用NodeInfoList\n磁盘大小（单位GB）",
-          "example": "已废弃请使用NodeInfoList",
+          "example": "10",
           "member": "uint64",
           "name": "DiskSize",
           "required": false,
@@ -10793,7 +12770,7 @@
         {
           "disabled": false,
           "document": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个或5个）",
-          "example": "已废弃请使用NodeInfoList",
+          "example": "3",
           "member": "uint64",
           "name": "MasterNodeNum",
           "required": false,
@@ -10811,7 +12788,7 @@
         {
           "disabled": false,
           "document": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）",
-          "example": "已废弃请使用NodeInfoList",
+          "example": "3",
           "member": "uint64",
           "name": "MasterNodeDiskSize",
           "required": false,
@@ -10820,7 +12797,7 @@
         {
           "disabled": false,
           "document": "更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false",
-          "example": "已废弃请使用NodeInfoList",
+          "example": "false",
           "member": "bool",
           "name": "ForceRestart",
           "required": false,
@@ -10982,7 +12959,7 @@
         {
           "disabled": false,
           "document": "新增或修改的配置组信息",
-          "example": "{\"EsConfig\": \"{}\",\"Type\": \"ldap\"}",
+          "example": "无",
           "member": "EsConfigSetInfo",
           "name": "EsConfigSet",
           "required": false,
@@ -10991,7 +12968,7 @@
         {
           "disabled": false,
           "document": "可维护时间段",
-          "example": "{\"MoreInstances\":[\"es-8v1kjxxx\",\"es-pa9r7xxx\"],\"Periods\":[1,2,3,4,5,6,0],\"TimeEnd\":\"06:00\",\"TimeStart\":\"02:00\",\"TimeZone\":\"UTC+8\"}",
+          "example": "无",
           "member": "OperationDurationUpdated",
           "name": "OperationDuration",
           "required": false,
@@ -11131,6 +13108,15 @@
           "name": "AutoScaleDiskDeleteNodeTypeList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "其他附加配置，jvm或者yml",
+          "example": "无",
+          "member": "OtherConfig",
+          "name": "OtherConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11148,6 +13134,69 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIpTraceStatusRequest": {
+      "document": "UpdateIpTraceStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "es-xasdasd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源配置开关",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenIpTrace",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源开启持续时间，单位：秒",
+          "example": "300",
+          "member": "int64",
+          "name": "DurationTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源配置",
+          "example": "无",
+          "member": "IpTraceConfig",
+          "name": "IpTraceConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤kibana节点IP",
+          "example": "false",
+          "member": "bool",
+          "name": "FilterKibanaIp",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIpTraceStatusResponse": {
+      "document": "UpdateIpTraceStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11244,7 +13293,7 @@
         {
           "disabled": false,
           "document": "实例绑定的ES集群信息",
-          "example": "{\"ESInstanceId\":\"es-1ta7zxxx\"}",
+          "example": "无",
           "member": "LogstashBindedES",
           "name": "BindedES",
           "required": false,
@@ -11294,6 +13343,15 @@
           "name": "OperationDuration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "多可用区部署",
+          "example": "无",
+          "member": "ZoneDetail",
+          "name": "MultiZoneInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

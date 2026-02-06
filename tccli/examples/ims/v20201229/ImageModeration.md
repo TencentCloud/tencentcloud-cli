@@ -122,7 +122,7 @@ Output:
             }
         ],
         "RecognitionResults": [],
-        "Extra": "{\"TerrorInfo\":[{\"Label\":\"Terror\"}}"
+        "Extra": "{\"TerrorInfo\":[{\"Label\":\"Terror\"}]}"
     },
     "retcode": 0,
     "retmsg": "ok"

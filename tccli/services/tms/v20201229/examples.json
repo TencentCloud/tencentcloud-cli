@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CreateFinancialLLMTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFinancialLLMTask\n<公共请求参数>\n\n{\n    \"BizType\": \"finance\",\n    \"ContentType\": 2,\n    \"Content\": \"5oqK6ZKx5pS+5YWl6IKh5biC44CC6Ziz5YWJ5oC75Zyo6aOO6Zuo5ZCO77yM6IKh5biC55qE5b2i5Yq/5LiA5pem5aW96L2s77yM6YCa5bi45Lya5Zue5Y2H5b6X6Z2e5bi46L+F6YCf44CCIDIwMDjlubTogqHluILkvY7ov7fvvIzkvaDmnInmnLrkvJrku6XmnoHkvY7nmoTku7fmoLzkubDlhaXjgILkvaDnlKjkuI3nnYDlrabkuaDopoHmipXotYTlk6rlj6rogqHnpajvvJrmib7kuIDlrrbkvY7miYvnu63otLnnmoTlhbHlkIzln7rph5Hlhazlj7jvvIzku47ku5bku6zpgqPph4zkubDkuIDlj6rotLnnlKjkvY7jgIHliIbmlaPmipXotYTnmoTmjIfmlbDln7rph5HjgII=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"de73c404-936f-4ec4-bbfe-e262d79c01e7\",\n        \"TaskId\": \"3570106e-b156-45d9-8af5-99b46f7eb2f9\"\n    }\n}",
+        "title": "创建金融大模型审校任务：送审文本示例"
+      }
+    ],
+    "GetFinancialLLMTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFinancialLLMTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"17719984-030f-4b32-8828-61d3c21b3324\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"Label\": \"违规荐股荐基\",\n                \"Reasons\": [\n                    {\n                        \"Reason\": \"复核发现主审核模型误判。原审核认为 ...\",\n                        \"TargetText\": \"2008年股市低迷...\"\n                    }\n                ],\n                \"Suggestion\": \"Block\"\n            }\n        ],\n        \"RequestId\": \"4b180195-fe4b-4fa1-8e12-536054fbde27\",\n        \"ReviewedLabels\": [\n            \"宏观走势造谣\",\n            \"数据来源缺失\",\n            \"违规荐股荐基\"\n        ],\n        \"StartTime\": \"2025-09-25 19:42:35\",\n        \"Status\": \"Success\"\n    }\n}",
+        "title": "获取金融大模型审校任务结果：示例"
+      }
+    ],
     "TextModeration": [
       {
         "document": "",

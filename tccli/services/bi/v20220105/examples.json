@@ -3,9 +3,17 @@
     "ApplyEmbedInterval": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyEmbedInterval\n<公共请求参数>\n\n{\n    \"Intention\": \"embed\",\n    \"Scope\": \"page\",\n    \"BIToken\": \"246cbf0d-aa6c-445d-895d-b368f59159e8\",\n    \"ExtraParam\": \"\",\n    \"PageId\": \"1\",\n    \"ProjectId\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyEmbedInterval\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"PageId\": 1982493789748932,\n    \"BIToken\": \"BIToken\",\n    \"ExtraParam\": \"ExtraParam\",\n    \"Intention\": \"Intention\",\n    \"Scope\": \"Scope\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"e60a2172-715b-4305-beb2-40792ae53856\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
         "title": "申请Token延期接口实例"
+      }
+    ],
+    "ClearEmbedToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ClearEmbedToken\n<公共请求参数>\n\n{\n    \"ProjectId\": \"889\",\n    \"UserCorpId\": \"700000777778\",\n    \"Scope\": \"page\",\n    \"PageId\": \"8991\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"Extra\",\n        \"Msg\": \"Msg\",\n        \"Data\": false,\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "page token 清理"
       }
     ],
     "CreateDatasource": [
@@ -32,6 +40,14 @@
         "title": "报表嵌出创建Token接口示例-强鉴权"
       }
     ],
+    "CreatePermissionRanks": [
+      {
+        "document": "创建行列权限",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePermissionRanks\n<公共请求参数>\n\n{\n    \"TableId\": 0,\n    \"Mode\": \"abc\",\n    \"RoleType\": \"abc\",\n    \"RoleId\": 0,\n    \"RulerInfo\": \"abc\",\n    \"Type\": \"abc\",\n    \"OpenStatus\": \"abc\",\n    \"ProjectId\": 0,\n    \"RowColumnConfigList\": [\n        {\n            \"RulerInfo\": \"abc\",\n            \"TagValueList\": [\n                {\n                    \"Id\": 0,\n                    \"Name\": \"abc\",\n                    \"Values\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建行列权限"
+      }
+    ],
     "CreateProject": [
       {
         "document": "创建项目",
@@ -54,24 +70,18 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"RoleIdList\": [\n        1982493789748932\n    ],\n    \"UserInfoList\": [\n        {\n            \"UserId\": \"zhangsan\",\n            \"UserName\": \"用户名\",\n            \"Email\": \"邮箱\",\n            \"PhoneNumber\": \"手机号\",\n            \"AreaCode\": \"手机号区号\",\n            \"AppUserId\": \"企微账号id\",\n            \"AppUserName\": \"企微账号名称\"\n        }\n    ],\n    \"UserList\": [\n        {\n            \"UserId\": \"zhangsan\",\n            \"UserName\": \"用户名\",\n            \"CorpId\": \"企业ID\",\n            \"Email\": \"电子邮箱\",\n            \"Status\": 1982493789748932,\n            \"FirstModify\": 1982493789748932,\n            \"PhoneNumber\": \"手机号码\",\n            \"AreaCode\": \"手机区号\",\n            \"CreatedUser\": \"创建人\",\n            \"UpdatedUser\": \"更改人\",\n            \"GlobalUserName\": \"全局角色\",\n            \"Mobile\": \"手机号\",\n            \"AppId\": \"1\",\n            \"AppUserId\": \"1\",\n            \"AppUserAliasName\": \"1\",\n            \"AppUserName\": \"1\",\n            \"InValidateAppRange\": false\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"6cd11622-b240-40ae-8ec0-86b933aab8da\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 0\n        }\n    }\n}",
         "title": "demo"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"UserList\": [\n        {\n            \"UserName\": \"张三\",\n            \"UserId\": \"zhangsan\"\n        }\n    ],\n    \"ProjectId\": \"1\",\n    \"RoleIdList\": [\n        \"100090\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed4d2bd1-ee13-4b67-80cf-a8a2794a82ed\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 1\n        },\n        \"Msg\": \"success\"\n    }\n}",
-        "title": "项目内-创建用户角色示例接口"
       }
     ],
     "DeleteDatasource": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatasource\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"Id\": \"56\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatasource\n<公共请求参数>\n\n{\n    \"Id\": 1982493789748932,\n    \"ProjectId\": 1982493789748932\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c22f4d3-e28c-450d-8c9f-2e72c40b7001\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"Msg\": \"success\"\n    }\n}",
         "title": "success"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatasource\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"Id\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatasource\n<公共请求参数>\n\n{\n    \"Id\": 1982493789748932,\n    \"ProjectId\": 1982493789748932\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b37bc0d-2a4d-40f0-a620-3a962872aecf\",\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"非法的数据源ID\"\n    }\n}",
         "title": "无效id"
       }
@@ -120,6 +130,30 @@
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePageWidgetList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"662\",\n    \"PageId\": \"6465\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorMessage\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Data\": {\n            \"CorpId\": \"110112\",\n            \"ProjectId\": \"1101\",\n            \"PageId\": \"1\",\n            \"WidgetList\": [\n                {\n                    \"WidgetId\": \"WidgetId\",\n                    \"WidgetName\": \"表格\"\n                }\n            ]\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"sadadadfdkfdl212313dsds\"\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "DescribePermissionRanksInfo": [
+      {
+        "document": "根据角色或标签查询行列权限配置",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionRanksInfo\n<公共请求参数>\n\n{\n    \"TableId\": 0,\n    \"Mode\": \"testdata\",\n    \"RoleType\": \"testdata\",\n    \"RoleId\": 0,\n    \"Type\": \"testdata\",\n    \"ProjectId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"testdata\",\n        \"Extra\": \"testdata\",\n        \"Data\": {\n            \"TableId\": 0,\n            \"Type\": \"testdata\",\n            \"Mode\": \"testdata\",\n            \"RulerInfo\": \"testdata\",\n            \"RoleId\": 0,\n            \"RoleType\": \"testdata\",\n            \"RowColumnConfigList\": [\n                {\n                    \"RulerInfo\": \"testdata\",\n                    \"TagValueList\": [\n                        {\n                            \"Id\": 0,\n                            \"Name\": \"testdata\",\n                            \"Values\": [\n                                \"testdata\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"testdata\"\n    }\n}",
+        "title": "根据角色或标签查询行列权限配置"
+      }
+    ],
+    "DescribePermissionRoleInfo": [
+      {
+        "document": "项目内角色列表接口示例",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionRoleInfo\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"PageNo\": 1,\n    \"PageSize\": 10,\n    \"AllPage\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 1,\n                \"RoleName\": \"testdata\",\n                \"CorpId\": \"testdata\",\n                \"RoleType\": \"testdata\",\n                \"Scope\": \"testdata\",\n                \"Description\": \"testdata\",\n                \"CreatedAt\": \"testdata\",\n                \"CreatedUser\": \"testdata\",\n                \"UpdatedAt\": \"testdata\",\n                \"UpdatedUser\": \"testdata\",\n                \"ScopeType\": 0,\n                \"CanChoose\": true,\n                \"ModuleCollection\": \"testdata\"\n            }\n        ],\n        \"Msg\": \"testdata\",\n        \"Extra\": \"testdata\",\n        \"RequestId\": \"testdata\"\n    }\n}",
+        "title": "项目内角色列表接口示例"
+      }
+    ],
+    "DescribePermissionStatusInfo": [
+      {
+        "document": "项目内角色列表接口示例",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionStatusInfo\n<公共请求参数>\n\n{\n    \"TableId\": -4052,\n    \"Type\": \"fugiat magna velit ea dolore\",\n    \"ProjectId\": \"1231\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Data\": {\n            \"TableId\": 0,\n            \"Type\": \"abc\",\n            \"Mode\": \"abc\",\n            \"OpenStatus\": \"abc\",\n            \"RoleType\": \"abc\",\n            \"RoleId\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "项目内角色列表接口示例"
       }
     ],
     "DescribeProjectInfo": [

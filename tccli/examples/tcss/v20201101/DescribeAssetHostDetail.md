@@ -45,7 +45,8 @@ Output:
         "Status": "ONLINE",
         "Tags": [],
         "UUID": "8bc803fd-d85d-47b8-9e2b-9644674be677",
-        "UpdateTime": "2024-10-30 10:26:52"
+        "UpdateTime": "2024-10-30 10:26:52",
+        "AssetSyncTime": "2024-10-30 10:26:52"
     }
 }
 ```

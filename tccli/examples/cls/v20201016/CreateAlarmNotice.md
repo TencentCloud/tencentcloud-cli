@@ -29,7 +29,7 @@ Output:
 ```
 {
     "Response": {
-        "AlarmNoticeId": "xxxx-xx-xx-xx-xxxxxxxx",
+        "AlarmNoticeId": "notice-b44d3a04-xxxx-4f9d-91f8-8abab903d885",
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
     }
 }
@@ -78,7 +78,7 @@ Output:
 ```
 {
     "Response": {
-        "AlarmNoticeId": "xxxx-xx-xx-xx-xxxxxxxx",
+        "AlarmNoticeId": "notice-b44d3a04-xxxx-4f9d-91f8-8abab903d885",
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
     }
 }

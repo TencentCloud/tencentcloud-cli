@@ -77,6 +77,13 @@
       "output": "CopyCasterResponse",
       "status": "online"
     },
+    "CreateAuditKeywordLib": {
+      "document": "创建关键词库，直播审核功能使用。",
+      "input": "CreateAuditKeywordLibRequest",
+      "name": "直播审核创建词库",
+      "output": "CreateAuditKeywordLibResponse",
+      "status": "online"
+    },
     "CreateAuditKeywords": {
       "document": "创建关键词，并关联到关键词库。",
       "input": "CreateAuditKeywordsRequest",
@@ -138,6 +145,13 @@
       "input": "CreateLiveCallbackTemplateRequest",
       "name": "创建回调模板",
       "output": "CreateLiveCallbackTemplateResponse",
+      "status": "online"
+    },
+    "CreateLiveCloudEffect": {
+      "document": "使用该接口生成云端特效。特效可用于叠加到直播流上，供播放端观看。\n注意：云端特效生成需要一定时间，调用生成接口后，可通过查询接口，获取是否特效已生成。",
+      "input": "CreateLiveCloudEffectRequest",
+      "name": "生成直播云端特效",
+      "output": "CreateLiveCloudEffectResponse",
       "status": "online"
     },
     "CreateLivePadRule": {
@@ -511,6 +525,13 @@
       "output": "DescribeCasterDisplayInfoResponse",
       "status": "online"
     },
+    "DescribeCasterEmergencyStatus": {
+      "document": "该接口用查询导播台的备播状态",
+      "input": "DescribeCasterEmergencyStatusRequest",
+      "name": "查询导播台备播状态",
+      "output": "DescribeCasterEmergencyStatusResponse",
+      "status": "online"
+    },
     "DescribeCasterInputInfos": {
       "document": "该接口用来查询导播台的输入源信息列表。",
       "input": "DescribeCasterInputInfosRequest",
@@ -644,6 +665,13 @@
       "output": "DescribeLiveCertsResponse",
       "status": "online"
     },
+    "DescribeLiveCloudEffectConfig": {
+      "document": "使用该接口查询云端特效配置信息。",
+      "input": "DescribeLiveCloudEffectConfigRequest",
+      "name": "查询直播云端特效配置信息",
+      "output": "DescribeLiveCloudEffectConfigResponse",
+      "status": "online"
+    },
     "DescribeLiveCloudEffectList": {
       "document": "使用该接口查询云端特效列表，特效列表中包含一部分官方精品特效，同时包含用户自定义生成的特效。",
       "input": "DescribeLiveCloudEffectListRequest",
@@ -705,13 +733,6 @@
       "input": "DescribeLiveEnhanceInfoListRequest",
       "name": "查询直播增强用量明细",
       "output": "DescribeLiveEnhanceInfoListResponse",
-      "status": "online"
-    },
-    "DescribeLiveForbidStreamList": {
-      "document": "获取禁推流列表。\n\n注意：该接口仅作为直播辅助查询接口，重要业务场景不可强依赖该接口。",
-      "input": "DescribeLiveForbidStreamListRequest",
-      "name": "获取禁推流列表",
-      "output": "DescribeLiveForbidStreamListResponse",
       "status": "online"
     },
     "DescribeLivePackageInfo": {
@@ -1015,6 +1036,13 @@
       "output": "DescribePullTransformPushInfoResponse",
       "status": "online"
     },
+    "DescribePullTransformPushInfoList": {
+      "document": "查询拉流转推任务流数据统计信息。",
+      "input": "DescribePullTransformPushInfoListRequest",
+      "name": "查询拉流转推任务流数据",
+      "output": "DescribePullTransformPushInfoListResponse",
+      "status": "online"
+    },
     "DescribePushBandwidthAndFluxList": {
       "document": "直播推流带宽和流量数据查询。\n推流计费会先取全球推流用量和全球播放用量进行比较，满足计费条件后再按各地区用量出账。详情参见[计费文档](https://cloud.tencent.com/document/product/267/34175)。",
       "input": "DescribePushBandwidthAndFluxListRequest",
@@ -1139,6 +1167,13 @@
       "input": "ForbidLiveStreamRequest",
       "name": "禁推直播流",
       "output": "ForbidLiveStreamResponse",
+      "status": "online"
+    },
+    "InsertTaskTemporaryFiles": {
+      "document": "可通过调用该接口，对点播源的直播拉流任务进行插播操作。\n注意：\n1. 仅支持对有效且运行中的点播源任务进行插播操作。\n2. 拉转推插播文件时，事件及回调中的索引均保持为插播前的值。",
+      "input": "InsertTaskTemporaryFilesRequest",
+      "name": "轮播任务插播文件",
+      "output": "InsertTaskTemporaryFilesResponse",
       "status": "online"
     },
     "ModifyCaster": {
@@ -1393,6 +1428,13 @@
       "output": "SwitchBackupStreamResponse",
       "status": "online"
     },
+    "SwitchCasterToEmergency": {
+      "document": "该接口用来将导播台切换到备播状态。\n该接口使用时，主监任务需处于运行状态。",
+      "input": "SwitchCasterToEmergencyRequest",
+      "name": "切换导播台备播",
+      "output": "SwitchCasterToEmergencyResponse",
+      "status": "online"
+    },
     "UnBindLiveDomainCert": {
       "document": "解绑域名证书",
       "input": "UnBindLiveDomainCertRequest",
@@ -1420,7 +1462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID。",
+          "document": "<p>导播台ID。</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -1429,7 +1471,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台输入源详细信息。",
+          "document": "<p>导播台输入源详细信息。</p>",
           "example": "无",
           "member": "CasterInputInfo",
           "name": "InputInfo",
@@ -1444,7 +1486,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "rtmp协议输入源播放地址。\n注：仅可作为预览使用，不可分发。",
+          "document": "<p>rtmp协议输入源播放地址。注：仅可作为预览使用，不可分发。</p>",
           "example": "rtmp://www.example.com/live/example",
           "member": "string",
           "name": "InputPlayUrl",
@@ -1454,7 +1496,7 @@
         },
         {
           "disabled": false,
-          "document": "webrtc协议播放地址。\n注：\n1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。\n2. 仅作为预览使用，不可分发。",
+          "document": "<p>webrtc协议播放地址。注：1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。2. 仅作为预览使用，不可分发。</p>",
           "example": "webrtc://webrtc.example.com/live/example",
           "member": "string",
           "name": "InputWebRTCPlayUrl",
@@ -1476,7 +1518,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID",
+          "document": "<p>导播台ID</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -1485,7 +1527,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台布局参数信息。",
+          "document": "<p>导播台布局参数信息。</p>",
           "example": "无",
           "member": "CasterLayoutInfo",
           "name": "LayoutInfo",
@@ -2386,7 +2428,7 @@
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "场景1回调模版配置",
+          "example": "场景1回调模板配置",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -2456,7 +2498,7 @@
         {
           "disabled": false,
           "document": "回调的鉴权 key。",
-          "example": "def",
+          "example": "jdkjfaljflals",
           "member": "string",
           "name": "CallbackKey",
           "output_required": true,
@@ -2969,7 +3011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入源Index。\n范围[1, 24]",
+          "document": "<p>输入源Index。范围[1, 24]</p>",
           "example": "1",
           "member": "int64",
           "name": "InputIndex",
@@ -2980,7 +3022,7 @@
         },
         {
           "disabled": false,
-          "document": "输入源类型。\n范围[0,1,2,3,4]。\n0：推流地址。\n1：点播文件地址。\n2：直播拉流地址。\n3：图片地址。\n4：webrtc协议推流地址。",
+          "document": "<p>输入源类型。范围[0,1,2,3,4]。0：推流地址。1：点播文件地址。2：直播拉流地址。3：图片地址。4：webrtc协议推流地址。</p>",
           "example": "1",
           "member": "int64",
           "name": "InputType",
@@ -2991,7 +3033,7 @@
         },
         {
           "disabled": false,
-          "document": "输入源的源地址。\n最大允许长度512。\n当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。\n",
+          "document": "<p>输入源的源地址。最大允许长度512。当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。</p>",
           "example": "http://example.domain.com/example.mp4",
           "member": "string",
           "name": "InputUrl",
@@ -3002,7 +3044,7 @@
         },
         {
           "disabled": false,
-          "document": "输入源描述。\n最大允许长度256字符。",
+          "document": "<p>输入源描述。最大允许长度256字符。</p>",
           "example": "example",
           "member": "string",
           "name": "Description",
@@ -3013,7 +3055,7 @@
         },
         {
           "disabled": false,
-          "document": "点播地址列表。仅当input type为1（点播地址）时，将一个或多个点播地址，填入该字段。\n单个地址最大允许长度512字符。\n最多允许同时填入5个地址。\n注：此时需保持InputUrl字段为空。",
+          "document": "<p>点播地址列表。仅当input type为1（点播地址）时，将一个或多个点播地址，填入该字段。单个地址最大允许长度512字符。最多允许同时填入5个地址。注：此时需保持InputUrl字段为空。</p>",
           "example": "[\"http://example.domain.com/example.mp4\"]",
           "member": "string",
           "name": "InputUrls",
@@ -3024,8 +3066,8 @@
         },
         {
           "disabled": false,
-          "document": "是否启用点播无限循环播放。\n注：当前该字段未生效，默认为True。",
-          "example": "1",
+          "document": "<p>是否启用点播无限循环播放。注：当前该字段未生效，默认为True。</p>",
+          "example": "true",
           "member": "bool",
           "name": "LoopEnable",
           "output_required": true,
@@ -3035,7 +3077,7 @@
         },
         {
           "disabled": false,
-          "document": "点播循环次数。\n允许值-1或正整数。\n当值为-1时，表示无限循环。\n当值为其他正整数时，表示循环对应次数。\n注：该字段暂未生效。",
+          "document": "<p>点播循环次数。允许值-1或正整数。当值为-1时，表示无限循环。当值为其他正整数时，表示循环对应次数。注：该字段暂未生效。</p>",
           "example": "-1",
           "member": "int64",
           "name": "LoopNumber",
@@ -3046,8 +3088,8 @@
         },
         {
           "disabled": false,
-          "document": "是否启用拉取到导播台。\n注：该字段默认强制为true。",
-          "example": "1",
+          "document": "<p>是否启用拉取到导播台。注：该字段默认强制为true。</p>",
+          "example": "true",
           "member": "bool",
           "name": "PullPushEnable",
           "output_required": true,
@@ -3057,7 +3099,7 @@
         },
         {
           "disabled": false,
-          "document": "输入源音量百分比。\n默认为100。表示音量为原始大小。\n允许值[0,200]。",
+          "document": "<p>输入源音量百分比。默认为100。表示音量为原始大小。允许值[0,200]。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Volume",
@@ -3074,7 +3116,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "布局Index。",
+          "document": "<p>布局Index。</p>取值范围：[1, 1000]",
           "example": "1",
           "member": "int64",
           "name": "LayoutIndex",
@@ -3085,7 +3127,7 @@
         },
         {
           "disabled": false,
-          "document": "布局模板Id。\n有效值[1，20，21，31，32，41]\n当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。\n",
+          "document": "<p>布局模板Id。有效值[1，20，21，31，32，41]当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。</p>",
           "example": "21",
           "member": "int64",
           "name": "LayoutTemplateId",
@@ -3096,7 +3138,7 @@
         },
         {
           "disabled": false,
-          "document": "布局绑定的输入列表。按布局LayerId从小到大，按顺序排列。\n已有两个画面的布局为例，输入1对应LayerId为1，输入2对应的LayerId为2，该字段应该填入\"1|2\"。",
+          "document": "<p>布局绑定的输入列表。按布局LayerId从小到大，按顺序排列。已有两个画面的布局为例，输入1对应LayerId为1，输入2对应的LayerId为2，该字段应该填入\"1|2\"。</p>",
           "example": "1|2",
           "member": "string",
           "name": "InputIndexList",
@@ -3107,8 +3149,8 @@
         },
         {
           "disabled": false,
-          "document": "详细的布局参数列表。",
-          "example": "1",
+          "document": "<p>详细的布局参数列表。</p>",
+          "example": "无",
           "member": "CasterLayoutParam",
           "name": "LayoutParams",
           "output_required": true,
@@ -3118,7 +3160,7 @@
         },
         {
           "disabled": false,
-          "document": "布局输出的宽度，单位为像素。\n默认为1280像素。\n注：该值仅在画中画布局，且未设置PgmWidth时生效。",
+          "document": "<p>布局输出的宽度，单位为像素。默认为1280像素。注：该值仅在画中画布局，且未设置PgmWidth时生效。</p>",
           "example": "1080",
           "member": "uint64",
           "name": "LayoutWidth",
@@ -3129,7 +3171,7 @@
         },
         {
           "disabled": false,
-          "document": "布局输出的高度，单位为像素。\n注：该参数仅在画中画布局，且未设置PgmHeight时生效。",
+          "document": "<p>布局输出的高度，单位为像素。注：该参数仅在画中画布局，且未设置PgmHeight时生效。</p>",
           "example": "1920",
           "member": "uint64",
           "name": "LayoutHeight",
@@ -4045,6 +4087,67 @@
       ],
       "usage": "both"
     },
+    "CloudEffectTemplateInfo": {
+      "document": "云端特效模板信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>特效模板ID。</p>",
+          "example": "captain_america",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>特效模板名称。</p>",
+          "example": "变身美队",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板预览URL。</p>",
+          "example": "https://system-live-cloud-effect***cloud.com/template/fishermen.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板封面图片URL。</p>",
+          "example": "https://system-live-cloud-effect-13114022***/template_cover_image/captain_america.png",
+          "member": "string",
+          "name": "CoverImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板视频宽高比。</p>",
+          "example": "9:16",
+          "member": "string",
+          "name": "VideoRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CommonMixControlParams": {
       "document": "通用混流控制参数",
       "members": [
@@ -4180,7 +4283,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入图层。取值范围[1，16]。\n1)背景流（即大主播画面或画布）的 image_layer 填1。\n2)纯音频混流，该参数也需填。\n注意：不同输入，该值不可重复",
+          "document": "<p>输入图层。取值范围[1，16]。<br>1)背景流（即大主播画面或画布）的 image_layer 填1。<br>2)纯音频混流，该参数也需填。<br>注意：不同输入，该值不可重复</p>",
           "example": "1",
           "member": "int64",
           "name": "ImageLayer",
@@ -4189,7 +4292,7 @@
         },
         {
           "disabled": false,
-          "document": "输入类型。取值范围[0，5]。\n不填默认为0。\n0表示输入流为音视频。\n2表示输入流为图片。\n3表示输入流为画布。 \n4表示输入流为音频。\n5表示输入流为纯视频。",
+          "document": "<p>输入类型。取值范围[0，5]。<br>不填默认为0。<br>0表示输入流为音视频。<br>2表示输入流为图片。<br>3表示输入流为画布。<br>4表示输入流为音频。<br>5表示输入流为纯视频。</p>",
           "example": "0",
           "member": "int64",
           "name": "InputType",
@@ -4198,7 +4301,7 @@
         },
         {
           "disabled": false,
-          "document": "输入画面在输出时的高度。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为输入流的高度。\n使用百分比时，期望输出为（百分比 * 背景高）。",
+          "document": "<p>输入画面在输出时的高度。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为输入流的高度。<br>使用百分比时，期望输出为（百分比 * 背景高）。</p>",
           "example": "720",
           "member": "float",
           "name": "ImageHeight",
@@ -4207,7 +4310,7 @@
         },
         {
           "disabled": false,
-          "document": "输入画面在输出时的宽度。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为输入流的宽度。\n使用百分比时，期望输出为（百分比 * 背景宽）。",
+          "document": "<p>输入画面在输出时的宽度。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为输入流的宽度。<br>使用百分比时，期望输出为（百分比 * 背景宽）。</p>",
           "example": "1024",
           "member": "float",
           "name": "ImageWidth",
@@ -4216,7 +4319,7 @@
         },
         {
           "disabled": false,
-          "document": "输入在输出画面的X偏移。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为0。\n相对于大主播背景画面左上角的横向偏移。 \n使用百分比时，期望输出为（百分比 * 背景宽）。",
+          "document": "<p>输入在输出画面的X偏移。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为0。<br>相对于大主播背景画面左上角的横向偏移。<br>使用百分比时，期望输出为（百分比 * 背景宽）。</p>",
           "example": "0",
           "member": "float",
           "name": "LocationX",
@@ -4225,7 +4328,7 @@
         },
         {
           "disabled": false,
-          "document": "输入在输出画面的Y偏移。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为0。\n相对于大主播背景画面左上角的纵向偏移。 \n使用百分比时，期望输出为（百分比 * 背景宽）",
+          "document": "<p>输入在输出画面的Y偏移。取值范围：<br>像素：[0，2000]<br>百分比：[0.01，0.99]<br>不填默认为0。<br>相对于大主播背景画面左上角的纵向偏移。<br>使用百分比时，期望输出为（百分比 * 背景宽）</p>",
           "example": "0",
           "member": "float",
           "name": "LocationY",
@@ -4234,7 +4337,7 @@
         },
         {
           "disabled": false,
-          "document": "当InputType为3(画布)时，该值表示画布的颜色。\n常用的颜色有：\n红色：0xCC0033。\n黄色：0xCC9900。\n绿色：0xCCCC33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
+          "document": "<p>当InputType为3(画布)时，该值表示画布的颜色。<br>常用的颜色有：<br>红色：0xCC0033。<br>黄色：0xCC9900。<br>绿色：0xCCCC33。<br>蓝色：0x99CCFF。<br>黑色：0x000000。<br>白色：0xFFFFFF。<br>灰色：0x999999。</p>",
           "example": "0xFFFFFF",
           "member": "string",
           "name": "Color",
@@ -4243,12 +4346,21 @@
         },
         {
           "disabled": false,
-          "document": "当InputType为2(图片)时，该值是水印ID。",
+          "document": "<p>当InputType为2(图片)时，该值是水印ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "WatermarkId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当InputType为8时，该值是动效贴片的URL</p>",
+          "example": "https://www.example.com/webpage",
+          "member": "string",
+          "name": "WebPageUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -4412,6 +4524,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditKeywordLibRequest": {
+      "document": "CreateAuditKeywordLib请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateAuditKeywordLibResponse": {
+      "document": "CreateAuditKeywordLib返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5109,6 +5238,79 @@
           "name": "TemplateId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveCloudEffectRequest": {
+      "document": "CreateLiveCloudEffect请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用于生成云端特效的 Prompt。示例：飞鸟。Prompt 和 ImageUrl 二选一。</p>",
+          "example": "一只猫咪",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板生礼物的模板ID。目前支持的模板ID：queen_accession, wizard_of_oz，red_envelopes，fishermen，captain_america。</p>",
+          "example": "wizard of oz",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入我的图片地址，用于生成云端特效。ImageUrl 和 Prompt 二选一。</p>",
+          "example": "http://my.image.com/live/cat.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定生成云端特效的方式。默认自动选取。标准方式：text2video，高品质方式：text2video_hq。</p>",
+          "example": "text2video",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者名称。</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveCloudEffectResponse": {
+      "document": "CreateLiveCloudEffect返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云端特效 ID。</p>",
+          "example": "43544",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7178,7 +7380,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID。",
+          "document": "<p>导播台ID。</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -7187,7 +7389,7 @@
         },
         {
           "disabled": false,
-          "document": "要删除的布局Index。\n注：待删除的Index对应的布局需存在。",
+          "document": "<p>要删除的布局Index。注：待删除的Index对应的布局需存在。</p>",
           "example": "1",
           "member": "uint64",
           "name": "LayoutIndex",
@@ -8652,6 +8854,43 @@
       ],
       "type": "object"
     },
+    "DescribeCasterEmergencyStatusRequest": {
+      "document": "DescribeCasterEmergencyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "63501",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCasterEmergencyStatusResponse": {
+      "document": "DescribeCasterEmergencyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备播状态，范围[0,1,2]\n0. 正常直播状态\n1. 备播状态\n2. 备播切换正常直播中，在配置了延播时长时出现",
+          "example": "0",
+          "member": "int64",
+          "name": "EmergencyStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCasterInputInfosRequest": {
       "document": "DescribeCasterInputInfos请求参数结构体",
       "members": [
@@ -9475,6 +9714,33 @@
       ],
       "type": "object"
     },
+    "DescribeLiveCloudEffectConfigRequest": {
+      "document": "DescribeLiveCloudEffectConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveCloudEffectConfigResponse": {
+      "document": "DescribeLiveCloudEffectConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板生礼物的模板信息列表。</p>",
+          "example": "无",
+          "member": "CloudEffectTemplateInfo",
+          "name": "EffectTemplateList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLiveCloudEffectListRequest": {
       "document": "DescribeLiveCloudEffectList请求参数结构体",
       "members": [
@@ -10067,101 +10333,6 @@
           "member": "LiveEnhanceInfo",
           "name": "DataInfoList",
           "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLiveForbidStreamListRequest": {
-      "document": "DescribeLiveForbidStreamList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "取得第几页，默认1。",
-          "example": "1",
-          "member": "int64",
-          "name": "PageNum",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "每页大小，最大100。 \n取值：1~100之前的任意整数。\n默认值：10。",
-          "example": "10",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "按流名称查询。",
-          "example": "stream_2021",
-          "member": "string",
-          "name": "StreamName",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLiveForbidStreamListResponse": {
-      "document": "DescribeLiveForbidStreamList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "符合条件的总个数。",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总页数。",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalPage",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分页的页码。",
-          "example": "1",
-          "member": "int64",
-          "name": "PageNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "每页显示的条数。",
-          "example": "10",
-          "member": "int64",
-          "name": "PageSize",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "禁推流列表。",
-          "example": "无",
-          "member": "ForbidStreamInfo",
-          "name": "ForbidStreamList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11202,7 +11373,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小，最大100。 \n取值：10~100之间的任意整数。\n默认值：10。",
+          "document": "每页大小，最大300000。 \n取值：10~300000之间的任意整数。\n默认值：10。\n注意：尽量传入比当前总流数大的PageSize, 一次性拉走全部在线流，减少访问频次，推荐1分钟拉取一次。",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -11446,7 +11617,7 @@
         },
         {
           "disabled": false,
-          "document": "每页个数，\n范围：[1,1000]，\n默认值： 200。",
+          "document": "每页个数，\n范围：[1,100000]，\n默认值： 200。\n注意： \n1. 这里尽量PageSize填大于预估在线流数，一次性全部把在线流拉过去，减少分页查询次数。\n2. 该接口用于拉取在线流，减少高频调用，推荐每分钟查询一次，结合推断流在线回调来维护在线流状态。",
           "example": "1000",
           "member": "uint64",
           "name": "PageSize",
@@ -11777,7 +11948,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "推流域名。",
+          "document": "<p>推流域名。</p>",
           "example": "test.push.com",
           "member": "string",
           "name": "PushDomain",
@@ -11786,7 +11957,7 @@
         },
         {
           "disabled": false,
-          "document": "流名称。",
+          "document": "<p>流名称。</p>",
           "example": "streamtest",
           "member": "string",
           "name": "StreamName",
@@ -11795,7 +11966,7 @@
         },
         {
           "disabled": false,
-          "document": "查询时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近1个月内某天的详细数据，截止到昨天。",
+          "document": "<p>查询时间，北京时间，<br>格式：yyyymmdd。<br>注意：支持查询近1个月内某天的详细数据，截止到昨天。</p>",
           "example": "20190307",
           "member": "string",
           "name": "DayTime",
@@ -11804,7 +11975,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，默认1，\n不超过100页。",
+          "document": "<p>页数，默认1，<br>不超过100页。</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNum",
@@ -11813,7 +11984,7 @@
         },
         {
           "disabled": false,
-          "document": "每页个数，默认20，\n范围：[10,1000]。",
+          "document": "<p>每页个数，默认20，<br>范围：[10,1000]。</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -11822,7 +11993,7 @@
         },
         {
           "disabled": false,
-          "document": "起始天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近1个月内的详细数据。",
+          "document": "<p>起始天时间，北京时间，<br>格式：yyyymmdd。<br>注意：支持查询近1个月内的详细数据。</p>",
           "example": "20190307",
           "member": "string",
           "name": "StartDayTime",
@@ -11831,7 +12002,7 @@
         },
         {
           "disabled": false,
-          "document": "结束天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近1个月内的详细数据，截止到昨天，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。",
+          "document": "<p>结束天时间，北京时间，<br>格式：yyyymmdd。<br>注意：支持查询近1个月内的详细数据，截止到昨天，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。</p>",
           "example": "20190307",
           "member": "string",
           "name": "EndDayTime",
@@ -11846,7 +12017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计数据列表。",
+          "document": "<p>统计数据列表。</p>",
           "example": "无",
           "member": "TranscodeDetailInfo",
           "name": "DataInfoList",
@@ -11856,7 +12027,7 @@
         },
         {
           "disabled": false,
-          "document": "页码。",
+          "document": "<p>页码。</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNum",
@@ -11866,7 +12037,7 @@
         },
         {
           "disabled": false,
-          "document": "每页个数。",
+          "document": "<p>每页个数。</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -11876,7 +12047,7 @@
         },
         {
           "disabled": false,
-          "document": "总个数。",
+          "document": "<p>总个数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
@@ -11886,7 +12057,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数。",
+          "document": "<p>总页数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalPage",
@@ -12028,7 +12199,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "document": "<p>开始时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 <a href=\"https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F\">ISO 日期格式说明</a>2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。</p>",
           "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -12037,7 +12208,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "document": "<p>结束时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 <a href=\"https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F\">ISO 日期格式说明</a>2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。</p>",
           "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
@@ -12046,7 +12217,7 @@
         },
         {
           "disabled": false,
-          "document": "推流域名列表，若不填，表示查询所有域名总体数据。\n指定域名时返回1小时粒度数据。",
+          "document": "<p>推流域名列表，若不填，表示查询所有域名总体数据。指定域名时返回1小时粒度数据。</p>",
           "example": "[\"test.com\"]",
           "member": "string",
           "name": "PushDomains",
@@ -12055,7 +12226,7 @@
         },
         {
           "disabled": false,
-          "document": "可选值：\nMainland：查询中国大陆（境内）数据，\nOversea：则查询国际/港澳台（境外）数据，\n默认：查询全球地区（境内+境外）的数据。",
+          "document": "<p>可选值：Mainland：查询中国大陆（境内）数据，Oversea：则查询国际/港澳台（境外）数据，默认：查询全球地区（境内+境外）的数据。</p>",
           "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
@@ -12070,7 +12241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计数据列表。",
+          "document": "<p>统计数据列表。</p>",
           "example": "无",
           "member": "TranscodeTotalInfo",
           "name": "DataInfoList",
@@ -13016,6 +13187,61 @@
           "example": "无",
           "member": "PullStreamConfig",
           "name": "PullStreamConfigs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePullTransformPushInfoListRequest": {
+      "document": "DescribePullTransformPushInfoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "utc开始时间，格式为：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I，\n例如：北京时间2019-01-08 10:00:00，对应utc时间为：2019-01-08T10:00:00+08:00。\n支持最近一个月的查询。",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "utc结束时间，格式为：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I，\n例如：北京时间2019-01-08 10:00:00，对应utc时间为：2019-01-08T10:00:00+08:00。\n支持最近一个月的查询，时间跨度为一个月。",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拉流转推任务Id。",
+          "example": "test",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePullTransformPushInfoListResponse": {
+      "document": "DescribePullTransformPushInfoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "拉流任务流信息列表。",
+          "example": "无",
+          "member": "TurnPushInfo",
+          "name": "DataInfoList",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -14982,62 +15208,6 @@
       ],
       "type": "object"
     },
-    "ForbidStreamInfo": {
-      "document": "禁推流列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流名称。",
-          "example": "stream1",
-          "member": "string",
-          "name": "StreamName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "2020-01-01 12:12:12",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "禁推过期时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "2020-01-01 12:12:12",
-          "member": "string",
-          "name": "ExpireTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "推流路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "live",
-          "member": "string",
-          "name": "AppName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5000.livepush.com",
-          "member": "string",
-          "name": "DomainName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "GroupProIspDataInfo": {
       "document": "某省份某运营商在某段时间内的带宽，流量，请求数和并发数",
       "members": [
@@ -15204,6 +15374,78 @@
         }
       ],
       "usage": "out"
+    },
+    "InsertTaskTemporaryFilesRequest": {
+      "document": "InsertTaskTemporaryFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播拉流任务 ID。",
+          "example": "823421",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "插播文件列表，支持一次性插播多个文件，文件个数最大支持30个。可在轮播过程中追加新的插播文件。",
+          "example": "[\"http://vod.com/path/test.mp4\"]",
+          "member": "string",
+          "name": "TemporaryFiles",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作人名称。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "将文件插在当前轮播序列的指定位置后面。索引序列从1开始。默认为：0，表示播完当前文件立即播放插入文件。注意：索引不要超过当前总文件个数，否则按播完全部文件后再处理插播文件。",
+          "example": "0",
+          "member": "int64",
+          "name": "InsertAfterIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于多个文件插播在同一个轮播序号之后时，可指定队列顺序。\n0 - 最高优先级队列。默认值。\n1 - 中等优先级队列。\n2 - 最低优先级队列。\n场景示例：\n比如当前播放第2个文件，多个新文件插播在第2个文件之后，播完第二个轮播文件之后，优先播放InsertPriorityType为0的插播队列中的文件，再播放InsertPriorityType为1的插播队列中的文件，最后播放InsertPriorityType为2的插播队列文件。\n如果插播无队列优先级要求，则无需使用此参数。",
+          "example": "2",
+          "member": "int64",
+          "name": "InsertPriorityType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "插播上下文信息。由用户自定义传入。当播放到使用本此插播请求插入的文件时，在文件播放开始和文件播放结束的回调时，将此上下文信息通过创建任务携带的回调地址回调给用户。\n注意：如果有关联每个插播文件的信息需要回调时，可将需要回调的信息自行拼接到插播文件URL上，通过回调信息中的URL进行读取使用。",
+          "example": "InsertId=492",
+          "member": "string",
+          "name": "InsertContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InsertTaskTemporaryFilesResponse": {
+      "document": "InsertTaskTemporaryFiles返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "LiveCertDomainInfo": {
       "document": "用作批量绑定域名和证书。",
@@ -16020,7 +16262,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID。",
+          "document": "<p>导播台ID。</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -16029,7 +16271,7 @@
         },
         {
           "disabled": false,
-          "document": "修改的导播台输入源信息",
+          "document": "<p>修改的导播台输入源信息</p>",
           "example": "无",
           "member": "CasterInputInfo",
           "name": "InputInfo",
@@ -16044,7 +16286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改输入源后的预览地址。\n注：该地址仅作为预览使用，不可分发。",
+          "document": "<p>修改输入源后的预览地址。注：该地址仅作为预览使用，不可分发。</p>",
           "example": "rtmp://www.example.com/live/stream_id",
           "member": "string",
           "name": "InputPlayUrl",
@@ -16054,7 +16296,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的输入源webrtc预览地址。\n该地址需配合腾讯云快直播播放SDK使用。\n注：该地址仅做预览使用，不可分发。",
+          "document": "<p>修改后的输入源webrtc预览地址。该地址需配合腾讯云快直播播放SDK使用。注：该地址仅做预览使用，不可分发。</p>",
           "example": "webrtc://www.webrtc.example.com/live/stream_id",
           "member": "string",
           "name": "InputWebRTCPlayUrl",
@@ -16076,7 +16318,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID。",
+          "document": "<p>导播台ID。</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -16085,7 +16327,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台布局参数信息。",
+          "document": "<p>导播台布局参数信息。</p>",
           "example": "无",
           "member": "CasterLayoutInfo",
           "name": "LayoutInfo",
@@ -16220,7 +16462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导播台ID",
+          "document": "<p>导播台ID</p>",
           "example": "63501",
           "member": "uint64",
           "name": "CasterId",
@@ -16229,7 +16471,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台名称",
+          "document": "<p>导播台名称</p>",
           "example": "example",
           "member": "string",
           "name": "CasterName",
@@ -16238,7 +16480,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的描述\n最大允许长度256",
+          "document": "<p>导播台的描述，最大允许长度256</p>",
           "example": "example caster",
           "member": "string",
           "name": "Description",
@@ -16247,7 +16489,7 @@
         },
         {
           "disabled": false,
-          "document": "录制模板id。\n默认为0。\n当使用直播录制功能时，可将使用的录制模版填入。\n该接口仅保存字段，不涉及任何录制功能。",
+          "document": "<p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模版填入。该接口仅保存字段，不涉及任何录制功能。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordTemplateId",
@@ -16256,7 +16498,7 @@
         },
         {
           "disabled": false,
-          "document": "录制状态，当调用录制接口后，可通过该字段保存录制状态。\n0：未录制 \n1：录制中\n该接口仅保存字段，不涉及任何录制处理。",
+          "document": "<p>录制状态，当调用录制接口后，可通过该字段保存录制状态。0：未录制 1：录制中该接口仅保存字段，不涉及任何录制处理。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordStatus",
@@ -16265,7 +16507,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的过期时间戳。值为-1或unix时间戳。\n默认值为-1。 \n当值为-1时，表示该导播台永不过期。 \n当值为正常unix时间戳时，导播台将在该时间过期。\n导播台过期后，预监与主监画面将自动停止，转推自动停止。 \n点播、直播url将停止转拉，推流url需自行停止推流。",
+          "document": "<p>导播台的过期时间戳。值为-1或unix时间戳。默认值为-1。 当值为-1时，表示该导播台永不过期。 当值为正常unix时间戳时，导播台将在该时间过期。导播台过期后，预监与主监画面将自动停止，转推自动停止。 点播、直播url将停止转拉，推流url需自行停止推流。</p>",
           "example": "-1",
           "member": "int64",
           "name": "ExpireTime",
@@ -16274,7 +16516,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台延时播放时间，单位为秒。 \n默认为0，最大支持300秒",
+          "document": "<p>导播台延时播放时间，单位为秒。 默认为0，最大支持300秒</p>",
           "example": "0",
           "member": "uint64",
           "name": "DelayTime",
@@ -16283,7 +16525,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台转场类型。 \n默认为空。 \n允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。",
+          "document": "<p>导播台转场类型。 默认为空。 允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>",
           "example": "heart",
           "member": "string",
           "name": "TransitionType",
@@ -16292,7 +16534,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的宽度，单位为像素。 \n默认为1280，最大允许4096。",
+          "document": "<p>导播台主监输出的宽度，单位为像素。 默认为1280，最大允许4096。</p>",
           "example": "1280",
           "member": "uint64",
           "name": "PgmWidth",
@@ -16301,7 +16543,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的高度，单位为像素。 \n默认为720，最大允许2160。",
+          "document": "<p>导播台主监输出的高度，单位为像素。 默认为720，最大允许2160。</p>",
           "example": "720",
           "member": "uint64",
           "name": "PgmHeight",
@@ -16310,7 +16552,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的帧率。 \n默认为0，表示随源输出。 最大支持60。",
+          "document": "<p>导播台主监输出的帧率。 默认为0，表示随源输出。 最大支持60。</p>",
           "example": "0",
           "member": "uint64",
           "name": "PgmFps",
@@ -16319,7 +16561,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的码率，单位为kbps。 \n默认为0，表示随源的码率输出。 \n最大允许10000kbps。",
+          "document": "<p>导播台主监输出的码率，单位为kbps。 默认为0，表示随源的码率输出。 最大允许10000kbps。</p>",
           "example": "0",
           "member": "uint64",
           "name": "PgmBitRate",
@@ -16328,7 +16570,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的计费类型。 \n0 通用型 \n1 播单型。 \n注： 本参数暂无作用。",
+          "document": "<p>导播台的计费类型。 0 通用型 1 播单型。 注： 本参数暂无作用。</p>",
           "example": "0",
           "member": "int64",
           "name": "FeeType",
@@ -16337,7 +16579,7 @@
         },
         {
           "disabled": false,
-          "document": "录制接口返回的taskid\n注：该接口只做字段保存，不涉及录制操作。",
+          "document": "<p>录制接口返回的taskid注：该接口只做字段保存，不涉及录制操作。</p>",
           "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
           "member": "string",
           "name": "RecordTaskId",
@@ -16346,7 +16588,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台主监输出的音频码率，单位为kbps。 \n可选项：[0, 128, 192, 256] \n默认值为0，表示随源的音频码率输出。",
+          "document": "<p>导播台主监输出的音频码率，单位为kbps。 可选项：[0, 128, 192, 256] 默认值为0，表示随源的音频码率输出。</p>",
           "example": "128",
           "member": "uint64",
           "name": "PgmAudioBitRate",
@@ -16455,7 +16697,7 @@
         {
           "disabled": false,
           "document": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。",
-          "example": "adasdas23432423",
+          "example": "ajdjfladla",
           "member": "string",
           "name": "CallbackKey",
           "required": false,
@@ -16879,7 +17121,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于30天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。",
+          "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于30天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。\n4. 只修改EndTime进行续期， 不会影响正在进行中的任务。",
           "example": "2020-04-17T12:02:00Z",
           "member": "string",
           "name": "EndTime",
@@ -16952,7 +17194,7 @@
         {
           "disabled": false,
           "document": "指定任务 ID 修改任务。\n\n注意：该自定义任务 ID 只有在创建任务时指定了，才可在此处修改时使用。否则请使用系统返回的任务 ID。",
-          "example": "1234567",
+          "example": "mytaskid",
           "member": "string",
           "name": "SpecifyTaskId",
           "required": false,
@@ -19521,7 +19763,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "录制间隔。\n单位秒，默认：1800。\n取值范围：30-7200。\n此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。",
+          "document": "录制间隔。\n单位秒，默认：1800。\nFLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。\n此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。",
           "example": "400",
           "member": "int64",
           "name": "RecordInterval",
@@ -19532,7 +19774,7 @@
         },
         {
           "disabled": false,
-          "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。",
+          "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。\n注：此参数只对录制到VOD有效。",
           "example": "800",
           "member": "int64",
           "name": "StorageTime",
@@ -21068,6 +21310,43 @@
       ],
       "type": "object"
     },
+    "SwitchCasterToEmergencyRequest": {
+      "document": "SwitchCasterToEmergency请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导播台ID。",
+          "example": "63501",
+          "member": "uint64",
+          "name": "CasterId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchCasterToEmergencyResponse": {
+      "document": "SwitchCasterToEmergency返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备播状态，范围[0,1,2]\n0. 正常直播状态\n1. 备播状态\n2. 备播切换正常直播中，在配置了延播时长时出现",
+          "example": "0",
+          "member": "int64",
+          "name": "EmergencyStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TaskDurationInfo": {
       "document": "拉流转推任务的时长分布信息",
       "members": [
@@ -21977,7 +22256,7 @@
           "example": "2022-11-14T14:04:59+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21987,7 +22266,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21997,7 +22276,7 @@
           "example": "liveprocessor_H264",
           "member": "string",
           "name": "ModuleCodec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22007,7 +22286,7 @@
           "example": "720P",
           "member": "string",
           "name": "Resolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -22045,6 +22324,72 @@
           "name": "Index",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TurnPushInfo": {
+      "document": "拉流转推任务流数据信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频帧率，单位fps。",
+          "example": "23",
+          "member": "int64",
+          "name": "VideoFps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频帧率，单位fps。",
+          "example": "12",
+          "member": "int64",
+          "name": "AudioFps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频码率，单位bps。",
+          "example": "27",
+          "member": "int64",
+          "name": "VideoRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频码率，单位bps。",
+          "example": "123",
+          "member": "int64",
+          "name": "AudioRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流标识。",
+          "example": "test",
+          "member": "string",
+          "name": "StreamFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。",
+          "example": "2006-01-02T15:04:05Z\t",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

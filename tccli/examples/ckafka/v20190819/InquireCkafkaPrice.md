@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka InquireCkafkaPrice --cli-unfold-argument  \
-    --Partition 40 \
+    --Partition 800 \
     --InstanceNum 1 \
     --InquiryDiskParam.DiskSize 500 \
     --InquiryDiskParam.DiskType SSD \
@@ -15,7 +15,7 @@ tccli ckafka InquireCkafkaPrice --cli-unfold-argument  \
     --Bandwidth 40 \
     --MessageRetention 4 \
     --PublicNetworkParam.PublicNetworkChargeType BANDWIDTH_PREPAID \
-    --PublicNetworkParam.PublicNetworkMonthly 10 \
+    --PublicNetworkParam.PublicNetworkMonthly 6 \
     --InstanceChargeParam.InstanceChargePeriod 1 \
     --InstanceChargeParam.InstanceChargeType PREPAID \
     --InstanceType profession \
@@ -109,7 +109,7 @@ Output:
             },
             "PublicNetworkBandwidthPrice": null
         },
-        "RequestId": "xxxx"
+        "RequestId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     }
 }
 ```

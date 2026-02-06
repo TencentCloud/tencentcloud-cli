@@ -19,22 +19,22 @@ Output:
         "TotalCount": 0,
         "Rows": [
             {
-                "TableInstanceId": "abc",
-                "TableName": "abc",
-                "TableGroupId": "abc",
+                "TableInstanceId": "tcaplus-0xm12ck1",
+                "TableName": "tb_test",
+                "TableGroupId": "1",
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "tkey",
+                        "TagValue": "tvalue"
                     }
                 ],
                 "Error": {
-                    "Code": "abc",
-                    "Message": "abc"
+                    "Code": "",
+                    "Message": ""
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1921341-214214"
     }
 }
 ```

@@ -6,10 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQVipInstances --cli-unfold-argument  \
-    --Limit 1 \
-    --Filters.0.Values rocketmq-1q23swe3 \
-    --Filters.0.Name order-instance \
-    --Offset 1
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
@@ -24,20 +22,20 @@ Output:
                 "PayMode": 1,
                 "Remark": "remark-info",
                 "AutoRenewFlag": 1,
-                "InstanceId": "rocketmq-1233",
-                "NodeCount": 1,
-                "ExpireTime": 1,
+                "InstanceId": "rocketmq-vvqb9emabapx",
+                "NodeCount": 3,
+                "ExpireTime": 1730877758000,
                 "InstanceVersion": "4.9.3",
-                "MaxStorage": 1,
-                "MaxBandWidth": 1,
+                "MaxStorage": 200,
+                "MaxBandWidth": 10,
                 "SpecName": "rocket-vip-basic-1",
                 "ConfigDisplay": "基础型",
                 "InstanceName": "order-instance",
-                "MaxTps": 1,
+                "MaxTps": 4000,
                 "AclEnabled": true,
-                "Retention": 0,
-                "MinRetention": 0,
-                "MaxRetention": 0
+                "Retention": 72,
+                "MinRetention": 72,
+                "MaxRetention": 960
             }
         ]
     }

@@ -10,7 +10,7 @@ Input:
 
 ```
 tccli wedata DescribeRules --cli-unfold-argument  \
-    --ProjectId 153161111111111111 \
+    --ProjectId 153161945204534 \
     --RuleGroupId 1 \
     --EngineType HIVE
 ```
@@ -35,7 +35,7 @@ Output:
                 "SourceObjectValue": "1",
                 "ConditionType": 1,
                 "ConditionExpression": ">",
-                "CustomSql": "abc",
+                "CustomSql": "",
                 "CompareRule": {
                     "Items": [
                         {
@@ -54,7 +54,7 @@ Output:
                     "ComputeExpression": "0"
                 },
                 "AlarmLevel": 1,
-                "Description": "描述",
+                "Description": "描述1",
                 "Operator": "zhangsan",
                 "TargetDatabaseId": "easdsad-dasdas",
                 "TargetDatabaseName": "db1",
@@ -75,7 +75,7 @@ Output:
                             "DatabaseId": "7p9gyuih78tgy",
                             "DatabaseName": "dbTest",
                             "TableId": "7t8ygihb670ygo",
-                            "TableName": "test",
+                            "TableName": "test_tb",
                             "TableKey": "asdfsdf",
                             "FieldConfig": [
                                 {
@@ -98,8 +98,8 @@ Output:
                 "SourceEngineTypes": [
                     2
                 ],
-                "TableName": "abc",
-                "TableOwnerName": "abc",
+                "TableName": "test_tb",
+                "TableOwnerName": "tom",
                 "ExecStrategy": {
                     "RuleGroupId": 1,
                     "MonitorType": 1,

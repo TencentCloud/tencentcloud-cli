@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQMsg --cli-unfold-argument  \
-    --EnvironmentId test_namespace \
+    --EnvironmentId test_ns \
     --ClusterId rocketmq-4k4orqgq \
     --TopicName test_topic \
     --PulsarMsgId 092BAE5A1656070DEA4E276DF0760089 \

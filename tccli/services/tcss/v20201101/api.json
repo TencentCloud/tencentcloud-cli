@@ -1,18 +1,18 @@
 {
   "actions": {
     "AddAndPublishNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略添加并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略添加并发布任务",
       "input": "AddAndPublishNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略添加并发布任务",
       "output": "AddAndPublishNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddAndPublishNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络创建Yaml网络策略并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建Yaml网络策略并发布任务",
       "input": "AddAndPublishNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络创建Yaml网络策略并发布任务",
       "output": "AddAndPublishNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddAssetImageRegistryRegistryDetail": {
       "document": "新增单个镜像仓库详细信息",
@@ -99,25 +99,25 @@
       "status": "online"
     },
     "AddNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略添加任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略添加任务",
       "input": "AddNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略添加任务",
       "output": "AddNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络创建Yaml网络策略添加任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建Yaml网络策略添加任务",
       "input": "AddNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络创建Yaml网络策略添加任务",
       "output": "AddNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CheckNetworkFirewallPolicyYaml": {
-      "document": "容器网络创建检查Yaml网络策略任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建检查Yaml网络策略任务",
       "input": "CheckNetworkFirewallPolicyYamlRequest",
       "name": "容器网络创建检查Yaml网络策略任务",
       "output": "CheckNetworkFirewallPolicyYamlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CheckRepeatAssetImageRegistry": {
       "document": "检查单个镜像仓库名是否重复",
@@ -127,11 +127,11 @@
       "status": "online"
     },
     "ConfirmNetworkFirewallPolicy": {
-      "document": "容器网络创建网络策略确认任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略确认任务",
       "input": "ConfirmNetworkFirewallPolicyRequest",
       "name": "容器网络创建网络策略确认任务",
       "output": "ConfirmNetworkFirewallPolicyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAbnormalProcessRulesExportJob": {
       "document": "创建异常进程规则导出任务",
@@ -171,7 +171,7 @@
     "CreateAssetImageScanTask": {
       "document": "容器安全创建镜像扫描任务",
       "input": "CreateAssetImageScanTaskRequest",
-      "name": "创建镜像扫描任务",
+      "name": "创建本地镜像扫描任务",
       "output": "CreateAssetImageScanTaskResponse",
       "status": "online"
     },
@@ -187,6 +187,13 @@
       "input": "CreateCheckComponentRequest",
       "name": "安装检查组件",
       "output": "CreateCheckComponentResponse",
+      "status": "online"
+    },
+    "CreateClusterAccess": {
+      "document": "创建集群接入",
+      "input": "CreateClusterAccessRequest",
+      "name": "创建集群接入",
+      "output": "CreateClusterAccessResponse",
       "status": "online"
     },
     "CreateClusterCheckTask": {
@@ -281,32 +288,32 @@
       "status": "online"
     },
     "CreateNetworkFirewallClusterRefresh": {
-      "document": "容器网络集群下发刷新任务",
+      "document": "功能已下线待三合一重构\n\n容器网络集群下发刷新任务",
       "input": "CreateNetworkFirewallClusterRefreshRequest",
       "name": "容器网络集群下发刷新任务",
       "output": "CreateNetworkFirewallClusterRefreshResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateNetworkFirewallPolicyDiscover": {
-      "document": "容器网络集群网络策略创建自动发现任务",
+      "document": "功能已下线待三合一重构\n\n容器网络集群网络策略创建自动发现任务",
       "input": "CreateNetworkFirewallPolicyDiscoverRequest",
       "name": "容器网络集群网络策略创建自动发现任务",
       "output": "CreateNetworkFirewallPolicyDiscoverResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateNetworkFirewallPublish": {
-      "document": "容器网络创建网络策略发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略发布任务",
       "input": "CreateNetworkFirewallPublishRequest",
       "name": "容器网络创建网络策略发布任务",
       "output": "CreateNetworkFirewallPublishResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateNetworkFirewallUndoPublish": {
-      "document": "容器网络创建网络策略撤销任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略撤销任务",
       "input": "CreateNetworkFirewallUndoPublishRequest",
       "name": "容器网络创建网络策略撤销任务",
       "output": "CreateNetworkFirewallUndoPublishResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateOrModifyPostPayCores": {
       "document": "CreateOrModifyPostPayCores  创建或者编辑弹性计费上限",
@@ -477,11 +484,11 @@
       "status": "online"
     },
     "DeleteNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略删除任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略删除任务",
       "input": "DeleteNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略删除任务",
       "output": "DeleteNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteRaspRules": {
       "document": "删除漏洞防御白名单",
@@ -1296,81 +1303,81 @@
       "status": "online"
     },
     "DescribeNetworkFirewallAuditRecord": {
-      "document": "查询集群策略审计列表",
+      "document": "功能已下线待三合一重构\n\n查询集群策略审计列表",
       "input": "DescribeNetworkFirewallAuditRecordRequest",
       "name": "查询集群策略审计列表",
       "output": "DescribeNetworkFirewallAuditRecordResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallClusterList": {
-      "document": "查询集群策略列表",
+      "document": "功能已下线待三合一重构\n\n查询集群策略列表",
       "input": "DescribeNetworkFirewallClusterListRequest",
       "name": "查询集群策略列表",
       "output": "DescribeNetworkFirewallClusterListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallClusterRefreshStatus": {
-      "document": "容器网络查询资产任务进度",
+      "document": "功能已下线待三合一重构\n\n容器网络查询资产任务进度",
       "input": "DescribeNetworkFirewallClusterRefreshStatusRequest",
       "name": "容器网络查询资产任务进度",
       "output": "DescribeNetworkFirewallClusterRefreshStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallNamespaceLabelList": {
-      "document": "查询集群网络空间标签列表",
+      "document": "功能已下线待三合一重构\n\n查询集群网络空间标签列表",
       "input": "DescribeNetworkFirewallNamespaceLabelListRequest",
       "name": "查询集群网络空间标签列表",
       "output": "DescribeNetworkFirewallNamespaceLabelListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallNamespaceList": {
-      "document": "查询集群网络空间列表",
+      "document": "功能已下线待三合一重构\n\n查询集群网络空间列表",
       "input": "DescribeNetworkFirewallNamespaceListRequest",
       "name": "查询集群网络空间列表",
       "output": "DescribeNetworkFirewallNamespaceListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPodLabelsList": {
-      "document": "查询集群网络pod标签",
+      "document": "功能已下线待三合一重构\n\n查询集群网络pod标签",
       "input": "DescribeNetworkFirewallPodLabelsListRequest",
       "name": "查询集群网络pod标签",
       "output": "DescribeNetworkFirewallPodLabelsListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyDetail": {
-      "document": "容器网络集群查看策略详情",
+      "document": "功能已下线待三合一重构\n\n容器网络集群查看策略详情",
       "input": "DescribeNetworkFirewallPolicyDetailRequest",
       "name": "容器网络集群查看策略详情",
       "output": "DescribeNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyDiscover": {
-      "document": "容器网络查询网络策略自动发现任务进度",
+      "document": "功能已下线待三合一重构\n\n容器网络查询网络策略自动发现任务进度",
       "input": "DescribeNetworkFirewallPolicyDiscoverRequest",
       "name": "容器网络查询网络策略自动发现任务进度",
       "output": "DescribeNetworkFirewallPolicyDiscoverResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyList": {
-      "document": "查询集群网络策略列表",
+      "document": "功能已下线待三合一重构\n\n查询集群网络策略列表",
       "input": "DescribeNetworkFirewallPolicyListRequest",
       "name": "查询集群网络策略列表",
       "output": "DescribeNetworkFirewallPolicyListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyStatus": {
-      "document": "容器网络查询网络策略策略执行状态",
+      "document": "功能已下线待三合一重构\n\n容器网络查询网络策略策略执行状态",
       "input": "DescribeNetworkFirewallPolicyStatusRequest",
       "name": "容器网络查询网络策略策略执行状态",
       "output": "DescribeNetworkFirewallPolicyStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络集群查看Yaml网络策略详情",
+      "document": "功能已下线待三合一重构\n\n容器网络集群查看Yaml网络策略详情",
       "input": "DescribeNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络集群查看Yaml网络策略详情",
       "output": "DescribeNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNewestVul": {
       "document": "查询最新披露漏洞列表",
@@ -2058,6 +2065,13 @@
       "output": "ModifyContainerNetStatusResponse",
       "status": "online"
     },
+    "ModifyDefendStatus": {
+      "document": "修改防护状态",
+      "input": "ModifyDefendStatusRequest",
+      "name": "修改防护状态",
+      "output": "ModifyDefendStatusResponse",
+      "status": "online"
+    },
     "ModifyEscapeEventStatus": {
       "document": "ModifyEscapeEventStatus  修改容器逃逸扫描事件状态",
       "input": "ModifyEscapeEventStatusRequest",
@@ -2324,19 +2338,26 @@
       "output": "SyncAssetImageRegistryAssetResponse",
       "status": "online"
     },
+    "UninstallClusterContainerSecurity": {
+      "document": "卸载集群容器安全",
+      "input": "UninstallClusterContainerSecurityRequest",
+      "name": "卸载集群容器安全",
+      "output": "UninstallClusterContainerSecurityResponse",
+      "status": "online"
+    },
     "UpdateAndPublishNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略更新并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略更新并发布任务",
       "input": "UpdateAndPublishNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略更新并发布任务",
       "output": "UpdateAndPublishNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateAndPublishNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络更新Yaml网络策略并发布任务",
+      "document": "功能已下线待三合一重构\n\n容器网络更新Yaml网络策略并发布任务",
       "input": "UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络更新Yaml网络策略并发布任务",
       "output": "UpdateAndPublishNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateAssetImageRegistryRegistryDetail": {
       "document": "更新单个镜像仓库详细信息",
@@ -2353,18 +2374,18 @@
       "status": "online"
     },
     "UpdateNetworkFirewallPolicyDetail": {
-      "document": "容器网络创建网络策略更新任务",
+      "document": "功能已下线待三合一重构\n\n容器网络创建网络策略更新任务",
       "input": "UpdateNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略更新任务",
       "output": "UpdateNetworkFirewallPolicyDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateNetworkFirewallPolicyYamlDetail": {
-      "document": "容器网络更新Yaml网络策略任务",
+      "document": "功能已下线待三合一重构\n\n容器网络更新Yaml网络策略任务",
       "input": "UpdateNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络更新Yaml网络策略任务",
       "output": "UpdateNetworkFirewallPolicyYamlDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {
@@ -5059,6 +5080,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群审计开关状态：\n已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed",
+          "example": "Closed",
+          "member": "string",
+          "name": "ClusterAuditStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入状态:\n未接入: AccessedNone\n已防护: AccessedDefended\n未防护: AccessedInstalled\n部分防护: AccessedPartialDefence\n接入异常: AccessedException\n卸载异常: AccessedUninstallException\n接入中: AccessedInstalling\n卸载中: AccessedUninstalling",
+          "example": "AccessedNone",
+          "member": "string",
+          "name": "AccessedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6170,6 +6211,16 @@
           "example": "AccessedSub****",
           "member": "string",
           "name": "AccessedSubStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入/卸载失败原因",
+          "example": "roles.rbac.authorization.k8s.io \"tcss-admin\" is forbidden: unable to create new content in namespace tcss because it is being terminated",
+          "member": "string",
+          "name": "AccessedErrorReason",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9107,7 +9158,7 @@
         {
           "disabled": true,
           "document": "是否扫描全部镜像(废弃)",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "All",
           "required": false,
@@ -9116,7 +9167,7 @@
         {
           "disabled": false,
           "document": "扫描的镜像列表",
-          "example": "[{\"Namespace\":\"name\",\"InstanceName\":\"ins-hdjh***\",\"ImageName\":\"imageName-01\",\"ImageTag\":\"tag\",\"Force\":true}]",
+          "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
@@ -9142,8 +9193,17 @@
         },
         {
           "disabled": false,
+          "document": "剔除扫描的镜像id列表",
+          "example": "[100]",
+          "member": "uint64",
+          "name": "ExcludeIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否最新镜像",
-          "example": "FALSE",
+          "example": "false",
           "member": "bool",
           "name": "IsLatest",
           "required": false,
@@ -9179,7 +9239,7 @@
         {
           "disabled": false,
           "document": "是否存在运行中的容器",
-          "example": "TRUE",
+          "example": "true",
           "member": "bool",
           "name": "ContainerRunning",
           "required": false,
@@ -9442,7 +9502,7 @@
         {
           "disabled": true,
           "document": "是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
-          "example": "TRUE",
+          "example": "true",
           "member": "bool",
           "name": "All",
           "required": false,
@@ -9460,7 +9520,7 @@
         {
           "disabled": false,
           "document": "扫描漏洞；漏洞，木马和风险需选其一",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "ScanVul",
           "required": false,
@@ -9469,7 +9529,7 @@
         {
           "disabled": false,
           "document": "扫描木马；漏洞，木马和风险需选其一",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ScanVirus",
           "required": false,
@@ -9478,7 +9538,7 @@
         {
           "disabled": false,
           "document": "扫描风险；漏洞，木马和风险需选其一",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ScanRisk",
           "required": false,
@@ -9487,7 +9547,7 @@
         {
           "disabled": false,
           "document": "根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
-          "example": "[{\"Name\":\"Namespace\",\"Values\":[\"name1\"]}]",
+          "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -9496,7 +9556,7 @@
         {
           "disabled": false,
           "document": "根据过滤条件筛选出镜像，再排除个别镜像",
-          "example": "[sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211]",
+          "example": "[\"sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211\"]",
           "member": "string",
           "name": "ExcludeImageIds",
           "required": false,
@@ -9505,7 +9565,7 @@
         {
           "disabled": false,
           "document": "镜像是否存在运行中的容器",
-          "example": "TRUE",
+          "example": "true",
           "member": "bool",
           "name": "ContainerRunning",
           "required": false,
@@ -9532,7 +9592,7 @@
         {
           "disabled": false,
           "document": "一键扫描任务。默认false表示非一键扫描，true一键扫描",
-          "example": "FALSE",
+          "example": "false",
           "member": "bool",
           "name": "IsOneClickScanningTask",
           "required": false,
@@ -9682,6 +9742,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterAccessRequest": {
+      "document": "CreateClusterAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterAccessResponse": {
+      "document": "CreateClusterAccess返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10228,9 +10315,18 @@
         {
           "disabled": false,
           "document": "要导出的资产ID列表或检测项ID列表，由ExportByAsset的取值决定。",
-          "example": "6788",
+          "example": "[6788]",
           "member": "uint64",
           "name": "IdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
           "required": false,
           "type": "list"
         }
@@ -12454,7 +12550,7 @@
         {
           "disabled": false,
           "document": "进程信息",
-          "example": "{         \"AncestorProcessInfo\": {             \"ProcessParam\": \"-port 22\",             \"ProcessPath\": \"/usr/local/bin/sshd\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "output_required": true,
@@ -12484,7 +12580,7 @@
         {
           "disabled": false,
           "document": "祖先进程信息",
-          "example": "{             \"ProcessParam\": \"-port 22\",             \"ProcessPath\": \"/usr/local/bin/sshd\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
           "output_required": true,
@@ -14842,6 +14938,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "资产同步时间",
+          "example": "2024-10-31 22:3****",
+          "member": "string",
+          "name": "AssetSyncTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -15157,7 +15263,7 @@
         {
           "disabled": false,
           "document": "是否信任镜像",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "IsTrustImage",
           "output_required": true,
@@ -15335,6 +15441,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -15414,7 +15540,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>\n<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>\n<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>\n<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>",
-          "example": "[{\"Name\":\"ScanStatus\",\"Values\":[\"notScan\"]}]",
+          "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -15690,7 +15816,7 @@
         {
           "disabled": false,
           "document": "层文件信息",
-          "example": "2024-10-16 10:18:03COPY /rootfs/ / # buildkit2024-10-16 10:18:03CMD [\"/bin/bash\"]2024-10-16 10:18:03ARG version=11.0.25.9-12024-10-16 10:18:03RUN |1 version=11.0.25.9-1 /bin/sh -c set -eux     && export GNUPGHOME=\"$(mktemp -d)\"     && curl -fL -o corretto.key https://yum.corretto.aws/corretto.key     && gpg --batch --import corretto.key     && gpg --batch --export --armor '6DC3636DAE534049C8B94623A122542AB04F24E3' > corretto.key     && rpm --import corretto.key     && rm -r \"$GNUPGHOME\" corretto.key     && curl -fL -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo     && grep -q '^gpgcheck=1' /etc/yum.repos.d/corretto.repo     && echo \"priority=9\" >> /etc/yum.repos.d/corretto.repo     && yum install -y java-11-amazon-corretto-devel-$version     && (find /usr/lib/jvm/java-11-amazon-corretto -name src.zip -delete || true)     && yum install -y fontconfig     && yum clean all # buildkit2024-10-16 10:18:03ENV LANG=C.UTF-82024-10-16 10:18:03ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto2024-10-25 17:07:21/bin/sh -c #(nop) WORKDIR /app2024-10-25 17:07:22/bin/sh -c #(nop)  ARG TIME_ZONE=Asia/Shanghai2024-10-31 15:36:40/bin/sh -c #(nop)  ENV LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 TZ=Asia/Shanghai2024-10-31 15:36:41/bin/sh -c #(nop) COPY dir:b6be22d5f6b7ecac64178d9ecb1776130408ba2ceefd1ccb00a8a74e963020c6 in /apps 2024-10-31 15:36:41/bin/sh -c #(nop) WORKDIR /agent2024-10-31 15:36:43/bin/sh -c #(nop) COPY dir:d820fbe9b16780dc71f1dde615f814fa61606b4016d71379d146e6ca0f3241a4 in /agent 2024-10-31 15:36:43/bin/sh -c #(nop)  ENTRYPOINT [\"/bin/sh\" \"-c\" \"bash****]",
+          "example": "2024-10-16 10:18:03COPY /rootfs/ / # buildkit2024-10-16 10:18:03CMD [\"/bin/bash\"] 2024-10-31 15:36:43/bin/sh -c #(nop)  ENTRYPOINT [\"/bin/sh\" \"-c\" \"bash****]",
           "member": "string",
           "name": "LayerInfo",
           "output_required": true,
@@ -15860,7 +15986,7 @@
         {
           "disabled": false,
           "document": "镜像创建的时间",
-          "example": "2019-10-24T14:20:51+0800",
+          "example": "2019-10-24T14:20:51+08:00",
           "member": "datetime_iso",
           "name": "ImageCreateTime",
           "output_required": true,
@@ -15885,6 +16011,26 @@
           "name": "Id",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -16478,7 +16624,7 @@
           "example": "[\"Name\"]",
           "member": "string",
           "name": "ExportField",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -16511,7 +16657,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "{\"Force\":\"true\",\"ImageDigest\":\"sha256:1319b1eaa0b7bcebae63af321fa67559b9517e8494060403d083bb3508fe52c8\",\"ImageName\":\"imageName-01\",\"ImageRepoAddress\":\"ccr.ccs.tencentyun.com\",\"ImageTag\":\"imageTag:1.0\",\"InstanceId\":\"instanceid-01\",\"InstanceName\":\"instanceName-01\",\"Namespace\":\"instanceNamespace-01\",\"RegistryType\":\"ccr\"}",
+          "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -16535,9 +16681,19 @@
         {
           "disabled": false,
           "document": "excel文件下载地址",
-          "example": "https://cwp-1258344699.cos.ap-guangzhou.myqcloud.com/ImageRiskListExport-1256299843-241101101930.csv?q-sign-algorithm=sha1&q-ak=AKID******&q-sign-time=1730427570%3B1730434770&q-key-time=1730427570%3B1730434770&q-header-list=host&q-url-param-list=&q-signature=5a8affd5ac54f2ed659c2618ef194eb0ecd947d9",
+          "example": "https://cwp-125834xx.xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出任务id",
+          "example": "1012",
+          "member": "string",
+          "name": "JobId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16947,7 +17103,7 @@
         },
         {
           "disabled": false,
-          "document": "必填参数，镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
+          "document": "镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
           "example": "135109910",
           "member": "uint64",
           "name": "Id",
@@ -17030,7 +17186,7 @@
         },
         {
           "disabled": false,
-          "document": "必填参数，镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
+          "document": "镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
           "example": "137884016",
           "member": "uint64",
           "name": "Id",
@@ -18896,7 +19052,7 @@
         {
           "disabled": false,
           "document": "防御容器状态",
-          "example": "Defended",
+          "example": "HasRisk",
           "member": "string",
           "name": "DefenderStatus",
           "output_required": true,
@@ -19009,6 +19165,16 @@
           "example": "tx-qi",
           "member": "string",
           "name": "OwnerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查失败原因",
+          "example": "no-node",
+          "member": "string",
+          "name": "CheckFailReason",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24756,7 +24922,7 @@
         {
           "disabled": false,
           "document": "解决方案",
-          "example": "1.检查容器内的恶意进程及非法端口，删除可疑的启动项和定时任务；\n 2.对容器存在的风险进行排查，如进行漏洞扫描、木马扫描等；\n 3.对容器所使用的的镜像进行加固，并替换运行中****",
+          "example": "1.检查容器内的恶意进程及非法端口，删除可疑的启动项和定时任务； 2.对容器存在的风险进行排查，如进行漏洞扫描、木马扫描等； 3.对容器所使用的镜像进行加固，并替换运行中****",
           "member": "string",
           "name": "Solution",
           "output_required": true,
@@ -24956,7 +25122,7 @@
         {
           "disabled": false,
           "document": "祖先进程命令行参数",
-          "example": "containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/36322181839db45cf0624e2d71059c015221be71c3552f2d98d26eda53094387 -address /run/containerd/containerd.sock -containerd-binary /usr/bin/containerd -runtime-root /var/run/docker/runtime-****",
+          "example": "param",
           "member": "string",
           "name": "AncestorProcessParam",
           "output_required": true,
@@ -25667,7 +25833,7 @@
         {
           "disabled": false,
           "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
-          "example": "[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
+          "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
           "required": false,
@@ -25710,7 +25876,7 @@
         {
           "disabled": false,
           "document": "白名单信息列表",
-          "example": "[             {                 \"UpdateTime\": \"2020-09-22 00:00:00\",                  \"SyscallNames\": [ \"chroot\", \"kill\"],                   \"ImageIds\": [                     \"image-id\"                 ]",
+          "example": "无",
           "member": "RiskSyscallWhiteListBaseInfo",
           "name": "WhiteListSet",
           "output_required": true,
@@ -27243,7 +27409,7 @@
         {
           "disabled": false,
           "document": "集群的详细信息",
-          "example": "无",
+          "example": "[{}]",
           "member": "ClusterInfoItem",
           "name": "ClusterInfoList",
           "output_required": true,
@@ -32202,7 +32368,7 @@
         {
           "disabled": false,
           "document": "所属项目",
-          "example": "{     \"ProjectName\":\"proj1\",     \"ProjectID\":1 }",
+          "example": "无",
           "member": "ProjectInfo",
           "name": "Project",
           "output_required": true,
@@ -32212,7 +32378,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "[{     \"TagKey\":\"business1\",     \"TagValue\":\"dev\" }]",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
@@ -32277,6 +32443,16 @@
           "name": "CoresCnt",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近在线时间",
+          "example": "2025-12-24 08:37:11",
+          "member": "string",
+          "name": "LastOnlineTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -32853,7 +33029,7 @@
         {
           "disabled": false,
           "document": "是否可信镜像",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "IsTrustImage",
           "output_required": true,
@@ -33053,7 +33229,7 @@
         {
           "disabled": false,
           "document": "镜像创建的时间",
-          "example": "\"2019-10-24T14:20:51+0800\"",
+          "example": "2019-10-24T14:20:51+08:00",
           "member": "datetime_iso",
           "name": "ImageCreateTime",
           "output_required": true,
@@ -33168,6 +33344,26 @@
           "name": "RecommendedFix",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -34255,7 +34451,7 @@
         {
           "disabled": false,
           "document": "镜像id",
-          "example": "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f****",
+          "example": "sha256:****",
           "member": "string",
           "name": "ImageID",
           "output_required": true,
@@ -34265,7 +34461,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "registry.jiguang.woa.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
+          "example": "imageName-01:latest",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -34365,7 +34561,7 @@
         {
           "disabled": false,
           "document": "是否信任镜像",
-          "example": "False",
+          "example": "true",
           "member": "bool",
           "name": "IsTrustImage",
           "output_required": true,
@@ -34530,6 +34726,26 @@
           "name": "RecommendedFix",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因\n",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -35951,6 +36167,60 @@
     },
     "ModifyContainerNetStatusResponse": {
       "document": "ModifyContainerNetStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefendStatusRequest": {
+      "document": "ModifyDefendStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开关是否开启",
+          "example": "无",
+          "member": "bool",
+          "name": "SwitchOn",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型 <li> Cluster: 集群</li> <li> Node: 节点</li>",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是全部实例",
+          "example": "无",
+          "member": "bool",
+          "name": "IsAll",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例id列表",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefendStatusResponse": {
+      "document": "ModifyDefendStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -42704,6 +42974,33 @@
       ],
       "usage": "out"
     },
+    "UninstallClusterContainerSecurityRequest": {
+      "document": "UninstallClusterContainerSecurity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallClusterContainerSecurityResponse": {
+      "document": "UninstallClusterContainerSecurity返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateAndPublishNetworkFirewallPolicyDetailRequest": {
       "document": "UpdateAndPublishNetworkFirewallPolicyDetail请求参数结构体",
       "members": [
@@ -45833,7 +46130,7 @@
         {
           "disabled": false,
           "document": "漏洞标签",
-          "example": "[None, None]",
+          "example": "[\"tag1\",\"tag2\"]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -45987,6 +46284,26 @@
           "member": "int64",
           "name": "DefendedCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护开启数量",
+          "example": "23",
+          "member": "int64",
+          "name": "RaspOpenNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护关闭数量",
+          "example": "24",
+          "member": "int64",
+          "name": "RaspClosedNodeCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }

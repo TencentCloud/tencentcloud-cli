@@ -27,8 +27,15 @@ Output:
     "Response": {
         "List": [
             {
+                "Username": "string",
+                "HandlingStatus": 0,
                 "Id": 0,
-                "Email": "string"
+                "Keyword": "string",
+                "Email": "string",
+                "Remark": "string",
+                "RiskLevel": 0,
+                "Source": "string",
+                "Suggestion": "string"
             }
         ],
         "Total": 0,

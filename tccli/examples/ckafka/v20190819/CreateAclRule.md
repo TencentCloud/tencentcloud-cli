@@ -10,8 +10,8 @@ tccli ckafka CreateAclRule --cli-unfold-argument  \
     --ResourceType Topic \
     --RuleList.0.Host 1.2.3.4 \
     --RuleList.0.Principal User:* \
-    --RuleList.0.Operation WRITE \
-    --RuleList.0.PermissionType ALLOW \
+    --RuleList.0.Operation Write \
+    --RuleList.0.PermissionType Allow \
     --RuleName testRule \
     --PatternType PREFIXED \
     --Pattern testPattern

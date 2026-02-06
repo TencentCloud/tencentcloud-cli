@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeEnvironmentRoles --cli-unfold-argument  \
+    --ClusterId pulsar-asyewnnedas \
     --EnvironmentId default
 ```
 

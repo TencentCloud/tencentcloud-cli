@@ -969,6 +969,16 @@
       "members": [
         {
           "disabled": false,
+          "document": "节省计划资源id",
+          "example": "svp-j5q000ezt4GyG32",
+          "member": "string",
+          "name": "SpId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "节省计划类型",
           "example": "svp_common",
           "member": "string",
@@ -1009,8 +1019,8 @@
         },
         {
           "disabled": false,
-          "document": "状态",
-          "example": "1 生效 2 失效 3 作废",
+          "document": "1 生效 2 失效 3 作废",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -1039,8 +1049,8 @@
         },
         {
           "disabled": false,
-          "document": "支付类型",
-          "example": "1 全预付 2 部分预付 3 全不预付",
+          "document": "1 全预付 2 部分预付 3 全不预付",
+          "example": "1",
           "member": "uint64",
           "name": "PayType",
           "output_required": true,
@@ -1056,6 +1066,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "承诺金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "PromiseAmount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1065,7 +1085,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "节省计划类型",
+          "document": "<p>节省计划资源id</p>",
+          "example": "svp-jcj000e-oWTZt00",
+          "member": "string",
+          "name": "SpId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节省计划类型</p>",
           "example": "svp_common",
           "member": "string",
           "name": "SpType",
@@ -1075,8 +1105,8 @@
         },
         {
           "disabled": false,
-          "document": "节省计划状态",
-          "example": "1 生效 2 失效 3 作废",
+          "document": "<p>节省计划状态</p>枚举值：<ul><li> 1：  生效</li><li> 2： 失效 </li><li> 3： 作废</li></ul>",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -1085,7 +1115,7 @@
         },
         {
           "disabled": false,
-          "document": "累计抵扣的金额（单位：元）",
+          "document": "<p>累计抵扣的金额（单位：元）</p>",
           "example": "90.01",
           "member": "string",
           "name": "DeductAmount",
@@ -1095,7 +1125,7 @@
         },
         {
           "disabled": false,
-          "document": "累计承诺消费金额（单位：元）",
+          "document": "<p>累计承诺消费金额（单位：元）</p>",
           "example": "90.01",
           "member": "string",
           "name": "PromiseAmount",
@@ -1105,7 +1135,7 @@
         },
         {
           "disabled": false,
-          "document": "累计净节省金额（单位：元）",
+          "document": "<p>累计净节省金额（单位：元）</p>",
           "example": "90.01",
           "member": "string",
           "name": "NetSavings",
@@ -1115,7 +1145,7 @@
         },
         {
           "disabled": false,
-          "document": "使用率",
+          "document": "<p>使用率</p>",
           "example": "90.01",
           "member": "float",
           "name": "UtilizationRate",
@@ -1125,7 +1155,7 @@
         },
         {
           "disabled": false,
-          "document": "累计流失金额（单位：元）",
+          "document": "<p>累计流失金额（单位：元）</p>",
           "example": "90.01",
           "member": "string",
           "name": "LossAmount",
@@ -1135,7 +1165,7 @@
         },
         {
           "disabled": false,
-          "document": "累计按量计费预期金额（单位：元）",
+          "document": "<p>累计按量计费预期金额（单位：元）</p>",
           "example": "90.01",
           "member": "string",
           "name": "DosageAmount",
@@ -1145,7 +1175,7 @@
         },
         {
           "disabled": false,
-          "document": "累计成本金额（单位：元）",
+          "document": "<p>累计成本金额（单位：元）</p>",
           "example": "90.01",
           "member": "string",
           "name": "CostAmount",
@@ -1155,7 +1185,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "[\"15\"]",
           "member": "string",
           "name": "Region",

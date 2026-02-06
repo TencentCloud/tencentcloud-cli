@@ -14,7 +14,9 @@ tccli cynosdb UpgradeProxy --cli-unfold-argument  \
     --ReloadBalance auto \
     --IsInMaintainPeriod no \
     --ProxyZones.0.ProxyNodeZone ap-guangzhou-3 \
-    --ProxyZones.0.ProxyNodeCount 2
+    --ProxyZones.0.ProxyNodeCount 2 \
+    --IsRollUpgrade yes \
+    --RollUpgradeWaitingTime 10
 ```
 
 Output: 

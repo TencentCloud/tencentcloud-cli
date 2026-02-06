@@ -33,7 +33,7 @@ Output:
                     "OwnerUserId": 100333290099,
                     "OwnerUserName": "zhangsna",
                     "DatabaseScore": 0.8,
-                    "TableScore": 12.0,
+                    "TableScore": 12,
                     "LastPeriodRatio": 0.18
                 }
             ]

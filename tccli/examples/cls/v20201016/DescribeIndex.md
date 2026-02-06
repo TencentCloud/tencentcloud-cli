@@ -58,7 +58,8 @@ Output:
         "ModifyTime": "2025-08-04 15:09:10",
         "RequestId": "9cdcca5e-9d2b-41c1-8b69-6de7034e70ee",
         "IncludeInternalFields": true,
-        "MetadataFlag": 0
+        "MetadataFlag": 0,
+        "CoverageField": ""
     }
 }
 ```

@@ -61,6 +61,7 @@ Output:
         ],
         "HostNormalCount": 15,
         "HostStandbyCount": 0,
+        "HostAbnormalCount": 0,
         "LocalNetInfo": {
             "BGPRoute": "10.0.0.0/24",
             "LocalIp": "10.0.0.0",

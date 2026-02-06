@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "Answer": "《**哪吒之魔童闹海**》（亦称《**哪吒贰之魔童闹海**》，简称《**哪吒2**》）。",
+        "Answer": "《**哪吒之魔童闹海**》亦称《**哪吒贰之魔童闹海**》，简称《**哪吒2**》）。",
         "AttrLabels": [],
         "AttrRange": 1,
         "CateBizId": "1887842680872108032",
@@ -41,7 +41,7 @@ Output:
         "Source": 3,
         "SourceDesc": "手动录入",
         "Status": 2,
-        "StatusDesc": "待发布",
+        "StatusDesc": "导入完成",
         "UpdateTime": "1742783970",
         "VideoAuditStatus": 0
     }

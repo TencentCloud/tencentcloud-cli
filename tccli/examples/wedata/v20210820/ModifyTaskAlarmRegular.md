@@ -49,7 +49,7 @@ tccli wedata ModifyTaskAlarmRegular --cli-unfold-argument  \
     --TaskAlarmInfo.MonitorObjectIds k753e8924-a3ed-4201-b5d3-35ce683b589c \
     --TaskAlarmInfo.LatestAlarmInstanceId 3047 \
     --TaskAlarmInfo.LatestAlarmTime 2022-04-11 10:49:56 \
-    --TaskAlarmInfo.Description 描述 \
+    --TaskAlarmInfo.Description 按需描述 \
     --TaskAlarmInfo.LarkWebHooks https://www.feishu.cn/ \
     --ProjectId 1486446569620893696
 ```

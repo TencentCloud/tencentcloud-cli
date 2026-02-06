@@ -70,6 +70,13 @@
       "output": "InquirePriceRunInstancesResponse",
       "status": "online"
     },
+    "InquirePriceUpdateServiceConfigs": {
+      "document": "本接口(InquirePriceUpdateServiceConfigs)用于更新服务配置询价",
+      "input": "InquirePriceUpdateServiceConfigsRequest",
+      "name": "更新服务配置询价",
+      "output": "InquirePriceUpdateServiceConfigsResponse",
+      "status": "online"
+    },
     "ResetInstancesPassword": {
       "document": "本接口 (ResetInstancesPassword) 用于重置实例的用户密码。",
       "input": "ResetInstancesPasswordRequest",
@@ -110,6 +117,13 @@
       "input": "TerminateInstancesRequest",
       "name": "销毁实例",
       "output": "TerminateInstancesResponse",
+      "status": "online"
+    },
+    "UpdateServiceConfigs": {
+      "document": "本接口(UpdateServiceConfigs)用于更新服务配置",
+      "input": "UpdateServiceConfigsRequest",
+      "name": "更新服务配置",
+      "output": "UpdateServiceConfigsResponse",
       "status": "online"
     }
   },
@@ -332,7 +346,7 @@
         {
           "disabled": false,
           "document": "应用id列表。单次请求数量上限为100个。",
-          "example": "[\"app-12345678\"]",
+          "example": "[\"app-q69qsc9v\"]",
           "member": "string",
           "name": "ApplicationIds",
           "required": false,
@@ -341,7 +355,7 @@
         {
           "disabled": false,
           "document": "过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;",
-          "example": "[{\"Name\":\"application-id\", \"Values\":[\"app-12345678\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -402,7 +416,7 @@
         {
           "disabled": false,
           "document": "分页返回的应用列表",
-          "example": "[{\"ApplicationId\":\"app-xx\",\"ApplicationName\":\"Pytorch\",\"ApplicationSize\":50,\"ApplicationState\":\"ONLINE\",\"ApplicationType\":\"PUBLIC_APPLICATION\",\"ConfigEnvironment\":\"Ubuntu\",\"CreateTime\":\"xx\",\"Description\":\"xx\",\"MinSystemDiskSize\": 80}]",
+          "example": "无",
           "member": "ApplicationInfo",
           "name": "ApplicationSet",
           "output_required": true,
@@ -480,7 +494,7 @@
         {
           "disabled": false,
           "document": "描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤",
-          "example": "[{\"Name\":\"instance-state\", \"Values\":[\"RUNNING\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -523,7 +537,7 @@
         {
           "disabled": false,
           "document": "分页实例详情\n",
-          "example": "[{\"InstanceId\":\"hai-jklfaded\"}]",
+          "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
           "output_required": true,
@@ -865,6 +879,33 @@
       ],
       "type": "object"
     },
+    "InquirePriceUpdateServiceConfigsRequest": {
+      "document": "InquirePriceUpdateServiceConfigs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "InquirePriceUpdateServiceConfigsResponse": {
+      "document": "InquirePriceUpdateServiceConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发货参数对应的价格组合。",
+          "example": "无",
+          "member": "ServicePriceDetail",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Instance": {
       "document": "实例信息",
       "members": [
@@ -971,7 +1012,7 @@
         {
           "disabled": false,
           "document": "系统盘数据",
-          "example": "{\"DiskType\":\"CLOUD_PREMIUM\", \"DiskSize\":100}",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "output_required": true,
@@ -1071,7 +1112,7 @@
         {
           "disabled": false,
           "document": "实例包含的登录服务详情",
-          "example": "{\"ServiceName\":\"Jupyter\"}",
+          "example": "无",
           "member": "LoginService",
           "name": "LoginServices",
           "output_required": true,
@@ -1175,6 +1216,26 @@
           "name": "Amount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "100.00",
+          "member": "float",
+          "name": "OriginPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣价",
+          "example": "88.8",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -1721,6 +1782,22 @@
       ],
       "usage": "both"
     },
+    "ServicePriceDetail": {
+      "document": "推理集群费用数据结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推理集群价格信息\t",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "ServicePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "StartInstanceRequest": {
       "document": "StartInstance请求参数结构体",
       "members": [
@@ -1887,6 +1964,42 @@
     },
     "TerminateInstancesResponse": {
       "document": "TerminateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceConfigsRequest": {
+      "document": "UpdateServiceConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "svc-3m6xrkjj",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "期望副本数",
+          "example": "2",
+          "member": "int64",
+          "name": "TargetReplicas",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceConfigsResponse": {
+      "document": "UpdateServiceConfigs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

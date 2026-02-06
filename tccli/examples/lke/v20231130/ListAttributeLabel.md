@@ -17,7 +17,7 @@ Output:
     "Response": {
         "List": [
             {
-                "AttrKey": "test",
+                "AttrKey": "AttrKey",
                 "AttrName": "诶皮爱标签",
                 "IsUpdating": false,
                 "AttrBizId": "1734549420823662592",

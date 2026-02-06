@@ -8,6 +8,42 @@
         "title": "成功激活示例"
       }
     ],
+    "BatchCreateTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Created\": true,\n                \"TaskId\": \"019a0fb5-f039-740f-9e5f-1b01fce8a7da\"\n            }\n        ],\n        \"RequestId\": \"a1a9472e-4d48-4494-bfa5-c0b744173452\"\n    }\n}",
+        "title": "批量创建 TWeSee 语义理解任务 - 成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Created\": false,\n                \"ErrorCode\": \"InvalidParameter\",\n                \"ErrorMessage\": \"参数错误:InputURL\"\n            }\n        ],\n        \"RequestId\": \"feb44033-42f2-4bb3-bb7a-ffa1fcec95d2\"\n    }\n}",
+        "title": "批量创建 TWeSee 语义理解任务 - 失败"
+      }
+    ],
+    "BatchInvokeTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchInvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Completed\": true,\n                \"Result\": {\n                    \"DetectedClassifications\": [\n                        \"person\"\n                    ],\n                    \"Status\": 3,\n                    \"Summary\": \"穿白衣服的人在雨后路边行走\"\n                },\n                \"TaskId\": \"019a0bdb-1471-77c7-ad24-3962edda28cc\"\n            }\n        ],\n        \"RequestId\": \"79d19408-d4e8-467a-8e93-b6e164d1cb6f\"\n    }\n}",
+        "title": "批量同步执行 TWeSee 语义理解任务 - 成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchInvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Completed\": false,\n                \"ErrorCode\": \"InvalidParameter\",\n                \"ErrorMessage\": \"参数错误:InputURL\"\n            }\n        ],\n        \"RequestId\": \"fa6f4dfb-45eb-4263-b889-e46b50bfcdbf\"\n    }\n}",
+        "title": "批量同步执行 TWeSee 语义理解任务 - 失败"
+      }
+    ],
+    "BatchUpdateFirmware": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=BatchUpdateFirmware\n&ProductID=sdfewihf\n&FirmwareVersion=2.0.0\n&FirmwareOriVersion=1.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxx\",\n        \"TaskId\": 1000696\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "BindCloudStorageUser": [
       {
         "document": "",
@@ -30,6 +66,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=BindProducts\n&GatewayProductId=9I5O8HSUDJ\n&ProductIds.0=12345ABCDE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee15c53-91ac-488d-855d-c02d9f5f3d91\"\n    }\n}",
         "title": "批量绑定子产品"
+      }
+    ],
+    "BindTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\",\n    \"ProductId\": \"LPIOACT1NG\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab1ae9a-77b4-4958-b413-b5e0f3b2a6b0\"\n    }\n}",
+        "title": "智能体和产品绑定示例"
       }
     ],
     "CallDeviceActionAsync": [
@@ -58,14 +102,6 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClientToken\": \"\",\n        \"OutputParams\": \"\",\n        \"RequestId\": \"b2621fc1-d6d9-4929-af0b-3fb0e919658a\",\n        \"Status\": \"FailedOperation.ActionUnreachable|动作消息不可达\"\n    }\n}",
         "title": "同步调用设备行为，设备不在线。"
-      }
-    ],
-    "CancelAssignTWeCallLicense": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAssignTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgId\": \"2024020236215\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3edc0o-456yghy\"\n    }\n}",
-        "title": "成功取消分配"
       }
     ],
     "ChangeP2PRoute": [
@@ -206,6 +242,14 @@
         "title": "创建设备通道示例"
       }
     ],
+    "CreateDeviceSDPAnswer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceSDPAnswer\n<公共请求参数>\n\n{\n    \"ProductId\": \"product\",\n    \"DeviceName\": \"device\",\n    \"SDPOffer\": \"v=0\\\\r\\\\no=- 1769412238477114228\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SDPAnswer\": \"v=0\\r\\no=- 1769412238477114229\",\n        \"RequestId\": \"0c4746c2-c06d-4849-a106-113956941993\"\n    }\n}",
+        "title": "创建设备SDP应答"
+      }
+    ],
     "CreateExternalSourceAIServiceTask": [
       {
         "document": "",
@@ -254,6 +298,14 @@
         "title": "新建 LoRa 网关"
       }
     ],
+    "CreateOtaModule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOtaModule\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\",\n    \"FwType\": \"bms\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0970c75a-07e2-429d-bae0-76230b466bbc\"\n    }\n}",
+        "title": "创建新模块"
+      }
+    ],
     "CreatePositionFence": [
       {
         "document": "创建围栏",
@@ -297,9 +349,121 @@
     "CreateTWeSeeRecognitionTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"InputURL\": \"hhttps://example.com/video.mp4\",\n    \"CustomId\": \"event-1\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1744389074077,\n    \"EndTimeMs\": 1744389075077\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26083bec-a7bd-491f-b6df-45e7f143638c\",\n        \"TaskId\": \"019625b1-15d6-72d8-a5d6-388b45c92c67\"\n    }\n}",
-        "title": "创建 TWeSee 语义理解任务"
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"not_exist_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"IsCustomDevice\": true,\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"988080c5-b74a-4185-a404-f2877e08f97e\",\n        \"TaskId\": \"0198cbc6-e472-79c6-953a-5240495d7640\"\n    }\n}",
+        "title": "使用未创建的设备名创建视频摘要任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/image.jpg\",\n    \"InputType\": \"image\",\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"65dcf25f-385a-4b63-9a60-c99caa28f45a\",\n        \"TaskId\": \"0198cbc8-8680-7b0a-bd4f-4dbff77853cd\"\n    }\n}",
+        "title": "创建图片摘要任务"
+      },
+      {
+        "document": "可选择的事件行为标签（SummaryConfig.DetectTypes）详见 [文档](https://cloud.tencent.com/document/api/1081/34988#VisionSummaryConfig)",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/image.jpg\",\n    \"InputType\": \"image\",\n    \"ServiceType\": \"Summary\",\n    \"SummaryConfig\": {\n        \"DetectTypes\": [\n            \"baby_crying\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"019a77b8-e78a-7d75-82ae-596b969aae63\",\n        \"RequestId\": \"f4256301-f72c-4eab-bcae-50548cbe987e\"\n    }\n}",
+        "title": "创建图片摘要任务（包含额外的事件行为检测）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"ServiceType\": \"ObjectDetect\",\n    \"ObjectDetectConfig\": {\n        \"DetectTypes\": [\n            \"adult\",\n            \"child\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57096151-fd04-4558-a2f9-280943e9682d\",\n        \"TaskId\": \"0198cbc2-91df-79cd-96ca-0f73ef661632\"\n    }\n}",
+        "title": "创建目标检测任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3d7d0eb-d28d-43b0-9b8c-676f785edcb3\",\n        \"TaskId\": \"0198cbc3-8c89-70f2-a07a-5a39b606bc92\"\n    }\n}",
+        "title": "创建视频摘要任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1755765320366,\n    \"EndTimeMs\": 1755765328366,\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7a2ea4f-8a8c-484c-afde-c82005c643fb\",\n        \"TaskId\": \"0198cbc4-eca1-78dd-b8ff-c150b97e081f\"\n    }\n}",
+        "title": "创建视频摘要任务且使该视频可被搜索"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"SummaryConfig\": {\n        \"MultiCameraLayout\": \"Vertical,Num=2,Index=0;1\"\n    },\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35044438-d9b8-42ee-a169-a40d9ecd96cc\",\n        \"TaskId\": \"0198cbc5-e684-7335-a168-593d91d5d89f\"\n    }\n}",
+        "title": "创建视频摘要任务（包含多路摄像头的视频）"
+      }
+    ],
+    "CreateTWeSeeRecognitionTaskWithFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTaskWithFile\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ChannelId\": 0,\n    \"CustomId\": \"event-1\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1761201772000,\n    \"EndTimeMs\": 1761201779000,\n    \"Config\": \"config_content\",\n    \"IsCustomDevice\": false,\n    \"InputType\": \"video\",\n    \"SummaryQOS\": \"minutely\",\n    \"ServiceType\": \"Summary\",\n    \"InputBase64\": \"AAAAIGZ0eXBpc29tAAAC...\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"019a0fdd-81ed-7f89-911a-43e2a0df1c2d\",\n        \"RequestId\": \"665a49ba-120b-4447-9a43-4f303d47b886\"\n    }\n}",
+        "title": "上传文件并创建 TWeSee 语义理解任务"
+      }
+    ],
+    "CreateTWeSeeService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeService\n<公共请求参数>\n\n{\n    \"Service\": \"VideoSummary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21d73508-3a88-41c7-927c-3952301b67c0\"\n    }\n}",
+        "title": "开通 TWeSee 视频摘要"
+      }
+    ],
+    "CreateTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"Name\": \"LPIOACT1NG\",\n    \"Description\": \"LPIOACT1NG\",\n    \"TargetLanguage\": \"zh\",\n    \"AgentConfig\": {\n        \"GreetingMessage\": \"u4f60u597d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BotId\": \"bot-1TzRAz42oi\",\n        \"RequestId\": \"46b67c1e-e60a-4128-95e1-c4b7ebd07121\"\n    }\n}",
+        "title": "创建智能体示例"
+      }
+    ],
+    "CreateTWeTalkProductConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶\",\n    \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n    \"VoiceType\": 101006\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b64cf0b-c10e-4b4a-97a1-40ab7116b362\"\n    }\n}",
+        "title": "新增产品配置信息"
+      }
+    ],
+    "CreateTWeTalkProductConfigV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n        \"DefaultVoiceType\": 101016\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "新增产品配置，使用系统默认 三段式，只配置系统提示词，问候语和音色"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"DeviceName\": \"dev\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n        \"DefaultVoiceType\": 101016\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "新增设备配置，使用系统默认 三段式，只配置系统提示词，问候语和音色"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"DeviceName\": \"dev\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n        \"DefaultVoiceType\": 101016\n    },\n    \"STTConfig\": {\n        \"STTType\": \"tencent\",\n        \"Enabled\": true,\n        \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"secretId*****\\\",\\\"SecretKey\\\":\\\"SecretKey****\\\",\\\"EngineType\\\":\\\"16k_zh\\\"}\"\n    },\n    \"ConversationConfig\": {\n        \"SessionTimeout\": 300,\n        \"InterruptionEnabled\": true,\n        \"MaxContextTokens\": 20000,\n        \"IdleDetection\": {\n            \"Enabled\": true,\n            \"TimeoutSeconds\": 4,\n            \"MaxRetries\": 3,\n            \"IdleResponses\": [\n                {\n                    \"RetryCount\": 1,\n                    \"Message\": \"不好意思，刚才可能有点安静啦，您还在吗？\"\n                },\n                {\n                    \"RetryCount\": 2,\n                    \"Message\": \"我没有听到你。我们继续聊天吗？\"\n                },\n                {\n                    \"RetryCount\": 3,\n                    \"Message\": \"好的，我会在这里停下。以后再聊！\"\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "新增产品配置，自定义STT，并配置系统提示词，问候语、音色和空闲检测"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"Q7MZK2V1QR\",\n    \"DeviceName\": \"dn1t3dgxbxmo\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n        \"DefaultVoiceType\": 101016\n    },\n    \"STTConfig\": {\n        \"STTType\": \"tencent\",\n        \"Enabled\": true,\n        \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"secretId*****\\\",\\\"SecretKey\\\":\\\"SecretKey****\\\",\\\"EngineType\\\":\\\"16k_zh\\\"}\"\n    },\n    \"LLMConfig\": {\n        \"LLMType\": \"openai\",\n        \"Model\": \"chatgpt4o\",\n        \"Streaming\": true,\n        \"Config\": \"{\\\"ApiKey\\\":\\\"sk-09***\\\",\\\"ApiUrl\\\":\\\"base_url\\\",\\\"SystemPrompt\\\":\\\"你是一个语音助手\\\",\\\"Timeout\\\":30,\\\"History\\\":0,\\\"MetaInfo\\\":{\\\"productID\\\":\\\"test\\\"}}\"\n    },\n    \"ConversationConfig\": {\n        \"SessionTimeout\": 300,\n        \"InterruptionEnabled\": true,\n        \"MaxContextTokens\": 20000,\n        \"IdleDetection\": {\n            \"Enabled\": true,\n            \"TimeoutSeconds\": 4,\n            \"MaxRetries\": 3,\n            \"IdleResponses\": [\n                {\n                    \"RetryCount\": 1,\n                    \"Message\": \"不好意思，刚才可能有点安静啦，您还在吗？\"\n                },\n                {\n                    \"RetryCount\": 2,\n                    \"Message\": \"我没有听到你。我们继续聊天吗？\"\n                },\n                {\n                    \"RetryCount\": 3,\n                    \"Message\": \"好的，我会在这里停下。以后再聊！\"\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "新增产品配置，自定义STT，LLM, 并配置系统提示词，问候语和音色"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"Q7MZK2V1QR\",\n    \"DeviceName\": \"dn1t3dgxbxmo\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\"\n    },\n    \"STTConfig\": {\n        \"STTType\": \"tencent\",\n        \"Enabled\": true,\n        \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"secretId*****\\\",\\\"SecretKey\\\":\\\"SecretKey****\\\",\\\"EngineType\\\":\\\"16k_zh\\\"}\"\n    },\n    \"LLMConfig\": {\n        \"LLMType\": \"openai\",\n        \"Model\": \"chatgpt4o\",\n        \"Streaming\": true,\n        \"Config\": \"{\\\"ApiKey\\\":\\\"sk-09***\\\",\\\"ApiUrl\\\":\\\"base_url\\\",\\\"SystemPrompt\\\":\\\"你是一个语音助手\\\",\\\"Timeout\\\":30,\\\"History\\\":0,\\\"MetaInfo\\\":{\\\"productID\\\":\\\"test\\\"}}\"\n    },\n    \"TTSConfig\": {\n        \"TTSType\": \"tencent\",\n        \"Enabled\": true,\n        \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"secretId*****\\\",\\\"SecretKey\\\":\\\"SecretKey****\\\",\\\"VoiceType\\\":10001}\"\n    },\n    \"ConversationConfig\": {\n        \"SessionTimeout\": 300,\n        \"InterruptionEnabled\": true,\n        \"MaxContextTokens\": 20000,\n        \"IdleDetection\": {\n            \"Enabled\": true,\n            \"TimeoutSeconds\": 4,\n            \"MaxRetries\": 3,\n            \"IdleResponses\": [\n                {\n                    \"RetryCount\": 1,\n                    \"Message\": \"不好意思，刚才可能有点安静啦，您还在吗？\"\n                },\n                {\n                    \"RetryCount\": 2,\n                    \"Message\": \"我没有听到你。我们继续聊天吗？\"\n                },\n                {\n                    \"RetryCount\": 3,\n                    \"Message\": \"好的，我会在这里停下。以后再聊！\"\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "新增产品配置，自定义STT，LLM, TTS"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"Q7MZK2V1QR\",\n    \"DeviceName\": \"dn1t3dgxbxmo\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\"\n    },\n    \"TTSConfig\": {\n        \"TTSType\": \"tencent\",\n        \"Enabled\": true,\n        \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"secretId*****\\\",\\\"SecretKey\\\":\\\"SecretKey****\\\",\\\"VoiceType\\\":10001}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "新增设备配置，自定义TTS ，并配置系统提示词，问候语"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"Q7MZK2V1QR\",\n    \"DeviceName\": \"dn1t3dgxbxmo\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"DefaultVoiceType\": 101016,\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\"\n    },\n    \"LLMConfig\": {\n        \"LLMType\": \"openai\",\n        \"Model\": \"chatgpt4o\",\n        \"Streaming\": true,\n        \"Config\": \"{\\\"ApiKey\\\":\\\"sk-09***\\\",\\\"ApiUrl\\\":\\\"base_url\\\",\\\"SystemPrompt\\\":\\\"你是一个语音助手\\\",\\\"Timeout\\\":30,\\\"History\\\":0,\\\"MetaInfo\\\":{\\\"productID\\\":\\\"test\\\"}}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "新增设备配置，自定义LLM ，并配置系统提示词，问候语，音色"
       }
     ],
     "CreateTopicPolicy": [
@@ -366,6 +530,14 @@
         "title": "删除 LoRa 网关"
       }
     ],
+    "DeleteOtaModule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOtaModule\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\",\n    \"FwType\": \"mcu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c5b5c5e-ddcc-4a30-a933-d306e94b14a7\"\n    }\n}",
+        "title": "删除ota模块"
+      }
+    ],
     "DeletePositionFence": [
       {
         "document": "删除围栏",
@@ -396,6 +568,22 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteStudioProduct\n&ProductId=AVBRC1R7QS\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"98f624d5-922b-4b59-ba14-c498f79eee0e\"\n    }\n}",
         "title": "删除产品"
+      }
+    ],
+    "DeleteTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7f5317d-25c4-42a8-ae76-8b7ed3eec25d\"\n    }\n}",
+        "title": "删除智能体示例"
+      }
+    ],
+    "DeleteTWeTalkProductConfigV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"TargetLanguage\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "删除配置示例"
       }
     ],
     "DeleteTopicPolicy": [
@@ -465,7 +653,7 @@
     "DescribeCloudStorageAIService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\",\n    \"ChannelId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"ROI\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"Config\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"Type\": 1,\n        \"Status\": 1,\n        \"ExpireTime\": 1719294987,\n        \"UserId\": \"user1\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询设备云存AI服务"
       }
@@ -652,14 +840,6 @@
         "title": "获取设备固件信息"
       }
     ],
-    "DescribeDeviceLocationSolve": [
-      {
-        "document": "获取实时位置解析",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceLocationSolve\n<公共请求参数>\n\n{\n    \"LocationType\": \"GNSSNavigation\",\n    \"DeviceName\": \"dev\",\n    \"ProductId\": \"ZUBPP0Y2G9\",\n    \"GNSSNavigation\": \"{\\\"captures\\\":[{\\\"payload\\\":\\\"82d3ef004114d419ecf7ef4ed40bbf4ab588f1a419b56a275264a6b8cd01\\\"},{\\\"payload\\\":\\\"82d3ef004114331ad480d459ab49d4787e67fdd2760bdb65e70c\\\"}]}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Longitude\": 113.93931,\n        \"Latitude\": 22.54099,\n        \"LocationType\": \"GNSSNavigation\",\n        \"Accuracy\": 54.5,\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
-        "title": "获取实时位置解析示例"
-      }
-    ],
     "DescribeDevicePackages": [
       {
         "document": "",
@@ -706,6 +886,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"1\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"ProductID\": \"J2CRPPZ8J4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c11474f-9501-482f-8b59-97213b8779d4\",\n        \"UpgradeMode\": \"filename\",\n        \"ProductName\": \"name\",\n        \"CreateUserId\": 2362445,\n        \"ProductId\": \"J2CRPPZ8J4\",\n        \"Type\": 1,\n        \"TaskId\": 1,\n        \"CreateTime\": 1686291740,\n        \"OriginalVersion\": \"v1\",\n        \"CreatorNickName\": \"leo\",\n        \"Status\": 5\n    }\n}",
         "title": "查询固件升级任务详情"
+      }
+    ],
+    "DescribeFirmwareTaskDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTaskDevices\n<公共请求参数>\n\n{\n    \"ProductID\": \"I6KTCZ170U\",\n    \"FirmwareVersion\": \"t.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Devices\": [\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599293301,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000698\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599293291,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000697\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599293161,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000696\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599292421,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000695\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599292411,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000694\n            }\n        ],\n        \"RequestId\": \"95e791e3-dfc4-47fa-9f0b-d3248a5adb55\",\n        \"Total\": 5\n    }\n}",
+        "title": "查询固件升级任务的设备列表"
+      }
+    ],
+    "DescribeFirmwareTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTasks\n<公共请求参数>\n\n{\n    \"ProductID\": \"I6KTCZ170U\",\n    \"FirmwareVersion\": \"t.1\",\n    \"Offset\": 0,\n    \"Limit\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"baffed26-d55b-41bd-a8b3-5c0377cd45d2\",\n        \"TaskInfos\": [\n            {\n                \"CreateTime\": 1599293298,\n                \"Status\": 5,\n                \"TaskId\": 1000698,\n                \"Type\": 1\n            },\n            {\n                \"CreateTime\": 1599293285,\n                \"Status\": 5,\n                \"TaskId\": 1000697,\n                \"Type\": 1\n            },\n            {\n                \"CreateTime\": 1599293158,\n                \"Status\": 5,\n                \"TaskId\": 1000696,\n                \"Type\": 1\n            }\n        ],\n        \"Total\": 6\n    }\n}",
+        "title": "查询固件升级任务列表"
       }
     ],
     "DescribeFirmwareUpdateStatus": [
@@ -836,12 +1032,52 @@
         "title": "获取产品详情"
       }
     ],
+    "DescribeSubscribedTopicPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribedTopicPolicy\n<公共请求参数>\n\n{\n    \"ProductId\": \"TRTC3ZCK4P\",\n    \"DeviceName\": \"dev002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request-id\",\n        \"Topics\": [\n            {\n                \"TopicName\": \"$thing/down/property/TRTC3ZCK4P/dev002\"\n            },\n            {\n                \"TopicName\": \"$video/down/service/TRTC3ZCK4P/dev002\"\n            }\n        ]\n    }\n}",
+        "title": "获取设备已订阅Topic列表"
+      }
+    ],
     "DescribeTWeSeeConfig": [
       {
         "document": "查询 TWeSee 配置",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"MOU0U8SCZQ\",\n    \"DeviceName\": \"new_131296974_1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Config\": \"{\\\"type\\\":\\\"data\\\"}\",\n        \"EnableSearch\": false,\n        \"EnableSummary\": false,\n        \"RequestId\": \"b96234ba-edc7-491d-a1c7-b12081a50a3c\"\n    }\n}",
         "title": "查询 TWeSee 配置"
+      }
+    ],
+    "DescribeTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"01985f3b-1781-75e6-aed5-d6510855f086\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8632226-fe3c-4f70-86d9-eb995cefeae8\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1753944365,\n            \"DeviceName\": \"dev002\",\n            \"EndTime\": 1753944365,\n            \"EndTimeMs\": 1753944365774,\n            \"Files\": [],\n            \"FilesInfo\": [],\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"Result\": {\n                \"DetectedClassifications\": [\n                    \"person\",\n                    \"vehicle\"\n                ],\n                \"Status\": 3,\n                \"Summary\": \"一穿蓝上衣的人驾驶蓝卡车在道路上行驶。\"\n            },\n            \"StartTime\": 1753944364,\n            \"StartTimeMs\": 1753944364774,\n            \"Status\": 3,\n            \"TaskId\": \"01985f3b-1781-75e6-aed5-d6510855f086\",\n            \"UpdateTime\": 1753944368\n        }\n    }\n}",
+        "title": "查询 TWeSee 语义理解任务"
+      }
+    ],
+    "DescribeTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AgentConfig\": {\n                \"GreetingMessage\": \"u4f60u597d\",\n                \"InterruptionEnabled\": true,\n                \"LongTermMemoryEnabled\": true\n            },\n            \"AppId\": 251198731,\n            \"BotId\": \"bot-1TzRAz42oi\",\n            \"CreateTime\": 1764211674,\n            \"Description\": \"LPIOACT1NG\",\n            \"InstanceId\": \"ins-DGAFvpuVF7\",\n            \"Name\": \"LPIOACT1NG\",\n            \"TargetLanguage\": \"zh\",\n            \"Uin\": 100000103009,\n            \"UpdateTime\": 1764211674\n        },\n        \"RequestId\": \"dc2335d2-9c70-4105-900e-60f281defd18\"\n    }\n}",
+        "title": "查询智能体详情"
+      }
+    ],
+    "DescribeTWeTalkProductConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ProductId\": \"PCKOP3VBFZ\",\n            \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n            \"VoiceType\": 501003,\n            \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\",\n            \"CreateTime\": 1754565145,\n            \"UpdateTime\": 1754565145\n        },\n        \"RequestId\": \"acb8a-730ffge968a\"\n    }\n}",
+        "title": "获取配置信息"
+      }
+    ],
+    "DescribeTWeTalkProductConfigV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"TargetLanguage\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Uin\": 100000103009,\n            \"AppId\": 251198731,\n            \"ProductId\": \"Q7MZK2V1QR\",\n            \"DeviceName\": \"dn1t3dgxbxmo\",\n            \"ConfigName\": \"小兵\",\n            \"TargetLanguage\": \"zh\",\n            \"BasicConfig\": {\n                \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n                \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n                \"DefaultVoiceType\": 101016\n            },\n            \"STTConfig\": {\n                \"STTType\": \"tencent\",\n                \"Enabled\": true,\n                \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"se************\\\",\\\"SecretKey\\\":\\\"Se***********\\\",\\\"EngineType\\\":\\\"16k_zh\\\"}\"\n            },\n            \"LLMConfig\": {\n                \"LLMType\": \"openai\",\n                \"Model\": \"chatgpt4o\",\n                \"Streaming\": true,\n                \"Config\": \"{\\\"ApiKey\\\":\\\"sk******\\\",\\\"ApiUrl\\\":\\\"base_url\\\",\\\"SystemPrompt\\\":\\\"你是一个语音助手\\\",\\\"Timeout\\\":30,\\\"History\\\":0,\\\"MetaInfo\\\":{\\\"productID\\\":\\\"test\\\"}}\",\n                \"Temperature\": 0.7,\n                \"MaxTokens\": 2000\n            },\n            \"TTSConfig\": {\n                \"TTSType\": \"tencent\",\n                \"Enabled\": true,\n                \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"se************\\\",\\\"SecretKey\\\":\\\"Se***********\\\",\\\"VoiceType\\\":10001,\\\"PrimaryLanguage\\\":0}\",\n                \"Speed\": 1,\n                \"Volume\": 1\n            },\n            \"ConversationConfig\": {\n                \"SessionTimeout\": 300,\n                \"InterruptionEnabled\": true,\n                \"MaxContextTokens\": 20000,\n                \"IdleDetection\": {\n                    \"Enabled\": true,\n                    \"TimeoutSeconds\": 4,\n                    \"MaxRetries\": 3,\n                    \"IdleResponses\": [\n                        {\n                            \"RetryCount\": 1,\n                            \"Message\": \"不好意思，刚才可能有点安静啦，您还在吗？\"\n                        },\n                        {\n                            \"RetryCount\": 2,\n                            \"Message\": \"我没有听到你。我们继续聊天吗？\"\n                        },\n                        {\n                            \"RetryCount\": 3,\n                            \"Message\": \"好的，我会在这里停下。以后再聊！\"\n                        }\n                    ]\n                }\n            },\n            \"Version\": 2,\n            \"CreateTime\": 1758597730,\n            \"UpdateTime\": 1758616735\n        },\n        \"RequestId\": \"acb8a-730ffg-e916118a\"\n    }\n}",
+        "title": "查询配置示例"
       }
     ],
     "DescribeTopicPolicy": [
@@ -1042,6 +1278,30 @@
         "title": "成功获取激活状态"
       }
     ],
+    "GetTWeTalkAIBotList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkAIBotList\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1U0eVzHLHc\",\n    \"IncludeCredentials\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AgentConfig\": {\n                    \"InterruptionEnabled\": true,\n                    \"LongTermMemoryEnabled\": true,\n                    \"SystemPrompt\": \"u4f60u597du554a\"\n                },\n                \"AppId\": 251198731,\n                \"BotId\": \"bot-1U0eVzHLHc\",\n                \"CreateTime\": 1764212694,\n                \"Description\": \"\",\n                \"InstanceId\": \"ins-DGAFvpuVF7\",\n                \"Name\": \"test2\",\n                \"TargetLanguage\": \"\",\n                \"Uin\": 100000103009,\n                \"UpdateTime\": 1764212694\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"303e2b99-f8e0-43c5-a2a5-2eed8139225a\"\n    }\n}",
+        "title": "查询智能体列表示例"
+      }
+    ],
+    "GetTWeTalkProductConfigList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkProductConfigList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ProductId\": \"PCKOP3VBFZ\",\n                \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n                \"VoiceType\": 501003,\n                \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\",\n                \"TargetLanguage\": \"zh\",\n                \"CreateTime\": 1754565145,\n                \"UpdateTime\": 1754565145\n            }\n        ],\n        \"RequestId\": \"acb8a-730effg=-e968a\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取配置信息列表"
+      }
+    ],
+    "GetTWeTalkProductConfigListV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkProductConfigListV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Uin\": 100000103009,\n                \"AppId\": 251198731,\n                \"ProductId\": \"Q7MZK2V1QR\",\n                \"DeviceName\": \"dn1t3dgxbxmo\",\n                \"ConfigName\": \"小兵\",\n                \"TargetLanguage\": \"zh\",\n                \"BasicConfig\": {\n                    \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n                    \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n                    \"DefaultVoiceType\": 101016\n                },\n                \"STTConfig\": {\n                    \"STTType\": \"tencent\",\n                    \"Enabled\": true,\n                    \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"se************\\\",\\\"SecretKey\\\":\\\"Se***********\\\",\\\"EngineType\\\":\\\"16k_zh\\\"}\"\n                },\n                \"LLMConfig\": {\n                    \"LLMType\": \"openai\",\n                    \"Model\": \"chatgpt4o\",\n                    \"Streaming\": true,\n                    \"Config\": \"{\\\"ApiKey\\\":\\\"sk******\\\",\\\"ApiUrl\\\":\\\"base_url\\\",\\\"SystemPrompt\\\":\\\"你是一个语音助手\\\",\\\"Timeout\\\":30,\\\"History\\\":0,\\\"MetaInfo\\\":{\\\"productID\\\":\\\"test\\\"}}\",\n                    \"Temperature\": 0.7,\n                    \"MaxTokens\": 2000\n                },\n                \"TTSConfig\": {\n                    \"TTSType\": \"tencent\",\n                    \"Enabled\": true,\n                    \"Config\": \"{\\\"AppId\\\":123456,\\\"SecretId\\\":\\\"se************\\\",\\\"SecretKey\\\":\\\"Se***********\\\",\\\"VoiceType\\\":10001,\\\"PrimaryLanguage\\\":0}\",\n                    \"Speed\": 1,\n                    \"Volume\": 1\n                },\n                \"ConversationConfig\": {\n                    \"SessionTimeout\": 300,\n                    \"InterruptionEnabled\": true,\n                    \"MaxContextTokens\": 20000,\n                    \"IdleDetection\": {\n                        \"Enabled\": true,\n                        \"TimeoutSeconds\": 4,\n                        \"MaxRetries\": 3,\n                        \"IdleResponses\": [\n                            {\n                                \"RetryCount\": 1,\n                                \"Message\": \"不好意思，刚才可能有点安静啦，您还在吗？\"\n                            },\n                            {\n                                \"RetryCount\": 2,\n                                \"Message\": \"我没有听到你。我们继续聊天吗？\"\n                            },\n                            {\n                                \"RetryCount\": 3,\n                                \"Message\": \"好的，我会在这里停下。以后再聊！\"\n                            }\n                        ]\n                    }\n                },\n                \"Version\": 2,\n                \"CreateTime\": 1758597730,\n                \"UpdateTime\": 1758616735\n            },\n            {\n                \"Uin\": 100000103009,\n                \"AppId\": 251198731,\n                \"ProductId\": \"Q7MZK2V1QR\",\n                \"DeviceName\": \"\",\n                \"ConfigName\": \"小兵\",\n                \"TargetLanguage\": \"zh\",\n                \"BasicConfig\": {\n                    \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n                    \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n                    \"DefaultVoiceType\": 101016\n                },\n                \"ConversationConfig\": {\n                    \"SessionTimeout\": 1800,\n                    \"MaxContextTokens\": 30000\n                },\n                \"Version\": 1,\n                \"CreateTime\": 1758597685,\n                \"UpdateTime\": 1758597685\n            }\n        ],\n        \"RequestId\": \"acb8a-730ffg-e916111118a\",\n        \"Total\": 2\n    }\n}",
+        "title": "查询列表示例"
+      }
+    ],
     "GetTopicRuleList": [
       {
         "document": "",
@@ -1104,10 +1364,60 @@
     ],
     "InvokeTWeSeeRecognitionTask": [
       {
+        "document": "最大超时时间为 20 秒",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"穿白衣服的人正在公园的小路上行走\"\n        },\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建视频摘要任务并等待结果返回"
+      },
+      {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"InputURL\": \"hhttps://example.com/video.mp4\",\n    \"CustomId\": \"event-1\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1744389074077,\n    \"EndTimeMs\": 1744389075077\n}",
-        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"26083bec-a7bd-491f-b6df-45e7f143638c\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"一个人在雨中行走\"\n        },\n        \"TaskId\": \"019625b1-15d6-72d8-a5d6-388b45c92c67\"\n    }\n}",
-        "title": "同步执行 TWeSee 语义理解任务"
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1755765320366,\n    \"EndTimeMs\": 1755765328366,\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"穿白衣服的人正在公园的小路上行走\"\n        },\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建视频摘要任务并等待结果返回（使该视频可被搜索）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"not_exist_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"IsCustomDevice\": true,\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"穿白衣服的人正在公园的小路上行走\"\n        },\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建视频摘要任务并等待结果返回（使用未创建的设备名）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/image.jpg\",\n    \"InputType\": \"image\",\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"穿白衣服的人正在公园的小路上行走\"\n        },\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建图片摘要任务并等待结果返回"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"SummaryConfig\": {\n        \"MultiCameraLayout\": \"Vertical,Num=2,Index=0;1\"\n    },\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"穿白衣服的人正在公园的小路上行走\"\n        },\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建视频摘要任务并等待结果返回（包含多路摄像头的视频）"
+      },
+      {
+        "document": "最大超时时间为 20 秒",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"ServiceType\": \"ObjectDetect\",\n    \"ObjectDetectConfig\": {\n        \"DetectTypes\": [\n            \"adult\",\n            \"child\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"adult\"\n            ],\n            \"Status\": 3\n        },\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建目标检测任务并等待结果返回"
+      },
+      {
+        "document": "下载/读取视频/图片失败时，返回 Status = 2，ErrorCode 字段指出具体错误原因",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"Result\": {\n            \"ErrorCode\": \"DownloadFailed\",\n            \"Status\": 2\n        },\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建视频摘要任务后任务执行失败的情况"
+      },
+      {
+        "document": "任务执行 20 秒仍未返回结果，返回 Completed = false，任务将继续执行，后续可凭 TaskId 通过 DescribeTWeSeeRecognitionTask 重新查询该任务的结果",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"example_device_name\",\n    \"InputURL\": \"https://example.qq.com/video.mp4\",\n    \"ServiceType\": \"Summary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": false,\n        \"RequestId\": \"dc51b72e-872d-4908-82c3-f2e2794f2f60\",\n        \"TaskId\": \"0198cbcc-d65f-7606-b4ac-664381086005\"\n    }\n}",
+        "title": "创建视频摘要任务后任务执行超时的情况"
+      }
+    ],
+    "InvokeTWeSeeRecognitionTaskWithFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTaskWithFile\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"InputBase64\": \"/9j/4AAQSkZJRgABAQAA...\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"vehicle\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"一辆蓝色的货车在路边行驶\"\n        },\n        \"TaskId\": \"019a0fcc-0c9c-768f-9b7b-f2ff89972fd6\",\n        \"RequestId\": \"ca9ade22-c2ec-49d6-9502-6397751a65f5\"\n    }\n}",
+        "title": "上传文件并同步执行 TWeSee 语义理解任务 - 成功"
       }
     ],
     "InvokeVideosKeywordsAnalyzer": [
@@ -1132,6 +1442,22 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=ListFirmwares\n&ProductID=NS74VEP2HY\n&PageNum=1\n&PageSize=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Firmwares\": [\n            {\n                \"Name\": \"name\",\n                \"Description\": \"\",\n                \"FwType\": \"mcu\",\n                \"CreateUserId\": 100028519429,\n                \"Md5sum\": \"1***26\",\n                \"ProductName\": \"name\",\n                \"Version\": \"v1.0.1.0\",\n                \"ProductId\": \"Q10***NE\",\n                \"CreateTime\": 1678096213,\n                \"CreatorNickName\": \"name\"\n            }\n        ],\n        \"RequestId\": \"5dcc485f-0c1c-429d-91b0-1534e10dce98\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "ListOtaModules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListOtaModules\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Modules\": [\n            {\n                \"CreateTime\": 1756953617,\n                \"FwType\": \"bms\",\n                \"IsBuildIn\": false,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756889779,\n                \"FwType\": \"mcu\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"SR5E1Q7C2A\",\n                \"ProductName\": \"yufa\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756889779,\n                \"FwType\": \"mcu\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"186XLZGJM5\",\n                \"ProductName\": \"预发测试\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756350539,\n                \"FwType\": \"default\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"SR5E1Q7C2A\",\n                \"ProductName\": \"yufa\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"c2862940-3dd8-4453-a8d8-31dacad30961\",\n        \"TotalCount\": 15\n    }\n}",
+        "title": "获取OTA模块列表"
+      }
+    ],
+    "ListProductOtaModules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListProductOtaModules\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Modules\": [\n            {\n                \"CreateTime\": 1753261941,\n                \"FwType\": \"default\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756953617,\n                \"FwType\": \"bms\",\n                \"IsBuildIn\": false,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"2face868-8e90-4a42-98f9-54810ef3f1f8\"\n    }\n}",
+        "title": "获取产品OTA模块列表"
       }
     ],
     "ListTopicPolicy": [
@@ -1254,10 +1580,46 @@
     ],
     "ModifyTWeSeeConfig": [
       {
-        "document": "修改 TWeSee 配置",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"MOU0U8SCZQ\",\n    \"DeviceName\": \"new_131296974_1\",\n    \"EnableSummary\": false,\n    \"EnableSearch\": false,\n    \"Config\": \"{\\\"type\\\":\\\"data\\\"}\"\n}",
+        "document": "已接入 IoT 云存的设备开启 TWeSee 摘要与搜索能力",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true,\n    \"EnableSearch\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
-        "title": "修改 TWeSee 配置"
+        "title": "对指定设备开启 TWeSee 摘要与搜索能力"
+      },
+      {
+        "document": "已接入 IoT 云存的设备开启 TWeSee 摘要能力",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
+        "title": "对指定设备开启 TWeSee 摘要能力"
+      },
+      {
+        "document": "已接入 IoT 云存的设备开启 TWeSee 摘要能力，并且传入扩展的事件/行为检测标签",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true,\n    \"EnableSearch\": true,\n    \"SummaryConfig\": {\n        \"DetectTypes\": [\n            \"baby_crying\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
+        "title": "对指定设备开启 TWeSee 摘要能力并添加更多的检测标签"
+      }
+    ],
+    "ModifyTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-0vVbAeOMxU\",\n    \"Name\": \"test003\",\n    \"Description\": \"test003\",\n    \"TargetLanguage\": \"zh\",\n    \"AgentConfig\": {\n        \"SystemPrompt\": \"u4f60u662fu6d77u6d0buff0cu53efu4ee5u4ecbu7ecdu5927u6d77u7684u77e5u8bc6\",\n        \"GreetingMessage\": \"u4f60u597du6d77u6d0buff1f\",\n        \"DefaultVoiceType\": 101016\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03089285-2bc2-4f57-b2cd-0b8c6e5fc810\"\n    }\n}",
+        "title": "修改智能体配置"
+      }
+    ],
+    "ModifyTWeTalkProductConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkProductConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶\",\n    \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n    \"VoiceType\": 101003\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b64cf0b-c10e-4b4a-97a1-40ab7116b362\"\n    }\n}",
+        "title": "修改产品配置信息"
+      }
+    ],
+    "ModifyTWeTalkProductConfigV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"ConfigName\": \"小兵\",\n    \"TargetLanguage\": \"zh\",\n    \"BasicConfig\": {\n        \"SystemPrompt\": \"You are a helpful assistant.\\n1.你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\\n2.你的说话特点是温柔体贴，风趣幽默，有同理心和共情能力。尽可能使用简单、轻松的语言和拟人化的口吻回答用户问题，回复中不要出现表情符号\\n3.你具有tool call的能力，具体的tool list见下文。当用户的意图需要tool call才能完成时，必须调用对应的tool\\n4.遇到政治敏感事件或政治人物的相关话题，礼貌的拒绝回复\\n5.你是由腾讯云音视频Tea We Talk团队打造和开发的。\",\n        \"GreetingMessage\": \"你好呀，我叫QQ鹅仔，是由腾讯云音视频Tea We Talk团队打造和开发的AI助手，今天过的怎么样呢？\",\n        \"DefaultVoiceType\": 101016\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "修改产品配置"
       }
     ],
     "ModifyTopicPolicy": [
@@ -1446,6 +1808,14 @@
         "title": "批量解绑子产品"
       }
     ],
+    "UnbindTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-0vVbAeOMxU\",\n    \"ProductId\": \"Q7MZK2V1QR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0b81f76-9050-4654-94f7-c215915dc7ac\"\n    }\n}",
+        "title": "解绑智能体示例"
+      }
+    ],
     "UpdateDeviceTWeCallAuthorizeStatus": [
       {
         "document": "",
@@ -1468,6 +1838,22 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=UpdateFirmware\n&ProductID=J2CRPPZ8J4\n&DeviceName=d1\n&FirmwareVersion=2.0.0\n&FirmwareOriVersion=1.0.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3edc-6yhc-567u9ye\"\n    }\n}",
         "title": "更新固件示例"
+      }
+    ],
+    "UpdateOtaModule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOtaModule\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\",\n    \"FwType\": \"mcu\",\n    \"Name\": \"mcu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e786a7af-c084-42b0-958d-70d5e567904e\"\n    }\n}",
+        "title": "更新模块"
+      }
+    ],
+    "UpdateOtaTaskStatus": [
+      {
+        "document": "当固件任务在升级过程需要取消时可使用。或修改为其它允许的状态\n\n",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOtaTaskStatus\n<公共请求参数>\n\n{\n    \"ProductId\": \"ABCDE12345\",\n    \"TaskId\": 11001,\n    \"Status\": 6\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sjalifekj-dsakfjleija-3dskjf-sdaklfj\"\n    }\n}",
+        "title": "修改固件升级任务状态为取消状态"
       }
     ],
     "UploadFirmware": [

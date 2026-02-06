@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: 删除mognodb云数据库实例从节点**
+**Example 2: 删除 mongodb 云数据库实例从节点**
 
 广州二区和三区共删除2个从节点，最终节点数量变更为3
 
@@ -54,7 +54,7 @@ Output:
 }
 ```
 
-**Example 3: 新增mognodb云数据库实例从节点**
+**Example 3: 新增 mongodb 云数据库实例从节点**
 
 广州二区和三区共新增2个从节点，最终节点数量变更为5
 
@@ -62,7 +62,7 @@ Input:
 
 ```
 tccli mongodb ModifyDBInstanceSpec --cli-unfold-argument  \
-    --InstanceId cmgo-abcdef \
+    --InstanceId cmgo-p8vn**** \
     --Memory 4 \
     --Volume 100 \
     --OplogSize 30 \

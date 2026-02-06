@@ -7,7 +7,7 @@ Input:
 ```
 tccli dlc DescribeNativeSparkSessions --cli-unfold-argument  \
     --DataEngineId DataEngine-a4wvak8f \
-    --ResourceGroupId rg-xxxx
+    --ResourceGroupId rg-7w5ex1i20y
 ```
 
 Output: 

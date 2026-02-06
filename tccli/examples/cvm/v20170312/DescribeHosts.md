@@ -7,7 +7,7 @@ Input:
 ```
 tccli cvm DescribeHosts --cli-unfold-argument  \
     --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-2 \
+    --Filters.0.Values ap-guangzhou-6 \
     --Offset 0 \
     --Limit 20
 ```
@@ -20,7 +20,7 @@ Output:
         "HostSet": [
             {
                 "Placement": {
-                    "Zone": "ap-guangzhou-5",
+                    "Zone": "ap-guangzhou-6",
                     "ProjectId": 0
                 },
                 "HostId": "host-8th3ybbw",

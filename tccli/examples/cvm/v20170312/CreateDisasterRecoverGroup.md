@@ -6,21 +6,25 @@ Input:
 
 ```
 tccli cvm CreateDisasterRecoverGroup --cli-unfold-argument  \
-    --Name 物理机容灾组 \
-    --Type HOST
+    --Name MySWDisasterRecoverGroup \
+    --Type SW \
+    --Affinity 3 \
+    --TagSpecification.0.ResourceType ps \
+    --TagSpecification.0.Tags.0.Key MySWDisasterRecoverGroupKey \
+    --TagSpecification.0.Tags.0.Value MySWDisasterRecoverGroupValue
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Type": "HOST",
-        "DisasterRecoverGroupId": "ps-qajfd25h",
-        "Name": "物理机容灾组",
-        "CvmQuotaTotal": 50,
+        "CreateTime": "2025-11-17 07:43:06",
         "CurrentNum": 0,
-        "CreateTime": "2020-09-22 00:00:00",
-        "RequestId": "21387009-9b9c-4b57-8fa2-8228f702ff6c"
+        "CvmQuotaTotal": 20,
+        "DisasterRecoverGroupId": "ps-39lmgkht",
+        "Name": "MySWDisasterRecoverGroup",
+        "RequestId": "59216e4c-c24d-46f8-bc88-ebc5081a595f",
+        "Type": "SW"
     }
 }
 ```

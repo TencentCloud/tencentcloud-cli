@@ -8,8 +8,7 @@ Input:
 tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee \
     --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0 \
-    --GroupExDescriptionInfos.0.GroupExDescription 部门 \
-    --Version 2018-03-01
+    --GroupExDescriptionInfos.0.GroupExDescription 部门
 ```
 
 Output: 
@@ -34,8 +33,7 @@ Input:
 ```
 tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee \
-    --GroupName 某某大学竹园1号宿舍楼 \
-    --Version 2018-03-01
+    --GroupName 某某大学竹园1号宿舍楼
 ```
 
 Output: 
@@ -63,8 +61,7 @@ tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupName 某某大学竹园1号宿舍楼 \
     --Tag 研究生入住 \
     --GroupExDescriptionInfos.0.GroupExDescriptionIndex 0 \
-    --GroupExDescriptionInfos.0.GroupExDescription 学院 \
-    --Version 2018-03-01
+    --GroupExDescriptionInfos.0.GroupExDescription 学院
 ```
 
 Output: 
@@ -90,8 +87,7 @@ tccli iai ModifyGroup --cli-unfold-argument  \
     --GroupExDescriptionInfos.0.GroupExDescriptionIndex 1 \
     --GroupExDescriptionInfos.0.GroupExDescription 部门 \
     --GroupExDescriptionInfos.1.GroupExDescriptionIndex 2 \
-    --GroupExDescriptionInfos.1.GroupExDescription 项目组 \
-    --Version 2018-03-01
+    --GroupExDescriptionInfos.1.GroupExDescription 项目组
 ```
 
 Output: 

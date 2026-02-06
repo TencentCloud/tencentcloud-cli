@@ -20,7 +20,7 @@ Output:
     "Response": {
         "Result": {
             "ReturnCode": "0",
-            "ReturnMessage": "ok",
+            "ReturnMessage": "success",
             "Data": {
                 "FlowId": 0,
                 "RouteDTO": {

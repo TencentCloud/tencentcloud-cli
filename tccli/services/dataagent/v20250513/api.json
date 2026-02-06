@@ -1,0 +1,2705 @@
+{
+  "actions": {
+    "AddChunk": {
+      "document": "文档切片新增",
+      "input": "AddChunkRequest",
+      "name": "添加文档切片",
+      "output": "AddChunkResponse",
+      "status": "online"
+    },
+    "AddScene": {
+      "document": "新增场景",
+      "input": "AddSceneRequest",
+      "name": "新增场景",
+      "output": "AddSceneResponse",
+      "status": "online"
+    },
+    "ChatAI": {
+      "document": "提供DataAgent 产品服务API",
+      "input": "ChatAIRequest",
+      "name": "DataAgent问答",
+      "output": "ChatAIResponse",
+      "status": "online"
+    },
+    "CreateDataAgentSession": {
+      "document": "生成DataAgent 会话ID",
+      "input": "CreateDataAgentSessionRequest",
+      "name": "生成DataAgent SessionID",
+      "output": "CreateDataAgentSessionResponse",
+      "status": "online"
+    },
+    "DeleteChunk": {
+      "document": "文档切片删除",
+      "input": "DeleteChunkRequest",
+      "name": "删除文档切片",
+      "output": "DeleteChunkResponse",
+      "status": "online"
+    },
+    "DeleteDataAgentSession": {
+      "document": "删除会话",
+      "input": "DeleteDataAgentSessionRequest",
+      "name": "删除会话",
+      "output": "DeleteDataAgentSessionResponse",
+      "status": "online"
+    },
+    "DeleteScene": {
+      "document": "删除场景",
+      "input": "DeleteSceneRequest",
+      "name": "删除场景",
+      "output": "DeleteSceneResponse",
+      "status": "online"
+    },
+    "GetJobsByKnowledgeBaseId": {
+      "document": "根据知识库id查询jobs 列表",
+      "input": "GetJobsByKnowledgeBaseIdRequest",
+      "name": "根据知识库id查询上传job列表",
+      "output": "GetJobsByKnowledgeBaseIdResponse",
+      "status": "online"
+    },
+    "GetKnowledgeBaseFileList": {
+      "document": "获取知识库文件信息列表",
+      "input": "GetKnowledgeBaseFileListRequest",
+      "name": "获取知识库文件列表",
+      "output": "GetKnowledgeBaseFileListResponse",
+      "status": "online"
+    },
+    "GetKnowledgeBaseList": {
+      "document": "获取知识库列表",
+      "input": "GetKnowledgeBaseListRequest",
+      "name": "获取知识库列表",
+      "output": "GetKnowledgeBaseListResponse",
+      "status": "online"
+    },
+    "GetSessionDetails": {
+      "document": "获取用户会话记录详情列表",
+      "input": "GetSessionDetailsRequest",
+      "name": "获取会话详情",
+      "output": "GetSessionDetailsResponse",
+      "status": "online"
+    },
+    "GetUploadJobDetails": {
+      "document": "查询上传任务",
+      "input": "GetUploadJobDetailsRequest",
+      "name": "查询上传任务详情",
+      "output": "GetUploadJobDetailsResponse",
+      "status": "online"
+    },
+    "ModifyChunk": {
+      "document": "编辑修改分片",
+      "input": "ModifyChunkRequest",
+      "name": "编辑分片",
+      "output": "ModifyChunkResponse",
+      "status": "online"
+    },
+    "ModifyKnowledgeBase": {
+      "document": "操作知识库",
+      "input": "ModifyKnowledgeBaseRequest",
+      "name": "修改知识库",
+      "output": "ModifyKnowledgeBaseResponse",
+      "status": "online"
+    },
+    "ModifyUserAuthority": {
+      "document": "修改对象权限",
+      "input": "ModifyUserAuthorityRequest",
+      "name": "修改对象的用户权限信息",
+      "output": "ModifyUserAuthorityResponse",
+      "status": "online"
+    },
+    "QueryChunkList": {
+      "document": "文档切片查询",
+      "input": "QueryChunkListRequest",
+      "name": "文档切片查询",
+      "output": "QueryChunkListResponse",
+      "status": "online"
+    },
+    "QuerySceneList": {
+      "document": "查询场景列表",
+      "input": "QuerySceneListRequest",
+      "name": "查询场景列表",
+      "output": "QuerySceneListResponse",
+      "status": "online"
+    },
+    "QueryUserAuthority": {
+      "document": "查询对象权限",
+      "input": "QueryUserAuthorityRequest",
+      "name": "查询对象的用户权限信息",
+      "output": "QueryUserAuthorityResponse",
+      "status": "online"
+    },
+    "StopChatAI": {
+      "document": "中断DataAgent的回答输出",
+      "input": "StopChatAIRequest",
+      "name": "终止问答返回流",
+      "output": "StopChatAIResponse",
+      "status": "online"
+    },
+    "UpdateScene": {
+      "document": "更新场景",
+      "input": "UpdateSceneRequest",
+      "name": "更新场景",
+      "output": "UpdateSceneResponse",
+      "status": "online"
+    },
+    "UploadAndCommitFile": {
+      "document": "上传提交文件",
+      "input": "UploadAndCommitFileRequest",
+      "name": "cos上传提交文件",
+      "output": "UploadAndCommitFileResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-05-13",
+    "api_brief": "产品功能接口和管控接口",
+    "serviceNameCN": "腾讯云数据分析智能体",
+    "serviceShortName": "dataagent"
+  },
+  "objects": {
+    "AddChunkRequest": {
+      "document": "AddChunk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新增chunk的后面一个ChunkID。如果是空就是插到队尾。插入位置的下一个 chunkId。如果插到最前面，传入原切片的第一个。",
+          "example": "xzcjjjij",
+          "member": "string",
+          "name": "BeforeChunkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显式指定的位置,实际的位置。从 0 开始计算。0 代表插到最前面，chunk total 代表插到最后面。",
+          "example": "1",
+          "member": "int64",
+          "name": "InsertPos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "chunk内容",
+          "example": "this is  my test",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId",
+          "example": "64bd3527-6ad9-4eda-a809-4e1a7ecaf86a",
+          "member": "string",
+          "name": "AfterChunkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kbase-fsdfsfd",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddChunkResponse": {
+      "document": "AddChunk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增的ChunkId",
+          "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
+          "member": "string",
+          "name": "ChunkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSceneRequest": {
+      "document": "AddScene请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "da-sdfasdaf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景",
+          "example": "无",
+          "member": "Scene",
+          "name": "Scene",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "1仅自己使用，2指定用户，0全员",
+          "example": "1",
+          "member": "int64",
+          "name": "UseScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可使用用户列表",
+          "example": "[\"00001\",\"00002\"]",
+          "member": "string",
+          "name": "AuthorityUins",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSceneResponse": {
+      "document": "AddScene返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景id",
+          "example": "sn001",
+          "member": "string",
+          "name": "SceneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatAIRequest": {
+      "document": "ChatAI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题内容",
+          "example": "what are you doing ?",
+          "member": "string",
+          "name": "Question",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上下文",
+          "example": "{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型",
+          "example": "deepseek",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否深度思考",
+          "example": "false",
+          "member": "bool",
+          "name": "DeepThinking",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "[\"cdb-8zau2hln\",\"cdwdoris-1yxlfzhj\"]",
+          "member": "string",
+          "name": "DataSourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "agent类型",
+          "example": "Analysis",
+          "member": "string",
+          "name": "AgentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要重新生成答案的记录ID",
+          "example": "e5b6a2e4-3b9b-4d41",
+          "member": "string",
+          "name": "OldRecordId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id列表",
+          "example": "[\"id1\",\"id2\"]",
+          "member": "string",
+          "name": "KnowledgeBaseIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatAIResponse": {
+      "document": "ChatAI返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Chunk": {
+      "document": "文件分片",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片ID",
+          "example": "sdjfi",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片内容",
+          "example": "content",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片的字数",
+          "example": "10",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片概要",
+          "example": "summary",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ColumnInfo": {
+      "document": "知识库文档表列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名称",
+          "example": "username",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列类型：int, bigint, double, date, datetime, string，decimal",
+          "example": "int",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列名称描述",
+          "example": "用户名称",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列索引",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始字段名称",
+          "example": "name",
+          "member": "string",
+          "name": "OriginalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosFileInfo": {
+      "document": "cos 文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称，包含后缀",
+          "example": "a.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，\"PDF\", \"DOC\", \"DOCX\", \"XLS\", \"XLSX\", \"PPT\", \"PPTX\", \"MD\", \"TXT\", \"PNG\", \"JPG\", \"JPEG\", \"CSV\"",
+          "example": "DOC",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户文件的cosurl",
+          "example": "http://xxx-bucket.ap-xxxx.cos.com/a.txt",
+          "member": "string",
+          "name": "UserCosUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateDataAgentSessionRequest": {
+      "document": "CreateDataAgentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-haBKQxLt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataAgentSessionResponse": {
+      "document": "CreateDataAgentSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChunkRequest": {
+      "document": "DeleteChunk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切片ID",
+          "example": "[\"4c49fb67-38c7-4dea-b61c-bb545c9cac67\"]",
+          "member": "string",
+          "name": "ChunkIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "klbase_-sfsfs",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChunkResponse": {
+      "document": "DeleteChunk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataAgentSessionRequest": {
+      "document": "DeleteDataAgentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataAgentSessionResponse": {
+      "document": "DeleteDataAgentSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSceneRequest": {
+      "document": "DeleteScene请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "da-sdfasdaf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景id",
+          "example": "sn01",
+          "member": "string",
+          "name": "SceneId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSceneResponse": {
+      "document": "DeleteScene返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExampleQA": {
+      "document": "问答数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "示例记录的唯一业务 ID",
+          "example": "001",
+          "member": "string",
+          "name": "ExampleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问题列表",
+          "example": "[\"100\"]",
+          "member": "string",
+          "name": "Questions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应的标准答案或回复",
+          "example": "dfsb",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容类型，类型包含 'text', 'sql', 'code' ",
+          "example": "code",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录的创建时间",
+          "example": "2025-10-10 10:10:10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录的最后更新时间",
+          "example": "2025-10-10 11:12:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FileInfo": {
+      "document": "知识库文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "信息.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，字节",
+          "example": "1231.1",
+          "member": "float",
+          "name": "FileSize",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型,0=文本,1=表格，默认0\n",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "xkewk9",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，0：数据处理中  1：可用 -1：错误",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者\n",
+          "example": "u8j8j",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-12-23 18:23:32",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片策略",
+          "example": "无",
+          "member": "KnowledgeTaskConfig",
+          "name": "ChunkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件来源0=unknow,1=user_cos,2=local",
+          "example": "1",
+          "member": "int64",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件url",
+          "example": "http://abc/dcd",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否官方示例，0=否，1=是",
+          "example": "1",
+          "member": "int64",
+          "name": "IsShowCase",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档摘要",
+          "example": "sfsd",
+          "member": "string",
+          "name": "DocumentSummary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetJobsByKnowledgeBaseIdRequest": {
+      "document": "GetJobsByKnowledgeBaseId请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kbase-ssdfssdf",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetJobsByKnowledgeBaseIdResponse": {
+      "document": "GetJobsByKnowledgeBaseId返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表详情",
+          "example": "无",
+          "member": "UploadJob",
+          "name": "Jobs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetKnowledgeBaseFileListRequest": {
+      "document": "GetKnowledgeBaseFileList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "dataagent-38jj82",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认 1 表示第一页，可以不填",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认 10 一页展示 10 条，可以不填",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "klbase-xjakxja",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetKnowledgeBaseFileListResponse": {
+      "document": "GetKnowledgeBaseFileList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件信息列表",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "FileList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件信息总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetKnowledgeBaseListRequest": {
+      "document": "GetKnowledgeBaseList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "dataagent-xjajixj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetKnowledgeBaseListResponse": {
+      "document": "GetKnowledgeBaseList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户实例所有知识库列表",
+          "example": "无",
+          "member": "KnowledgeBase",
+          "name": "KnowledgeBaseList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSessionDetailsRequest": {
+      "document": "GetSessionDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSessionDetailsResponse": {
+      "document": "GetSessionDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话记录详情",
+          "example": "无",
+          "member": "Record",
+          "name": "RecordList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "10",
+          "member": "int64",
+          "name": "RecordCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前在运行的record信息",
+          "example": "xkdsZ0df-sdfjkx-aqjlx-xla",
+          "member": "string",
+          "name": "RunRecord",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUploadJobDetailsRequest": {
+      "document": "GetUploadJobDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "job-ssdfssdf",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUploadJobDetailsResponse": {
+      "document": "GetUploadJobDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情",
+          "example": "无",
+          "member": "UploadJob",
+          "name": "Job",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KnowledgeBase": {
+      "document": "知识库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "klbase-dxjajwq",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称\n",
+          "example": "测试知识库",
+          "member": "string",
+          "name": "KnowledgeBaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库描述",
+          "example": "用户存放测试数据",
+          "member": "string",
+          "name": "KnowledgeBaseDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者subuin",
+          "example": "4348798",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-02-23 23:23:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件数量",
+          "example": "12",
+          "member": "int64",
+          "name": "FileNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库关联的数据库列表，目前是只绑定一个数据源，数组预留拓展",
+          "example": "[\"datasource-xjaj\",\"datasource_jxuamj\"]",
+          "member": "string",
+          "name": "DatasourceIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeTaskConfig": {
+      "document": "任务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片类型  0:自定义切片，1：智能切片",
+          "example": "1",
+          "member": "int64",
+          "name": "ChunkType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/智能切片：最小值 1000，默认 4800 自定义切片：正整数即可,默认值 1000",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxChunkSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 切片分隔符,自定义切片使用：默认值为：[\"\\n\\n\", \"\\n\", \"。\", \"！\", \"？\", \"，\", \"\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\",\",\"|\"]",
+          "member": "string",
+          "name": "Delimiters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义切片使用:默认0 可重叠字符长度",
+          "example": "100",
+          "member": "int64",
+          "name": "ChunkOverlap",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表格类文档解析",
+          "example": "无",
+          "member": "ColumnInfo",
+          "name": "Columns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带检索的索引列表",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "Indexes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：不生成文档摘要，1：生成文档概要。默认0，当取1时，GenParaSummary必须也为1",
+          "example": "1",
+          "member": "int64",
+          "name": "GenDocSummary",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：不生成段落摘要，1：生成段落概要。默认0",
+          "example": "1",
+          "member": "int64",
+          "name": "GenParaSummary",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelUserAuthority": {
+      "document": "用户对象的权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "dataagent-fsgdftertf",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块，分为知识库knowledge、数据源datasource、自定义场景scene",
+          "example": "knowledge/datasource/scene",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象创建者",
+          "example": "104354545634",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象id,分为知识库id、数据源id、场景id",
+          "example": "kbase-ssfdsfs3",
+          "member": "string",
+          "name": "ObjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作用范围：1仅自己使用，2指定用户，0全员",
+          "example": "1",
+          "member": "int64",
+          "name": "UseScope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可使用的用户列表",
+          "example": "[\"1000031244\",\"105335553\"]",
+          "member": "string",
+          "name": "AuthorityUins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-12-25 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-12-25 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyChunkRequest": {
+      "document": "ModifyChunk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切片ID",
+          "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
+          "member": "string",
+          "name": "ChunkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "编辑后的文本",
+          "example": "this is  my test. hello world",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kbase-fsdfs",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyChunkResponse": {
+      "document": "ModifyChunk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKnowledgeBaseRequest": {
+      "document": "ModifyKnowledgeBase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "dataagent-xjasjxja",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型：Create，Update，Delete",
+          "example": "Create",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id，update和delete时必填",
+          "example": "klbase-xjqaxjaz",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称，create和update时必填。只允许字母、数字、汉字、下划线",
+          "example": "测试知识库",
+          "member": "string",
+          "name": "KnowledgeBaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库描述，create和update时必填",
+          "example": "用来存放测试数据",
+          "member": "string",
+          "name": "KnowledgeBaseDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1仅自己使用，2指定用户，0全员",
+          "example": "1",
+          "member": "int64",
+          "name": "UseScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可使用用户列表",
+          "example": "[\"10101012\",\"10110003\"]",
+          "member": "string",
+          "name": "AuthorityUins",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKnowledgeBaseResponse": {
+      "document": "ModifyKnowledgeBase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "klbase-xjqaxjaz",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserAuthorityRequest": {
+      "document": "ModifyUserAuthority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分为知识库knowledge、数据源datasource、自定义场景scene",
+          "example": "模块",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对象id,分为知识库id、数据源id、场景id",
+          "example": "kbase-fgdgsgds",
+          "member": "string",
+          "name": "ObjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作用范围：1仅自己使用，2指定用户，0全员",
+          "example": "1",
+          "member": "int64",
+          "name": "UseScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可使用的用户列表，UseScope=0/1,取值为[]",
+          "example": "[\"12434354326\"]",
+          "member": "string",
+          "name": "AuthorityUins",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserAuthorityResponse": {
+      "document": "ModifyUserAuthority返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryChunkListRequest": {
+      "document": "QueryChunkList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示第一页",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认一页展示 10 条",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kbase-fdsfs",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryChunkListResponse": {
+      "document": "QueryChunkList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片信息",
+          "example": "无",
+          "member": "Chunk",
+          "name": "Chunks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QuerySceneListRequest": {
+      "document": "QuerySceneList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "da-jijsdfj8",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景id",
+          "example": "s001",
+          "member": "string",
+          "name": "SceneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景名称",
+          "example": "sn001",
+          "member": "string",
+          "name": "SceneName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页的大小",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QuerySceneListResponse": {
+      "document": "QuerySceneList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景列表",
+          "example": "无",
+          "member": "Scene",
+          "name": "Datas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserAuthorityRequest": {
+      "document": "QueryUserAuthority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分为知识库knowledge、数据源datasource、自定义场景scene",
+          "example": "模块",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对象id,分为知识库id、数据源id、场景id",
+          "example": "kbase-fgdgsgds",
+          "member": "string",
+          "name": "ObjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserAuthorityResponse": {
+      "document": "QueryUserAuthority返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象权限信息",
+          "example": "无",
+          "member": "ModelUserAuthority",
+          "name": "ModelUserAuthority",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Record": {
+      "document": "问答结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问题内容",
+          "example": "hello",
+          "member": "string",
+          "name": "Question",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回答内容",
+          "example": "hello",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "思考内容",
+          "example": "think",
+          "member": "string",
+          "name": "Think",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "Task",
+          "name": "TaskList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录创建时间",
+          "example": "2025-05-13 14:23:41",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录更新时间",
+          "example": "2025-05-13 14:23:41",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录id",
+          "example": "1j28j8-2j83e2-2312-xjax",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总结内容",
+          "example": "总结",
+          "member": "string",
+          "name": "FinalSummary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "j28j8-2j83e2-2312-xazx",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1=赞，2=踩，0=无反馈",
+          "example": "1",
+          "member": "int64",
+          "name": "Feedback",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库信息",
+          "example": "\"{\\\"DbTable\\\":[{\\\"DbName\\\":\\\"database_name\\\",\\\"TableList\\\":[\\\"table1\\\"]}],\\\"DatasourceName\\\":\\\"test\\\"}\")",
+          "member": "string",
+          "name": "DbInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "error msg",
+          "member": "string",
+          "name": "ErrorContext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TaskList的string字符串",
+          "example": "\"{\"TaskName\":\"task1\"}\"",
+          "member": "string",
+          "name": "TaskListStr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库id列表",
+          "example": "[\"dxjajkke\"]",
+          "member": "string",
+          "name": "KnowledgeBaseIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上下文",
+          "example": "\"sdfs\"",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Scene": {
+      "document": "场景",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景ID",
+          "example": "sn001",
+          "member": "string",
+          "name": "SceneId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景名称",
+          "example": "cran_sn",
+          "member": "string",
+          "name": "SceneName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）",
+          "example": "[\"rag\"]",
+          "member": "string",
+          "name": "Skills",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示词文本",
+          "example": "key",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "mytest",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索配置",
+          "example": "无",
+          "member": "SearchConfig",
+          "name": "SearchConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "示例问答列表",
+          "example": "无",
+          "member": "ExampleQA",
+          "name": "ExampleQAList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录的创建时间",
+          "example": "2025-11-02 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录的最后更新时间",
+          "example": "2025-11-02 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者Uin",
+          "example": "10104343253",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SearchConfig": {
+      "document": "检索配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索类型：0:混合搜索 1：向量搜索 2：全文搜索",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "召回数量最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Num",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重配置",
+          "example": "0.5",
+          "member": "float",
+          "name": "EmbeddingWeight",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭 1:开启，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "Rerank",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭 1:开启，默认0",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AutoRag关联的知识库ID列表",
+          "example": "[\"kb001\"]",
+          "member": "string",
+          "name": "KnowledgeBaseIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效",
+          "example": "1",
+          "member": "int64",
+          "name": "SearchStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StepExpand": {
+      "document": "步骤扩展结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "数据查询",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cellid数组",
+          "example": "无",
+          "member": "string",
+          "name": "CellIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StepInfo": {
+      "document": "任务步骤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤名称",
+          "example": "查询",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤状态",
+          "example": "待补充",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型(text/expand)",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总结",
+          "example": "总结内容",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤扩展结构",
+          "example": "无",
+          "member": "StepExpand",
+          "name": "Expand",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StopChatAIRequest": {
+      "document": "StopChatAI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopChatAIResponse": {
+      "document": "StopChatAI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Task": {
+      "document": "任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "查询db",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "processing",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务步骤列表",
+          "example": "无",
+          "member": "StepInfo",
+          "name": "StepInfoList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateSceneRequest": {
+      "document": "UpdateScene请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "da-sdfasdaf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景",
+          "example": "无",
+          "member": "Scene",
+          "name": "Scene",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSceneResponse": {
+      "document": "UpdateScene返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadAndCommitFileRequest": {
+      "document": "UploadAndCommitFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "da-xssj8832",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传文件列表",
+          "example": "无",
+          "member": "CosFileInfo",
+          "name": "CosFiles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "klbase-bxjajxjazj",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadAndCommitFileResponse": {
+      "document": "UploadAndCommitFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上传任务",
+          "example": "job001",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadJob": {
+      "document": "上传任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "job-sfsfdsfd",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "data-afafase",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "kb-sssscsdfs",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "1002213242",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "subuin",
+          "example": "10432523553",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pending、FileUploading、\nFileParsing、\nSuccess、\nFailed \n\t",
+          "example": "FileUploading",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "2025-11-11 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务更新时间",
+          "example": "2025-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "error:xxxxx",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

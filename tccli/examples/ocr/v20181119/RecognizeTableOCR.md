@@ -7,7 +7,7 @@ Input:
 ```
 tccli ocr RecognizeTableOCR --cli-unfold-argument  \
     --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/TableOCR/TableOCR2.jpg \
-    --IsPdf false
+    --IsPdf False
 ```
 
 Output: 

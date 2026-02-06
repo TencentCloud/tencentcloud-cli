@@ -122,10 +122,10 @@ tccli cls CreateConfig --cli-unfold-argument  \
     --LogType fullregex_log \
     --UserDefineRule  \
     --ExtractRule.IsGBK 0 \
-    --ExtractRule.BeginRegex \{"\w+":"\w+","\w+":"\w+","\w+":\{"\w+"[^"]+([^,]+),"\w+":"/\w+/\w+/\*\*/\w+\.\w+","\w+":\[\{"\w+":"\w+","\w+":"/\w+/\w+/\w+\.\w+"\}\],"\w+":"\w+\.\d+\.\d+","\w+":"\w+","\w+":"\w+","\w+":"","\w+":\{"\w+":\d+,"\w+":\[\{"\w+":"\w+","\w+":"\d+\|\d+"\}\],"\w+":\d+,"\w+":\d+,"\w+":\[\{"\w+":"\w+","\w+":"\w+"\}\],"\w+":"","\w+":\[\]\},"\w+":"\{\\"\w+\\":\d+\}","\w+"[^"]+([^\}]+).* \
-    --ExtractRule.LogRegex \{"\w+":"\w+","\w+":"\w+","\w+":\{"\w+"[^"]+([^,]+),"\w+":"/\w+/\w+/\*\*/\w+\.\w+","\w+":\[\{"\w+":"\w+","\w+":"/\w+/\w+/\w+\.\w+"\}\],"\w+":"\w+\.\d+\.\d+","\w+":"\w+","\w+":"\w+","\w+":"","\w+":\{"\w+":\d+,"\w+":\[\{"\w+":"\w+","\w+":"\d+\|\d+"\}\],"\w+":\d+,"\w+":\d+,"\w+":\[\{"\w+":"\w+","\w+":"\w+"\}\],"\w+":"","\w+":\[\]\},"\w+":"\{\\"\w+\\":\d+\}","\w+"[^"]+([^\}]+).* \
-    --ExtractRule.Keys Version ConfigId \
-    --ExtractRule.TimeKey log_time \
+    --ExtractRule.BeginRegex (\w)(\w+\s\S+)\s+(\d+)\s([^:]+):(\d+)\]\s(.*) \
+    --ExtractRule.LogRegex (\w)(\w+\s\S+)\s+(\d+)\s([^:]+):(\d+)\]\s(.*) \
+    --ExtractRule.Keys level time thread_id file lineno msg \
+    --ExtractRule.TimeKey time \
     --ExtractRule.TimeFormat %Y-%m-%d %H:%M:%S.%f \
     --ExtractRule.FilterKeyRegex.0.Key key1 \
     --ExtractRule.FilterKeyRegex.0.Regex value1 \

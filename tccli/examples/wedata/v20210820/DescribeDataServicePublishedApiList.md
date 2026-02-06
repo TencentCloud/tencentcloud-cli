@@ -7,9 +7,8 @@ Input:
 ```
 tccli wedata DescribeDataServicePublishedApiList --cli-unfold-argument  \
     --PageNumber 1 \
-    --PageSize 2 \
-    --ProjectId 1470547050521227264 \
-    --Filters.Keyword 
+    --PageSize 10 \
+    --ProjectId 1470547050521227264
 ```
 
 Output: 
@@ -18,32 +17,20 @@ Output:
     "Response": {
         "DataSet": [
             {
-                "ApiFolderName": "test",
-                "ApiId": "1753335714101014529",
-                "ApiName": "test_gss_0202",
-                "ApiStatus": 1,
-                "ApiTagNames": "test_001",
-                "AuthType": 1,
-                "ConfigType": 1,
-                "CreateTime": "2024-04-25 10:14:29",
-                "Id": "1783318630750957569",
-                "OwnerName": "v_vgssgan"
-            },
-            {
-                "ApiFolderName": "test",
-                "ApiId": "1746830093602308097",
-                "ApiName": "test_gss_0116",
+                "ApiFolderName": "根目录",
+                "ApiId": "1792441377707995137",
+                "ApiName": "test_0520",
                 "ApiStatus": 1,
                 "ApiTagNames": "",
-                "AuthType": 0,
+                "AuthType": 1,
                 "ConfigType": 0,
-                "CreateTime": "2024-01-15 18:41:28",
-                "Id": "1746845044760952833",
-                "OwnerName": "v_vgssgan"
+                "CreateTime": "2024-10-24 15:47:09",
+                "Id": "1849356941592047617",
+                "OwnerName": "jaredlin"
             }
         ],
-        "RequestId": "39313658-20fe-4f38-ae42-17fca1853cf1",
-        "TotalCount": 39
+        "RequestId": "356df7a2-8e3c-4914-abe8-3a6c33a211d8",
+        "TotalCount": 53
     }
 }
 ```

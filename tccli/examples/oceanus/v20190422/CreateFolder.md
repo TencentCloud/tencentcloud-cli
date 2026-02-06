@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli oceanus CreateFolder --cli-unfold-argument  \
-    --FolderName test \
+    --FolderName sql \
     --WorkSpaceId space-1257058945ap-guangzhou \
     --FolderType 0 \
     --ParentId root

@@ -26,7 +26,7 @@ Output:
                 "RouteTableId": "ccnrtb-b0v86f8t",
                 "RouteTableName": "rubytest222",
                 "Description": "ruby",
-                "InstanceType": 0,
+                "InstanceType": "VPC",
                 "InstanceId": "vpc-q2nxods9",
                 "InstanceUin": "329087131",
                 "SourceCidrBlock": "10.0.0.0/24",

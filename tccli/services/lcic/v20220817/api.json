@@ -70,6 +70,13 @@
       "output": "CreateDocumentResponse",
       "status": "online"
     },
+    "CreateGroupLiveCodes": {
+      "document": "创建分组直播参加码",
+      "input": "CreateGroupLiveCodesRequest",
+      "name": "创建分组直播参加码",
+      "output": "CreateGroupLiveCodesResponse",
+      "status": "online"
+    },
     "CreateGroupWithMembers": {
       "document": "此接口根据成员列表创建群组",
       "input": "CreateGroupWithMembersRequest",
@@ -222,6 +229,13 @@
       "input": "DescribeGroupListRequest",
       "name": "获取群组列表",
       "output": "DescribeGroupListResponse",
+      "status": "online"
+    },
+    "DescribeGroupLiveCodes": {
+      "document": "获取分组直播参加码",
+      "input": "DescribeGroupLiveCodesRequest",
+      "name": "获取分组直播参加码",
+      "output": "DescribeGroupLiveCodesResponse",
       "status": "online"
     },
     "DescribeGroupMemberList": {
@@ -889,8 +903,8 @@
         },
         {
           "disabled": false,
-          "document": "创建课堂ID列表",
-          "example": "[123,456]",
+          "document": "批量创建课堂的配置信息",
+          "example": "无",
           "member": "RoomInfo",
           "name": "RoomInfos",
           "required": true,
@@ -1370,7 +1384,7 @@
         },
         {
           "disabled": false,
-          "document": "转码类型，可以有如下取值：\n0 无需转码（默认），bmp，jpg，jpeg，png，gif\n1 需要转码的文档，ppt，pptx，pdf，doc，docx，xls，xlsx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus\n请注意，待录制的页面中任何视频的分辨率不能超过页面录制最大分辨率（1920*1080），否则将导致录制失败。\n - ppt课件内嵌视频或纯视频课件，在上传课件时，云api会进行转码，以确保视频分辨率不超过页面录制最大分辨率。\n - h5课件中内嵌音视频内容时，由于平台无法获取视频内容，因此在制作环节需确保视频分辨率不超过页面录制最大分辨率。\n",
+          "document": "转码类型，可以有如下取值：\n0 无需转码（默认），bmp，jpg，jpeg，png，gif\n1 需要转码的文档，ppt，pptx，pdf，doc，docx，xls，xlsx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus\n3 备用转码，建议 WPS 制作的课件使用此方式转码，保证课件显示效果\n请注意，待录制的页面中任何视频的分辨率不能超过页面录制最大分辨率（1920*1080），否则将导致录制失败。\n - ppt课件内嵌视频或纯视频课件，在上传课件时，云api会进行转码，以确保视频分辨率不超过页面录制最大分辨率。\n - h5课件中内嵌音视频内容时，由于平台无法获取视频内容，因此在制作环节需确保视频分辨率不超过页面录制最大分辨率。\n",
           "example": "1",
           "member": "uint64",
           "name": "TranscodeType",
@@ -1436,6 +1450,61 @@
           "name": "DocumentId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupLiveCodesRequest": {
+      "document": "CreateGroupLiveCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码互动课堂的SdkAppId。</p>",
+          "example": "38901831",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID。</p>",
+          "example": "23122342",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组数量。注：最大数量限制为30</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Number",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupLiveCodesResponse": {
+      "document": "CreateGroupLiveCodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分组直播参加码</p>",
+          "example": "[\"e2323\",\"web382\"]",
+          "member": "string",
+          "name": "GroupLiveCodes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1580,7 +1649,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "课堂名称。",
+          "document": "<p>课堂名称。<br>字符数不超过256</p>",
           "example": "房间名称",
           "member": "string",
           "name": "Name",
@@ -1589,7 +1658,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的课堂开始时间，unix时间戳（秒）。",
+          "document": "<p>预定的课堂开始时间，unix时间戳（秒）。</p>",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -1598,7 +1667,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的课堂结束时间，unix时间戳（秒）。",
+          "document": "<p>预定的课堂结束时间，unix时间戳（秒）。</p>",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
@@ -1607,7 +1676,7 @@
         },
         {
           "disabled": false,
-          "document": "低代码互动课堂的SdkAppId。",
+          "document": "<p>低代码互动课堂的SdkAppId。</p>",
           "example": "123467",
           "member": "uint64",
           "name": "SdkAppId",
@@ -1616,7 +1685,7 @@
         },
         {
           "disabled": false,
-          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n注意：连麦人数（MaxMicNumber）>6时，仅可使用标清",
+          "document": "<p>头像区域，摄像头视频画面的分辨率。可以有如下取值：<br>1 标清<br>2 高清<br>3 全高清<br>注意：连麦人数（MaxMicNumber）&gt;6时，仅可使用标清</p>",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
@@ -1625,7 +1694,7 @@
         },
         {
           "disabled": false,
-          "document": "设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。",
+          "document": "<p>设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MaxMicNumber",
@@ -1634,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频",
+          "document": "<p>课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频</p>",
           "example": "videodoc",
           "member": "string",
           "name": "SubType",
@@ -1643,7 +1712,7 @@
         },
         {
           "disabled": false,
-          "document": "老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。",
+          "document": "<p>老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。</p>",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
@@ -1652,7 +1721,7 @@
         },
         {
           "disabled": false,
-          "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
+          "document": "<p>进入课堂时是否自动连麦。可以有以下取值：<br>0 不自动连麦（需要手动申请上麦，默认值）<br>1 自动连麦</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoMic",
@@ -1661,7 +1730,7 @@
         },
         {
           "disabled": false,
-          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
+          "document": "<p>释放音视频权限后是否自动取消连麦。可以有以下取值：<br>0 自动取消连麦（默认值）<br>1 保持连麦状态</p>",
           "example": "1",
           "member": "uint64",
           "name": "TurnOffMic",
@@ -1670,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "声音音质。可以有以下取值：\n0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。\n1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。",
+          "document": "<p>声音音质。可以有以下取值：<br>0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。<br>1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。</p>",
           "example": "1",
           "member": "uint64",
           "name": "AudioQuality",
@@ -1679,7 +1748,7 @@
         },
         {
           "disabled": false,
-          "document": "录制方式，可以有以下取值：0 开启自动录制（默认值）1  禁止录制2 开启手动录制 注： - 如果该配置取值为0，录制将从上课后开始，课堂结束后停止。 - 如果该配置取值为2，需通过startRecord、stopRecord接口控制录制的开始和结束。 ",
+          "document": "<p>录制方式，可以有以下取值：0 开启自动录制（默认值）1  禁止录制2 开启手动录制 注： - 如果该配置取值为0，录制将从上课后开始，课堂结束后停止。 - 如果该配置取值为2，需通过startRecord、stopRecord接口控制录制的开始和结束。</p>",
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",
@@ -1688,8 +1757,8 @@
         },
         {
           "disabled": false,
-          "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
-          "example": "[azsdasfsdfsd,asefawefewf]]",
+          "document": "<p>助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。</p>",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -1697,7 +1766,7 @@
         },
         {
           "disabled": true,
-          "document": "rtc人数。",
+          "document": "<p>rtc人数。</p>",
           "example": "0",
           "member": "uint64",
           "name": "RTCAudienceNumber",
@@ -1706,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "观看类型。互动观看 （默认）",
+          "document": "<p>观看类型。互动观看 （默认）</p>",
           "example": "0",
           "member": "uint64",
           "name": "AudienceType",
@@ -1715,7 +1784,7 @@
         },
         {
           "disabled": false,
-          "document": "录制模板。未配置时默认取值0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
+          "document": "<p>录制模板。未配置时默认取值0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordLayout",
@@ -1724,8 +1793,8 @@
         },
         {
           "disabled": false,
-          "document": "课堂绑定的群组ID,非空时限制组成员进入",
-          "example": "abcdfgd",
+          "document": "<p>课堂绑定的群组ID,非空时限制组成员进入</p>",
+          "example": "98781273",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -1733,7 +1802,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：\n0 不允许直接控制（需同意，默认值）\n1 允许直接控制（无需同意）",
+          "document": "<p>是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：<br>0 不允许直接控制（需同意，默认值）<br>1 允许直接控制（无需同意）</p>",
           "example": "0",
           "member": "uint64",
           "name": "EnableDirectControl",
@@ -1742,7 +1811,7 @@
         },
         {
           "disabled": false,
-          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "document": "<p>开启专注模式。<br>0 收看全部角色音视频(默认)<br>1 只看老师和助教</p>",
           "example": "0",
           "member": "int64",
           "name": "InteractionMode",
@@ -1751,7 +1820,7 @@
         },
         {
           "disabled": false,
-          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "document": "<p>横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "VideoOrientation",
@@ -1760,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "开启课后评分。 0：不开启(默认)  1：开启",
+          "document": "<p>开启课后评分。 0：不开启(默认)  1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "IsGradingRequiredPostClass",
@@ -1769,7 +1838,7 @@
         },
         {
           "disabled": false,
-          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏",
+          "document": "<p>课堂类型。  注：大班课的布局(layout)只有三分屏</p><p>枚举值：</p><ul><li>0： 小班课（默认值）</li><li>1： 大班课</li><li>2： 1V1 (预留参数，暂未开放);</li><li>3： 圆桌会议</li><li>4： 分组直播 </li></ul><p>默认值：0</p>",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
@@ -1778,7 +1847,16 @@
         },
         {
           "disabled": false,
-          "document": "拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟",
+          "document": "<p>嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效</p>",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟</p>",
           "example": "0",
           "member": "int64",
           "name": "EndDelayTime",
@@ -1787,7 +1865,7 @@
         },
         {
           "disabled": false,
-          "document": "直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播",
+          "document": "<p>直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播</p>",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -1796,8 +1874,8 @@
         },
         {
           "disabled": false,
-          "document": "伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。",
-          "example": "https://1234221212.vod-qcloud.com/425sfabhhs7814/e99049456789ghjk7399827/1INCKHSY9QMA.mp4",
+          "document": "<p>伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。</p><p>注意：伪直播视频规格建议最高使用1080p 30fps，4k视频会有兼容性问题导致直播失败。</p>",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "required": false,
@@ -1805,7 +1883,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效",
+          "document": "<p>是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效</p>",
           "example": "0",
           "member": "uint64",
           "name": "EnableAutoStart",
@@ -1814,7 +1892,7 @@
         },
         {
           "disabled": false,
-          "document": "录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道",
+          "document": "<p>录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道</p>",
           "example": "www.demo.com/test.png",
           "member": "string",
           "name": "RecordBackground",
@@ -1823,8 +1901,8 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。\n数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
-          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
+          "document": "<p>录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。</p><p>自定义场景参数的含义。如下：<br>     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。<br>    lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）<br>     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。</p>",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "required": false,
@@ -1832,7 +1910,7 @@
         },
         {
           "disabled": true,
-          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
+          "document": "<p>录制自定义语言，仅recordlayout=9的时候此参数有效</p>",
           "example": "en",
           "member": "string",
           "name": "RecordLang",
@@ -1841,7 +1919,7 @@
         },
         {
           "disabled": false,
-          "document": "录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0",
+          "document": "<p>录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordStream",
@@ -1850,7 +1928,7 @@
         },
         {
           "disabled": false,
-          "document": "板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式",
+          "document": "<p>板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式</p>",
           "example": "0",
           "member": "uint64",
           "name": "WhiteBoardSnapshotMode",
@@ -1859,10 +1937,19 @@
         },
         {
           "disabled": false,
-          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "document": "<p>字幕转写功能开关。可以有以下取值：<br>0 不开启字幕转写功能（默认值）<br>1 自动转写模式：上课自动开启，下课自动停止<br>2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写<br>设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关</p>",
           "example": "0",
           "member": "uint64",
           "name": "SubtitlesTranscription",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
           "required": false,
           "type": "int"
         }
@@ -1874,7 +1961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间ID。",
+          "document": "<p>房间ID。</p>",
           "example": "301234567",
           "member": "uint64",
           "name": "RoomId",
@@ -3073,6 +3160,52 @@
       ],
       "type": "object"
     },
+    "DescribeGroupLiveCodesRequest": {
+      "document": "DescribeGroupLiveCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>学校ID</p>",
+          "example": "38742230",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID</p>",
+          "example": "3323849",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupLiveCodesResponse": {
+      "document": "DescribeGroupLiveCodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分组直播参加码</p>",
+          "example": "[\"hdi2323\",\"uweu32\"]",
+          "member": "string",
+          "name": "GroupLiveCodes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGroupMemberListRequest": {
       "document": "DescribeGroupMemberList请求参数结构体",
       "members": [
@@ -3826,7 +3959,7 @@
         {
           "disabled": false,
           "document": "助教UserId列表。",
-          "example": "\t[azsdasfsdfsd,asefawefew]",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "output_required": true,
@@ -3836,7 +3969,7 @@
         {
           "disabled": false,
           "document": "录制地址（协议为https)。仅在房间结束后存在。",
-          "example": "https://abc.mp4",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordUrl",
           "output_required": true,
@@ -3905,7 +4038,7 @@
         },
         {
           "disabled": false,
-          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)注：大班课的布局(layout)只有三分屏",
+          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
@@ -3946,7 +4079,7 @@
         {
           "disabled": false,
           "document": "伪直播链接",
-          "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "output_required": false,
@@ -3976,7 +4109,7 @@
         {
           "disabled": false,
           "document": "RTMP推流链接",
-          "example": "rtmp://rtmp.rtc.qq.com/push/301234567?sdkappid=141234567&userid=abcdefg123456789&usersig=&use_number_room_id=1",
+          "example": "rtmp://rtmp.rtc.com/push/30928374?sdkappid=9182537&userid=mpqhaijldaoqpnsd12&use_number_room_id=1&usersig=bsjkehdbfwie28102",
           "member": "string",
           "name": "RTMPStreamingURL",
           "output_required": false,
@@ -3985,8 +4118,8 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
-          "example": "default",
+          "document": "录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "output_required": false,
@@ -4035,10 +4168,30 @@
         },
         {
           "disabled": false,
-          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "document": "字幕转写功能开关。可以有以下取值：\n0 不开启字幕转写功能（默认值）\n1 自动转写模式：上课自动开启，下课自动停止\n2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写\n设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关",
           "example": "0",
           "member": "uint64",
           "name": "SubtitlesTranscription",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4895,6 +5048,16 @@
           "name": "RecordUrl",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）",
+          "example": "4",
+          "member": "uint64",
+          "name": "Reason",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5845,7 +6008,7 @@
         {
           "disabled": false,
           "document": "子上课班号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['a','b']",
+          "example": "[\"groupID1\",\"groupID2\"]",
           "member": "string",
           "name": "SubGroupId",
           "output_required": true,
@@ -5854,7 +6017,7 @@
         },
         {
           "disabled": false,
-          "document": "用户的上台状态",
+          "document": "本堂课用户是否上过台。0 否；1 是",
           "example": "0",
           "member": "int64",
           "name": "Stage",
@@ -6089,7 +6252,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间ID。",
+          "document": "<p>房间ID。</p>",
           "example": "312345678",
           "member": "uint64",
           "name": "RoomId",
@@ -6098,7 +6261,7 @@
         },
         {
           "disabled": false,
-          "document": "低代码互动课堂的SdkAppId",
+          "document": "<p>低代码互动课堂的SdkAppId</p>",
           "example": "123467",
           "member": "uint64",
           "name": "SdkAppId",
@@ -6107,7 +6270,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。",
+          "document": "<p>预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。</p>",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -6116,7 +6279,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。",
+          "document": "<p>预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。</p>",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
@@ -6125,7 +6288,7 @@
         },
         {
           "disabled": false,
-          "document": "老师ID。直播开始后不允许修改。",
+          "document": "<p>老师ID。直播开始后不允许修改。</p>",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
@@ -6134,7 +6297,7 @@
         },
         {
           "disabled": false,
-          "document": "房间名称。",
+          "document": "<p>房间名称。<br>字符数不超过256</p>",
           "example": "房间名称",
           "member": "string",
           "name": "Name",
@@ -6143,7 +6306,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n直播开始后不允许修改。",
+          "document": "<p>分辨率。可以有如下取值：<br>1 标清<br>2 高清<br>3 全高清<br>直播开始后不允许修改。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
@@ -6152,7 +6315,7 @@
         },
         {
           "disabled": false,
-          "document": "设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。",
+          "document": "<p>设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxMicNumber",
@@ -6161,7 +6324,7 @@
         },
         {
           "disabled": false,
-          "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦\n直播开始后不允许修改。",
+          "document": "<p>进入房间时是否自动连麦。可以有以下取值：<br>0 不自动连麦（默认值）<br>1 自动连麦<br>直播开始后不允许修改。</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoMic",
@@ -6170,7 +6333,7 @@
         },
         {
           "disabled": false,
-          "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质\n直播开始后不允许修改。",
+          "document": "<p>高音质模式。可以有以下取值：<br>0 不开启高音质（默认值）<br>1 开启高音质<br>直播开始后不允许修改。</p>",
           "example": "1",
           "member": "uint64",
           "name": "AudioQuality",
@@ -6179,7 +6342,7 @@
         },
         {
           "disabled": false,
-          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\n直播开始后不允许修改。",
+          "document": "<p>房间子类型，可以有以下取值：<br>videodoc 文档+视频<br>video 纯视频<br>直播开始后不允许修改。</p>",
           "example": "video",
           "member": "string",
           "name": "SubType",
@@ -6188,7 +6351,7 @@
         },
         {
           "disabled": false,
-          "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制\n直播开始后不允许修改。",
+          "document": "<p>禁止录制。可以有以下取值：<br>0 不禁止录制（默认值）<br>1 禁止录制<br>直播开始后不允许修改。</p>",
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",
@@ -6197,8 +6360,8 @@
         },
         {
           "disabled": false,
-          "document": "助教Id列表。直播开始后不允许修改。",
-          "example": "\t[azsdasfsdfsd,asefawefew]",
+          "document": "<p>助教Id列表。直播开始后不允许修改。</p>",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -6206,8 +6369,8 @@
         },
         {
           "disabled": false,
-          "document": "房间绑定的群组ID。直播开始后不允许修改。",
-          "example": "490194023",
+          "document": "<p>房间绑定的群组ID。直播开始后不允许修改。</p>",
+          "example": "7230232",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -6215,7 +6378,7 @@
         },
         {
           "disabled": false,
-          "document": "打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。",
+          "document": "<p>打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。</p>",
           "example": "0",
           "member": "uint64",
           "name": "EnableDirectControl",
@@ -6224,7 +6387,7 @@
         },
         {
           "disabled": false,
-          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "document": "<p>开启专注模式。<br>0 收看全部角色音视频(默认)<br>1 只看老师和助教</p>",
           "example": "0",
           "member": "uint64",
           "name": "InteractionMode",
@@ -6233,7 +6396,7 @@
         },
         {
           "disabled": false,
-          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "document": "<p>横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "VideoOrientation",
@@ -6242,7 +6405,7 @@
         },
         {
           "disabled": false,
-          "document": "开启课后评分。 0：不开启(默认)  1：开启",
+          "document": "<p>开启课后评分。 0：不开启(默认)  1：开启</p>",
           "example": "0",
           "member": "uint64",
           "name": "IsGradingRequiredPostClass",
@@ -6251,7 +6414,7 @@
         },
         {
           "disabled": false,
-          "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 （预留参数、暂未开放)\n注：大班课的布局(layout)只有三分屏",
+          "document": "<p>房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 （预留参数、暂未开放)<br>注：大班课的布局(layout)只有三分屏</p>",
           "example": "0",
           "member": "uint64",
           "name": "RoomType",
@@ -6260,7 +6423,7 @@
         },
         {
           "disabled": false,
-          "document": "录制模板。仅可修改还未开始的房间。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
+          "document": "<p>录制模板。仅可修改还未开始的房间。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744</p>",
           "example": "0",
           "member": "uint64",
           "name": "RecordLayout",
@@ -6269,7 +6432,7 @@
         },
         {
           "disabled": false,
-          "document": "拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟",
+          "document": "<p>拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟</p>",
           "example": "0",
           "member": "int64",
           "name": "EndDelayTime",
@@ -6278,7 +6441,7 @@
         },
         {
           "disabled": false,
-          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）。 目前支持从回放直播模式（伪直播）改为常规模式，不支持从常规模式改为回放直播模式（伪直播）",
+          "document": "<p>直播方式：0 常规模式（默认）1 回放直播模式（伪直播）。 目前支持从回放直播模式（伪直播）改为常规模式，不支持从常规模式改为回放直播模式（伪直播）</p>",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -6287,8 +6450,8 @@
         },
         {
           "disabled": false,
-          "document": "伪直播链接",
-          "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
+          "document": "<p>伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。</p><p>注意：伪直播视频规格建议最高使用1080p 30fps，4k视频会有兼容性问题导致直播失败。</p>",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "required": false,
@@ -6296,7 +6459,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效",
+          "document": "<p>是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效</p>",
           "example": "0",
           "member": "uint64",
           "name": "EnableAutoStart",
@@ -6305,7 +6468,7 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
+          "document": "<p>录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。</p>",
           "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
@@ -6314,7 +6477,7 @@
         },
         {
           "disabled": true,
-          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
+          "document": "<p>录制自定义语言，仅recordlayout=9的时候此参数有效</p>",
           "example": "en",
           "member": "string",
           "name": "RecordLang",
@@ -6323,7 +6486,7 @@
         },
         {
           "disabled": false,
-          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "document": "<p>板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式</p>",
           "example": "0",
           "member": "uint64",
           "name": "WhiteBoardSnapshotMode",
@@ -6332,10 +6495,28 @@
         },
         {
           "disabled": false,
-          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "document": "<p>字幕转写功能开关。可以有以下取值：<br>0 不开启字幕转写功能（默认值）<br>1 自动转写模式：上课自动开启，下课自动停止<br>2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写<br>设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关</p>",
           "example": "0",
           "member": "uint64",
           "name": "SubtitlesTranscription",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效</p>",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
           "required": false,
           "type": "int"
         }
@@ -6611,7 +6792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间名称。",
+          "document": "<p>房间名称。<br>字符数不超过256</p>",
           "example": "房间名称",
           "member": "string",
           "name": "Name",
@@ -6620,7 +6801,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间开始时间，unix时间戳。",
+          "document": "<p>预定的房间开始时间，unix时间戳。</p>",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -6629,7 +6810,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间结束时间，unix时间戳。",
+          "document": "<p>预定的房间结束时间，unix时间戳。</p>",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
@@ -6638,7 +6819,7 @@
         },
         {
           "disabled": false,
-          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "document": "<p>头像区域，摄像头视频画面的分辨率。可以有如下取值：<br>1 标清<br>2 高清<br>3 全高清</p>",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
@@ -6647,7 +6828,7 @@
         },
         {
           "disabled": false,
-          "document": "设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。",
+          "document": "<p>设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxMicNumber",
@@ -6656,7 +6837,7 @@
         },
         {
           "disabled": false,
-          "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频",
+          "document": "<p>房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频</p>",
           "example": "videodoc",
           "member": "string",
           "name": "SubType",
@@ -6665,7 +6846,7 @@
         },
         {
           "disabled": false,
-          "document": "老师ID。通过[注册用户]接口获取的UserId。",
+          "document": "<p>老师ID。通过[注册用户]接口获取的UserId。</p>",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
@@ -6674,7 +6855,7 @@
         },
         {
           "disabled": false,
-          "document": "进入课堂时是否自动连麦。可以有以下取值： 0 不自动连麦（需要手动申请上麦，默认值） 1 自动连麦",
+          "document": "<p>进入课堂时是否自动连麦。可以有以下取值： 0 不自动连麦（需要手动申请上麦，默认值） 1 自动连麦</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoMic",
@@ -6683,7 +6864,7 @@
         },
         {
           "disabled": false,
-          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值： 0 自动取消连麦（默认值） 1 保持连麦状态",
+          "document": "<p>释放音视频权限后是否自动取消连麦。可以有以下取值： 0 自动取消连麦（默认值） 1 保持连麦状态</p>",
           "example": "1",
           "member": "uint64",
           "name": "TurnOffMic",
@@ -6692,7 +6873,7 @@
         },
         {
           "disabled": false,
-          "document": "高音质模式。可以有以下取值： 0 不开启高音质（默认值） 1 开启高音质",
+          "document": "<p>高音质模式。可以有以下取值： 0 不开启高音质（默认值） 1 开启高音质</p>",
           "example": "1",
           "member": "uint64",
           "name": "AudioQuality",
@@ -6701,7 +6882,7 @@
         },
         {
           "disabled": false,
-          "document": "上课后是否禁止自动录制。可以有以下取值： 0 不禁止录制（自动开启录制，默认值） 1 禁止录制 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
+          "document": "<p>上课后是否禁止自动录制。可以有以下取值： 0 不禁止录制（自动开启录制，默认值） 1 禁止录制 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。</p>",
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",
@@ -6710,8 +6891,8 @@
         },
         {
           "disabled": false,
-          "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
-          "example": "[azsdasfsdfsd,asefawefew]",
+          "document": "<p>助教Id列表。通过[注册用户]接口获取的UserId。</p>",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -6719,7 +6900,7 @@
         },
         {
           "disabled": true,
-          "document": "rtc人数。",
+          "document": "<p>rtc人数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RTCAudienceNumber",
@@ -6728,7 +6909,7 @@
         },
         {
           "disabled": false,
-          "document": "观看类型。",
+          "document": "<p>观看类型。</p>",
           "example": "1",
           "member": "uint64",
           "name": "AudienceType",
@@ -6737,7 +6918,7 @@
         },
         {
           "disabled": false,
-          "document": "录制布局。",
+          "document": "<p>录制布局。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordLayout",
@@ -6746,7 +6927,7 @@
         },
         {
           "disabled": false,
-          "document": "房间绑定的群组ID",
+          "document": "<p>房间绑定的群组ID</p>",
           "example": "xfdfgdf",
           "member": "string",
           "name": "GroupId",
@@ -6755,7 +6936,7 @@
         },
         {
           "disabled": false,
-          "document": "打开学生麦克风/摄像头的授权开关",
+          "document": "<p>打开学生麦克风/摄像头的授权开关</p>",
           "example": "0",
           "member": "uint64",
           "name": "EnableDirectControl",
@@ -6764,7 +6945,7 @@
         },
         {
           "disabled": false,
-          "document": "开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教",
+          "document": "<p>开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教</p>",
           "example": "0",
           "member": "int64",
           "name": "InteractionMode",
@@ -6773,7 +6954,7 @@
         },
         {
           "disabled": false,
-          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "document": "<p>横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型</p>",
           "example": "0",
           "member": "int64",
           "name": "VideoOrientation",
@@ -6782,7 +6963,7 @@
         },
         {
           "disabled": false,
-          "document": "开启课后评分。 0：不开启(默认)  1：开启",
+          "document": "<p>开启课后评分。 0：不开启(默认)  1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "IsGradingRequiredPostClass",
@@ -6791,7 +6972,7 @@
         },
         {
           "disabled": false,
-          "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)\n注：大班课的布局(layout)只有三分屏",
+          "document": "<p>课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏</p>",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
@@ -6800,7 +6981,7 @@
         },
         {
           "disabled": false,
-          "document": "拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟",
+          "document": "<p>拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟</p>",
           "example": "0",
           "member": "int64",
           "name": "EndDelayTime",
@@ -6809,7 +6990,7 @@
         },
         {
           "disabled": false,
-          "document": "直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播",
+          "document": "<p>直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播</p>",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -6818,8 +6999,8 @@
         },
         {
           "disabled": false,
-          "document": "伪直播回放链接",
-          "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
+          "document": "<p>伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。</p><p>注意：伪直播视频规格建议最高使用1080p 30fps，4k视频会有兼容性问题导致直播失败。</p>",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "required": false,
@@ -6827,7 +7008,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效",
+          "document": "<p>是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效</p>",
           "example": "0",
           "member": "uint64",
           "name": "EnableAutoStart",
@@ -6836,7 +7017,7 @@
         },
         {
           "disabled": false,
-          "document": "录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道",
+          "document": "<p>录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道</p>",
           "example": "https://tcic-backend-record-22112222.cos.ap-beujing.myqcloud.com/desktop-02_219090_210001.png",
           "member": "string",
           "name": "RecordBackground",
@@ -6845,8 +7026,8 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
-          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
+          "document": "<p>录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。</p>",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "required": false,
@@ -6854,7 +7035,7 @@
         },
         {
           "disabled": true,
-          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
+          "document": "<p>录制自定义语言，仅recordlayout=9的时候此参数有效</p>",
           "example": "en",
           "member": "string",
           "name": "RecordLang",
@@ -6863,7 +7044,7 @@
         },
         {
           "disabled": false,
-          "document": "录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0",
+          "document": "<p>录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordStream",
@@ -6872,7 +7053,7 @@
         },
         {
           "disabled": false,
-          "document": "板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式",
+          "document": "<p>板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式</p>",
           "example": "0",
           "member": "uint64",
           "name": "WhiteBoardSnapshotMode",
@@ -6881,10 +7062,28 @@
         },
         {
           "disabled": false,
-          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "document": "<p>字幕转写功能开关。可以有以下取值：<br>0 不开启字幕转写功能（默认值）<br>1 自动转写模式：上课自动开启，下课自动停止<br>2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写<br>设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关</p>",
           "example": "0",
           "member": "uint64",
           "name": "SubtitlesTranscription",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效</p>",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
           "required": false,
           "type": "int"
         }

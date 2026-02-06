@@ -7,9 +7,9 @@ Input:
 ```
 tccli wedata TriggerDsEvent --cli-unfold-argument  \
     --ProjectId 1470547050521227264 \
-    --EventCaseList.0.Name myTest \
-    --EventCaseList.0.Dimension 20220729 \
-    --EventCaseList.0.Description 手动触发
+    --EventCaseList.0.Name event_0811 \
+    --EventCaseList.0.Dimension 20250811 \
+    --ScheduleTimeZone UTC+8
 ```
 
 Output: 
@@ -17,12 +17,12 @@ Output:
 {
     "Response": {
         "Data": {
-            "TotalCount": 1,
-            "SuccessCount": 1,
             "FailCount": 0,
-            "FailMessageList": []
+            "FailMessageList": [],
+            "SuccessCount": 1,
+            "TotalCount": 1
         },
-        "RequestId": "a339e515-9f6c-46b1-a43a-587f1c39067c"
+        "RequestId": "edf02697-ae38-49f2-8682-057fd340d197"
     }
 }
 ```

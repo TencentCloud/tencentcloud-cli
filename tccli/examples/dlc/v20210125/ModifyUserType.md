@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc ModifyUserType --cli-unfold-argument  \
-    --UserId 182xxxxx342 \
+    --UserId 1000****4431 \
     --UserType ADMIN
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "ks1141-dasd8ca1-acds81fa"
+        "RequestId": "29533352-368a-49cb-932e-3d14800f7ea1"
     }
 }
 ```

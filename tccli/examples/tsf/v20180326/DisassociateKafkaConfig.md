@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DisassociateKafkaConfig --cli-unfold-argument  \
-    --ConfigId dddd
+    --ConfigId apm-busi-log-cfg-6a7m36a5
 ```
 
 Output: 

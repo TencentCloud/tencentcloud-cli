@@ -1,58 +1,4 @@
-**Example 1: 创建普通剪辑项目**
-
- 
-
-Input: 
-
-```
-tccli cme CreateProject --cli-unfold-argument  \
-    --Category VIDEO_EDIT \
-    --Platform 1000000009 \
-    --Owner.Type PERSON \
-    --Owner.Id user_id_61978823e6a253000100fb0f \
-    --Name first_project \
-    --VideoEditProjectInput.AspectRatio 16:9
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ProjectId": "cmepid_5f16967b64436100015fb025",
-        "RtmpPushInputInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 2: 创建一个导播台项目**
-
- 
-
-Input: 
-
-```
-tccli cme CreateProject --cli-unfold-argument  \
-    --Category SWITCHER \
-    --Platform 1000000009 \
-    --Owner.Type PERSON \
-    --Owner.Id user_id_61978823e6a253000100fb0f \
-    --Name 导播台 \
-    --SwitcherProjectInput.PgmOutputConfig.TemplateId 10001
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ProjectId": "3f1699f3f97b9f0001920f29",
-        "RtmpPushInputInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5c"
-    }
-}
-```
-
-**Example 3: 使用初始轨道创建项目**
+**Example 1: 使用初始轨道创建项目**
 
  
 
@@ -85,7 +31,7 @@ Output:
 }
 ```
 
-**Example 4: 使用剪辑模板创建项目**
+**Example 2: 使用剪辑模板创建项目**
 
  
 
@@ -113,7 +59,7 @@ Output:
 }
 ```
 
-**Example 5: 创建一个云转推项目，初始化输入源为直播拉流**
+**Example 3: 创建一个云转推项目，初始化输入源为直播拉流**
 
 云转推项目初始化输入输出源
 
@@ -142,7 +88,7 @@ Output:
 }
 ```
 
-**Example 6: 创建一个云转推项目，初始化输入源为直播推流**
+**Example 4: 创建一个云转推项目，初始化输入源为直播推流**
 
 云转推项目初始化输入输出源
 
@@ -180,7 +126,34 @@ Output:
 }
 ```
 
-**Example 7: 创建一个点播转直播项目，播放一次，输出视频的帧率为25帧，码率为2500K，视频大小为1920*1080。**
+**Example 5: 创建一个导播台项目**
+
+ 
+
+Input: 
+
+```
+tccli cme CreateProject --cli-unfold-argument  \
+    --Category SWITCHER \
+    --Platform 1000000009 \
+    --Owner.Type PERSON \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
+    --Name 导播台 \
+    --SwitcherProjectInput.PgmOutputConfig.TemplateId 10001
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ProjectId": "3f1699f3f97b9f0001920f29",
+        "RtmpPushInputInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5c"
+    }
+}
+```
+
+**Example 6: 创建一个点播转直播项目，播放一次，输出视频的帧率为25帧，码率为2500K，视频大小为1920*1080。**
 
  
 
@@ -213,6 +186,33 @@ Output:
         "ProjectId": "3f1699f3f97b9f0001920f31",
         "RtmpPushInputInfoSet": [],
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e6a"
+    }
+}
+```
+
+**Example 7: 创建普通剪辑项目**
+
+ 
+
+Input: 
+
+```
+tccli cme CreateProject --cli-unfold-argument  \
+    --Category VIDEO_EDIT \
+    --Platform 1000000009 \
+    --Owner.Type PERSON \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
+    --Name first_project \
+    --VideoEditProjectInput.AspectRatio 16:9
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ProjectId": "cmepid_5f16967b64436100015fb025",
+        "RtmpPushInputInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
 ```

@@ -50,11 +50,11 @@
       "status": "online"
     },
     "ContinueRunFailedTaskBatch": {
-      "document": "对执行失败的任务批次执行续跑",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n对执行失败的任务批次执行续跑",
       "input": "ContinueRunFailedTaskBatchRequest",
       "name": "续跑任务批次",
       "output": "ContinueRunFailedTaskBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAllGatewayApiAsync": {
       "document": "一键导入API分组",
@@ -239,18 +239,18 @@
       "status": "online"
     },
     "CreateTask": {
-      "document": "创建任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n创建任务",
       "input": "CreateTaskRequest",
       "name": "创建任务",
       "output": "CreateTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateTaskFlow": {
-      "document": "创建工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n创建工作流",
       "input": "CreateTaskFlowRequest",
       "name": "创建工作流",
       "output": "CreateTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateUnitNamespaces": {
       "document": "批量创建单元化命名空间",
@@ -414,11 +414,11 @@
       "status": "deprecated"
     },
     "DeleteTask": {
-      "document": "删除任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n删除任务",
       "input": "DeleteTaskRequest",
       "name": "删除任务",
       "output": "DeleteTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteUnitNamespaces": {
       "document": "删除单元化命名空间",
@@ -617,7 +617,7 @@
       "status": "online"
     },
     "DescribeContainerGroupDetail": {
-      "document": "容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）",
+      "document": "容器部署组详情（已废弃，请使用  [DescribeContainerGroupDeployInfo](https://cloud.tencent.com/document/product/649/67221)）",
       "input": "DescribeContainerGroupDetailRequest",
       "name": "查询容器部署组详情",
       "output": "DescribeContainerGroupDetailResponse",
@@ -687,11 +687,11 @@
       "status": "online"
     },
     "DescribeFlowLastBatchState": {
-      "document": "查询工作流最新一个批次的状态信息",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询工作流最新一个批次的状态信息",
       "input": "DescribeFlowLastBatchStateRequest",
       "name": "查询工作流最近一个批次的执行状态",
       "output": "DescribeFlowLastBatchStateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeGatewayAllGroupApis": {
       "document": "查询网关所有分组下Api列表",
@@ -797,13 +797,6 @@
       "name": "查询镜像版本列表",
       "output": "DescribeImageTagsResponse",
       "status": "online"
-    },
-    "DescribeInovcationIndicators": {
-      "document": "废弃接口\n\n废弃",
-      "input": "DescribeInovcationIndicatorsRequest",
-      "name": "查询调用监控指标",
-      "output": "DescribeInovcationIndicatorsResponse",
-      "status": "deprecated"
     },
     "DescribeInstances": {
       "document": "无",
@@ -1058,25 +1051,25 @@
       "status": "online"
     },
     "DescribeTaskDetail": {
-      "document": "查询任务详情",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询任务详情",
       "input": "DescribeTaskDetailRequest",
       "name": "查询任务详情",
       "output": "DescribeTaskDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTaskLastStatus": {
-      "document": "查询任务最近一次执行状态",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n查询任务最近一次执行状态",
       "input": "DescribeTaskLastStatusRequest",
       "name": "查看任务最近执行批次状态",
       "output": "DescribeTaskLastStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTaskRecords": {
-      "document": "翻页查询任务列表",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n翻页查询任务列表",
       "input": "DescribeTaskRecordsRequest",
       "name": "查询任务列表",
       "output": "DescribeTaskRecordsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeUnitApiUseDetail": {
       "document": "查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail",
@@ -1135,18 +1128,18 @@
       "status": "online"
     },
     "DisableTask": {
-      "document": "停用任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停用任务",
       "input": "DisableTaskRequest",
       "name": "停用任务",
       "output": "DisableTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DisableTaskFlow": {
-      "document": "停用工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停用工作流",
       "input": "DisableTaskFlowRequest",
       "name": "停用工作流",
       "output": "DisableTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DisableUnitRoute": {
       "document": "禁用单元化路由",
@@ -1191,18 +1184,18 @@
       "status": "online"
     },
     "EnableTask": {
-      "document": "启用任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n启用任务",
       "input": "EnableTaskRequest",
       "name": "启用任务",
       "output": "EnableTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "EnableTaskFlow": {
-      "document": "启用工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n启用工作流",
       "input": "EnableTaskFlowRequest",
       "name": "启用工作流",
       "output": "EnableTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "EnableUnitRoute": {
       "document": "启用单元化路由",
@@ -1219,18 +1212,18 @@
       "status": "online"
     },
     "ExecuteTask": {
-      "document": "手动执行一次任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n手动执行一次任务",
       "input": "ExecuteTaskRequest",
       "name": "手动执行一次任务",
       "output": "ExecuteTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ExecuteTaskFlow": {
-      "document": "执行一次工作流",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n执行一次工作流",
       "input": "ExecuteTaskFlowRequest",
       "name": "执行一次工作流",
       "output": "ExecuteTaskFlowResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ExpandGroup": {
       "document": "虚拟机部署组添加实例",
@@ -1272,6 +1265,13 @@
       "input": "ModifyGroupRequest",
       "name": "更新分组信息",
       "output": "ModifyGroupResponse",
+      "status": "online"
+    },
+    "ModifyGroupLane": {
+      "document": "更新部署组泳道信息",
+      "input": "ModifyGroupLaneRequest",
+      "name": "更新部署组泳道信息",
+      "output": "ModifyGroupLaneResponse",
       "status": "online"
     },
     "ModifyLane": {
@@ -1317,11 +1317,11 @@
       "status": "online"
     },
     "ModifyTask": {
-      "document": "修改任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n修改任务",
       "input": "ModifyTaskRequest",
       "name": "修改任务",
       "output": "ModifyTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyUploadInfo": {
       "document": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。",
@@ -1345,32 +1345,32 @@
       "status": "deprecated"
     },
     "RedoTask": {
-      "document": "重新执行任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行任务",
       "input": "RedoTaskRequest",
       "name": "重新执行任务",
       "output": "RedoTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedoTaskBatch": {
-      "document": "重新执行任务批次",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行任务批次",
       "input": "RedoTaskBatchRequest",
       "name": "重新执行任务批次",
       "output": "RedoTaskBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedoTaskExecute": {
-      "document": "重新执行在某个节点上执行任务。",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行在某个节点上执行任务。",
       "input": "RedoTaskExecuteRequest",
       "name": "重新执行任务的一次执行",
       "output": "RedoTaskExecuteResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedoTaskFlowBatch": {
-      "document": "重新执行工作流批次",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n重新执行工作流批次",
       "input": "RedoTaskFlowBatchRequest",
       "name": "重新执行工作流批次",
       "output": "RedoTaskFlowBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ReleaseApiGroup": {
       "document": "发布Api分组",
@@ -1499,25 +1499,25 @@
       "status": "online"
     },
     "StopTaskBatch": {
-      "document": "停止执行中的任务批次， 非运行中的任务不可调用。",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止执行中的任务批次， 非运行中的任务不可调用。",
       "input": "StopTaskBatchRequest",
       "name": "停止执行中的任务批次",
       "output": "StopTaskBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "StopTaskExecute": {
-      "document": "停止正在某个节点上执行的任务",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止正在某个节点上执行的任务",
       "input": "StopTaskExecuteRequest",
       "name": "停止正在执行的任务",
       "output": "StopTaskExecuteResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "TerminateTaskFlowBatch": {
-      "document": "停止一个工作流批次",
+      "document": "分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053\n\n停止一个工作流批次",
       "input": "TerminateTaskFlowBatchRequest",
       "name": "停止一个工作流批次",
       "output": "TerminateTaskFlowBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UnbindApiGroup": {
       "document": "API分组批量与网关解绑",
@@ -1602,8 +1602,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "cluster-4zu6vabc",
+          "document": "集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。",
+          "example": "cluster-4zu6vmes",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1611,8 +1611,8 @@
         },
         {
           "disabled": false,
-          "document": "云主机ID列表",
-          "example": "[\"ins-4zu6vabc\\n\",\"ins-4zu6vabe\\n\"]",
+          "document": "云主机ID列表，可通过调用[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)查询已创建的云主机列表或登录控制台进行查看；也可以调用[RunInstances](https://cloud.tencent.com/document/api/213/15730)创建新的云主机。",
+          "example": "[\"ins-4zu6vmes\",\"ins-4zu6vabe\"]",
           "member": "string",
           "name": "InstanceIdList",
           "required": true,
@@ -1630,7 +1630,7 @@
         {
           "disabled": false,
           "document": "操作系统镜像ID",
-          "example": "img-4zu6vabc",
+          "example": "img-4zu6vmes",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -1639,7 +1639,7 @@
         {
           "disabled": false,
           "document": "重装系统密码设置",
-          "example": "xxxxxxx",
+          "example": "4zu6vmes",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1648,7 +1648,7 @@
         {
           "disabled": false,
           "document": "重装系统，关联密钥设置",
-          "example": "skey-4zu6vabc",
+          "example": "skey-4zu6vmes",
           "member": "string",
           "name": "KeyId",
           "required": false,
@@ -1684,7 +1684,7 @@
         {
           "disabled": false,
           "document": "镜像特征ID列表",
-          "example": "feature-24aq56bg",
+          "example": "[\"feature-24aq56bg\"]",
           "member": "string",
           "name": "FeatureIdList",
           "required": false,
@@ -1784,7 +1784,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -1793,7 +1793,7 @@
         },
         {
           "disabled": false,
-          "document": "云主机ID列表",
+          "document": "云主机ID列表，可通过调用[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)查询已创建的云主机列表或登录控制台进行查看；也可以调用[RunInstances](https://cloud.tencent.com/document/api/213/15730)创建新的云主机。",
           "example": "[\"ins-6a79x94v\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -3210,7 +3210,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TSF分组ID",
+          "document": "部署组ID\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -3219,7 +3219,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置项ID列表",
+          "document": "日志配置项ID列表\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
           "example": "[\"config-6a79x94v\"]",
           "member": "string",
           "name": "ConfigIdList",
@@ -3234,7 +3234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果",
+          "document": "操作结果，true：成功，false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -3256,7 +3256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项id",
+          "document": "配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
           "example": "send-data-to-kafka-6a79x94v",
           "member": "string",
           "name": "ConfigId",
@@ -3283,7 +3283,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间id",
+          "document": "命名空间ID\n可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -3292,7 +3292,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "集群ID\n可通过[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已经创建的集群列表，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1)查看",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -3317,7 +3317,7 @@
         {
           "disabled": false,
           "document": "绑定是否成功",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -3590,7 +3590,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "config-6a79x94v",
+          "example": "apm-busi-log-cfg-qabp49vl",
           "member": "string",
           "name": "ConfigId",
           "output_required": true,
@@ -3622,25 +3622,25 @@
         },
         {
           "disabled": false,
-          "document": "配置项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项描述",
           "example": "this is a desc",
           "member": "string",
           "name": "ConfigDesc",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置项标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项标签",
           "example": "tag1",
           "member": "string",
           "name": "ConfigTags",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3655,25 +3655,25 @@
         },
         {
           "disabled": false,
-          "document": "配置项创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项创建时间，格式为yyyy-MM-dd HH:mm:ss",
           "example": "2019-11-21 11:31:34",
           "member": "string",
           "name": "ConfigCreateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置项更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项更新时间，格式为yyyy-MM-dd HH:mm:ss",
           "example": "2019-11-22 11:31:34",
           "member": "string",
           "name": "ConfigUpdateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3729,6 +3729,61 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "filebeat ignore_older参数",
+          "example": "10",
+          "member": "int64",
+          "name": "FilebeatIgnoreOlder",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "filebeat harvester_limit参数",
+          "example": "100",
+          "member": "int64",
+          "name": "FilebeatHarvesterLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "filebeat close_inactive参数",
+          "example": "10",
+          "member": "int64",
+          "name": "FilebeatCloseInactive",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "filebeat clean_inactive参数",
+          "example": "20",
+          "member": "int64",
+          "name": "FilebeatCleanInactive",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自定义pattern",
+          "example": "true",
+          "member": "bool",
+          "name": "CustomMultilinePattern",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3782,7 +3837,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组所属应用类型",
+          "document": "部署组所属应用类型，C：容器应用，V：虚拟机应用",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
@@ -3805,7 +3860,7 @@
         {
           "disabled": false,
           "document": "部署组所属命名空间名称",
-          "example": "default",
+          "example": "my-namespace",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -3837,7 +3892,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组所属集群类型",
+          "document": "部署组所属集群类型，C：容器集群，V：虚拟机集群",
           "example": "C",
           "member": "string",
           "name": "ClusterType",
@@ -3848,7 +3903,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组关联日志配置时间",
+          "document": "部署组关联日志配置时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-01-12 12:33:12",
           "member": "string",
           "name": "AssociatedTime",
@@ -3865,8 +3920,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "解析规则类型",
-          "example": "SPRING_BOOT",
+          "document": "解析规则类型。可选值 0（SPRING_BOOT：默认Spring Boot格式），1（NONE：无解析规则），4（NGINX_ACCESS：nginx access日志），5（CUSTOM_LOGBACK：自定义Logback），6（CUSTOM_LOG4J：自定义Log4J），7（CUSTOM_LOG4J2：自定义Log4J2），8（TEXT：单行/多行文本），9（ENVOY_MSGW_ACCESS：envoy access日志）。",
+          "example": "1",
           "member": "int64",
           "name": "SchemaType",
           "output_required": true,
@@ -3876,40 +3931,40 @@
         },
         {
           "disabled": false,
-          "document": "解析规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析规则内容",
           "example": "spring-log-xxxxxxxxxx",
           "member": "string",
           "name": "SchemaContent",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解析规则时间格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析规则时间格式",
           "example": "yy-MM-dd HH:mm:ss",
           "member": "string",
           "name": "SchemaDateFormat",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解析规则对应的多行匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析规则对应的多行匹配规则",
           "example": "/t/n",
           "member": "string",
           "name": "SchemaMultilinePattern",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解析规则创建时间",
+          "document": "解析规则创建时间，格式为yyyy-MM-dd HH:mm:ss",
           "example": "2020-12-30 12:34:56",
           "member": "string",
           "name": "SchemaCreateTime",
@@ -3920,14 +3975,14 @@
         },
         {
           "disabled": false,
-          "document": "用户填写的解析规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户填写的解析规则",
           "example": ".*",
           "member": "string",
           "name": "SchemaPatternLayout",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3957,7 +4012,7 @@
         },
         {
           "disabled": false,
-          "document": "日志时间戳",
+          "document": "日志时间戳，单位毫秒",
           "example": "1792739028",
           "member": "uint64",
           "name": "Timestamp",
@@ -4365,7 +4420,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群类型，C表示容器集群，V表示虚拟机集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "C",
           "member": "string",
           "name": "ClusterType",
@@ -4406,7 +4461,7 @@
         {
           "disabled": false,
           "document": "集群总CPU，单位: 核\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "128",
+          "example": "128.0",
           "member": "float",
           "name": "ClusterTotalCpu",
           "output_required": true,
@@ -4416,7 +4471,7 @@
         {
           "disabled": false,
           "document": "集群总内存，单位: G\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "999",
+          "example": "999.0",
           "member": "float",
           "name": "ClusterTotalMem",
           "output_required": true,
@@ -4426,7 +4481,7 @@
         {
           "disabled": false,
           "document": "集群已使用CPU，单位: 核\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "64",
+          "example": "64.0",
           "member": "float",
           "name": "ClusterUsedCpu",
           "output_required": true,
@@ -4436,7 +4491,7 @@
         {
           "disabled": false,
           "document": "集群已使用内存，单位: G\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "600",
+          "example": "600.0",
           "member": "float",
           "name": "ClusterUsedMem",
           "output_required": true,
@@ -4485,7 +4540,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间，格式为​​YYYY-MM-DD HH:MM:SS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-12-13 12:31:12",
           "member": "string",
           "name": "CreateTime",
@@ -4495,7 +4550,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间，格式为​​YYYY-MM-DD HH:MM:SS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-12-13 12:31:12",
           "member": "string",
           "name": "UpdateTime",
@@ -4675,7 +4730,7 @@
         },
         {
           "disabled": false,
-          "document": "K : kubeconfig, S : service account\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "K 表示通过kubeconfig 导入, S 表示通过service account导入\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "S",
           "member": "string",
           "name": "KuberneteNativeType",
@@ -4685,8 +4740,8 @@
         },
         {
           "disabled": false,
-          "document": "native secret\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "secret-mock-xxxxxxxxxxxx",
+          "document": "Kubernetes 密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secret-mock-U2FsdGVkX1+dOP",
           "member": "string",
           "name": "KuberneteNativeSecret",
           "output_required": true,
@@ -5581,20 +5636,20 @@
         {
           "disabled": false,
           "document": "CPU 核数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "内存 MiB 数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1024",
           "member": "string",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5662,7 +5717,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "Kubernetes 资源类型，典型取值有 Deployment(部署资源)、Pod(容器组)、Service(服务资源) 等",
           "example": "Pod",
           "member": "string",
           "name": "Kind",
@@ -6038,7 +6093,7 @@
         },
         {
           "disabled": false,
-          "document": "数据卷信息，list\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据卷信息，数组结构\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VolumeInfo",
           "name": "VolumeInfos",
@@ -6561,7 +6616,7 @@
         {
           "disabled": false,
           "document": "日志配置项ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"apm-busi-log-cfg-lba2povk\", \"apm-busi-log-cfg-2vz5nm9v\"]",
           "member": "string",
           "name": "BusinessLogConfigIdList",
           "output_required": false,
@@ -6572,7 +6627,7 @@
         {
           "disabled": false,
           "document": "投递配置项ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"send-data-to-kafka-nyg9o3wa\"]",
           "member": "string",
           "name": "BusinessLogDeliveryConfigIdList",
           "output_required": false,
@@ -6731,7 +6786,7 @@
         {
           "disabled": false,
           "document": "是否开启服务治理\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnableGovernance",
           "output_required": false,
@@ -6764,7 +6819,7 @@
         {
           "disabled": false,
           "document": "服务治理类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SHARE",
           "member": "string",
           "name": "GovernanceType",
           "output_required": false,
@@ -6781,7 +6836,7 @@
         {
           "disabled": false,
           "document": "容器名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "consumer",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -6792,7 +6847,7 @@
         {
           "disabled": false,
           "document": "容器ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0f675d42546fc",
           "member": "string",
           "name": "ContainerId",
           "output_required": true,
@@ -6803,7 +6858,7 @@
         {
           "disabled": false,
           "document": "容器状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Waiting",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6814,7 +6869,7 @@
         {
           "disabled": false,
           "document": "容器的Reason\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ContainerCreating",
           "member": "string",
           "name": "Reason",
           "output_required": true,
@@ -6825,7 +6880,7 @@
         {
           "disabled": false,
           "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ccr.ccs.tencentyun.com/tsf_700001067584/test-ns",
           "member": "string",
           "name": "Image",
           "output_required": true,
@@ -6836,7 +6891,7 @@
         {
           "disabled": false,
           "document": "是否为业务主容器\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsBusinessMainContainer",
           "output_required": false,
@@ -6847,7 +6902,7 @@
         {
           "disabled": false,
           "document": "镜像Server\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
           "output_required": false,
@@ -6858,7 +6913,7 @@
         {
           "disabled": false,
           "document": "镜像名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tsf_700001067584/test-ns",
           "member": "string",
           "name": "RepoName",
           "output_required": false,
@@ -6869,7 +6924,7 @@
         {
           "disabled": false,
           "document": "仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "personal",
           "member": "string",
           "name": "RepoType",
           "output_required": false,
@@ -6891,7 +6946,7 @@
         {
           "disabled": false,
           "document": "容器访问凭证名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "qcloudregistry",
           "member": "string",
           "name": "SecretName",
           "output_required": false,
@@ -6902,7 +6957,7 @@
         {
           "disabled": false,
           "document": "镜像版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1",
           "member": "string",
           "name": "TagName",
           "output_required": false,
@@ -6924,7 +6979,7 @@
         {
           "disabled": false,
           "document": "容器Cpu request\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.25",
           "member": "string",
           "name": "CpuRequest",
           "output_required": false,
@@ -6935,7 +6990,7 @@
         {
           "disabled": false,
           "document": "容器Cpu limit\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.5",
           "member": "string",
           "name": "CpuLimit",
           "output_required": false,
@@ -6946,7 +7001,7 @@
         {
           "disabled": false,
           "document": "容器Mem request\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "120",
           "member": "string",
           "name": "MemRequest",
           "output_required": false,
@@ -6957,7 +7012,7 @@
         {
           "disabled": false,
           "document": "容器Mem Limit\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1280",
           "member": "string",
           "name": "MemLimit",
           "output_required": false,
@@ -6990,7 +7045,7 @@
         {
           "disabled": false,
           "document": "JVM参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m",
           "member": "string",
           "name": "JvmOpts",
           "output_required": false,
@@ -7012,7 +7067,7 @@
         {
           "disabled": false,
           "document": "是否为初始化容器\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "InitContainerEnable",
           "output_required": false,
@@ -7034,7 +7089,7 @@
         {
           "disabled": false,
           "document": "是否为特权容器\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "PrivilegeContainerEnable",
           "output_required": false,
@@ -7045,7 +7100,7 @@
         {
           "disabled": false,
           "document": "运行命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/bin/sh",
           "member": "string",
           "name": "RunCommand",
           "output_required": false,
@@ -7056,7 +7111,7 @@
         {
           "disabled": false,
           "document": "运行参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "-c\\nwhile true; do echo hello; sleep 10; done",
           "member": "string",
           "name": "RunArg",
           "output_required": false,
@@ -7067,7 +7122,7 @@
         {
           "disabled": false,
           "document": "容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group-nygeogpv-docker",
           "member": "string",
           "name": "ContainerName",
           "output_required": false,
@@ -7084,30 +7139,30 @@
         {
           "disabled": false,
           "document": "实例导入方式，可多个，公有云为 [\"R\"]，独立版的取值有 \"M\" 脚本模式、\"S\" SSH 模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"R\"]",
           "member": "string",
           "name": "ImportMode",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "SSH 模式时，前端应该限制用户填这个数量的 master 主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "MasterNumLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "SSH 模式时，前端应该限制用户填的最高数量的 node 主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "NodeNumLimitPerSetup",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7618,7 +7673,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "应用名称，最长60字符",
           "example": "application-user",
           "member": "string",
           "name": "ApplicationName",
@@ -7681,7 +7736,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的数据集ID",
+          "document": "【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "program-6a79x94v",
           "member": "string",
           "name": "ProgramId",
@@ -7799,7 +7854,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "指定集群类型，目前支持：\n- `V`：虚拟机集群\n- `C`：容器集群\n- `S`：Serverless 集群",
           "example": "C",
           "member": "string",
           "name": "ClusterType",
@@ -7808,7 +7863,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "私有网络ID，可通过调用[DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372)查询已创建的私有网络列表或登录控制台进行查看；也可以调用[CreateVpc](https://cloud.tencent.com/document/api/215/1309)创建新的私有网络。",
           "example": "vpc-6a79x94v",
           "member": "string",
           "name": "VpcId",
@@ -7907,7 +7962,7 @@
         },
         {
           "disabled": false,
-          "document": "K : kubeconfig, S : service account",
+          "document": "K : kubeconfig, S : service account (公有云不支持通过kubeconfig和service account的方式创建集群)",
           "example": "K",
           "member": "string",
           "name": "KuberneteNativeType",
@@ -7916,7 +7971,7 @@
         },
         {
           "disabled": false,
-          "document": "native secret",
+          "document": "Kubernetes 原生 Secret 资源对象",
           "example": "mock-secret",
           "member": "string",
           "name": "KuberneteNativeSecret",
@@ -7925,7 +7980,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -8317,7 +8372,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组所属应用ID",
+          "document": "分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -8326,7 +8381,7 @@
         },
         {
           "disabled": false,
-          "document": "分组所属命名空间ID",
+          "document": "分组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -8443,8 +8498,8 @@
         },
         {
           "disabled": false,
-          "document": "部署组资源类型；\nDEF — 默认资源类型；\nGW — 网关资源类型；",
-          "example": "DEF",
+          "document": "部署组资源类型；DEF 表示默认资源类型",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "GroupResourceType",
           "required": false,
@@ -8452,7 +8507,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "分组所属【子网ID】，可前往私有网络[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1&unVpcId=vpc-6bs8ytjd)进行获取",
           "example": "subnet-6a79x94v",
           "member": "string",
           "name": "SubnetId",
@@ -8870,7 +8925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组所属的应用ID",
+          "document": "部署组所属的【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -8879,7 +8934,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组所属命名空间ID",
+          "document": "部署组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -8897,7 +8952,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "部署组所属的【集群ID】，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
           "example": "cluster-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -8915,8 +8970,8 @@
         },
         {
           "disabled": false,
-          "document": "部署组资源类型；DEF 表示默认资源类型；GW 表示网关资源类型",
-          "example": "DEF",
+          "document": "部署组资源类型；DEF 表示默认资源类型",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "GroupResourceType",
           "required": false,
@@ -8939,6 +8994,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "k8s命名空间名称",
+          "example": "default",
+          "member": "string",
+          "name": "K8sNamespaceName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9235,7 +9299,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。",
           "example": "cluster-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -9253,8 +9317,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间资源类型(默认值为DEF)",
-          "example": "DEF",
+          "document": "命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "NamespaceResourceType",
           "required": false,
@@ -9262,8 +9326,8 @@
         },
         {
           "disabled": false,
-          "document": "是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)",
-          "example": "DEF",
+          "document": "命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "NamespaceType",
           "required": false,
@@ -9271,7 +9335,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -9289,7 +9353,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的数据集ID",
+          "document": "需要绑定的数据集ID，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。",
           "example": "program-6a79x94v",
           "member": "string",
           "name": "ProgramId",
@@ -9298,12 +9362,21 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的数据集ID",
+          "document": "需要绑定的数据集ID列表，可通过调用[DescribePrograms](https://cloud.tencent.com/document/api/649/73477)查询已创建的数据集列表或登录控制台进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否创建k8s命名空间标识",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateK8sNamespaceFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9755,7 +9828,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流执行超时时间",
+          "document": "工作流执行超时时间，单位：毫秒",
           "example": "3000",
           "member": "uint64",
           "name": "TimeOut",
@@ -9764,7 +9837,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "数据集列表",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -10167,8 +10240,8 @@
         },
         {
           "disabled": false,
-          "document": "该坐标点时间戳",
-          "example": "179372900",
+          "document": "该坐标点时间戳，单位毫秒",
+          "example": "1754555818541",
           "member": "string",
           "name": "Timestamp",
           "output_required": true,
@@ -10346,7 +10419,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -10392,8 +10465,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "cls-xxxxxx",
+          "document": "集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。",
+          "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -10512,8 +10585,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，分组唯一标识",
-          "example": "group-xxxxxxxx",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
+          "example": "group-s892j3s",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -10632,7 +10705,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -10693,7 +10766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像版本数组",
+          "document": "需要删除的镜像版本列表，可通过调用[DescribeImageTags](https://cloud.tencent.com/document/api/649/36052)查询已创建的镜像版本列表或登录控制台进行查看。",
           "example": "无",
           "member": "DeleteImageTag",
           "name": "ImageTags",
@@ -10850,7 +10923,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -10859,7 +10932,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -11240,7 +11313,7 @@
         {
           "disabled": false,
           "document": "采集路径",
-          "example": "/var/log",
+          "example": "[\"/var/log\"]",
           "member": "string",
           "name": "CollectPath",
           "output_required": true,
@@ -11261,7 +11334,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-11-22 09:27:12",
           "member": "string",
           "name": "CreateTime",
@@ -11272,7 +11345,7 @@
         },
         {
           "disabled": false,
-          "document": "KafkaVIp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kafka的vip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.23.2.1",
           "member": "string",
           "name": "KafkaVIp",
@@ -11283,7 +11356,7 @@
         },
         {
           "disabled": false,
-          "document": "KafkaAddress\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kafka地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kafka.tencent.com",
           "member": "string",
           "name": "KafkaAddress",
@@ -11294,7 +11367,7 @@
         },
         {
           "disabled": false,
-          "document": "KafkaVPort\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kafka端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8080",
           "member": "string",
           "name": "KafkaVPort",
@@ -11327,7 +11400,7 @@
         },
         {
           "disabled": false,
-          "document": "CustomRule\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ".*",
           "member": "string",
           "name": "CustomRule",
@@ -11349,7 +11422,7 @@
         },
         {
           "disabled": false,
-          "document": "EnableAuth",
+          "document": "是否开启认证",
           "example": "false",
           "member": "bool",
           "name": "EnableAuth",
@@ -11360,7 +11433,7 @@
         },
         {
           "disabled": false,
-          "document": "Username\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "root",
           "member": "string",
           "name": "Username",
@@ -11371,7 +11444,7 @@
         },
         {
           "disabled": false,
-          "document": "Password\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pass-xxxxxx",
           "member": "string",
           "name": "Password",
@@ -11476,7 +11549,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "application-xx",
+          "example": "application-9yn765ea",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -11494,7 +11567,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cluster-xxx",
+          "example": "cls-23iwxs1y",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -11503,7 +11576,7 @@
         {
           "disabled": false,
           "document": "部署组ID，分组唯一标识",
-          "example": "group-xxxxxxx",
+          "example": "group-zvwpn3wy",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -11566,7 +11639,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "consumer app",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -11575,7 +11648,7 @@
         {
           "disabled": false,
           "document": "部署组名称",
-          "example": "无",
+          "example": "consumer-app",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -11593,7 +11666,7 @@
         {
           "disabled": false,
           "document": "容器类型",
-          "example": "无",
+          "example": "Deployment",
           "member": "string",
           "name": "ContainerKind",
           "required": false,
@@ -11602,7 +11675,7 @@
         {
           "disabled": false,
           "document": "业务容器的 镜像Server ccr.ccs.tencentyun.com",
-          "example": "无",
+          "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
           "required": false,
@@ -11611,7 +11684,7 @@
         {
           "disabled": false,
           "document": "业务容器的镜像名",
-          "example": "无",
+          "example": "tsf_700001025656/test-sts-1",
           "member": "string",
           "name": "RepoName",
           "required": false,
@@ -11620,7 +11693,7 @@
         {
           "disabled": false,
           "document": "仓库类型",
-          "example": "无",
+          "example": "personal",
           "member": "string",
           "name": "RepoType",
           "required": false,
@@ -11638,7 +11711,7 @@
         {
           "disabled": false,
           "document": "容器访问凭证名称",
-          "example": "无",
+          "example": "qcloudregistry",
           "member": "string",
           "name": "SecretName",
           "required": false,
@@ -11701,7 +11774,7 @@
         {
           "disabled": false,
           "document": "业务容器的 jvm 参数",
-          "example": "无",
+          "example": "-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m",
           "member": "string",
           "name": "JvmOpts",
           "required": false,
@@ -11719,7 +11792,7 @@
         {
           "disabled": false,
           "document": "业务主容器是否为特权容器",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "PrivilegeContainerEnable",
           "required": false,
@@ -11728,7 +11801,7 @@
         {
           "disabled": false,
           "document": "业务主容器运行命令(转base64)",
-          "example": "无",
+          "example": "/bin/sh",
           "member": "string",
           "name": "RunCommand",
           "required": false,
@@ -11737,7 +11810,7 @@
         {
           "disabled": false,
           "document": "业务主容器运行参数(转base64)",
-          "example": "无",
+          "example": "-c\\nwhile true; do echo hello; sleep 10; done",
           "member": "string",
           "name": "RunArg",
           "required": false,
@@ -11764,7 +11837,7 @@
         {
           "disabled": false,
           "document": "重启策略",
-          "example": "无",
+          "example": "Always",
           "member": "string",
           "name": "RestartPolicy",
           "required": false,
@@ -11773,7 +11846,7 @@
         {
           "disabled": false,
           "document": "服务治理配置",
-          "example": "无",
+          "example": "NULL",
           "member": "string",
           "name": "ServiceSpecEncode",
           "required": false,
@@ -11881,7 +11954,7 @@
         {
           "disabled": false,
           "document": "对应更新策略和策略配置参数",
-          "example": "无",
+          "example": "25%",
           "member": "string",
           "name": "MaxSurge",
           "required": false,
@@ -11890,7 +11963,7 @@
         {
           "disabled": false,
           "document": "对应更新策略和策略配置参数",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "MaxUnavailable",
           "required": false,
@@ -11908,7 +11981,7 @@
         {
           "disabled": false,
           "document": "配置模版ID",
-          "example": "无",
+          "example": "template-id",
           "member": "string",
           "name": "ConfigTemplateId",
           "required": false,
@@ -11917,7 +11990,7 @@
         {
           "disabled": false,
           "document": "配置模版Version",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ConfigTemplateVersion",
           "required": false,
@@ -11926,7 +11999,7 @@
         {
           "disabled": false,
           "document": "是否清除数据卷信息",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "VolumeClean",
           "required": false,
@@ -11980,11 +12053,56 @@
         {
           "disabled": false,
           "document": "本次部署的描述信息",
-          "example": "无",
+          "example": "update image to v1",
           "member": "string",
           "name": "DeployDesc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "k8s命名空间名称",
+          "example": "consumer",
+          "member": "string",
+          "name": "K8sNamespaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用静态IP",
+          "example": "false",
+          "member": "bool",
+          "name": "StaticIpEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "启动策略[OrderedReady/Parallel]",
+          "example": "OrderedReady",
+          "member": "string",
+          "name": "PodManagementPolicyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "滚动更新分区序号",
+          "example": "0",
+          "member": "int64",
+          "name": "Partition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数",
+          "example": "false",
+          "member": "bool",
+          "name": "IncrementalDeployment",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11995,7 +12113,7 @@
         {
           "disabled": false,
           "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group-zvwpn3wy",
           "member": "string",
           "name": "GroupId",
           "output_required": false,
@@ -12005,7 +12123,7 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "task-2.0-2vz683oa",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -12021,7 +12139,7 @@
         {
           "disabled": false,
           "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "无",
           "member": "DeployContainerApplicationResp",
           "name": "Result",
           "output_required": true,
@@ -12042,7 +12160,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，分组唯一标识",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -12412,7 +12530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -12421,7 +12539,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包ID",
+          "document": "软件包ID，可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
@@ -12494,7 +12612,7 @@
         {
           "disabled": false,
           "document": "滚动发布每个批次参与的实例比率",
-          "example": "0.25",
+          "example": "[0.25]",
           "member": "float",
           "name": "DeployBatch",
           "required": false,
@@ -12511,7 +12629,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布每个批次的时间间隔",
+          "document": "滚动发布每个批次的时间间隔，单位min。默认值是0，不等待。",
           "example": "30",
           "member": "uint64",
           "name": "DeployWaitTime",
@@ -12599,7 +12717,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "task-6a79x94v",
+          "example": "无",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
@@ -12995,7 +13113,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -13032,7 +13150,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -13087,7 +13205,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "指定排序类型，目前支持：\n`0`：降序\n`1`：升序",
           "example": "0",
           "member": "int64",
           "name": "OrderType",
@@ -13096,7 +13214,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。关于Offset详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13105,7 +13223,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数",
+          "document": "数量限制，默认为20，最大值为100。关于Limit详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -13114,8 +13232,8 @@
         },
         {
           "disabled": false,
-          "document": "应用类型",
-          "example": "DEF",
+          "document": "指定应用类型，目前支持：\n- `V`：普通应用/CVM应用\n- `C`：容器应用\n- `S`：serverless 应用",
+          "example": "V",
           "member": "string",
           "name": "ApplicationType",
           "required": false,
@@ -13132,8 +13250,8 @@
         },
         {
           "disabled": false,
-          "document": "应用资源类型数组",
-          "example": "[\"DEF\"]",
+          "document": "应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型",
+          "example": "[\"GW\"]",
           "member": "string",
           "name": "ApplicationResourceTypeList",
           "required": false,
@@ -13224,8 +13342,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项ID",
-          "example": "config-6a79x94v",
+          "document": "日志配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
+          "example": "apm-busi-log-cfg-qabp49vl",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -13279,7 +13397,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊匹配关键词",
+          "document": "模糊匹配关键词，可搜索配置项ID或配置项名称",
           "example": "config-name",
           "member": "string",
           "name": "SearchWord",
@@ -13288,7 +13406,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "是否禁用数据集鉴权",
           "example": "true",
           "member": "bool",
           "name": "DisableProgramAuthCheck",
@@ -13297,8 +13415,8 @@
         },
         {
           "disabled": false,
-          "document": "无",
-          "example": "[\"config-6a79x94v\"]",
+          "document": "日志配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
+          "example": "[\"apm-busi-log-cfg-qabp49vl\"]",
           "member": "string",
           "name": "ConfigIdList",
           "required": false,
@@ -13334,7 +13452,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。",
           "example": "cluster-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -13361,7 +13479,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "排序类型；0：升序，1：降序。",
           "example": "0",
           "member": "int64",
           "name": "OrderType",
@@ -13370,7 +13488,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认值：0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13379,7 +13497,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数",
+          "document": "分页个数，默认值：20。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -13416,7 +13534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索词",
+          "document": "搜索词，可以搜索ID/名称/备注/标签",
           "example": "cluster name",
           "member": "string",
           "name": "SearchWord",
@@ -13425,8 +13543,8 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
-          "example": "ClusterId",
+          "document": "排序字段，目前仅支持使用“创建时间”",
+          "example": "create_time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -13434,7 +13552,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "排序方式，0表示升序，1表示倒序",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
@@ -13443,7 +13561,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13452,7 +13570,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数",
+          "document": "分页个数，0-50 之间，默认20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -13461,7 +13579,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，C表示容器集群，V表示虚拟机集群",
           "example": "C",
           "member": "string",
           "name": "ClusterType",
@@ -13963,7 +14081,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "event 的资源类型, group 或者 instance",
+          "document": "event 的资源类型, 仅支持 group",
           "example": "group",
           "member": "string",
           "name": "ResourceType",
@@ -13972,7 +14090,7 @@
         },
         {
           "disabled": false,
-          "document": "event 的资源 id",
+          "document": "部署组ID，按照【部署组ID】进行过滤，可通过调用[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的项目。",
           "example": "group-df3fsd23",
           "member": "string",
           "name": "ResourceId",
@@ -13999,7 +14117,7 @@
         },
         {
           "disabled": false,
-          "document": "当类型是 instance 时需要",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-df3fsd23",
           "member": "string",
           "name": "GroupId",
@@ -14008,7 +14126,7 @@
         },
         {
           "disabled": false,
-          "document": "event的资源kind",
+          "document": "event的资源种类",
           "example": "Deployment",
           "member": "string",
           "name": "Kind",
@@ -14017,8 +14135,8 @@
         },
         {
           "disabled": false,
-          "document": "event 的type",
-          "example": "group",
+          "document": "event 的事件级别",
+          "example": "Normal",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -14072,7 +14190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-ab958z6y",
           "member": "string",
           "name": "GroupId",
@@ -14088,7 +14206,7 @@
         {
           "disabled": false,
           "document": "部署组列表-其它字段",
-          "example": "true",
+          "example": "无",
           "member": "ContainerGroupOther",
           "name": "Result",
           "output_required": true,
@@ -14109,7 +14227,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所属 groupId",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-gyqpkzda",
           "member": "string",
           "name": "GroupId",
@@ -14183,8 +14301,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组所属应用ID。",
-          "example": "application-xxx",
+          "document": "分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
+          "example": "application-zvw6zp9a",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -14237,8 +14355,8 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "cls-xxx",
+          "document": "分组所属【集群ID】，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
+          "example": "cls-2nhp3g1i",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -14246,8 +14364,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间 ID",
-          "example": "namespace-xxx",
+          "document": "分组所属【命名空间 ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "example": "namespace-byxwl4da",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -14329,7 +14447,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组id",
+          "document": "部署组ID\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看",
           "example": "group-ab958z6y",
           "member": "string",
           "name": "GroupId",
@@ -14366,7 +14484,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递配置id",
+          "document": "日志配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
           "example": "config-2k8sh4s",
           "member": "string",
           "name": "ConfigId",
@@ -14403,7 +14521,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关键字",
+          "document": "搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称",
           "example": "mock-name",
           "member": "string",
           "name": "SearchWord",
@@ -14412,7 +14530,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移",
+          "document": "偏移量，取值范围大于等于0，默认值为0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -14421,7 +14539,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条数",
+          "document": "单页请求配置数量，取值范围[1, 50]，默认值为10",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -14430,7 +14548,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集idList",
+          "document": "数据集ID列表\n可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a22gwdwa)进行查看",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -14439,7 +14557,7 @@
         },
         {
           "disabled": false,
-          "document": "ConfigIdList",
+          "document": "日志配置项ID列表\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
           "example": "[\"config-6a79x94v\"]",
           "member": "string",
           "name": "ConfigIdList",
@@ -14970,7 +15088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID字段",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -15071,7 +15189,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组ID",
+          "document": "部署组ID\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -15172,7 +15290,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -15199,8 +15317,8 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
-          "example": "asc",
+          "document": "排序类型；0：升序，1：降序",
+          "example": "0",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -15208,7 +15326,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认值：0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15217,7 +15335,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数",
+          "document": "分页个数；默认值：20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -15291,7 +15409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。",
           "example": "group-oydzed8v",
           "member": "string",
           "name": "GroupId",
@@ -15410,7 +15528,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID。调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用或通过[CreateApplication](https://cloud.tencent.com/document/api/649/36094)接口创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -15428,8 +15546,8 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
-          "example": "DESC",
+          "document": "排序方式，0：升序，1：降序",
+          "example": "1",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -15437,7 +15555,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认值：0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15446,7 +15564,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数",
+          "document": "分页个数，默认值：20",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -15455,7 +15573,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID。调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096)查询已创建的命名空间或通过[CreateNamespace](https://cloud.tencent.com/document/api/649/36098)接口创建新的集群。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -15464,7 +15582,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。",
           "example": "cluster-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -15474,7 +15592,7 @@
         {
           "disabled": false,
           "document": "部署组资源类型列表",
-          "example": "[\"DEF\"]",
+          "example": "[\"GW\"]",
           "member": "string",
           "name": "GroupResourceTypeList",
           "required": false,
@@ -15483,7 +15601,7 @@
         {
           "disabled": false,
           "document": "部署组状态过滤字段",
-          "example": "RUNNING",
+          "example": "Running、Waiting、Paused、Updating、RollingBack、Abnormal、Unknown",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -15491,7 +15609,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "部署组ID列表",
           "example": "[\"group-6a79x94v\"]",
           "member": "string",
           "name": "GroupIdList",
@@ -15619,7 +15737,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取值从0开始",
+          "document": "偏移量，默认为0。关于Offset详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15628,7 +15746,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数，默认为20， 取值应为1~100",
+          "document": "数量限制，默认为20，最大值为100。关于Limit详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -15646,7 +15764,7 @@
         },
         {
           "disabled": false,
-          "document": "应用id",
+          "document": "应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -15701,7 +15819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用Id",
+          "document": "应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -15710,7 +15828,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取值从0开始",
+          "document": "偏移量，默认为0。关于Offset详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15719,7 +15837,7 @@
         },
         {
           "disabled": false,
-          "document": "分页个数，默认为20， 取值应为1~100",
+          "document": "数量限制，默认为20，最大值为100。关于Limit详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -15796,148 +15914,13 @@
       ],
       "type": "object"
     },
-    "DescribeInovcationIndicatorsRequest": {
-      "document": "DescribeInovcationIndicators请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "维度",
-          "example": "1",
-          "member": "string",
-          "name": "Dimension",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间",
-          "example": "1",
-          "member": "datetime",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "1",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "命名空间ID",
-          "example": "1",
-          "member": "string",
-          "name": "NamespaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "微服务ID",
-          "example": "1",
-          "member": "string",
-          "name": "ServiceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "调用方服务名",
-          "example": "1",
-          "member": "string",
-          "name": "CallerServiceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "被调方服务名",
-          "example": "1",
-          "member": "string",
-          "name": "CalleeServiceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "调用方接口名",
-          "example": "1",
-          "member": "string",
-          "name": "CallerInterfaceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "被调方接口名",
-          "example": "1",
-          "member": "string",
-          "name": "CalleeInterfaceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "应用ID",
-          "example": "1",
-          "member": "string",
-          "name": "ApplicationId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署组ID",
-          "example": "1",
-          "member": "string",
-          "name": "GroupId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "1",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInovcationIndicatorsResponse": {
-      "document": "DescribeInovcationIndicators返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "服务调用监控指标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "InvocationIndicator",
-          "name": "Result",
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件",
-          "example": "[{\"name\":\"id\",\"values\":[\"ins-xxxxxx\"]}]",
+          "document": "过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。\n参考：[{\"Name\":\"ip\",\"Values\":[\"172.16.16.139\"]}]\nfilter name 取值范围：\n- `id`：实例ID\n- ` name `：实例名\n- ` ip `：内网IP（可填wan_ip或lan_ip）",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -15970,7 +15953,7 @@
         {
           "disabled": false,
           "document": "机器列表信息",
-          "example": "{\"TotalCount\":0,\"Content\":[]}",
+          "example": "无",
           "member": "InstanceEnrichedInfoPage",
           "name": "Result",
           "output_required": true,
@@ -15991,7 +15974,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询开始时间",
+          "document": "开始时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-06-03 17:11:49",
           "member": "datetime",
           "name": "StartTime",
@@ -16000,7 +15983,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间",
+          "document": "结束时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-06-03 17:21:49",
           "member": "datetime",
           "name": "EndTime",
@@ -16009,7 +15992,7 @@
         },
         {
           "disabled": false,
-          "document": "查询时间粒度，单位秒可选值：60、3600、86400",
+          "document": "查询时间粒度，单位秒。可选值：60、3600、86400",
           "example": "3600",
           "member": "int64",
           "name": "Period",
@@ -16018,7 +16001,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName",
+          "document": "查询指标维度，不能为空",
           "example": "无",
           "member": "MetricDimension",
           "name": "MetricDimensions",
@@ -16027,7 +16010,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标名，不能为空.",
+          "document": "查询指标名，不能为空",
           "example": "无",
           "member": "Metric",
           "name": "Metrics",
@@ -16036,7 +16019,7 @@
         },
         {
           "disabled": false,
-          "document": "视图视角。可选值：SERVER, CLIENT。默认为SERVER",
+          "document": "视图视角。可选值：SERVER：服务端，CLIENT：客户端。默认为SERVER",
           "example": "SERVER",
           "member": "string",
           "name": "Kind",
@@ -16082,7 +16065,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2024-11-11 12:21:50",
           "member": "string",
           "name": "StartTime",
@@ -16091,7 +16074,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2024-11-11 12:26:50",
           "member": "string",
           "name": "EndTime",
@@ -16100,7 +16083,7 @@
         },
         {
           "disabled": false,
-          "document": "开始index",
+          "document": "开始index，取值范围大于等于0，默认值为0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -16109,7 +16092,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "单页请求配置数量，取值范围[1, 50]，默认值为10",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -16118,7 +16101,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合维度",
+          "document": "聚合维度。可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID",
           "example": "applicationName",
           "member": "string",
           "name": "DimensionName",
@@ -16136,7 +16119,7 @@
         },
         {
           "disabled": false,
-          "document": "维度",
+          "document": "构建维度",
           "example": "无",
           "member": "MetricDimensionValue",
           "name": "MetricDimensionValues",
@@ -16173,7 +16156,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-06-03 17:11:49",
           "member": "string",
           "name": "StartTime",
@@ -16182,7 +16165,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-06-03 17:11:49",
           "member": "string",
           "name": "EndTime",
@@ -16191,7 +16174,7 @@
         },
         {
           "disabled": false,
-          "document": "维度，并且 维度 key value 不能为空",
+          "document": "查询指标维度, 不能为空",
           "example": "无",
           "member": "MetricDimensionValue",
           "name": "MetricDimensionValues",
@@ -16200,7 +16183,7 @@
         },
         {
           "disabled": false,
-          "document": "指标，并且 key, value 不能为空",
+          "document": "指标，不能为空",
           "example": "无",
           "member": "Metric",
           "name": "Metrics",
@@ -16209,8 +16192,8 @@
         },
         {
           "disabled": false,
-          "document": "调用视角。可选值：SERVER, CLIENT。默认为SERVER",
-          "example": "SEERVER",
+          "document": "视图视角。可选值：SERVER：服务端, CLIENT：客户端。默认为SERVER",
+          "example": "SERVER",
           "member": "string",
           "name": "Kind",
           "required": false,
@@ -16246,7 +16229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询开始时间",
+          "document": "查询开始时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-06-03 17:11:49",
           "member": "datetime",
           "name": "StartTime",
@@ -16255,7 +16238,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间",
+          "document": "查询结束时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-06-03 17:21:49",
           "member": "datetime",
           "name": "EndTime",
@@ -16264,7 +16247,7 @@
         },
         {
           "disabled": false,
-          "document": "查询时间粒度，单位秒。可选值：60、3600、86400。",
+          "document": "查询时间粒度，单位秒。可选值：60、3600、86400",
           "example": "60",
           "member": "int64",
           "name": "Period",
@@ -16273,7 +16256,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标维度, 不能为空。可选 NamespaceId, GroupId, InstanceId, OperationName, ServiceName, PeerServiceName, PeerOperationName",
+          "document": "查询指标维度, 不能为空。Name, Valeu键值对形式。Name可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID",
           "example": "无",
           "member": "MetricDimension",
           "name": "MetricDimensions",
@@ -16282,7 +16265,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标名， 不能为空。仅支持 range_count_duratioin 为 key 下的 sum 方法",
+          "document": "查询指标名， 不能为空。仅支持 range_count_duration（响应耗时分布） 为 key 下的 sum（求和） 方法",
           "example": "无",
           "member": "Metric",
           "name": "Metrics",
@@ -16291,7 +16274,7 @@
         },
         {
           "disabled": false,
-          "document": "视图视角。可选值：SERVER, CLIENT。默认为SERVER",
+          "document": "视图视角。可选值：SERVER：服务端, CLIENT：客户端。默认为SERVER",
           "example": "SERVER",
           "member": "string",
           "name": "Kind",
@@ -16328,7 +16311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的实例Id",
+          "document": "查询的实例ID\n可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk",
           "example": "ins-6a79x94v",
           "member": "string",
           "name": "InstanceId",
@@ -16337,7 +16320,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属应用Id",
+          "document": "实例所属应用ID\n可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已经存在的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)查看。应用ID例如：application-v378ewna",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -16373,8 +16356,8 @@
         },
         {
           "disabled": false,
-          "document": "查询的监控图列表,以返回值属性名作为入参",
-          "example": "SQL",
+          "document": "查询的监控图列表，以返回值属性名作为入参，可选值：\nheapMemory：堆内存监控图；nonHeapMemory：非堆内存监控图；edenSpace：伊甸区监控图；survivorSpace：幸存者区监控图；oldSpace：老年代监控图；metaSpace：元空间监控图；youngGC：youngGC增量监控图；fullGC：fullGC增量监控图；cpuUsage：cpu使用率监控图；classCount：加载类数监控图；threadPicture：线程图",
+          "example": "[\"heapMemory\"]",
           "member": "string",
           "name": "RequiredPictures",
           "required": true,
@@ -16438,7 +16421,7 @@
         {
           "disabled": false,
           "document": "搜索关键词。",
-          "example": "groupName",
+          "example": "app_lane",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -16461,6 +16444,15 @@
           "name": "RuleIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询全部标记",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16940,7 +16932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID， 此参数必填",
+          "document": "命名空间ID， 此参数必填\n可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看",
           "example": "namespace-xxx",
           "member": "string",
           "name": "NamespaceId",
@@ -16949,7 +16941,7 @@
         },
         {
           "disabled": false,
-          "document": "监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时",
+          "document": "监控统计类型，必填，取值范围 SumReqAmount：请求量，AvgFailureRate：请求错误率，AvgTimeCost：平均响应耗时",
           "example": "SumReqAmount",
           "member": "string",
           "name": "Type",
@@ -16967,7 +16959,7 @@
         },
         {
           "disabled": false,
-          "document": "查询开始时间，默认为当天的 00:00:00",
+          "document": "查询开始时间，格式为yyyy-MM-dd HH:mm:ss，默认为当天的 00:00:00",
           "example": "2019-05-28 17:45:43",
           "member": "datetime",
           "name": "StartTime",
@@ -16976,7 +16968,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间，默认为当前时间",
+          "document": "查询结束时间，格式为yyyy-MM-dd HH:mm:ss，默认为当前时间",
           "example": "2019-05-29 17:45:43",
           "member": "datetime",
           "name": "EndTime",
@@ -17305,7 +17297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所属groupId",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-df3fsd23",
           "member": "string",
           "name": "GroupId",
@@ -17332,7 +17324,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤字段",
+          "document": "用于通过PodName字段过滤返回结果。",
           "example": "[\"test-consume-88f4974c9-gz8gk\"]",
           "member": "string",
           "name": "PodNameList",
@@ -17341,7 +17333,7 @@
         },
         {
           "disabled": false,
-          "document": "新老版本pod批次标识",
+          "document": "新老版本pod批次标识，old表示老版本，new表示新版本。",
           "example": "old",
           "member": "string",
           "name": "DeployVersion",
@@ -17350,7 +17342,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "实例所属任务ID，登录控制台进行查看。",
           "example": "task-xxx",
           "member": "string",
           "name": "TaskId",
@@ -17396,7 +17388,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "每页数量，默认值20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -17405,7 +17397,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "起始偏移量，默认值0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -17944,10 +17936,10 @@
         {
           "disabled": false,
           "document": "是否需要子网\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "NeedSubnetWhenCreatingCluster",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -17960,50 +17952,50 @@
         {
           "disabled": false,
           "document": "功能\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DescribeResourceConfigLicenseFunction",
           "name": "Function",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DescribeResourceConfigLicenseResource",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "utc时间 单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "utc时间 单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Countdown",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "basic",
           "member": "string",
           "name": "Spec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -18015,21 +18007,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "功能名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vm",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "enable\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -18042,20 +18034,20 @@
         {
           "disabled": false,
           "document": "Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "instance",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Quota\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Quota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -18161,10 +18153,10 @@
         {
           "disabled": false,
           "document": "uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "91000000039",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -18176,7 +18168,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "容器实例任务ID，可通过调用 [DeployContainerGroup](https://cloud.tencent.com/document/product/649/120669) 部署容器应用，查询其返回内容中的任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -18213,7 +18205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID列表",
+          "document": "应用ID列表，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。",
           "example": "[\"application-6a79x94v\"]",
           "member": "string",
           "name": "ApplicationIdList",
@@ -18222,7 +18214,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型",
+          "document": "指定应用类型，目前支持：\n- `V`：普通应用/CVM应用\n- `C`：容器应用\n- `S`：serverless 应用",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
@@ -18231,7 +18223,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "数量限制，默认为20，最大值为100。关于Limit详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -18240,7 +18232,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "偏移量，默认为0。关于Offset详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "50",
           "member": "int64",
           "name": "Offset",
@@ -18258,8 +18250,8 @@
         },
         {
           "disabled": false,
-          "document": "资源类型数组",
-          "example": "DEF",
+          "document": "应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型",
+          "example": "[\"GW\"]",
           "member": "string",
           "name": "ApplicationResourceTypeList",
           "required": false,
@@ -18276,7 +18268,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "是否关闭鉴权查询",
           "example": "true",
           "member": "bool",
           "name": "DisableProgramAuthCheck",
@@ -18404,7 +18396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID列表，不填写时查询全量",
+          "document": "按照【部署组ID】进行过滤，不填写时查询全量。可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "[\"group-6a79x94v\"]",
           "member": "string",
           "name": "GroupIdList",
@@ -18413,7 +18405,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID，不填写时查询全量",
+          "document": "按照【应用ID】进行过滤，不填写时查询全量。可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -18422,7 +18414,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID，不填写时查询全量",
+          "document": "按照【集群ID】进行过滤，不填写时查询全量。可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -18431,7 +18423,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID，不填写时查询全量",
+          "document": "按照【命名空间ID】进行过滤，不填写时查询全量。可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -18440,7 +18432,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "每页条数，默认值20，无上限",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -18449,7 +18441,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "起始偏移量，默认值0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -18480,6 +18472,15 @@
           "example": "N",
           "member": "string",
           "name": "AppMicroServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照【部署组名称】进行过滤，不填写时查询全量。可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
+          "example": "test-group",
+          "member": "string",
+          "name": "GroupName",
           "required": false,
           "type": "string"
         }
@@ -18513,7 +18514,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID列表，不传入时查询全量",
+          "document": "命名空间ID列表，按照【命名空间ID列表】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "[\"namespace-6a79x94v\"]",
           "member": "string",
           "name": "NamespaceIdList",
@@ -18522,7 +18523,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID，不传入时查询全量",
+          "document": "集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -18531,8 +18532,8 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
-          "example": "50",
+          "document": "数量限制，默认为20，最大值为100。关于Limit详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -18540,7 +18541,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "偏移量，默认为0。关于Offset详见[API简介](https://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -18549,7 +18550,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID，不传入时查询全量",
+          "document": "命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -18558,8 +18559,8 @@
         },
         {
           "disabled": false,
-          "document": "查询资源类型列表",
-          "example": "DEF",
+          "document": "查询资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型",
+          "example": "[\"GW\"]",
           "member": "string",
           "name": "NamespaceResourceTypeList",
           "required": false,
@@ -18576,8 +18577,8 @@
         },
         {
           "disabled": false,
-          "document": "查询的命名空间类型列表",
-          "example": "[\"DEF\"]",
+          "document": "查询的命名空间类型列表。DEF：默认普通命名空间。GLOBAL：全局命名空间。",
+          "example": "[\"GLOBAL\"]",
           "member": "string",
           "name": "NamespaceTypeList",
           "required": false,
@@ -18594,8 +18595,8 @@
         },
         {
           "disabled": false,
-          "document": "通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认命名空间。1：非默认命名空间",
-          "example": "true",
+          "document": "通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认命名空间。1：非默认命名空间。",
+          "example": "0",
           "member": "string",
           "name": "IsDefault",
           "required": false,
@@ -18640,7 +18641,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型：Interface、Service、Group、Instance、SQL、NoSQL",
+          "document": "统计类型。可选值 Interface：接口类型、Service：服务类型、Group：部署组类型、Instance：实例类型、SQL：SQL类型、NoSQL：NoSQL类型",
           "example": "Interface",
           "member": "string",
           "name": "Type",
@@ -18649,7 +18650,7 @@
         },
         {
           "disabled": false,
-          "document": "步长，单位s：60、3600、86400",
+          "document": "步长，单位秒。可选值 60、3600、86400",
           "example": "60",
           "member": "uint64",
           "name": "TimeStep",
@@ -18676,7 +18677,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。",
+          "document": "命名空间ID。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。\n可通过[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已经创建的命名空间，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)查看\n",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -18739,7 +18740,7 @@
         },
         {
           "disabled": false,
-          "document": "维度",
+          "document": "维度。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一",
           "example": "无",
           "member": "MetricDimensionValue",
           "name": "MetricDimensionValues",
@@ -18757,7 +18758,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库",
+          "document": "数据库名称",
           "example": "tsf_demo",
           "member": "string",
           "name": "DbName",
@@ -18766,7 +18767,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间id数组",
+          "document": "命名空间ID数组。此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一",
           "example": "[\"namespace-6a79x94v\"]",
           "member": "string",
           "name": "NamespaceIdList",
@@ -18775,10 +18776,19 @@
         },
         {
           "disabled": false,
-          "document": "独占配置中心的ID",
+          "document": "独占配置中心的ID。\n可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk。",
           "example": "ins-6a79x94v",
           "member": "string",
           "name": "ConfigCenterInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务过滤",
+          "example": "normal",
+          "member": "string",
+          "name": "ServiceFilter",
           "required": false,
           "type": "string"
         }
@@ -18931,7 +18941,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID。前往应用管理 - 应用部署，部署组列表页面获取部署组ID。",
+          "document": "部署组ID。前往[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)点击应用ID进入应用部署列表页面获取部署组ID。",
           "example": "group-abl8j7xy",
           "member": "string",
           "name": "GroupId",
@@ -18958,7 +18968,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID列表。",
+          "document": "任务ID列表。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列查看任务ID。",
           "example": "[\"task-6a79x94v\"]",
           "member": "string",
           "name": "Ids",
@@ -19534,7 +19544,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID。前往工作流管理，在工作流列表第一列和工作流详情页查看工作流ID。",
+          "document": "工作流 ID。[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)列表页查看工作流ID。",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "FlowId",
@@ -19571,7 +19581,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列或是任务基本信息页查看任务ID。",
+          "document": "任务ID。[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -19682,7 +19692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务日志配置项ID列表",
+          "document": "业务日志配置项ID列表\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
           "example": "[\"apm-busi-log-cfg-6a79x94v\"]",
           "member": "string",
           "name": "ConfigIdList",
@@ -19691,7 +19701,7 @@
         },
         {
           "disabled": false,
-          "document": "TSF分组ID",
+          "document": "部署组ID\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -19706,7 +19716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果",
+          "document": "操作结果，true：成功，false：失败。",
           "example": "false",
           "member": "bool",
           "name": "Result",
@@ -19728,7 +19738,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项id",
+          "document": "日志配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
           "example": "apm-busi-log-cfg-6a79x94v",
           "member": "string",
           "name": "ConfigId",
@@ -19737,7 +19747,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组id",
+          "document": "部署组ID列表\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看",
           "example": "[\"group-6a79x94v\"]",
           "member": "string",
           "name": "GroupIds",
@@ -19752,7 +19762,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解除绑定是否成功",
+          "document": "解除绑定是否成功，true：成功，false：失败。",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -19898,7 +19908,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID。前往工作流管理，在工作流列表第一列和工作流详情页查看工作流ID。",
+          "document": "工作流 ID。[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)列表页查看工作流ID。",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "FlowId",
@@ -19935,7 +19945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。在任务管理列表页面和任务基本信息页可以查看任务ID。",
+          "document": "任务ID。[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -20050,6 +20060,7 @@
           "example": "foo",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20060,6 +20071,7 @@
           "example": "bar",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -20070,6 +20082,7 @@
           "example": "无",
           "member": "ValueFrom",
           "name": "ValueFrom",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -20082,7 +20095,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置中心类型[Registration、Configuration]",
+          "document": "配置中心类型[注册中心Registration、配置中心Configuration]",
           "example": "Registration",
           "member": "string",
           "name": "CenterType",
@@ -20093,7 +20106,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
           "example": "ins-6a79x94v",
           "member": "string",
           "name": "InstanceId",
@@ -20104,7 +20117,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型[Polaris]",
+          "document": "实例类型，例如北极星Polaris",
           "example": "Polaris",
           "member": "string",
           "name": "InstanceType",
@@ -20126,7 +20139,7 @@
         },
         {
           "disabled": false,
-          "document": "实例地域id",
+          "document": "实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
           "example": "7",
           "member": "string",
           "name": "RegionId",
@@ -20137,7 +20150,7 @@
         },
         {
           "disabled": false,
-          "document": "实例命名空间ID",
+          "document": "实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "InstanceNamespaceId",
@@ -20145,6 +20158,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-6a73eg5v",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1757324401000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1757324863000",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -20154,7 +20200,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID。前往工作流管理，在工作流列表第一列和工作流详情页查看工作流ID。",
+          "document": "工作流 ID。[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)列表页查看工作流ID。",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "FlowId",
@@ -20191,7 +20237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。在任务管理列表页面第一列或是任务基本信息页查看任务ID。",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
           "example": "task-jzdv5qao",
           "member": "string",
           "name": "TaskId",
@@ -20228,7 +20274,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -20237,7 +20283,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的机器实例ID列表",
+          "document": "扩容的机器实例ID列表，调用[DescribeGroupInstances](https://cloud.tencent.com/document/api/649/36066)查询虚拟机部署组云主机列表",
           "example": "[\"ins-6a79x94v\",\"ins-6a79x94f\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -20976,6 +21022,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用删除",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteDisabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用原因",
+          "example": "已存在绑定资源,请解绑分组或API后重试",
+          "member": "string",
+          "name": "DeleteDisabledReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21336,7 +21402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组id",
+          "document": "部署组ID\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -21358,7 +21424,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，C：容器集群，V：虚拟机集群",
           "example": "C",
           "member": "string",
           "name": "ClusterType",
@@ -21369,7 +21435,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "集群ID\n可通过[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已经创建的集群列表，也可以通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1)查看。",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -21392,7 +21458,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "default",
+          "example": "my-namespace",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -21402,7 +21468,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定时间",
+          "document": "绑定时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-12-23 12:34:34",
           "member": "string",
           "name": "AssociateTime",
@@ -21499,7 +21565,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时长",
+          "document": "运行时长，单位秒",
           "example": "126",
           "member": "string",
           "name": "Runtime",
@@ -21509,7 +21575,7 @@
         },
         {
           "disabled": false,
-          "document": "实例启动时间",
+          "document": "实例启动时的时间戳，单位秒",
           "example": "158702289",
           "member": "string",
           "name": "CreatedAt",
@@ -21519,7 +21585,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例状态",
+          "document": "服务实例状态，枚举值为：\n- `Starting`：启动中\n- `Running`：运行中\n- `Stopping`：停止中\n- `Stopped`: 已停止\n- `StopFailed`: 停止失败\n- `Abnormal`: 异常\n- `Unknown`: 未知",
           "example": "RUNNING",
           "member": "string",
           "name": "ServiceInstanceStatus",
@@ -21529,7 +21595,7 @@
         },
         {
           "disabled": false,
-          "document": "机器实例可使用状态",
+          "document": "机器实例可使用状态，枚举值为：\n- `Starting`：启动中\n- `Running`：运行中\n- `Stopping`：停止中\n- `Stopped`: 已停止\n- `StopFailed`: 停止失败\n- `Abnormal`: 异常\n- `Unknown`: 未知",
           "example": "Running",
           "member": "string",
           "name": "InstanceAvailableStatus",
@@ -21899,7 +21965,7 @@
         },
         {
           "disabled": false,
-          "document": "容器延时启动健康检查的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器延时启动健康检查的时间，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "180",
           "member": "uint64",
           "name": "InitialDelaySeconds",
@@ -21910,7 +21976,7 @@
         },
         {
           "disabled": false,
-          "document": "每次健康检查响应的最大超时时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每次健康检查响应的最大超时时间，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "uint64",
           "name": "TimeoutSeconds",
@@ -21921,7 +21987,7 @@
         },
         {
           "disabled": false,
-          "document": "进行健康检查的时间间隔。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "进行健康检查的时间间隔，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "uint64",
           "name": "PeriodSeconds",
@@ -22044,7 +22110,7 @@
         {
           "disabled": false,
           "document": "主机地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Host",
           "output_required": false,
@@ -22055,7 +22121,7 @@
         {
           "disabled": false,
           "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/tmp",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -22066,7 +22132,7 @@
         {
           "disabled": false,
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "7998",
           "member": "string",
           "name": "Port",
           "output_required": false,
@@ -22077,7 +22143,7 @@
         {
           "disabled": false,
           "document": "协议：HTTP｜HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HTTP",
           "member": "string",
           "name": "Scheme",
           "output_required": false,
@@ -22309,13 +22375,13 @@
         },
         {
           "disabled": false,
-          "document": "镜像服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像服务器地址",
           "example": "ccr.tencent.com",
           "member": "string",
           "name": "Server",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -22517,42 +22583,6 @@
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "IndicatorCoord": {
-      "document": "监控指标坐标",
-      "members": [
-        {
-          "disabled": false,
-          "document": "指标横坐标值",
-          "example": "12",
-          "member": "string",
-          "name": "CoordX",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "指标纵坐标值",
-          "example": "12",
-          "member": "string",
-          "name": "CoordY",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "指标标签，用于标识附加信息",
-          "example": "time",
-          "member": "string",
-          "name": "CoordTag",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -23076,7 +23106,7 @@
         },
         {
           "disabled": false,
-          "document": "机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown",
+          "document": "机器运行状态，枚举值为：\n- `Pending`: 准备中\n-  `Running`: 运行中\n-  `Stopped`: 已停止\n-  `Rebooting`: 重启中\n-  `Starting`: 启动中\n-  `Stopping`: 停止中\n-  `Abnormal`: 异常\n-  `Unknown`: 未知\n-  `Offline`: 离线 ",
           "example": "running",
           "member": "string",
           "name": "InstanceStatus",
@@ -23116,7 +23146,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型",
+          "document": "应用类型，C表示容器应用，V表示虚拟机应用",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
@@ -23146,7 +23176,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，C表示容器集群，V表示虚拟机集群",
           "example": "C",
           "member": "string",
           "name": "ClusterType",
@@ -23245,92 +23275,6 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "InvocationIndicator": {
-      "document": "服务调用监控指标",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总请求数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "190",
-          "member": "int64",
-          "name": "InvocationQuantity",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "请求成功率，百分比\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.25",
-          "member": "float",
-          "name": "InvocationSuccessRate",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "请求平均耗时，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "38",
-          "member": "float",
-          "name": "InvocationAvgDuration",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "成功请求数时间分布",
-          "example": "无",
-          "member": "IndicatorCoord",
-          "name": "InvocationSuccessDistribution",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "失败请求数时间分布",
-          "example": "无",
-          "member": "IndicatorCoord",
-          "name": "InvocationFailedDistribution",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态码分布",
-          "example": "无",
-          "member": "IndicatorCoord",
-          "name": "InvocationStatusDistribution",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "时延分布",
-          "example": "无",
-          "member": "IndicatorCoord",
-          "name": "InvocationDurationDistribution",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "并发请求次数时间分布",
-          "example": "无",
-          "member": "IndicatorCoord",
-          "name": "InvocationQuantityDistribution",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23882,6 +23826,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用删除。\ntrue：禁用\nfalse：取消禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteDisabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用原因",
+          "example": "该泳道已关联全链路灰度发布规则,请先从规则中移除后删除",
+          "member": "string",
+          "name": "DeleteDisabledReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -24133,20 +24099,20 @@
         {
           "disabled": false,
           "document": "许可ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tsf-jhdas5d3",
           "member": "string",
           "name": "LicenseId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -24159,7 +24125,7 @@
         {
           "disabled": false,
           "document": "生命周期函数类型：PostStart|PreStop\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "postStart",
           "member": "string",
           "name": "HookType",
           "output_required": false,
@@ -24170,7 +24136,7 @@
         {
           "disabled": false,
           "document": "函数执行方式：execCommand|httpGet|none\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "httpGet",
           "member": "string",
           "name": "ExecMode",
           "output_required": false,
@@ -24181,7 +24147,7 @@
         {
           "disabled": false,
           "document": "execCommand函数执行内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/bin/sh\\n-c\\nsleep 35",
           "member": "string",
           "name": "ExecCommandContent",
           "output_required": false,
@@ -24255,7 +24221,7 @@
         },
         {
           "disabled": false,
-          "document": "指标计算方式",
+          "document": "指标计算方式，可选值： none：无，sum：求和，exclusive：独占值，avg：平均值，max：最大值，min：最小值，percentage_50：50分位数，percentage_75：75分位数，percentage_95：95分位数，percentage_99：99分位数，bucket_5：分桶统计。",
           "example": "count",
           "member": "string",
           "name": "Function",
@@ -24450,7 +24416,7 @@
       "usage": "both"
     },
     "MetricDimensionValue": {
-      "document": "指标维度多值匹配",
+      "document": "指标维度多值匹配。可选值 NamespaceId：命名空间ID，GroupId：部署组ID，InstanceId：实例ID，ApplicationId：应用ID，OperationMethod：执行方法，OperationName：执行名称，ServiceName：服务名，UpstreamNamespaceId：上游命名空间ID",
       "members": [
         {
           "disabled": false,
@@ -24459,18 +24425,16 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "维度值",
-          "example": "[\"a\"]",
+          "example": "[\"namespace-xxxxxxxx\"]",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -24574,7 +24538,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -24619,8 +24583,8 @@
         },
         {
           "disabled": false,
-          "document": "应用的微服务类型",
-          "example": "DEF",
+          "document": "应用的微服务类型，N表示普通应用，M表示Mesh应用，G表示网关应用，NATIVE表示原生应用，RAW表示裸应用",
+          "example": "N",
           "member": "string",
           "name": "MicroserviceType",
           "required": false,
@@ -24637,8 +24601,8 @@
         },
         {
           "disabled": false,
-          "document": "应用开发框架",
-          "example": "Spring Cloud",
+          "document": "应用开发框架，SpringCloud表示SpringCloud应用，Dubbo表示Dubbo应用，Go-GRPC表示Go-GRPC应用，Other表示其他应用",
+          "example": "SpringCloud",
           "member": "string",
           "name": "FrameworkType",
           "required": false,
@@ -24652,7 +24616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：操作成功\nfalse：操作失败",
+          "document": "true表示修改成功，false表示修改失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -24674,8 +24638,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "1",
+          "document": "集群ID，按照【集群ID】进行过滤，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录控制台进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。仅在集群下无部署组、命名空间、云主机时可以删除。",
+          "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -24684,7 +24648,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "1",
+          "example": "DEMO-DOCKER",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -24693,7 +24657,7 @@
         {
           "disabled": false,
           "document": "集群描述信息",
-          "example": "1",
+          "example": "集群描述",
           "member": "string",
           "name": "ClusterDesc",
           "required": false,
@@ -24702,7 +24666,7 @@
         {
           "disabled": false,
           "document": "备注名",
-          "example": "1",
+          "example": "集群备注",
           "member": "string",
           "name": "ClusterRemarkName",
           "required": false,
@@ -24710,7 +24674,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启cls日志功能",
+          "document": "是否开启cls日志功能，true表示开启，false表示关闭",
           "example": "false",
           "member": "bool",
           "name": "EnableLogCollection",
@@ -24719,7 +24683,7 @@
         },
         {
           "disabled": false,
-          "document": "是否修复cls日志功能",
+          "document": "是否修复cls日志功能，true表示修复，false表示不修复",
           "example": "false",
           "member": "bool",
           "name": "RepairLog",
@@ -24735,7 +24699,7 @@
         {
           "disabled": false,
           "document": "更新集群详情操作是否成功。\ntrue： 操作成功。\nfalse：操作失败。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -24756,7 +24720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的项目。",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-s892vem",
           "member": "string",
           "name": "GroupId",
@@ -24801,8 +24765,8 @@
         },
         {
           "disabled": false,
-          "document": "子网ID，可通过调用[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateSubnet](https://cloud.tencent.com/document/product/1108/43594)创建新的项目。",
-          "example": "ssubnet-kgpu7vem",
+          "document": "子网ID，可通过调用[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)查询已创建的子网列表或登录控制台进行查看；也可以调用[CreateSubnet](https://cloud.tencent.com/document/product/1108/43594)创建新的子网。",
+          "example": "subnet-kgpu7vem",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -24847,7 +24811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，部署组唯一标识",
+          "document": "部署组ID，部署组唯一标识，可以通过[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的容器部署组列表；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的容器部署组",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -24888,12 +24852,58 @@
       ],
       "type": "object"
     },
+    "ModifyGroupLaneRequest": {
+      "document": "ModifyGroupLane请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
+          "example": "group-ab2md7wa",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "泳道部署组列表。",
+          "example": "无",
+          "member": "LaneGroup",
+          "name": "LaneList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupLaneResponse": {
+      "document": "ModifyGroupLane返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果。- true：成功- false：失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyGroupRequest": {
       "document": "ModifyGroup请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-9yn2q8yd",
           "member": "string",
           "name": "GroupId",
@@ -25149,8 +25159,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID",
-          "example": "namespace-123456",
+          "document": "命名空间ID，按照【命名空间ID】进行过滤，可通过调用[DescribeNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录控制台进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新命名空间。",
+          "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -25176,7 +25186,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启高可用",
+          "document": "是否开启高可用，0表示不开启，1表示开启",
           "example": "1",
           "member": "string",
           "name": "IsHaEnable",
@@ -25286,7 +25296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集ID",
+          "document": "数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口会返回数据集信息，包括programId",
           "example": "program-6a79x94v",
           "member": "string",
           "name": "ProgramId",
@@ -25359,7 +25369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。在任务管理列表页面第一列查看任务ID。",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
           "example": "task-klwqrnlw",
           "member": "string",
           "name": "TaskId",
@@ -26207,7 +26217,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "bind 或 unbind",
+          "document": "指定操作类型，目前支持：\n- `bind`：绑定（默认）\n- `unbind`：解除绑定",
           "example": "bind",
           "member": "string",
           "name": "Command",
@@ -26216,7 +26226,7 @@
         },
         {
           "disabled": false,
-          "document": "应用id",
+          "document": "应用ID，可通过调用[DescribeApplications](https://cloud.tencent.com/document/api/649/36090)查询已创建的应用列表或登录控制台进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/api/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -26391,10 +26401,10 @@
         {
           "disabled": false,
           "document": "程序包存储空间大小，单位字节\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10737418",
           "member": "uint64",
           "name": "SpaceSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -26764,7 +26774,7 @@
         },
         {
           "disabled": false,
-          "document": "端口协议",
+          "document": "端口协议，TCP或者UDP",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -26864,7 +26874,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据项ID",
+          "document": "数据项ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)接口查询已创建的数据集或登陆控制台进行查看；也可以通过调用[CreateProgram](https://cloud.tencent.com/document/api/649/108544)创建新的数据集。\n",
           "example": "prog-item-6a79x94v",
           "member": "string",
           "name": "ProgramItemId",
@@ -26876,7 +26886,7 @@
         {
           "disabled": false,
           "document": "资源",
-          "example": "FindOne",
+          "example": "无",
           "member": "Resource",
           "name": "Resource",
           "output_required": true,
@@ -26908,7 +26918,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，时间戳格式【Long】",
           "example": "174594239000",
           "member": "int64",
           "name": "CreationTime",
@@ -26919,7 +26929,7 @@
         },
         {
           "disabled": false,
-          "document": "最后更新时间",
+          "document": "最后更新时间，时间戳格式【Long】，单位毫秒",
           "example": "174594239000",
           "member": "int64",
           "name": "LastUpdateTime",
@@ -26941,7 +26951,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集ID",
+          "document": "数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口获取",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramId",
@@ -27155,7 +27165,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。在任务管理列表页面可以查看任务ID。",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -27164,7 +27174,7 @@
         },
         {
           "disabled": false,
-          "document": "任务批次ID。在任务管理页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
+          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
           "example": "batch-6a79x94v",
           "member": "string",
           "name": "BatchId",
@@ -27201,7 +27211,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务批次ID。在任务管理页面第一列点击任务ID进入任务详情，进入执行记录列表页，第一列内容即为任务批次ID。",
+          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面第一列点击任务ID进入任务详情，进入执行记录列表页，第一列内容即为任务批次ID。",
           "example": "batch-6a79x94v",
           "member": "string",
           "name": "BatchId",
@@ -27210,7 +27220,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行ID。在任务管理页面第一列点击任务ID进入任务详情，进入执行记录页，点击批次ID进入执行详情列表页，第一列即为任务执行ID。",
+          "document": "任务执行ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面第一列点击任务ID进入任务详情，进入执行记录页，点击批次ID进入执行详情列表页，第一列即为任务执行ID。",
           "example": "execute-6a79x94v",
           "member": "string",
           "name": "ExecuteId",
@@ -27219,7 +27229,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID。在任务管理列表页面可以查看任务ID。",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -27256,7 +27266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流批次 ID。在工作流管理页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。",
+          "document": "工作流批次 ID。在[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。",
           "example": "fbatch-6a79x94v",
           "member": "string",
           "name": "FlowBatchId",
@@ -27293,7 +27303,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。在任务管理列表页面第一列查看任务ID。",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -27587,7 +27597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "集群 ID。调用[DescribeSimpleClusters](https://cloud.tencent.com/document/api/649/36047)查询已创建的集群或通过[CreateCluster](https://cloud.tencent.com/document/api/649/36049)接口创建新的集群。",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -27596,7 +27606,7 @@
         },
         {
           "disabled": false,
-          "document": "云主机 ID 列表",
+          "document": "云主机 ID 列表，调用[DescribeInstances](https://cloud.tencent.com/document/api/649/72342)查询已有的云主机列表",
           "example": "[\"ins-6a79x94v\", \"ins-7a79x94v\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -27755,7 +27765,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "资源ID，调用[DescribeResources](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)接口，查看接口返回的ResourceId",
           "example": "resource-6a79x94v",
           "member": "string",
           "name": "ResourceId",
@@ -27766,7 +27776,7 @@
         },
         {
           "disabled": false,
-          "document": "资源编码",
+          "document": "资源编码，枚举值描述【cluster（集群）、namespace（命名空间）、config（应用配置）】",
           "example": "FindOne",
           "member": "string",
           "name": "ResourceCode",
@@ -27788,7 +27798,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属产品编码",
+          "document": "资源所属产品编码，枚举值描述【tsf】",
           "example": "tsf",
           "member": "string",
           "name": "ServiceCode",
@@ -27799,7 +27809,7 @@
         },
         {
           "disabled": false,
-          "document": "选取资源使用的Action",
+          "document": "选取资源使用的Action，枚举值描述【DescribeSimpleCluster（查询简单集群列表）、DescribeTaskRecords（查询任务列表）】",
           "example": "FindOne",
           "member": "string",
           "name": "ResourceAction",
@@ -27810,7 +27820,7 @@
         },
         {
           "disabled": false,
-          "document": "资源数据查询的ID字段名",
+          "document": "资源数据查询的ID字段名，调用[DescribeResources](https://console.cloud.tencent.com/tsf/privilege-program-create?rid=1)接口，查看接口返回的IdField",
           "example": "ResourceId",
           "member": "string",
           "name": "IdField",
@@ -27843,7 +27853,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，时间戳格式【Long】",
           "example": "1279033108",
           "member": "int64",
           "name": "CreationTime",
@@ -27854,7 +27864,7 @@
         },
         {
           "disabled": false,
-          "document": "最后更新时间",
+          "document": "最后更新时间，时间戳格式【Long】",
           "example": "1803792739",
           "member": "int64",
           "name": "LastUpdateTime",
@@ -27909,7 +27919,7 @@
         },
         {
           "disabled": false,
-          "document": "排序",
+          "document": "排序，枚举值描述【10、20、77】",
           "example": "1",
           "member": "int64",
           "name": "Index",
@@ -27943,8 +27953,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的执行状态",
-          "example": "running",
+          "document": "变更状态：\n- `0`：成功\n- `1`：失败\n- `2`：执行中",
+          "example": "0",
           "member": "uint64",
           "name": "TaskStatus",
           "output_required": true,
@@ -28217,7 +28227,7 @@
           "member": "string",
           "name": "Type",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28350,7 +28360,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志配置项ID",
+          "document": "日志配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
           "example": "apm-busi-log-cfg-6a7m36a5",
           "member": "string",
           "name": "ConfigId",
@@ -28368,7 +28378,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2019-05-29 16:06:08",
           "member": "datetime",
           "name": "StartTime",
@@ -28377,7 +28387,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2019-05-29 17:06:08",
           "member": "datetime",
           "name": "EndTime",
@@ -28423,7 +28433,7 @@
         {
           "disabled": false,
           "document": "检索关键词",
-          "example": "demo",
+          "example": "[\"demo\"]",
           "member": "string",
           "name": "SearchWords",
           "required": false,
@@ -28431,7 +28441,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID列表，不传表示全部部署组",
+          "document": "部署组ID列表，不传表示全部部署组\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看",
           "example": "[\"group-gvkqkdjv\"]",
           "member": "string",
           "name": "GroupIds",
@@ -28440,7 +28450,7 @@
         },
         {
           "disabled": false,
-          "document": "检索类型，取值\"LUCENE\", \"REGEXP\", \"NORMAL\"",
+          "document": "检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索",
           "example": "NORMAL",
           "member": "string",
           "name": "SearchWordType",
@@ -28449,8 +28459,8 @@
         },
         {
           "disabled": false,
-          "document": "批量请求类型，取值\"page\"或\"scroll\"",
-          "example": "scroll",
+          "document": "批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE",
+          "example": "SCROLL",
           "member": "string",
           "name": "BatchType",
           "required": false,
@@ -28468,7 +28478,7 @@
         {
           "disabled": false,
           "document": "查询es使用searchAfter时，游标",
-          "example": "[1463538857, \"654323\"]",
+          "example": "[\"1463538857\", \"654323\"]",
           "member": "string",
           "name": "SearchAfter",
           "required": false,
@@ -28504,8 +28514,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器实例ID， 和  实例 ID 二者必选其一，不能同时为空",
-          "example": "msjw-uniform-payment-5ffb678dbf-mctr7",
+          "document": "机器实例ID， 和 部署组 ID 二者必选其一，不能同时为空\n可通过调用[DescribeClusterInstances](https://cloud.tencent.com/document/product/649/36048)查询已导入的实例列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=instance)进行查询。实例ID例如：ins-6decplwk\n\n\n",
+          "example": "ins-6mm4t7ze",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -28523,7 +28533,7 @@
         {
           "disabled": false,
           "document": "检索关键词",
-          "example": "demo",
+          "example": "[\"demo\"]",
           "member": "string",
           "name": "SearchWords",
           "required": false,
@@ -28531,7 +28541,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始时间",
+          "document": "查询起始时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2019-05-29 14:14:42",
           "member": "datetime",
           "name": "StartTime",
@@ -28540,7 +28550,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID，和 InstanceId 二者必选其一，不能同时为空",
+          "document": "部署组ID，和 InstanceId 二者必选其一，不能同时为空\n可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)或[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-yo7kp9dv&tab=publish&subTab=group)进行查看",
           "example": "group-mctr7",
           "member": "string",
           "name": "GroupId",
@@ -28549,7 +28559,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间",
+          "document": "查询结束时间，格式yyyy-MM-dd HH:mm:ss",
           "example": "2020-11-12 14:34:36",
           "member": "datetime",
           "name": "EndTime",
@@ -28567,7 +28577,7 @@
         },
         {
           "disabled": false,
-          "document": "排序规则，默认值\"time\"",
+          "document": "排序规则，time：按时间排序，score：按检索值排序，默认值\"time\"",
           "example": "time",
           "member": "string",
           "name": "OrderBy",
@@ -28576,7 +28586,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，取值\"asc\"或\"desc\"，默认\n值\"desc\"",
+          "document": "排序方式，取值 asc：升序 或 desc：降序，默认值desc",
           "example": "asc",
           "member": "string",
           "name": "OrderType",
@@ -28585,7 +28595,7 @@
         },
         {
           "disabled": false,
-          "document": "检索类型，取值\"LUCENE\", \"REGEXP\",\n\"NORMAL\"",
+          "document": "检索类型，取值 LUCENE：Lucene检索，REGEXP：正则检索，NORMAL：普通检索",
           "example": "NORMAL",
           "member": "string",
           "name": "SearchWordType",
@@ -28594,8 +28604,8 @@
         },
         {
           "disabled": false,
-          "document": "批量请求类型，取值\"page\"或\"scroll\"，默认\n值\"page\"",
-          "example": "scroll",
+          "document": "批量请求类型，取值 PAGE：分页查询，SCROLL：滚动查询，SEARCHAFTER：游标查询，默认值PAGE\n",
+          "example": "SCROLL",
           "member": "string",
           "name": "BatchType",
           "required": false,
@@ -28613,7 +28623,7 @@
         {
           "disabled": false,
           "document": "查询es使用searchAfter时，游标",
-          "example": "[1463538857, \"654323\"]",
+          "example": "[\"1463538857\", \"654323\"]",
           "member": "string",
           "name": "SearchAfter",
           "required": false,
@@ -28699,7 +28709,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理类型（枚举：SHARE、EXCLUSIVE）",
+          "document": "服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）",
           "example": "SHARE",
           "member": "string",
           "name": "GovernanceType",
@@ -28754,7 +28764,7 @@
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28859,7 +28869,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡类型",
+          "document": "负载均衡类型，Intranet表示内网，Internet表示外网",
           "example": "Intranet",
           "member": "string",
           "name": "LoadBalancingType",
@@ -28995,7 +29005,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务Id",
+          "document": "微服务ID",
           "example": "ms-6a79x94v",
           "member": "string",
           "name": "MicroserviceId",
@@ -29026,7 +29036,7 @@
         {
           "disabled": false,
           "document": "请求错误率，不带百分号",
-          "example": "12",
+          "example": "12.0",
           "member": "float",
           "name": "ErrorRate",
           "output_required": true,
@@ -29036,7 +29046,7 @@
         {
           "disabled": false,
           "document": "平均响应耗时ms",
-          "example": "100",
+          "example": "100.0",
           "member": "float",
           "name": "AvgTimeConsuming",
           "output_required": true,
@@ -29075,7 +29085,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组id",
+          "document": "部署组ID",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -29095,7 +29105,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组类型",
+          "document": "集群类型，C：容器集群，V：虚拟机集群",
           "example": "C",
           "member": "string",
           "name": "ClusterType",
@@ -29125,7 +29135,7 @@
         },
         {
           "disabled": false,
-          "document": "应用id",
+          "document": "应用ID",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -29135,8 +29145,8 @@
         },
         {
           "disabled": false,
-          "document": "微服务类型",
-          "example": "DEF",
+          "document": "微服务类型。RAW：裸应用，M：mesh应用，N：普通应用，G：网关应用",
+          "example": "N",
           "member": "string",
           "name": "MicroserviceType",
           "output_required": true,
@@ -29196,7 +29206,7 @@
         {
           "disabled": false,
           "document": "Apdex值",
-          "example": "2",
+          "example": "2.0",
           "member": "float",
           "name": "Apdex",
           "output_required": true,
@@ -29206,7 +29216,7 @@
         {
           "disabled": false,
           "document": "Qps值",
-          "example": "89",
+          "example": "89.0",
           "member": "float",
           "name": "Qps",
           "output_required": true,
@@ -29235,7 +29245,7 @@
         },
         {
           "disabled": false,
-          "document": "normal/error",
+          "document": "状态。normal：正常，warn：警告，error：错误",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -29245,7 +29255,7 @@
         },
         {
           "disabled": false,
-          "document": "normal/warn/error",
+          "document": "请求错误率等级。normal：正常，warn：警告，error：错误",
           "example": "warn",
           "member": "string",
           "name": "ErrorRateLevel",
@@ -29255,7 +29265,7 @@
         },
         {
           "disabled": false,
-          "document": "normal/warn/error",
+          "document": "请求平均耗时等级。normal：正常，warn：警告，error：错误",
           "example": "normal",
           "member": "string",
           "name": "AvgTimeConsumingLevel",
@@ -29265,7 +29275,7 @@
         },
         {
           "disabled": false,
-          "document": "normal/warn/error",
+          "document": "应用程序性能指数等级。normal：正常，warn：警告，error：错误",
           "example": "normal",
           "member": "string",
           "name": "ApdexLevel",
@@ -29335,7 +29345,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeGroups](https://cloud.tencent.com/document/api/649/36065)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/api/649/36074)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -29645,7 +29655,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "default",
+          "example": "namespace-name",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -29679,6 +29689,16 @@
           "member": "string",
           "name": "AppMicroServiceType",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "k8s 命名空间名称",
+          "example": "kube-ns",
+          "member": "string",
+          "name": "K8sNamespaceName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -29716,7 +29736,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-s892j3s",
           "member": "string",
           "name": "GroupId",
@@ -29753,7 +29773,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "按照【部署组ID】进行部署组启动，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-2ks8wsk",
           "member": "string",
           "name": "GroupId",
@@ -29810,8 +29830,8 @@
         },
         {
           "disabled": false,
-          "document": "日志时间戳",
-          "example": "179039070",
+          "document": "日志时间戳，单位毫秒",
+          "example": "1754547960288",
           "member": "uint64",
           "name": "Timestamp",
           "output_required": true,
@@ -29836,7 +29856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-w28snw",
           "member": "string",
           "name": "GroupId",
@@ -29873,7 +29893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "按照【部署组ID】进行部署组删除，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-wns82m",
           "member": "string",
           "name": "GroupId",
@@ -29910,7 +29930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批次ID",
+          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
           "example": "batch-2kjs83",
           "member": "string",
           "name": "BatchId",
@@ -29919,7 +29939,7 @@
         },
         {
           "disabled": false,
-          "document": "参数ID",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页面可以查看任务ID。",
           "example": "task-kw92ux",
           "member": "string",
           "name": "TaskId",
@@ -29934,7 +29954,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作成功 or 失败",
+          "document": "返回 true 或 false。true：操作成功，false：操作失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -29956,7 +29976,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行ID",
+          "document": "任务执行ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录页，点击批次ID进入执行详情列表页，第一列即为任务执行ID。",
           "example": "execute-k2is9h",
           "member": "string",
           "name": "ExecuteId",
@@ -29965,7 +29985,7 @@
         },
         {
           "disabled": false,
-          "document": "任务批次ID",
+          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
           "example": "batch-k2is9h",
           "member": "string",
           "name": "BatchId",
@@ -29974,7 +29994,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页面可以查看任务ID。",
           "example": "task-k2is9h",
           "member": "string",
           "name": "TaskId",
@@ -29989,7 +30009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作成功 or 失败",
+          "document": "返回 true 或 false。true：操作成功，false：操作失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -30951,28 +30971,28 @@
         },
         {
           "disabled": false,
-          "document": "游标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "游标ID",
           "example": "scroll-6a79x94v",
           "member": "string",
           "name": "ScrollId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "running",
+          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "查询es时，使用searchAfter返回的游标",
-          "example": "[“1463538857”, \"654323\"]",
+          "example": "[\"1463538857\", \"654323\"]",
           "member": "string",
           "name": "SearchAfter",
           "output_required": false,
@@ -31300,20 +31320,20 @@
         {
           "disabled": false,
           "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "记录实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "LicenseTag",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -31475,28 +31495,28 @@
         },
         {
           "disabled": false,
-          "document": "游标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "游标ID",
           "example": "scroll-6a79x94v",
           "member": "string",
           "name": "ScrollId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "running",
+          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "游标ID",
-          "example": "scroll-6a79x94v",
+          "document": "查询es使用searchAfter时，游标",
+          "example": "[\"1754547958821\", \"254107\"]",
           "member": "string",
           "name": "SearchAfter",
           "output_required": false,
@@ -32457,8 +32477,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
-          "example": "group-ap7qxxxx",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
+          "example": "group-gyqnd7py",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -32476,7 +32496,7 @@
         {
           "disabled": false,
           "document": "健康检查配置",
-          "example": " ",
+          "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": false,
@@ -32491,7 +32511,7 @@
         {
           "disabled": false,
           "document": "更新健康检查配置操作是否成功。\ntrue：操作成功。\nfalse：操作失败。",
-          "example": " ",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -33198,8 +33218,8 @@
         },
         {
           "disabled": false,
-          "document": "部署组状态",
-          "example": "running",
+          "document": "部署组状态，Running运行中，Waiting等待中，Paused暂停中，Updating更新中，RollingBack回滚中，Abnormal异常，Unknown未知",
+          "example": "Running",
           "member": "string",
           "name": "GroupStatus",
           "output_required": true,
@@ -33421,15 +33441,54 @@
         {
           "disabled": false,
           "document": "实例导入方式，可多个，公有云为 [\"R\", \"M\"]，独立版的取值仅有 \"M\" 脚本模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"R\"]",
           "member": "string",
           "name": "ImportMode",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "VolumeClaimTemplatesOption": {
+      "document": "VolumeClaim模板项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "StorageClass名称",
+          "example": "cbs",
+          "member": "string",
+          "name": "StorageClass",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问模式",
+          "example": "ReadWriteOnce",
+          "member": "string",
+          "name": "AccessModes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "卷空间的预占声明",
+          "example": "20",
+          "member": "int64",
+          "name": "StorageRequest",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VolumeInfo": {
       "document": "容器卷挂载信息",
@@ -33484,6 +33543,17 @@
           "example": "无",
           "member": "EmptyDirOption",
           "name": "EmptyDirOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据卷PVC声明模板",
+          "example": "无",
+          "member": "VolumeClaimTemplatesOption",
+          "name": "VolumeClaimTemplateOption",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -33551,16 +33621,18 @@
           "example": "false",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预热时间",
+          "document": "预热时间，单位秒",
           "example": "120",
           "member": "uint64",
           "name": "WarmupTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -33571,6 +33643,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Curvature",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -33581,6 +33654,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnabledProtection",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false

@@ -650,6 +650,7 @@
           "example": "无",
           "member": "Library",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -659,6 +660,7 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1178,7 +1180,7 @@
           "example": "smh3ptyc9mscifdi",
           "member": "string",
           "name": "LibraryId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1188,7 +1190,7 @@
           "example": "个人相册",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1198,7 +1200,7 @@
           "example": "用于家庭内部共享",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1208,7 +1210,7 @@
           "example": "smh-1250000000",
           "member": "string",
           "name": "BucketName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1218,7 +1220,17 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该媒体库的业务 API 访问域名",
+          "example": "smh3ptyc9mscifdi.api.tencentsmh.cn",
+          "member": "string",
+          "name": "AccessDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1228,7 +1240,7 @@
           "example": "2021-10-12T03:53:29Z",
           "member": "datetime_iso",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1238,7 +1250,7 @@
           "example": "无",
           "member": "LibraryExtension",
           "name": "LibraryExtension",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1248,7 +1260,7 @@
           "example": "182736273",
           "member": "string",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1258,7 +1270,7 @@
           "example": "12",
           "member": "string",
           "name": "DirNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1268,7 +1280,7 @@
           "example": "3746",
           "member": "string",
           "name": "FileNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1284,6 +1296,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsFileLibrary",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -1294,6 +1307,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsMultiSpace",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -1304,6 +1318,7 @@
           "example": "STANDARD_IA",
           "member": "string",
           "name": "CosStorageClass",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1314,6 +1329,7 @@
           "example": "true",
           "member": "bool",
           "name": "UseRecycleBin",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -1324,6 +1340,7 @@
           "example": "7",
           "member": "uint64",
           "name": "AutoRemoveRecycledDays",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1334,6 +1351,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableSearch",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -1344,6 +1362,7 @@
           "example": "true",
           "member": "bool",
           "name": "DenyOnQuotaLessThanUsage",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -1354,26 +1373,29 @@
           "example": "true",
           "member": "bool",
           "name": "EnableFileHistory",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当开启历史版本时，指定单个文件保留的历史版本的数量上限，不能超过 999，指定为 0 则不限制，默认为 0。当未开启历史版本时，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当开启历史版本时，指定单个文件保留的历史版本的数量上限，取值范围为 1 到 999。当未开启历史版本时，该属性可能为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "FileHistoryCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当开启历史版本时，指定历史版本保留的最长天数，不能超过 999，指定为 0 则不限制，默认为 0。当未开启历史版本时，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当开启历史版本时，指定历史版本保留的最长天数，取值范围为 0 到 999，当指定为 0 时代表永久保留。当未开启历史版本时，该属性可能为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "uint64",
           "name": "FileHistoryExpireDay",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1384,6 +1406,7 @@
           "example": "200",
           "member": "uint64",
           "name": "MaxDirFileNameLength",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1394,6 +1417,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsPublicRead",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1404,6 +1428,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsMultiAlbum",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1414,6 +1439,7 @@
           "example": "true",
           "member": "bool",
           "name": "AllowPhoto",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1424,6 +1450,7 @@
           "example": "[ '.jpg', '.png', '.heic' ]",
           "member": "string",
           "name": "AllowPhotoExtName",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1434,6 +1461,7 @@
           "example": "true",
           "member": "bool",
           "name": "AllowVideo",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1444,6 +1472,7 @@
           "example": "[ '.mp4', '.mov' ]",
           "member": "string",
           "name": "AllowVideoExtName",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1454,6 +1483,7 @@
           "example": "[ '.docx', '.xslx', '.pptx' ]",
           "member": "string",
           "name": "AllowFileExtName",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1464,6 +1494,7 @@
           "example": "true",
           "member": "bool",
           "name": "RecognizeSensitiveContent",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true

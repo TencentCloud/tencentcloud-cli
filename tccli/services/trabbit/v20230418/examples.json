@@ -99,9 +99,9 @@
     "DescribeRabbitMQServerlessConnection": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessConnection\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"Connections\": [],\n        \"TotalCount\": 0\n    }\n}",
-        "title": "查询RabbitMQ连接列表"
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessConnection\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slbswcjhay\",\n    \"VirtualHost\": \"/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Connections\": [\n            {\n                \"Channels\": 10,\n                \"ConnectionName\": \"11.141.232.162:2594 -> 21.63.172.58:5672\",\n                \"Heartbeat\": 60,\n                \"IncomingBytes\": 5,\n                \"MaxChannel\": 1024,\n                \"OutgoingBytes\": 766.65,\n                \"PeerHost\": \"11.141.232.162\",\n                \"Protocol\": \"AMQP 0-9-1\",\n                \"SSL\": false,\n                \"State\": \"running\",\n                \"User\": \"ledou\"\n            },\n            {\n                \"Channels\": 1,\n                \"ConnectionName\": \"11.151.193.8:35695 -> 21.63.172.58:5672\",\n                \"Heartbeat\": 60,\n                \"IncomingBytes\": 9.92,\n                \"MaxChannel\": 1024,\n                \"OutgoingBytes\": 763.8,\n                \"PeerHost\": \"11.151.193.8\",\n                \"Protocol\": \"AMQP 0-9-1\",\n                \"SSL\": false,\n                \"State\": \"running\",\n                \"User\": \"ledou\"\n            }\n        ],\n        \"RequestId\": \"8ea767cf-5895-4eda-985b-cf739d9074b5\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "正常获取connection列表"
       }
     ],
     "DescribeRabbitMQServerlessConsumers": [
@@ -110,6 +110,12 @@
         "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessConsumers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-jero744g\",\n    \"VirtualHost\": \"testVhost\",\n    \"QueueName\": \"testQueue\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"SearchWord\": \"testSearchWord\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"ConsumerInfoList\": [\n            {\n                \"ClientIp\": \"119.147.10.198\",\n                \"ConsumerTag\": \"ctag1.6473a72d0293494197684c6c3261318b\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询RabbitMQ队列消费者列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessConsumers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slbswcjhay\",\n    \"VirtualHost\": \"/\",\n    \"QueueName\": \"normal-queue\",\n    \"SearchWord\": \"amq.ctag-0b29cd9c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsumerInfoList\": [\n            {\n                \"AckRequired\": true,\n                \"Active\": \"up\",\n                \"ClientIp\": \"11.151.193.8\",\n                \"ConsumerTag\": \"amq.ctag-0b29cd9c\",\n                \"PrefetchCount\": 500,\n                \"QueueName\": \"normal-queue\"\n            }\n        ],\n        \"RequestId\": \"271eecb0-9c34-43d0-b06d-4a539abda5f8\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "正常获取消费者列表"
       }
     ],
     "DescribeRabbitMQServerlessExchangeDetail": [

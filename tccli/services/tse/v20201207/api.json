@@ -140,6 +140,13 @@
       "output": "CreateNativeGatewayServiceSourceResponse",
       "status": "online"
     },
+    "CreateOrModifyCloudNativeAPIGatewayIPRestriction": {
+      "document": "创建或编辑云原生网关访问控制",
+      "input": "CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest",
+      "name": "创建或编辑云原生网关访问控制",
+      "output": "CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse",
+      "status": "online"
+    },
     "CreateOrUpdateConfigFileAndRelease": {
       "document": "创建或更新配置文件并发布配置",
       "input": "CreateOrUpdateConfigFileAndReleaseRequest",
@@ -180,6 +187,13 @@
       "input": "DeleteCloudNativeAPIGatewayCertificateRequest",
       "name": "删除云原生网关证书",
       "output": "DeleteCloudNativeAPIGatewayCertificateResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayIPRestriction": {
+      "document": "删除云原生网关访问控制",
+      "input": "DeleteCloudNativeAPIGatewayIPRestrictionRequest",
+      "name": "删除云原生网关访问控制",
+      "output": "DeleteCloudNativeAPIGatewayIPRestrictionResponse",
       "status": "online"
     },
     "DeleteCloudNativeAPIGatewayPublicNetwork": {
@@ -355,6 +369,13 @@
       "input": "DescribeCloudNativeAPIGatewayConfigRequest",
       "name": "获取云原生API网关实例网络配置信息",
       "output": "DescribeCloudNativeAPIGatewayConfigResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayIPRestriction": {
+      "document": "查询云原生网关访问控制",
+      "input": "DescribeCloudNativeAPIGatewayIPRestrictionRequest",
+      "name": "查询云原生网关访问控制",
+      "output": "DescribeCloudNativeAPIGatewayIPRestrictionResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayInfoByIp": {
@@ -757,7 +778,7 @@
       "status": "online"
     },
     "ModifyNetworkBasicInfo": {
-      "document": "修改云原生API网关实例网络基本信息，例如带宽以及描述，只支持修改客户端公网/内网的信息。",
+      "document": "修改云原生API网关实例网络基本信息，例如带宽以及描述、规格升级，只支持修改客户端公网/内网的信息。",
       "input": "ModifyNetworkBasicInfoRequest",
       "name": "修改云原生API网关实例网络基本信息",
       "output": "ModifyNetworkBasicInfoResponse",
@@ -1817,6 +1838,16 @@
           "name": "IPV6FullChain",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡个性化配置内容",
+          "example": "send_timeout 1800s;\\nproxy_read_timeout 1800s;\\nproxy_send_timeout 1800s;\\nclient_max_body_size 256M;",
+          "member": "string",
+          "name": "CustomizedConfigContent",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4790,7 +4821,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎的节点规格 ID。参见EngineProductVersion字段说明",
+          "document": "引擎的节点规格 ID。参见EngineProductVersion字段说明\n北极星支持的引擎规格ID与节点数对应关系：\n基础版：\nspec-c160bas1 500\nspec-c160bas2 1000\nspec-c160bas3 2000\nspec-c160bas4 5000\nspec-c160bas5 10000\nspec-c160bas6 20000\nspec-c160bas7 50000\n企业版：\nspec-c160pro50 50\nspec-c160pro100 100\nspec-c160pro200 200\nspec-c160pro500 500\nspec-c160pro1k 1000\nspec-c160pro5k 5000\nspec-c160pro10k 10000\nspec-c160pro20k 20000\nspec-c160pro50k 50000\n开发版：\nspec-c160dev1 50",
           "example": "1C2G",
           "member": "string",
           "name": "EngineResourceSpec",
@@ -5349,6 +5380,88 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "服务来源ID",
+          "example": "cls-koqdd0fq",
+          "member": "string",
+          "name": "SourceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest": {
+      "document": "CreateOrModifyCloudNativeAPIGatewayIPRestriction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制插件绑定的资源类型：route|service",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由或服务的id",
+          "example": "31f3bf99-f289-4b6e-8edc-5e09d9d8ce4e",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用插件",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制类型：whiteList｜blackList",
+          "example": "whiteList",
+          "member": "string",
+          "name": "RestrictionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cidr｜ip",
+          "example": "[1.1.1.1,2.2.2.2]",
+          "member": "string",
+          "name": "AddressList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse": {
+      "document": "CreateOrModifyCloudNativeAPIGatewayIPRestriction返回参数结构体",
+      "members": [
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5640,6 +5753,51 @@
       ],
       "type": "object"
     },
+    "DeleteCloudNativeAPIGatewayIPRestrictionRequest": {
+      "document": "DeleteCloudNativeAPIGatewayIPRestriction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制插件绑定的资源类型：route|service",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由或服务的id",
+          "example": "31f3bf99-f289-4b6e-8edc-5e09d9d8ce4e",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayIPRestrictionResponse": {
+      "document": "DeleteCloudNativeAPIGatewayIPRestriction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudNativeAPIGatewayPublicNetworkRequest": {
       "document": "DeleteCloudNativeAPIGatewayPublicNetwork请求参数结构体",
       "members": [
@@ -5894,6 +6052,15 @@
           "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步删除服务上绑定的路由",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteRoutes",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6957,6 +7124,61 @@
       ],
       "usage": "out"
     },
+    "DescribeCloudNativeAPIGatewayIPRestrictionRequest": {
+      "document": "DescribeCloudNativeAPIGatewayIPRestriction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-3d19195c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制插件绑定的资源类型：route|service",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由或服务的id",
+          "example": "31f3bf99-f289-4b6e-8edc-5e09d9d8ce4f",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayIPRestrictionResponse": {
+      "document": "DescribeCloudNativeAPIGatewayIPRestriction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"SourceType\":\"route\",\"SourceId\":\"31f3bf99-f289-4b6e-8edc-5e09d9d8ce4f\",\"Enabled\":true,\"RestrictionType\":\"whiteList\",\"AddressList\":\t[1.1.1.1,2.2.2.2]}",
+          "member": "DescribeKongIpRestrictionResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayInfoByIpRequest": {
       "document": "DescribeCloudNativeAPIGatewayInfoByIp请求参数结构体",
       "members": [
@@ -7404,7 +7626,7 @@
         {
           "disabled": false,
           "document": "公网IP地址列表",
-          "example": "145.215.23.2",
+          "example": "[\"145.215.23.2\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "output_required": false,
@@ -7420,6 +7642,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示可以升级的版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2.5.1\",\"2.8.5\"]",
+          "member": "string",
+          "name": "AvailableVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9246,6 +9478,15 @@
           "name": "SyncToGlobalRegistry",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤筛选条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "StatusFilter",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9450,6 +9691,62 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeKongIpRestrictionResult": {
+      "document": "查询云原生网关访问控制配置出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问控制插件绑定的资源类型：route | service\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由或服务的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5c425ea8-85d9-46e7-973e-86780fde34fa",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用插件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问控制类型：whiteList｜blackList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "whiteList",
+          "member": "string",
+          "name": "RestrictionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cidr｜ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
+          "member": "string",
+          "name": "AddressList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeNacosReplicasRequest": {
       "document": "DescribeNacosReplicas请求参数结构体",
@@ -9674,6 +9971,15 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源ID",
+          "example": "cls-qwertyuw",
+          "member": "string",
+          "name": "SourceID",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -11098,14 +11404,14 @@
         },
         {
           "disabled": false,
-          "document": "元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据信息",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11795,13 +12101,13 @@
         },
         {
           "disabled": false,
-          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12050,7 +12356,7 @@
         {
           "disabled": false,
           "document": "该服务对哪些命名空间可见\t",
-          "example": "[Namespace-1, Namespace-2]",
+          "example": "[ \"Namespace-2\"]",
           "member": "string",
           "name": "ExportTo",
           "output_required": false,
@@ -12075,6 +12381,26 @@
           "name": "SyncToGlobalRegistry",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离实例数",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsolateInstanceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务健康状态",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -12206,14 +12532,14 @@
         },
         {
           "disabled": false,
-          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15329,6 +15655,15 @@
           "example": "公网入口",
           "member": "string",
           "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡的规格类型，支持：\n- 不传为共享型。\n- clb.c2.medium：标准型规格\n- clb.c3.small：高阶型1规格\n- clb.c3.medium：高阶型2规格\n- clb.c4.small：超强型1规格\n- clb.c4.medium：超强型2规格\n- clb.c4.large：超强型3规格\n- clb.c4.xlarge：超强型4规格",
+          "example": "clb.c3.medium",
+          "member": "string",
+          "name": "SlaType",
           "required": false,
           "type": "string"
         }

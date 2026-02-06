@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata EnableProject --cli-unfold-argument  \
-    --ProjectId abc \
-    --ModuleKey abc
+    --ProjectId 1 \
+    --ModuleKey 2
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "1231"
     }
 }
 ```

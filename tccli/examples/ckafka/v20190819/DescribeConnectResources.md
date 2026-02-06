@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeConnectResources --cli-unfold-argument  \
-    --Limit 0 \
+    --Limit 20 \
     --Type KAFKA \
     --SearchWord mytest \
     --Offset 0

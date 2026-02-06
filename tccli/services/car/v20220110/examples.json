@@ -16,6 +16,14 @@
         "title": "CreateSession示例"
       }
     ],
+    "DescribeConcurrentCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrentCount\n<公共请求参数>\n\n{\n    \"ProjectId\": \"cap-abcdefgh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\",\n        \"Total\": 10,\n        \"Running\": 6\n    }\n}",
+        "title": "DescribeConcurrentCount示例"
+      }
+    ],
     "DestroySession": [
       {
         "document": "",

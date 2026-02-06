@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli wedata DescribeRealTimeTaskSpeed --cli-unfold-argument  \
-    --TaskId 123 \
+    --TaskId task33 \
     --StartTime 1712803796000 \
     --EndTime 1712803996000 \
-    --Granularity 1 \
-    --ProjectId 1
+    --Granularity 1213 \
+    --ProjectId 1486804694126882816
 ```
 
 Output: 
@@ -67,7 +67,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "as1cs2c123asyi23bh213cc"
+        "RequestId": "977662"
     }
 }
 ```

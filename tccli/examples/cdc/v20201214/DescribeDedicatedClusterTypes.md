@@ -32,7 +32,7 @@ Output:
                     "S5"
                 ],
                 "Weight": 3000,
-                "PowerDrawKva": "2000.800000",
+                "PowerDrawKva": 2000.8,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             },
             {
@@ -50,7 +50,7 @@ Output:
                     "S5"
                 ],
                 "Weight": 3273,
-                "PowerDrawKva": "4156.700000",
+                "PowerDrawKva": 4156.7,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             },
             {
@@ -67,7 +67,7 @@ Output:
                     "S3"
                 ],
                 "Weight": 3724,
-                "PowerDrawKva": "3829.100000",
+                "PowerDrawKva": 3829.1,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             },
             {
@@ -82,7 +82,7 @@ Output:
                 ],
                 "SupportedInstanceFamily": [],
                 "Weight": 3724,
-                "PowerDrawKva": "3829.100000",
+                "PowerDrawKva": 3829.1,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             }
         ],

@@ -3592,7 +3592,7 @@
         {
           "disabled": false,
           "document": "函数状态失败原因",
-          "example": "[ ]",
+          "example": "无",
           "member": "StatusReason",
           "name": "StatusReasons",
           "output_required": true,
@@ -3645,6 +3645,16 @@
           "example": "无",
           "member": "ProtocolParams",
           "name": "ProtocolParams",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单实例多并发配置。只支持Web函数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceConcurrencyConfig",
+          "name": "InstanceConcurrencyConfig",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
@@ -4070,7 +4080,7 @@
         {
           "disabled": false,
           "document": "镜像加速开关，默认False\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ContainerImageAccelerate",
           "output_required": false,
@@ -4101,6 +4111,7 @@
           "example": "'FALSE'",
           "member": "string",
           "name": "DynamicEnabled",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4111,9 +4122,54 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxConcurrency",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全隔离开关",
+          "example": "'FALSE'",
+          "member": "string",
+          "name": "InstanceIsolationEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基于会话：Session-Based ， 或者基于请求：Request-Based，二选一",
+          "example": "Session-Based",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动态并发参数",
+          "example": "无",
+          "member": "MixNodeConfig",
+          "name": "MixNodeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话配置参数",
+          "example": "无",
+          "member": "SessionConfig",
+          "name": "SessionConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4947,7 +5003,7 @@
         },
         {
           "disabled": false,
-          "document": "`过滤特定属性或者有特定标签的函数。`- 传值方式key-value 进行传值  例如：\"Filters\": [{ \"Name\": \"Status\", \"Values\": [\"CreateFailed\",\"Creating\"]}, {\"Name\": \"Type\",\"Values\": [\"HTTP\"]}]上述条件的函数是，函数状态为创建失败或者创建中，且函数类型为 HTTP 函数`如果通过标签进行过滤：`- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。示例值：\"Filters\": [{\"Name\":\"tag-dmtest\",\"Values\":[\"dmtest\"]}]`入参限制：`1.每次请求的Filters的上限为10，Filter.Values的上限为5。2.[VpcId', 'SubnetId', 'ClsTopicId', 'ClsLogsetId', 'Role', 'CfsId', 'CfsMountInsId', 'Eip'] 过滤的Name 为这些属性时， values 只能传一个值3.['Status', 'Runtime', 'Type', 'PublicNetStatus', 'AsyncRunEnable', 'TraceEnable', 'Stamp'] 过滤的Name 为这些属性时 ，values 可以传多个值",
+          "document": "`过滤特定属性或者有特定标签的函数。`\n- 传值方式 \n   key-value 进行传值\n    例如：\"Filters\": [{ \"Name\": \"Status\", \"Values\": [\"CreateFailed\",\"Creating\"]}, {\"Name\": \"Type\",\"Values\": [\"HTTP\"]}]上述条件的函数是，函数状态为创建失败或者创建中，且函数类型为 HTTP 函数\n- `如果通过标签进行过滤：`Filter 中  Name 字段需要以 `tag-` 起始，`-` 后跟着标签名称，`Values` 指定对应的标签值\n   示例值：\"Filters\": [{\"Name\":\"tag-dmtest\",\"Values\":[\"dmtest\"]}]\n- `入参限制：`\n`Filter`:对应的`Name`支持的字段有：\n`单 Value Filter`支持的 `Name` 字段入参：['VpcId', 'SubnetId', 'ClsTopicId', 'ClsLogsetId', 'Role', 'CfsId', 'CfsMountInsId', 'Eip'] \n`多 Value Filter`支持的 `Name` 字段入参：['Status', 'Runtime', 'Type', 'PublicNetStatus', 'AsyncRunEnable', 'TraceEnable', 'Stamp']\n\n单次 API 请求的`Filters` 的上限为`10`, 即Filters 最多有 10个 {\"Name\":\"\",\"Values\":[]} `Name -Values` 的键值对。`Filter.Values`的上限，由 `Filter` 的 `Name` 决定。\n1.[ VpcId', 'SubnetId', 'ClsTopicId', 'ClsLogsetId', 'Role', 'CfsId', 'CfsMountInsId', 'Eip' ] 过滤的 Name 为这些属性时， Values `只能传一个值`\n 2.['Status', 'Runtime', 'Type', 'PublicNetStatus', 'AsyncRunEnable', 'TraceEnable', 'Stamp'] 过滤的Name 为这些属性时 ，Values `至多可以传20个值`",
           "example": "[{\"Name\":\"Status\",\"Values\":[\"CreateFailed\",\"Creating\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -5460,6 +5516,34 @@
       ],
       "usage": "both"
     },
+    "MixNodeConfig": {
+      "document": "动态并发配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU机型名",
+          "example": "gpu-dsdfsd",
+          "member": "string",
+          "name": "NodeSpec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Num",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Namespace": {
       "document": "命名空间",
       "members": [
@@ -5532,7 +5616,7 @@
         {
           "disabled": false,
           "document": "Trigger信息",
-          "example": "{\"Apigw\":10,\"Ckafka\":10,\"Clb\":10,\"Cls\":10,\"Cm\":10,\"Cmq\":10,\"Cos\":10,\"Eb\":10,\"Mps\":10,\"Timer\":10,\"Total\":110,\"Vod\":10}",
+          "example": "无",
           "member": "TriggerCount",
           "name": "Trigger",
           "output_required": true,
@@ -6542,6 +6626,89 @@
         }
       ],
       "usage": "in"
+    },
+    "SessionConfig": {
+      "document": "会话参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "session 来源，三选一：'HEADER', 'COOKIE', 'QUERY_STRING' ",
+          "example": "HEADER",
+          "member": "string",
+          "name": "SessionSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session 名称，以字母开头，非首字母可包含数字、字母、下划线、中划线，长度5-40个字符",
+          "example": "x-test-",
+          "member": "string",
+          "name": "SessionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大并发会话数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaximumConcurrencySessionPerInstance",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期",
+          "example": "1800",
+          "member": "uint64",
+          "name": "MaximumTTLInSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空闲时长",
+          "example": "1800",
+          "member": "uint64",
+          "name": "MaximumIdleTimeInSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session 对应的路径信息",
+          "example": "/mcp",
+          "member": "string",
+          "name": "SessionPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动销毁 FATAL、自动暂停PAUSE， 只有启动安全隔离的时候才会有",
+          "example": "FATAL",
+          "member": "string",
+          "name": "IdleTimeoutStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "StatusReason": {
       "document": "状态原因描述",

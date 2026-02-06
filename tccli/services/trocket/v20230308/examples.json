@@ -366,6 +366,14 @@
         "title": "获取数据迁移任务列表"
       }
     ],
+    "DescribeProducerList": [
+      {
+        "document": "查询生产者列表",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducerList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-9j77qmrm\",\n    \"Topic\": \"topic-normal\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ProducerList\": [\n            {\n                \"ClientId\": \"169.254.165.243@a3c02f03-5b27-425f-8632-83d1e9f7010b\",\n                \"ClientIp\": \"/11.176.16.134:58560\",\n                \"Language\": \"JAVA\",\n                \"LastUpdateTimestamp\": 1725440379597,\n                \"Version\": \"V4_9_3\"\n            }\n        ],\n        \"RequestId\": \"6918ecdb-ee41-4f8a-bf5f-7b313cd5fca0\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询生产者列表"
+      }
+    ],
     "DescribeProductSKUs": [
       {
         "document": "获取产品规格信息",
@@ -556,6 +564,22 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackMigratingTopicStage\n<公共请求参数>\n\n{\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\",\n    \"TopicName\": \"TopicTest\",\n    \"Namespace\": \"\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "回滚迁移主题的切流状态"
+      }
+    ],
+    "SendMessage": [
+      {
+        "document": "发送消息",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"MsgBody\": \"This is a normal message for Apache RocketMQ.\",\n    \"MsgKey\": \"test_key\",\n    \"MsgTag\": \"test_kag\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n        \"RequestId\": \"256f8223-d0e2-4400-9481-763989799560\"\n    }\n}",
+        "title": "发送消费"
+      }
+    ],
+    "VerifyMessageConsumption": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyMessageConsumption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"ConsumerGroup\": \"test_group\",\n    \"ClientId\": \"10.185.22.31@7#782332544\",\n    \"MsgId\": \"1464F14500017DAF6ECC79CA6CAA0288\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"960dfb7a-44af-49f4-8172-22896c57a8be\"\n    }\n}",
+        "title": "消息验证成功"
       }
     ]
   },

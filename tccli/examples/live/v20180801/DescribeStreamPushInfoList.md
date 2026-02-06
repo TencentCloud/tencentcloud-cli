@@ -22,7 +22,7 @@ Output:
                 "AppName": "live",
                 "ClientIp": "43.12.9.2",
                 "BeginPushTime": "2019-06-21T12:00:00+08:00",
-                "Resolution": "720P",
+                "Resolution": "1920*1080",
                 "VCodec": "h264",
                 "ACodec": "aac",
                 "Sequence": "4543453324532",

@@ -30,7 +30,7 @@ Output:
         "NextAction": "",
         "Placement": {
             "ProjectId": 0,
-            "Zone": "ap-guangzhou-2"
+            "Zone": "ap-guangzhou-6"
         },
         "ComputeNodeSet": [
             {

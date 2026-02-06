@@ -25,6 +25,7 @@ Output:
         "ResponseMode": "form_post",
         "MappingFiled": "sub",
         "Status": 11,
+        "AutoRotateKey": 1,
         "RequestId": "e00eaca1-57b4-49e7-978d-648c5f1b9bd3"
     }
 }

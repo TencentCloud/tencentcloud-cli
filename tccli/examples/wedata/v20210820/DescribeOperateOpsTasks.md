@@ -1,38 +1,14 @@
-**Example 1: 失败示例**
+**Example 1: 获取任务列表**
 
-失败示例
 
-Input: 
-
-```
-tccli wedata DescribeOperateOpsTasks --cli-unfold-argument  \
-    --ProjectId 1470561602745229312
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "AuthFailure.SignatureFailure",
-            "Message": "请求签名验证失败，请检查您的签名计算是否正确。"
-        },
-        "RequestId": "2aa47359-f740-4c00-a91d-51820f08e30f"
-    }
-}
-```
-
-**Example 2: 任务列表查询**
-
-任务列表查询
 
 Input: 
 
 ```
 tccli wedata DescribeOperateOpsTasks --cli-unfold-argument  \
-    --WorkFlowIdList 1282d8d2-68e0-11ee-8d13-a411120f8272 \
-    --TaskIdList 20231220103934257 \
-    --ProjectId 1531609696110365952
+    --ProjectId 1460947878944567296 \
+    --PageNumber 1 \
+    --PageSize 1
 ```
 
 Output: 
@@ -42,97 +18,104 @@ Output:
         "Data": {
             "Items": [
                 {
+                    "AllowRedoType": "ALL",
                     "BrokerIp": null,
                     "ClusterId": null,
-                    "CreateTime": "2023-12-20 20:40:59",
-                    "Creator": "MaksimGuo",
+                    "CreateTime": "2024-07-08 17:15:11",
+                    "Creator": "carlshi",
                     "Crontab": null,
                     "CrontabExpression": null,
                     "CycleNum": 1,
                     "CycleStep": null,
                     "CycleType": null,
                     "CycleUnit": "D",
+                    "DLCResourceConfig": null,
                     "DelayTime": 0,
                     "DependencyRel": null,
                     "DependencyWorkflow": null,
                     "EndDate": "2099-12-31 23:59:59",
                     "EndTime": null,
                     "EventListenerConfig": null,
+                    "EventListenerInfos": null,
                     "EventPublisherConfig": null,
-                    "ExecutionEndTime": null,
-                    "ExecutionStartTime": null,
+                    "ExecutionEndTime": "23:59",
+                    "ExecutionStartTime": "00:00",
                     "ExecutionTTL": -1,
-                    "ExecutorGroupId": null,
-                    "ExecutorGroupName": null,
-                    "FirstRunTime": "2023-10-12 17:18:45",
-                    "FirstSubmitTime": "2023-12-21 21:06:36",
-                    "FolderId": "0ab0ffbd-68e0-11ee-8d13-a4ae120f8272",
-                    "FolderName": "jianweisong",
-                    "InCharge": "MaksimGuo",
+                    "ExecutorGroupId": "20221219061532357712",
+                    "ExecutorGroupName": "dev_inlong_v9_1219_03",
+                    "ExtResourceFlag": null,
+                    "FirstRunTime": "2024-07-08 00:00:00",
+                    "FirstSubmitTime": "2024-09-05 12:25:03",
+                    "FolderId": "8a098d2e-3cff-11ef-8ec8-b8599f277de5",
+                    "FolderName": "carlshi",
+                    "InCharge": ";Wedata开发测试专用;",
                     "InChargeId": null,
                     "InitStrategy": "T+0",
                     "InstanceInitStrategy": null,
-                    "LastSchedulerCommitTime": "2023-12-21 21:06:36",
-                    "LastUpdate": null,
+                    "LastSchedulerCommitTime": "2024-09-05 12:25:03",
+                    "LastUpdate": "2025-08-13 11:47:42",
                     "Layer": null,
-                    "LeftCoordinate": 367,
+                    "LeftCoordinate": 752,
                     "MaxDateTime": null,
                     "MinDateTime": null,
+                    "NewParentTaskInfos": null,
                     "NormalizedJobStartTime": null,
-                    "Notes": null,
+                    "Notes": "",
                     "OwnId": null,
+                    "OwnerId": "100028448903",
                     "ProductName": null,
-                    "ProjectId": "1531609696090365952",
-                    "ProjectIdent": "project_wedata",
-                    "ProjectName": "project_wedata",
+                    "ProjectId": "1460947878944567296",
+                    "ProjectIdent": "us_dev",
+                    "ProjectName": "调度dev验证项目_new2",
                     "RealWorkflowId": null,
                     "ResourceGroup": null,
                     "RetryAble": 1,
                     "RetryWait": 5,
                     "RunPriority": 6,
-                    "ScheduleDesc": "每天00:00执行一次",
+                    "ScheduleDesc": "每天00:00执行一次(UTC+8)",
                     "SchedulerDesc": null,
-                    "SelfDepend": "serial",
+                    "ScriptInfo": null,
+                    "SelfDepend": "parallel",
+                    "SelfWorkFlowDependType": "no",
                     "ShowWorkflow": false,
-                    "SourceServiceId": null,
-                    "SourceServiceType": null,
-                    "StartDate": "2023-10-12 17:18:45",
+                    "SourceServiceId": "9638",
+                    "SourceServiceType": "mysql",
+                    "StartDate": "2024-07-08 00:00:00",
                     "StartTime": null,
                     "StartupTime": null,
                     "Status": "F",
-                    "TargetServiceId": null,
-                    "TargetServiceType": null,
+                    "TargetServiceId": "9638",
+                    "TargetServiceType": "mysql",
                     "TaskAction": "",
-                    "TaskId": "20231220203934257",
+                    "TaskExtInfo": null,
+                    "TaskId": "20240708171511541",
                     "TaskLinkInfo": null,
-                    "TaskName": "1111asdasdadsd",
+                    "TaskName": "test11212",
                     "TaskType": null,
-                    "TaskTypeDesc": "MapReduce",
-                    "TaskTypeId": 92,
+                    "TaskTypeDesc": "Offline Synchronization",
+                    "TaskTypeId": 26,
                     "TenantId": "1315051789",
-                    "TopCoordinate": 227,
+                    "TopCoordinate": 211,
                     "TryLimit": 5,
                     "UpdateTime": null,
-                    "UpdateUser": "MaksimGuo",
-                    "UpdateUserId": "100029483142",
-                    "UserId": "100029483142",
+                    "UpdateUser": "yaofuwang",
+                    "UpdateUserId": "100036013191",
+                    "UserId": "100028448903",
                     "VirtualFlag": false,
                     "VirtualTaskId": null,
                     "VirtualTaskStatus": null,
-                    "WorkflowId": "1282d8d2-68e0-11ee-8d13-a4ae120f8272",
-                    "WorkflowName": "1002",
-                    "YarnQueue": null,
-                    "TasksStr": "testss",
-                    "Submit": true
+                    "WorkflowId": "05239aaa-325b-4d12-9c86-db4358ef64ce",
+                    "WorkflowName": "test12234",
+                    "YarnQueue": null
                 }
             ],
-            "PageCount": 1,
+            "PageCount": 1099,
             "PageNumber": 1,
-            "PageSize": 10,
-            "TotalCount": 1,
-            "TotalPage": 1
+            "PageSize": 1,
+            "TotalCount": 1099,
+            "TotalPage": 1099
         },
-        "RequestId": "ce9d691e-47fc-4378-92db-3fa248e84166"
+        "RequestId": "ecfdec6f-dacd-434c-8660-fee3b8de316e"
     }
 }
 ```

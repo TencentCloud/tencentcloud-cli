@@ -14,7 +14,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "647f2a53-c672-45fa-980b-385423898a69"
+        "DestinationRegionBlueprintSet": [
+            {
+                "Region": "ap-singapore",
+                "BlueprintId": "lhbp-lf3gjs2f"
+            },
+            {
+                "Region": "ap-hongkong",
+                "BlueprintId": "lhbp-lfle246l"
+            }
+        ],
+        "RequestId": "e35a5b7b-4dfa-49f8-8729-ba5c504807e0"
     }
 }
 ```

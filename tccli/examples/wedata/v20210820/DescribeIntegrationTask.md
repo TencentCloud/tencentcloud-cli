@@ -123,7 +123,7 @@ Output:
                             {
                                 "Id": "597853056",
                                 "Name": "name",
-                                "Value": "test",
+                                "Value": "testschema",
                                 "Type": "String",
                                 "Alias": "name",
                                 "Comment": "名称",
@@ -166,7 +166,7 @@ Output:
                         {
                             "Id": "597853056",
                             "Name": "name",
-                            "Value": "test",
+                            "Value": "testschema",
                             "Type": "String",
                             "Alias": "name",
                             "Comment": "名称",

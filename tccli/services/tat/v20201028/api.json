@@ -790,11 +790,20 @@
         {
           "disabled": false,
           "document": "周期执行器设置。\n\n当执行器类型为 `SCHEDULE` 时，必须指定此参数。",
-          "example": "{\"Policy\":\"ONCE\",\"InvokeTime\":\"2021-09-01T00:00:00+08:00\"}",
+          "example": "无",
           "member": "ScheduleSettings",
           "name": "ScheduleSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "为命令关联的标签，列表长度不超过10",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2028,13 +2037,13 @@
         },
         {
           "disabled": false,
-          "document": "执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ",
+          "document": "执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-03-05T20:07:29Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2225,7 +2234,7 @@
         {
           "disabled": false,
           "document": "执行结果。",
-          "example": "{\"Dropped\":0,\"ExecEndTime\":\"2024-11-13T02:10:32Z\",\"ExecStartTime\":\"2024-11-13T02:10:32Z\",\"ExitCode\":7,\"Output\":\"\",\"OutputUploadCOSErrorInfo\":\"\",\"OutputUrl\":\"\"}",
+          "example": "无",
           "member": "TaskResult",
           "name": "TaskResult",
           "output_required": true,
@@ -2275,7 +2284,7 @@
         {
           "disabled": false,
           "document": "执行任务所执行的命令详情。",
-          "example": "{\"CommandType\":\"SHELL\",\"Content\":\"cHdk\",\"OutputCOSBucketUrl\":\"\",\"OutputCOSKeyPrefix\":\"prefix\",\"Timeout\":600,\"Username\":\"root\",\"WorkingDirectory\":\"/data\"}",
+          "example": "无",
           "member": "CommandDocument",
           "name": "CommandDocument",
           "output_required": true,
@@ -2298,6 +2307,16 @@
           "example": "USER",
           "member": "string",
           "name": "InvocationSource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行的命令的名称。",
+          "example": "name",
+          "member": "string",
+          "name": "CommandName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

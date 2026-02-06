@@ -21,13 +21,6 @@
       "output": "CreateClsLogTopicResponse",
       "status": "online"
     },
-    "CreateDiagnoseUrl": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nCreateDiagnoseUrl 用于添加域名诊断任务URL。",
-      "input": "CreateDiagnoseUrlRequest",
-      "name": "添加诊断URL(已废弃)",
-      "output": "CreateDiagnoseUrlResponse",
-      "status": "deprecated"
-    },
     "CreateEdgePackTask": {
       "document": "动态打包任务提交接口",
       "input": "CreateEdgePackTaskRequest",
@@ -57,7 +50,7 @@
       "status": "online"
     },
     "DescribeBillingData": {
-      "document": "DescribeBillingData 用于查询实际计费数据明细。",
+      "document": "DescribeBillingData 用于查询实际计费数据明细。\n注意:\n受计费算法的影响，计费数据接口返回的数据均存在一定延时。小时结算客户预计延时3-5小时。月结算客户预计延迟4-28小时，在凌晨4点（不含4点）之前，仅能查询到前2天数据，4点（含）之后，能查询到前1天数据。若您对数据及时性较强的诉求，建议使用[监控访问数据](https://cloud.tencent.com/document/product/228/30986)。",
       "input": "DescribeBillingDataRequest",
       "name": "计费数据查询",
       "output": "DescribeBillingDataResponse",
@@ -97,13 +90,6 @@
       "name": "获取SSL证书中的可用域名",
       "output": "DescribeCertDomainsResponse",
       "status": "online"
-    },
-    "DescribeDiagnoseReport": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nDescribeDiagnoseReport 用于获取指定报告id的内容。",
-      "input": "DescribeDiagnoseReportRequest",
-      "name": "获取诊断报告(已废弃)",
-      "output": "DescribeDiagnoseReportResponse",
-      "status": "deprecated"
     },
     "DescribeDistrictIspData": {
       "document": "查询指定域名的区域、运营商明细数据\n注意事项：接口尚未全面开放，未在内测名单中的账号不支持调用",
@@ -238,13 +224,6 @@
       "output": "DescribeUrlViolationsResponse",
       "status": "online"
     },
-    "DisableCaches": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nDisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。",
-      "input": "DisableCachesRequest",
-      "name": "禁用 URL(已废弃)",
-      "output": "DisableCachesResponse",
-      "status": "online"
-    },
     "DisableClsLogTopic": {
       "document": "DisableClsLogTopic 用于停止日志主题投递。注意：停止后，所有绑定该日志主题域名的日志将不再继续投递至该主题，已经投递的日志将会继续保留。生效时间约为 5~15 分钟。\n",
       "input": "DisableClsLogTopicRequest",
@@ -259,26 +238,12 @@
       "output": "DuplicateDomainConfigResponse",
       "status": "online"
     },
-    "EnableCaches": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nEnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。",
-      "input": "EnableCachesRequest",
-      "name": "解禁 URL(已废弃)",
-      "output": "EnableCachesResponse",
-      "status": "online"
-    },
     "EnableClsLogTopic": {
       "document": "EnableClsLogTopic 用于启动日志主题投递。注意：启动后，所有绑定该日志主题域名的日志将继续投递至该主题。生效时间约为 5~15 分钟。",
       "input": "EnableClsLogTopicRequest",
       "name": "启动日志主题投递",
       "output": "EnableClsLogTopicResponse",
       "status": "online"
-    },
-    "GetDisableRecords": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nGetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。",
-      "input": "GetDisableRecordsRequest",
-      "name": "禁用历史查询(已废弃)",
-      "output": "GetDisableRecordsResponse",
-      "status": "deprecated"
     },
     "ListClsLogTopics": {
       "document": "ListClsLogTopics 用于显示日志主题列表。注意：一个日志集下至多含10个日志主题。",
@@ -293,13 +258,6 @@
       "name": "获取日志主题下绑定的域名",
       "output": "ListClsTopicDomainsResponse",
       "status": "online"
-    },
-    "ListDiagnoseReport": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。",
-      "input": "ListDiagnoseReportRequest",
-      "name": "获取诊断任务列表(已废弃)",
-      "output": "ListDiagnoseReportResponse",
-      "status": "deprecated"
     },
     "ListTopClsLogData": {
       "document": "通过CLS日志计算Top信息。支持近7天的日志数据。",
@@ -541,6 +499,15 @@
           "name": "Channel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否继承域名标签, 默认保留上一次更改的值",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2032,6 +1999,34 @@
       ],
       "usage": "both"
     },
+    "AutoGuard": {
+      "document": "流量防盗刷配置（仅限大陆地区）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量防盗刷配置开关，取值有： on：开启 off：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量防盗刷配置规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterRules",
+          "name": "FilterRules",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AvifAdapter": {
       "document": "图片优化-AvifAdapter配置",
       "members": [
@@ -2682,32 +2677,6 @@
       ],
       "usage": "both"
     },
-    "CacheOptResult": {
-      "document": "违规资源封禁/解封返回类型",
-      "members": [
-        {
-          "disabled": false,
-          "document": "成功的url列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/SuccessUrls",
-          "member": "string",
-          "name": "SuccessUrls",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "失败的url列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/FailUrls",
-          "member": "string",
-          "name": "FailUrls",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "CacheTagKey": {
       "document": "组成CacheKey的一部分",
       "members": [
@@ -2952,52 +2921,6 @@
         }
       ],
       "usage": "both"
-    },
-    "ClientInfo": {
-      "document": "客户端信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "省份。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "guangdong",
-          "member": "string",
-          "name": "ProvName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "国家。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "china",
-          "member": "string",
-          "name": "Country",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "运营商。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "中国移动",
-          "member": "string",
-          "name": "IspName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "Ip",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "ClsLogIpData": {
       "document": "通过Cls日志，计算出来的IP每秒访问数量",
@@ -3340,6 +3263,15 @@
           "name": "DomainAreaConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否继承域名标签，默认为false",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3353,52 +3285,6 @@
           "example": "2feewq3-g327-0457-a12m-2e22e5df1111",
           "member": "string",
           "name": "TopicId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateDiagnoseUrlRequest": {
-      "document": "CreateDiagnoseUrl请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "需诊断的url，形如：http://www.test.com/test.txt。",
-          "example": "http://www.test.com/test.txt",
-          "member": "string",
-          "name": "Url",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "请求源带协议头，形如：https://console.cloud.tencent.com",
-          "example": "https://console.cloud.tencent.com",
-          "member": "string",
-          "name": "Origin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateDiagnoseUrlResponse": {
-      "document": "CreateDiagnoseUrl返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "系统生成的诊断链接，一个诊断链接最多可访问10次，有效期为24h。",
-          "example": "http://cdn.cloud.tencent.com/self_diagnose/a49ecccd",
-          "member": "string",
-          "name": "DiagnoseLink",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3730,7 +3616,7 @@
           "example": "5min",
           "member": "string",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3740,7 +3626,7 @@
           "example": "无",
           "member": "ResourceBillingData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3786,7 +3672,7 @@
         {
           "disabled": false,
           "document": "指定查询域名列表\n查询单域名：指定单个域名\n查询多个域名：指定多个域名，最多可一次性查询 30 个\n查询账号下所有域名：不传参，默认查询账号维度",
-          "example": "qq.com, tencent.com",
+          "example": "[\"qq.com\", \"tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -3839,7 +3725,7 @@
         },
         {
           "disabled": false,
-          "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标",
+          "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标\nquic：指定查询 QUIC 对应指标",
           "example": "all",
           "member": "string",
           "name": "Protocol",
@@ -3848,7 +3734,7 @@
         },
         {
           "disabled": false,
-          "document": "指定数据源查询，白名单功能",
+          "document": "指定数据源查询\nmonitor：监控数据",
           "example": "monitor",
           "member": "string",
           "name": "DataSource",
@@ -4164,123 +4050,6 @@
           "name": "CertifiedDomains",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDiagnoseReportRequest": {
-      "document": "DescribeDiagnoseReport请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "报告ID",
-          "example": "9597132511111",
-          "member": "string",
-          "name": "ReportId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDiagnoseReportResponse": {
-      "document": "DescribeDiagnoseReport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "诊断报告基础信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "BaskInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CNAME检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "CnameInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "客户端检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "ClientInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "DNS检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "DnsInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "网络检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "NetworkInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "边缘节点检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "OcNodeInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "中间源节点检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "MidNodeInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "源站检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "OriginInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "刷新检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "PurgeInfo",
-          "output_required": true,
-          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -4799,7 +4568,7 @@
         },
         {
           "disabled": false,
-          "document": "查询区域：\nmainland: 国内节点\noverseas: 海外节点\nglobal: 全球节点",
+          "document": "查询区域：mainland: 中国境内节点overseas: 海外节点global: 全球节点",
           "example": "last",
           "member": "string",
           "name": "Area",
@@ -4809,7 +4578,7 @@
         {
           "disabled": false,
           "document": "是否以IP段的格式返回。",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "Segment",
           "required": false,
@@ -4818,7 +4587,7 @@
         {
           "disabled": false,
           "document": "是否查询节点 IPV6 信息。",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "ShowIpv6",
           "required": false,
@@ -4827,7 +4596,7 @@
         {
           "disabled": false,
           "document": "是否对IPV6进行缩写。",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "AbbreviationIpv6",
           "required": false,
@@ -6172,7 +5941,7 @@
         },
         {
           "disabled": false,
-          "document": "域名封禁状态\nnormal：正常状态\noverdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务\nmalicious：域名出现恶意行为，强制关闭加速服务\nddos：域名被大规模 DDoS 攻击，关闭加速服务\nidle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务\nunlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务\ncapping：触发配置的带宽阈值上限\nreadonly：域名存在特殊配置，被锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名封禁状态\nnormal：正常状态\noverdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务\nmalicious：域名出现恶意行为，强制关闭加速服务\nddos：域名被大规模 DDoS 攻击，关闭加速服务\nddos_risk: 域名存在ddos攻击风险\nidle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务\nunlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务\ncapping：触发配置的带宽阈值上限\nreadonly：域名存在特殊配置，被锁定\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
           "name": "Disable",
@@ -6549,260 +6318,29 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiagnoseData": {
-      "document": "诊断报告内容数据",
-      "members": [
+        },
         {
           "disabled": false,
-          "document": "诊断报告内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量一键防盗刷配置",
           "example": "无",
-          "member": "DiagnoseUnit",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "当前诊断项是否正常。\n\"ok\"：正常\n\"error\"：异常\n\"warning\"：\"警告\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ok",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiagnoseInfo": {
-      "document": "诊断信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "待诊断的URL。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/diagnose",
-          "member": "string",
-          "name": "DiagnoseUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "由系统生成的诊断链接。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/diagnose/result",
-          "member": "string",
-          "name": "DiagnoseLink",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-04-01 02:00:00",
-          "member": "datetime",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断链接过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-04-01 07:00:00",
-          "member": "datetime",
-          "name": "ExpireDate",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断链接当前访问次数，一个诊断链接最多可访问10次。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5",
-          "member": "int64",
-          "name": "VisitCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "访问诊断链接的客户端简易信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DiagnoseList",
-          "name": "ClientList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "域名加速区域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "mainland",
-          "member": "string",
-          "name": "Area",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiagnoseList": {
-      "document": "客户端访问诊断URL信息列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "诊断任务标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tag",
-          "member": "string",
-          "name": "DiagnoseTag",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "报告ID，用于获取详细诊断报告。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "id-2353956120",
-          "member": "string",
-          "name": "ReportId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "客户端信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ClientInfo",
-          "name": "ClientInfo",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最终诊断结果。\n-1：已提交\n0  ：检测中\n1  ：检测正常\n2  ： 检测异常\n3  ： 诊断页面异常关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
-          "member": "int64",
-          "name": "FinalDiagnose",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断任务创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-04-01 02:00:00",
-          "member": "datetime",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiagnoseUnit": {
-      "document": "诊断报告单元信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "内容单元英文名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "unit-name",
-          "member": "string",
-          "name": "Key",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "内容单元中文名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "单元名称",
-          "member": "string",
-          "name": "KeyText",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "报告内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cotent",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "报告内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "content",
-          "member": "string",
-          "name": "ValueText",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DisableCachesRequest": {
-      "document": "DisableCaches请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "禁用的 URL 列表（分协议生效，必须包含http://或https://）\n每次最多可提交 100 条，每日最多可提交 3000 条",
-          "example": "http://www.test.com/1.txt",
-          "member": "string",
-          "name": "Urls",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DisableCachesResponse": {
-      "document": "DisableCaches返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "提交结果",
-          "example": "无",
-          "member": "CacheOptResult",
-          "name": "CacheOptResult",
+          "member": "AutoGuard",
+          "name": "AutoGuard",
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID",
-          "example": "9597132570124",
-          "member": "string",
-          "name": "TaskId",
+          "document": "区域访问控制配置",
+          "example": "无",
+          "member": "GeoBlocker",
+          "name": "GeoBlocker",
           "output_required": true,
-          "type": "string",
+          "type": "object",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
         }
       ],
-      "type": "object"
+      "usage": "out"
     },
     "DisableClsLogTopicRequest": {
       "document": "DisableClsLogTopic请求参数结构体",
@@ -7268,62 +6806,6 @@
       ],
       "usage": "out"
     },
-    "EnableCachesRequest": {
-      "document": "EnableCaches请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "解封 URL 列表",
-          "example": "[\"http:\\/\\/example.com\\/path\\/to.jpg\\r\\n\"]",
-          "member": "string",
-          "name": "Urls",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "URL封禁日期",
-          "example": "2021-06-01",
-          "member": "date",
-          "name": "Date",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EnableCachesResponse": {
-      "document": "EnableCaches返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "结果列表",
-          "example": "无",
-          "member": "CacheOptResult",
-          "name": "CacheOptResult",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "1632627566746100176",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "EnableClsLogTopicRequest": {
       "document": "EnableClsLogTopic请求参数结构体",
       "members": [
@@ -7460,6 +6942,45 @@
       ],
       "usage": "out"
     },
+    "FilterRules": {
+      "document": "防盗刷配置规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "封禁类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "forbidden",
+          "member": "string",
+          "name": "FilterType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "RulePaths",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FollowRedirect": {
       "document": "回源 301/302 状态码自动跟随配置，默认为关闭状态",
       "members": [
@@ -7538,106 +7059,79 @@
       ],
       "usage": "both"
     },
-    "GetDisableRecordsRequest": {
-      "document": "GetDisableRecords请求参数结构体",
+    "GeoBlockStrategy": {
+      "document": "区域访问控制策略",
       "members": [
         {
           "disabled": false,
-          "document": "指定 URL 查询",
-          "example": "http://www.test.com/1.txt",
+          "document": "规则类型\nwhitelist: 白名单\nblacklist: 黑名单",
+          "example": "blacklist",
           "member": "string",
-          "name": "Url",
-          "required": false,
-          "type": "string"
+          "name": "BlockType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间，如：2018-12-12 10:24:00。",
-          "example": "2021-02-01 00:00:00",
-          "member": "datetime",
-          "name": "StartTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间，如：2018-12-14 10:24:00。",
-          "example": "2021-02-01 23:59:59",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "URL 当前状态\ndisable：当前仍为禁用状态，访问返回 403\nenable：当前为可用状态，已解禁，可正常访问",
-          "example": "disable",
+          "document": "生效规则",
+          "example": "*",
           "member": "string",
-          "name": "Status",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页查询偏移量，默认为 0",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页查询限制数目，默认为20。",
-          "example": "100",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID，任务ID和起始时间需要至少填写一项。",
-          "example": "364332106815435411",
-          "member": "string",
-          "name": "TaskId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetDisableRecordsResponse": {
-      "document": "GetDisableRecords返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "封禁历史记录",
-          "example": "无",
-          "member": "UrlRecord",
-          "name": "UrlRecordList",
-          "output_required": true,
+          "name": "RulePaths",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务总数，用于分页",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
+          "document": "生效类型\nall: 全部\ndirectory: 目录",
+          "example": "all",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "disabled": false,
+          "document": "生效区域，可选值有: CN-AH CN-BJ CN-CQ CN-FJ CN-GD CN-GS CN-GX CN-GZ CN-HA CN-HB CN-HE CN-HI CN-HK CN-HL CN-HN CN-JL CN-JS CN-JX CN-LN CN-MO CN-NM CN-NX CN-QH CN-SC CN-SD CN-SH CN-SN CN-SX CN-TJ CN-TW CN-XJ CN-XZ CN-YN CN-ZJ AF AX AL DZ AS AD AO AI AQ AG AR AM AW AU AT AZ BS BH BD BB BY BE BZ BJ BM BT BO BQ BA BW BV BR IO BN BG BF BI CV KH CM CA KY CF TD CL CN CX CC CO KM CG CD CK CR CI HR CU CW CY CZ DK DJ DM DO EC EG SV GQ ER EE SZ ET FK FO FJ FI FR GF PF TF GA GM GE DE GH GI GR GL GD GP GU GT GG GN GW GY HT HM VA HN HK HU IS IN ID IR IQ IE IM IL IT JM JP JE JO KZ KE KI KP KR KW KG LA LV LB LS LR LY LI LT LU MO MG MW MY MV ML MT MH MQ MR MU YT MX FM MD MC MN ME MS MA MZ MM NA NR NP NL NC NZ NI NE NG NU NF MK MP NO OM PK PW PS PA PG PY PE PH PN PL PT PR QA RE RO RU RW BL SH KN LC MF PM VC WS SM ST SA SN RS SC SL SG SX SK SI SB SO ZA GS SS ES LK SD SR SJ SE CH SY TW TJ TZ TH TL TG TK TO TT TN TR TM TC TV UG UA AE GB US UM UY UZ VU VE VN VG VI WF EH YE ZM ZW",
+          "example": "CN-GZ",
           "member": "string",
-          "name": "RequestId",
-          "type": "string"
+          "name": "Districts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "type": "object"
+      "usage": "both"
+    },
+    "GeoBlocker": {
+      "document": "区域访问控制配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 黑白名单配置开关，取值有\non：开启\noff：关闭",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "[\n    {\n      \"BlockType\": \"whitelist\",\n      \"RulePaths\": [\n        \"*\"\n      ],\n      \"RuleType\": \"all\",\n      \"Districts\": [\n        \"CN-HK\"\n      ]\n    }\n  ]",
+          "example": "无",
+          "member": "GeoBlockStrategy",
+          "name": "BlockRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GuetzliAdapter": {
       "document": "图片优化-GuetzliAdapter配置",
@@ -7804,7 +7298,7 @@
         },
         {
           "disabled": false,
-          "document": "http 头部值，最多可设置 2000 个字符\nMode 为 del 时非必填\nMode 为 add/set 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "http 头部值，自定义请求头中最多可设置 1000 个字符，自定义响应头中最多可以设置 2000 个字符\nMode 为 del 时非必填\nMode 为 add/set 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "value",
           "member": "string",
           "name": "HeaderValue",
@@ -8339,8 +7833,8 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "document": "IP 黑白名单分路径配置。黑白名单 IP 总数不能超过 1000 个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IpFilterPathRule",
           "name": "FilterRules",
           "output_required": true,
@@ -8350,7 +7844,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 黑白名单验证失败时返回的状态码。\n注意：\n请求拒绝时，平台默认响应514状态。\n支持自定义为403，404，609状态码，空值时或自定义的不在范围内，均默认为514.\n非514状态码将计入HTTPS计费统计，最终账单将按您的计费规则生成。\n若您开启了自定义状态码，则默认您认同<a href=\"https://cloud.tencent.com/document/product/228/75563\">HTTPS计费规则</a>。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "514",
           "member": "int64",
           "name": "ReturnCode",
@@ -8787,58 +8281,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ListDiagnoseReportRequest": {
-      "document": "ListDiagnoseReport请求参数结构体",
-      "members": [
-        {
           "disabled": false,
-          "document": "用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。",
-          "example": "test.com/",
-          "member": "string",
-          "name": "KeyWords",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx",
-          "example": "http://cdn.cloud.tencent.com/self_diagnose/xxxxx",
-          "member": "string",
-          "name": "DiagnoseLink",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "请求源带协议头，形如：https://console.cloud.tencent.com",
-          "example": "https://console.cloud.tencent.com",
-          "member": "string",
-          "name": "Origin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ListDiagnoseReportResponse": {
-      "document": "ListDiagnoseReport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "诊断信息。",
-          "example": "无",
-          "member": "DiagnoseInfo",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
+          "document": "是否继承域名标签",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -9573,6 +9022,15 @@
           "name": "DomainAreaConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否继承域名标签",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9914,7 +9372,7 @@
         },
         {
           "disabled": false,
-          "document": "备源站类型\n<font color=red>备源站列表BackupOrigins 不为空时必填</font>\n支持以下类型：\ndomain：域名类型\nip：IP 列表作为源站\n以下备源源站类型尚未全量支持，需要申请试用：\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备源站类型\n<font color=red>备源站列表BackupOrigins 不为空时必填</font>\n支持以下类型：\ndomain：域名类型\nip：IP 列表作为源站\n以下备源源站类型尚未全量支持，需要申请试用：\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "BackupOriginType",
@@ -9970,7 +9428,7 @@
         {
           "disabled": false,
           "document": "HTTPS回源SNI配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Switch\":\"on\",\"ServerName\":\"abc.com\"}",
+          "example": "无",
           "member": "OriginSni",
           "name": "Sni",
           "output_required": true,
@@ -9981,7 +9439,7 @@
         {
           "disabled": false,
           "document": "HTTPS回源高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "AdvanceHttps",
           "name": "AdvanceHttps",
           "output_required": true,
@@ -13617,6 +13075,24 @@
           "name": "ParamFilter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "流量防盗刷配置",
+          "example": "无",
+          "member": "AutoGuard",
+          "name": "AutoGuard",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "区域访问控制配置",
+          "example": "无",
+          "member": "GeoBlocker",
+          "name": "GeoBlocker",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13732,52 +13208,6 @@
       ],
       "type": "object"
     },
-    "UrlRecord": {
-      "document": "封禁url的详细信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "状态(disable表示封禁，enable表示解封)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "disable",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "对应的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/disable",
-          "member": "string",
-          "name": "RealUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-06-28 17:02:24",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-06-28 17:02:24",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "UrlRedirect": {
       "document": "访问URL重写配置",
       "members": [
@@ -13857,6 +13287,17 @@
           "example": "false",
           "member": "bool",
           "name": "FullMatch",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pattern是否支持正则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Regex",
           "output_required": true,
           "required": false,
           "type": "bool",

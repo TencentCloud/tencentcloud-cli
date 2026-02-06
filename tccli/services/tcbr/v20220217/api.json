@@ -14,11 +14,46 @@
       "output": "CreateCloudRunServerResponse",
       "status": "online"
     },
+    "DeleteCloudRunServer": {
+      "document": "删除云托管服务：包括服务下的版本，镜像，流水线",
+      "input": "DeleteCloudRunServerRequest",
+      "name": "删除云托管服务",
+      "output": "DeleteCloudRunServerResponse",
+      "status": "online"
+    },
+    "DeleteCloudRunVersions": {
+      "document": "批量删除版本",
+      "input": "DeleteCloudRunVersionsRequest",
+      "name": "批量删除版本",
+      "output": "DeleteCloudRunVersionsResponse",
+      "status": "online"
+    },
+    "DescribeCloudRunDeployRecord": {
+      "document": "查询云托管部署记录",
+      "input": "DescribeCloudRunDeployRecordRequest",
+      "name": "查询云托管部署记录",
+      "output": "DescribeCloudRunDeployRecordResponse",
+      "status": "online"
+    },
     "DescribeCloudRunEnvs": {
       "document": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数",
       "input": "DescribeCloudRunEnvsRequest",
       "name": "查询云托管环境列表",
       "output": "DescribeCloudRunEnvsResponse",
+      "status": "online"
+    },
+    "DescribeCloudRunPodList": {
+      "document": "查询云托管Pod实例列表",
+      "input": "DescribeCloudRunPodListRequest",
+      "name": "查询云托管Pod实例列表接口",
+      "output": "DescribeCloudRunPodListResponse",
+      "status": "online"
+    },
+    "DescribeCloudRunProcessLog": {
+      "document": "查询运行日志",
+      "input": "DescribeCloudRunProcessLogRequest",
+      "name": "查询运行日志",
+      "output": "DescribeCloudRunProcessLogResponse",
       "status": "online"
     },
     "DescribeCloudRunServerDetail": {
@@ -42,11 +77,25 @@
       "output": "DescribeEnvBaseInfoResponse",
       "status": "online"
     },
+    "DescribeReleaseOrder": {
+      "document": "查询发布单",
+      "input": "DescribeReleaseOrderRequest",
+      "name": "查询发布单",
+      "output": "DescribeReleaseOrderResponse",
+      "status": "online"
+    },
     "DescribeServerManageTask": {
       "document": "查询服务管理任务信息",
       "input": "DescribeServerManageTaskRequest",
       "name": "查询服务管理任务信息",
       "output": "DescribeServerManageTaskResponse",
+      "status": "online"
+    },
+    "DescribeVersionDetail": {
+      "document": "查询版本详情",
+      "input": "DescribeVersionDetailRequest",
+      "name": "查询版本详情",
+      "output": "DescribeVersionDetailResponse",
       "status": "online"
     },
     "OperateServerManage": {
@@ -61,6 +110,20 @@
       "input": "ReleaseGrayRequest",
       "name": "灰度发布",
       "output": "ReleaseGrayResponse",
+      "status": "online"
+    },
+    "SearchClsLog": {
+      "document": "查询日志信息",
+      "input": "SearchClsLogRequest",
+      "name": "查询日志cls日志信息",
+      "output": "SearchClsLogResponse",
+      "status": "online"
+    },
+    "SubmitServerRollback": {
+      "document": "回滚版本",
+      "input": "SubmitServerRollbackRequest",
+      "name": "回滚版本",
+      "output": "SubmitServerRollbackResponse",
       "status": "online"
     },
     "UpdateCloudRunServer": {
@@ -190,7 +253,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Trial,Standard,Professional,Enterprise",
+          "document": "<p>Trial,Standard,Professional,Enterprise</p>",
           "example": "Enterprise",
           "member": "string",
           "name": "PackageType",
@@ -199,7 +262,7 @@
         },
         {
           "disabled": false,
-          "document": "环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符",
+          "document": "<p>环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符</p>",
           "example": "alias",
           "member": "string",
           "name": "Alias",
@@ -208,7 +271,7 @@
         },
         {
           "disabled": false,
-          "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
+          "document": "<p>用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。</p>",
           "example": "basic",
           "member": "string",
           "name": "FreeQuota",
@@ -217,7 +280,7 @@
         },
         {
           "disabled": false,
-          "document": "订单标记。建议使用方统一转大小写之后再判断。\nQuickStart：快速启动来源\nActivity：活动来源",
+          "document": "<p>订单标记。建议使用方统一转大小写之后再判断。QuickStart：快速启动来源Activity：活动来源</p>",
           "example": "QuickStart",
           "member": "string",
           "name": "Flag",
@@ -226,7 +289,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络Id",
+          "document": "<p>私有网络Id</p>",
           "example": "vpc-45olnsxx",
           "member": "string",
           "name": "VpcId",
@@ -235,7 +298,7 @@
         },
         {
           "disabled": false,
-          "document": "子网列表",
+          "document": "<p>子网列表</p>",
           "example": "[\"subnet-n17bt4yb\",\"subnet-dw0xrh1b\",\"subnet-h5xm5f2x\"]",
           "member": "string",
           "name": "SubNetIds",
@@ -244,7 +307,7 @@
         },
         {
           "disabled": false,
-          "document": "请求key 用于防重",
+          "document": "<p>请求key 用于防重</p>",
           "example": "4045b63716e",
           "member": "string",
           "name": "ReqKey",
@@ -253,7 +316,7 @@
         },
         {
           "disabled": false,
-          "document": "来源：wechat | cloud | weda",
+          "document": "<p>来源：wechat | cloud | weda</p>",
           "example": "wechat",
           "member": "string",
           "name": "Source",
@@ -262,7 +325,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道：wechat | cloud | weda",
+          "document": "<p>渠道：wechat | cloud | weda</p>",
           "example": "wechat",
           "member": "string",
           "name": "Channel",
@@ -271,7 +334,7 @@
         },
         {
           "disabled": false,
-          "document": "环境ID 云开发平台必填",
+          "document": "<p>环境ID 云开发平台必填</p>",
           "example": "env-sdjflskjfd",
           "member": "string",
           "name": "EnvId",
@@ -286,7 +349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "prod-3g69bdvme2ac11cb",
           "member": "string",
           "name": "EnvId",
@@ -296,7 +359,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费订单号",
+          "document": "<p>后付费订单号</p>",
           "example": "0ow89eea326",
           "member": "string",
           "name": "TranId",
@@ -318,7 +381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
@@ -327,7 +390,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "serverName",
           "member": "string",
           "name": "ServerName",
@@ -336,7 +399,7 @@
         },
         {
           "disabled": false,
-          "document": "部署信息",
+          "document": "<p>部署信息</p>",
           "example": "无",
           "member": "DeployParam",
           "name": "DeployInfo",
@@ -345,7 +408,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息(已废弃)",
+          "document": "<p>服务配置信息(已废弃)</p>",
           "example": "无",
           "member": "ServerBaseConfig",
           "name": "ServerConfig",
@@ -354,12 +417,21 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息",
+          "document": "<p>服务配置信息</p>",
           "example": "无",
           "member": "DiffConfigItem",
           "name": "Items",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc 信息</p>",
+          "example": "无",
+          "member": "CreateVpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -369,7 +441,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一键部署任务Id，微信云托管，暂时用不到",
+          "document": "<p>一键部署任务Id，微信云托管，暂时用不到</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
@@ -385,6 +457,39 @@
         }
       ],
       "type": "object"
+    },
+    "CreateVpcInfo": {
+      "document": "创建 vpc 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "vpc-sdfd",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1 新建 2 指定",
+          "example": "2",
+          "member": "int64",
+          "name": "CreateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID列表",
+          "example": "[\"subnet-sdfdf\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "DatabasesInfo": {
       "document": "数据库资源信息",
@@ -421,6 +526,154 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteCloudRunServerRequest": {
+      "document": "DeleteCloudRunServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境Id",
+          "example": "env-example",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "server-name",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "wu",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudRunServerResponse": {
+      "document": "DeleteCloudRunServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除结果：success / failed",
+          "example": "success",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudRunVersionsRequest": {
+      "document": "DeleteCloudRunVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除服务，只有最后一个版本的时候才生效",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDeleteServer",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "只有删除服务的时候，才生效",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDeleteImage",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "删除版本的信息",
+          "example": "无",
+          "member": "SimpleVersion",
+          "name": "SimpleVersions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作备注",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudRunVersionsResponse": {
+      "document": "DeleteCloudRunVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "succ | fail | partial",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除失败的版本列表",
+          "example": "无",
+          "member": "FailDeleteVersions",
+          "name": "FailVersions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除成功的版本列表",
+          "example": "无",
+          "member": "SuccessDeleteVersions",
+          "name": "SuccessVersions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeployParam": {
       "document": "部署参数",
@@ -500,6 +753,168 @@
       ],
       "usage": "in"
     },
+    "DeployRecord": {
+      "document": "云托管实例的部署记录, 包括扩缩容状态和流量分配情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署Id",
+          "example": "001",
+          "member": "string",
+          "name": "DeployId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署开始时间",
+          "example": "2022-03-09 14:00:00",
+          "member": "string",
+          "name": "DeployTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态：running/deploying/deploy_failed",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署运行Id 用户查询部署日志",
+          "example": "asfasfefasfas",
+          "member": "string",
+          "name": "RunId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "构建Id",
+          "example": "123124",
+          "member": "int64",
+          "name": "BuildId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量比例",
+          "example": "30",
+          "member": "int64",
+          "name": "FlowRatio",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缩容状态 缩容为 zero 否则为空",
+          "example": "zero",
+          "member": "string",
+          "name": "ScaleStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否分配流量",
+          "example": "false",
+          "member": "bool",
+          "name": "HasTraffic",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量分配方式, FLOW: 百分比分配; URL_PARAMS: 匹配 query 参数; HEADERS: 匹配请求 Header",
+          "example": "FLOW",
+          "member": "string",
+          "name": "TrafficType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前版本是否在发布中",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReleasing",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCloudRunDeployRecordRequest": {
+      "document": "DescribeCloudRunDeployRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境Id",
+          "example": "env-example",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "serverName",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudRunDeployRecordResponse": {
+      "document": "DescribeCloudRunDeployRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署列表",
+          "example": "无",
+          "member": "DeployRecord",
+          "name": "DeployRecords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudRunEnvsRequest": {
       "document": "DescribeCloudRunEnvs请求参数结构体",
       "members": [
@@ -542,6 +957,135 @@
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudRunPodListRequest": {
+      "document": "DescribeCloudRunPodList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境Id",
+          "example": "env-example",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "srv-example",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本名",
+          "example": "version-example",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为10， 最大为50\n不传或传0时 取默认10\n大于50时取50",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不传或传0时 会默认为1",
+          "example": "15",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudRunPodListResponse": {
+      "document": "DescribeCloudRunPodList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod实例列表",
+          "example": "[       {         \"Webshell\": \"\",         \"PodId\": \"sdfsdf\",         \"Status\": \"running\",         \"CreateTime\": \"2025-07-25 19:00:00\"       }     ]",
+          "member": "VersionPodInstance",
+          "name": "PodList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudRunProcessLogRequest": {
+      "document": "DescribeCloudRunProcessLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作 Id",
+          "example": "无",
+          "member": "string",
+          "name": "RunId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudRunProcessLogResponse": {
+      "document": "DescribeCloudRunProcessLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行日志列表",
+          "example": "无",
+          "member": "string",
+          "name": "Logs",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -668,6 +1212,15 @@
           "name": "ServerType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpcId",
+          "example": "vpc-sret",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -709,7 +1262,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境 Id",
+          "document": "<p>环境 Id</p>",
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
@@ -724,7 +1277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境基础信息",
+          "document": "<p>环境基础信息</p>",
           "example": "无",
           "member": "EnvBaseInfo",
           "name": "EnvBaseInfo",
@@ -734,12 +1287,87 @@
         },
         {
           "disabled": false,
-          "document": "是否存在",
+          "document": "<p>是否存在</p>",
           "example": "false",
           "member": "bool",
           "name": "IsExist",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReleaseOrderRequest": {
+      "document": "DescribeReleaseOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "test",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发布单状态",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReleaseOrderResponse": {
+      "document": "DescribeReleaseOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否存在",
+          "example": "false",
+          "member": "bool",
+          "name": "IsExist",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布单信息",
+          "example": "无",
+          "member": "ReleaseOrderInfo",
+          "name": "ReleaseOrderInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上一次成功发布时间",
+          "example": "2022-05-27 15:00:00",
+          "member": "string",
+          "name": "LastReleasedSuccessTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -815,6 +1443,250 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVersionDetailRequest": {
+      "document": "DescribeVersionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境Id</p>",
+          "example": "frederickli***clc930f66d",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名</p>",
+          "example": "echos",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名</p>",
+          "example": "echos-008",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>channel</p>",
+          "example": "gateway",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVersionDetailResponse": {
+      "document": "DescribeVersionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本名</p>",
+          "example": "echos-008",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口号</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cpu 规格</p>",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>mem 规格</p>",
+          "example": "2",
+          "member": "float",
+          "name": "Mem",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小副本数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MinNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大副本数</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩缩容策略</p>",
+          "example": "无",
+          "member": "HpaPolicy",
+          "name": "PolicyDetails",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Dockerfile path</p>",
+          "example": "Dockerfile",
+          "member": "string",
+          "name": "Dockerfile",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标目录</p>",
+          "example": ".",
+          "member": "string",
+          "name": "BuildDir",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>",
+          "example": "{\"key\":\"val\"}",
+          "member": "string",
+          "name": "EnvParams",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "build_failed",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-12-18 15:32:24",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-12-18 16:04:43",
+          "member": "string",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志采集路径</p>",
+          "example": "stdout",
+          "member": "string",
+          "name": "LogPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>entryPoint</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/ap***ho\"]",
+          "member": "string",
+          "name": "EntryPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cmd</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/ap***ho\"]",
+          "member": "string",
+          "name": "Cmd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc conf</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcConf",
+          "name": "VpcConf",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>volume conf</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeConf",
+          "name": "VolumesConf",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>buildpack 信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BuildPacksInfo",
+          "name": "BuildPacks",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -908,6 +1780,15 @@
           "name": "VpcConf",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "存储配置信息",
+          "example": "无",
+          "member": "VolumeConf",
+          "name": "VolumesConf",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1002,6 +1883,16 @@
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回收标志，为空则表示正常，recycle表示已回收",
+          "example": "recycle",
+          "member": "string",
+          "name": "Recycle",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1224,6 +2115,52 @@
       ],
       "usage": "out"
     },
+    "FailDeleteVersions": {
+      "document": "删除失败版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除失败版本信息",
+          "example": "无",
+          "member": "SimpleVersion",
+          "name": "Version",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除失败错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除失败错误信息",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除操作 RequestId",
+          "example": "02fcf983-4b1d-4145-a647-4f039eda1568",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FunctionInfo": {
       "document": "函数的信息",
       "members": [
@@ -1277,6 +2214,118 @@
         }
       ],
       "usage": "both"
+    },
+    "LogObject": {
+      "document": "CLS日志单条信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志属于的 topic ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "190d1e0f-91dd-4192-a5c7-741db1727",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "online_sh_oEMLCfqh_hhxfsZUUVnVFj",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-23 17:35:28",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sdfjsdfjsldkfdf",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/log",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志来源设备\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.3.0.23",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志唯一标识",
+          "example": "sdfsdfsdfd",
+          "member": "string",
+          "name": "PkgLogId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogResObject": {
+      "document": "CLS日志结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取更多检索结果的游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果是否已经全部返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志内容信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogObject",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "LogServiceInfo": {
       "document": "云日志服务相关信息",
@@ -1359,6 +2408,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ObjectKVPriority": {
+      "document": "通用键值权重对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键值对Key",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "键值对Value",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "键值对权重",
+          "example": "priority",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OnlineVersionInfo": {
       "document": "在线版本信息",
@@ -1540,6 +2625,122 @@
       ],
       "type": "object"
     },
+    "ReleaseOrderInfo": {
+      "document": "发布单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布单Id",
+          "example": "1111",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "test",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前版本",
+          "example": "无",
+          "member": "VersionInfo",
+          "name": "CurrentVersion",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布版本",
+          "example": "无",
+          "member": "VersionInfo",
+          "name": "ReleaseVersion",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "灰度状态",
+          "example": "无",
+          "member": "string",
+          "name": "GrayStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布状态",
+          "example": "open",
+          "member": "string",
+          "name": "ReleaseStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量值",
+          "example": "无",
+          "member": "ObjectKV",
+          "name": "TrafficTypeValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量类型",
+          "example": "FLOW",
+          "member": "string",
+          "name": "TrafficType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "百分比",
+          "example": "100",
+          "member": "int64",
+          "name": "FlowRatio",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-05-27 15:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否发布中",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReleasing",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RepositoryInfo": {
       "document": "代码仓库信息",
       "members": [
@@ -1575,6 +2776,115 @@
         }
       ],
       "usage": "both"
+    },
+    "SearchClsLogRequest": {
+      "document": "SearchClsLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境Id",
+          "example": "env-id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2006-01-02 03:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2006-01-02 03:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044",
+          "example": "QueryString",
+          "member": "string",
+          "name": "QueryString",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单次要返回的日志条数，单次返回的最大条数为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围",
+          "example": "Context",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按时间排序 asc（升序）或者 desc（降序），默认为 desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用Lucene语法，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "UseLucene",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchClsLogResponse": {
+      "document": "SearchClsLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志内容结果",
+          "example": "无",
+          "member": "LogResObject",
+          "name": "LogResults",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ServerBaseConfig": {
       "document": "服务基础配置信息",
@@ -1897,6 +3207,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储配置信息",
+          "example": "无",
+          "member": "VolumeConf",
+          "name": "VolumesConf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联镜像密钥",
+          "example": "ccr_xa13ada2",
+          "member": "string",
+          "name": "LinkImageRegistry",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2173,6 +3505,42 @@
       ],
       "usage": "out"
     },
+    "SimpleVersion": {
+      "document": "删除版本时需要的简化信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要删除版本的环境 Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要删除版本的服务名",
+          "example": "test",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要删除版本的版本名",
+          "example": "test-001",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StaticStorageInfo": {
       "document": "静态CDN资源信息",
       "members": [
@@ -2268,6 +3636,115 @@
           "example": "1301106610",
           "member": "string",
           "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubmitServerRollbackRequest": {
+      "document": "SubmitServerRollback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "test",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前版本",
+          "example": "server-001",
+          "member": "string",
+          "name": "CurrentVersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回滚版本",
+          "example": "server-002",
+          "member": "string",
+          "name": "RollbackVersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作标识",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitServerRollbackResponse": {
+      "document": "SubmitServerRollback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "1001",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SuccessDeleteVersions": {
+      "document": "删除成功的版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本简化信息",
+          "example": "无",
+          "member": "SimpleVersion",
+          "name": "Version",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除版本的 RequestId",
+          "example": "02fcf983-4b1d-4145-a647-4f039eda1568",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除版本结果",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2444,7 +3921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
@@ -2453,7 +3930,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "serverName",
           "member": "string",
           "name": "ServerName",
@@ -2462,7 +3939,7 @@
         },
         {
           "disabled": false,
-          "document": "部署信息",
+          "document": "<p>部署信息</p>",
           "example": "无",
           "member": "DeployParam",
           "name": "DeployInfo",
@@ -2471,7 +3948,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息(已废弃)",
+          "document": "<p>服务配置信息(已废弃)</p>",
           "example": "无",
           "member": "ServerBaseConfig",
           "name": "ServerConfig",
@@ -2480,7 +3957,7 @@
         },
         {
           "disabled": false,
-          "document": "业务类型，默认tcr",
+          "document": "<p>业务类型，默认tcr</p>",
           "example": "tcb",
           "member": "string",
           "name": "Business",
@@ -2489,7 +3966,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息",
+          "document": "<p>服务配置信息</p>",
           "example": "无",
           "member": "DiffConfigItem",
           "name": "Items",
@@ -2504,7 +3981,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
@@ -2514,7 +3991,7 @@
         },
         {
           "disabled": false,
-          "document": "一键部署任务Id，暂时用不到",
+          "document": "<p>一键部署任务Id，暂时用不到</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
@@ -2586,6 +4063,310 @@
         }
       ],
       "usage": "in"
+    },
+    "VersionInfo": {
+      "document": "版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本名",
+          "example": "server-001",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量比例",
+          "example": "40",
+          "member": "int64",
+          "name": "FlowRatio",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-05-27 15:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2022-05-27 15:00:00",
+          "member": "string",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "构建Id",
+          "example": "10001",
+          "member": "int64",
+          "name": "BuildId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传方式",
+          "example": "image",
+          "member": "string",
+          "name": "UploadType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作标识",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测试参数",
+          "example": "无",
+          "member": "ObjectKV",
+          "name": "UrlParam",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "100",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否默认",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefaultPriority",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量参数",
+          "example": "无",
+          "member": "ObjectKVPriority",
+          "name": "FlowParams",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最小副本数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大副本数",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作Id",
+          "example": "acasd",
+          "member": "string",
+          "name": "RunId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "百分比",
+          "example": "100",
+          "member": "int64",
+          "name": "Percent",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前副本数",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "架构类型",
+          "example": "Microservices",
+          "member": "string",
+          "name": "Architecture",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VersionPodInstance": {
+      "document": "版本Pod实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例webshell链接",
+          "example": "https://webshell",
+          "member": "string",
+          "name": "Webshell",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "ins-3sdf",
+          "member": "string",
+          "name": "PodId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-10-11 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VolumeConf": {
+      "document": "存储配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储类型",
+          "example": "\"COS\",\"CFS\"",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储桶名称",
+          "example": "xxx-appid",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储连接地址",
+          "example": "https://cos.ap-shanghai",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储连接用户密码",
+          "example": "xxxx-xxxx",
+          "member": "string",
+          "name": "KeyID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载目的目录",
+          "example": "/data",
+          "member": "string",
+          "name": "DstPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载源目录",
+          "example": "/data",
+          "member": "string",
+          "name": "SrcPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VpcConf": {
       "document": "云托管服务 Vpc 配置",

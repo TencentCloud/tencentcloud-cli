@@ -48,6 +48,22 @@
         "title": "查询集群实例信息"
       }
     ],
+    "DescribeClusterMachines": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterMachines\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"ClusterId\": \"cls-123\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"789\"\n            ],\n            \"Name\": \"cls-123\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"1231\",\n        \"Machines\": [\n            {\n                \"ExpiredTime\": \"123\",\n                \"SystemDisk\": {\n                    \"AutoFormatAndMount\": true,\n                    \"MountTarget\": \"123\",\n                    \"DiskSize\": 0,\n                    \"FileSystem\": \"123\",\n                    \"DiskType\": \"123\"\n                },\n                \"LanIP\": \"123\",\n                \"DisplayName\": \"123\",\n                \"InstanceType\": \"123\",\n                \"Zone\": \"123\",\n                \"InstanceFamily\": \"123\",\n                \"MachineName\": \"123\",\n                \"IsProtectedFromScaleIn\": true,\n                \"InternetAccessible\": {\n                    \"BandwidthPackageId\": \"123\",\n                    \"MaxBandwidthOut\": 0,\n                    \"ChargeType\": \"123\"\n                },\n                \"PayMode\": \"123\",\n                \"InstanceChargeType\": \"123\",\n                \"RenewFlag\": \"123\",\n                \"LoginStatus\": \"123\",\n                \"Memory\": 1,\n                \"GPU\": 1,\n                \"MachineState\": \"123\",\n                \"CPU\": 1,\n                \"CreatedAt\": \"123\"\n            }\n        ]\n    }\n}",
+        "title": "查询原生节点列表"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "查询集群列表",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterDescription\": \"\",\n                \"ClusterId\": \"cls-padxxv08\",\n                \"ClusterLevel\": \"L5\",\n                \"ClusterName\": \"勿删 feeli-1.16.7-1\",\n                \"ClusterStatus\": \"Running\",\n                \"ClusterType\": \"EDGE_CLUSTER\",\n                \"ClusterVersion\": \"1.16.7\",\n                \"CreatedTime\": \"2022-11-09T17:12:15Z\",\n                \"TagSpecification\": []\n            }\n        ],\n        \"Errors\": [],\n        \"RequestId\": \"55777e90-1af7-4108-abd5-fca0638a7bb6\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询集群列表"
+      }
+    ],
     "DescribeHealthCheckPolicies": [
       {
         "document": "",
@@ -80,6 +96,14 @@
         "title": "查询 TKE 节点池列表"
       }
     ],
+    "ModifyClusterMachine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterMachine\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-dg5wylw\",\n    \"MachineNames\": [\n        \"np-hg57ffaw-jkioi\"\n    ],\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d6c3318-b802-4416-ba7a-eb527379eb31\"\n    }\n}",
+        "title": "修改节点自动续费标识"
+      }
+    ],
     "ModifyHealthCheckPolicy": [
       {
         "document": "",
@@ -91,7 +115,7 @@
     "ModifyNodePool": [
       {
         "document": "用户更新节点池",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-6sukkvyx\",\n    \"Native\": {\n        \"EnableAutoscaling\": true,\n        \"Scaling\": {\n            \"CreatePolicy\": \"ZonePriority\",\n            \"MaxReplicas\": 1,\n            \"MinReplicas\": 0\n        }\n    },\n    \"NodePoolId\": \"np-00igpu9y\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-6sukkvyx\",\n    \"Native\": {\n        \"DeletePolicy\": \"Newest\",\n        \"EnableAutoscaling\": true,\n        \"Scaling\": {\n            \"CreatePolicy\": \"ZonePriority\",\n            \"MaxReplicas\": 1,\n            \"MinReplicas\": 0\n        }\n    },\n    \"NodePoolId\": \"np-00igpu9y\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
         "title": "更新 TKE 节点池"
       }

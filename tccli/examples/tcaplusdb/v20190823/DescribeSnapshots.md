@@ -21,19 +21,19 @@ Output:
                 "SnapshotCreateTime": "2020-09-22 00:00:00",
                 "TableGroupId": "1",
                 "SnapshotSize": 1,
-                "SnapshotName": "test",
+                "SnapshotName": "snapshotname",
                 "SnapshotTime": "2020-09-22 00:00:00",
                 "TableName": "cl_generic",
                 "SnapshotStatus": 1,
-                "TaskId": "xx",
+                "TaskId": "212311-1214",
                 "Error": {
-                    "Message": "xx",
-                    "Code": "xx"
+                    "Message": "",
+                    "Code": ""
                 },
                 "SnapshotDeadTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "213932-1223134"
     }
 }
 ```

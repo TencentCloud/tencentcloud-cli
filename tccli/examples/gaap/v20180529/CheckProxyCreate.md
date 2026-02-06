@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap CheckProxyCreate --cli-unfold-argument  \
-    --Concurrent 2 \
-    --Bandwidth 10 \
-    --RealServerRegion SouthChina \
-    --AccessRegion EastChina
+    --AccessRegion SouthChina \
+    --RealServerRegion EastChina \
+    --Bandwidth 2 \
+    --Concurrent 10
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "CheckFlag": 1,
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd"
+        "RequestId": "50cfe60e-2cc8-4ff7-ba08-03769ea7259a"
     }
 }
 ```

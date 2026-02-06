@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli lke DescribeNodeRun --cli-unfold-argument  \
+    --AppBizId 1963140753734418240 \
     --NodeRunId n223-4358-b8a0-b4d65712f44c
 ```
 

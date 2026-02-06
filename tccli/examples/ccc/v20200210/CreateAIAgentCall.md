@@ -1,6 +1,6 @@
-**Example 1: 使用 AI Agent 发起外呼**
+**Example 1: 使用智能体发起外呼**
 
-使用 AI Agent 发起外呼
+使用智能体发起外呼
 
 Input: 
 
@@ -10,8 +10,14 @@ tccli ccc CreateAIAgentCall --cli-unfold-argument  \
     --SdkAppId 1400000000 \
     --AIAgentId 15 \
     --Callers 008601012345678 008601012345679 \
-    --PromptVariables.0.Key foo \
-    --PromptVariables.0.Value bar
+    --Variables.0.Key foo \
+    --Variables.0.Value bar \
+    --Variables.1.Key dify-inputs-key \
+    --Variables.1.Value value \
+    --Variables.2.Key dify-inputs-user \
+    --Variables.2.Value value \
+    --Variables.3.Key dify-inputs-conversation_id \
+    --Variables.3.Value value
 ```
 
 Output: 

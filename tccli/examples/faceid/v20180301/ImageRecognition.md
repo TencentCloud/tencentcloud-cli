@@ -1,4 +1,4 @@
-**Example 1: 照片人脸核身 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ImageRecognition)**
+**Example 1: 照片人脸核身**
 
 
 

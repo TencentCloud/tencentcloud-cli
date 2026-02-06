@@ -39,7 +39,7 @@ Output:
                 "Source": 1,
                 "SourceDesc": "网页导入",
                 "Status": 12,
-                "StatusDesc": "已发布",
+                "StatusDesc": "导入成功",
                 "WebUrl": "",
                 "ReferUrlType": 0,
                 "UpdateTime": "1701425246"

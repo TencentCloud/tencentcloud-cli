@@ -1,30 +1,27 @@
 **Example 1: 创建监听器转发规则**
 
-创建HTTP/HTTPS监听器转发规则
+
 
 Input: 
 
 ```
 tccli gaap CreateRule --cli-unfold-argument  \
-    --Domain www.bbb.com \
+    --ListenerId listener-9vub5ymx \
+    --Domain www.baidu.com \
+    --Path / \
     --RealServerType IP \
-    --HealthCheck 1 \
-    --ListenerId listener-9jt0rtv9 \
-    --CheckParams.ConnectTimeout 4 \
-    --CheckParams.Path %2F \
-    --CheckParams.Method HEAD \
-    --CheckParams.DelayLoop 39 \
-    --CheckParams.StatusCode 300 100 400 200 500 \
-    --Scheduler rr \
-    --Path %2Fimage
+    --Scheduler lc \
+    --HealthCheck 0 \
+    --ForwardProtocol HTTP \
+    --ForwardHost www.baidu.com
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f3ab4984-dfe0-4c6f-aca0-32100550f6fd",
-        "RuleId": "rule-qws4fmyl"
+        "RuleId": "rule-f13hgptl",
+        "RequestId": "ea3b7a5e-5d9a-4dbb-a95d-5e299ee98b67"
     }
 }
 ```

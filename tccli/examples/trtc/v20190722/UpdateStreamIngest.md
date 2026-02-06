@@ -1,22 +1,22 @@
-**Example 1: 更新任务**
+**Example 1: 更新输入在线媒体流**
 
-更新SdkAppId为1600011111下的TaskId为HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri的StreamUrl
+
 
 Input: 
 
 ```
 tccli trtc UpdateStreamIngest --cli-unfold-argument  \
-    --SdkAppId 1600011111 \
-    --TaskId HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri \
-    --StreamUrl https://a.b/test.mp4
+    --SdkAppId 1400188366 \
+    --TaskId CR6LqvF7KfFBEyRihlxDN5RBXjdLDEn-LZgRFr+rTEL2p6vnZV4vRaRm5zJS3tEiSir0mwHw-Y5itMY+Rcfy3QpDMCzfXWl5CXXrEFRHuOGHxJCzqSY. \
+    --StreamUrl https://webrtc-backup-record-default-1258344699.cos.ap-nanjing.myqcloud.com/runningwang/48d0c7e46f088ee97208f0815ddc8b20.mp4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "InProgress",
-        "RequestId": "71993312-6ab8-4768-9124-118e0a20c45f"
+        "RequestId": "b070fb8a-0fa2-4a3c-8675-0756e014770b",
+        "Status": "InProgress"
     }
 }
 ```

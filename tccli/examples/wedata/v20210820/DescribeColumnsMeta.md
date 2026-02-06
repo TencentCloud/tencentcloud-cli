@@ -1,72 +1,15 @@
-**Example 1: 失败**
+**Example 1: 查询表的所有列元数据**
 
-失败
+
 
 Input: 
 
 ```
 tccli wedata DescribeColumnsMeta --cli-unfold-argument  \
-    --TableId 111 \
     --PageNumber 1 \
-    --PageSize 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "DescribeColumnsMeta出错了，原因：元数据 MetaDataClient.describeColumnPageByTableName 接口出错了"
-        },
-        "RequestId": "9eba5f8a-8cf5-4ce1-a557-b5d8e624a9b9"
-    }
-}
-```
-
-**Example 2: 失败2**
-
-失败2
-
-Input: 
-
-```
-tccli wedata DescribeColumnsMeta --cli-unfold-argument  \
-    --TableId 1 \
-    --PageNumber 1 \
-    --PageSize 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "DescribeColumnsMeta出错了，原因：元数据 MetaDataClient.describeColumnPageByTableName 接口出错了"
-        },
-        "RequestId": "964be7a0-7dde-4a2f-8a53-fa60524f87f8"
-    }
-}
-```
-
-**Example 3: 查询表的所有列元数据**
-
-
-
-Input: 
-
-```
-tccli wedata DescribeColumnsMeta --cli-unfold-argument  \
-    --TableId abc \
-    --PageNumber 0 \
-    --PageSize 0 \
-    --FilterSet.0.Name abc \
-    --FilterSet.0.Values abc \
-    --OrderFieldSet.0.Name abc \
-    --OrderFieldSet.0.Direction abc \
-    --IsPartitionQuery True \
-    --ComplianceId 0
+    --TableId JqDviGd3SJKP1DzlUXXNEA \
+    --PageSize 5 \
+    --IsPartitionQuery False
 ```
 
 Output: 
@@ -75,27 +18,36 @@ Output:
     "Response": {
         "ColumnMetaSet": [
             {
-                "NameEn": "abc",
-                "NameCn": "abc",
-                "Type": "abc",
-                "Description": "abc",
+                "ColumnFamiliesFieldSet": [],
+                "Description": null,
+                "DictionaryId": null,
+                "DictionaryName": null,
+                "IsPartition": false,
+                "LevelName": null,
+                "LevelRank": null,
+                "Name": "cloa",
+                "NameCn": null,
+                "NameEn": null,
                 "Position": 0,
-                "IsPartition": true,
-                "Name": "abc",
-                "ColumnFamiliesFieldSet": [
-                    {
-                        "Key": "abc",
-                        "Value": "abc"
-                    }
-                ],
-                "DictionaryId": "abc",
-                "DictionaryName": "abc",
-                "LevelName": "abc",
-                "LevelRank": 0
+                "Type": "int"
+            },
+            {
+                "ColumnFamiliesFieldSet": [],
+                "Description": null,
+                "DictionaryId": null,
+                "DictionaryName": null,
+                "IsPartition": false,
+                "LevelName": null,
+                "LevelRank": null,
+                "Name": "colb",
+                "NameCn": null,
+                "NameEn": null,
+                "Position": 1,
+                "Type": "string"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "5c2475a9-a65a-4c74-b672-b1e2a4bbc1bd",
+        "TotalCount": 2
     }
 }
 ```

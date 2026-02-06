@@ -1,35 +1,33 @@
-**Example 1: 样例**
+**Example 1: CreateDataSource**
 
-
+数据源管理-创建数据源
 
 Input: 
 
 ```
 tccli wedata CreateDataSource --cli-unfold-argument  \
-    --BizParams string \
+    --Name mysql_test \
     --Category DB \
-    --DatabaseName db \
-    --Description string \
-    --Display saga \
-    --Name striaasdgng \
-    --Params string \
-    --ClusterId cdb-xxasfsdg6d \
+    --Type MYSQL \
+    --OwnerProjectId 1486804694126882816 \
+    --OwnerProjectName DI \
+    --OwnerProjectIdent 数据集成_联调 \
+    --Params {"connectType":"public","authorityType":"true","advanceParams":[],"deployType":"CONNSTR_PUBLICDB","url":"jdbc:mysql://43.140.253.103:63925/di_mysql_test?useSSL=false&serverTimezone=UTC","username":"wedata","password":"1234","type":"MYSQL","newType":1} \
+    --Description  \
+    --Display  \
     --Status 1 \
-    --Type CLICKHOUSE \
-    --Collect 1 \
-    --OwnerProjectId 100265651 \
-    --OwnerProjectName pprasf \
-    --OwnerProjectIdent striasdgang \
-    --COSBucket string \
-    --COSRegion string
+    --ClusterId  \
+    --COSBucket wedata-fusion-dev-1257305158 \
+    --COSRegion ap-nanjing \
+    --ConnectResult 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "123",
-        "Data": "1"
+        "Data": 62235,
+        "RequestId": "3fee373e-8cd9-48a0-8003-12dbe3658ba7"
     }
 }
 ```

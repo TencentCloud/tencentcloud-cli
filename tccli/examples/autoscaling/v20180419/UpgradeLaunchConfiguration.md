@@ -35,14 +35,14 @@ tccli as UpgradeLaunchConfiguration --cli-unfold-argument  \
     --LaunchConfigurationId asc-gj14vczi \
     --InstanceTypes S2.SMALL1 \
     --ImageId img-8toqc6s3 \
-    --EnhancedService.SecurityService.Enabled TRUE \
-    --EnhancedService.MonitorService.Enabled TRUE \
+    --EnhancedService.SecurityService.Enabled True \
+    --EnhancedService.MonitorService.Enabled True \
     --LaunchConfigurationName as_test \
-    --InternetAccessible.PublicIpAssigned TRUE \
+    --InternetAccessible.PublicIpAssigned True \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 5 \
-    --DataDisks.0.Encrypt FALSE \
-    --DataDisks.0.DeleteWithInstance TRUE \
+    --DataDisks.0.Encrypt False \
+    --DataDisks.0.DeleteWithInstance True \
     --DataDisks.0.DiskSize 1000 \
     --DataDisks.0.ThroughputPerformance 100 \
     --DataDisks.0.DiskType CLOUD_HSSD

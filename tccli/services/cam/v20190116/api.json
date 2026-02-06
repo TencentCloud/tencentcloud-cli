@@ -1840,6 +1840,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2254,7 +2263,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。",
-          "example": "openid",
+          "example": "[\"openid\"]",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -2268,6 +2277,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话会默认置0",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2443,7 +2461,7 @@
         {
           "disabled": false,
           "document": "数组，数组成员是策略 id，支持批量删除策略",
-          "example": "1000",
+          "example": "[1000]",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -3188,6 +3206,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3678,7 +3706,7 @@
         {
           "disabled": false,
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "备注",
+          "example": "这是一个测试策略",
           "member": "string",
           "name": "PresetAlias",
           "output_required": true,
@@ -3693,6 +3721,16 @@
           "name": "IsServiceLinkedRolePolicy",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3971,7 +4009,7 @@
         {
           "disabled": false,
           "document": "密钥ID最近访问列表",
-          "example": "[{\"SecretId\":\"AKID***\",\"LastUsedDate\":\"2022-12-19\",\"LastSecretUsedDate\":1671681023555}]",
+          "example": "无",
           "member": "SecretIdLastUsed",
           "name": "SecretIdLastUsedRows",
           "output_required": true,
@@ -6190,7 +6228,7 @@
         {
           "disabled": false,
           "document": "手机号码",
-          "example": "132****0012",
+          "example": "132****0112",
           "member": "string",
           "name": "PhoneNumber",
           "output_required": true,
@@ -6255,6 +6293,16 @@
           "name": "Uin",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国家代码",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6631,13 +6679,13 @@
         },
         {
           "disabled": false,
-          "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略创建时间。",
           "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "AddTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6758,6 +6806,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6953,6 +7011,34 @@
         }
       ],
       "usage": "out"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "region",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TagRoleRequest": {
       "document": "TagRole请求参数结构体",
@@ -7298,13 +7384,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略id，入参是PolicyName时，才会返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10041",
+          "document": "策略id，入参是PolicyName时，才会返回",
+          "example": "10042",
           "member": "uint64",
           "name": "PolicyId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7564,7 +7650,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。",
-          "example": "openid",
+          "example": "[\"openid\"]",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -7578,6 +7664,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -21,55 +21,55 @@ Output:
         "TotalCount": 0,
         "ModelAccelerateVersions": [
             {
-                "ModelId": "abc",
-                "ModelVersionId": "abc",
-                "ModelJobId": "abc",
-                "ModelJobName": "abc",
-                "ModelVersion": "abc",
-                "SpeedUp": "abc",
+                "ModelId": "m-918096658947376768",
+                "ModelVersionId": "mv-v9-918664407880828544",
+                "ModelJobId": "train-999234853525975168",
+                "ModelJobName": "zoeymodel",
+                "ModelVersion": "v9",
+                "SpeedUp": "4.83x",
                 "ModelSource": {
-                    "Source": "abc",
-                    "JobName": "abc",
-                    "JobVersion": "abc",
-                    "JobId": "abc",
-                    "ModelName": "abc",
-                    "AlgorithmFramework": "abc",
-                    "TrainingPreference": "abc",
-                    "ReasoningEnvironmentSource": "abc",
-                    "ReasoningEnvironment": "abc",
-                    "ReasoningEnvironmentId": "abc",
+                    "Source": "Job",
+                    "JobName": "zoeymodel",
+                    "JobVersion": "V1",
+                    "JobId": "train-999234853525975168",
+                    "ModelName": "zoeytest",
+                    "AlgorithmFramework": "PYTORCH",
+                    "TrainingPreference": "",
+                    "ReasoningEnvironmentSource": "SYSTEM",
+                    "ReasoningEnvironment": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch-gpu:py38-torch2.0.0-cu118-sd-tiacc4.2.9-3.2.17",
+                    "ReasoningEnvironmentId": "stabe-diffusion-mosec-a10(gpu)",
                     "ReasoningImageInfo": {
-                        "ImageType": "abc",
-                        "ImageUrl": "abc",
-                        "RegistryRegion": "abc",
-                        "RegistryId": "abc",
+                        "ImageType": "TCR",
+                        "ImageUrl": "tione-live.tencentcloudcr.com/tione-demo/infer:angel-vllm-0.4.2-ti-1.1.2",
+                        "RegistryRegion": "ap-shanghai",
+                        "RegistryId": "tcr-f40c5gin",
                         "AllowSaveAllContent": true,
-                        "ImageName": "abc"
+                        "ImageName": "infer"
                     }
                 },
                 "CosPathInfo": {
-                    "Bucket": "abc",
-                    "Region": "abc",
+                    "Bucket": "qiqi-sh-1318247806",
+                    "Region": "ap-shanghai",
                     "Paths": [
-                        "abc"
+                        "lstest/"
                     ]
                 },
-                "CreateTime": "abc",
-                "ModelFormat": "abc",
-                "Status": "abc",
+                "CreateTime": "2024-02-27 14:32:11",
+                "ModelFormat": "TORCH_SCRIPT",
+                "Status": "STATUS_SUCCESS",
                 "Progress": 1,
-                "ErrorMsg": "abc",
-                "GPUType": "abc",
+                "ErrorMsg": "",
+                "GPUType": "T4",
                 "ModelCosPath": {
-                    "Bucket": "abc",
-                    "Region": "abc",
+                    "Bucket": "qiqi-sh-1318247806",
+                    "Region": "ab-shanghai",
                     "Paths": [
-                        "abc"
+                        "Output/"
                     ]
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "c72334f2-fb6f-4171-b8c6-8038cf8f1f9f"
     }
 }
 ```

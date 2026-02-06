@@ -420,6 +420,13 @@
       "output": "DescribeOrganizationMembersResponse",
       "status": "online"
     },
+    "DescribeOrganizationMembersAuthPolicy": {
+      "document": "查询组织成员访问策略列表",
+      "input": "DescribeOrganizationMembersAuthPolicyRequest",
+      "name": "查询组织成员访问策略列表",
+      "output": "DescribeOrganizationMembersAuthPolicyResponse",
+      "status": "online"
+    },
     "DescribeOrganizationNodes": {
       "document": "获取组织节点列表",
       "input": "DescribeOrganizationNodesRequest",
@@ -1399,7 +1406,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定策略目标ID。成员Uin或部门ID",
+          "document": "<p>绑定策略目标ID。成员Uin或部门ID</p>",
           "example": "10001",
           "member": "uint64",
           "name": "TargetId",
@@ -1408,7 +1415,7 @@
         },
         {
           "disabled": false,
-          "document": "目标类型。取值范围：NODE-部门、MEMBER-成员",
+          "document": "<p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -1417,7 +1424,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略Id。可以调用<a href=\"https://cloud.tencent.com/document/product/850/105311\">ListPolicies</a>获取</p>",
           "example": "100001",
           "member": "uint64",
           "name": "PolicyId",
@@ -1426,7 +1433,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "document": "<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>",
           "example": "SERVICE_CONTROL_POLICY",
           "member": "string",
           "name": "Type",
@@ -2062,7 +2069,7 @@
         },
         {
           "disabled": false,
-          "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须",
+          "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须",
           "example": "[1,2]",
           "member": "uint64",
           "name": "PermissionIds",
@@ -2135,7 +2142,7 @@
         {
           "disabled": false,
           "document": "成员标签列表。最大10个",
-          "example": "{            \"TagKey\t\":\"key\",            \"TagValue\":\"value\"      }",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -2639,6 +2646,15 @@
           "name": "UserType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要重置密码： true: 需要重置  false: 不需要重置密码。 默认false",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedResetPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2649,7 +2665,7 @@
         {
           "disabled": false,
           "document": "用户详情",
-          "example": "{\"ZoneId\": \"z-3fee3r3r3\"}",
+          "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
           "output_required": true,
@@ -4173,6 +4189,89 @@
       ],
       "type": "object"
     },
+    "DescribeOrganizationMembersAuthPolicyRequest": {
+      "document": "DescribeOrganizationMembersAuthPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~50。默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "成员uin。",
+          "example": "0",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团管理员子账号uin。",
+          "example": "0",
+          "member": "int64",
+          "name": "OrgSubAccountUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "成员访问策略Id。",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationMembersAuthPolicyResponse": {
+      "document": "DescribeOrganizationMembersAuthPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问授权策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgMembersAuthPolicy",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOrganizationMembersRequest": {
       "document": "DescribeOrganizationMembers请求参数结构体",
       "members": [
@@ -5098,7 +5197,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解绑策略目标ID。成员Uin或部门ID",
+          "document": "<p>解绑策略目标ID。成员Uin或部门ID</p>",
           "example": "10001",
           "member": "uint64",
           "name": "TargetId",
@@ -5107,7 +5206,7 @@
         },
         {
           "disabled": false,
-          "document": "目标类型。取值范围：NODE-部门、MEMBER-成员",
+          "document": "<p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -5116,7 +5215,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略Id。可以调用<a href=\"https://cloud.tencent.com/document/product/850/105311\">ListPolicies</a>获取</p>",
           "example": "100001",
           "member": "uint64",
           "name": "PolicyId",
@@ -5125,7 +5224,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "document": "<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>",
           "example": "SERVICE_CONTROL_POLICY",
           "member": "string",
           "name": "Type",
@@ -6013,7 +6112,7 @@
         },
         {
           "disabled": false,
-          "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须",
+          "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须",
           "example": "[1,2]",
           "member": "uint64",
           "name": "PermissionIds",
@@ -6068,7 +6167,7 @@
         {
           "disabled": false,
           "document": "互信主体证明文件列表。",
-          "example": "[{\"Name\":\"file_name\",\"Url\":\"file/file_name.txt\"}]",
+          "example": "无",
           "member": "AuthRelationFile",
           "name": "AuthFile",
           "required": false,
@@ -6077,7 +6176,7 @@
         {
           "disabled": false,
           "document": "成员标签列表。最大10个",
-          "example": "[{\"Tagkey\":\"key\",\"TagValue\":\"value\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -6190,7 +6289,7 @@
         {
           "disabled": false,
           "document": "SAML 签名证书列表",
-          "example": "[{\"SerialNumber\":\"1347934239****\",\"Issuer\":\"5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta\",\"Version\":\"1\",\"CertificateId\":\"idp-c-2jd8923je29****\",\"PublicKey\":\"nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****\",\"SignatureAlgorithm\":\"SHA256withRSA\",\"NotAfter\":\"2030-06-23 07:04:37\",\"NotBefore\":\"2010-06-23 07:04:37\",\"Subject\":\"5.6.54.22.1.9.1=#dj39dj39e3w9rm3e2e3****,CN=dev-xxxxxx,OU=SSOProvider,O=Okta\",\"X509Certificate\":\"nMIIBtjCCAVugAwIBAgITBmyf1XSXNmY****\"}]",
+          "example": "无",
           "member": "SAMLIdPCertificate",
           "name": "SAMLIdPCertificates",
           "output_required": true,
@@ -6422,7 +6521,7 @@
         {
           "disabled": false,
           "document": "用户组列表。",
-          "example": "[{\"GroupName\":\"testGroup\",\"Description\":\"thsi is group\",\"CreateTime\":\"2024-01-01 12:12:12\",\"GroupType\":\"Manual\",\"UpdateTime\":\"2024-01-01 12:12:12\",\"GroupId\":\"g-q8shs8h****\",\"MemberCount\":20}]",
+          "example": "无",
           "member": "GroupInfo",
           "name": "Groups",
           "output_required": true,
@@ -8346,7 +8445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享单元ID。",
+          "document": "<p>共享单元ID。</p>",
           "example": "shareUnit-xhre**ra2p",
           "member": "string",
           "name": "UnitId",
@@ -8356,7 +8455,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元名称。",
+          "document": "<p>共享单元名称。</p>",
           "example": "myShareUnit",
           "member": "string",
           "name": "Name",
@@ -8366,7 +8465,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元管理员Uin。",
+          "document": "<p>共享单元管理员Uin。</p>",
           "example": "222222222222",
           "member": "int64",
           "name": "Uin",
@@ -8376,7 +8475,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元管理员OwnerUin。",
+          "document": "<p>共享单元管理员OwnerUin。</p>",
           "example": "111111111111",
           "member": "int64",
           "name": "OwnerUin",
@@ -8386,7 +8485,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元地域。",
+          "document": "<p>共享单元地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
@@ -8396,7 +8495,7 @@
         },
         {
           "disabled": false,
-          "document": "描述。",
+          "document": "<p>描述。</p>",
           "example": "share unit",
           "member": "string",
           "name": "Description",
@@ -8406,7 +8505,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2021-03-05 12:21:21",
           "member": "string",
           "name": "CreateTime",
@@ -8416,7 +8515,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元资源数。",
+          "document": "<p>共享单元资源数。</p>",
           "example": "10",
           "member": "int64",
           "name": "ShareResourceNum",
@@ -8426,7 +8525,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元成员数。",
+          "document": "<p>共享单元成员数。</p>",
           "example": "1",
           "member": "int64",
           "name": "ShareMemberNum",
@@ -8436,10 +8535,20 @@
         },
         {
           "disabled": false,
-          "document": "共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号",
+          "document": "<p>共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号</p>",
           "example": "1",
           "member": "uint64",
           "name": "ShareScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享单元部门数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ShareNodeNum",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9332,6 +9441,132 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OrgMembersAuthPolicy": {
+      "document": "组织成员访问授权策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "int64",
+          "name": "IdentityId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份的角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityRoleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份的角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityRoleAliasName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:12:10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员访问策略Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "222",
+          "member": "int64",
+          "name": "PolicyId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员访问策略名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "policy-test",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111111111111",
+          "member": "int64",
+          "name": "MemberUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "member-name",
+          "member": "string",
+          "name": "MemberName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号uin或者用户组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "222222222222",
+          "member": "int64",
+          "name": "OrgSubAccountUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号名称或者用户组名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sub-name",
+          "member": "string",
+          "name": "OrgSubAccountName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定类型。1-子账号、2-用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BindType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"MemberUin\":111111111111},\"MemberName\":\"member-name\"]",
+          "member": "MemberMainInfo",
+          "name": "Members",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10990,6 +11225,16 @@
       "document": "SetExternalSAMLIdentityProvider返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "证书ID。",
+          "example": "[\"idp-c-d73bss92ns\"]",
+          "member": "string",
+          "name": "CertificateIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11778,7 +12023,7 @@
         },
         {
           "disabled": false,
-          "document": "成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。\n取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析，如果有值，1、2 默认必须",
+          "document": "成员财务权限ID列表。PermissionIds不为空，PolicyType不能为空。\n取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须",
           "example": "[1,2]",
           "member": "uint64",
           "name": "PermissionIds",
@@ -12262,6 +12507,15 @@
           "name": "NewEmail",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要重置密码",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedResetPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -12576,6 +12830,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下次登录是否需要重置密码， true: 需要重置密码， false：不需要重置密码",
+          "example": "",
+          "member": "bool",
+          "name": "NeedResetPassword",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

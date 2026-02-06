@@ -1,4 +1,4 @@
-**Example 1: Waf  CC V2 Upsert接口**
+**Example 1: 新建cc规则示例**
 
 
 
@@ -6,27 +6,40 @@ Input:
 
 ```
 tccli waf UpsertCCRule --cli-unfold-argument  \
-    --Status 0 \
+    --Domain yyxz.1030.testwaf.com \
+    --Name 测试使用 \
+    --Status 1 \
     --Advance 0 \
-    --Domain test.com \
-    --Name test2 \
-    --Url /test \
-    --Priority 50 \
-    --Interval 60 \
-    --MatchFunc 0 \
-    --ValidTime 600
- \
     --Limit 60 \
+    --Interval 60 \
     --ActionType 22 \
-    --OptionsArr [{"key":"get","args":["a=12"]}]
+    --Priority 50 \
+    --ValidTime 600 \
+    --Url  \
+    --MatchFunc 0 \
+    --OptionsArr [{"key":"URL","args":["=L2NjdGVzdA"],"match":"0","encodeflag":true}] \
+    --Edition sparta-waf \
+    --Type 0 \
+    --EventId  \
+    --RuleId 0 \
+    --LimitMethod  \
+    --CelRule  \
+    --LogicalOp and \
+    --PageId  \
+    --ActionRatio 100 \
+    --JobType TimedJob \
+    --JobDateTime.Timed.0.StartDateTime 1769529600 \
+    --JobDateTime.Timed.0.EndDateTime 1771776000 \
+    --JobDateTime.TimeTZone UTC+8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "success",
-        "RequestId": "5029e2b0-493c-4dcc-9e4e-d53ab98ede99"
+        "Data": "",
+        "RuleId": 0,
+        "RequestId": "707d8c2c-413f-49b7-a03a-39aa61a07202"
     }
 }
 ```

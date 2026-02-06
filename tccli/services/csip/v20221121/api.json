@@ -122,7 +122,7 @@
     "DescribeAssetRiskList": {
       "document": "资产视角下云资源配置风险列表",
       "input": "DescribeAssetRiskListRequest",
-      "name": "资产视角下的云资源配置风险列表",
+      "name": "资产视角下的云资源配置风险",
       "output": "DescribeAssetRiskListResponse",
       "status": "online"
     },
@@ -169,9 +169,9 @@
       "status": "online"
     },
     "DescribeCheckViewRisks": {
-      "document": "检查视角下云资源配置风险列表示例",
+      "document": "检查视角下云资源配置风险列表",
       "input": "DescribeCheckViewRisksRequest",
-      "name": "检查项视角风险列表",
+      "name": "检查项视角云资源配置风险",
       "output": "DescribeCheckViewRisksResponse",
       "status": "online"
     },
@@ -577,7 +577,7 @@
   },
   "metadata": {
     "apiVersion": "2022-11-21",
-    "api_brief": null,
+    "api_brief": "介绍如何使用API对云安全中心进行操作，包括云上资产管理、安全体检、多云多账号管理等。",
     "serviceNameCN": "云安全一体化平台",
     "serviceShortName": "csip"
   },
@@ -597,8 +597,8 @@
         },
         {
           "disabled": false,
-          "document": "ak具体值\n临时密钥时返回临时密钥",
-          "example": "AKID***FGAW1  ",
+          "document": "ak具体值 临时密钥时返回临时密钥",
+          "example": "AKID********",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -684,7 +684,7 @@
         {
           "disabled": false,
           "document": "访问密钥",
-          "example": "AKID*******dy5xs",
+          "example": "AKID********",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -744,7 +744,7 @@
         {
           "disabled": false,
           "document": "告警标签",
-          "example": "[\"主账号AK\"，“权限过高”]",
+          "example": "[\"主账号AK\",\"权限过高\"]",
           "member": "string",
           "name": "Tag",
           "output_required": true,
@@ -804,7 +804,7 @@
         {
           "disabled": false,
           "document": "所属appid",
-          "example": "13050*14",
+          "example": "1234567",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
@@ -814,11 +814,81 @@
         {
           "disabled": false,
           "document": "泄漏证据",
-          "example": "[url1,url2]",
+          "example": "[\"url1\",\"url2\"]",
           "member": "string",
           "name": "LeakEvidence",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持编辑信任账号",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportEditWhiteAccount",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警证据",
+          "example": "\"{   \"Type\": \"Login\",   \"Login\": [     {       \"LoginTime\": \"2025-08-27T20:21:19Z\",       \"Ip\": \"192.168.1.1\",       \"Country\": 86,       \"Province\": 44,       \"City\": 1     }]}\"",
+          "member": "string",
+          "name": "Evidence",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警规则标识",
+          "example": "AbnormalLogin",
+          "member": "string",
+          "name": "RuleKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警AI分析状态\n-1 分析失败\n0 未分析\n1 分析中\n2 分析成功，真实告警\n3 分析成功，可疑告警",
+          "example": "0",
+          "member": "int64",
+          "name": "AIStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次告警时间戳（秒级）",
+          "example": "1766651394",
+          "member": "int64",
+          "name": "FirstAlarmTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后告警时间戳（秒级）",
+          "example": "1766651394",
+          "member": "int64",
+          "name": "LastAlarmTimestamp",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -855,6 +925,36 @@
           "name": "AlarmCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问密钥状态 0 禁用 1 已启用 2 已删除",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessKeyStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AK创建时间",
+          "example": "2024-02-18 15:40:24",
+          "member": "string",
+          "name": "AccessKeyCreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AK最后使用时间，从未使用过则返回“-”",
+          "example": "2024-02-18 15:40:24",
+          "member": "string",
+          "name": "LastAccessTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -902,7 +1002,7 @@
         {
           "disabled": false,
           "document": "AK名称",
-          "example": "AKIDf12*****c192rb",
+          "example": "AKID********",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -922,7 +1022,7 @@
         {
           "disabled": false,
           "document": "账号所属APPID",
-          "example": "120407**01",
+          "example": "1200000001",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
@@ -992,7 +1092,7 @@
         {
           "disabled": false,
           "document": "告警信息列表",
-          "example": "告警列表",
+          "example": "无",
           "member": "AccessKeyAlarmInfo",
           "name": "AccessKeyAlarmList",
           "output_required": true,
@@ -1002,7 +1102,7 @@
         {
           "disabled": false,
           "document": "风险信息列表",
-          "example": "风险列表",
+          "example": "无",
           "member": "AccessKeyAlarmInfo",
           "name": "AccessKeyRiskList",
           "output_required": true,
@@ -1041,7 +1141,7 @@
         },
         {
           "disabled": false,
-          "document": "AK状态 \n0:禁用\n1:已启用",
+          "document": "AK状态 \n0:禁用\n1:已启用\n2:已删除(已在cam侧删除，安全中心仍然存留之前的记录)",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1056,6 +1156,16 @@
           "member": "int64",
           "name": "CheckStatus",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1118,7 +1228,7 @@
         {
           "disabled": false,
           "document": "访问密钥",
-          "example": "AKID*******dy5xs",
+          "example": "AKID********",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -1168,7 +1278,7 @@
         {
           "disabled": false,
           "document": "风险标签",
-          "example": "[\"主账号AK\"，“权限过高”]",
+          "example": "[\"主账号AK\"]",
           "member": "string",
           "name": "Tag",
           "output_required": true,
@@ -1258,11 +1368,41 @@
         {
           "disabled": false,
           "document": "所属appid",
-          "example": "13050*14",
+          "example": "120000001",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应风险的查询参数",
+          "example": "accUin:100**01 AND module:a AND action:b",
+          "member": "string",
+          "name": "QueryParam",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云类型 0-腾讯云 4-阿里云",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相关的AK列表，包含AK名和AK备注",
+          "example": "无",
+          "member": "AKInfo",
+          "name": "RelatedAK",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1324,7 +1464,7 @@
         {
           "disabled": false,
           "document": "告警信息列表",
-          "example": "告警列表\t",
+          "example": "无",
           "member": "AccessKeyAlarmInfo",
           "name": "AccessKeyAlarmList",
           "output_required": true,
@@ -1334,7 +1474,7 @@
         {
           "disabled": false,
           "document": "风险信息列表",
-          "example": "风险列表\t",
+          "example": "无",
           "member": "AccessKeyAlarmInfo",
           "name": "AccessKeyRiskList",
           "output_required": true,
@@ -1344,7 +1484,7 @@
         {
           "disabled": false,
           "document": "账号所属APPID",
-          "example": "120407**01\t",
+          "example": "100001",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
@@ -1458,6 +1598,16 @@
           "member": "int64",
           "name": "CheckStatus",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3849,7 +3999,7 @@
       "usage": "out"
     },
     "AssetRiskItem": {
-      "document": "资产视角风险项",
+      "document": "资产视角风险信息",
       "members": [
         {
           "disabled": false,
@@ -3990,6 +4140,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置分类",
+          "example": "expose",
+          "member": "string",
+          "name": "Classify",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等保合规",
+          "example": "无",
+          "member": "StandardTerm",
+          "name": "StandardTerms",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4038,7 +4218,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "高风险子帐号应该开启登录保护",
+          "example": "高风险子账号应该开启登录保护",
           "member": "string",
           "name": "CFGName",
           "output_required": true,
@@ -5670,7 +5850,7 @@
         {
           "disabled": false,
           "document": "影响资产",
-          "example": "1.1.1.1",
+          "example": "1024",
           "member": "int64",
           "name": "NoHandleCount",
           "output_required": true,
@@ -5780,7 +5960,7 @@
         {
           "disabled": false,
           "document": "配置名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "高风险子帐号应该开启登录保护",
+          "example": "高风险子账号应该开启登录保护",
           "member": "string",
           "name": "CFGName",
           "output_required": true,
@@ -6599,7 +6779,7 @@
         {
           "disabled": false,
           "document": "访问密钥",
-          "example": "AKID******fzD8s",
+          "example": "AKID********",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -6799,7 +6979,7 @@
         {
           "disabled": false,
           "document": "appid",
-          "example": "10852**92",
+          "example": "1000130",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
@@ -6829,9 +7009,19 @@
         {
           "disabled": false,
           "document": "账号外vpc信息列表",
-          "example": "账号外vpc信息列表",
+          "example": "无",
           "member": "SourceIPVpcInfo",
           "name": "VpcInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用请求客户端列表",
+          "example": "[\"SDK_GO_1.0.xxx\",\"SDK_Java_1.0.xxx\"]",
+          "member": "string",
+          "name": "ReqClient",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -6970,6 +7160,26 @@
           "name": "EventType",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置分类",
+          "example": "expose",
+          "member": "string",
+          "name": "Classify",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cspm规范条款",
+          "example": "无",
+          "member": "StandardTerm",
+          "name": "StandardTerms",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8301,7 +8511,7 @@
         {
           "disabled": false,
           "document": "过滤器",
-          "example": "过滤器",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -8316,7 +8526,7 @@
         {
           "disabled": false,
           "document": "调用记录列表",
-          "example": "调用记录列表",
+          "example": "无",
           "member": "CallRecord",
           "name": "Data",
           "output_required": true,
@@ -8372,7 +8582,7 @@
         {
           "disabled": false,
           "document": "告警信息",
-          "example": "告警信息",
+          "example": "无",
           "member": "AccessKeyAlarm",
           "name": "AlarmInfo",
           "output_required": true,
@@ -8424,7 +8634,7 @@
         {
           "disabled": false,
           "document": "过滤器",
-          "example": "过滤器",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -8475,7 +8685,7 @@
         {
           "disabled": false,
           "document": "告警列表",
-          "example": "告警列表",
+          "example": "无",
           "member": "AccessKeyAlarm",
           "name": "Data",
           "output_required": true,
@@ -8669,7 +8879,7 @@
         {
           "disabled": false,
           "document": "过滤器",
-          "example": "过滤器",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -8687,7 +8897,7 @@
         {
           "disabled": false,
           "document": "访问密钥的ID",
-          "example": "100002",
+          "example": "10002",
           "member": "uint64",
           "name": "AccessKeyID",
           "required": false,
@@ -8711,7 +8921,7 @@
         {
           "disabled": false,
           "document": "风险列表",
-          "example": "风险列表",
+          "example": "无",
           "member": "AccessKeyRisk",
           "name": "Data",
           "output_required": true,
@@ -9059,7 +9269,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -9124,6 +9334,26 @@
           "member": "AssetRiskItem",
           "name": "AssetRiskList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等保规范名称集合",
+          "example": "无",
+          "member": "StandardItem",
+          "name": "StandardNameList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型集合",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "AssetTypeList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9680,9 +9910,18 @@
         {
           "disabled": false,
           "document": "访问账号uin",
-          "example": "100*001",
+          "example": "100***01",
           "member": "string",
           "name": "AccUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问密钥，注意：不支持临时密钥的情况",
+          "example": "AKID****z0c",
+          "member": "string",
+          "name": "AccessKey",
           "required": false,
           "type": "string"
         },
@@ -9745,7 +9984,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -9810,6 +10049,26 @@
           "member": "CheckViewRiskItem",
           "name": "CheckViewRiskList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查视角下cspm规范标签列表",
+          "example": "无",
+          "member": "StandardItem",
+          "name": "StandardNameList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型集合",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "AssetTypeList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10558,7 +10817,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -12603,7 +12862,7 @@
         {
           "disabled": false,
           "document": "风险危害",
-          "example": "云上多种产品都有管理后台功能且具有对公网开放能力，管理后台对外开放后后容易存在口令被爆破/被入侵风险，可导致重要数据泄露，服务器遭受入侵等严重后果。",
+          "example": "云上多种产品都有管理后台功能且具有对公网开放能力，管理后台对外开放后容易存在口令被爆破/被入侵风险，可导致重要数据泄露，服务器遭受入侵等严重后果。",
           "member": "string",
           "name": "RiskInfluence",
           "output_required": true,
@@ -13079,7 +13338,7 @@
         {
           "disabled": false,
           "document": "过滤器",
-          "example": "过滤器",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -13094,7 +13353,7 @@
         {
           "disabled": false,
           "document": "访问密钥资产列表",
-          "example": "访问密钥资产列表",
+          "example": "无",
           "member": "SourceIPAsset",
           "name": "Data",
           "output_required": true,
@@ -13660,7 +13919,7 @@
         {
           "disabled": false,
           "document": "集团账号的成员id",
-          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
           "required": false,
@@ -15063,6 +15322,46 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待治理风险数量",
+          "example": "",
+          "member": "uint64",
+          "name": "ToGovernedRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待治理风险内容",
+          "example": "",
+          "member": "string",
+          "name": "ToGovernedRiskContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15307,7 +15606,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "{\"Name\": \"tag-key\", \"Value\": \"tag-value\"}}",
+          "example": "无",
           "member": "Tag",
           "name": "Tag",
           "output_required": true,
@@ -15492,6 +15791,16 @@
           "name": "EngineRegion",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弱口令风险",
+          "example": "",
+          "member": "uint64",
+          "name": "WeakPasswordRisk",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -16052,7 +16361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改集团账号状态，1 开启， 2关闭",
+          "document": "修改集团账号状态，1 开启， 0关闭",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -19426,7 +19735,7 @@
         },
         {
           "disabled": false,
-          "document": "调用方式\n0:控制台调用\n1:API",
+          "document": "调用方式\n-1:未统计\n0:控制台调用\n1:API",
           "example": "0",
           "member": "int64",
           "name": "EventType",
@@ -19543,6 +19852,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号外vpc信息",
+          "example": "账号外vpc信息列表",
+          "member": "SourceIPVpcInfo",
+          "name": "VpcInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云类型\n0为腾讯云",
+          "example": "",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19588,6 +19917,58 @@
           "name": "VpcName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardItem": {
+      "document": "CSPM规范",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规范ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规范名称",
+          "example": "等保三级",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardTerm": {
+      "document": "CSPM条款",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "等保三级",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条款",
+          "example": "[\"tag1\", \"tag2\"]",
+          "member": "string",
+          "name": "Terms",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -19693,7 +20074,7 @@
         {
           "disabled": false,
           "document": "子账号UIn",
-          "example": "100*3**012345",
+          "example": "10001**271828",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -19723,7 +20104,7 @@
         {
           "disabled": false,
           "document": "主账号Uin",
-          "example": "10033**12345",
+          "example": "10002**271828",
           "member": "string",
           "name": "OwnerUin",
           "output_required": true,
@@ -19822,7 +20203,7 @@
         },
         {
           "disabled": false,
-          "document": "是否接入云审计日志",
+          "document": "是否接入操作审计日志",
           "example": "false",
           "member": "bool",
           "name": "IsAccessCloudAudit",
@@ -20581,7 +20962,7 @@
         {
           "disabled": false,
           "document": "发生事件",
-          "example": "{     \"EventType\": 2,     \"Content\": \"zero**\" }",
+          "example": "无",
           "member": "UebaEventContent",
           "name": "EventContent",
           "output_required": true,
@@ -20658,7 +21039,7 @@
         {
           "disabled": false,
           "document": "日志中文名",
-          "example": "云审计读日志",
+          "example": "操作审计读日志",
           "member": "string",
           "name": "LogTypeStr",
           "output_required": true,
@@ -20725,7 +21106,7 @@
         {
           "disabled": false,
           "document": "策略id",
-          "example": "rule-abc1234",
+          "example": "rule-example-271828",
           "member": "string",
           "name": "RuleID",
           "output_required": true,
@@ -20735,7 +21116,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "海外IP调用高危接口",
+          "example": "境外IP调用高危接口",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
@@ -20745,7 +21126,7 @@
         {
           "disabled": false,
           "document": "策略类型\n0:系统策略\n1:自定义策略",
-          "example": "系统策略",
+          "example": "1",
           "member": "int64",
           "name": "RuleType",
           "output_required": true,
@@ -20755,7 +21136,7 @@
         {
           "disabled": false,
           "document": "策略等级\n0:提示\n1:低危\n2:中危\n3:高危\n4:严重",
-          "example": "严重",
+          "example": "2",
           "member": "int64",
           "name": "RuleLevel",
           "output_required": true,
@@ -20835,7 +21216,7 @@
         {
           "disabled": false,
           "document": "自定义规则具体内容",
-          "example": "自定义规则具体内容",
+          "example": "无",
           "member": "UebaCustomRule",
           "name": "CustomRuleDetail",
           "output_required": true,

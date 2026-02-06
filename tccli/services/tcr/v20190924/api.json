@@ -35,6 +35,13 @@
       "output": "CreateApplicationTriggerPersonalResponse",
       "status": "online"
     },
+    "CreateGCJob": {
+      "document": "创建 GC 作业",
+      "input": "CreateGCJobRequest",
+      "name": "创建 GC 作业",
+      "output": "CreateGCJobResponse",
+      "status": "online"
+    },
     "CreateImageAccelerationService": {
       "document": "创建镜像加速服务",
       "input": "CreateImageAccelerationServiceRequest",
@@ -271,6 +278,13 @@
       "input": "DeleteReplicationInstanceRequest",
       "name": "删除从实例",
       "output": "DeleteReplicationInstanceResponse",
+      "status": "online"
+    },
+    "DeleteReplicationRule": {
+      "document": "删除实例同步规则",
+      "input": "DeleteReplicationRuleRequest",
+      "name": "删除实例同步规则",
+      "output": "DeleteReplicationRuleResponse",
       "status": "online"
     },
     "DeleteRepository": {
@@ -518,6 +532,13 @@
       "output": "DescribeReplicationInstancesResponse",
       "status": "online"
     },
+    "DescribeReplicationPolicies": {
+      "document": "获取实例同步规则列表",
+      "input": "DescribeReplicationPoliciesRequest",
+      "name": "查询实例同步策略列表",
+      "output": "DescribeReplicationPoliciesResponse",
+      "status": "online"
+    },
     "DescribeRepositories": {
       "document": "查询镜像仓库列表或指定镜像仓库信息",
       "input": "DescribeRepositoriesRequest",
@@ -672,6 +693,13 @@
       "output": "ModifyInstanceResponse",
       "status": "online"
     },
+    "ModifyInstanceStorage": {
+      "document": "TCR实例存储桶切换",
+      "input": "ModifyInstanceStorageRequest",
+      "name": "修改TCR实例存储配置",
+      "output": "ModifyInstanceStorageResponse",
+      "status": "online"
+    },
     "ModifyInstanceToken": {
       "document": "更新实例内指定长期访问凭证的启用状态",
       "input": "ModifyInstanceTokenRequest",
@@ -754,6 +782,13 @@
       "input": "RenewInstanceRequest",
       "name": "续费实例",
       "output": "RenewInstanceResponse",
+      "status": "online"
+    },
+    "TerminateGCJob": {
+      "document": "终止制品清理任务",
+      "input": "TerminateGCJobRequest",
+      "name": "终止制品清理任务",
+      "output": "TerminateGCJobResponse",
       "status": "online"
     },
     "ValidateNamespaceExistPersonal": {
@@ -1188,6 +1223,42 @@
     },
     "CreateApplicationTriggerPersonalResponse": {
       "document": "CreateApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGCJobRequest": {
+      "document": "CreateGCJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GC 参数",
+          "example": "无",
+          "member": "GCParameters",
+          "name": "GCParameters",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGCJobResponse": {
+      "document": "CreateGCJob返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2331,7 +2402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主实例iD",
+          "document": "<p>主实例iD</p>",
           "example": "tcr-test123",
           "member": "string",
           "name": "RegistryId",
@@ -2340,7 +2411,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的Id",
+          "document": "<p>命名空间的Id</p>",
           "example": "1",
           "member": "int64",
           "name": "NamespaceId",
@@ -2349,16 +2420,7 @@
         },
         {
           "disabled": false,
-          "document": "保留策略",
-          "example": "无",
-          "member": "RetentionRule",
-          "name": "RetentionRule",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "执行周期，当前只能选择： manual;daily;weekly;monthly",
+          "document": "<p>执行周期，当前只能选择： manual;daily;weekly;monthly</p>",
           "example": "manual",
           "member": "string",
           "name": "CronSetting",
@@ -2367,7 +2429,25 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用规则，默认值为false",
+          "document": "<p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级版本保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRuleItem",
+          "name": "AdvancedRuleItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用规则，默认值为false</p>",
           "example": "false",
           "member": "bool",
           "name": "Disabled",
@@ -3065,6 +3145,51 @@
       ],
       "type": "object"
     },
+    "DeleteReplicationRuleRequest": {
+      "document": "DeleteReplicationRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源实例ID",
+          "example": "tcr-40s86s0j",
+          "member": "string",
+          "name": "SourceRegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步规则名称",
+          "example": "rule-1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "删除同步规则rule-1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReplicationRuleResponse": {
+      "document": "DeleteReplicationRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRepositoryPersonalRequest": {
       "document": "DeleteRepositoryPersonal请求参数结构体",
       "members": [
@@ -3097,7 +3222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
@@ -3106,7 +3231,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的名称",
+          "document": "<p>命名空间的名称</p>",
           "example": "private",
           "member": "string",
           "name": "NamespaceName",
@@ -3115,12 +3240,21 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库的名称",
+          "document": "<p>镜像仓库的名称</p>",
           "example": "golang",
           "member": "string",
           "name": "RepositoryName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认值为true，表示无论仓库是否存在镜像都直接删除；false代表删除仓库前需检查是否存在镜像。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceDelete",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5092,6 +5226,71 @@
       ],
       "type": "object"
     },
+    "DescribeReplicationPoliciesRequest": {
+      "document": "DescribeReplicationPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页数，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示个数，默认为100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationPoliciesResponse": {
+      "document": "DescribeReplicationPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例同步策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReplicationPolicyInfo",
+          "name": "ReplicationPolicyInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRepositoriesRequest": {
       "document": "DescribeRepositories请求参数结构体",
       "members": [
@@ -5640,7 +5839,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主实例iD",
+          "document": "<p>主实例iD</p>",
           "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
@@ -5649,7 +5848,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的名称",
+          "document": "<p>命名空间的名称</p>",
           "example": "ns2",
           "member": "string",
           "name": "NamespaceName",
@@ -5658,7 +5857,7 @@
         },
         {
           "disabled": false,
-          "document": "分页PageSize",
+          "document": "<p>分页PageSize</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5667,7 +5866,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Page",
+          "document": "<p>分页Page</p>",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -5682,8 +5881,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本保留策略列表",
-          "example": "[{},{}]",
+          "document": "<p>版本保留策略列表</p>",
+          "example": "无",
           "member": "RetentionPolicy",
           "name": "RetentionPolicyList",
           "output_required": true,
@@ -5692,7 +5891,7 @@
         },
         {
           "disabled": false,
-          "document": "版本保留策略总数",
+          "document": "<p>版本保留策略总数</p>",
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
@@ -6337,6 +6536,34 @@
       ],
       "usage": "in"
     },
+    "FilterSelector": {
+      "document": "过滤选择器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤规则类型，在tag过滤中，可选值为matches（匹配），excludes(排除)，在仓库过滤中，可选值为repoMatches（仓库匹配），repoExcludes（仓库排除）</p>",
+          "example": "matches",
+          "member": "string",
+          "name": "Decoration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤表达式</p>",
+          "example": "v*",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GCJobInfo": {
       "document": "GC 执行信息",
       "members": [
@@ -6392,6 +6619,22 @@
         }
       ],
       "usage": "out"
+    },
+    "GCParameters": {
+      "document": "GC 参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模拟运行",
+          "example": "true",
+          "member": "bool",
+          "name": "Dryrun",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Header": {
       "document": "Header KV",
@@ -7018,6 +7261,51 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceStorageRequest": {
+      "document": "ModifyInstanceStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tcr-dc0d****",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标存储资源地域</p>",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "TargetRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标存储资源名称</p>",
+          "example": "tcr-dc0d****-1255******",
+          "member": "string",
+          "name": "TargetStorageName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceStorageResponse": {
+      "document": "ModifyInstanceStorage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceTokenRequest": {
       "document": "ModifyInstanceToken请求参数结构体",
       "members": [
@@ -7511,7 +7799,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主实例iD",
+          "document": "<p>主实例iD</p>",
           "example": "tcr-test123",
           "member": "string",
           "name": "RegistryId",
@@ -7520,7 +7808,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的Id，必须填写原有的命名空间id",
+          "document": "<p>命名空间的Id，必须填写原有的命名空间id</p>",
           "example": "1",
           "member": "int64",
           "name": "NamespaceId",
@@ -7529,16 +7817,7 @@
         },
         {
           "disabled": false,
-          "document": "保留策略",
-          "example": "无",
-          "member": "RetentionRule",
-          "name": "RetentionRule",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "执行周期，必须填写为原来的设置",
+          "document": "<p>执行周期，必须填写为原来的设置</p>",
           "example": "manual",
           "member": "string",
           "name": "CronSetting",
@@ -7547,7 +7826,7 @@
         },
         {
           "disabled": false,
-          "document": "规则Id",
+          "document": "<p>规则Id</p>",
           "example": "1",
           "member": "int64",
           "name": "RetentionId",
@@ -7556,7 +7835,25 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用规则",
+          "document": "<p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>",
+          "example": "无",
+          "member": "RetentionRuleItem",
+          "name": "AdvancedRuleItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用规则</p>",
           "example": "false",
           "member": "bool",
           "name": "Disabled",
@@ -7798,6 +8095,32 @@
         }
       ],
       "usage": "both"
+    },
+    "PolicyFilter": {
+      "document": "策略过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略过滤类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Region": {
       "document": "地域信息",
@@ -8292,6 +8615,112 @@
       ],
       "usage": "out"
     },
+    "ReplicationPolicyInfo": {
+      "document": "实例复制/实例同步策略信息ID",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test policy describtion",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyFilter",
+          "name": "Filters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖对端同名镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Override",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test/event-center/test:v1 ap-chengdu",
+          "member": "string",
+          "name": "SrcResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcr-xxx/event-center/test ap-guangzhou",
+          "member": "string",
+          "name": "DestResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-01T03:45:04.038408Z",
+          "member": "string",
+          "name": "CreationTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-01T03:45:04.038408Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ReplicationRegistry": {
       "document": "企业版复制实例",
       "members": [
@@ -8760,7 +9189,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本保留策略Id",
+          "document": "<p>版本保留策略Id</p>",
           "example": "1",
           "member": "int64",
           "name": "RetentionId",
@@ -8770,7 +9199,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间的名称",
+          "document": "<p>命名空间的名称</p>",
           "example": "mytest",
           "member": "string",
           "name": "NamespaceName",
@@ -8780,7 +9209,7 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
+          "document": "<p>规则列表</p>",
           "example": "无",
           "member": "RetentionRule",
           "name": "RetentionRuleList",
@@ -8790,7 +9219,17 @@
         },
         {
           "disabled": false,
-          "document": "定期执行方式",
+          "document": "<p>高级保留规则列表</p>",
+          "example": "无",
+          "member": "RetentionRuleItem",
+          "name": "AdvancedRuleItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定期执行方式</p>",
           "example": "manual",
           "member": "string",
           "name": "CronSetting",
@@ -8800,7 +9239,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用规则",
+          "document": "<p>是否启用规则</p>",
           "example": "false",
           "member": "bool",
           "name": "Disabled",
@@ -8810,7 +9249,7 @@
         },
         {
           "disabled": false,
-          "document": "基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用",
+          "document": "<p>基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用</p>",
           "example": "2021-02-03",
           "member": "string",
           "name": "NextExecutionTime",
@@ -8844,6 +9283,45 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RetentionRuleItem": {
+      "document": "版本保留规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本保留规则</p>",
+          "example": "无",
+          "member": "RetentionRule",
+          "name": "RetentionPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签过滤器</p>",
+          "example": "无",
+          "member": "FilterSelector",
+          "name": "TagFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库过滤器</p>",
+          "example": "无",
+          "member": "FilterSelector",
+          "name": "RepositoryFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -9779,6 +10257,53 @@
         }
       ],
       "usage": "out"
+    },
+    "TerminateGCJobRequest": {
+      "document": "TerminateGCJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tcr-dc0*****",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateGCJobResponse": {
+      "document": "TerminateGCJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作结果</p>枚举值：<ul><li> success： 操作成功</li><li> error： 操作失败</li></ul>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作结果详细信息</p>",
+          "example": "GC job stopped successfully",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TriggerInvokeCondition": {
       "document": "触发器触发条件",

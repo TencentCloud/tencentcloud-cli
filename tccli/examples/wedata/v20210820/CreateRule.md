@@ -26,7 +26,7 @@ tccli wedata CreateRule --cli-unfold-argument  \
     --CompareRule.CycleStep 1 \
     --CompareRule.ComputeExpression 0 \
     --AlarmLevel 1 \
-    --Description 测试 \
+    --Description 规则 \
     --DatasourceId 678990 \
     --DatabaseId 97yuhijbkh08y97uhi \
     --TargetDatabaseId 97yuhijbkh08y97uhi \
@@ -59,10 +59,10 @@ Output:
             "TableName": "dq",
             "DatabaseId": "roeqgaBtT4m22RyjnMQ",
             "DatasourceId": 6789789,
-            "Name": "测试",
+            "Name": "rule1",
             "Type": 1,
             "RuleTemplateId": 1,
-            "RuleTemplateContent": "描述",
+            "RuleTemplateContent": "规则",
             "QualityDim": 1,
             "SourceObjectType": 1,
             "SourceObjectDataType": 1,
@@ -134,10 +134,10 @@ Output:
                 "CycleStep": 1
             },
             "AlarmLevel": 2,
-            "Description": "测试",
+            "Description": "规则",
             "Operator": "zhangsan",
             "TargetDatabaseId": "6788897uigygh967q23e",
-            "TargetDatabaseName": "test",
+            "TargetDatabaseName": "db",
             "TargetTableId": "y8o97hufe378qygfvbqd",
             "TargetTableName": "dq",
             "TargetConditionExpr": "ct='${yyyy-mm-dd-1}'",

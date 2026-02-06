@@ -112,6 +112,13 @@
       "output": "CreateKeyPairResponse",
       "status": "online"
     },
+    "CreateMcpServer": {
+      "document": "本接口（CreateMcpServer）用于创建MCP Server。\n- 本接口为异步接口，请求发送成功后会返回一个 McpServerId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。",
+      "input": "CreateMcpServerRequest",
+      "name": "创建MCP Server",
+      "output": "CreateMcpServerResponse",
+      "status": "online"
+    },
     "DeleteBlueprints": {
       "document": "本接口 (DeleteBlueprints) 用于删除镜像。可删除的镜像应满足如下条件：\n1、删除镜像接口需要镜像状态为NORMAL（正常）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败），其他状态下的镜像不支持删除操作。镜像状态，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintState获取。\n2、仅支持删除自定义镜像。",
       "input": "DeleteBlueprintsRequest",
@@ -392,6 +399,20 @@
       "output": "DescribeKeyPairsResponse",
       "status": "online"
     },
+    "DescribeMcpServerTemplates": {
+      "document": "本接口（DescribeMcpServerTemplates）用于查询MCP Server模板列表。",
+      "input": "DescribeMcpServerTemplatesRequest",
+      "name": "查询MCP Server模板列表",
+      "output": "DescribeMcpServerTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeMcpServers": {
+      "document": "本接口（DescribeMcpServers）用于查询MCP Server列表。",
+      "input": "DescribeMcpServersRequest",
+      "name": "查询MCP Server列表",
+      "output": "DescribeMcpServersResponse",
+      "status": "online"
+    },
     "DescribeModifyInstanceBundles": {
       "document": "本接口（DescribeModifyInstanceBundles）用于查询实例可变更套餐列表。",
       "input": "DescribeModifyInstanceBundlesRequest",
@@ -540,7 +561,7 @@
       "status": "online"
     },
     "ModifyDisksBackupQuota": {
-      "document": "本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。\n该操作目前仅支持云硬盘类型为数据盘且状态是ATTACHED（已挂载）或 UNATTACHED（待挂载）的云硬盘。\n支持批量操作。每次批量请求云硬盘数量上限为15个。",
+      "document": "本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。\n该操作目前仅支持状态是ATTACHED（已挂载）或 UNATTACHED（待挂载）的云硬盘。\n支持批量操作。每次批量请求云硬盘数量上限为15个。",
       "input": "ModifyDisksBackupQuotaRequest",
       "name": "调整云硬盘备份点配额",
       "output": "ModifyDisksBackupQuotaResponse",
@@ -609,6 +630,13 @@
       "output": "ModifyInstancesRenewFlagResponse",
       "status": "online"
     },
+    "ModifyMcpServer": {
+      "document": "本接口（ModifyMcpServer）用于修改实例的MCP Server信息。\n- 本接口为异步接口，API返回时修改操作并未立即完成。MCP Server的修改结果可以通过调用 DescribeMcpServers 接口查询。",
+      "input": "ModifyMcpServerRequest",
+      "name": "修改MCP Server",
+      "output": "ModifyMcpServerResponse",
+      "status": "online"
+    },
     "ModifySnapshotAttribute": {
       "document": "本接口（ModifySnapshotAttribute）用于修改指定快照的属性。\n<li>“快照名称”仅为方便用户自己管理之用。</li>",
       "input": "ModifySnapshotAttributeRequest",
@@ -628,6 +656,13 @@
       "input": "RemoveDockerContainersRequest",
       "name": "删除Docker容器",
       "output": "RemoveDockerContainersResponse",
+      "status": "online"
+    },
+    "RemoveMcpServers": {
+      "document": "本接口（RemoveMcpServers）用于删除MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果，如无法查询到，代表删除成功。",
+      "input": "RemoveMcpServersRequest",
+      "name": "删除MCP Server",
+      "output": "RemoveMcpServersResponse",
       "status": "online"
     },
     "RenameDockerContainer": {
@@ -707,6 +742,13 @@
       "output": "RestartDockerContainersResponse",
       "status": "online"
     },
+    "RestartMcpServers": {
+      "document": "本接口（RestartMcpServers）用于重启实例中的MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。",
+      "input": "RestartMcpServersRequest",
+      "name": "重启MCP Server",
+      "output": "RestartMcpServersResponse",
+      "status": "online"
+    },
     "RunDockerContainers": {
       "document": "创建并运行多个Docker容器，之后可以通过返回的ActivityIds调用<a href=\"https://cloud.tencent.com/document/product/1207/95476\" target=\"_blank\">DescribeDockerActivities</a>接口查询创建情况。",
       "input": "RunDockerContainersRequest",
@@ -735,6 +777,13 @@
       "output": "StartInstancesResponse",
       "status": "online"
     },
+    "StartMcpServers": {
+      "document": "本接口（StartMcpServers）用于开启实例中的MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。",
+      "input": "StartMcpServersRequest",
+      "name": "开启MCP Server",
+      "output": "StartMcpServersResponse",
+      "status": "online"
+    },
     "StopDockerContainers": {
       "document": "停止实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询停止情况。",
       "input": "StopDockerContainersRequest",
@@ -747,6 +796,13 @@
       "input": "StopInstancesRequest",
       "name": "关闭实例",
       "output": "StopInstancesResponse",
+      "status": "online"
+    },
+    "StopMcpServers": {
+      "document": "本接口（StopMcpServers）用于关闭实例中的MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。",
+      "input": "StopMcpServersRequest",
+      "name": "关闭MCP Server",
+      "output": "StopMcpServersResponse",
       "status": "online"
     },
     "SyncBlueprint": {
@@ -1181,7 +1237,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像状态。\n可选值：\nNORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。",
+          "document": "镜像状态。\n可选值：\nNORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。",
           "example": "NORMAL",
           "member": "string",
           "name": "BlueprintState",
@@ -1262,7 +1318,7 @@
         {
           "disabled": false,
           "document": "镜像关联使用场景Id列表。",
-          "example": "[\"lhsc-123456\"]",
+          "example": "[\"lhsc-3bzsddow\",\"lhsc-h0ug8jtq\"]",
           "member": "string",
           "name": "SceneIdSet",
           "output_required": true,
@@ -1287,6 +1343,16 @@
           "name": "BlueprintShared",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1735,11 +1801,20 @@
         {
           "disabled": false,
           "document": "是否执行强制关机以制作镜像。\n取值范围：\nTrue：表示关机之后制作镜像\nFalse：表示开机状态制作镜像\n默认取值：True\n开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "ForcePowerOff",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1786,6 +1861,15 @@
           "name": "DiskBackupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1895,6 +1979,15 @@
           "name": "AutoMountConfiguration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2078,6 +2171,15 @@
           "name": "SnapshotName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2245,7 +2347,7 @@
         {
           "disabled": false,
           "document": "子域名。\n注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。",
-          "example": "www",
+          "example": "blog",
           "member": "string",
           "name": "Subdomain",
           "required": false,
@@ -2287,6 +2389,15 @@
           "name": "KeyName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2302,6 +2413,88 @@
           "name": "KeyPair",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMcpServerRequest": {
+      "document": "CreateMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server名称。最大长度：64",
+          "example": "腾讯云 Lighthouse MCP Server",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
+          "example": "bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server备注。最大长度：2048",
+          "example": "基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量。最大长度：10",
+          "example": "无",
+          "member": "McpServerEnv",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "传输类型。枚举值如下：\n\n<li>STREAMABLE_HTTP：HTTP协议的流式传输方式。未传传输类型字段时，默认创建此类型的MCP Server</li>\n<li>SSE：Server-Sent Events，服务器发送事件</li>",
+          "example": "STREAMABLE_HTTP",
+          "member": "string",
+          "name": "TransportType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMcpServerResponse": {
+      "document": "CreateMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server ID。",
+          "example": "lhms-p2dophob",
+          "member": "string",
+          "name": "McpServerId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2637,7 +2830,7 @@
         {
           "disabled": false,
           "document": "使用场景ID列表。可通过[DescribeAllScenes](https://cloud.tencent.com/document/product/1207/83513)接口返回值中的SceneId获取。",
-          "example": "[\"lhsc-123456\"]",
+          "example": "[\"lhsc-3bzsddow\"]",
           "member": "string",
           "name": "SceneIds",
           "required": false,
@@ -2775,7 +2968,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n镜像 ID ，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n镜像状态，可通过[数据结构Blueprint](https://cloud.tencent.com/document/api/1207/47576#Blueprint)中的BlueprintState来获取。\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n场景Id，可通过[查看使用场景列表](https://cloud.tencent.com/document/product/1207/83512)接口获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds (可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取BlueprintId)和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n镜像 ID ，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n镜像状态，可通过[数据结构Blueprint](https://cloud.tencent.com/document/api/1207/47576#Blueprint)中的BlueprintState来获取。\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n场景Id，可通过[查看使用场景列表](https://cloud.tencent.com/document/product/1207/83512)接口获取。\n<li>tag-key</li>\n按照【标签键】进行过滤。 类型：String 必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。 类型：String 必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds (可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取BlueprintId)和 Filters 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3025,7 +3218,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：\n- SYSTEM_DISK - 系统盘\n- DATA_DISK - 数据盘\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
+          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：\n- SYSTEM_DISK - 系统盘\n- DATA_DISK - 数据盘\n<li>tag-key</li>\n按照【标签键】进行过滤。 类型：String 必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。 类型：String 必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3238,7 +3431,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。",
+          "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。\ntag-key\n按照【标签键】进行过滤。 类型：String 必选：否\ntag-value\n按照【标签值】进行过滤。 类型：String 必选：否\ntag:tag-key\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4043,7 +4236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- STARTER_BUNDLE_INSTANCE 入门型套餐实例\n- HK_EXCLUSIVE_BUNDLE_INSTANCE 中国香港专属型套餐实例\n- CAREFREE_BUNDLE_INSTANCE 无忧型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘",
+          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- STARTER_BUNDLE_INSTANCE 入门型套餐实例\n- HK_EXCLUSIVE_BUNDLE_INSTANCE 中国香港专属型套餐实例\n- CAREFREE_BUNDLE_INSTANCE 无忧型套餐实例\n- EXCLUSIVE_BUNDLE_02_INSTANCE 境外专属Ⅱ型\n- NEWCOMER_BUNDLE_INSTANCE 新客专享型\n- GAME_PORTAL_BUNDLE_INSTANCE 游戏专区实例\n- ECONOMY_BUNDLE_INSTANCE 经济型套餐实例\n- BUDGET_BUNDLE_INSTANCE 特惠型套餐实例\n- RAZOR_SPEED_BUNDLE_INSTANCE 锐驰套餐实例\n- BANDWIDTH_BUNDLE_INSTANCE 带宽型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘",
           "example": "[\"GENERAL_BUNDLE_INSTANCE\"]",
           "member": "string",
           "name": "ResourceNames",
@@ -4284,7 +4477,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否\n<li>instance-state</li>按照【实例状态】进行过滤。\n类型：String\n必选：否\n<li>tag-key</li>按照【标签键】进行过滤。\n类型：String\n必选：否\n<li>tag-value</li>按照【标签值】进行过滤。\n类型：String\n必选：否\n<li> tag:tag-key</li>按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。",
+          "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否\n<li>instance-state</li>按照【实例状态】进行过滤。\n类型：String\n必选：否\n<li>tag-key</li>按照【标签键】进行过滤。\n类型：String\n必选：否\n<li>tag-value</li>按照【标签值】进行过滤。\n类型：String\n必选：否\n<li> tag:tag-key</li>按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n类型：String\n必选：否\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4524,8 +4717,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>key-id</li>按照【密钥对ID】进行过滤。\n类型：String\n必选：否\n<li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。",
-          "example": "[{\"Name\":\"key-name\",\"Values\":[\"k1\"]}]",
+          "document": "过滤器列表。\n<li>key-id</li>按照【密钥对ID】进行过滤。\n类型：String\n必选：否\n<li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n<li>tag-key</li>\n按照【标签键】进行过滤。 类型：String 必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。 类型：String 必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4555,6 +4748,165 @@
           "name": "KeyPairSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerTemplatesRequest": {
+      "document": "DescribeMcpServerTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器列表。\n<li>name-description</li>按照MCP Server模板名称或描述进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerTemplatesResponse": {
+      "document": "DescribeMcpServerTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server模板列表。",
+          "example": "无",
+          "member": "McpServerTemplate",
+          "name": "McpServerTemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的MCP Server模板数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServersRequest": {
+      "document": "DescribeMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。列表为空时此条件不生效。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServersResponse": {
+      "document": "DescribeMcpServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server列表。",
+          "example": "无",
+          "member": "McpServer",
+          "name": "McpServerSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的MCP Server数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例 ID。\t",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "ai mcp server test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4867,7 +5219,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotId 获取。\n\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/66093\">DescribeDisks</a> 接口返回值中的 DiskId 获取。\n\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotName 获取。\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
+          "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotId 获取。\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/66093\">DescribeDisks</a> 接口返回值中的 DiskId 获取。\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotName 获取。\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。\n<li>tag-key</li>\n按照【标签键】进行过滤。\n类型：String\n必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。\n类型：String\n必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4983,6 +5335,32 @@
       ],
       "type": "object"
     },
+    "DestinationRegionBlueprint": {
+      "document": "目标地域镜像信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标地域镜像ID。",
+          "example": "lhbp-lf3gjs2f",
+          "member": "string",
+          "name": "BlueprintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DetachCcnRequest": {
       "document": "DetachCcn请求参数结构体",
       "members": [
@@ -5042,51 +5420,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述计费项目名称，目前取值\n<li>\"DiskSpace\"代表云硬盘空间收费项。</li>\n<li>\"DiskBackupQuota\"代表云硬盘备份点配额收费项。</li>",
+          "document": "描述计费项目名称，目前取值\n<li>\"DiskSpace\"代表云硬盘空间收费项。</li>\n<li>\"DiskBackupQuota\"代表数据盘备份点配额收费项。</li>\n<li>\"Instance\"代表实例收费项。</li>\n<li>\"SystemDiskBackupQuota\"代表系统盘备份点配额收费项。</li>",
           "example": "DiskSpace",
           "member": "string",
           "name": "PriceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘计费项维度单价。",
+          "document": "计费项维度单价。",
           "example": "1.1",
           "member": "float",
           "name": "OriginUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘计费项维度总价。",
+          "document": "计费项维度总价。",
           "example": "2.2",
           "member": "float",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘在计费项维度折扣。",
+          "document": "计费项维度折扣。",
           "example": "0.8",
           "member": "float",
           "name": "Discount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘在计费项维度折后总价。",
+          "document": "计费项维度折后总价。",
           "example": "2.1",
           "member": "float",
           "name": "DiscountPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -5196,11 +5574,11 @@
       "usage": "out"
     },
     "Disk": {
-      "document": "磁盘信息",
+      "document": "云硬盘信息。",
       "members": [
         {
           "disabled": false,
-          "document": "磁盘ID",
+          "document": "云硬盘ID。",
           "example": "lhdisk-p1zflrif",
           "member": "string",
           "name": "DiskId",
@@ -5210,7 +5588,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "lhins-anxwfvxh",
           "member": "string",
           "name": "InstanceId",
@@ -5220,7 +5598,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -5230,7 +5608,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称",
+          "document": "云硬盘名称。",
           "example": "disk-name",
           "member": "string",
           "name": "DiskName",
@@ -5240,7 +5618,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型\n枚举值：\n<li> SYSTEM_DISK: 系统盘 </li>\n<li> DATA_DISK: 数据盘 </li>\n",
+          "document": "云硬盘类型。\n枚举值：\n<li> SYSTEM_DISK: 系统盘 </li>\n<li> DATA_DISK: 数据盘 </li>\n",
           "example": "DATA_DISK",
           "member": "string",
           "name": "DiskUsage",
@@ -5250,7 +5628,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘介质类型\n枚举值:\n<li> CLOUD_BASIC: 普通云硬盘 </li>\n<li> CLOUD_PREMIUM: 高性能云硬盘 </li>\n<li> CLOUD_SSD: SSD云硬盘 </li>",
+          "document": "云硬盘介质类型。\n枚举值:\n<li> CLOUD_BASIC: 普通云硬盘 </li>\n<li> CLOUD_PREMIUM: 高性能云硬盘 </li>\n<li> CLOUD_SSD: SSD云硬盘 </li>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -5260,7 +5638,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘付费类型\n<li> PREPAID: 预付费 </li>\n<li> POSTPAID_BY_HOUR: 按小时后付费 </li>",
+          "document": "云硬盘付费类型。\n<li> PREPAID: 预付费 </li>\n<li> POSTPAID_BY_HOUR: 按小时后付费 </li>",
           "example": "PREPAID",
           "member": "string",
           "name": "DiskChargeType",
@@ -5270,7 +5648,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘大小, 单位GB",
+          "document": "云硬盘大小, 单位GB。",
           "example": "20",
           "member": "int64",
           "name": "DiskSize",
@@ -5280,7 +5658,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标识",
+          "document": "续费标识。",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -5290,7 +5668,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：待挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
+          "document": "云硬盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：待挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
           "example": "UNATTACHED",
           "member": "string",
           "name": "DiskState",
@@ -5300,8 +5678,8 @@
         },
         {
           "disabled": false,
-          "document": "磁盘挂载状态",
-          "example": "False",
+          "document": "云硬盘挂载状态。",
+          "example": "false",
           "member": "bool",
           "name": "Attached",
           "output_required": true,
@@ -5310,8 +5688,8 @@
         },
         {
           "disabled": false,
-          "document": "是否随实例释放",
-          "example": "False",
+          "document": "是否随实例释放。",
+          "example": "false",
           "member": "bool",
           "name": "DeleteWithInstance",
           "output_required": true,
@@ -5320,7 +5698,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次操作",
+          "document": "上一次操作。",
           "example": "CreateDisks",
           "member": "string",
           "name": "LatestOperation",
@@ -5330,7 +5708,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次操作状态",
+          "document": "上一次操作状态。",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
@@ -5340,7 +5718,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次请求ID",
+          "document": "上一次请求ID。",
           "example": "b786faac-d27b-4f70-a52e-3ae725e0f639",
           "member": "string",
           "name": "LatestOperationRequestId",
@@ -5396,6 +5774,16 @@
           "name": "DiskBackupQuota",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5512,6 +5900,16 @@
           "name": "CreatedTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘备份点绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -6707,6 +7105,15 @@
           "name": "PublicKey",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6720,7 +7127,7 @@
           "example": "lhkp-2xsmy15f",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7452,12 +7859,12 @@
       "usage": "both"
     },
     "InstancePrice": {
-      "document": "关于Lighthouse Instance实例的价格信息",
+      "document": "关于Lighthouse Instance实例的价格信息。",
       "members": [
         {
           "disabled": false,
           "document": "套餐单价原价。",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "OriginalBundlePrice",
           "output_required": true,
@@ -7467,7 +7874,7 @@
         {
           "disabled": false,
           "document": "原价。",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "OriginalPrice",
           "output_required": true,
@@ -7477,7 +7884,7 @@
         {
           "disabled": false,
           "document": "折扣。",
-          "example": "100",
+          "example": "100.0",
           "member": "float",
           "name": "Discount",
           "output_required": true,
@@ -7487,7 +7894,7 @@
         {
           "disabled": false,
           "document": "折后价。",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": true,
@@ -7502,6 +7909,16 @@
           "name": "Currency",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项目明细。",
+          "example": "无",
+          "member": "DetailPrice",
+          "name": "DetailPrices",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -7568,7 +7985,7 @@
         },
         {
           "disabled": false,
-          "document": "实例退还失败错误码。取值:\n0: 可以退还\n1: 资源已退货。如为退货后续费资源，请于购买6小时后操作\n2: 资源已到期\n3: 资源购买超过5天不支持退款\n4: 非预付费资源不支持退款\n8: 退货数量超出限额\n9: 涉及活动订单不支持退款\n10: 资源不支持自助退，请走工单退款\n11: 涉及推广奖励渠道订单，请提工单咨询\n12: 根据业务侧产品规定，该资源不允许退款",
+          "document": "实例退还失败错误码。取值:\n0: 可以退还\n1: 资源已退货。\n2: 资源已到期\n3: 资源购买超过5天不支持退款\n4: 非预付费资源不支持退款\n8: 退货数量超出限额\n9: 涉及活动订单不支持退款\n10: 资源不支持自助退，请走工单退款\n11: 涉及推广奖励渠道订单，请提工单咨询\n12: 根据业务侧产品规定，该资源不允许退款",
           "example": "2",
           "member": "int64",
           "name": "ReturnFailCode",
@@ -7822,6 +8239,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密钥对绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7874,6 +8301,294 @@
         }
       ],
       "usage": "out"
+    },
+    "McpServer": {
+      "document": "MCP Server信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server ID",
+          "example": "lhms-bi8sl6ut",
+          "member": "string",
+          "name": "McpServerId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server名称。最大长度：64",
+          "example": "test-modify",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server类型。枚举值如下：\n\n<li>PUBLIC_PACKAGE：公共包安装</li>\n<li>AGENT_GENERATED：AI生成</li>",
+          "example": "PUBLIC_PACKAGE",
+          "member": "string",
+          "name": "McpServerType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server图标地址",
+          "example": "https://cloudcache.tencent-cloud.com",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
+          "example": "bnB4IEBwbGF5d3JpZ2h0L21jcEBsYXRlc3QgLS1oZWFkbGVzcw==",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server状态。枚举值如下：\n\n<li>PENDING：表示创建中</li>\n<li>LAUNCH_FAILED：表示创建失败</li>\n<li>RUNNING：表示运行中</li>\n<li>STOPPED：表示关闭</li>\n<li>STARTING：表示开启中</li>\n<li>STOPPING：表示关闭中</li>\n<li>RESTARTING：表示重启中</li>\n<li>REMOVING：表示删除中</li>\n<li>UNKNOWN：表示未知</li>\n<li>ENV_ERROR：表示环境错误</li>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server访问地址。传输类型 TransportType 为 STREAMABLE_HTTP 时以 /mcp结尾，为 SSE 时以 /sse结尾。",
+          "example": "http://1.14.54.109/lhms-bi8sl6ut/mcp",
+          "member": "string",
+          "name": "ServerUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server配置",
+          "example": "{\"mcpServers\":{\"test-modify\":{\"url\":\"http://1.14.54.109/lhms-bi8sl6ut/mcp\"}}}",
+          "member": "string",
+          "name": "Config",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server备注",
+          "example": "Playwright Mcp",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2025-10-22T10:46:45Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2025-10-22T10:49:49Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量",
+          "example": "无",
+          "member": "McpServerEnv",
+          "name": "EnvSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传输类型。枚举值如下：\n\n<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>\n<li>SSE：Server-Sent Events，服务器发送事件</li>",
+          "example": "STREAMABLE_HTTP",
+          "member": "string",
+          "name": "TransportType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpServerEnv": {
+      "document": "MCP Server环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server的环境变量键。最大长度：128",
+          "example": "MAP_API_KEY",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server的环境变量值。最大长度：1024。该字段可能存储密钥，出参时将固定返回“**********”，避免明文泄露。",
+          "example": "api_key_xxx_xxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpServerTemplate": {
+      "document": "MCP Server模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server名称",
+          "example": "AMap",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码之后的MCP Server启动命令。",
+          "example": "bnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9tYXA=",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "高德地图官网MCP Server",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server图标地址",
+          "example": "https://lbs.amap.com/favicon.ico",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server社区地址",
+          "example": "https://lbs.amap.com/api/mcp-server/summary",
+          "member": "string",
+          "name": "CommunityUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server关联的开发平台地址或开放平台地址",
+          "example": "https://console.amap.com/dev/index",
+          "member": "string",
+          "name": "PlatformUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量",
+          "example": "无",
+          "member": "McpServerTemplateEnv",
+          "name": "EnvSet",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpServerTemplateEnv": {
+      "document": "MCP Server模板环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server模板的环境变量键",
+          "example": "MAP_API_KEY",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server模板的环境变量值",
+          "example": "api_key_xxx_xxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyBlueprintAttributeRequest": {
       "document": "ModifyBlueprintAttribute请求参数结构体",
@@ -8052,7 +8767,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘备份点配额。取值范围: [0, 500]。调整后的配额必须不小于已存在的备份点数量。",
+          "document": "云硬盘备份点配额。取值范围: [0, 500]。调整后的配额必须大于等于已存在的备份点数量。",
           "example": "4",
           "member": "int64",
           "name": "DiskBackupQuota",
@@ -8490,6 +9205,87 @@
       ],
       "type": "object"
     },
+    "ModifyMcpServerRequest": {
+      "document": "ModifyMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可以通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID。可以通[DescribeMcpServers](https://cloud.tencent.com/document/product/1207/122837)接口返回值中的McpServerId获取。",
+          "example": "lhms-p2dophob",
+          "member": "string",
+          "name": "McpServerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server名称。最大长度：64",
+          "example": "腾讯云 Lighthouse MCP Server",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
+          "example": "bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server备注。最大长度：2048",
+          "example": "基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量。最大长度：10。用于完整替换MCP Server的环境变量。当该字段为空时，系统将清除当前所有环境变量。若无需修改环境变量，请勿传递该字段。",
+          "example": "无",
+          "member": "McpServerEnv",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "传输类型。枚举值如下：\n\n<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>\n<li>SSE：Server-Sent Events，服务器发送事件</li>",
+          "example": "STREAMABLE_HTTP",
+          "member": "string",
+          "name": "TransportType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMcpServerResponse": {
+      "document": "ModifyMcpServer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySnapshotAttributeRequest": {
       "document": "ModifySnapshotAttribute请求参数结构体",
       "members": [
@@ -8609,6 +9405,15 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关机类型。\n取值范围：\n- SOFT：表示软关机 \n- HARD：表示硬关机 \n- SOFT_FIRST：表示优先软关机，失败再执行硬关机  \n\n默认取值：SOFT_FIRST。",
+          "example": "\"SOFT_FIRST\"",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8708,6 +9513,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMcpServersRequest": {
+      "document": "RemoveMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可以通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMcpServersResponse": {
+      "document": "RemoveMcpServers返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9303,6 +10144,42 @@
       ],
       "type": "object"
     },
+    "RestartMcpServersRequest": {
+      "document": "RestartMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartMcpServersResponse": {
+      "document": "RestartMcpServers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RunDockerContainersRequest": {
       "document": "RunDockerContainers请求参数结构体",
       "members": [
@@ -9569,6 +10446,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9764,6 +10651,42 @@
       ],
       "type": "object"
     },
+    "StartMcpServersRequest": {
+      "document": "StartMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMcpServersResponse": {
+      "document": "StartMcpServers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopDockerContainersRequest": {
       "document": "StopDockerContainers请求参数结构体",
       "members": [
@@ -9821,12 +10744,57 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关机类型。取值范围： \n<li>SOFT：表示软关机</li>\n<li>HARD：表示硬关机 </li>\n<li>SOFT_FIRST：表示优先软关机，失败再执行硬关机 </li>\n\n默认取值：SOFT_FIRST",
+          "example": "\"SOFT_FIRST\"",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
     "StopInstancesResponse": {
       "document": "StopInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMcpServersRequest": {
+      "document": "StopMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-5h3s0lht",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMcpServersResponse": {
+      "document": "StopMcpServers返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9900,6 +10868,16 @@
     "SyncBlueprintResponse": {
       "document": "SyncBlueprint返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "目标地域镜像信息。",
+          "example": "无",
+          "member": "DestinationRegionBlueprint",
+          "name": "DestinationRegionBlueprintSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

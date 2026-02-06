@@ -827,7 +827,7 @@
       "status": "online"
     },
     "ModifyDatabaseShrinkMDF": {
-      "document": "本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。",
+      "document": "本接口（ModifyDatabaseShrinkMDF）用于收缩数据库 mdf（Shrink mdf）。",
       "input": "ModifyDatabaseShrinkMDFRequest",
       "name": "收缩数据库mdf",
       "output": "ModifyDatabaseShrinkMDFResponse",
@@ -2286,7 +2286,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID（必填），形如mssql-i1z41iwd",
+          "document": "实例ID，形如mssql-i1z41iwd",
           "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
@@ -5423,6 +5423,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是可用性组 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsAvailabilityGroups",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AG组数据库同步状态",
+          "example": "0",
+          "member": "string",
+          "name": "AGSyncState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5950,15 +5970,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号权限列表",
-          "example": "[]",
+          "example": "无",
           "member": "AccountPrivilege",
           "name": "Accounts",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6660,7 +6682,7 @@
         {
           "disabled": false,
           "document": "一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl。",
-          "example": "[mssql-7vfv3rk3]",
+          "example": "[\"mssql-7vfv3rk3\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": false,
@@ -6669,7 +6691,7 @@
         {
           "disabled": false,
           "document": "实例名称列表，模糊查询。",
-          "example": "[name]",
+          "example": "[\"name\"]",
           "member": "string",
           "name": "InstanceNameSet",
           "required": false,
@@ -6678,7 +6700,7 @@
         {
           "disabled": false,
           "document": "排序字段，默认default，则按照备份空间降序。\ndefault 按照备份空间排序\ndata 数据备份排序\nlog 日志备份排序\nauto 自动备份排序\nmanual 手动备份排序",
-          "example": "default",
+          "example": "order",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -6705,7 +6727,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6715,7 +6737,7 @@
           "example": "无",
           "member": "SummaryDetailRes",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7384,7 +7406,7 @@
         {
           "disabled": false,
           "document": "实例ID列表",
-          "example": "[mssql-6upluvd5]",
+          "example": "[\"mssql-6upluvd5\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": false,
@@ -7393,7 +7415,7 @@
         {
           "disabled": false,
           "document": "实例名称列表",
-          "example": "[name]",
+          "example": "[\"name\"]",
           "member": "string",
           "name": "InstanceNameSet",
           "required": false,
@@ -7419,8 +7441,8 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训",
-          "example": "default",
+          "document": "排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份",
+          "example": "instanceId",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -7447,7 +7469,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7457,7 +7479,7 @@
           "example": "无",
           "member": "CrossSummaryDetailRes",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7774,7 +7796,7 @@
         {
           "disabled": false,
           "document": "TDE透明数据加密配置",
-          "example": "{\"Encryption\":\"disable\", \"CertificateAttribution\":\"self\"}",
+          "example": "无",
           "member": "TDEConfigAttribute",
           "name": "TDEConfig",
           "output_required": true,
@@ -7784,7 +7806,7 @@
         {
           "disabled": false,
           "document": "SSL加密",
-          "example": "{\"IsKMS\":0, \"Encryption\":\"disable\",\"SSLValidity\":0}",
+          "example": "无",
           "member": "SSLConfig",
           "name": "SSLConfig",
           "output_required": true,
@@ -7794,7 +7816,7 @@
         {
           "disabled": false,
           "document": "双节点备机只读信息",
-          "example": "{\"DrInstanceId\":\"mssqldr-0918ha7\", \"Zone\":\"ap-guangzhou\",\"SlaveStatus\":\"disable\"}",
+          "example": "无",
           "member": "DrReadableInfo",
           "name": "DrReadableInfo",
           "output_required": true,
@@ -7804,7 +7826,7 @@
         {
           "disabled": false,
           "document": "等待回收的IP列表",
-          "example": "[{\"Vip\":\"127.0.0.1\",\"RecycleTime\":\"2024-03-26 12:28:41\"}],]",
+          "example": "无",
           "member": "OldVip",
           "name": "OldVipList",
           "output_required": true,
@@ -7824,7 +7846,7 @@
         {
           "disabled": false,
           "document": "多节点备机只读信息",
-          "example": "[{\"DrInstanceId\":\"mssqldr-0918ha7\", \"Zone\":\"ap-guangzhou\",\"SlaveStatus\":\"disable\"}]",
+          "example": "无",
           "member": "DrReadableInfo",
           "name": "MultiDrReadableInfo",
           "output_required": false,
@@ -7860,6 +7882,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢SQL阈值，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "SlowLogThreshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10785,7 +10817,7 @@
           "example": "[\"2022-10-24 00:00:00\"]",
           "member": "string",
           "name": "SaveModePeriod",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10795,7 +10827,7 @@
           "example": "[\"2022-10-25 00:00:00\"]",
           "member": "string",
           "name": "SaveModeRegular",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11688,7 +11720,7 @@
         {
           "disabled": false,
           "document": "扩展事件列表",
-          "example": "[]",
+          "example": "无",
           "member": "Events",
           "name": "Events",
           "output_required": true,
@@ -11988,7 +12020,7 @@
         },
         {
           "disabled": false,
-          "document": "事件记录状态，1-成功，2-失败",
+          "document": "事件记录状态，1-成功，4-写入中",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -12008,7 +12040,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展文件生成开始时间",
+          "document": "扩展文件最后更新时间",
           "example": "2023-01-01 12:05:00",
           "member": "string",
           "name": "EndTime",
@@ -13515,7 +13547,7 @@
         },
         {
           "disabled": false,
-          "document": "备份模式（必填），master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。",
+          "document": "备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。",
           "example": "master_no_pkg",
           "member": "string",
           "name": "BackupModel",
@@ -14135,8 +14167,8 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
-          "example": "[\"sg-igw86yth\\r\\n\"]",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 DescribeDBSecurityGroups 接口获取。输入的安全组 ID 数组无长度限制。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
+          "example": "[\"sg-ajr1jzgj\"]",
           "member": "string",
           "name": "SecurityGroupIdSet",
           "required": true,
@@ -14583,7 +14615,7 @@
         {
           "disabled": false,
           "document": "数据库名数组",
-          "example": "[db_test]",
+          "example": "[\"db_test\"]",
           "member": "string",
           "name": "DBNames",
           "required": true,
@@ -18303,6 +18335,15 @@
           "name": "DrZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动升级数据库的兼容性级别，默认0。0-否，1-是",
+          "example": "0",
+          "member": "int64",
+          "name": "UpgradeCompatLevel",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -1,34 +1,4 @@
-**Example 1: 拉取指定成员的信息**
-
-
-
-Input: 
-
-```
-tccli cme DescribeTeamMembers --cli-unfold-argument  \
-    --Platform 1000000009 \
-    --TeamId 1kdk882ddd88338ddd3k3 \
-    --MemberIds 1993939392iidkei8ei
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "MemberSet": [
-            {
-                "MemberId": "1993939392iidkei8ei",
-                "Remark": "主编辑李四",
-                "Role": "Members"
-            }
-        ],
-        "RequestId": "99004d9f-aeec-4817-bbe2-d3499f95a2bf"
-    }
-}
-```
-
-**Example 2: 分页拉取团队成员信息**
+**Example 1: 分页拉取团队成员信息**
 
 
 
@@ -60,6 +30,36 @@ Output:
             },
             {
                 "MemberId": "i9dlld9393d2iidkei89i0",
+                "Remark": "主编辑李四",
+                "Role": "Members"
+            }
+        ],
+        "RequestId": "99004d9f-aeec-4817-bbe2-d3499f95a2bf"
+    }
+}
+```
+
+**Example 2: 拉取指定成员的信息**
+
+
+
+Input: 
+
+```
+tccli cme DescribeTeamMembers --cli-unfold-argument  \
+    --Platform 1000000009 \
+    --TeamId 1kdk882ddd88338ddd3k3 \
+    --MemberIds 1993939392iidkei8ei
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "MemberSet": [
+            {
+                "MemberId": "1993939392iidkei8ei",
                 "Remark": "主编辑李四",
                 "Role": "Members"
             }

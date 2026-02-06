@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"InstanceId\": \"cdwpg_rzshdeh1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Accounts\": [\n            {\n                \"InstanceId\": \"cdwpg-rzshdeh1\",\n                \"Perms\": [\n                    \"Create role\",\n                    \"Create DB\"\n                ],\n                \"UserName\": \"dbadmin\"\n            }\n        ],\n        \"RequestId\": \"88aeb3ac-19d8-4c89-b4e2-905cbf74100d\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Accounts\": [\n            {\n                \"InstanceId\": \"cdwpg-rzshdeh1\",\n                \"Perms\": [\n                    \"Create role\",\n                    \"Create DB\"\n                ],\n                \"UserName\": \"dbadmin\"\n            }\n        ],\n        \"RequestId\": \"88aeb3ac-19d8-4c89-b4e2-905cbf74100d\",\n        \"ErrorMsg\": \"\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "账号管理"
       }
     ],

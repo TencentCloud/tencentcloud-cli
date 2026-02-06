@@ -1,6 +1,6 @@
-**Example 1: 查看一个策略的详情**
+**Example 1: 查看策略详情**
 
-
+查看策略详情
 
 Input: 
 
@@ -21,7 +21,13 @@ Output:
         "Type": 1,
         "RequestId": "845b309d-e531-402d-a4f6-ec124f06738b",
         "PresetAlias": "备注",
-        "IsServiceLinkedRolePolicy": 0
+        "IsServiceLinkedRolePolicy": 0,
+        "Tags": [
+            {
+                "Key": "region",
+                "Value": "ap-guangzhou"
+            }
+        ]
     }
 }
 ```

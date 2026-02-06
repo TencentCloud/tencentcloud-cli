@@ -229,6 +229,7 @@ Output:
                     "InstanceId": "cdb-o7uph0cj",
                     "Password": "Abc_123456789",
                     "Port": 0,
+                    "EncryptConn": "UnEncrypted",
                     "Role": "",
                     "SubnetId": "",
                     "TmpSecretId": "",

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tione StopTrainingTask --cli-unfold-argument  \
-    --Id abc
+    --Id train-1243143
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "dfds-fdsafsa"
     }
 }
 ```

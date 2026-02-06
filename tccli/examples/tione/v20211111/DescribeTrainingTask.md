@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DescribeTrainingTask --cli-unfold-argument  \
-    --Id abc
+    --Id train-1329791605108055040
 ```
 
 Output: 
@@ -14,124 +14,94 @@ Output:
 {
     "Response": {
         "TrainingTaskDetail": {
-            "Id": "abc",
-            "Name": "abc",
-            "Uin": "abc",
-            "SubUin": "abc",
-            "Region": "abc",
-            "FrameworkName": "abc",
-            "FrameworkVersion": "abc",
-            "FrameworkEnvironment": "abc",
-            "ChargeType": "abc",
-            "ResourceGroupId": "abc",
+            "Id": "train-1329791605108055040",
+            "Name": "initCommand_test",
+            "Uin": "100031385875",
+            "SubUin": "100042146752",
+            "Region": "ap-guangzhou",
+            "FrameworkName": "PYTORCH",
+            "FrameworkVersion": "",
+            "FrameworkEnvironment": "torch1.9-py3.8-cuda11.1-gpu",
+            "TrainingMode": "DDP",
+            "ChargeType": "POSTPAID_BY_HOUR",
+            "ResourceGroupId": "",
+            "ResourceGroupName": "",
             "ResourceConfigInfos": [
                 {
-                    "Role": "abc",
-                    "Cpu": 1,
-                    "Memory": 1,
-                    "GpuType": "abc",
-                    "Gpu": 1,
-                    "InstanceType": "abc",
+                    "Role": "WORKER",
+                    "Cpu": 2000,
+                    "Memory": 2048,
+                    "GpuType": "",
+                    "Gpu": 0,
+                    "InstanceType": "TI.S6.MEDIUM2.POST",
+                    "InstanceTypeAlias": "2C2G",
                     "InstanceNum": 1,
-                    "InstanceTypeAlias": "abc",
                     "RDMAConfig": {
-                        "Enable": true
+                        "Enable": false
                     }
                 }
             ],
             "Tags": [
                 {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
+                    "TagKey": "qcs:tag:createdBy",
+                    "TagValue": "CAMUser:100042146752:evanxli"
                 }
             ],
-            "TrainingMode": "abc",
+            "ImageInfo": {
+                "ImageType": "PRE_SET",
+                "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-torch-1.9.0-devel:1.0.9",
+                "RegistryRegion": "",
+                "RegistryId": "",
+                "ImageName": "torch1.9-py3.8-cuda11.1-gpu"
+            },
             "CodePackagePath": {
-                "Bucket": "abc",
-                "Region": "abc",
-                "Paths": [
-                    "abc"
-                ]
+                "Bucket": "",
+                "Region": "",
+                "Paths": []
             },
             "StartCmdInfo": {
-                "StartCmd": "abc",
-                "PsStartCmd": "abc",
-                "WorkerStartCmd": "abc"
+                "StartCmd": "",
+                "PsStartCmd": "",
+                "WorkerStartCmd": "sleep 3600"
             },
-            "DataSource": "abc",
-            "DataConfigs": [
-                {
-                    "MappingPath": "abc",
-                    "DataSourceType": "abc",
-                    "DataSetSource": {
-                        "Id": "abc"
-                    },
-                    "COSSource": {
-                        "Bucket": "abc",
-                        "Region": "abc",
-                        "Paths": [
-                            "abc"
-                        ]
-                    },
-                    "CFSSource": {
-                        "Id": "abc",
-                        "Path": "abc",
-                        "MountType": "abc",
-                        "Protocol": "abc"
-                    },
-                    "HDFSSource": {
-                        "Id": "abc",
-                        "Path": "abc"
-                    },
-                    "GooseFSSource": {
-                        "Id": "abc"
-                    },
-                    "CFSTurboSource": {
-                        "Id": "abc",
-                        "Path": "abc"
-                    }
-                }
-            ],
-            "TuningParameters": "abc",
+            "DataSource": "",
+            "DataConfigs": [],
+            "TuningParameters": "{abc,}",
             "Output": {
-                "Bucket": "abc",
-                "Region": "abc",
-                "Paths": [
-                    "abc"
-                ]
+                "Bucket": "",
+                "Region": "",
+                "Paths": []
             },
-            "LogEnable": true,
+            "LogEnable": false,
             "LogConfig": {
-                "LogsetId": "abc",
-                "TopicId": "abc"
+                "LogsetId": "",
+                "TopicId": ""
             },
-            "VpcId": "abc",
-            "SubnetId": "abc",
-            "ImageInfo": {
-                "ImageType": "abc",
-                "ImageUrl": "abc",
-                "RegistryRegion": "abc",
-                "RegistryId": "abc",
-                "AllowSaveAllContent": true,
-                "ImageName": "abc"
-            },
-            "RuntimeInSeconds": 1,
-            "CreateTime": "abc",
-            "StartTime": "abc",
-            "ChargeStatus": "abc",
-            "LatestInstanceId": "abc",
-            "TensorBoardId": "abc",
-            "Remark": "abc",
-            "FailureReason": "abc",
-            "UpdateTime": "abc",
-            "EndTime": "abc",
-            "BillingInfo": "abc",
-            "ResourceGroupName": "abc",
-            "Message": "abc",
-            "Status": "abc",
-            "CallbackUrl": "abc"
+            "VpcId": "",
+            "SubnetId": "",
+            "Status": "SUCCEED",
+            "RuntimeInSeconds": 3602,
+            "CreateTime": "2025-05-28T18:18:33+08",
+            "UpdateTime": "2025-05-29T14:41:57+08",
+            "StartTime": "2025-05-29T14:43:53+08",
+            "EndTime": "2025-05-29T15:43:55+08",
+            "ChargeStatus": "NOT_BILLING",
+            "LatestInstanceId": "train-1329791605108055040-a3vq1whfx24g",
+            "TensorBoardId": "",
+            "Remark": "",
+            "FailureReason": "",
+            "BillingInfo": "",
+            "Message": "",
+            "CallbackUrl": "",
+            "SubUinName": "evanxli",
+            "CodeRepos": [
+                {
+                    "Id": "cr-1076157270725717248",
+                    "TargetPath": "/git/data"
+                }
+            ]
         },
-        "RequestId": "abc"
+        "RequestId": "aaa06bff-0a06-4539-9a86-36b2f605d525"
     }
 }
 ```

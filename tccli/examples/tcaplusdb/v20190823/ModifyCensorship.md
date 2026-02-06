@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcaplusdb ModifyCensorship --cli-unfold-argument  \
-    --Uins xx \
-    --ClusterId xx \
+    --Uins 12323 \
+    --ClusterId 123213 \
     --Censorship 0
 ```
 
@@ -16,10 +16,10 @@ Output:
 {
     "Response": {
         "Uins": [
-            "xx"
+            "123123"
         ],
-        "ClusterId": "xx",
-        "RequestId": "xx",
+        "ClusterId": "12313",
+        "RequestId": "123123-12313",
         "Censorship": 0
     }
 }
