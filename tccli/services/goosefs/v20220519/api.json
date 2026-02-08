@@ -1244,6 +1244,34 @@
       ],
       "usage": "out"
     },
+    "ClusterMountAttr": {
+      "document": "客户端集群挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载的文件系统Id",
+          "example": "x-c60-who39x58",
+          "member": "string",
+          "name": "StorageFileSystemId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群挂载点。入参是节点的自定义挂载点，出参是集群的默认挂载点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/mountDir",
+          "member": "string",
+          "name": "MountPoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ClusterRole": {
       "document": "ClusterRole",
       "members": [
@@ -1726,6 +1754,16 @@
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群挂载存储集合",
+          "example": "无",
+          "member": "ClusterMountAttr",
+          "name": "ClusterMountSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

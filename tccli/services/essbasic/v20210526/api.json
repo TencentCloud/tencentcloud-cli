@@ -365,7 +365,7 @@
       "status": "online"
     },
     "CreateChannelFlowEvidenceReport": {
-      "document": "提交申请出证报告任务并返回报告ID。\n\n出证报告的示例样式可以参考 [出征报告.PDF](https://qcloudimg.tencent-cloud.cn/raw/a55214fcddaebbd1582cc9c57cc6cf1b.pdf)\n\n注意：\n- 使用此功能**需搭配出证套餐**  ，使用前请联系对接的客户经理沟通。\n- 操作人必须是**发起方或者签署方企业的(非走授权书认证)法人或者超管**。\n- 合同流程必须**所有参与方已经签署完成**。\n- 出证过程需一定时间，建议在**提交出证任务后的24小时之后**，通过<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport\" target=\"_blank\">获取出证报告任务执行结果</a>接口进行查询执行结果和出证报告的下载URL。\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/1b4307ed143a992940c41d61192d3a0f/channel_CreateChannelFlowEvidenceReport.png)",
+      "document": "提交申请出证报告任务并返回报告ID。\n\n出证报告的示例样式可以参考 [出证报告.PDF](https://qcloudimg.tencent-cloud.cn/raw/a55214fcddaebbd1582cc9c57cc6cf1b.pdf)\n\n注意：\n- 使用此功能**需搭配出证套餐**  ，使用前请联系对接的客户经理沟通。\n- 操作人必须是**发起方或者签署方企业的(非走授权书认证)法人或者超管**。\n- 合同流程必须**所有参与方已经签署完成**。\n- 出证过程需一定时间，建议在**提交出证任务后的24小时之后**，通过<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport\" target=\"_blank\">获取出证报告任务执行结果</a>接口进行查询执行结果和出证报告的下载URL。\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/1b4307ed143a992940c41d61192d3a0f/channel_CreateChannelFlowEvidenceReport.png)",
       "input": "CreateChannelFlowEvidenceReportRequest",
       "name": "提交申请出证报告任务",
       "output": "CreateChannelFlowEvidenceReportResponse",

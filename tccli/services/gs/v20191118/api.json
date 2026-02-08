@@ -1024,6 +1024,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安卓实例型号。\nYS1：默认值，基础型云手机\nGC0、GC1、GC2：三种性能型云手机",
+          "example": "YS1",
+          "member": "string",
+          "name": "AndroidInstanceModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1354,6 +1365,16 @@
           "example": "2021-07-02T10:15:36Z",
           "member": "string",
           "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像型号。\nYS1：基础型云手机\nGC0、GC1、GC2：三种性能型云手机",
+          "example": "YS1",
+          "member": "string",
+          "name": "AndroidInstanceImageModel",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2634,6 +2655,15 @@
           "name": "Labels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安卓实例型号。YS1：默认值，基础型云手机GC0、GC1、GC2：三种性能型云手机",
+          "example": "YS1",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2644,7 +2674,7 @@
         {
           "disabled": false,
           "document": "安卓实例 ID 列表",
-          "example": "[\"abc\", \"def\"]",
+          "example": "[\"ab\", \"ef\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "output_required": true,
@@ -3465,7 +3495,7 @@
         },
         {
           "disabled": false,
-          "document": "字段过滤器。Filter 的 Name 有以下值：\nImageName：镜像名称\nImageState：镜像状态\nAndroidVersion：安卓版本",
+          "document": "字段过滤器。Filter 的 Name 有以下值：\nImageModel：镜像型号\nImageName：镜像名称\nImageState：镜像状态\nAndroidVersion：安卓版本",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3853,7 +3883,7 @@
         },
         {
           "disabled": false,
-          "document": "字段过滤器。Filter 的 Name 有以下值：\nName：实例名称\nUserId：实例用户ID\nHostSerialNumber：宿主机序列号\nHostServerSerialNumber：机箱序列号",
+          "document": "字段过滤器。Filter 的 Name 有以下值：\nName：实例名称\nUserId：实例用户ID\nHostSerialNumber：宿主机序列号\nHostServerSerialNumber：机箱序列号\nAndroidInstanceModel：实例型号",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

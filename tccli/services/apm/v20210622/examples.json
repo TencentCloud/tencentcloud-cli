@@ -40,6 +40,14 @@
         "title": "删除采样配置"
       }
     ],
+    "DescribeAgentList": [
+      {
+        "document": "请求实例",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentList\n<公共请求参数>\n\n{\n    \"ServiceName\": \"java-order-service\",\n    \"InstanceId\": \"apm-6xYKFXYxo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Agents\": [\n            {\n                \"Enable\": false,\n                \"IP\": \"9.126.244.1\",\n                \"RunningTime\": 1211,\n                \"StartTime\": 1689661909,\n                \"Status\": 1,\n                \"Version\": \"v1.1.1\"\n            },\n            {\n                \"Enable\": false,\n                \"IP\": \"10.126.244.1\",\n                \"RunningTime\": 10000,\n                \"StartTime\": 1689651909,\n                \"Status\": 0,\n                \"Version\": \"v1.2.1\"\n            }\n        ],\n        \"RequestId\": \"8fd3468e-a737-4058-84be-e14ada3a25a9\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeApmAgent": [
       {
         "document": "获取 APM 接入点示例",
