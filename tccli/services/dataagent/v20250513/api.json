@@ -673,6 +673,15 @@
           "name": "SessionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批量删除 会话id 列表",
+          "example": "[\"e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d\"]",
+          "member": "string",
+          "name": "SessionIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -688,6 +697,16 @@
           "name": "SessionId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除的会话ID列表",
+          "example": "[\"e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d\"]",
+          "member": "string",
+          "name": "SessionIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

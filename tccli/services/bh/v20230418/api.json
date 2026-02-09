@@ -12498,7 +12498,7 @@
         },
         {
           "disabled": false,
-          "document": "运维父任务执行状态",
+          "document": "运维父任务执行状态。1 - 执行中，2 - 成功，3 - 失败，4 - 超时",
           "example": "[1, 2]",
           "member": "uint64",
           "name": "Status",
@@ -12519,6 +12519,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维子任务执行结果",
+          "example": "无",
+          "member": "SubtaskResult",
+          "name": "SubtaskResult",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13095,6 +13105,162 @@
           "example": "mini_iam",
           "member": "string",
           "name": "Target",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubtaskResult": {
+      "document": "运维子任务执行结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行日志ID",
+          "example": "ops-x2julw6p75997988",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机实例ID",
+          "example": "ins-61lt4n7u",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "执行主机名称",
+          "example": "测试任务",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机外网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机内网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务状态 1 - 执行中，2 - 成功， 3 - 失败，4 - 超时",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务失败原因",
+          "example": "脚本异常退出码",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务命令退出码",
+          "example": "0",
+          "member": "int64",
+          "name": "ExitCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务开始时间",
+          "example": "2022-04-13T19:44:57+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务结束时间",
+          "example": "2022-04-13T19:44:57+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务执行结果输出。默认超出16384字节的内容会被自动截断",
+          "example": "stdout data",
+          "member": "string",
+          "name": "StdOut",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务执行结果错误",
+          "example": "stderr data",
+          "member": "string",
+          "name": "StdErr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产名",
+          "example": "push_account_ubuntupush_account_ubuntu",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产账号",
+          "example": "root",
+          "member": "string",
+          "name": "Account",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

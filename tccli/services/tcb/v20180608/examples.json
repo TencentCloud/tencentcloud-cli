@@ -58,46 +58,46 @@
     ],
     "CreateBillDeal": [
       {
+        "document": "购买新环境，并指定所需资源类型，以及自动绑定CAM标签",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{\n    \"DealType\": \"purchase\",\n    \"ProductType\": \"tcb-baas\",\n    \"PackageId\": \"baas_personal\",\n    \"CreateAndPay\": true,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"Source\": \"qcloud\",\n    \"Alias\": \"cloud\",\n    \"EnableExcess\": true,\n    \"AutoVoucher\": true,\n    \"ResourceTypes\": [\n        \"flexdb\"\n    ],\n    \"EnvTags\": [\n        {\n            \"Key\": \"user\",\n            \"Value\": \"jeffeng\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64a8e42d-0372-42b1-b933-8a05715d29bf\"\n    }\n}",
+        "title": "创建环境并指定资源类型和CAM标签"
+      },
+      {
         "document": "指定当前生效套餐和变配目标套餐；指定目标变配资源/环境；（示例将个人版套餐变配为团队版套餐）",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{\n    \"DealType\": \"modify\",\n    \"ProductType\": \"tcb-baas\",\n    \"PackageId\": \"baas_personal\",\n    \"CreateAndPay\": true,\n    \"ResourceId\": \"cloud-0g6kw62kbda53cb6\",\n    \"EnvId\": \"cloud-0g6kw62kbda53cb6\",\n    \"EnableExcess\": false,\n    \"ModifyPackageId\": \"baas_team\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a317487-4ca1-4edc-80aa-e2c300f5f7ae\"\n    }\n}",
         "title": "变配云开发baas套餐"
       },
       {
         "document": "购买云开发baas个人版套餐，购买时长1个月，指定环境别名为cloud，开启超限按量",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{\n    \"DealType\": \"purchase\",\n    \"ProductType\": \"tcb-baas\",\n    \"PackageId\": \"baas_personal\",\n    \"CreateAndPay\": true,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"Alias\": \"cloud\",\n    \"EnableExcess\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5ce71e0-cf6e-4387-90e4-a4a1ed0f2a8d\"\n    }\n}",
         "title": "新购云开发baas套餐"
       },
       {
         "document": "新购baas教育体验版",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{\n    \"DealType\": \"purchase\",\n    \"ProductType\": \"tcb-baas\",\n    \"PackageId\": \"education_demo\",\n    \"CreateAndPay\": true,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"Source\": \"qcloud\",\n    \"Alias\": \"education\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9487229-4a54-468c-b5f9-900ab9d0387c\"\n    }\n}",
         "title": "新购云开发baas套餐教育体验版"
       },
       {
         "document": "给指定环境加购flexdb大促包，大促包时长1天",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{\n    \"DealType\": \"purchase\",\n    \"ProductType\": \"tcb-promotion\",\n    \"PackageId\": \"pkg_flexdb_promotion_3000\",\n    \"CreateAndPay\": true,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"d\",\n    \"EnvId\": \"cloud2-3gn8d5ah836cac09\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ac4bb6a-9a74-4390-bcf1-51b4938d83d0\"\n    }\n}",
         "title": "新购云开发大促包"
       },
       {
         "document": "给指定环境购买调用次数资源包，购买时长固定为一个月",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{\n    \"DealType\": \"purchase\",\n    \"ProductType\": \"tcb-package\",\n    \"PackageId\": \"pkg_tcb_api_invoke_num\",\n    \"CreateAndPay\": true,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"EnvId\": \"cloud2-3gn8d5ah836cac09\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0ff4d25-f803-46f1-80dc-3b36af94af39\"\n    }\n}",
         "title": "新购云开发资源包"
       },
       {
         "document": "给指定套餐/环境续费指定时长，时长单位为月",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{\n    \"DealType\": \"renew\",\n    \"ProductType\": \"tcb-baas\",\n    \"PackageId\": \"baas_personal\",\n    \"CreateAndPay\": true,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"ResourceId\": \"cloud-2g248wj43786d54d\",\n    \"EnvId\": \"cloud-2g248wj43786d54d\",\n    \"EnableExcess\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e45941ab-9a88-49df-8626-188a8d6c7236\"\n    }\n}",
         "title": "续费云开发baas套餐"
-      },
-      {
-        "document": "购买新环境，并指定所需资源类型，以及自动绑定CAM标签",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillDeal\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64a8e42d-0372-42b1-b933-8a05715d29bf\"\n    }\n}",
-        "title": "创建环境并指定资源类型和CAM标签"
       }
     ],
     "CreateCloudBaseGWAPI": [
@@ -130,6 +130,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=CreateHostingDomain\n&EnvId=env_id\n&Domain=domain\n&CertId=cert-id\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "创建静态托管域名"
+      }
+    ],
+    "CreateMySQL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenMySql\n<公共请求参数>\n\n{\n    \"EnvId\": \"**s*e*******g1**dbc0df14561\",\n    \"DbInstanceType\": \"MYSQL\",\n    \"MysqlVersion\": \"5.7\",\n    \"VpcId\": \"vpc-py******\",\n    \"SubnetId\": \"subnet-68r*****\",\n    \"LowerCaseTableNames\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"38661\"\n        },\n        \"RequestId\": \"04b9fb5b-97c6-4b87-b926-e7d49c99c974\"\n    }\n}",
+        "title": "OpenMySql"
       }
     ],
     "CreatePostpayPackage": [
@@ -368,6 +376,14 @@
         "title": "查看服务版本历史"
       }
     ],
+    "DescribeCreateMySQLResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpenMySqlResult\n<公共请求参数>\n\n{\n    \"EnvId\": \"**s*e*-********2dbc0df14561\",\n    \"TaskId\": \"38654\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FailReason\": null,\n            \"FreezeStatus\": false,\n            \"Status\": \"success\"\n        },\n        \"RequestId\": \"c110db5b-5fd8-4a02-9a86-c2a46679abd7\"\n    }\n}",
+        "title": "DescribeOpenMySqlResult"
+      }
+    ],
     "DescribeCurveData": [
       {
         "document": "根据用户传入的指标, 拉取一段时间内的监控数据",
@@ -488,6 +504,22 @@
         "title": "查询环境静态托管域名任务状态"
       }
     ],
+    "DescribeMySQLClusterDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMySqlClusterDetail\n<公共请求参数>\n\n{\n    \"EnvId\": \"*******p**-8g1j2dbc0df14561\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DbClusterId\": \"cynos*******-6gian***\",\n            \"DbInfo\": {\n                \"ClusterStatus\": \"running\",\n                \"DbType\": \"MYSQL\",\n                \"DbVersion\": \"5.7\",\n                \"IsOpenPubNetAccess\": false,\n                \"MaxCpu\": 0.5,\n                \"MinCpu\": 0.25,\n                \"ServerlessStatus\": \"pause\",\n                \"Status\": \"running\",\n                \"StorageLimit\": 100000,\n                \"UsedStorage\": 21000000,\n                \"WanStatus\": \"init\"\n            },\n            \"NetInfo\": {\n                \"Net\": \"vpc-py8*****/subnet-68*****p\",\n                \"PrivateNetAddress\": \"10*******3:3306\",\n                \"PubNetAddress\": \"\",\n                \"SubnetId\": \"subnet-68****d*\",\n                \"SubnetName\": \"cloudbase_run_tdsqlc_subnet\",\n                \"VpcId\": \"vpc-py******\",\n                \"VpcName\": \"tcb_pre-**l*f*s**r*******q098a0434e\"\n            }\n        },\n        \"RequestId\": \"72b253f4-a578-4940-8d99-cb417f26e286\"\n    }\n}",
+        "title": "DescribeMySqlClusterDetail"
+      }
+    ],
+    "DescribeMySQLTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMySqlTaskStatus\n<公共请求参数>\n\n{\n    \"EnvId\": \"*******pre-******bc0df14561\",\n    \"TaskId\": \"16710\",\n    \"TaskName\": \"DeleteDataHub\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": \"SUCCESS\",\n            \"StatusDesc\": \"\"\n        },\n        \"RequestId\": \"85002631-5ed1-4e27-974a-7a5ffcd5fbae\"\n    }\n}",
+        "title": "DescribeMySqlTaskStatus"
+      }
+    ],
     "DescribePostpayFreeQuotas": [
       {
         "document": "查询免费量 ",
@@ -604,6 +636,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DestroyEnv\n&EnvId=yourenvid-2fb346\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "销毁环境"
+      }
+    ],
+    "DestroyMySQL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyMySql\n<公共请求参数>\n\n{\n    \"EnvId\": \"**s**r*pr********bc0df14561\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"IsSuccess\": true,\n            \"TaskId\": \"16710\",\n            \"TaskName\": \"DeleteDataHub\"\n        },\n        \"RequestId\": \"be616768-b634-4cd1-ad50-fd101be6a0a7\"\n    }\n}",
+        "title": "DestroyMySql"
       }
     ],
     "DestroyStaticStore": [

@@ -813,8 +813,8 @@
     "SearchSubtaskResultById": [
       {
         "document": "查询运维子任务执行结果",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSubtaskResultById\n<公共请求参数>\n\n{\n    \"Status\": [\n        1\n    ],\n    \"Name\": \"运维任务\",\n    \"Limit\": 1,\n    \"Id\": \"west\",\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSubtaskResultById\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Id\": \"4fda0e7f-6741-401c-a4c1-ca5872097c9c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubtaskResult\": [\n            {\n                \"Account\": \"root\",\n                \"ApCode\": \"ap-guangzhou\",\n                \"DeviceName\": \"Centos-7.9\",\n                \"EndTime\": \"2026-02-05T18:28:38+08:00\",\n                \"ExitCode\": 0,\n                \"Id\": \"4fda0e7f-6741-401c-a4c1-ca5872097c9c_0\",\n                \"InstanceId\": \"ins-xxxxxx\",\n                \"Name\": \"\",\n                \"PrivateIp\": \"192.168.0.6\",\n                \"PublicIp\": \"143.156.236.100\",\n                \"Reason\": \"\",\n                \"StartTime\": \"2026-02-05T18:28:37+08:00\",\n                \"Status\": 2,\n                \"StdErr\": \"\",\n                \"StdOut\": \"hello, world\\r\\n\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c6f7f69a-1c89-4982-87c4-c954fe10b0cc\"\n    }\n}",
         "title": "查询运维子任务执行结果"
       }
     ],

@@ -217,13 +217,6 @@
       "output": "DescribeTRTCRealTimeScaleDataResponse",
       "status": "online"
     },
-    "DescribeTRTCRealTimeScaleMetricData": {
-      "document": "腾讯云可观测平台monitor接口已下线，TRTC同步下线接口\n\n查询TRTC监控仪表盘-实时监控规模指标（会返回下列指标）\n-userCount（在线用户数）\n-roomCount（在线房间数）\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。\nxa0\n3.除此之外您也可以通过订阅TRTC包月套餐(https://buy.cloud.tencent.com/trtc)尊享版或旗舰版解锁此接口（DescribeTRTCRealTimeScaleMetricData）的调用能力，请在开通包月套餐后，请提交工单联系售后解锁调用能力https://console.cloud.tencent.com/workorder/category",
-      "input": "DescribeTRTCRealTimeScaleMetricDataRequest",
-      "name": "查询TRTC实时监控规模指标",
-      "output": "DescribeTRTCRealTimeScaleMetricDataResponse",
-      "status": "deprecated"
-    },
     "DescribeTrtcMcuTranscodeTime": {
       "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
       "input": "DescribeTrtcMcuTranscodeTimeRequest",
@@ -3408,69 +3401,6 @@
           "member": "TRTCDataResult",
           "name": "Data",
           "output_required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTRTCRealTimeScaleMetricDataRequest": {
-      "document": "DescribeTRTCRealTimeScaleMetricData请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用户SdkAppId（如：1400xxxxxx）",
-          "example": "\"1400188366\"",
-          "member": "string",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间，unix时间戳，单位：秒（查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时）",
-          "example": "1665747036",
-          "member": "int64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间，unix时间戳，单位：秒",
-          "example": "1665747284",
-          "member": "int64",
-          "name": "EndTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "房间ID",
-          "example": "23390",
-          "member": "string",
-          "name": "RoomId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTRTCRealTimeScaleMetricDataResponse": {
-      "document": "DescribeTRTCRealTimeScaleMetricData返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "TRTC监控数据出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "TRTCDataResp",
-          "name": "Data",
           "type": "object",
           "value_allowed_null": true
         },
@@ -9026,7 +8956,7 @@
         },
         {
           "disabled": false,
-          "document": " 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别",
+          "document": " 需要合成的语言（ISO 639-1），默认自动识别，支持如下语言：\n- zh（中文）\n- en（英文）\n- yue（粤语）\n- ja（日语）\n- ko（韩语）\n- ar（阿拉伯语）\n- id（印尼语）\n- th（泰语）\n",
           "example": "zh",
           "member": "string",
           "name": "Language",

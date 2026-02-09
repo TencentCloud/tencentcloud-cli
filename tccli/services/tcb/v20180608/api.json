@@ -84,6 +84,13 @@
       "output": "CreateHostingDomainResponse",
       "status": "online"
     },
+    "CreateMySQL": {
+      "document": "开通Mysql",
+      "input": "CreateMySQLRequest",
+      "name": "开通 MySql",
+      "output": "CreateMySQLResponse",
+      "status": "online"
+    },
     "CreatePostpayPackage": {
       "document": "开通后付费资源",
       "input": "CreatePostpayPackageRequest",
@@ -280,6 +287,13 @@
       "output": "DescribeCloudBaseRunVersionSnapshotResponse",
       "status": "online"
     },
+    "DescribeCreateMySQLResult": {
+      "document": "查询开通Mysql结果",
+      "input": "DescribeCreateMySQLResultRequest",
+      "name": "开通 MySql 结果查询",
+      "output": "DescribeCreateMySQLResultResponse",
+      "status": "online"
+    },
     "DescribeCurveData": {
       "document": "根据用户传入的指标, 拉取一段时间内的监控数据。",
       "input": "DescribeCurveDataRequest",
@@ -385,6 +399,20 @@
       "output": "DescribeHostingDomainTaskResponse",
       "status": "online"
     },
+    "DescribeMySQLClusterDetail": {
+      "document": "销毁Mysql",
+      "input": "DescribeMySQLClusterDetailRequest",
+      "name": "查询Mysql集群信息",
+      "output": "DescribeMySQLClusterDetailResponse",
+      "status": "online"
+    },
+    "DescribeMySQLTaskStatus": {
+      "document": "查询Mysql任务状态",
+      "input": "DescribeMySQLTaskStatusRequest",
+      "name": "查询Mysql任务状态",
+      "output": "DescribeMySQLTaskStatusResponse",
+      "status": "online"
+    },
     "DescribePostpayFreeQuotas": {
       "document": "查询后付费资源免费量",
       "input": "DescribePostpayFreeQuotasRequest",
@@ -481,6 +509,13 @@
       "input": "DestroyEnvRequest",
       "name": "销毁环境",
       "output": "DestroyEnvResponse",
+      "status": "online"
+    },
+    "DestroyMySQL": {
+      "document": "销毁Mysql",
+      "input": "DestroyMySQLRequest",
+      "name": "销毁MySql",
+      "output": "DestroyMySQLResponse",
       "status": "online"
     },
     "DestroyStaticStore": {
@@ -3394,6 +3429,122 @@
       ],
       "usage": "out"
     },
+    "ClusterDetail": {
+      "document": "TDSQL-C数据库详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启公网访问",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOpenPubNetAccess",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大算力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "MaxCpu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最小算力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.25",
+          "member": "float",
+          "name": "MinCpu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TDSQL-C集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储用量（单位：MB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21000000",
+          "member": "int64",
+          "name": "UsedStorage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大存储量（单位：GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "StorageLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网访问状态；open开启，opening开启中，closed关闭，closing关闭中",
+          "example": "init",
+          "member": "string",
+          "name": "WanStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "serverless状态",
+          "example": "pause",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CodeSource": {
       "document": "云开发项目来源",
       "members": [
@@ -3748,7 +3899,152 @@
     },
     "CreateBillDealRequest": {
       "document": "CreateBillDeal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前下单的操作类型，可取[purchase,renew,modify]三种值，分别代表新购，续费，变配。",
+          "example": "purchase",
+          "member": "string",
+          "name": "DealType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买的产品类型，可取[tcb-baas,tcb-promotion,tcb-package], 分别代表baas套餐、大促包、资源包",
+          "example": "tcb-baas",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标下单产品/套餐Id",
+          "example": "baas_personal",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认只下单不支付，为ture则下单并支付",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateAndPay",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源唯一标识",
+          "example": "cloud-0g6kw62kbda53cb6",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源可选[qcloud,miniapp]，默认qcloud",
+          "example": "qcloud",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源别名",
+          "example": "cloud",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "cloud-0g6kw62kbda53cb6",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启超限按量",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableExcess",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "变配目标产品/套餐id",
+          "example": "baas_team",
+          "member": "string",
+          "name": "ModifyPackageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "jsonstr附加信息",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券支付",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型。\n代表新购环境（DealType=purchase 并且 ProductType=tcb-baas ）时需要发货哪些资源。\n可取值：flexdb, cos, cdn, scf\n",
+          "example": "[\"flexdb\"]",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境标签。\n 代表新购环境（DealType=purchase 并且 ProductType=tcb-baas ）时需要打的标签。\n",
+          "example": "无",
+          "member": "Tag",
+          "name": "EnvTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "CreateBillDealResponse": {
@@ -4493,6 +4789,104 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateMySQLRequest": {
+      "document": "CreateMySQL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "**s*e*******g1**dbc0df14561",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Db类型 1. FLEXDB 2.MYSQL",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbInstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mysql版本",
+          "example": "5.7",
+          "member": "string",
+          "name": "MysqlVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc Id",
+          "example": "vpc-py******",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-68r*****",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0 区分表名大小写；1 不区分表名大小写(默认)",
+          "example": "1",
+          "member": "string",
+          "name": "LowerCaseTableNames",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMySQLResponse": {
+      "document": "CreateMySQL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开通结果",
+          "example": "无",
+          "member": "CreateMySQLResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMySQLResult": {
+      "document": "开通Mysql 结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "38654",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreatePostpayPackageRequest": {
       "document": "CreatePostpayPackage请求参数结构体",
@@ -8031,6 +8425,88 @@
       ],
       "type": "object"
     },
+    "DescribeCreateMySQLResult": {
+      "document": "查询开通Mysql结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态 notexist | init | doing | success | fail",
+          "example": "fail",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Init Failed",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否冻结",
+          "example": "false",
+          "member": "bool",
+          "name": "FreezeStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCreateMySQLResultRequest": {
+      "document": "DescribeCreateMySQLResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "**s*e*-********2dbc0df14561",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OpenMysql 返回任务 Id",
+          "example": "38654",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCreateMySQLResultResponse": {
+      "document": "DescribeCreateMySQLResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开通结果",
+          "example": "无",
+          "member": "DescribeCreateMySQLResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCurveDataRequest": {
       "document": "DescribeCurveData请求参数结构体",
       "members": [
@@ -9211,6 +9687,98 @@
       ],
       "type": "object"
     },
+    "DescribeMySQLClusterDetailRequest": {
+      "document": "DescribeMySQLClusterDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "*******p**-8g1j2dbc0df14561",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMySQLClusterDetailResponse": {
+      "document": "DescribeMySQLClusterDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群详情",
+          "example": "无",
+          "member": "MySQLClusterDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMySQLTaskStatusRequest": {
+      "document": "DescribeMySQLTaskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "*******pre-******bc0df14561",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "16710",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务名",
+          "example": "DeleteDataHub",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMySQLTaskStatusResponse": {
+      "document": "DescribeMySQLTaskStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "无",
+          "member": "MySQLTaskStatus",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePostpayFreeQuotasRequest": {
       "document": "DescribePostpayFreeQuotas请求参数结构体",
       "members": [
@@ -10139,6 +10707,79 @@
         }
       ],
       "type": "object"
+    },
+    "DestroyMySQLRequest": {
+      "document": "DestroyMySQL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云开发环境ID",
+          "example": "**s**r*pr********bc0df14561",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyMySQLResponse": {
+      "document": "DestroyMySQL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "销毁结果",
+          "example": "无",
+          "member": "DestroyMySQLResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyMySQLResult": {
+      "document": "销毁 Mysql 结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSuccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "16710",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名",
+          "example": "DeleteDataHub",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DestroyStaticStoreRequest": {
       "document": "DestroyStaticStore请求参数结构体",
@@ -12639,6 +13280,154 @@
         }
       ],
       "usage": "in"
+    },
+    "MySQLClusterDetail": {
+      "document": "MySql 集群详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmy**l***ian***",
+          "member": "string",
+          "name": "DbClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络详情",
+          "example": "无",
+          "member": "MySQLNetDetail",
+          "name": "NetInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库详情",
+          "example": "无",
+          "member": "ClusterDetail",
+          "name": "DbInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MySQLNetDetail": {
+      "document": "TDSQL-C网络信息类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.**2******3306",
+          "member": "string",
+          "name": "PrivateNetAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sh-cynosdb***q*******l*8*****sql.*******c***********3",
+          "member": "string",
+          "name": "PubNetAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络信息（VPCID/SubnetID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-py******/subnet-*******p",
+          "member": "string",
+          "name": "Net",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开通公网",
+          "example": "true",
+          "member": "bool",
+          "name": "PubNetAccessEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc id ",
+          "example": "vpc-p*******",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc name",
+          "example": "tcb_**e**ul-f*****-7gxt7zq098a*****",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-********",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网名",
+          "example": "cloudbase_run_tdsqlc_subnet",
+          "member": "string",
+          "name": "SubnetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MySQLTaskStatus": {
+      "document": "MySql 任务状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SUCCESS | FAILED | PENDING",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ObjectKV": {
       "document": "Key-Value类型，模拟的 object 类型",

@@ -248,14 +248,6 @@
         "title": "DescribeTRTCRealTimeScaleData"
       }
     ],
-    "DescribeTRTCRealTimeScaleMetricData": [
-      {
-        "document": "查询在线TRTC房间和用户",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCRealTimeScaleMetricData\n<公共请求参数>\n\n{\n    \"StartTime\": 1665747036,\n    \"EndTime\": 1665747284,\n    \"SdkAppId\": \"1400188366\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"userCount\",\n                        \"roomCount\"\n                    ],\n                    \"Values\": [\n                        1681280600,\n                        1,\n                        1\n                    ]\n                }\n            ],\n            \"Total\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeTRTCRealTimeScaleMetricData"
-      }
-    ],
     "DescribeTrtcMcuTranscodeTime": [
       {
         "document": "多日查询",
