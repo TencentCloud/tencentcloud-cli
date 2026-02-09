@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam UpdateAccessKey --cli-unfold-argument  \
-    --TargetUin 123456 \
-    --AccessKeyId AKIDtm****lqorp \
+    --TargetUin 100013065917 \
+    --AccessKeyId AKID*** \
     --Status Active
 ```
 

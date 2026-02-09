@@ -1,12 +1,12 @@
 **Example 1: 列出访问密钥**
 
-
+列出访问密钥
 
 Input: 
 
 ```
 tccli cam ListAccessKeys --cli-unfold-argument  \
-    --TargetUin 123456
+    --TargetUin 100013065917
 ```
 
 Output: 
@@ -15,12 +15,12 @@ Output:
     "Response": {
         "AccessKeys": [
             {
-                "AccessKeyId": "AKIDlOp****mQsJQWEaYK",
+                "AccessKeyId": "AKID***",
                 "Status": "Active",
                 "CreateTime": "2019-12-25 14:53:03"
             },
             {
-                "AccessKeyId": "A2342hOv****QOHySnzb5P7dv8",
+                "AccessKeyId": "AKID***",
                 "Status": "Active",
                 "CreateTime": "2020-03-03 16:51:21"
             }

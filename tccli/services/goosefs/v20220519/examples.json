@@ -312,6 +312,30 @@
         "title": "修改数据流动带宽"
       }
     ],
+    "MountMultipleStorageFileSystem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MountMultipleStorageFileSystem\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a112q1lj\",\n    \"CustomerClusterId\": \"x-c60-a112q1lj-client-cluster-1\",\n    \"StorageFileSystemId\": \"x-c60-mrn3a677\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a606332-e531-4014-b3be-306faa4821c6\"\n    }\n}",
+        "title": "客户端集群挂载存储文件系统"
+      }
+    ],
+    "QueryClientNodeMountCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClientNodeMountCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"x-c60-a112q1lj-client-cluster-default\",\n    \"ClusterMountInfo\": [\n        {\n            \"StorageFileSystemId\": \"x-c60-a112q1lj\",\n            \"MountPoint\": \"/mountDir\"\n        }\n    ],\n    \"FileSystemId\": \"x-c60-a112q1lj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"wget https://***********-***-**********.cos.ap-shanghai.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh; chmod +x install-goosefsx-client.sh; ./install-goosefsx-client.sh ***.***.*.**:55533,***.***.*.**:55533,***.***.*.**:55533 x-c60-a112q1lj:/mountDir\",\n        \"RequestId\": \"5506922d-4abd-4ca1-ba9e-6f14566b3bd0\"\n    }\n}",
+        "title": "查询挂载命令"
+      }
+    ],
+    "QueryClientUninstallCommand": [
+      {
+        "document": "查询卸载命令",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClientUninstallCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"x-c60-a112q1lj-client-cluster-default\",\n    \"FileSystemId\": \"x-c60-a112q1lj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"cd /root/goosefsx_client_agent/linux_client_agent; sh ./uninstall-goosefsx-client.sh\\n\",\n        \"RequestId\": \"ebc942f5-9090-4888-a4c2-5fc87049c6d9\"\n    }\n}",
+        "title": "查询卸载命令"
+      }
+    ],
     "QueryCrossVpcSubnetSupportForClientNode": [
       {
         "document": "查询客户端的跨vpc子网访问能力",

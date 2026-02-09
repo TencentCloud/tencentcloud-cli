@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam CreateAccessKey --cli-unfold-argument  \
-    --TargetUin 123456
+    --TargetUin 100013065917
 ```
 
 Output: 
@@ -14,8 +14,8 @@ Output:
 {
     "Response": {
         "AccessKey": {
-            "AccessKeyId": "AKID8GFED7s****QrFXkmb",
-            "SecretAccessKey": "iDVjy****tNzX",
+            "AccessKeyId": "AKID***",
+            "SecretAccessKey": "iDVd***",
             "Status": "Active",
             "CreateTime": "2020-03-03 18:00:26"
         },

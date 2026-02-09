@@ -1,4 +1,4 @@
-**Example 1: 拉取子用户**
+**Example 1: listUsers**
 
 
 
@@ -13,18 +13,19 @@ Output:
     "Response": {
         "Data": [
             {
-                "Uin": 100021969091,
-                "Name": "cam001",
-                "Uid": 11398137,
+                "Uin": 0,
+                "Name": "开发商",
+                "Uid": 1003668,
                 "Remark": "",
-                "ConsoleLogin": 1,
-                "PhoneNum": "",
+                "ConsoleLogin": 0,
+                "PhoneNum": "15118121005",
                 "CountryCode": "86",
-                "Email": "",
-                "CreateTime": "2021-10-28 18:02:00"
+                "Email": "evianwang@personal.com",
+                "CreateTime": "2021-11-26 16:21:01",
+                "NickName": "开发商"
             }
         ],
-        "RequestId": "b2c7267c-8ee5-408b-9a88-ac359f13c8b1"
+        "RequestId": "81b595fc-0700-40e3-847e-6bbf711c0d2c"
     }
 }
 ```

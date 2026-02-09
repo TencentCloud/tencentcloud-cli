@@ -273,6 +273,27 @@
       "output": "ModifyDataRepositoryBandwidthResponse",
       "status": "online"
     },
+    "MountMultipleStorageFileSystem": {
+      "document": "客户端集群挂载存储集群",
+      "input": "MountMultipleStorageFileSystemRequest",
+      "name": "挂载多个存储集群",
+      "output": "MountMultipleStorageFileSystemResponse",
+      "status": "online"
+    },
+    "QueryClientNodeMountCommand": {
+      "document": "生成客户端的挂载命令",
+      "input": "QueryClientNodeMountCommandRequest",
+      "name": "查询生成客户端节点的挂载命令",
+      "output": "QueryClientNodeMountCommandResponse",
+      "status": "online"
+    },
+    "QueryClientUninstallCommand": {
+      "document": "生成客户端的卸载命令",
+      "input": "QueryClientUninstallCommandRequest",
+      "name": "查询生成客户端节点的卸载载命令",
+      "output": "QueryClientUninstallCommandResponse",
+      "status": "online"
+    },
     "QueryCrossVpcSubnetSupportForClientNode": {
       "document": "查询客户端节点跨vpc子网访问能力",
       "input": "QueryCrossVpcSubnetSupportForClientNodeRequest",
@@ -4231,6 +4252,152 @@
     "ModifyDataRepositoryBandwidthResponse": {
       "document": "ModifyDataRepositoryBandwidth返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MountMultipleStorageFileSystemRequest": {
+      "document": "MountMultipleStorageFileSystem请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端集群所属的文件系统id",
+          "example": "x-c60-a112q1lj",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群Id",
+          "example": "x-c60-a112q1lj-client-cluster-1",
+          "member": "string",
+          "name": "CustomerClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "挂载的存储集群的id",
+          "example": "x-c60-mrn3a677",
+          "member": "string",
+          "name": "StorageFileSystemId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MountMultipleStorageFileSystemResponse": {
+      "document": "MountMultipleStorageFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientNodeMountCommandRequest": {
+      "document": "QueryClientNodeMountCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端集群ID",
+          "example": "x-c60-a112q1lj-client-cluster-default",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群挂载信息",
+          "example": "无",
+          "member": "ClusterMountAttr",
+          "name": "ClusterMountInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-a112q1lj",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientNodeMountCommandResponse": {
+      "document": "QueryClientNodeMountCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载命令",
+          "example": "wget https://***********-***-**********.cos.ap-shanghai.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh; chmod +x install-goose; ./install-goosefsx-client.sh ***.***.*.**:55533,***.***.*.**:55533,***.***.*.**:55533 x-c60-a112q1lj:/mountDir",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientUninstallCommandRequest": {
+      "document": "QueryClientUninstallCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端集群ID",
+          "example": "x-c60-a112q1lj-client-cluster-default",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-a112q1lj",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientUninstallCommandResponse": {
+      "document": "QueryClientUninstallCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载命令",
+          "example": "cd /root/goosefsx_client_agent/linux_client_agent; sh ./uninstall-goosefsx-client.sh",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

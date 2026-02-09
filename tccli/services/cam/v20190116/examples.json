@@ -3,8 +3,8 @@
     "AddUser": [
       {
         "document": "创建子账号",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test124\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"UseApi\": \"1\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Remark\": \"jack account\",\n    \"Name\": \"jack\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"UseApi\": \"1\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"jack\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加子用户"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "生成AuthToken",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildDataFlowAuthToken\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cdb-12dd3d\",\n    \"ResourceRegion\": \"ap-shanghai\",\n    \"ResourceAccount\": \"ReadOnly\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"CurrentTime\": 12332343423,\n            \"LastRotationTimeCost\": 343,\n            \"NextRotationTime\": 10,\n            \"RotationMessage\": \"success\",\n            \"RotationStatus\": \"success\",\n            \"Token\": \"944a***mtHS\"\n        },\n        \"RequestId\": \"5bc7f0df-18a3-426b-84ce-ddbc8d1c95d1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"CurrentTime\": 1733802016,\n            \"LastRotationTimeCost\": 343,\n            \"NextRotationTime\": 10,\n            \"RotationMessage\": \"success\",\n            \"RotationStatus\": \"success\",\n            \"Token\": \"944a***mtHS\"\n        },\n        \"RequestId\": \"5bc7f0df-18a3-426b-84ce-ddbc8d1c95d1\"\n    }\n}",
         "title": "生成AuthToken"
       }
     ],
@@ -83,8 +83,8 @@
     "CreateAccessKey": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateAccessKey\n&TargetUin=123456\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessKey\": {\n            \"AccessKeyId\": \"AKID8GFED7s****QrFXkmb\",\n            \"SecretAccessKey\": \"iDVjy****tNzX\",\n            \"Status\": \"Active\",\n            \"CreateTime\": \"2020-03-03 18:00:26\"\n        },\n        \"RequestId\": \"f8423e9b-a7da-488d-9539-333f1955ca78\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateAccessKey\n&TargetUin=100013065917\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessKey\": {\n            \"AccessKeyId\": \"AKID***\",\n            \"SecretAccessKey\": \"iDVd***\",\n            \"Status\": \"Active\",\n            \"CreateTime\": \"2020-03-03 18:00:26\"\n        },\n        \"RequestId\": \"f8423e9b-a7da-488d-9539-333f1955ca78\"\n    }\n}",
         "title": "创建访问密钥"
       }
     ],
@@ -115,7 +115,7 @@
     "CreatePolicy": [
       {
         "document": "以下示例将创建一个允许cos所有API访问所有的cos资源的策略",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicy\r\n&PolicyName=test-2019-04-29\r\n&Description=策略描述\r\n&PolicyDocument={\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:*\"],\"resource\":[\"*\"]}]}\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicy\n&PolicyName=test-2019-04-29\n&Description=策略描述\n&PolicyDocument={\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:*\"],\"resource\":[\"*\"]}]}\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PolicyId\": 17698703,\n        \"RequestId\": \"89360f78-b1dd-4e43-aa91-ecb2c8b8f282\"\n    }\n}",
         "title": "创建一个策略"
       }
@@ -131,7 +131,7 @@
     "CreateRole": [
       {
         "document": "以下示例将创建一个以日志服务和操作审计为载体的角色",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_1234544\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&Description=abc\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_1234544\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&Description=adminRole remark\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"123456789000\",\n        \"RequestId\": \"0bac591a-6cc7-4e9d-8d01-74618f1a9611\"\n    }\n}",
         "title": "创建一个角色"
       }
@@ -147,15 +147,23 @@
     "CreateServiceLinkedRole": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateServiceLinkedRole\n&QCSServiceName.0=ccs.qcloud.com\n&CustomSuffix=forTest\n&Description=ccsLinkedRole\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RoleId\": \"4611686018427411525\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateServiceLinkedRole\n&QCSServiceName.0=ccs.qcloud.com\n&CustomSuffix=forAdmin\n&Description=ccsLinkedRole\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RoleId\": \"4611**************1\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "创建服务相关角色"
+      }
+    ],
+    "CreateSubAccountLoginIpPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubAccountLoginIpPolicy\n<公共请求参数>\n\n{\n    \"ApproverType\": \"SubAccountLoginLimitApproval\",\n    \"IpPolicies\": [\n        {\n            \"IP\": \"192.168.1.171\",\n            \"Effect\": \"Allow\"\n        }\n    ],\n    \"PolicyType\": \"1\",\n    \"DisablePolicy\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ad60b60-222f-4e22-8350-3227bebaa3dd\"\n    }\n}",
+        "title": "增加子账号登录IP策略"
       }
     ],
     "CreateUserOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth***.cn/\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"测试\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCi******\",\n    \"ClientId\": \"61adcf00620c31e3***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n    \"Scope\": [\n        \"openidScope.1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth***.cn/\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCi******\",\n    \"ClientId\": \"61adcf00620c31e3***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n    \"Scope\": [\n        \"openidScope.1\"\n    ],\n    \"AutoRotateKey\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a70d447-3c04-43c0-94ca-db899d4d05ac\"\n    }\n}",
         "title": "添加用户OIDC配置"
       }
@@ -171,7 +179,7 @@
     "DeleteAccessKey": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccessKey\n<公共请求参数>\n\n{\n    \"TargetUin\": \"123456\",\n    \"AccessKeyId\": \"AKIDtm****lqorp\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccessKey\n<公共请求参数>\n\n{\n    \"TargetUin\": \"100013065917\",\n    \"AccessKeyId\": \"AKID***\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99d650e2-10fa-4c8f-819f-874578039641\"\n    }\n}",
         "title": "删除访问密钥"
       }
@@ -187,7 +195,7 @@
     "DeleteMessageReceiver": [
       {
         "document": "删除消息接收人",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"zhangshan\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"af3a7188-5b3e-41a6-b489-8443e5816494\"\n    }\n}",
         "title": "删除消息接收人"
       }
@@ -282,7 +290,7 @@
     ],
     "DescribeSafeAuthFlag": [
       {
-        "document": "",
+        "document": "查询安全设置",
         "input": "https://cam.tencentcloudapi.com/?Action=DescribeSafeAuthFlag\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LoginFlag\": {\n            \"Phone\": 1,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"ActionFlag\": {\n            \"Phone\": 0,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"OffsiteFlag\": {\n            \"VerifyFlag\": 0,\n            \"NotifyPhone\": 1,\n            \"NotifyEmail\": 1,\n            \"NotifyWechat\": 1,\n            \"Tips\": 0\n        },\n        \"PromptTrust\": 1,\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\n    }\n}",
         "title": "查询安全设置"
@@ -316,7 +324,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserOIDCConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Description\": \"描述信息\",\n        \"ProviderType\": 12,\n        \"IdentityUrl\": \"https://tencent.auth**.cn/\",\n        \"IdentityKey\": \"ewogICAgImtleXMiOiBbC****\",\n        \"ClientId\": \"61adcf00620c31e3d***\",\n        \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n        \"Scope\": [\n            \"openid\",\n            \"email\"\n        ],\n        \"ResponseType\": \"id_token\",\n        \"ResponseMode\": \"form_post\",\n        \"MappingFiled\": \"sub\",\n        \"Status\": 11,\n        \"RequestId\": \"e00eaca1-57b4-49e7-978d-648c5f1b9bd3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"描述信息\",\n        \"ProviderType\": 12,\n        \"IdentityUrl\": \"https://tencent.auth**.cn/\",\n        \"IdentityKey\": \"ewogICAgImtleXMiOiBbC****\",\n        \"ClientId\": \"61adcf00620c31e3d***\",\n        \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n        \"Scope\": [\n            \"openid\",\n            \"email\"\n        ],\n        \"ResponseType\": \"id_token\",\n        \"ResponseMode\": \"form_post\",\n        \"MappingFiled\": \"sub\",\n        \"Status\": 11,\n        \"AutoRotateKey\": 1,\n        \"RequestId\": \"e00eaca1-57b4-49e7-978d-648c5f1b9bd3\"\n    }\n}",
         "title": "获取用户OIDC配置"
       }
     ],
@@ -324,7 +332,7 @@
       {
         "document": "查询用户SAML配置",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSAMLConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"SAMLMetadata\": \"\",\n        \"Status\": 0,\n        \"AuxiliaryDomain\": \"xx.com\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SAMLMetadata\": \"metadataDocument\",\n        \"Status\": 0,\n        \"AuxiliaryDomain\": \"xx.com\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询用户SAML配置"
       }
     ],
@@ -380,16 +388,16 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"GroupName\": \"test1\",\n        \"GroupNum\": 1,\n        \"Remark\": \"test2\",\n        \"CreateTime\": \"2019-04-03 15:11:34\",\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"testName\",\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"GroupName\": \"group1\",\n        \"GroupNum\": 1,\n        \"Remark\": \"IT\",\n        \"CreateTime\": \"2019-04-03 15:11:34\",\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"zhangsan\",\n                \"PhoneNum\": \"188****8888\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"user1***@tencent.com\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\n    }\n}",
         "title": "查询用户组详情"
       }
     ],
     "GetPolicy": [
       {
-        "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=GetPolicy\r\n&PolicyId=17698703\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\n        \"AddTime\": \"2019-04-29 21:18:40\",\n        \"PolicyName\": \"test-2019-04-29\",\n        \"Description\": \"测试策略\",\n        \"Type\": 1,\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\",\n        \"PresetAlias\": \"备注\",\n        \"IsServiceLinkedRolePolicy\": 0\n    }\n}",
-        "title": "查看一个策略的详情"
+        "document": "查看策略详情",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetPolicy\n&PolicyId=17698703\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\n        \"AddTime\": \"2019-04-29 21:18:40\",\n        \"PolicyName\": \"test-2019-04-29\",\n        \"Description\": \"测试策略\",\n        \"Type\": 1,\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\",\n        \"PresetAlias\": \"备注\",\n        \"IsServiceLinkedRolePolicy\": 0,\n        \"Tags\": [\n            {\n                \"Key\": \"region\",\n                \"Value\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
+        "title": "查看策略详情"
       }
     ],
     "GetPolicyVersion": [
@@ -404,13 +412,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"4611686018427844696\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427844696\",\n            \"RoleName\": \"test_1234544\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\n            \"Description\": \"abc\",\n            \"AddTime\": \"2019-07-10 11:22:27\",\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"system\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427844696\",\n            \"RoleName\": \"productAdminRole\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\n            \"Description\": \"产品管理角色\",\n            \"AddTime\": \"2019-07-10 11:22:27\",\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"system\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"管理人员\",\n                    \"Key\": \"运营主管\"\n                }\n            ]\n        },\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\n    }\n}",
         "title": "获取角色详情"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"4611686018427411642\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427411642\",\n            \"RoleName\": \"byron3214_QcsRole\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"ccslinked.qcloud.com\\\"]}}]}\",\n            \"Description\": \"role222\",\n            \"AddTime\": \"2020-03-25 11:03:00\",\n            \"UpdateTime\": \"2020-03-25 11:03:00\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"service_linked\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"1fb826eb-6d21-42f3-8f6e-9f51360f585d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleInfo\": {\n            \"RoleId\": \"4611686018427411642\",\n            \"RoleName\": \"productAdminRole\",\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"ccslinked.qcloud.com\\\"]}}]}\",\n            \"Description\": \"产品管理角色\",\n            \"AddTime\": \"2020-03-25 11:03:00\",\n            \"UpdateTime\": \"2020-03-25 11:03:00\",\n            \"ConsoleLogin\": 0,\n            \"RoleType\": \"service_linked\",\n            \"SessionDuration\": 43200,\n            \"DeletionTaskId\": \"114\",\n            \"Tags\": [\n                {\n                    \"Value\": \"管理人员\",\n                    \"Key\": \"运营主管\"\n                }\n            ]\n        },\n        \"RequestId\": \"1fb826eb-6d21-42f3-8f6e-9f51360f585d\"\n    }\n}",
         "title": "获取服务相关角色详情"
       }
     ],
@@ -434,7 +442,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecurityLastUsed\n<公共请求参数>\n\n{\n    \"SecretIdList\": [\n        \"***\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SecretIdLastUsedRows\": [\n            {\n                \"SecretId\": \"***\",\n                \"LastUsedDate\": \"2022-12-19\",\n                \"LastSecretUsedDate\": 1671681023555\n            }\n        ],\n        \"RequestId\": \"b790d4ca-5692-42ae-8a8c-d15c6ed976db\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretIdLastUsedRows\": [\n            {\n                \"SecretId\": \"AKID***\",\n                \"LastUsedDate\": \"2022-12-19\",\n                \"LastSecretUsedDate\": 1671681023555\n            }\n        ],\n        \"RequestId\": \"b790d4ca-5692-42ae-8a8c-d15c6ed976db\"\n    }\n}",
         "title": "密钥最后一次访问时间"
       }
     ],
@@ -442,7 +450,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetServiceLinkedRoleDeletionStatus\r\n&DeletionTaskId=100\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCEEDED\",\n        \"ServiceType\": \"cam\",\n        \"ServiceName\": \"访问管理\",\n        \"Reason\": \"{}\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCEEDED\",\n        \"ServiceType\": \"cam\",\n        \"ServiceName\": \"访问管理\",\n        \"Reason\": \"ok\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "获取服务相关角色删除状态"
       }
     ],
@@ -458,14 +466,14 @@
       {
         "document": "查询子用户信息",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUser\n<公共请求参数>\n\n{\n    \"Name\": \"test124\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Uid\": 1001774,\n        \"Remark\": \"test\",\n        \"ConsoleLogin\": 1,\n        \"PhoneNum\": \"10086\",\n        \"CountryCode\": \"86\",\n        \"Email\": \"123@qq.com\",\n        \"RecentlyLoginIP\": \"1.1.1.1\",\n        \"RecentlyLoginTime\": \"2023-02-27 14:59:08\",\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 100000546533,\n        \"Name\": \"jack\",\n        \"Uid\": 1001774,\n        \"Remark\": \"product manager\",\n        \"ConsoleLogin\": 1,\n        \"PhoneNum\": \"10086\",\n        \"CountryCode\": \"86\",\n        \"Email\": \"1****0@qq.com\",\n        \"RecentlyLoginIP\": \"1.1.1.1\",\n        \"RecentlyLoginTime\": \"2023-02-27 14:59:08\",\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "查询子用户"
       }
     ],
     "GetUserAppId": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=GetUserAppId\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetUserAppId\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Uin\": \"12345678\",\n        \"OwnerUin\": \"12345678\",\n        \"AppId\": 1250000000,\n        \"RequestId\": \"6fd84cee-0df1-4003-88c9-029acc082ad1\"\n    }\n}",
         "title": "获取用户appId"
       }
@@ -480,9 +488,9 @@
     ],
     "ListAccessKeys": [
       {
-        "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=ListAccessKeys\n&TargetUin=123456\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessKeys\": [\n            {\n                \"AccessKeyId\": \"AKIDlOp****mQsJQWEaYK\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2019-12-25 14:53:03\"\n            },\n            {\n                \"AccessKeyId\": \"A2342hOv****QOHySnzb5P7dv8\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2020-03-03 16:51:21\"\n            }\n        ],\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\n    }\n}",
+        "document": "列出访问密钥",
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAccessKeys\n&TargetUin=100013065917\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessKeys\": [\n            {\n                \"AccessKeyId\": \"AKID***\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2019-12-25 14:53:03\"\n            },\n            {\n                \"AccessKeyId\": \"AKID***\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2020-03-03 16:51:21\"\n            }\n        ],\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\n    }\n}",
         "title": "列出访问密钥"
       }
     ],
@@ -490,7 +498,7 @@
       {
         "document": "查询用户组3349关联的策略列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedGroupPolicies\n&TargetGroupId=3349\n&Page=1\n&Rp=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"OperateOwnerUin\": \"10001\",\n                \"PolicyName\": \"AdministratorAccess\",\n                \"Remark\": \"test policy remark\",\n                \"OperateUinType\": 1,\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"PolicyType\": \"User\",\n                \"PolicyId\": 1,\n                \"DeactivedDetail\": [\n                    \"test\"\n                ],\n                \"OperateUin\": \"10001\"\n            }\n        ],\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\",\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"OperateOwnerUin\": \"10001\",\n                \"PolicyName\": \"AdministratorAccess\",\n                \"Remark\": \"test policy remark\",\n                \"OperateUinType\": 1,\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"PolicyType\": \"User\",\n                \"PolicyId\": 1,\n                \"DeactivedDetail\": [\n                    \"ccs\"\n                ],\n                \"OperateUin\": \"10001\"\n            }\n        ],\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "查询用户组关联的策略列表"
       }
     ],
@@ -498,7 +506,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedRolePolicies\n&RoleId=4611686018427397905\n&Page=1\n&Rp=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyName\": \"QcloudAccessForASRole\",\n                \"Description\": \"xx\",\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2019-07-10 11:17:41\",\n                \"PolicyType\": \"QCS\",\n                \"PolicyId\": 13847366,\n                \"DeactivedDetail\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\",\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyName\": \"QcloudAccessForASRole\",\n                \"Description\": \"Free Access to AS Product\",\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2019-07-10 11:17:41\",\n                \"PolicyType\": \"QCS\",\n                \"PolicyId\": 13847366,\n                \"DeactivedDetail\": [\n                    \"bbs\"\n                ]\n            }\n        ],\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "获取角色绑定的策略列表"
       }
     ],
@@ -514,7 +522,7 @@
       {
         "document": "查询绑定到子账号3449203261的策略列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserPolicies\n&TargetUin=3449203261\n&Page=1\n&Rp=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 109360057,\n                \"PolicyName\": \"test-0103\",\n                \"AddTime\": \"2022-01-03 10:38:28\",\n                \"CreateMode\": 3,\n                \"Remark\": \"\",\n                \"OperateOwnerUin\": null,\n                \"OperateUin\": null,\n                \"OperateUinType\": null,\n                \"PolicyType\": \"\",\n                \"Deactived\": 0,\n                \"DeactivedDetail\": []\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"db1cdf3f-9b1a-47c5-88b3-c49089aaa811\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 109360057,\n                \"PolicyName\": \"policygen-20240909141614\",\n                \"AddTime\": \"2024-09-09 15:51:40\",\n                \"CreateMode\": 3,\n                \"Remark\": \"cos policy\",\n                \"OperateOwnerUin\": \"100008847111\",\n                \"OperateUin\": \"100008847111\",\n                \"OperateUinType\": 0,\n                \"PolicyType\": \"User\",\n                \"Deactived\": 0,\n                \"DeactivedDetail\": [\n                    \"ccs\"\n                ]\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"db1cdf3f-9b1a-47c5-88b3-c49089aaa811\"\n    }\n}",
         "title": "查询子账号关联的策略列表"
       }
     ],
@@ -522,7 +530,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListCollaborators\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ConsoleLogin\": 1,\n                \"CountryCode\": \"86\",\n                \"CreateTime\": \"2022-03-06 14:54:06\",\n                \"Email\": \"123456@qq.com\",\n                \"Name\": \"test\",\n                \"NickName\": \"test\",\n                \"PhoneNum\": \"12222222222\",\n                \"Remark\": \"test\",\n                \"Uid\": 18368010,\n                \"Uin\": 100021154441\n            }\n        ],\n        \"RequestId\": \"25350c03-ca94-45b1-b082-f845dfc7c39b\",\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"Data\": [\n            {\n                \"Uin\": 100000000001,\n                \"Name\": \"Jack\",\n                \"Uid\": 10000001,\n                \"Remark\": \"productUser\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"186****0001\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"186****0001@qq.com\",\n                \"CreateTime\": \"2023-06-01 10:53:48\",\n                \"NickName\": \"Jack\"\n            }\n        ],\n        \"RequestId\": \"3bfc64a0-8935-43f4-91f7-6d16c41886d8\"\n    }\n}",
         "title": "获取协作者列表"
       }
     ],
@@ -552,7 +560,7 @@
     ],
     "ListMaskedSubAccounts": [
       {
-        "document": "",
+        "document": "获取子账户列表",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListMaskedSubAccounts\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"UserInfo\": [\n            {\n                \"Uid\": 12062472,\n                \"Uin\": 100023162094,\n                \"Name\": \"test_seven\",\n                \"Remark\": \"\",\n                \"CanLogin\": 1,\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"test\",\n                        \"Key\": \"test\"\n                    }\n                ],\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2022-01-03 10:38:26\",\n                \"IsReceiverOwner\": 0,\n                \"SystemType\": \"SubAccount\",\n                \"NeedResetPassword\": 1,\n                \"ConsoleLogin\": 0,\n                \"WxzsStatus\": 0,\n                \"PermType\": [],\n                \"IsDeleted\": 0,\n                \"IsSelected\": null,\n                \"HasAPIKey\": null,\n                \"BindWework\": null\n            }\n        ],\n        \"OwnerInfo\": [\n            {\n                \"Uin\": 100011742865,\n                \"UserName\": \"YB\",\n                \"CheckStatus\": 0\n            }\n        ],\n        \"GroupInfo\": [],\n        \"RequestId\": \"50a36793-83c2-44b5-961f-2946bca09c69\"\n    }\n}",
         "title": "获取子账户列表"
@@ -562,7 +570,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPolicies\n<公共请求参数>\n\n{\n    \"Rp\": \"1\",\n    \"Page\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ServiceTypeList\": [\n            \"xx\"\n        ],\n        \"List\": [\n            {\n                \"PolicyId\": 16313162,\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\n                \"AddTime\": \"2019-04-19 10:55:31\",\n                \"Type\": 2,\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\n                \"CreateMode\": 2,\n                \"Attachments\": 0,\n                \"ServiceType\": \"cooperator\",\n                \"IsAttached\": 1,\n                \"Deactived\": 1,\n                \"DeactivedDetail\": [\n                    \"cvm\"\n                ],\n                \"IsServiceLinkedPolicy\": 1,\n                \"UpdateTime\": \"2019-04-19 10:55:31\",\n                \"AttachEntityCount\": 0,\n                \"AttachEntityBoundaryCount\": 0\n            }\n        ],\n        \"TotalNum\": 239,\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 16313162,\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\n                \"AddTime\": \"2019-04-19 10:55:31\",\n                \"Type\": 2,\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\n                \"CreateMode\": 2,\n                \"Attachments\": 0,\n                \"ServiceType\": \"cooperator\",\n                \"IsAttached\": 1,\n                \"Deactived\": 1,\n                \"DeactivedDetail\": [\n                    \"cvm\"\n                ],\n                \"IsServiceLinkedPolicy\": 1,\n                \"UpdateTime\": \"2019-04-19 10:55:31\",\n                \"AttachEntityCount\": 0,\n                \"AttachEntityBoundaryCount\": 0\n            }\n        ],\n        \"ServiceTypeList\": [\n            \"scf\"\n        ],\n        \"TotalNum\": 239,\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\n    }\n}",
         "title": "查看策略列表"
       }
     ],
@@ -570,13 +578,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPoliciesGrantingServiceAccess\n<公共请求参数>\n\n{\n    \"TargetUin\": 100000001\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"-\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [\n                    {\n                        \"Name\": \"AddInstanceInDeployGroup\",\n                        \"Description\": \"新增实例部署组\"\n                    }\n                ],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"cvm custom policy\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
         "title": "所有已授权服务"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPoliciesGrantingServiceAccess\n<公共请求参数>\n\n{\n    \"TargetUin\": 100000001,\n    \"ServiceType\": \"cvm\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [\n                    {\n                        \"Name\": \"AddInstanceInDeployGroup\",\n                        \"Description\": \"新增实例部署组\"\n                    }\n                ],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"-\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [\n                    {\n                        \"Name\": \"AddInstanceInDeployGroup\",\n                        \"Description\": \"新增实例部署组\"\n                    }\n                ],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"cvm custom policy\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
         "title": "查看已授权服务中所有已授权接口"
       }
     ],
@@ -600,7 +608,7 @@
       {
         "document": "查询身份提供商列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListSAMLProviders\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"SAMLProviderSet\": [\n            {\n                \"Name\": \"saml-sdk\",\n                \"Description\": \"sdk\",\n                \"CreateTime\": \"2018-12-17 16:33:35\",\n                \"ModifyTime\": \"2019-02-26 13:34:58\"\n            },\n            {\n                \"Name\": \"TestSAML\",\n                \"Description\": \"111\",\n                \"CreateTime\": \"2018-11-08 19:27:27\",\n                \"ModifyTime\": \"2019-04-30 11:23:12\"\n            },\n            {\n                \"Name\": \"OneLogin\",\n                \"Description\": \"ONeLogin\",\n                \"CreateTime\": \"2018-11-04 20:36:41\",\n                \"ModifyTime\": \"2018-11-23 23:56:09\"\n            },\n            {\n                \"Name\": \"Azure_AD\",\n                \"Description\": \"Azure AD\",\n                \"CreateTime\": \"2018-11-04 16:44:25\",\n                \"ModifyTime\": \"2019-02-14 10:38:27\"\n            },\n            {\n                \"Name\": \"api-test\",\n                \"Description\": \"API测试\",\n                \"CreateTime\": \"2018-10-30 11:40:19\",\n                \"ModifyTime\": \"2018-10-30 11:40:19\"\n            },\n            {\n                \"Name\": \"okta\",\n                \"Description\": \"okta\",\n                \"CreateTime\": \"2018-09-17 17:18:03\",\n                \"ModifyTime\": \"2018-09-17 17:18:03\"\n            }\n        ],\n        \"RequestId\": \"d644fa50-7e54-4448-84d8-64cb4dd9f737\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"SAMLProviderSet\": [\n            {\n                \"Name\": \"saml-sdk\",\n                \"Description\": \"sdk\",\n                \"CreateTime\": \"2018-12-17 16:33:35\",\n                \"ModifyTime\": \"2019-02-26 13:34:58\"\n            },\n            {\n                \"Name\": \"TestSAML\",\n                \"Description\": \"this is description\",\n                \"CreateTime\": \"2018-11-08 19:27:27\",\n                \"ModifyTime\": \"2019-04-30 11:23:12\"\n            },\n            {\n                \"Name\": \"OneLogin\",\n                \"Description\": \"ONeLogin\",\n                \"CreateTime\": \"2018-11-04 20:36:41\",\n                \"ModifyTime\": \"2018-11-23 23:56:09\"\n            },\n            {\n                \"Name\": \"Azure_AD\",\n                \"Description\": \"Azure AD\",\n                \"CreateTime\": \"2018-11-04 16:44:25\",\n                \"ModifyTime\": \"2019-02-14 10:38:27\"\n            },\n            {\n                \"Name\": \"api-test\",\n                \"Description\": \"API测试\",\n                \"CreateTime\": \"2018-10-30 11:40:19\",\n                \"ModifyTime\": \"2018-10-30 11:40:19\"\n            },\n            {\n                \"Name\": \"okta\",\n                \"Description\": \"okta\",\n                \"CreateTime\": \"2018-09-17 17:18:03\",\n                \"ModifyTime\": \"2018-09-17 17:18:03\"\n            }\n        ],\n        \"RequestId\": \"d644fa50-7e54-4448-84d8-64cb4dd9f737\"\n    }\n}",
         "title": "查询身份提供商列表"
       }
     ],
@@ -615,16 +623,16 @@
     "ListUsers": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=ListUsers\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Uin\": 100021969091,\n                \"Name\": \"cam001\",\n                \"Uid\": 11398137,\n                \"Remark\": \"\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"\",\n                \"CreateTime\": \"2021-10-28 18:02:00\"\n            }\n        ],\n        \"RequestId\": \"b2c7267c-8ee5-408b-9a88-ac359f13c8b1\"\n    }\n}",
-        "title": "拉取子用户"
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Uin\": 0,\n                \"Name\": \"开发商\",\n                \"Uid\": 1003668,\n                \"Remark\": \"\",\n                \"ConsoleLogin\": 0,\n                \"PhoneNum\": \"15118121005\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"evianwang@personal.com\",\n                \"CreateTime\": \"2021-11-26 16:21:01\",\n                \"NickName\": \"开发商\"\n            }\n        ],\n        \"RequestId\": \"81b595fc-0700-40e3-847e-6bbf711c0d2c\"\n    }\n}",
+        "title": "listUsers"
       }
     ],
     "ListUsersForGroup": [
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListUsersForGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"testName\",\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"group1\",\n                \"PhoneNum\": \"188****8888\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"user1***@tencent.com\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\n    }\n}",
         "title": "查询用户组关联的用户列表"
       }
     ],
@@ -632,7 +640,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListWeChatWorkSubAccounts\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 100,\n        \"Data\": [\n            {\n                \"Uin\": 100000546533,\n                \"Name\": \"test124\",\n                \"Uid\": 1001774,\n                \"Remark\": \"test\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"10086\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"123@qq.com\",\n                \"WeChatWorkUserId\": \"xxx\",\n                \"CreateTime\": \"2020-10-10 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 100,\n        \"Data\": [\n            {\n                \"Uin\": 100000546533,\n                \"Name\": \"test124\",\n                \"Uid\": 1001774,\n                \"Remark\": \"account_test\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"10086\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"123@qq.com\",\n                \"WeChatWorkUserId\": \"2343455\",\n                \"CreateTime\": \"2020-10-10 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "拉取企业微信子用户"
       }
     ],
@@ -700,6 +708,14 @@
         "title": "设置登录保护校验方式为微信"
       }
     ],
+    "SyncSecretKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncSecretKey\n<公共请求参数>\n\n{\n    \"GitSkInfo\": [\n        {\n            \"SecretId\": \"AKIDGQOBuT***********HG2f7NQI1ZEi072\",\n            \"SecretKey\": \"mLkwwj************RSL2WotnV2M4at\",\n            \"GithubUrl\": \"33\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretStatus\": [\n            {\n                \"SecretId\": \"AKIDGQOBuTr***********G2f7NQI1ZEi072\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"d8499643-ccca-4abf-80bd-b5417c6f8756\"\n    }\n}",
+        "title": "同步秘钥"
+      }
+    ],
     "TagRole": [
       {
         "document": "",
@@ -719,7 +735,7 @@
     "UpdateAccessKey": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=UpdateAccessKey\n&TargetUin=123456\n&AccessKeyId=AKIDtm****lqorp\n&Status=Active\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateAccessKey\n&TargetUin=100013065917\n&AccessKeyId=AKID***\n&Status=Active\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99d650e2-10fa-4c8f-819f-874578039641\"\n    }\n}",
         "title": "更新访问密钥"
       }
@@ -791,7 +807,7 @@
     "UpdateUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUser\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test124\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUser\n<公共请求参数>\n\n{\n    \"Remark\": \"财务管理\",\n    \"Name\": \"jack\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"132*******86\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"2sd82*****ddw832je\",\n    \"Email\": \"3729*****qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "更新子用户"
       }
@@ -799,7 +815,7 @@
     "UpdateUserOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth**.com\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"描述\",\n    \"IdentityKey\": \"key\",\n    \"ClientId\": \"cbaefefes9823***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.com\",\n    \"Scope\": [\n        \"email\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth**.com\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"key\",\n    \"ClientId\": \"cbaefefes9823***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.com\",\n    \"Scope\": [\n        \"email\"\n    ],\n    \"AutoRotateKey\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"10a20884-070e-48a8-aa40-9ed295a33ea2\"\n    }\n}",
         "title": "修改用户OIDC配置"
       }

@@ -981,6 +981,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具数量上限",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxToolCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1801,14 +1812,14 @@
         },
         {
           "disabled": false,
-          "document": "插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型",
+          "document": "插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentModelInfo",
           "name": "Model",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1823,14 +1834,14 @@
         },
         {
           "disabled": false,
-          "document": "知识库问答插件配置",
+          "document": "知识库问答插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentKnowledgeQAPlugin",
           "name": "KnowledgeQa",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2661,6 +2672,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthConfigStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3335,6 +3357,23 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AsyncWorkflowMessage": {
+      "document": "异步工作流的消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容数组，包含多个内容对象",
+          "example": "无",
+          "member": "Content",
+          "name": "Contents",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -6562,6 +6601,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "Agent数量上限",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxAgentCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -8864,7 +8913,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型,正常的文件名类型后缀，例如 xlsx、pdf、 docx、png 等",
+          "document": "文件类型,正常的文件名类型后缀，支持 docx、doc、pdf、txt、md、wps、pages、html、mhtml、epub、xml、json、log、xlsx、xls、csv、tsv、numbers、pptx、ppt、ppsx、ppsm、key、png、jpg、jpeg、gif、bmp、tiff、webp、heif、heic、jp2、eps、icns、im、pcx、ppm、xbm、xmind\n",
           "example": "pdf",
           "member": "string",
           "name": "FileType",
@@ -8926,7 +8975,7 @@
         {
           "disabled": false,
           "document": "失效时间",
-          "example": "无",
+          "example": "1717063483",
           "member": "int64",
           "name": "ExpiredTime",
           "output_required": false,
@@ -8936,7 +8985,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "1717062883",
           "member": "int64",
           "name": "StartTime",
           "output_required": false,
@@ -8946,7 +8995,7 @@
         {
           "disabled": false,
           "document": "对象存储桶",
-          "example": "无",
+          "example": "qidian-qbot-test-1251316161",
           "member": "string",
           "name": "Bucket",
           "output_required": false,
@@ -8956,7 +9005,7 @@
         {
           "disabled": false,
           "document": "对象存储可用区",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -8966,7 +9015,7 @@
         {
           "disabled": false,
           "document": "文件存储目录",
-          "example": "无",
+          "example": "/corp/137/doc/",
           "member": "string",
           "name": "FilePath",
           "output_required": false,
@@ -8976,7 +9025,7 @@
         {
           "disabled": false,
           "document": "存储类型",
-          "example": "无",
+          "example": "cos",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -8985,8 +9034,8 @@
         },
         {
           "disabled": false,
-          "document": "主号",
-          "example": "无",
+          "document": "企业主账号",
+          "example": "0",
           "member": "string",
           "name": "CorpUin",
           "output_required": false,
@@ -8996,7 +9045,7 @@
         {
           "disabled": false,
           "document": "图片存储目录",
-          "example": "无",
+          "example": "/corp/17685678771866/image/",
           "member": "string",
           "name": "ImagePath",
           "output_required": false,
@@ -9009,6 +9058,26 @@
           "example": "/corp/1768567877186617344/1768574873671565312/doc/XIEVIQBxpnltliscsSAu-1796171935184060416.pdf",
           "member": "string",
           "name": "UploadPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件上传地址，使用put请求上传文件到该地址",
+          "example": "https://lke-realtime-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fcorp/xxxxxxxxxx/xxxxxxxxx/doc/xxxxxxxxxxx-2020788481547555584.xlsx?q-sign-algorithm=sha1&q-ak=AKIDqQ2UCeGDtjVkjauVp8NM1czNWPAgwvhF&q-sign-time=1770628493%3B1770630293",
+          "member": "string",
+          "name": "UploadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的预签名地址，支持下载",
+          "example": "https://lke-realtime-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fcorp/xxxxxxxxxx/xxxxxxxxx/doc/xxxxxxxxxxx-2020788481547555584.xlsx?q-sign-algorithm=sha1&q-ak=AKIDqQ2UCeGDtjVkjauVp8NM1czNWPAgwvhF&q-sign-time=1770628493%3B1770630293",
+          "member": "string",
+          "name": "FileUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10199,15 +10268,15 @@
       "document": "文件信息内容",
       "members": [
         {
-          "disabled": false,
-          "document": "实时文档解析接口返回的 DocBizId",
+          "disabled": true,
+          "document": "实时文档解析接口返回的 DocBizId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1982108829427482944",
           "member": "uint64",
           "name": "DocBizId",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -10251,6 +10320,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实时文档解析接口返回的 doc_id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "DocId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -21028,6 +21119,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启图谱检索",
+          "example": "true",
+          "member": "bool",
+          "name": "GraphRetrieval",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -22621,6 +22723,17 @@
         },
         {
           "disabled": false,
+          "document": "Widget显示数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "View",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "Widget状态数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"message\":\"widget\"}",
           "member": "string",
@@ -23353,6 +23466,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前的回复消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AsyncWorkflowMessage",
+          "name": "LatestMessage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

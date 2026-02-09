@@ -6,28 +6,24 @@ Input:
 
 ```
 tccli bi CreatePermissionRanks --cli-unfold-argument  \
-    --TableId 0 \
-    --Mode abc \
-    --RoleType abc \
+    --TableId 10628115 \
+    --Mode all \
+    --RoleType others \
     --RoleId 0 \
-    --RulerInfo abc \
-    --Type abc \
-    --OpenStatus abc \
-    --ProjectId 0 \
-    --RowColumnConfigList.0.RulerInfo abc \
-    --RowColumnConfigList.0.TagValueList.0.Id 0 \
-    --RowColumnConfigList.0.TagValueList.0.Name abc \
-    --RowColumnConfigList.0.TagValueList.0.Values abc
+    --RulerInfo {"Logic":"and","Items":[]} \
+    --Type column \
+    --OpenStatus open \
+    --ProjectId 11055177
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Msg": "abc",
-        "Extra": "abc",
-        "Data": "abc",
-        "RequestId": "abc"
+        "Msg": "默认业务成功",
+        "RequestId": "131ecec6-e8c7-4147-af1c-3c5725307583",
+        "Extra": "",
+        "Data": null
     }
 }
 ```

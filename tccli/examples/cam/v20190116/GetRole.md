@@ -15,9 +15,9 @@ Output:
     "Response": {
         "RoleInfo": {
             "RoleId": "4611686018427844696",
-            "RoleName": "test_1234544",
+            "RoleName": "productAdminRole",
             "PolicyDocument": "{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}",
-            "Description": "abc",
+            "Description": "产品管理角色",
             "AddTime": "2019-07-10 11:22:27",
             "UpdateTime": "2019-07-10 11:22:27",
             "ConsoleLogin": 0,
@@ -26,8 +26,8 @@ Output:
             "DeletionTaskId": "114",
             "Tags": [
                 {
-                    "Value": "xx",
-                    "Key": "xx"
+                    "Value": "管理人员",
+                    "Key": "运营主管"
                 }
             ]
         },
@@ -53,9 +53,9 @@ Output:
     "Response": {
         "RoleInfo": {
             "RoleId": "4611686018427411642",
-            "RoleName": "byron3214_QcsRole",
+            "RoleName": "productAdminRole",
             "PolicyDocument": "{\"version\":\"2.0\",\"statement\":[{\"action\":\"sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"ccslinked.qcloud.com\"]}}]}",
-            "Description": "role222",
+            "Description": "产品管理角色",
             "AddTime": "2020-03-25 11:03:00",
             "UpdateTime": "2020-03-25 11:03:00",
             "ConsoleLogin": 0,
@@ -64,8 +64,8 @@ Output:
             "DeletionTaskId": "114",
             "Tags": [
                 {
-                    "Value": "xx",
-                    "Key": "xx"
+                    "Value": "管理人员",
+                    "Key": "运营主管"
                 }
             ]
         },

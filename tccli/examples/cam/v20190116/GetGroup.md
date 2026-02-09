@@ -14,19 +14,19 @@ Output:
 {
     "Response": {
         "GroupId": 2020,
-        "GroupName": "test1",
+        "GroupName": "group1",
         "GroupNum": 1,
-        "Remark": "test2",
+        "Remark": "IT",
         "CreateTime": "2019-04-03 15:11:34",
         "UserInfo": [
             {
                 "Uid": 1001408,
                 "Uin": 100000545998,
-                "Name": "testName",
-                "PhoneNum": "",
+                "Name": "zhangsan",
+                "PhoneNum": "188****8888",
                 "CountryCode": "86",
                 "PhoneFlag": 0,
-                "Email": "",
+                "Email": "user1***@tencent.com",
                 "EmailFlag": 0,
                 "UserType": 3,
                 "CreateTime": "2018-04-24 15:36:26",

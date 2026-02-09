@@ -15,17 +15,17 @@ Output:
 ```
 {
     "Response": {
-        "Msg": "abc",
-        "Extra": "abc",
+        "Msg": "默认业务成功",
+        "RequestId": "dfcd12ec-6920-42a1-a758-7a10fcc4a60a",
+        "Extra": "",
         "Data": {
             "TableId": 0,
-            "Type": "abc",
-            "Mode": "abc",
-            "OpenStatus": "abc",
-            "RoleType": "abc",
+            "Type": "row",
+            "Mode": "specify",
+            "OpenStatus": "open",
+            "RoleType": "roles",
             "RoleId": 0
-        },
-        "RequestId": "abc"
+        }
     }
 }
 ```

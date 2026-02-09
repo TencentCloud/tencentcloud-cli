@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam DeleteMessageReceiver --cli-unfold-argument  \
-    --Name test
+    --Name zhangshan
 ```
 
 Output: 

@@ -20,12 +20,12 @@ Output:
                 "Uin": 100000546533,
                 "Name": "test124",
                 "Uid": 1001774,
-                "Remark": "test",
+                "Remark": "account_test",
                 "ConsoleLogin": 1,
                 "PhoneNum": "10086",
                 "CountryCode": "86",
                 "Email": "123@qq.com",
-                "WeChatWorkUserId": "xxx",
+                "WeChatWorkUserId": "2343455",
                 "CreateTime": "2020-10-10 00:00:00"
             }
         ],

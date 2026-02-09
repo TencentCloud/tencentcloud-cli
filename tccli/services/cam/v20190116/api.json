@@ -133,6 +133,13 @@
       "output": "CreateServiceLinkedRoleResponse",
       "status": "online"
     },
+    "CreateSubAccountLoginIpPolicy": {
+      "document": "增加子账号登录IP策略",
+      "input": "CreateSubAccountLoginIpPolicyRequest",
+      "name": "增加子账号登录IP策略",
+      "output": "CreateSubAccountLoginIpPolicyResponse",
+      "status": "online"
+    },
     "CreateUserOIDCConfig": {
       "document": "创建用户OIDC配置。只能创建一个用户OIDC身份提供商，并且创建用户OIDC配置之后会自动关闭用户SAML SSO身份提供商。",
       "input": "CreateUserOIDCConfigRequest",
@@ -477,9 +484,9 @@
       "status": "online"
     },
     "ListMaskedSubAccounts": {
-      "document": "拉取子帐号列表(敏感信息打码)",
+      "document": "拉取子账号列表(敏感信息打码)",
       "input": "ListMaskedSubAccountsRequest",
-      "name": "拉取子帐号列表(敏感信息打码)",
+      "name": "拉取子账号列表(敏感信息打码)",
       "output": "ListMaskedSubAccountsResponse",
       "status": "online"
     },
@@ -600,6 +607,13 @@
       "input": "SetMfaFlagRequest",
       "name": "设置子用户的登录保护和敏感操作校验方式",
       "output": "SetMfaFlagResponse",
+      "status": "online"
+    },
+    "SyncSecretKey": {
+      "document": "同步泄露的秘钥信息",
+      "input": "SyncSecretKeyRequest",
+      "name": "同步泄露的秘钥",
+      "output": "SyncSecretKeyResponse",
       "status": "online"
     },
     "TagRole": {
@@ -760,7 +774,7 @@
         {
           "disabled": false,
           "document": "访问密钥标识",
-          "example": "无",
+          "example": "AKID***",
           "member": "string",
           "name": "AccessKeyId",
           "output_required": true,
@@ -770,7 +784,7 @@
         {
           "disabled": false,
           "document": "访问密钥（密钥仅创建时可见，请妥善保存）",
-          "example": "无",
+          "example": "iDVd***",
           "member": "string",
           "name": "SecretAccessKey",
           "output_required": true,
@@ -780,7 +794,7 @@
         {
           "disabled": false,
           "document": "密钥状态，激活（Active）或未激活（Inactive）",
-          "example": "无",
+          "example": "Active",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -790,7 +804,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2020-03-03 18:00:26",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
@@ -800,7 +814,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "readOnly权限",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -844,7 +858,7 @@
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "test124",
+          "example": "Jack",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -853,7 +867,7 @@
         {
           "disabled": false,
           "document": "子用户备注",
-          "example": "test",
+          "example": "公司运营",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -934,15 +948,17 @@
           "example": "100000546533",
           "member": "uint64",
           "name": "Uin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "test124",
+          "example": "Jack",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -952,6 +968,7 @@
           "example": "test123456",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -961,6 +978,7 @@
           "example": "faweffewagwaegawe",
           "member": "string",
           "name": "SecretId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -970,6 +988,7 @@
           "example": "fawef23rjhiuaefhuaifhiuawef",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -979,6 +998,7 @@
           "example": "5648765",
           "member": "uint64",
           "name": "Uid",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -997,7 +1017,7 @@
         {
           "disabled": false,
           "document": "添加的子用户 UIN/UID 和用户组 ID 关联关系",
-          "example": "无",
+          "example": "[{\"GroupId\":10000002,\"Uid\":10000004}]",
           "member": "GroupIdOfUidInfo",
           "name": "Info",
           "required": true,
@@ -1033,23 +1053,23 @@
         },
         {
           "disabled": false,
-          "document": "实体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实体名称",
           "example": "TestPolicyName",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实体Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实体Uin",
           "example": "3449203261",
           "member": "uint64",
           "name": "Uin",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1063,13 +1083,13 @@
         },
         {
           "disabled": false,
-          "document": "策略关联时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略关联时间",
           "example": "2021-11-11 19:38:01",
           "member": "string",
           "name": "AttachmentTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1116,7 +1136,7 @@
         {
           "disabled": false,
           "document": "策略id",
-          "example": "无",
+          "example": "109360057",
           "member": "uint64",
           "name": "PolicyId",
           "output_required": true,
@@ -1125,58 +1145,58 @@
         },
         {
           "disabled": false,
-          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "策略名称",
+          "example": "readOnlyPolicy",
           "member": "string",
           "name": "PolicyName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "创建时间",
+          "example": "2022-01-03 10:38:28",
           "member": "datetime",
           "name": "AddTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建",
+          "example": "1",
           "member": "uint64",
           "name": "CreateMode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "取值为user和QCS\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "取值为User和QCS。User代表自定义策略，QCS代表系统策略",
+          "example": "User",
           "member": "string",
           "name": "PolicyType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "策略备注",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略关联操作者主账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100013065917",
           "member": "string",
           "name": "OperateOwnerUin",
           "output_required": true,
@@ -1186,7 +1206,7 @@
         {
           "disabled": false,
           "document": "策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "OperateUin",
           "output_required": true,
@@ -1195,8 +1215,8 @@
         },
         {
           "disabled": false,
-          "document": "UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "OperateUinType",
           "output_required": true,
@@ -1205,23 +1225,23 @@
         },
         {
           "disabled": false,
-          "document": "是否已下线\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否已下线，1代表已下线，0代表未下线",
+          "example": "1",
           "member": "uint64",
           "name": "Deactived",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已下线的产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "已下线的产品列表",
+          "example": "[\"ccs\"]",
           "member": "string",
           "name": "DeactivedDetail",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1322,82 +1342,82 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "",
+          "example": "9420",
           "member": "uint64",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "",
+          "example": "AdministratorAccess",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定时间",
-          "example": "",
+          "example": "2024-12-06 12:00:00",
           "member": "string",
           "name": "AddTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略类型，User表示自定义策略，QCS表示预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "策略类型，User表示自定义策略，QCS表示预设策略",
+          "example": "User",
           "member": "string",
           "name": "PolicyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "CreateMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否已下线(0:否 1:是)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否已下线(0:否 1:是)",
+          "example": "1",
           "member": "uint64",
           "name": "Deactived",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已下线的产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "已下线的产品列表",
+          "example": "[\"ccs\"]",
           "member": "string",
           "name": "DeactivedDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "策略描述",
+          "example": "admin policy",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1408,92 +1428,92 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "",
+          "example": "219064",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略名",
-          "example": "",
+          "example": "QcloudSMSFullAccess",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略描述",
-          "example": "",
+          "example": "短信（SMS）全读写访问权限",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2020-01-16 15:09:27",
           "member": "string",
           "name": "AddTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略类型(1表示自定义策略，2表示预设策略)",
-          "example": "",
+          "example": "2",
           "member": "string",
           "name": "StrategyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建模式(1表示按产品或项目权限创建的策略，其他表示策略语法创建的策略)",
-          "example": "",
+          "example": "2",
           "member": "string",
           "name": "CreateMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "随组关联信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "随组关联信息",
+          "example": "[{\"GroupId\":93878,\"GroupName\":\"系统运维\"}]",
           "member": "AttachedUserPolicyGroupInfo",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否已下线(0:否 1:是)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否已下线(0:否 1:是)",
+          "example": "1",
           "member": "uint64",
           "name": "Deactived",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已下线的产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "已下线的产品列表",
+          "example": "[\"consolesms\"]",
           "member": "string",
           "name": "DeactivedDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1629,7 +1649,7 @@
         {
           "disabled": false,
           "document": "认证凭据AuthToken信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"CurrentTime\":1733802016,\"LastRotationTimeCost\":343,\"NextRotationTime\":10,\"RotationMessage\":\"success\",\"RotationStatus\":\"success\",\"Token\":\"944a***mtHS\"}",
           "member": "AuthToken",
           "name": "Credentials",
           "output_required": true,
@@ -1931,7 +1951,7 @@
         {
           "disabled": false,
           "document": "自定义多因子验证Token",
-          "example": "",
+          "example": "mfa_1000000000-a6f836f1",
           "member": "string",
           "name": "MFAToken",
           "required": true,
@@ -1958,7 +1978,7 @@
         {
           "disabled": false,
           "document": "指定用户Uin，不填默认为当前用户创建访问密钥",
-          "example": "123456",
+          "example": "100013065917",
           "member": "uint64",
           "name": "TargetUin",
           "required": false,
@@ -1982,7 +2002,7 @@
         {
           "disabled": false,
           "document": "访问密钥\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"AccessKeyId\":\"AKID***\",\"SecretAccessKey\":\"iDVd***\",\"Status\":\"Active\",\"CreateTime\":\"2020-03-03 18:00:26\"}",
           "member": "AccessKeyDetail",
           "name": "AccessKey",
           "output_required": true,
@@ -2139,7 +2159,7 @@
         {
           "disabled": false,
           "document": "签名公钥，需要base64",
-          "example": "无",
+          "example": "baz****",
           "member": "string",
           "name": "IdentityKey",
           "required": true,
@@ -2148,7 +2168,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2198,6 +2218,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2262,13 +2291,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略版本号",
           "example": "1",
           "member": "uint64",
           "name": "VersionId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2285,7 +2314,7 @@
         {
           "disabled": false,
           "document": "角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。",
-          "example": "test_1234544",
+          "example": "AdminRole",
           "member": "string",
           "name": "RoleName",
           "required": true,
@@ -2303,7 +2332,7 @@
         {
           "disabled": false,
           "document": "角色描述",
-          "example": "abc",
+          "example": "管理角色",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2330,7 +2359,7 @@
         {
           "disabled": false,
           "document": "角色绑定标签",
-          "example": "无",
+          "example": "[{\"Key\":\"管理人员\",\"Value\":\"运营主管\"}]",
           "member": "RoleTags",
           "name": "Tags",
           "required": false,
@@ -2344,13 +2373,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456789",
+          "document": "角色ID",
+          "example": "4611**************1",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2431,7 +2460,7 @@
         {
           "disabled": false,
           "document": "自定义后缀，根据您提供的字符串，与服务提供的前缀组合在一起以形成完整的角色名称。",
-          "example": "forTest",
+          "example": "forAdmin",
           "member": "string",
           "name": "CustomSuffix",
           "required": false,
@@ -2449,7 +2478,7 @@
         {
           "disabled": false,
           "document": "角色绑定标签。",
-          "example": "无",
+          "example": "[{\"TagKey\":\"管理人员\",\"TagValue\":\"运营主管\"}]",
           "member": "RoleTags",
           "name": "Tags",
           "required": false,
@@ -2464,13 +2493,76 @@
         {
           "disabled": false,
           "document": "角色ID",
-          "example": "4611686018427411525",
+          "example": "4611**************1",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubAccountLoginIpPolicyRequest": {
+      "document": "CreateSubAccountLoginIpPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP策略集合",
+          "example": "无",
+          "member": "IpPolicy",
+          "name": "IpPolicies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "审批人类型，目前支持的类型有：SubAccountLoginLimitApproval（子账号登录限制审批）",
+          "example": "SubAccountLoginLimitApproval",
+          "member": "string",
+          "name": "ApproverType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被添加为协助审批人的账号ID数组",
+          "example": "[\"20548499\"]",
+          "member": "uint64",
+          "name": "ApproverUin",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用策略：0：不禁用，1：禁用",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisablePolicy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型：1：更新IP策略，2：设置异地登录校验校验规则",
+          "example": "1",
+          "member": "uint64",
+          "name": "PolicyType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubAccountLoginIpPolicyResponse": {
+      "document": "CreateSubAccountLoginIpPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2540,7 +2632,7 @@
         {
           "disabled": false,
           "document": "签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。",
-          "example": "无",
+          "example": "baz****",
           "member": "string",
           "name": "IdentityKey",
           "required": true,
@@ -2549,7 +2641,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。",
-          "example": "无",
+          "example": "[\"openid\"]",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -2557,12 +2649,21 @@
         },
         {
           "disabled": false,
-          "document": "描述",
-          "example": "描述",
+          "document": "描述信息。由用户自行定义。",
+          "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话会默认置0",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2621,7 +2722,7 @@
         {
           "disabled": false,
           "document": "指定需要删除的AccessKeyId",
-          "example": "AKIDtmV4QYS9dx4yhEZllY8VebL2c0Tlqorp",
+          "example": "AKID***",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -2630,7 +2731,7 @@
         {
           "disabled": false,
           "document": "指定用户Uin，不填默认为当前用户删除访问密钥",
-          "example": "123456",
+          "example": "100013065917",
           "member": "uint64",
           "name": "TargetUin",
           "required": false,
@@ -2684,7 +2785,7 @@
         {
           "disabled": false,
           "document": "消息接受者的名称",
-          "example": "test",
+          "example": "Jack",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2738,7 +2839,7 @@
         {
           "disabled": false,
           "document": "数组，数组成员是策略 id，支持批量删除策略",
-          "example": "1000",
+          "example": "[1000]",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -3018,7 +3119,7 @@
           "example": "11",
           "member": "uint64",
           "name": "ProviderType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3028,27 +3129,27 @@
           "example": "11",
           "member": "string",
           "name": "IdentityUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "签名公钥",
-          "example": "无",
+          "example": "dgab***",
           "member": "string",
           "name": "IdentityKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端id",
-          "example": "无",
+          "example": "sbzw***",
           "member": "string",
           "name": "ClientId",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3058,7 +3159,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3068,7 +3169,7 @@
           "example": "desc",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3078,7 +3179,7 @@
           "example": "OIDC",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3115,7 +3216,7 @@
         {
           "disabled": false,
           "document": "标签筛选",
-          "example": "无",
+          "example": "[{\"Key\":\"管理人员\",\"Value\":\"运营主管\"}]",
           "member": "RoleTags",
           "name": "Tags",
           "required": false,
@@ -3129,13 +3230,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色详情列表。",
           "example": "无",
           "member": "RoleInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3143,7 +3244,7 @@
           "example": "14",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3162,7 +3263,7 @@
         {
           "disabled": false,
           "document": "子账号",
-          "example": "1234567",
+          "example": "100000000000",
           "member": "uint64",
           "name": "SubUin",
           "required": true,
@@ -3177,38 +3278,42 @@
         {
           "disabled": false,
           "document": "登录保护设置",
-          "example": "无",
+          "example": "{\"Phone\": 1,\"Token\": 0,\"Stoken\": 0,\"Wechat\": 0,\"Custom\": 0}",
           "member": "LoginActionFlag",
           "name": "LoginFlag",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "敏感操作保护设置",
-          "example": "无",
+          "example": "{\"Phone\": 1,\"Token\": 0,\"Stoken\": 0,\"Wechat\": 0,\"Custom\": 0}",
           "member": "LoginActionFlag",
           "name": "ActionFlag",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异地登录保护设置",
-          "example": "无",
+          "example": "{\"VerifyFlag\": 0,\"NotifyPhone\": 1,\"NotifyEmail\": 1,\"NotifyWechat\": 1,\"Tips\": 0}",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否提示信任设备1 ：提示 0: 不提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否提示信任设备1 ：提示 0: 不提示",
           "example": "1",
           "member": "int64",
           "name": "PromptTrust",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3230,30 +3335,30 @@
         {
           "disabled": false,
           "document": "登录保护设置",
-          "example": "无",
+          "example": "{\"Phone\":0,\"Token\":0,\"Stoken\":0,\"Mail\":0,\"Wechat\":0,\"Custom\":0,\"U2FToken\":0}",
           "member": "LoginActionFlagIntl",
           "name": "LoginFlag",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "敏感操作保护设置",
-          "example": "无",
+          "example": "{\"Phone\":0,\"Token\":0,\"Stoken\":0,\"Mail\":1,\"Wechat\":0,\"Custom\":0,\"U2FToken\":0}",
           "member": "LoginActionFlagIntl",
           "name": "ActionFlag",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异地登录保护设置",
-          "example": "无",
+          "example": "{\"VerifyFlag\":1,\"NotifyPhone\":1,\"NotifyEmail\":1,\"NotifyWechat\":1,\"Tips\":0}",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3277,40 +3382,40 @@
         {
           "disabled": false,
           "document": "登录保护设置",
-          "example": "无",
+          "example": "{\"Phone\":0,\"Token\":0,\"Stoken\":1,\"Wechat\":0,\"Custom\":0}",
           "member": "LoginActionFlag",
           "name": "LoginFlag",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "敏感操作保护设置",
-          "example": "无",
+          "example": "{\"Phone\":0,\"Token\":0,\"Stoken\":1,\"Wechat\":0,\"Custom\":0}",
           "member": "LoginActionFlag",
           "name": "ActionFlag",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异地登录保护设置",
-          "example": "无",
+          "example": "{\"VerifyFlag\":0,\"NotifyPhone\":1,\"NotifyEmail\":1,\"NotifyWechat\":1,\"Tips\":0}",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1: 提示7天信任设备 0: 不提示",
+          "document": "是否提示信任设备：1: 提示  0: 不提示",
           "example": "1",
           "member": "uint64",
           "name": "PromptTrust",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3344,7 +3449,7 @@
         {
           "disabled": false,
           "document": "子用户列表",
-          "example": "[]",
+          "example": "[{\"Uid\":1000000232,\"Uin\":100028712456,\"Name\":\"cvm operation\",\"UserType\":2,\"Remark\":\"\",\"CreateTime\":\"2022-10-20 14:11:01\",\"LastLoginIp\":\"\",\"LastLoginTime\":null}]",
           "member": "SubAccountUser",
           "name": "SubAccounts",
           "output_required": true,
@@ -3374,108 +3479,118 @@
           "example": "11",
           "member": "uint64",
           "name": "ProviderType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "身份提供商URL",
-          "example": "11",
+          "example": "http://test-idp.com",
           "member": "string",
           "name": "IdentityUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "签名公钥",
-          "example": "无",
+          "example": "sdg****",
           "member": "string",
           "name": "IdentityKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端id",
-          "example": "无",
+          "example": "dbw****",
           "member": "string",
           "name": "ClientId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态：0:未设置，11:已开启，2:已禁用",
-          "example": "1",
+          "example": "11",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权请求Endpoint",
-          "example": "无",
+          "example": "http://test-endpoint.com",
           "member": "string",
           "name": "AuthorizationEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权请求Scope",
-          "example": "无",
+          "example": "[ \"openid\" ]",
           "member": "string",
           "name": "Scope",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权请求Response type",
-          "example": "无",
+          "example": "id_token",
           "member": "string",
           "name": "ResponseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权请求Response mode",
-          "example": "无",
+          "example": "form_post",
           "member": "string",
           "name": "ResponseMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "映射字段名称",
-          "example": "无",
+          "example": "sub",
           "member": "string",
           "name": "MappingFiled",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "this is description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3501,15 +3616,17 @@
           "example": "metadataDocumentDemo",
           "member": "string",
           "name": "SAMLMetadata",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态：0:未设置，1:已开启，2:已禁用",
+          "document": "状态：0:未设置，11:已开启，2:已禁用",
           "example": "11",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3519,6 +3636,7 @@
           "example": "xx.com",
           "member": "string",
           "name": "AuxiliaryDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3680,40 +3798,40 @@
         {
           "disabled": false,
           "document": "子用户Uid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "22***22",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "10000***221",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "运维",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "运维",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3723,7 +3841,7 @@
           "example": "1",
           "member": "int64",
           "name": "CanLogin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3733,7 +3851,7 @@
           "example": "13755545444",
           "member": "string",
           "name": "PhoneNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3743,7 +3861,7 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3753,7 +3871,7 @@
           "example": "1",
           "member": "int64",
           "name": "PhoneFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3763,7 +3881,7 @@
           "example": "eg@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3773,7 +3891,7 @@
           "example": "1",
           "member": "int64",
           "name": "EmailFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3783,7 +3901,7 @@
           "example": "1",
           "member": "int64",
           "name": "UserType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3793,7 +3911,7 @@
           "example": "2022-03-03 01:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3803,7 +3921,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsReceiverOwner",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3813,7 +3931,7 @@
           "example": "SubAccount",
           "member": "string",
           "name": "SystemType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3823,7 +3941,7 @@
           "example": "1",
           "member": "int64",
           "name": "NeedResetPassword",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3833,7 +3951,7 @@
           "example": "1",
           "member": "int64",
           "name": "ConsoleLogin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3843,17 +3961,17 @@
           "example": "1",
           "member": "int64",
           "name": "WxzsStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "权限类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[1]",
           "member": "string",
           "name": "PermType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3863,7 +3981,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsDeleted",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3873,7 +3991,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsSelected",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3883,7 +4001,7 @@
           "example": "0",
           "member": "int64",
           "name": "HasAPIKey",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3893,7 +4011,7 @@
           "example": "1",
           "member": "int64",
           "name": "BindWework",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3903,7 +4021,7 @@
           "example": "[{\"Key\":\"test\",\"Value\":\"test\"}]",
           "member": "AccountTag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -4040,7 +4158,7 @@
         {
           "disabled": false,
           "document": "用户组 ID",
-          "example": "",
+          "example": "300001",
           "member": "uint64",
           "name": "GroupId",
           "required": true,
@@ -4055,54 +4173,60 @@
         {
           "disabled": false,
           "document": "用户组 ID",
-          "example": "",
+          "example": "300001",
           "member": "uint64",
           "name": "GroupId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组名称",
-          "example": "",
+          "example": "admin",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组成员数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "GroupNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组描述",
-          "example": "",
+          "example": "管理员",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组创建时间",
-          "example": "",
+          "example": "2024-11-25 20:37:41",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组成员信息",
-          "example": "",
+          "example": "{\"Uid\": 20000111}",
           "member": "GroupMemberInfo",
           "name": "UserInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4135,68 +4259,68 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名。",
           "example": "testPolicy",
           "member": "string",
           "name": "PolicyName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略描述。",
           "example": "测试策略",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1 表示自定义策略，2 表示预设策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1 表示自定义策略，2 表示预设策略。",
           "example": "1",
           "member": "uint64",
           "name": "Type",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略创建时间。",
           "example": "2019-04-29 21:18:28",
           "member": "datetime",
           "name": "AddTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略最近更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略最近更新时间。",
           "example": "2019-04-29 21:28:32",
           "member": "datetime",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略文档。",
           "example": "{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}",
           "member": "string",
           "name": "PolicyDocument",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "备注",
+          "example": "这是一个测试策略",
           "member": "string",
           "name": "PresetAlias",
           "output_required": true,
@@ -4205,13 +4329,23 @@
         },
         {
           "disabled": false,
-          "document": "是否是服务相关策略，0代表不是服务相关策略，1代表是服务相关策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是服务相关策略，0代表不是服务相关策略，1代表是服务相关策略。",
           "example": "1",
           "member": "uint64",
           "name": "IsServiceLinkedRolePolicy",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4251,13 +4385,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略版本详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "策略版本详情",
+          "example": "{\"VersionId\":2,\"CreateDate\":\"2019-08-09T10:31:47Z\",\"IsDefaultVersion\":1,\"Document\":\"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\"}",
           "member": "PolicyVersionDetail",
           "name": "PolicyVersion",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4274,7 +4408,7 @@
         {
           "disabled": false,
           "document": "角色ID",
-          "example": "",
+          "example": "4611686018441258642",
           "member": "string",
           "name": "RoleId",
           "required": true,
@@ -4289,45 +4423,50 @@
         {
           "disabled": false,
           "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "4221356",
           "member": "int64",
           "name": "PolicyId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "QcloudCOSAccessForCLSRole",
           "member": "string",
           "name": "PolicyName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}}",
           "member": "string",
           "name": "PolicyDocument",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PolicyType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "CreateMode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4370,10 +4509,10 @@
         {
           "disabled": false,
           "document": "角色详情",
-          "example": "无",
+          "example": "{\"Response\":{\"RequestId\":\"3bfc64a0-8935-43f4-91f7-6d16c41886d8\",\"RoleInfo\":{\"AddTime\":\"2024-10-15 14:08:20\",\"ConsoleLogin\":0,\"DeletionTaskId\":null,\"Description\":\"1120\",\"IsSelected\":0,\"PolicyDocument\":\"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/100000000001:root\\\"}}]}\",\"RoleArn\":\"qcs::cam::uin/100000000001:roleName/test_principal\",\"RoleId\":\"4611000000000000001\",\"RoleName\":\"test_principal\",\"RoleType\":\"user\",\"SessionDuration\":7200,\"Tags\":[{\"Key\":\"管理人员\",\"Value\":\"运营主管\"}],\"UpdateTime\":\"2024-11-20 19:04:57\"}}}",
           "member": "RoleInfo",
           "name": "RoleInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4487,7 +4626,7 @@
           "example": "无",
           "member": "SecretIdLastUsed",
           "name": "SecretIdLastUsedRows",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4506,7 +4645,7 @@
         {
           "disabled": false,
           "document": "删除任务ID",
-          "example": "",
+          "example": "40082",
           "member": "string",
           "name": "DeletionTaskId",
           "required": true,
@@ -4521,36 +4660,40 @@
         {
           "disabled": false,
           "document": "状态：NOT_STARTED，IN_PROGRESS，SUCCEEDED，FAILED",
-          "example": "",
+          "example": "SUCCEEDED",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "",
+          "example": "ok",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "advisor",
           "member": "string",
           "name": "ServiceType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "云顾问",
           "member": "string",
           "name": "ServiceName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4664,27 +4807,30 @@
         {
           "disabled": false,
           "document": "当前账号Uin",
-          "example": "",
+          "example": "100000000000",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前账号OwnerUin",
-          "example": "",
+          "example": "100000000000",
           "member": "string",
           "name": "OwnerUin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前账号AppId",
-          "example": "",
+          "example": "1250000000",
           "member": "uint64",
           "name": "AppId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4703,7 +4849,7 @@
         {
           "disabled": false,
           "document": "子账号Uin",
-          "example": "",
+          "example": "100000546547",
           "member": "int64",
           "name": "TargetUin",
           "required": true,
@@ -4718,45 +4864,50 @@
         {
           "disabled": false,
           "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "213465",
           "member": "int64",
           "name": "PolicyId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "QcloudCOSAccessForCLSRole",
           "member": "string",
           "name": "PolicyName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}}",
           "member": "string",
           "name": "PolicyDocument",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PolicyType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "CreateMode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4775,7 +4926,7 @@
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "test124",
+          "example": "Jack",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4793,15 +4944,17 @@
           "example": "100000546533",
           "member": "uint64",
           "name": "Uin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "test124",
+          "example": "Jack",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4811,15 +4964,17 @@
           "example": "1001774",
           "member": "uint64",
           "name": "Uid",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "Jack",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4829,6 +4984,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4838,6 +4994,7 @@
           "example": "10086",
           "member": "string",
           "name": "PhoneNum",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4847,6 +5004,7 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4856,26 +5014,29 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最近一次登录ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近一次登录ip",
           "example": "1.1.1.1",
           "member": "string",
           "name": "RecentlyLoginIP",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最近一次登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近一次登录时间",
           "example": "2023-02-27 14:59:08",
           "member": "string",
           "name": "RecentlyLoginTime",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4886,28 +5047,68 @@
       ],
       "type": "object"
     },
+    "GitSecretInfo": {
+      "document": "秘钥信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "秘钥ID",
+          "example": "IKIDy0rY4ypgR2RsFSREqGTSEnBOVRAi3GNJ",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秘钥key（RSA加密）",
+          "example": "pT6Z***************oRtGdu20udCdr33",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发现泄露时间（10位时间戳）",
+          "example": "44",
+          "member": "uint64",
+          "name": "FindTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "泄露地址",
+          "example": "55",
+          "member": "string",
+          "name": "GithubUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "GroupIdOfUidInfo": {
       "document": "子用户和用户组关联信息",
       "members": [
         {
           "disabled": false,
           "document": "用户组 ID",
-          "example": "123456",
+          "example": "1000122",
           "member": "uint64",
           "name": "GroupId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "子用户 UID",
-          "example": "123456",
+          "example": "1000121",
           "member": "uint64",
           "name": "Uid",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4916,8 +5117,7 @@
           "member": "uint64",
           "name": "Uin",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -4928,40 +5128,40 @@
         {
           "disabled": false,
           "document": "用户组 ID。",
-          "example": "",
+          "example": "10000121",
           "member": "uint64",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组名称。",
-          "example": "",
+          "example": "运营部门",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组创建时间。",
-          "example": "",
+          "example": "2024-12-12 12:12:12",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组描述。",
-          "example": "",
+          "example": "运营部门",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4977,7 +5177,7 @@
           "example": "100000001",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4987,7 +5187,7 @@
           "example": "100000001",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4997,7 +5197,7 @@
           "example": "userName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5007,7 +5207,7 @@
           "example": "13600000001",
           "member": "string",
           "name": "PhoneNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5017,7 +5217,7 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5027,7 +5227,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PhoneFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5037,7 +5237,7 @@
           "example": "email@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5047,7 +5247,7 @@
           "example": "1",
           "member": "uint64",
           "name": "EmailFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5057,7 +5257,7 @@
           "example": "1",
           "member": "uint64",
           "name": "UserType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5067,7 +5267,7 @@
           "example": "2021-11-11 19:38:01",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5077,12 +5277,48 @@
           "example": "1",
           "member": "uint64",
           "name": "IsReceiverOwner",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "IpPolicy": {
+      "document": "IP限制策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP段",
+          "example": "",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略效力，Allow或Deny",
+          "example": "",
+          "member": "string",
+          "name": "Effect",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ListAccessKeysRequest": {
       "document": "ListAccessKeys请求参数结构体",
@@ -5090,7 +5326,7 @@
         {
           "disabled": false,
           "document": "指定用户Uin，不填默认列出当前用户访问密钥",
-          "example": "123456",
+          "example": "100013065917",
           "member": "uint64",
           "name": "TargetUin",
           "required": false,
@@ -5108,7 +5344,7 @@
           "example": "无",
           "member": "AccessKey",
           "name": "AccessKeys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5179,7 +5415,7 @@
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "无",
+          "example": "[{\"OperateOwnerUin\":\"10001\",\"PolicyName\":\"AdministratorAccess\",\"Remark\":\"policy remark\",\"OperateUinType\":1,\"CreateMode\":1,\"Deactived\":1,\"AddTime\":\"2020-09-22 00:00:00\",\"PolicyType\":\"User\",\"PolicyId\":1,\"DeactivedDetail\":[\"bbs\"],\"OperateUin\":\"10001\"}]",
           "member": "AttachPolicyInfo",
           "name": "List",
           "output_required": true,
@@ -5228,7 +5464,7 @@
         {
           "disabled": false,
           "document": "角色名。用于指定角色，入参 RoleId 与 RoleName 二选一",
-          "example": "role_data",
+          "example": "dev_role",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -5246,7 +5482,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "searchKey",
+          "example": "readonly",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -5261,10 +5497,10 @@
         {
           "disabled": false,
           "document": "角色关联的策略列表",
-          "example": "无",
+          "example": "[{\"PolicyName\":\"QcloudAccessForASRole\",\"Description\":\"Free Access to AS Product\",\"CreateMode\":1,\"Deactived\":1,\"AddTime\":\"2019-07-10 11:17:41\",\"PolicyType\":\"QCS\",\"PolicyId\":13847366,\"DeactivedDetail\":[\"bbs\"]}]",
           "member": "AttachedPolicyOfRole",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5274,7 +5510,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5421,17 +5657,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "无",
+          "example": "{\"PolicyId\":109360057,\"PolicyName\":\"policygen-20220103141614\",\"AddTime\":\"2022-01-03 10:38:28\",\"CreateMode\":3,\"Remark\":\"cos policy\",\"OperateOwnerUin\":100008847111,\"OperateUin\":100008847111,\"OperateUinType\":0,\"PolicyType\":\"User\",\"Deactived\":0,\"DeactivedDetail\":[\"bbs\"]}]",
           "member": "AttachPolicyInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5484,7 +5720,7 @@
         {
           "disabled": false,
           "document": "协作者信息",
-          "example": "无",
+          "example": "[{\"Uin\":100000000001,\"Name\":\"Jack\",\"Uid\":10000001,\"Remark\":\"productUser\",\"ConsoleLogin\":1,\"PhoneNum\":\"186****0001\",\"CountryCode\":\"86\",\"Email\":\"productUser@qq.com\",\"CreateTime\":\"2023-06-01 10:53:48\",\"NickName\":\"Jack\"}]",
           "member": "SubAccountInfo",
           "name": "Data",
           "output_required": true,
@@ -5547,23 +5783,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "实体总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实体总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实体列表",
+          "example": "[{\"AttachmentTime\":\"2024-11-11T17:14:30+0800\",\"Id\":\"1000001\",\"Name\":\"product_user_policy\",\"RelatedType\":2,\"Uin\":0}]",
           "member": "AttachEntityOfPolicy",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5606,30 +5842,30 @@
         {
           "disabled": false,
           "document": "服务",
-          "example": "无",
+          "example": "{\"ServiceType\":\"cvm\",\"ServiceName\":\"云服务器\"}",
           "member": "ListGrantServiceAccessService",
           "name": "Service",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "接口信息",
-          "example": "无",
+          "example": "{\"Name\":\"AddInstanceInDeployGroup\",\"Description\":\"新增实例部署组\"}",
           "member": "ListGrantServiceAccessActionNode",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权的策略",
-          "example": "无",
+          "example": "{\"PolicyId\":\"73019980\",\"PolicyName\":\"policygen-20210101\",\"PolicyDescription\":\"cvm custom policy\",\"PolicyType\":\"Custom\"}",
           "member": "ListGrantServiceAccessPolicy",
           "name": "Policy",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5766,7 +6002,7 @@
         {
           "disabled": false,
           "document": "用户组信息",
-          "example": "无",
+          "example": "[{\"GroupId\":100000000121,\"GroupName\":\"CVM\",\"CreateTime\":\"2023-06-25 11:42:00\",\"Remark\":\"开发组\"}]",
           "member": "GroupInfo",
           "name": "GroupInfo",
           "output_required": true,
@@ -5788,7 +6024,7 @@
         {
           "disabled": false,
           "document": "页码。默认为1。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": false,
@@ -5797,7 +6033,7 @@
         {
           "disabled": false,
           "document": "每页数量。默认为20。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "Rp",
           "required": false,
@@ -5806,7 +6042,7 @@
         {
           "disabled": false,
           "document": "按用户组名称匹配。",
-          "example": "",
+          "example": "IT",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -5821,18 +6057,20 @@
         {
           "disabled": false,
           "document": "用户组总数。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组数组信息。",
-          "example": "",
+          "example": "[{\"GroupId\": 2021,\"GroupName\": \"IT\",\"CreateTime\": \"2019-04-03 15:15:18\",\"Remark\": \"IT\"}]",
           "member": "GroupInfo",
           "name": "GroupInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6013,7 +6251,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6023,7 +6261,7 @@
           "example": "无",
           "member": "FilteredSubAccount",
           "name": "UserInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6033,7 +6271,7 @@
           "example": "无",
           "member": "OwnerInfo",
           "name": "OwnerInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6043,7 +6281,7 @@
           "example": "无",
           "member": "SimpleGroupInfo",
           "name": "GroupInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6104,10 +6342,10 @@
         {
           "disabled": false,
           "document": "列表",
-          "example": "无",
+          "example": "[{\"Service\":{\"ServiceType\":\"cvm\",\"ServiceName\":\"云服务器\"},\"Action\":[{\"Name\":\"AddInstanceInDeployGroup\",\"Description\":\"新增实例部署组\"}],\"Policy\":[{\"PolicyId\":\"73019980\",\"PolicyName\":\"policygen-20210xxxxxxx\",\"PolicyDescription\":\"cvm custom policy\",\"PolicyType\":\"Custom\"}]}]",
           "member": "ListGrantServiceAccessNode",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6171,7 +6409,7 @@
           "example": "239",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6181,19 +6419,19 @@
           "example": "无",
           "member": "StrategyInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "保留字段",
+          "example": "[\"scf\"]",
           "member": "string",
           "name": "ServiceTypeList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6210,7 +6448,7 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "",
+          "example": "13847366",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -6224,12 +6462,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "策略版本列表",
+          "example": "[{\"VersionId\":2,\"CreateDate\":\"2019-08-09T10:31:47Z\",\"IsDefaultVersion\":1},{\"VersionId\":3,\"CreateDate\":\"2019-08-09T10:31:47Z\",\"IsDefaultVersion\":0}]",
           "member": "PolicyVersionItem",
           "name": "Versions",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6280,7 +6519,7 @@
         {
           "disabled": false,
           "document": "联系人列表",
-          "example": "[{\"Uid\":1001892,\"Name\":\"nick\",\"Remark\":\"\",\"PhoneNumber\":\"+86 186****3509\",\"PhoneFlag\":1,\"Email\":\"2054****@qq.com\",\"EmailFlag\":1,\"IsReceiverOwner\":1}]",
+          "example": "[{\"Uid\":100000121,\"Name\":\"nick\",\"Remark\":\"cvm\",\"PhoneNumber\":\"+86 186****3509\",\"PhoneFlag\":1,\"Email\":\"2054****@qq.com\",\"EmailFlag\":1,\"IsReceiverOwner\":1}]",
           "member": "Receiver",
           "name": "Receivers",
           "output_required": true,
@@ -6307,18 +6546,20 @@
         {
           "disabled": false,
           "document": "SAML身份提供商总数",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "SAML身份提供商列表",
-          "example": "",
+          "example": "无",
           "member": "SAMLProviderInfo",
           "name": "SAMLProviderSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6393,7 +6634,7 @@
         {
           "disabled": false,
           "document": "用户组 ID。",
-          "example": "",
+          "example": "300001",
           "member": "uint64",
           "name": "GroupId",
           "required": true,
@@ -6402,7 +6643,7 @@
         {
           "disabled": false,
           "document": "页码。默认为1。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": false,
@@ -6411,7 +6652,7 @@
         {
           "disabled": false,
           "document": "每页数量。默认为20。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "Rp",
           "required": false,
@@ -6426,18 +6667,20 @@
         {
           "disabled": false,
           "document": "用户组关联的用户总数。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户信息。",
-          "example": "",
+          "example": "[{\"Uid\": 1001408,\"Uin\": 100000545998,\"Name\": \"IT\",\"PhoneNum\": \"\",\"CountryCode\": \"86\",\"PhoneFlag\": 0,\"Email\": \"\",\"EmailFlag\": 0,\"UserType\": 3,\"CreateTime\": \"2018-04-24 15:36:26\",\"IsReceiverOwner\": 0}]",
           "member": "GroupMemberInfo",
           "name": "UserInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6461,10 +6704,10 @@
         {
           "disabled": false,
           "document": "子用户信息",
-          "example": "无",
+          "example": "{\"Uin\":1000000121,\"Name\":\"Jack\",\"Uid\":10000000121,\"Remark\":\"development\",\"ConsoleLogin\":1,\"PhoneNum\":\"151*****443\",\"CountryCode\":\"86\",\"Email\":\"13343****@qq.com\",\"CreateTime\":\"2024-11-26 20:52:34\",\"NickName\":\"Jack\"}]",
           "member": "SubAccountInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6483,7 +6726,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -6492,7 +6735,7 @@
         {
           "disabled": false,
           "document": "限制数目",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6507,18 +6750,20 @@
         {
           "disabled": false,
           "document": "企业微信子用户列表。",
-          "example": "",
+          "example": " [ {             \"Uin\": 1000005433333533,             \"Name\": \"test124\",             \"Uid\": 1001774,             \"Remark\": \"account_test\",             \"ConsoleLogin\": 1,             \"PhoneNum\": \"10086\",             \"CountryCode\": \"86\",             \"Email\": \"123@qq.com\",             \"WeChatWorkUserId\": \"45657\",             \"CreateTime\": \"2020-10-10 00:00:00\"         } ]",
           "member": "WeChatWorkSubAccount",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总数目。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6602,14 +6847,14 @@
         },
         {
           "disabled": false,
-          "document": "0: 非u2f硬件token 1: u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0: 非u2f硬件token 1: u2f硬件token",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6685,14 +6930,14 @@
         },
         {
           "disabled": false,
-          "document": "u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "u2f硬件token",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6742,9 +6987,10 @@
         {
           "disabled": false,
           "document": "验证标识",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "VerifyFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6752,9 +6998,10 @@
         {
           "disabled": false,
           "document": "手机通知",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "NotifyPhone",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6762,9 +7009,10 @@
         {
           "disabled": false,
           "document": "邮箱通知",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "NotifyEmail",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6772,9 +7020,10 @@
         {
           "disabled": false,
           "document": "微信通知",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "NotifyWechat",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6782,9 +7031,10 @@
         {
           "disabled": false,
           "document": "提示",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Tips",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6916,40 +7166,40 @@
         {
           "disabled": false,
           "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "VersionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2019-08-09T10:31:47Z",
           "member": "string",
           "name": "CreateDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否是正在生效的版本。0表示不是，1表示是\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "IsDefaultVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略语法文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name\\/cos:*\"],\"resource\":[\"*\"]}]}",
           "member": "string",
           "name": "Document",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6961,33 +7211,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "策略版本号",
+          "example": "3",
           "member": "uint64",
           "name": "VersionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "策略版本创建时间",
+          "example": "2019-08-09T10:31:47Z",
           "member": "string",
           "name": "CreateDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是正在生效的版本。0表示不是，1表示是\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否是正在生效的版本。0表示不是，1表示是",
+          "example": "0",
           "member": "int64",
           "name": "IsDefaultVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7179,102 +7429,112 @@
         {
           "disabled": false,
           "document": "id",
-          "example": "",
+          "example": "100000121",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "名字",
-          "example": "",
+          "example": "Jack",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "Jack",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "手机号码",
-          "example": "",
+          "example": "132****0112",
           "member": "string",
           "name": "PhoneNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "手机号码是否验证",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PhoneFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "",
+          "example": "57****@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "邮箱是否验证",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "EmailFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否主联系人",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "IsReceiverOwner",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否允许微信接收通知\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否允许微信接收通知",
+          "example": "1",
           "member": "int64",
           "name": "WechatFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "账号uin",
+          "example": "10000000121",
           "member": "int64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国家代码",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7285,7 +7545,7 @@
         {
           "disabled": false,
           "document": "要删除的用户 UIN/UID和用户组 ID对应数组",
-          "example": "无",
+          "example": "[{\"GroupId\":1000000121,\"Uid\":1000000122}]",
           "member": "GroupIdOfUidInfo",
           "name": "Info",
           "required": true,
@@ -7332,7 +7592,7 @@
         {
           "disabled": false,
           "document": "角色的策略文档",
-          "example": "无",
+          "example": "{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/100000000001:root\\\"}}]}",
           "member": "string",
           "name": "PolicyDocument",
           "output_required": true,
@@ -7412,7 +7672,7 @@
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Key\":\"管理人员\",\"Value\":\"运营主管\"}]",
           "member": "RoleTags",
           "name": "Tags",
           "output_required": true,
@@ -7546,9 +7806,10 @@
         {
           "disabled": false,
           "document": "SAML身份提供商名称",
-          "example": "",
+          "example": "testName",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7556,9 +7817,10 @@
         {
           "disabled": false,
           "document": "SAML身份提供商描述",
-          "example": "",
+          "example": "testDescription",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7566,9 +7828,10 @@
         {
           "disabled": false,
           "document": "SAML身份提供商创建时间",
-          "example": "",
+          "example": "2024-10-01 10:00:00",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7576,9 +7839,10 @@
         {
           "disabled": false,
           "document": "SAML身份提供商上次修改时间",
-          "example": "",
+          "example": "2024-10-01 10:00:00",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7618,6 +7882,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SecretStatus": {
+      "document": "秘钥状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "秘钥ID",
+          "example": "",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "秘钥状态；1：有效  2：无效",
+          "example": "",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7673,7 +7963,7 @@
         {
           "disabled": false,
           "document": "登录保护设置",
-          "example": "无",
+          "example": "{\"Phone\":1}",
           "member": "LoginActionMfaFlag",
           "name": "LoginFlag",
           "required": false,
@@ -7682,7 +7972,7 @@
         {
           "disabled": false,
           "document": "操作保护设置",
-          "example": "无",
+          "example": "{\"Phone\":1}",
           "member": "LoginActionMfaFlag",
           "name": "ActionFlag",
           "required": false,
@@ -7709,9 +7999,10 @@
         {
           "disabled": false,
           "document": "用户组 ID。",
-          "example": "",
+          "example": "322***3232",
           "member": "uint64",
           "name": "GroupId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7719,15 +8010,16 @@
         {
           "disabled": false,
           "document": "用户组名称。",
-          "example": "",
+          "example": "运维",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "StrategyInfo": {
       "document": "策略信息",
@@ -7738,7 +8030,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7748,19 +8040,19 @@
           "example": "AdministratorAccess",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略创建时间。",
           "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "AddTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7768,7 +8060,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7778,7 +8070,7 @@
           "example": "该策略允许您管理账户内所有用户及其权限、财务相关的信息、云服务资产。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7788,7 +8080,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CreateMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7798,7 +8090,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Attachments",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7808,7 +8100,7 @@
           "example": "cam",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7818,7 +8110,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsAttached",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7828,17 +8120,17 @@
           "example": "0",
           "member": "uint64",
           "name": "Deactived",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已下线产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"ccs\"]",
           "member": "string",
           "name": "DeactivedDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7848,7 +8140,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsServiceLinkedPolicy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7858,7 +8150,7 @@
           "example": "1",
           "member": "int64",
           "name": "AttachEntityCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7868,7 +8160,7 @@
           "example": "1",
           "member": "int64",
           "name": "AttachEntityBoundaryCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7878,9 +8170,19 @@
           "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7894,7 +8196,7 @@
           "example": "123xxxxx",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7904,7 +8206,7 @@
           "example": "名称",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7914,7 +8216,7 @@
           "example": "123xxxxx",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7924,7 +8226,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7934,7 +8236,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7944,7 +8246,7 @@
           "example": "151xxxx1001",
           "member": "string",
           "name": "PhoneNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7954,7 +8256,7 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7964,29 +8266,29 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-12-09 11:39:46",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称",
           "example": "昵称",
           "member": "string",
           "name": "NickName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8103,13 +8405,78 @@
       ],
       "usage": "out"
     },
+    "SyncSecretKeyRequest": {
+      "document": "SyncSecretKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "泄露的秘钥信息",
+          "example": "无",
+          "member": "GitSecretInfo",
+          "name": "GitSkInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncSecretKeyResponse": {
+      "document": "SyncSecretKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "秘钥状态\n1：有效\n2：无效",
+          "example": "无",
+          "member": "SecretStatus",
+          "name": "SecretStatus",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "region",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TagRoleRequest": {
       "document": "TagRole请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "标签",
-          "example": "无",
+          "example": "[{\"Key\":\"AKey\",\"Value\":\"AValue\"}]",
           "member": "RoleTags",
           "name": "Tags",
           "required": true,
@@ -8199,7 +8566,7 @@
         {
           "disabled": false,
           "document": "指定需要更新的AccessKeyId",
-          "example": "AKIDtmV4QYS9dx4yhEZllY8VebL2c0Tlqorp",
+          "example": "AKID***",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -8217,7 +8584,7 @@
         {
           "disabled": false,
           "document": "指定用户Uin，不填默认为当前用户更新访问密钥",
-          "example": "123456",
+          "example": "100013065917",
           "member": "uint64",
           "name": "TargetUin",
           "required": false,
@@ -8307,7 +8674,7 @@
         {
           "disabled": false,
           "document": "用户组描述",
-          "example": "test",
+          "example": "财务管理",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -8361,7 +8728,7 @@
         {
           "disabled": false,
           "document": "签名公钥，需要base64",
-          "example": "无",
+          "example": "dazw****",
           "member": "string",
           "name": "IdentityKey",
           "required": true,
@@ -8370,7 +8737,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -8447,13 +8814,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略id，入参是PolicyName时，才会返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10041",
+          "document": "策略id，入参是PolicyName时，才会返回",
+          "example": "10042",
           "member": "uint64",
           "name": "PolicyId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8614,7 +8981,7 @@
         {
           "disabled": false,
           "document": "SAML身份提供商描述",
-          "example": "test",
+          "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -8704,7 +9071,7 @@
         {
           "disabled": false,
           "document": "RSA签名公钥，JWKS格式，需要进行base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。",
-          "example": "ewogICJrZXlzIjogWwogICAgewogICAgICAia3R5IjogIlJTQSIsCiAgICAgICJraWQiOiAibXlrZXkiLAogICAgICAidXNlIjogInNpZyIsCiAgICAgICJhbGciOiAiUlMyNTYiLAogICAgICAibiI6ICJBS2pKWnouLi4vZjEiLAogICAgICAiZSI6ICJBUUFCIgogICAgfQogIF0KfQ==",
+          "example": "ewog****",
           "member": "string",
           "name": "IdentityKey",
           "required": true,
@@ -8713,7 +9080,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。",
-          "example": "openid",
+          "example": "[\"openid\"]",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -8722,11 +9089,20 @@
         {
           "disabled": false,
           "document": "描述，长度为1~255个英文或中文字符，默认值为空。",
-          "example": "描述",
+          "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRotateKey",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8749,7 +9125,7 @@
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "test124",
+          "example": "jack",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8758,7 +9134,7 @@
         {
           "disabled": false,
           "document": "子用户备注",
-          "example": "test",
+          "example": "财务管理",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -8776,7 +9152,7 @@
         {
           "disabled": false,
           "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。",
-          "example": "test123456",
+          "example": "password123456",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -8794,7 +9170,7 @@
         {
           "disabled": false,
           "document": "手机号",
-          "example": "10086",
+          "example": "18888888888",
           "member": "string",
           "name": "PhoneNum",
           "required": false,
@@ -8812,7 +9188,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "123%40qq.com",
+          "example": "123**0qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -8884,102 +9260,102 @@
         {
           "disabled": false,
           "document": "子用户用户 ID",
-          "example": "",
+          "example": "234234",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "",
+          "example": "accountName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户 UID",
-          "example": "",
+          "example": "245423424",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注",
-          "example": "",
+          "example": "测试账号",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户能否登录控制台",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "手机号",
-          "example": "",
+          "example": "187******123",
           "member": "string",
           "name": "PhoneNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区号",
-          "example": "",
+          "example": "010",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "",
+          "example": "123@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业微信UserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "企业微信UserId",
+          "example": "23423424",
           "member": "string",
           "name": "WeChatWorkUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "创建时间",
+          "example": "2024-12-19 10:49:12",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

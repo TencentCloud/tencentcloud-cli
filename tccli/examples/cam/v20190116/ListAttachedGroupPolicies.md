@@ -27,7 +27,7 @@ Output:
                 "PolicyType": "User",
                 "PolicyId": 1,
                 "DeactivedDetail": [
-                    "test"
+                    "ccs"
                 ],
                 "OperateUin": "10001"
             }

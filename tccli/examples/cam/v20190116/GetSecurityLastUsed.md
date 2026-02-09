@@ -15,7 +15,7 @@ Output:
     "Response": {
         "SecretIdLastUsedRows": [
             {
-                "SecretId": "***",
+                "SecretId": "AKID***",
                 "LastUsedDate": "2022-12-19",
                 "LastSecretUsedDate": 1671681023555
             }

@@ -1,10 +1,29 @@
-# Release 3.0.1365.1
+# Release 3.0.1366.1
 
-## 应用性能监控(apm) 版本：2021-06-22
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 24 次发布
+### 第 159 次发布
 
-发布时间：2026-02-09 01:10:10
+发布时间：2026-02-10 01:16:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccounts](http://document.tencentcloudapi.woa.com/document/product/236/17499)
+
+	* 新增入参：HostRegexp
+
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 26 次发布
+
+发布时间：2026-02-10 01:42:34
 
 本次发布包含了以下内容：
 
@@ -12,19 +31,17 @@
 
 新增接口：
 
-* [DescribeAgentList](http://document.tencentcloudapi.woa.com/document/product/1463/88873)
-
-新增数据结构：
-
-* [Agent](http://document.tencentcloudapi.woa.com/document/product/1463/64927#Agent)
+* [MountMultipleStorageFileSystem](http://document.tencentcloudapi.woa.com/document/product/1716/88878)
+* [QueryClientNodeMountCommand](http://document.tencentcloudapi.woa.com/document/product/1716/88877)
+* [QueryClientUninstallCommand](http://document.tencentcloudapi.woa.com/document/product/1716/88876)
 
 
 
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+## 腾讯云智能体开发平台(lke) 版本：2023-11-30
 
-### 第 31 次发布
+### 第 22 次发布
 
-发布时间：2026-02-09 01:11:40
+发布时间：2026-02-10 01:54:57
 
 本次发布包含了以下内容：
 
@@ -32,66 +49,81 @@
 
 修改接口：
 
-* [SearchSubtaskResultById](http://document.tencentcloudapi.woa.com/document/product/1780/86156)
+* [DescribeAppAgentList](http://document.tencentcloudapi.woa.com/document/product/1759/88290)
 
-	* 新增出参：SubtaskResult
+	* 新增出参：MaxAgentCount
+
+* [DescribeStorageCredential](http://document.tencentcloudapi.woa.com/document/product/1759/83676)
+
+	* 新增出参：UploadUrl, FileUrl
 
 
 新增数据结构：
 
-* [SubtaskResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SubtaskResult)
-
-
-
-## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
-
-### 第 11 次发布
-
-发布时间：2026-02-09 01:30:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DeleteDataAgentSession](http://document.tencentcloudapi.woa.com/document/product/1806/87991)
-
-	* 新增入参：SessionIds
-
-	* 新增出参：SessionIds
-
-
-
-
-## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
-
-### 第 25 次发布
-
-发布时间：2026-02-09 01:41:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [ClusterMountAttr](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClusterMountAttr)
+* [AsyncWorkflowMessage](http://document.tencentcloudapi.woa.com/document/product/1759/83593#AsyncWorkflowMessage)
 
 修改数据结构：
 
-* [CustomerClusterAttr](http://document.tencentcloudapi.woa.com/document/product/1716/81241#CustomerClusterAttr)
+* [Agent](http://document.tencentcloudapi.woa.com/document/product/1759/83593#Agent)
 
-	* 新增成员：ClusterMountSet
+	* 新增成员：MaxToolCount
+
+* [AgentToolInfo](http://document.tencentcloudapi.woa.com/document/product/1759/83593#AgentToolInfo)
+
+	* 新增成员：AuthConfigStatus
+
+* [FileInfoContent](http://document.tencentcloudapi.woa.com/document/product/1759/83593#FileInfoContent)
+
+	* 新增成员：DocId, CreateTime
+
+* [SearchStrategy](http://document.tencentcloudapi.woa.com/document/product/1759/83593#SearchStrategy)
+
+	* 新增成员：GraphRetrieval
+
+* [Widget](http://document.tencentcloudapi.woa.com/document/product/1759/83593#Widget)
+
+	* 新增成员：View
+
+* [WorkflowRunDetail](http://document.tencentcloudapi.woa.com/document/product/1759/83593#WorkflowRunDetail)
+
+	* 新增成员：LatestMessage
 
 
 
 
-## 云游戏(gs) 版本：2019-11-18
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
 
-### 第 51 次发布
+### 第 53 次发布
 
-发布时间：2026-02-09 01:42:21
+发布时间：2026-02-10 01:57:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseAuditService](http://document.tencentcloudapi.woa.com/document/product/240/88883)
+* [DescribeAuditConfig](http://document.tencentcloudapi.woa.com/document/product/240/88882)
+* [DescribeAuditLogFiles](http://document.tencentcloudapi.woa.com/document/product/240/88881)
+* [DescribeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/240/88880)
+
+新增数据结构：
+
+* [AuditLog](http://document.tencentcloudapi.woa.com/document/product/240/38576#AuditLog)
+* [AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/240/38576#AuditLogFile)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 27 次发布
+
+发布时间：2026-02-10 02:18:51
 
 本次发布包含了以下内容：
 
@@ -99,37 +131,18 @@
 
 修改接口：
 
-* [CreateAndroidInstances](http://document.tencentcloudapi.woa.com/document/product/1162/86011)
+* [DescribeAutoScalingConfiguration](http://document.tencentcloudapi.woa.com/document/product/1701/80204)
 
-	* 新增入参：Model
-
-
-修改数据结构：
-
-* [AndroidInstance](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstance)
-
-	* 新增成员：AndroidInstanceModel
-
-* [AndroidInstanceImage](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceImage)
-
-	* 新增成员：AndroidInstanceImageModel
+	* 新增入参：QueueName
 
 
 
 
-## 实时音视频(trtc) 版本：2019-07-22
+## 高性能计算平台(thpc) 版本：2022-04-01
 
-### 第 121 次发布
 
-发布时间：2026-02-09 02:18:39
 
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeTRTCRealTimeScaleMetricData
+## 高性能计算平台(thpc) 版本：2021-11-09
 
 
 
