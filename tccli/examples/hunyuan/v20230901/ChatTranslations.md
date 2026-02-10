@@ -12,6 +12,7 @@ tccli hunyuan ChatTranslations --cli-unfold-argument  \
     --Source en \
     --Target zh \
     --Field 游戏剧情 \
+    --GlossaryIDs 3177dfae1f8cb180dfcc1bea2ddf19f6 \
     --References.0.Type sentence \
     --References.0.Text Computer games are a perfect recipe for strengthening our cognitive skills \
     --References.0.Translation 电脑游戏是增强我们认知能力的完美秘诀

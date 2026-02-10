@@ -184,14 +184,6 @@
         "title": "查询GooseFS集群角色凭证"
       }
     ],
-    "DescribeClusterRoles": [
-      {
-        "document": "查询集群角色列表",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoles\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x419f8qc\",\n    \"RoleName\": \"GooseFS_QCSLinkedRoleInManageCloudService\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClusterRoles\": [\n            {\n                \"ClusterId\": \"g_cvm_x419f8qc\",\n                \"RoleName\": \"GooseFS_QCSLinkedRoleInManageCloudService\",\n                \"Description\": \"列举集群角色列表\",\n                \"DirectoryList\": [\n                    \"root\"\n                ]\n            }\n        ],\n        \"RequestId\": \"a10aeff3-cc7c-4535-8af5-db3b9bc108cb\"\n    }\n}",
-        "title": "查询集群角色列表"
-      }
-    ],
     "DescribeClusters": [
       {
         "document": "列出所有的 GooseFS 集群",

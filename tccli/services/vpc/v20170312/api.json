@@ -48237,7 +48237,7 @@
         },
         {
           "disabled": false,
-          "document": "是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关",
+          "document": "是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。",
           "example": "true",
           "member": "bool",
           "name": "ICMPProxy",
@@ -48247,7 +48247,7 @@
         },
         {
           "disabled": false,
-          "document": "true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。",
+          "document": "同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。",
           "example": "true",
           "member": "bool",
           "name": "PublicAddressAffinity",
@@ -48258,7 +48258,7 @@
         {
           "disabled": false,
           "document": "NAT网关实例路由表ID。",
-          "example": "",
+          "example": "rtb-q4fju7ze",
           "member": "string",
           "name": "InstanceRouteTableId",
           "output_required": false,

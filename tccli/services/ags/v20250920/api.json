@@ -228,6 +228,23 @@
       ],
       "type": "object"
     },
+    "CLSConfig": {
+      "document": "沙箱工具日志推送CLS相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具日志推送所使用的CLS日志主题ID",
+          "example": "123e4567-e89b-12d3-a456-426614174000",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CfsStorageSource": {
       "document": "文件存储配置",
       "members": [
@@ -508,6 +525,15 @@
           "example": "无",
           "member": "CustomConfiguration",
           "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具日志推送相关配置",
+          "example": "无",
+          "member": "LogConfiguration",
+          "name": "LogConfiguration",
           "required": false,
           "type": "object"
         }
@@ -1223,6 +1249,23 @@
       ],
       "usage": "both"
     },
+    "LogConfiguration": {
+      "document": "沙箱工具日志采集相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志推送CLS的配置。",
+          "example": "无",
+          "member": "CLSConfig",
+          "name": "CLSConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MountOption": {
       "document": "沙箱实例存储挂载配置可选项，用于覆盖沙箱工具的存储配置的部分选项，并提供子路径挂载配置。",
       "members": [
@@ -1762,6 +1805,17 @@
           "example": "无",
           "member": "CustomConfigurationDetail",
           "name": "CustomConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具日志推送相关配置",
+          "example": "无",
+          "member": "LogConfiguration",
+          "name": "LogConfiguration",
           "output_required": false,
           "required": false,
           "type": "object",

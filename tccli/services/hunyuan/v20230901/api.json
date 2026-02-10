@@ -817,6 +817,15 @@
           "name": "ReferenceRepo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "关联的术语库 ID 列表，用于术语翻译\u0005，最大支持5个术语库",
+          "example": "[\"3177dfae1f8cb180dfcc1bea2ddf19f6\"]",
+          "member": "string",
+          "name": "GlossaryIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

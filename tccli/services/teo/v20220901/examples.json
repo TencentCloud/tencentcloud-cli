@@ -91,7 +91,7 @@
     "CreateAccelerationDomain": [
       {
         "document": "创建加速域名并使用指定的共享 CNAME。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"www.example.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"1.1.1.1\"\n    },\n    \"OriginProtocol\": \"FOLLOW\",\n    \"HttpOriginPort\": 80,\n    \"HttpsOriginPort\": 443,\n    \"IPv6Status\": \"follow\"\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"www.example.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"1.1.1.1\"\n    },\n    \"OriginProtocol\": \"FOLLOW\",\n    \"HttpOriginPort\": 80,\n    \"HttpsOriginPort\": 443,\n    \"IPv6Status\": \"follow\",\n    \"SharedCNAME\": \"sharedomain.225qgrnvbi9w.share.dnse5.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"OwnershipVerification\": null,\n        \"RequestId\": \"3d310306-f298-439a-9daa-29eec8490769\"\n    }\n}",
         "title": "创建使用共享 CNAME 的加速域名"
       },

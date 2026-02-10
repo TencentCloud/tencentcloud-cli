@@ -147,6 +147,13 @@
       "output": "DescribeAutoScaleStrategiesResponse",
       "status": "online"
     },
+    "DescribeBootScript": {
+      "document": "获取引导脚本",
+      "input": "DescribeBootScriptRequest",
+      "name": "获取引导脚本",
+      "output": "DescribeBootScriptResponse",
+      "status": "online"
+    },
     "DescribeCloudInstanceService": {
       "document": "容器版emr集群服务部署信息",
       "input": "DescribeCloudInstanceServiceRequest",
@@ -385,6 +392,13 @@
       "output": "DescribeServiceConfGroupInfosResponse",
       "status": "online"
     },
+    "DescribeServiceGroups": {
+      "document": "服务组信息",
+      "input": "DescribeServiceGroupsRequest",
+      "name": "服务组信息",
+      "output": "DescribeServiceGroupsResponse",
+      "status": "online"
+    },
     "DescribeServiceNodeInfos": {
       "document": "查询服务进程信息",
       "input": "DescribeServiceNodeInfosRequest",
@@ -511,6 +525,13 @@
       "output": "InquiryPriceUpdateInstanceResponse",
       "status": "online"
     },
+    "InstallSoftware": {
+      "document": "安装组件。对于依赖元数据库的组件，有可能会需要下单一个cdb。可根据InstallSoftWareInfo查看当前集群可安装的组件，以及哪些组件有可能需要cdb。",
+      "input": "InstallSoftwareRequest",
+      "name": "安装组件",
+      "output": "InstallSoftwareResponse",
+      "status": "online"
+    },
     "ModifyAutoRenewFlag": {
       "document": "前提：预付费集群\n资源级别开启或关闭自动续费",
       "input": "ModifyAutoRenewFlagRequest",
@@ -523,6 +544,13 @@
       "input": "ModifyAutoScaleStrategyRequest",
       "name": "修改自动扩缩容规则",
       "output": "ModifyAutoScaleStrategyResponse",
+      "status": "online"
+    },
+    "ModifyBootScript": {
+      "document": "修改引导脚本",
+      "input": "ModifyBootScriptRequest",
+      "name": "修改引导脚本",
+      "output": "ModifyBootScriptResponse",
       "status": "online"
     },
     "ModifyGlobalConfig": {
@@ -3772,6 +3800,30 @@
       ],
       "usage": "both"
     },
+    "ComponentDeployInfo": {
+      "document": "角色的部署信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "HiveServer2",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待安装的节点uuid列表",
+          "example": "[\"0c88dde9-beb3-43ba-b83b-38a84afe193b\"]",
+          "member": "string",
+          "name": "DeployHostUuidList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "ComputeMultiZoneSetting": {
       "document": "计算资源各个可用区的参数信息",
       "members": [
@@ -6250,6 +6302,98 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeBootScriptRequest": {
+      "document": "DescribeBootScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例序列号",
+          "example": "emr-examples",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引导脚本类型，resourceAfter,clusterAfter,clusterBefore不填时表示全部时机",
+          "example": "clusterBefore",
+          "member": "string",
+          "name": "BootType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBootScriptResponse": {
+      "document": "DescribeBootScript返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引导脚本详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeBootScriptRsp",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBootScriptRsp": {
+      "document": "引导脚本回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源初始化结束自定义脚本文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ResourceAfter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群启动前自定义脚本文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ClusterBefore",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群启动后自定义脚本文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ClusterAfter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务下线前自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ServiceBefore",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeCloudInstanceServiceRequest": {
       "document": "DescribeCloudInstanceService请求参数结构体",
@@ -9489,6 +9633,89 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceGroupsRequest": {
+      "document": "DescribeServiceGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "emr-ikoyp9nw",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取配置状态数量",
+          "example": "true",
+          "member": "bool",
+          "name": "QueryConfStatusNumFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceGroupsResponse": {
+      "document": "DescribeServiceGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceGroup",
+          "name": "ServiceGroupList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14107,6 +14334,151 @@
       ],
       "usage": "in"
     },
+    "InstallSoftwareRequest": {
+      "document": "InstallSoftware请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例号",
+          "example": "emr-331dcki",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件版本号，例如presto-0.161，可根据InstallSoftWareInfo查看当前集群可安装的组件",
+          "example": "[\"sqoop-1.4.6\\r\\n\"]",
+          "member": "string",
+          "name": "SoftInfo",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "如果需要购买CDB，如果是包年包月集群，是否为这个cdb自动续费，默认AUTO_RENEW,如不自动续费新增的CDB，则填入NOT_AUTO_RENEW",
+          "example": "AUTO_RENEW",
+          "member": "string",
+          "name": "CdbAutoRenew",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "example": "EMR_DEFAULT_META",
+          "member": "string",
+          "name": "MetaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "EMR-MetaDB实例",
+          "example": "cab-fasdf232",
+          "member": "string",
+          "name": "UnifyMetaInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义MetaDB信息",
+          "example": "无",
+          "member": "CustomMetaInfo",
+          "name": "MetaDBInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "共用组件信息",
+          "example": "无",
+          "member": "ExternalService",
+          "name": "ExternalService",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "角色的Pod规格信息",
+          "example": "无",
+          "member": "CloudResource",
+          "name": "CloudResources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义部署信息",
+          "example": "无",
+          "member": "ServiceDeployInfo",
+          "name": "ServiceDeployInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义配置项",
+          "example": "无",
+          "member": "Configuration",
+          "name": "Configurations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通审计",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallSoftwareResponse": {
+      "document": "InstallSoftware返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"missing key\"]",
+          "member": "string",
+          "name": "ErrorMessages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceChargePrepaid": {
       "document": "实例预付费参数，只有在付费类型为PREPAID时生效。",
       "members": [
@@ -15088,6 +15460,51 @@
     },
     "ModifyAutoScaleStrategyResponse": {
       "document": "ModifyAutoScaleStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBootScriptRequest": {
+      "document": "ModifyBootScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例Id",
+          "example": "emr-examples",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引导脚本类型,resourceAfter,clusterAfter,clusterBefore",
+          "example": "clusterBefore",
+          "member": "string",
+          "name": "BootType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引导脚本的具体变更，如为空表示WhenRun时机无引导脚本",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "PreExecutedFileSettings",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBootScriptResponse": {
+      "document": "ModifyBootScript返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -19334,6 +19751,155 @@
       ],
       "usage": "both"
     },
+    "PreExecuteFileSetting": {
+      "document": "预执行脚本配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脚本在COS上路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行脚本参数",
+          "example": "无",
+          "member": "string",
+          "name": "Args",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS的Bucket名称",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS的Region名称",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS的Domain数据",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行顺序",
+          "example": "无",
+          "member": "int64",
+          "name": "RunOrder",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "resourceAfter 或 clusterAfter",
+          "example": "无",
+          "member": "string",
+          "name": "WhenRun",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脚本文件名",
+          "example": "无",
+          "member": "string",
+          "name": "CosFileName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脚本的cos地址",
+          "example": "无",
+          "member": "string",
+          "name": "CosFileURI",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos的SecretId",
+          "example": "无",
+          "member": "string",
+          "name": "CosSecretId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos的SecretKey",
+          "example": "无",
+          "member": "string",
+          "name": "CosSecretKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos的appid",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PreExecuteFileSettings": {
       "document": "预执行脚本配置",
       "members": [
@@ -22173,6 +22739,32 @@
       ],
       "usage": "both"
     },
+    "ServiceConfStatusNumStatistic": {
+      "document": "组件配置状态统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "失败配置个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FailedConfNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期配置个数",
+          "example": "1",
+          "member": "int64",
+          "name": "ExpiredConfNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ServiceCvmLogPath": {
       "document": "返回给es的组件及其日志信息",
       "members": [
@@ -22229,6 +22821,356 @@
       ],
       "usage": "out"
     },
+    "ServiceDeployInfo": {
+      "document": "服务的部署信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "YARN",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色的部署信息列表",
+          "example": "无",
+          "member": "ComponentDeployInfo",
+          "name": "ComponentDeployInfoList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ServiceGroup": {
+      "document": "服务组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "软件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "SoftName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "软件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "SoftVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "V地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "VAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "UserGroup",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "PathsInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "添加时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "AccessInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceNode",
+          "name": "ServiceNodeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "退出无效参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ExitInvalidParam",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持重启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportReStart",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持配置下发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportSubmitConf",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "WebUI地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"http\"",
+          "member": "string",
+          "name": "WebUiUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportMonitor",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持数据迁移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportDataMove",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceDetectStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "webui状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "WebUiDetectStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持联邦管理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportFederation",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指令操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceOpsInfo",
+          "name": "CmdServiceOpsInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为共用组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsExternal",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持服务版本升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportServiceUpdate",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件配置状态统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceConfStatusNumStatistic",
+          "name": "ServiceConfStatusNumStatistic",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持服务卸载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportUninstall",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "true表示不显示 查看端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "PortNotDisplay",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持绑定使用RSS-Uniffle集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportRSSUniffle",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 是否已绑定使用rss-uniffle集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRSSUniffleBinded",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的rss-uniffle集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-xx",
+          "member": "string",
+          "name": "BindRSSUniffleClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效的提供服务的IP",
+          "example": "DataNode IPC:10.0.0.1",
+          "member": "string",
+          "name": "AccessActiveInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务是否支持CLB外部访问",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportEGCLB",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ServiceLayerIn": {
       "document": "ServiceLayerIn",
       "members": [
@@ -22254,6 +23196,82 @@
         }
       ],
       "usage": "both"
+    },
+    "ServiceNode": {
+      "document": "服务节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "NodeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Core节点部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "CoreDeploy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Core节点必须\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "CoreNecessary",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Task节点部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "TaskDeploy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Task节点必须\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "TaskNecessary",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件重启策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "RestartPolicy",
+          "name": "RestartPolicies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ServiceNodeDetailInfo": {
       "document": "服务进程信息",
@@ -22467,6 +23485,42 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceOpsInfo": {
+      "document": "服务运维操作，包含复杂与指令的",
+      "members": [
+        {
+          "disabled": false,
+          "document": "前端展示用，操作展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据均衡",
+          "member": "string",
+          "name": "OpsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该操作的id，提交表单是要带\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hdfs rebalance",
+          "member": "string",
+          "name": "ActionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展用，表示提交表单时提交给后端的接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CreateServiceOps",
+          "member": "string",
+          "name": "InterfaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
