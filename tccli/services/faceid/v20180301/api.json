@@ -171,7 +171,7 @@
     "GetDetectInfoEnhanced": {
       "document": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetDetectInfoEnhancedRequest",
-      "name": "获取实名核身结果信息增强版",
+      "name": "获取实名核身结果信息（适用所有版本）",
       "output": "GetDetectInfoEnhancedResponse",
       "status": "online"
     },
