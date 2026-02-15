@@ -5320,6 +5320,15 @@
         },
         {
           "disabled": false,
+          "document": "生成模型的格式，仅限制生成一种格式。 生成模型文件组默认返回obj格式。 可选值：OBJ，GLB，STL，USDZ，FBX，MP4。",
+          "example": "OBJ",
+          "member": "string",
+          "name": "ResultFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "是否开启 PBR材质生成，默认 false。\t",
           "example": "false",
           "member": "bool",
