@@ -1,21 +1,41 @@
-# Release 3.0.1369.1
+# Release 3.0.1370.1
 
-## 腾讯混元大模型(hunyuan) 版本：2023-09-01
+## 腾讯云可观测平台(monitor) 版本：2023-06-16
 
-### 第 28 次发布
 
-发布时间：2026-02-16 01:42:19
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 117 次发布
+
+发布时间：2026-02-25 01:56:06
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [SubmitHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1744/88613)
+* CreatePrometheusGlobalNotification
+* DescribePrometheusGlobalNotification
+* ModifyPrometheusGlobalNotification
 
-	* 新增入参：ResultFormat
 
+
+## 腾讯混元生视频(vclm) 版本：2024-05-23
+
+### 第 13 次发布
+
+发布时间：2026-02-25 02:20:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAigcVideoJob](http://document.tencentcloudapi.woa.com/document/product/1766/88898)
+* [SubmitAigcVideoJob](http://document.tencentcloudapi.woa.com/document/product/1766/88897)
 
 
 

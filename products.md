@@ -19,7 +19,7 @@
 | api | [云 API](http://document.tencentcloudapi.woa.com/document/product/1278) | [查看](http://document.tencentcloudapi.woa.com/document/product/1672/79435) | 2025-11-19 01:08:13 |
 | apigateway | [API 网关](http://document.tencentcloudapi.woa.com/document/product/628) | [查看](http://document.tencentcloudapi.woa.com/document/product/628/45248) | 2025-11-19 01:08:16 |
 | apis | [大模型安全网关](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1805/87927) | 2026-01-26 01:10:17 |
-| apm | [应用性能监控](http://document.tencentcloudapi.woa.com/document/product/1463) | [查看](http://document.tencentcloudapi.woa.com/document/product/1463/64937) | 2026-02-09 01:10:10 |
+| apm | [应用性能监控](http://document.tencentcloudapi.woa.com/document/product/1463) | [查看](http://document.tencentcloudapi.woa.com/document/product/1463/64937) | 2026-02-25 01:10:14 |
 | as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | [查看](http://document.tencentcloudapi.woa.com/document/product/377/20429) | 2025-12-30 01:10:13 |
 | asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | [查看](http://document.tencentcloudapi.woa.com/document/product/1093/35644) | 2026-02-06 01:10:55 |
 | asw | [应用与服务编排工作流](http://document.tencentcloudapi.woa.com/document/product/1272) | [查看](http://document.tencentcloudapi.woa.com/document/product/1272/49726) | 2025-11-19 01:10:23 |
@@ -125,7 +125,7 @@
 | ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | [查看](http://document.tencentcloudapi.woa.com/document/product/1668/79371) | 2025-09-11 01:24:37 |
 | essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | [查看](http://document.tencentcloudapi.woa.com/document/product/1595/75268) | 2026-02-11 01:41:49 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | [查看](http://document.tencentcloudapi.woa.com/document/product/670/78454) | 2025-11-19 01:33:25 |
-| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | [查看](http://document.tencentcloudapi.woa.com/document/product/1007/31327) | 2026-02-13 01:40:03 |
+| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | [查看](http://document.tencentcloudapi.woa.com/document/product/1007/31327) | 2026-02-25 01:40:11 |
 | fele | [联邦学习](http://document.tencentcloudapi.woa.com/document/product/1192) | [查看](http://document.tencentcloudapi.woa.com/document/product/1654/78706) | 2025-11-19 01:33:53 |
 | fibona | [fibona](http://document.tencentcloudapi.woa.com/document/product/-1) | [查看](http://document.tencentcloudapi.woa.com/document/product/1777/85170) | 2024-12-09 11:21:09 |
 | fmu | [人脸试妆](http://document.tencentcloudapi.woa.com/document/product/1172) | [查看](http://document.tencentcloudapi.woa.com/document/product/1172/40704) | 2025-11-19 01:33:55 |
@@ -297,7 +297,7 @@
 | tts | [语音合成](http://document.tencentcloudapi.woa.com/document/product/1073) | [查看](http://document.tencentcloudapi.woa.com/document/product/1073/37993) | 2026-02-02 02:18:04 |
 | ump | [客流数字化平台](http://document.tencentcloudapi.woa.com/document/product/1320) | [查看](http://document.tencentcloudapi.woa.com/document/product/1320/50581) | 2024-03-20 01:28:42 |
 | vcg | [视频生成](http://document.tencentcloudapi.woa.com/document/product/1770) | [查看](http://document.tencentcloudapi.woa.com/document/product/1762/83930) | 2024-11-22 02:47:09 |
-| vclm | [腾讯混元生视频](http://document.tencentcloudapi.woa.com/document/product/1616) | [查看](http://document.tencentcloudapi.woa.com/document/product/1766/87526) | 2026-02-13 02:20:40 |
+| vclm | [腾讯混元生视频](http://document.tencentcloudapi.woa.com/document/product/1616) | [查看](http://document.tencentcloudapi.woa.com/document/product/1766/87526) | 2026-02-25 02:20:56 |
 | vdb | [向量数据库](http://document.tencentcloudapi.woa.com/document/product/1709) | [查看](http://document.tencentcloudapi.woa.com/document/product/1758/83316) | 2026-01-06 02:19:06 |
 | vm | [视频内容安全](http://document.tencentcloudapi.woa.com/document/product/1265) | [查看](http://document.tencentcloudapi.woa.com/document/product/1265/74914) | 2024-07-26 01:26:39 |
 | vms | [语音消息](http://document.tencentcloudapi.woa.com/document/product/1128) | [查看](http://document.tencentcloudapi.woa.com/document/product/1128/51570) | 2025-11-19 02:07:22 |

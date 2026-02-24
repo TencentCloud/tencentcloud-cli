@@ -148,11 +148,11 @@
       "status": "online"
     },
     "CreatePrometheusGlobalNotification": {
-      "document": "创建全局告警通知渠道。集群内创建的告警规则如果未配置告警通知渠道，默认走全局告警通知渠道（建议在控制台创建告警，集群内创建告警不易维护）",
+      "document": "之前TPS的接口，迁移后已经不需要该功能\n\n创建全局告警通知渠道。集群内创建的告警规则如果未配置告警通知渠道，默认走全局告警通知渠道（建议在控制台创建告警，集群内创建告警不易维护）",
       "input": "CreatePrometheusGlobalNotificationRequest",
       "name": "创建全局告警通知渠道",
       "output": "CreatePrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreatePrometheusMultiTenantInstancePostPayMode": {
       "document": "创建按量 Prometheus 实例，根据用量收费实例",
@@ -701,11 +701,11 @@
       "status": "online"
     },
     "DescribePrometheusGlobalNotification": {
-      "document": "查询全局告警通知渠道",
+      "document": "之前TPS的接口，迁移后已经不需要\n\n查询全局告警通知渠道",
       "input": "DescribePrometheusGlobalNotificationRequest",
       "name": "查询全局告警通知渠道",
       "output": "DescribePrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePrometheusInstanceDetail": {
       "document": "获取TMP实例详情",
@@ -1030,11 +1030,11 @@
       "status": "online"
     },
     "ModifyPrometheusGlobalNotification": {
-      "document": "修改全局告警通知渠道",
+      "document": "之前TPS接口，迁移后不需要\n\n修改全局告警通知渠道",
       "input": "ModifyPrometheusGlobalNotificationRequest",
       "name": "修改全局告警通知渠道",
       "output": "ModifyPrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyPrometheusInstanceAttributes": {
       "document": "修改 Prometheus 实例相关属性",
