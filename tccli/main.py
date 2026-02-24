@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import _locale
+
 _locale._getdefaultlocale = (lambda *args: ['zh_CN', 'utf8'])
 
 import io
@@ -14,6 +15,7 @@ try:
     # python2 doesn't support cp65001 codec
     if getattr(sys.stdin, 'encoding', 'utf-8') == "cp65001":
         import codecs
+
         codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
 
     reload(sys)  # Python 2.7
@@ -22,9 +24,11 @@ except NameError:
     try:
         sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
         from importlib import reload  # Python 3.4+
+
         reload(sys)
     except ImportError:
         from imp import reload  # Python 3.0 - 3.3
+
         reload(sys)
 from tccli.command import CLICommand
 from tccli import __version__
@@ -75,9 +79,13 @@ def main():
         log.exception(e)
         return 255
     except TencentCloudSDKException as e:
-        sys.stderr.write("usage: %s\n" % USAGE)
-        sys.stderr.write(str(e))
-        sys.stderr.write("\n")
+        if hasattr(e, 'requestId') and e.requestId:
+            sys.stderr.write(str(e))
+            sys.stderr.write("\n")
+        else:
+            sys.stderr.write("usage: %s\n" % USAGE)
+            sys.stderr.write(str(e))
+            sys.stderr.write("\n")
         log.error(e)
         return 255
     except Exception as e:
@@ -90,4 +98,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
