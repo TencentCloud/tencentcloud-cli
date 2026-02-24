@@ -9,6 +9,9 @@ import six
 from tccli.log import init
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 
+# Python 3.14兼容性：添加兼容性检查
+from tccli.compatibility import PythonVersionChecker
+
 try:
     # cp65001 is utf-8 on windows platform
     # python2 doesn't support cp65001 codec
@@ -36,6 +39,13 @@ log = init('tccli.main')
 
 def main():
     try:
+        # Python 3.14兼容性：应用兼容性修复
+        PythonVersionChecker.apply_compatibility_fixes()
+        
+        # 检查Python版本兼容性
+        if PythonVersionChecker.is_python_314_or_later():
+            log.info("Running on Python 3.14 or later - applying compatibility adjustments")
+        
         log.info("tccli %s" % ' '.join(sys.argv[1:]))
         CLICommand()()
         return 0
@@ -81,6 +91,13 @@ def main():
         log.error(e)
         return 255
     except Exception as e:
+        # Python 3.14兼容性：改进异常处理
+        if "badly formed help string" in str(e).lower():
+            # 处理帮助字符串格式错误
+            sys.stderr.write("Error: Badly formed help string detected\n")
+            sys.stderr.write("This may be due to Python 3.14 compatibility issues.\n")
+            sys.stderr.write("Try running with simplified help: tccli help --simple\n")
+        
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")

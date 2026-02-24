@@ -8,6 +8,7 @@ import six
 from difflib import get_close_matches
 from gettext import gettext
 from tccli.error_msg import USAGE
+from tccli.compatibility import PythonVersionChecker
 
 log = init("tccli.argparser")
 
@@ -31,52 +32,110 @@ class CustomAction(argparse.Action):
 
 class BaseArgParser(argparse.ArgumentParser):
     Formatter = argparse.RawTextHelpFormatter
-
     ChoicesPerLine = 2
 
+    def __init__(self, *args, **kwargs):
+        # Python 3.14兼容性：确保帮助字符串格式正确
+        kwargs.setdefault('formatter_class', self.Formatter)
+        kwargs.setdefault('add_help', False)
+        kwargs.setdefault('conflict_handler', 'resolve')
+        
+        # Python 3.14: 添加allow_abbrev=False以避免参数缩写问题
+        if hasattr(argparse.ArgumentParser, 'allow_abbrev'):
+            kwargs.setdefault('allow_abbrev', False)
+            
+        super(BaseArgParser, self).__init__(*args, **kwargs)
+
     def _check_value(self, action, value):
+        # 改进的错误消息格式化，避免Python 3.14兼容性问题
         if action.choices is not None and value not in action.choices:
             msg = ['Invalid choice, valid choices are:\n']
             args = (' '.join(sys.argv[1:])).split(value)
-            help_msg = "you can run `tccli %shelp` to see valid choices" % args[0]
-            log.error(USAGE + msg[0] + help_msg)
+            
+            # 改进的帮助消息生成
+            help_msg = "you can run `tccli %s help` to see valid choices" % args[0]
+            
+            # 使用更安全的日志记录方式
+            try:
+                log.error(USAGE + msg[0] + help_msg)
+            except Exception as e:
+                # Python 3.14兼容性：如果日志记录失败，直接输出到stderr
+                sys.stderr.write("Error: " + str(e) + "\n")
+                sys.stderr.write(USAGE + msg[0] + help_msg + "\n")
+            
             for i in range(len(action.choices))[::self.ChoicesPerLine]:
                 current = []
                 for choice in action.choices[i:i + self.ChoicesPerLine]:
-                    current.append('%-40s' % choice)
+                    # 使用更安全的字符串格式化
+                    try:
+                        current.append('%-40s' % choice)
+                    except Exception:
+                        current.append(str(choice).ljust(40))
                 msg.append(' | '.join(current))
+            
             possible = get_close_matches(value, action.choices, cutoff=0.8)
             if possible:
                 extra = ['\n\nInvalid choice: %r, maybe you meant:\n' % value]
                 for word in possible:
                     extra.append('  * %s' % word)
                 msg.extend(extra)
-            msg.append("Invalid choice: The specified command or option is not found, " \
-                       "try lastest version by running `pip install --upgrade tccli`.")
-            raise argparse.ArgumentError(action, '\n'.join(msg))
+            
+            msg.append("Invalid choice: The specified command or option is not found, "
+                       "try latest version by running `pip install --upgrade tccli`.")
+            
+            # 使用更安全的错误消息构建
+            error_msg = '\n'.join(msg)
+            raise argparse.ArgumentError(action, error_msg)
 
     def parse_known_args(self, args=None, namespace=None):
-        parsed, remaining = super(BaseArgParser, self).parse_known_args(args, namespace)
-        terminal_encoding = getattr(sys.stdin, 'encoding', 'utf-8')
-        if terminal_encoding is None or terminal_encoding == 'cp65001':
-            terminal_encoding = 'utf-8'
-        for arg, value in vars(parsed).items():
-            if isinstance(value, six.binary_type):
-                setattr(parsed, arg, value.decode(terminal_encoding))
-            elif isinstance(value, list):
-                encoded = []
-                for v in value:
-                    if isinstance(v, six.binary_type):
-                        encoded.append(v.decode(terminal_encoding))
-                    else:
-                        encoded.append(v)
-                setattr(parsed, arg, encoded)
-        return parsed, remaining
+        # Python 3.14兼容性：改进参数解析
+        try:
+            parsed, remaining = super(BaseArgParser, self).parse_known_args(args, namespace)
+            
+            # Python 3.14兼容性：改进编码处理
+            terminal_encoding = getattr(sys.stdin, 'encoding', 'utf-8')
+            if terminal_encoding is None or terminal_encoding == 'cp65001':
+                terminal_encoding = 'utf-8'
+            
+            for arg, value in vars(parsed).items():
+                if isinstance(value, six.binary_type):
+                    setattr(parsed, arg, value.decode(terminal_encoding))
+                elif isinstance(value, list):
+                    encoded = []
+                    for v in value:
+                        if isinstance(v, six.binary_type):
+                            encoded.append(v.decode(terminal_encoding))
+                        else:
+                            encoded.append(v)
+                    setattr(parsed, arg, encoded)
+            
+            return parsed, remaining
+        except Exception as e:
+            # Python 3.14兼容性：改进异常处理
+            if "badly formed help string" in str(e).lower():
+                # 处理帮助字符串格式错误
+                self._handle_badly_formed_help_string(e)
+            raise
 
+    def _handle_badly_formed_help_string(self, exception):
+        """处理badly formed help string错误"""
+        # Python 3.14兼容性：简化帮助字符串格式
+        if PythonVersionChecker.is_python_314_or_later():
+            # 在Python 3.14中，简化帮助字符串格式
+            self.formatter_class = argparse.HelpFormatter
+            
     def error(self, message):
+        # Python 3.14兼容性：改进错误处理
         self.print_usage(sys.stderr)
         args = {'prog': self.prog, 'message': message}
-        self.exit(252, gettext('%(prog)s: error: %(message)s\n') % args)
+        
+        # 使用安全的字符串格式化
+        try:
+            error_msg = gettext('%(prog)s: error: %(message)s\n') % args
+        except Exception:
+            error_msg = '%s: error: %s\n' % (self.prog, message)
+        
+        self.exit(252, error_msg)
 
 
 class CLIArgParser(BaseArgParser):
