@@ -74,5 +74,3 @@ def test_multi_process():
     while not queue.empty():
         ret = queue.get()
         assert ret == 0
-
-test_multi_process()
