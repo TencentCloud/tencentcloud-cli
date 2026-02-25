@@ -2043,7 +2043,7 @@
         {
           "disabled": false,
           "document": "qps阈值",
-          "example": "[{Unit:\"second\",Max:10}]",
+          "example": "无",
           "member": "QpsThreshold",
           "name": "QpsThresholds",
           "output_required": true,
@@ -2093,6 +2093,17 @@
           "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局配置中的redis配置",
+          "example": "9a4e0f39-fa6a-44d8-8e3e-10f016ad78de",
+          "member": "string",
+          "name": "GlobalConfigId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2175,7 +2186,7 @@
         {
           "disabled": false,
           "document": "基础限流\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{Unit:\"second\",Max:10}]",
+          "example": "无",
           "member": "QpsThreshold",
           "name": "BasicLimitQpsThresholds",
           "output_required": false,
@@ -2186,7 +2197,7 @@
         {
           "disabled": false,
           "document": "参数限流的规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Filters\":[{\"Key\":\"ip\",\"Values\":[\"8.8.8.8/24\"]}],\"LimitBy\":[{\"Key\":\"ip\",\"Value\":\"\"},{\"Key\":\"header\",\"Value\":\"host\"}],\"QpsThresholds\":[{\"Unit\":\"second\",\"Max\":10000}]}]",
+          "example": "无",
           "member": "LimitRule",
           "name": "LimitRules",
           "output_required": false,

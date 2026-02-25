@@ -4568,7 +4568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生命周期管理策略创建的时间",
+          "document": "<p>生命周期管理策略创建的时间</p>",
           "example": "2020-01-05 00:02:00",
           "member": "string",
           "name": "CreateTime",
@@ -4578,7 +4578,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略ID",
+          "document": "<p>生命周期管理策略ID</p>",
           "example": "policy-ek8aw4id",
           "member": "string",
           "name": "LifecyclePolicyID",
@@ -4588,8 +4588,8 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "<p>生命周期管理策略名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LifecyclePolicyTest",
           "member": "string",
           "name": "LifecyclePolicyName",
           "required": true,
@@ -4598,7 +4598,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略关联的管理规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生命周期管理策略关联的管理规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LifecycleRule",
           "name": "LifecycleRules",
@@ -4608,7 +4608,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略关联目录的绝对路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生命周期管理策略关联目录的绝对路径列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PathInfo",
           "name": "Paths",

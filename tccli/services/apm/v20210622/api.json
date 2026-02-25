@@ -10,7 +10,7 @@
     "CreateApmPrometheusRule": {
       "document": "用于创建apm业务系统与Prometheus实例的指标匹配规则",
       "input": "CreateApmPrometheusRuleRequest",
-      "name": "创建apm业务系统与Prometheus实例的指标匹配规则",
+      "name": "创建 APM 业务系统与 Prometheus 实例的指标匹配规则",
       "output": "CreateApmPrometheusRuleResponse",
       "status": "online"
     },
@@ -66,7 +66,7 @@
     "DescribeApmAssociation": {
       "document": "用于查询apm业务系统与其他产品的关联关系",
       "input": "DescribeApmAssociationRequest",
-      "name": "查询apm业务系统与其他产品的关联关系",
+      "name": "查询 APM 业务系统与其他产品的关联关系",
       "output": "DescribeApmAssociationResponse",
       "status": "online"
     },
@@ -199,7 +199,7 @@
     "ModifyApmAssociation": {
       "document": "用于修改apm业务系统与其他产品的关联关系（包括创建和删除）",
       "input": "ModifyApmAssociationRequest",
-      "name": "修改apm业务系统与其他产品的关联关系",
+      "name": "修改 APM 业务系统与其他产品的关联关系",
       "output": "ModifyApmAssociationResponse",
       "status": "online"
     },
@@ -213,7 +213,7 @@
     "ModifyApmPrometheusRule": {
       "document": "用于修改apm业务系统与Prometheus实例的指标匹配规则",
       "input": "ModifyApmPrometheusRuleRequest",
-      "name": "修改apm业务系统与Prometheus实例的指标匹配规则",
+      "name": "修改 APM 业务系统与 Prometheus 实例的指标匹配规则",
       "output": "ModifyApmPrometheusRuleResponse",
       "status": "online"
     },
@@ -234,7 +234,7 @@
     "TerminateApmInstance": {
       "document": "销毁 APM 业务系统",
       "input": "TerminateApmInstanceRequest",
-      "name": "销毁APM业务系统",
+      "name": "销毁 APM 业务系统",
       "output": "TerminateApmInstanceResponse",
       "status": "online"
     }

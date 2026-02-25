@@ -10930,7 +10930,7 @@
         },
         {
           "disabled": false,
-          "document": " 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别",
+          "document": " 需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：\n- zh（中文）\n- en（英文）\n- yue（粤语）\n- ja（日语）\n- ko（韩语）\n- ar（阿拉伯语）\n- id（印尼语）\n- th（泰语）",
           "example": "zh",
           "member": "string",
           "name": "Language",
