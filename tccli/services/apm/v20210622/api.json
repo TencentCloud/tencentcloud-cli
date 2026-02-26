@@ -87,8 +87,15 @@
     "DescribeApmPrometheusRule": {
       "document": "用于查询apm业务系统与Prometheus实例的指标匹配规则",
       "input": "DescribeApmPrometheusRuleRequest",
-      "name": "查询apm业务系统与Prometheus实例的指标匹配规则",
+      "name": "查询 APM 业务系统与 Prometheus 实例的指标匹配规则",
       "output": "DescribeApmPrometheusRuleResponse",
+      "status": "online"
+    },
+    "DescribeApmSQLInjectionDetail": {
+      "document": "查询SQL注入详情信息",
+      "input": "DescribeApmSQLInjectionDetailRequest",
+      "name": "查询SQL注入详情",
+      "output": "DescribeApmSQLInjectionDetailResponse",
       "status": "online"
     },
     "DescribeApmSampleConfig": {
@@ -3462,6 +3469,125 @@
           "member": "ApmPrometheusRules",
           "name": "ApmPrometheusRules",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmSQLInjectionDetailRequest": {
+      "document": "DescribeApmSQLInjectionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务系统 ID",
+          "example": "apm-CVfliqa8U",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "9",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "秒级时间戳",
+          "example": "1728910000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "秒级时间戳",
+          "example": "1728910000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "{       \"Key\":\"time\",       \"Value\":\"desc\"   }",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤条件",
+          "example": "[         {             \"Key\": \"process.serviceName\",             \"Type\": \"=\",             \"Value\": \"profile-service\"         }     ]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "聚合维度",
+          "example": "[\"error.object\"]",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标列表",
+          "example": "无",
+          "member": "QueryMetricItem",
+          "name": "Metrics",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmSQLInjectionDetailResponse": {
+      "document": "DescribeApmSQLInjectionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SQL相关维度信息",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链路相关信息",
+          "example": "无",
+          "member": "ApmMetricRecord",
+          "name": "Records",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

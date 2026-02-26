@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli goosefs CreateLoadTask --cli-unfold-argument  \
-    --ClusterId g_cvm_hi052k4l \
+    --ClusterId g_cvm_******** \
     --LoadTaskCreationAttrs.TaskType DistributedLoad \
-    --LoadTaskCreationAttrs.Priority 666 \
+    --LoadTaskCreationAttrs.Priority 5454 \
+    --LoadTaskCreationAttrs.Description sdasdasd \
     --LoadTaskCreationAttrs.MetadataLoadAttrs.LoadType LoadByPath \
-    --LoadTaskCreationAttrs.MetadataLoadAttrs.SkipIfExists False \
-    --LoadTaskCreationAttrs.MetadataLoadAttrs.LoadByPath /goosefs_path/ \
-    --LoadTaskCreationAttrs.DistributedLoadAttrs.LoadType LoadByPath \
-    --LoadTaskCreationAttrs.DistributedLoadAttrs.LoadByPath /goosefs_path/ \
+    --LoadTaskCreationAttrs.MetadataLoadAttrs.LoadByPath / \
+    --LoadTaskCreationAttrs.DistributedLoadAttrs.LoadType LoadByList \
+    --LoadTaskCreationAttrs.DistributedLoadAttrs.LoadByList cos://**********-**-**********/test.txt \
     --LoadTaskCreationAttrs.DistributedLoadAttrs.Replica SingleReplica
 ```
 
@@ -21,8 +21,8 @@ Output:
 ```
 {
     "Response": {
-        "TaskId": "baae4888-62e5-4027-bd56-070e82b2a584",
-        "RequestId": "0174dedd-9c61-47aa-9ee9-1c5f901f8262"
+        "TaskId": "10dda4fd-a28e-4c43-b4cd-e2678571a078",
+        "RequestId": "d457f4a3-34ba-4c49-a21a-7c5614796596"
     }
 }
 ```

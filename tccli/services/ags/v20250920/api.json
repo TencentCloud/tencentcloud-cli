@@ -1669,7 +1669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱工具唯一标识符",
+          "document": "<p>沙箱工具唯一标识符</p>",
           "example": "sdt-ee4ywozw",
           "member": "string",
           "name": "ToolId",
@@ -1680,7 +1680,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具名称，长度 1-50 字符，支持中英文、数字、下划线。同一 AppId 下沙箱工具名称必须唯一",
+          "document": "<p>沙箱工具名称，长度 1-50 字符，支持中英文、数字、下划线。同一 AppId 下沙箱工具名称必须唯一</p>",
           "example": "browser-sandbox",
           "member": "string",
           "name": "ToolName",
@@ -1691,7 +1691,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具类型，取值：browser（浏览器工具）、code-interpreter（代码解释器工具）、computer（计算机控制工具）、mobile（移动设备工具）",
+          "document": "<p>沙箱工具类型，取值：browser（浏览器工具）、code-interpreter（代码解释器工具）、computer（计算机控制工具）、mobile（移动设备工具）</p>",
           "example": "browser",
           "member": "string",
           "name": "ToolType",
@@ -1702,7 +1702,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具状态，取值：CREATING（创建中）、ACTIVE（可用）、DELETING（删除中）、FAILED（失败）",
+          "document": "<p>沙箱工具状态，取值：CREATING（创建中）、ACTIVE（可用）、DELETING（删除中）、FAILED（失败）</p>",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -1713,7 +1713,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具描述信息，最大长度 200 字符",
+          "document": "<p>沙箱工具描述信息，最大长度 200 字符</p>",
           "example": "浏览器沙箱环境",
           "member": "string",
           "name": "Description",
@@ -1724,7 +1724,7 @@
         },
         {
           "disabled": false,
-          "document": "默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时",
+          "document": "<p>默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时</p>",
           "example": "600",
           "member": "uint64",
           "name": "DefaultTimeoutSeconds",
@@ -1735,7 +1735,7 @@
         },
         {
           "disabled": false,
-          "document": "网络配置",
+          "document": "<p>网络配置</p>",
           "example": "无",
           "member": "NetworkConfiguration",
           "name": "NetworkConfiguration",
@@ -1746,7 +1746,7 @@
         },
         {
           "disabled": false,
-          "document": "标签规格，包含资源标签绑定关系。用于为沙箱工具绑定标签，支持多种资源类型的标签绑定",
+          "document": "<p>标签规格，包含资源标签绑定关系。用于为沙箱工具绑定标签，支持多种资源类型的标签绑定</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1757,7 +1757,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具创建时间，格式：ISO8601",
+          "document": "<p>沙箱工具创建时间，格式：ISO8601</p>",
           "example": "2024-01-15T10:30:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -1768,7 +1768,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具更新时间，格式：ISO8601",
+          "document": "<p>沙箱工具更新时间，格式：ISO8601</p>",
           "example": "2024-01-15T10:30:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -1779,7 +1779,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具绑定角色ARN",
+          "document": "<p>沙箱工具绑定角色ARN</p>",
           "example": "qcs::cam::uin/100000001:roleName/test_role",
           "member": "string",
           "name": "RoleArn",
@@ -1790,7 +1790,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具中实例存储挂载配置",
+          "document": "<p>沙箱工具中实例存储挂载配置</p>",
           "example": "无",
           "member": "StorageMount",
           "name": "StorageMounts",
@@ -1801,7 +1801,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具自定义配置",
+          "document": "<p>沙箱工具自定义配置</p>",
           "example": "无",
           "member": "CustomConfigurationDetail",
           "name": "CustomConfiguration",
@@ -1812,13 +1812,24 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具日志推送相关配置",
+          "document": "<p>沙箱工具日志推送相关配置</p>",
           "example": "无",
           "member": "LogConfiguration",
           "name": "LogConfiguration",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于说明沙箱工具处于该状态的原因</p>",
+          "example": "InternalError",
+          "member": "string",
+          "name": "StatusReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

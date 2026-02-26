@@ -283,7 +283,7 @@
     "QueryClientUninstallCommand": {
       "document": "生成客户端的卸载命令",
       "input": "QueryClientUninstallCommandRequest",
-      "name": "查询生成客户端节点的卸载载命令",
+      "name": "查询生成客户端节点的卸载命令",
       "output": "QueryClientUninstallCommandResponse",
       "status": "online"
     },
@@ -1601,7 +1601,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "g_cvm_hi052k4l",
+          "example": "g_cvm_********",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1625,7 +1625,7 @@
         {
           "disabled": false,
           "document": "预热任务 ID",
-          "example": "baae4888-62e5-4027-bd56-070e82b2a584",
+          "example": "10dda4fd-a28e-4c43-b4cd-e2678571a078",
           "member": "string",
           "name": "TaskId",
           "output_required": true,

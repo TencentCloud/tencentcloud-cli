@@ -19,11 +19,11 @@ Output:
         "List": [
             {
                 "Id": 13844,
-                "Uuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
-                "Quuid": "acdd5474-6360-4fd4-bfc7-843162cb8116",
-                "Alias": "v_llzlu微隔离测试(millionlan)",
-                "PrivateIp": "10.0.1.233",
-                "PublicIp": "43.138.142.208",
+                "Uuid": "acdd5474-****-***-bfc7-843162cb8116",
+                "Quuid": "acdd5474-****-****-843162cb8116",
+                "Alias": "v",
+                "PrivateIp": "10.***.233",
+                "PublicIp": "43.***.208",
                 "UpgradeType": 1,
                 "VulId": 14004,
                 "VulName": "ISC BIND 资源管理错误漏洞(CVE-2014-8500)",
@@ -38,12 +38,12 @@ Output:
                 "Count": 74,
                 "Status": 1,
                 "MachineExtraInfo": {
-                    "WanIP": "43.138.142.208",
-                    "PrivateIP": "10.0.1.233",
+                    "WanIP": "43.***.208",
+                    "PrivateIP": "10.***.233",
                     "NetworkType": 1,
-                    "NetworkName": "vpc-mbgoxtov",
-                    "InstanceID": "ins-j7vumfb6",
-                    "HostName": "v_llzlu微隔离测试(millionlan)"
+                    "NetworkName": "vpc-mb**tov",
+                    "InstanceID": "ins-j***fb6",
+                    "HostName": "离测试ntest"
                 }
             }
         ]

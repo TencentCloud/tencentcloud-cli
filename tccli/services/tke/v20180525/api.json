@@ -5778,7 +5778,7 @@
         },
         {
           "disabled": false,
-          "document": "使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808",
+          "document": "使用的安全组（开启内外网访问且不使用已有clb时可传，内网访问需要先找clb侧加白使用）。获取方式：https://cloud.tencent.com/document/api/215/15808",
           "example": "sg-kineiakx",
           "member": "string",
           "name": "SecurityGroup",
@@ -10651,6 +10651,16 @@
           "member": "string",
           "name": "ClusterIntranetSubnetId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网安全组",
+          "example": "sg-3euou3gv",
+          "member": "string",
+          "name": "IntranetSecurityGroup",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

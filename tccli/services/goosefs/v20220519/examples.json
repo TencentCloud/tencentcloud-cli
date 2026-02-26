@@ -115,8 +115,8 @@
     "CreateLoadTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_hi052k4l\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"DistributedLoad\",\n        \"Priority\": 666,\n        \"MetadataLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"SkipIfExists\": false,\n            \"LoadByPath\": \"/goosefs_path/\"\n        },\n        \"DistributedLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/goosefs_path/\",\n            \"Replica\": \"SingleReplica\"\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"baae4888-62e5-4027-bd56-070e82b2a584\",\n        \"RequestId\": \"0174dedd-9c61-47aa-9ee9-1c5f901f8262\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_********\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"DistributedLoad\",\n        \"Priority\": 5454,\n        \"Description\": \"sdasdasd\",\n        \"MetadataLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/\"\n        },\n        \"DistributedLoadAttrs\": {\n            \"LoadType\": \"LoadByList\",\n            \"LoadByList\": \"cos://**********-**-**********/test.txt\",\n            \"Replica\": \"SingleReplica\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"10dda4fd-a28e-4c43-b4cd-e2678571a078\",\n        \"RequestId\": \"d457f4a3-34ba-4c49-a21a-7c5614796596\"\n    }\n}",
         "title": "创建预热任务"
       }
     ],
