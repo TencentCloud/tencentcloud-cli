@@ -471,14 +471,34 @@ class Loader(object):
 
     def get_action_example_model(self, service, version, action):
         services_path = self.get_services_path()
-        version = "v" + version.replace('-', '')
-        example_path = os.path.join(services_path, service, version, "examples.json")
-        if not os.path.exists(example_path):
-            raise Exception("Not find service:%s version:%s model" % (service, version))
-
-        with open(example_path, 'r') as f:
-            examples = json.load(f)
-        return examples['actions'][action]
+        compact_version = "v" + version.replace('-', '')
+        example_path = os.path.join(services_path, service, compact_version, "examples.json")
+        
+        # 首先尝试从services目录加载examples.json
+        if os.path.exists(example_path):
+            with open(example_path, 'r') as f:
+                examples = json.load(f)
+            return examples['actions'][action]
+        
+        # 如果services目录下没有，尝试从插件系统获取示例
+        import tccli.plugin as plugin
+        plugins = plugin.import_plugins()
+        
+        # 使用原始版本格式检查插件系统
+        if service in plugins and version in plugins[service]:
+            plugin_spec = plugins[service][version]
+            # 对于插件提供的服务，如果没有examples.json，返回一个完整的示例结构
+            return [{
+                "input": "",
+                "output": "{}",
+                "name": "示例",
+                "title": "基础示例",
+                "document": "该服务通过插件提供，暂无详细的示例描述",
+                "description": "该服务通过插件提供，暂无示例数据"
+            }]
+        
+        # 如果既不在services目录也不在插件系统中，抛出异常
+        raise Exception("Not find service:%s version:%s model" % (service, compact_version))
 
     def generate_cli_example(self, service, version, action):
         examples = self.get_action_example_model(service, version, action)
