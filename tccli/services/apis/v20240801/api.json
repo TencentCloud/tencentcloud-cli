@@ -238,7 +238,7 @@
         {
           "disabled": false,
           "document": "mcp server id",
-          "example": "mcp-0101010",
+          "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -249,7 +249,7 @@
         {
           "disabled": false,
           "document": "是否需要鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "NeedAuth",
           "output_required": false,
@@ -260,7 +260,7 @@
         {
           "disabled": false,
           "document": "凭据代填的ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "agc-010101",
+          "example": "agc-xxxxxxxx",
           "member": "string",
           "name": "AgentCredentialID",
           "output_required": false,
@@ -298,8 +298,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp id",
-          "example": "mcp-0101010",
+          "document": "绑定ID",
+          "example": "aga-41d42939",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -319,7 +319,7 @@
         {
           "disabled": false,
           "document": "凭据ID",
-          "example": "agc-01010101",
+          "example": "agc-4440aa1d",
           "member": "string",
           "name": "AgentCredentialID",
           "output_required": false,
@@ -349,7 +349,7 @@
         {
           "disabled": false,
           "document": "关联时间",
-          "example": "关联时间",
+          "example": "2025-12-28T00:55:38.218Z",
           "member": "string",
           "name": "RelateTime",
           "output_required": false,
@@ -359,7 +359,7 @@
         {
           "disabled": false,
           "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://127.0.0.1/_llmsgw_/sse/aga-05b85106/mcp-2fc41d77",
+          "example": "http://10.0.0.4/_llmsgw_/sse/aga-41d42939/mcp-2fc41d77",
           "member": "string",
           "name": "SSEResourceIdentifier",
           "output_required": false,
@@ -369,9 +369,29 @@
         {
           "disabled": false,
           "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://127.0.0.1/_llmsgw_/mcp/aga-05b85106/mcp-2fc41d77",
+          "example": "http://10.0.0.4/_llmsgw_/aga-41d42939/mcp-2fc41d77",
           "member": "string",
           "name": "StreamableResourceIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aga-41d42939",
+          "member": "string",
+          "name": "AgentAppID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mcp ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcp-41d42939",
+          "member": "string",
+          "name": "McpServerID",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -385,7 +405,7 @@
         {
           "disabled": false,
           "document": "secret id",
-          "example": "11110000000aaaa",
+          "example": "AK290f08b25DF12029ceb2e47519BFC50C",
           "member": "string",
           "name": "SecretID",
           "output_required": false,
@@ -395,7 +415,7 @@
         {
           "disabled": false,
           "document": "secret key",
-          "example": "111******************aa",
+          "example": "********************************",
           "member": "string",
           "name": "SecretKey",
           "output_required": false,
@@ -411,7 +431,7 @@
         {
           "disabled": false,
           "document": "如果认证类型为sts时，该项必填",
-          "example": "tencentCam",
+          "example": "tencent",
           "member": "string",
           "name": "STSSystem",
           "output_required": false,
@@ -422,7 +442,7 @@
         {
           "disabled": false,
           "document": "如果认证类型为sts时，该项必填",
-          "example": "cls",
+          "example": "cos",
           "member": "string",
           "name": "STSService",
           "output_required": false,
@@ -450,7 +470,7 @@
         {
           "disabled": false,
           "document": "凭据header key",
-          "example": "auth",
+          "example": "apiKey",
           "member": "string",
           "name": "Key",
           "output_required": false,
@@ -461,7 +481,7 @@
         {
           "disabled": false,
           "document": "凭据header value",
-          "example": "basic 101010101010",
+          "example": "**********************",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -615,7 +635,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "mr-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -643,7 +663,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "msr-0101",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -654,7 +674,7 @@
         {
           "disabled": false,
           "document": "规则类型",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -665,7 +685,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -676,7 +696,7 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -687,7 +707,7 @@
         {
           "disabled": false,
           "document": "风险等级",
-          "example": "无",
+          "example": "low",
           "member": "string",
           "name": "RiskLevel",
           "output_required": false,
@@ -698,7 +718,7 @@
         {
           "disabled": false,
           "document": "版本号",
-          "example": "无",
+          "example": "2026010101",
           "member": "string",
           "name": "VersionNumber",
           "output_required": false,
@@ -709,7 +729,7 @@
         {
           "disabled": false,
           "document": "当前选择的处置动作",
-          "example": "无",
+          "example": "watch",
           "member": "string",
           "name": "Act",
           "output_required": false,
@@ -720,7 +740,7 @@
         {
           "disabled": false,
           "document": "支持的处置动作",
-          "example": "无",
+          "example": "[\"watch\"]",
           "member": "string",
           "name": "SupportActs",
           "output_required": false,
@@ -731,7 +751,7 @@
         {
           "disabled": false,
           "document": "内容类型",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "BodyType",
           "output_required": false,
@@ -742,7 +762,7 @@
         {
           "disabled": false,
           "document": "icon类型",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "IconType",
           "output_required": false,
@@ -1048,7 +1068,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-0101010",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -1057,7 +1077,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "aga-1010101",
+          "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -1066,7 +1086,7 @@
         {
           "disabled": false,
           "document": "关联的mcp server",
-          "example": "[{\"ID\":\"\",\"NeedAuth\":false}]",
+          "example": "无",
           "member": "AgentAppMcpServerDTO",
           "name": "McpServers",
           "required": true,
@@ -1103,7 +1123,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-0101010",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -1154,7 +1174,7 @@
         {
           "disabled": false,
           "document": "app id ",
-          "example": "aga-0101010",
+          "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -1612,7 +1632,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-0101010",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -1621,7 +1641,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "aga-1010101",
+          "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -1629,8 +1649,8 @@
         },
         {
           "disabled": false,
-          "document": "mcpserver id数组",
-          "example": "[\"mcp-0101010\"]",
+          "document": "mcp server id数组",
+          "example": "[\"mcp-xxxxxxxx\"]",
           "member": "string",
           "name": "McpServerIDs",
           "required": true,
@@ -1667,7 +1687,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-0101010",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -1676,7 +1696,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "aga-1010101",
+          "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -1768,7 +1788,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -1777,7 +1797,7 @@
         {
           "disabled": false,
           "document": "mcp server ID",
-          "example": "无",
+          "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -1892,7 +1912,7 @@
         {
           "disabled": false,
           "document": "条目总数",
-          "example": "1",
+          "example": "4",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -1940,7 +1960,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -1949,7 +1969,7 @@
         {
           "disabled": false,
           "document": "app id",
-          "example": "无",
+          "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -1964,7 +1984,7 @@
         {
           "disabled": false,
           "document": "租户appID",
-          "example": "1000000",
+          "example": "1300273807",
           "member": "int64",
           "name": "AppID",
           "output_required": false,
@@ -1974,7 +1994,7 @@
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "1000000",
+          "example": "700001136234",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -1984,7 +2004,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-1010101",
+          "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,
@@ -1994,7 +2014,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "aga-1010101",
+          "example": "aga-41d42939",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -2004,7 +2024,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "name01",
+          "example": "测试agentApp",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -2014,7 +2034,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "description……",
+          "example": "description 01",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -2034,7 +2054,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "2025-07-11 15:18:09",
+          "example": "2025-12-28T00:55:30.53Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -2044,7 +2064,7 @@
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "2025-07-11 15:18:09",
+          "example": "2025-12-28T00:55:30.53Z",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -2064,7 +2084,7 @@
         {
           "disabled": false,
           "document": "apiKeys列表，脱敏",
-          "example": "[\"lsk-*************010\"]",
+          "example": "[\"SK******************************DF\"]",
           "member": "string",
           "name": "ApiKeys",
           "output_required": false,
@@ -2110,6 +2130,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的模型服务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ModelServicesNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2150,8 +2180,26 @@
         },
         {
           "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID数组",
+          "example": "[\"aga-xxxxxxxx\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "实例ID",
-          "example": "ins-010101",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -2160,7 +2208,7 @@
         {
           "disabled": false,
           "document": "notID列表",
-          "example": "[\"aga-010101\"]",
+          "example": "[\"aga-xxxxxxxx\"]",
           "member": "string",
           "name": "NotIDs",
           "required": false,
@@ -2177,30 +2225,12 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "关键词",
           "example": "key",
           "member": "string",
           "name": "Keyword",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务ID数组",
-          "example": "[\"aga-010101\"]",
-          "member": "string",
-          "name": "IDs",
-          "required": false,
-          "type": "list"
         },
         {
           "disabled": false,
@@ -2214,7 +2244,7 @@
         {
           "disabled": true,
           "document": "关联的mcp",
-          "example": "mcp-01010101",
+          "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "McpServerID",
           "required": false,
@@ -2223,7 +2253,7 @@
         {
           "disabled": true,
           "document": "没有关联的mcp",
-          "example": "mcp-01010101",
+          "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "NotMcpServerID",
           "required": false,
@@ -2241,7 +2271,7 @@
         {
           "disabled": false,
           "document": "凭据ID",
-          "example": "agc-01010101",
+          "example": "agc-xxxxxxxx",
           "member": "string",
           "name": "AgentCredentialID",
           "required": false,
@@ -2346,7 +2376,7 @@
         {
           "disabled": false,
           "document": "租户应用ID",
-          "example": "1000000000",
+          "example": "1300273807",
           "member": "int64",
           "name": "AppID",
           "output_required": false,
@@ -2356,7 +2386,7 @@
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "1000000000",
+          "example": "700001136234",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -2366,7 +2396,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-0101010",
+          "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,
@@ -2376,7 +2406,7 @@
         {
           "disabled": false,
           "document": "凭据ID",
-          "example": "agc-0101010",
+          "example": "agc-4440aa1d",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -2386,7 +2416,7 @@
         {
           "disabled": false,
           "document": "凭据名称",
-          "example": "name01",
+          "example": "pingju",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -2406,7 +2436,7 @@
         {
           "disabled": false,
           "document": "关联应用数",
-          "example": "10",
+          "example": "0",
           "member": "int64",
           "name": "RelateAgentAppNum",
           "output_required": false,
@@ -2416,12 +2446,22 @@
         {
           "disabled": false,
           "document": "关联mcp数",
-          "example": "10",
+          "example": "0",
           "member": "int64",
           "name": "RelateMcpServerNum",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联模型数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RelateModelNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2436,7 +2476,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "2025-07-11 15:18:09",
+          "example": "2025-08-07T10:06:37.246Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -2446,7 +2486,7 @@
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "2025-07-11 15:18:09",
+          "example": "2025-08-07T10:06:37.246Z",
           "member": "string",
           "name": "LastUpdateTime",
           "output_required": false,
@@ -2839,7 +2879,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -2848,7 +2888,7 @@
         {
           "disabled": false,
           "document": "mcp server ID",
-          "example": "无",
+          "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -2885,7 +2925,7 @@
         {
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ins-xxxxxxxx",
+          "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,
@@ -2895,7 +2935,7 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testname",
+          "example": "testmcp",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -2915,7 +2955,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testdesc",
+          "example": "testmcp",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -2925,7 +2965,7 @@
         {
           "disabled": false,
           "document": "标签ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"lab-xxxxxxxx\"]",
+          "example": "[\"01010\"]",
           "member": "string",
           "name": "LabelIDs",
           "output_required": false,
@@ -2935,7 +2975,7 @@
         {
           "disabled": false,
           "document": "目录ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"cat-xxxxxxxx\"]",
+          "example": "[\"01010\"]",
           "member": "string",
           "name": "CategoryIDs",
           "output_required": false,
@@ -3005,7 +3045,7 @@
         {
           "disabled": false,
           "document": "目标路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/sse",
+          "example": "/",
           "member": "string",
           "name": "TargetPath",
           "output_required": false,
@@ -3055,7 +3095,7 @@
         {
           "disabled": false,
           "document": "IP黑名单开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "IpBlackStatus",
           "output_required": false,
@@ -3075,7 +3115,7 @@
         {
           "disabled": false,
           "document": "mcp server ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "mcp-010101",
+          "example": "mcp-2fc41d77",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -3095,7 +3135,7 @@
         {
           "disabled": false,
           "document": "预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://aaa.com",
+          "example": "http://1.1.1.1/",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -3135,7 +3175,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-07-10",
+          "example": "2025-08-07T09:55:58.696Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -3145,7 +3185,7 @@
         {
           "disabled": false,
           "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-07-10",
+          "example": "2025-12-04T06:07:53.241Z",
           "member": "string",
           "name": "LastUpdateTime",
           "output_required": false,
@@ -3155,7 +3195,7 @@
         {
           "disabled": false,
           "document": "用户appID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "101010101",
+          "example": "1300273807",
           "member": "int64",
           "name": "AppID",
           "output_required": false,
@@ -3165,7 +3205,7 @@
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "101010101",
+          "example": "700001136234",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -3175,7 +3215,7 @@
         {
           "disabled": false,
           "document": "自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test.com",
+          "example": "default",
           "member": "string",
           "name": "CustomHttpHost",
           "output_required": false,
@@ -3195,7 +3235,7 @@
         {
           "disabled": false,
           "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "60",
           "member": "uint64",
           "name": "Timeout",
           "output_required": false,
@@ -3205,7 +3245,7 @@
         {
           "disabled": false,
           "document": "mcp server模式",
-          "example": "proxy",
+          "example": "wrap",
           "member": "string",
           "name": "Mode",
           "output_required": false,
@@ -3225,7 +3265,7 @@
         {
           "disabled": false,
           "document": "封装模式下绑定的服务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"ee\"]",
+          "example": "[\"svr-7e7f07e8\"]",
           "member": "string",
           "name": "WrapServices",
           "output_required": false,
@@ -3235,7 +3275,7 @@
         {
           "disabled": false,
           "document": "工具数量",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "ToolNum",
           "output_required": false,
@@ -3275,7 +3315,7 @@
         {
           "disabled": false,
           "document": "后端mcp服务是否正常",
-          "example": "err",
+          "example": "error",
           "member": "string",
           "name": "ToolMessage",
           "output_required": false,
@@ -3295,7 +3335,7 @@
         {
           "disabled": false,
           "document": "封装的API分组ID",
-          "example": "app-xxxxxxxx",
+          "example": "app-be27914b",
           "member": "string",
           "name": "WrapPaasID",
           "output_required": false,
@@ -3305,7 +3345,7 @@
         {
           "disabled": false,
           "document": "关联的agentApp数量",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "RelateAgentAppNum",
           "output_required": false,
@@ -3339,8 +3379,17 @@
         },
         {
           "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "实例ID",
-          "example": "ins-010101",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -3366,15 +3415,6 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "关键词",
           "example": "filter",
           "member": "string",
@@ -3385,7 +3425,7 @@
         {
           "disabled": false,
           "document": "服务ID数组",
-          "example": "[\"mcp-01010101\"]",
+          "example": "[\"mcp-xxxxxxxx\"]",
           "member": "string",
           "name": "IDs",
           "required": false,
@@ -3403,7 +3443,7 @@
         {
           "disabled": false,
           "document": "绑定的安全规则ID",
-          "example": "mc-0101010",
+          "example": "mc-xxxxxxxx",
           "member": "string",
           "name": "McpSecurityRuleID",
           "required": false,
@@ -3412,7 +3452,7 @@
         {
           "disabled": false,
           "document": "没有绑定的安全规则ID",
-          "example": "mc-0101010",
+          "example": "mc-xxxxxxxx",
           "member": "string",
           "name": "NotMcpSecurityRuleID",
           "required": false,
@@ -3429,8 +3469,8 @@
         },
         {
           "disabled": false,
-          "document": "排除服务ID数组",
-          "example": "[\"mcp-01010101\"]",
+          "document": "排除ID数组",
+          "example": "[\"mcp-xxxxxxxx\"]",
           "member": "string",
           "name": "NotIDs",
           "required": false,
@@ -3439,7 +3479,7 @@
         {
           "disabled": true,
           "document": "应用id",
-          "example": "aga-dbe4d418",
+          "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "AgentAppID",
           "required": false,
@@ -3448,7 +3488,7 @@
         {
           "disabled": false,
           "document": "已绑定插件id",
-          "example": "plg-093e25ca",
+          "example": "plg-xxxxxxxx",
           "member": "string",
           "name": "PluginID",
           "required": false,
@@ -3457,7 +3497,7 @@
         {
           "disabled": false,
           "document": "未绑定插件id",
-          "example": "plg-093e25ca",
+          "example": "plg-xxxxxxxx",
           "member": "string",
           "name": "ExcludedPluginID",
           "required": false,
@@ -3494,7 +3534,7 @@
         {
           "disabled": false,
           "document": "条目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -3520,7 +3560,7 @@
         {
           "disabled": false,
           "document": "请求token消耗",
-          "example": "0",
+          "example": "4008",
           "member": "int64",
           "name": "ReqTokens",
           "output_required": false,
@@ -3530,7 +3570,7 @@
         {
           "disabled": false,
           "document": "响应token消耗",
-          "example": "0",
+          "example": "2000",
           "member": "int64",
           "name": "ResTokens",
           "output_required": false,
@@ -3540,7 +3580,7 @@
         {
           "disabled": false,
           "document": "总的token消耗",
-          "example": "0",
+          "example": "3000",
           "member": "int64",
           "name": "TotalTokens",
           "output_required": false,
@@ -3550,7 +3590,7 @@
         {
           "disabled": false,
           "document": "请求总量",
-          "example": "0",
+          "example": "5",
           "member": "int64",
           "name": "ReqCount",
           "output_required": false,
@@ -3566,7 +3606,7 @@
         {
           "disabled": false,
           "document": "日期时间戳，秒",
-          "example": "1764518400000",
+          "example": "1768900560000",
           "member": "int64",
           "name": "Time",
           "output_required": false,
@@ -3576,7 +3616,7 @@
         {
           "disabled": false,
           "document": "请求消耗token数",
-          "example": "0",
+          "example": "2000",
           "member": "int64",
           "name": "ReqTokens",
           "output_required": false,
@@ -3586,7 +3626,7 @@
         {
           "disabled": false,
           "document": "响应消耗token数",
-          "example": "0",
+          "example": "4000",
           "member": "int64",
           "name": "ResTokens",
           "output_required": false,
@@ -3596,7 +3636,7 @@
         {
           "disabled": false,
           "document": "总体消耗token数",
-          "example": "0",
+          "example": "6000",
           "member": "int64",
           "name": "TotalTokens",
           "output_required": false,
@@ -3606,7 +3646,7 @@
         {
           "disabled": false,
           "document": "请求总量",
-          "example": "0",
+          "example": "2",
           "member": "int64",
           "name": "ReqCount",
           "output_required": false,
@@ -3622,7 +3662,7 @@
         {
           "disabled": false,
           "document": "实例",
-          "example": "ins-a7af1980",
+          "example": "ins-730f7211",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -3631,7 +3671,7 @@
         {
           "disabled": false,
           "document": "开始时间戳，毫秒",
-          "example": "1764518400000",
+          "example": "1768899600000",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -3640,7 +3680,7 @@
         {
           "disabled": false,
           "document": "结束时间戳，毫秒",
-          "example": "1767196799999",
+          "example": "1769072400000",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -3656,18 +3696,18 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "API分组ID列表",
-          "example": "[\"dex\"]",
+          "example": "[\"app-92952946\"]",
           "member": "string",
           "name": "PaasIDs",
           "required": false,
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "API ID列表",
-          "example": "[\"srv-0101\"]",
+          "example": "[\"svr-62245b3f\"]",
           "member": "string",
           "name": "ServiceIDs",
           "required": false,
@@ -3675,8 +3715,26 @@
         },
         {
           "disabled": false,
+          "document": "应用ID列表",
+          "example": "[\"aga-01010\"]",
+          "member": "string",
+          "name": "AgentAppIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型服务ID列表",
+          "example": "[\"mds-01010\"]",
+          "member": "string",
+          "name": "ModelServiceIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "模型ID列表",
-          "example": "[\"tar-0101\"]",
+          "example": "[\"mod-01010\"]",
           "member": "string",
           "name": "ModelIDs",
           "required": false,
@@ -3694,7 +3752,7 @@
         {
           "disabled": false,
           "document": "tmsCheck为true时，执行动作watch，intercept",
-          "example": "[\"watch\"]",
+          "example": "[\"intercept\"]",
           "member": "string",
           "name": "TmsActions",
           "required": false,
@@ -4094,7 +4152,7 @@
         {
           "disabled": false,
           "document": "ip数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Ips",
           "output_required": false,
@@ -4105,7 +4163,7 @@
         {
           "disabled": false,
           "document": "生效类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "always fixedTime",
+          "example": "always",
           "member": "string",
           "name": "EffectType",
           "output_required": false,
@@ -4127,7 +4185,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test_e",
           "member": "string",
           "name": "Comment",
           "output_required": false,
@@ -4144,7 +4202,7 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "string",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -4155,7 +4213,7 @@
         {
           "disabled": false,
           "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test_ee",
           "member": "string",
           "name": "Properties",
           "output_required": false,
@@ -4166,7 +4224,7 @@
         {
           "disabled": false,
           "document": "必填字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "Required",
           "output_required": false,
@@ -4177,7 +4235,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test_ee",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -4194,7 +4252,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "mr-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -4205,7 +4263,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "open",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -4499,7 +4557,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "msr-0101",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -4509,7 +4567,7 @@
         {
           "disabled": false,
           "document": "规则类型",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -4519,7 +4577,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -4529,7 +4587,7 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -4539,7 +4597,7 @@
         {
           "disabled": false,
           "document": "风险等级",
-          "example": "无",
+          "example": "low",
           "member": "string",
           "name": "RiskLevel",
           "output_required": false,
@@ -4549,7 +4607,7 @@
         {
           "disabled": false,
           "document": "版本号",
-          "example": "无",
+          "example": "2026010101",
           "member": "string",
           "name": "VersionNumber",
           "output_required": false,
@@ -4559,7 +4617,7 @@
         {
           "disabled": false,
           "document": "状态开关",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -4569,7 +4627,7 @@
         {
           "disabled": false,
           "document": "当前选择的处置动作",
-          "example": "无",
+          "example": "watch",
           "member": "string",
           "name": "Act",
           "output_required": false,
@@ -4579,7 +4637,7 @@
         {
           "disabled": false,
           "document": "支持的处置动作",
-          "example": "无",
+          "example": "[\"watch\"]",
           "member": "string",
           "name": "SupportActs",
           "output_required": false,
@@ -4589,7 +4647,7 @@
         {
           "disabled": false,
           "document": "内容类型",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "BodyType",
           "output_required": false,
@@ -4599,7 +4657,7 @@
         {
           "disabled": false,
           "document": "icon类型",
-          "example": "无",
+          "example": "data",
           "member": "string",
           "name": "IconType",
           "output_required": false,
@@ -4615,7 +4673,7 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "getUser",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -4626,7 +4684,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "getUser",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -4676,7 +4734,7 @@
         {
           "disabled": false,
           "document": "title for the tool\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "getUser",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -4687,7 +4745,7 @@
         {
           "disabled": false,
           "document": "If true, the tool does not modify its environment\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ReadOnlyHint",
           "output_required": false,
@@ -4698,7 +4756,7 @@
         {
           "disabled": false,
           "document": "If true, the tool may perform destructive updates\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DestructiveHint",
           "output_required": false,
@@ -4709,7 +4767,7 @@
         {
           "disabled": false,
           "document": "If true, repeated calls with same args have no additional effect\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IdempotentHint",
           "output_required": false,
@@ -4720,7 +4778,7 @@
         {
           "disabled": false,
           "document": "If true, tool interacts with external entities\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "OpenWorldHint",
           "output_required": false,
@@ -4737,7 +4795,7 @@
         {
           "disabled": false,
           "document": "sse访问URL",
-          "example": "无",
+          "example": "http://10.0.0.4/_llmsgw_/sse/aga-41d42939/mcp-2fc41d77",
           "member": "string",
           "name": "SSEUrl",
           "output_required": false,
@@ -4747,7 +4805,7 @@
         {
           "disabled": false,
           "document": "streamable访问URL",
-          "example": "无",
+          "example": "http://10.0.0.4/_llmsgw_/mcp/aga-2f812567/mcp-2fc41d77",
           "member": "string",
           "name": "StreamAbleUrl",
           "output_required": false,
@@ -4818,7 +4876,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-0101010",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -4827,7 +4885,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "aga-0101011",
+          "example": "aga-xxxxxxxx",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -4836,7 +4894,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "name01",
+          "example": "testname",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4845,7 +4903,7 @@
         {
           "disabled": false,
           "document": "OAuth2资源服务器ID",
-          "example": "ors-be1312ba",
+          "example": "ors-xxxxxxxx",
           "member": "string",
           "name": "OAuth2ResourceServerID",
           "required": false,
@@ -4970,7 +5028,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "鉴权方式：sign签名； none免鉴权",
           "example": "sign",
           "member": "string",
@@ -4979,7 +5037,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "签名方式：sha256 sm3",
           "example": "sha256",
           "member": "string",
@@ -5353,7 +5411,7 @@
         {
           "disabled": false,
           "document": "对象ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "mds-36d0b658",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -5369,7 +5427,7 @@
         {
           "disabled": false,
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "202512121212",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -5380,7 +5438,7 @@
         {
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "202601010101",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -5397,7 +5455,7 @@
         {
           "disabled": false,
           "document": "服务器\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10.1.2.3",
           "member": "string",
           "name": "Host",
           "output_required": false,
@@ -5408,7 +5466,7 @@
         {
           "disabled": false,
           "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Rank",
           "output_required": false,
@@ -5425,7 +5483,7 @@
         {
           "disabled": false,
           "document": "工具名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tool-test",
           "member": "string",
           "name": "ToolName",
           "output_required": false,
@@ -5436,7 +5494,7 @@
         {
           "disabled": false,
           "document": "是否开启限流配置",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
           "output_required": false,
@@ -5475,7 +5533,7 @@
         {
           "disabled": false,
           "document": "工具名称",
-          "example": "无",
+          "example": "toolName",
           "member": "string",
           "name": "ToolName",
           "output_required": false,
@@ -5485,7 +5543,7 @@
         {
           "disabled": false,
           "document": "是否开启限流配置",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
           "output_required": false,

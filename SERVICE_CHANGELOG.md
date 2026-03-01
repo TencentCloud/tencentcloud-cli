@@ -1,65 +1,10 @@
-# Release 3.0.1372.1
+# Release 3.0.1373.1
 
-## Agent 沙箱服务(ags) 版本：2025-09-20
+## 大模型安全网关(apis) 版本：2024-08-01
 
-### 第 7 次发布
+### 第 5 次发布
 
-发布时间：2026-02-27 01:07:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SandboxTool](http://document.tencentcloudapi.woa.com/document/product/1804/87854#SandboxTool)
-
-	* 新增成员：StatusReason
-
-
-
-
-## 应用性能监控(apm) 版本：2021-06-22
-
-### 第 25 次发布
-
-发布时间：2026-02-27 01:10:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeApmSQLInjectionDetail](http://document.tencentcloudapi.woa.com/document/product/1463/88904)
-
-
-
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
-
-### 第 74 次发布
-
-发布时间：2026-02-27 01:18:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeSourceMd5VerifyTasks
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* SourceMd5VerifyTask
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 154 次发布
-
-发布时间：2026-02-27 01:29:41
+发布时间：2026-03-02 01:10:03
 
 本次发布包含了以下内容：
 
@@ -67,18 +12,58 @@
 
 修改接口：
 
-* [ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1003/48096)
+* [DescribeTokenLogs](http://document.tencentcloudapi.woa.com/document/product/1805/88761)
 
-	* 新增入参：UniqVpcId, Vip, Vport
+	* 新增入参：AgentAppIDs, ModelServiceIDs
+
+* [ModifyMcpServer](http://document.tencentcloudapi.woa.com/document/product/1805/87898)
+
+
+修改数据结构：
+
+* [AgentAppMcpServerVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#AgentAppMcpServerVO)
+
+	* 新增成员：AgentAppID, McpServerID
+
+* [DescribeAgentAppResp](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeAgentAppResp)
+
+	* 新增成员：ModelServicesNum
+
+* [DescribeAgentCredentialResp](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeAgentCredentialResp)
+
+	* 新增成员：RelateModelNum
 
 
 
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 130 次发布
+### 第 50 次发布
 
-发布时间：2026-02-27 01:38:53
+发布时间：2026-03-02 01:32:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSlowLogUserHostStats](http://document.tencentcloudapi.woa.com/document/product/1130/57783)
+
+	* 新增入参：InstanceProxyId, Cmd
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 76 次发布
+
+发布时间：2026-03-02 02:14:40
 
 本次发布包含了以下内容：
 
@@ -86,50 +71,23 @@
 
 新增接口：
 
-* [DescribeEMREventList](http://document.tencentcloudapi.woa.com/document/product/589/88905)
+* [DescribeJobDetail](http://document.tencentcloudapi.woa.com/document/product/849/88909)
+* [DescribeMetricProxy](http://document.tencentcloudapi.woa.com/document/product/849/88908)
 
 新增数据结构：
 
-* [EMREventListItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#EMREventListItem)
+* [Condition](http://document.tencentcloudapi.woa.com/document/product/849/52010#Condition)
+* [DataPoint](http://document.tencentcloudapi.woa.com/document/product/849/52010#DataPoint)
+* [Dimension](http://document.tencentcloudapi.woa.com/document/product/849/52010#Dimension)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/849/52010#Instance)
 
 
 
 ## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
 
-### 第 52 次发布
+### 第 53 次发布
 
-发布时间：2026-02-27 02:04:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ClassInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#ClassInfo)
-
-	* 新增成员：State, ClassType
-
-* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/409/16778#DBInstance)
-
-	* 新增成员：DBInstanceStorageType, Category, DBInstanceClassType
-
-* [SpecItemInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#SpecItemInfo)
-
-	* 新增成员：State, ClassType
-
-
-
-
-## 容器服务(tke) 版本：2022-05-01
-
-
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 114 次发布
-
-发布时间：2026-02-27 02:18:46
+发布时间：2026-03-02 02:17:17
 
 本次发布包含了以下内容：
 
@@ -137,9 +95,46 @@
 
 修改接口：
 
-* [DescribeClusterEndpoints](http://document.tencentcloudapi.woa.com/document/product/457/76625)
+* [CloneDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/68071)
 
-	* 新增出参：IntranetSecurityGroup
+	* 新增入参：StorageType, Category
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/409/56107)
+
+	* 新增入参：StorageType, Category
+
+* [CreateReadOnlyDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/52602)
+
+	* 新增入参：StorageType, Category
+
+* [DescribeClasses](http://document.tencentcloudapi.woa.com/document/product/409/77295)
+
+	* 新增入参：State, ClassType
+
+* [DescribeProductConfig](http://document.tencentcloudapi.woa.com/document/product/409/16776)
+
+	* 新增入参：State, ClassType
+
+* [InquiryPriceCreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/409/16777)
+
+	* 新增入参：StorageType, Category, DBNodeNum
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 122 次发布
+
+发布时间：2026-03-02 02:35:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [VoiceClone](http://document.tencentcloudapi.woa.com/document/product/647/87563)
 
 
 

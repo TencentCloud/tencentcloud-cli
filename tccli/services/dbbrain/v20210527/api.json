@@ -7058,7 +7058,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -7067,8 +7067,8 @@
         },
         {
           "disabled": false,
-          "document": "查询范围的开始时间，时间格式如：2019-09-10 12:13:14。",
-          "example": "2019-09-10 12:13:14",
+          "document": "查询范围的开始时间，格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"。",
+          "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -7076,8 +7076,8 @@
         },
         {
           "disabled": false,
-          "document": "查询范围的结束时间，时间格式如：2019-09-10 12:13:14。",
-          "example": "2019-09-10 12:13:14",
+          "document": "查询范围的结束时间，格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"。",
+          "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -7100,6 +7100,24 @@
           "name": "Md5",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅Redis产品使用；实例Proxy ID。",
+          "example": "ca7848437614df37a3365afaeb98dcf9baaae983",
+          "member": "string",
+          "name": "InstanceProxyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅Redis产品使用；命令。",
+          "example": "set",
+          "member": "string",
+          "name": "Cmd",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7120,7 +7138,7 @@
         {
           "disabled": false,
           "document": "各来源地址的慢日志占比详情列表。",
-          "example": "[{\"UserHost\":\"xx.xx.xx.xx\",\"Ratio\":100,\"Count\":1}]",
+          "example": "无",
           "member": "SlowLogHost",
           "name": "Items",
           "output_required": true,
@@ -7130,7 +7148,7 @@
         {
           "disabled": false,
           "document": "各来源用户名的慢日志占比详情列表。",
-          "example": "[{\"UserName\":\"test\",\"Ratio\":100,\"Count\":1}]",
+          "example": "无",
           "member": "SlowLogUser",
           "name": "UserNameItems",
           "output_required": true,

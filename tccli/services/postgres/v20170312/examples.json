@@ -92,16 +92,16 @@
         "title": "创建12.4版本的PostgreSQL实例"
       },
       {
-        "document": "创建内核版本号为v12.4_r1.0版本的PostgreSQL实例",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"InstanceCount\": 1,\n    \"AutoRenewFlag\": 1,\n    \"AdminName\": \"test2313\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"AdminPassword\": \" xxxxxxx\",\n    \"Charset\": \"UTF8\",\n    \"Storage\": 10,\n    \"Period\": 1,\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"DBKernelVersion\": \"v12.4_r1.0\",\n    \"DBEngine\": \"postgresql\",\n    \"InstanceChargeType\": \"prepaid\",\n    \"AutoVoucher\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxxx\"\n        ],\n        \"BillId\": \"20181225711000768276476\"\n    }\n}",
-        "title": "创建指定内核版本号的PostgreSQL实例"
-      },
-      {
         "document": "创建12版本中最新内核版本的PostgreSQL实例（跨可用区）",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"InstanceCount\": 1,\n    \"AutoRenewFlag\": 1,\n    \"DBMajorVersion\": \"12\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"AdminPassword\": \" xxxxxxx\",\n    \"Charset\": \"UTF8\",\n    \"Storage\": 10,\n    \"Period\": 1,\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"InstanceChargeType\": \"prepaid\",\n    \"AutoVoucher\": 0,\n    \"DBNodeSet\": [\n        {\n            \"Role\": \"Standby\",\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        {\n            \"Role\": \"Primary\",\n            \"Zone\": \"ap-guangzhou-2\"\n        }\n    ],\n    \"AdminName\": \"test2313\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxxx\"\n        ],\n        \"BillId\": \"20181225711000768276479\"\n    }\n}",
         "title": "创建12版本中最新内核版本的PostgreSQL实例"
+      },
+      {
+        "document": "创建内核版本号为v12.4_r1.0版本的PostgreSQL实例",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"InstanceCount\": 1,\n    \"AutoRenewFlag\": 1,\n    \"AdminName\": \"test2313\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"AdminPassword\": \" xxxxxxx\",\n    \"Charset\": \"UTF8\",\n    \"Storage\": 10,\n    \"Period\": 1,\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"DBKernelVersion\": \"v12.4_r1.0\",\n    \"DBEngine\": \"postgresql\",\n    \"InstanceChargeType\": \"prepaid\",\n    \"AutoVoucher\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxxx\"\n        ],\n        \"BillId\": \"20181225711000768276476\"\n    }\n}",
+        "title": "创建指定内核版本号的PostgreSQL实例"
       }
     ],
     "CreateParameterTemplate": [
@@ -114,16 +114,16 @@
     ],
     "CreateReadOnlyDBInstance": [
       {
-        "document": "创建只读实例，指定主实例为postgres-abcdef，只校验不实际发起创建",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyDBInstance\n<公共请求参数>\n\n{\n    \"DBVersion\": \"12.22\",\n    \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n    \"InstanceCount\": 1,\n    \"MasterDBInstanceId\": \"postgres-abcdef\",\n    \"Period\": 1,\n    \"ProjectId\": 1,\n    \"ReadOnlyGroupId\": \"\",\n    \"SecurityGroupIds\": [\n        \"sg-iwnfp51z\"\n    ],\n    \"SpecCode\": \"pg.it.small2\",\n    \"Storage\": 100,\n    \"SubnetId\": \"subnet-1i9huswn\",\n    \"VpcId\": \"vpc-8btfafeo\",\n    \"Zone\": \"ap-beijing-4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BillId\": \"\",\n        \"DBInstanceIdSet\": [],\n        \"DealNames\": [],\n        \"RequestId\": \"e0726ee5-3f5f-414c-9976-17e94dd0023e\"\n    }\n}",
-        "title": "创建只读实例，使用校验模式"
-      },
-      {
         "document": "创建只读实例，指定主实例为postgres-abcdef，实际发起创建",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyDBInstance\n<公共请求参数>\n\n{\n    \"DBVersion\": \"12.22\",\n    \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n    \"InstanceCount\": 1,\n    \"MasterDBInstanceId\": \"postgres-abcdef\",\n    \"Period\": 1,\n    \"ProjectId\": 1,\n    \"ReadOnlyGroupId\": \"\",\n    \"SecurityGroupIds\": [\n        \"sg-iwnfp51z\"\n    ],\n    \"SpecCode\": \"pg.it.small2\",\n    \"Storage\": 100,\n    \"SubnetId\": \"subnet-1i9huswn\",\n    \"VpcId\": \"vpc-8btfafeo\",\n    \"Zone\": \"ap-beijing-4\"\n}",
         "output": "{\n    \"Response\": {\n        \"BillId\": \"2701077795\",\n        \"DBInstanceIdSet\": [],\n        \"DealNames\": [\n            \"20251009929109544409421\"\n        ],\n        \"RequestId\": \"f3b13348-be76-4631-8d2f-0c8da1e07958\"\n    }\n}",
         "title": "创建只读实例"
+      },
+      {
+        "document": "创建只读实例，指定主实例为postgres-abcdef，只校验不实际发起创建",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyDBInstance\n<公共请求参数>\n\n{\n    \"DBVersion\": \"12.22\",\n    \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n    \"InstanceCount\": 1,\n    \"MasterDBInstanceId\": \"postgres-abcdef\",\n    \"Period\": 1,\n    \"ProjectId\": 1,\n    \"ReadOnlyGroupId\": \"\",\n    \"SecurityGroupIds\": [\n        \"sg-iwnfp51z\"\n    ],\n    \"SpecCode\": \"pg.it.small2\",\n    \"Storage\": 100,\n    \"SubnetId\": \"subnet-1i9huswn\",\n    \"VpcId\": \"vpc-8btfafeo\",\n    \"Zone\": \"ap-beijing-4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BillId\": \"\",\n        \"DBInstanceIdSet\": [],\n        \"DealNames\": [],\n        \"RequestId\": \"e0726ee5-3f5f-414c-9976-17e94dd0023e\"\n    }\n}",
+        "title": "创建只读实例，使用校验模式"
       }
     ],
     "CreateReadOnlyGroup": [

@@ -202,6 +202,14 @@
         "title": "查询作业配置"
       }
     ],
+    "DescribeJobDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobDetail\n<公共请求参数>\n\n{\n    \"JobSerialId\": \"cql-2xvd\",\n    \"Path\": \"/overview\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"099s-xset-xasd-x2sd\",\n        \"Data\": \"{\\\"taskmanagers\\\":1,\\\"slots-total\\\":1,\\\"slots-available\\\":0,\\\"jobs-running\\\":1,\\\"jobs-finished\\\":0,\\\"jobs-cancelled\\\":0,\\\"jobs-failed\\\":0,\\\"flink-version\\\":\\\"1.13.6\\\",\\\"flink-commit\\\":\\\"9cfdad4\\\"}\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeJobEvents": [
       {
         "document": "请求参数不包含 \"RunningOrderIds\"时，接口为查询作业事件接口",
@@ -252,6 +260,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"AppId\": 1257048945,\n                \"ClusterId\": \"cluster-5c43n3a5\",\n                \"ClusterName\": \"cluster-test\",\n                \"ClusterStatus\": 2,\n                \"CreateTime\": \"2023-11-20 15:19:57\",\n                \"CreatorUin\": \"100032489761\",\n                \"CuMem\": 4,\n                \"CurrentRunMillis\": 0,\n                \"FlinkVersion\": \"Flink-1.13\",\n                \"JobId\": \"cql-e92rh2pb\",\n                \"JobType\": 1,\n                \"LastOpResult\": \"\",\n                \"LatestJobConfigVersion\": 0,\n                \"Name\": \"create_job_test\",\n                \"OwnerUin\": \"100006376216\",\n                \"PublishedJobConfigVersion\": -1,\n                \"Region\": \"ap-guangzhou\",\n                \"Remark\": \"\",\n                \"RunningCu\": 0,\n                \"RunningCuNum\": 0,\n                \"SchedulerType\": 2,\n                \"StartTime\": \"2025-11-11 11:11:11\",\n                \"Status\": 1,\n                \"StatusDesc\": \"create\",\n                \"StopTime\": \"2025-11-11 11:11:11\",\n                \"Tags\": null,\n                \"TotalRunMillis\": 0,\n                \"UpdateTime\": \"2023-11-20 15:19:57\",\n                \"WebUIUrl\": \"\",\n                \"WorkSpaceId\": \"space-53rek422\",\n                \"WorkSpaceName\": \"name\",\n                \"Zone\": \"ap-guangzhou-7\"\n            }\n        ],\n        \"RequestId\": \"ac6a62a7-45f1-4066-963d-eabea0f2824d\",\n        \"TotalCount\": 5\n    }\n}",
         "title": "查询作业"
+      }
+    ],
+    "DescribeMetricProxy": [
+      {
+        "document": "setats集群查找指标信息",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetricProxy\n<公共请求参数>\n\n{\n    \"Namespace\": \"QCE/CVM\",\n    \"MetricName\": \"CpuUsage\",\n    \"Period\": 300,\n    \"StartTime\": \"2026-01-27 10:00:29\",\n    \"EndTime\": \"2026-01-27 11:00:29\",\n    \"ClusterId\": \"cluster-25jtjt3p\",\n    \"MetricType\": \"setats\",\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceId \",\n            \"Values\": [\n                \"ins-09oy8c32\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AdditionalInfo\": \"eyJJbnN0YW5jZU1hcCI6eyJpbnMtMDlveThjMzIiOiJzZXRhdHMtd29ya2VyIiwiaW5zLTM2cThlNjlzIjoic2V0YXRzLXdvcmtlciIsImlucy1pb2ZrcDEyZSI6InNldGF0cy1tYW5hZ2VyIiwiaW5zLXA5ZjBhaXVjIjoic2V0YXRzLXdvcmtlciJ9fQ==\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"ins-09oy8c32\"\n                    }\n                ]\n            }\n        ],\n        \"EndTime\": \"2026-01-27 11:00:00\",\n        \"MetricName\": \"CpuUsage\",\n        \"Period\": 300,\n        \"StartTime\": \"2026-01-27 10:00:00\",\n        \"RequestId\": \"b9439958-f460-4213-9612-03919a895665\"\n    }\n}",
+        "title": "setats集群查找指标信息"
       }
     ],
     "DescribeResourceConfigs": [

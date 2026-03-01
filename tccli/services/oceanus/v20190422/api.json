@@ -161,6 +161,13 @@
       "output": "DescribeJobConfigsResponse",
       "status": "online"
     },
+    "DescribeJobDetail": {
+      "document": "显示flink作业的Dag图，以及算子、subtask等信息",
+      "input": "DescribeJobDetailRequest",
+      "name": "显示作业详情",
+      "output": "DescribeJobDetailResponse",
+      "status": "online"
+    },
     "DescribeJobEvents": {
       "document": "请求参数不包含 \"RunningOrderIds\"时，接口获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型;请求参数不包含 \"RunningOrderIds\"时，接口为查询作业实例ID接口,获取作业实例",
       "input": "DescribeJobEventsRequest",
@@ -194,6 +201,13 @@
       "input": "DescribeJobsRequest",
       "name": "查询作业",
       "output": "DescribeJobsResponse",
+      "status": "online"
+    },
+    "DescribeMetricProxy": {
+      "document": "特殊需要调用云观测平台接口获取的指标接口",
+      "input": "DescribeMetricProxyRequest",
+      "name": "DescribeMetricProxy",
+      "output": "DescribeMetricProxyResponse",
       "status": "online"
     },
     "DescribeResourceConfigs": {
@@ -1649,6 +1663,45 @@
       ],
       "usage": "out"
     },
+    "Condition": {
+      "document": "指标查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定监控条件</p>",
+          "example": "Region",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定监控条件</p>",
+          "example": "in",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定监控条件</p>",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Connectors": {
       "document": "解析Connector",
       "members": [
@@ -2932,6 +2985,42 @@
       ],
       "type": "object"
     },
+    "DataPoint": {
+      "document": "指标维度信息和指标数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteFoldersRequest": {
       "document": "DeleteFolders请求参数结构体",
       "members": [
@@ -3583,6 +3672,61 @@
       ],
       "type": "object"
     },
+    "DescribeJobDetailRequest": {
+      "document": "DescribeJobDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flink rest api 路径",
+          "example": "/overview",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业id",
+          "example": "cql-1sxcv",
+          "member": "string",
+          "name": "JobSerialId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求rest api 方法",
+          "example": "Get",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobDetailResponse": {
+      "document": "DescribeJobDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flink rest api 响应",
+          "example": "{\"taskmanagers\":1,\"slots-total\":1,\"slots-available\":0,\"jobs-running\":1,\"jobs-finished\":0,\"jobs-cancelled\":0,\"jobs-failed\":0,\"flink-version\":\"1.13.6\",\"flink-commit\":\"9cfdad4\"}",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJobEventsRequest": {
       "document": "DescribeJobEvents请求参数结构体",
       "members": [
@@ -4094,6 +4238,202 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricProxyRequest": {
+      "document": "DescribeMetricProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命名空间名称</p>",
+          "example": "\"space-name\"",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标名称</p>",
+          "example": "\"CpuUseRate\"",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计周期</p>",
+          "example": "300",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2018-09-22T19:20:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2018-09-22T19:20:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目id</p>",
+          "example": "\"1486804694126882816\"",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>特殊查询调用指标</p>",
+          "example": "sentas",
+          "member": "string",
+          "name": "MetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>特殊值</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpecifyStatistics",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例值</p>",
+          "example": "无",
+          "member": "Instance",
+          "name": "Instances",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>监控数据类型</p><p>枚举值：</p><ul><li>tke： 查询tke指标</li></ul>",
+          "example": "tke",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询监控数据的条件</p>",
+          "example": "无",
+          "member": "Condition",
+          "name": "Conditions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricProxyResponse": {
+      "document": "DescribeMetricProxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指标名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CpuUseRate",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计周期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-22T19:20:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-22T20:20:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataPoint",
+          "name": "DataPoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例信息base64加密</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"eyJpbnMtOWZoNHJudnYiOiJzZXRhdHMtd29ya2VyIiwiaW5zLWdmeXN4bmhoIjoic2V0YXRzLXdvcmtlciIsImlucy1oemdnNGtwNSI6InNldGF0cy1tYW5hZ2VyIn0=\"",
+          "member": "string",
+          "name": "AdditionalInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4943,6 +5283,34 @@
       ],
       "type": "object"
     },
+    "Dimension": {
+      "document": "指标维度数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jobId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cql-xxxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ExpertModeConfiguration": {
       "document": "作业配置 -- 专家模式的详细配置",
       "members": [
@@ -5398,6 +5766,23 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Instance": {
+      "document": "实例维度组合数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度组合数组",
+          "example": "[ ]",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
