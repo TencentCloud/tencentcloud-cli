@@ -920,6 +920,14 @@
         "title": "权限点"
       }
     ],
+    "GetUserCosBucketsInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUserCosBucketsInfo\n<公共请求参数>\n\n{\n    \"UsedFor\": \"volume\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BucketsInfo\": [\n            {\n                \"BucketName\": \"dlc38a3-700002237358-1767681051-700002274418-251440277\",\n                \"BucketStatus\": \"bind\",\n                \"CreateTime\": 1767681051,\n                \"Description\": \"used_for_tclake_lakehouse\",\n                \"EntrustAccountUin\": \"700002274418\",\n                \"ModifyTime\": 1767681109,\n                \"NameSpace\": \"lakehouse\",\n                \"ProjectId\": \"tclake\",\n                \"Region\": \"ap-guangzhou\",\n                \"Summary\": \"\",\n                \"UserAppId\": \"260076791\",\n                \"UserUin\": \"700002237358\"\n            }\n        ],\n        \"RequestId\": \"29e71a1b-d164-4f8f-9428-b4293306c5d1\"\n    }\n}",
+        "title": "GetUserCosBucketsInfo调用实例"
+      }
+    ],
     "GrantPermissionToRole": [
       {
         "document": "添加权限",

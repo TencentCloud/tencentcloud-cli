@@ -26,6 +26,7 @@ Output:
             "QosLevel": "PT",
             "State": "AVAILABLE",
             "InstanceChargeType": "POSTPAID",
+            "InstanceMeteringType": "BANDWIDTH",
             "BandwidthLimitType": "OUTER_REGION_LIMIT",
             "CreateTime": "2020-09-22 00:00:00",
             "RouteTableFlag": true,

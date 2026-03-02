@@ -1151,7 +1151,7 @@
     "UpdateOpsTriggerTasksOwner": {
       "document": "查询任务执行详情",
       "input": "UpdateOpsTriggerTasksOwnerRequest",
-      "name": "修改任务责任人",
+      "name": "修改工作流调度任务责任人",
       "output": "UpdateOpsTriggerTasksOwnerResponse",
       "status": "online"
     },

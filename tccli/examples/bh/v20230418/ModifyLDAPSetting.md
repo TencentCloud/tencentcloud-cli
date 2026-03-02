@@ -17,7 +17,7 @@ tccli bh ModifyLDAPSetting --cli-unfold-argument  \
     --SyncAll True \
     --EnableSSL True \
     --AttributeRealName attrRealName \
-    --SyncUnitSet  \
+    --SyncUnitSet ou=GGG,dc=my-domain,dc=com \
     --IpBackup  \
     --AttributeUser user \
     --AttributeUserName testusername \

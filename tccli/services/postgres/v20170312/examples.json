@@ -634,6 +634,14 @@
         "title": "解隔离实例"
       }
     ],
+    "ExecuteDBBrainQuery": [
+      {
+        "document": "用于DBBrain侧获取实例相关数据的SQL执行",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteDBBrainQuery\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-nv3mfnkx\",\n    \"SqlNo\": 31,\n    \"NodeRole\": \"master\",\n    \"Args\": [\n        \"10\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"datname\",\n            \"Values\": [\n                \"postgres\"\n            ],\n            \"Operate\": \"not_eq\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"Message\": \"Success\",\n        \"Names\": [],\n        \"RequestId\": \"4360d27d-8161-4f2f-b50e-573121ecc762\"\n    }\n}",
+        "title": "执行DBBrain查询SQL"
+      }
+    ],
     "InquiryPriceCreateDBInstances": [
       {
         "document": "查询实例的售卖价格",
