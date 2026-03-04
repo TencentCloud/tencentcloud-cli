@@ -8,11 +8,11 @@
       "status": "online"
     },
     "CreateCorpTag": {
-      "document": "该接口用户设置标签库, 每个企业最多可配置3000个企业标签。",
+      "document": "产品已EOL\n\n该接口用户设置标签库, 每个企业最多可配置3000个企业标签。",
       "input": "CreateCorpTagRequest",
       "name": "新增标签库接口",
       "output": "CreateCorpTagResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateLead": {
       "document": "线索回收接口",

@@ -7,6 +7,13 @@
       "output": "ActivateHardwareResponse",
       "status": "online"
     },
+    "AddApplication": {
+      "document": "新建应用",
+      "input": "AddApplicationRequest",
+      "name": "新建应用",
+      "output": "AddApplicationResponse",
+      "status": "online"
+    },
     "AddDevice": {
       "document": "新建设备记录",
       "input": "AddDeviceRequest",
@@ -42,6 +49,13 @@
       "output": "CreateEncryptedKeyResponse",
       "status": "online"
     },
+    "DeleteApplication": {
+      "document": "删除应用",
+      "input": "DeleteApplicationRequest",
+      "name": "删除应用",
+      "output": "DeleteApplicationResponse",
+      "status": "online"
+    },
     "DeleteDevice": {
       "document": "删除设备信息",
       "input": "DeleteDeviceRequest",
@@ -75,6 +89,13 @@
       "input": "GetActiveDeviceCountRequest",
       "name": "活跃设备数量统计",
       "output": "GetActiveDeviceCountResponse",
+      "status": "online"
+    },
+    "GetApplication": {
+      "document": "应用查询",
+      "input": "GetApplicationRequest",
+      "name": "获取应用信息",
+      "output": "GetApplicationResponse",
       "status": "online"
     },
     "GetDestIPByName": {
@@ -278,6 +299,20 @@
       "input": "SetNotifyUrlRequest",
       "name": "设置用户流量告警信息",
       "output": "SetNotifyUrlResponse",
+      "status": "online"
+    },
+    "UpdateApplicationInfo": {
+      "document": "更新应用信息",
+      "input": "UpdateApplicationInfoRequest",
+      "name": "更新应用信息",
+      "output": "UpdateApplicationInfoResponse",
+      "status": "online"
+    },
+    "UpdateApplicationKey": {
+      "document": "更新应用密钥",
+      "input": "UpdateApplicationKeyRequest",
+      "name": "更新应用密钥",
+      "output": "UpdateApplicationKeyResponse",
       "status": "online"
     },
     "UpdateDevice": {
@@ -519,6 +554,90 @@
         }
       ],
       "usage": "out"
+    },
+    "AddApplicationRequest": {
+      "document": "AddApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新建应用的应用名",
+          "example": "application1",
+          "member": "string",
+          "name": "MpApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新建设备的备注",
+          "example": "game",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新建应用的base64密钥字符串，非必选，如果不填写则由系统自动生成",
+          "example": "dasdfrfwer32e4r",
+          "member": "string",
+          "name": "MpApplicationKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。不填默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）",
+          "example": "0",
+          "member": "int64",
+          "name": "AccessScope",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddApplicationResponse": {
+      "document": "AddApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "mna-w795bzezug",
+          "member": "string",
+          "name": "MpApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经过加密算法加密后的base64格式密钥",
+          "example": "dasdfrfwer32e4r",
+          "member": "string",
+          "name": "MpApplicationKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "application1",
+          "member": "string",
+          "name": "MpApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AddDeviceRequest": {
       "document": "AddDevice请求参数结构体",
@@ -823,6 +942,48 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DelApplicationList": {
+      "document": "应用id列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "mna-w795bzezug",
+          "member": "string",
+          "name": "MpApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteApplicationRequest": {
+      "document": "DeleteApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id列表",
+          "example": "无",
+          "member": "DelApplicationList",
+          "name": "MpApplicationIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationResponse": {
+      "document": "DeleteApplication返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1750,6 +1911,83 @@
           "name": "AppId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetApplicationRequest": {
+      "document": "GetApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "mna-w795bzezug",
+          "member": "string",
+          "name": "MpApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetApplicationResponse": {
+      "document": "GetApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "mna-w795bzezug",
+          "member": "string",
+          "name": "MpApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经过加密算法加密后的base64格式密钥",
+          "example": "dasdfrfwer32e4r",
+          "member": "string",
+          "name": "MpApplicationKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "application1",
+          "member": "string",
+          "name": "MpApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备的备注",
+          "example": "game",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。不填默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）",
+          "example": "0",
+          "member": "int64",
+          "name": "AccessScope",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4499,6 +4737,96 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateApplicationInfoRequest": {
+      "document": "UpdateApplicationInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "mna-w795bzezug",
+          "member": "string",
+          "name": "MpApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新建应用的应用名",
+          "example": "application1",
+          "member": "string",
+          "name": "MpApplicationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新建设备的备注",
+          "example": "game",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。不填默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）",
+          "example": "0",
+          "member": "int64",
+          "name": "AccessScope",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApplicationInfoResponse": {
+      "document": "UpdateApplicationInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApplicationKeyRequest": {
+      "document": "UpdateApplicationKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用的base64密钥字符串",
+          "example": "dasdfrfwer32e4r",
+          "member": "string",
+          "name": "MpApplicationKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "mna-w795bzezug",
+          "member": "string",
+          "name": "MpApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApplicationKeyResponse": {
+      "document": "UpdateApplicationKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateDeviceRequest": {
       "document": "UpdateDevice请求参数结构体",

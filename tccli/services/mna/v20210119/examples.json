@@ -8,6 +8,14 @@
         "title": "批量激活设备"
       }
     ],
+    "AddApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddApplication\n<公共请求参数>\n\n{\n    \"MpApplicationName\": \"mna-test1\",\n    \"Remark\": \"mna-test1\",\n    \"MpApplicationKey\": \"mna-test1\",\n    \"AccessScope\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\",\n        \"MpApplicationId\": \"mna-test1\",\n        \"MpApplicationKey\": \"dasdfrfwer32e4r\",\n        \"MpApplicationName\": \"mna-test1\"\n    }\n}",
+        "title": "新建应用"
+      }
+    ],
     "AddDevice": [
       {
         "document": "",
@@ -48,6 +56,14 @@
         "title": "设置预置密钥"
       }
     ],
+    "DeleteApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplication\n<公共请求参数>\n\n{\n    \"MpApplicationIdList\": [\n        {\n            \"MpApplicationId\": \"test1\"\n        },\n        {\n            \"MpApplicationId\": \"test2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\"\n    }\n}",
+        "title": "删除应用"
+      }
+    ],
     "DeleteDevice": [
       {
         "document": "",
@@ -86,6 +102,14 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetActiveDeviceCount\n<公共请求参数>\n\n{\n    \"Period\": 0,\n    \"StartTime\": 1732176361,\n    \"EndTime\": 1732176362,\n    \"DevGroup\": \"comollit\",\n    \"LicenseType\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"ActiveDeviceList\": [\n            {\n                \"Count\": 1,\n                \"Time\": \"2024-11-20\"\n            }\n        ],\n        \"DevGroup\": \"group1\",\n        \"EndTime\": \"2024-11-20\",\n        \"LicenseType\": \"1\",\n        \"Period\": 0,\n        \"StartTime\": \"2024-11-20\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "活跃设备数量统计"
+      }
+    ],
+    "GetApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetApplication\n<公共请求参数>\n\n{\n    \"MpApplicationId\": \"mna-94p8c5zyst\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\",\n        \"MpApplicationId\": \"mna-test1\",\n        \"MpApplicationKey\": \"dasdfrfwer32e4r\",\n        \"MpApplicationName\": \"mna-test1\"\n    }\n}",
+        "title": "应用查询"
       }
     ],
     "GetDestIPByName": [
@@ -330,6 +354,22 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNotifyUrl\n<公共请求参数>\n\n{\n    \"AlarmValue\": 20,\n    \"NotifyUrl\": \"http://ip:port/callurl\",\n    \"CallbackKey\": \"xd23y5cb89bx23432\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "UpdateApplicationInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApplicationInfo\n<公共请求参数>\n\n{\n    \"MpApplicationName\": \"mna-test1\",\n    \"MpApplicationId\": \"mna-test1\",\n    \"Remark\": \"mna-test1\",\n    \"AccessScope\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\"\n    }\n}",
+        "title": "更新应用信息"
+      }
+    ],
+    "UpdateApplicationKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApplicationKey\n<公共请求参数>\n\n{\n    \"MpApplicationKey\": \"mna-test1\",\n    \"MpApplicationId\": \"mna-test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\"\n    }\n}",
+        "title": "更新应用密钥"
       }
     ],
     "UpdateDevice": [
