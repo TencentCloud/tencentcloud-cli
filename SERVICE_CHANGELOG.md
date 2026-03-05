@@ -1,29 +1,10 @@
-# Release 3.0.1376.1
+# Release 3.0.1377.1
 
-## 语音识别(asr) 版本：2019-06-14
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 33 次发布
+### 第 51 次发布
 
-发布时间：2026-03-05 01:11:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
-
-	* 新增成员：LangType, SpeakerRoleName
-
-
-
-
-## 多网聚合加速(mna) 版本：2021-01-19
-
-### 第 31 次发布
-
-发布时间：2026-03-05 01:56:38
+发布时间：2026-03-06 01:32:21
 
 本次发布包含了以下内容：
 
@@ -31,31 +12,68 @@
 
 新增接口：
 
-* [AddApplication](http://document.tencentcloudapi.woa.com/document/product/1385/88933)
-* [DeleteApplication](http://document.tencentcloudapi.woa.com/document/product/1385/88932)
-* [GetApplication](http://document.tencentcloudapi.woa.com/document/product/1385/88931)
-* [UpdateApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1385/88930)
-* [UpdateApplicationKey](http://document.tencentcloudapi.woa.com/document/product/1385/88929)
-
-新增数据结构：
-
-* [DelApplicationList](http://document.tencentcloudapi.woa.com/document/product/1385/55846#DelApplicationList)
+* [CreateMongoDBKillTask](http://document.tencentcloudapi.woa.com/document/product/1130/88934)
 
 
 
-## 企业微信汽车行业版(wav) 版本：2021-01-29
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
 
-### 第 13 次发布
 
-发布时间：2026-03-05 02:28:31
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 96 次发布
+
+发布时间：2026-03-06 02:08:27
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+修改接口：
 
-* CreateCorpTag
+* [CreateCertificate](http://document.tencentcloudapi.woa.com/document/product/400/49427)
+
+	* 新增出参：ResourceIds
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 18 次发布
+
+发布时间：2026-03-06 02:21:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/457/74869#Disk)
+
+	* 新增成员：Encrypt, KmsKeyId
+
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 115 次发布
+
+发布时间：2026-03-06 02:19:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddExistedInstances](http://document.tencentcloudapi.woa.com/document/product/457/31865)
+
+	* 新增入参：NodeType
+
 
 
 

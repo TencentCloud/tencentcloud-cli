@@ -2099,6 +2099,15 @@
           "name": "ImageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "直接添加为原生节点",
+          "example": "Native",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6739,7 +6748,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽",
+          "document": "公网带宽，单位为Mbps",
           "example": "100",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
@@ -23238,7 +23247,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池所关联的伸缩组的期望实例数",
+          "document": "节点池所关联的伸缩组的期望实例数，单位个",
           "example": "1",
           "member": "int64",
           "name": "DesiredCapacity",

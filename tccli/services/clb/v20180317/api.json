@@ -2286,7 +2286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡监听器ID",
+          "document": "<p>负载均衡监听器ID</p>",
           "example": "lbl-hscepds6",
           "member": "string",
           "name": "ListenerId",
@@ -2296,7 +2296,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡监听器端口",
+          "document": "<p>负载均衡监听器端口</p>",
           "example": "80",
           "member": "int64",
           "name": "ListenerPort",
@@ -2306,7 +2306,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器后端转发端口",
+          "document": "<p>监听器后端转发端口</p>",
           "example": "8080",
           "member": "int64",
           "name": "InstancePort",
@@ -2316,7 +2316,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器名称",
+          "document": "<p>监听器名称</p>",
           "example": "CLASSIC-LB-LISTENER",
           "member": "string",
           "name": "ListenerName",
@@ -2326,7 +2326,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器协议类型",
+          "document": "<p>监听器协议类型</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -2336,7 +2336,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间",
+          "document": "<p>会话保持时间</p>",
           "example": "0",
           "member": "int64",
           "name": "SessionExpire",
@@ -2346,7 +2346,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启了健康检查：1（开启）、0（关闭）",
+          "document": "<p>是否开启了健康检查：1（开启）、0（关闭）</p>",
           "example": "1",
           "member": "int64",
           "name": "HealthSwitch",
@@ -2356,7 +2356,7 @@
         },
         {
           "disabled": false,
-          "document": "响应超时时间",
+          "document": "<p>响应超时时间</p><p>单位：秒</p>",
           "example": "2",
           "member": "int64",
           "name": "TimeOut",
@@ -2366,7 +2366,7 @@
         },
         {
           "disabled": false,
-          "document": "检查间隔",
+          "document": "<p>检查间隔</p><p>单位：秒</p>",
           "example": "5",
           "member": "int64",
           "name": "IntervalTime",
@@ -2376,7 +2376,7 @@
         },
         {
           "disabled": false,
-          "document": "健康阈值",
+          "document": "<p>健康阈值</p>",
           "example": "3",
           "member": "int64",
           "name": "HealthNum",
@@ -2386,7 +2386,7 @@
         },
         {
           "disabled": false,
-          "document": "不健康阈值",
+          "document": "<p>不健康阈值</p>",
           "example": "3",
           "member": "int64",
           "name": "UnhealthNum",
@@ -2396,7 +2396,7 @@
         },
         {
           "disabled": false,
-          "document": "传统型公网负载均衡 监听器的请求均衡方法。空字符串或wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发，least_conn表示按最小连接数。",
+          "document": "<p>传统型公网负载均衡 监听器的请求均衡方法。空字符串或wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发，least_conn表示按最小连接数。</p>",
           "example": "wrr",
           "member": "string",
           "name": "HttpHash",
@@ -2406,7 +2406,7 @@
         },
         {
           "disabled": false,
-          "document": "传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释",
+          "document": "<p>传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释</p>",
           "example": "31",
           "member": "int64",
           "name": "HttpCode",
@@ -2416,7 +2416,7 @@
         },
         {
           "disabled": false,
-          "document": "传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径",
+          "document": "<p>传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径</p>",
           "example": "/healthchk",
           "member": "string",
           "name": "HttpCheckPath",
@@ -2426,7 +2426,7 @@
         },
         {
           "disabled": false,
-          "document": "传统型公网负载均衡的 HTTPS 监听器的认证方式",
+          "document": "<p>传统型公网负载均衡的 HTTPS 监听器的认证方式</p>",
           "example": "UNIDIRECTIONAL",
           "member": "string",
           "name": "SSLMode",
@@ -2436,7 +2436,7 @@
         },
         {
           "disabled": false,
-          "document": "传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID",
+          "document": "<p>传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID</p>",
           "example": "Cps86Nwh",
           "member": "string",
           "name": "CertId",
@@ -2446,7 +2446,7 @@
         },
         {
           "disabled": false,
-          "document": "传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID",
+          "document": "<p>传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID</p>",
           "example": "FYybUazg",
           "member": "string",
           "name": "CertCaId",
@@ -2456,7 +2456,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的状态，0 表示创建中，1 表示运行中",
+          "document": "<p>监听器的状态，0 表示创建中，1 表示运行中</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8771,7 +8771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡监听器 ID",
+          "document": "<p>负载均衡监听器 ID</p>",
           "example": "lbl-odt45qxx",
           "member": "string",
           "name": "ListenerId",
@@ -8781,7 +8781,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC",
+          "document": "<p>监听器协议，可选值：TCP、UDP、HTTP、HTTPS、TCP_SSL、QUIC</p>",
           "example": "HTTP",
           "member": "string",
           "name": "Protocol",
@@ -8791,7 +8791,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器端口，端口范围：1-65535",
+          "document": "<p>监听器端口，端口范围：1-65535</p>",
           "example": "80",
           "member": "int64",
           "name": "Port",
@@ -8801,7 +8801,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器绑定的证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>监听器绑定的证书信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CertificateOutput",
           "name": "Certificate",
@@ -8811,7 +8811,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>监听器的健康检查信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
@@ -8821,7 +8821,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WRR",
           "member": "string",
           "name": "Scheduler",
@@ -8831,7 +8831,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。</p><p>单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
@@ -8841,7 +8841,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）",
+          "document": "<p>是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）</p>",
           "example": "0",
           "member": "int64",
           "name": "SniSwitch",
@@ -8851,7 +8851,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器下的全部转发规则（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>监听器下的全部转发规则（本参数仅对于HTTP/HTTPS监听器有意义）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuleOutput",
           "name": "Rules",
@@ -8861,7 +8861,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的名称",
+          "document": "<p>监听器的名称</p>",
           "example": "Name",
           "member": "string",
           "name": "ListenerName",
@@ -8871,7 +8871,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的创建时间。",
+          "document": "<p>监听器的创建时间。</p>",
           "example": "2021-03-01 15:27:04",
           "member": "string",
           "name": "CreateTime",
@@ -8881,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "端口段结束端口，端口范围：2-65535",
+          "document": "<p>端口段结束端口，端口范围：2-65535</p>",
           "example": "7890",
           "member": "int64",
           "name": "EndPort",
@@ -8891,7 +8891,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -8901,7 +8901,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroup",
@@ -8911,7 +8911,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。",
+          "document": "<p>会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "SessionType",
@@ -8921,7 +8921,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "KeepaliveEnable",
@@ -8931,7 +8931,7 @@
         },
         {
           "disabled": false,
-          "document": "仅支持Nat64 CLB TCP监听器",
+          "document": "<p>仅支持Nat64 CLB TCP监听器</p>",
           "example": "false",
           "member": "bool",
           "name": "Toa",
@@ -8941,7 +8941,7 @@
         },
         {
           "disabled": false,
-          "document": "重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。",
+          "document": "<p>重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。</p>",
           "example": "false",
           "member": "bool",
           "name": "DeregisterTargetRst",
@@ -8951,7 +8951,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的属性",
+          "document": "<p>监听器的属性</p>",
           "example": "[\"Stop\"]",
           "member": "string",
           "name": "AttrFlags",
@@ -8961,7 +8961,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的目标组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的目标组列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroupList",
@@ -8971,7 +8971,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器最大连接数，-1表示监听器维度不限速。",
+          "document": "<p>监听器最大连接数，-1表示监听器维度不限速。</p>",
           "example": "-1",
           "member": "int64",
           "name": "MaxConn",
@@ -8981,7 +8981,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器最大新增连接数，-1表示监听器维度不限速。",
+          "document": "<p>监听器最大新增连接数，-1表示监听器维度不限速。</p>",
           "example": "-1",
           "member": "int64",
           "name": "MaxCps",
@@ -8991,7 +8991,7 @@
         },
         {
           "disabled": false,
-          "document": "空闲连接超时时间，仅支持TCP监听器。默认值:900；共享型实例和独占型实例取值范围：300～900，性能容量型实例取值范围:300～1980。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空闲连接超时时间，仅支持TCP监听器。默认值:900；共享型实例和独占型实例取值范围：300～900，性能容量型实例取值范围:300～1980。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "900",
           "member": "int64",
           "name": "IdleConnectTimeout",
@@ -9001,7 +9001,7 @@
         },
         {
           "disabled": false,
-          "document": "重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。",
+          "document": "<p>重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。</p><p>单位：秒</p>",
           "example": "600",
           "member": "uint64",
           "name": "RescheduleInterval",
@@ -9011,7 +9011,7 @@
         },
         {
           "disabled": false,
-          "document": "数据压缩模式",
+          "document": "<p>数据压缩模式</p>",
           "example": "compatibility",
           "member": "string",
           "name": "DataCompressMode",
@@ -9021,7 +9021,7 @@
         },
         {
           "disabled": false,
-          "document": "重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。",
+          "document": "<p>重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。</p>",
           "example": "600",
           "member": "int64",
           "name": "RescheduleStartTime",
@@ -11193,8 +11193,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据压缩模式</p>",
-          "example": "transparent/compatibility",
+          "document": "<p>数据压缩模式</p><p>枚举值：</p><ul><li>transparent： 透明模式（默认值）</li><li>compatibility： 兼容模式（开启 gzip 兼容压缩配置）</li></ul>",
+          "example": "transparent",
           "member": "string",
           "name": "DataCompressMode",
           "required": false,

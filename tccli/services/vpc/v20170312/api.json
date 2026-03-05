@@ -28463,7 +28463,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28473,7 +28473,7 @@
           "example": "无",
           "member": "PrivateNatGatewayLimit",
           "name": "PrivateNatGatewayLimitSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -28500,7 +28500,7 @@
           "example": "无",
           "member": "NatRegionInfoWithArea",
           "name": "RegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -28510,7 +28510,7 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -48445,7 +48445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源产品类型",
+          "document": "资源产品类型，支持\nStandardPublicNat\nPrivateNat\nClassicPublicNat\nExclusiveSmall\nExclusiveMedium1\nExclusiveLarge1",
           "example": "StandardPublicNat",
           "member": "string",
           "name": "ResourceType",
@@ -48455,7 +48455,7 @@
         },
         {
           "disabled": false,
-          "document": "资源可用状态",
+          "document": "资源可用状态，支持\nAvailable\nUnavailable",
           "example": "Available",
           "member": "string",
           "name": "Availability",
