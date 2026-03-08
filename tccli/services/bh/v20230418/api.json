@@ -6401,7 +6401,7 @@
         {
           "disabled": false,
           "document": "认证源信息",
-          "example": "[{\"Source\":1002, \"Name\":\"钉钉\"}]",
+          "example": "无",
           "member": "SourceType",
           "name": "SourceTypeSet",
           "output_required": false,

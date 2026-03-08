@@ -460,7 +460,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountGroups\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SourceTypeSet\": [\n            {\n                \"Type\": \"test\",\n                \"Name\": \"钉钉\",\n                \"Source\": 1001,\n                \"Target\": \"mini_iam\"\n            }\n        ],\n        \"RequestId\": \"cf85w9eee-b651-4ff3q-9b49-173f9f55733f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SourceTypeSet\": [\n            {\n                \"Type\": \"dingding\",\n                \"Name\": \"钉钉\",\n                \"Source\": 1001,\n                \"Target\": \"mini_iam\"\n            }\n        ],\n        \"RequestId\": \"cf85w9eee-b651-4ff3q-9b49-173f9f55733f\"\n    }\n}",
         "title": "获取认证源信息"
       }
     ],

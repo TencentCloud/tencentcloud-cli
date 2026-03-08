@@ -90,10 +90,10 @@
     ],
     "CreateTrainingModel": [
       {
-        "document": "导入模型请求",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrainingModel\n<公共请求参数>\n\n{\n    \"TrainingJobName\": \"test-job\",\n    \"TrainingJobId\": \"train-608753141184489472\",\n    \"TrainingModelVersion\": \"v1\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"test-key\",\n            \"TagValue\": \"test-value\"\n        }\n    ],\n    \"ModelMoveMode\": \"COPY\",\n    \"TrainingModelIndex\": \"test123\",\n    \"ReasoningEnvironment\": \"tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch-gpu:py38-torch1.9.0-cu111-tiacc3.0.0-2.0.2\",\n    \"ReasoningEnvironmentId\": \"pytorch1.9.0-py38(gpu)\",\n    \"TrainingModelName\": \"test-model\",\n    \"AlgorithmFramework\": \"PYTORCH\",\n    \"ImportMethod\": \"MODEL\",\n    \"ReasoningEnvironmentSource\": \"SYSTEM\",\n    \"TrainingModelCosPath\": {\n        \"Paths\": [\n            \"test/output/train-608753141184489472/model/\"\n        ],\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"test-bucket\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": \"m-664968589676184576\",\n        \"RequestId\": \"ced11c16-fd5a-4f12-8a0b-17c7f0b14659\",\n        \"TrainingModelVersionId\": \"mv-v1-664975193381340160\"\n    }\n}",
-        "title": "导入模型请求"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrainingModel\n<公共请求参数>\n\n{\n    \"ImportMethod\": \"MODEL\",\n    \"TrainingModelName\": \"test-0203-05\",\n    \"Tags\": [],\n    \"TrainingModelVersion\": \"v1\",\n    \"ModelFormat\": \"PYTORCH\",\n    \"AlgorithmFramework\": \"PYTORCH\",\n    \"TrainingModelSource\": \"CFS\",\n    \"ReasoningEnvironmentSource\": \"SYSTEM\",\n    \"ReasoningImageInfo\": {\n        \"ImageType\": \"PRE_SET\",\n        \"ImageUrl\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:vllm-0.9.1-ti-20250703\",\n        \"RegistryRegion\": \"\",\n        \"RegistryId\": \"\"\n    },\n    \"ReasoningEnvironment\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:vllm-0.9.1-ti-20250703\",\n    \"ReasoningEnvironmentId\": \"vllm(0.9.1)\",\n    \"AutoClean\": \"false\",\n    \"ModelCleanPeriod\": 1,\n    \"MaxReservedModels\": 24\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"m-1511805105118762624\",\n        \"TrainingModelVersionId\": \"mv-v1-1511805105118762625\",\n        \"RequestId\": \"2569dfaf-131f-45f9-a5b5-dbf4d0db8d35\"\n    }\n}",
+        "title": "创建模型"
       }
     ],
     "CreateTrainingTask": [
@@ -170,10 +170,10 @@
     ],
     "DeleteTrainingModel": [
       {
-        "document": "删除模型请求",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrainingModel\n<公共请求参数>\n\n{\n    \"TrainingModelId\": \"m-660879334503305216\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ced11c16-fd5a-4f12-8a0b-17c7f0b14659\"\n    }\n}",
-        "title": "删除模型请求"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrainingModel\n<公共请求参数>\n\n{\n    \"TrainingModelId\": \"m-1508893456133569280\",\n    \"ModelVersionType\": \"NORMAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9aec7e2-aae8-423e-8260-e7e73c20b9c1\"\n    }\n}",
+        "title": "删除模型"
       }
     ],
     "DeleteTrainingModelVersion": [
@@ -276,7 +276,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSources\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"DataSourceInfos\": [\n            {\n                \"CreateTime\": \"2025-07-08 19:31:47\",\n                \"Creator\": \"100038630886\",\n                \"CreatorName\": \"breezeliu\",\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"NFS\",\n                    \"CFSStorageType\": \"SD\"\n                },\n                \"Id\": \"dsrc-Cfs-abum82k1s7wg\",\n                \"LimitMount\": true,\n                \"MountConfigure\": {\n                    \"WorkDir\": \"/abc\"\n                },\n                \"Name\": \"测试数据源\",\n                \"Permission\": \"RW\",\n                \"StorageId\": \"cfs-ndqrxskx\",\n                \"StorageName\": \"shizhuhuang_cfs\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key1\",\n                        \"TagValue\": \"value2\"\n                    },\n                    {\n                        \"TagKey\": \"qcs:tag:createdBy\",\n                        \"TagValue\": \"CAMUser:100038630886:breezeliu\"\n                    }\n                ],\n                \"Type\": \"Cfs\",\n                \"UpdateTime\": \"2025-07-08 19:31:47\"\n            }\n        ],\n        \"RequestId\": \"98f3068f-279d-4b70-8dd3-2189b0d3c7c6\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSourceInfos\": [\n            {\n                \"CreateTime\": \"2025-07-08T19:31:47Z\",\n                \"Creator\": \"100038630886\",\n                \"CreatorName\": \"breezeliu\",\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"NFS\",\n                    \"CFSStorageType\": \"SD\"\n                },\n                \"Id\": \"dsrc-Cfs-abum82k1s7wg\",\n                \"LimitMount\": true,\n                \"MountConfigure\": {\n                    \"WorkDir\": \"/abc\"\n                },\n                \"Name\": \"测试数据源\",\n                \"Permission\": \"RW\",\n                \"StorageId\": \"cfs-ndqrxskx\",\n                \"StorageName\": \"shizhuhuang_cfs\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key1\",\n                        \"TagValue\": \"value2\"\n                    },\n                    {\n                        \"TagKey\": \"qcs:tag:createdBy\",\n                        \"TagValue\": \"CAMUser:100038630886:breezeliu\"\n                    }\n                ],\n                \"Type\": \"Cfs\",\n                \"UpdateTime\": \"2025-07-08T19:31:47Z\"\n            }\n        ],\n        \"RequestId\": \"98f3068f-279d-4b70-8dd3-2189b0d3c7c6\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -388,7 +388,7 @@
       {
         "document": "",
         "input": "https://tione.tencentcloudapi.com/?Action=DescribeModelServices\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Services\": [\n            {\n                \"UpdateTime\": \"2021-12-12T21:12:00+08:00\",\n                \"ServiceGroupId\": \"ms-4jjrcsw2-1\",\n                \"CreatedBy\": \"yourname\",\n                \"Region\": \"ap-guangzhou\",\n                \"ServiceGroupName\": \"test\",\n                \"ServiceId\": \"ms-4jjrcsw2-1-dfjerxjfe\",\n                \"CreateTime\": \"2021-12-12T20:12:00+08:00\",\n                \"ServiceDescription\": \"测试\"\n            }\n        ],\n        \"TotalCount\": 20,\n        \"RequestId\": \"fdfahfdjoier\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Services\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"fdfahfdjoxer\"\n    }\n}",
         "title": "查询多个服务"
       }
     ],
@@ -414,6 +414,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformImages\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 200,\n    \"Filters\": [\n        {\n            \"Name\": \"ImageRange\",\n            \"Values\": [\n                \"Train\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformImageInfos\": [\n            {\n                \"Framework\": \"PYTORCH\",\n                \"ImageType\": \"TCR\",\n                \"ImageUrl\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\n                \"RegistryRegion\": \"\",\n                \"RegistryId\": \"\",\n                \"ImageName\": \"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\n                \"ImageId\": \"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\",\n                \"FrameworkVersion\": \"2.3\",\n                \"SupportGpuList\": [\n                    \"A10\",\n                    \"V100\",\n                    \"T4\"\n                ],\n                \"Description\": \"支持的核心库：Python 3.10，CUDA 12.4，jupyterlab 2.3.2，torch 2.3.0a0+40ec155e58.nv24.3，transformers 4.39.3，deepspeed 0.13.4，tilearn-llm 0.9.9，tilearn.ops 0.2.2.175，angel-vllm 0.4.2\\n支持的卡型：A10，V100，T4\",\n                \"ImageRange\": [\n                    \"Notebook\",\n                    \"Train\"\n                ],\n                \"ExtraAttributes\": [\n                    {\n                        \"Type\": \"\",\n                        \"Key\": \"AllowSaveAllContent\",\n                        \"Value\": \"true\",\n                        \"Values\": []\n                    },\n                    {\n                        \"Type\": \"\",\n                        \"Key\": \"SupportDataPipeline\",\n                        \"Value\": \"false\",\n                        \"Values\": []\n                    },\n                    {\n                        \"Type\": \"List\",\n                        \"Key\": \"TrainingModes\",\n                        \"Value\": \"\",\n                        \"Values\": [\n                            \"DDP\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"8a3942be-0e3c-4efd-bf03-422e0410afa9\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeSubAccountLinuxUserInfos": [
+      {
+        "document": "批量查询子账号Linux用户信息",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubAccountLinuxUserInfos\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5dee4285-b87f-4005-ad48-45729a5942d8\",\n        \"SubAccountList\": [\n            {\n                \"LinuxGid\": 20000,\n                \"LinuxUid\": 20001,\n                \"LinuxUserName\": \"100040359585\",\n                \"SubUin\": \"0\",\n                \"SubUinName\": \"ExampleUser\",\n                \"Uin\": \"100033122983\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeSubAccountLinuxUserInfos"
       }
     ],
     "DescribeTrainingModelVersion": [
@@ -496,6 +504,14 @@
         "title": "增量修改模型服务"
       }
     ],
+    "ModifyNotebook": [
+      {
+        "document": "修改Notebook",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotebook\n<公共请求参数>\n\n{\n    \"Id\": \"nb-32178932173972137\",\n    \"Name\": \"liming-notebook\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"ResourceConf\": {\n        \"Cpu\": 2000,\n        \"Memory\": 4096,\n        \"Gpu\": 1,\n        \"GpuType\": \"V100\",\n        \"InstanceType\": \"TI.GN10.2XLARGE40.POST\"\n    },\n    \"ResourceGroupId\": \"trsg-dwpqnjmk\",\n    \"VpcId\": \"vpc-4kq8vlym\",\n    \"SubnetId\": \"subnet-58zkmdob\",\n    \"VolumeSourceType\": \"CFS\",\n    \"VolumeSizeInGB\": 1,\n    \"VolumeSourceCFS\": {\n        \"Id\": \"cfs-9su5kqtv\",\n        \"Path\": \"/tione\"\n    },\n    \"LogEnable\": true,\n    \"LogConfig\": {\n        \"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\",\n        \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\"\n    },\n    \"RootAccess\": true,\n    \"LifecycleScriptId\": \"ls-1007228485705742720\",\n    \"DefaultCodeRepoId\": \"cr-1000669213287070080\",\n    \"AdditionalCodeRepoIds\": [\n        \"cr-1000669213287070081\"\n    ],\n    \"AutoStopping\": true,\n    \"AutomaticStopTime\": 1,\n    \"Tags\": [\n        {\n            \"TagKey\": \"test-key\",\n            \"TagValue\": \"test-value\"\n        }\n    ],\n    \"DirectInternetAccess\": true,\n    \"DataConfigs\": [\n        {\n            \"MappingPath\": \"/home/tione/notebook\",\n            \"DataSourceType\": \"CLOUD_PREMIUM\",\n            \"CBSSource\": {\n                \"VolumeSizeInGB\": 50\n            }\n        }\n    ],\n    \"ImageInfo\": {\n        \"ImageType\": \"SYSTEM\",\n        \"ImageId\": \"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\",\n        \"ImageUrl\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\n        \"ImageName\": \"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\"\n    },\n    \"ImageType\": \"SYSTEM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27103821308080d8sgdsggdsgd\"\n    }\n}",
+        "title": "修改Notebook"
+      }
+    ],
     "ModifyNotebookTags": [
       {
         "document": "修改Notebook标签",
@@ -574,6 +590,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopTrainingTask\n<公共请求参数>\n\n{\n    \"Id\": \"train-1243143\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfds-fdsafsa\"\n    }\n}",
         "title": "停止训练任务"
+      }
+    ],
+    "UpdateSubAccountLinuxUserInfo": [
+      {
+        "document": "更新LinuxUser信息",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSubAccountLinuxUserInfo\n<公共请求参数>\n\n{\n    \"SubAccountList\": [\n        {\n            \"Uin\": \"100055132983\",\n            \"SubUin\": \"100033176827\",\n            \"SubUinName\": \"ExampleUser\",\n            \"LinuxUid\": 50000,\n            \"LinuxGid\": 50000,\n            \"LinuxUserName\": \"example_user\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30841715-2516-4a28-a4fa-4b5a62ea9ded\"\n    }\n}",
+        "title": "UpdateSubAccountLinuxUserInfo"
       }
     ]
   },

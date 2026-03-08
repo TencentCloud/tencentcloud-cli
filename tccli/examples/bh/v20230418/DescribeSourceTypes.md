@@ -14,7 +14,7 @@ Output:
         "TotalCount": 1,
         "SourceTypeSet": [
             {
-                "Type": "test",
+                "Type": "dingding",
                 "Name": "钉钉",
                 "Source": 1001,
                 "Target": "mini_iam"

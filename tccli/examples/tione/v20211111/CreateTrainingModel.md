@@ -1,36 +1,36 @@
-**Example 1: 导入模型请求**
+**Example 1: 创建模型**
 
-导入模型请求
+
 
 Input: 
 
 ```
 tccli tione CreateTrainingModel --cli-unfold-argument  \
-    --TrainingJobName test-job \
-    --TrainingJobId train-608753141184489472 \
-    --TrainingModelVersion v1 \
-    --Tags.0.TagKey test-key \
-    --Tags.0.TagValue test-value \
-    --ModelMoveMode COPY \
-    --TrainingModelIndex test123 \
-    --ReasoningEnvironment tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch-gpu:py38-torch1.9.0-cu111-tiacc3.0.0-2.0.2 \
-    --ReasoningEnvironmentId pytorch1.9.0-py38(gpu) \
-    --TrainingModelName test-model \
-    --AlgorithmFramework PYTORCH \
     --ImportMethod MODEL \
+    --TrainingModelName test-0203-05 \
+    --TrainingModelVersion v1 \
+    --ModelFormat PYTORCH \
+    --AlgorithmFramework PYTORCH \
+    --TrainingModelSource CFS \
     --ReasoningEnvironmentSource SYSTEM \
-    --TrainingModelCosPath.Paths test/output/train-608753141184489472/model/ \
-    --TrainingModelCosPath.Region ap-guangzhou \
-    --TrainingModelCosPath.Bucket test-bucket
+    --ReasoningImageInfo.ImageType PRE_SET \
+    --ReasoningImageInfo.ImageUrl tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:vllm-0.9.1-ti-20250703 \
+    --ReasoningImageInfo.RegistryRegion  \
+    --ReasoningImageInfo.RegistryId  \
+    --ReasoningEnvironment tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:vllm-0.9.1-ti-20250703 \
+    --ReasoningEnvironmentId vllm(0.9.1) \
+    --AutoClean false \
+    --ModelCleanPeriod 1 \
+    --MaxReservedModels 24
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Id": "m-664968589676184576",
-        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659",
-        "TrainingModelVersionId": "mv-v1-664975193381340160"
+        "Id": "m-1511805105118762624",
+        "TrainingModelVersionId": "mv-v1-1511805105118762625",
+        "RequestId": "2569dfaf-131f-45f9-a5b5-dbf4d0db8d35"
     }
 }
 ```

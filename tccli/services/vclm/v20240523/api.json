@@ -1301,7 +1301,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型参数Json-Format字符串</p>",
+          "document": "<p>模型参数Json-Format字符串<br> <a href=\"https://cloud.tencent.com/document/product/1616/128996\">模型参数列表</a></p>",
           "example": "{\n\"image\":\"https://**********************-guangzhou.myqcloud.com/****.jpeg\",\n\"resolution\":\"1080p\",\n\"images\":[\"https://**********************-guangzhou.myqcloud.com/****.jpeg\"]\n}",
           "member": "string",
           "name": "ModelParam",

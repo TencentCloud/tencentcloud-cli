@@ -1,19 +1,20 @@
-**Example 1: 删除模型请求**
+**Example 1: 删除模型**
 
-删除模型请求
+
 
 Input: 
 
 ```
 tccli tione DeleteTrainingModel --cli-unfold-argument  \
-    --TrainingModelId m-660879334503305216
+    --TrainingModelId m-1508893456133569280 \
+    --ModelVersionType NORMAL
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
+        "RequestId": "c9aec7e2-aae8-423e-8260-e7e73c20b9c1"
     }
 }
 ```

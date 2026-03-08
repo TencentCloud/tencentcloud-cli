@@ -13,7 +13,7 @@ Output:
     "Response": {
         "DataSourceInfos": [
             {
-                "CreateTime": "2025-07-08 19:31:47",
+                "CreateTime": "2025-07-08T19:31:47Z",
                 "Creator": "100038630886",
                 "CreatorName": "breezeliu",
                 "ExtraConf": {
@@ -40,7 +40,7 @@ Output:
                     }
                 ],
                 "Type": "Cfs",
-                "UpdateTime": "2025-07-08 19:31:47"
+                "UpdateTime": "2025-07-08T19:31:47Z"
             }
         ],
         "RequestId": "98f3068f-279d-4b70-8dd3-2189b0d3c7c6",
