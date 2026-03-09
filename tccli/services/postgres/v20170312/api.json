@@ -5238,7 +5238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名称。可以通过接口[DescribeZones](https://cloud.tencent.com/document/product/409/16769)获取。",
+          "document": "<p>可用区名称。可以通过接口<a href=\"https://cloud.tencent.com/document/product/409/16769\">DescribeZones</a>获取。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -5247,7 +5247,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；",
+          "document": "<p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；</p>",
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
@@ -5256,7 +5256,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库主版本号。例如12，13，可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取。",
+          "document": "<p>数据库主版本号。例如12，13，可以通过接口<a href=\"https://cloud.tencent.com/document/product/409/89018\">DescribeDBVersions</a>获取。</p>",
           "example": "12",
           "member": "string",
           "name": "DBMajorVersion",
@@ -5265,7 +5265,7 @@
         },
         {
           "disabled": false,
-          "document": "规格状态：0-不可用，1-可用",
+          "document": "<p>规格状态：0-不可用，1-可用</p>",
           "example": "1",
           "member": "uint64",
           "name": "State",
@@ -5274,10 +5274,19 @@
         },
         {
           "disabled": false,
-          "document": "规格所属类型,General-Purpose:通用型,Dedicated:独享型",
+          "document": "<p>规格所属类型,General-Purpose:通用型,Dedicated:独享型</p>",
           "example": "General-Purpose",
           "member": "string",
           "name": "ClassType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，根据存储类型返回支持的规格。</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 物理机本地ssd硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： ssd云硬盘</li><li>CLOUD_HSSD： 增强型ssd云硬盘</li></ul><p>默认值：PHYSICAL_LOCAL_SSD</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
           "required": false,
           "type": "string"
         }
@@ -5289,7 +5298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库规格列表",
+          "document": "<p>数据库规格列表</p>",
           "example": "无",
           "member": "ClassInfo",
           "name": "ClassInfoSet",
@@ -5932,7 +5941,17 @@
     },
     "DescribeDBVersionsRequest": {
       "document": "DescribeDBVersions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，根据磁盘类型返回支持的版本</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 物理机本地ssd硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： ssd云硬盘</li><li>CLOUD_HSSD： 增强型ssd云硬盘</li></ul><p>默认值：PHYSICAL_LOCAL_SSD</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDBVersionsResponse": {
@@ -5940,8 +5959,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库版本号信息列表",
-          "example": "[     {         \"AvailableUpgradeTarget\": [],         \"DBEngine\": \"mssql_compatible\",         \"DBKernelVersion\": \"v14.3_r1.3\",         \"DBMajorVersion\": \"14\",         \"DBVersion\": \"14.3\",         \"Status\": \"AVAILABLE\",         \"SupportedFeatureNames\": []     },     {         \"AvailableUpgradeTarget\": [             \"v14.3_r1.3\"         ],         \"DBEngine\": \"postgresql\",         \"DBKernelVersion\": \"v14.2_r1.1\",         \"DBMajorVersion\": \"14\",         \"DBVersion\": \"14.2\",         \"Status\": \"AVAILABLE\",         \"SupportedFeatureNames\": [             \"TDE\"         ]     } ]",
+          "document": "<p>数据库版本号信息列表</p>",
+          "example": "无",
           "member": "Version",
           "name": "VersionSet",
           "output_required": true,
@@ -6940,7 +6959,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名称",
+          "document": "<p>可用区名称</p>",
           "example": "ap-guangzhou-7",
           "member": "string",
           "name": "Zone",
@@ -6949,7 +6968,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n如不指定默认使用postgresql。",
+          "document": "<p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；<br>如不指定默认使用postgresql。</p>",
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
@@ -6958,7 +6977,7 @@
         },
         {
           "disabled": false,
-          "document": "规格状态：0-不可用，1-可用",
+          "document": "<p>规格状态：0-不可用，1-可用</p>",
           "example": "1",
           "member": "uint64",
           "name": "State",
@@ -6967,10 +6986,19 @@
         },
         {
           "disabled": false,
-          "document": "规格所属类型,General-Purpose:通用型,Dedicated:独享型",
+          "document": "<p>规格所属类型,General-Purpose:通用型,Dedicated:独享型</p>",
           "example": "General-Purpose",
           "member": "string",
           "name": "ClassType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，根据存储类型返回支持的版本和规格</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 物理机本地ssd硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： ssd云硬盘</li><li>CLOUD_HSSD： 增强型ssd云硬盘</li></ul><p>默认值：PHYSICAL_LOCAL_SSD</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
           "required": false,
           "type": "string"
         }
@@ -6982,7 +7010,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "售卖规格列表。",
+          "document": "<p>售卖规格列表。</p>",
           "example": "无",
           "member": "SpecInfo",
           "name": "SpecInfoList",
@@ -9806,7 +9834,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>处于等待切换状态中的实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-19nmz2xb",
           "member": "string",
           "name": "DBInstanceId",
@@ -9815,11 +9843,38 @@
         },
         {
           "disabled": false,
-          "document": "入参取值为 0 ，代表立即切换。",
-          "example": "0:立即切换",
+          "document": "<p>入参取值为 0 ，代表立即切换。</p>",
+          "example": "0",
           "member": "uint64",
           "name": "SwitchTag",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>切换开始时间</p>",
+          "example": "17:10:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>切换截止时间</p>",
+          "example": "18:30:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID，可通过DescribeTasks获取</p>",
+          "example": "102252",
+          "member": "int64",
+          "name": "TaskId",
+          "required": false,
           "type": "int"
         }
       ],

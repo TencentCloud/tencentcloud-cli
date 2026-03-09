@@ -353,9 +353,9 @@
     "SubmitHunyuanTo3DProJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DProJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"一只猫\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"1375367755519696896\",\n        \"RequestId\": \"13f47dd0-1af9-4383-b401-dae18d6e99fc\"\n    }\n}",
-        "title": "提交生3D任务"
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DProJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"cat\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1422504058612350976\",\n        \"RequestId\": \"c942d2da-5dbc-40d6-aa55-f4631c4299d3\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "SubmitHunyuanTo3DRapidJob": [

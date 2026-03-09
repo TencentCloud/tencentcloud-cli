@@ -14673,7 +14673,17 @@
     },
     "SyncAllCamUsersRequest": {
       "document": "SyncAllCamUsers请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "cam的subuin",
+          "example": "700002333202",
+          "member": "string",
+          "name": "SubUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "SyncAllCamUsersResponse": {
