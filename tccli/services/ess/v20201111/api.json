@@ -267,7 +267,7 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP、支付宝打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在**仅支持中国大陆身份证、中国港澳台居民居住证**。",
       "input": "CreateFlowSignUrlRequest",
       "name": "获取H5签署链接",
       "output": "CreateFlowSignUrlResponse",
@@ -2501,6 +2501,16 @@
           "name": "DiffText",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同文本的格式类型。\n类型如下：\n<ul><li> **0**：段落（正文）</li>\n<li> **1**：标点符号</li>\n<li> **2**：页眉页脚</li>\n<li> **3**：目录</li>\n<li> **4**：印章</li>\n<li> **5**：序号</li>\n<li> **6**：水印</li>\n<li> **7**：下划线内容（填写区）</li>\n</ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "FormatType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -11237,6 +11247,15 @@
           "name": "ShowDetail",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，具体参考Filter结构体。本接口取值：\n\n1. **format-type：**\n按照【 合同文本格式类型 】进行过滤；\n类型：String；\n是否必填项：否；\n类型如下：\n<ul><li> **0**：段落（正文）</li>\n<li> **1**：标点符号</li>\n<li> **2**：页眉页脚</li>\n<li> **3**：目录</li>\n<li> **4**：印章</li>\n<li> **5**：序号</li>\n<li> **7**：下划线内容（填写区）</li>\n</ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13221,7 +13240,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，单页最大1000",
+          "document": "指定分页每页返回的数据条数，单页最大支持 200。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -13230,7 +13249,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0",
+          "document": "偏移量，默认为0，最大20000。关于<code>Offset</code>的更进一步介绍请参考 API <a href=\"https://cloud.tencent.com/document/api/213/15688\" target=\"_blank\">简介</a>中的相关小节。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -13257,7 +13276,7 @@
         },
         {
           "disabled": false,
-          "document": "是否导出当前成员企业数据\n<ul><li> **false**：不导出（默认值）</li>\n<li> **true**：导出</li></ul>",
+          "document": "是否导出当前成员企业数据\n<ul><li> **false**：不导出（默认值）</li>\n<li> **true**：导出</li></ul>\n\np.s.\n若传入此参数， LImit参数将无效，导出的为全量数据。",
           "example": "false",
           "member": "bool",
           "name": "Export",
@@ -14484,7 +14503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "印章来源类型",
+          "document": "印章来源类型\n印章来源类型包括下面几种：\n<ul>\n<li>CREATE-客户上传图片创建</li>\n<li>GENERATE-系统模版印章生成</li>\n<li>SIST_SEAL-深圳电子印章</li>\n</ul>",
           "example": "GENERATE",
           "member": "string",
           "name": "GenerateType",
@@ -14495,7 +14514,7 @@
         },
         {
           "disabled": false,
-          "document": "印章来源类型描述",
+          "document": "印章来源类型描述\n",
           "example": "深圳电子印章",
           "member": "string",
           "name": "GenerateTypeDesc",
@@ -19246,7 +19265,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "PDF文件页X坐标位置,以PDF单页左上角为坐标原点",
+          "document": "PDF文件页X坐标位置,以PDF单页左上角为坐标原点，单位是 “点”（Point，简称 pt）",
           "example": "129.59680902497985",
           "member": "float",
           "name": "X",
@@ -19257,7 +19276,7 @@
         },
         {
           "disabled": false,
-          "document": "PDF文件页Y坐标位置,以PDF单页左上角为坐标原点",
+          "document": "PDF文件页Y坐标位置,以PDF单页左上角为坐标原点，单位是 “点”（Point，简称 pt）",
           "example": "129.59680902497985",
           "member": "float",
           "name": "Y",
@@ -19268,7 +19287,7 @@
         },
         {
           "disabled": false,
-          "document": "距离X坐标的宽度，用于在PDF文件进行画框。",
+          "document": "距离X坐标的宽度，用于在PDF文件进行画框，单位是 “点”（Point，简称 pt）",
           "example": "129.59680902497985",
           "member": "float",
           "name": "Width",
@@ -19279,7 +19298,7 @@
         },
         {
           "disabled": false,
-          "document": "距离Y坐标的高度，用于在PDF文件进行画框。",
+          "document": "距离Y坐标的高度，用于在PDF文件进行画框，单位是 “点”（Point，简称 pt）",
           "example": "129.59680902497985",
           "member": "float",
           "name": "Height",

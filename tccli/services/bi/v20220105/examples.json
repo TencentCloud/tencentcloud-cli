@@ -43,8 +43,8 @@
     "CreatePermissionRanks": [
       {
         "document": "创建行列权限",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePermissionRanks\n<公共请求参数>\n\n{\n    \"TableId\": 0,\n    \"Mode\": \"abc\",\n    \"RoleType\": \"abc\",\n    \"RoleId\": 0,\n    \"RulerInfo\": \"abc\",\n    \"Type\": \"abc\",\n    \"OpenStatus\": \"abc\",\n    \"ProjectId\": 0,\n    \"RowColumnConfigList\": [\n        {\n            \"RulerInfo\": \"abc\",\n            \"TagValueList\": [\n                {\n                    \"Id\": 0,\n                    \"Name\": \"abc\",\n                    \"Values\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePermissionRanks\n<公共请求参数>\n\n{\n    \"TableId\": 10628115,\n    \"Mode\": \"all\",\n    \"RoleType\": \"others\",\n    \"RoleId\": 0,\n    \"RulerInfo\": \"{\\\"Logic\\\":\\\"and\\\",\\\"Items\\\":[]}\",\n    \"Type\": \"column\",\n    \"OpenStatus\": \"open\",\n    \"ProjectId\": 11055177,\n    \"RowColumnConfigList\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"131ecec6-e8c7-4147-af1c-3c5725307583\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
         "title": "创建行列权限"
       }
     ],
@@ -152,7 +152,7 @@
       {
         "document": "项目内角色列表接口示例",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionStatusInfo\n<公共请求参数>\n\n{\n    \"TableId\": -4052,\n    \"Type\": \"fugiat magna velit ea dolore\",\n    \"ProjectId\": \"1231\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Data\": {\n            \"TableId\": 0,\n            \"Type\": \"abc\",\n            \"Mode\": \"abc\",\n            \"OpenStatus\": \"abc\",\n            \"RoleType\": \"abc\",\n            \"RoleId\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"dfcd12ec-6920-42a1-a758-7a10fcc4a60a\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"TableId\": 0,\n            \"Type\": \"row\",\n            \"Mode\": \"specify\",\n            \"OpenStatus\": \"open\",\n            \"RoleType\": \"roles\",\n            \"RoleId\": 0\n        }\n    }\n}",
         "title": "项目内角色列表接口示例"
       }
     ],

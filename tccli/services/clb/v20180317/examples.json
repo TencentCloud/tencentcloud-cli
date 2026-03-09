@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AssociateCustomizedConfig": [
+      {
+        "document": "关联配置",
+        "input": "https://clb.tencentcloudapi.com/?Action=AssociateCustomizedConfig\r\n&UconfigId=pz-asdfs\r\n&BindList.0.LoadBalancerId=asdfasdf\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "关联配置"
+      }
+    ],
     "AssociateTargetGroups": [
       {
         "document": "",
@@ -548,6 +556,14 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"55c85074-3e7f-4c6d-864f-673660d4f8de\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"RequestId\": \"917384bc-5b8d-4b68-a0bc-a58f815e8e3b\"\n    }\n}",
         "title": "查询异步任务状态"
+      }
+    ],
+    "DisassociateCustomizedConfig": [
+      {
+        "document": "解绑配置",
+        "input": "https://clb.tencentcloudapi.com/?Action=DisassociateCustomizedConfig\r\n&UconfigId=pz-asdfs\r\n&BindList.0.LoadBalancerId=asdfasdf\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "解绑配置"
       }
     ],
     "DisassociateTargetGroups": [

@@ -8,6 +8,14 @@
         "title": "检测输入图成功案例"
       }
     ],
+    "DescribeAigcVideoJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcVideoJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1412473406099169280\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultUrl\": \"https://vcg-test-**********.cos.ap-guangzhou.tencentcos.cn/image_to_video/results/*******************************************************************************************************************************************************************************************************************************************\",\n        \"Status\": \"DONE\",\n        \"RequestId\": \"89d000ea-c861-442a-ac61-41b7b0b5e6d9\"\n    }\n}",
+        "title": "查询生视频任务示例"
+      }
+    ],
     "DescribeHumanActorJob": [
       {
         "document": "",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoVoiceJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1372503633131323392\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"45f7928c-eefb-477c-a632-eadec7322b1e\",\n        \"ResultVideoUrl\": \"https://vcg-test-1258344699.cos.ap-guangzhou.tencentcos.cn/video_voice/results/228a7e.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
         "title": "调用成功示例"
+      }
+    ],
+    "SubmitAigcVideoJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitAigcVideoJob\n<公共请求参数>\n\n{\n    \"Vendor\": \"VO\",\n    \"Model\": \"V3.1\",\n    \"ModelParam\": \"{\\n\\\"image\\\":\\\"https://**********************-guangzhou.myqcloud.com/****.jpeg\\\",\\n\\\"resolution\\\":\\\"1080p\\\",\\n\\\"images\\\":[\\\"https://**********************-guangzhou.myqcloud.com/****.jpeg\\\"]\\n}\",\n    \"Prompt\": \"美女在沙滩跳舞\",\n    \"LogoAdd\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1412464707775373312\",\n        \"RequestId\": \"bb40df7c-c705-4bf1-b0d6-196e17dfef10\"\n    }\n}",
+        "title": "提交生视频任务示例"
       }
     ],
     "SubmitHumanActorJob": [

@@ -7,7 +7,7 @@ Input:
 ```
 tccli bh CreateUserDirectory --cli-unfold-argument  \
     --DirId 523353 \
-    --DirName 测试 \
+    --DirName dept1 \
     --Source 0 \
     --SourceName 自建账号 \
     --UserCount 45 \

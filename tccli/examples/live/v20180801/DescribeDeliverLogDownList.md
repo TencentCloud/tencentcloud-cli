@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli live DescribeDeliverLogDownList --cli-unfold-argument ```
+tccli live DescribeDeliverLogDownList --cli-unfold-argument  \
+    --StartTime 2022-02-09T12:36:42Z \
+    --EndTime 2022-02-09T13:36:42Z \
+    --DeliverDomains 5000.liveplay.com
+```
 
 Output: 
 ```

@@ -1938,6 +1938,22 @@
         "title": "获取概览统计数据"
       }
     ],
+    "DescribePatchEffectHostList": [
+      {
+        "document": "查询Windows补丁影响的主机",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePatchEffectHostList\n<公共请求参数>\n\n{\n    \"KbId\": 7070,\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"0\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PatchEffectHostList\": [\n            {\n                \"FirstScanTime\": \"2025-07-29 16:30:17\",\n                \"FixStatus\": 0,\n                \"HasSnapshot\": 0,\n                \"HostVersion\": 2,\n                \"Id\": 73,\n                \"InstanceState\": \"运行中\",\n                \"KbId\": 7070,\n                \"LatestFixTime\": \"2025-07-29 16:30:17\",\n                \"LatestScanTime\": \"2025-07-31 14:28:50\",\n                \"MachineExtraInfo\": {\n                    \"HostName\": \"v_llwin\",\n                    \"InstanceID\": \"ins-r3qao\",\n                    \"NetworkName\": \"vpc-guv4i1h5\",\n                    \"NetworkType\": 1,\n                    \"PrivateIP\": \"10.6.64.8\",\n                    \"WanIP\": \"119.45.128.17\"\n                },\n                \"MachineType\": \"CVM\",\n                \"Quuid\": \"ea71992a-b484-4d9c-882a-419fb6d0a5b0\",\n                \"RegionId\": 33,\n                \"RestartRequired\": 0,\n                \"Status\": 0,\n                \"Uuid\": \"ea71992a-b484-4d9c-882a-419fb6d0a5b0\"\n            }\n        ],\n        \"RequestId\": \"475a2160-cc47-43e9-a576-ec0947badb37\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询Windows补丁影响的主机"
+      }
+    ],
+    "DescribePatchInfo": [
+      {
+        "document": "获取指定id的补丁详细信息",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePatchInfo\n<公共请求参数>\n\n{\n    \"KbId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"KbId\": 1,\n        \"KbNo\": \"KB3135456\",\n        \"PatchName\": \"Windows Server 2012 R2 安全更新程序 (KB3135456)\",\n        \"PublishTime\": \"2016-04\",\n        \"ReferUrl\": \"https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2016/03/windows8.1-kb3135456-x64_a42c42ccae2e3dd54c0a7722fe7aecdae2e69785.msu\",\n        \"RelateVulCveId\": \"CVE-2016-0088,CVE-2016-0089,CVE-2016-0090\",\n        \"RelateVulInfoList\": [\n            {\n                \"CVSS\": 9.3,\n                \"CveId\": \"CVE-2016-0088\",\n                \"Id\": 113214,\n                \"Label\": \"本地利用\",\n                \"Level\": 4,\n                \"Name\": \"Microsoft Windows Hyper-V 远程执行代码漏洞(CVE-2016-0088)\",\n                \"PublishTime\": \"2016-04-13\"\n            },\n            {\n                \"CVSS\": 7.1,\n                \"CveId\": \"CVE-2016-0089\",\n                \"Id\": 113215,\n                \"Label\": \"本地利用\",\n                \"Level\": 3,\n                \"Name\": \"Microsoft Windows Hyper-V 信息泄露漏洞(CVE-2016-0089)\",\n                \"PublishTime\": \"2016-04-13\"\n            },\n            {\n                \"CVSS\": 7.1,\n                \"CveId\": \"CVE-2016-0090\",\n                \"Id\": 113216,\n                \"Label\": \"本地利用\",\n                \"Level\": 3,\n                \"Name\": \"Microsoft Windows Hyper-V 信息泄露漏洞(CVE-2016-0090)\",\n                \"PublishTime\": \"2016-04-13\"\n            }\n        ],\n        \"RequestId\": \"d55784e4-3de4-43e9-9d82-caa0f3a19b09\",\n        \"VulCount\": 3\n    }\n}",
+        "title": "获取指定id的补丁详细信息"
+      }
+    ],
     "DescribePrivilegeEventInfo": [
       {
         "document": "",
@@ -2550,7 +2566,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDefenceEvent\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"356fec3f-0a9e-47c1-bbd0-c47d1496d0ae\",\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Id\": 13844,\n                \"Uuid\": \"acdd5474-6360-4fd4-bfc7-843162cb8116\",\n                \"Quuid\": \"acdd5474-6360-4fd4-bfc7-843162cb8116\",\n                \"Alias\": \"v_llzlu微隔离测试(millionlan)\",\n                \"PrivateIp\": \"10.0.1.233\",\n                \"PublicIp\": \"43.138.142.208\",\n                \"UpgradeType\": 1,\n                \"VulId\": 14004,\n                \"VulName\": \"ISC BIND 资源管理错误漏洞(CVE-2014-8500)\",\n                \"CveId\": \"CVE-2014-8500\",\n                \"FixType\": 1,\n                \"EventType\": 2,\n                \"SourceIp\": \"na\",\n                \"City\": \"beijing\",\n                \"SourcePort\": [],\n                \"CreateTime\": \"2024-11-03 00:40:12\",\n                \"MergeTime\": \"2024-11-03 15:45:16\",\n                \"Count\": 74,\n                \"Status\": 1,\n                \"MachineExtraInfo\": {\n                    \"WanIP\": \"43.138.142.208\",\n                    \"PrivateIP\": \"10.0.1.233\",\n                    \"NetworkType\": 1,\n                    \"NetworkName\": \"vpc-mbgoxtov\",\n                    \"InstanceID\": \"ins-j7vumfb6\",\n                    \"HostName\": \"v_llzlu微隔离测试(millionlan)\"\n                }\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"356fec3f-0a9e-47c1-bbd0-c47d1496d0ae\",\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Id\": 13844,\n                \"Uuid\": \"acdd5474-****-***-bfc7-843162cb8116\",\n                \"Quuid\": \"acdd5474-****-****-843162cb8116\",\n                \"Alias\": \"v\",\n                \"PrivateIp\": \"10.***.233\",\n                \"PublicIp\": \"43.***.208\",\n                \"UpgradeType\": 1,\n                \"VulId\": 14004,\n                \"VulName\": \"ISC BIND 资源管理错误漏洞(CVE-2014-8500)\",\n                \"CveId\": \"CVE-2014-8500\",\n                \"FixType\": 1,\n                \"EventType\": 2,\n                \"SourceIp\": \"na\",\n                \"City\": \"beijing\",\n                \"SourcePort\": [],\n                \"CreateTime\": \"2024-11-03 00:40:12\",\n                \"MergeTime\": \"2024-11-03 15:45:16\",\n                \"Count\": 74,\n                \"Status\": 1,\n                \"MachineExtraInfo\": {\n                    \"WanIP\": \"43.***.208\",\n                    \"PrivateIP\": \"10.***.233\",\n                    \"NetworkType\": 1,\n                    \"NetworkName\": \"vpc-mb**tov\",\n                    \"InstanceID\": \"ins-j***fb6\",\n                    \"HostName\": \"离测试ntest\"\n                }\n            }\n        ]\n    }\n}",
         "title": "获取漏洞防御事件列表"
       }
     ],
@@ -2812,6 +2828,14 @@
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebPageServiceInfo\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"g54f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"Status\": true,\n        \"UsedNum\": 2,\n        \"ResidueNum\": 0,\n        \"BuyNum\": 2,\n        \"ExpireNum\": 1,\n        \"ExpiredNum\": 1,\n        \"ProtectDirNum\": 1,\n        \"AllAuthorizedMachines\": [\n            {\n                \"HostName\": \"机器1\",\n                \"HostIp\": \"1.0.0.1\",\n                \"CreateTime\": \"2020-10-10 10:10:00\",\n                \"ExpireTime\": \"2021-10-10 10:10:00\"\n            }\n        ],\n        \"ExpireAuthorizedMachines\": [\n            {\n                \"HostName\": \"机器2\",\n                \"HostIp\": \"1.0.0.2\",\n                \"SafeguardDirNum\": 1\n            }\n        ]\n    }\n}",
         "title": "查询网站防篡改服务信息"
+      }
+    ],
+    "DescribeWindowsPatchList": [
+      {
+        "document": "查询Windows补丁风险列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWindowsPatchList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ShowNew\",\n            \"Values\": [\n                \"1\"\n            ]\n        },\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"0\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PatchInfoList\": [\n            {\n                \"EffectHostCount\": 1,\n                \"Ids\": \"73\",\n                \"IsNew\": 1,\n                \"KbId\": 7070,\n                \"KbNo\": \"KB5062592\",\n                \"KbPreCondition\": \"\",\n                \"LastScanTime\": \"2025-07-31 14:28:50\",\n                \"Name\": \"2025-07 适用于基于 x64 的系统的 Windows Server 2012 月度安全质量汇总（KB5062592）\",\n                \"PublishTime\": \"2025-07\",\n                \"RelateVulCount\": 58,\n                \"RelateVulList\": [\n                    \"CVE-2023-24932\",\n                    \"CVE-2025-47971\",\n                    \"CVE-2025-47976\",\n                    \"CVE-2025-47984\",\n                    \"CVE-2025-47985\",\n                    \"CVE-2025-47986\",\n                    \"CVE-2025-47987\",\n                    \"CVE-2025-48824\",\n                    \"CVE-2025-49657\",\n                    \"CVE-2025-49658\",\n                    \"CVE-2025-49661\",\n                    \"CVE-2025-49670\",\n                    \"CVE-2025-49671\",\n                    \"CVE-2025-49672\",\n                    \"CVE-2025-49674\",\n                    \"CVE-2025-49676\",\n                    \"CVE-2025-49686\",\n                    \"CVE-2025-49687\",\n                    \"CVE-2025-49689\",\n                    \"CVE-2025-49716\",\n                    \"CVE-2025-49721\",\n                    \"CVE-2025-49753\",\n                    \"CVE-2025-47973\",\n                    \"CVE-2025-47975\",\n                    \"CVE-2025-47980\",\n                    \"CVE-2025-47981\",\n                    \"CVE-2025-47996\",\n                    \"CVE-2025-47998\",\n                    \"CVE-2025-48001\",\n                    \"CVE-2025-48804\",\n                    \"CVE-2025-48805\",\n                    \"CVE-2025-48806\",\n                    \"CVE-2025-48808\",\n                    \"CVE-2025-48814\",\n                    \"CVE-2025-48815\",\n                    \"CVE-2025-48816\",\n                    \"CVE-2025-48817\",\n                    \"CVE-2025-48819\",\n                    \"CVE-2025-48821\",\n                    \"CVE-2025-49659\",\n                    \"CVE-2025-49663\",\n                    \"CVE-2025-49664\",\n                    \"CVE-2025-49665\",\n                    \"CVE-2025-49667\",\n                    \"CVE-2025-49668\",\n                    \"CVE-2025-49669\",\n                    \"CVE-2025-49673\",\n                    \"CVE-2025-49675\",\n                    \"CVE-2025-49678\",\n                    \"CVE-2025-49679\",\n                    \"CVE-2025-49681\",\n                    \"CVE-2025-49683\",\n                    \"CVE-2025-49722\",\n                    \"CVE-2025-49727\",\n                    \"CVE-2025-49729\",\n                    \"CVE-2025-49730\",\n                    \"CVE-2025-49732\",\n                    \"CVE-2025-49742\"\n                ],\n                \"RelatedProduct\": \"Windows Server 2012\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"02625b85-89d8-4883-a200-4bffb8b1e003\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询Windows补丁风险列表"
       }
     ],
     "DestroyOrder": [
@@ -3188,6 +3212,14 @@
         "title": "导出异地登录记录"
       }
     ],
+    "ExportPatchEffectHostList": [
+      {
+        "document": "导出指定id的补丁影响的主机列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportPatchEffectHostList\n<公共请求参数>\n\n{\n    \"KbId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28e1cd65-0e0b-4799-9088-99e64e7b3d69\",\n        \"TaskId\": \"1753945237\"\n    }\n}",
+        "title": "导出指定id的补丁影响的主机列表"
+      }
+    ],
     "ExportPrivilegeEvents": [
       {
         "document": "导出本地提权事件",
@@ -3370,6 +3402,14 @@
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportWebPageEventList\n<公共请求参数>\n\n{\n    \"By\": \"CreateTime\",\n    \"Order\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"IpOrAlias\",\n            \"Values\": [\n                \"HostName or HostIp\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9506441-52bc-4d14-a767-7e1251ed3ced\",\n        \"TaskId\": \"173042****\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "ExportWindowsPatchList": [
+      {
+        "document": "导出Windows补丁列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportWindowsPatchList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1ad0e14-11e9-4ec2-aaae-10dc63d6187d\",\n        \"TaskId\": \"1753945081\"\n    }\n}",
+        "title": "导出Windows补丁列表"
       }
     ],
     "FixBaselineDetect": [

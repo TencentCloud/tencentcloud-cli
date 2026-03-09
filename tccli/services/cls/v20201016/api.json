@@ -217,6 +217,13 @@
       "output": "CreateMetricSubscribeResponse",
       "status": "online"
     },
+    "CreateNetworkApplication": {
+      "document": "创建网络应用",
+      "input": "CreateNetworkApplicationRequest",
+      "name": "创建网络应用",
+      "output": "CreateNetworkApplicationResponse",
+      "status": "online"
+    },
     "CreateNoticeContent": {
       "document": "该接口用于创建通知内容。",
       "input": "CreateNoticeContentRequest",
@@ -439,6 +446,13 @@
       "input": "DeleteMetricSubscribeRequest",
       "name": "删除指标订阅配置",
       "output": "DeleteMetricSubscribeResponse",
+      "status": "online"
+    },
+    "DeleteNetworkApplication": {
+      "document": "删除网络应用",
+      "input": "DeleteNetworkApplicationRequest",
+      "name": "删除网络应用",
+      "output": "DeleteNetworkApplicationResponse",
       "status": "online"
     },
     "DeleteNoticeContent": {
@@ -770,6 +784,20 @@
       "output": "DescribeMetricSubscribesResponse",
       "status": "online"
     },
+    "DescribeNetworkApplicationDetail": {
+      "document": "获取网络应用详情",
+      "input": "DescribeNetworkApplicationDetailRequest",
+      "name": "获取网络应用详情",
+      "output": "DescribeNetworkApplicationDetailResponse",
+      "status": "online"
+    },
+    "DescribeNetworkApplications": {
+      "document": "获取网络应用列表",
+      "input": "DescribeNetworkApplicationsRequest",
+      "name": "获取网络应用列表",
+      "output": "DescribeNetworkApplicationsResponse",
+      "status": "online"
+    },
     "DescribeNoticeContents": {
       "document": "获取通知内容列表",
       "input": "DescribeNoticeContentsRequest",
@@ -1048,6 +1076,13 @@
       "input": "ModifyMetricSubscribeRequest",
       "name": "修改指标订阅配置",
       "output": "ModifyMetricSubscribeResponse",
+      "status": "online"
+    },
+    "ModifyNetworkApplication": {
+      "document": "修改网络应用",
+      "input": "ModifyNetworkApplicationRequest",
+      "name": "修改网络应用",
+      "output": "ModifyNetworkApplicationResponse",
       "status": "online"
     },
     "ModifyNoticeContent": {
@@ -7009,6 +7044,61 @@
       ],
       "type": "object"
     },
+    "CreateNetworkApplicationRequest": {
+      "document": "CreateNetworkApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用名称：长度不超过64字符，名称不能重复。</p><ul><li>只能包含以下字符：<ul><li>英文字母（大小写）</li><li>数字</li><li>下划线</li><li>连字符（减号）</li><li>汉字</li></ul></li><li>至少包含一个字符</li><li>不能包含空格</li><li>不能包含其他特殊字符（如 @、#、$、% 等）</li></ul>",
+          "example": "network_application_demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集ID</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/58624\">获取日志集列表</a>获取日志集Id。</li></ul>",
+          "example": "b2927b70-6650-4bae-ba42-2cdc569f202e",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题名称。名称限制如下：</p><ul><li>不能为空字符串</li><li>不能包含字符&#39;|&#39;</li><li>不能使用以下名称[&quot;cls_service_log&quot;,&quot;loglistener_status&quot;,&quot;loglistener_alarm&quot;,&quot;loglistener_business&quot;,&quot;cls_service_metric&quot;]</li></ul>",
+          "example": "network_application_topic_name",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNetworkApplicationResponse": {
+      "document": "CreateNetworkApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id</p>",
+          "example": "78c9c041-be1c-476e-b05b-84eb51d87e02",
+          "member": "string",
+          "name": "NetworkAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNoticeContentRequest": {
       "document": "CreateNoticeContent请求参数结构体",
       "members": [
@@ -9515,6 +9605,33 @@
     },
     "DeleteMetricSubscribeResponse": {
       "document": "DeleteMetricSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNetworkApplicationRequest": {
+      "document": "DeleteNetworkApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id。</p>",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNetworkApplicationResponse": {
+      "document": "DeleteNetworkApplication返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12541,6 +12658,108 @@
       ],
       "type": "object"
     },
+    "DescribeNetworkApplicationDetailRequest": {
+      "document": "DescribeNetworkApplicationDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id</p>",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkApplicationDetailResponse": {
+      "document": "DescribeNetworkApplicationDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询指定的网络应用详情</p>",
+          "example": "无",
+          "member": "NetworkApplicationDetail",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkApplicationsRequest": {
+      "document": "DescribeNetworkApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤项</p><ul><li><p>name<br>按照【任务名称】进行过滤。模糊匹配方式查询。<br>类型：String<br>必选：否</p></li><li><p>networkAppId<br>按照【网络应用id】进行过滤。<br>类型：String<br>必选：否</p></li></ul><p>每次请求的Filters的上限为10，Filter.Values的上限为10。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkApplicationsResponse": {
+      "document": "DescribeNetworkApplications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合查询条件的大模型性能剖析任务列表</p>",
+          "example": "无",
+          "member": "NetworkApplicationInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合查询条件的任务总数。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNoticeContentsRequest": {
       "document": "DescribeNoticeContents请求参数结构体",
       "members": [
@@ -13560,7 +13779,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cls日志中的字段名",
+          "document": "<p>cls日志中的字段名</p>",
           "example": "table_name",
           "member": "string",
           "name": "ClsField",
@@ -13571,7 +13790,7 @@
         },
         {
           "disabled": false,
-          "document": "数据湖计算服务表的列名",
+          "document": "<p>数据湖计算服务表的列名</p>",
           "example": "table_name",
           "member": "string",
           "name": "DlcField",
@@ -13582,7 +13801,7 @@
         },
         {
           "disabled": false,
-          "document": "数据湖计算服务字段类型",
+          "document": "<p>数据湖计算服务字段类型</p><p>枚举值：</p><ul><li>int|string|struct等： 参考 <a href=\"https://cloud.tencent.com/document/product/1342/53778#Column\">DLC  cloumn中的Type 定义 </a></li></ul>",
           "example": "string",
           "member": "string",
           "name": "DlcFieldType",
@@ -13593,7 +13812,7 @@
         },
         {
           "disabled": false,
-          "document": "解析失败填充字段",
+          "document": "<p>解析失败填充字段</p>",
           "example": "NULL",
           "member": "string",
           "name": "FillField",
@@ -13604,7 +13823,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用",
+          "document": "<p>是否禁用</p>",
           "example": "false",
           "member": "bool",
           "name": "Disable",
@@ -13699,7 +13918,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cls日志中的字段名",
+          "document": "<p>cls日志中的字段名</p>",
           "example": "table_name",
           "member": "string",
           "name": "ClsField",
@@ -13710,7 +13929,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc表的列名",
+          "document": "<p>dlc表的列名</p>",
           "example": "table_name",
           "member": "string",
           "name": "DlcField",
@@ -13721,7 +13940,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc字段类型",
+          "document": "<p>请参考 <a href=\"https://cloud.tencent.com/document/product/1342/53778#Column\">DLC  cloumn中的Type 定义 </a></p><p>枚举值：</p><ul><li>int|string|array等： 请参考 <a href=\"https://cloud.tencent.com/document/product/1342/53778#Column\">DLC  cloumn中的Type 定义 </a></li></ul>",
           "example": "string",
           "member": "string",
           "name": "DlcFieldType",
@@ -14409,7 +14628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -14419,7 +14638,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出任务ID",
+          "document": "<p>日志导出任务ID</p>",
           "example": "export-57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
           "name": "ExportId",
@@ -14429,7 +14648,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出查询语句",
+          "document": "<p>日志导出查询语句</p>",
           "example": "status:200",
           "member": "string",
           "name": "Query",
@@ -14439,7 +14658,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出文件名",
+          "document": "<p>日志导出文件名</p>",
           "example": "log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_571",
           "member": "string",
           "name": "FileName",
@@ -14449,7 +14668,7 @@
         },
         {
           "disabled": false,
-          "document": "日志文件大小",
+          "document": "<p>日志文件大小</p><p>单位：Byte</p>",
           "example": "0",
           "member": "uint64",
           "name": "FileSize",
@@ -14459,7 +14678,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出时间排序",
+          "document": "<p>日志导出时间排序</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -14469,7 +14688,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出格式",
+          "document": "<p>日志导出格式</p>",
           "example": "json",
           "member": "string",
           "name": "Format",
@@ -14479,7 +14698,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出数量",
+          "document": "<p>日志导出数量</p>",
           "example": "100",
           "member": "uint64",
           "name": "Count",
@@ -14489,7 +14708,7 @@
         },
         {
           "disabled": false,
-          "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
+          "document": "<p>日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中</p>",
           "example": "Expired",
           "member": "string",
           "name": "Status",
@@ -14499,7 +14718,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出起始时间，毫秒时间戳",
+          "document": "<p>日志导出起始时间，毫秒时间戳</p>",
           "example": "1607499207000",
           "member": "int64",
           "name": "From",
@@ -14509,7 +14728,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出结束时间，毫秒时间戳",
+          "document": "<p>日志导出结束时间，毫秒时间戳</p>",
           "example": "1607499208000",
           "member": "int64",
           "name": "To",
@@ -14519,7 +14738,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
+          "document": "<p>日志导出路径,有效期一个小时，请尽快使用该路径下载。</p>",
           "example": "/cos_path/file/1",
           "member": "string",
           "name": "CosPath",
@@ -14529,7 +14748,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>日志导出创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2020-08-08 12:12:12",
           "member": "string",
           "name": "CreateTime",
@@ -14539,7 +14758,7 @@
         },
         {
           "disabled": false,
-          "document": "语法规则。 默认值为0。\n0：Lucene语法，1：CQL语法。",
+          "document": "<p>语法规则。 默认值为0。<br>0：Lucene语法，1：CQL语法。</p>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -14549,7 +14768,7 @@
         },
         {
           "disabled": false,
-          "document": "导出字段",
+          "document": "<p>导出字段</p>",
           "example": "[\"__timestamp__\"]",
           "member": "string",
           "name": "DerivedFields",
@@ -15110,7 +15329,53 @@
     },
     "GetMetricLabelValuesRequest": {
       "document": "GetMetricLabelValues请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>时序主题id</p>",
+          "example": "3a05cb9c-3471-42b8-b212-6ecbc0c49a4a",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时序label名称</p>",
+          "example": "__name__",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间</p>",
+          "example": "1772787397",
+          "member": "uint64",
+          "name": "Start",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "1772787697",
+          "member": "uint64",
+          "name": "End",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Label匹配规则</p>",
+          "example": "[\"http_server_requests_seconds_count\"]",
+          "member": "string",
+          "name": "Match",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "GetMetricLabelValuesResponse": {
@@ -15118,8 +15383,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "时序metric label values",
-          "example": "[\"123\",\"456\"]",
+          "document": "<p>时序metric label values</p>",
+          "example": "[\"http_server_requests_seconds_count\"]",
           "member": "string",
           "name": "Values",
           "output_required": true,
@@ -18631,7 +18896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TopicId",
@@ -18640,7 +18905,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id。",
+          "document": "<p>任务id。</p>",
           "example": "111024e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TaskId",
@@ -18649,7 +18914,7 @@
         },
         {
           "disabled": false,
-          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "document": "<p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>",
           "example": "template_1",
           "member": "string",
           "name": "Name",
@@ -18658,7 +18923,7 @@
         },
         {
           "disabled": false,
-          "document": "投递类型。0:批投递,1:实时投递",
+          "document": "<p>投递类型。0:批投递,1:实时投递</p>",
           "example": "1",
           "member": "uint64",
           "name": "DeliverType",
@@ -18667,7 +18932,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的开始时间",
+          "document": "<p>投递时间范围的开始时间</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "StartTime",
@@ -18676,7 +18941,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的结束时间。 如果为空，则表示不限时",
+          "document": "<p>投递时间范围的结束时间。 如果为空，则表示不限时</p>",
           "example": "1741006340",
           "member": "uint64",
           "name": "EndTime",
@@ -18685,7 +18950,7 @@
         },
         {
           "disabled": false,
-          "document": "投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。",
+          "document": "<p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>",
           "example": "5",
           "member": "uint64",
           "name": "MaxSize",
@@ -18694,7 +18959,7 @@
         },
         {
           "disabled": false,
-          "document": "投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。",
+          "document": "<p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>",
           "example": "300",
           "member": "uint64",
           "name": "Interval",
@@ -18703,7 +18968,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc配置信息",
+          "document": "<p>dlc配置信息</p>",
           "example": "无",
           "member": "DlcInfo",
           "name": "DlcInfo",
@@ -18712,7 +18977,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。1关闭，2开启。默认开启",
+          "document": "<p>是否开启投递服务日志。1关闭，2开启。默认开启</p>",
           "example": "2",
           "member": "uint64",
           "name": "HasServicesLog",
@@ -18721,7 +18986,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。",
+          "document": "<p>任务状态。</p><p>枚举值：</p><ul><li>1： 运行</li><li>2： 停止</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -19561,6 +19826,42 @@
     },
     "ModifyMetricSubscribeResponse": {
       "document": "ModifyMetricSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkApplicationRequest": {
+      "document": "ModifyNetworkApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id</p>",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络应用名称：长度不超过64字符，名称不能重复。</p><ul><li>只能包含以下字符：<ul><li>英文字母（大小写）</li><li>数字</li><li>下划线</li><li>连字符（减号）</li><li>汉字</li></ul></li><li>至少包含一个字符</li><li>不能包含空格</li><li>不能包含其他特殊字符（如 @、#、$、% 等）</li></ul>",
+          "example": "network_application_demo_update",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkApplicationResponse": {
+      "document": "ModifyNetworkApplication返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20495,6 +20796,208 @@
         }
       ],
       "usage": "both"
+    },
+    "NetworkApplicationDetail": {
+      "document": "网络应用任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络应用Id",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络应用名称",
+          "example": "network_application_demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域code",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "edce15b6-b85c-48e2-94e5-042aa9ad99d7",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "7fb0245e-2006-4e0f-9153-c5f6b7110b4c",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "eyJuX2FfaWQiOiI2MzhjYTdmZC1jN2QzLTQ5MmItYmMwMS02NTMwNDQyNjc4M2UiLCJ1aW4iOjEwMDAwMTEyNzU4OSwia2V5IjoiYTc3ZWZhNWEtOTkyZS00MzU1LThkYmMtNzE5MGU1NzA2ZmYyIiwicmVnaW9uIjoiYXAteGlhbi1lYyIsInRvcGljX2lkIjoiZWRjZTE1YjYtYjg1Yy00OGUyLTk0ZTUtMDQyYWE5YWQ5OWQ3In0=",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号id",
+          "example": "1000010101",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号id",
+          "example": "1000010102",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NetworkApplicationInfo": {
+      "document": "网络应用任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络应用Id",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络应用名称",
+          "example": "network_application_demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域code",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "edce15b6-b85c-48e2-94e5-042aa9ad99d7",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "7fb0245e-2006-4e0f-9153-c5f6b7110b4c",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号id",
+          "example": "1000010101",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号id",
+          "example": "1000010102",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "NoticeContent": {
       "document": "通知内容模板详细配置",

@@ -71,10 +71,17 @@
       "status": "online"
     },
     "DescribeExtractDocAgentJob": {
-      "document": "用于查询文档处理任务。文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。",
+      "document": "模型参数更大，速度更慢。推荐场景：可以接受异步（超过30s返回），样本输入输出token大于2000，长文本类文档建议用异步模型。需要 SubmitExtractDocAgentJob（提交任务）、DescribeExtractDocAgentJob（查询任务）两个接口配套使用，计费发生在提交任务后。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】",
       "input": "DescribeExtractDocAgentJobRequest",
-      "name": "查询文档抽取Agent任务",
+      "name": "异步文档抽取Agent(查询任务)",
       "output": "DescribeExtractDocAgentJobResponse",
+      "status": "online"
+    },
+    "DescribeMarkEssayAgentJob": {
+      "document": "用于作文批改Agent查询任务。基于业界领先的千亿参数多模态大模型技术，提供中英文手写作文的精准批改端到端服务。核心功能涵盖错别字智能识别、好词好句点评、错句纠错，并能够在原文中定位至具体段落与字符位置，同时提供详细的修改建议与优化内容。此能力是作业批改场景中的核心模块。\n\n默认接口请求并发限制：2次/分钟。",
+      "input": "DescribeMarkEssayAgentJobRequest",
+      "name": "作文批改Agent（查询任务）",
+      "output": "DescribeMarkEssayAgentJobResponse",
       "status": "online"
     },
     "DescribeQuestionMarkAgentJob": {
@@ -127,7 +134,7 @@
       "status": "online"
     },
     "ExtractDocAgent": {
-      "document": "用于查询文档处理任务。文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。",
+      "document": "模型参数更小，速度更快。推荐场景：实时性要求高（30s以内）并且样本输入输出token2000以内，建议用实时模型。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】",
       "input": "ExtractDocAgentRequest",
       "name": "实时文档抽取Agent",
       "output": "ExtractDocAgentResponse",
@@ -253,7 +260,7 @@
       "status": "online"
     },
     "IDCardOCR": {
-      "document": "本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别准确度达到99%以上。\n\n另外，本接口还支持多种扩展能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备7种告警功能，如下表所示。\n\n<table style=\"width:650px\">\n      <thead>\n        <tr>\n       <th width=\"150\">扩展能力</th>\n          <th width=\"500\">能力项</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td rowspan=\"2\">裁剪功能</td>\n          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>\n        </tr>\n        <tr>\n          <td>人像照片裁剪（自动抠取身份证头像区域）</td>\n        </tr>\n        <tr>\n          <td rowspan=\"9\">告警功能</td>\n        </tr>\n        <tr>\n         <td>身份证有效日期不合法告警</td>\n        </tr> \n        <tr>\n         <td>身份证边框不完整告警</td>\n        </tr>\n        <tr>\n          <td>身份证复印件告警</td>\n        </tr>\n        <tr>\n          <td>身份证翻拍告警</td>\n        </tr>\n          <tr>\n          <td>身份证框内遮挡告警</td>\n        </tr>\n         <tr>\n          <td>临时身份证告警</td>\n        </tr>\n         <tr>\n          <td>身份证疑似存在PS痕迹告警</td>\n        </tr>\n          <tr>\n          <td>图片模糊告警（可根据图片质量分数判断）</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别准确度达到99%以上。\n\n另外，本接口还支持多种扩展能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备7种告警功能，如下表所示。\n\n重要提醒：本产品告警功能依托AI检测技术，不可作为审核的唯一依据，应用前请做好效果测试。\n\n\n<table style=\"width:650px\">\n      <thead>\n        <tr>\n       <th width=\"150\">扩展能力</th>\n          <th width=\"500\">能力项</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td rowspan=\"2\">裁剪功能</td>\n          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>\n        </tr>\n        <tr>\n          <td>人像照片裁剪（自动抠取身份证头像区域）</td>\n        </tr>\n        <tr>\n          <td rowspan=\"9\">告警功能</td>\n        </tr>\n        <tr>\n         <td>身份证有效日期不合法告警</td>\n        </tr> \n        <tr>\n         <td>身份证边框不完整告警</td>\n        </tr>\n        <tr>\n          <td>身份证复印件告警</td>\n        </tr>\n        <tr>\n          <td>身份证翻拍告警</td>\n        </tr>\n          <tr>\n          <td>身份证框内遮挡告警</td>\n        </tr>\n         <tr>\n          <td>临时身份证告警</td>\n        </tr>\n         <tr>\n          <td>身份证疑似存在PS痕迹告警</td>\n        </tr>\n          <tr>\n          <td>图片模糊告警（可根据图片质量分数判断）</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
       "input": "IDCardOCRRequest",
       "name": "身份证识别",
       "output": "IDCardOCRResponse",
@@ -379,7 +386,7 @@
       "status": "online"
     },
     "RecognizeEncryptedIDCardOCR": {
-      "document": "身份证识别（安全加密版）接口实现了数据加密传输，能够有效防止个人身份证隐私信息不被窃取泄露。\n\n本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别速度快、准确度高。\n\n另外，本接口还支持多种扩展能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备9种告警功能，如下表所示。\n\n<table style=\"width:650px\">\n      <thead>\n        <tr>\n       <th width=\"150\">扩展能力</th>\n          <th width=\"500\">能力项</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td rowspan=\"2\">裁剪功能</td>\n          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>\n        </tr>\n        <tr>\n          <td>人像照片裁剪（自动抠取身份证头像区域）</td>\n        </tr>\n        <tr>\n          <td rowspan=\"9\">告警功能</td>\n          <td>身份证有效日期不合法\n\n</td>\n        </tr>\n        <tr>\n          <td>身份证边框不完整告警</td>\n        </tr>\n        <tr>\n          <td>身份证复印件告警</td>\n        </tr>\n        <tr>\n          <td>身份证翻拍告警</td>\n        </tr>\n          <tr>\n          <td>身份证框内遮挡告警</td>\n        </tr>\n         <tr>\n          <td>临时身份证告警</td>\n        </tr>\n         <tr>\n          <td>身份证疑似存在PS痕迹告警</td>\n        </tr>\n          <tr>\n          <td>图片模糊告警（可根据图片质量分数判断）</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
+      "document": "身份证识别（安全加密版）接口实现了数据加密传输，能够有效防止个人身份证隐私信息不被窃取泄露。\n\n本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别速度快、准确度高。\n\n另外，本接口还支持多种扩展能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备9种告警功能，如下表所示。\n\n重要提醒：本产品告警功能依托AI检测技术，不可作为审核的唯一依据，应用前请做好效果测试。\n\n\n<table style=\"width:650px\">\n      <thead>\n        <tr>\n       <th width=\"150\">扩展能力</th>\n          <th width=\"500\">能力项</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td rowspan=\"2\">裁剪功能</td>\n          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>\n        </tr>\n        <tr>\n          <td>人像照片裁剪（自动抠取身份证头像区域）</td>\n        </tr>\n        <tr>\n          <td rowspan=\"9\">告警功能</td>\n          <td>身份证有效日期不合法\n\n</td>\n        </tr>\n        <tr>\n          <td>身份证边框不完整告警</td>\n        </tr>\n        <tr>\n          <td>身份证复印件告警</td>\n        </tr>\n        <tr>\n          <td>身份证翻拍告警</td>\n        </tr>\n          <tr>\n          <td>身份证框内遮挡告警</td>\n        </tr>\n         <tr>\n          <td>临时身份证告警</td>\n        </tr>\n         <tr>\n          <td>身份证疑似存在PS痕迹告警</td>\n        </tr>\n          <tr>\n          <td>图片模糊告警（可根据图片质量分数判断）</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizeEncryptedIDCardOCRRequest",
       "name": "身份证识别（安全加密版）",
       "output": "RecognizeEncryptedIDCardOCRResponse",
@@ -393,7 +400,7 @@
       "status": "online"
     },
     "RecognizeGeneralCardWarn": {
-      "document": "支持通用证照的有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能，支持通用证照的ps伪造检测，可以应用于各种证件信息有效性校验场景。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "支持通用证照的有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能，支持通用证照的ps伪造检测，可以应用于各种证件信息有效性校验场景。\n\n重要提醒：本产品依托AI检测技术，不可作为审核的唯一依据，应用前请做好效果测试。\n\n默认接口请求频率限制：5次/秒。",
       "input": "RecognizeGeneralCardWarnRequest",
       "name": "通用卡证鉴伪",
       "output": "RecognizeGeneralCardWarnResponse",
@@ -441,13 +448,6 @@
       "output": "RecognizeTableAccurateOCRResponse",
       "status": "online"
     },
-    "RecognizeTableMultiOCR": {
-      "document": "基于MLLM(多模态大语言模型)的表格识别能力，针对复杂表格的算法识别效果更佳，适配财务报表识别场景，并可输出直接对接业务系统的Excel数据。\n\n默认接口请求频率限制：1次/秒。",
-      "input": "RecognizeTableMultiOCRRequest",
-      "name": "表格识别（多模态版）",
-      "output": "RecognizeTableMultiOCRResponse",
-      "status": "online"
-    },
     "RecognizeTableOCR": {
       "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。\n\n默认接口请求频率限制：10次/秒。",
       "input": "RecognizeTableOCRRequest",
@@ -470,7 +470,7 @@
       "status": "deprecated"
     },
     "RecognizeValidIDCardOCR": {
-      "document": "本接口支持二代身份证、临时身份证、港澳台居住证、外国人永久居留证，字段内容识别功能，包括姓名、性别、民族、出生、出生日期、住址、公民身份号码、签发机关、有效期限、国籍、通行证号码、持证人持有号码；支持返回证件类型；支持翻拍、复印、边框不完整、遮挡、字段级反光和字段级完整性告警；支持卡片主体框裁剪和头像裁剪。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持二代身份证、临时身份证、港澳台居住证、外国人永久居留证，字段内容识别功能，包括姓名、性别、民族、出生、出生日期、住址、公民身份号码、签发机关、有效期限、国籍、通行证号码、持证人持有号码；支持返回证件类型；支持翻拍、复印、边框不完整、遮挡、字段级反光和字段级完整性告警；支持卡片主体框裁剪和头像裁剪。\n\n重要提醒：本产品告警功能依托AI检测技术，不可作为审核的唯一依据，应用前请做好效果测试。\n\n默认接口请求频率限制：5次/秒。",
       "input": "RecognizeValidIDCardOCRRequest",
       "name": "有效身份证件识别（鉴伪版）",
       "output": "RecognizeValidIDCardOCRResponse",
@@ -519,10 +519,17 @@
       "status": "online"
     },
     "SubmitExtractDocAgentJob": {
-      "document": "文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。",
+      "document": "模型参数更大，速度更慢。推荐场景：可以接受异步（超过30s返回），样本输入输出token大于2000，长文本类文档建议用异步模型。需要 SubmitExtractDocAgentJob（提交任务）、DescribeExtractDocAgentJob（查询任务）两个接口配套使用，计费发生在提交任务后。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】",
       "input": "SubmitExtractDocAgentJobRequest",
-      "name": "提交文档抽取Agent任务",
+      "name": "异步文档抽取Agent(创建任务)",
       "output": "SubmitExtractDocAgentJobResponse",
+      "status": "online"
+    },
+    "SubmitMarkEssayAgentJob": {
+      "document": "用于作文批改Agent提交任务。基于业界领先的千亿参数多模态大模型技术，提供中英文手写作文的精准批改端到端服务。核心功能涵盖错别字智能识别、好词好句点评、错句纠错，并能够在原文中定位至具体段落与字符位置，同时提供详细的修改建议与优化内容。此能力是作业批改场景中的核心模块。\n\n默认接口请求并发限制：2次/分钟。",
+      "input": "SubmitMarkEssayAgentJobRequest",
+      "name": "作文批改Agent（提交任务）",
+      "output": "SubmitMarkEssayAgentJobResponse",
       "status": "online"
     },
     "SubmitQuestionMarkAgentJob": {
@@ -3215,6 +3222,83 @@
           "example": "在本次任务中，首先，我们需要从文档中提取车型字段。接着，我定位到文档中所有类型为kv的段落。最终，找到了文档中最相关的kv信息",
           "member": "string",
           "name": "ThoughtContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMarkEssayAgentJobRequest": {
+      "document": "DescribeMarkEssayAgentJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务唯一ID。由服务端生成。",
+          "example": "\"1334797167793684480\"",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMarkEssayAgentJobResponse": {
+      "document": "DescribeMarkEssayAgentJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Angle",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置结构化文本信息。",
+          "example": "无",
+          "member": "MarkEssaySuggestions",
+          "name": "SentenceSuggests",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.PDFParseFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "PDF解析失败。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "DONE",
+          "member": "string",
+          "name": "JobStatus",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8457,7 +8541,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -8466,7 +8550,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "document": "<p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -8475,7 +8559,7 @@
         },
         {
           "disabled": false,
-          "document": "FRONT：身份证有照片的一面（人像面），\nBACK：身份证有国徽的一面（国徽面），\n该参数如果不填，将为您自动判断身份证正反面。",
+          "document": "<p>FRONT：身份证有照片的一面（人像面），<br>BACK：身份证有国徽的一面（国徽面），<br>该参数如果不填，将为您自动判断身份证正反面。</p>",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -8484,7 +8568,7 @@
         },
         {
           "disabled": false,
-          "document": "以下可选字段均为bool 类型，默认false：\nCropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）\nCropPortrait，人像照片裁剪（自动抠取身份证头像区域）\nCopyWarn，复印件告警\nBorderCheckWarn，边框不完整和框内遮挡告警\nReshootWarn，屏幕翻拍告警\nDetectPsWarn，疑似存在PS痕迹告警（CardWarnType参数为 Advanced时同时开启电子身份证告警）\nTempIdWarn，临时身份证告警\nInvalidDateWarn，身份证有效日期不合法告警\nQuality，图片质量分数（评价图片的模糊程度）\nMultiCardDetect，是否开启正反面同框识别（仅支持二代身份证正反页同框识别或临时身份证正反页同框识别）\nReflectWarn，是否开启反光检测\nSDK 设置方式参考：Config = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：Config = {\"CropIdCard\":true,\"CropPortrait\":true}",
+          "document": "<p>以下可选字段均为bool 类型，默认false：<br>CropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）<br>CropPortrait，人像照片裁剪（自动抠取身份证头像区域）<br>CopyWarn，复印件告警<br>BorderCheckWarn，边框不完整和框内遮挡告警<br>ReshootWarn，屏幕翻拍告警<br>DetectPsWarn，疑似存在PS痕迹告警（CardWarnType参数为 Advanced时同时开启电子身份证、水印告警）<br>TempIdWarn，临时身份证告警<br>InvalidDateWarn，身份证有效日期不合法告警<br>Quality，图片质量分数（评价图片的模糊程度）<br>MultiCardDetect，是否开启正反面同框识别（仅支持二代身份证正反页同框识别或临时身份证正反页同框识别）<br>ReflectWarn，是否开启反光检测<br>SDK 设置方式参考：Config = Json.stringify({&quot;CropIdCard&quot;:true,&quot;CropPortrait&quot;:true})<br>API 3.0 Explorer 设置方式参考：Config = {&quot;CropIdCard&quot;:true,&quot;CropPortrait&quot;:true}</p>",
           "example": "{\"CropIdCard\":true,\"CropPortrait\":true}",
           "member": "string",
           "name": "Config",
@@ -8493,7 +8577,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。",
+          "document": "<p>默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableRecognitionRectify",
@@ -8502,7 +8586,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值为false。\n\n此开关需要在反光检测开关开启下才会生效（即此开关生效的前提是config入参里的\"ReflectWarn\":true），若EnableReflectDetail设置为true，则会返回反光点覆盖区域详情。反光点覆盖区域详情分为四部分：人像照片位置、国徽位置、识别字段位置、其他位置。一个反光点允许覆盖多个区域，且一张图片可能存在多个反光点。",
+          "document": "<p>默认值为false。</p><p>此开关需要在反光检测开关开启下才会生效（即此开关生效的前提是config入参里的&quot;ReflectWarn&quot;:true），若EnableReflectDetail设置为true，则会返回反光点覆盖区域详情。反光点覆盖区域详情分为四部分：人像照片位置、国徽位置、识别字段位置、其他位置。一个反光点允许覆盖多个区域，且一张图片可能存在多个反光点。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableReflectDetail",
@@ -8511,7 +8595,7 @@
         },
         {
           "disabled": true,
-          "document": "用于控制是否开启日期校验，默认值为true，打开会进行日期校验。",
+          "document": "<p>用于控制是否开启日期校验，默认值为true，打开会进行日期校验。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableDateVerify",
@@ -8520,7 +8604,7 @@
         },
         {
           "disabled": false,
-          "document": "Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic",
+          "document": "<p>Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic</p>",
           "example": "Basic",
           "member": "string",
           "name": "CardWarnType",
@@ -8535,7 +8619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名（人像面）",
+          "document": "<p>姓名（人像面）</p>",
           "example": "李明",
           "member": "string",
           "name": "Name",
@@ -8545,7 +8629,7 @@
         },
         {
           "disabled": false,
-          "document": "性别（人像面）",
+          "document": "<p>性别（人像面）</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -8555,7 +8639,7 @@
         },
         {
           "disabled": false,
-          "document": "民族（人像面）",
+          "document": "<p>民族（人像面）</p>",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -8565,7 +8649,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期（人像面）",
+          "document": "<p>出生日期（人像面）</p>",
           "example": "1987/1/1",
           "member": "string",
           "name": "Birth",
@@ -8575,7 +8659,7 @@
         },
         {
           "disabled": false,
-          "document": "地址（人像面）",
+          "document": "<p>地址（人像面）</p>",
           "example": "北京市石景山区高新技术园腾讯大楼",
           "member": "string",
           "name": "Address",
@@ -8585,7 +8669,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号（人像面）",
+          "document": "<p>身份证号（人像面）</p>",
           "example": "440524198701010014",
           "member": "string",
           "name": "IdNum",
@@ -8595,7 +8679,7 @@
         },
         {
           "disabled": false,
-          "document": "发证机关（国徽面）",
+          "document": "<p>发证机关（国徽面）</p>",
           "example": "深圳市公安局南山分局",
           "member": "string",
           "name": "Authority",
@@ -8605,7 +8689,7 @@
         },
         {
           "disabled": false,
-          "document": "证件有效期（国徽面）",
+          "document": "<p>证件有效期（国徽面）</p>",
           "example": "2017.08.12-2037.08.12",
           "member": "string",
           "name": "ValidDate",
@@ -8615,7 +8699,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展信息，不请求则不返回，具体输入参考示例3和示例4。\nIdCard，裁剪后身份证照片的base64编码，请求 Config.CropIdCard 时返回；\nPortrait，身份证头像照片的base64编码，请求 Config.CropPortrait 时返回；\nQuality，图片质量分数，请求 Config.Quality 时返回（取值范围：0 ~ 100，分数越低越模糊，建议阈值≥50）;\nBorderCodeValue，身份证边框不完整告警阈值分数，请求 Config.BorderCheckWarn时返回（取值范围：0 ~ 100，分数越低边框遮挡可能性越低，建议阈值≤50）;\nWarnInfos，告警信息，Code 告警码列表和释义：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警（黑白及彩色复印件）,\n-9108 身份证复印件告警（仅黑白复印件），\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证疑似存在PS痕迹告警，\n-9107 身份证反光告警，\n-9110 电子身份证告警",
+          "document": "<p>扩展信息，不请求则不返回，具体输入参考示例3和示例4。<br>IdCard，裁剪后身份证照片的base64编码，请求 Config.CropIdCard 时返回；<br>Portrait，身份证头像照片的base64编码，请求 Config.CropPortrait 时返回；<br>Quality，图片质量分数，请求 Config.Quality 时返回（取值范围：0 ~ 100，分数越低越模糊，建议阈值≥50）;<br>BorderCodeValue，身份证边框不完整告警阈值分数，请求 Config.BorderCheckWarn时返回（取值范围：0 ~ 100，分数越低边框遮挡可能性越低，建议阈值≤50）;<br>WarnInfos，告警信息，Code 告警码列表和释义：<br>-9100 身份证有效日期不合法告警，<br>-9101 身份证边框不完整告警，<br>-9102 身份证复印件告警（黑白及彩色复印件）,<br>-9108 身份证复印件告警（仅黑白复印件），<br>-9103 身份证翻拍告警，<br>-9105 身份证框内遮挡告警，<br>-9104 临时身份证告警，<br>-9106 身份证疑似存在PS痕迹告警，<br>-9107 身份证反光告警，<br>-9110 电子身份证告警，<br>-9111 水印告警（仅CardWarnType参数为Advanced时）</p>",
           "example": "{\"Quality\":100,\"WarnInfos\":[],\"BorderCodeValue\":26}",
           "member": "string",
           "name": "AdvancedInfo",
@@ -8625,7 +8709,7 @@
         },
         {
           "disabled": false,
-          "document": "反光点覆盖区域详情结果，具体内容请点击左侧链接",
+          "document": "<p>反光点覆盖区域详情结果，具体内容请点击左侧链接</p>",
           "example": "无",
           "member": "ReflectDetailInfo",
           "name": "ReflectDetailInfos",
@@ -10355,7 +10439,7 @@
         },
         {
           "disabled": false,
-          "document": "图片正反面\nFRONT：正面\nBACK：反面\n默认为FRONT",
+          "document": "图片正反面\nFRONT：正面\nBACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）\n默认为FRONT",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -10552,6 +10636,89 @@
         }
       ],
       "usage": "out"
+    },
+    "MarkEssaySuggestions": {
+      "document": "作文批改建议",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作文批改序号",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批改类型：主要包括：词汇、语句",
+          "example": "“语句层面”",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子类型，基于Type返回二级类型\n\n词汇： 错别字、使用拼音、词语误用、词语冗余、词汇贫乏、多字/漏字\n\n语句：语法硬伤、逻辑问题、表达不佳、标点误用、优美句子",
+          "example": "“优美句子”",
+          "member": "string",
+          "name": "SubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原文内容",
+          "example": "\"即紧张又感到自豪\"",
+          "member": "string",
+          "name": "Origin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批改后的内容",
+          "example": "\"既紧张又感到自豪\"",
+          "member": "string",
+          "name": "Replace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点评内容",
+          "example": "\"'即'应为'既'，表示同时存在两种状态\"",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "array[][]二维数组，原文内容可能存在跨行的句子，会有多组坐标返回\n\n切图区域的4个角点坐标, 是个长度为8的数组\n\n[0,1,2,3,4,5,6,7]\n\n(0,1) 左上角坐标\n(2,3) 右上角坐标\n(4,5) 右下角坐标\n(6,7) 左下角坐标",
+          "example": "无",
+          "member": "Positions",
+          "name": "Positions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MarkInfo": {
       "document": "整张试卷所有题目批改信息",
@@ -12729,6 +12896,23 @@
       ],
       "usage": "out"
     },
+    "Positions": {
+      "document": "这是OCR在高精度识别下返回的坐标值，采用的是由一个数组表示4个顶点的坐标构成，如[0,1,2,3,4,5,6,7]\n- (0,1) 左上角坐标\n- (2,3) 右上角坐标\n- (4,5) 右下角坐标\n- (6,7) 左下角坐标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "这是OCR在高精度识别下返回的坐标值，采用的是由一个数组表示4个顶点的坐标构成，如[0,1,2,3,4,5,6,7]\n- (0,1) 左上角坐标\n- (2,3) 右上角坐标\n- (4,5) 右下角坐标\n- (6,7) 左下角坐标",
+          "example": "[1,2,3,4,5,6,7,8]",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "QrcodeImgSize": {
       "document": "图片大小",
       "members": [
@@ -13954,7 +14138,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求体被加密后的密文（Base64编码），本接口只支持加密传输",
+          "document": "<p>请求体被加密后的密文（Base64编码），本接口只支持加密传输</p>",
           "example": "/9j/cpA8uWgtLjDSY.....HmPx1Lt1A==",
           "member": "string",
           "name": "EncryptedBody",
@@ -13963,7 +14147,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。对传入信息有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。对传入信息有加密需求的用户可使用此参数，详情请点击左侧链接。</p>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -13972,7 +14156,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -13981,7 +14165,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "document": "<p>图片的 Url 地址。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR3.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -13990,7 +14174,7 @@
         },
         {
           "disabled": false,
-          "document": "FRONT：身份证有照片的一面（人像面），\nBACK：身份证有国徽的一面（国徽面），\n该参数如果不填，将为您自动判断身份证正反面。",
+          "document": "<p>FRONT：身份证有照片的一面（人像面），<br>BACK：身份证有国徽的一面（国徽面），<br>该参数如果不填，将为您自动判断身份证正反面。</p>",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -13999,7 +14183,7 @@
         },
         {
           "disabled": false,
-          "document": "以下可选字段均为bool 类型，默认false：\nCropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）\nCropPortrait，人像照片裁剪（自动抠取身份证头像区域）\nCopyWarn，复印件告警\nBorderCheckWarn，边框不完整和框内遮挡告警\nReshootWarn，屏幕翻拍告警\nDetectPsWarn，疑似存在PS痕迹告警（CardWarnType参数为 Advanced时同时开启电子身份证告警）\nTempIdWarn，临时身份证告警\nInvalidDateWarn，身份证有效日期不合法告警\nQuality，图片质量分数（评价图片的模糊程度）\nMultiCardDetect，是否开启正反面同框识别（仅支持二代身份证正反页同框识别或临时身份证正反页同框识别）\nReflectWarn，是否开启反光检测\nSDK 设置方式参考：Config = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：Config = {\"CropIdCard\":true,\"CropPortrait\":true}",
+          "document": "<p>以下可选字段均为bool 类型，默认false：<br>CropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）<br>CropPortrait，人像照片裁剪（自动抠取身份证头像区域）<br>CopyWarn，复印件告警<br>BorderCheckWarn，边框不完整和框内遮挡告警<br>ReshootWarn，屏幕翻拍告警<br>DetectPsWarn，疑似存在PS痕迹告警（CardWarnType参数为 Advanced时同时开启电子身份证、水印告警）<br>TempIdWarn，临时身份证告警<br>InvalidDateWarn，身份证有效日期不合法告警<br>Quality，图片质量分数（评价图片的模糊程度）<br>MultiCardDetect，是否开启正反面同框识别（仅支持二代身份证正反页同框识别或临时身份证正反页同框识别）<br>ReflectWarn，是否开启反光检测<br>SDK 设置方式参考：Config = Json.stringify({&quot;CropIdCard&quot;:true,&quot;CropPortrait&quot;:true})<br>API 3.0 Explorer 设置方式参考：Config = {&quot;CropIdCard&quot;:true,&quot;CropPortrait&quot;:true}</p>",
           "example": "{\"CropIdCard\":true,\"CropPortrait\":true}",
           "member": "string",
           "name": "Config",
@@ -14008,7 +14192,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。",
+          "document": "<p>默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableRecognitionRectify",
@@ -14017,7 +14201,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值为false。\n\n此开关需要在反光检测开关开启下才会生效（即此开关生效的前提是config入参里的\"ReflectWarn\":true），若EnableReflectDetail设置为true，则会返回反光点覆盖区域详情。反光点覆盖区域详情分为四部分：人像照片位置、国徽位置、识别字段位置、其他位置。一个反光点允许覆盖多个区域，且一张图片可能存在多个反光点。",
+          "document": "<p>默认值为false。</p><p>此开关需要在反光检测开关开启下才会生效（即此开关生效的前提是config入参里的&quot;ReflectWarn&quot;:true），若EnableReflectDetail设置为true，则会返回反光点覆盖区域详情。反光点覆盖区域详情分为四部分：人像照片位置、国徽位置、识别字段位置、其他位置。一个反光点允许覆盖多个区域，且一张图片可能存在多个反光点。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableReflectDetail",
@@ -14026,7 +14210,7 @@
         },
         {
           "disabled": false,
-          "document": "Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic",
+          "document": "<p>Basic：使用基础卡证告警能力（含基础PS告警）； Advanced：开启进阶PS告警能力，PS告警效果更佳但需要更长耗时；建议测试对比后选用，默认值为 Basic</p>",
           "example": "Basic",
           "member": "string",
           "name": "CardWarnType",
@@ -14041,7 +14225,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名（人像面）",
+          "document": "<p>姓名（人像面）</p>",
           "example": "李明",
           "member": "string",
           "name": "Name",
@@ -14051,7 +14235,7 @@
         },
         {
           "disabled": false,
-          "document": "性别（人像面）",
+          "document": "<p>性别（人像面）</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -14061,7 +14245,7 @@
         },
         {
           "disabled": false,
-          "document": "民族（人像面）",
+          "document": "<p>民族（人像面）</p>",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -14071,7 +14255,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期（人像面）",
+          "document": "<p>出生日期（人像面）</p>",
           "example": "1987/1/1",
           "member": "string",
           "name": "Birth",
@@ -14081,7 +14265,7 @@
         },
         {
           "disabled": false,
-          "document": "地址（人像面）",
+          "document": "<p>地址（人像面）</p>",
           "example": "北京市石景山区高新技术园腾讯大楼",
           "member": "string",
           "name": "Address",
@@ -14091,7 +14275,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号（人像面）",
+          "document": "<p>身份证号（人像面）</p>",
           "example": "440524198701010014",
           "member": "string",
           "name": "IdNum",
@@ -14101,7 +14285,7 @@
         },
         {
           "disabled": false,
-          "document": "发证机关（国徽面）",
+          "document": "<p>发证机关（国徽面）</p>",
           "example": "深圳市公安局南山分局",
           "member": "string",
           "name": "Authority",
@@ -14111,7 +14295,7 @@
         },
         {
           "disabled": false,
-          "document": "证件有效期（国徽面）",
+          "document": "<p>证件有效期（国徽面）</p>",
           "example": "2017.08.12-2037.08.12",
           "member": "string",
           "name": "ValidDate",
@@ -14121,7 +14305,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展信息，不请求则不返回，具体输入参考示例3和示例4。\nIdCard，裁剪后身份证照片的base64编码，请求 Config.CropIdCard 时返回；\nPortrait，身份证头像照片的base64编码，请求 Config.CropPortrait 时返回；\nQuality，图片质量分数，请求 Config.Quality 时返回（取值范围：0 ~ 100，分数越低越模糊，建议阈值≥50）;\nBorderCodeValue，身份证边框不完整告警阈值分数，请求 Config.BorderCheckWarn时返回（取值范围：0 ~ 100，分数越低边框遮挡可能性越低，建议阈值≤50）;\nWarnInfos，告警信息，Code 告警码列表和释义：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警（黑白及彩色复印件）,\n-9108 身份证复印件告警（仅黑白复印件），\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证疑似存在PS痕迹告警，\n-9107 身份证反光告警，\n-9110 电子身份证告警",
+          "document": "<p>扩展信息，不请求则不返回，具体输入参考示例3和示例4。<br>IdCard，裁剪后身份证照片的base64编码，请求 Config.CropIdCard 时返回；<br>Portrait，身份证头像照片的base64编码，请求 Config.CropPortrait 时返回；<br>Quality，图片质量分数，请求 Config.Quality 时返回（取值范围：0 ~ 100，分数越低越模糊，建议阈值≥50）;<br>BorderCodeValue，身份证边框不完整告警阈值分数，请求 Config.BorderCheckWarn时返回（取值范围：0 ~ 100，分数越低边框遮挡可能性越低，建议阈值≤50）;<br>WarnInfos，告警信息，Code 告警码列表和释义：<br>-9100 身份证有效日期不合法告警，<br>-9101 身份证边框不完整告警，<br>-9102 身份证复印件告警（黑白及彩色复印件）,<br>-9108 身份证复印件告警（仅黑白复印件），<br>-9103 身份证翻拍告警，<br>-9105 身份证框内遮挡告警，<br>-9104 临时身份证告警，<br>-9106 身份证疑似存在PS痕迹告警，<br>-9107 身份证反光告警，<br>-9110 电子身份证告警，<br>-9111 水印告警（仅CardWarnType参数为Advanced时），</p>",
           "example": "{\"Quality\":100,\"WarnInfos\":[],\"BorderCodeValue\":26}",
           "member": "string",
           "name": "AdvancedInfo",
@@ -14131,7 +14315,7 @@
         },
         {
           "disabled": false,
-          "document": "反光点覆盖区域详情结果，具体内容请点击左侧链接",
+          "document": "<p>反光点覆盖区域详情结果，具体内容请点击左侧链接</p>",
           "example": "无",
           "member": "ReflectDetailInfo",
           "name": "ReflectDetailInfos",
@@ -14141,7 +14325,7 @@
         },
         {
           "disabled": false,
-          "document": "加密后的数据（Base64编码）",
+          "document": "<p>加密后的数据（Base64编码）</p>",
           "example": "/9j/R+psIR59D8HR2.....EBBDaxRzP6o=",
           "member": "string",
           "name": "EncryptedBody",
@@ -14151,7 +14335,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息",
+          "document": "<p>敏感数据加密信息</p>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -15003,79 +15187,6 @@
           "name": "Angle",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeTableMultiOCRRequest": {
-      "document": "RecognizeTableMultiOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片/PDF的 Base64 值。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。 ",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片/PDF的 Url 地址。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。 ",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文档的起始页码。  当传入文件是PDF型时，用来指定识别的起始页码，识别的页码包含当前值。",
-          "example": "1",
-          "member": "int64",
-          "name": "PdfStartPageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "文档的结束页码。 当传入文件是PDF类型时，用来指定识别的结束页码，识别的页码包含当前值。单次调用最多支持识别3页内容，即PdfEndPageNumber-PdfStartPageNumber需要不大于3。",
-          "example": "3",
-          "member": "int64",
-          "name": "PdfEndPageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "配置选项，支持配置输出数据格式。\n\n* **Mdbase64** 返回 base64 编码的 markdown 格式文本。\n* **Excelbase64** 返回 base64 编码的 excel 文件。",
-          "example": "Excelbase64",
-          "member": "string",
-          "name": "DataFormat",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeTableMultiOCRResponse": {
-      "document": "RecognizeTableMultiOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Base64 编码后的 Excel 数据或 Markdown 数据。  注意：此字段可能返回空，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "DataBase64",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -17656,6 +17767,70 @@
           "name": "JobId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitMarkEssayAgentJobRequest": {
+      "document": "SubmitMarkEssayAgentJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。  示例值：/9j/4AAQSkZJRg.....s97n//2Q==",
+          "example": "[\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABJoAAAYyCAYAAAB3uYQsAA***QAElEQ\"]",
+          "member": "string",
+          "name": "ImageBase64List",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。  示例值：https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "example": "[\"https://lke-realtime-1251316161.cos.ap-guangzhou.myqcloud.com/public/18877***06462784.png\"]",
+          "member": "string",
+          "name": "ImageUrlList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。 示例值：1",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "批改信息输出配置，当key对应为1表示开启配置开关。  当key为StructureAndContent  value为1 表示SentenceSuggest返回篇章结构和内容信息，默认只返回词汇、语句",
+          "example": "{\"StructureAndContent\": \"1\"}",
+          "member": "string",
+          "name": "QuestionConfigMap",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitMarkEssayAgentJobResponse": {
+      "document": "SubmitMarkEssayAgentJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务唯一ID。由服务端生成。 示例值：1334797167793684480",
+          "example": "[\"1334797167793684480\",\"1334797167793684345\"]",
+          "member": "string",
+          "name": "JobIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

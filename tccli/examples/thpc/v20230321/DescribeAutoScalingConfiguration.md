@@ -46,7 +46,13 @@ Output:
                         },
                         "DataDisks": null
                     }
-                ]
+                ],
+                "DesiredIdleNodeCapacity": 5,
+                "DesiredNodeCount": 0,
+                "ScaleOutRatio": 50,
+                "ScaleOutNodeThreshold": 0,
+                "MaxNodesPerCycle": 10,
+                "ScaleUpMemRatio": 0
             }
         ],
         "RequestId": "935760b6-2a63-480d-9124-c5f5b9d4218b"

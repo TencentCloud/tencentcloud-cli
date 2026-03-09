@@ -1,4 +1,4 @@
-**Example 1: DestroyMySql**
+**Example 1: DestroyMySQL**
 
 
 

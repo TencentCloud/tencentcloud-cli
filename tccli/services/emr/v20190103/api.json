@@ -154,6 +154,13 @@
       "output": "DescribeDAGInfoResponse",
       "status": "online"
     },
+    "DescribeEMREventList": {
+      "document": "查询EMR事件监控数据",
+      "input": "DescribeEMREventListRequest",
+      "name": "查询EMR事件数据信息",
+      "output": "DescribeEMREventListResponse",
+      "status": "online"
+    },
     "DescribeEmrApplicationStatics": {
       "document": "yarn application 统计接口查询",
       "input": "DescribeEmrApplicationStaticsRequest",
@@ -5351,6 +5358,116 @@
       ],
       "type": "object"
     },
+    "DescribeEMREventListRequest": {
+      "document": "DescribeEMREventList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-32xv111",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询事件的开始时间",
+          "example": "1767671005",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询事件的结束时间",
+          "example": "1767671005",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件触发的IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件受影响服务角色",
+          "example": "CPU",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件名称",
+          "example": "CPU利用率连续高于阈值",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件列表的偏移量",
+          "example": "20",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件列表的Limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEMREventListResponse": {
+      "document": "DescribeEMREventList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件详情列表",
+          "example": "无",
+          "member": "EMREventListItem",
+          "name": "EventList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合的事件总量",
+          "example": "200",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEmrApplicationStaticsRequest": {
       "document": "DescribeEmrApplicationStatics请求参数结构体",
       "members": [
@@ -9217,6 +9334,67 @@
           "name": "LimitMemory",
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EMREventListItem": {
+      "document": "事件详情列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件受影响ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件受影响的服务角色",
+          "example": "CPU",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件名称",
+          "example": "CPU利用率连续高于阈值",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件告警详情",
+          "example": "[NODE - CPU : 10.0.17.3] CPU utilization >= 0 % in 300 seconds",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件发生时间",
+          "example": "2026-01-03 00:33:43",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

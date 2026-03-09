@@ -127,7 +127,7 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n\n⚠️ **注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持在支付宝、APP打开、浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n   如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在**仅支持中国大陆身份证、中国港澳台居民居住证**。",
       "input": "ChannelCreateFlowSignUrlRequest",
       "name": "获取用户H5签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
@@ -11363,7 +11363,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署文件资源Id列表，目前仅支持单个文件",
+          "document": "<p>签署文件资源Id列表，目前仅支持单个文件</p>",
           "example": "[\"yDt1iUUckp7xb05iUuWfBtZwW5IdVzLn\"]",
           "member": "string",
           "name": "FileIds",
@@ -11372,7 +11372,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程名称，长度不超过200个字符",
+          "document": "<p>签署流程名称，长度不超过200个字符</p>",
           "example": "张三的入职合同",
           "member": "string",
           "name": "FlowName",
@@ -11381,7 +11381,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程签约方列表，最多不超过5个参与方",
+          "document": "<p>签署流程签约方列表，最多不超过5个参与方</p>",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApprovers",
@@ -11390,7 +11390,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
+          "document": "<p>签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年</p>",
           "example": "1662110622",
           "member": "int64",
           "name": "Deadline",
@@ -11399,7 +11399,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的描述，长度不超过1000个字符",
+          "document": "<p>签署流程的描述，长度不超过1000个字符</p>",
           "example": "张三的入职合同（2025）",
           "member": "string",
           "name": "FlowDescription",
@@ -11408,7 +11408,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的类型，长度不超过255个字符",
+          "document": "<p>签署流程的类型，长度不超过255个字符</p><p>枚举值：</p><ul><li>入职合同： 入职合同</li><li>劳动合同： 劳动合同</li></ul>",
           "example": "入职合同",
           "member": "string",
           "name": "FlowType",
@@ -11417,7 +11417,7 @@
         },
         {
           "disabled": true,
-          "document": "已废弃，请使用【应用号配置】中的回调地址统一接收消息",
+          "document": "<p>已废弃，请使用【应用号配置】中的回调地址统一接收消息</p>",
           "example": "https://callback.cn/callback",
           "member": "string",
           "name": "CallbackUrl",
@@ -11426,7 +11426,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方应用的业务信息，最大长度1000个字符。",
+          "document": "<p>第三方应用的业务信息，最大长度1000个字符。</p>",
           "example": "56ys5LiJ5pa55bqU55So55qE5Lia5Yqh5L+h5oGv77yM5pyA5aSn6ZW/5bqmMTAwMOS4quWtl+espuOAgg==",
           "member": "string",
           "name": "CustomerData",
@@ -11435,7 +11435,7 @@
         },
         {
           "disabled": false,
-          "document": "合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署",
+          "document": "<p>合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署</p>",
           "example": "false",
           "member": "bool",
           "name": "Unordered",
@@ -11444,7 +11444,7 @@
         },
         {
           "disabled": false,
-          "document": "签署文件中的发起方的填写控件，需要在发起的时候进行填充",
+          "document": "<p>签署文件中的发起方的填写控件，需要在发起的时候进行填充</p>",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -11453,7 +11453,7 @@
         },
         {
           "disabled": false,
-          "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
+          "document": "<p>合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始</p>",
           "example": "合同名称:{合同名称};发起方: {发起方企业}的{发起方姓名}大佬！;净重: 100吨;品类: 铁矿石",
           "member": "string",
           "name": "CustomShowMap",
@@ -11462,8 +11462,8 @@
         },
         {
           "disabled": false,
-          "document": "本企业(发起方企业)是否需要签署审批",
-          "example": "flase",
+          "document": "<p>本企业(发起方企业)是否需要签署审批</p>",
+          "example": "true",
           "member": "bool",
           "name": "NeedSignReview",
           "required": false,
@@ -11471,7 +11471,7 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "<p>在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:<img src=\"https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png\" alt=\"FlowDisplayType\"></p>",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
@@ -12924,7 +12924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "document": "<p>组织机构名称。<br>请确认该名称与企业营业执照中注册的名称一致。<br>如果名称中包含英文括号()，请使用中文括号（）代替。</p>",
           "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -12935,7 +12935,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。",
+          "document": "<p>组织机构企业统一社会信用代码。<br>请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。</p>",
           "example": "37000019890303000X",
           "member": "string",
           "name": "UniformSocialCreditCode",
@@ -12946,7 +12946,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。",
+          "document": "<p>组织机构法人的姓名。<br>请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。</p>",
           "example": "张三",
           "member": "string",
           "name": "LegalName",
@@ -12957,7 +12957,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构法人的证件类型",
+          "document": "<p>组织机构法人的证件类型</p><p>枚举值：</p><ul><li>居民身份证： 中国大陆居民身份证</li></ul>",
           "example": "居民身份证",
           "member": "string",
           "name": "LegalIdCardType",
@@ -12968,7 +12968,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构法人的证件号码",
+          "document": "<p>组织机构法人的证件号码</p>",
           "example": "37000019890303000X",
           "member": "string",
           "name": "LegalIdCardNumber",
@@ -12979,7 +12979,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构超管姓名。\n",
+          "document": "<p>组织机构超管姓名。</p>",
           "example": "张三",
           "member": "string",
           "name": "AdminName",
@@ -12990,7 +12990,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构超管手机号。\n",
+          "document": "<p>组织机构超管手机号。</p>",
           "example": "18888888888",
           "member": "string",
           "name": "AdminMobile",
@@ -13001,7 +13001,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构超管证件类型\n",
+          "document": "<p>组织机构超管证件类型</p><p>枚举值：</p><ul><li>居民身份证： 中国大陆居民身份证</li></ul>",
           "example": "居民身份证",
           "member": "string",
           "name": "AdminIdCardType",
@@ -13012,7 +13012,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构超管证件号码\n",
+          "document": "<p>组织机构超管证件号码</p>",
           "example": "37000019890303000X",
           "member": "string",
           "name": "AdminIdCardNumber",
@@ -13023,7 +13023,7 @@
         },
         {
           "disabled": false,
-          "document": "原超管姓名",
+          "document": "<p>原超管姓名</p>",
           "example": "李四",
           "member": "string",
           "name": "OldAdminName",
@@ -13034,7 +13034,7 @@
         },
         {
           "disabled": false,
-          "document": "原超管手机号",
+          "document": "<p>原超管手机号</p>",
           "example": "15100000000",
           "member": "string",
           "name": "OldAdminMobile",
@@ -13045,7 +13045,7 @@
         },
         {
           "disabled": false,
-          "document": "原超管证件类型",
+          "document": "<p>原超管证件类型</p><p>枚举值：</p><ul><li>居民身份证： 中国大陆居民身份证</li></ul>",
           "example": "居民身份证",
           "member": "string",
           "name": "OldAdminIdCardType",
@@ -13056,7 +13056,7 @@
         },
         {
           "disabled": false,
-          "document": "原超管证件号码",
+          "document": "<p>原超管证件号码</p>",
           "example": "65000019870404000X",
           "member": "string",
           "name": "OldAdminIdCardNumber",
@@ -13618,7 +13618,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同参与方的角色ID",
+          "document": "<p>合同参与方的角色ID</p>",
           "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "RecipientId",
@@ -13629,7 +13629,7 @@
         },
         {
           "disabled": false,
-          "document": "参与者类型, 可以选择的类型如下:\n<ul><li> **ENTERPRISE** :此角色为企业参与方</li>\n<li> **INDIVIDUAL** :此角色为个人参与方</li>\n<li> **PROMOTER** :此角色是发起方</li></ul>",
+          "document": "<p>参与者类型, 可以选择的类型如下:</p><ul><li> **ENTERPRISE** :此角色为企业参与方</li><li> **INDIVIDUAL** :此角色为个人参与方</li><li> **PROMOTER** :此角色是发起方</li></ul>",
           "example": "ENTERPRISE",
           "member": "string",
           "name": "RecipientType",
@@ -13640,7 +13640,7 @@
         },
         {
           "disabled": false,
-          "document": "合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。",
+          "document": "<p>合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。</p>",
           "example": "本合同的卖方",
           "member": "string",
           "name": "Description",
@@ -13651,7 +13651,7 @@
         },
         {
           "disabled": false,
-          "document": "合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。",
+          "document": "<p>合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。</p>",
           "example": "卖方",
           "member": "string",
           "name": "RoleName",
@@ -13662,7 +13662,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要校验，\ntrue-是，\nfalse-否",
+          "document": "<p>是否需要校验，<br>true-是，<br>false-否</p>",
           "example": "true",
           "member": "bool",
           "name": "RequireValidation",
@@ -13673,7 +13673,7 @@
         },
         {
           "disabled": false,
-          "document": "是否必须填写，\ntrue-是，\nfalse-否",
+          "document": "<p>是否必须填写，<br>true-是，<br>false-否</p>",
           "example": "true",
           "member": "bool",
           "name": "RequireSign",
@@ -13684,7 +13684,7 @@
         },
         {
           "disabled": false,
-          "document": "内部字段，签署类型",
+          "document": "<p>内部字段，签署类型</p><p>枚举值：</p><ul><li>0： 人脸</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "SignType",
@@ -13695,7 +13695,7 @@
         },
         {
           "disabled": false,
-          "document": "签署顺序：数字越小优先级越高",
+          "document": "<p>签署顺序：数字越小优先级越高</p>",
           "example": "0",
           "member": "int64",
           "name": "RoutingOrder",
@@ -13706,7 +13706,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是发起方，\ntrue-是 \nfalse-否",
+          "document": "<p>是否是发起方，<br>true-是<br>false-否</p>",
           "example": "true",
           "member": "bool",
           "name": "IsPromoter",
@@ -13717,7 +13717,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人查看合同校验方式, 支持的类型如下:\n<ul><li> 1 :实名认证查看</li>\n<li> 2 :手机号校验查看</li></ul>",
+          "document": "<p>签署人查看合同校验方式, 支持的类型如下:</p><ul><li> 1 :实名认证查看</li><li> 2 :手机号校验查看</li></ul>",
           "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
@@ -13728,7 +13728,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人进行合同签署时的认证方式，支持的类型如下:\n<ul><li> 1 :人脸认证</li>\n<li> 2 :签署密码</li>\n<li> 3 :运营商三要素认证</li>\n<li> 4 :UKey认证</li>\n<li> 5 :设备指纹识别</li>\n<li> 6 :设备面容识别</li></ul>",
+          "document": "<p>签署人进行合同签署时的认证方式，支持的类型如下:</p><ul><li> 1 :人脸认证</li><li> 2 :签署密码</li><li> 3 :运营商三要素认证</li><li> 4 :UKey认证</li><li> 5 :设备指纹识别</li><li> 6 :设备面容识别</li></ul>",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -13739,7 +13739,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方是否可以转他人处理\n\n<ul><li> **false** : ( 默认)可以转他人处理</li>\n<li> **true** :不可以转他人处理</li></ul>",
+          "document": "<p>签署方是否可以转他人处理</p><ul><li> **false** : ( 默认)可以转他人处理</li><li> **true** :不可以转他人处理</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "NoTransfer",

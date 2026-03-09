@@ -4514,7 +4514,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生命周期管理策略创建的时间",
+          "document": "<p>生命周期管理策略创建的时间</p>",
           "example": "2020-01-05 00:02:00",
           "member": "string",
           "name": "CreateTime",
@@ -4524,7 +4524,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略ID",
+          "document": "<p>生命周期管理策略ID</p>",
           "example": "policy-ek8aw4id",
           "member": "string",
           "name": "LifecyclePolicyID",
@@ -4534,8 +4534,8 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "<p>生命周期管理策略名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LifecyclePolicyTest",
           "member": "string",
           "name": "LifecyclePolicyName",
           "required": true,
@@ -4544,7 +4544,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略关联的管理规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生命周期管理策略关联的管理规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LifecycleRule",
           "name": "LifecycleRules",
@@ -4554,7 +4554,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略关联目录的绝对路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生命周期管理策略关联目录的绝对路径列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PathInfo",
           "name": "Paths",
@@ -5522,7 +5522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统Id,该参数通过查询文件系统列表接口获取",
+          "document": "文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
           "example": "cfs-4abc12345",
           "member": "string",
           "name": "FileSystemId",
@@ -5687,7 +5687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建快照时间",
+          "document": "<p>创建快照时间</p>",
           "example": "2020-09-16 16:34:33",
           "member": "string",
           "name": "CreationTime",
@@ -5697,7 +5697,7 @@
         },
         {
           "disabled": false,
-          "document": "快照名称",
+          "document": "<p>快照名称</p>",
           "example": "default",
           "member": "string",
           "name": "SnapshotName",
@@ -5707,7 +5707,7 @@
         },
         {
           "disabled": false,
-          "document": "快照ID",
+          "document": "<p>快照ID</p>",
           "example": "snapcfs-123abcde",
           "member": "string",
           "name": "SnapshotId",
@@ -5717,8 +5717,8 @@
         },
         {
           "disabled": false,
-          "document": "快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败",
-          "example": "available ",
+          "document": "<p>快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败</p>",
+          "example": "available",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -5727,7 +5727,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名称",
+          "document": "<p>地域名称</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
@@ -5737,7 +5737,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统ID",
+          "document": "<p>文件系统ID</p>",
           "example": "cfs-xx",
           "member": "string",
           "name": "FileSystemId",
@@ -5747,7 +5747,7 @@
         },
         {
           "disabled": false,
-          "document": "快照大小",
+          "document": "<p>快照大小</p><p>单位：MiB</p>",
           "example": "11",
           "member": "uint64",
           "name": "Size",
@@ -5757,7 +5757,7 @@
         },
         {
           "disabled": false,
-          "document": "保留时长天",
+          "document": "<p>保留时长天</p>",
           "example": "12",
           "member": "uint64",
           "name": "AliveDay",
@@ -5767,7 +5767,7 @@
         },
         {
           "disabled": false,
-          "document": "快照进度百分比，1表示1% 范围1-100",
+          "document": "<p>快照进度百分比，1表示1% 范围1-100</p>",
           "example": "1",
           "member": "uint64",
           "name": "Percent",
@@ -5777,7 +5777,7 @@
         },
         {
           "disabled": false,
-          "document": "账号ID",
+          "document": "<p>账号ID</p>",
           "example": "21211",
           "member": "uint64",
           "name": "AppId",
@@ -5787,7 +5787,7 @@
         },
         {
           "disabled": false,
-          "document": "快照删除时间",
+          "document": "<p>快照删除时间</p>",
           "example": "2020-10-01 16:34:33",
           "member": "string",
           "name": "DeleteTime",
@@ -5797,7 +5797,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统名称",
+          "document": "<p>文件系统名称</p>",
           "example": "default",
           "member": "string",
           "name": "FsName",
@@ -5807,7 +5807,7 @@
         },
         {
           "disabled": false,
-          "document": "快照标签",
+          "document": "<p>快照标签</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -5817,7 +5817,7 @@
         },
         {
           "disabled": false,
-          "document": "快照类型，general为通用系列快照，turbo为Turbo系列快照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "turbo",
           "member": "string",
           "name": "SnapshotType",
@@ -5827,7 +5827,7 @@
         },
         {
           "disabled": false,
-          "document": "实际快照时间，反映快照对应文件系统某个时刻的数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-05-16 14:45:15",
           "member": "string",
           "name": "SnapshotTime",
@@ -6037,7 +6037,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "低频存储容量",
+          "document": "<p>低频存储容量</p><p>单位：Byte, B, 字节</p>",
           "example": "100",
           "member": "int64",
           "name": "TieringSizeInBytes",
@@ -6048,7 +6048,7 @@
         },
         {
           "disabled": false,
-          "document": "冷存储容量",
+          "document": "<p>冷存储容量</p><p>单位：Byte, B, 字节</p>",
           "example": "100",
           "member": "int64",
           "name": "SecondaryTieringSizeInBytes",

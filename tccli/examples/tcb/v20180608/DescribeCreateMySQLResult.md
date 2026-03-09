@@ -1,4 +1,4 @@
-**Example 1: DescribeOpenMySqlResult**
+**Example 1: DescribeCreateMySQLResult**
 
 
 

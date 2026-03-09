@@ -112,6 +112,13 @@
       "output": "DeleteReceiverResponse",
       "status": "online"
     },
+    "GetAbuseReport": {
+      "document": "获取垃圾投诉数据",
+      "input": "GetAbuseReportRequest",
+      "name": "获取垃圾投诉记录",
+      "output": "GetAbuseReportResponse",
+      "status": "online"
+    },
     "GetEmailIdentity": {
       "document": "获取某个发信域名的配置详情",
       "input": "GetEmailIdentityRequest",
@@ -253,6 +260,155 @@
     "serviceShortName": "ses"
   },
   "objects": {
+    "AbuseReport": {
+      "document": "垃圾投诉数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发送时间",
+          "example": "2025-10-01 11:11:11",
+          "member": "string",
+          "name": "DeliverTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发信地址",
+          "example": "example@qcloudmail.com",
+          "member": "string",
+          "name": "OriginalMailFrom",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "收信地址",
+          "example": "example@gmail.com",
+          "member": "string",
+          "name": "OriginalRcptTo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发信域名",
+          "example": "qcloudmail.com",
+          "member": "string",
+          "name": "FromDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投诉时间",
+          "example": "2025-10-01 11:11:11",
+          "member": "string",
+          "name": "ComplainTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "收信域名",
+          "example": "gmail.com",
+          "member": "string",
+          "name": "Mta",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源ip",
+          "example": "198.0.0.1",
+          "member": "string",
+          "name": "SourceIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据时间",
+          "example": "2025-10-01 11:11:11",
+          "member": "string",
+          "name": "InsertTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板id",
+          "example": "100",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "bulkId",
+          "example": "qcloudapi-xxx-xxx",
+          "member": "string",
+          "name": "BulkId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮件Message-Id",
+          "example": "xxx-xxx@example.com",
+          "member": "string",
+          "name": "MessageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投诉时间",
+          "example": "2025-10-01 11:11:11",
+          "member": "string",
+          "name": "AbuseTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮件主题",
+          "example": "abuse for example.com",
+          "member": "string",
+          "name": "Subject",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AddressUnsubscribeConfigData": {
       "document": "地址级退订配置",
       "members": [
@@ -1464,6 +1620,125 @@
         }
       ],
       "usage": "out"
+    },
+    "GetAbuseReportRequest": {
+      "document": "GetAbuseReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2025-10-14",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-10-15",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数量（默认为1000）",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "发信域名",
+          "example": "qcloudmail.com",
+          "member": "string",
+          "name": "FromDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发信地址",
+          "example": "example@qcloudmail.com",
+          "member": "string",
+          "name": "FromAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "收信域名",
+          "example": "gmail.com",
+          "member": "string",
+          "name": "Mta",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "收信地址",
+          "example": "example@gmail.com",
+          "member": "string",
+          "name": "ToAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模版id",
+          "example": "100",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAbuseReportResponse": {
+      "document": "GetAbuseReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "打开日志数据",
+          "example": "无",
+          "member": "AbuseReport",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetEmailIdentityRequest": {
       "document": "GetEmailIdentity请求参数结构体",

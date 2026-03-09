@@ -7861,6 +7861,15 @@
           "name": "OrderBy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网",
+          "example": "%",
+          "member": "string",
+          "name": "HostRegexp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

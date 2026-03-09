@@ -1,6 +1,6 @@
-**Example 1: DescribeAuthDomains**
+**Example 1: 查询安全域名列表**
 
-DescribeAuthDomains 
+查询安全域名列表
 
 Input: 
 

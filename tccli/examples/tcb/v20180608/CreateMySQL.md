@@ -1,4 +1,4 @@
-**Example 1: OpenMySql**
+**Example 1: CreateMySQL**
 
 
 

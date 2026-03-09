@@ -8865,7 +8865,7 @@
         },
         {
           "disabled": false,
-          "document": " 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别",
+          "document": " 需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：\n- zh（中文）\n- en（英文）\n- yue（粤语）\n- ja（日语）\n- ko（韩语）\n- ar（阿拉伯语）\n- id（印尼语）\n- th（泰语）",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -9888,7 +9888,7 @@
         },
         {
           "disabled": false,
-          "document": "声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在10秒～180秒之间",
+          "document": "声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间",
           "example": "ejiwnorinofnODSw",
           "member": "string",
           "name": "PromptAudio",
@@ -9896,7 +9896,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "TTS的API密钥",
           "example": "sk-xxxxxxx",
           "member": "string",

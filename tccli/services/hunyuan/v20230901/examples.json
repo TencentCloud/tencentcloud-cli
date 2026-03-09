@@ -73,9 +73,25 @@
     "ChatTranslations": [
       {
         "document": "非流式调用翻译接口",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatTranslations\n<公共请求参数>\n\n{\n    \"Model\": \"hunyuan-translation\",\n    \"Stream\": false,\n    \"Text\": \"Playing video games leads to lasting improvements in cognitive abilities.\",\n    \"Source\": \"en\",\n    \"Target\": \"zh\",\n    \"Field\": \"游戏剧情\",\n    \"References\": [\n        {\n            \"Type\": \"sentence\",\n            \"Text\": \"Computer games are a perfect recipe for strengthening our cognitive skills\",\n            \"Translation\": \"电脑游戏是增强我们认知能力的完美秘诀\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatTranslations\n<公共请求参数>\n\n{\n    \"Model\": \"hunyuan-translation\",\n    \"Stream\": false,\n    \"Text\": \"Playing video games leads to lasting improvements in cognitive abilities.\",\n    \"Source\": \"en\",\n    \"Target\": \"zh\",\n    \"Field\": \"游戏剧情\",\n    \"GlossaryIDs\": [\n        \"3177dfae1f8cb180dfcc1bea2ddf19f6\"\n    ],\n    \"References\": [\n        {\n            \"Type\": \"sentence\",\n            \"Text\": \"Computer games are a perfect recipe for strengthening our cognitive skills\",\n            \"Translation\": \"电脑游戏是增强我们认知能力的完美秘诀\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e638f0a0-a2a5-4c43-a1c6-798a7cbfbb18\",\n        \"Id\": \"e638f0a0-a2a5-4c43-a1c6-798a7cbfbb18\",\n        \"Created\": 1733133524,\n        \"Choices\": [\n            {\n                \"Index\": 0,\n                \"Message\": {\n                    \"Role\": \"assistant\",\n                    \"Content\": \"玩视频游戏会导致认知能力持久的提升。\"\n                },\n                \"FinishReason\": \"stop\"\n            }\n        ],\n        \"Usage\": {\n            \"PromptTokens\": 96,\n            \"CompletionTokens\": 10,\n            \"TotalTokens\": 106\n        },\n        \"Note\": \"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\"\n    }\n}",
         "title": "非流式调用翻译接口"
+      }
+    ],
+    "CreateGlossary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlossary\n<公共请求参数>\n\n{\n    \"Name\": \"我的术语库\",\n    \"Source\": \"en\",\n    \"Target\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GlossaryId\": \"6df696144203027ba838dbfb5b8c2fba\",\n        \"Name\": \"我的术语库\",\n        \"RequestId\": \"e53930ed-b529-42f8-a933-b4a773587c4c\"\n    }\n}",
+        "title": "创建术语库"
+      }
+    ],
+    "CreateGlossaryEntry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlossaryEntry\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"3177dfae1f8cb180dfcc1bea2ddf19f6\",\n    \"Entries\": [\n        {\n            \"SourceTerm\": \"Cloud Storage\",\n            \"TargetTerm\": \"云存储\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Entries\": [\n            {\n                \"SourceTerm\": \"Cloud Storage\",\n                \"TargetTerm\": \"云存储\"\n            }\n        ],\n        \"RequestId\": \"76c19884-c0bf-47ca-b289-8bad552b137a\"\n    }\n}",
+        "title": "添加成功"
       }
     ],
     "CreateThread": [
@@ -84,6 +100,22 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateThread\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85f12577-426b-4af2-93a5-03cea153cbe4\",\n        \"ID\": \"thread_QPH2Z6DpBhc46V3ylE1JEqTv\",\n        \"Object\": \"thread\",\n        \"CreatedAt\": 1727331773,\n        \"ToolResources\": {\n            \"CodeInterpreter\": null\n        }\n    }\n}",
         "title": "创建会话"
+      }
+    ],
+    "DeleteGlossary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlossary\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"452ed9fea07fd1e58be56bd329c28941\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c517c9b-4457-4863-ad03-07d8b6545a1c\"\n    }\n}",
+        "title": "删除成功"
+      }
+    ],
+    "DeleteGlossaryEntry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlossaryEntry\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"36c0033b405c84107d68e1c03788c4f6\",\n    \"Entries\": [\n        {\n            \"EntryId\": \"993c20e70d423efed83864d9cc7df288\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01679fb0-c379-4547-8769-5bd9fb60aed9\"\n    }\n}",
+        "title": "删除成功"
       }
     ],
     "FilesDeletions": [
@@ -166,6 +198,22 @@
         "title": "拍照解题请求"
       }
     ],
+    "ListGlossary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGlossary\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Glossaries\": [\n            {\n                \"Description\": \"desc\",\n                \"GlossaryId\": \"3177dfae1f8cb180dfcc1bea2ddf19f6\",\n                \"Name\": \"My Glossary\",\n                \"Source\": \"en\",\n                \"Target\": \"zh\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 2,\n        \"Total\": 180,\n        \"RequestId\": \"68c98be9-3f46-4efa-9da9-3b5fc435527c\"\n    }\n}",
+        "title": "查询成功"
+      }
+    ],
+    "ListGlossaryEntry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGlossaryEntry\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"3177dfae1f8cb180dfcc1bea2ddf19f6\",\n    \"Page\": 1,\n    \"PageSize\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Entries\": [\n            {\n                \"EntryId\": \"cf0a1f13edae52ef71be9e46fc26ec59\",\n                \"SourceTerm\": \"Cloud Storage1\",\n                \"TargetTerm\": \"云存储1\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 2,\n        \"Total\": 2,\n        \"RequestId\": \"a5f73bfb-6725-45b1-8294-0af419fd61b0\"\n    }\n}",
+        "title": "查询成功"
+      }
+    ],
     "QueryHunyuanImageChatJob": [
       {
         "document": "成功查询",
@@ -220,6 +268,14 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImageLite\n<公共请求参数>\n\n{\n    \"Prompt\": \"雨中, 竹林,  小路\",\n    \"RspImgType\": \"url\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"53549a10-0633-4ebe-bf39-466dc51aa2bb\",\n        \"ResultImage\": \"https://hyimg-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731586602;1731590202&q-key-time=1731586602;1731590202&q-header-list=host&q-url-param-list=&q-signature=ebb3f1d327cf4224c798ef328e1babbb41d09326\"\n    }\n}",
         "title": "成功调用"
+      }
+    ],
+    "UpdateGlossaryEntry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGlossaryEntry\n<公共请求参数>\n\n{\n    \"GlossaryId\": \"3177dfae1f8cb180dfcc1bea2ddf19f6\",\n    \"Entries\": [\n        {\n            \"EntryId\": \"cf0a1f13edae52ef71be9e46fc26ec59\",\n            \"SourceTerm\": \"Cloud Storage1\",\n            \"TargetTerm\": \"云存储1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Entries\": [\n            {\n                \"EntryId\": \"cf0a1f13edae52ef71be9e46fc26ec59\",\n                \"SourceTerm\": \"Cloud Storage1\",\n                \"TargetTerm\": \"云存储1\"\n            }\n        ],\n        \"RequestId\": \"6da07c33-e4c4-466b-a3f0-6f04e4291fb9\"\n    }\n}",
+        "title": "更新成功"
       }
     ]
   },

@@ -1,4 +1,75 @@
-**Example 1: 配置mysql迁移任务**
+**Example 1: 配置mongodb迁移迁移上云任务**
+
+配置一个mongodb迁移上云任务，迁移部分库表，源端使用公有云接入方式，使用change_stream的方式拉取。
+
+Input: 
+
+```
+tccli dts ModifyMigrationJob --cli-unfold-argument  \
+    --JobId dts-nk75d8oa \
+    --RunMode immediate \
+    --MigrateOption.DatabaseTable.ObjectMode partial \
+    --MigrateOption.DatabaseTable.Databases.0.DbName db222_index \
+    --MigrateOption.DatabaseTable.Databases.0.DBMode all \
+    --MigrateOption.DatabaseTable.Databases.0.TableMode all \
+    --MigrateOption.DatabaseTable.Databases.0.ViewMode all \
+    --MigrateOption.MigrateType fullAndIncrement \
+    --MigrateOption.Consistency.Mode full \
+    --SrcInfo.Region ap-guangzhou \
+    --SrcInfo.AccessType extranet \
+    --SrcInfo.DatabaseType mongodb \
+    --SrcInfo.NodeType cluster \
+    --SrcInfo.Info.0.Role mongos \
+    --SrcInfo.Info.0.Host 9.8.160.69 \
+    --SrcInfo.Info.0.Port 6009 \
+    --SrcInfo.Info.0.User mongouser \
+    --SrcInfo.Info.0.Password 1234567a \
+    --SrcInfo.ExtraAttr.0.Key fetchMethod \
+    --SrcInfo.ExtraAttr.0.Value change_stream \
+    --SrcInfo.ExtraAttr.1.Key AuthDatabase \
+    --SrcInfo.ExtraAttr.1.Value admin \
+    --SrcInfo.ExtraAttr.2.Key AuthFlag \
+    --SrcInfo.ExtraAttr.2.Value 1 \
+    --SrcInfo.ExtraAttr.3.Key AuthMechanism \
+    --SrcInfo.ExtraAttr.3.Value SCRAM-SHA-1 \
+    --DstInfo.Region ap-guangzhou \
+    --DstInfo.AccessType cdb \
+    --DstInfo.DatabaseType mongodb \
+    --DstInfo.NodeType cluster \
+    --DstInfo.Info.0.Account  \
+    --DstInfo.Info.0.AccountMode  \
+    --DstInfo.Info.0.AccountRole  \
+    --DstInfo.Info.0.CcnGwId  \
+    --DstInfo.Info.0.CvmInstanceId  \
+    --DstInfo.Info.0.DbKernel  \
+    --DstInfo.Info.0.EncryptConn  \
+    --DstInfo.Info.0.EngineVersion  \
+    --DstInfo.Info.0.Host  \
+    --DstInfo.Info.0.InstanceId cmgo-fdbgxxxx \
+    --DstInfo.Info.0.Password xxxxxx \
+    --DstInfo.Info.0.Port 0 \
+    --DstInfo.Info.0.Role  \
+    --DstInfo.Info.0.SetId  \
+    --DstInfo.Info.0.SubnetId  \
+    --DstInfo.Info.0.TmpSecretId  \
+    --DstInfo.Info.0.TmpSecretKey  \
+    --DstInfo.Info.0.TmpToken  \
+    --DstInfo.Info.0.UniqDcgId  \
+    --DstInfo.Info.0.UniqVpnGwId  \
+    --DstInfo.Info.0.User mongouser \
+    --DstInfo.Info.0.VpcId 
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "a3365b29-2042-4565-9206-8df9e2af1a17"
+    }
+}
+```
+
+**Example 2: 配置mysql迁移任务**
 
 
 
@@ -100,7 +171,7 @@ Output:
 }
 ```
 
-**Example 2: 配置一个直连下云的redis迁移任务**
+**Example 3: 配置一个直连下云的redis迁移任务**
 
 1.源端为腾讯云redis实例，目标端为AWS实例并以公网的方式连接目标节点信息填写所有分片上的IP/域名、端口、密码等连接信息；注意一定是所有分片节点连接信息都写。
 2.目标端以覆盖写的方式执行，如果要配置其他目标端写入模式，可以参考入参MigrateOption.ExtraAttr中的字段描述。
@@ -138,77 +209,6 @@ Output:
 {
     "Response": {
         "RequestId": "4d21a953-4a23-47f1-91a9-84df62f016f3"
-    }
-}
-```
-
-**Example 3: 配置mongodb迁移迁移上云任务**
-
-配置一个mongodb迁移上云任务，迁移部分库表，源端使用公有云接入方式，使用change_stream的方式拉取。
-
-Input: 
-
-```
-tccli dts ModifyMigrationJob --cli-unfold-argument  \
-    --JobId dts-nk75d8oa \
-    --RunMode immediate \
-    --MigrateOption.DatabaseTable.ObjectMode partial \
-    --MigrateOption.DatabaseTable.Databases.0.DbName db222_index \
-    --MigrateOption.DatabaseTable.Databases.0.DBMode all \
-    --MigrateOption.DatabaseTable.Databases.0.TableMode all \
-    --MigrateOption.DatabaseTable.Databases.0.ViewMode all \
-    --MigrateOption.MigrateType fullAndIncrement \
-    --MigrateOption.Consistency.Mode full \
-    --SrcInfo.Region ap-guangzhou \
-    --SrcInfo.AccessType extranet \
-    --SrcInfo.DatabaseType mongodb \
-    --SrcInfo.NodeType cluster \
-    --SrcInfo.Info.0.Role mongos \
-    --SrcInfo.Info.0.Host 9.8.160.69 \
-    --SrcInfo.Info.0.Port 6009 \
-    --SrcInfo.Info.0.User mongouser \
-    --SrcInfo.Info.0.Password 1234567a \
-    --SrcInfo.ExtraAttr.0.Key fetchMethod \
-    --SrcInfo.ExtraAttr.0.Value change_stream \
-    --SrcInfo.ExtraAttr.1.Key AuthDatabase \
-    --SrcInfo.ExtraAttr.1.Value admin \
-    --SrcInfo.ExtraAttr.2.Key AuthFlag \
-    --SrcInfo.ExtraAttr.2.Value 1 \
-    --SrcInfo.ExtraAttr.3.Key AuthMechanism \
-    --SrcInfo.ExtraAttr.3.Value SCRAM-SHA-1 \
-    --DstInfo.Region ap-guangzhou \
-    --DstInfo.AccessType cdb \
-    --DstInfo.DatabaseType mongodb \
-    --DstInfo.NodeType cluster \
-    --DstInfo.Info.0.Account  \
-    --DstInfo.Info.0.AccountMode  \
-    --DstInfo.Info.0.AccountRole  \
-    --DstInfo.Info.0.CcnGwId  \
-    --DstInfo.Info.0.CvmInstanceId  \
-    --DstInfo.Info.0.DbKernel  \
-    --DstInfo.Info.0.EncryptConn  \
-    --DstInfo.Info.0.EngineVersion  \
-    --DstInfo.Info.0.Host  \
-    --DstInfo.Info.0.InstanceId cmgo-fdbgxxxx \
-    --DstInfo.Info.0.Password xxxxxx \
-    --DstInfo.Info.0.Port 0 \
-    --DstInfo.Info.0.Role  \
-    --DstInfo.Info.0.SetId  \
-    --DstInfo.Info.0.SubnetId  \
-    --DstInfo.Info.0.TmpSecretId  \
-    --DstInfo.Info.0.TmpSecretKey  \
-    --DstInfo.Info.0.TmpToken  \
-    --DstInfo.Info.0.UniqDcgId  \
-    --DstInfo.Info.0.UniqVpnGwId  \
-    --DstInfo.Info.0.User mongouser \
-    --DstInfo.Info.0.VpcId 
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "a3365b29-2042-4565-9206-8df9e2af1a17"
     }
 }
 ```

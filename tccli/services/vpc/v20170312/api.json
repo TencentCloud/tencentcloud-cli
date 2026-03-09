@@ -280,6 +280,20 @@
       "output": "CreateCcnResponse",
       "status": "online"
     },
+    "CreateCcnPolicyBasedRoutingNextHop": {
+      "document": "创建云联网策略路由下一跳",
+      "input": "CreateCcnPolicyBasedRoutingNextHopRequest",
+      "name": "创建云联网策略路由下一跳",
+      "output": "CreateCcnPolicyBasedRoutingNextHopResponse",
+      "status": "online"
+    },
+    "CreateCcnPolicyBasedRoutingRules": {
+      "document": "创建云联网策略路由匹配规则",
+      "input": "CreateCcnPolicyBasedRoutingRulesRequest",
+      "name": "批量创建云联网策略路由匹配规则",
+      "output": "CreateCcnPolicyBasedRoutingRulesResponse",
+      "status": "online"
+    },
     "CreateCcnRouteTables": {
       "document": "本接口（CreateCcnRouteTables）用于给指定的云联网实例新建路由表。",
       "input": "CreateCcnRouteTablesRequest",
@@ -691,6 +705,20 @@
       "input": "DeleteCcnRequest",
       "name": "删除CCN",
       "output": "DeleteCcnResponse",
+      "status": "online"
+    },
+    "DeleteCcnPolicyBasedRoutingNextHop": {
+      "document": "删除云联网策略路由下一跳",
+      "input": "DeleteCcnPolicyBasedRoutingNextHopRequest",
+      "name": "删除云联网策略路由下一跳",
+      "output": "DeleteCcnPolicyBasedRoutingNextHopResponse",
+      "status": "online"
+    },
+    "DeleteCcnPolicyBasedRoutingRule": {
+      "document": "删除云联网策略路由匹配规则",
+      "input": "DeleteCcnPolicyBasedRoutingRuleRequest",
+      "name": "删除云联网策略路由匹配规则",
+      "output": "DeleteCcnPolicyBasedRoutingRuleResponse",
       "status": "online"
     },
     "DeleteCcnRouteTables": {
@@ -1155,6 +1183,20 @@
       "output": "DescribeCcnAttachedInstancesResponse",
       "status": "online"
     },
+    "DescribeCcnPolicyBasedRoutingNextHop": {
+      "document": "查询云联网策略路由下一跳",
+      "input": "DescribeCcnPolicyBasedRoutingNextHopRequest",
+      "name": "查询云联网策略路由下一跳",
+      "output": "DescribeCcnPolicyBasedRoutingNextHopResponse",
+      "status": "online"
+    },
+    "DescribeCcnPolicyBasedRoutingRule": {
+      "document": "查询云联网策略路由匹配规则",
+      "input": "DescribeCcnPolicyBasedRoutingRuleRequest",
+      "name": "查询云联网策略路由匹配规则",
+      "output": "DescribeCcnPolicyBasedRoutingRuleResponse",
+      "status": "online"
+    },
     "DescribeCcnRegionBandwidthLimits": {
       "document": "本接口（DescribeCcnRegionBandwidthLimits）用于查询云联网各地域出带宽上限，该接口只返回已关联网络实例包含的地域。",
       "input": "DescribeCcnRegionBandwidthLimitsRequest",
@@ -1258,6 +1300,13 @@
       "input": "DescribeCustomerGatewaysRequest",
       "name": "查询对端网关",
       "output": "DescribeCustomerGatewaysResponse",
+      "status": "online"
+    },
+    "DescribeDesignatedZones": {
+      "document": "用于查询用户创建带宽包时可指定的可用区信息",
+      "input": "DescribeDesignatedZonesRequest",
+      "name": "查询用户当前地域下可指定的特殊可用区",
+      "output": "DescribeDesignatedZonesResponse",
       "status": "online"
     },
     "DescribeDhcpIps": {
@@ -2266,6 +2315,20 @@
       "input": "ModifyCcnAttributeRequest",
       "name": "修改CCN属性",
       "output": "ModifyCcnAttributeResponse",
+      "status": "online"
+    },
+    "ModifyCcnPolicyBasedRoutingNextHopAttribute": {
+      "document": "更新云联网策略路由下一跳参数",
+      "input": "ModifyCcnPolicyBasedRoutingNextHopAttributeRequest",
+      "name": "更新云联网策略路由下一跳参数",
+      "output": "ModifyCcnPolicyBasedRoutingNextHopAttributeResponse",
+      "status": "online"
+    },
+    "ModifyCcnPolicyBasedRoutingRuleAttribute": {
+      "document": "更新云联网策略路由匹配规则参数",
+      "input": "ModifyCcnPolicyBasedRoutingRuleAttributeRequest",
+      "name": "更新云联网策略路由匹配规则参数",
+      "output": "ModifyCcnPolicyBasedRoutingRuleAttributeResponse",
       "status": "online"
     },
     "ModifyCcnRegionBandwidthLimitsType": {
@@ -3653,7 +3716,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标志。0表示手动续费，1表示自动续费，2表示到期不续费。默认缺省为0即手动续费",
+          "document": "自动续费标志。0表示手动续费，1表示自动续费，2表示到期不续费。默认缺省为1即自动续费。",
           "example": "2",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -6534,6 +6597,226 @@
       ],
       "usage": "both"
     },
+    "CcnPolicyBasedRoutingNextHop": {
+      "document": "云联网策略路由下一跳",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略路由下一跳ID",
+          "example": "pbrnh-bbjdqarl",
+          "member": "string",
+          "name": "PolicyBasedRoutingNextHopId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "next hop",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "NextHopRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联实例ID",
+          "example": "vpc-6zgq4gsp",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态(ENABLE/DISABLE)",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "next hop",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联实例类型[VPC,DIRECTCONNECT,VPNGW]",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳资源类型[HAVIP,GWLB_ENDPOINT]",
+          "example": "HAVIP",
+          "member": "string",
+          "name": "NextHopResourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳资源ID",
+          "example": "havip-lmojafue",
+          "member": "string",
+          "name": "NextHopResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳资源ip",
+          "example": "pbrnh-hows4a7d",
+          "member": "string",
+          "name": "NextHopIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyBasedRoutingRulesCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CcnPolicyBasedRoutingRule": {
+      "document": "查询云联网策略路由匹配规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略路由下一跳ID",
+          "example": "pbrnh-8kas9zm7",
+          "member": "string",
+          "name": "PolicyBasedRoutingNextHopId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型[VPC,DIRECTCONNECT,VPNGW]",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "vpc-6zgq4gsp",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址CIDR",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "SourceCidrBlock",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的地址CIDR",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "rule",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略路由匹配策略ID",
+          "example": "pbrrule-145s8ebs",
+          "member": "string",
+          "name": "PolicyBasedRoutingRuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CcnRegionBandwidthLimit": {
       "document": "云联网（CCN）地域出带宽上限",
       "members": [
@@ -8164,6 +8447,161 @@
       ],
       "type": "object"
     },
+    "CreateCcnPolicyBasedRoutingNextHopRequest": {
+      "document": "CreateCcnPolicyBasedRoutingNextHop请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-2gx0nr9r",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一跳地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "NextHopRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联实例ID",
+          "example": "vpc-6zgq4gsp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "next-hop",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联实例类型[VPC,DIRECTCONNECT,VPNGW]",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "ENABLE/DISABLE",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "next-hop",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一跳资源类型[HAVIP, GWLB_ENDPOINT]",
+          "example": "HAVIP",
+          "member": "string",
+          "name": "NextHopResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一跳资源ID",
+          "example": "havip-lmojafue",
+          "member": "string",
+          "name": "NextHopResourceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCcnPolicyBasedRoutingNextHopResponse": {
+      "document": "CreateCcnPolicyBasedRoutingNextHop返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略路由下一跳ID",
+          "example": "pbrnh-bbjdqarl",
+          "member": "string",
+          "name": "PolicyBasedRoutingNextHopId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCcnPolicyBasedRoutingRulesRequest": {
+      "document": "CreateCcnPolicyBasedRoutingRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-2gx0nr9r",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云联网策略路由匹配规则",
+          "example": "无",
+          "member": "CcnPolicyBasedRoutingRule",
+          "name": "CcnPolicyBasedRoutingRuleSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCcnPolicyBasedRoutingRulesResponse": {
+      "document": "CreateCcnPolicyBasedRoutingRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略路由匹配规则ID",
+          "example": "[\"pbrrule-n6anb2js\"]",
+          "member": "string",
+          "name": "PolicyBasedRoutingRuleIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCcnRequest": {
       "document": "CreateCcn请求参数结构体",
       "members": [
@@ -8205,7 +8643,7 @@
         },
         {
           "disabled": false,
-          "document": "计量模式",
+          "document": "计量模式,`BANDWIDTH`：表示带宽,即带宽计量模式，`TRAFFIC`：表示流量,即流量计量模式。",
           "example": "BANDWIDTH",
           "member": "string",
           "name": "InstanceMeteringType",
@@ -11934,7 +12372,7 @@
         {
           "disabled": false,
           "document": "VPN网关目的路由列表",
-          "example": "{     'RouteId': 'vpnr-xxxxxxxx',     'DestinationCidrBlock': '10.0.0.0/24',     'InstanceType': 'VPNCONN',     'InstanceId': 'vpnx-xxxxxxxx' }",
+          "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
           "required": true,
@@ -11949,7 +12387,7 @@
         {
           "disabled": false,
           "document": "VPN网关目的路由",
-          "example": "[{'RouteId': 'vpnr-xxxxxxxx', 'DestinationCidrBlock': '10.0.0.0/24', 'Status': 1, 'InstanceId': 'vpnx-xxxxxxxx', 'InstanceType': 'vpnconn', 'Priority': 1, 'Type': 1, 'CreateTime': '2024-04-01 16:52:51', 'UpdateTime': '2024-04-01 16:52:51'}]",
+          "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
           "output_required": true,
@@ -12158,6 +12596,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "DNS Server 地址",
+          "example": "无",
+          "member": "DnsServers",
+          "name": "DnsServers",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -12870,6 +13317,78 @@
     },
     "DeleteBandwidthPackageResponse": {
       "document": "DeleteBandwidthPackage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCcnPolicyBasedRoutingNextHopRequest": {
+      "document": "DeleteCcnPolicyBasedRoutingNextHop请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-7bw2xi31",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略路由下一跳ID",
+          "example": "pbrnh-bbjdqarl",
+          "member": "string",
+          "name": "PolicyBasedRoutingNextHopIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCcnPolicyBasedRoutingNextHopResponse": {
+      "document": "DeleteCcnPolicyBasedRoutingNextHop返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCcnPolicyBasedRoutingRuleRequest": {
+      "document": "DeleteCcnPolicyBasedRoutingRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-7bw2xi31",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略路由匹配规则ID",
+          "example": "pbrrule-n6anb2js",
+          "member": "string",
+          "name": "PolicyBasedRoutingRuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCcnPolicyBasedRoutingRuleResponse": {
+      "document": "DeleteCcnPolicyBasedRoutingRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15490,6 +16009,136 @@
       ],
       "type": "object"
     },
+    "DescribeCcnPolicyBasedRoutingNextHopRequest": {
+      "document": "DescribeCcnPolicyBasedRoutingNextHop请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网 ID",
+          "example": "ccn-7bw2xi31",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnPolicyBasedRoutingNextHopResponse": {
+      "document": "DescribeCcnPolicyBasedRoutingNextHop返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网策略路由下一跳信息",
+          "example": "无",
+          "member": "CcnPolicyBasedRoutingNextHop",
+          "name": "CcnPolicyBasedRoutingNextHopSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的对象数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnPolicyBasedRoutingRuleRequest": {
+      "document": "DescribeCcnPolicyBasedRoutingRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网 ID",
+          "example": "ccn-7bw2xi31",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnPolicyBasedRoutingRuleResponse": {
+      "document": "DescribeCcnPolicyBasedRoutingRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网策略路由下一跳信息",
+          "example": "无",
+          "member": "CcnPolicyBasedRoutingRule",
+          "name": "CcnPolicyBasedRoutingRuleSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的对象数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCcnRegionBandwidthLimitsRequest": {
       "document": "DescribeCcnRegionBandwidthLimits请求参数结构体",
       "members": [
@@ -16459,6 +17108,43 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDesignatedZonesRequest": {
+      "document": "DescribeDesignatedZones请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDesignatedZonesResponse": {
+      "document": "DescribeDesignatedZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户可选的可用区总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户可选的可用区详细信息",
+          "example": "无",
+          "member": "DesignatedZoneInfoDict",
+          "name": "DesignatedZoneInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -18932,7 +19618,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18942,7 +19628,7 @@
           "example": "无",
           "member": "PrivateNatGatewayLimit",
           "name": "PrivateNatGatewayLimitSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18969,7 +19655,7 @@
           "example": "无",
           "member": "NatRegionInfoWithArea",
           "name": "RegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18979,7 +19665,7 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -22385,7 +23071,7 @@
         {
           "disabled": false,
           "document": "VPN通道实例ID。形如：vpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。",
-          "example": "vpnx-f49l6u0z",
+          "example": "[\"vpnx-f49l6u0z\"]",
           "member": "string",
           "name": "VpnConnectionIds",
           "required": false,
@@ -22394,7 +23080,7 @@
         {
           "disabled": false,
           "document": "过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>\n<li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>\n<li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>\n<li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>\n<li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8\"`。</li>",
-          "example": "[{\"Name\":\"vpc-id\",\"Values\":[\"vpc-xxxxxxxx\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -22437,7 +23123,7 @@
         {
           "disabled": false,
           "document": "VPN通道实例。",
-          "example": "[       {         \"CreatedTime\": \"2022-05-12 12:50:06\",         \"CustomerGatewayId\": \"cgw-972gvd00\",         \"DpdAction\": \"clear\",         \"DpdEnable\": 1,         \"DpdTimeout\": \"30\",         \"EnableHealthCheck\": false,         \"EncryptProto\": \"IKE\",         \"HealthCheckLocalIp\": \"\",         \"HealthCheckRemoteIp\": \"\",         \"HealthCheckStatus\": \"\",         \"IKEOptionsSpecification\": {           \"DhGroupName\": \"GROUP1\",           \"ExchangeMode\": \"MAIN\",           \"IKESaLifetimeSeconds\": 86400,           \"IKEVersion\": \"IKEV1\",           \"LocalAddress\": \"33.113.108.46\",           \"LocalFqdnName\": \"\",           \"LocalIdentity\": \"ADDRESS\",           \"PropoAuthenAlgorithm\": \"MD5\",           \"PropoEncryAlgorithm\": \"3DES-CBC\",           \"RemoteAddress\": \"1.2.3.4\",           \"RemoteFqdnName\": \"\",           \"RemoteIdentity\": \"ADDRESS\"         },         \"IPSECOptionsSpecification\": {           \"EncryptAlgorithm\": \"AES-CBC-128\",           \"IPSECSaLifetimeSeconds\": 3600,           \"IPSECSaLifetimeTraffic\": 1843200,           \"IntegrityAlgorith\": \"MD5\",           \"PfsDhGroup\": \"NULL\"         },         \"NegotiationType\": \"flowTrigger\",         \"NetStatus\": \"UNAVAILABLE\",         \"PreShareKey\": \"123\",         \"RouteType\": \"StaticRoute\",         \"SecurityPolicyDatabaseSet\": [           {             \"LocalCidrBlock\": \"0.0.0.0/0\",             \"RemoteCidrBlock\": [               \"0.0.0.0/0\"             ]           }         ],         \"State\": \"AVAILABLE\",         \"TagSet\": [],         \"VpcId\": \"vpc-ejaaeaja\",         \"VpnConnectionId\": \"vpnx-1rwdb4qz\",         \"VpnConnectionName\": \"test-conn\",         \"VpnGatewayId\": \"vpngw-f61esawc\",         \"VpnProto\": \"IPSEC\"       }     ]",
+          "example": "无",
           "member": "VpnConnection",
           "name": "VpnConnectionSet",
           "output_required": true,
@@ -22829,6 +23515,42 @@
         }
       ],
       "type": "object"
+    },
+    "DesignatedZoneInfoDict": {
+      "document": "用户可选的可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区Id",
+          "example": "ap-guangzhou-tez-guangzhou-1",
+          "member": "string",
+          "name": "DesignatedZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区名称",
+          "example": "广州边缘一区",
+          "member": "string",
+          "name": "DesignatedZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区类型",
+          "example": "TEZ",
+          "member": "string",
+          "name": "DesignatedZoneType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DestinationIpPortTranslationNatRule": {
       "document": "NAT网关的端口转发规则",
@@ -24153,6 +24875,34 @@
         }
       ],
       "type": "object"
+    },
+    "DnsServers": {
+      "document": "SSL VPN Server DnsServers",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主DNS配置",
+          "example": "15.51.5.16",
+          "member": "string",
+          "name": "PrimaryDns",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备DNS配置",
+          "example": "15.51.67.1",
+          "member": "string",
+          "name": "SecondaryDns",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DownloadCustomerGatewayConfigurationRequest": {
       "document": "DownloadCustomerGatewayConfiguration请求参数结构体",
@@ -28422,6 +29172,159 @@
       ],
       "type": "object"
     },
+    "ModifyCcnPolicyBasedRoutingNextHopAttributeRequest": {
+      "document": "ModifyCcnPolicyBasedRoutingNextHopAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-7bw2xi31",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略路由下一跳ID",
+          "example": "pbrnh-bbjdqarl",
+          "member": "string",
+          "name": "PolicyBasedRoutingNextHopId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "next hop",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "next hop",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一跳地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "NextHopRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型[VPC,DIRECTCONNECT,VPNGW]",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联实例ID\t",
+          "example": "vpc-6zgq4gsp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一跳资源类型[HAVIP,GWLB_ENDPOINT]",
+          "example": "HAVIP",
+          "member": "string",
+          "name": "NextHopResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一跳资源ID",
+          "example": "havip-lmojafue",
+          "member": "string",
+          "name": "NextHopResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCcnPolicyBasedRoutingNextHopAttributeResponse": {
+      "document": "ModifyCcnPolicyBasedRoutingNextHopAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCcnPolicyBasedRoutingRuleAttributeRequest": {
+      "document": "ModifyCcnPolicyBasedRoutingRuleAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-7bw2xi31",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略路由匹配规则ID",
+          "example": "pbrrule-n6anb2js",
+          "member": "string",
+          "name": "PolicyBasedRoutingRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "rule",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCcnPolicyBasedRoutingRuleAttributeResponse": {
+      "document": "ModifyCcnPolicyBasedRoutingRuleAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCcnRegionBandwidthLimitsTypeRequest": {
       "document": "ModifyCcnRegionBandwidthLimitsType请求参数结构体",
       "members": [
@@ -30917,7 +31820,7 @@
         {
           "disabled": false,
           "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
-          "example": "[{'LocalCidrBlock': '10.40.1.12/24','RemoteCidrBlock': ['172.123.10.5/16', '10.7.10.0/16']}]",
+          "example": "无",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabases",
           "required": false,
@@ -30926,7 +31829,7 @@
         {
           "disabled": false,
           "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议。",
-          "example": "{'LocalIdentity': 'ADDRESS','LocalAddress': 'dddd'}",
+          "example": "无",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "required": false,
@@ -30935,7 +31838,7 @@
         {
           "disabled": false,
           "document": "IPSec配置，腾讯云提供IPSec安全会话设置。",
-          "example": "{'IPSECSaLifetimeSeconds': 7200}",
+          "example": "无",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "required": false,
@@ -30944,7 +31847,7 @@
         {
           "disabled": false,
           "document": "是否启用通道健康检查，默认为False。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
@@ -31016,7 +31919,7 @@
         {
           "disabled": false,
           "document": "健康检查配置",
-          "example": "{'ProbeType': 'NQA','ProbeInterval': 30,'ProbeThreshold': 10,'ProbeTimeout': 60}",
+          "example": "无",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
           "required": false,
@@ -31025,7 +31928,7 @@
         {
           "disabled": false,
           "document": "BGP隧道配置",
-          "example": "{ \"LocalBgpIp\": \"169.254.128.1\", \"RemoteBgpIp\": \"169.254.128.2\", \"TunnelCidr\": \"169.254.128.0/30\" }\t",
+          "example": "无",
           "member": "BgpConfig",
           "name": "BgpConfig",
           "required": false,
@@ -31160,7 +32063,7 @@
         {
           "disabled": false,
           "document": "路由修改参数。",
-          "example": "{     'RouteId': 'vpnr-xxxxxxxx',     'Status': 'ENABLE' }",
+          "example": "无",
           "member": "VpnGatewayRouteModify",
           "name": "Routes",
           "required": true,
@@ -31329,6 +32232,15 @@
           "name": "SamlData",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS Server地址",
+          "example": "无",
+          "member": "DnsServers",
+          "name": "DnsServers",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -31686,7 +32598,7 @@
         },
         {
           "disabled": false,
-          "document": "是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关",
+          "document": "是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。",
           "example": "true",
           "member": "bool",
           "name": "ICMPProxy",
@@ -31696,7 +32608,7 @@
         },
         {
           "disabled": false,
-          "document": "true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。",
+          "document": "同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。",
           "example": "true",
           "member": "bool",
           "name": "PublicAddressAffinity",
@@ -31927,7 +32839,18 @@
     },
     "NatRegionInfoWithArea": {
       "document": "NAT地域地区对象",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域ID，如：ap-guangzhou。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "NatZoneInfo": {
@@ -38004,6 +38927,16 @@
           "name": "SpName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS Server地址",
+          "example": "无",
+          "member": "DnsServers",
+          "name": "DnsServers",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

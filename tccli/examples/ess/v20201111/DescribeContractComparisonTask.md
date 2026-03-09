@@ -40,8 +40,10 @@ Input:
 ```
 tccli ess DescribeContractComparisonTask --cli-unfold-argument  \
     --Operator.UserId yDwqbUUckp3o2rzmUxHsV0j1FlhYIKo7 \
-    --TaskId yDtrrUUckp94goxhUyjVZ8rSEQ0lg7vb \
-    --ShowDetail True
+    --TaskId yD3flUUckpmq0ju2Uyp7ycDyIDZElSrT \
+    --ShowDetail True \
+    --Filters.0.Key format-type \
+    --Filters.0.Values 0
 ```
 
 Output: 
@@ -56,19 +58,22 @@ Output:
                 "ComparisonType": "delete",
                 "ContentType": "text",
                 "DiffText": "",
-                "OriginText": "@huaxi"
+                "OriginText": "@huaxi",
+                "FormatType": 0
             },
             {
                 "ComparisonType": "change",
                 "ContentType": "text",
                 "DiffText": "完整地填写上",
-                "OriginText": "请乙方务必准确、完整"
+                "OriginText": "请乙方务必准确、完整",
+                "FormatType": 0
             },
             {
                 "ComparisonType": "add",
                 "ContentType": "text",
                 "DiffText": "行贷款本息",
-                "OriginText": ""
+                "OriginText": "",
+                "FormatType": 0
             }
         ],
         "CreateTime": 1760430451,

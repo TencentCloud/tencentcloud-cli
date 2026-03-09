@@ -3688,7 +3688,7 @@
         {
           "disabled": false,
           "document": "目录名称",
-          "example": "测试",
+          "example": "dept1",
           "member": "string",
           "name": "DirName",
           "required": true,
@@ -3697,7 +3697,7 @@
         {
           "disabled": false,
           "document": "ioa分组信息",
-          "example": "[{\"OrgId\":47723,\"OrgName\":\"开发部\"\"}]",
+          "example": "无",
           "member": "UserOrg",
           "name": "UserOrgSet",
           "required": true,
@@ -5906,7 +5906,7 @@
         {
           "disabled": false,
           "document": "ou 列表",
-          "example": "[]",
+          "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "UnitSet",
           "output_required": true,
@@ -6401,7 +6401,7 @@
         {
           "disabled": false,
           "document": "认证源信息",
-          "example": "[{\"Source\":1002, \"Name\":\"钉钉\"}]",
+          "example": "无",
           "member": "SourceType",
           "name": "SourceTypeSet",
           "output_required": false,
@@ -7978,7 +7978,7 @@
         {
           "disabled": false,
           "document": "同步周期，30～60000之间的整数",
-          "example": "true",
+          "example": "30",
           "member": "uint64",
           "name": "SyncPeriod",
           "output_required": true,
@@ -8000,7 +8000,7 @@
         {
           "disabled": false,
           "document": "同步OU列表",
-          "example": "无",
+          "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "SyncUnitSet",
           "output_required": true,
@@ -9162,7 +9162,7 @@
         {
           "disabled": false,
           "document": "同步OU列表，SyncAll为false时必传",
-          "example": "[]",
+          "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "SyncUnitSet",
           "required": false,

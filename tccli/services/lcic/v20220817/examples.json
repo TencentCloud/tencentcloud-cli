@@ -56,6 +56,14 @@
         "title": "示例"
       }
     ],
+    "BatchGetPlaybackToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchGetPlaybackToken\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3923193,\n    \"RoomIds\": [\n        305745891\n    ],\n    \"ExpireSeconds\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"RoomId\": 305745891,\n                \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.***********p******A1NzQ1ODkxLCJleHAiOjQ5MjQyOTMzMzh9.WvaoCqfns************lRXNr6tgylgWmM1ocAz0kw\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"9a4a9095-f250-4dcd-8650-21861a0ebbb0\"\n    }\n}",
+        "title": "BatchGetPlaybackToken"
+      }
+    ],
     "BatchRegister": [
       {
         "document": "批量注册用户",
@@ -107,9 +115,9 @@
     "CreateRoom": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"测试课堂\",\n    \"StartTime\": 1798768800,\n    \"EndTime\": 1798772400,\n    \"SdkAppId\": 3322111,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"SubType\": \"videodoc\",\n    \"TeacherId\": \"2qkMhWixIzNQC7UizlM7NabCdef\",\n    \"AutoMic\": 1,\n    \"RecordLayout\": 9\n}",
-        "output": "{\n    \"Response\": {\n        \"RoomId\": 345678011,\n        \"RequestId\": \"efee43a2-704f-4b45-b62d-abcdefg12345\"\n    }\n}",
-        "title": "创建支持页面录制的1小时标清直播1V1小班课"
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"classIDA\",\n    \"StartTime\": 1770781258,\n    \"EndTime\": 1770784858,\n    \"SdkAppId\": 3520371,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 0,\n    \"SubType\": \"videodoc\",\n    \"TeacherId\": \"2aiT64yygupUJ5ZrkRi2r****\",\n    \"DisableRecord\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomId\": 325332968,\n        \"RequestId\": \"18803909-c509-4ef7-94ba-47b4ab2c4154\"\n    }\n}",
+        "title": "CreateRoom"
       }
     ],
     "CreateSupervisor": [
@@ -150,6 +158,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroupMember\n<公共请求参数>\n\n{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678,\n    \"MemberIds\": [\n        \"dfgdfg\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "删除指定群组成员"
+      }
+    ],
+    "DeletePlaybackItem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePlaybackItem\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 340599814\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5584dc2-7577-4a2f-a2da-c8e115df7c97\"\n    }\n}",
+        "title": "DeletePlaybackItem"
       }
     ],
     "DeleteRecord": [
@@ -306,6 +322,22 @@
         "title": "查询跑马灯配置"
       }
     ],
+    "DescribePlayRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlayRecords\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 322220255,\n    \"StartTime\": 1770174290,\n    \"EndTime\": 1770260690,\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"UserId\": \"2qkMhWixIzNQC7UizlM7*******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Duration\": 93677,\n                \"PlayBeginTime\": 1770184233,\n                \"PlayEndTime\": 1770184329,\n                \"RoomId\": 322220255,\n                \"SessionId\": \"322220255-1770184231997-1345\",\n                \"UserId\": \"2qkMhWixIzNQC7UizlM7*******\"\n            }\n        ],\n        \"Total\": 8,\n        \"RequestId\": \"c29649d6-a8c7-4c0c-923f-ad569af81598\"\n    }\n}",
+        "title": "查询信令录制回放观看记录。"
+      }
+    ],
+    "DescribePlaybackList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlaybackList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3923193,\n    \"Page\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": 1770625573,\n                \"Duration\": 0,\n                \"PlaybackUrl\": \"https://****s.q***udcla**.com/pl******/***ex.html?classid=379125945&token=eyJhbGciOiJIUzI1NiIsIn*****6*******9.eyJjbGFzc19pZCI6Mzc5MTI1OTQ1LCJleHAiOjE3Nz***T**N*****H-0GlGD4YcD-INQP0UDixn0****jrzYTNZamjI7CDs\",\n                \"RoomId\": 379125945\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"9be3f8dd-31ed-4b13-896d-dddbc3b21ea3\"\n    }\n}",
+        "title": "DescribePlaybackList"
+      }
+    ],
     "DescribeQuestionList": [
       {
         "document": "获取房间问答提问列表",
@@ -432,6 +464,14 @@
         "title": "设置禁言"
       }
     ],
+    "GetPlaybackToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPlaybackToken\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 374377112,\n    \"UserId\": \"2qkMhWixIzNQC7UizlM7*******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomId\": 374377112,\n        \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFzc19pZCI6Mzc0Mzc3MTEyLCJleHAiOjQ5MjM4NjA0NDN9.Urs***********30VopL-rrmN9dd-Oja7k2f*******\",\n        \"RequestId\": \"bc43d9f1-ca1c-40fa-8c4f-abf44f674b11\",\n        \"UserId\": \"2qkMhWixIzNQC7UizlM7*******\"\n    }\n}",
+        "title": "GetPlaybackToken"
+      }
+    ],
     "GetRoomEvent": [
       {
         "document": "获取房间事件",
@@ -480,12 +520,28 @@
         "title": "源账号登录"
       }
     ],
+    "LoginOriginIdWithRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LoginOriginIdWithRoom\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3096436,\n    \"OriginId\": \"o*****Id_******086\",\n    \"RoomId\": 10086\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"******ciOi*IUzI1NiIsInR5cCI6IkpXVCJ***yJjbGFzc19pZCI6MTAwODYsImV4cC*****3MT*5N*M*****aWF0Ijo*NzcwN*****c2LCJpc3MiOiJuUk*tT*Vj**ZYM*h**********UFBTGZ**F*Fe*QzVi*sInNj*G9vbF9pZCI6M*****QzNiw*dX**cl*p***6IjM5VnFQYVByQ3ZX*UtJ********dmpZRm9YUCJ9.FRNXD**MJ***7vG5WfMSswhUAtyR****LiTk***76P0\",\n        \"UserId\": \"39VqPaPrCvWiKI7tipudvjYFoXP\",\n        \"RequestId\": \"9a0624ee-e894-46eb-8e40-f65056c6c97d\"\n    }\n}",
+        "title": "源账号登录到课堂"
+      }
+    ],
     "LoginUser": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LoginUser\n<公共请求参数>\n\n{\n    \"UserId\": \"2i5WfUzRRC2Eb2uNmLNv96gzxCv\"\n}",
         "output": "{\n    \"Response\": {\n        \"Token\": \"e574aae1lp024225a2f89032h7199f5f0\",\n        \"UserId\": \"2i5WfUzRRC2Eb2uNmLNv96gzxCv\",\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "登录"
+      }
+    ],
+    "LoginUserWithRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LoginUserWithRoom\n<公共请求参数>\n\n{\n    \"UserId\": \"39V**W****m3BNzU**h**b*q**Z\",\n    \"RoomId\": 10086\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"****bGciOiJIUzI1NiIsInR5cCI6IkpXV*J*.eyJjbGFz*19*Z**6MTAwODYsImV4**I6MTc3M*M*****MCwiaWF0IjoxNz****k***E**C*pc*MiOiJuUk****V*S***MWhxQ***dV*VRUFB**Z*S*h**WQzV**s****aG9*bF9pZCI6MzA**j*z*i***X*lcl9p*CI6IjM5Vl*QV0Naand*M0**elVCa*hLWGJuc**EWi*9.*DrmYkLv***Gw*kwfPwr7***wzIG3eDEg4clmC5p**M\",\n        \"UserId\": \"39VWPWCZjwm3BNzUBhhKXbnqsDZ\",\n        \"RequestId\": \"96a16e5d-4d0f-44d1-b220-d2ad81f6f58c\"\n    }\n}",
+        "title": "登录到课堂"
       }
     ],
     "ModifyApp": [

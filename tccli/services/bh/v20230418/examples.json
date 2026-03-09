@@ -153,7 +153,7 @@
     "CreateUserDirectory": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserDirectory\n<公共请求参数>\n\n{\n    \"DirId\": 523353,\n    \"DirName\": \"测试\",\n    \"Source\": 0,\n    \"SourceName\": \"自建账号\",\n    \"UserCount\": 45,\n    \"UserOrgSet\": [\n        {\n            \"OrgId\": 47723,\n            \"OrgName\": \"开发部\",\n            \"OrgIdPath\": \"1233.85232.45245\",\n            \"OrgNamePath\": \"全网账户.钉钉.开发部\",\n            \"UserTotal\": 12\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserDirectory\n<公共请求参数>\n\n{\n    \"DirId\": 523353,\n    \"DirName\": \"dept1\",\n    \"Source\": 0,\n    \"SourceName\": \"自建账号\",\n    \"UserCount\": 45,\n    \"UserOrgSet\": [\n        {\n            \"OrgId\": 47723,\n            \"OrgName\": \"开发部\",\n            \"OrgIdPath\": \"1233.85232.45245\",\n            \"OrgNamePath\": \"全网账户.钉钉.开发部\",\n            \"UserTotal\": 12\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 234,\n        \"RequestId\": \"3c123219-cfe9-4722e-b241-22wfrew\"\n    }\n}",
         "title": "创建用户目录"
       }
@@ -412,7 +412,7 @@
       {
         "document": "获取LDAP ou 列表",
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLDAPUnitSet\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminPassword\": \"pwd\",\n    \"Ip\": \"192.168.0.1\",\n    \"BaseDN\": \"bh-base-dn\",\n    \"EnableSSL\": true,\n    \"IpBackup\": \"\",\n    \"AttributeUserName\": \"attr-user\",\n    \"AdminAccount\": \"admin\",\n    \"AttributeUnit\": \"attr-uint\",\n    \"Port\": 22\n}",
-        "output": "{\n    \"Response\": {\n        \"UnitSet\": [\n            \"bh-test-uint\"\n        ],\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UnitSet\": [\n            \"ou=GGG,dc=my-domain,dc=com\"\n        ],\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
         "title": "获取LDAP ou 列表"
       }
     ],
@@ -460,7 +460,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountGroups\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SourceTypeSet\": [\n            {\n                \"Type\": \"test\",\n                \"Name\": \"钉钉\",\n                \"Source\": 1001,\n                \"Target\": \"mini_iam\"\n            }\n        ],\n        \"RequestId\": \"cf85w9eee-b651-4ff3q-9b49-173f9f55733f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SourceTypeSet\": [\n            {\n                \"Type\": \"dingding\",\n                \"Name\": \"钉钉\",\n                \"Source\": 1001,\n                \"Target\": \"mini_iam\"\n            }\n        ],\n        \"RequestId\": \"cf85w9eee-b651-4ff3q-9b49-173f9f55733f\"\n    }\n}",
         "title": "获取认证源信息"
       }
     ],
@@ -645,7 +645,7 @@
     "ModifyLDAPSetting": [
       {
         "document": "修改LDAP配置信息",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLDAPSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminAccount\": \"admin\",\n    \"AttributeEmail\": \"bhtets@email.com\",\n    \"AdminPassword\": \"password\",\n    \"AutoSync\": true,\n    \"Ip\": \"172.168.0.1\",\n    \"BaseDN\": \"bhtest-dn\",\n    \"SyncPeriod\": 1,\n    \"SyncAll\": true,\n    \"EnableSSL\": true,\n    \"AttributeRealName\": \"attrRealName\",\n    \"SyncUnitSet\": [\n        \"\"\n    ],\n    \"IpBackup\": \"\",\n    \"AttributeUser\": \"user\",\n    \"AttributeUserName\": \"testusername\",\n    \"AttributePhone\": \"phone\",\n    \"AttributeUnit\": \"unit\",\n    \"Port\": 1,\n    \"Overwrite\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLDAPSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminAccount\": \"admin\",\n    \"AttributeEmail\": \"bhtets@email.com\",\n    \"AdminPassword\": \"password\",\n    \"AutoSync\": true,\n    \"Ip\": \"172.168.0.1\",\n    \"BaseDN\": \"bhtest-dn\",\n    \"SyncPeriod\": 1,\n    \"SyncAll\": true,\n    \"EnableSSL\": true,\n    \"AttributeRealName\": \"attrRealName\",\n    \"SyncUnitSet\": [\n        \"ou=GGG,dc=my-domain,dc=com\"\n    ],\n    \"IpBackup\": \"\",\n    \"AttributeUser\": \"user\",\n    \"AttributeUserName\": \"testusername\",\n    \"AttributePhone\": \"phone\",\n    \"AttributeUnit\": \"unit\",\n    \"Port\": 1,\n    \"Overwrite\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e5a83b7-564a-4831-8111-28a4ec740c61\"\n    }\n}",
         "title": "修改LDAP配置信息"
       }

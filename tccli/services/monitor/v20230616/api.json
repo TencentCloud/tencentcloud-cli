@@ -7,11 +7,32 @@
       "output": "CreateNoticeContentTmplResponse",
       "status": "online"
     },
+    "DeleteNoticeContentTmpls": {
+      "document": "删除通知内容模板",
+      "input": "DeleteNoticeContentTmplsRequest",
+      "name": "批量删除通知内容模板",
+      "output": "DeleteNoticeContentTmplsResponse",
+      "status": "online"
+    },
     "DescribeAlarmNotifyHistories": {
       "document": "按需查询告警的通知历史",
       "input": "DescribeAlarmNotifyHistoriesRequest",
       "name": "查询告警通知历史",
       "output": "DescribeAlarmNotifyHistoriesResponse",
+      "status": "online"
+    },
+    "DescribeNoticeContentTmpl": {
+      "document": "根据查询条件获取自定义通知内容模板，若所有查询条件空，则获取账号下所有模板",
+      "input": "DescribeNoticeContentTmplRequest",
+      "name": "获取通知内容模板",
+      "output": "DescribeNoticeContentTmplResponse",
+      "status": "online"
+    },
+    "ModifyNoticeContentTmpl": {
+      "document": "修改通知内容模板",
+      "input": "ModifyNoticeContentTmplRequest",
+      "name": "修改通知内容模板",
+      "output": "ModifyNoticeContentTmplResponse",
       "status": "online"
     }
   },
@@ -77,6 +98,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNoticeContentTmplsRequest": {
+      "document": "DeleteNoticeContentTmpls请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要删除的模板id",
+          "example": "无",
+          "member": "string",
+          "name": "TmplIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNoticeContentTmplsResponse": {
+      "document": "DeleteNoticeContentTmpls返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -158,6 +206,137 @@
     "DescribeAlarmNotifyHistoriesResponse": {
       "document": "DescribeAlarmNotifyHistories返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNoticeContentTmplRequest": {
+      "document": "DescribeNoticeContentTmpl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定模板ID查询，查询参数都为空则默认查询账号下所有模板",
+          "example": "[\"tmpl-1\"]",
+          "member": "string",
+          "name": "TmplIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定模板名称查询，查询参数都为空则默认查询账号下所有模板",
+          "example": "自定义模板",
+          "member": "string",
+          "name": "TmplName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定通知模板ID查询，查询参数都为空则默认查询账号下所有模板",
+          "example": "notice-xxx",
+          "member": "string",
+          "name": "NoticeID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板语言 en/zh 缺省不过滤",
+          "example": "zh",
+          "member": "string",
+          "name": "TmplLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNoticeContentTmplResponse": {
+      "document": "DescribeNoticeContentTmpl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义通知内容模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoticeContentTmpl",
+          "name": "NoticeContentTmpls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板绑定的告警策略数量",
+          "example": "无",
+          "member": "NoticeContentTmplBindPolicyCount",
+          "name": "NoticeContentTmplBindPolicyCounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页数",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -274,6 +453,184 @@
           "output_required": false,
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyNoticeContentTmplRequest": {
+      "document": "ModifyNoticeContentTmpl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名称",
+          "example": "自定义内容模板",
+          "member": "string",
+          "name": "TmplName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板内容",
+          "example": "无",
+          "member": "NoticeContentTmplItem",
+          "name": "TmplContents",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的模板ID",
+          "example": "ntpl-1",
+          "member": "string",
+          "name": "TmplID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNoticeContentTmplResponse": {
+      "document": "ModifyNoticeContentTmpl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NoticeContentTmpl": {
+      "document": "自定义通知内容模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义通知内容模板id，唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tmpl-123",
+          "member": "string",
+          "name": "TmplID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义通知内容模板名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "TmplName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoticeContentTmplItem",
+          "name": "TmplContents",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Unix时间戳，秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1729655205",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Unix时间戳，秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1729655205",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastModifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板语言 en/zh",
+          "example": "zh",
+          "member": "string",
+          "name": "TmplLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NoticeContentTmplBindPolicyCount": {
+      "document": "通知内容模板绑定告警策略数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容模板ID",
+          "example": "tmpl-xxx",
+          "member": "string",
+          "name": "NoticeContentTmplID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定告警策略数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "BindCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

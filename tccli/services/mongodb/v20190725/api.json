@@ -7,6 +7,13 @@
       "output": "AssignProjectResponse",
       "status": "online"
     },
+    "CloseAuditService": {
+      "document": "本接口（CloseAuditService）用于关闭审计服务",
+      "input": "CloseAuditServiceRequest",
+      "name": "关闭审计",
+      "output": "CloseAuditServiceResponse",
+      "status": "online"
+    },
     "CreateAccountUser": {
       "document": "本接口（CreateAccountUser）用于自定义实例访问账号。",
       "input": "CreateAccountUserRequest",
@@ -98,11 +105,32 @@
       "output": "DescribeAsyncRequestInfoResponse",
       "status": "online"
     },
+    "DescribeAuditConfig": {
+      "document": "本接口(DescribeAuditConfig)用于查询云数据库审计策略的服务配置，包括审计日志保存时长等。",
+      "input": "DescribeAuditConfigRequest",
+      "name": "查询审计服务配置",
+      "output": "DescribeAuditConfigResponse",
+      "status": "online"
+    },
     "DescribeAuditInstanceList": {
       "document": "本接口（DescribeAuditInstanceList）用于查询开通或未开通数据库审计的实例列表。",
       "input": "DescribeAuditInstanceListRequest",
       "name": "查询审计实例",
       "output": "DescribeAuditInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogFiles": {
+      "document": "本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。",
+      "input": "DescribeAuditLogFilesRequest",
+      "name": "查询审计日志文件",
+      "output": "DescribeAuditLogFilesResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogs": {
+      "document": "本接口(DescribeAuditLogs)用于查询数据库审计日志。",
+      "input": "DescribeAuditLogsRequest",
+      "name": "查询数据库审计日志",
+      "output": "DescribeAuditLogsResponse",
       "status": "online"
     },
     "DescribeBackupDownloadTask": {
@@ -754,6 +782,178 @@
       ],
       "usage": "out"
     },
+    "AuditLog": {
+      "document": "审计日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "影响行数",
+          "example": "2",
+          "member": "uint64",
+          "name": "AffectRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作类型。如：grantRolesToRole、dropRole等。",
+          "example": "insert",
+          "member": "string",
+          "name": "Atype",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行时间。单位为：ms。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址。",
+          "example": "21.0***.200",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作参数。包含操作的详细参数信息。",
+          "example": "{ ns: dbinsert_2.collinsert_1, cmd: { _id:***jectId('697828d959982e5800b1e936'), df: [ \"sw\", \"re\" ], likes: 100, title: 3 } }",
+          "member": "string",
+          "name": "Param",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行结果。0表示成功，非0表示失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色列表。格式为：role@db,role@db。",
+          "example": "backup@admin,clusterAdmin@admin,d***minAnyDatabase@admin,readWriteAnyDatabase@admin,restore@admin",
+          "member": "string",
+          "name": "Roles",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作时间戳。格式为：YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-01-27 10:54:19",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名。格式为：user@db。",
+          "example": "mongo***r@admin",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditLogFile": {
+      "document": "审计日志文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审计日志文件名称。",
+          "example": "text.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计日志文件创建时间。格式为 : \"2019-03-20 17:09:13\"。",
+          "example": "2021-03-20 17:09:13",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件状态值。可能返回的值为：\n\"creating\" - 生成中；\n\"failed\" - 创建失败；\n\"success\" - 已生成。",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位为 KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "uint64",
+          "name": "FileSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审计日志下载地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://*******",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "system error",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下载进度",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProgressRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AuditLogFilter": {
       "document": "审计日志过滤条件",
       "members": [
@@ -1210,6 +1410,33 @@
         }
       ],
       "usage": "out"
+    },
+    "CloseAuditServiceRequest": {
+      "document": "CloseAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cmgo-test1234，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cmgo-l0w4****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAuditServiceResponse": {
+      "document": "CloseAuditService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAccountUserRequest": {
       "document": "CreateAccountUser请求参数结构体",
@@ -2720,6 +2947,113 @@
       ],
       "type": "object"
     },
+    "DescribeAuditConfigRequest": {
+      "document": "DescribeAuditConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cmgo-xftsghuy，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cmgo-c1nl****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditConfigResponse": {
+      "document": "DescribeAuditConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmgo-c1nl****",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmgo-c1nl****",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "true表示全审计，false表示规则审计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditAll",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该实例开通数据库审计的时间。",
+          "example": "2021-11-30 16:19:46",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计日志保存时长。\n单位：天。目前支持的保存时长包括：0、30、180、365，1095、1825。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审计日志存储类型。目前仅支持storage：存储型。",
+          "example": "storage",
+          "member": "string",
+          "name": "LogType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否正在关闭审计功能。\n<ul><li>true：是。</li><li>false：否。</li></ul>",
+          "example": "false",
+          "member": "string",
+          "name": "IsClosing",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否正在开启审计功能。<ul><li>true：是。</li><li>false：否。</li></ul>",
+          "example": "false",
+          "member": "string",
+          "name": "IsOpening",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAuditInstanceListRequest": {
       "document": "DescribeAuditInstanceList请求参数结构体",
       "members": [
@@ -2789,6 +3123,190 @@
           "document": "审计实例详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AuditInstance",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogFilesRequest": {
+      "document": "DescribeAuditLogFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cmgo-xfts****，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cmgo-xfts****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小参数。默认值为 20，取值范围[1,100]。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审计日志文件名。该接口将根据此参数过滤相关的审计日志文件。",
+          "example": "test.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogFilesResponse": {
+      "document": "DescribeAuditLogFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的审计日志文件个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计日志文件详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditLogFile",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogsRequest": {
+      "document": "DescribeAuditLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cmgo-xftsghuy，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cmgo-7pje****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，格式为：\"2017-07-12 10:29:20\"。",
+          "example": "2022-09-28 14:25:38",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，格式为：\"2017-07-12 10:29:20\"。",
+          "example": "2022-09-28 15:25:38",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，可按设置的过滤条件过滤日志。",
+          "example": "无",
+          "member": "AuditLogFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，指单次返回的数据条数。默认值为100，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审计日志的排序方式。\n<ul><li>ASC：升序。</li><li>DESC：降序。</li></ul>",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审计日志的排序字段，包括：\n<ul><li>timestamp：时间戳。</li>\n<li>affectRows：影响行数。</li>\n<li>execTime：执行时间。</li></ul>",
+          "example": "timestamp",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogsResponse": {
+      "document": "DescribeAuditLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的审计日志条数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditLog",
           "name": "Items",
           "output_required": true,
           "type": "list",

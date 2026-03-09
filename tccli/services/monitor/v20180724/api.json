@@ -141,11 +141,11 @@
       "status": "online"
     },
     "CreatePrometheusGlobalNotification": {
-      "document": "创建全局告警通知渠道。集群内创建的告警规则如果未配置告警通知渠道，默认走全局告警通知渠道（建议在控制台创建告警，集群内创建告警不易维护）",
+      "document": "之前TPS的接口，迁移后已经不需要该功能\n\n创建全局告警通知渠道。集群内创建的告警规则如果未配置告警通知渠道，默认走全局告警通知渠道（建议在控制台创建告警，集群内创建告警不易维护）",
       "input": "CreatePrometheusGlobalNotificationRequest",
       "name": "创建全局告警通知渠道",
       "output": "CreatePrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreatePrometheusMultiTenantInstancePostPayMode": {
       "document": "创建按量 Prometheus 实例，根据用量收费实例",
@@ -553,6 +553,13 @@
       "output": "DescribeMonitorTypesResponse",
       "status": "online"
     },
+    "DescribeNotificationContentTemplateSupports": {
+      "document": "查询告警通知内容模板支持的变量或者函数列表",
+      "input": "DescribeNotificationContentTemplateSupportsRequest",
+      "name": "查询通知内容模板支持的变量及函数",
+      "output": "DescribeNotificationContentTemplateSupportsResponse",
+      "status": "online"
+    },
     "DescribePhoneAlarmFlowTotalCount": {
       "document": "查询周期内电话流水总数",
       "input": "DescribePhoneAlarmFlowTotalCountRequest",
@@ -659,11 +666,11 @@
       "status": "online"
     },
     "DescribePrometheusGlobalNotification": {
-      "document": "查询全局告警通知渠道",
+      "document": "之前TPS的接口，迁移后已经不需要\n\n查询全局告警通知渠道",
       "input": "DescribePrometheusGlobalNotificationRequest",
       "name": "查询全局告警通知渠道",
       "output": "DescribePrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePrometheusInstanceDetail": {
       "document": "获取TMP实例详情",
@@ -953,11 +960,11 @@
       "status": "online"
     },
     "ModifyPrometheusGlobalNotification": {
-      "document": "修改全局告警通知渠道",
+      "document": "之前TPS接口，迁移后不需要\n\n修改全局告警通知渠道",
       "input": "ModifyPrometheusGlobalNotificationRequest",
       "name": "修改全局告警通知渠道",
       "output": "ModifyPrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyPrometheusInstanceAttributes": {
       "document": "修改 Prometheus 实例相关属性",
@@ -9656,6 +9663,43 @@
       ],
       "type": "object"
     },
+    "DescribeNotificationContentTemplateSupportsRequest": {
+      "document": "DescribeNotificationContentTemplateSupports请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_PROM",
+          "member": "string",
+          "name": "MonitorType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotificationContentTemplateSupportsResponse": {
+      "document": "DescribeNotificationContentTemplateSupports返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationContentTemplateSupport",
+          "name": "Support",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePhoneAlarmFlowTotalCountRequest": {
       "document": "DescribePhoneAlarmFlowTotalCount请求参数结构体",
       "members": [
@@ -17673,6 +17717,84 @@
           "example": "notice-xxx",
           "member": "string",
           "name": "NoticeID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NotificationContentTemplateSupport": {
+      "document": "告警通知内容模板支持的变量或者函数列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_PROM",
+          "member": "string",
+          "name": "MonitorType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationContentTemplateSupportDetail",
+          "name": "Variables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationContentTemplateSupportDetail",
+          "name": "Functions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NotificationContentTemplateSupportDetail": {
+      "document": "告警通知内容模板支持的变量或者函数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量/函数名称",
+          "example": "status_fmt",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "告警状态格式化信息",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "示例",
+          "example": "触发",
+          "member": "string",
+          "name": "Example",
           "output_required": false,
           "required": false,
           "type": "string",

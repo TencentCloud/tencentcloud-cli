@@ -8,8 +8,8 @@ Input:
 tccli ckafka DescribeTopicSyncReplica --cli-unfold-argument  \
     --InstanceId ckafka-test \
     --TopicName topic-test \
-    --Offset 1 \
-    --Limit 0 \
+    --Offset 0 \
+    --Limit 10 \
     --OutOfSyncReplicaOnly True
 ```
 

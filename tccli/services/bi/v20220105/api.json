@@ -472,7 +472,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "ProjectId",
+          "example": "889",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -481,7 +481,7 @@
         {
           "disabled": false,
           "document": "主账号id",
-          "example": "UserCorpId",
+          "example": "700000777778",
           "member": "string",
           "name": "UserCorpId",
           "required": true,
@@ -490,7 +490,7 @@
         {
           "disabled": false,
           "document": "panel , page",
-          "example": "Scope",
+          "example": "page",
           "member": "string",
           "name": "Scope",
           "required": true,
@@ -499,7 +499,7 @@
         {
           "disabled": false,
           "document": "page id",
-          "example": "PageId",
+          "example": "8991",
           "member": "string",
           "name": "PageId",
           "required": false,
@@ -524,7 +524,7 @@
         {
           "disabled": false,
           "document": "额外消息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "额外消息",
           "member": "string",
           "name": "Extra",
           "output_required": false,
@@ -534,7 +534,7 @@
         {
           "disabled": false,
           "document": "提示消息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "提示消息",
           "member": "string",
           "name": "Msg",
           "output_required": false,
@@ -1370,7 +1370,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -3019,7 +3019,7 @@
         {
           "disabled": false,
           "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "无",
           "member": "RowColumnStatus",
           "name": "Data",
           "output_required": true,
@@ -5778,7 +5778,7 @@
         {
           "disabled": false,
           "document": "行列权限规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\\\"Logic\\\":\\\"and\\\",\\\"Items\\\":[]}",
           "member": "string",
           "name": "RulerInfo",
           "output_required": false,
@@ -5872,7 +5872,7 @@
         {
           "disabled": false,
           "document": "标签id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Id",
           "output_required": false,
@@ -5883,7 +5883,7 @@
         {
           "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -5894,7 +5894,7 @@
         {
           "disabled": false,
           "document": "标签值列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"value1\",\"value2\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,

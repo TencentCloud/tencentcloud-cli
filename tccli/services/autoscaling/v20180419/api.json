@@ -4060,33 +4060,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡器ID",
+          "document": "<p>负载均衡器ID</p>",
           "example": "lb-ceqnq5xk",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "应用型负载均衡监听器 ID",
+          "document": "<p>应用型负载均衡监听器 ID</p>",
           "example": "lbl-lqf523ih",
           "member": "string",
           "name": "ListenerId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "转发规则ID，注意：针对七层监听器此参数必填",
+          "document": "<p>转发规则ID，注意：针对七层监听器此参数必填</p>",
           "example": "loc-0xbavbfi",
           "member": "string",
           "name": "LocationId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>监听器或转发路径需解绑的端口号列表。</p><p>取值范围：[1, 65535]</p><p>不传递该参数时，默认解绑指定监听器或转发路径关联的所有端口。</p>",
+          "example": "[223]",
+          "member": "uint64",
+          "name": "PortList",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

@@ -1,25 +1,26 @@
-**Example 1: 创建上传文件系统数据到存储桶任务**
+**Example 1: 创建数据流动任务示例**
 
-创建上传文件系统数据到存储桶任务
+
 
 Input: 
 
 ```
 tccli goosefs CreateDataRepositoryTask --cli-unfold-argument  \
-    --TaskName my_test_task \
-    --FileSystemId x_c60_r3c4fa1f \
-    --Bucket mybucket-1250000 \
-    --TaskPath aaa/bbb \
-    --TaskType FS_TO_BUCKET \
-    --RepositoryType MSP_AFM
+    --TaskType COS_TO_FS \
+    --Bucket bucket-123456 \
+    --FileSystemId x-c60-v321qq3 \
+    --TaskPath test/ \
+    --TaskName 预热任务 \
+    --EnableDataFlowSubPath True \
+    --DataFlowSubPath dst/
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "c1a2b3f4",
-        "RequestId": "b3caa32f-5e39-4360-91e4-5724369b78a6"
+        "TaskId": "x_task_1769158823183",
+        "RequestId": "7bc315dc-c3fa-4c23-b719-30e382d36afb"
     }
 }
 ```

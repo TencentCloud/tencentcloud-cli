@@ -97,7 +97,7 @@
     "CreateAuditKeywordLib": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywordLib\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywordLib\n<公共请求参数>\n\n{\n    \"MatchType\": \"ExactMatch\",\n    \"Name\": \"黄暴过滤\",\n    \"Suggestion\": \"Block\",\n    \"Description\": \"自定义词库\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核创建词库"
       }
@@ -729,7 +729,7 @@
     "DescribeDeliverLogDownList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeliverLogDownList\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeliverLogDownList\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-02-09T12:36:42Z\",\n    \"EndTime\": \"2022-02-09T13:36:42Z\",\n    \"DeliverDomains\": [\n        \"5000.liveplay.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LogInfoList\": [\n            {\n                \"LogName\": \"mylog\",\n                \"LogUrl\": \"https://livelog-down.cdn.qcloud.com/20220804/11/202208041125-pul\",\n                \"LogTime\": \"2022-02-09T12:36:42Z\",\n                \"FileSize\": 0\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }

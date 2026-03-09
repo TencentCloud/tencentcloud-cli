@@ -409,9 +409,9 @@
     "CreateTWeTalkAIBot": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"Name\": \"LPIOACT1NG\",\n    \"Description\": \"LPIOACT1NG\",\n    \"TargetLanguage\": \"zh\",\n    \"AgentConfig\": {\n        \"GreetingMessage\": \"u4f60u597d\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"BotId\": \"bot-1TzRAz42oi\",\n        \"RequestId\": \"46b67c1e-e60a-4128-95e1-c4b7ebd07121\"\n    }\n}",
-        "title": "创建智能体示例"
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"Name\": \"示例bot\",\n    \"BotType\": \"mobile_app\",\n    \"RAGConfig\": \"{\\n  \\\"RAGEnabled\\\": true,\\n  \\\"KnowledgeBaseId\\\": \\\"kb-test-001\\\",\\n  \\\"RAGRegion\\\": \\\"ap-guangzhou\\\",\\n  \\\"RAGTopK\\\": 5,\\n  \\\"RAGScoreThreshold\\\": 0.75,\\n  \\\"RAGRoleExternalId\\\": \\\"external-id-demo\\\",\\n  \\\"RAGRoleDurationSeconds\\\": 3600\\n}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BotId\": \"bot-PuzbxMQnHk\",\n        \"RequestId\": \"91229769-ffe1-4a44-963c-9da03517d3ae\"\n    }\n}",
+        "title": "创建智能体"
       }
     ],
     "CreateTWeTalkProductConfig": [
@@ -1601,9 +1601,9 @@
     "ModifyTWeTalkAIBot": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-0vVbAeOMxU\",\n    \"Name\": \"test003\",\n    \"Description\": \"test003\",\n    \"TargetLanguage\": \"zh\",\n    \"AgentConfig\": {\n        \"SystemPrompt\": \"u4f60u662fu6d77u6d0buff0cu53efu4ee5u4ecbu7ecdu5927u6d77u7684u77e5u8bc6\",\n        \"GreetingMessage\": \"u4f60u597du6d77u6d0buff1f\",\n        \"DefaultVoiceType\": 101016\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03089285-2bc2-4f57-b2cd-0b8c6e5fc810\"\n    }\n}",
-        "title": "修改智能体配置"
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-PuzbxMQnHk\",\n    \"RAGConfig\": \"{\\n  \\\"RAGEnabled\\\": true,\\n  \\\"KnowledgeBaseId\\\": \\\"kb-test-001\\\",\\n  \\\"RAGRegion\\\": \\\"ap-guangzhou\\\",\\n  \\\"RAGTopK\\\": 5,\\n  \\\"RAGScoreThreshold\\\": 0.75,\\n  \\\"RAGRoleExternalId\\\": \\\"external-id-demo\\\",\\n  \\\"RAGRoleDurationSeconds\\\": 1600\\n}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e74b195-eb4b-4335-9693-1cd74bd807c4\"\n    }\n}",
+        "title": "修改智能体"
       }
     ],
     "ModifyTWeTalkProductConfig": [

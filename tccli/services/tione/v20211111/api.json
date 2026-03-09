@@ -134,9 +134,9 @@
       "status": "online"
     },
     "DescribeBillingResourceGroups": {
-      "document": "查询资源组详情",
+      "document": "查询资源组列表",
       "input": "DescribeBillingResourceGroupsRequest",
-      "name": "查询资源组详情",
+      "name": "查询资源组列表",
       "output": "DescribeBillingResourceGroupsResponse",
       "status": "online"
     },
@@ -1697,6 +1697,15 @@
           "name": "SchedulingStrategy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关日志投递相关配置",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "GatewayLogConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3850,7 +3859,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
+          "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. Filter.Negative: 是否取反，默认为false\n4. Filter.Fuzzy: 是否模糊查询，默认为false\n5. 每次请求的Filters的上限为10，Filter.Values的上限为100",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3943,16 +3952,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组类型;\n枚举值:\n空: 通用, TRAIN: 训练, INFERENCE: 推理",
-          "example": "INFERENCE",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量）Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100",
+          "document": "Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量） Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4618,7 +4618,7 @@
         },
         {
           "disabled": false,
-          "document": "日志查询条数，默认值100，最大值100",
+          "document": "日志查询条数，默认值100，最大值1000",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -4678,6 +4678,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用OFFSET分页查询时，指定返回的数据偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11724,6 +11733,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关日志投递相关配置",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "GatewayLogConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12739,6 +12758,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号在Linux下的用户名",
+          "example": "example_user",
+          "member": "string",
+          "name": "LinuxUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13989,16 +14019,18 @@
           "example": "ms-xy1",
           "member": "string",
           "name": "ServiceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量权重值，同 ServiceGroup 下 总和应为 100",
+          "document": "流量权重值，ServiceGroup 下，不同服务版本根据权重比例分配流量",
           "example": "50",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false

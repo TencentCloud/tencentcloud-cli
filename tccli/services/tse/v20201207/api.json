@@ -112,6 +112,13 @@
       "output": "CreateGovernanceInstancesResponse",
       "status": "online"
     },
+    "CreateGovernanceLaneGroups": {
+      "document": "创建泳道组",
+      "input": "CreateGovernanceLaneGroupsRequest",
+      "name": "创建泳道组",
+      "output": "CreateGovernanceLaneGroupsResponse",
+      "status": "online"
+    },
     "CreateGovernanceNamespaces": {
       "document": "创建治理中心命名空间",
       "input": "CreateGovernanceNamespacesRequest",
@@ -278,6 +285,13 @@
       "input": "DeleteGovernanceInstancesByHostRequest",
       "name": "根据HOST删除服务实例",
       "output": "DeleteGovernanceInstancesByHostResponse",
+      "status": "online"
+    },
+    "DeleteGovernanceLaneGroups": {
+      "document": "删除泳道组",
+      "input": "DeleteGovernanceLaneGroupsRequest",
+      "name": "删除泳道组",
+      "output": "DeleteGovernanceLaneGroupsResponse",
       "status": "online"
     },
     "DeleteGovernanceNamespaces": {
@@ -518,6 +532,13 @@
       "output": "DescribeGovernanceInstancesResponse",
       "status": "online"
     },
+    "DescribeGovernanceLaneGroups": {
+      "document": "查询泳道组列表",
+      "input": "DescribeGovernanceLaneGroupsRequest",
+      "name": "查询泳道组列表",
+      "output": "DescribeGovernanceLaneGroupsResponse",
+      "status": "online"
+    },
     "DescribeGovernanceNamespaces": {
       "document": "查询服务治理中心命名空间列表",
       "input": "DescribeGovernanceNamespacesRequest",
@@ -740,6 +761,13 @@
       "input": "ModifyGovernanceInstancesRequest",
       "name": "修改服务实例",
       "output": "ModifyGovernanceInstancesResponse",
+      "status": "online"
+    },
+    "ModifyGovernanceLaneGroups": {
+      "document": "创建泳道组",
+      "input": "ModifyGovernanceLaneGroupsRequest",
+      "name": "修改泳道组",
+      "output": "ModifyGovernanceLaneGroupsResponse",
       "status": "online"
     },
     "ModifyGovernanceNamespaces": {
@@ -965,6 +993,78 @@
         }
       ],
       "usage": "in"
+    },
+    "Argument": {
+      "document": "路由规则来源服务的请求规则配置详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CALLER_IP",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "$caller_ip",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{ \t\t\t\t\t\t\"type\": \"EXACT\", \t\t\t\t\t\t\"value\": \"test\", \t\t\t\t\t\t\"value_type\": \"TEXT\" \t\t\t\t\t}",
+          "member": "ArgumentValue",
+          "name": "Value",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ArgumentValue": {
+      "document": "被调服务配置表达式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表达式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXACT",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEXT",
+          "member": "string",
+          "name": "ValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AutoScalerBehavior": {
       "document": "指标伸缩行为",
@@ -1994,7 +2094,7 @@
         {
           "disabled": false,
           "document": "qps阈值",
-          "example": "[{Unit:\"second\",Max:10}]",
+          "example": "无",
           "member": "QpsThreshold",
           "name": "QpsThresholds",
           "output_required": true,
@@ -2044,6 +2144,17 @@
           "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局配置中的redis配置",
+          "example": "9a4e0f39-fa6a-44d8-8e3e-10f016ad78de",
+          "member": "string",
+          "name": "GlobalConfigId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2126,7 +2237,7 @@
         {
           "disabled": false,
           "document": "基础限流\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{Unit:\"second\",Max:10}]",
+          "example": "无",
           "member": "QpsThreshold",
           "name": "BasicLimitQpsThresholds",
           "output_required": false,
@@ -2137,7 +2248,7 @@
         {
           "disabled": false,
           "document": "参数限流的规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Filters\":[{\"Key\":\"ip\",\"Values\":[\"8.8.8.8/24\"]}],\"LimitBy\":[{\"Key\":\"ip\",\"Value\":\"\"},{\"Key\":\"header\",\"Value\":\"host\"}],\"QpsThresholds\":[{\"Unit\":\"second\",\"Max\":10000}]}]",
+          "example": "无",
           "member": "LimitRule",
           "name": "LimitRules",
           "output_required": false,
@@ -5132,6 +5243,52 @@
       ],
       "type": "object"
     },
+    "CreateGovernanceLaneGroupsRequest": {
+      "document": "CreateGovernanceLaneGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎实例ID",
+          "example": "ins-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "泳道组规则列表",
+          "example": "无",
+          "member": "GovernanceLaneGroup",
+          "name": "LaneGroups",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGovernanceLaneGroupsResponse": {
+      "document": "CreateGovernanceLaneGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否创建成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGovernanceNamespacesRequest": {
       "document": "CreateGovernanceNamespaces请求参数结构体",
       "members": [
@@ -6404,6 +6561,168 @@
           "member": "bool",
           "name": "Result",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceLaneGroup": {
+      "document": "泳道组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lanegroup-123",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123345",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道入口服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LaneTrafficEntry",
+          "name": "TrafficEntries",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovernanceServiceDestination",
+          "name": "Destinations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则内容摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c123xaweqw",
+          "member": "string",
+          "name": "Revision",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则一致性状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Abnormal/Normal/Unknown",
+          "member": "string",
+          "name": "Consistency",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovernanceLaneRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteGovernanceLaneGroupsRequest": {
+      "document": "DeleteGovernanceLaneGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎实例ID",
+          "example": "ins-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "泳道组规则列表",
+          "example": "无",
+          "member": "DeleteGovernanceLaneGroup",
+          "name": "LaneGroups",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceLaneGroupsResponse": {
+      "document": "DeleteGovernanceLaneGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否创建成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9099,6 +9418,98 @@
           "name": "Location",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceLaneGroupsRequest": {
+      "document": "DescribeGovernanceLaneGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎实例ID",
+          "example": "ins-1231345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "泳道名称",
+          "example": "123123",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "泳道ID",
+          "example": "123123",
+          "member": "string",
+          "name": "GroupID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示泳道规则列表",
+          "example": "true",
+          "member": "bool",
+          "name": "Brief",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceLaneGroupsResponse": {
+      "document": "DescribeGovernanceLaneGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "泳道规则列表",
+          "example": "无",
+          "member": "GovernanceLaneGroup",
+          "name": "LaneGroups",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11946,6 +12357,293 @@
       ],
       "usage": "both"
     },
+    "GovernanceLaneGroup": {
+      "document": "泳道组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lanegroup-123",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123345",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道入口服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LaneTrafficEntry",
+          "name": "TrafficEntries",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovernanceServiceDestination",
+          "name": "Destinations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该泳道组下的所有泳道规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovernanceLaneRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则内容摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c123xaweqw",
+          "member": "string",
+          "name": "Revision",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则一致性状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Abnormal/Normal/Unknown",
+          "member": "string",
+          "name": "Consistency",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GovernanceLaneRule": {
+      "document": "泳道规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "泳道规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "71f28761f5e8433a9e656fb290e1dcf8",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule-1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道所属泳道组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lane-2",
+          "member": "string",
+          "name": "LaneGroup",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道规则启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Argument",
+          "name": "TrafficLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多个流量标签匹配方式\nAND：与\nOR：或\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AND|OR",
+          "member": "string",
+          "name": "TrafficMatchMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道匹配方式\nSTRICT：严格匹配\nPERMISSIVE：宽松匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STRICT|PERMISSIVE",
+          "member": "string",
+          "name": "LaneMatchMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道灰度规则",
+          "example": "无",
+          "member": "TrafficGray",
+          "name": "TrafficGray",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "泳道规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "blue",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道标签内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gray",
+          "member": "string",
+          "name": "LaneLabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "EnableTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道规则优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "df5bc49fd0084bf3a362b5152d52ad8a",
+          "member": "string",
+          "name": "Revision",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "GovernanceNamespace": {
       "document": "治理中心命名空间",
       "members": [
@@ -12579,6 +13277,45 @@
         }
       ],
       "usage": "out"
+    },
+    "GovernanceServiceDestination": {
+      "document": "服务实例组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service",
+          "member": "string",
+          "name": "Service",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoutingDestinationRuleLabel",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GovernanceServiceInput": {
       "document": "治理中心服务入参",
@@ -14160,6 +14897,84 @@
       ],
       "usage": "both"
     },
+    "Label": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键名称",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LaneTrafficEntry": {
+      "document": "泳道入口信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "   // type == \"polarismesh.cn/gateway/tse-gateway, 则 selector 为 TSEGatewaySelector\n   // type == \"polarismesh.cn/gateway/spring-cloud-gateway\", 则 selector 为 ServiceGatewaySelector\n   // type == \"polarismesh.cn/service, 则 selector 为 ServiceSelector\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "polarismesh.cn/gateway/tse-gateway",
+          "member": "string",
+          "name": "EntryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TSE云原生网关选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TSEGatewaySelector",
+          "name": "TSEGatewaySelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "微服务网关选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceGatewaySelector",
+          "name": "ServiceGatewaySelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "普通微服务选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceSelector",
+          "name": "ServiceSelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LimitRule": {
       "document": "参数限流的规则",
       "members": [
@@ -15326,6 +16141,52 @@
           "member": "bool",
           "name": "Result",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceLaneGroupsRequest": {
+      "document": "ModifyGovernanceLaneGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎实例ID",
+          "example": "ins-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "泳道组规则列表",
+          "example": "无",
+          "member": "GovernanceLaneGroup",
+          "name": "LaneGroups",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceLaneGroupsResponse": {
+      "document": "ModifyGovernanceLaneGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否创建成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16716,6 +17577,56 @@
       ],
       "usage": "out"
     },
+    "RoutingDestinationRuleLabel": {
+      "document": "目标服务实例实例标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "labelkey1",
+          "member": "string",
+          "name": "LabelKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表达式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOT_IN",
+          "member": "string",
+          "name": "LabelType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEXT",
+          "member": "string",
+          "name": "LabelValueType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RuleFilter": {
       "document": "限流规则的Filter",
       "members": [
@@ -17172,6 +18083,45 @@
       ],
       "usage": "out"
     },
+    "ServiceGatewaySelector": {
+      "document": "微服务网关选择器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service",
+          "member": "string",
+          "name": "Service",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ServiceGovernanceInfo": {
       "document": "服务治理相关的信息",
       "members": [
@@ -17284,6 +18234,45 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceSelector": {
+      "document": "普通服务选择器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service",
+          "member": "string",
+          "name": "Service",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17472,6 +18461,84 @@
           "member": "uint64",
           "name": "Capacity",
           "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TSEGatewaySelector": {
+      "document": "网关服务信息匹配条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关引擎实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gateway-123456",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"service-1\"]",
+          "member": "string",
+          "name": "Services",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TrafficGray": {
+      "document": "泳道流量灰度规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量灰度规则，按比例灰度或预热方式",
+          "example": "PERCENTAGE",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按比例灰度的百分比值1-100",
+          "example": "30",
+          "member": "int64",
+          "name": "Percent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预热的间隔",
+          "example": "6",
+          "member": "int64",
+          "name": "IntervalSecond",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预热的曲度",
+          "example": "2",
+          "member": "int64",
+          "name": "Curvature",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

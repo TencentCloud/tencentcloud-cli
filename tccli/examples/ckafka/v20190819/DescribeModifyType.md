@@ -21,8 +21,7 @@ Output:
     "Response": {
         "Result": {
             "ModifyType": 1,
-            "MigrateFlag": true,
-            "MigrateCostTime": 17066
+            "MigrateFlag": true
         },
         "RequestId": "7118b7f95-43de-4d27-8sdadsa-9999999a"
     }

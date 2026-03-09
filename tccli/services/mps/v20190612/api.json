@@ -7430,7 +7430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 \n\n不同模型支持的分辨率选项:\n1. Kling 720P(默认), 1080P。\n2. Hailuo 768P(默认), 1080P。\n3. Vidu 720P(默认)，1080P。\n4. GV 720P(默认),1080P。\n5. OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。\n\n注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。",
+          "document": "<p>生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 </p><p>不同模型支持的分辨率选项:</p><ol><li>Kling 720P(默认), 1080P。</li><li>Hailuo 768P(默认), 1080P。</li><li>Vidu 720P(默认)，1080P。</li><li>GV 720P(默认),1080P。</li><li>OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。</li></ol><p>注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。</p>",
           "example": "720P",
           "member": "string",
           "name": "Resolution",
@@ -7441,7 +7441,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所生成视频的宽高比。 \n\n不同模型对于此参数的支持：\n1. Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。\n2. Hailuo 暂不支持。\n3. Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。\n4. GV 16:9(默认值)、9:16。\n5. OS 仅文生视频支持, 16:9(默认), 9:16。\n\n注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。",
+          "document": "<p>指定所生成视频的宽高比。 </p><p>不同模型对于此参数的支持：</p><ol><li>Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。</li><li>Hailuo 暂不支持。</li><li>Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。</li><li>GV 16:9(默认值)、9:16。</li><li>OS 仅文生视频支持, 16:9(默认), 9:16。</li></ol><p>注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。</p>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -7452,7 +7452,7 @@
         },
         {
           "disabled": false,
-          "document": "是否添加图标水印。\n1. Hailuo 支持此参数。\n2. Kling 支持此参数。\n3. Vidu 支持此参数。",
+          "document": "<p>是否添加图标水印。</p><ol><li>Hailuo 支持此参数。</li><li>Kling 支持此参数。</li><li>Vidu 支持此参数。</li></ol>",
           "example": "0",
           "member": "int64",
           "name": "LogoAdd",
@@ -7463,7 +7463,7 @@
         },
         {
           "disabled": false,
-          "document": "为视频生成音频。接受的值包括 true 或 false。 \n\n支持此参数的模型：\n1. GV，默认true。\n2. OS，默认true。",
+          "document": "<p>为视频生成音频。接受的值包括 true 或 false。 </p><p>支持此参数的模型：</p><ol><li>GV，默认true。</li><li>OS，默认true。</li></ol>",
           "example": "false",
           "member": "bool",
           "name": "EnableAudio",
@@ -7474,10 +7474,21 @@
         },
         {
           "disabled": false,
-          "document": "错峰模型，目前仅支持Vidu模型。\n错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。",
+          "document": "<p>错峰模型，目前仅支持Vidu模型。<br>错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。</p>",
           "example": "false",
           "member": "bool",
           "name": "OffPeak",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为生成的视频添加背景音乐。默认：false，可选值 true 、false。<br>注意：部分模型的版本支持。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBgm",
           "output_required": false,
           "required": false,
           "type": "bool",
@@ -7506,6 +7517,45 @@
           "example": "asset",
           "member": "string",
           "name": "ReferenceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcVideoReferenceVideoInfo": {
+      "document": "用于AIGC视频生成的参考视频素材。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参考视频url。需要外网可访问。\n可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声\n通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频\n参考视频为待编辑视频时，不能定义视频首尾帧。",
+          "example": "",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。",
+          "example": "",
+          "member": "string",
+          "name": "ReferType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。",
+          "example": "",
+          "member": "string",
+          "name": "KeepOriginalSound",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -10596,7 +10646,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称。\n当前支持的模型列表:\nHunyuan,\nHailuo，\nKling，\nVidu，\nOS，\nGV。",
+          "document": "<p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV。</p>",
           "example": "Hailuo",
           "member": "string",
           "name": "ModelName",
@@ -10605,7 +10655,7 @@
         },
         {
           "disabled": false,
-          "document": "指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。\n1. Hailuo， 可选[02、2.3]。\n2. Kling，可选[2.0、2.1、2.5、O1、2.6]。\n3. Vidu,可选[q2、q2-pro、q2-turbo]。\n4. GV, 可选[3.1]。\n5. OS，可选[2.0]。",
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3]。</li><li>Kling，可选[2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo]。</li><li>GV, 可选[3.1]。</li><li>OS，可选[2.0]。</li></ol>",
           "example": "2.3",
           "member": "string",
           "name": "ModelVersion",
@@ -10614,7 +10664,7 @@
         },
         {
           "disabled": false,
-          "document": "指定场景生视频。\n注意：仅部分模型支持指定场景。\n1. Kling支持动作控制，motion_control。\n2. Mingmou支持横转竖，land2port。\n3. Vidu支持特效模板，template_effect。",
+          "document": "<p>指定场景生视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持动作控制，motion_control。</li><li>Mingmou支持横转竖，land2port。</li><li>Vidu支持特效模板，template_effect。</li></ol>",
           "example": "motion_control",
           "member": "string",
           "name": "SceneType",
@@ -10623,7 +10673,7 @@
         },
         {
           "disabled": false,
-          "document": "生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。",
+          "document": "<p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>",
           "example": "move the picture",
           "member": "string",
           "name": "Prompt",
@@ -10632,7 +10682,7 @@
         },
         {
           "disabled": false,
-          "document": "用于描述您想要阻止模型生成的内容。\n注意：部分模型支持。\n例如：\n顶部照明、明亮的色彩\n人物、动物\n多辆汽车、风。",
+          "document": "<p>用于描述您想要阻止模型生成的内容。<br>注意：部分模型支持。<br>例如：<br>顶部照明、明亮的色彩<br>人物、动物<br>多辆汽车、风。</p>",
           "example": "Top lighting, bright colors",
           "member": "string",
           "name": "NegativePrompt",
@@ -10641,7 +10691,7 @@
         },
         {
           "disabled": false,
-          "document": "默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。",
+          "document": "<p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnhancePrompt",
@@ -10650,7 +10700,7 @@
         },
         {
           "disabled": false,
-          "document": "用于指导视频生成的图片 URL。该URL需外网可访问。\n注意：\n1. 推荐图片大小不超过10M，不同模型大小限制不相同。\n2. 支持的图片格式：jpeg、png。\n3. 使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。",
+          "document": "<p>用于指导视频生成的图片 URL。该URL需外网可访问。<br>注意：</p><ol><li>推荐图片大小不超过10M，不同模型大小限制不相同。</li><li>支持的图片格式：jpeg、png。</li><li>使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。</li></ol>",
           "example": "https://1500039689.vod-xxx.com/6cd2c44bvodcq1500039689/179cafb25145403699605999621/xxdjoxE6jcA.png",
           "member": "string",
           "name": "ImageUrl",
@@ -10659,7 +10709,7 @@
         },
         {
           "disabled": false,
-          "document": "模型将以此参数传入的图片作为尾帧画面来生成视频。\n支持此参数的模型：\n1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。\n2. Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。\n3. Vidu, q2-pro, q2-turbo 支持首尾帧。\n\n注意：\n1. 推荐图片大小不超过10M，各模型限制不同。\n2. 支持的图片格式：jpeg、png。",
+          "document": "<p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。</li><li>Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。</li><li>Vidu, q2-pro, q2-turbo 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>",
           "example": "https://aigc-xxx-image-1303333058.cos.ap-guangzhou.myqcloud.com/xxx_8655.png",
           "member": "string",
           "name": "LastImageUrl",
@@ -10668,7 +10718,7 @@
         },
         {
           "disabled": false,
-          "document": "最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。\n\n支持多图输入的模型：\n1. GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。\n2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。\n\n注意：\n1. 图片大小不超过10M。\n2. 支持的图片格式：jpeg、png。",
+          "document": "<p>最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。</li><li>Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>",
           "example": "无",
           "member": "AigcVideoReferenceImageInfo",
           "name": "ImageInfos",
@@ -10677,7 +10727,16 @@
         },
         {
           "disabled": false,
-          "document": "生成视频的时长。\n注意：\n1. Kling支持 5、10秒。默认: 5秒。\n2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。\n3. Vidu支持1-10秒。\n4. GV支持 8秒。 默认：8秒。\n5. OS支持4、8、12秒。 默认：8秒。",
+          "document": "<p>目前仅Kling O1版本支持参考视频信息传入。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声。</p>",
+          "example": "无",
+          "member": "AigcVideoReferenceVideoInfo",
+          "name": "VideoInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成视频的时长。<br>注意：</p><ol><li>Kling支持 5、10秒。默认: 5秒。</li><li>Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。</li><li>Vidu支持1-10秒。</li><li>GV支持 8秒。 默认：8秒。</li><li>OS支持4、8、12秒。 默认：8秒。</li></ol>",
           "example": "8",
           "member": "int64",
           "name": "Duration",
@@ -10686,7 +10745,7 @@
         },
         {
           "disabled": false,
-          "document": "用于传入要求的额外参数。",
+          "document": "<p>用于传入要求的额外参数。</p>",
           "example": "无",
           "member": "AigcVideoExtraParam",
           "name": "ExtraParameters",
@@ -10695,7 +10754,7 @@
         },
         {
           "disabled": false,
-          "document": "文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。",
+          "document": "<p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>",
           "example": "无",
           "member": "AigcStoreCosParam",
           "name": "StoreCosParam",
@@ -10704,7 +10763,7 @@
         },
         {
           "disabled": false,
-          "document": "用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。\n示例：\n{\\\"camera_control\\\":{\\\"type\\\":\\\"simple\\\"}}",
+          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例：<br>{\"camera_control\":{\"type\":\"simple\"}}</p>",
           "example": "{\\\"test\\\":1}",
           "member": "string",
           "name": "AdditionalParameters",
@@ -10713,7 +10772,7 @@
         },
         {
           "disabled": false,
-          "document": "接口操作者名称。",
+          "document": "<p>接口操作者名称。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
@@ -10728,7 +10787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务创建成功后，返回的任务ID。\n调用查询接口，轮询获取任务进度及生成结果。",
+          "document": "<p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>",
           "example": "2147483792",
           "member": "string",
           "name": "TaskId",
@@ -19766,7 +19825,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入的视频文件信息。",
+          "document": "<p>输入的视频文件信息。</p>",
           "example": "无",
           "member": "EditMediaFileInfo",
           "name": "FileInfos",
@@ -19775,7 +19834,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理输出文件的目标存储。",
+          "document": "<p>媒体处理输出文件的目标存储。</p>",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -19784,7 +19843,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理输出文件的目标路径。\n\n注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。\n",
+          "document": "<p>媒体处理输出文件的目标路径。</p><p>注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。</p>",
           "example": "/clip_result/clip_WildAnimal.{format}",
           "member": "string",
           "name": "OutputObjectPath",
@@ -19793,7 +19852,7 @@
         },
         {
           "disabled": false,
-          "document": "【剪辑】任务生成的文件配置。",
+          "document": "<p>【剪辑】任务生成的文件配置。</p>",
           "example": "无",
           "member": "EditMediaOutputConfig",
           "name": "OutputConfig",
@@ -19802,7 +19861,7 @@
         },
         {
           "disabled": false,
-          "document": "【合成】任务配置。\n\n注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。",
+          "document": "<p>【合成】任务配置。</p><p>注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。</p>",
           "example": "无",
           "member": "ComposeMediaConfig",
           "name": "ComposeConfig",
@@ -19811,7 +19870,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "document": "<p>任务的事件通知信息，不填代表不获取事件通知。</p>",
           "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
@@ -19820,7 +19879,7 @@
         },
         {
           "disabled": false,
-          "document": "任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
+          "document": "<p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>",
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
@@ -19829,7 +19888,7 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
           "example": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
           "member": "string",
           "name": "SessionId",
@@ -19838,10 +19897,19 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
           "example": "MD123******QNA==",
           "member": "string",
           "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。</p>",
+          "example": "vts-24000-0",
+          "member": "string",
+          "name": "ResourceId",
           "required": false,
           "type": "string"
         }
@@ -19853,7 +19921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。",
+          "document": "<p>编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。</p>",
           "example": "125xxx88-EditMedia-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
@@ -31047,7 +31115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。\ntrtc地址如下：\n trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`\n`<roomid>` 为trtc的房间号id, 为数字\n`<sdkappid>` 为trtc的sdk app id\n`<userid>` 为服务进入房间的用户id,可以区分谁是机器人\n<`usersig>` 为trtc 用户的签名\n\nwebrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)\n\nsrt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)\n\n",
+          "document": "<p>直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。<br>trtc地址如下：<br> trtc: //trtc.rtc.qq.com/mps/<code>&lt;roomid&gt;</code>?sdkappid=<code>&lt;sdkappid&gt;</code>&amp;userid=<code>&lt;userid&gt;</code>&amp;usersig=&lt;<code>usersig&gt;</code><br><code>&lt;roomid&gt;</code> 为trtc的房间号id, 为数字<br><code>&lt;sdkappid&gt;</code> 为trtc的sdk app id<br><code>&lt;userid&gt;</code> 为服务进入房间的用户id,可以区分谁是机器人<br>&lt;<code>usersig&gt;</code> 为trtc 用户的签名</p><p>webrtc 支持<a href=\"https://cloud.tencent.com/product/leb\">LEB</a>的直播流，地址获取请<a href=\"https://cloud.tencent.com/document/product/267/32720\">参考</a></p><p>srt支持地址请<a href=\"https://ffmpeg.org/ffmpeg-protocols.html#srt\">参考</a></p>",
           "example": "http://www.adc.com/adc.m3u8",
           "member": "string",
           "name": "Url",
@@ -31056,7 +31124,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的事件通知信息，用于指定直播流处理的结果。",
+          "document": "<p>任务的事件通知信息，用于指定直播流处理的结果。</p>",
           "example": "无",
           "member": "LiveStreamTaskNotifyConfig",
           "name": "TaskNotifyConfig",
@@ -31065,7 +31133,7 @@
         },
         {
           "disabled": false,
-          "document": "直播流处理输出文件的目标存储。如处理有文件输出，该参数为必填项。",
+          "document": "<p>直播流处理输出文件的目标存储。如处理有文件输出，该参数为必填项。</p>",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -31074,7 +31142,7 @@
         },
         {
           "disabled": false,
-          "document": "直播流处理生成的文件输出的目标目录，如`/movie/201909/`，如果不填为 `/` 目录。",
+          "document": "<p>直播流处理生成的文件输出的目标目录，如<code>/movie/201909/</code>，如果不填为 <code>/</code> 目录。</p>",
           "example": "/tmp/",
           "member": "string",
           "name": "OutputDir",
@@ -31083,7 +31151,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容审核类型任务参数。",
+          "document": "<p>视频内容审核类型任务参数。</p>",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
@@ -31092,7 +31160,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容识别类型任务参数。",
+          "document": "<p>视频内容识别类型任务参数。</p>",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
@@ -31101,7 +31169,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析类型任务参数。",
+          "document": "<p>视频内容分析类型任务参数。</p>",
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
@@ -31110,7 +31178,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检类型任务参数。",
+          "document": "<p>媒体质检类型任务参数。</p>",
           "example": "无",
           "member": "AiQualityControlTaskInput",
           "name": "AiQualityControlTask",
@@ -31119,7 +31187,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕任务参数。",
+          "document": "<p>智能字幕任务参数。</p>",
           "example": "无",
           "member": "LiveSmartSubtitlesTaskInput",
           "name": "SmartSubtitlesTask",
@@ -31128,7 +31196,7 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "<p>用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
           "example": "sdsxxx-xxxx",
           "member": "string",
           "name": "SessionId",
@@ -31137,7 +31205,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
           "example": "ceckxxxxx",
           "member": "string",
           "name": "SessionContext",
@@ -31146,12 +31214,21 @@
         },
         {
           "disabled": false,
-          "document": "直播编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若对直播流发起处理（ProcessLiveStream）有输出，将覆盖原有编排的默认输出。</li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessLiveStream）有设置，将覆盖原有编排的默认回调。",
+          "document": "<p>直播编排ID。<br>注意1：对于OutputStorage、OutputDir参数：</p><li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li><li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若对直播流发起处理（ProcessLiveStream）有输出，将覆盖原有编排的默认输出。</li>注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessLiveStream）有设置，将覆盖原有编排的默认回调。",
           "example": "450001",
           "member": "int64",
           "name": "ScheduleId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。</p>",
+          "example": "vts-24000-0",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -31161,7 +31238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "125xxxxxx07-live-procedure-813dc41e6fdc22dcf24aa6e9c61cp92",
           "member": "string",
           "name": "TaskId",

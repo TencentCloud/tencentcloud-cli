@@ -1,4 +1,4 @@
-**Example 1: 创建智能体示例**
+**Example 1: 创建智能体**
 
 
 
@@ -6,18 +6,25 @@ Input:
 
 ```
 tccli iotexplorer CreateTWeTalkAIBot --cli-unfold-argument  \
-    --Name LPIOACT1NG \
-    --Description LPIOACT1NG \
-    --TargetLanguage zh \
-    --AgentConfig.GreetingMessage u4f60u597d
+    --Name 示例bot \
+    --BotType mobile_app \
+    --RAGConfig {
+  "RAGEnabled": true,
+  "KnowledgeBaseId": "kb-test-001",
+  "RAGRegion": "ap-guangzhou",
+  "RAGTopK": 5,
+  "RAGScoreThreshold": 0.75,
+  "RAGRoleExternalId": "external-id-demo",
+  "RAGRoleDurationSeconds": 3600
+}
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BotId": "bot-1TzRAz42oi",
-        "RequestId": "46b67c1e-e60a-4128-95e1-c4b7ebd07121"
+        "BotId": "bot-PuzbxMQnHk",
+        "RequestId": "91229769-ffe1-4a44-963c-9da03517d3ae"
     }
 }
 ```

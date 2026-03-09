@@ -1,4 +1,4 @@
-**Example 1: DescribeMySqlClusterDetail**
+**Example 1: DescribeMySQLClusterDetail**
 
 
 

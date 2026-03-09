@@ -4277,7 +4277,7 @@
       "usage": "both"
     },
     "AnalyseTimeDetail": {
-      "document": "成本分返回值复杂类型",
+      "document": "成本分析返回值复杂类型",
       "members": [
         {
           "disabled": false,

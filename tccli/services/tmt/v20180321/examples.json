@@ -26,10 +26,10 @@
     ],
     "ImageTranslateLLM": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageTranslateLLM\n<公共请求参数>\n\n{\n    \"Data\": \"iVBORw0KGgoAAAAN......Ws0ewAAAABJRU5ErkJggg==\",\n    \"Target\": \"en\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"iVBORw0KGgoAAAANSUh......4AAAAASUVORK5CYII=\",\n        \"RequestId\": \"962cc025-f31c-466a-9a2d-c7947bd866c2\",\n        \"Source\": \"zh_CN\",\n        \"SourceText\": \"你好\",\n        \"Target\": \"en\",\n        \"TargetText\": \"Hello\"\n    }\n}",
-        "title": "图片翻译调用示例"
+        "document": "端到端图片翻译base64输入",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageTranslateLLM\n<公共请求参数>\n\n{\n    \"Data\": \"/9j/4AAQ...FFFFABRRRQB//9k=\",\n    \"Target\": \"zh\",\n    \"Url\": null\n}",
+        "output": "{\n    \"Response\": {\n        \"Angle\": 0,\n        \"Data\": \"iVBORw...ABJRU5ErkJggg==\",\n        \"RequestId\": \"368a3dd3-e5f9-40a0-a96c-bf7db373f1de\",\n        \"Source\": \"zh\",\n        \"SourceText\": \"你好\",\n        \"Target\": \"en\",\n        \"TargetText\": \"hello\",\n        \"TransDetails\": [\n            {\n                \"BoundingBox\": {\n                    \"Height\": 28,\n                    \"Width\": 236,\n                    \"X\": 118,\n                    \"Y\": 153\n                },\n                \"LineHeight\": 28,\n                \"LinesCount\": 1,\n                \"RotateParagraphRect\": {\n                    \"Coord\": [\n                        {\n                            \"X\": 118,\n                            \"Y\": 153\n                        },\n                        {\n                            \"X\": 354,\n                            \"Y\": 153\n                        },\n                        {\n                            \"X\": 354,\n                            \"Y\": 182\n                        },\n                        {\n                            \"X\": 118,\n                            \"Y\": 182\n                        }\n                    ],\n                    \"TiltAngle\": 0,\n                    \"Valid\": false\n                },\n                \"SourceLineText\": \"你好\",\n                \"SpamCode\": 0,\n                \"TargetLineText\": \"hello\"\n            }\n        ]\n    }\n}",
+        "title": "端到端图片翻译调用示例"
       }
     ],
     "LanguageDetect": [

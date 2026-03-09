@@ -1853,7 +1853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "挂载点ID",
+          "document": "<p>挂载点ID</p>",
           "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
           "name": "MountPointId",
@@ -1862,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载点名称",
+          "document": "<p>挂载点名称</p>",
           "example": "mp-test",
           "member": "string",
           "name": "MountPointName",
@@ -1871,7 +1871,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载点状态",
+          "document": "<p>挂载点状态</p><p>枚举值：</p><ul><li>1： 打开</li><li>2： 关闭</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "MountPointStatus",

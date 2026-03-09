@@ -9939,6 +9939,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则分区，1最前分区，2中间分区，3最后分区",
+          "example": "2",
+          "member": "int64",
+          "name": "RulePartition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围，SG安全组，LH轻量服务器",
+          "example": "SG",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15249,7 +15269,7 @@
         {
           "disabled": false,
           "document": "（入参时无需填写，自动生成）规则对应的唯一id",
-          "example": "8888",
+          "example": "47481",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -15274,6 +15294,17 @@
           "example": "1",
           "member": "string",
           "name": "Uid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围，SG安全组，LH轻量服务器",
+          "example": "SG",
+          "member": "string",
+          "name": "Scope",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -15343,6 +15374,16 @@
           "name": "Sequence",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效范围，SG安全组，LH轻量服务器",
+          "example": "SG",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

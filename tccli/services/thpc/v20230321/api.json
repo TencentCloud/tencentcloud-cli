@@ -1839,11 +1839,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID。\t",
+          "document": "<p>集群ID。</p>",
           "example": "hpc-5lyv94lq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称</p>",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1854,37 +1863,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID。",
+          "document": "<p>集群ID。</p>",
           "example": "hpc-rv7hahw2",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。",
+          "document": "<p>任务连续等待时间，队列的任务处于连续等待的时间。单位秒。</p>",
           "example": "120",
           "member": "int64",
           "name": "ExpansionBusyTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。",
+          "document": "<p>节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。</p>",
           "example": "300",
           "member": "int64",
           "name": "ShrinkIdleTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩容队列配置概览列表。",
+          "document": "<p>扩容队列配置概览列表。</p>",
           "example": "无",
           "member": "QueueConfigOverview",
           "name": "QueueConfigs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

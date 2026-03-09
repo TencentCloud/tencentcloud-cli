@@ -1,4 +1,4 @@
-**Example 1: DescribeMySqlTaskStatus**
+**Example 1: DescribeMySQLTaskStatus**
 
 
 

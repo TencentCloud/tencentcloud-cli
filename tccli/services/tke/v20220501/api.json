@@ -1510,7 +1510,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘大小(G）",
+          "document": "云盘大小 (G）",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -1558,6 +1558,28 @@
           "example": "disk-kped07j8",
           "member": "string",
           "name": "DiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密系统盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENCRYPT",
+          "member": "string",
+          "name": "Encrypt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义 KMS ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "65932f38-0106-11f1-bda4-5254008811d0",
+          "member": "string",
+          "name": "KmsKeyId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2251,7 +2273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽",
+          "document": "带宽，单位为Mbps",
           "example": "50",
           "member": "int64",
           "name": "MaxBandwidthOut",

@@ -5666,7 +5666,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "雪碧图小图的高度。",
+          "document": "<p>雪碧图小图的高度。</p>",
           "example": "100",
           "member": "int64",
           "name": "Height",
@@ -5676,7 +5676,7 @@
         },
         {
           "disabled": false,
-          "document": "雪碧图小图的宽度。",
+          "document": "<p>雪碧图小图的宽度。</p>",
           "example": "100",
           "member": "int64",
           "name": "Width",
@@ -5686,7 +5686,7 @@
         },
         {
           "disabled": false,
-          "document": "雪碧图小图的总数量。",
+          "document": "<p>雪碧图小图的总数量。</p>",
           "example": "200",
           "member": "int64",
           "name": "TotalCount",
@@ -5696,7 +5696,7 @@
         },
         {
           "disabled": false,
-          "document": "截取雪碧图输出的地址。",
+          "document": "<p>截取雪碧图输出的地址。</p>",
           "example": "[\"http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.jpg\"]",
           "member": "string",
           "name": "ImageUrlSet",
@@ -5706,7 +5706,7 @@
         },
         {
           "disabled": false,
-          "document": "雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。",
+          "document": "<p>雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。</p>",
           "example": "https://xxx.vod2.myqcloud.com/xxx/xxx.vtt",
           "member": "string",
           "name": "WebVttUrl",
@@ -5722,7 +5722,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "大小。",
+          "document": "<p>大小。</p>",
           "example": "97561",
           "member": "uint64",
           "name": "Size",
@@ -5732,7 +5732,7 @@
         },
         {
           "disabled": false,
-          "document": "容器类型。",
+          "document": "<p>容器类型。</p>",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -5742,7 +5742,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流码率平均值与音频流码率平均值之和，单位：bps。",
+          "document": "<p>视频流码率平均值与音频流码率平均值之和，单位：bps。</p>",
           "example": "64000",
           "member": "uint64",
           "name": "Bitrate",
@@ -5752,7 +5752,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流高度的最大值，单位：px。",
+          "document": "<p>视频流高度的最大值，单位：px。</p>",
           "example": "540",
           "member": "uint64",
           "name": "Height",
@@ -5762,7 +5762,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流宽度的最大值，单位：px。",
+          "document": "<p>视频流宽度的最大值，单位：px。</p>",
           "example": "960",
           "member": "uint64",
           "name": "Width",
@@ -5772,7 +5772,7 @@
         },
         {
           "disabled": false,
-          "document": "时长，单位：秒。",
+          "document": "<p>时长，单位：秒。</p>",
           "example": "20",
           "member": "float",
           "name": "Duration",
@@ -5782,7 +5782,7 @@
         },
         {
           "disabled": false,
-          "document": "视频拍摄时的选择角度，单位：度",
+          "document": "<p>视频拍摄时的选择角度，单位：度</p>",
           "example": "0",
           "member": "int64",
           "name": "Rotate",
@@ -5792,7 +5792,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流信息。",
+          "document": "<p>视频流信息。</p>",
           "example": "无",
           "member": "VideoStreamInfo",
           "name": "VideoStreamInfoSet",
@@ -5802,7 +5802,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流信息。",
+          "document": "<p>音频流信息。</p>",
           "example": "无",
           "member": "AudioStreamInfo",
           "name": "AudioStreamInfoSet",
@@ -8619,7 +8619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "封装格式，可选值：\n<li>mp4 </li>\n<li>mov </li>\n不填则使用视频导出编码配置。",
+          "document": "<p>封装格式，可选值：</p><li>mp4 </li><li>mov </li>不填则使用视频导出编码配置。",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -8629,7 +8629,7 @@
         },
         {
           "disabled": false,
-          "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例如：项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>\n不填则使用视频导出编码配置。",
+          "document": "<p>视频短边尺寸，取值范围： [128, 4096]，单位：px。<br>视频最后的分辨率，根据短边尺寸和宽高比进行计算。<br>例如：项目的宽高比是 16：9 ：</p><li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li><li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>不填则使用视频导出编码配置。",
           "example": "1080",
           "member": "uint64",
           "name": "ShortEdge",
@@ -8639,7 +8639,7 @@
         },
         {
           "disabled": false,
-          "document": "指定码率，单位 bps。当该参数为 0 时则不强制限定码率。\n不填则使用视频导出编码配置。",
+          "document": "<p>指定码率，单位 bps。当该参数为 0 时则不强制限定码率。<br>不填则使用视频导出编码配置。</p>",
           "example": "0",
           "member": "uint64",
           "name": "VideoBitrate",
@@ -8649,7 +8649,7 @@
         },
         {
           "disabled": false,
-          "document": "帧率。取值范围：[15, 60]，不填默认值为 25。",
+          "document": "<p>帧率。取值范围：[15, 60]，不填默认值为 25。</p><p>单位：帧</p>",
           "example": "0",
           "member": "float",
           "name": "FrameRate",
@@ -8659,7 +8659,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则使用视频导出编码配置。",
+          "document": "<p>是否去除视频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。",
           "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
@@ -8669,7 +8669,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则使用视频导出编码配置。",
+          "document": "<p>是否去除音频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。",
           "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
@@ -8679,7 +8679,7 @@
         },
         {
           "disabled": false,
-          "document": "片段起始时间，单位：毫秒。",
+          "document": "<p>片段起始时间，单位：毫秒。</p>",
           "example": "0",
           "member": "int64",
           "name": "StartTime",
@@ -8689,7 +8689,7 @@
         },
         {
           "disabled": false,
-          "document": "片段结束时间，单位：毫秒。",
+          "document": "<p>片段结束时间，单位：毫秒。</p>",
           "example": "0",
           "member": "int64",
           "name": "EndTime",

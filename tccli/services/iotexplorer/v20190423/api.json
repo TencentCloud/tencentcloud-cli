@@ -1037,7 +1037,7 @@
       "status": "online"
     },
     "InvokeTWeSeeRecognitionTaskWithFile": {
-      "document": "同步执行 TWeSee 语义理解任务",
+      "document": "上传文件并同步执行 TWeSee 语义理解任务",
       "input": "InvokeTWeSeeRecognitionTaskWithFileRequest",
       "name": "上传文件并同步执行 TWeSee 语义理解任务",
       "output": "InvokeTWeSeeRecognitionTaskWithFileResponse",
@@ -5233,7 +5233,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "LPIOACT1NG",
+          "example": "示例bot",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5242,7 +5242,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "LPIOACT1NG",
+          "example": "test1",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -5310,6 +5310,33 @@
           "name": "CustomTools",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WebHook工具配置(JSON字符串格式)",
+          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"type\":\"string\",\"description\":\"订单ID\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
+          "member": "string",
+          "name": "WebhookTools",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体模板类型",
+          "example": "mobile_app",
+          "member": "string",
+          "name": "BotType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库相关配置(JSON字符串格式)",
+          "example": "{\n  \"RAGEnabled\": true,\n  \"KnowledgeBaseId\": \"kb-test-001\",\n  \"RAGRegion\": \"ap-guangzhou\",\n  \"RAGTopK\": 5,\n  \"RAGScoreThreshold\": 0.75,\n  \"RAGRoleExternalId\": \"external-id-demo\",\n  \"RAGRoleDurationSeconds\": 3600\n}",
+          "member": "string",
+          "name": "RAGConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5320,7 +5347,7 @@
         {
           "disabled": false,
           "document": "智能体ID",
-          "example": "bot-1TzRAz42oi",
+          "example": "bot-PuzbxMQnHk",
           "member": "string",
           "name": "BotId",
           "output_required": false,
@@ -17119,7 +17146,7 @@
         {
           "disabled": false,
           "document": "智能体ID",
-          "example": "bot-0vVbAeOMxU",
+          "example": "bot-PuzbxMQnHk",
           "member": "string",
           "name": "BotId",
           "required": true,
@@ -17128,7 +17155,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "test003",
+          "example": "智能体名称",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -17137,7 +17164,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "test003",
+          "example": "智能体描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -17194,6 +17221,33 @@
           "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"type\":\"object\",\"properties\":{\"device_id\":{\"type\":\"string\",\"description\":\"设备ID\"}},\"required\":[\"device_id\"]}}}]",
           "member": "string",
           "name": "CustomTools",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WebHook工具配置(JSON字符串格式)",
+          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"type\":\"string\",\"description\":\"订单ID\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
+          "member": "string",
+          "name": "WebhookTools",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体模板类型",
+          "example": "mobile_app",
+          "member": "string",
+          "name": "BotType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库相关配置(JSON字符串格式)",
+          "example": "{\n  \"RAGEnabled\": true,\n  \"KnowledgeBaseId\": \"kb-test-001\",\n  \"RAGRegion\": \"ap-guangzhou\",\n  \"RAGTopK\": 5,\n  \"RAGScoreThreshold\": 0.75,\n  \"RAGRoleExternalId\": \"external-id-demo\",\n  \"RAGRoleDurationSeconds\": 1600\n}",
+          "member": "string",
+          "name": "RAGConfig",
           "required": false,
           "type": "string"
         }
@@ -19783,6 +19837,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WebHook工具配置(JSON字符串格式)",
+          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"description\":\"订单ID\",\"type\":\"string\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
+          "member": "string",
+          "name": "WebhookTools",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体模板类型",
+          "example": "mobile_app",
+          "member": "string",
+          "name": "BotType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库相关配置(JSON字符串格式)",
+          "example": "{\"RAGEnabled\":true,\"KnowledgeBaseId\":\"kb-test-001\",\"RAGRegion\":\"ap-guangzhou\",\"RAGTopK\":5,\"RAGScoreThreshold\":0.75,\"RAGRetrievalMethod\":\"SEMANTIC\",\"RAGRoleExternalId\":\"external-id-demo\",\"RAGRoleDurationSeconds\":3600}",
+          "member": "string",
+          "name": "RAGConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19942,6 +20029,39 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时字幕回调地址，支持HTTP/HTTPS",
+          "example": "https://aaa.bb.com/callback",
+          "member": "string",
+          "name": "SubtitleCallbackUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回调签名密钥，最大32字符，用于HMAC SHA256签名",
+          "example": "aabbcc key",
+          "member": "string",
+          "name": "SubtitleCallbackSignKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕推送超时时间（秒），参考TRTC规范",
+          "example": "5",
+          "member": "int64",
+          "name": "SubtitleCallbackTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

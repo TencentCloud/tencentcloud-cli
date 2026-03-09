@@ -49,6 +49,13 @@
       "output": "BatchDescribeDocumentResponse",
       "status": "online"
     },
+    "BatchGetPlaybackToken": {
+      "document": "批量获取信令录制回放token，用于回放指定课堂时鉴权",
+      "input": "BatchGetPlaybackTokenRequest",
+      "name": "批量获取回放token",
+      "output": "BatchGetPlaybackTokenResponse",
+      "status": "online"
+    },
     "BatchRegister": {
       "document": "如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒",
       "input": "BatchRegisterRequest",
@@ -131,6 +138,13 @@
       "input": "DeleteGroupMemberRequest",
       "name": "删除群组成员",
       "output": "DeleteGroupMemberResponse",
+      "status": "online"
+    },
+    "DeletePlaybackItem": {
+      "document": "删除该堂课的录制记录",
+      "input": "DeletePlaybackItemRequest",
+      "name": "删除课堂的信令录制记录",
+      "output": "DeletePlaybackItemResponse",
       "status": "online"
     },
     "DeleteRecord": {
@@ -252,6 +266,20 @@
       "output": "DescribeMarqueeResponse",
       "status": "online"
     },
+    "DescribePlayRecords": {
+      "document": "信令录制视频观看记录查询接口，用于查询指定课堂在指定时间段内的用户播放记录。",
+      "input": "DescribePlayRecordsRequest",
+      "name": "获取信令录制回放视频观看记录",
+      "output": "DescribePlayRecordsResponse",
+      "status": "online"
+    },
+    "DescribePlaybackList": {
+      "document": "查询录制信息",
+      "input": "DescribePlaybackListRequest",
+      "name": "查询信令录制回放列表",
+      "output": "DescribePlaybackListResponse",
+      "status": "online"
+    },
     "DescribeQuestionList": {
       "document": "获取房间提问列表",
       "input": "DescribeQuestionListRequest",
@@ -357,6 +385,13 @@
       "output": "ForbidSendMsgResponse",
       "status": "online"
     },
+    "GetPlaybackToken": {
+      "document": "获取信令录制回放token，用于回放指定课堂时鉴权",
+      "input": "GetPlaybackTokenRequest",
+      "name": "获取单节课的回放token",
+      "output": "GetPlaybackTokenResponse",
+      "status": "online"
+    },
     "GetRoomEvent": {
       "document": "获取房间事件,仅在课堂结束1小时内有效。",
       "input": "GetRoomEventRequest",
@@ -399,11 +434,25 @@
       "output": "LoginOriginIdResponse",
       "status": "online"
     },
+    "LoginOriginIdWithRoom": {
+      "document": "使用源账号登录课堂，源账号为注册时填入的originId",
+      "input": "LoginOriginIdWithRoomRequest",
+      "name": "源账号登录课堂",
+      "output": "LoginOriginIdWithRoomResponse",
+      "status": "online"
+    },
     "LoginUser": {
       "document": "登录",
       "input": "LoginUserRequest",
       "name": "登录",
       "output": "LoginUserResponse",
+      "status": "online"
+    },
+    "LoginUserWithRoom": {
+      "document": "登录课堂",
+      "input": "LoginUserWithRoomRequest",
+      "name": "登录课堂",
+      "output": "LoginUserWithRoomResponse",
       "status": "online"
     },
     "ModifyApp": {
@@ -1127,6 +1176,71 @@
       ],
       "type": "object"
     },
+    "BatchGetPlaybackTokenRequest": {
+      "document": "BatchGetPlaybackToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码平台的SdkAppId。</p>",
+          "example": "3923193",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID。</p>",
+          "example": "[305745891]",
+          "member": "uint64",
+          "name": "RoomIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token过期时间，单位秒。如果传0则表示不过期</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchGetPlaybackTokenResponse": {
+      "document": "BatchGetPlaybackToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>token值，用于回放鉴权。</p>",
+          "example": "无",
+          "member": "TokenResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchRegisterRequest": {
       "document": "BatchRegister请求参数结构体",
       "members": [
@@ -1748,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>录制方式，可以有以下取值：0 开启自动录制（默认值）1  禁止录制2 开启手动录制 注： - 如果该配置取值为0，录制将从上课后开始，课堂结束后停止。 - 如果该配置取值为2，需通过startRecord、stopRecord接口控制录制的开始和结束。</p>",
+          "document": "<p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制（默认）</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制。</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",
@@ -2281,6 +2395,42 @@
     },
     "DeleteGroupResponse": {
       "document": "DeleteGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePlaybackItemRequest": {
+      "document": "DeletePlaybackItem请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码互动课堂的SdkAppId。</p>",
+          "example": "3520371",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>课堂ID。</p>",
+          "example": "340599814",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePlaybackItemResponse": {
+      "document": "DeletePlaybackItem返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3501,6 +3651,181 @@
           "name": "MarqueeCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlayRecordsRequest": {
+      "document": "DescribePlayRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码互动课堂的SdkAppId。</p>",
+          "example": "3520371",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID。</p>",
+          "example": "322220255",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间，unix时间戳（秒）。</p>",
+          "example": "1770174290",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，unix时间戳（秒）。</p>",
+          "example": "1770260690",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始递增。</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页获取的记录条数。</p><p>取值范围：[1, 200]</p><p>默认值：20</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID。</p>",
+          "example": "2qkMhWixIzNQC7UizlM7*******",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlayRecordsResponse": {
+      "document": "DescribePlayRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总条数。</p>",
+          "example": "8",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>信令录制视频回放观看记录列表。</p>",
+          "example": "无",
+          "member": "PlayRecord",
+          "name": "Records",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlaybackListRequest": {
+      "document": "DescribePlaybackList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码平台的SdkAppId。</p>",
+          "example": "3923193",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID</p>",
+          "example": "352214288",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询当前页数，从1开始递增</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认10条，最大上限为100条</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlaybackListResponse": {
+      "document": "DescribePlaybackList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>课堂回放信息列表</p>",
+          "example": "无",
+          "member": "PlaybackItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5177,6 +5502,90 @@
       ],
       "type": "object"
     },
+    "GetPlaybackTokenRequest": {
+      "document": "GetPlaybackToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码平台的SdkAppId。</p>",
+          "example": "3520371",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID。</p>",
+          "example": "374377112",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID。</p>",
+          "example": "2qkMhWixIzNQC7UizlM7*******",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token过期时间，单位秒。如果传0则表示不过期</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPlaybackTokenResponse": {
+      "document": "GetPlaybackToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>token值，用于回放鉴权。</p>",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFzc19pZCI6Mzc0Mzc3MTEyLCJleHAiOjQ5MjM4NjA0NDN9.Urs***********30VopL-rrmN9dd-Oja7k2f*******",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID。</p>",
+          "example": "374377112",
+          "member": "uint64",
+          "name": "RoomId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID。</p>",
+          "example": "2qkMhWixIzNQC7UizlM7*******",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRoomEventRequest": {
       "document": "GetRoomEvent请求参数结构体",
       "members": [
@@ -5775,6 +6184,71 @@
       ],
       "type": "object"
     },
+    "LoginOriginIdWithRoomRequest": {
+      "document": "LoginOriginIdWithRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码互动课堂的SdkAppId。</p>",
+          "example": "3096436",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户在客户系统的Id，需要在同一应用下唯一。</p>",
+          "example": "o*****Id_******086",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>课堂 ID</p>",
+          "example": "10086",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOriginIdWithRoomResponse": {
+      "document": "LoginOriginIdWithRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户Id。</p>",
+          "example": "39VqPaPrCvWiKI7tipudvjYFoXP",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录/注册成功后返回登录态token。有效期7天。</p>",
+          "example": "******ciOi*IUzI1NiIsInR5cCI6IkpXVCJ***yJjbGFzc19pZCI6MTAwO",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LoginUserRequest": {
       "document": "LoginUser请求参数结构体",
       "members": [
@@ -5807,6 +6281,62 @@
           "disabled": false,
           "document": "注册成功后返回登录态token，有效期7天。token过期后可以通过调用“登录”或“源账号登录”进行更新。",
           "example": "e574aae1lp024225a2f89032h7199f5f0",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginUserWithRoomRequest": {
+      "document": "LoginUserWithRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>注册获取的用户id。</p>",
+          "example": "39V**W****m3BNzU**h**b*q**Z",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>课堂 ID</p>",
+          "example": "10086",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginUserWithRoomResponse": {
+      "document": "LoginUserWithRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户Id。</p>",
+          "example": "39VWPWCZjwm3BNzUBhhKXbnqsDZ",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册成功后返回登录态token，有效期7天。token过期后可以通过调用“登录”或“源账号登录”进行更新。</p>",
+          "example": "****bGciOiJIUzI1NiIsInR5cCI6IkpXV*J*",
           "member": "string",
           "name": "Token",
           "output_required": true,
@@ -6656,6 +7186,122 @@
         }
       ],
       "usage": "out"
+    },
+    "PlayRecord": {
+      "document": "信令录制视频观看记录详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>房间ID。</p>",
+          "example": "322220255",
+          "member": "uint64",
+          "name": "RoomId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID。</p>",
+          "example": "2qkMhWixIzNQC7UizlM7*******",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次播放会话ID。</p>",
+          "example": "32*******-1*****3804313-0872",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放开始时间，unix时间戳（秒）。</p>",
+          "example": "1770274582",
+          "member": "uint64",
+          "name": "PlayBeginTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放结束时间，unix时间戳（秒）。</p>",
+          "example": "1770274653",
+          "member": "uint64",
+          "name": "PlayEndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放时长（毫秒）。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PlaybackItem": {
+      "document": "课堂回放信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>房间id</p>",
+          "example": "354392889",
+          "member": "uint64",
+          "name": "RoomId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回放地址</p>",
+          "example": "https://***-c*****qc****c****.com/playback/i*****html?classid=354392889&token=eyJhbGciOiJIUzI1Ni***n*5*****kpXVCJ9.eyJjbGFzc19pZCI6MzU0MzkyODg5LCJleHAiOjE3NzA3**A*M*B*.***51KpFuLO***jSRk*d*F*V***3xjEMhz-GB8a8ftU",
+          "member": "string",
+          "name": "PlaybackUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>录制时长</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>录制开始时间</p>",
+          "example": "1768993811",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "QuestionInfo": {
       "document": "房间问答问题详情",
@@ -8116,6 +8762,34 @@
         }
       ],
       "usage": "in"
+    },
+    "TokenResult": {
+      "document": "token结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>房间id</p>",
+          "example": "305745891",
+          "member": "uint64",
+          "name": "RoomId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该房间信令回放的token</p>",
+          "example": "eyJhbGciOiJ**z****IsInR5cCI6IkpXVCJ9.eyJjbGFzc19pZCI6MzA1NzQ1ODkxLCJ*****O*****QyOTMzMzh9.WvaoCqfnsyGIbLxcxfB3ulRXNr6t*y**W***ocAz0kw",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TransferItem": {
       "document": "转存配置",

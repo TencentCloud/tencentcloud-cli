@@ -266,6 +266,14 @@
         "title": "创建即时转码模板"
       }
     ],
+    "CreateLLMComprehendTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLLMComprehendTemplate\n<公共请求参数>\n\n{\n    \"Level\": \"Audio\",\n    \"SubAppId\": 220885,\n    \"Name\": \"模板名称\",\n    \"Comment\": \"模板描述\",\n    \"Summary\": {\n        \"Switch\": \"ON\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 100004,\n        \"RequestId\": \"818fc227-67cf-4857-aadb-3259499468dd\"\n    }\n}",
+        "title": "创建新模板"
+      }
+    ],
     "CreateMPSTemplate": [
       {
         "document": "",
@@ -284,26 +292,26 @@
     ],
     "CreateProcedureTemplate": [
       {
-        "document": "创建一个名为“我的一个任务流”的任务流模板，任务流转码20，30，40三种格式。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
-        "title": "创建一个发起转码任务的任务流模板"
-      },
-      {
         "document": "创建一个名为“我的一个任务流”的任务流模板，发起内容审核任务 (包括涉及令人反感的信息、涉及不安全的信息、涉及不适宜的信息)，使用的内容审核模板 ID 是 10。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"AiContentReviewTask\": {\n        \"Definition\": \"10\"\n    },\n    \"Name\": \"我的一个任务流\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"AiContentReviewTask\": {\n        \"Definition\": 10\n    },\n    \"Name\": \"我的一个任务流\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "创建一个发起内容审核任务的任务流模板"
       },
       {
         "document": "创建一个名为“我的一个任务流”的任务流模板，转出20，30，40三种格式，并且转出的每一个视频都打上一个水印，水印的模板 ID 为15780。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\",\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": \"0.0\",\n                        \"Definition\": \"15780\",\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": \"0.0\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"20\",\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": \"0.0\",\n                        \"Definition\": \"15780\",\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": \"0.0\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"40\",\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": \"0.0\",\n                        \"Definition\": \"15780\",\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": \"0.0\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": 30,\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": 0.0,\n                        \"Definition\": 15780,\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": 0.0\n                    }\n                ]\n            },\n            {\n                \"Definition\": 20,\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": 0.0,\n                        \"Definition\": 15780,\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": 0.0\n                    }\n                ]\n            },\n            {\n                \"Definition\": 40,\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": 0.0,\n                        \"Definition\": 15780,\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": 0.0\n                    }\n                ]\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "创建一个发起带水印的转码任务的任务流模板"
       },
       {
+        "document": "创建一个名为“我的一个任务流”的任务流模板，任务流转码20，30，40三种格式。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": 30\n            },\n            {\n                \"Definition\": 20\n            },\n            {\n                \"Definition\": 40\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "创建一个发起转码任务的任务流模板"
+      },
+      {
         "document": "创建一个名为“我的一个任务流”的任务流模板，转出20，30，40三种格式，同时还对视频做采样截图，使用的采样截图的模板 ID 是10。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ],\n        \"SampleSnapshotTaskSet\": [\n            {\n                \"Definition\": \"10\"\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": 30\n            },\n            {\n                \"Definition\": 20\n            },\n            {\n                \"Definition\": 40\n            }\n        ],\n        \"SampleSnapshotTaskSet\": [\n            {\n                \"Definition\": 10\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "创建一个发起转码和采样截图任务的任务流模板"
       }
@@ -570,6 +578,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"MyTemplateName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "删除即时转码模板"
+      }
+    ],
+    "DeleteLLMComprehendTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLLMComprehendTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 100001,\n    \"SubAppId\": 220885\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6af0548-b7a6-4bdb-ba40-a7aa37756546\"\n    }\n}",
+        "title": "删除已有模板"
       }
     ],
     "DeleteMPSTemplate": [
@@ -1006,6 +1022,14 @@
         "title": "获取即时转码模板列表"
       }
     ],
+    "DescribeLLMComprehendTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMComprehendTemplates\n<公共请求参数>\n\n{\n    \"SubAppId\": 221086\n}",
+        "output": "{\n    \"Response\": {\n        \"LLMComprehendTemplateSet\": [\n            {\n                \"Asr\": {\n                    \"Switch\": \"ON\"\n                },\n                \"Comment\": \"适用于解析讲座、会议录制等不依赖画面视觉的内容\",\n                \"CreateTime\": \"2026-02-05T12:00:00+08:00\",\n                \"Definition\": 100,\n                \"Level\": \"Audio\",\n                \"Name\": \"基础音频解析模版\",\n                \"Summary\": {\n                    \"ExtendedParameter\": \"\",\n                    \"Switch\": \"ON\"\n                },\n                \"UpdateTime\": \"2026-01-29T12:00:00+08:00\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"df838f51-db7c-45c1-899d-6a8597d2afaa\"\n    }\n}",
+        "title": "获取现有模板列表"
+      }
+    ],
     "DescribeLicenseUsageData": [
       {
         "document": "",
@@ -1401,8 +1425,8 @@
     "ImportMediaKnowledge": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMediaKnowledge\n<公共请求参数>\n\n{\n    \"SubAppId\": 1490012345,\n    \"FileId\": \"966263*******14024\",\n    \"ImportTasks\": [\n        \"AiAnalysis.DescriptionTask\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82d8af52-0bab-4894-bf4b-831e38fba6f4\",\n        \"TaskId\": \"1490012345-ImportMediaKnowledge-6c93a80f3f49a2426299c0ec0096349ft\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMediaKnowledge\n<公共请求参数>\n\n{\n    \"SubAppId\": 221086,\n    \"FileId\": \"966263618988054052\",\n    \"Definition\": 100003\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"221086-ImportMediaKnowledge-5838a3e1d4855683e93991e35f8a3ccet\",\n        \"RequestId\": \"2cf4b3ad-fd68-46f5-8456-e9f0a34f021a\"\n    }\n}",
         "title": "导入媒体"
       }
     ],
@@ -1596,6 +1620,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"MyTemplateName\",\n    \"Comment\": \"comment\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "修改即时转码模板"
+      }
+    ],
+    "ModifyLLMComprehendTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMComprehendTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 100002,\n    \"SubAppId\": 220885,\n    \"Model\": \"Basic\",\n    \"Summary\": {\n        \"Switch\": \"OFF\",\n        \"ExtendedParameter\": \"\"\n    },\n    \"Asr\": {\n        \"Switch\": \"OFF\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b6c7338-2dae-4454-a91b-1bdc219c5b9f\"\n    }\n}",
+        "title": "修改已有模板"
       }
     ],
     "ModifyMPSTemplate": [
