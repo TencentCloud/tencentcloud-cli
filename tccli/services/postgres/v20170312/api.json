@@ -5021,7 +5021,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名称。可以通过接口[DescribeZones](https://cloud.tencent.com/document/product/409/16769)获取。",
+          "document": "<p>可用区名称。可以通过接口<a href=\"https://cloud.tencent.com/document/product/409/16769\">DescribeZones</a>获取。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -5030,7 +5030,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；",
+          "document": "<p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；</p>",
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
@@ -5039,7 +5039,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库主版本号。例如12，13，可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取。",
+          "document": "<p>数据库主版本号。例如12，13，可以通过接口<a href=\"https://cloud.tencent.com/document/product/409/89018\">DescribeDBVersions</a>获取。</p>",
           "example": "12",
           "member": "string",
           "name": "DBMajorVersion",
@@ -5054,7 +5054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库规格列表",
+          "document": "<p>数据库规格列表</p>",
           "example": "无",
           "member": "ClassInfo",
           "name": "ClassInfoSet",
@@ -5695,8 +5695,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库版本号信息列表",
-          "example": "[     {         \"AvailableUpgradeTarget\": [],         \"DBEngine\": \"mssql_compatible\",         \"DBKernelVersion\": \"v14.3_r1.3\",         \"DBMajorVersion\": \"14\",         \"DBVersion\": \"14.3\",         \"Status\": \"AVAILABLE\",         \"SupportedFeatureNames\": []     },     {         \"AvailableUpgradeTarget\": [             \"v14.3_r1.3\"         ],         \"DBEngine\": \"postgresql\",         \"DBKernelVersion\": \"v14.2_r1.1\",         \"DBMajorVersion\": \"14\",         \"DBVersion\": \"14.2\",         \"Status\": \"AVAILABLE\",         \"SupportedFeatureNames\": [             \"TDE\"         ]     } ]",
+          "document": "<p>数据库版本号信息列表</p>",
+          "example": "无",
           "member": "Version",
           "name": "VersionSet",
           "output_required": true,
@@ -6557,7 +6557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名称",
+          "document": "<p>可用区名称</p>",
           "example": "ap-guangzhou-7",
           "member": "string",
           "name": "Zone",
@@ -6566,7 +6566,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n如不指定默认使用postgresql。",
+          "document": "<p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；<br>如不指定默认使用postgresql。</p>",
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
@@ -6581,7 +6581,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "售卖规格列表。",
+          "document": "<p>售卖规格列表。</p>",
           "example": "无",
           "member": "SpecInfo",
           "name": "SpecInfoList",
@@ -9257,7 +9257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>处于等待切换状态中的实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-19nmz2xb",
           "member": "string",
           "name": "DBInstanceId",
@@ -9266,8 +9266,8 @@
         },
         {
           "disabled": false,
-          "document": "入参取值为 0 ，代表立即切换。",
-          "example": "0:立即切换",
+          "document": "<p>入参取值为 0 ，代表立即切换。</p>",
+          "example": "0",
           "member": "uint64",
           "name": "SwitchTag",
           "required": true,

@@ -350,6 +350,13 @@
       "output": "DescribeApiListVersionTwoResponse",
       "status": "online"
     },
+    "DescribeApiSecSensitiveRuleList": {
+      "document": "获取api安全敏感规则列表",
+      "input": "DescribeApiSecSensitiveRuleListRequest",
+      "name": "获取api安全配置规则列表",
+      "output": "DescribeApiSecSensitiveRuleListResponse",
+      "status": "online"
+    },
     "DescribeAreaBanAreas": {
       "document": "获取地域封禁配置包括地域封禁开关，设置封禁的地区信息",
       "input": "DescribeAreaBanAreasRequest",
@@ -4140,6 +4147,82 @@
         }
       ],
       "usage": "both"
+    },
+    "ApiSecSensitiveRule": {
+      "document": "api安全敏感规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份证号，唯一主键",
+          "example": "id_card",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示OS系统内置，\"custom\"表示客户自定义",
+          "example": "\"OS\",\"custom\"",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态，0：表示关，1表示开",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，100，200,300表示低中高三个等级",
+          "example": "\"100\"",
+          "member": "string",
+          "name": "Level",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，默认0，表示没有进行修改",
+          "example": "1312",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则部分",
+          "example": "{\"waf\":1}",
+          "member": "ApiSecCustomSensitiveRule",
+          "name": "CustomRule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否泛化 0:不泛化，1:泛化",
+          "example": "0",
+          "member": "int64",
+          "name": "IsPan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Area": {
       "document": "地域信息",
@@ -10951,6 +11034,177 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiSecSensitiveRuleListRequest": {
+      "document": "DescribeApiSecSensitiveRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api提取规则策略，true表示查询",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiExtractRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api鉴权规则",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiPrivilegeRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api场景规则",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiSceneRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询鉴权配置的时候，该rule只返回鉴权配置的规则",
+          "example": "\"ddpd\"",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api自定义事件规则",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiCustomEventRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询无效api排除策略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiExcludeRule",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiSecSensitiveRuleListResponse": {
+      "document": "DescribeApiSecSensitiveRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "api敏感规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecSensitiveRule",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义敏感检测规则总开关",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "非内置规则的rulename列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"asd\"]",
+          "member": "string",
+          "name": "RuleNameList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api提取规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecExtractRule",
+          "name": "ApiExtractRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api鉴权规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecPrivilegeRule",
+          "name": "ApiSecPrivilegeRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api场景规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecSceneRule",
+          "name": "ApiSecSceneRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义事件规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecCustomEventRule",
+          "name": "ApiSecCustomEventRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无效api排除规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecExcludeRule",
+          "name": "ApiExcludeRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

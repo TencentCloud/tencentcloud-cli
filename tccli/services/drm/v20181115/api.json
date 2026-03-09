@@ -1051,7 +1051,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "播放许可证的有效期",
+          "document": "<p>播放许可证的有效期</p><p>单位：秒</p>",
           "example": "4561412421",
           "member": "uint64",
           "name": "LicenseDurationSeconds",
@@ -1060,7 +1060,7 @@
         },
         {
           "disabled": false,
-          "document": "开始播放后，允许最长播放时间",
+          "document": "<p>开始播放后，允许最长播放时间</p><p>单位：秒</p>",
           "example": "8411412421",
           "member": "uint64",
           "name": "PlaybackDurationSeconds",

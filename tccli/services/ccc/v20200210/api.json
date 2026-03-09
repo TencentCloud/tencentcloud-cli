@@ -374,7 +374,7 @@
     "DescribeStaffInfoList": {
       "document": "获取坐席信息列表",
       "input": "DescribeStaffInfoListRequest",
-      "name": "获取坐席信息列表",
+      "name": "获取座席信息列表",
       "output": "DescribeStaffInfoListResponse",
       "status": "online"
     },
@@ -6795,7 +6795,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -6804,7 +6804,7 @@
         },
         {
           "disabled": false,
-          "document": "分页尺寸，上限 9999",
+          "document": "<p>分页尺寸，上限 9999</p>",
           "example": "9999",
           "member": "int64",
           "name": "PageSize",
@@ -6813,7 +6813,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码，从 0 开始",
+          "document": "<p>分页页码，从 0 开始</p>",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",
@@ -6822,7 +6822,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席账号，查询单个坐席时使用",
+          "document": "<p>坐席账号，查询单个坐席时使用</p>",
           "example": "102992@qq.com",
           "member": "string",
           "name": "StaffMail",
@@ -6831,7 +6831,7 @@
         },
         {
           "disabled": false,
-          "document": "查询修改时间大于等于ModifiedTime的坐席时使用",
+          "document": "<p>查询修改时间大于等于ModifiedTime的坐席时使用</p>",
           "example": "1611631881",
           "member": "int64",
           "name": "ModifiedTime",
@@ -6840,7 +6840,7 @@
         },
         {
           "disabled": false,
-          "document": "技能组ID",
+          "document": "<p>技能组ID</p>",
           "example": "1145",
           "member": "int64",
           "name": "SkillGroupId",
@@ -6855,7 +6855,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "坐席用户总数",
+          "document": "<p>坐席用户总数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -6865,8 +6865,8 @@
         },
         {
           "disabled": false,
-          "document": "坐席用户信息列表",
-          "example": "[{\"Name\":\"n\",\"Mail\":\"m@e.com\",\"Phone\":\"123\",\"Nick\":\"t\",\"StaffNumber\":\"1\",\"RoleId\":1,\"SkillGroupList\":[{\"SkillGroupId\":1,\"SkillGroupName\":\"sg\",\"Priority\":1,\"Type\":\"IM\"}],\"LastModifyTimestamp\":1}]",
+          "document": "<p>坐席用户信息列表</p>",
+          "example": "无",
           "member": "StaffInfo",
           "name": "StaffList",
           "output_required": true,
@@ -7033,8 +7033,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间戳，Unix 时间戳(查询维度仅支持天，例如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
-          "example": "0",
+          "document": "<p>起始时间戳，Unix 时间戳(查询维度仅支持天，例如查询5月1日应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-01 23:59:59&quot;的时间戳,查5月1日和5月2日的应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-02 23:59:59&quot;的时间戳)</p>",
+          "example": "1773041460",
           "member": "int64",
           "name": "StartTimeStamp",
           "required": true,
@@ -7042,8 +7042,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天(查询维度仅支持天，例如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
-          "example": "0",
+          "document": "<p>结束时间戳，Unix 时间戳，查询时间范围最大为90天(查询维度仅支持天，例如查询5月1日应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-01 23:59:59&quot;的时间戳,查5月1日和5月2日的应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-02 23:59:59&quot;的时间戳)</p>",
+          "example": "1773042460",
           "member": "int64",
           "name": "EndTimeStamp",
           "required": true,
@@ -7051,8 +7051,8 @@
         },
         {
           "disabled": false,
-          "document": "应用ID列表，多个ID时，返回值为多个ID使用总和",
-          "example": "[\"0\\n\"]",
+          "document": "<p>应用ID列表，多个ID时，返回值为多个ID使用总和</p>",
+          "example": "[140000000]",
           "member": "int64",
           "name": "SdkAppIdList",
           "required": true,
@@ -7066,7 +7066,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "呼出套餐包消耗分钟数",
+          "document": "<p>呼出套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "TelCallOutCount",
@@ -7076,7 +7076,7 @@
         },
         {
           "disabled": false,
-          "document": "呼入套餐包消耗分钟数",
+          "document": "<p>呼入套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "TelCallInCount",
@@ -7086,7 +7086,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席使用统计个数",
+          "document": "<p>坐席使用统计个数</p>",
           "example": "50",
           "member": "int64",
           "name": "SeatUsedCount",
@@ -7096,7 +7096,7 @@
         },
         {
           "disabled": true,
-          "document": "音频套餐包消耗分钟数",
+          "document": "<p>音频套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "VoipCallInCount",
@@ -7106,7 +7106,7 @@
         },
         {
           "disabled": false,
-          "document": "音频套餐包消耗分钟数",
+          "document": "<p>音频套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "VOIPCallInCount",
@@ -7116,7 +7116,7 @@
         },
         {
           "disabled": false,
-          "document": "离线语音转文字套餐包消耗分钟数",
+          "document": "<p>离线语音转文字套餐包消耗分钟数</p>",
           "example": "1",
           "member": "int64",
           "name": "AsrOfflineCount",
@@ -7126,7 +7126,7 @@
         },
         {
           "disabled": false,
-          "document": "实时语音转文字套餐包消耗分钟数",
+          "document": "<p>实时语音转文字套餐包消耗分钟数</p>",
           "example": "1",
           "member": "int64",
           "name": "AsrRealtimeCount",

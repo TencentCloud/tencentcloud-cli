@@ -24,14 +24,6 @@
         "title": "清空订阅者消息标签"
       }
     ],
-    "CreateCluster": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCluster\n&ClusterName=devName\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"pulsar-5r59xd4vnx\",\n        \"RequestId\": \"c1e66353-c87b-4a30-804d-94c6c2c8bac5\"\n    }\n}",
-        "title": "创建集群"
-      }
-    ],
     "CreateCmqQueue": [
       {
         "document": "创建队列",

@@ -13679,7 +13679,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解析级别，可选值为：\n- Audio: 音频级解析\n- Video: 视频级解析",
+          "document": "<p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>",
           "example": "Audio",
           "member": "string",
           "name": "Level",
@@ -13688,7 +13688,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "220885",
           "member": "uint64",
           "name": "SubAppId",
@@ -13697,7 +13697,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型解析模板名称，长度限制：64 个字符。",
+          "document": "<p>大模型解析模板名称，长度限制：64 个字符。</p>",
           "example": "模板名称",
           "member": "string",
           "name": "Name",
@@ -13706,7 +13706,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型解析模板描述信息，长度限制：256 个字符。",
+          "document": "<p>大模型解析模板描述信息，长度限制：256 个字符。</p>",
           "example": "模板描述",
           "member": "string",
           "name": "Comment",
@@ -13715,7 +13715,7 @@
         },
         {
           "disabled": false,
-          "document": "分段摘要解析配置",
+          "document": "<p>分段摘要解析配置</p>",
           "example": "无",
           "member": "LLMComprehendSummary",
           "name": "Summary",
@@ -13724,10 +13724,19 @@
         },
         {
           "disabled": false,
-          "document": "文本转录解析配置",
+          "document": "<p>文本转录解析配置</p>",
           "example": "无",
           "member": "LLMComprehendAsr",
           "name": "Asr",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>人脸识别配置</p>",
+          "example": "无",
+          "member": "LLMComprehendFaceRecognition",
+          "name": "FaceRecognition",
           "required": false,
           "type": "object"
         }
@@ -13739,7 +13748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "大模型理解模板的唯一标识",
+          "document": "<p>大模型理解模板的唯一标识</p>",
           "example": "100004",
           "member": "int64",
           "name": "Definition",
@@ -26417,6 +26426,118 @@
       ],
       "usage": "in"
     },
+    "LLMComprehendFaceRecognition": {
+      "document": "大模型解析人脸识别配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "float",
+          "name": "Score",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "DefaultLibraryLabelSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "UserDefineLibraryLabelSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "FaceLibrary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LLMComprehendFaceRecognitionForUpdate": {
+      "document": "大模型解析人脸识别配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "float",
+          "name": "Score",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "DefaultLibraryLabelSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "UserDefineLibraryLabelSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "FaceLibrary",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "LLMComprehendSummary": {
       "document": "大模型解析分段摘要解析配置",
       "members": [
@@ -31800,7 +31921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "大模型理解模板的唯一标识",
+          "document": "<p>大模型理解模板的唯一标识</p>",
           "example": "100002",
           "member": "int64",
           "name": "Definition",
@@ -31809,7 +31930,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "220885",
           "member": "uint64",
           "name": "SubAppId",
@@ -31818,7 +31939,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型解析模板名称，长度限制：64 个字符。",
+          "document": "<p>大模型解析模板名称，长度限制：64 个字符。</p>",
           "example": "模板名称",
           "member": "string",
           "name": "Name",
@@ -31827,7 +31948,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型解析模板描述信息，长度限制：256 个字符。",
+          "document": "<p>大模型解析模板描述信息，长度限制：256 个字符。</p>",
           "example": "模板描述",
           "member": "string",
           "name": "Comment",
@@ -31836,7 +31957,7 @@
         },
         {
           "disabled": false,
-          "document": "解析模型，可选值为：\n- Basic: 基础模型\n- Pro: 优化模型",
+          "document": "<p>解析模型，可选值为：</p><ul><li>Basic: 基础模型</li><li>Pro: 优化模型</li></ul>",
           "example": "Basic",
           "member": "string",
           "name": "Model",
@@ -31845,7 +31966,7 @@
         },
         {
           "disabled": false,
-          "document": "分段摘要解析配置",
+          "document": "<p>分段摘要解析配置</p>",
           "example": "无",
           "member": "LLMComprehendSummaryForUpdate",
           "name": "Summary",
@@ -31854,10 +31975,19 @@
         },
         {
           "disabled": false,
-          "document": "文本转录解析配置",
+          "document": "<p>文本转录解析配置</p>",
           "example": "无",
           "member": "LLMComprehendAsrForUpdate",
           "name": "Asr",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>人脸识别配置</p>",
+          "example": "无",
+          "member": "LLMComprehendFaceRecognitionForUpdate",
+          "name": "FaceRecognition",
           "required": false,
           "type": "object"
         }
@@ -42019,7 +42149,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1500035838",
           "member": "uint64",
           "name": "SubAppId",
@@ -42028,7 +42158,7 @@
         },
         {
           "disabled": false,
-          "document": "需要进行搜索的内容",
+          "document": "<p>需要进行搜索的内容</p>",
           "example": "包含夕阳的海边视频",
           "member": "string",
           "name": "Text",
@@ -42037,7 +42167,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的记录条数，默认值：20。",
+          "document": "<p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -42046,7 +42176,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li>",
+          "document": "<p>文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li></p>",
           "example": "[\"Video\"]",
           "member": "string",
           "name": "Categories",
@@ -42055,7 +42185,7 @@
         },
         {
           "disabled": false,
-          "document": "标签集合，匹配集合中任意元素。 <li>单个标签长度限制：32个字符。</li> <li>数组长度限制：16。</li>",
+          "document": "<p>标签集合，匹配集合中任意元素。</p><p>入参限制：单个标签长度限制：32个字符。数组长度限制：16。</p>",
           "example": "[\"Sports\", \"Food\"]",
           "member": "string",
           "name": "Tags",
@@ -42064,7 +42194,16 @@
         },
         {
           "disabled": false,
-          "document": "搜索的任务类型，可选值有： \n- AiAnalysis.DescriptionTask \n- SmartSubtitle.AsrFullTextTask",
+          "document": "<p>人物集合，匹配出现了所有传入人物的片段</p><p>入参限制：数组长度限制：16</p>",
+          "example": "[\"张三\"]",
+          "member": "string",
+          "name": "Persons",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索的任务类型，可选值有： </p><ul><li>AiAnalysis.DescriptionTask </li><li>SmartSubtitle.AsrFullTextTask</li></ul>",
           "example": "[\"AiAnalysis.DescriptionTask \"]",
           "member": "string",
           "name": "TaskTypes",
@@ -42079,7 +42218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体列表。",
+          "document": "<p>媒体列表。</p>",
           "example": "无",
           "member": "SemanticsSearchResult",
           "name": "SearchResults",

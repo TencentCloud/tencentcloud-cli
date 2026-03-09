@@ -412,6 +412,14 @@
         "title": "API资产列表"
       }
     ],
+    "DescribeApiSecSensitiveRuleList": [
+      {
+        "document": "获取指定类型的API安全相关规则",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiSecSensitiveRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"xxx.testwaf.com\",\n    \"IsQueryApiExtractRule\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiExcludeRule\": null,\n        \"ApiExtractRule\": null,\n        \"ApiSecCustomEventRule\": null,\n        \"ApiSecPrivilegeRule\": null,\n        \"ApiSecSceneRule\": null,\n        \"Data\": null,\n        \"RuleNameList\": null,\n        \"Status\": 1,\n        \"Total\": 0,\n        \"RequestId\": \"56b9948c-9b1d-4839-9e21-857a266db0d9\"\n    }\n}",
+        "title": "获取指定类型的API安全相关规则"
+      }
+    ],
     "DescribeAreaBanAreas": [
       {
         "document": "",

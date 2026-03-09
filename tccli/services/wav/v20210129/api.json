@@ -1,11 +1,11 @@
 {
   "actions": {
     "CreateChannelCode": {
-      "document": "新增渠道活码接口",
+      "document": "产品已经EOL\n\n新增渠道活码接口",
       "input": "CreateChannelCodeRequest",
       "name": "新增渠道活码接口",
       "output": "CreateChannelCodeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateCorpTag": {
       "document": "产品已EOL\n\n该接口用户设置标签库, 每个企业最多可配置3000个企业标签。",
@@ -15,172 +15,172 @@
       "status": "deprecated"
     },
     "CreateLead": {
-      "document": "线索回收接口",
+      "document": "产品已经EOL\n\n线索回收接口",
       "input": "CreateLeadRequest",
       "name": "线索回收接口",
       "output": "CreateLeadResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryActivityJoinList": {
-      "document": "根据游标拉取活动参与列表信息",
+      "document": "产品已经EOL\n\n根据游标拉取活动参与列表信息",
       "input": "QueryActivityJoinListRequest",
       "name": "查询活动参与明细列表接口",
       "output": "QueryActivityJoinListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryActivityList": {
-      "document": "根据游标拉取活动列表信息",
+      "document": "产品已经EOL\n\n根据游标拉取活动列表信息",
       "input": "QueryActivityListRequest",
       "name": "查询活动列表接口",
       "output": "QueryActivityListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryActivityLiveCodeList": {
-      "document": "根据游标拉取活动活码列表信息",
+      "document": "产品已经EOL\n\n根据游标拉取活动活码列表信息",
       "input": "QueryActivityLiveCodeListRequest",
       "name": "查询活动活码列表接口",
       "output": "QueryActivityLiveCodeListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryArrivalList": {
-      "document": "查询指定时间范围内发生过到店的潜客到店信息",
+      "document": "产品已经EOL\n\n查询指定时间范围内发生过到店的潜客到店信息",
       "input": "QueryArrivalListRequest",
       "name": "查询指定时间范围内发生过到店的潜客到店信息",
       "output": "QueryArrivalListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryChannelCodeList": {
-      "document": "根据游标拉取渠道活码列表信息",
+      "document": "产品已经EOL\n\n根据游标拉取渠道活码列表信息",
       "input": "QueryChannelCodeListRequest",
       "name": "查询渠道活码列表接口",
       "output": "QueryChannelCodeListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryChatArchivingList": {
-      "document": "根据游标拉取会话存档列表信息",
+      "document": "产品已经EOL\n\n根据游标拉取会话存档列表信息",
       "input": "QueryChatArchivingListRequest",
       "name": "查询会话存档列表接口",
       "output": "QueryChatArchivingListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryClueInfoList": {
-      "document": "企业可通过此接口获取线索列表。",
+      "document": "产品已经EOL\n\n企业可通过此接口获取线索列表。",
       "input": "QueryClueInfoListRequest",
       "name": "查询线索列表接口",
       "output": "QueryClueInfoListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryCrmStatistics": {
-      "document": "通过接口拉取租户/指定成员/部门在指定日期范围内的CRM跟进统计数据",
+      "document": "产品已经EOL\n\n通过接口拉取租户/指定成员/部门在指定日期范围内的CRM跟进统计数据",
       "input": "QueryCrmStatisticsRequest",
       "name": "查询CRM统计数据接口",
       "output": "QueryCrmStatisticsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryCustomerEventDetailStatistics": {
-      "document": "通过接口拉取SaaS内C端外部联系人在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
+      "document": "产品已经EOL\n\n通过接口拉取SaaS内C端外部联系人在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
       "input": "QueryCustomerEventDetailStatisticsRequest",
       "name": "查询外部联系人SaaS使用明细数据接口",
       "output": "QueryCustomerEventDetailStatisticsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryCustomerProfileList": {
-      "document": "通过接口拉取租户已有潜客客户档案列表信息",
+      "document": "产品已经EOL\n\n通过接口拉取租户已有潜客客户档案列表信息",
       "input": "QueryCustomerProfileListRequest",
       "name": "查询潜客客户档案列表接口",
       "output": "QueryCustomerProfileListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryDealerInfoList": {
-      "document": "企业可通过此接口获取录入在企微SaaS平台上的经销商信息。",
+      "document": "产品已经EOL\n\n企业可通过此接口获取录入在企微SaaS平台上的经销商信息。",
       "input": "QueryDealerInfoListRequest",
       "name": "查询经销商信息列表接口",
       "output": "QueryDealerInfoListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryExternalContactDetail": {
-      "document": "企业可通过此接口，根据外部联系人的userid，拉取外部联系人详情",
+      "document": "产品已经EOL\n\n企业可通过此接口，根据外部联系人的userid，拉取外部联系人详情",
       "input": "QueryExternalContactDetailRequest",
       "name": "查询外部联系人详情接口",
       "output": "QueryExternalContactDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryExternalContactDetailByDate": {
-      "document": "企业可通过传入起始和结束时间，获取该时间段的外部联系人详情列表",
+      "document": "产品已经EOL\n\n企业可通过传入起始和结束时间，获取该时间段的外部联系人详情列表",
       "input": "QueryExternalContactDetailByDateRequest",
       "name": "通过时间段查询外部联系人详情列表",
       "output": "QueryExternalContactDetailByDateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryExternalContactList": {
-      "document": "企业可通过此接口基于外部联系人获取指定成员添加的客户列表。客户是指配置了客户联系功能的成员所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。",
+      "document": "产品已经EOL\n\n企业可通过此接口基于外部联系人获取指定成员添加的客户列表。客户是指配置了客户联系功能的成员所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。",
       "input": "QueryExternalContactListRequest",
       "name": "查询外部联系人列表接口",
       "output": "QueryExternalContactListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryExternalUserEventList": {
-      "document": "通过接口拉取租户在指定时间范围内的外部联系人添加/删除明细，此接口提供的数据以天为维度，查询的时间范围为[StarTime, EndTime]，即前后均为闭区间，支持的最大查询跨度为365天；",
+      "document": "产品已经EOL\n\n通过接口拉取租户在指定时间范围内的外部联系人添加/删除明细，此接口提供的数据以天为维度，查询的时间范围为[StarTime, EndTime]，即前后均为闭区间，支持的最大查询跨度为365天；",
       "input": "QueryExternalUserEventListRequest",
       "name": "查询外部联系人事件明细列表接口",
       "output": "QueryExternalUserEventListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryExternalUserMappingInfo": {
-      "document": "企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。",
+      "document": "产品已经EOL\n\n企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。",
       "input": "QueryExternalUserMappingInfoRequest",
       "name": "外部联系人转换接口",
       "output": "QueryExternalUserMappingInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryFollowList": {
-      "document": "查询指定时间范围内发生过跟进的潜客信息",
+      "document": "产品已经EOL\n\n查询指定时间范围内发生过跟进的潜客信息",
       "input": "QueryFollowListRequest",
       "name": "查询指定时间范围内发生过跟进的潜客信息",
       "output": "QueryFollowListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryLicenseInfo": {
-      "document": "该接口获取license对应的详细信息",
+      "document": "产品已经EOL\n\n该接口获取license对应的详细信息",
       "input": "QueryLicenseInfoRequest",
       "name": "查询license信息接口",
       "output": "QueryLicenseInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryMaterialList": {
-      "document": "通过接口按类型拉取租户当前的素材列表及关键信息",
+      "document": "产品已经EOL\n\n通过接口按类型拉取租户当前的素材列表及关键信息",
       "input": "QueryMaterialListRequest",
       "name": "获取企业素材列表接口",
       "output": "QueryMaterialListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryMiniAppCodeList": {
-      "document": "查询小程序码列表接口",
+      "document": "产品已经EOL\n\n查询小程序码列表接口",
       "input": "QueryMiniAppCodeListRequest",
       "name": "查询小程序码列表接口",
       "output": "QueryMiniAppCodeListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryStaffEventDetailStatistics": {
-      "document": "通过接口拉取SaaS内企业成员在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
+      "document": "产品已经EOL\n\n通过接口拉取SaaS内企业成员在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
       "input": "QueryStaffEventDetailStatisticsRequest",
       "name": "企业成员SaaS使用明细数据接口",
       "output": "QueryStaffEventDetailStatisticsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryUserInfoList": {
-      "document": "查询企业成员信息列表接口",
+      "document": "产品已经EOL\n\n查询企业成员信息列表接口",
       "input": "QueryUserInfoListRequest",
       "name": "查询企业成员信息列表接口",
       "output": "QueryUserInfoListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryVehicleInfoList": {
-      "document": "企业可通过此接口获取企微SaaS平台上的车系车型信息。",
+      "document": "产品已经EOL\n\n企业可通过此接口获取企微SaaS平台上的车系车型信息。",
       "input": "QueryVehicleInfoListRequest",
       "name": "查询车系车型信息列表接口",
       "output": "QueryVehicleInfoListResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

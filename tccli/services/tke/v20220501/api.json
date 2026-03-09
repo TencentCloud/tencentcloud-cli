@@ -2774,6 +2774,15 @@
         },
         {
           "disabled": false,
+          "document": "安全组列表",
+          "example": "[\"sg-4h43fuxj\"]",
+          "member": "string",
+          "name": "SecurityGroupIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "节点预付费信息",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -4435,7 +4444,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新存量节点",
+          "document": "是否更新存量节点MetaData(包括： metadata、annotation、label)",
           "example": "false",
           "member": "bool",
           "name": "UpdateExistedNode",
@@ -4450,6 +4459,15 @@
           "name": "DataDisks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选\n\nmanagement包括：nameserver、host、kubelet、kernel参数",
+          "example": "disable",
+          "member": "string",
+          "name": "UpdateMachineManagement",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

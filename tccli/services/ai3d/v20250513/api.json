@@ -724,7 +724,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需进行组件生成的3D模型文件，仅支持FBX格式。",
+          "document": "<p>需进行组件生成的3D模型文件，仅支持FBX格式。</p>",
           "example": "无",
           "member": "InputFile3D",
           "name": "File",
@@ -733,8 +733,8 @@
         },
         {
           "disabled": false,
-          "document": "组件生成模型版本，默认为1.0，可选项：1.0，1.5；",
-          "example": "1.0",
+          "document": "<p>组件生成模型版本，默认为1.5</p><p>枚举值：</p><ul><li>1.5： 1.5模型</li></ul><p>默认值：1.5</p>",
+          "example": "1.5",
           "member": "string",
           "name": "Model",
           "required": false,
@@ -748,7 +748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
+          "document": "<p>任务ID。</p>",
           "example": "1384898587778465792",
           "member": "string",
           "name": "JobId",
@@ -770,7 +770,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1\n选择3.1版本时，LowPoly参数不可用。",
+          "document": "<p>混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1<br>选择3.1版本时，LowPoly参数不可用。</p>",
           "example": "3.0",
           "member": "string",
           "name": "Model",
@@ -779,7 +779,7 @@
         },
         {
           "disabled": false,
-          "document": "文生3D，3D内容的描述，中文正向提示词。\n最多支持1024个 utf-8 字符。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "document": "<p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持1024个 utf-8 字符。<br>ImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。</p>",
           "example": "一只小猫",
           "member": "string",
           "name": "Prompt",
@@ -788,7 +788,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图 Base64 数据。\n大小: 单边分辨率要求不小于128，不大于5000，大小≤6m (因base64编码后会大30%左右)\n格式: jpg，png，jpeg，webp.\nlmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。",
+          "document": "<p>输入图 Base64 数据。<br>大小: 单边分辨率要求不小于128，不大于5000，大小≤6m (因base64编码后会大30%左右)<br>格式: jpg，png，jpeg，webp.<br>lmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。</p>",
           "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "ImageBase64",
@@ -797,7 +797,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图Url\n大小: 单边分辨率要求不小于128，不大于5000，大小≤8m\n格式: jpg，png，jpeg，webp.\nlmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。",
+          "document": "<p>输入图Url<br>大小: 单边分辨率要求不小于128，不大于5000，大小≤8m<br>格式: jpg，png，jpeg，webp.<br>lmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。</p>",
           "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -806,7 +806,7 @@
         },
         {
           "disabled": false,
-          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\ntop：顶视图（仅3.1版本支持）；\nbottom：底视图（仅3.1版本支持）；\nleft_front：左前45°视图（仅3.1版本支持）；\nright_front：右前45°视图（仅3.1版本支持）；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
+          "document": "<p>多视角的模型图片，视角参考值：<br>left：左视图；<br>right：右视图；<br>back：后视图；<br>top：顶视图（仅3.1版本支持）；<br>bottom：底视图（仅3.1版本支持）；<br>left_front：左前45°视图（仅3.1版本支持）；<br>right_front：右前45°视图（仅3.1版本支持）；</p><p>每个视角仅限制一张图片。<br>●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）<br>●图片分辨率限制：单边分辨率小于5000且大于128。<br>●支持图片格式：支持jpg或png</p>",
           "example": "无",
           "member": "ViewImage",
           "name": "MultiViewImages",
@@ -815,7 +815,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 PBR材质生成，默认 false。",
+          "document": "<p>是否开启 PBR材质生成，默认 false。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnablePBR",
@@ -824,7 +824,7 @@
         },
         {
           "disabled": false,
-          "document": "生成3D模型的面数，默认值为500000。\n可支持生成面数范围，参考值：10000-1500000。\nGenerateType中选择LowPoly时，参考值：3000-1500000。",
+          "document": "<p>生成3D模型的面数，默认值为500000。可支持生成面数范围，参考值：3000-1500000。GenerateType中选择LowPoly时，此参数不生效。</p><p>取值范围：[3000, 1500000]</p>",
           "example": "100000",
           "member": "int64",
           "name": "FaceCount",
@@ -833,7 +833,7 @@
         },
         {
           "disabled": false,
-          "document": "生成任务类型，默认Normal，参考值：\nNormal：可生成带纹理的几何模型。\nLowPoly：可生成智能拓扑后的模型，选择此参数时，面数最低可到达3000面。\nGeometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。\nSketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。",
+          "document": "<p>生成任务类型，默认Normal，参考值：<br>Normal：可生成带纹理的几何模型。<br>LowPoly：可生成智能拓扑后的模型，FaceCount参数不生效。<br>Geometry：可生成不带纹理的几何模型（白模），EnablePBR参数不生效。<br>Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。</p><p>枚举值：</p><ul><li>Normal： 可生成带纹理的几何模型</li><li>LowPoly： 可生成智能拓扑后的模型，FaceCount参数不生效。</li><li>Geometry： 可生成不带纹理的几何模型（白模），EnablePBR参数不生效。</li><li>Sketch： 可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。</li></ul>",
           "example": "Normal",
           "member": "string",
           "name": "GenerateType",
@@ -842,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅在GenerateType中选择LowPoly模式可生效。\n\n多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:\ntriangle: 三角形面。\nquadrilateral: 四边形面与三角形面混合生成。",
+          "document": "<p>该参数仅在GenerateType中选择LowPoly模式可生效。</p><p>多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:<br>triangle: 三角形面。<br>quadrilateral: 四边形面与三角形面混合生成。</p>",
           "example": "triangle",
           "member": "string",
           "name": "PolygonType",
@@ -851,7 +851,7 @@
         },
         {
           "disabled": false,
-          "document": "生成模型的格式，仅限制生成一种格式； 生成模型文件组默认返回obj、glb格式（开启时Geometry参数时，默认为glb格式）； 可选值：STL，USDZ，FBX；",
+          "document": "<p>生成模型的格式，仅限制生成一种格式； 生成模型文件组默认返回obj、glb格式（开启时Geometry参数时，默认为glb格式）； 可选值：STL，USDZ，FBX；</p>",
           "example": "STL",
           "member": "string",
           "name": "ResultFormat",
@@ -866,7 +866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID（有效期24小时）",
+          "document": "<p>任务ID（有效期24小时）</p>",
           "example": "1357237233311637504",
           "member": "string",
           "name": "JobId",

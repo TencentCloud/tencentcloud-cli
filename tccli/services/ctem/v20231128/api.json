@@ -2615,7 +2615,7 @@
         {
           "disabled": false,
           "document": "是否聚合数据",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -2731,12 +2731,21 @@
         },
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "100",
           "member": "int64",
           "name": "CustomerId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式</p>",
+          "example": "+Risk",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2746,7 +2755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "100",
           "member": "int64",
           "name": "Total",
@@ -2756,7 +2765,7 @@
         },
         {
           "disabled": false,
-          "document": "API安全数组",
+          "document": "<p>API安全数组</p>",
           "example": "无",
           "member": "DisplayApiSec",
           "name": "List",

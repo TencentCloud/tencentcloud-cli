@@ -549,6 +549,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token的唯一id，与value一一对应，重置后id也会一并变化",
+          "example": "fdsfae454fsdfsd344fsf333434sfs",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1950,6 +1961,15 @@
           "name": "VolumeSourceGooseFS",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "开发机描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5598,6 +5618,15 @@
           "name": "Id",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "训练任务实例ID",
+          "example": "train-1529127322499521280-bo5itl59j30g",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8590,6 +8619,15 @@
           "name": "Envs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "开发机描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9169,6 +9207,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "开发机描述信息",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9485,6 +9533,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述信息",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9549,7 +9607,7 @@
         {
           "disabled": false,
           "document": "框架名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "PyTorch",
           "member": "string",
           "name": "Framework",
           "output_required": false,
@@ -9560,7 +9618,7 @@
         {
           "disabled": false,
           "document": "镜像类型: ccr or tcr\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ccr",
           "member": "string",
           "name": "ImageType",
           "output_required": false,
@@ -9571,7 +9629,7 @@
         {
           "disabled": false,
           "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:sglang-v0.5.6.post2-ti-dev20251215",
           "member": "string",
           "name": "ImageUrl",
           "output_required": false,
@@ -9593,7 +9651,7 @@
         {
           "disabled": false,
           "document": "TCR镜像所属实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "llm-infer",
           "member": "string",
           "name": "RegistryId",
           "output_required": false,
@@ -9604,7 +9662,7 @@
         {
           "disabled": false,
           "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sglang-v0.5.6.post2",
           "member": "string",
           "name": "ImageName",
           "output_required": false,
@@ -9615,7 +9673,7 @@
         {
           "disabled": false,
           "document": "镜像Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sglang-v0.5.6",
           "member": "string",
           "name": "ImageId",
           "output_required": false,
@@ -9626,7 +9684,7 @@
         {
           "disabled": false,
           "document": "框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.5.6",
           "member": "string",
           "name": "FrameworkVersion",
           "output_required": false,
@@ -9637,7 +9695,7 @@
         {
           "disabled": false,
           "document": "支持的gpu列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"HCCPNV6\"]",
           "member": "string",
           "name": "SupportGpuList",
           "output_required": false,
@@ -9648,7 +9706,7 @@
         {
           "disabled": false,
           "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "大模型推理框架，开源 SGLang 0.5.6.post2 版本",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -9670,7 +9728,7 @@
         {
           "disabled": false,
           "document": "镜像适用场景Train/Inference/Notebook\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"Inference\"]",
           "member": "string",
           "name": "ImageRange",
           "output_required": false,

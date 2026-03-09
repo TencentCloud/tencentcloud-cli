@@ -21,13 +21,6 @@
       "output": "ClearCmqSubscriptionFilterTagsResponse",
       "status": "online"
     },
-    "CreateCluster": {
-      "document": "创建用户的集群",
-      "input": "CreateClusterRequest",
-      "name": "创建集群",
-      "output": "CreateClusterResponse",
-      "status": "online"
-    },
     "CreateCmqQueue": {
       "document": "创建cmq队列接口",
       "input": "CreateCmqQueueRequest",
@@ -2954,79 +2947,6 @@
         }
       ],
       "usage": "out"
-    },
-    "CreateClusterRequest": {
-      "document": "CreateCluster请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。",
-          "example": "devName",
-          "member": "string",
-          "name": "ClusterName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。",
-          "example": "1",
-          "member": "uint64",
-          "name": "BindClusterId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "说明，128个字符以内。",
-          "example": "demo",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集群的标签列表(已废弃)",
-          "example": "无",
-          "member": "Tag",
-          "name": "Tags",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启公网访问，不填时默认开启",
-          "example": "true",
-          "member": "bool",
-          "name": "PublicAccessEnabled",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateClusterResponse": {
-      "document": "CreateCluster返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群ID",
-          "example": "pulsar-ge3n43v3wj",
-          "member": "string",
-          "name": "ClusterId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "CreateCmqQueueRequest": {
       "document": "CreateCmqQueue请求参数结构体",

@@ -14913,7 +14913,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SourceType",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {
@@ -26080,7 +26080,7 @@
         {
           "disabled": false,
           "document": "存储类型，string数组",
-          "example": "[\\\"malware\\\",\\\"risk_process\\\",\\\"hostlogin\\\",\\\"bruteattack\\\",\\\"risk_dns\\\",\\\"bash\\\",\\\"privilege_escalation\\\",\\\"reverse_shell\\\",\\\"emergency_vul\\\",\\\"Web-CMS_vul\\\",\\\"application_vul\\\",\\\"linux_app_vul\\\",\\\"windows_sys_vul\\\",\\\"baseline\\\",\\\"java_shell\\\",\\\"file_tamper\\\",\\\"attack_logs\\\",\\\"tamper_protect_exceptions\\\",\\\"tamper_protect_logs\\\",\\\"agent_offline\\\",\\\"agent_uninstall\\\"]",
+          "example": "[\"malware\",\"risk_process\",\"hostlogin\"]",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -26113,6 +26113,16 @@
           "example": "day",
           "member": "string",
           "name": "Granularity",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语言类型",
+          "example": "zh",
+          "member": "string",
+          "name": "MsgLanguage",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -47611,7 +47621,7 @@
         {
           "disabled": false,
           "document": "是否修改有效期（已废弃）",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "IsModifyPeriod",
           "required": true,
@@ -47620,7 +47630,7 @@
         {
           "disabled": false,
           "document": "存储类型，string数组",
-          "example": "[\\\"malware\\\",\\\"risk_process\\\",\\\"hostlogin\\\",\\\"bruteattack\\\",\\\"risk_dns\\\",\\\"bash\\\",\\\"privilege_escalation\\\",\\\"reverse_shell\\\",\\\"emergency_vul\\\",\\\"Web-CMS_vul\\\",\\\"application_vul\\\",\\\"linux_app_vul\\\",\\\"windows_sys_vul\\\",\\\"baseline\\\",\\\"java_shell\\\",\\\"file_tamper\\\",\\\"attack_logs\\\",\\\"tamper_protect_exceptions\\\",\\\"tamper_protect_logs\\\",\\\"agent_offline\\\",\\\"agent_uninstall\\\"]",
+          "example": "[\"malware\"]",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -47641,6 +47651,15 @@
           "example": "day",
           "member": "string",
           "name": "Granularity",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语言类型",
+          "example": "zh",
+          "member": "string",
+          "name": "MsgLanguage",
           "required": false,
           "type": "string"
         }
