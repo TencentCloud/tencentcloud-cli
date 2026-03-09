@@ -87,7 +87,7 @@ class BasicConfigure(BasicCommand):
                                          "Received input format: %s\n "
                                          "Valid input format eg. set cvm.version 2017-03-12"
                                          % (err, k))
-        if old_data and conf_data != old_data:
+        if conf_data != old_data:
             Utils.dump_json_msg(config_path, conf_data)
 
     def _checkout_config(self, profile_name):
