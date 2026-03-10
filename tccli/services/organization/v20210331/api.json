@@ -49,6 +49,13 @@
       "output": "AddShareUnitMembersResponse",
       "status": "online"
     },
+    "AddShareUnitNode": {
+      "document": "添加共享单元部门",
+      "input": "AddShareUnitNodeRequest",
+      "name": "添加共享单元部门",
+      "output": "AddShareUnitNodeResponse",
+      "status": "online"
+    },
     "AddShareUnitResources": {
       "document": "添加共享单元资源",
       "input": "AddShareUnitResourcesRequest",
@@ -315,6 +322,13 @@
       "output": "DeleteShareUnitMembersResponse",
       "status": "online"
     },
+    "DeleteShareUnitNode": {
+      "document": "删除共享单元部门",
+      "input": "DeleteShareUnitNodeRequest",
+      "name": "删除共享单元部门",
+      "output": "DeleteShareUnitNodeResponse",
+      "status": "online"
+    },
     "DeleteShareUnitResources": {
       "document": "删除共享单元资源",
       "input": "DeleteShareUnitResourcesRequest",
@@ -467,6 +481,13 @@
       "input": "DescribeShareUnitMembersRequest",
       "name": "获取共享单元成员列表",
       "output": "DescribeShareUnitMembersResponse",
+      "status": "online"
+    },
+    "DescribeShareUnitNodes": {
+      "document": "获取共享单元部门列表。",
+      "input": "DescribeShareUnitNodesRequest",
+      "name": "获取共享单元部门列表",
+      "output": "DescribeShareUnitNodesResponse",
       "status": "online"
     },
     "DescribeShareUnitResources": {
@@ -1228,6 +1249,42 @@
     },
     "AddShareUnitMembersResponse": {
       "document": "AddShareUnitMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddShareUnitNodeRequest": {
+      "document": "AddShareUnitNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享单元ID。</p>",
+          "example": "shareUnit-pj96**f0du",
+          "member": "string",
+          "name": "UnitId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享部门ID。</p>",
+          "example": "10001",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddShareUnitNodeResponse": {
+      "document": "AddShareUnitNode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3240,6 +3297,42 @@
       ],
       "type": "object"
     },
+    "DeleteShareUnitNodeRequest": {
+      "document": "DeleteShareUnitNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享单元ID。</p>",
+          "example": "shareUnit-pj96**f0du",
+          "member": "string",
+          "name": "UnitId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部门ID。</p>",
+          "example": "10001",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteShareUnitNodeResponse": {
+      "document": "DeleteShareUnitNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteShareUnitRequest": {
       "document": "DeleteShareUnit请求参数结构体",
       "members": [
@@ -5012,6 +5105,80 @@
           "document": "共享单元成员列表。",
           "example": "[{\"CreateTime\":\"2021-03-06 17:08:38\",\"ShareMemberUin\":333333333333}]",
           "member": "ShareUnitMember",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeShareUnitNodesRequest": {
+      "document": "DescribeShareUnitNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享单元ID。</p>",
+          "example": "shareUnit-pj9**1f0du",
+          "member": "string",
+          "name": "UnitId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量。取值是limit的整数倍，默认值 : 0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制数目。取值范围：1~50。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键字。支持部门ID搜索。</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeShareUnitNodesResponse": {
+      "document": "DescribeShareUnitNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数目。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享单元部门列表。</p>",
+          "example": "无",
+          "member": "ShareUnitNode",
           "name": "Items",
           "output_required": true,
           "type": "list",
@@ -11415,6 +11582,32 @@
           "disabled": false,
           "document": "创建时间。",
           "example": "2021-03-05 12:12:01",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ShareUnitNode": {
+      "document": "共享单元部门",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>共享部门ID。</p>",
+          "example": "10001",
+          "member": "int64",
+          "name": "ShareNodeId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2025-12-16 10:09:25",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,

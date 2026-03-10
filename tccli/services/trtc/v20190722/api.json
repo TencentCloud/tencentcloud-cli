@@ -35,6 +35,13 @@
       "output": "CreateCloudSliceTaskResponse",
       "status": "online"
     },
+    "CreateCloudTranscription": {
+      "document": "接口说明：\n启动云端转录功能。",
+      "input": "CreateCloudTranscriptionRequest",
+      "name": "开始云端转录任务",
+      "output": "CreateCloudTranscriptionResponse",
+      "status": "online"
+    },
     "CreatePicture": {
       "document": "如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁新增自定义背景图或水印，可通过此接口上传新的图片素材。无需频繁新增图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。",
       "input": "CreatePictureRequest",
@@ -68,6 +75,13 @@
       "input": "DeleteCloudSliceTaskRequest",
       "name": "停止云端切片任务",
       "output": "DeleteCloudSliceTaskResponse",
+      "status": "online"
+    },
+    "DeleteCloudTranscription": {
+      "document": "成功开启转录后，可以使用此接口来停止转录任务。",
+      "input": "DeleteCloudTranscriptionRequest",
+      "name": "停止云端转录任务",
+      "output": "DeleteCloudTranscriptionResponse",
       "status": "online"
     },
     "DeletePicture": {
@@ -124,6 +138,13 @@
       "input": "DescribeCloudSliceTaskRequest",
       "name": "查询云端切片任务信息",
       "output": "DescribeCloudSliceTaskResponse",
+      "status": "online"
+    },
+    "DescribeCloudTranscription": {
+      "document": "成功开启转录后，可以使用此接口来查询录制状态。仅在转录任务进行时有效，转录退出后查询将会返回错误。",
+      "input": "DescribeCloudTranscriptionRequest",
+      "name": "查询云端转录状态",
+      "output": "DescribeCloudTranscriptionResponse",
       "status": "online"
     },
     "DescribeMixTranscodingUsage": {
@@ -815,6 +836,57 @@
         }
       ],
       "usage": "both"
+    },
+    "AsrParam": {
+      "document": "语音识别使用的参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转录服务使用的模型类型。示例值\"16k_zh_en\"。语音转文本不同套餐版本支持的语言如下：\n\n基础语言引擎：\n- \"zh\": 8k 采样率中文识别模型，主要用于电话音频。\n\n标准语言引擎：\n- \"8k_zh_large\": 8k 中文大模型引擎，针对电话音频支持较好。\n- \"16k_zh_large\": 16k 大模型引擎，同时支持中文、英文、多种中文方言口音等语言的识别。\n- \"16k_zh_en\": 最新 16k 中英大模型引擎，同时支持中文、英语、多种中文方言口音的识别，对中英混说场景识别更优。\n\n高级语言引擎：\n- \"zh-yue\": 中文粤语\n- \"vi\": 越南语\n- \"ja\": 日语\n- \"ko\": 韩语\n- \"id\": 印度尼西亚语\n- \"th\": 泰语\n- \"pt\": 葡萄牙语\n- \"tr\": 土耳其语\n- \"ar\": 阿拉伯语\n- \"es\": 西班牙语\n- \"hi\": 印地语\n- \"fr\": 法语\n- \"ms\": 马来语\n- \"fil\": 菲律宾语\n- \"de\": 德语\n- \"it\": 意大利语\n- \"ru\": 俄语\n- \"sv\": 瑞典语\n- \"da\": 丹麦语\n- \"no\": 挪威语\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。",
+          "example": "16k_zh_en",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。\n示例值：1000",
+          "example": "1000",
+          "member": "uint64",
+          "name": "VadSilenceTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "临时热词表：该参数用于提升识别准确率。\n- 单个热词限制：\"热词|权重\"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：\"腾讯云|5\" 或 \"ASR|11\"。\n- 临时热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：\"腾讯云|10,语音识别|5,ASR|11\"。\n注意：\n热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。\n热词权重设置为100时，当前热词开启热词增强同音同调替换功能，举例：热词配置\"蜜制|100\"时，与\"蜜制\"同拼音（mizhi）的\"秘制\"的识别结果会被强制替换成\"蜜制\"。因此建议客户根据自己的实际情况开启该功能。建议仅将重要且必须生效的热词设置到100，设置过多权重为100的热词将影响整体字准率。\n热词不能包含空格，如：ASR 腾讯云\n示例值：语音助理|10",
+          "example": "腾讯云|10,语音识别|5,ASR|11",
+          "member": "string",
+          "name": "HotWordList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起模糊识别为高级版能力,默认按照高级版收费,仅支持填写除\"zh-dialect\"和\"zh-yue\"以外的高级版语言。注意：最多只能填写4种语言。\n",
+          "example": "[\"vi\", \"ja\"]",
+          "member": "string",
+          "name": "AlternativeLanguage",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。",
+          "example": "0",
+          "member": "uint64",
+          "name": "VadLevel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "AudioEncode": {
       "document": "音频编码参数。",
@@ -1713,6 +1785,88 @@
       ],
       "type": "object"
     },
+    "CreateCloudTranscriptionRequest": {
+      "document": "CreateCloudTranscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转录的房间所对应的SdkAppId相同。",
+          "example": "140000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。",
+          "example": "room_366",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转录服务加入TRTC房间的参数。",
+          "example": "无",
+          "member": "TranscriptionParam",
+          "name": "TranscriptionParam",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "转录服务ASR使用的参数。",
+          "example": "无",
+          "member": "AsrParam",
+          "name": "AsrParam",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "转录服务翻译使用的参数。",
+          "example": "无",
+          "member": "TranslationParam",
+          "name": "TranslationParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudTranscriptionResponse": {
+      "document": "CreateCloudTranscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于唯一标识转录任务，由腾讯云服务端生成，后续查询和停止请求都需要携带TaskID参数。",
+          "example": "-m9-bVVU7k801X-VX8gO***GrDFLaZwKKZ5-fTXqywE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePictureRequest": {
       "document": "CreatePicture请求参数结构体",
       "members": [
@@ -1973,6 +2127,52 @@
           "disabled": false,
           "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
           "example": "-nHwX3RU7h3eZ-9PYsqd+z8I1uU1tUnbTWClW4K-xuWiN6KipeCyXJ8ZJEFpWSZ5zZuyZUAuAQ..",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudTranscriptionRequest": {
+      "document": "DeleteCloudTranscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和转录的房间所对应的SDKAppId相同。",
+          "example": "140000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转录任务的唯一Id，在启动转录成功后会返回。",
+          "example": "-m9Ghi1U*****gjmwRxKiwE...",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudTranscriptionResponse": {
+      "document": "DeleteCloudTranscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转录服务分配的任务 ID。任务 ID 是对一次转录生命周期过程的唯一标识，结束转录时会失去意义。",
+          "example": "-m9Ghi1U*****gjmwRxKiwE...",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -2535,6 +2735,72 @@
           "example": "InProgress",
           "member": "string",
           "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudTranscriptionRequest": {
+      "document": "DescribeCloudTranscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和转录的房间所对应的SDKAppId相同。",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转录任务的唯一Id，在启动转录成功后会返回。",
+          "example": "-m9Ghi1U7upt0******aR8QqgE...",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudTranscriptionResponse": {
+      "document": "DescribeCloudTranscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务开始时间。",
+          "example": "1762156499146",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转录任务状态。Idle：表示当前转录任务空闲中 InProgress：表示当前转录任务正在进行中。 Exited：表示当前转录任务正在退出的过程中。",
+          "example": "Idle",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转录任务的唯一Id。",
+          "example": "-m9Ghi1U7upt0******aR8QqgE...",
+          "member": "string",
+          "name": "TaskId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4310,6 +4576,15 @@
           "name": "Interrupt",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实验性参数,联系后台使用",
+          "example": "实验性参数,联系后台使用",
+          "member": "string",
+          "name": "ExperimentalParams",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -9004,6 +9279,66 @@
       ],
       "usage": "out"
     },
+    "TranscriptionParam": {
+      "document": "转录服务加入TRTC房间的参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转录服务在TRTC房间使用的[UserId](https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转录服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。",
+          "example": "transcription_1234",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转录服务加入TRTC房间的用户签名，当前 UserId 对应的验证签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
+          "example": "transcription_1234_sig",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转录用户白名单，开始服务时，为空或不填表示转录所有主播音频，填具体值表示转录指定主播音频。\n使用黑白名单时，同一个用户同时在黑白名单时，以黑名单为主。",
+          "example": "无",
+          "member": "TranscriptionUserInfoParams",
+          "name": "SubscribeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转录用户黑名单，为空或不填表示无黑名单，填具体值表示不转录指定主播音频。\n同一个用户同时在黑白名单时，以黑名单为主。",
+          "example": "无",
+          "member": "TranscriptionUserInfoParams",
+          "name": "UnSubscribeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "所有参与转录的主播持续离开TRTC房间或切换成观众超过MaxIdleTime的时长，自动停止转录任务，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于 86400秒(24小时)。",
+          "example": "30",
+          "member": "uint64",
+          "name": "MaxIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义通道：支持自定义信息，只可以填0-2， 0表示不开启自定义通道，1表示开启自定义数据，2表示开启自定义消息。不填默认不开启自定义通道。注意：填1自定义数据只对 SDK版本 >= 5.15.0生效。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SendCustomMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "TranscriptionParams": {
       "document": "AI转录参数",
       "members": [
@@ -9100,6 +9435,21 @@
       ],
       "usage": "in"
     },
+    "TranscriptionUserInfoParams": {
+      "document": "转录用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID。",
+          "example": "",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "TranslationConfig": {
       "document": "翻译相关配置",
       "members": [
@@ -9149,6 +9499,21 @@
         }
       ],
       "usage": "both"
+    },
+    "TranslationParam": {
+      "document": "翻译相关的参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻译的目标语言，示例值[\"en\", \"ja\"]。目标语种列表[中文 \"zh\"，英语 \"en\"，越南语 \"vi\"，日语 \"ja\"，韩语 \"ko\"，印度尼西亚语 \"id\"，泰语 \"th\"，葡萄牙语 \"pt\"，阿拉伯语 \"ar\"，西班牙语 \"es\"，法语 \"fr\"，马来语 \"ms\"，德语 \"de\"，意大利语 \"it\"，俄语 \"ru\"]。",
+          "example": "[\"en\", \"ja\"]",
+          "member": "string",
+          "name": "TargetLang",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "TrtcUsage": {
       "document": "实时音视频用量在某一时间段的统计信息。",

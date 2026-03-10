@@ -41330,7 +41330,7 @@
         },
         {
           "disabled": false,
-          "document": "网关出带宽。",
+          "document": "网关出带宽，单位：Mbps。",
           "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -41466,7 +41466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽配额",
+          "document": "带宽配额，单位：Mbps。",
           "example": "5",
           "member": "uint64",
           "name": "Bandwidth",

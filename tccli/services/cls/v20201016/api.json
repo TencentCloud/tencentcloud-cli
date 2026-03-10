@@ -4605,7 +4605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略名称。最大支持255个字节。 不支持 '|'。",
+          "document": "<p>告警策略名称。最大支持255个字节。 不支持 &#39;|&#39;。</p>",
           "example": "p1-业务告警",
           "member": "string",
           "name": "Name",
@@ -4614,7 +4614,7 @@
         },
         {
           "disabled": false,
-          "document": "监控对象列表。",
+          "document": "<p>监控对象列表。</p>",
           "example": "无",
           "member": "AlarmTarget",
           "name": "AlarmTargets",
@@ -4623,7 +4623,7 @@
         },
         {
           "disabled": false,
-          "document": "监控任务运行时间点。",
+          "document": "<p>监控任务运行时间点。</p>",
           "example": "无",
           "member": "MonitorTime",
           "name": "MonitorTime",
@@ -4632,7 +4632,7 @@
         },
         {
           "disabled": false,
-          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。",
+          "document": "<p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。</p>",
           "example": "1",
           "member": "int64",
           "name": "TriggerCount",
@@ -4641,7 +4641,7 @@
         },
         {
           "disabled": false,
-          "document": "告警重复的周期，单位是分钟。取值范围是0~1440。",
+          "document": "<p>告警重复的周期，单位是分钟。取值范围是0~1440。</p>",
           "example": "0",
           "member": "int64",
           "name": "AlarmPeriod",
@@ -4650,16 +4650,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥",
-          "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
-          "member": "string",
-          "name": "AlarmNoticeIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "告警发送通知的触发条件\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。\n",
+          "document": "<p>告警发送通知的触发条件<br> 注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "$1.count > 10",
           "member": "string",
           "name": "Condition",
@@ -4668,7 +4659,7 @@
         },
         {
           "disabled": false,
-          "document": "告警级别\n0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。\n注意:  \n- 不填则默认为0。\n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>告警级别<br>0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。<br>注意:  </p><ul><li>不填则默认为0。</li><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "AlarmLevel",
@@ -4677,7 +4668,7 @@
         },
         {
           "disabled": false,
-          "document": "多触发条件\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。\n\n\n",
+          "document": "<p>多触发条件<br> 注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "无",
           "member": "MultiCondition",
           "name": "MultiConditions",
@@ -4686,7 +4677,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启告警策略。\n默认值为true",
+          "document": "<p>是否开启告警策略。<br>默认值为true</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -4695,7 +4686,7 @@
         },
         {
           "disabled": true,
-          "document": "请使用Status参数控制是否开启告警策略。",
+          "document": "<p>请使用Status参数控制是否开启告警策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -4704,7 +4695,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义告警内容",
+          "document": "<p>用户自定义告警内容</p>",
           "example": "{{range .AnalysisResult.sync}}\\n\\n集群{{.ClusterID}}中节点失败\\n\\n{{end}}",
           "member": "string",
           "name": "MessageTemplate",
@@ -4713,7 +4704,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义回调",
+          "document": "<p>用户自定义回调</p>",
           "example": "无",
           "member": "CallBackInfo",
           "name": "CallBack",
@@ -4722,7 +4713,7 @@
         },
         {
           "disabled": false,
-          "document": "多维分析",
+          "document": "<p>多维分析</p>",
           "example": "无",
           "member": "AnalysisDimensional",
           "name": "Analysis",
@@ -4731,7 +4722,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发状态。\n默认值false",
+          "document": "<p>分组触发状态。<br>默认值false</p>",
           "example": "true",
           "member": "bool",
           "name": "GroupTriggerStatus",
@@ -4740,7 +4731,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发条件。",
+          "document": "<p>分组触发条件。</p>",
           "example": "[\"$1.conut\"]",
           "member": "string",
           "name": "GroupTriggerCondition",
@@ -4749,7 +4740,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。\n\n最大支持10个标签键值对，并且不能有重复的键值对。",
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。</p><p>最大支持10个标签键值对，并且不能有重复的键值对。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -4758,7 +4749,7 @@
         },
         {
           "disabled": false,
-          "document": "监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n不填则默认为0。\n当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。\n",
+          "document": "<p>监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。<br>不填则默认为0。<br>当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MonitorObjectType",
@@ -4767,12 +4758,30 @@
         },
         {
           "disabled": false,
-          "document": "告警附加分类信息列表。\nClassifications元素个数不能超过20个。\nClassifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。\nClassifications元素的Value长度不能超过200个字符。",
+          "document": "<p>告警附加分类信息列表。<br>Classifications元素个数不能超过20个。<br>Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 <code>^[a-z]([a-z0-9_]{0,49})$</code>。<br>Classifications元素的Value长度不能超过200个字符。</p>",
           "example": "无",
           "member": "AlarmClassification",
           "name": "Classifications",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的日志服务告警通知渠道组列表。-通过<a href=\"https://cloud.tencent.com/document/product/614/56462\">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>",
+          "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
+          "member": "string",
+          "name": "AlarmNoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的可观测平台通知模板，与 AlarmNoticeIds 参数互斥，不能同时使用</p>",
+          "example": "无",
+          "member": "MonitorNotice",
+          "name": "MonitorNotice",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4782,7 +4791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略ID。",
+          "document": "<p>告警策略ID。</p>",
           "example": "alarm-479dec34-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
@@ -5806,7 +5815,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 最长 255 个字符",
+          "document": "加工任务名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 最长128 个字符",
           "example": "task1",
           "member": "string",
           "name": "Name",
@@ -8463,7 +8472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题ID</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "abdeace6-9484-4d2e-b670-28289c42b60f",
           "member": "string",
           "name": "TopicId",
@@ -8474,11 +8483,66 @@
         },
         {
           "disabled": false,
-          "document": "别名\n限制：不能包含字符 |。",
+          "document": "<p>别名<br>限制：不能包含字符 |。</p>",
           "example": "topicname",
           "member": "string",
           "name": "Alias",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是跨账号主题，false不是跨账号主题，true是跨账号主题</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCrossAccount",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨账号场景下，被投递账号给投递账号创建的角色ARN值，在被投递账号的角色里查找</p>",
+          "example": "qcs::cam::uin/1234567890:roleName/cls_online_role",
+          "member": "string",
+          "name": "RoleARN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部ID值，可以在被投递账号的角色-载体里找到该值</p>",
+          "example": "hello123",
+          "member": "string",
+          "name": "ExternalId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名称</p>",
+          "example": "topic_name_1",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集的名称</p>",
+          "example": "logset_name_1",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17708,7 +17772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID",
+          "document": "<p>告警策略ID。-通过<a href=\"https://cloud.tencent.com/document/product/614/56461\">获取告警策略列表</a>获取告警策略ID</p>",
           "example": "alarm-bea71170-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
@@ -17717,7 +17781,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略名称。最大支持255个字节，不支持 '|'。",
+          "document": "<p>告警策略名称。最大支持255个字节，不支持 &#39;|&#39;。</p>",
           "example": "访问拦截告警",
           "member": "string",
           "name": "Name",
@@ -17726,7 +17790,7 @@
         },
         {
           "disabled": false,
-          "document": "监控任务运行时间点。",
+          "document": "<p>监控任务运行时间点。</p>",
           "example": "无",
           "member": "MonitorTime",
           "name": "MonitorTime",
@@ -17735,7 +17799,7 @@
         },
         {
           "disabled": false,
-          "document": "告警信息发送的触发条件。\n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>告警信息发送的触发条件。</p><p>注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "$1.source='10.0.0.1'",
           "member": "string",
           "name": "Condition",
@@ -17744,7 +17808,7 @@
         },
         {
           "disabled": false,
-          "document": "告警级别。\n\n0:警告(Warn);1:提醒(Info);2:紧急 (Critical)\n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>告警级别。</p><p>0:警告(Warn);1:提醒(Info);2:紧急 (Critical)</p><p>注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "AlarmLevel",
@@ -17753,7 +17817,7 @@
         },
         {
           "disabled": false,
-          "document": "多触发条件。 \n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>多触发条件。 </p><p>注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "无",
           "member": "MultiCondition",
           "name": "MultiConditions",
@@ -17762,7 +17826,7 @@
         },
         {
           "disabled": false,
-          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。",
+          "document": "<p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。</p>",
           "example": "1",
           "member": "int64",
           "name": "TriggerCount",
@@ -17771,7 +17835,7 @@
         },
         {
           "disabled": false,
-          "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
+          "document": "<p>告警重复的周期。单位是分钟。取值范围是0~1440。</p>",
           "example": "0",
           "member": "int64",
           "name": "AlarmPeriod",
@@ -17780,16 +17844,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥",
-          "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
-          "member": "string",
-          "name": "AlarmNoticeIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "监控对象列表。",
+          "document": "<p>监控对象列表。</p>",
           "example": "无",
           "member": "AlarmTarget",
           "name": "AlarmTargets",
@@ -17798,7 +17853,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启告警策略。",
+          "document": "<p>是否开启告警策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -17807,7 +17862,7 @@
         },
         {
           "disabled": true,
-          "document": "该参数已废弃，请使用Status参数控制是否开启告警策略。",
+          "document": "<p>该参数已废弃，请使用Status参数控制是否开启告警策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -17816,7 +17871,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义告警内容",
+          "document": "<p>用户自定义告警内容</p>",
           "example": "{{.Label}}",
           "member": "string",
           "name": "MessageTemplate",
@@ -17825,7 +17880,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义回调",
+          "document": "<p>用户自定义回调</p>",
           "example": "无",
           "member": "CallBackInfo",
           "name": "CallBack",
@@ -17834,7 +17889,7 @@
         },
         {
           "disabled": false,
-          "document": "多维分析",
+          "document": "<p>多维分析</p>",
           "example": "无",
           "member": "AnalysisDimensional",
           "name": "Analysis",
@@ -17843,7 +17898,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发状态。true：开启，false：关闭（默认）",
+          "document": "<p>分组触发状态。true：开启，false：关闭（默认）</p>",
           "example": "true",
           "member": "bool",
           "name": "GroupTriggerStatus",
@@ -17852,7 +17907,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发条件。",
+          "document": "<p>分组触发条件。</p>",
           "example": "[\"$1.conut\"]",
           "member": "string",
           "name": "GroupTriggerCondition",
@@ -17861,7 +17916,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。最大支持10个标签键值对，并且不能有重复的键值对。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -17870,7 +17925,7 @@
         },
         {
           "disabled": false,
-          "document": "监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。\n",
+          "document": "<p>监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。<br>当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MonitorObjectType",
@@ -17879,12 +17934,30 @@
         },
         {
           "disabled": false,
-          "document": "告警附加分类信息列表。\nClassifications元素个数不能超过20个。\nClassifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。\nClassifications元素的Value长度不能超过200个字符。",
+          "document": "<p>告警附加分类信息列表。<br>Classifications元素个数不能超过20个。<br>Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 <code>^[a-z]([a-z0-9_]{0,49})$</code>。<br>Classifications元素的Value长度不能超过200个字符。</p>",
           "example": "无",
           "member": "AlarmClassification",
           "name": "Classifications",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的日志服务告警通知渠道组列表。-通过<a href=\"https://cloud.tencent.com/document/product/614/56462\">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>",
+          "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
+          "member": "string",
+          "name": "AlarmNoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的可观测平台通知模板，与 AlarmNoticeIds 参数互斥，不能同时使用</p>",
+          "example": "无",
+          "member": "MonitorNotice",
+          "name": "MonitorNotice",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -20587,8 +20660,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云可观测平台通知模板 ID",
-          "example": "notice-erictest",
+          "document": "<p>腾讯云可观测平台通知模板 ID</p>",
+          "example": "notice-xxx",
           "member": "string",
           "name": "NoticeId",
           "output_required": false,
@@ -20598,8 +20671,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云可观测平台内容模板ID，不传默认内容模板\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tmpl-erictest",
+          "document": "<p>腾讯云可观测平台内容模板ID，为空时使用默认内容模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tmpl-xxx",
           "member": "string",
           "name": "ContentTmplId",
           "output_required": false,
@@ -20609,8 +20682,8 @@
         },
         {
           "disabled": false,
-          "document": "告警级别,0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)",
-          "example": "[0,1]",
+          "document": "<p>告警级别,0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)</p>",
+          "example": "[0,1,2]",
           "member": "uint64",
           "name": "AlarmLevels",
           "output_required": false,

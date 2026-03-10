@@ -36201,7 +36201,7 @@
         {
           "disabled": false,
           "document": "过滤条件。  <li>Status : string类型 非必填 处理状态 0待处理,1忽略,3修复</li><li>ShowNew : int类型 非必填 展示最新版本 1-开启 0-关闭</li><li>Name : string类型 非必填 补丁名称</li><li>KbNo : string类型 非必填 补丁编号</li><li>VulName : string类型 非必填 漏洞名称</li><li>CVEId : string类型 非必填 漏洞CVE编号</li><li>Uuid : string类型 非必填 主机uuid</li>",
-          "example": "{\"Filters\":[{\"ExactMatch\":true,\"Name\":\"ShowNew\",\"Values\":[\"0\"]}]",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -36226,7 +36226,7 @@
         {
           "disabled": false,
           "document": "Windows补丁信息列表",
-          "example": "[{}]",
+          "example": "无",
           "member": "EventPatchInfo",
           "name": "PatchInfoList",
           "output_required": false,

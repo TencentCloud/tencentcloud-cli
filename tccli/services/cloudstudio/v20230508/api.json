@@ -356,7 +356,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间名称过滤条件",
+          "document": "<p>工作空间名称过滤条件</p>",
           "example": "workspace-name",
           "member": "string",
           "name": "Name",
@@ -371,8 +371,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间列表",
-          "example": "[{\"Id\": 9,\"Name\": \"open_api_test-1\",\"SpaceKey\": \"ryvzki\",...}]",
+          "document": "<p>工作空间列表</p>",
+          "example": "无",
           "member": "WorkspaceStatusInfo",
           "name": "Data",
           "output_required": true,

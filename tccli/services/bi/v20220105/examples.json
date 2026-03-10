@@ -51,7 +51,7 @@
     "CreateProject": [
       {
         "document": "创建项目",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"Name\": \"测试项目\",\n    \"Logo\": \"https://tencent.cloud.com/logo.png\",\n    \"ColorCode\": \"#ffffff\",\n    \"Mark\": \"创建项目\",\n    \"IsApply\": true,\n    \"DefaultPanelType\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"Name\": \"Name\",\n    \"ColorCode\": \"ColorCode\",\n    \"Logo\": \"Logo\",\n    \"Mark\": \"Mark\",\n    \"IsApply\": false,\n    \"DefaultPanelType\": 1982493789748932,\n    \"ManagePlatform\": \"ManagePlatform\"\n}",
         "output": "{\n    \"Response\": {\n        \"Extra\": \"1\",\n        \"Data\": {\n            \"Id\": 11010\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"dsjasdk121kdsfjksadk\"\n    }\n}",
         "title": "创建项目"
       }

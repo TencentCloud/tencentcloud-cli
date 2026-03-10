@@ -6,12 +6,13 @@ Input:
 
 ```
 tccli bi CreateProject --cli-unfold-argument  \
-    --Name 测试项目 \
-    --Logo https://tencent.cloud.com/logo.png \
-    --ColorCode #ffffff \
-    --Mark 创建项目 \
-    --IsApply True \
-    --DefaultPanelType 1
+    --Name Name \
+    --ColorCode ColorCode \
+    --Logo Logo \
+    --Mark Mark \
+    --IsApply False \
+    --DefaultPanelType 1982493789748932 \
+    --ManagePlatform ManagePlatform
 ```
 
 Output: 

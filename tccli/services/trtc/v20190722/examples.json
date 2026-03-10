@@ -40,6 +40,14 @@
         "title": "创建切片任务"
       }
     ],
+    "CreateCloudTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 14000000,\n    \"RoomId\": \"295000\",\n    \"RoomIdType\": 0,\n    \"TranscriptionParam\": {\n        \"UserId\": \"trtc_test_1\",\n        \"UserSig\": \"eJjdaVgrxCdYrzkx*************BLATRT\",\n        \"SubscribeList\": [\n            {\n                \"UserId\": \"user_1\"\n            }\n        ],\n        \"MaxIdleTime\": 30,\n        \"SendCustomMode\": 2\n    },\n    \"AsrParam\": {\n        \"Lang\": \"16k_zh_en\",\n        \"VadSilenceTime\": 2000\n    },\n    \"TranslationParam\": {\n        \"TargetLang\": [\n            \"en\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nE5dafd3iq51******41fnF8bp2NI65pgE.\",\n        \"RequestId\": \"f98cb56d-2c70******b0-213ee0ef73ac\"\n    }\n}",
+        "title": "发起转录任务"
+      }
+    ],
     "CreatePicture": [
       {
         "document": "上传图片",
@@ -78,6 +86,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"93186328-a0f6-4127-a0cb-72c85b6af982\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
         "title": "停止云端切片任务"
+      }
+    ],
+    "DeleteCloudTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 14000000,\n    \"TaskId\": \"-nE5Nd9U7pfwyEzu+8LN******j-r1AI7H3plkD1p8pHX71AE.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nE5Nd9U7pfwyEzu+8LNXe******ndibj-r1AI7H3plkD1p8pHX71AE.\",\n        \"RequestId\": \"768c7bde-70******c-e81f21cb1599\"\n    }\n}",
+        "title": "停止转录任务"
       }
     ],
     "DeletePicture": [
@@ -142,6 +158,14 @@
         "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc45d9cd-f615-43a5-943e-89f559cb3f7b\",\n        \"Status\": \"InProgress\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
         "title": "查询切片任务信息"
+      }
+    ],
+    "DescribeCloudTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudTranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\",\n    \"SdkAppId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": 1772433534515,\n        \"Status\": \"Idle\",\n        \"RequestId\": \"f83001c5-7e3c-dfac-ba3e-236bf063c8d1\",\n        \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\"\n    }\n}",
+        "title": "查询转录任务"
       }
     ],
     "DescribeMixTranscodingUsage": [

@@ -106,7 +106,7 @@
       "status": "online"
     },
     "DeleteTable": {
-      "document": "本接口(DeleteTable)用于删除表，删除表后表中数据将会被删除且无法恢复，请谨慎操作",
+      "document": "本接口(DeleteTable)用于删除表，删除表后表中数据将会被删除且无法恢复，请谨慎操作\n\n接口入参中的 Tag 为 flexdb 的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取",
       "input": "DeleteTableRequest",
       "name": "删除表",
       "output": "DeleteTableResponse",
@@ -232,14 +232,14 @@
       "status": "online"
     },
     "DescribeTable": {
-      "document": "查询表的相关信息，包括索引等信息",
+      "document": "查询表的相关信息，包括索引等信息\n\n接口入参中的 Tag 为 flexdb 的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取",
       "input": "DescribeTableRequest",
       "name": "查询表信息",
       "output": "DescribeTableResponse",
       "status": "online"
     },
     "DescribeTables": {
-      "document": "本接口(ListTables)用于查询所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等",
+      "document": "本接口(DescribeTables)用于查询所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等",
       "input": "DescribeTablesRequest",
       "name": "查询所有表信息",
       "output": "DescribeTablesResponse",
@@ -3968,6 +3968,15 @@
           "name": "MongoConnector",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定表名过滤，为空时返回所有表",
+          "example": "[\"table_name\"]",
+          "member": "string",
+          "name": "TableNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -105,6 +105,13 @@
       "output": "DescribeDataResponse",
       "status": "online"
     },
+    "DescribeDataBridgeUrlV2": {
+      "document": "获取DescribeDataBridgeUrl信息",
+      "input": "DescribeDataBridgeUrlV2Request",
+      "name": "获取DescribeDataBridgeUrlV2信息",
+      "output": "DescribeDataBridgeUrlV2Response",
+      "status": "online"
+    },
     "DescribeDataCustomUrl": {
       "document": "获取DescribeDataCustomUrl信息",
       "input": "DescribeDataCustomUrlRequest",
@@ -112,11 +119,25 @@
       "output": "DescribeDataCustomUrlResponse",
       "status": "online"
     },
+    "DescribeDataCustomUrlV2": {
+      "document": "获取DescribeDataCustomUrl信息",
+      "input": "DescribeDataCustomUrlV2Request",
+      "name": "获取DescribeDataCustomUrlV2信息",
+      "output": "DescribeDataCustomUrlV2Response",
+      "status": "online"
+    },
     "DescribeDataEventUrl": {
       "document": "获取DescribeDataEventUrl信息",
       "input": "DescribeDataEventUrlRequest",
       "name": "获取DescribeDataEventUrl信息",
       "output": "DescribeDataEventUrlResponse",
+      "status": "online"
+    },
+    "DescribeDataEventUrlV2": {
+      "document": "获取DescribeDataEventUrl信息",
+      "input": "DescribeDataEventUrlV2Request",
+      "name": "获取DescribeDataEventUrl信息V2",
+      "output": "DescribeDataEventUrlV2Response",
       "status": "online"
     },
     "DescribeDataFetchProject": {
@@ -140,6 +161,13 @@
       "output": "DescribeDataFetchUrlInfoResponse",
       "status": "online"
     },
+    "DescribeDataFetchUrlV2": {
+      "document": "获取DescribeDataFetchUrl信息",
+      "input": "DescribeDataFetchUrlV2Request",
+      "name": "获取DescribeDataFetchUrlV2信息",
+      "output": "DescribeDataFetchUrlV2Response",
+      "status": "online"
+    },
     "DescribeDataLogUrlInfo": {
       "document": "获取loginfo信息",
       "input": "DescribeDataLogUrlInfoRequest",
@@ -154,11 +182,25 @@
       "output": "DescribeDataLogUrlStatisticsResponse",
       "status": "online"
     },
+    "DescribeDataLogUrlStatisticsV2": {
+      "document": "获取LogUrlStatistics信息",
+      "input": "DescribeDataLogUrlStatisticsV2Request",
+      "name": "获取LogUrlStatistics信息V2",
+      "output": "DescribeDataLogUrlStatisticsV2Response",
+      "status": "online"
+    },
     "DescribeDataPerformancePage": {
       "document": "获取PerformancePage信息",
       "input": "DescribeDataPerformancePageRequest",
       "name": "获取PerformancePage信息",
       "output": "DescribeDataPerformancePageResponse",
+      "status": "online"
+    },
+    "DescribeDataPerformancePageV2": {
+      "document": "获取PerformancePage信息",
+      "input": "DescribeDataPerformancePageV2Request",
+      "name": "获取PerformancePage信息V2",
+      "output": "DescribeDataPerformancePageV2Response",
       "status": "online"
     },
     "DescribeDataPvUrlInfo": {
@@ -203,11 +245,25 @@
       "output": "DescribeDataSetUrlStatisticsResponse",
       "status": "online"
     },
+    "DescribeDataSetUrlStatisticsV2": {
+      "document": "获取DescribeDataSetUrlStatistics信息",
+      "input": "DescribeDataSetUrlStatisticsV2Request",
+      "name": "获取DescribeDataSetUrlStatisticsV2信息",
+      "output": "DescribeDataSetUrlStatisticsV2Response",
+      "status": "online"
+    },
     "DescribeDataStaticProject": {
       "document": "获取DescribeDataStaticProject信息",
       "input": "DescribeDataStaticProjectRequest",
       "name": "获取DescribeDataStaticProject信息",
       "output": "DescribeDataStaticProjectResponse",
+      "status": "online"
+    },
+    "DescribeDataStaticProjectV2": {
+      "document": "获取DescribeDataStaticProject信息",
+      "input": "DescribeDataStaticProjectV2Request",
+      "name": "获取DescribeDataStaticProjectV2信息",
+      "output": "DescribeDataStaticProjectV2Response",
       "status": "online"
     },
     "DescribeDataStaticResource": {
@@ -217,6 +273,13 @@
       "output": "DescribeDataStaticResourceResponse",
       "status": "online"
     },
+    "DescribeDataStaticResourceV2": {
+      "document": "获取DescribeDataStaticResource信息",
+      "input": "DescribeDataStaticResourceV2Request",
+      "name": "获取DescribeDataStaticResourceV2信息",
+      "output": "DescribeDataStaticResourceV2Response",
+      "status": "online"
+    },
     "DescribeDataStaticUrl": {
       "document": "获取DescribeDataStaticUrl信息",
       "input": "DescribeDataStaticUrlRequest",
@@ -224,11 +287,25 @@
       "output": "DescribeDataStaticUrlResponse",
       "status": "online"
     },
+    "DescribeDataStaticUrlV2": {
+      "document": "获取DescribeDataStaticUrl信息",
+      "input": "DescribeDataStaticUrlV2Request",
+      "name": "获取DescribeDataStaticUrlV2信息",
+      "output": "DescribeDataStaticUrlV2Response",
+      "status": "online"
+    },
     "DescribeDataWebVitalsPage": {
       "document": "获取DescribeDataWebVitalsPage信息，用户核心活动信息\n页面加载性能之Web Vitals。性能关键点",
       "input": "DescribeDataWebVitalsPageRequest",
       "name": "获取DescribeDataWebVitalsPage信息",
       "output": "DescribeDataWebVitalsPageResponse",
+      "status": "online"
+    },
+    "DescribeDataWebVitalsPageV2": {
+      "document": "获取DescribeDataWebVitalsPage信息，用户核心活动信息\n页面加载性能之Web Vitals。性能关键点",
+      "input": "DescribeDataWebVitalsPageV2Request",
+      "name": "获取DescribeDataWebVitalsPageV2信息",
+      "output": "DescribeDataWebVitalsPageV2Response",
       "status": "online"
     },
     "DescribeError": {
@@ -313,6 +390,13 @@
       "input": "DescribeScoresRequest",
       "name": "获取首页分数列表",
       "output": "DescribeScoresResponse",
+      "status": "online"
+    },
+    "DescribeScoresV2": {
+      "document": "获取首页分数列表",
+      "input": "DescribeScoresV2Request",
+      "name": "获取首页分数列表V2",
+      "output": "DescribeScoresV2Response",
       "status": "online"
     },
     "DescribeTawAreas": {
@@ -688,7 +772,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费资源包类型(仅预付费需要)",
+          "document": "资源包类型：1=5百万/30天，2=10百万/30天，3=50百万/180天，4=100百万/180天，5=300百万/180天，6=500百万/180天，7=1000百万/180天，8=2500百万/180天，9=10000百万/360天（单位：上报量=百万条，周期=天）",
           "example": "1",
           "member": "uint64",
           "name": "ResourcePackageType",
@@ -715,7 +799,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费类型",
+          "document": "自动续费类型：0=不自动续费，1=开启自动续费；开启时需填写 AutoRenewalThreshold（1~50%）；同一实例最多允许存在 1 个自动续费资源包。",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewalType",
@@ -1487,8 +1571,577 @@
       ],
       "type": "object"
     },
+    "DescribeDataBridgeUrlV2Request": {
+      "document": "DescribeDataBridgeUrlV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "pagepv：性能视图，allcount：性能视图，falls：页面加载瀑布图，samp：首屏时间，day：14天数据，nettype：网络/平台视图，performance：页面性能TOP视图，version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：ISP视图/地区视图/浏览器视图等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "ext1",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "ext2",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "ext3",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时计算方式",
+          "example": "50",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "url名称",
+          "example": "http",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "http状态码",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "retcode",
+          "example": "1",
+          "member": "string",
+          "name": "Ret",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络状态",
+          "example": "1",
+          "member": "string",
+          "name": "NetStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataBridgeUrlV2Response": {
+      "document": "DescribeDataBridgeUrlV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "success",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataCustomUrlRequest": {
       "document": "DescribeDataCustomUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "top：资源top视图，allcount：性能视图，day：14天数据，condition：条件列表，pagepv：性能视图，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知。",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（使用 percentile2 计算分位数）；\"avg\" 表示均值（使用 avg 计算）。",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义测速的key的值",
+          "example": "自定义测速",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataCustomUrlResponse": {
+      "document": "DescribeDataCustomUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"Result\": \"{\\\"request_id\\\":\\\"44202a67-c864-4d29-82f4-bfd483327e60\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":1,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataCustomUrlV2Request": {
+      "document": "DescribeDataCustomUrlV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -1696,12 +2349,84 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataCustomUrlResponse": {
-      "document": "DescribeDataCustomUrl返回参数结构体",
+    "DescribeDataCustomUrlV2Response": {
+      "document": "DescribeDataCustomUrlV2返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -1724,6 +2449,232 @@
     },
     "DescribeDataEventUrlRequest": {
       "document": "DescribeDataEventUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "netType | 网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。也可通过 Type=condition（show tag values）查询当前数据集中的实际可选值。\n",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEventUrlResponse": {
+      "document": "DescribeDataEventUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"request_id\\\":\\\"97e9e8cc-e106-4034-889c-c8f8d3451057\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEventUrlV2Request": {
+      "document": "DescribeDataEventUrlV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -1922,17 +2873,89 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataEventUrlResponse": {
-      "document": "DescribeDataEventUrl返回参数结构体",
+    "DescribeDataEventUrlV2Response": {
+      "document": "DescribeDataEventUrlV2返回参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "返回值",
-          "example": "\"{\\\"request_id\\\":\\\"97e9e8cc-e106-4034-889c-c8f8d3451057\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
+          "example": "\"{\\\"request_id\\\":\\\"d446c290-7034-47d3-8d72-46e7a692f5ac\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -2133,7 +3156,7 @@
         },
         {
           "disabled": false,
-          "document": "耗时计算方式",
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
           "example": "50",
           "member": "string",
           "name": "CostType",
@@ -2160,7 +3183,7 @@
         },
         {
           "disabled": false,
-          "document": "httpcode响应码",
+          "document": "HTTP 状态码（tag 值）：用于过滤字段 status；取值一般为 200/301/404/500 等，也可配合 4xx/5xx 统计逻辑使用",
           "example": "200",
           "member": "string",
           "name": "Status",
@@ -2341,7 +3364,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -2386,7 +3409,7 @@
         },
         {
           "disabled": false,
-          "document": "耗时计算方式",
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
           "example": "avg",
           "member": "string",
           "name": "CostType",
@@ -2438,6 +3461,268 @@
     },
     "DescribeDataFetchUrlRequest": {
       "document": "DescribeDataFetchUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "allcount：性能视图，pagepv：pv视图，day：14天数据，count40x：40X视图，count50x：50X视图，count5xand4x：40∑50视图，top：资源top视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
+          "example": "50",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "http",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 状态码（tag 值）：用于过滤字段 status；支持 4xx（status =~ /4[0-9]{2}/）和 5xx（status =~ /5[0-9]{2}/）等错误码统计。",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "retcode",
+          "example": "1",
+          "member": "string",
+          "name": "Ret",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络状态",
+          "example": "1",
+          "member": "string",
+          "name": "NetStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataFetchUrlResponse": {
+      "document": "DescribeDataFetchUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"request_id\\\":\\\"d446c290-7034-47d3-8d72-46e7a692f5ac\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataFetchUrlV2Request": {
+      "document": "DescribeDataFetchUrlV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -2672,12 +3957,84 @@
           "name": "NetStatus",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataFetchUrlResponse": {
-      "document": "DescribeDataFetchUrl返回参数结构体",
+    "DescribeDataFetchUrlV2Response": {
+      "document": "DescribeDataFetchUrlV2返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -2893,7 +4250,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -2979,8 +4336,550 @@
       ],
       "type": "object"
     },
+    "DescribeDataLogUrlStatisticsV2Request": {
+      "document": "DescribeDataLogUrlStatisticsV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "analysis：异常分析，compare：异常列表对比，allcount：性能视图，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境区分",
+          "example": "production",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "js异常信息",
+          "example": "Script error.",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataLogUrlStatisticsV2Response": {
+      "document": "DescribeDataLogUrlStatisticsV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataPerformancePageRequest": {
       "document": "DescribeDataPerformancePage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "pagepv：pv视图，allcount：性能视图，falls：页面加载瀑布图，samp：首屏时间，day：14天数据，nettype：网络/平台视图，performance：页面性能TOP视图，version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：ISP视图/地区视图/浏览器视图等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
+          "example": "50",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络状态(tag 值):用于过滤/聚合字段 netStatus；枚举值：0(正常)、1(弱网)、2(断网)、3(其他)。 ",
+          "example": "1",
+          "member": "string",
+          "name": "NetStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回webvitals数据",
+          "example": "true",
+          "member": "bool",
+          "name": "WebVitals",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataPerformancePageResponse": {
+      "document": "DescribeDataPerformancePage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"request_id\\\":\\\"ddec0dc8-3268-4571-9ac0-566ae7537495\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0},{\\\"statement_id\\\":2,\\\"total\\\":0},{\\\"statement_id\\\":3,\\\"total\\\":0}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataPerformancePageV2Request": {
+      "document": "DescribeDataPerformancePageV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -3197,12 +5096,84 @@
           "name": "WebVitals",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataPerformancePageResponse": {
-      "document": "DescribeDataPerformancePage返回参数结构体",
+    "DescribeDataPerformancePageV2Response": {
+      "document": "DescribeDataPerformancePageV2返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -3237,7 +5208,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "查询类型（string）：当前后端实现固定按 from 聚合统计，未使用该字段（保留字段，传值不会影响结果）。",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -3363,7 +5334,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -3454,7 +5425,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -3580,7 +5551,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -3815,7 +5786,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -4112,7 +6083,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\"",
+          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}]}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -4176,6 +6147,241 @@
     },
     "DescribeDataSetUrlStatisticsRequest": {
       "document": "DescribeDataSetUrlStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "allcount：性能视图，data：小程序，component：小程序相关，day：14天数据，nettype：网络/平台视图，performance：页面性能TOP视图，version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：ISP视图/地区视图/浏览器视图等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时/数据量口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序包类型（tag 值）：用于过滤字段 type（请求参数名为 PackageType）；取值由上报数据决定，可通过 Type=condition（show tag values）获取可选值集合。",
+          "example": "loadPackage",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSetUrlStatisticsResponse": {
+      "document": "DescribeDataSetUrlStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0},{\\\"statement_id\\\":2,\\\"total\\\":0}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSetUrlStatisticsV2Request": {
+      "document": "DescribeDataSetUrlStatisticsV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -4383,12 +6589,84 @@
           "name": "PackageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataSetUrlStatisticsResponse": {
-      "document": "DescribeDataSetUrlStatistics返回参数结构体",
+    "DescribeDataSetUrlStatisticsV2Response": {
+      "document": "DescribeDataSetUrlStatisticsV2返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -4594,7 +6872,7 @@
         },
         {
           "disabled": false,
-          "document": "耗时计算",
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
           "example": "avg",
           "member": "string",
           "name": "CostType",
@@ -4644,8 +6922,550 @@
       ],
       "type": "object"
     },
+    "DescribeDataStaticProjectV2Request": {
+      "document": "DescribeDataStaticProjectV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "allcount：性能视图，day：14天数据，condition：条件列表，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级（1表示白名单日志，2表示一般日志，4表示错误日志，8表示Promise 错误，16表示Ajax 请求异常，32表示JS 加载异常，64表示图片加载异常，128表示css 加载异常，256表示console.error，512表示音视频资源异常，1024表示retcode 异常，2048表示aegis report，4096表示PV日志，8192表示自定义事件，16384表示小程序 页面不存在，32768表示websocket错误，65536表示js bridge错误）",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知。",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时计算",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "[\"http\"]",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticProjectV2Response": {
+      "document": "DescribeDataStaticProjectV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"series\\\":[{\\\"name\\\":\\\"static_project_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\",\\\"successRate\\\",\\\"avgDuration\\\",\\\"connectTime\\\",\\\"domainLookupTime\\\"],\\\"values\\\":[[1737246360,null,null,null,null,null]],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataStaticResourceRequest": {
       "document": "DescribeDataStaticResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "top：资源top视图，count40x：40X视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图//ext1视图等等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "http",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticResourceResponse": {
+      "document": "DescribeDataStaticResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticResourceV2Request": {
+      "document": "DescribeDataStaticResourceV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -4853,12 +7673,84 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataStaticResourceResponse": {
-      "document": "DescribeDataStaticResource返回参数结构体",
+    "DescribeDataStaticResourceV2Response": {
+      "document": "DescribeDataStaticResourceV2返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -4881,6 +7773,241 @@
     },
     "DescribeDataStaticUrlRequest": {
       "document": "DescribeDataStaticUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "pagepv：性能视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图//ext1视图等等",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "optimized",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "http",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticUrlResponse": {
+      "document": "DescribeDataStaticUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\"request_id\":\"19f7743c-8a5d-4c41-ad6a-742a145b685d\",\"results\":[{\"statement_id\":0,\"total\":0,\"offset\":\"\"}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticUrlV2Request": {
+      "document": "DescribeDataStaticUrlV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -5088,12 +8215,84 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义4",
+          "example": "ext4",
+          "member": "string",
+          "name": "ExtFourth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义5",
+          "example": "ext5",
+          "member": "string",
+          "name": "ExtFifth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义6",
+          "example": "ext6",
+          "member": "string",
+          "name": "ExtSixth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义7",
+          "example": "ext7",
+          "member": "string",
+          "name": "ExtSeventh",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义8",
+          "example": "ext8",
+          "member": "string",
+          "name": "ExtEighth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义9",
+          "example": "ext9",
+          "member": "string",
+          "name": "ExtNinth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义10",
+          "example": "ext10",
+          "member": "string",
+          "name": "ExtTenth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataStaticUrlResponse": {
-      "document": "DescribeDataStaticUrl返回参数结构体",
+    "DescribeDataStaticUrlV2Response": {
+      "document": "DescribeDataStaticUrlV2返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -5116,6 +8315,232 @@
     },
     "DescribeDataWebVitalsPageRequest": {
       "document": "DescribeDataWebVitalsPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义2",
+          "example": "3.2.1",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询维度：from=按页面来源(from)聚合输出；其他值/空值=输出整体汇总。",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型暂无",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义3",
+          "example": "normal",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义1",
+          "example": "offline",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。 ",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Web Vitals 口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。 ",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataWebVitalsPageResponse": {
+      "document": "DescribeDataWebVitalsPage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "\"{\"request_id\":\"2fe018e0-9e76-46cb-9ddb-cfbd6835ff19\",\"results\":[{\"statement_id\":0,\"series\":[{\"name\":\"webvitals_page_statistics\",\"columns\":[\"time\",\"LCP\",\"FID\",\"CLS\",\"FCP\"],\"values\":[[0,null,null,null,null]]}],\"total\":1,\"offset\":\"\"}]}\"",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataWebVitalsPageV2Request": {
+      "document": "DescribeDataWebVitalsPageV2请求参数结构体",
       "members": [
         {
           "disabled": false,
@@ -5314,12 +8739,21 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间段",
+          "example": "1m",
+          "member": "string",
+          "name": "Granularity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDataWebVitalsPageResponse": {
-      "document": "DescribeDataWebVitalsPage返回参数结构体",
+    "DescribeDataWebVitalsPageV2Response": {
+      "document": "DescribeDataWebVitalsPageV2返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -6200,6 +9634,79 @@
           "document": "数组",
           "example": "无",
           "member": "ScoreInfo",
+          "name": "ScoreSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScoresV2Request": {
+      "document": "DescribeScoresV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025080100",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025080700",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目 ID 列表",
+          "example": "[120000, 120468]",
+          "member": "int64",
+          "name": "IDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询粒度，hour 或 day",
+          "example": "day",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "production",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScoresV2Response": {
+      "document": "DescribeScoresV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目得分数组",
+          "example": "无",
+          "member": "ScoreInfoV2",
           "name": "ScoreSet",
           "output_required": true,
           "type": "list",
@@ -7794,6 +11301,242 @@
           "name": "StaticAvaliableScore",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScoreInfoV2": {
+      "document": "project Score分数实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "120000",
+          "member": "int64",
+          "name": "ProjectID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目总分",
+          "example": "100.0",
+          "member": "float",
+          "name": "Score",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API性能评分",
+          "example": "0.0",
+          "member": "float",
+          "name": "ApiPerformanceScore",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API可用性评分",
+          "example": "0.0",
+          "member": "float",
+          "name": "ApiAvailableScore",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API调用总数",
+          "example": "12345",
+          "member": "int64",
+          "name": "ApiNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API失败次数",
+          "example": "123",
+          "member": "int64",
+          "name": "ApiFail",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API平均持续时间",
+          "example": "100.0",
+          "member": "float",
+          "name": "ApiDuration",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面性能评分",
+          "example": "0.9",
+          "member": "float",
+          "name": "PagePerformanceScore",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面浏览量",
+          "example": "123",
+          "member": "int64",
+          "name": "PagePv",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独立访客数",
+          "example": "14",
+          "member": "int64",
+          "name": "PageUv",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面错误数",
+          "example": "114",
+          "member": "int64",
+          "name": "PageError",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首屏时间",
+          "example": "123.0",
+          "member": "float",
+          "name": "PageDuration",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均 LCP",
+          "example": "123.0",
+          "member": "float",
+          "name": "PageLCP",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均 FID",
+          "example": "123.0",
+          "member": "float",
+          "name": "PageFID",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均 CLS",
+          "example": "123.0",
+          "member": "float",
+          "name": "PageCLS",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均 FCP",
+          "example": "123.0",
+          "member": "float",
+          "name": "PageFCP",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均 INP",
+          "example": "123.0",
+          "member": "float",
+          "name": "PageINP",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "JavaScript错误评分",
+          "example": "0.1",
+          "member": "float",
+          "name": "JsErrorScore",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静态资源可用性评分",
+          "example": "0.5",
+          "member": "float",
+          "name": "StaticAvailableScore",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静态资源性能评分",
+          "example": "0.6",
+          "member": "float",
+          "name": "StaticPerformanceScore",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静态资源请求总数",
+          "example": "123",
+          "member": "int64",
+          "name": "StaticNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静态资源加载失败数",
+          "example": "12",
+          "member": "int64",
+          "name": "StaticFail",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静态资源加载时间",
+          "example": "123.0",
+          "member": "float",
+          "name": "StaticDuration",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

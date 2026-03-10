@@ -14385,7 +14385,7 @@
         },
         {
           "disabled": false,
-          "document": "导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）",
+          "document": "导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）; 3 = 不带批注文件",
           "example": "1",
           "member": "int64",
           "name": "FileType",

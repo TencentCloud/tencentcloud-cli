@@ -610,7 +610,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动",
+          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -806,7 +806,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
+          "example": "无",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
@@ -884,7 +884,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动",
+          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -1080,7 +1080,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
+          "example": "无",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
@@ -1315,8 +1315,8 @@
         },
         {
           "disabled": false,
-          "document": "条数",
-          "example": "1",
+          "document": "模式。\n取值范围：\n- ALL：全部\n- Specify：指定\n- TAG：标签\n\n默认值：ALL\n示例值：ALL",
+          "example": "ALL",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -1324,8 +1324,8 @@
         },
         {
           "disabled": false,
-          "document": "角色类型",
-          "example": "1",
+          "document": "角色类型。\n取值范围：\n\n- ROLES：按角色\n- Others：其它\n\n默认值：Others\n示例值：Others",
+          "example": "Others",
           "member": "string",
           "name": "RoleType",
           "required": false,
@@ -1351,8 +1351,8 @@
         },
         {
           "disabled": false,
-          "document": "类型",
-          "example": "1",
+          "document": "类型。\n取值范围：\n\n- ROW：行权限\n- COLUMN：列权限\n\n默认值：ROW\n示例值：ROW",
+          "example": "ROW",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -1360,8 +1360,8 @@
         },
         {
           "disabled": false,
-          "document": "状态",
-          "example": "1",
+          "document": "开启状态。\n取值范围：\n\n- Open：开启\n- Close：关闭\n\n默认值：Close\n示例值：Close",
+          "example": "Close",
           "member": "string",
           "name": "OpenStatus",
           "required": false,
@@ -1490,7 +1490,7 @@
         },
         {
           "disabled": false,
-          "document": "默认看板",
+          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
           "example": "1(1:项目看板  2：我的看板)",
           "member": "int64",
           "name": "DefaultPanelType",
@@ -2342,7 +2342,7 @@
         },
         {
           "disabled": false,
-          "document": "默认看板",
+          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
           "example": "page",
           "member": "int64",
           "name": "DefaultPanelType",
@@ -2758,8 +2758,8 @@
         },
         {
           "disabled": false,
-          "document": "条数",
-          "example": "1",
+          "document": "模式。\n取值范围：\n\n- ALL：全部\n- Specify：指定\n- TAG：标签\n\n默认值：ALL\n示例值：ALL",
+          "example": "ALL",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -2767,8 +2767,8 @@
         },
         {
           "disabled": false,
-          "document": "角色类型",
-          "example": "1",
+          "document": "角色类型。\n取值范围：\n\n- ROLES：按角色\n- Others：其它\n\n默认值：Others\n示例值：Others",
+          "example": "Others",
           "member": "string",
           "name": "RoleType",
           "required": false,
@@ -2785,8 +2785,8 @@
         },
         {
           "disabled": false,
-          "document": "类型",
-          "example": "1",
+          "document": "类型。\n取值范围：\n\n- ROW：行权限\n- COLUMN：列权限\n\n默认值：ROW\n示例值：ROW",
+          "example": "ROW",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -2964,8 +2964,8 @@
         },
         {
           "disabled": false,
-          "document": "类型",
-          "example": "1",
+          "document": "类型。\n取值范围：\n\n- ROW：行权限\n- COLUMN：列权限\n\n默认值：ROW\n示例值：ROW",
+          "example": "ROW",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -3049,7 +3049,7 @@
         },
         {
           "disabled": false,
-          "document": "默认看板",
+          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
           "example": "1",
           "member": "int64",
           "name": "DefaultPanelType",
@@ -4037,7 +4037,7 @@
         },
         {
           "disabled": false,
-          "document": "事务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事务状态\n取值范围：\n1: 处理中\n2: 处理成功\n3: 处理失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TranStatus",
@@ -4063,7 +4063,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动",
+          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
           "example": "1",
           "member": "string",
           "name": "DbType",
@@ -4268,7 +4268,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
+          "example": "无",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
@@ -4346,7 +4346,7 @@
         },
         {
           "disabled": false,
-          "document": "驱动",
+          "document": "驱动\n取值范围：\nMYSQL：MySQL数据库\nPRESTO：PRESTO数据库\nPOSTGRE：PostgreSQL数据库\nDLC：DLC数据库\nMSSQL：微软SQL Server数据库",
           "example": "1",
           "member": "string",
           "name": "DbType",
@@ -4542,7 +4542,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
+          "example": "无",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
@@ -4656,7 +4656,7 @@
         },
         {
           "disabled": false,
-          "document": "默认看板",
+          "document": "默认看板\n取值范围：\n1：项目看板 \n2：我的看板",
           "example": "1",
           "member": "int64",
           "name": "DefaultPanelType",
@@ -5093,8 +5093,8 @@
         },
         {
           "disabled": false,
-          "document": "可见/可用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "usable",
+          "document": "可用性。\n取值范围：\n\n- usable：可用\n- visible：可见\n- disabled：不可用\n- hidden：隐藏\n\n默认值：disabled\n示例值：disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disabled",
           "member": "string",
           "name": "IncludeType",
           "output_required": true,
@@ -5494,8 +5494,8 @@
         },
         {
           "disabled": false,
-          "document": "配置方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "usable",
+          "document": "配置方式。\n取值范围：\n\n- usable：可用\n- visible：可见\n- disabled：不可用\n- hidden：隐藏\n\n默认值：disabled\n示例值：disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disabled",
           "member": "string",
           "name": "IncludeType",
           "output_required": true,
@@ -6048,7 +6048,7 @@
         },
         {
           "disabled": false,
-          "document": "停启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户状态。\n取值范围：\n\n- 1：启用\n- 0：停用\n\n默认值：1\n示例值：1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
