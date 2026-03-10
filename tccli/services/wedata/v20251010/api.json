@@ -1,0 +1,864 @@
+{
+  "actions": {
+    "ListApplicationDashboardRefreshTime": {
+      "document": "dashboard数据集缓存时间列表接口",
+      "input": "ListApplicationDashboardRefreshTimeRequest",
+      "name": "获取仪表盘数据集刷新时间",
+      "output": "ListApplicationDashboardRefreshTimeResponse",
+      "status": "online"
+    },
+    "ListApplicationDatasets": {
+      "document": "数据集接口列表",
+      "input": "ListApplicationDatasetsRequest",
+      "name": "获取数据集全部列表",
+      "output": "ListApplicationDatasetsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-10-10",
+    "api_brief": "欢迎使用数据开发治理平台 WeData。\n数据开发治理平台 WeData（以下简称 WeData） 是腾讯云推出的一站式数据开发治理平台，融合了包含数据集成 DataInLong、数据开发 DataStudio 的全链路 DataOps 数据开发能力，以及数据地图、数据质量、数据安全等一系列数据开发与治理能力，帮助企业在数据构建和应用的过程中实现降本增效，数据价值最大化。\nWeData将自身基础的能力以API的方式对外开放，方便企业进行定制开发或企业内部系统进行对接打通，详情请参考API概览。\n\n",
+    "serviceNameCN": "数据开发治理平台 WeData",
+    "serviceShortName": "wedata"
+  },
+  "objects": {
+    "ApplicationDatasetItem": {
+      "document": "数据集item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据集唯一标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据集名称",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称（catalog）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名（物理表名或视图名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义SQL查询语句（当modelType为CUSTOM时使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select 1",
+          "member": "string",
+          "name": "CustomSql",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "CreatedBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "ModifiedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "ModifiedBy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "CreatedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拥有者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Owner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集来源 SQL/SEMANTICS/FILE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SQL",
+          "member": "string",
+          "name": "DataFrom",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DatasetVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引用数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RefCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationFieldInfo",
+          "name": "FieldInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationParameterInfo",
+          "name": "ParameterList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据cos临时地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/cos/path",
+          "member": "string",
+          "name": "TempCosUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationDatasetRefreshInfo": {
+      "document": "数据集刷新信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "string",
+          "name": "RefreshTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ApplicationFieldInfo": {
+      "document": "获取数据集field info",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段key 唯一标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段名称（显示名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型（PHYSICAL:物理字段, CALCULATED:计算字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "FieldType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物理字段名（对应数据源表的实际字段名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "PhysicalFieldName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据类型（INT, VARCHAR, DECIMAL, DATE等）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "DataType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据类型精度（如DECIMAL(10,2)中的10）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataTypePrecision",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据类型小数位数（如DECIMAL(10,2)中的2）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataTypeScale",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算公式（用于计算字段，如：price * quantity）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "CalcFormula",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始字段列表（JSON数组格式，计算字段依赖的原始字段，如：[\"price\", \"quantity\"]）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "OriginalFields",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段分类（DIMENSION:维度, MEASURE:度量, ATTRIBUTE:属性）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "FieldCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段格式化规则（JSON格式，如日期格式、数字格式等）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "FormatRule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为聚合表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CalcAggregation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationListDashboardRefreshTimeRsp": {
+      "document": "仪表盘数据集缓存时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ak",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DashboardVersion",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "刷新时间信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationDatasetRefreshInfo",
+          "name": "DatasetRefreshInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页面刷新时间列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationDatasetRefreshInfo",
+          "name": "PageRefreshInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ApplicationListDatasetsRsp": {
+      "document": "获取数据集列表rsp",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据应用查询分页出参",
+          "example": "无",
+          "member": "ApplicationPageResponseParam",
+          "name": "PageResponse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ChatBI空间实体",
+          "example": "无",
+          "member": "ApplicationDatasetItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationPageRequestParam": {
+      "document": "数据应用查询分页入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码数",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\t",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否分页",
+          "example": "false",
+          "member": "bool",
+          "name": "AllPage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "ApplicationPageResponseParam": {
+      "document": "数据应用查询分页出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationParameterInfo": {
+      "document": "获取数据集parameter info",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数 唯一标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据类型 string/int/decimal/date/datetime/dateRange/datetimeRange\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "int",
+          "member": "string",
+          "name": "DataType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据类型 补充\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "ComplexType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认值 数组json\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数显示名 50字符限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数使用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段格式化规则（JSON格式，如日期格式、数字格式等）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "FormatRule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否多选 0-单选 1-多选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MultiSelect",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义引用 前端唯一标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "RefId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ApplicationQueryFilterParam": {
+      "document": "数据应用查询过滤入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段名",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤字段值",
+          "example": "[\"qwe\" ]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型:\nEQ(等于), NE(不等于), GT(大于), LT(小于), GE(大于等于), LE(小于等于), LIKE(模糊匹配) ",
+          "example": "EQ",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ApplicationQueryOrderParam": {
+      "document": "数据应用查询排序入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序：ASC 升序，DESC 降序",
+          "example": "ASC",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ApplicationQueryRequestParam": {
+      "document": "数据应用查询入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "ApplicationQueryFilterParam",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "无",
+          "member": "ApplicationQueryOrderParam",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ListApplicationDashboardRefreshTimeRequest": {
+      "document": "ListApplicationDashboardRefreshTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "1",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘访问key",
+          "example": "ak",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页面状态",
+          "example": "DRAFT",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据集key",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "DatasetKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页面key",
+          "example": "[\"key\"]",
+          "member": "string",
+          "name": "PageKeys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListApplicationDashboardRefreshTimeResponse": {
+      "document": "ListApplicationDashboardRefreshTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationListDashboardRefreshTimeRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListApplicationDatasetsRequest": {
+      "document": "ListApplicationDatasets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "11",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘访问key",
+          "example": "ak",
+          "member": "string",
+          "name": "DashboardAccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询参数",
+          "example": "无",
+          "member": "ApplicationPageRequestParam",
+          "name": "PageRequest",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "条件过滤和排序参数",
+          "example": "无",
+          "member": "ApplicationQueryRequestParam",
+          "name": "QueryRequest",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键词",
+          "example": "key",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListApplicationDatasetsResponse": {
+      "document": "ListApplicationDatasets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "无",
+          "member": "ApplicationListDatasetsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "ListApplicationDashboardRefreshTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApplicationDashboardRefreshTime\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17663856806379896\",\n    \"AccessKey\": \"801469279624839168\",\n    \"Status\": \"DRAFT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessKey\": \"801469279624839168\",\n            \"DashboardVersion\": 10,\n            \"DatasetRefreshInfos\": [\n                {\n                    \"Key\": \"fb9e4d1f176889318086406b99645\",\n                    \"RefreshTime\": \"1769001606187\"\n                }\n            ],\n            \"PageRefreshInfos\": [\n                {\n                    \"Key\": \"e75774b91768893167246edb97d0f\",\n                    \"RefreshTime\": \"1769001606187\"\n                }\n            ]\n        },\n        \"RequestId\": \"1fb95490-6539-48a5-8d46-8d5533eb8477\"\n    }\n}",
+        "title": "获取刷新时间列表"
+      }
+    ],
+    "ListApplicationDatasets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApplicationDatasets\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17663856806379896\",\n    \"DashboardAccessKey\": \"801469279624839168\",\n    \"PageRequest\": {\n        \"PageNumber\": 1,\n        \"PageSize\": 20\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Catalog\": \"c4\",\n                    \"CreatedBy\": \"700002164618\",\n                    \"CreatedOn\": \"1768893180863\",\n                    \"CustomSql\": \"SELECT * from c4.default.lingshou\",\n                    \"DataFrom\": \"SQL\",\n                    \"DatasetVersion\": 5,\n                    \"Description\": \"\",\n                    \"DisplayName\": \"无标题数据集test\",\n                    \"FieldInfoList\": [\n                        {\n                            \"CalcAggregation\": \"\",\n                            \"CalcFormula\": \"\",\n                            \"DataType\": \"DATE\",\n                            \"DataTypePrecision\": 0,\n                            \"DataTypeScale\": 0,\n                            \"Description\": \"\",\n                            \"DisplayName\": \"time\",\n                            \"FieldCategory\": \"\",\n                            \"FieldType\": \"PHYSICAL\",\n                            \"FormatRule\": \"yyyy-MM-dd\",\n                            \"Key\": \"92a3273c17690016062549d7c3752\",\n                            \"OriginalFields\": \"\",\n                            \"PhysicalFieldName\": \"time\"\n                        }\n                    ],\n                    \"Key\": \"fb9e4d1f176889318086406b99645\",\n                    \"ModifiedBy\": \"700002164618\",\n                    \"ModifiedOn\": \"1769003451243\",\n                    \"Owner\": \"700002164618\",\n                    \"ParameterList\": [],\n                    \"RefCount\": 1,\n                    \"Schema\": \"default\",\n                    \"TableName\": \"\",\n                    \"TempCosUrl\": \"/801469279624839168/fb9e4d1f176889318086406b99645/DRAFT/ff8024a1716b53f2052bd1fc0c73a162_700002164618_1769001555218.csv\"\n                }\n            ],\n            \"PageResponse\": {\n                \"PageNumber\": 1,\n                \"PageSize\": 20,\n                \"TotalCount\": 5,\n                \"TotalPageNumber\": 1\n            }\n        },\n        \"RequestId\": \"e170f1ca-73cd-4231-acd6-1a0397917421\"\n    }\n}",
+        "title": "数据集列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}
