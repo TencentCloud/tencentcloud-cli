@@ -99,7 +99,6 @@ class Utils(object):
             os.remove(temp_file)
             raise Exception("write configure file failed")
 
-
     @staticmethod
     def get_call_mode():
         cli_line = os.environ.get('COMP_LINE') or os.environ.get('COMMAND_LINE') or ''
