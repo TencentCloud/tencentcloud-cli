@@ -360,7 +360,7 @@
   },
   "metadata": {
     "apiVersion": "2021-01-19",
-    "api_brief": "介绍如何使用API对多网聚合加速进行操作，包括启动加速、停止加速、上报接口状态等。",
+    "api_brief": "介绍如何使用API对多网聚合加速（腾讯云聚通）进行操作，包括启动加速、停止加速、上报接口状态等。",
     "serviceNameCN": "多网聚合加速",
     "serviceShortName": "mna"
   },

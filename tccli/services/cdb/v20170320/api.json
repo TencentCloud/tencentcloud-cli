@@ -22266,7 +22266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。",
+          "document": "<p>只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。</p>",
           "example": "alone",
           "member": "string",
           "name": "RoGroupMode",
@@ -22277,7 +22277,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组 ID。\n说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。",
+          "document": "<p>只读组 ID。<br>说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。</p>",
           "example": "cdbrg-92zkeaq2",
           "member": "string",
           "name": "RoGroupId",
@@ -22288,7 +22288,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组名称。",
+          "document": "<p>只读组名称。</p>",
           "example": "your_group_name",
           "member": "string",
           "name": "RoGroupName",
@@ -22299,7 +22299,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。",
+          "document": "<p>是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。</p>",
           "example": "0",
           "member": "int64",
           "name": "RoOfflineDelay",
@@ -22310,7 +22310,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟阈值。单位：秒。值范围：1-10000，整数。",
+          "document": "<p>延迟阈值。单位：秒。值范围：1-10000，整数。</p>",
           "example": "1",
           "member": "int64",
           "name": "RoMaxDelayTime",
@@ -22321,7 +22321,7 @@
         },
         {
           "disabled": false,
-          "document": "最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。",
+          "document": "<p>最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。</p>",
           "example": "1",
           "member": "int64",
           "name": "MinRoInGroup",
@@ -22332,7 +22332,7 @@
         },
         {
           "disabled": false,
-          "document": "读写权重分配模式，可选值：system-系统自动分配；custom-自定义。",
+          "document": "<p>读写权重分配模式，可选值：system-系统自动分配；custom-自定义。</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -22343,7 +22343,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。",
+          "document": "<p>该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。</p>",
           "example": "0",
           "member": "int64",
           "name": "Weight",
@@ -22354,7 +22354,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组中的只读实例详情。",
+          "document": "<p>只读组中的只读实例详情。</p>",
           "example": "无",
           "member": "RoInstanceInfo",
           "name": "RoInstances",
@@ -22365,7 +22365,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组的内网 IP。",
+          "document": "<p>只读组的内网 IP。</p>",
           "example": "10.89.90.66",
           "member": "string",
           "name": "Vip",
@@ -22376,7 +22376,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组的内网端口号。",
+          "document": "<p>只读组的内网端口号。</p>",
           "example": "3306",
           "member": "int64",
           "name": "Vport",
@@ -22387,7 +22387,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID。",
+          "document": "<p>私有网络 ID。</p>",
           "example": "vpc-ja6ts123",
           "member": "string",
           "name": "UniqVpcId",
@@ -22398,7 +22398,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID。",
+          "document": "<p>子网 ID。</p>",
           "example": "subnet-njh2bc99",
           "member": "string",
           "name": "UniqSubnetId",
@@ -22409,7 +22409,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组所在的地域。",
+          "document": "<p>只读组所在的地域。</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "RoGroupRegion",
@@ -22420,7 +22420,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组所在的可用区。",
+          "document": "<p>只读组所在的可用区。</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "RoGroupZone",
@@ -22431,7 +22431,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟复制时间。单位：秒。值范围：1-259200，整数。",
+          "document": "<p>延迟复制时间。单位：秒。值范围：1-259200，整数。</p>",
           "example": "1000",
           "member": "int64",
           "name": "DelayReplicationTime",
@@ -22442,7 +22442,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启RO故障剔除。1-开启，0-关闭。默认为0",
+          "document": "<p>是否开启RO故障剔除。1-开启，0-关闭。默认为0</p>",
           "example": "1",
           "member": "uint64",
           "name": "DisasterKickOut",
@@ -22453,13 +22453,35 @@
         },
         {
           "disabled": false,
-          "document": "故障最小保留Ro数",
+          "document": "<p>故障最小保留Ro数</p>",
           "example": "1",
           "member": "uint64",
           "name": "DisasterReserveMinRo",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cl5地址</p>",
+          "example": "123123:21314",
+          "member": "string",
+          "name": "PolarisAddr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>只读组类型。</p><p>枚举值：</p><ul><li>normal： 普通RO组</li><li>direct： 纯网络转发模式</li><li>default： 默认RO组</li></ul><p>默认值：normal</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "RoGroupType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
