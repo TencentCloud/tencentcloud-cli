@@ -1,13 +1,5 @@
 {
   "actions": {
-    "CreateProject": [
-      {
-        "document": "创建 RUM 应用",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"Name\": \"'测试项目'\",\n    \"InstanceID\": \"\\\"taw-123\\\"\",\n    \"Repo\": \"'http://github.com/xxx'\",\n    \"URL\": \"'http://www.qq.com'\",\n    \"Rate\": \"\\\"10\\\"\",\n    \"EnableURLGroup\": 1,\n    \"Type\": \"web\",\n    \"Desc\": \"'项目描述'\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ID\": 1,\n        \"Key\": \"RlOmCVbPrKd4\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "创建 RUM 应用"
-      }
-    ],
     "CreateReleaseFile": [
       {
         "document": "",
@@ -22,14 +14,6 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStarProject\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"ID\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "添加星标应用"
-      }
-    ],
-    "CreateTawInstance": [
-      {
-        "document": "创建实例",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTawInstance\n<公共请求参数>\n\n{\n    \"AreaId\": 1,\n    \"InstanceName\": \"****VPH0Jn\",\n    \"ChargeType\": 1,\n    \"DataRetentionDays\": 30,\n    \"InstanceDesc\": \"业务系统\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"****VPH0Jn\",\n        \"DealName\": \"****3459432\",\n        \"RequestId\": \"57f4d8a2-13b6-4ac0-9f0b-0acc7bbc1d61\"\n    }\n}",
-        "title": "查询实例"
       }
     ],
     "CreateWhitelist": [

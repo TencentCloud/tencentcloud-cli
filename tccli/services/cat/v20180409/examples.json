@@ -138,6 +138,14 @@
         "title": "对新建的拨测任务进行价格估算"
       }
     ],
+    "ProcessAIEventsStream": [
+      {
+        "document": "对话场景，使用 Console Agent",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessAIEventsStream\n<公共请求参数>\n\n{}",
+        "output": "{\n  \"Type\": \"agent.done\",\n  \"SessionID\": \"4fea71061f184517b9463f6754c88050\",\n  \"FullText\": \"",
+        "title": "对话场景"
+      }
+    ],
     "ResumeProbeTask": [
       {
         "document": "",

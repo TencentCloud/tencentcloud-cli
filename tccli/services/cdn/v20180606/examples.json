@@ -128,6 +128,14 @@
         "title": "查询域名详细配置"
       }
     ],
+    "DescribeDomainsForCos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainsForCos\n<公共请求参数>\n\n{\n    \"Origins\": [\n        \"testcdn-1252662529.cos.ap-nanjing.myqcloud.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"AppId\": 1300295767,\n                \"Area\": \"mainland\",\n                \"Cname\": \"**************************.com.cdn.dnsv1.com\",\n                \"CreateTime\": \"2025-12-30 16:49:23\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"**************************.com\",\n                \"MigrateEo\": 0,\n                \"Origin\": {\n                    \"OriginType\": \"cos\",\n                    \"Origins\": [\n                        \"testcdn-1252662529.cos.ap-nanjing.myqcloud.com\"\n                    ],\n                    \"ServerName\": \"testcdn-1252662529.cos.ap-nanjing.myqcloud.com\"\n                },\n                \"ParentHost\": \"\",\n                \"Product\": \"cdn\",\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"cdn-k3c7s0z5\",\n                \"ServiceType\": \"web\",\n                \"Status\": \"online\",\n                \"UpdateTime\": \"2026-01-26 19:23:34\"\n            }\n        ],\n        \"TotalNumber\": 2,\n        \"RequestId\": \"2b42d487-cd4d-419c-bae8-40d474ad6176\"\n    }\n}",
+        "title": "查询域名基本信息"
+      }
+    ],
     "DescribeEdgePackTaskStatus": [
       {
         "document": "",
