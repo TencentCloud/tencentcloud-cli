@@ -161,6 +161,13 @@
       "output": "CreateTriggerWorkflowResponse",
       "status": "online"
     },
+    "CreateTriggerWorkflowRun": {
+      "document": "工作流调度模型下运行工作流",
+      "input": "CreateTriggerWorkflowRunRequest",
+      "name": "运行工作流(工作流调度)",
+      "output": "CreateTriggerWorkflowRunResponse",
+      "status": "online"
+    },
     "CreateWorkflow": {
       "document": "创建工作流",
       "input": "CreateWorkflowRequest",
@@ -5512,6 +5519,104 @@
           "member": "string",
           "name": "WorkflowId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateTriggerWorkflowRunRequest": {
+      "document": "CreateTriggerWorkflowRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "3126203***945134080",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "9f551833-215***772-8ec1-78019779617c",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义运行参数，如果为空或者null则使用工作流最新配置",
+          "example": "无",
+          "member": "SchedulingParameter",
+          "name": "AdvancedParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本次需要运行指定的任务ID集合，如果为null或为空则运行全部",
+          "example": "[\"202601***53102448\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定的调度资源组id，为空默认原资源组",
+          "example": "2026010***5230846836",
+          "member": "string",
+          "name": "SchedulingResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定的集成资源组id，为空默认原资源组",
+          "example": "2025062***2930469737",
+          "member": "string",
+          "name": "IntegrationResourceGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTriggerWorkflowRunResponse": {
+      "document": "CreateTriggerWorkflowRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateTriggerWorkflowRunResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTriggerWorkflowRunResult": {
+      "document": "工作流调度模式下，工作流触发运行结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流执行id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c4f74d96-6095-4834-8e52-485ec193e877",
+          "member": "string",
+          "name": "WorkflowExecutionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

@@ -7,7 +7,7 @@ Input:
 ```
 tccli sms ModifySmsSign --cli-unfold-argument  \
     --Remark 测试使用 \
-    --SignType 0 \
+    --SignType 1 \
     --CommissionImage base64 \
     --SignName 腾讯云 \
     --DocumentType 1 \

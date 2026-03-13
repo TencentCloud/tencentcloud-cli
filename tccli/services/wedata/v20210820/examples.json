@@ -676,6 +676,14 @@
         "title": "查询表的所有列元数据"
       }
     ],
+    "DescribeDataAssets": [
+      {
+        "document": "查询资产信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataAssets\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSetRecords\": [\n            {\n                \"AssetId\": \"uvt******k4w\",\n                \"AssetLevel\": 20,\n                \"AssetStatus\": 0,\n                \"BizCatalogIds\": [],\n                \"BizCatalogNames\": [],\n                \"ClusterId\": \"emr-m7o0zu6k\",\n                \"CreateTime\": \"2024-04-19T15:47:02+08:00\",\n                \"DatabaseId\": \"y******3Yw\",\n                \"DatabaseName\": \"box\",\n                \"DatasourceId\": 9263,\n                \"DatasourceName\": \"hive_******88\",\n                \"Description\": null,\n                \"Environment\": \"prod\",\n                \"HeatValue\": 0,\n                \"InCharge\": null,\n                \"IsView\": false,\n                \"LabelNames\": [],\n                \"LifeTime\": null,\n                \"MetaCrawlType\": \"TABLE\",\n                \"MsType\": \"HIVE\",\n                \"OperateOption\": {\n                    \"FavoriteCount\": 1,\n                    \"HasFavorite\": false,\n                    \"HasPermission\": false,\n                    \"OtherOperate\": \"ProjectIdNull\"\n                },\n                \"ProjectDisplayName\": null,\n                \"ProjectId\": null,\n                \"ProjectName\": null,\n                \"Schema\": null,\n                \"StorageSize\": 0,\n                \"StorageSizeWithUnit\": \"0B\",\n                \"TableId\": \"uvt******k4w\",\n                \"TableName\": \"biao\",\n                \"TableNameCn\": null,\n                \"TableNameEn\": null,\n                \"TablePropertyScore\": {\n                    \"Average\": 0,\n                    \"DayTime\": \"2024-08-06T11:16:52+08:00\",\n                    \"Integrity\": 0,\n                    \"Normative\": 0,\n                    \"Safety\": 0,\n                    \"Stability\": 0,\n                    \"TableId\": \"uvt******k4w\",\n                    \"Timeliness\": 0\n                },\n                \"TableRecordFieldSet\": [],\n                \"TechnologyType\": \"HIVE\"\n            }\n        ],\n        \"PageNumber\": 1,\n        \"PageSize\": 1,\n        \"RequestId\": \"f4ea1692-e5f5-4666-9cc0-3db66bb21518\",\n        \"TotalCount\": 231017\n    }\n}",
+        "title": "查询资产信息"
+      }
+    ],
     "DescribeDataCheckStat": [
       {
         "document": "",

@@ -353,7 +353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "短信回执量统计。",
+          "document": "<p>短信回执量统计。</p><p>单位：数</p>",
           "example": "1745",
           "member": "uint64",
           "name": "CallbackCount",
@@ -363,7 +363,7 @@
         },
         {
           "disabled": false,
-          "document": "短信提交成功量统计。",
+          "document": "<p>短信提交成功量统计。</p><p>单位：数</p>",
           "example": "1880",
           "member": "uint64",
           "name": "RequestSuccessCount",
@@ -373,7 +373,7 @@
         },
         {
           "disabled": false,
-          "document": "短信回执失败量统计。",
+          "document": "<p>短信回执失败量统计。</p><p>单位：数</p>",
           "example": "401",
           "member": "uint64",
           "name": "CallbackFailCount",
@@ -383,7 +383,7 @@
         },
         {
           "disabled": false,
-          "document": "短信回执成功量统计。",
+          "document": "<p>短信回执成功量统计。</p><p>单位：数</p>",
           "example": "1344",
           "member": "uint64",
           "name": "CallbackSuccessCount",
@@ -393,7 +393,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商内部错误统计。",
+          "document": "<p>运营商内部错误统计。</p><p>单位：数</p>",
           "example": "0",
           "member": "uint64",
           "name": "InternalErrorCount",
@@ -403,7 +403,7 @@
         },
         {
           "disabled": false,
-          "document": "号码无效或空号统计。",
+          "document": "<p>号码无效或空号统计。</p><p>单位：数</p>",
           "example": "0",
           "member": "uint64",
           "name": "InvalidNumberCount",
@@ -413,7 +413,7 @@
         },
         {
           "disabled": false,
-          "document": "停机、关机等错误统计。",
+          "document": "<p>停机、关机等错误统计。</p><p>单位：数</p>",
           "example": "401",
           "member": "uint64",
           "name": "ShutdownErrorCount",
@@ -423,7 +423,7 @@
         },
         {
           "disabled": false,
-          "document": "号码拉入黑名单统计。",
+          "document": "<p>号码拉入免打扰名单统计。</p><p>单位：数</p>",
           "example": "0",
           "member": "uint64",
           "name": "BlackListCount",
@@ -433,7 +433,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商频率限制统计。",
+          "document": "<p>运营商频率限制统计。</p><p>单位：数</p>",
           "example": "0",
           "member": "uint64",
           "name": "FrequencyLimitCount",
@@ -522,7 +522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除状态信息。",
+          "document": "<p>删除状态信息。</p>",
           "example": "return successfully!",
           "member": "string",
           "name": "DeleteStatus",
@@ -533,7 +533,7 @@
         },
         {
           "disabled": false,
-          "document": "删除时间，UNIX 时间戳（单位：秒）。",
+          "document": "<p>删除时间，UNIX 时间戳（单位：秒）。</p>",
           "example": "1578988506",
           "member": "uint64",
           "name": "DeleteTime",
@@ -2061,7 +2061,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐包创建时间，UNIX 时间戳（单位：秒）。",
+          "document": "<p>套餐包创建时间，UNIX 时间戳。</p><p>单位：秒</p>",
           "example": "1733040000",
           "member": "uint64",
           "name": "PackageCreateTime",
@@ -2071,7 +2071,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐包生效时间，UNIX 时间戳（单位：秒）。",
+          "document": "<p>套餐包生效时间，UNIX 时间戳。</p><p>单位：秒</p>",
           "example": "1733040000",
           "member": "uint64",
           "name": "PackageEffectiveTime",
@@ -2081,7 +2081,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐包过期时间，UNIX 时间戳（单位：秒）。",
+          "document": "<p>套餐包过期时间，UNIX 时间戳。</p><p>单位：秒</p>",
           "example": "1796112000",
           "member": "uint64",
           "name": "PackageExpiredTime",
@@ -2091,7 +2091,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐包条数。",
+          "document": "<p>套餐包条数。</p><p>单位：条</p>",
           "example": "1000",
           "member": "uint64",
           "name": "PackageAmount",
@@ -2101,7 +2101,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐包类别，0表示赠送套餐包，1表示购买套餐包。",
+          "document": "<p>套餐包类别。</p><p>枚举值：</p><ul><li>0： 赠送套餐</li><li>1： 购买套餐包</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "PackageType",
@@ -2111,7 +2111,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐包 ID。",
+          "document": "<p>套餐包 ID。</p>",
           "example": "1000791745",
           "member": "uint64",
           "name": "PackageId",
@@ -2121,7 +2121,7 @@
         },
         {
           "disabled": false,
-          "document": "当前使用套餐包条数。",
+          "document": "<p>当前使用套餐包条数。</p><p>单位：条</p>",
           "example": "100",
           "member": "uint64",
           "name": "CurrentUsage",

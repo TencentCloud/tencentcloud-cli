@@ -3,7 +3,7 @@
     "AddSmsSign": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"业务自用申请\",\n    \"SignType\": \"0\",\n    \"CommissionImage\": \"base64\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": \"1\",\n    \"International\": \"0\",\n    \"UsedMethod\": \"1\",\n    \"ProofImage\": \"base64\",\n    \"QualificationId\": 1000001\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"业务自用申请\",\n    \"SignType\": 0,\n    \"CommissionImage\": \"base64\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"UsedMethod\": 1,\n    \"ProofImage\": \"base64\",\n    \"QualificationId\": 1000001\n}",
         "output": "{\n    \"Response\": {\n        \"AddSignStatus\": {\n            \"SignId\": 1110,\n            \"SignApplyId\": 1109\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -27,7 +27,7 @@
     "DeleteSmsSign": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsSign\n<公共请求参数>\n\n{\n    \"SignId\": \"1110\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsSign\n<公共请求参数>\n\n{\n    \"SignId\": 1110\n}",
         "output": "{\n    \"Response\": {\n        \"DeleteSignStatus\": {\n            \"DeleteTime\": 1578988506,\n            \"DeleteStatus\": \"return successfully!\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -35,7 +35,7 @@
     "DeleteSmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"1110\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 1110\n}",
         "output": "{\n    \"Response\": {\n        \"DeleteTemplateStatus\": {\n            \"DeleteTime\": 1578988506,\n            \"DeleteStatus\": \"return successfully!\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -59,7 +59,7 @@
     "ModifySmsSign": [
       {
         "document": "修改短信签名",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"测试使用\",\n    \"SignType\": \"0\",\n    \"CommissionImage\": \"base64\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": \"1\",\n    \"International\": \"0\",\n    \"SignId\": \"1110\",\n    \"ProofImage\": \"base64\",\n    \"UsedMethod\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"测试使用\",\n    \"SignType\": 1,\n    \"CommissionImage\": \"base64\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"SignId\": 1110,\n    \"ProofImage\": \"base64\",\n    \"UsedMethod\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ModifySignStatus\": {\n            \"SignId\": 1110,\n            \"SignApplyId\": \"1109\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
