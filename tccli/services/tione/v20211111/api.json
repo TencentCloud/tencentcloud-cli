@@ -2786,6 +2786,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公有云数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicDataSourceFS",
+          "name": "PublicDataSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

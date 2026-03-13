@@ -5418,6 +5418,15 @@
           "name": "OpenDynamicSignFlow",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启发起合同审批，默认：false（不开启），开启后，发起合同（StartFlow），会提交电子签内置的审批流",
+          "example": "true",
+          "member": "bool",
+          "name": "Workflow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5453,6 +5462,16 @@
           "name": "Approvers",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发起审批流id，仅在CreateFlowByFiles时指定了WorkFlow=true时返回",
+          "example": "2028742319208935424",
+          "member": "string",
+          "name": "WorkflowInstanceId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5725,6 +5744,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "发起审批流id，仅在发起时指定FlowGroupOptions.FlowGroupNeedWorkflow=true时返回",
+          "example": "2028742319208935424",
+          "member": "string",
+          "name": "WorkflowInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5824,6 +5853,16 @@
           "name": "Approvers",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FlowGroupNeedWorkflow",
+          "example": "2028742319208935424",
+          "member": "string",
+          "name": "WorkflowInstanceId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6348,6 +6387,15 @@
           "name": "FlowDisplayType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启发起合同审批，默认：false（不开启），开启后，发起合同（StartFlow），会提交电子签内置的审批流",
+          "example": "true",
+          "member": "bool",
+          "name": "Workflow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8447,6 +8495,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批",
+          "example": "无",
+          "member": "FlowGroupOptions",
+          "name": "FlowGroupOptions",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8674,6 +8731,15 @@
           "name": "SignComponentConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启嵌入式合同发起时，提交发起审批流，默认：false（不开启），开启后，嵌入式合同发起后，会提交电子签内置审批流",
+          "example": "false",
+          "member": "bool",
+          "name": "Workflow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14503,7 +14569,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "印章来源类型\n印章来源类型包括下面几种：\n<ul>\n<li>CREATE-客户上传图片创建</li>\n<li>GENERATE-系统模版印章生成</li>\n<li>SIST_SEAL-深圳电子印章</li>\n</ul>",
+          "document": "印章来源类型\n印章来源类型包括下面几种：\n<ul>\n<li>CREATE-客户上传图片创建</li>\n<li>GENERATE-系统模板印章生成</li>\n<li>SIST_SEAL-深圳电子印章</li>\n</ul>",
           "example": "GENERATE",
           "member": "string",
           "name": "GenerateType",
@@ -16278,7 +16344,7 @@
         {
           "disabled": false,
           "document": "签署人校验方式,支持以下类型\n<ul><li>VerifyCheck : 人脸识别 (默认值)</li>\n<li>MobileCheck : 手机号验证</li></ul>\n参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
-          "example": "VerifyCheck ",
+          "example": "VerifyCheck",
           "member": "string",
           "name": "ApproverVerifyType",
           "required": false,
@@ -16287,7 +16353,7 @@
         {
           "disabled": false,
           "document": "发起合同（流程）组本方企业经办人通知方式\n签署通知类型，支持以下类型\n<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
-          "example": "none ",
+          "example": "none",
           "member": "string",
           "name": "SelfOrganizationApproverNotifyType",
           "required": false,
@@ -16301,6 +16367,15 @@
           "name": "OtherApproverNotifyType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流",
+          "example": "true",
+          "member": "bool",
+          "name": "FlowGroupNeedWorkflow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -20689,7 +20764,7 @@
         {
           "disabled": true,
           "document": "客户端Token，保持接口幂等性,最大长度64个字符",
-          "example": "无",
+          "example": "yDwJ0UUckpk2071xUxgm9jJEvuhEhqD7",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -20726,6 +20801,16 @@
           "member": "string",
           "name": "Status",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发起审批流id，仅在CreateFlow时指定了WorkFlow=true时返回",
+          "example": "2028742319208935424",
+          "member": "string",
+          "name": "WorkflowInstanceId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

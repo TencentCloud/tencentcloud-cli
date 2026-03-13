@@ -774,6 +774,14 @@
         "title": "机动车登记证书识别示例代码"
       }
     ],
+    "VerifyBizLicenseEnterprise4": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyBizLicenseEnterprise4\n<公共请求参数>\n\n{\n    \"CreditCode\": \"92130aaaaaaaa1BXA\",\n    \"EntName\": \"隆aaaaaaaa商户）\",\n    \"LrName\": \"aba\",\n    \"IdNum\": \"13aaaaaaaa6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsCreditCodeConsistent\": true,\n        \"IsEntNameConsistent\": true,\n        \"IsIdNumConsistent\": false,\n        \"IsLrNameConsistent\": true,\n        \"OperatingPeriod\": \"/\",\n        \"OperatingStatus\": \"1\",\n        \"RequestId\": \"6e6ef488-b1cf-4722-8f36-ae9386c22cb2\",\n        \"StatusCode\": 0,\n        \"VerifyResult\": 0\n    }\n}",
+        "title": "企业四要素核验"
+      }
+    ],
     "VerifyOfdVatInvoiceOCR": [
       {
         "document": "ofd发票识别",

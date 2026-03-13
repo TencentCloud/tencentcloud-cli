@@ -502,3 +502,92 @@ Output:
 }
 ```
 
+**Example 5: 创建一个有2份子合同的合同组签署流程（B2B、B2C）,并通过FlowGroupOptions控制开启合同组发起审批流**
+
+
+
+Input: 
+
+```
+tccli ess CreateFlowGroupByFiles --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowGroupName 示例合同组-有3份子合同 \
+    --FlowGroupInfos.0.FileIds yDwgAUUckp1tbkbgUukJIiCyj7014en1 \
+    --FlowGroupInfos.0.FlowName 子合同1-B2B(发起方企业自动签署) \
+    --FlowGroupInfos.0.FlowDescription 子合同1 \
+    --FlowGroupInfos.0.FlowType 示例合同 \
+    --FlowGroupInfos.0.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.0.Approvers.0.OrganizationName 典子谦示例企业 \
+    --FlowGroupInfos.0.Approvers.0.ApproverName 典子谦 \
+    --FlowGroupInfos.0.Approvers.0.ApproverMobile 18251952320 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosY 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentValue yDxMjUyKQDN7EkUuO4zjEBpGXvHEACSA \
+    --FlowGroupInfos.0.Approvers.1.ApproverName 张三 \
+    --FlowGroupInfos.0.Approvers.1.ApproverType 0 \
+    --FlowGroupInfos.0.Approvers.1.OrganizationName 张三示例企业 \
+    --FlowGroupInfos.0.Approvers.1.ApproverMobile 18888888888 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentPosY 200 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Unordered True \
+    --FlowGroupInfos.1.FileIds yDwgAUUckp1tbkbgUukJIiCyj7014en2 \
+    --FlowGroupInfos.1.FlowName 子合同2-普通B2C \
+    --FlowGroupInfos.1.Deadline 0 \
+    --FlowGroupInfos.1.FlowDescription 子合同2 \
+    --FlowGroupInfos.1.FlowType 示例合同 \
+    --FlowGroupInfos.1.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.1.Approvers.0.OrganizationName 王五示例企业 \
+    --FlowGroupInfos.1.Approvers.0.ApproverName 王五 \
+    --FlowGroupInfos.1.Approvers.0.ApproverMobile 13700000000 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentPosY 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentValue  \
+    --FlowGroupInfos.1.Approvers.1.ApproverType 1 \
+    --FlowGroupInfos.1.Approvers.1.ApproverName 典子谦 \
+    --FlowGroupInfos.1.Approvers.1.ApproverMobile 13200000000 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentPosY 200 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.1.Unordered True \
+    --FlowGroupOptions.FlowGroupNeedWorkflow True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowGroupId": "yDwJ7UUckpk84plbUyPWcjISvuv6WMJx",
+        "FlowIds": [
+            "yDwJ7UUckpk84ploUyPWcjIS9KmiX55F",
+            "yDwJ7UUckpk84plvUyPWcjIxKfGMJ9fF",
+            "yDwJ7UUckpk84plaUyPWcjIvgnAvfS3H"
+        ],
+        "WorkflowInstanceId": "2028742319208935424",
+        "RequestId": "s1694572486923868447"
+    }
+}
+```
+

@@ -106,6 +106,14 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAigcAdvancedCustomElement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcAdvancedCustomElement\n<公共请求参数>\n\n{\n    \"SubAppId\": 221073,\n    \"ElementName\": \"testname\",\n    \"ElementDescription\": \"testdescription\",\n    \"ReferenceType\": \"image_refer\",\n    \"ElementVoiceId\": \"123333\",\n    \"ElementImageList\": \"{\\\"frontal_image\\\":\\\"image_url_0\\\",\\\"refer_images\\\":[{\\\"image_url\\\":\\\"image_url_1\\\"},{\\\"image_url\\\":\\\"image_url_2\\\"},{\\\"image_url\\\":\\\"image_url_3\\\"}]}\",\n    \"TagList\": \"[{\\\"tag_id\\\": \\\"o_101\\\"}, {\\\"tag_id\\\": \\\"o_102\\\"}]\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"221073-CreateAigcAdvancedCustomElement-927af0f45e354127835f6ec67c48f2a9t\",\n        \"RequestId\": \"2ff6980c-db91-488b-bb5b-04e8eb5661d2\"\n    }\n}",
+        "title": "创建多图主体"
+      }
+    ],
     "CreateAigcApiToken": [
       {
         "document": "",
@@ -120,6 +128,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: CreateAigcCustomElement\n<公共请求参数>\n\n{\n    \"ElementName\": \"my_element\",\n    \"ElementDescription\": \"主体\",\n    \"ElementFrontalImage\": \"https://****.vod-qcloud.com/6cd2c44bvodcq1500039**/179cafb25145403**1/ClcdjoxE6jcA.png\",\n    \"ElementReferList\": [\n        {\n            \"ImageUrl\": \"https://****.vod-qcloud.com/6cd2c44bvodcq1500039**/179cafb25145403**1/feefsfrefer.png\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"ElementId\": \"53459345344333\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "CreateAigcCustomVoice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcCustomVoice\n<公共请求参数>\n\n{\n    \"SubAppId\": 221073,\n    \"VoiceName\": \"myVoice\",\n    \"VoiceUrl\": \"myVoiceUrl\",\n    \"VideoId\": \"myVideoId\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"221073-CreateAigcCustomVoice-d5cd48945834b441e6e2db3966d4c954t\",\n        \"RequestId\": \"daab1385-c7d7-4668-90a0-99f73f14c009\"\n    }\n}",
+        "title": "创建自定义音色"
       }
     ],
     "CreateAigcImageTask": [

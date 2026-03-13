@@ -1,29 +1,5 @@
 {
   "actions": {
-    "FileTranslate": [
-      {
-        "document": "通过文件数据来调用接口",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FileTranslate\n<公共请求参数>\n\n{\n    \"SourceType\": 1,\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"DocumentType\": \"txt\",\n    \"Data\": \"5L2g5aW944CC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": {\n            \"TaskId\": \"1396665\"\n        }\n    }\n}",
-        "title": "文件翻译请求调用示例"
-      }
-    ],
-    "GetFileTranslate": [
-      {
-        "document": "通过文件数据来调用接口",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFileTranslate\n<公共请求参数>\n\n{\n    \"TaskId\": \"100001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": \"Wait\",\n            \"FileData\": \"\",\n            \"TaskId\": \"100001\",\n            \"Message\": \"\",\n            \"Progress\": 80\n        },\n        \"RequestId\": \"1e1cffb3-3637-47f3-b6ef-5b529e08c3c8\"\n    }\n}",
-        "title": "文件翻译结果查询调用示例"
-      }
-    ],
-    "ImageTranslate": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageTranslate\n<公共请求参数>\n\n{\n    \"Target\": \"en\",\n    \"SessionUuid\": \"session-00001\",\n    \"ProjectId\": 0,\n    \"Scene\": \"doc\",\n    \"Source\": \"zh\",\n    \"Data\": \"iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ\\n......\\nCCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ImageRecord\": {\n            \"Value\": [\n                {\n                    \"H\": 21,\n                    \"SourceText\": \" 我们可以比较容易的将字典(ict)类型转为字符串(string)类型。\",\n                    \"TargetText\": \"We can easily convert the dictionary icttype to the string) type.\",\n                    \"W\": 373,\n                    \"X\": 12,\n                    \"Y\": 53\n                }\n            ]\n        },\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"SessionUuid\": \"session-00001\",\n        \"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\"\n    }\n}",
-        "title": "API调用"
-      }
-    ],
     "ImageTranslateLLM": [
       {
         "document": "端到端图片翻译base64输入",
@@ -32,42 +8,12 @@
         "title": "端到端图片翻译调用示例"
       }
     ],
-    "LanguageDetect": [
-      {
-        "document": "语种识别",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LanguageDetect\n<公共请求参数>\n\n{\n    \"Text\": \"你好\",\n    \"ProjectId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Lang\": \"zh\",\n        \"RequestId\": \"155a6879-2c39-4e36-b79c-50a68d073ffc\"\n    }\n}",
-        "title": "语种识别调用示例"
-      }
-    ],
-    "SpeechTranslate": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SpeechTranslate\n<公共请求参数>\n\n{\n    \"Target\": \"en\",\n    \"Seq\": 0,\n    \"ProjectId\": 0,\n    \"SessionUuid\": \"sid-1516105689129\",\n    \"Source\": \"zh\",\n    \"AudioFormat\": 83886080,\n    \"Data\": \"=%2F%2FtQxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\\n......\\nMGCwUAU4UeWgJDOGmC2JgzouqHJQBsZiKUicVTU5UGTZ6mVJYlri5s9geZdCjBnExqtEsaw%2F5rtShQ6UOkolgkGSpWK\",\n    \"IsEnd\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RecognizeStatus\": 0,\n        \"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\",\n        \"Seq\": 0,\n        \"SessionUuid\": \"sid-1516105689129\",\n        \"Source\": \"zh\",\n        \"SourceText\": \"你好。\",\n        \"Target\": \"en\",\n        \"TargetText\": \"Hello.\",\n        \"VadSeq\": 0\n    }\n}",
-        "title": "API调用"
-      }
-    ],
     "TextTranslate": [
       {
         "document": "文本翻译",
         "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslate\n<公共请求参数>\n\n{\n    \"SourceText\": \"hello\",\n    \"Source\": \"en\",\n    \"Target\": \"zh\",\n    \"ProjectId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TargetText\": \"你好\",\n        \"Source\": \"en\",\n        \"Target\": \"zh\",\n        \"RequestId\": \"000ee211-f19e-4a34-a214-e2bb1122d248\"\n    }\n}",
         "title": "文本翻译调用示例"
-      }
-    ],
-    "TextTranslateBatch": [
-      {
-        "document": "批量文本翻译",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslateBatch\n<公共请求参数>\n\n{\n    \"SourceTextList\": [\n        \"你好\",\n        \"今天天气怎么样\"\n    ],\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"ProjectId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"beb15bd7-29aa-4f0f-9a80-574d6fc3733f\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetTextList\": [\n            \"Hello.\",\n            \"What's the weather like today?\"\n        ],\n        \"UsedAmount\": 9\n    }\n}",
-        "title": "批量文本翻译调用示例"
-      },
-      {
-        "document": "带术语库例句库",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslateBatch\n<公共请求参数>\n\n{\n    \"Source\": \"auto\",\n    \"Target\": \"en\",\n    \"ProjectId\": 0,\n    \"SourceTextList\": [\n        \"你好啊\",\n        \"这是你的苹果\"\n    ],\n    \"TermRepoIDList\": [\n        \"753899732b0611efbb47037fdf41da5a\"\n    ],\n    \"SentRepoIDList\": [\n        \"\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abf2a2a1-a0da-4d7d-b539-cc34322b78a4\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetTextList\": [\n            \"What's up man!\",\n            \"This is your apple\"\n        ],\n        \"UsedAmount\": 9\n    }\n}",
-        "title": "批量文本翻译示例"
       }
     ]
   },
