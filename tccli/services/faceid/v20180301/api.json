@@ -10520,7 +10520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始验证时，是否跳过开始验证页面，如果为true直接进入验证流程，默认false。如果触发降级策略，此配置将不会生效。",
+          "document": "<p>开始验证时，是否跳过开始验证页面，如果为true直接进入验证流程，默认false。如果触发降级策略，此配置将不会生效。</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoSkipStartPage",
@@ -10529,7 +10529,7 @@
         },
         {
           "disabled": false,
-          "document": "验证成功时，是否跳过结果展示页面，自动跳转到RedirectURL，默认false。",
+          "document": "<p>验证成功时，是否跳过结果展示页面，自动跳转到RedirectURL，默认false。</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoSkip",
@@ -10538,7 +10538,7 @@
         },
         {
           "disabled": false,
-          "document": "检测模式，参数取值如下：\n1：OCR+活体检测+人脸比对；\n2：活体检测+人脸比对；\n3：活体检测；\n4：OCR;\n默认值为2。",
+          "document": "<p>检测模式，参数取值如下：<br>1：OCR+活体检测+人脸比对；<br>2：活体检测+人脸比对；<br>3：活体检测；<br>4：OCR;<br>默认值为2。</p>",
           "example": "1",
           "member": "int64",
           "name": "CheckMode",
@@ -10547,7 +10547,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:\n1.HKIDCard：中国香港身份证\n2.MLIDCard：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.InternationalIDPassport：港澳台地区以及境外护照\n10.ThailandIDCard：泰国身份证\n11.SingaporeIDCard：新加坡身份证\n12.MainlandIDCard：大陆身份证",
+          "document": "<p>认证使用的卡证类型，当前支持:<br>1.HKIDCard：中国香港身份证<br>2.MLIDCard：马来西亚身份证<br>3.IndonesiaIDCard：印度尼西亚身份证<br>4.PhilippinesVoteID：菲律宾选民卡<br>5.PhilippinesDrivingLicense：菲律宾驾驶证<br>6.PhilippinesTinID：菲律宾TinID<br>7.PhilippinesSSSID：菲律宾SSSID<br>8.PhilippinesUMID：菲律宾UMID<br>9.InternationalIDPassport：港澳台地区以及境外护照<br>10.ThailandIDCard：泰国身份证<br>11.SingaporeIDCard：新加坡身份证<br>12.MainlandIDCard：大陆身份证</p>",
           "example": "HKIDCard",
           "member": "string",
           "name": "IDCardType",
@@ -10556,7 +10556,7 @@
         },
         {
           "disabled": false,
-          "document": "是否关闭证件告警，默认为false（开启告警检测功能）。当开启时，身份认证流程将会根据证件的告警情况进行拦截。若您需要使用证件鉴伪功能，请[联系我们](https://www.tencentcloud.com/zh/contact-us)。",
+          "document": "<p>是否关闭证件告警，默认为false（开启告警检测功能）。当开启时，身份认证流程将会根据证件的告警情况进行拦截。若您需要使用证件鉴伪功能，请<a href=\"https://www.tencentcloud.com/zh/contact-us\">联系我们</a>。</p>",
           "example": "false",
           "member": "bool",
           "name": "DisableCheckOcrWarnings",
@@ -10565,7 +10565,7 @@
         },
         {
           "disabled": false,
-          "document": "认证的安全等级：\n1：静默活体； \n2：动作活体；\n3：光线活体；\n4：动作+光线活体； \n5：动作+光线活体（高安全）；\n默认值为3。",
+          "document": "<p>认证的安全等级：<br>1：静默活体；<br>2：动作活体；<br>3：光线活体；<br>4：动作+光线活体；<br>5：动作+光线活体（高安全）；<br>默认值为3。</p>",
           "example": "3",
           "member": "int64",
           "name": "SecurityLevel",
@@ -10574,7 +10574,7 @@
         },
         {
           "disabled": false,
-          "document": "是否跳过协议页面，默认false。当SkipPrivacyPolicy为false时，将展示协议页面，需要勾选隐私协议；当SkipPrivacyPolicy为true时，将跳过协议页面，直接进入活体流程，无需勾选隐私协议页面。",
+          "document": "<p>是否跳过协议页面，默认false。当SkipPrivacyPolicy为false时，将展示协议页面，需要勾选隐私协议；当SkipPrivacyPolicy为true时，将跳过协议页面，直接进入活体流程，无需勾选隐私协议页面。</p>",
           "example": "false",
           "member": "bool",
           "name": "SkipPrivacyPolicy",
@@ -10583,7 +10583,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false，为false时展示证件原图，为true时展示切割后的证件图片。",
+          "document": "<p>默认为false，为false时展示证件原图，为true时展示切割后的证件图片。</p>",
           "example": "false",
           "member": "bool",
           "name": "IdCardCutReturn",
@@ -10592,7 +10592,7 @@
         },
         {
           "disabled": false,
-          "document": "前端主题颜色，格式为RGB16进制颜色码。默认为“#2d72f1”，填写格式错误时使用默认值颜色。",
+          "document": "<p>前端主题颜色，格式为RGB16进制颜色码。默认为“#2d72f1”，填写格式错误时使用默认值颜色。</p>",
           "example": "#2d72f1",
           "member": "string",
           "name": "ThemeColor",
@@ -10601,7 +10601,7 @@
         },
         {
           "disabled": false,
-          "document": "国际化语言，默认为en（英语）。当前支持：\nth：泰语；\nen：英语；\nzh-cn：简体中文；\nzh-tc：繁体中文；\nid：印尼；",
+          "document": "<p>国际化语言，默认为en（英语）。当前支持：<br>th：泰语；<br>en：英语；<br>zh-cn：简体中文；<br>zh-tc：繁体中文；<br>id：印尼；</p>",
           "example": "en",
           "member": "string",
           "name": "Language",
@@ -10610,7 +10610,7 @@
         },
         {
           "disabled": false,
-          "document": "自动降级模式，参数取值如下：\n1：降级为静默活体模式；\n2：禁用降级模式。\n默认值为1。",
+          "document": "<p>自动降级模式，参数取值如下：<br>1：降级为静默活体模式；<br>2：禁用降级模式。<br>默认值为1。</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoDowngrade",
@@ -10619,7 +10619,7 @@
         },
         {
           "disabled": false,
-          "document": "控制动作序列，动作类型如下\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecurityLevel为2、4、5时传入此参数不同动作类型生效；否则接口报错。",
+          "document": "<p>控制动作序列，动作类型如下<br>“blink”<br>“mouth”<br>“nod”<br>“shake”<br>可以选择四个中的1-2个动作。<br>单动作示例：“blink”<br>多动作示例：“blink,mouth”.<br>默认值为blink<br>仅当SecurityLevel为2、4、5时传入此参数不同动作类型生效；否则接口报错。</p>",
           "example": "blink",
           "member": "string",
           "name": "ActionList",
@@ -10628,7 +10628,7 @@
         },
         {
           "disabled": false,
-          "document": "控制活体重试次数。取值范围1-99。默认值为99",
+          "document": "<p>活体最多可验证次数。取值范围1-99。默认值为99</p>",
           "example": "3",
           "member": "int64",
           "name": "LivenessRetryLimit",
@@ -10637,7 +10637,7 @@
         },
         {
           "disabled": false,
-          "document": "控制活体检测超时时间秒数，取值范围(0,600]。默认45秒",
+          "document": "<p>控制活体检测超时时间秒数，取值范围(0,600]。默认45秒</p>",
           "example": "45",
           "member": "uint64",
           "name": "LivenessTimeout",
@@ -10646,7 +10646,7 @@
         },
         {
           "disabled": false,
-          "document": "选择需要关注的OCR告警，当出现关注的OCR告警时身份认证流程会被中断，默认值为空，表示全部告警都关注。这功能需要参数 DisableCheckOcrWarnings=false，若关闭告警，本参数将不生效。\n\n告警码列表和释义：\n-9101 边框不完整告警\n-9102 复印件告警\n-9103 翻拍告警\n-9104 ps告警\n-9107 反光告警\n-9108 模糊告警\n-9109 告警未开通\n",
+          "document": "<p>选择需要关注的OCR告警，当出现关注的OCR告警时身份认证流程会被中断，默认值为空，表示全部告警都关注。这功能需要参数 DisableCheckOcrWarnings=false，若关闭告警，本参数将不生效。</p><p>告警码列表和释义：<br>-9101 边框不完整告警<br>-9102 复印件告警<br>-9103 翻拍告警<br>-9104 ps告警<br>-9107 反光告警<br>-9108 模糊告警<br>-9109 告警未开通</p>",
           "example": "-9104,-9105",
           "member": "string",
           "name": "SelectedWarningCodes",
@@ -10655,7 +10655,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许过期身份证件进入活体检测流程。此参数仅在证件类型为香港身份证（HKID）时生效。\ntrue（默认值）：允许过期香港身份证进入活体检测流程。\nfalse：拒绝过期香港身份证，不可进入活体检测流程。",
+          "document": "<p>是否允许过期身份证件进入活体检测流程。此参数仅在证件类型为香港身份证（HKID）时生效。<br>true（默认值）：允许过期香港身份证进入活体检测流程。<br>false：拒绝过期香港身份证，不可进入活体检测流程。</p>",
           "example": "true",
           "member": "bool",
           "name": "AllowExpiredDocument",

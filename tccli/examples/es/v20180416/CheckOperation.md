@@ -6,24 +6,26 @@ Input:
 
 ```
 tccli es CheckOperation --cli-unfold-argument  \
-    --InstanceId es-xxxxxx \
-    --OpType restart
+    --InstanceId es-o3164dv0 \
+    --OpType scalein
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CheckSucc": true,
-        "NeedForceResult": false,
-        "ReasonType": 0,
-        "DiskUsageInfoList": [
+        "AbnormalNodes": [
             {
-                "DiskType": "CLOUD_DISK",
-                "NodeId": 17341724100
+                "NodeId": "1772608355000145932",
+                "NodeRole": "warmData"
             }
         ],
-        "RequestId": "22bcf772-63da-4bc3-b409-18a662fcedd4"
+        "CheckSucc": false,
+        "DiskUsageInfoList": [],
+        "Message": "{\"1772608355000145932\":[\"test_wcy\"],\"1772610021000155232\":[\"test_wcy\"]}",
+        "NeedForceResult": false,
+        "ReasonType": -23,
+        "RequestId": "3cf7645f-98a4-4322-bd92-0440f746b2b6"
     }
 }
 ```

@@ -28,6 +28,20 @@
       "output": "DescribeUnitInfoListResponse",
       "status": "online"
     },
+    "GetAccountInfoByFields": {
+      "document": "接口有白名单限制，如有需要，请按如下指引进行申请：\n- 申请接入的指引文档：http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661\n- 审批流申请：https://panshi.woa.com/approvalSystem/apply/add?approvalType=CloudApiApproval\n\n如有疑问，请联系 yizerowu、zoeyfu、annayanyu\n\n备注：（1）申请之前，请先试着请求现网接口看看通不通。由于该接口现存的调用方比较多，加上申请用的是主账号 uin，根据以往经验，很大概率会出现重复申请的情况。",
+      "input": "GetAccountInfoByFieldsRequest",
+      "name": "查帐号信息",
+      "output": "GetAccountInfoByFieldsResponse",
+      "status": "online"
+    },
+    "GetCidList": {
+      "document": "获取数据中台的cid，白名单限制",
+      "input": "GetCidListRequest",
+      "name": "获取多个客户cid",
+      "output": "GetCidListResponse",
+      "status": "online"
+    },
     "GetExportControlUnderwriting": {
       "document": "通过测算单获取出口管制、包销",
       "input": "GetExportControlUnderwritingRequest",
@@ -40,13 +54,6 @@
       "input": "GetTreeNodeRequest",
       "name": "查询树详情",
       "output": "GetTreeNodeResponse",
-      "status": "online"
-    },
-    "GetTreeNodeInfoByCodes": {
-      "document": "【有白名单限制，需要的童鞋，请联系neilqiao或zanderfang配置白名单 更多接入问题请看 http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661】\n#### 响应参数说明\n|参数名称|数据类型|备注|\n|:--|:--:|:--:|\n| Codes |array string|节点code,支持批量,最大支持100, 支持聚合code和产业树code\n\n#### 返回参数说明参考\nhttp://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975",
-      "input": "GetTreeNodeInfoByCodesRequest",
-      "name": "获取产业树节点信息",
-      "output": "GetTreeNodeInfoByCodesResponse",
       "status": "online"
     }
   },
@@ -453,6 +460,210 @@
       ],
       "usage": "out"
     },
+    "GetAccountInfoByFieldsRequest": {
+      "document": "GetAccountInfoByFields请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云帐号id。",
+          "example": "12334556",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的信息域，最大不超过8个。account_info（账号基本信息）、channelmark（账号收入来源），更多说明参考：http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412009435667",
+          "example": "[\"account_info\\n\",\"channelmark\\n\"]",
+          "member": "string",
+          "name": "Fields",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示无效客户（0不展示，1展示，默认展示）",
+          "example": "0",
+          "member": "uint64",
+          "name": "ShowInvalid",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAccountInfoByFieldsResponse": {
+      "document": "GetAccountInfoByFields返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包数据",
+          "example": "{\"account_info\":{\"uin\":\"12334556\",\"cid\":\"xxxxxx\"}}",
+          "member": "string",
+          "name": "JsonString",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCidListRequest": {
+      "document": "GetCidList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0个人，1非个人。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CustomerType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户名称，只有企业在不传id_card时会用到（正常情况下企业名称不会重复）",
+          "example": "DEV经营测试账号4547",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件号，无论个人或企业，如果有证件号，优先使用证件号查询。如果是个人，此字段必传。个人会重名，所以只能通过身份证号码来唯一识别一个个人客户",
+          "example": "202101084547",
+          "member": "string",
+          "name": "IdCard",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCidListResponse": {
+      "document": "GetCidList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回字段",
+          "example": "无",
+          "member": "GetCidListRsp",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCidListRsp": {
+      "document": "getCIdLIst接口返回数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cid",
+          "example": "0031685e04f73d9b5dcb7e69f8aa9c01",
+          "member": "string",
+          "name": "Cid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户名称",
+          "example": "南京云帐房网络科技有限公司",
+          "member": "string",
+          "name": "CustomerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户类型(0个人1企业2政府3组织99未知)\n",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证状态: 0未认证，3已认证",
+          "example": "3",
+          "member": "int64",
+          "name": "AuthState",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主销售",
+          "example": "jack",
+          "member": "string",
+          "name": "BusinessManager",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国家代号",
+          "example": "CN",
+          "member": "string",
+          "name": "CountryCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mdmId",
+          "example": "101142053",
+          "member": "string",
+          "name": "MdMID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邓白氏编码",
+          "example": "202101082490",
+          "member": "string",
+          "name": "Duns",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetExportControlUnderwritingRequest": {
       "document": "GetExportControlUnderwriting请求参数结构体",
       "members": [
@@ -480,43 +691,6 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTreeNodeInfoByCodesRequest": {
-      "document": "GetTreeNodeInfoByCodes请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "节点code,支持批量,最大支持100, 支持聚合树codes和产业树codes",
-          "example": "[\"CA00001\",\"CC000049\"]\"]",
-          "member": "string",
-          "name": "Codes",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTreeNodeInfoByCodesResponse": {
-      "document": "GetTreeNodeInfoByCodes返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "NodeInfoList",
-          "name": "NodeInfoList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1775,142 +1949,6 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "NodeInfoList": {
-      "document": "节点的基础信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "节点code\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "CC000049",
-          "member": "string",
-          "name": "Code",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "中心id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[1123,1101]",
-          "member": "int64",
-          "name": "CenterIds",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[1123,1101]",
-          "member": "int64",
-          "name": "DepartmentIds",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节点层级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "3",
-          "member": "int64",
-          "name": "Level",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "细类负责人,只有细类有值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[                     \"billxie\",                     \"yanzuwu\",                     \"yarkizhang\"                 ]",
-          "member": "string",
-          "name": "Managers",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"测试123\"",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节点状态,1 生效 2失效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "Status",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节点版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
-          "member": "int64",
-          "name": "Version",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "状态对应中文\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "StatusZh",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "官网产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1223",
-          "member": "int64",
-          "name": "DictId",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "产品介绍页状态(1:上线;2:未上线)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "IntroPageStatus",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节点英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
-          "member": "string",
-          "name": "NameEn",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "英文缩写",
-          "example": "cvm",
-          "member": "string",
-          "name": "EnAbbreviation",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "out"

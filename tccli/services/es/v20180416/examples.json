@@ -11,8 +11,8 @@
     "CheckOperation": [
       {
         "document": "检查操作",
-        "input": "https://es.tencentcloudapi.com/?Action=CheckOperation\r\n&InstanceId=es-xxxxxx\r\n&OpType=restart\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CheckSucc\": true,\n        \"NeedForceResult\": false,\n        \"ReasonType\": 0,\n        \"DiskUsageInfoList\": [\n            {\n                \"DiskType\": \"CLOUD_DISK\",\n                \"NodeId\": 17341724100\n            }\n        ],\n        \"RequestId\": \"22bcf772-63da-4bc3-b409-18a662fcedd4\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckOperation\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-o3164dv0\",\n    \"OpType\": \"scalein\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AbnormalNodes\": [\n            {\n                \"NodeId\": \"1772608355000145932\",\n                \"NodeRole\": \"warmData\"\n            }\n        ],\n        \"CheckSucc\": false,\n        \"DiskUsageInfoList\": [],\n        \"Message\": \"{\\\"1772608355000145932\\\":[\\\"test_wcy\\\"],\\\"1772610021000155232\\\":[\\\"test_wcy\\\"]}\",\n        \"NeedForceResult\": false,\n        \"ReasonType\": -23,\n        \"RequestId\": \"3cf7645f-98a4-4322-bd92-0440f746b2b6\"\n    }\n}",
         "title": "检查操作"
       }
     ],

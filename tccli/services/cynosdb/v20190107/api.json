@@ -3154,13 +3154,24 @@
         },
         {
           "disabled": false,
-          "document": "动数据备份触发策略，periodically:自动周期备份,frequent:高频备份",
+          "document": "自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份",
           "example": "periodically",
           "member": "string",
           "name": "BackupTriggerStrategy",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份投递关系",
+          "example": "无",
+          "member": "CreateBackupVaultItem",
+          "name": "AutoCopyVaults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3287,6 +3298,46 @@
           "name": "BackupName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递状态",
+          "example": "done",
+          "member": "string",
+          "name": "CopyStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "秘钥id",
+          "example": "1764ae22-72f0-11f0-8904-52540009df14",
+          "member": "string",
+          "name": "EncryptKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "秘钥地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EncryptRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱信息",
+          "example": "无",
+          "member": "VaultInfo",
+          "name": "VaultInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3588,6 +3639,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保险箱信息",
+          "example": "无",
+          "member": "CreateBackupVaultItem",
+          "name": "AutoCopyVaults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3653,6 +3715,46 @@
           "name": "CrossRegions",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份投递状态",
+          "example": "done",
+          "member": "string",
+          "name": "CopyStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱信息",
+          "example": "无",
+          "member": "VaultInfo",
+          "name": "VaultInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密秘钥key",
+          "example": "1764ae22-72f0-11f0-8904-52540009df14",
+          "member": "string",
+          "name": "EncryptKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密秘钥地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EncryptRegion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4039,6 +4141,26 @@
           "name": "GdnTaskInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱id",
+          "example": "vault-08535e43-40d0-4982-bbe8-9d15722f234f",
+          "member": "string",
+          "name": "VaultId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱名称",
+          "example": "vaults_1769683193_5oDpM",
+          "member": "string",
+          "name": "VaultName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5393,6 +5515,34 @@
         }
       ],
       "type": "object"
+    },
+    "CreateBackupVaultItem": {
+      "document": "保险箱信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a",
+          "member": "string",
+          "name": "VaultId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保险箱地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "VaultRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CreateCLSDeliveryRequest": {
       "document": "CreateCLSDelivery请求参数结构体",
@@ -21653,6 +21803,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份投递关系",
+          "example": "无",
+          "member": "CreateBackupVaultItem",
+          "name": "AutoCopyVaults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -24702,6 +24863,15 @@
           "name": "UpgradeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。",
+          "example": "[\"sg-gsbdgrts\"]",
+          "member": "string",
+          "name": "SecurityGroupIdsForNewRo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -28021,6 +28191,46 @@
           "example": "20203-20",
           "member": "string",
           "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱信息",
+          "example": "无",
+          "member": "VaultInfo",
+          "name": "VaultInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份投递状态",
+          "example": "done",
+          "member": "string",
+          "name": "CopyStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密秘钥key",
+          "example": "1764ae22-72f0-11f0-8904-52540009df14",
+          "member": "string",
+          "name": "EncryptKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密秘钥地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EncryptRegion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -31884,6 +32094,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱信息",
+          "example": "无",
+          "member": "CreateBackupVaultItem",
+          "name": "AutoCopyVaults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -33455,6 +33676,67 @@
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VaultInfo": {
+      "document": "保险箱信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱id",
+          "example": "vault-b5044c44-9e41-4c88-b75d-72a77ed8a759",
+          "member": "string",
+          "name": "VaultId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱name",
+          "example": "test_yqj",
+          "member": "string",
+          "name": "VaultName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱地域",
+          "example": "ap-qingyuan",
+          "member": "string",
+          "name": "VaultRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱状态",
+          "example": "running",
+          "member": "string",
+          "name": "VaultStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份保留时间",
+          "example": "604800",
+          "member": "int64",
+          "name": "BackupSaveSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
