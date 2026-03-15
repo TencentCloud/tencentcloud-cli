@@ -40,6 +40,14 @@
         "title": "获取文件系统的客户端挂载命令"
       }
     ],
+    "BuildCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-1f2yq7b5\",\n    \"VpcId\": \"vpc-5owubpl0\",\n    \"SubnetId\": \"vpc-5owubpl0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"x-c60-1f2yq7b5-client-cluster-1\",\n        \"RequestId\": \"ce997012-2519-4e6a-b9b3-95ce81fc7ea6\"\n    }\n}",
+        "title": "新建客户端集群"
+      }
+    ],
     "CancelLoadTask": [
       {
         "document": "",
@@ -88,6 +96,14 @@
         "title": "为客户端节点删除跨vpc子网访问能力"
       }
     ],
+    "DeleteCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-w953d0pt\",\n    \"ClusterId\": \"x-c60-w953d0pt-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b503a94a-15af-41f0-81fd-8c35ad3d7274\"\n    }\n}",
+        "title": "删除客户端管理集群"
+      }
+    ],
     "DeleteFileSystem": [
       {
         "document": "删除文件系统",
@@ -126,6 +142,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoleToken\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x419f8qc\",\n    \"RoleName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RoleTokens\": [\n            {\n                \"RoleName\": \"test\",\n                \"Token\": \"MTY4ODQ2NTA1NF84MzM2X2E3ZWFmMDVmLWI0MzMtNGE2Yi1iOWU2LTZiZDY5OTYwXXXXXX==\"\n            }\n        ],\n        \"RequestId\": \"2a5ab488-0221-4315-8670-3873452be22d \"\n    }\n}",
         "title": "查询GooseFS集群角色凭证"
+      }
+    ],
+    "DescribeCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-412s8jlp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClientNum\": 0,\n                \"ClusterId\": \"x-c60-412s8jlp\",\n                \"ClusterName\": \"test_cluster\",\n                \"ClusterType\": 0,\n                \"ManagerNodes\": [\n                    {\n                        \"ClusterId\": \"x-c60-412s8jlp\",\n                        \"InitialPassword\": \"*****\",\n                        \"NodeInstanceId\": \"ins-20jxbhdb\",\n                        \"NodeIp\": \"10.1.16.93\"\n                    }\n                ],\n                \"Status\": 0,\n                \"SubnetId\": \"subnet-ekn2txsv\",\n                \"VpcId\": \"vpc-q6lm145g\"\n            }\n        ],\n        \"RequestId\": \"13448a6b-8145-4f4a-960d-3db9427b6357\"\n    }\n}",
+        "title": "查询文件系统的客户端集群"
       }
     ],
     "DescribeDataRepositoryTaskStatus": [
@@ -206,6 +230,22 @@
         "input": "{\n  \"FileSystemId\": \"x_c60_123456\",\n  \"Bandwidth\": 600\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "修改数据流动带宽"
+      }
+    ],
+    "MountMultipleStorageFileSystem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MountMultipleStorageFileSystem\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a112q1lj\",\n    \"CustomerClusterId\": \"x-c60-a112q1lj-client-cluster-1\",\n    \"StorageFileSystemId\": \"x-c60-mrn3a677\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a606332-e531-4014-b3be-306faa4821c6\"\n    }\n}",
+        "title": "客户端集群挂载存储文件系统"
+      }
+    ],
+    "QueryClientNodeMountCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClientNodeMountCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"x-c60-a112q1lj-client-cluster-default\",\n    \"ClusterMountInfo\": [\n        {\n            \"StorageFileSystemId\": \"x-c60-a112q1lj\",\n            \"MountPoint\": \"/mountDir\"\n        }\n    ],\n    \"FileSystemId\": \"x-c60-a112q1lj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"wget https://***********-***-**********.cos.ap-shanghai.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh; chmod +x install-goosefsx-client.sh; ./install-goosefsx-client.sh ***.***.*.**:55533,***.***.*.**:55533,***.***.*.**:55533 x-c60-a112q1lj:/mountDir\",\n        \"RequestId\": \"5506922d-4abd-4ca1-ba9e-6f14566b3bd0\"\n    }\n}",
+        "title": "查询挂载命令"
       }
     ],
     "QueryCrossVpcSubnetSupportForClientNode": [

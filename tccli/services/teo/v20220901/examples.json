@@ -1450,9 +1450,15 @@
     ],
     "EnableOriginACL": [
       {
+        "document": "ZoneId 为 'zone-3ly7orr0u97o' 的站点开启源站防护，并配置七层加速域名‘www.qq.com’启用控制域为gaz的回源 IP 网段回源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3ly7orr0u97o\",\n    \"L7EnableMode\": \"specific\",\n    \"L7Hosts\": [\n        \"www.qq.com\"\n    ],\n    \"OriginACLFamily\": \"gaz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97a988a5-6ff1-437f-9c84-f327bee9771c\"\n    }\n}",
+        "title": "站点首次启用源站防护，并配置为指定七层加速域名启用特定控制域回源 IP 网段回源"
+      },
+      {
         "document": "ZoneId 为 'zone-276zs184g93m' 的站点开启源站防护，并配置七层加速域名‘www.qq.com’和四层代理实例‘sid-19389e5dwwxfs’启用特定回源 IP 网段回源。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"L7EnableMode\": \"specific\",\n    \"L7Hosts\": [\n        \"www.qq.com\"\n    ],\n    \"L4EnableMode\": \"specific\",\n    \"L4ProxyIds\": [\n        \"sid-19389e5dwwxfs\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e0a2b4f-df6d-4d2a-ac39-1706cbf8a869\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b90202f3-7368-436d-ba36-7358e722259d\"\n    }\n}",
         "title": "站点首次启用源站防护，并配置为指定七层加速域名/四层代理实例启用特定回源 IP 网段回源"
       },
       {
@@ -1468,16 +1474,16 @@
         "title": "站点首次启用源站防护，并配置为指定四层代理实例启用特定回源 IP 网段回源"
       },
       {
-        "document": "ZoneId 为 'zone-276zs184g93m' 的站点开启源站防护，并配置所有的七层加速域名和四层代理实例启用特定回源 IP 网段回源。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"L7EnableMode\": \"all\",\n    \"L4EnableMode\": \"all\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e0a2b4f-df6d-4d2a-ac39-1706wdf8a869\"\n    }\n}",
-        "title": "站点首次启用源站防护，并配置站点下所有七层加速域名和四层代理实例启用特定回源 IP 网段回源"
-      },
-      {
         "document": "ZoneId 为 'zone-276zs184g93m' 的站点开启源站防护，并配置所有的七层加速域名启用特定回源 IP 网段回源。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"L7EnableMode\": \"all\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e0a2b4f-df6d-4d2a-ac39-1706wdf8a869\"\n    }\n}",
         "title": "站点首次启用源站防护，并配置站点下所有七层加速域名启用特定回源 IP 网段回源"
+      },
+      {
+        "document": "ZoneId 为 'zone-276zs184g93m' 的站点开启源站防护，并配置所有的七层加速域名和四层代理实例启用特定回源 IP 网段回源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"L7EnableMode\": \"all\",\n    \"L4EnableMode\": \"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e0a2b4f-df6d-4d2a-ac39-1706wdf8a869\"\n    }\n}",
+        "title": "站点首次启用源站防护，并配置站点下所有七层加速域名和四层代理实例启用特定回源 IP 网段回源"
       },
       {
         "document": "ZoneId 为 'zone-276zs184g93m' 的站点开启源站防护，并配置所有的四层代理实例启用特定回源 IP 网段回源。",
@@ -1856,16 +1862,22 @@
     ],
     "ModifyOriginACL": [
       {
-        "document": "ZoneId 为 'zone-276zs184g93m' 的站点新增七层加速域名 ‘www.qq.com’ 使用特定回源 IP 网段回源。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"OriginACLEntities\": [\n        {\n            \"OperationMode\": \"enable\",\n            \"Type\": \"l7\",\n            \"Instances\": [\n                \"www.qq.com\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe0a2b4f-df6d-4d2a-ac39-1706cbf8a868\"\n    }\n}",
-        "title": "新增七层加速域名使用特定回源 IP 网段回源"
+        "document": "ZoneId 为 'zone-3ey0mmcs899o' 的站点指定控制域为 gaz 的 IP 网段回源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3ey0mmcs899o\",\n    \"OriginACLFamily\": \"plat-emc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"285f505b-ed21-4efb-86e6-5f05cd6c299c\"\n    }\n}",
+        "title": "修改回源 IP 网段为指定控制域的"
       },
       {
         "document": "ZoneId 为 'zone-276zs184g93m' 的站点关闭四层代理实例 ‘sid-19389e5dwwxfs’ 的特定回源 IP 网段回源。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"OriginACLEntities\": [\n        {\n            \"OperationMode\": \"disable\",\n            \"Type\": \"l4\",\n            \"Instances\": [\n                \"sid-19389e5dwwxfs\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe0a2b4f-df6d-4d2a-ac39-1706cbf8a868\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7517b2b9-4edd-4f79-baa8-c6938e7f3399\"\n    }\n}",
         "title": "四层代理实例关闭特定回源 IP 网段回源"
+      },
+      {
+        "document": "ZoneId 为 'zone-276zs184g93m' 的站点新增七层加速域名 ‘www.qq.com’ 使用特定回源 IP 网段回源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginACL\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"OriginACLEntities\": [\n        {\n            \"OperationMode\": \"enable\",\n            \"Type\": \"l7\",\n            \"Instances\": [\n                \"www.qq.com\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"764fcb13-30a1-4b7c-92a2-f3fa93d5ae3e\"\n    }\n}",
+        "title": "新增七层加速域名使用特定回源 IP 网段回源"
       }
     ],
     "ModifyOriginGroup": [

@@ -146,6 +146,14 @@
         "title": "发起生成 AIGC 图片的任务"
       }
     ],
+    "CreateAigcSubject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcSubject\n<公共请求参数>\n\n{\n    \"SubAppId\": 221073,\n    \"SubjectName\": \"mySessionName\",\n    \"SubjectVideos\": [\n        \"***\"\n    ],\n    \"SessionContext\": \"mySessionContext\",\n    \"TasksPriority\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"221073-CreateAigcSubject-f9aa5a12**********cdd403de6fcd07t\",\n        \"RequestId\": \"e78603c5-2fd1-417a-91f5-023728963868\"\n    }\n}",
+        "title": "创建视频主体"
+      }
+    ],
     "CreateAigcVideoTask": [
       {
         "document": "",

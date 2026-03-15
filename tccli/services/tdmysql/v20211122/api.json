@@ -21,13 +21,6 @@
       "output": "DeleteDBSBackupSetsResponse",
       "status": "online"
     },
-    "DescribeBillingEnable": {
-      "document": "已无地方调用\n\n本接口（DescribeBillingEnable）用于查询计费是否开启",
-      "input": "DescribeBillingEnableRequest",
-      "name": "查询计费是否开启",
-      "output": "DescribeBillingEnableResponse",
-      "status": "offline"
-    },
     "DescribeDBParameters": {
       "document": "本接口（DescribeDBParameters）用于获取实例的当前参数设置。",
       "input": "DescribeDBParametersRequest",
@@ -63,13 +56,6 @@
       "output": "DescribeDatabaseObjectsResponse",
       "status": "online"
     },
-    "DescribeDatabaseTable": {
-      "document": "冗余接口，无人调用\n\n本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。",
-      "input": "DescribeDatabaseTableRequest",
-      "name": "查询数据库表信息",
-      "output": "DescribeDatabaseTableResponse",
-      "status": "offline"
-    },
     "DescribeFlow": {
       "document": "本接口（DescribeFlow）用于查询异步任务流程状态",
       "input": "DescribeFlowRequest",
@@ -97,13 +83,6 @@
       "name": "修改自动续费标志",
       "output": "ModifyAutoRenewFlagResponse",
       "status": "online"
-    },
-    "ModifyBinlogStatus": {
-      "document": "接口功能已被 ModifyInstanceCdc 完全覆盖\n\n修改binlog状态",
-      "input": "ModifyBinlogStatusRequest",
-      "name": "修改binlog状态",
-      "output": "ModifyBinlogStatusResponse",
-      "status": "offline"
     },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组",
@@ -743,23 +722,6 @@
       ],
       "type": "object"
     },
-    "DescribeBillingEnableRequest": {
-      "document": "DescribeBillingEnable请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeBillingEnableResponse": {
-      "document": "DescribeBillingEnable返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeDBParametersRequest": {
       "document": "DescribeDBParameters请求参数结构体",
       "members": [
@@ -1145,91 +1107,6 @@
       ],
       "type": "object"
     },
-    "DescribeDatabaseTableRequest": {
-      "document": "DescribeDatabaseTable请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例 ID，形如：tdsql3-ow7t8lmc。",
-          "example": "tdsql3-52s53yyh",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "数据库名称，通过 DescribeDatabases 接口获取。",
-          "example": "test",
-          "member": "string",
-          "name": "DbName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "表名称，通过 DescribeDatabaseObjects 接口获取。",
-          "example": "persons",
-          "member": "string",
-          "name": "Table",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDatabaseTableResponse": {
-      "document": "DescribeDatabaseTable返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例名称。",
-          "example": "tdsql3-52s53yyh",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "数据库名称。",
-          "example": "test",
-          "member": "string",
-          "name": "DbName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "表名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "persons",
-          "member": "string",
-          "name": "Table",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "列信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "TableColumn",
-          "name": "Cols",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeFlowRequest": {
       "document": "DescribeFlow请求参数结构体",
       "members": [],
@@ -1346,7 +1223,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要修改的实例列表",
+          "document": "<p>需要修改的实例列表</p>",
           "example": "[\"tdsql3-e234db15\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -1355,7 +1232,7 @@
         },
         {
           "disabled": false,
-          "document": "1表示开启自动续费，0为关闭自动续费",
+          "document": "<p>1表示开启自动续费，0为关闭自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -1368,52 +1245,6 @@
     "ModifyAutoRenewFlagResponse": {
       "document": "ModifyAutoRenewFlag返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyBinlogStatusRequest": {
-      "document": "ModifyBinlogStatus请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例id",
-          "example": "tdsql3-xxx",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "1打开0关闭",
-          "example": "1/0",
-          "member": "uint64",
-          "name": "Status",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyBinlogStatusResponse": {
-      "document": "ModifyBinlogStatus返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "flow的流程id",
-          "example": "123457",
-          "member": "int64",
-          "name": "FlowId",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1910,32 +1741,6 @@
           "member": "string",
           "name": "IpProtocol",
           "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TableColumn": {
-      "document": "数据库列信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "列名称",
-          "example": "123",
-          "member": "string",
-          "name": "Col",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "列类型",
-          "example": "123",
-          "member": "string",
-          "name": "Type",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         }

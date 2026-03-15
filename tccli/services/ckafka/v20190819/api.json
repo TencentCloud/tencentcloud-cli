@@ -400,7 +400,7 @@
       "status": "online"
     },
     "DescribeRegion": {
-      "document": "枚举地域,只支持广州地域",
+      "document": "枚举地域信息",
       "input": "DescribeRegionRequest",
       "name": "枚举地域",
       "output": "DescribeRegionResponse",

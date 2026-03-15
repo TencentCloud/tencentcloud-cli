@@ -24,20 +24,6 @@
         "title": "删除备份集"
       }
     ],
-    "DescribeBillingEnable": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingEnable\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
-        "title": "查询"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingEnable\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f656ed5f-e408-439c-bcc6-1fae1a126a69\"\n    }\n}",
-        "title": "查询计费开关"
-      }
-    ],
     "DescribeDBParameters": [
       {
         "document": "",
@@ -78,20 +64,6 @@
         "title": "1"
       }
     ],
-    "DescribeDatabaseTable": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseTable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-01d1c3ed\",\n    \"Table\": \"user\",\n    \"DbName\": \"my-db\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Cols\": [\n            {\n                \"Col\": \"Host\",\n                \"Type\": \"char(60)\"\n            }\n        ],\n        \"DbName\": \"mysql\",\n        \"InstanceId\": \"tdsql3-01d1c3ed\",\n        \"RequestId\": \"d70d9f4e-80d8-459f-8771-73e87bd553c1\",\n        \"Table\": \"user\"\n    }\n}",
-        "title": "1"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseTable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-2123sasd\",\n    \"Table\": \"dasf\",\n    \"DbName\": \"adsf\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Cols\": null,\n        \"DbName\": \"\",\n        \"InstanceId\": \"\",\n        \"RequestId\": \"5cdd7082-d8b9-4e4c-87ea-aabe45c91b3e\",\n        \"Table\": \"\"\n    }\n}",
-        "title": "11"
-      }
-    ],
     "DescribeFlow": [
       {
         "document": "查询flow",
@@ -122,14 +94,6 @@
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoRenewFlag\n<公共请求参数>\n\n{\n    \"AutoRenewFlag\": \"1\",\n    \"InstanceIds\": [\n        \"tdsql3-ec8b11f8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7a16c18-afce-4746-86c7-2040e0238b0b\"\n    }\n}",
         "title": "修改"
-      }
-    ],
-    "ModifyBinlogStatus": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-f0e5ff5b\",\n    \"Status\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9ddd5d0-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
-        "title": "ModifyBinlogStatus"
       }
     ],
     "ModifyDBInstanceSecurityGroups": [

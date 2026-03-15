@@ -35,6 +35,13 @@
       "output": "BuildClientNodeMountCommandResponse",
       "status": "online"
     },
+    "BuildCustomerCluster": {
+      "document": "构建客户端集群",
+      "input": "BuildCustomerClusterRequest",
+      "name": "创建客户端集群",
+      "output": "BuildCustomerClusterResponse",
+      "status": "online"
+    },
     "CancelLoadTask": {
       "document": "取消单个预热任务，仅任务在 waiting、running 状态时可以调用此接口。注意，该接口需要 GooseFS 集群版本 ≥ 1.5.1。",
       "input": "CancelLoadTaskRequest",
@@ -77,6 +84,13 @@
       "output": "DeleteCrossVpcSubnetSupportForClientNodeResponse",
       "status": "online"
     },
+    "DeleteCustomerCluster": {
+      "document": "删除客户端集群",
+      "input": "DeleteCustomerClusterRequest",
+      "name": "删除客户端集群",
+      "output": "DeleteCustomerClusterResponse",
+      "status": "online"
+    },
     "DeleteFileSystem": {
       "document": "删除文件系统",
       "input": "DeleteFileSystemRequest",
@@ -110,6 +124,13 @@
       "input": "DescribeClusterRoleTokenRequest",
       "name": "查询GooseFS集群角色凭证",
       "output": "DescribeClusterRoleTokenResponse",
+      "status": "online"
+    },
+    "DescribeCustomerCluster": {
+      "document": "查询客户端集群",
+      "input": "DescribeCustomerClusterRequest",
+      "name": "查询客户端集群",
+      "output": "DescribeCustomerClusterResponse",
       "status": "online"
     },
     "DescribeDataRepositoryTaskStatus": {
@@ -180,6 +201,20 @@
       "input": "ModifyDataRepositoryBandwidthRequest",
       "name": "修改数据流动带宽",
       "output": "ModifyDataRepositoryBandwidthResponse",
+      "status": "online"
+    },
+    "MountMultipleStorageFileSystem": {
+      "document": "客户端集群挂载存储集群",
+      "input": "MountMultipleStorageFileSystemRequest",
+      "name": "挂载多个存储集群",
+      "output": "MountMultipleStorageFileSystemResponse",
+      "status": "online"
+    },
+    "QueryClientNodeMountCommand": {
+      "document": "生成客户端的挂载命令",
+      "input": "QueryClientNodeMountCommandRequest",
+      "name": "查询生成客户端节点的挂载命令",
+      "output": "QueryClientNodeMountCommandResponse",
       "status": "online"
     },
     "QueryCrossVpcSubnetSupportForClientNode": {
@@ -460,6 +495,70 @@
       ],
       "type": "object"
     },
+    "BuildCustomerClusterRequest": {
+      "document": "BuildCustomerCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-1f2yq7b5",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc网络ID",
+          "example": "vpc-5owubpl0",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网id",
+          "example": "vpc-5owubpl0",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "CustomerCluster-2",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildCustomerClusterResponse": {
+      "document": "BuildCustomerCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端集群Id",
+          "example": "x-c60-1f2yq7b5-client-cluster-1",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CancelLoadTaskRequest": {
       "document": "CancelLoadTask请求参数结构体",
       "members": [
@@ -713,6 +812,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ClusterMountAttr": {
+      "document": "客户端集群挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载的文件系统Id",
+          "example": "x-c60-who39x58",
+          "member": "string",
+          "name": "StorageFileSystemId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群挂载点。入参是节点的自定义挂载点，出参是集群的默认挂载点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/mountDir",
+          "member": "string",
+          "name": "MountPoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CreateDataRepositoryTaskRequest": {
       "document": "CreateDataRepositoryTask请求参数结构体",
@@ -1069,6 +1196,102 @@
       ],
       "type": "object"
     },
+    "CustomerClusterAttr": {
+      "document": "goosefsx客户端集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "x-c60-rz400po1-client-cluster-1",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc网络id",
+          "example": "vpc-5owubpl0",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网id",
+          "example": "subnet-91w0ebrp",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "ClientNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "CustomerCluster-2",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型：0: 默认集群（文件系统创建时构建，不可销毁）；1: 扩展集群（客户端数量为0时可销毁）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理节点信息",
+          "example": "无",
+          "member": "ClientClusterManagerNodeInfo",
+          "name": "ManagerNodes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态：0:creating 创建中；1: created 创建完成; 2: deleting 删除中； 3: deleted 删除完成； 4:  failed 创建失败 ",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群挂载存储集合",
+          "example": "无",
+          "member": "ClusterMountAttr",
+          "name": "ClusterMountSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteCrossVpcSubnetSupportForClientNodeRequest": {
       "document": "DeleteCrossVpcSubnetSupportForClientNode请求参数结构体",
       "members": [
@@ -1095,6 +1318,42 @@
     },
     "DeleteCrossVpcSubnetSupportForClientNodeResponse": {
       "document": "DeleteCrossVpcSubnetSupportForClientNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomerClusterRequest": {
+      "document": "DeleteCustomerCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-w953d0pt",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群ID",
+          "example": "x-c60-w953d0pt-1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomerClusterResponse": {
+      "document": "DeleteCustomerCluster返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1276,6 +1535,43 @@
           "member": "RoleToken",
           "name": "RoleTokens",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerClusterRequest": {
+      "document": "DescribeCustomerCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-412s8jlp",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerClusterResponse": {
+      "document": "DescribeCustomerCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端集群列表",
+          "example": "无",
+          "member": "CustomerClusterAttr",
+          "name": "ClusterSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2642,6 +2938,106 @@
     "ModifyDataRepositoryBandwidthResponse": {
       "document": "ModifyDataRepositoryBandwidth返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MountMultipleStorageFileSystemRequest": {
+      "document": "MountMultipleStorageFileSystem请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端集群所属的文件系统id",
+          "example": "x-c60-a112q1lj",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群Id",
+          "example": "x-c60-a112q1lj-client-cluster-1",
+          "member": "string",
+          "name": "CustomerClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "挂载的存储集群的id",
+          "example": "x-c60-mrn3a677",
+          "member": "string",
+          "name": "StorageFileSystemId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MountMultipleStorageFileSystemResponse": {
+      "document": "MountMultipleStorageFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientNodeMountCommandRequest": {
+      "document": "QueryClientNodeMountCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端集群ID",
+          "example": "x-c60-a112q1lj-client-cluster-default",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群挂载信息",
+          "example": "无",
+          "member": "ClusterMountAttr",
+          "name": "ClusterMountInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-a112q1lj",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientNodeMountCommandResponse": {
+      "document": "QueryClientNodeMountCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载命令",
+          "example": "wget https://***********-***-**********.cos.ap-shanghai.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh; chmod +x install-goose; ./install-goosefsx-client.sh ***.***.*.**:55533,***.***.*.**:55533,***.***.*.**:55533 x-c60-a112q1lj:/mountDir",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
