@@ -35,6 +35,13 @@
       "output": "CheckMcpServerUniqueResponse",
       "status": "online"
     },
+    "CreateAIMCredential": {
+      "document": "创建Credential",
+      "input": "CreateAIMCredentialRequest",
+      "name": "创建agent身份凭据",
+      "output": "CreateAIMCredentialResponse",
+      "status": "online"
+    },
     "CreateAgentApp": {
       "document": "创建app",
       "input": "CreateAgentAppRequest",
@@ -91,6 +98,13 @@
       "output": "CreateModelServiceResponse",
       "status": "online"
     },
+    "DeleteAIMCredential": {
+      "document": "删除Credential",
+      "input": "DeleteAIMCredentialRequest",
+      "name": "删除agent身份凭据",
+      "output": "DeleteAIMCredentialResponse",
+      "status": "online"
+    },
     "DeleteAgentApp": {
       "document": "删除app",
       "input": "DeleteAgentAppRequest",
@@ -145,6 +159,20 @@
       "input": "DeleteModelServiceRequest",
       "name": "删除模型服务",
       "output": "DeleteModelServiceResponse",
+      "status": "online"
+    },
+    "DescribeAIMCredential": {
+      "document": "查询凭据详情",
+      "input": "DescribeAIMCredentialRequest",
+      "name": "查询agent身份凭据详情",
+      "output": "DescribeAIMCredentialResponse",
+      "status": "online"
+    },
+    "DescribeAIMCredentials": {
+      "document": "查询Credential列表",
+      "input": "DescribeAIMCredentialsRequest",
+      "name": "查询agent身份凭据列表",
+      "output": "DescribeAIMCredentialsResponse",
       "status": "online"
     },
     "DescribeAgentApp": {
@@ -273,6 +301,20 @@
       "output": "EnableMcpServerResponse",
       "status": "online"
     },
+    "GetAIMCredential": {
+      "document": "获取agent调用凭据，sts类型凭据返回临时秘钥信息",
+      "input": "GetAIMCredentialRequest",
+      "name": "获取agent身份调用凭据，sts凭据返回临时秘钥",
+      "output": "GetAIMCredentialResponse",
+      "status": "online"
+    },
+    "ModifyAIMCredential": {
+      "document": "修改Credential",
+      "input": "ModifyAIMCredentialRequest",
+      "name": "修改agent身份凭据",
+      "output": "ModifyAIMCredentialResponse",
+      "status": "online"
+    },
     "ModifyAgentApp": {
       "document": "修改app",
       "input": "ModifyAgentAppRequest",
@@ -330,6 +372,34 @@
     "serviceShortName": "apis"
   },
   "objects": {
+    "AccessCredential": {
+      "document": "接入凭据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Expiration",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "凭据value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AKxxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AgentAppMcpServerDTO": {
       "document": "关联的mcp服务配置",
       "members": [
@@ -1234,6 +1304,88 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAIMCredentialRequest": {
+      "document": "CreateAIMCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "testaccess",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型：access（普通凭据）、sts（临时秘钥凭据）",
+          "example": "access",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "普通凭据内容",
+          "example": "无",
+          "member": "AccessCredential",
+          "name": "Access",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "STS凭据内容",
+          "example": "无",
+          "member": "STSCredential",
+          "name": "STS",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "[\"testtag\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIMCredentialResponse": {
+      "document": "CreateAIMCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAgentAppApiKeyRequest": {
       "document": "CreateAgentAppApiKey请求参数结构体",
@@ -2151,6 +2303,52 @@
       ],
       "type": "object"
     },
+    "DeleteAIMCredentialRequest": {
+      "document": "DeleteAIMCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "crd-xxxxxxxx",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAIMCredentialResponse": {
+      "document": "DeleteAIMCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAgentAppApiKeyRequest": {
       "document": "DeleteAgentAppApiKey请求参数结构体",
       "members": [
@@ -2541,6 +2739,285 @@
           "document": "结果集",
           "example": "无",
           "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIMCredentialRequest": {
+      "document": "DescribeAIMCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-a7af1980",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "crd-8b468a40",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIMCredentialResp": {
+      "document": "凭据详情响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户应用ID",
+          "example": "1300",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "7000",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "crd-xxxxxxxx",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据名称",
+          "example": "teststs",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "sts",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-16T05:32:00.134Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-16T05:32:00.134Z",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "普通凭据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessCredential",
+          "name": "Access",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"testtag\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "STS凭据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "STSCredential",
+          "name": "STS",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAIMCredentialResponse": {
+      "document": "DescribeAIMCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据详情",
+          "example": "无",
+          "member": "DescribeAIMCredentialResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIMCredentialsRequest": {
+      "document": "DescribeAIMCredentials请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "teststs",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ID数组",
+          "example": "[\"crd-xxxxxxxx\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "认证类型：access、sts",
+          "example": "sts",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "[\"testtag\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIMCredentialsResp": {
+      "document": "获取凭证列表的返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条目",
+          "example": "无",
+          "member": "DescribeAIMCredentialResp",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAIMCredentialsResponse": {
+      "document": "DescribeAIMCredentials返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Credential列表",
+          "example": "无",
+          "member": "DescribeAIMCredentialsResp",
           "name": "Data",
           "output_required": false,
           "type": "object",
@@ -5697,6 +6174,68 @@
       ],
       "type": "object"
     },
+    "GetAIMCredentialRequest": {
+      "document": "GetAIMCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-a7af1980",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "crd-0d1e5311",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAIMCredentialResp": {
+      "document": "获取凭据响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据",
+          "example": "无",
+          "member": "AccessCredential",
+          "name": "Credentials",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetAIMCredentialResponse": {
+      "document": "GetAIMCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用凭据",
+          "example": "无",
+          "member": "GetAIMCredentialResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "IDNameVO": {
       "document": "IDNameVO",
       "members": [
@@ -6537,6 +7076,79 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyAIMCredentialRequest": {
+      "document": "ModifyAIMCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-a7af1980",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "crd-8b468a40",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭据名称",
+          "example": "newname",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "STS凭据内容，sts类型凭据必传",
+          "example": "无",
+          "member": "STSCredential",
+          "name": "STS",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "普通凭据内容，access类型凭据必传",
+          "example": "无",
+          "member": "AccessCredential",
+          "name": "Access",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAIMCredentialResponse": {
+      "document": "ModifyAIMCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "credential id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyAgentAppMcpServersRequest": {
       "document": "ModifyAgentAppMcpServers请求参数结构体",
@@ -7504,6 +8116,45 @@
         }
       ],
       "usage": "out"
+    },
+    "STSCredential": {
+      "document": "sts凭据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据提供商：tencentCam\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tenentCam",
+          "member": "string",
+          "name": "System",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "凭据SecretID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AKxxx",
+          "member": "string",
+          "name": "SecretID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "凭据SecretKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SKxxx",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StartEndTime": {
       "document": "开始结束时间结构体",

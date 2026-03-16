@@ -24,6 +24,14 @@
         "title": "创建代码仓库"
       }
     ],
+    "CreateDataSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataSource\n<公共请求参数>\n\n{\n    \"Name\": \"测试数据源\",\n    \"Type\": \"Cfs\",\n    \"Permission\": \"RW\",\n    \"StorageId\": \"cfs-ndqrxskx\",\n    \"MountConfigure\": {\n        \"WorkDir\": \"/abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"key1\",\n            \"TagValue\": \"value2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"dsrc-Cfs-abum82k1s7wg\",\n        \"RequestId\": \"e3c94882-87a2-445e-80b3-2f8d3558f9dd\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "CreateDataset": [
       {
         "document": "CreateDataset",
@@ -62,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelServicePodUrl\n<公共请求参数>\n\n{\n    \"ServiceId\": \"ms-thisisatest\",\n    \"PodName\": \"ms-thisisatest-podname\"\n}",
         "output": "{\n    \"Response\": {\n        \"Url\": \"http://dfsdfxx\",\n        \"RequestId\": \"a-fake-id\"\n    }\n}",
         "title": "创建在线服务登陆pod链接"
+      }
+    ],
+    "CreateMountLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMountLimit\n<公共请求参数>\n\n{\n    \"Type\": \"Cfs\",\n    \"StorageId\": \"cfs-ndqrxskx\",\n    \"LimitMount\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31576dfd-e7cb-4571-ae7f-8658e0d884b0\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "CreateNotebook": [
@@ -112,6 +128,14 @@
         "title": "删除代码仓库"
       }
     ],
+    "DeleteDataSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataSource\n<公共请求参数>\n\n{\n    \"Id\": \"dsrc-Cfs-abum82k1s7wg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e6b5443-ddb4-40ce-9ea4-ddbe00374541\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DeleteDataset": [
       {
         "document": "",
@@ -150,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelServiceGroup\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-xxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1cb0e984-d1eb-4dc1-944d-64b7f1a4d143\"\n    }\n}",
         "title": "删除一个服务组"
+      }
+    ],
+    "DeleteMountLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMountLimit\n<公共请求参数>\n\n{\n    \"Type\": \"Cfs\",\n    \"StorageId\": \"cfs-ndqrxskx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d724f408-dcbe-4ff6-a4b7-b6da0da50cbc\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "DeleteNotebook": [
@@ -272,6 +304,14 @@
         "title": "代码仓库列表"
       }
     ],
+    "DescribeDataSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSource\n<公共请求参数>\n\n{\n    \"Id\": \"dsrc-Cfs-abum82k1s7wg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSourceInfo\": {\n            \"CreateTime\": \"2025-07-08T19:31:47Z\",\n            \"Creator\": \"100038630886\",\n            \"CreatorName\": \"breezeliu\",\n            \"ExtraConf\": {\n                \"CFSProtocol\": \"NFS\",\n                \"CFSStorageType\": \"SD\"\n            },\n            \"Id\": \"dsrc-Cfs-abum82k1s7wg\",\n            \"LimitMount\": true,\n            \"MountConfigure\": {\n                \"WorkDir\": \"/abc\"\n            },\n            \"Name\": \"测试数据源\",\n            \"Permission\": \"RW\",\n            \"StorageId\": \"cfs-ndqrxskx\",\n            \"StorageName\": \"shizhuhuang_cfs\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"key1\",\n                    \"TagValue\": \"value2\"\n                },\n                {\n                    \"TagKey\": \"qcs:tag:createdBy\",\n                    \"TagValue\": \"CAMUser:100038630886:breezeliu\"\n                }\n            ],\n            \"Type\": \"Cfs\",\n            \"UpdateTime\": \"2025-07-08T19:31:47Z\"\n        },\n        \"RequestId\": \"78188a2e-c160-4696-b066-0f0799e2ed2f\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeDataSources": [
       {
         "document": "",
@@ -390,6 +430,30 @@
         "input": "https://tione.tencentcloudapi.com/?Action=DescribeModelServices\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Services\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"fdfahfdjoxer\"\n    }\n}",
         "title": "查询多个服务"
+      }
+    ],
+    "DescribeMountInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMountInstance\n<公共请求参数>\n\n{\n    \"Type\": \"Cfs\",\n    \"StorageId\": \"cfs-du6hjitx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MountInstance\": {\n            \"ExtraConf\": {\n                \"CFSProtocol\": \"NFS\",\n                \"CFSStorageType\": \"SD\"\n            },\n            \"Status\": 0,\n            \"StorageId\": \"cfs-du6hjitx\",\n            \"StorageName\": \"haroldyan\",\n            \"Type\": \"Cfs\"\n        },\n        \"RequestId\": \"cadb6775-ccaf-4c65-8e03-42d1590a3eb3\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DescribeMountInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMountInstances\n<公共请求参数>\n\n{\n    \"Type\": \"Cfs\",\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"MountInstances\": [\n            {\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"NFS\",\n                    \"CFSStorageType\": \"SD\"\n                },\n                \"Status\": 0,\n                \"StorageId\": \"cfs-du6hjitx\",\n                \"StorageName\": \"haroldyan\",\n                \"Type\": \"Cfs\"\n            },\n            {\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"NFS\",\n                    \"CFSStorageType\": \"SD\"\n                },\n                \"Status\": 0,\n                \"StorageId\": \"cfs-cavy2v1x\",\n                \"StorageName\": \"zoey-cfs\",\n                \"Type\": \"Cfs\"\n            },\n            {\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"NFS\",\n                    \"CFSStorageType\": \"SD\"\n                },\n                \"Status\": 0,\n                \"StorageId\": \"cfs-fktuhiez\",\n                \"StorageName\": \"bradyxie-cfs\",\n                \"Type\": \"Cfs\"\n            },\n            {\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"TURBO\",\n                    \"CFSStorageType\": \"TB\"\n                },\n                \"Status\": 0,\n                \"StorageId\": \"cfs-47c3b0f37\",\n                \"StorageName\": \"phye-ut-0\",\n                \"Type\": \"Cfs\"\n            },\n            {\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"NFS\",\n                    \"CFSStorageType\": \"SD\"\n                },\n                \"Status\": 0,\n                \"StorageId\": \"cfs-f11afilz\",\n                \"StorageName\": \"felixszheng_cfs\",\n                \"Type\": \"Cfs\"\n            }\n        ],\n        \"RequestId\": \"49c7d53e-5f8f-4dd9-8076-1c922308060b\",\n        \"TotalCount\": 28\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DescribeMountLimits": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMountLimits\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"MountLimits\": [\n            {\n                \"CreateTime\": \"2025-07-02T20:10:37Z\",\n                \"Creator\": \"100038630886\",\n                \"CreatorName\": \"zhangsan\",\n                \"ExtraConf\": {\n                    \"CFSProtocol\": \"NFS\",\n                    \"CFSStorageType\": \"SD\"\n                },\n                \"LimitMount\": true,\n                \"StorageId\": \"cfs-ndqrxskx\",\n                \"StorageName\": \"test_cfs\",\n                \"Type\": \"Cfs\",\n                \"UpdateTime\": \"2025-07-02T20:10:37Z\"\n            }\n        ],\n        \"RequestId\": \"cee4fb9b-f0c4-4ed7-b865-2d9d71ddbaaa\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "DescribeNotebook": [
@@ -590,6 +654,22 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopTrainingTask\n<公共请求参数>\n\n{\n    \"Id\": \"train-1243143\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfds-fdsafsa\"\n    }\n}",
         "title": "停止训练任务"
+      }
+    ],
+    "UpdateDataSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataSource\n<公共请求参数>\n\n{\n    \"Id\": \"dsrc-Cfs-abum82k1s7wg\",\n    \"Name\": \"测试数据源\",\n    \"Permission\": \"RW\",\n    \"MountConfigure\": {\n        \"WorkDir\": \"/home\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49b0504e-6ded-49ef-84d9-9bf61250df55\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "UpdateMountLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMountLimit\n<公共请求参数>\n\n{\n    \"Type\": \"Cfs\",\n    \"StorageId\": \"cfs-ndqrxskx\",\n    \"LimitMount\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"04b64fc7-7344-45fa-8f5d-31834a1d3043\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "UpdateSubAccountLinuxUserInfo": [

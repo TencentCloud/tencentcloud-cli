@@ -40,6 +40,14 @@
         "title": "查询mcp server唯一性"
       }
     ],
+    "CreateAIMCredential": [
+      {
+        "document": "CreateAIMCredential-access",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIMCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"Name\": \"testaccess\",\n    \"Type\": \"access\",\n    \"Access\": [\n        {\n            \"Key\": \"testkey\",\n            \"Value\": \"testvalue\"\n        }\n    ],\n    \"Tags\": [\n        \"testtag\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"crd-8b468a40\"\n        },\n        \"RequestId\": \"9d1c7b14-6fa4-4257-881c-78cba1e8802f\"\n    }\n}",
+        "title": "CreateAIMCredential"
+      }
+    ],
     "CreateAgentApp": [
       {
         "document": "创建app",
@@ -104,6 +112,14 @@
         "title": "创建模型服务"
       }
     ],
+    "DeleteAIMCredential": [
+      {
+        "document": "DeleteAIMCredential",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAIMCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"crd-8b468a40\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"crd-8b468a40\"\n        },\n        \"RequestId\": \"b4f20df7-a1c6-4b4a-94a6-2913dff3de3c\"\n    }\n}",
+        "title": "DeleteAIMCredential"
+      }
+    ],
     "DeleteAgentApp": [
       {
         "document": "删除app",
@@ -166,6 +182,22 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"mds-e9b168e4\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-e9b168e4\"\n        },\n        \"RequestId\": \"459519b6-c90e-4b27-bf5f-2e900a888045\"\n    }\n}",
         "title": "删除模型服务"
+      }
+    ],
+    "DescribeAIMCredential": [
+      {
+        "document": "DescribeAIMCredential",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIMCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"crd-8b468a40\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Access\": [\n                {\n                    \"Key\": \"testkey\",\n                    \"Value\": \"testvalue\"\n                }\n            ],\n            \"AppID\": 1300273807,\n            \"CreateTime\": \"2026-03-16T03:58:35.358Z\",\n            \"ID\": \"crd-8b468a40\",\n            \"InstanceID\": \"ins-a7af1980\",\n            \"LastUpdateTime\": \"2026-03-16T04:00:57.603Z\",\n            \"Name\": \"newname\",\n            \"Tags\": [\n                \"testtag\"\n            ],\n            \"Type\": \"access\",\n            \"Uin\": \"700001136234\"\n        },\n        \"RequestId\": \"4cb19b2a-81d3-4ccd-91a0-2d13d2690e7c\"\n    }\n}",
+        "title": "DescribeAIMCredential"
+      }
+    ],
+    "DescribeAIMCredentials": [
+      {
+        "document": "DescribeAIMCredentials",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIMCredentials\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"InstanceID\": \"ins-a7af1980\",\n    \"Offset\": 0,\n    \"Keyword\": \"teststs\",\n    \"IDs\": [\n        \"crd-3077f964\"\n    ],\n    \"Type\": \"sts\",\n    \"Tags\": [\n        \"testtag\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AppID\": 1300273807,\n                    \"CreateTime\": \"2026-03-16T05:32:00.134Z\",\n                    \"ID\": \"crd-3077f964\",\n                    \"InstanceID\": \"ins-a7af1980\",\n                    \"LastUpdateTime\": \"2026-03-16T05:32:00.134Z\",\n                    \"Name\": \"teststs\",\n                    \"Type\": \"sts\",\n                    \"Uin\": \"700001136234\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"cd166fe2-4a2c-434c-9f35-481821b58ea7\"\n    }\n}",
+        "title": "DescribeAIMCredentials"
       }
     ],
     "DescribeAgentApp": [
@@ -310,6 +342,22 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableMcpServer\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"mcp-aa12c447\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mcp-aa12c447\"\n        },\n        \"RequestId\": \"1eed7b01-8b36-4b06-97c2-242e461856db\"\n    }\n}",
         "title": "上线mcp server"
+      }
+    ],
+    "GetAIMCredential": [
+      {
+        "document": "GetAIMCredential",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAIMCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"crd-0d1e5311\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Credentials\": [\n                {\n                    \"Key\": \"TmpSecretId\",\n                    \"Value\": \"AKID************************************************************D2Om\"\n                }\n            ]\n        },\n        \"RequestId\": \"1628a9e7-8854-44c5-adce-047a770ea943\"\n    }\n}",
+        "title": "GetAIMCredential"
+      }
+    ],
+    "ModifyAIMCredential": [
+      {
+        "document": "ModifyAIMCredential",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIMCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"crd-8b468a40\",\n    \"Name\": \"newname\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"crd-8b468a40\"\n        },\n        \"RequestId\": \"8b747f07-19ab-4be4-8d0a-0daf862a187b\"\n    }\n}",
+        "title": "ModifyAIMCredential"
       }
     ],
     "ModifyAgentApp": [

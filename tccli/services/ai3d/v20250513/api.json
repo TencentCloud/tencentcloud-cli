@@ -590,7 +590,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
+          "document": "<p>任务ID。</p>",
           "example": "1357237233311637504",
           "member": "string",
           "name": "JobId",
@@ -605,7 +605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>",
           "example": "DONE",
           "member": "string",
           "name": "Status",
@@ -615,7 +615,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码",
+          "document": "<p>错误码</p>",
           "example": "InvalidParameter",
           "member": "string",
           "name": "ErrorCode",
@@ -625,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "<p>错误信息</p>",
           "example": "参数错误。",
           "member": "string",
           "name": "ErrorMessage",
@@ -635,12 +635,32 @@
         },
         {
           "disabled": false,
-          "document": "生成的3D文件数组。",
+          "document": "<p>生成的3D文件数组。</p>",
           "example": "无",
           "member": "File3D",
           "name": "ResultFile3Ds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接口任务功能参数及积分详情，返回形式为字符串。Generate参数返回对应模式及消耗积分，如：Generate-Normal：20<br>附加参数返回参数名称及消耗积分，如：MultiViewImages：10</p>",
+          "example": "{\"GenerateType-Normal\":20}",
+          "member": "string",
+          "name": "ResultCreditDetails",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总消耗积分。</p>",
+          "example": "20",
+          "member": "float",
+          "name": "ResultCreditConsumed",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -833,7 +853,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生成任务类型，默认Normal，参考值：<br>Normal：可生成带纹理的几何模型。<br>LowPoly：可生成智能拓扑后的模型，FaceCount参数不生效。<br>Geometry：可生成不带纹理的几何模型（白模），EnablePBR参数不生效。<br>Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。</p><p>枚举值：</p><ul><li>Normal： 可生成带纹理的几何模型</li><li>LowPoly： 可生成智能拓扑后的模型，FaceCount参数不生效。</li><li>Geometry： 可生成不带纹理的几何模型（白模），EnablePBR参数不生效。</li><li>Sketch： 可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。</li></ul>",
+          "document": "<p>生成任务类型，默认Normal</p><p>枚举值：</p><ul><li>Normal： 可生成带纹理的几何模型</li><li>LowPoly： 可生成智能拓扑后的模型，FaceCount参数不生效。</li><li>Geometry： 可生成不带纹理的几何模型（白模），EnablePBR参数不生效。</li><li>Sketch： 可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。</li></ul>",
           "example": "Normal",
           "member": "string",
           "name": "GenerateType",
@@ -1108,7 +1128,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源3D模型文件。\nType可选值：OBJ，GLB",
+          "document": "<p>源3D模型文件。<br>Type可选值：OBJ，GLB</p>",
           "example": "无",
           "member": "File3D",
           "name": "File3D",
@@ -1117,7 +1137,7 @@
         },
         {
           "disabled": false,
-          "document": "文生3D，3D内容的描述，中文正向提示词。\n最多支持200个 utf-8 字符。\n文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。",
+          "document": "<p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>",
           "example": "一只小猫",
           "member": "string",
           "name": "Prompt",
@@ -1126,7 +1146,7 @@
         },
         {
           "disabled": false,
-          "document": "3D模型纹理参考图 Base64 数据和参考图图 Url。\n- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。\n- 图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。",
+          "document": "<p>3D模型纹理参考图 Base64 数据和参考图 Url。</p><ul><li>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。</li><li>图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。</li></ul>",
           "example": "无",
           "member": "Image",
           "name": "Image",
@@ -1135,7 +1155,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 PBR材质生成，默认 false。",
+          "document": "<p>是否开启 PBR材质生成，默认 false。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnablePBR",
@@ -1150,7 +1170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID（有效期24小时）",
+          "document": "<p>任务ID（有效期24小时）</p>",
           "example": "1315932989749215232",
           "member": "string",
           "name": "JobId",

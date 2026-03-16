@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ai3d QueryHunyuanTo3DProJob --cli-unfold-argument  \
-    --JobId 1357237233311637504
+    --JobId 1423225609617285120
 ```
 
 Output: 
@@ -15,15 +15,17 @@ Output:
     "Response": {
         "ErrorCode": "",
         "ErrorMessage": "",
-        "RequestId": "e4de438f-acca-44f9-9f29-7df547c81680",
+        "ResultCreditConsumed": 40,
+        "ResultCreditDetails": "{\"FaceCount\":10,\"GenerateType-Normal\":20,\"Pbr\":10}",
         "ResultFile3Ds": [
             {
                 "PreviewImageUrl": "https://cos.ap-guangzhou.tencentcos.cn/xxx.png",
-                "Type": "GLB",
-                "Url": "https://cos.ap-guangzhou.tencentcos.cn/xxx.glb"
+                "Type": "OBJ",
+                "Url": "https://cos.ap-guangzhou.tencentcos.cn/xxx.zip"
             }
         ],
-        "Status": "DONE"
+        "Status": "DONE",
+        "RequestId": "8c73c29c-f871-470e-87ca-69219c82b550"
     }
 }
 ```
