@@ -8,6 +8,14 @@
         "title": "成功激活示例"
       }
     ],
+    "ActivateTWeTalk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateTWeTalk\n<公共请求参数>\n\n{\n    \"ServiceType\": 1,\n    \"DeviceIds\": [\n        \"HX3VWPFMVX_dev\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailureRecords\": [\n            {\n                \"DeviceId\": \"HX3VWPFMVX_dev\",\n                \"ErrCode\": 60009,\n                \"ErrMessage\": \"产品不是码音视频类型\",\n                \"ExpireTime\": 0\n            }\n        ],\n        \"SuccessRecords\": [],\n        \"RequestId\": \"8c672b42-0846-4a28-966a-a327e9684d7f\"\n    }\n}",
+        "title": "产品类型错误"
+      }
+    ],
     "BatchCreateTWeSeeRecognitionTask": [
       {
         "document": "",
@@ -1284,6 +1292,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkAIBotList\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1U0eVzHLHc\",\n    \"IncludeCredentials\": false\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AgentConfig\": {\n                    \"InterruptionEnabled\": true,\n                    \"LongTermMemoryEnabled\": true,\n                    \"SystemPrompt\": \"u4f60u597du554a\"\n                },\n                \"AppId\": 251198731,\n                \"BotId\": \"bot-1U0eVzHLHc\",\n                \"CreateTime\": 1764212694,\n                \"Description\": \"\",\n                \"InstanceId\": \"ins-DGAFvpuVF7\",\n                \"Name\": \"test2\",\n                \"TargetLanguage\": \"\",\n                \"Uin\": 100000103009,\n                \"UpdateTime\": 1764212694\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"303e2b99-f8e0-43c5-a2a5-2eed8139225a\"\n    }\n}",
         "title": "查询智能体列表示例"
+      }
+    ],
+    "GetTWeTalkActiveRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkActiveRecordList\n<公共请求参数>\n\n{\n    \"StartTime\": 1772014291,\n    \"EndTime\": 1772019291,\n    \"Offset\": 1,\n    \"Limit\": 10,\n    \"ProductId\": \"RNSEEMTZB0\",\n    \"DeviceName\": \"dev\",\n    \"ServiceType\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActiveRecords\": [\n            {\n                \"ActiveTime\": 1772015290,\n                \"DeviceName\": \"dev\",\n                \"ErrorMsg\": \"\",\n                \"ExpireTime\": 11238941496,\n                \"ProductId\": \"RNSEEMTZB0\",\n                \"ServiceType\": 1,\n                \"Status\": 1\n            }\n        ],\n        \"Total\": 283,\n        \"RequestId\": \"3f8b798b-a251-4936-841d-663efb7ac099\"\n    }\n}",
+        "title": "获取Talk设备激活记录列表示例"
+      }
+    ],
+    "GetTWeTalkActiveStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkActiveStatus\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"RNSEEMTZB0_dev\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TalkActivationRecords\": [\n            {\n                \"DeviceId\": \"RNSEEMTZB0_dev\",\n                \"ExpireTime\": 11270477496,\n                \"ServiceType\": 1\n            }\n        ],\n        \"RequestId\": \"882fdadf-e56a-465a-8a6d-2ecea4137f3c\"\n    }\n}",
+        "title": "获取设备Talk激活状态"
       }
     ],
     "GetTWeTalkProductConfigList": [

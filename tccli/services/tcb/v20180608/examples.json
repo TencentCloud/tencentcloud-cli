@@ -200,6 +200,14 @@
         "title": "获取套餐"
       }
     ],
+    "DescribeBillingInfo": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeBillingInfo\r\n&EnvId=tnt-j715s5gda\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvBillingInfoList\": [\n            {\n                \"EnvId\": \"tnt-j715s5gda\",\n                \"PackageId\": \"professional\",\n                \"IsAutoRenew\": true,\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"PREPAYMENT\",\n                \"IsolatedTime\": \"2011-5-16 12:15:01\",\n                \"ExpireTime\": \"2019-5-25 12:15:01\",\n                \"CreateTime\": \"2016-5-25 12:15:01\",\n                \"UpdateTime\": \"2019-4-25 12:15:01\",\n                \"FreeQuota\": \"\",\n                \"PaymentChannel\": \"qcloud\",\n                \"ExtPackageType\": \"baas\",\n                \"OrderInfo\": {\n                    \"CreateTime\": \"\",\n                    \"ExtensionId\": \"\",\n                    \"Flag\": \"\",\n                    \"PackageId\": \"\",\n                    \"PayMode\": \"\",\n                    \"ReqBody\": \"\",\n                    \"ResourceReady\": \"\",\n                    \"TranId\": \"\",\n                    \"TranStatus\": \"\",\n                    \"TranType\": \"\",\n                    \"UpdateTime\": \"\"\n                },\n                \"IsAlwaysFree\": false,\n                \"EnableOverrun\": true\n            }\n        ],\n        \"RequestId\": \"ec5dde6a-6c21-4777-bf4a-99e1f910247e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeCloudBaseBuildService": [
       {
         "document": "通过环境id,获得云托管代码上传url, 用来上传代码",
@@ -222,6 +230,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseGWService\n&ServiceId=“aa”\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ServiceSet\": [\n            {\n                \"Status\": 0,\n                \"EnableRegion\": true,\n                \"Domain\": \"www.domain.com\",\n                \"OpenTime\": 1,\n                \"ForceHttps\": true,\n                \"IcpForbidStatus\": 0,\n                \"Cname\": \"www.cname.com\",\n                \"CertId\": \"certid\",\n                \"ServiceId\": \"envid\",\n                \"IsPreempted\": true,\n                \"UnionStatus\": 0,\n                \"CustomRoutingRules\": \"{route}\",\n                \"CnameStatus\": 0\n            }\n        ],\n        \"CustomRoutingRules\": \"{route}\",\n        \"EnableService\": true,\n        \"RequestId\": \"requestid\",\n        \"EnableUnion\": true,\n        \"EnableCheckAcrossDomain\": true,\n        \"DefaultDomain\": \"envid-appid.app.tcloudbase.com\",\n        \"OriginDomain\": \".app-in.tencentcloudbase.com\"\n    }\n}",
         "title": "DescribeCloudBaseGWService示例"
+      }
+    ],
+    "DescribeCloudBaseRunServerVersion": [
+      {
+        "document": "查询版本信息",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunServerVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-sdfd\",\n    \"ServerName\": \"server\",\n    \"VersionName\": \"ver\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionName\": \"\",\n        \"Remark\": \"\",\n        \"DockerfilePath\": \"\",\n        \"BuildDir\": \"\",\n        \"Cpu\": 0,\n        \"Mem\": 0,\n        \"MinNum\": 0,\n        \"MaxNum\": 0,\n        \"PolicyType\": \"\",\n        \"PolicyThreshold\": 0,\n        \"EnvParams\": \"\",\n        \"CreatedTime\": \"\",\n        \"UpdatedTime\": \"\",\n        \"VersionIP\": \"\",\n        \"VersionPort\": 0,\n        \"Status\": \"\",\n        \"PackageName\": \"\",\n        \"PackageVersion\": \"\",\n        \"UploadType\": \"\",\n        \"RepoType\": \"\",\n        \"Repo\": \"\",\n        \"Branch\": \"\",\n        \"ServerName\": \"\",\n        \"IsPublic\": true,\n        \"VpcId\": \"\",\n        \"SubnetIds\": [\n            \"\"\n        ],\n        \"CustomLogs\": \"\",\n        \"ContainerPort\": 0,\n        \"InitialDelaySeconds\": 0,\n        \"ImageUrl\": \"\",\n        \"CpuSize\": 0,\n        \"MemSize\": 0,\n        \"HasDockerfile\": 0,\n        \"BaseImage\": \"\",\n        \"EntryPoint\": \"\",\n        \"RepoLanguage\": \"\",\n        \"PolicyDetail\": [\n            {\n                \"PolicyType\": \"\",\n                \"PolicyThreshold\": 0\n            }\n        ],\n        \"TkeClusterInfo\": {\n            \"ClusterId\": \"\",\n            \"VpcId\": \"\",\n            \"VersionClbSubnetId\": \"\"\n        },\n        \"TkeWorkloadType\": \"\",\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeCreateMySQLResult": [

@@ -2130,6 +2130,15 @@
           "name": "AndroidInstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间。默认 1 小时，最长 30 天。格式为 2025-07-02T10:15:36Z",
+          "example": "2025-07-02T10:15:36Z",
+          "member": "string",
+          "name": "ExpiredTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

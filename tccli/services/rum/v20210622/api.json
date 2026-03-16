@@ -1866,7 +1866,7 @@
         },
         {
           "disabled": false,
-          "document": "top：资源top视图，allcount：性能视图，day：14天数据，condition：条件列表，pagepv：性能视图，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "top：资源top视图，allcount：性能视图，day：14天数据，condition：条件列表，pagepv：性能视图，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -2399,7 +2399,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -2950,7 +2950,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "Type\t是\tString\t无枚举值。此接口不使用 Type 做分支判断，SQL 固定 group by \"url\"，Type 字段传任何值不影响查询。\n",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -3401,7 +3401,7 @@
         },
         {
           "disabled": false,
-          "document": "网络状态",
+          "document": "网络状态(tag 值):用于过滤/聚合字段 netStatus；枚举值：0(正常)、1(弱网)、2(断网)、3(其他)。",
           "example": "1",
           "member": "string",
           "name": "NetStatus",
@@ -3447,7 +3447,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，pagepv：pv视图，day：14天数据，count40x：40X视图，count50x：50X视图，count5xand4x：40∑50视图，top：资源top视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "allcount：性能视图，pagepv：pv视图，day：14天数据，count40x：40X视图，count50x：50X视图，count5xand4x：40∑50视图，top：资源top视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -4062,7 +4062,7 @@
         },
         {
           "disabled": false,
-          "document": "analysis：异常分析，compare：异常列表对比，allcount：性能视图，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "analysis：异常分析，compare：异常列表对比，allcount：性能视图，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -5372,7 +5372,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "allcount：性能视图，day：14天数据，vp：性能，ckuv：uv，ckpv：pv，condition：条件列表，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -6648,7 +6648,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，day：14天数据，condition：条件列表，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "allcount：性能视图，day：14天数据，condition：条件列表，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -7190,7 +7190,7 @@
         },
         {
           "disabled": false,
-          "document": "top：资源top视图，count40x：40X视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图//ext1视图等等",
+          "document": "top：资源top视图，count40x：40X视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图//ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -7732,7 +7732,7 @@
         },
         {
           "disabled": false,
-          "document": "pagepv：性能视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图//ext1视图等等",
+          "document": "pagepv：性能视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图//ext1视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -8102,7 +8102,7 @@
         },
         {
           "disabled": false,
-          "document": "类型暂无",
+          "document": "按页面来源分组（group by from），返回每个页面的 LCP/FID/CLS/FCP",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -11064,7 +11064,7 @@
         {
           "disabled": false,
           "document": "API调用总数",
-          "example": "12345",
+          "example": "99",
           "member": "int64",
           "name": "ApiNum",
           "output_required": true,
@@ -11074,7 +11074,7 @@
         {
           "disabled": false,
           "document": "API失败次数",
-          "example": "123",
+          "example": "50",
           "member": "int64",
           "name": "ApiFail",
           "output_required": true,
@@ -11104,7 +11104,7 @@
         {
           "disabled": false,
           "document": "页面浏览量",
-          "example": "123",
+          "example": "799",
           "member": "int64",
           "name": "PagePv",
           "output_required": true,
@@ -11224,7 +11224,7 @@
         {
           "disabled": false,
           "document": "静态资源请求总数",
-          "example": "123",
+          "example": "50",
           "member": "int64",
           "name": "StaticNum",
           "output_required": true,

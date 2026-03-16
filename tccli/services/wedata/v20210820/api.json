@@ -1891,7 +1891,7 @@
       "status": "online"
     },
     "ReportTable": {
-      "document": "上报table元数据",
+      "document": "上报table元数据,当前列数量限制在300",
       "input": "ReportTableRequest",
       "name": "上报table元数据",
       "output": "ReportTableResponse",
@@ -57050,7 +57050,7 @@
           "example": "12345",
           "member": "string",
           "name": "TableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -57060,7 +57060,7 @@
           "example": "2004-05-03T17:30:08+08:00",
           "member": "datetime_iso",
           "name": "DayTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -57070,7 +57070,7 @@
           "example": "222.0",
           "member": "float",
           "name": "Heat",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -57080,7 +57080,7 @@
           "example": "1000.0",
           "member": "float",
           "name": "MaxHeat",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -58290,7 +58290,7 @@
         {
           "disabled": false,
           "document": "分区时间格式：yyyy-MM-dd\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "yyyy-MM-dd",
           "member": "string",
           "name": "DateFormat",
           "output_required": false,
@@ -58576,6 +58576,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目状态：0：禁用，1：启用，-3:禁用中，2：启用中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -58752,7 +58762,7 @@
           "example": "12345",
           "member": "string",
           "name": "TableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -58762,7 +58772,7 @@
           "example": "2004-05-03T17:30:08+08:00",
           "member": "datetime_iso",
           "name": "DayTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -58772,7 +58782,7 @@
           "example": "98.15",
           "member": "float",
           "name": "Integrity",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -58782,7 +58792,7 @@
           "example": "98.15",
           "member": "float",
           "name": "Safety",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -58792,7 +58802,7 @@
           "example": "98.15",
           "member": "float",
           "name": "Timeliness",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -58802,7 +58812,7 @@
           "example": "98.15",
           "member": "float",
           "name": "Stability",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -58812,7 +58822,7 @@
           "example": "98.15",
           "member": "float",
           "name": "Normative",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -58822,7 +58832,7 @@
           "example": "98.15",
           "member": "float",
           "name": "Average",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }

@@ -1136,6 +1136,20 @@
         "title": "错误示例-变更类型不合法"
       }
     ],
+    "CreatePartnerAuthorizationLink": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAuthorizationLink\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps**v**UEfH3DjwIpMfa0uw\"\n    },\n    \"BusinessId\": \"jdyxk\",\n    \"PartnerOrganizationId\": \"yDxjsUUg*dj*335****4zjEvfko0F1BB\",\n    \"ApplicationInfo\": {\n        \"CallbackUrl\": \"https://v.qq.com\",\n        \"CallbackKey\": \"yDwf3U**kp*8*v********jwIpMfa0uw\"\n    },\n    \"ProxyOrganizationInfo\": {\n        \"OrganizationOpenId\": \"ererer\",\n        \"OperatorOpenId\": \"2323\"\n    },\n    \"PartnerApplicationId\": \"yD3nhUUck***up**U***IGBN50TJsNwY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1773400421,\n        \"Link\": \"https://test.qian.tencent.cn/console/third-app-auth?token=yD3aIUUckpmou8niUxFA3TWyp6dwJwKA\",\n        \"RequestId\": \"a486dde2-d36a-425f-911b-802e0d36a362\"\n    }\n}",
+        "title": "创建应用并且授权子客企业链接"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAuthorizationLink\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3U*c**s8*v*********wIpMfa0uw\"\n    },\n    \"BusinessId\": \"jdyxk\",\n    \"PartnerOrganizationId\": \"yDxjsUU***j*3***U****jE*fko0F1BB\",\n    \"ApplicationInfo\": {\n        \"CallbackUrl\": \"https://v.qq.com\",\n        \"CallbackKey\": \"yD3nhUUc***eu**p*******N50TJsNwY\"\n    },\n    \"ProxyOrganizationInfo\": {\n        \"OrganizationOpenId\": \"org_open_id\",\n        \"OperatorOpenId\": \"operator_open_id\"\n    },\n    \"PartnerApplicationId\": \"yD3nhU**kp**********IGBN50TJsNwY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1773400245,\n        \"Link\": \"https://test.qian.tencent.cn/console/third-app-auth?token=yD3aIUUckpmouq0qUxnX3yhReAfE4eqs\",\n        \"RequestId\": \"cb3df742-c9f7-4938-9574-4e2893d9ee8f\"\n    }\n}",
+        "title": "已有授权应用，创建子客企业授权链接"
+      }
+    ],
     "CreatePartnerAutoSignAuthUrl": [
       {
         "document": "创建他方自动签授权链接（AuthToMe设置成false）\n",
@@ -2204,6 +2218,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84\",\n    \"Name\": \"业务员角色\",\n    \"Description\": \"这是角色描述信息\",\n    \"Operator\": {\n        \"UserId\": \"y******************5\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84\",\n        \"RequestId\": \"4558af3c-b35b-41f2-85e4-31854a39a512\"\n    }\n}",
         "title": "示例-普通企业更新角色（不带权限树参数）"
+      }
+    ],
+    "ModifyPartnerAuthorization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPartnerAuthorization\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3U*c*p*8dv**UE*******pMfa0uw\"\n    },\n    \"BusinessId\": \"jdyxk\",\n    \"PartnerApplicationId\": \"yD3nh****pf*u*k*******BN50TJsNwY\",\n    \"ApplicationInfo\": {\n        \"CallbackUrl\": \"https://v.qq.com\",\n        \"CallbackKey\": \"yDxjsU**yd**3*5*U********ko0F1BB\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0fbfba2-fb8f-43d9-bc74-87a0a63bda0a\"\n    }\n}",
+        "title": "修改他方企业授权的第三方应用配置，仅能修改回调地址和key"
       }
     ],
     "ModifyPartnerAutoSignAuthUrl": [

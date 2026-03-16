@@ -196,6 +196,13 @@
       "output": "CreateEksLogConfigResponse",
       "status": "online"
     },
+    "CreateExternalNodePool": {
+      "document": "创建第三方节点池",
+      "input": "CreateExternalNodePoolRequest",
+      "name": "创建第三方节点池",
+      "output": "CreateExternalNodePoolResponse",
+      "status": "online"
+    },
     "CreateGlobalMaintenanceWindowAndExclusions": {
       "document": "创建全局维护时间窗口和排除项",
       "input": "CreateGlobalMaintenanceWindowAndExclusionsRequest",
@@ -418,6 +425,20 @@
       "input": "DeleteEdgeClusterInstancesRequest",
       "name": "删除边缘计算实例",
       "output": "DeleteEdgeClusterInstancesResponse",
+      "status": "online"
+    },
+    "DeleteExternalNode": {
+      "document": "删除第三方节点",
+      "input": "DeleteExternalNodeRequest",
+      "name": "删除第三方节点",
+      "output": "DeleteExternalNodeResponse",
+      "status": "online"
+    },
+    "DeleteExternalNodePool": {
+      "document": "删除第三方节点池",
+      "input": "DeleteExternalNodePoolRequest",
+      "name": "删除第三方节点池",
+      "output": "DeleteExternalNodePoolResponse",
       "status": "online"
     },
     "DeleteGlobalMaintenanceWindowAndExclusion": {
@@ -903,6 +924,27 @@
       "output": "DescribeExistedInstancesResponse",
       "status": "online"
     },
+    "DescribeExternalNode": {
+      "document": "查看第三方节点列表",
+      "input": "DescribeExternalNodeRequest",
+      "name": "查看第三方节点列表",
+      "output": "DescribeExternalNodeResponse",
+      "status": "online"
+    },
+    "DescribeExternalNodePools": {
+      "document": "查看第三方节点池列表",
+      "input": "DescribeExternalNodePoolsRequest",
+      "name": "查看第三方节点池列表",
+      "output": "DescribeExternalNodePoolsResponse",
+      "status": "online"
+    },
+    "DescribeExternalNodeScript": {
+      "document": "获取第三方节点添加脚本",
+      "input": "DescribeExternalNodeScriptRequest",
+      "name": "获取第三方节点添加脚本",
+      "output": "DescribeExternalNodeScriptResponse",
+      "status": "online"
+    },
     "DescribeExternalNodeSupportConfig": {
       "document": "查看开启第三方节点池配置信息",
       "input": "DescribeExternalNodeSupportConfigRequest",
@@ -1316,6 +1358,13 @@
       "output": "DrainClusterVirtualNodeResponse",
       "status": "online"
     },
+    "DrainExternalNode": {
+      "document": "驱逐第三方节点",
+      "input": "DrainExternalNodeRequest",
+      "name": "驱逐第三方节点",
+      "output": "DrainExternalNodeResponse",
+      "status": "online"
+    },
     "EnableClusterAudit": {
       "document": "开启集群审计",
       "input": "EnableClusterAuditRequest",
@@ -1356,6 +1405,13 @@
       "input": "EnableEventPersistenceRequest",
       "name": "开启事件持久化功能",
       "output": "EnableEventPersistenceResponse",
+      "status": "online"
+    },
+    "EnableExternalNodeSupport": {
+      "document": "开启第三方节点池支持",
+      "input": "EnableExternalNodeSupportRequest",
+      "name": "开启第三方节点池支持",
+      "output": "EnableExternalNodeSupportResponse",
       "status": "online"
     },
     "EnableVpcCniNetworkType": {
@@ -1538,6 +1594,13 @@
       "input": "ModifyClusterVirtualNodePoolRequest",
       "name": "修改超级节点池",
       "output": "ModifyClusterVirtualNodePoolResponse",
+      "status": "online"
+    },
+    "ModifyExternalNodePool": {
+      "document": "修改第三方节点池",
+      "input": "ModifyExternalNodePoolRequest",
+      "name": "修改第三方节点池",
+      "output": "ModifyExternalNodePoolResponse",
       "status": "online"
     },
     "ModifyGlobalMaintenanceWindowAndExclusions": {
@@ -3880,6 +3943,52 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClusterExternalConfig": {
+      "document": "开启第三方节点池支持配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群网络插件类型，支持：Flannel、CiliumBGP、CiliumVXLan",
+          "example": "Flannel",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-drsvvxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.22.0.0/16",
+          "member": "string",
+          "name": "ClusterCIDR",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启第三方节点池支持",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -6708,6 +6817,114 @@
       ],
       "type": "object"
     },
+    "CreateExternalNodePoolRequest": {
+      "document": "CreateExternalNodePool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池名称",
+          "example": "np-kennkdng",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运行时",
+          "example": "docker",
+          "member": "string",
+          "name": "ContainerRuntime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运行时版本",
+          "example": "19.3",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点label",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点taint",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点高级设置",
+          "example": "无",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "CPU",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExternalNodePoolResponse": {
+      "document": "CreateExternalNodePool返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点池ID",
+          "example": "np-kennkdng",
+          "member": "string",
+          "name": "NodePoolId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGlobalMaintenanceWindowAndExclusionsRequest": {
       "document": "CreateGlobalMaintenanceWindowAndExclusions请求参数结构体",
       "members": [
@@ -8504,6 +8721,96 @@
     },
     "DeleteEdgeClusterInstancesResponse": {
       "document": "DeleteEdgeClusterInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExternalNodePoolRequest": {
+      "document": "DeleteExternalNodePool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点池ID列表",
+          "example": "[\"np-abcd1234\"]",
+          "member": "string",
+          "name": "NodePoolIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制删除，在第三方节点上有pod的情况下，如果选择非强制删除，则删除会失败",
+          "example": "false",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExternalNodePoolResponse": {
+      "document": "DeleteExternalNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExternalNodeRequest": {
+      "document": "DeleteExternalNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点列表",
+          "example": "[\"node1\",\"node2\"]",
+          "member": "string",
+          "name": "Names",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制删除：如果第三方节点上有运行中Pod，则非强制删除状态下不会进行删除",
+          "example": "无",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExternalNodeResponse": {
+      "document": "DeleteExternalNode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12459,6 +12766,211 @@
       ],
       "type": "object"
     },
+    "DescribeExternalNodePoolsRequest": {
+      "document": "DescribeExternalNodePools请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalNodePoolsResponse": {
+      "document": "DescribeExternalNodePools返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点池总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点池列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExternalNodePool",
+          "name": "NodePoolSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalNodeRequest": {
+      "document": "DescribeExternalNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池ID",
+          "example": "np-abcd1234",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalNodeResponse": {
+      "document": "DescribeExternalNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExternalNode",
+          "name": "Nodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalNodeScriptRequest": {
+      "document": "DescribeExternalNodeScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池ID",
+          "example": "np-abcd1234",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网卡名",
+          "example": "eth0",
+          "member": "string",
+          "name": "Interface",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "node-1.1.1.1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否内网获取节点初始化脚本",
+          "example": "false",
+          "member": "bool",
+          "name": "Internal",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalNodeScriptResponse": {
+      "document": "DescribeExternalNodeScript返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加脚本cos下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "Link",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos临时密钥",
+          "example": "UAkOh6wCxzr8M8zf",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加脚本下载命令",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExternalNodeSupportConfigRequest": {
       "document": "DescribeExternalNodeSupportConfig请求参数结构体",
       "members": [
@@ -16210,6 +16722,42 @@
       ],
       "type": "object"
     },
+    "DrainExternalNodeRequest": {
+      "document": "DrainExternalNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名",
+          "example": "node1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DrainExternalNodeResponse": {
+      "document": "DrainExternalNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DriverVersion": {
       "document": "GPU驱动和CUDA的版本信息",
       "members": [
@@ -17553,6 +18101,42 @@
       ],
       "type": "object"
     },
+    "EnableExternalNodeSupportRequest": {
+      "document": "EnableExternalNodeSupport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启第三方节点池支持配置信息",
+          "example": "无",
+          "member": "ClusterExternalConfig",
+          "name": "ClusterExternalConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableExternalNodeSupportResponse": {
+      "document": "EnableExternalNodeSupport返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableVpcCniNetworkTypeRequest": {
       "document": "EnableVpcCniNetworkType请求参数结构体",
       "members": [
@@ -18081,6 +18665,198 @@
         }
       ],
       "usage": "in"
+    },
+    "ExternalNode": {
+      "document": "第三方节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第三方节点名称",
+          "example": "node1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点所属节点池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "np-0nwzqj10",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方IP地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方地域",
+          "example": "gz",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点状态",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-29T06:30:44Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kubelet has sufficient memory available",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否封锁。true表示已封锁，false表示未封锁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Unschedulable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExternalNodePool": {
+      "document": "第三方节点池信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第三方节点池ID",
+          "example": "np-0nwzqj10",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点池名称",
+          "example": "externalNodePool",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点池生命周期",
+          "example": "normal",
+          "member": "string",
+          "name": "LifeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群CIDR",
+          "example": "172.16.0.0/16",
+          "member": "string",
+          "name": "ClusterCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群网络插件类型",
+          "example": "Flannel",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点Runtime配置",
+          "example": "无",
+          "member": "RuntimeConfig",
+          "name": "RuntimeConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点taint\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "FailedResource": {
       "document": "修改标签失败的资源",
@@ -21512,6 +22288,87 @@
     },
     "ModifyClusterVirtualNodePoolResponse": {
       "document": "ModifyClusterVirtualNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExternalNodePoolRequest": {
+      "document": "ModifyExternalNodePool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池ID",
+          "example": "np-abcd1234",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池名称",
+          "example": "virtual-node-prod",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点label",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "第三方节点taint",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看",
+          "example": "IyEvYmluL3NoIAplY2hvICJoZWxsbyB3b3JsZCI=",
+          "member": "string",
+          "name": "UserScript",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExternalNodePoolResponse": {
+      "document": "ModifyExternalNodePool返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

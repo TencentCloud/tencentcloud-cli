@@ -51,8 +51,8 @@
     "QueryHunyuanTo3DProJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DProJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1357237233311637504\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"e4de438f-acca-44f9-9f29-7df547c81680\",\n        \"ResultFile3Ds\": [\n            {\n                \"PreviewImageUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.png\",\n                \"Type\": \"GLB\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.glb\"\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DProJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1423225609617285120\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultCreditConsumed\": 40,\n        \"ResultCreditDetails\": \"{\\\"FaceCount\\\":10,\\\"GenerateType-Normal\\\":20,\\\"Pbr\\\":10}\",\n        \"ResultFile3Ds\": [\n            {\n                \"PreviewImageUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.png\",\n                \"Type\": \"OBJ\",\n                \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.zip\"\n            }\n        ],\n        \"Status\": \"DONE\",\n        \"RequestId\": \"8c73c29c-f871-470e-87ca-69219c82b550\"\n    }\n}",
         "title": "查询生3D专业版示例"
       }
     ],
@@ -114,10 +114,10 @@
     ],
     "SubmitTextureTo3DJob": [
       {
-        "document": "成功调用",
-        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextureTo3DJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Type\": \"GLB\",\n        \"Url\": \"https://vcg-test-1258344699.cos.ap-guangzhou.myqcloud.com/test/3d/test.glb\"\n    },\n    \"Prompt\": \"优化模型\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"1317417610996465664\",\n        \"RequestId\": \"19f63401-d6f2-47d7-a3ad-8a3428a304ff\"\n    }\n}",
-        "title": "成功调用"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextureTo3DJob\n<公共请求参数>\n\n{\n    \"File3D\": {\n        \"Type\": \"GLB\",\n        \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.glb\"\n    },\n    \"Prompt\": \"优化模型\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1425050619077222400\",\n        \"RequestId\": \"dcc06f5c-684d-4e58-9eaf-2616d66b177a\"\n    }\n}",
+        "title": "调用示例"
       }
     ]
   },

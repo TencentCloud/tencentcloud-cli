@@ -57,7 +57,7 @@
       "status": "online"
     },
     "CreateMySQL": {
-      "document": "开通Mysql型数据库\n\n开通后，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询开通结果，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令",
+      "document": "本接口（CreateMySQL）用于开通Mysql型数据库。\n\n开通后，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询开通结果，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令。",
       "input": "CreateMySQLRequest",
       "name": "开通 MySql",
       "output": "CreateMySQLResponse",
@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateTable": {
-      "document": "本接口(CreateTable)用于创建文档型数据库表，支持创建capped类型集合，暂时不支持分片表",
+      "document": "本接口(CreateTable)用于创建文档型数据库表，支持创建capped类型集合，暂时不支持分片表。",
       "input": "CreateTableRequest",
       "name": "创建文档型数据库表",
       "output": "CreateTableResponse",
@@ -106,7 +106,7 @@
       "status": "online"
     },
     "DeleteTable": {
-      "document": "本接口(DeleteTable)用于删除文档型数据库表，删除表后表中数据将会被删除且无法恢复，请谨慎操作\n\n接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取",
+      "document": "本接口(DeleteTable)用于删除文档型数据库表，删除表后表中数据将会被删除且无法恢复，请谨慎操作。\n\n接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取。",
       "input": "DeleteTableRequest",
       "name": "删除文档型数据库表",
       "output": "DeleteTableResponse",
@@ -133,6 +133,13 @@
       "output": "DescribeBaasPackageListResponse",
       "status": "online"
     },
+    "DescribeBillingInfo": {
+      "document": "获取计费相关信息",
+      "input": "DescribeBillingInfoRequest",
+      "name": "获取计费相关信息",
+      "output": "DescribeBillingInfoResponse",
+      "status": "online"
+    },
     "DescribeCloudBaseBuildService": {
       "document": "获取云托管代码上传url",
       "input": "DescribeCloudBaseBuildServiceRequest",
@@ -154,15 +161,22 @@
       "output": "DescribeCloudBaseGWServiceResponse",
       "status": "online"
     },
+    "DescribeCloudBaseRunServerVersion": {
+      "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
+      "input": "DescribeCloudBaseRunServerVersionRequest",
+      "name": "查询云托管服务版本的详情",
+      "output": "DescribeCloudBaseRunServerVersionResponse",
+      "status": "online"
+    },
     "DescribeCreateMySQLResult": {
-      "document": "查询开通Mysql结果，`Response.Data.Status = \"notexist\"` 表示未开通，如果未开通，可以调用 [CreateMySQL](https://cloud.tencent.com/document/api/876/128186) 来开通\n `Response.Data. Status = \"success\"` 表示开通成功，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令",
+      "document": "本接口（DescribeCreateMySQLResult）用于查询开通Mysql结果。\n\n`Response.Data.Status = \"notexist\"` 表示未开通，如果未开通，可以调用 [CreateMySQL](https://cloud.tencent.com/document/api/876/128186) 来开通\n `Response.Data. Status = \"success\"` 表示开通成功，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 MySql 命令。",
       "input": "DescribeCreateMySQLResultRequest",
       "name": "开通 MySql 结果查询",
       "output": "DescribeCreateMySQLResultResponse",
       "status": "online"
     },
     "DescribeDatabaseACL": {
-      "document": "获取文档型数据库权限",
+      "document": "本接口（DescribeDatabaseACL）获取文档型数据库权限。",
       "input": "DescribeDatabaseACLRequest",
       "name": "获取文档型数据库权限",
       "output": "DescribeDatabaseACLResponse",
@@ -197,14 +211,14 @@
       "status": "online"
     },
     "DescribeMySQLClusterDetail": {
-      "document": "查询Mysql集群信息\n\n调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有已开通的才能查到集群信息，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令",
+      "document": "本接口（DescribeMySQLClusterDetail）查询Mysql集群信息。\n\n调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有已开通的才能查到集群信息，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 MySql 命令，比如创建表格、插入数据、删除表格等 MySql 命令。",
       "input": "DescribeMySQLClusterDetailRequest",
       "name": "查询Mysql集群信息",
       "output": "DescribeMySQLClusterDetailResponse",
       "status": "online"
     },
     "DescribeMySQLTaskStatus": {
-      "document": "查询Mysql任务状态",
+      "document": "本接口（DescribeMySQLTaskStatus）用于查询Mysql任务状态。",
       "input": "DescribeMySQLTaskStatusRequest",
       "name": "销毁Mysql结果查询",
       "output": "DescribeMySQLTaskStatusResponse",
@@ -232,14 +246,14 @@
       "status": "online"
     },
     "DescribeTable": {
-      "document": "查询文档型数据库表的相关信息，包括索引等信息\n\n接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取",
+      "document": "本接口（DescribeTable）用于查询文档型数据库表的相关信息，包括索引等信息。\n\n接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取。",
       "input": "DescribeTableRequest",
       "name": "查询文档型数据库表信息",
       "output": "DescribeTableResponse",
       "status": "online"
     },
     "DescribeTables": {
-      "document": "本接口(DescribeTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等",
+      "document": "本接口(DescribeTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等。",
       "input": "DescribeTablesRequest",
       "name": "查询文档型数据库所有表信息",
       "output": "DescribeTablesResponse",
@@ -260,7 +274,7 @@
       "status": "online"
     },
     "DestroyMySQL": {
-      "document": "销毁Mysql\n\n销毁后可以通过 [DescribeMySQLTaskStatus](https://cloud.tencent.com/document/api/876/128183) 接口查询销毁结果，如果 `Response.Data. Status = FAILED ` 表示销毁失败，可以重新调用销毁接口重试",
+      "document": "本接口（DestroyMySQL）用于销毁Mysql。\n\n销毁后可以通过 [DescribeMySQLTaskStatus](https://cloud.tencent.com/document/api/876/128183) 接口查询销毁结果，如果 `Response.Data. Status = FAILED ` 表示销毁失败，可以重新调用销毁接口重试。",
       "input": "DestroyMySQLRequest",
       "name": "销毁MySql",
       "output": "DestroyMySQLResponse",
@@ -281,7 +295,7 @@
       "status": "online"
     },
     "ListTables": {
-      "document": "本接口(ListTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等\n\n该接口跟 [DescribeTables](https://cloud.tencent.com/document/api/876/127962) 接口功能一致，后续该接口可能会下线，请使用 [DescribeTable](https://cloud.tencent.com/document/api/876/127962)接口",
+      "document": "本接口(ListTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等。\n\n该接口跟 [DescribeTables](https://cloud.tencent.com/document/api/876/127962) 接口功能一致，后续该接口可能会下线，请使用 [DescribeTable](https://cloud.tencent.com/document/api/876/127962)接口。",
       "input": "ListTablesRequest",
       "name": "查询文档型数据库所有表",
       "output": "ListTablesResponse",
@@ -302,7 +316,7 @@
       "status": "online"
     },
     "ModifyDatabaseACL": {
-      "document": "修改文档型数据库权限",
+      "document": "本接口（ModifyDatabaseACL）用于修改文档型数据库权限。",
       "input": "ModifyDatabaseACLRequest",
       "name": "修改文档型数据库权限",
       "output": "ModifyDatabaseACLResponse",
@@ -351,14 +365,14 @@
       "status": "online"
     },
     "RunCommands": {
-      "document": "本接口用于执行文档型数据库命令",
+      "document": "本接口（RunCommands）用于执行文档型数据库命令。",
       "input": "RunCommandsRequest",
       "name": "执行文档型数据库命令",
       "output": "RunCommandsResponse",
       "status": "online"
     },
     "RunSql": {
-      "document": "执行MySQL语句\n\n该接口用来执行 MySql 语句，比如创建表格、插入数据、修改数据、删除字段、添加索引等可以通过sql 语句实现的都可以使用该接口\n\n调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有开通成功才能操作",
+      "document": "本接口（RunSql）用于执行MySQL语句。\n\n该接口用来执行 MySql 语句，比如创建表格、插入数据、修改数据、删除字段、添加索引等可以通过sql 语句实现的都可以使用该接口。\n\n调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有开通成功才能操作。",
       "input": "RunSqlRequest",
       "name": "执行MySQL语句",
       "output": "RunSqlResponse",
@@ -372,7 +386,7 @@
       "status": "online"
     },
     "UpdateTable": {
-      "document": "本接口(UpdateTable)用于修改文档型数据库表信息，当前可以支持创建和删除索引",
+      "document": "本接口(UpdateTable)用于修改文档型数据库表信息，当前可以支持创建和删除索引。",
       "input": "UpdateTableRequest",
       "name": "修改文档型数据库表索引信息",
       "output": "UpdateTableResponse",
@@ -2702,6 +2716,43 @@
       ],
       "type": "object"
     },
+    "DescribeBillingInfoRequest": {
+      "document": "DescribeBillingInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xxyyzzaa",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingInfoResponse": {
+      "document": "DescribeBillingInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境计费信息列表",
+          "example": "无",
+          "member": "EnvBillingInfoItem",
+          "name": "EnvBillingInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudBaseBuildServiceRequest": {
       "document": "DescribeCloudBaseBuildService请求参数结构体",
       "members": [
@@ -3114,6 +3165,441 @@
           "example": "envid.app-in.tencentcloudbase.com",
           "member": "string",
           "name": "OriginDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerVersionRequest": {
+      "document": "DescribeCloudBaseRunServerVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-98772234",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "sv",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本名称",
+          "example": "sv-001",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerVersionResponse": {
+      "document": "DescribeCloudBaseRunServerVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本名称",
+          "example": "sv-001",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Dockerfile的路径",
+          "example": "Dockerfile",
+          "member": "string",
+          "name": "DockerfilePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DockerBuild的目录",
+          "example": ".",
+          "member": "string",
+          "name": "BuildDir",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请使用CPUSize",
+          "example": "1.0",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请使用MemSize",
+          "example": "2.0",
+          "member": "float",
+          "name": "Mem",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "副本最小值",
+          "example": "1",
+          "member": "int64",
+          "name": "MinNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "副本最大值",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型",
+          "example": "Dockerfile",
+          "member": "string",
+          "name": "PolicyType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略阈值",
+          "example": "60.0",
+          "member": "float",
+          "name": "PolicyThreshold",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "key=value",
+          "member": "string",
+          "name": "EnvParams",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-12-01 12:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2024-12-01 12:00:00",
+          "member": "string",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本的IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "VersionIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本的端口号",
+          "example": "80",
+          "member": "int64",
+          "name": "VersionPort",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本状态",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代码包的名字",
+          "example": "package",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代码版本的名字",
+          "example": "134sd",
+          "member": "string",
+          "name": "PackageVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "枚举（package/repository/image)",
+          "example": "package",
+          "member": "string",
+          "name": "UploadType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Repo的类型(gitlab/github/coding)",
+          "example": "gitlab",
+          "member": "string",
+          "name": "RepoType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址",
+          "example": "adress",
+          "member": "string",
+          "name": "Repo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分支",
+          "example": "master",
+          "member": "string",
+          "name": "Branch",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名字",
+          "example": "version",
+          "member": "string",
+          "name": "ServerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否对于外网开放",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPublic",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "vpc-sdfsdf",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"subnet-sdfsdf\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志采集路径",
+          "example": "stdout",
+          "member": "string",
+          "name": "CustomLogs",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听端口",
+          "example": "80",
+          "member": "int64",
+          "name": "ContainerPort",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "延迟多长时间开始健康检查（单位s）",
+          "example": "80",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "url",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU 大小",
+          "example": "2.0",
+          "member": "float",
+          "name": "CpuSize",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MEM 大小",
+          "example": "4.0",
+          "member": "float",
+          "name": "MemSize",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有Dockerfile：0-default has, 1-has, 2-has not",
+          "example": "0",
+          "member": "int64",
+          "name": "HasDockerfile",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础镜像",
+          "example": "JDK7",
+          "member": "string",
+          "name": "BaseImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器启动入口命令",
+          "example": "java -jar app.jar",
+          "member": "string",
+          "name": "EntryPoint",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仓库语言",
+          "example": "Java",
+          "member": "string",
+          "name": "RepoLanguage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动扩缩容策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HpaPolicy",
+          "name": "PolicyDetail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Tke集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-sddff",
+          "member": "TkeClusterInfo",
+          "name": "TkeClusterInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本工作负载类型；deployment/deamonset",
+          "example": "deployment",
+          "member": "string",
+          "name": "TkeWorkloadType",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4363,6 +4849,182 @@
       ],
       "type": "object"
     },
+    "EnvBillingInfoItem": {
+      "document": "环境计费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xxxxxx",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
+          "example": "baas_personal",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标记",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAutoRenew",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。包含以下取值：\n<li> 空字符串：初始化中</li>\n<li> NORMAL：正常</li>\n<li> ISOLATE：隔离</li>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支付方式。包含以下取值：\n<li> PREPAYMENT：预付费</li>\n<li> POSTPAID：后付费</li>",
+          "example": "PREPAYMENT",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间，最近一次隔离的时间",
+          "example": "2022-01-01 12:34:56",
+          "member": "string",
+          "name": "IsolatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，套餐即将到期的时间",
+          "example": "2022-01-01 12:34:56",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，第一次接入计费方案的时间。",
+          "example": "2022-01-01 12:34:56",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，计费信息最近一次更新的时间。",
+          "example": "2022-01-01 12:34:56",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true表示从未升级过付费版。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAlwaysFree",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费渠道。\n<li> miniapp：小程序</li>\n<li> qcloud：腾讯云</li>",
+          "example": "miniapp",
+          "member": "string",
+          "name": "PaymentChannel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新的订单信息",
+          "example": "无",
+          "member": "OrderInfo",
+          "name": "OrderInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费配额信息。",
+          "example": "basic",
+          "member": "string",
+          "name": "FreeQuota",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 `超过套餐额度部分转按量付费`",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableOverrun",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境套餐类型",
+          "example": "baas",
+          "member": "string",
+          "name": "ExtPackageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否付费期环境，可取值：yes/no。",
+          "example": "yes",
+          "member": "string",
+          "name": "EnvCharged",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已激活，可取值：yes/no。",
+          "example": "yes",
+          "member": "string",
+          "name": "EnvActivated",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EnvInfo": {
       "document": "环境信息",
       "members": [
@@ -4644,6 +5306,34 @@
         }
       ],
       "usage": "out"
+    },
+    "HpaPolicy": {
+      "document": "扩缩容策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略类型",
+          "example": "cpu",
+          "member": "string",
+          "name": "PolicyType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略阈值",
+          "example": "10",
+          "member": "int64",
+          "name": "PolicyThreshold",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "IndexAccesses": {
       "document": "索引命中信息",
@@ -5741,6 +6431,122 @@
       ],
       "usage": "out"
     },
+    "OrderInfo": {
+      "document": "订单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号",
+          "example": "202401011000004515",
+          "member": "string",
+          "name": "TranId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单要切换的套餐ID",
+          "example": "baas_personal",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单类型\n<li>1 购买</li>\n<li>2 续费</li>\n<li>3 变配</li>",
+          "example": "1",
+          "member": "string",
+          "name": "TranType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态。\n<li>1未支付</li>\n<li>2 支付中</li>\n<li>3 发货中</li>\n<li>4 发货成功</li>\n<li>5 发货失败</li>\n<li>6 已退款</li>\n<li>7 已取消</li>\n<li>100 已删除</li>",
+          "example": "1",
+          "member": "string",
+          "name": "TranStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单更新时间",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单创建时间",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式.\n<li>prepayment 预付费</li>\n<li>postpaid 后付费</li>",
+          "example": "prepayment ",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单绑定的扩展ID",
+          "example": "ext-xyzabdkjks",
+          "member": "string",
+          "name": "ExtensionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)",
+          "example": "successful",
+          "member": "string",
+          "name": "ResourceReady",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安装标记。建议使用方统一转大小写之后再判断。\n<li>QuickStart：快速启动来源</li>\n<li>Activity：活动来源</li>",
+          "example": "QuickStart",
+          "member": "string",
+          "name": "Flag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下单时的参数",
+          "example": "ReqBody",
+          "member": "string",
+          "name": "ReqBody",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Pager": {
       "document": "分页信息",
       "members": [
@@ -6374,6 +7180,45 @@
           "member": "string",
           "name": "Value",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TkeClusterInfo": {
+      "document": "tke集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群的vpcId",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本内网CLB所在子网Id",
+          "example": "subnet-xxxxxxx",
+          "member": "string",
+          "name": "VersionClbSubnetId",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

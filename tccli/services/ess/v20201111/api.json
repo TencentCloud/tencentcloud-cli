@@ -385,6 +385,13 @@
       "output": "CreateOrganizationInfoChangeUrlResponse",
       "status": "online"
     },
+    "CreatePartnerAuthorizationLink": {
+      "document": "获取他方企业第三方应用的创建及授权及企业用户初始化链接\n此链接在 7 天内有效，若失效请重新生成。\n若第一次初始化，打开此链接，会进行应用号的创建，子客的创建，打开此链接的人，必须是合作方企业的超管或者法人，否则无法认证成功。\n若传递了应用号Id，若之前的初始化还未创建子客成功，则可以继续创建子客企业。\n\n注: \n1. BusinessId “集成方业务标记”唯一，不可变更， 此标记由电子签产品经理提供，请调用方保存。\n2. 若“第三方应用id”不为空，需要其“集成方业务标记”与接口一致。\n3. 不支持客户自己创建“已有第三方应用id”进行授权。（即“已有第三方应用id”的集成方业务标记为空，不能进行授权）。\n4. 创建的子客企业与合作企业一致，其中包括超管姓名，企业名称。\n5. 创建好的第三方应用号，不支持在页面进行修改编辑，只能通过接口的方式进行管理。",
+      "input": "CreatePartnerAuthorizationLinkRequest",
+      "name": "创建他方企业第三方应用授权链接",
+      "output": "CreatePartnerAuthorizationLinkResponse",
+      "status": "online"
+    },
     "CreatePartnerAutoSignAuthUrl": {
       "document": "创建一个用于他方自动签授权的链接（可选择他方授权或我方授权）。通过这个链接，合作方企业可以直接进入小程序，进行自动签授权操作。\n\n如果授权企业尚未开通企业自动签功能，该链接还将引导他们首先开通本企业的自动签服务\n\n注: \n1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Operator.UserId 需要传递超管或者法人的UserId)\n2. 已经在授权中或者授权成功的企业，无法重复授权\n3. 授权企业和被授权企业必须都是已认证企业\n4. <font color='red'>需要授权企业或被授权企业的超管或者法人打开链接</font>走开通逻辑。\n\n\n**该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权**\n![image](https://qcloudimg.tencent-cloud.cn/raw/4f89c8d5ccc1397db964257fd73dd5e1.png)",
       "input": "CreatePartnerAutoSignAuthUrlRequest",
@@ -894,6 +901,13 @@
       "input": "ModifyIntegrationRoleRequest",
       "name": "更新企业角色",
       "output": "ModifyIntegrationRoleResponse",
+      "status": "online"
+    },
+    "ModifyPartnerAuthorization": {
+      "document": "管理他方企业授权的第三方应用\n\n注: \n1. BusinessId “集成方业务标记”需要与“第三方应用id”一致\n2. 不支持客户自己创建“已有第三方应用id”进行变更。（即“已有第三方应用id”的集成方业务标记为空，不能进行变更）。\n3. 当前仅支持修改回调地址和加密key。",
+      "input": "ModifyPartnerAuthorizationRequest",
+      "name": "修改他方企业授权的第三方应用配置",
+      "output": "ModifyPartnerAuthorizationResponse",
       "status": "online"
     },
     "ModifyPartnerAutoSignAuthUrl": {
@@ -8211,6 +8225,98 @@
           "example": "1695713654",
           "member": "int64",
           "name": "ExpiredTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartnerAuthorizationLinkRequest": {
+      "document": "CreatePartnerAuthorizationLink请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯电子签平台给生态集成方分配的**生态集成业务标识**，\n<font color=\"red\">**此生态集成业务标识需要提前联系产品经理配置**。</font>",
+          "example": "jdyxk",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合作方企业在腾讯电子签注册企业后生成的企业id，需要合作方企业登录\n<a href=\"https://qian.tencent.com/console/company-settings/company-center\" target=\"_blank\">电子签控制台</a>获取\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/20ce774cf8118b9f3742b8519ef935db.png)\n",
+          "example": "yDxjsUUg*dj*335****4zjEvfko0F1BB",
+          "member": "string",
+          "name": "PartnerOrganizationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方应用的配置信息。\n其中包括 回调地址，加密KEY等信息。",
+          "example": "无",
+          "member": "CallbackInfo",
+          "name": "ApplicationInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "第三方应用下企业用户信息。\n其中包括企业的OrganizationOpenId和超管的UserOpenId。\n具体含义请参考结构体解释",
+          "example": "无",
+          "member": "ProxyOrganizationInfo",
+          "name": "ProxyOrganizationInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "若未填写，则会创建一个生态集成应用。\n若填写， 则必须是生态集成企业给合作方企业通过此接口**CreatePartnerAuthorizationLink**创建的应用号。\n应用号可以从下图位置获取。\n![image](https://qcloudimg.tencent-cloud.cn/raw/9bc4ee2bd5972035d12033608df157c9.png)",
+          "example": "yD3nhUUck***up**U***IGBN50TJsNwY",
+          "member": "string",
+          "name": "PartnerApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartnerAuthorizationLinkResponse": {
+      "document": "CreatePartnerAuthorizationLink返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权链接，以短链形式返回。短链的有效期参考回参中的 ExpiredTime。\n\n注：\n\n1. 非小程序和APP集成使用\n\n2. 生成的链路后面不能再增加参数（会出现覆盖链接中已有参数导致错误）",
+          "example": "https://test.qian.tencent.cn/console/third-app-auth?token=yD3aIUUckpmou8niUxFA3TWyp6dwJwKA",
+          "member": "string",
+          "name": "Link",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
+          "example": "1773400421",
+          "member": "int64",
+          "name": "ExpireTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17872,6 +17978,60 @@
       ],
       "type": "object"
     },
+    "ModifyPartnerAuthorizationRequest": {
+      "document": "ModifyPartnerAuthorization请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯电子签平台分配的生态集成业务的**业务标识**，**需要联系接入产品经理提供**。",
+          "example": "jdyxk",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合作方企业通过集成方创建的应用id, 必须与业务标记（Business）保持对应。\n![image](https://qcloudimg.tencent-cloud.cn/raw/9bc4ee2bd5972035d12033608df157c9.png)\n",
+          "example": "yD3nh****pf*u*k*******BN50TJsNwY",
+          "member": "string",
+          "name": "PartnerApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方应用的配置信息。其中包括 回调地址，加密KEY等信息。\n执行成功后会覆盖掉对应的第三方应用的回调相关配置。",
+          "example": "无",
+          "member": "CallbackInfo",
+          "name": "ApplicationInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPartnerAuthorizationResponse": {
+      "document": "ModifyPartnerAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPartnerAutoSignAuthUrlRequest": {
       "document": "ModifyPartnerAutoSignAuthUrl请求参数结构体",
       "members": [
@@ -19477,6 +19637,30 @@
           "member": "string",
           "name": "IdCardType",
           "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ProxyOrganizationInfo": {
+      "document": "第三方应用下企业用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第三方应用平台自定义，对应第三方平台子客企业的唯一标识。一个第三方平台子客企业主体与子客企业ProxyOrganizationOpenId是一一对应的，不可更改，不可重复使用。（例如，可以使用企业名称的hash值，或者社会统一信用代码的hash值，或者随机hash值，需要第三方应用平台保存），最大64位字符串",
+          "example": "org_open_id",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方应用平台自定义，对应第三方平台子客企业超管的唯一标识。\n\n\n注意:\n1. OpenId在子客企业对应一个真实员工，**本应用唯一, 不可重复使用**，最大64位字符串\n2. 可使用用户在贵方企业系统中的Userid或者hash值作为子客企业的员工OpenId\n3. **员工加入企业后**, 可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录子客控制台后, 在**组织架构**模块查看员工们的OpenId, 样式如下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/bb67fb66c926759df3a0af5838fdafd5.png)",
+          "example": "operator_open_id",
+          "member": "string",
+          "name": "OperatorOpenId",
+          "required": true,
           "type": "string"
         }
       ],

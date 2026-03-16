@@ -1155,7 +1155,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "amqp-slrlpeddnr",
           "member": "string",
           "name": "InstanceId",
@@ -1164,7 +1164,7 @@
         },
         {
           "disabled": false,
-          "document": "Vhost参数",
+          "document": "<p>Vhost参数</p>",
           "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
@@ -1173,7 +1173,7 @@
         },
         {
           "disabled": false,
-          "document": "分页offset",
+          "document": "<p>分页offset</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1182,7 +1182,7 @@
         },
         {
           "disabled": false,
-          "document": "分页limit",
+          "document": "<p>分页limit</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -1191,7 +1191,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键词，根据源exchange名称/目标资源名称/绑定key进行模糊搜索",
+          "document": "<p>搜索关键词，根据源exchange名称/目标资源名称进行模糊搜索</p>",
           "example": "testSearchWord",
           "member": "string",
           "name": "SearchWord",
@@ -1200,7 +1200,7 @@
         },
         {
           "disabled": false,
-          "document": "根据源Exchange精准搜索过滤",
+          "document": "<p>根据源Exchange精准搜索过滤</p>",
           "example": "srcExchange",
           "member": "string",
           "name": "SourceExchange",
@@ -1209,7 +1209,7 @@
         },
         {
           "disabled": false,
-          "document": "根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置",
+          "document": "<p>根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置</p>",
           "example": "testQueueName",
           "member": "string",
           "name": "QueueName",
@@ -1218,7 +1218,7 @@
         },
         {
           "disabled": false,
-          "document": "根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置",
+          "document": "<p>根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置</p>",
           "example": "destExchange",
           "member": "string",
           "name": "DestinationExchange",
@@ -1233,7 +1233,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "路由关系列表",
+          "document": "<p>路由关系列表</p>",
           "example": "无",
           "member": "RabbitMQBindingListInfo",
           "name": "BindingInfoList",
@@ -1243,7 +1243,7 @@
         },
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -2726,6 +2726,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备用交换机",
+          "example": "alternate-exchange",
+          "member": "string",
+          "name": "AlternateExchange",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3268,7 +3277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "amqp-slrlpeddnr",
           "member": "string",
           "name": "ClusterId",
@@ -3278,7 +3287,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "测试集群",
           "member": "string",
           "name": "ClusterName",
@@ -3288,7 +3297,7 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
+          "document": "<p>地域信息</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -3298,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，毫秒为单位",
+          "document": "<p>创建时间，毫秒为单位</p>",
           "example": "1728907454000",
           "member": "uint64",
           "name": "CreateTime",
@@ -3308,7 +3317,7 @@
         },
         {
           "disabled": false,
-          "document": "集群说明信息",
+          "document": "<p>集群说明信息</p>",
           "example": "dev开发环境",
           "member": "string",
           "name": "Remark",
@@ -3318,7 +3327,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC及网络信息",
+          "document": "<p>VPC及网络信息</p>",
           "example": "无",
           "member": "VpcEndpointInfo",
           "name": "Vpcs",
@@ -3328,7 +3337,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息",
+          "document": "<p>可用区信息</p>",
           "example": "[190001]",
           "member": "int64",
           "name": "ZoneIds",
@@ -3338,7 +3347,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟主机数量",
+          "document": "<p>虚拟主机数量</p>",
           "example": "10",
           "member": "int64",
           "name": "VirtualHostNumber",
@@ -3348,7 +3357,7 @@
         },
         {
           "disabled": false,
-          "document": "队列数量",
+          "document": "<p>队列数量</p>",
           "example": "10",
           "member": "int64",
           "name": "QueueNumber",
@@ -3358,7 +3367,7 @@
         },
         {
           "disabled": false,
-          "document": "每秒生产消息数 单位：条/秒",
+          "document": "<p>每秒生产消息数 单位：条/秒</p>",
           "example": "2.3",
           "member": "float",
           "name": "MessagePublishRate",
@@ -3368,7 +3377,7 @@
         },
         {
           "disabled": false,
-          "document": "堆积消息数 单位：条",
+          "document": "<p>堆积消息数 单位：条</p>",
           "example": "5",
           "member": "int64",
           "name": "MessageStackNumber",
@@ -3378,7 +3387,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "1666257531143",
           "member": "int64",
           "name": "ExpireTime",
@@ -3388,7 +3397,7 @@
         },
         {
           "disabled": false,
-          "document": "Channel数量",
+          "document": "<p>Channel数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ChannelNumber",
@@ -3398,7 +3407,7 @@
         },
         {
           "disabled": false,
-          "document": "Connection数量",
+          "document": "<p>Connection数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ConnectionNumber",
@@ -3408,7 +3417,7 @@
         },
         {
           "disabled": false,
-          "document": "Consumer数量",
+          "document": "<p>Consumer数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ConsumerNumber",
@@ -3418,7 +3427,7 @@
         },
         {
           "disabled": false,
-          "document": "Exchang数量",
+          "document": "<p>Exchang数量</p>",
           "example": "10",
           "member": "int64",
           "name": "ExchangeNumber",
@@ -3428,7 +3437,7 @@
         },
         {
           "disabled": false,
-          "document": "集群异常信息",
+          "document": "<p>集群异常信息</p>",
           "example": "异常信息",
           "member": "string",
           "name": "ExceptionInformation",
@@ -3438,7 +3447,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
+          "document": "<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>",
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
@@ -3448,7 +3457,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -3458,7 +3467,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启镜像队列策略。1表示开启，0表示没开启。",
+          "document": "<p>是否开启镜像队列策略。1表示开启，0表示没开启。</p>",
           "example": "1",
           "member": "int64",
           "name": "MirrorQueuePolicyFlag",
@@ -3468,7 +3477,7 @@
         },
         {
           "disabled": false,
-          "document": "每秒消费消息数 单位：条/秒",
+          "document": "<p>每秒消费消息数 单位：条/秒</p>",
           "example": "1.0",
           "member": "float",
           "name": "MessageConsumeRate",
@@ -3478,7 +3487,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本信息",
+          "document": "<p>集群版本信息</p>",
           "example": "3.8.30",
           "member": "string",
           "name": "ClusterVersion",
@@ -3488,7 +3497,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，0-后付费，1-预付费",
+          "document": "<p>计费模式，0-后付费，1-预付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -3498,7 +3507,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "<p>集群类型</p>",
           "example": "1",
           "member": "uint64",
           "name": "InstanceType",
@@ -3508,7 +3517,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时间，单位小时",
+          "document": "<p>消息保留时间，单位小时</p>",
           "example": "72",
           "member": "uint64",
           "name": "MessageRetainTime",
@@ -3518,7 +3527,7 @@
         },
         {
           "disabled": false,
-          "document": "发送消息流量比例",
+          "document": "<p>发送消息流量比例</p>",
           "example": "0.5",
           "member": "float",
           "name": "SendReceiveRatio",
@@ -3528,7 +3537,7 @@
         },
         {
           "disabled": false,
-          "document": "消息轨迹保留时间，单位小时",
+          "document": "<p>消息轨迹保留时间，单位小时</p>",
           "example": "72",
           "member": "uint64",
           "name": "TraceTime",
@@ -3538,12 +3547,52 @@
         },
         {
           "disabled": false,
-          "document": "实例标签列表",
+          "document": "<p>实例标签列表</p>",
           "example": "无",
           "member": "RabbitMQServerlessTag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启弹性tps</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ElasticTpsFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性tps倍数，默认弹1倍</p>",
+          "example": "1",
+          "member": "float",
+          "name": "ElasticTpsRatio",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大重投次数</p>",
+          "example": "16",
+          "member": "uint64",
+          "name": "MaxRedeliverCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费超时时间，单位min</p>",
+          "example": "30",
+          "member": "uint64",
+          "name": "ConsumerTimeout",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
