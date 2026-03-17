@@ -861,6 +861,13 @@
       "output": "DescribeAttackTrendsResponse",
       "status": "online"
     },
+    "DescribeAttackType": {
+      "document": "查询应用防护白名单攻击类型列表",
+      "input": "DescribeAttackTypeRequest",
+      "name": "查询应用防护白名单攻击类型列表",
+      "output": "DescribeAttackTypeResponse",
+      "status": "online"
+    },
     "DescribeAttackVulTypeList": {
       "document": "获取网络攻击威胁类型列表",
       "input": "DescribeAttackVulTypeListRequest",
@@ -1337,6 +1344,13 @@
       "output": "DescribeImportMachineInfoResponse",
       "status": "online"
     },
+    "DescribeInjectRiskyServiceSwitch": {
+      "document": "查询java内存马和rasp的是否注入风险服务配置",
+      "input": "DescribeInjectRiskyServiceSwitchRequest",
+      "name": "查询java内存马和rasp是否注入风险服务配置",
+      "output": "DescribeInjectRiskyServiceSwitchResponse",
+      "status": "online"
+    },
     "DescribeJavaMemShellInfo": {
       "document": "查询java内存马事件详细信息",
       "input": "DescribeJavaMemShellInfoRequest",
@@ -1468,6 +1482,20 @@
       "input": "DescribeLogTypeRequest",
       "name": "获取日志类型",
       "output": "DescribeLogTypeResponse",
+      "status": "online"
+    },
+    "DescribeLoginTypeGlobalConf": {
+      "document": "获取防卸载全局配置",
+      "input": "DescribeLoginTypeGlobalConfRequest",
+      "name": "获取扫码登录全局配置",
+      "output": "DescribeLoginTypeGlobalConfResponse",
+      "status": "online"
+    },
+    "DescribeLoginTypeHost": {
+      "document": "获取扫码登录主机列表",
+      "input": "DescribeLoginTypeHostRequest",
+      "name": "获取扫码登录机器列表",
+      "output": "DescribeLoginTypeHostResponse",
       "status": "online"
     },
     "DescribeLoginWhiteCombinedList": {
@@ -1652,6 +1680,13 @@
       "output": "DescribeMalwareWhiteListAffectListResponse",
       "status": "online"
     },
+    "DescribeMemShellRules": {
+      "document": "获取反弹Shell规则列表",
+      "input": "DescribeMemShellRulesRequest",
+      "name": "获取java内存马白名单列表",
+      "output": "DescribeMemShellRulesResponse",
+      "status": "online"
+    },
     "DescribeNetAttackSetting": {
       "document": "查询网络攻击设置",
       "input": "DescribeNetAttackSettingRequest",
@@ -1834,11 +1869,67 @@
       "output": "DescribeRansomDefenseTrendResponse",
       "status": "online"
     },
+    "DescribeRaspEventCWP": {
+      "document": "应用防护事件列表接口",
+      "input": "DescribeRaspEventCWPRequest",
+      "name": "主机视角应用防护事件列表",
+      "output": "DescribeRaspEventCWPResponse",
+      "status": "online"
+    },
+    "DescribeRaspEventDetailCWP": {
+      "document": "应用防御事件详情",
+      "input": "DescribeRaspEventDetailCWPRequest",
+      "name": "获取应用防护事件详情",
+      "output": "DescribeRaspEventDetailCWPResponse",
+      "status": "online"
+    },
+    "DescribeRaspEventDetailTCSS": {
+      "document": "应用防御事件详情",
+      "input": "DescribeRaspEventDetailTCSSRequest",
+      "name": "获取容器视角应用防护事件详情",
+      "output": "DescribeRaspEventDetailTCSSResponse",
+      "status": "online"
+    },
+    "DescribeRaspEventTCSS": {
+      "document": "应用防护事件列表接口",
+      "input": "DescribeRaspEventTCSSRequest",
+      "name": "容器视角应用防护事件列表",
+      "output": "DescribeRaspEventTCSSResponse",
+      "status": "online"
+    },
+    "DescribeRaspLicenseList": {
+      "document": "查询应用防护授权列表",
+      "input": "DescribeRaspLicenseListRequest",
+      "name": "查询应用防护授权列表",
+      "output": "DescribeRaspLicenseListResponse",
+      "status": "online"
+    },
     "DescribeRaspMaxCpu": {
       "document": "查看漏洞防御最大cpu限制",
       "input": "DescribeRaspMaxCpuRequest",
       "name": "查询rasp最大cpu限制",
       "output": "DescribeRaspMaxCpuResponse",
+      "status": "online"
+    },
+    "DescribeRaspMemShellDetailTCSS": {
+      "document": "获取容器视角应用防护内存马扫描事件详情",
+      "input": "DescribeRaspMemShellDetailTCSSRequest",
+      "name": "获取容器应用防护内存马扫描事件详情",
+      "output": "DescribeRaspMemShellDetailTCSSResponse",
+      "status": "online"
+    },
+    "DescribeRaspMemShellListTCSS": {
+      "document": "获取容器视角内存马扫描事件列表",
+      "input": "DescribeRaspMemShellListTCSSRequest",
+      "name": "获取容器视角应用防护内存马扫描列表",
+      "output": "DescribeRaspMemShellListTCSSResponse",
+      "status": "online"
+    },
+    "DescribeRaspPluginList": {
+      "document": "重保防护授权插件详情列表",
+      "input": "DescribeRaspPluginListRequest",
+      "name": "重保防护插件详情列表",
+      "output": "DescribeRaspPluginListResponse",
       "status": "online"
     },
     "DescribeRaspRuleVuls": {
@@ -1881,6 +1972,20 @@
       "input": "DescribeReverseShellRulesRequest",
       "name": "获取反弹Shell规则列表",
       "output": "DescribeReverseShellRulesResponse",
+      "status": "online"
+    },
+    "DescribeReverseShellRulesAggregation": {
+      "document": "获取反弹Shell规则列表",
+      "input": "DescribeReverseShellRulesAggregationRequest",
+      "name": "获取反弹Shell规则列表-聚合版本",
+      "output": "DescribeReverseShellRulesAggregationResponse",
+      "status": "online"
+    },
+    "DescribeReverseShellSystemPolicyConfig": {
+      "document": "查询反弹shell系统策略配置",
+      "input": "DescribeReverseShellSystemPolicyConfigRequest",
+      "name": "查询反弹shell系统策略配置",
+      "output": "DescribeReverseShellSystemPolicyConfigResponse",
       "status": "online"
     },
     "DescribeRiskBatchStatus": {
@@ -2135,6 +2240,13 @@
       "output": "DescribeServersAndRiskAndFirstInfoResponse",
       "status": "online"
     },
+    "DescribeShellPolicyList": {
+      "document": "查询反弹shell策略列表",
+      "input": "DescribeShellPolicyListRequest",
+      "name": "查询反弹shell策略列表",
+      "output": "DescribeShellPolicyListResponse",
+      "status": "online"
+    },
     "DescribeStrategyExist": {
       "document": "根据策略名查询策略是否存在",
       "input": "DescribeStrategyExistRequest",
@@ -2247,6 +2359,13 @@
       "output": "DescribeVulDefenceOverviewResponse",
       "status": "online"
     },
+    "DescribeVulDefenceOverviewCount": {
+      "document": "获取漏洞防御策略和事件统计",
+      "input": "DescribeVulDefenceOverviewCountRequest",
+      "name": "获取漏洞防御策略和事件统计",
+      "output": "DescribeVulDefenceOverviewCountResponse",
+      "status": "online"
+    },
     "DescribeVulDefencePluginDetail": {
       "document": "获取单台主机漏洞防御插件信息",
       "input": "DescribeVulDefencePluginDetailRequest",
@@ -2273,6 +2392,13 @@
       "input": "DescribeVulDefenceSettingRequest",
       "name": "获取当前漏洞防御插件设置",
       "output": "DescribeVulDefenceSettingResponse",
+      "status": "online"
+    },
+    "DescribeVulDefenceSettingList": {
+      "document": "查询漏洞防御设置列表",
+      "input": "DescribeVulDefenceSettingListRequest",
+      "name": "查询漏洞防御设置列表",
+      "output": "DescribeVulDefenceSettingListResponse",
       "status": "online"
     },
     "DescribeVulEffectHostList": {
@@ -2455,6 +2581,13 @@
       "input": "DescribeWindowsPatchListRequest",
       "name": "查询Windows补丁风险列表",
       "output": "DescribeWindowsPatchListResponse",
+      "status": "online"
+    },
+    "DescribeYDRaspBlackWhite": {
+      "document": "查询应用防护白名单规则",
+      "input": "DescribeYDRaspBlackWhiteRequest",
+      "name": "查询应用防护白名单列表",
+      "output": "DescribeYDRaspBlackWhiteResponse",
       "status": "online"
     },
     "DestroyOrder": {
@@ -3372,6 +3505,13 @@
       "input": "RansomDefenseRollbackRequest",
       "name": "防勒索快照回滚",
       "output": "RansomDefenseRollbackResponse",
+      "status": "online"
+    },
+    "RaspEventOverview": {
+      "document": "获取漏洞防御概览信息，包括事件趋势及插件开启情况",
+      "input": "RaspEventOverviewRequest",
+      "name": "获取应用防护事件概览",
+      "output": "RaspEventOverviewResponse",
       "status": "online"
     },
     "RecoverMalwares": {
@@ -13680,6 +13820,152 @@
       ],
       "type": "object"
     },
+    "ClientSettingHost": {
+      "document": "客户端设置相关功能主机结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "host对应的数据库记录ID",
+          "example": "187",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机名字",
+          "example": "VM-67*",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-agt",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "11.14.56.79",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网IP",
+          "example": "192.168.100.2",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机Quuid",
+          "example": "75b47b9c-3***-4505-b527-7e2133e2d214",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机状态\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>\n<li>UNINSTALLED: 未防护</li>",
+          "example": "OFFLINE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ins-sad143",
+          "example": "所属网络",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域信息",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "附加信息",
+          "example": "{\"WanIP\":\"1.1.1.1\",\"PrivateIP\":\"1.1.1.1\",\"NetworkType\":1,\"NetworkName\":\"vpc-id\",\"InstanceID\":\"ins-id\",\"HostName\":\"hn\"}\t",
+          "member": "MachineExtraInfo",
+          "name": "MachineExtraInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<li>0: 关闭 </li>\n<li>1:  开启</li>\n<li>2: 开启中 </li>\n<li>3:  关闭中</li>\n<li>9: 未设置</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "FunctionStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "以下几个固定值需要前端特殊处理，其他失败原因可直接展示：\n1. UNINSTALLED   -- 未安装\n2. NEED_UPGRADE -- 需要升级\n3. NOT_RUNNING -- 已关机\n4. NO_PASSWORD -- 未开启密码登录，无法开启扫码",
+          "example": "升级失败",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因",
+          "example": "升级失败",
+          "member": "string",
+          "name": "MessageDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n<li>RUNNING: 运行中</li>\n<li>STOPED: 已关机</li>\n<li>EXPIRED: 待回收</li>",
+          "example": "实例状态",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CloudFromCnt": {
       "document": "云服务器类型机器数量",
       "members": [
@@ -20259,6 +20545,89 @@
       ],
       "type": "object"
     },
+    "DescribeAttackTypeRequest": {
+      "document": "DescribeAttackType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>Source - String - 是否必填：是 - 加白的模块，rasp：漏洞防御，memshell_inject：内存马注入</li>\n",
+          "example": "[{\"Source\":\"Name\",\"Values\":[\"rasp\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为1000。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，目前有：Id，默认按照Id排序，可以不传",
+          "example": "Id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序升序还是倒序，DESC有ASC、",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackTypeResponse": {
+      "document": "DescribeAttackType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表内容",
+          "example": "无",
+          "member": "RaspAttackTypeListItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAttackVulTypeListRequest": {
       "document": "DescribeAttackVulTypeList请求参数结构体",
       "members": [],
@@ -24830,6 +25199,63 @@
       ],
       "type": "object"
     },
+    "DescribeInjectRiskyServiceSwitchRequest": {
+      "document": "DescribeInjectRiskyServiceSwitch请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInjectRiskyServiceSwitchResponse": {
+      "document": "DescribeInjectRiskyServiceSwitch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内存马是否注入风险服务配置，0: 用户没有操作过，默认不注入 1: 注入,2:用户指定不注入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "JavaShellInjectRiskyServiceStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机rasp是否注入风险服务配置，0: 用户没有操作过，默认不注入 1: 注入,2:用户指定不注入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RaspInjectRiskyServiceStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险服务总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险服务列表",
+          "example": "[]",
+          "member": "RiskMainClass",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJavaMemShellInfoRequest": {
       "document": "DescribeJavaMemShellInfo请求参数结构体",
       "members": [
@@ -26216,6 +26642,186 @@
           "name": "Data",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginTypeGlobalConfRequest": {
+      "document": "DescribeLoginTypeGlobalConf请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLoginTypeGlobalConfResponse": {
+      "document": "DescribeLoginTypeGlobalConf返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启范围 <li>0 自选主机</li> <li>1 全部主机</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Scope",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正选主机配置数",
+          "example": "188",
+          "member": "uint64",
+          "name": "IncludeHostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "反选主机配置数",
+          "example": "2",
+          "member": "uint64",
+          "name": "ExcludeHostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正选quuid配置列表",
+          "example": "[\"ce2d32e2-59ab-4859-****-05eb20d252be\"]",
+          "member": "string",
+          "name": "IncludeQuuid",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "反选quuid配置列表",
+          "example": "[\"ce2d32e2-59ab-4859-****-05eb20d252be\"]",
+          "member": "string",
+          "name": "ExcludeQuuid",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已开启机器数",
+          "example": "20",
+          "member": "uint64",
+          "name": "EnableCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未启机器数",
+          "example": "19",
+          "member": "uint64",
+          "name": "DisableCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginTypeHostRequest": {
+      "document": "DescribeLoginTypeHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<li>Name - string - 是否必填：否 - 主机名</li> <li>InstanceId - string - 是否必填：否 - 实例ID</li> <li>PublicIp - string - 是否必填：否 - 公网IP</li> <li>PrivateIp - string - 是否必填：否 - 私网IP</li>",
+          "example": "[{\"ExactMatch\": true, \"Name\": \"Name\", \"Values\": [“nameA”]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限制条数,默认10,最大100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式: [ASC:升序|DESC:降序]",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选排序列: [Id]",
+          "example": "Id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginTypeHostResponse": {
+      "document": "DescribeLoginTypeHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机列表",
+          "example": "无",
+          "member": "ClientSettingHost",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -28431,6 +29037,89 @@
       ],
       "type": "object"
     },
+    "DescribeMemShellRulesRequest": {
+      "document": "DescribeMemShellRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序升序还是倒序，DESC有ASC、",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemShellRulesResponse": {
+      "document": "DescribeMemShellRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表内容",
+          "example": "[]",
+          "member": "MemShellRule",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNetAttackSettingRequest": {
       "document": "DescribeNetAttackSetting请求参数结构体",
       "members": [],
@@ -30299,6 +30988,329 @@
       ],
       "type": "object"
     },
+    "DescribeRaspEventCWPRequest": {
+      "document": "DescribeRaspEventCWP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件：Keywords: ip或者主机名, VulKeywords漏洞名或者CveId模糊查询;AttackTypeKeywords攻击类型名模糊查询;Quuid，VulId，EventType，Status精确匹配，CreateBeginTime，CreateEndTime时间段查询\nSource区分内存马注入和漏洞防御，rasp：漏洞防御，memshell_inject：内存马注入",
+          "example": "[{  \"Name\": \"Keywords\",  \"Values\": [\"127.0.0.1\"],  \"ExactMatch\": false },{  \"Name\": \"Source\",  \"Values\": [\"rasp\"],  \"ExactMatch\": false }]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据限制",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序，大小写无关：asc 升序，desc降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序列，严格相等：CreateTime创建时间，MergeTime合并时间，Count事件数量",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspEventCWPResponse": {
+      "document": "DescribeRaspEventCWP返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御事件列表",
+          "example": "无",
+          "member": "RaspEvent",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspEventDetailCWPRequest": {
+      "document": "DescribeRaspEventDetailCWP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞事件id",
+          "example": "13844",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspEventDetailCWPResponse": {
+      "document": "DescribeRaspEventDetailCWP返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用防护事件详情",
+          "example": "无",
+          "member": "RaspEventDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspEventDetailTCSSRequest": {
+      "document": "DescribeRaspEventDetailTCSS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞事件id",
+          "example": "13844",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspEventDetailTCSSResponse": {
+      "document": "DescribeRaspEventDetailTCSS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用防护事件详情",
+          "example": "无",
+          "member": "RaspEventDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspEventTCSSRequest": {
+      "document": "DescribeRaspEventTCSS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件：Keywords: ip或者主机名, VulKeywords漏洞名或者CveId模糊查询;AttackTypeKeywords攻击类型名模糊查询;Quuid，VulId，EventType，Status精确匹配，CreateBeginTime，CreateEndTime时间段查询",
+          "example": "[{  \"Name\": \"Keywords\",  \"Values\": [“127.0.0.1”],  \"ExactMatch\": false }]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据限制",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序，大小写无关：asc 升序，desc降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序列，严格相等：CreateTime创建时间，MergeTime合并时间，Count事件数量",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspEventTCSSResponse": {
+      "document": "DescribeRaspEventTCSS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御事件列表",
+          "example": "无",
+          "member": "RaspEvent",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspLicenseListRequest": {
+      "document": "DescribeRaspLicenseList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件\n- AssetType 资产类型(CWP 主机安全资产, TCSS_HOST 容器主机节点,TCSS_EKS 容器超级节点)\n- PluginStatus 插件状态(Normal 使用正常,Abnormal 存在异常,Unused 未使用)\n- ProtectionSwitch 防护开关(Enable 开启,Disable 未开启)\n- ProtectionVersion 防护版本(Rasp 重保授权包,Unauthorized 未授权)\n- InstanceID 实例ID\n- InstanceName 实例名称\n- InstanceIP 实例IP(内网IP/外网IP)\n- NodeID 容器节点ID\n- NodeName 容器节点名称\n- ClusterID 容器集群ID\n- ClusterName 容器集群名称",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限制条数,默认10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式,ASC 正序,DESC 倒序",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序值\n- LatestUpdateTime 最近更新时间",
+          "example": "LatestUpdateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspLicenseListResponse": {
+      "document": "DescribeRaspLicenseList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数组对象",
+          "example": "无",
+          "member": "RaspLicenseList",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRaspMaxCpuRequest": {
       "document": "DescribeRaspMaxCpu请求参数结构体",
       "members": [],
@@ -30314,6 +31326,209 @@
           "member": "uint64",
           "name": "RaspMaxCpu",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspMemShellDetailTCSSRequest": {
+      "document": "DescribeRaspMemShellDetailTCSS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内存马事件id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspMemShellDetailTCSSResponse": {
+      "document": "DescribeRaspMemShellDetailTCSS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件详情",
+          "example": "无",
+          "member": "RaspMemShellDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspMemShellListTCSSRequest": {
+      "document": "DescribeRaspMemShellListTCSS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件：InstanceID、IP、MachineName主机名模糊查询, Type，Status精确匹配，CreateBeginTime，CreateEndTime时间段",
+          "example": "[{\"Name\":\"MachineName\",\"Values\":[\"dev\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "RecentFountTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspMemShellListTCSSResponse": {
+      "document": "DescribeRaspMemShellListTCSS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件列表",
+          "example": "无",
+          "member": "RaspMemShellEvent",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "12",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspPluginListRequest": {
+      "document": "DescribeRaspPluginList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产类型\n- CWP 主机安全资产\n- TCSS_HOST 容器主机节点\n- TCSS_EKS 容器超级节点",
+          "example": "CWP",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器唯一ID",
+          "example": "6b8d56a5-dbb6-4dbb-b3c6-9e0ecd92e113",
+          "member": "string",
+          "name": "QUUID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数\nPluginStatus 插件状态  (Injecting 注入中,Injected 注入成功,Timeout 插件超时,Exited 插件退出, Failed 注入失败)\nPID  进程PID\nMainClass 进程主类名 ",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制条数,默认10",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspPluginListResponse": {
+      "document": "DescribeRaspPluginList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表详情",
+          "example": "无",
+          "member": "RaspLicensePlugin",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -30611,6 +31826,89 @@
       ],
       "type": "object"
     },
+    "DescribeReverseShellRulesAggregationRequest": {
+      "document": "DescribeReverseShellRulesAggregation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序升序还是倒序，DESC有ASC、",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellRulesAggregationResponse": {
+      "document": "DescribeReverseShellRulesAggregation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表内容",
+          "example": "[]",
+          "member": "ReverseShellRuleAggregation",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReverseShellRulesRequest": {
       "document": "DescribeReverseShellRules请求参数结构体",
       "members": [
@@ -30665,6 +31963,43 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellSystemPolicyConfigRequest": {
+      "document": "DescribeReverseShellSystemPolicyConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeReverseShellSystemPolicyConfigResponse": {
+      "document": "DescribeReverseShellSystemPolicyConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网告警展示",
+          "example": "true",
+          "member": "bool",
+          "name": "InnerNetAlarmShow",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网ip展示",
+          "example": "true",
+          "member": "bool",
+          "name": "InnerIPShow",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -33167,6 +34502,89 @@
       ],
       "type": "object"
     },
+    "DescribeShellPolicyListRequest": {
+      "document": "DescribeShellPolicyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制条数,默认10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式: [ASC:升序|DESC:降序]",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选排序列:[UpdateTime]",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeShellPolicyListResponse": {
+      "document": "DescribeShellPolicyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表数据",
+          "example": "[]",
+          "member": "ShellPolicyList",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeStrategyExistRequest": {
       "document": "DescribeStrategyExist请求参数结构体",
       "members": [
@@ -33897,6 +35315,53 @@
       ],
       "type": "object"
     },
+    "DescribeVulDefenceOverviewCountRequest": {
+      "document": "DescribeVulDefenceOverviewCount请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVulDefenceOverviewCountResponse": {
+      "document": "DescribeVulDefenceOverviewCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略数",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启的策略数",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyOpenCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的防御漏洞个数",
+          "example": "2",
+          "member": "uint64",
+          "name": "SupportDefenceVulCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVulDefenceOverviewRequest": {
       "document": "DescribeVulDefenceOverview请求参数结构体",
       "members": [],
@@ -34098,6 +35563,71 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulDefenceSettingListRequest": {
+      "document": "DescribeVulDefenceSettingList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件：Switch、Keywords",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移",
+          "example": "12",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据限制",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulDefenceSettingListResponse": {
+      "document": "DescribeVulDefenceSettingList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总数",
+          "example": "123",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御设置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VulDefenceSetting",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -36231,6 +37761,89 @@
           "name": "PatchInfoList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeYDRaspBlackWhiteRequest": {
+      "document": "DescribeYDRaspBlackWhite请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>WhiteContent - String - 是否必填：否 - 加白内容搜索</li>\n<li>GroupName - String - 是否必填：否 - 规则名称搜索</li>\n<li>Source - String - 是否必填：否 - 加白的模块</li>\n<li>Status - String - 是否必填：否 - 策略开关</li>",
+          "example": "[{\"WhiteContent\":\"Name\",\"Values\":[\"dev\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序升序还是倒序，DESC有ASC、",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeYDRaspBlackWhiteResponse": {
+      "document": "DescribeYDRaspBlackWhite返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表内容",
+          "example": "无",
+          "member": "YDRaspBlackWhiteListItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -46189,6 +47802,212 @@
       ],
       "usage": "out"
     },
+    "MemShellRule": {
+      "document": "内存马白名单规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "[{'Uuid': '', 'Hostip': '10.0.1****'}]",
+          "member": "UuidHostip",
+          "name": "UuidHostips",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑运算符，0: 下面5个有效的正则逻辑与 1: 逻辑或",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogicalSymbol",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类名正则表达式，为空则不匹配",
+          "example": "webshell_filter",
+          "member": "string",
+          "name": "ClassNameRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父类名正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "SuperClassNameRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "继承的接口正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "InterfacesRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注释正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "AnnotationsRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属的类加载器正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "LoaderClassNameRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人",
+          "example": "username",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否全局规则(是否对appid下所有主机有效， 0:单台uuid 1:全局，默认否)",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsGlobal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 (0: 有效 1: 删除，2：无效（启用开关关闭）)",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-09-20 15:32:26",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2024-11-03 15:09:33",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理历史事件， 0:不处理 1:处理",
+          "example": "1",
+          "member": "uint64",
+          "name": "HandleHistory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批次id",
+          "example": "ece9dcb3-e427-4ded-ac6f-727cce79130b",
+          "member": "string",
+          "name": "GroupID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用资产，描述服务器数量，全局时候为：全部服务器",
+          "example": "2",
+          "member": "string",
+          "name": "MachinesNums",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "groupname",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源代码正则表达式，为空则不匹配",
+          "example": "eval",
+          "member": "string",
+          "name": "CodeSourceRegexp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用栈正则表达式，为空则不匹配",
+          "example": "eval",
+          "member": "string",
+          "name": "CallStackRegexp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件是否存在， 0:用户没选择规则时候的默认值，1：文件存在，2：文件不存在",
+          "example": "0",
+          "member": "uint64",
+          "name": "FileExist",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAutoOpenProVersionConfigRequest": {
       "document": "ModifyAutoOpenProVersionConfig请求参数结构体",
       "members": [
@@ -50244,6 +52063,42 @@
       ],
       "usage": "out"
     },
+    "OrderDetail": {
+      "document": "订单详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "cwplic-xxxx",
+          "member": "string",
+          "name": "ResourceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_yunjing_xxx",
+          "member": "string",
+          "name": "InquireKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态\n- 1 正常\n- 2 隔离期\n- 3 已销毁",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OrderModifyObject": {
       "document": "订单变配参数对象",
       "members": [
@@ -53120,6 +54975,2168 @@
       ],
       "usage": "both"
     },
+    "RaspAttackTypeListItem": {
+      "document": "应用防护白名单攻击类型列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "攻击类型名称",
+          "example": "危险协议使用",
+          "member": "string",
+          "name": "AttackTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击类型ID",
+          "example": "20",
+          "member": "int64",
+          "name": "AttackTypeID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应的功能类型，rasp:漏洞防御,memshell_inject:内存马注入",
+          "example": "rasp",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RaspEvent": {
+      "document": "应用防护事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞事件id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器uuid",
+          "example": "e4deb973-e109-435a-bf22-49cd27e7eb6a",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器quuid",
+          "example": "e4deb973-e109-435a-bf22-49cd27e7eb6a",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机名",
+          "example": "testmachine",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "i-testfdav",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网ip",
+          "example": "10.2.3.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网ip",
+          "example": "111.2.3.1",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞ID",
+          "example": "14004",
+          "member": "uint64",
+          "name": "VulId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称",
+          "example": "漏洞",
+          "member": "string",
+          "name": "VulName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cve编号",
+          "example": "CVE-2014-8500",
+          "member": "string",
+          "name": "CveId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击源ip",
+          "example": "11.2.3.1",
+          "member": "string",
+          "name": "SourceIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击源ip地址所在城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被攻击的端口",
+          "example": "8080",
+          "member": "uint64",
+          "name": "AttackPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次攻击时间",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近攻击时间",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "MergeTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 0: 待处理 1:已防御 2:已处理 3: 已忽略 4: 已删除 5: 已加白",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用攻击类型",
+          "example": "任意文件读取",
+          "member": "string",
+          "name": "AttackTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用攻击类型id",
+          "example": "1",
+          "member": "int64",
+          "name": "AttackType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "tke_cls-6ydg4qri_worker3",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点id",
+          "example": "ins-od3s0xd1",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器名称",
+          "example": "k8s",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器id",
+          "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器运行状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ContainerStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器隔离状态",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "sha256:c66abded45cdae32051ed557e8f930dcd46fa3396e0ca280517ca18c0f0d48ea",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "ccr.ccs.tencentyun.com/tkeimages/apiserver-proxy:v1.4.5",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod名称",
+          "example": "kubernetes-proxy-55466756fc-6ptx9",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "podip",
+          "example": "10.0.2.120",
+          "member": "string",
+          "name": "PodIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "grafana-test",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cls-4waue9dh",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件详情，包括poc",
+          "example": "[{\\\"name\\\":\\\"Url\\\",\\\"value\\\":\\\"http://172.17.0.1:8080/testwar1/RCE.jsp\\\"},{\\\"name\\\":\\\"Poc\\\",\\\"value\\\":\\\"d2hvYW1p\\\"}]",
+          "member": "string",
+          "name": "RaspDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "普通节点：NORMAL\n超级节点：SUPER",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型 1:攻击时间 2:防御成功",
+          "example": "2",
+          "member": "int64",
+          "name": "EventType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点的唯一id",
+          "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
+          "member": "string",
+          "name": "NodeUniqueID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "poc id",
+          "example": "pcmgr-582503",
+          "member": "string",
+          "name": "PocID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求url",
+          "example": "http://test.com/query?a=b",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "恶意特征",
+          "example": "恶意特征",
+          "member": "string",
+          "name": "Poc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RaspEventDetail": {
+      "document": "应用防护事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态 0: 待处理 1:已防御 2:已处理 3: 已忽略 4: 已删除 5: 已加白\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e4deb973-e109-435a-bf22-49cd27e7eb6a",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testmachine",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "i-testfdav",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.2.3.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111.2.3.1",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"核心资产\"]",
+          "member": "string",
+          "name": "HostTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "首次攻击时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近攻击时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "MergeTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用攻击类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任意文件读取",
+          "member": "string",
+          "name": "AttackTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用攻击类型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AttackType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.baidu.com/test",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "漏洞",
+          "member": "string",
+          "name": "VulName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cve编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVE-2014-8500",
+          "member": "string",
+          "name": "CveId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击源ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.2.3.1",
+          "member": "string",
+          "name": "SourceIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击源ip地址所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被攻击的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "uint64",
+          "name": "AttackPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "漏洞描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修复方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "修复方式",
+          "member": "string",
+          "name": "Fix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET http:://www.baidu.com/test",
+          "member": "string",
+          "name": "NetworkPayload",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tke_cls-6ydg4qri_worker3",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-od3s0xd1",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "k8s",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ContainerStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器隔离状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sha256:c66abded45cdae32051ed557e8f930dcd46fa3396e0ca280517ca18c0f0d48ea",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccr.ccs.tencentyun.com/tkeimages/apiserver-proxy:v1.4.5",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kubernetes-proxy-55466756fc-6ptx9",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "podip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.2.120",
+          "member": "string",
+          "name": "PodIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grafana-test",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-4waue9dh",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "进程id",
+          "member": "int64",
+          "name": "Pid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联进程主类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sf.class",
+          "member": "string",
+          "name": "MainClass",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "堆栈信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "at org.java.uti",
+          "member": "string",
+          "name": "StackTrace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞ID相关的事件详情(json array格式 rasp特有)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {         \"name\": \"jndiurl\",         \"value\": \"http://whoa",
+          "member": "string",
+          "name": "RaspDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入侵状态： 1 攻击事件，2 防御成功",
+          "example": "1",
+          "member": "int64",
+          "name": "EventType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RaspEventOverview": {
+      "document": "应用防御概览信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可防御漏洞数",
+          "example": "23",
+          "member": "int64",
+          "name": "DefenceVuls",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可精准防御漏洞数",
+          "example": "2",
+          "member": "int64",
+          "name": "PreciseDefenseVuls",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未处理的应用防御事件数",
+          "example": "1",
+          "member": "int64",
+          "name": "UnhandledRaspEvents",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未处理的内存马扫描事件数",
+          "example": "1",
+          "member": "int64",
+          "name": "UnhandledMemShellScanEvents",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未处理的内存马注入事件数",
+          "example": "2",
+          "member": "int64",
+          "name": "UnhandledMemShellInjectEvents",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每日未处理事件趋势",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "UnHandledEvents",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每日漏洞检测事件趋势",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "RaspAttackCounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每日漏洞防御事件趋势",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "RaspDefendCounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每日内存马检测事件趋势",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "MemShellAttackCounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每日内存马防御事件趋势",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "MemShellDefendCounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日期",
+          "example": "[\"2024-10-21\",\"2024-10-22\",\"2024-10-23\",\"2024-10-24\",\"2024-10-25\",\"2024-10-26\",\"2024-10-27\",\"2024-10-28\",\"2024-10-29\",\"2024-10-30\",\"2024-10-31\",\"2024-11-01\",\"2024-11-02\",\"2024-11-03\"]",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开通RASP防护开关资产数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProtectAssetOpenCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全部资产数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProtectAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定了旗舰版的资产防护数",
+          "example": "0",
+          "member": "uint64",
+          "name": "UltimateAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定了重保防护包的资产数",
+          "example": "0",
+          "member": "uint64",
+          "name": "RaspAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未授权的资产数",
+          "example": "0",
+          "member": "uint64",
+          "name": "NotProtectAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "近7天未处理事件数",
+          "example": "1",
+          "member": "int64",
+          "name": "RecentUnhandledEvents",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防御成功的总次数",
+          "example": "277",
+          "member": "int64",
+          "name": "RaspDefendCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RaspEventOverviewRequest": {
+      "document": "RaspEventOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RaspEventOverviewResponse": {
+      "document": "RaspEventOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用防御概览信息",
+          "example": "无",
+          "member": "RaspEventOverview",
+          "name": "Overview",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RaspLicenseList": {
+      "document": "重保授权包列表对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器唯一ID",
+          "example": "e0b41ad5-cf93-49d5-94d0-ffb6febdbed0",
+          "member": "string",
+          "name": "QUUID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "机器名称",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "PublicIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网IP",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "PrivateIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云标签信息",
+          "example": "[\"tag name\"]",
+          "member": "Tags",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护版本信息\n- CriticalProtection 重保防护包\n- Pro 容器安全-专业版\n- Ultimate 主机安全-旗舰版",
+          "example": "防护版本",
+          "member": "string",
+          "name": "ProtectionVersion",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护设置\n- 0 未配置\n- 1 已配置",
+          "example": "0",
+          "member": "uint64",
+          "name": "ConfigurationSetting",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总开关\n- 0 未开启\n- 1已开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "Enable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御开关\n- 0 未开启\n- 1 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "VulDefEnable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御模式\n- 0 标准\n- 1 重保",
+          "example": "0",
+          "member": "uint64",
+          "name": "VulDefMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御动作\n- 0 仅检测\n- 1 检测+防御",
+          "example": "0",
+          "member": "uint64",
+          "name": "VulDefAction",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存马防御开关\n- 0 未开启\n- 1 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "MemShellDefEnable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更多防护\n- 0 不注入会重启的进程 \n- 1 注入会重启的进程",
+          "example": "0",
+          "member": "uint64",
+          "name": "SafeInject",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "性能阈值配置开关\n- 0 未开启\n- 1 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "PerformanceLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU阈值,取值1-99",
+          "example": "0",
+          "member": "uint64",
+          "name": "PerformanceLimitCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存阈值,取值1-99",
+          "example": "0",
+          "member": "uint64",
+          "name": "PerformanceLimitMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存剩余阈值",
+          "example": "0",
+          "member": "uint64",
+          "name": "PerformanceLimitMemAmount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件状态\n- 0 使用正常\n- 1 存在异常\n- 2 未使用",
+          "example": "0",
+          "member": "uint64",
+          "name": "RaspException",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "LatestUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID,仅容器资产有值",
+          "example": "cls-id",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称,仅容器资产有值",
+          "example": "集群名称",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单信息",
+          "example": "订单信息",
+          "member": "OrderDetail",
+          "name": "OrderDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许解绑,fasle 不允许 true 允许",
+          "example": "false",
+          "member": "bool",
+          "name": "IsUnBind",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uuid 机器唯一ID,仅AssetType = CWP 时有值",
+          "example": "e0b41ad5-cf93-49d5-94d0-ffb6febdbed0",
+          "member": "string",
+          "name": "UUID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无注入/注入失败原因",
+          "example": "存在多种异常情况，请点击 插件状态 查看插件注入详情",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RaspLicensePlugin": {
+      "document": "重保防护授权插件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "java进程pid",
+          "example": "0",
+          "member": "uint64",
+          "name": "PID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "java主类",
+          "example": "name",
+          "member": "string",
+          "name": "MainClass",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 注入中, 1: 注入成功, 2: 插件超时, 3: 插件退出, 4: 注入失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误详情",
+          "example": "错误日志",
+          "member": "string",
+          "name": "ErrorLog",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注入失败原因",
+          "example": "检测到注入所需的文件socket已缺失。需重启业务进程，重启后系统将会自动重新注入。",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注入时间",
+          "example": "2025-12-03 22:28:56",
+          "member": "string",
+          "name": "InjectTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RaspMemShellDetail": {
+      "document": "java内存马事件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "142",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务器quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e1f081aa-7777-4fdf-a2f7-88f3faa3d302",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dev-centos8",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cls-4waue9dh",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.1.2.5",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.255.10",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"核心资产\"]",
+          "member": "string",
+          "name": "HostTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存马类型  0:Filter型 1:Listener型 2:Servlet型 3:Interceptors型 4:Agent型 5:其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略  4 - 已手动处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属的类加载器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "ClassLoaderName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "SuperClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "继承的接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "Interfaces",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "comment",
+          "member": "string",
+          "name": "Annotations",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "ClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类文件md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "37e54fce63f1ca6c82927caf7aa1c412",
+          "member": "string",
+          "name": "Md5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程pid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1436",
+          "member": "int64",
+          "name": "Pid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "java进程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java",
+          "member": "string",
+          "name": "Exe",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "java进程命令行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.apache.jasper.servlet.JasperLoader",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "java内存马二进制代码(base64)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "avewsa==...",
+          "member": "string",
+          "name": "ClassContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "java内存马反编译代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "package com.company;  public class Main {      public static voi",
+          "member": "string",
+          "name": "ClassContentPretty",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯御见...",
+          "member": "string",
+          "name": "EventDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "安全建议..",
+          "member": "string",
+          "name": "SecurityAdvice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "首次发现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "RecentFoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tke_cls-6ydg4qri_worker3",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-od3s0xd1",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "k8s",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ContainerStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器隔离状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sha256:c66abded45cdae32051ed557e8f930dcd46fa3396e0ca280517ca18c0f0d48ea",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccr.ccs.tencentyun.com/tkeimages/apiserver-proxy:v1.4.5",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kubernetes-proxy-55466756fc-6ptx9",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "podip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.2.120",
+          "member": "string",
+          "name": "PodIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grafana-test",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-4waue9dh",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RaspMemShellEvent": {
+      "document": "java内存马事件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "142",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器quuid",
+          "example": "e1f081aa-7777-4fdf-a2f7-88f3faa3d302",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器名称",
+          "example": "dev-centos8",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器IP",
+          "example": "192.168.255.10",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存马类型  0:Filter型 1:Listener型 2:Servlet型 3:Interceptors型 4:Agent型 5:其他",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "说明",
+          "example": "测到java进程1128220/org.apache.catalina.startup.Bootstrap start中加载的o",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次发现时间",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近检测时间",
+          "example": "2021-01-20 16:17:11",
+          "member": "string",
+          "name": "RecentFoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略  4 - 已手动处理",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类文件md5",
+          "example": "37e54fce63f1ca6c82927caf7aa1c412",
+          "member": "string",
+          "name": "Md5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类名",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "ClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父类名",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "SuperClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "继承的接口",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "Interfaces",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注释",
+          "example": "comment",
+          "member": "string",
+          "name": "Annotations",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属的类加载器",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "LoaderClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进程pid",
+          "example": "1436",
+          "member": "int64",
+          "name": "Pid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "java进程路径",
+          "example": "/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java",
+          "member": "string",
+          "name": "Exe",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "java进程命令行参数",
+          "example": "org.apache.jasper.servlet.JasperLoader",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "tke_cls-6ydg4qri_worker3",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点id",
+          "example": "ins-od3s0xd1",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器名称",
+          "example": "k8s",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器id",
+          "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器运行状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ContainerStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器隔离状态",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "sha256:c66abded45cdae32051ed557e8f930dcd46fa3396e0ca280517ca18c0f0d48ea",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "ccr.ccs.tencentyun.com/tkeimages/apiserver-proxy:v1.4.5",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod名称",
+          "example": "kubernetes-proxy-55466756fc-6ptx9",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "podip",
+          "example": "10.0.2.120",
+          "member": "string",
+          "name": "PodIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "grafana-test",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cls-4waue9dh",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "和节点id一样，前端可以不用这个",
+          "example": "ins-od3s0xd1",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器内网ip",
+          "example": "10.0.2.120",
+          "member": "string",
+          "name": "HostInnerIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器外网ip",
+          "example": "192.168.255.10",
+          "member": "string",
+          "name": "HostPublicIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "普通节点：NORMAL\n超级节点：SUPER",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点唯一id",
+          "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
+          "member": "string",
+          "name": "NodeUniqueID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RaspRule": {
       "document": "rasp白名单规则",
       "members": [
@@ -54399,6 +58416,162 @@
       ],
       "usage": "out"
     },
+    "ReverseShellRuleAggregation": {
+      "document": "反弹Shell规则-聚合版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "[]",
+          "member": "UuidHostip",
+          "name": "UuidHostips",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进程名称",
+          "example": "/etc/sshd",
+          "member": "string",
+          "name": "ProcessName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标IP",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "DestIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标端口",
+          "example": "80",
+          "member": "string",
+          "name": "DestPort",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人",
+          "example": "opt1",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否全局规则",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsGlobal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 (0: 有效 1: 无效)",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2020-10-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2020-10-01 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加白方式， 0:常规加白 1:正则加白",
+          "example": "1",
+          "member": "uint64",
+          "name": "WhiteType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正则表达式",
+          "example": "sh.*d",
+          "member": "string",
+          "name": "RuleRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理历史事件， 0:不处理 1:处理",
+          "example": "0",
+          "member": "uint64",
+          "name": "HandleHistory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批次id",
+          "example": "1",
+          "member": "string",
+          "name": "GroupID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用资产，描述服务器数量，全局时候为：全部服务器",
+          "example": "12",
+          "member": "string",
+          "name": "MachinesNums",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RiskDnsEvent": {
       "document": "恶意请求事件",
       "members": [
@@ -55028,6 +59201,22 @@
         }
       ],
       "usage": "both"
+    },
+    "RiskMainClass": {
+      "document": "内存马和rasp注入时候的风险服务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "rasp注入时候的风险服务\t",
+          "example": "1",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RiskProcessEvent": {
       "document": "异常进程事件",
@@ -57409,6 +61598,92 @@
       ],
       "type": "object"
     },
+    "ShellPolicyList": {
+      "document": "反弹shell列表数据详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "系统自动拦截策略",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 系统策略, 1 用户自定义策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PolicyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "''",
+          "member": "string",
+          "name": "PolicyDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略动作[0:告警,1:放行,2:拦截+告警]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PolicyAction",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 开启, 1关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsEnabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机范围:[0: 一组quuid 1: 所有专业版 2: 旗舰版 3: 所有主机]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HostScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StandardModeConfig": {
       "document": "标准模式阻断配置",
       "members": [
@@ -58481,6 +62756,32 @@
           "name": "CityId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UuidHostip": {
+      "document": "过检机器和对应的hostip",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器id",
+          "example": "82727b6e-3676-4660-ac4e-c281dba1b23f",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器ip",
+          "example": "172.16.0.9",
+          "member": "string",
+          "name": "Hostip",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -59662,6 +63963,152 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VulDefenceSetting": {
+      "document": "漏洞防御设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "漏洞防御",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0系统策略\n1自定义策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StrategyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "威胁等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ThreatLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1全部旗舰版主机\n0自选主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Scope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的漏洞个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "180",
+          "member": "uint64",
+          "name": "SupportVulNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 关闭 1 开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Enable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户MemberId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qq",
+          "member": "string",
+          "name": "MemberId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略动作\n0告警\n1防御\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StrategyAction",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护类型\n0漏洞防御\n1攻击检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DefenceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自选主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "InstanceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -61883,6 +66330,312 @@
           "name": "HostCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "YDRaspBlackWhiteListItem": {
+      "document": "应用防护白名单规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑运算符，0: 下面5个有效的正则逻辑与 1: 逻辑或",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogicalSymbol",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类名正则表达式，为空则不匹配",
+          "example": "webshell_filter",
+          "member": "string",
+          "name": "ClassNameRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父类名正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "SuperClassNameRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "继承的接口正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "InterfacesRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注释正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "AnnotationsRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属的类加载器正则表达式，为空则不匹配",
+          "example": "org.apache.catalina.startup.Bootstrap",
+          "member": "string",
+          "name": "LoaderClassNameRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单类型，rasp:漏洞防御,memshell_scan:内存马扫描, memshell_inject:内存马注入",
+          "example": "rasp",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 (0: 有效 1: 删除，2：无效（启用开关关闭）)",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-09-20 15:32:26",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2024-11-03 15:09:33",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存马扫描使用，处理历史事件， 0:不处理 1:处理",
+          "example": "1",
+          "member": "uint64",
+          "name": "HandleHistory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "rasp和内存马注入使用，匹配内容，POC，可以是正则表达式（MatchMode=5），也可以是字符串",
+          "example": "/api/user",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "rasp和内存马注入使用，攻击来源ip,不设置就是全部来源，可以多个，可以有ip段，例如：192.168.57.1/24;172.17.0.1",
+          "example": "10.10.10.11",
+          "member": "string",
+          "name": "IP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "rasp和内存马注入使用，加白方式，0：恶意特征加白，1：请求URL加白",
+          "example": "1",
+          "member": "int64",
+          "name": "FilterType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "rasp和内存马注入使用，攻击类型，vul.rasp_attacktype_mapping attack_type_id字段",
+          "example": "12",
+          "member": "int64",
+          "name": "AttackType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "rasp和内存马注入使用，匹配模式，0:完全匹配,1：前缀匹配，2：后缀匹配，4：任意匹配，5：部分匹配，6：正则匹配",
+          "example": "0",
+          "member": "int64",
+          "name": "MatchMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效资产类型，0: 主机不生效 1: 主机生效",
+          "example": "1",
+          "member": "int64",
+          "name": "CWPEffective",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 一组quuid 1: 所有主机授权的机器",
+          "example": "1",
+          "member": "int64",
+          "name": "CWPScope",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定生效主机机器",
+          "example": "[\"acdd5474-6360-4fd4-bfc7-843162cb8116\"]",
+          "member": "string",
+          "name": "CWPQuuids",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效资产类型，0: 容器不生效 1: 容器生效",
+          "example": "1",
+          "member": "int64",
+          "name": "TCSSEffective",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 一组quuid 1: 所有容器授权的node",
+          "example": "1",
+          "member": "int64",
+          "name": "TCSSScope",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定生效容器节点",
+          "example": "[\"acdd5474-6360-4fd4-bfc7-843162cb8116\"]",
+          "member": "string",
+          "name": "TCSSQuuids",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效资产类型，0: 超级节点不生效 1: 超级节点生效",
+          "example": "1",
+          "member": "int64",
+          "name": "EksEffective",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 一组quuid 1: 所有容器授权的超级节点",
+          "example": "1",
+          "member": "int64",
+          "name": "EksScope",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定生效容器超级节点",
+          "example": "[\"b5ef4789fe709adc70b0627430c132ba\"]",
+          "member": "string",
+          "name": "EksNodeUniqueID",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用资产，全局则：全部主机，否则是选择主机服务器的数量",
+          "example": "12",
+          "member": "string",
+          "name": "CWPMachinesNums",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用资产，全局则：全部容器主机节点，否则是选择容器主机节点的数量",
+          "example": "13",
+          "member": "string",
+          "name": "TCSSMachinesNums",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用资产，全局则：全部超级节点，否则是选择超级节点的数量",
+          "example": "14",
+          "member": "string",
+          "name": "EksMachinesNums",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

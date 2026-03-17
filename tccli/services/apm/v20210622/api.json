@@ -6589,7 +6589,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "svc-test",
           "member": "string",
           "name": "ServiceID",
@@ -6600,7 +6600,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务系统ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "apm-test",
           "member": "string",
           "name": "InstanceKey",
@@ -6611,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户appid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1251763868",
           "member": "int64",
           "name": "AppID",
@@ -6622,7 +6622,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主账号uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1500000688",
           "member": "string",
           "name": "CreateUIN",
@@ -6633,7 +6633,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "ServiceName",
@@ -6644,7 +6644,7 @@
         },
         {
           "disabled": false,
-          "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "describe",
           "member": "string",
           "name": "ServiceDescription",
@@ -6655,7 +6655,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -6666,7 +6666,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmTag",
           "name": "Tags",
@@ -6677,7 +6677,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统名称",
+          "document": "<p>业务系统名称</p>",
           "example": "travy-test",
           "member": "string",
           "name": "InstanceName",
@@ -6685,6 +6685,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableThresholdConfig",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p><p>单位：%</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "ErrRateThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p><p>单位：ms</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "int64",
+          "name": "ResponseDurationWarningThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

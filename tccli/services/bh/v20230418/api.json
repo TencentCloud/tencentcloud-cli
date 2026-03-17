@@ -1505,6 +1505,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍",
+          "example": "86400",
+          "member": "uint64",
+          "name": "MaxAccessCredentialDuration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3002,6 +3012,15 @@
           "name": "AllowKeyboardLogger",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍",
+          "example": "86400",
+          "member": "uint64",
+          "name": "MaxAccessCredentialDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6017,7 +6036,7 @@
         },
         {
           "disabled": false,
-          "document": "分页每页记录数，默认20",
+          "document": "分页每页记录数，默认20，最大200",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6154,7 +6173,7 @@
         },
         {
           "disabled": false,
-          "document": "分页每页记录数，默认20",
+          "document": "分页每页记录数，默认20，最大200",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -8564,6 +8583,15 @@
           "name": "AllowKeyboardLogger",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍",
+          "example": "86400",
+          "member": "uint64",
+          "name": "MaxAccessCredentialDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10789,6 +10817,46 @@
           "name": "IOAResourceId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm",
+          "example": "pro",
+          "member": "string",
+          "name": "ResourceEdition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费时长",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式 0后付费，1预付费",
+          "example": "1",
+          "member": "uint64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -5196,6 +5196,15 @@
           "name": "BackupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t投递到保险箱的信息",
+          "example": "无",
+          "member": "CreateBackupVaultItem",
+          "name": "Vaults",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15743,6 +15752,24 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱id",
+          "example": "vault-62c01b4e-2684-4b7a-9bd8-01d41a4cc803",
+          "member": "string",
+          "name": "VaultId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "VaultRegion",
+          "required": false,
           "type": "string"
         }
       ],
@@ -27639,6 +27666,15 @@
           "example": "full",
           "member": "string",
           "name": "RollbackMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱id",
+          "example": "vault-b5044c44-9e41-4c88-b75d-72a77ed8a759",
+          "member": "string",
+          "name": "VaultId",
           "required": false,
           "type": "string"
         }

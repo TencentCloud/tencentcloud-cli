@@ -1440,6 +1440,54 @@
         "title": "查询本地镜像组件列表"
       }
     ],
+    "DescribeImageDenyEventDetail": [
+      {
+        "document": "查询镜像拦截事件详情",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageDenyEventDetail\n<公共请求参数>\n\n{\n    \"EventID\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterID\": \"cls-4waue9dh\",\n        \"ClusterName\": \"prom-g62znlhv\",\n        \"DealBehavior\": \"BEHAVIOR_HOLDUP_SUCCESSED\",\n        \"Description\": \"该镜像命中拦截规则（id:ce25d78c-d247-4e2f-80ee-190e089ea434）触发拦截操作, 规则详情：该镜像存在存在漏洞: 按漏洞分类\",\n        \"EventCount\": 185,\n        \"EventID\": 2414001,\n        \"EventType\": \"EVENT_RISK\",\n        \"FoundTime\": \"2024-11-02 00:03:32\",\n        \"ImageID\": \"sha256:d41059c812a8741c15695046857b90747aef9c7f9d67733962d7bbb025b9d159\",\n        \"ImageName\": \"registry.tce.com/etcd/etcd:3.4.18.amd64\",\n        \"LatestFoundTime\": \"2024-11-02 15:42:37\",\n        \"NodeID\": \"eklet-subnet-1ewk3avk\",\n        \"NodeIP\": \"10.206.1.2\",\n        \"NodeName\": \"tcs-10-206-67-153\",\n        \"NodeSubNetCIDR\": \"172.16.64.0/20\",\n        \"NodeSubNetID\": \"subnet-1ewk3avk\",\n        \"NodeSubNetName\": \"subnet-1ewk3avk\",\n        \"NodeType\": \"NORMAL\",\n        \"NodeUniqueID\": \"eb7b9af448345924bab44fc90a1b4e3b\",\n        \"PodIP\": \"127.0.0.1\",\n        \"PodName\": \"pod1\",\n        \"PodStatus\": \"RUNNING\",\n        \"PublicIP\": \"127.0.0.1\",\n        \"QUUID\": \"46d3b4de-add7-4378-af19-ad34baeb6b4b\",\n        \"RequestId\": \"b610c113-b940-4c0c-b937-b8edf518ef92\",\n        \"RuleDescription\": \"测试\",\n        \"RuleEffectStatus\": \"IN_EFFECT\",\n        \"RuleEffectTime\": \"2024-10-30 10:52:56\",\n        \"RuleID\": \"ce25d78c-d247-4e2f-80ee-190e089ea434\",\n        \"RuleInfo\": [\n            \"IMAGE_DENY_VUL_CLASS\"\n        ],\n        \"RuleName\": \"name01\",\n        \"RuleStatus\": 1,\n        \"RuleType\": \"RULE_RISK\",\n        \"Solution\": \"CVE漏洞：将存在漏洞的组件更新到对应修复版本\",\n        \"StartParam\": \"/opt/containerd/bin/runc runc --root /var/run/docker/runtime-runc/moby --log /run/docker/containerd/daemon/io.containerd.runtime.v1.linux/moby/9deace634eeb3fc28f7ac7bdbdeae6e917c89d1fc668892b25af20555fbd2832/log.json --log-format json create --bundle /var/run/docker/containerd/daemon/io.containerd.runtime.v1.linux/moby/9deace634eeb3fc28f7ac7bdbdeae6e917c89d1fc668892b25af20555fbd2832 --pid-file /var/run/docker/containerd/daemon/io.containerd.runtime.v1.linux/moby/9deace634eeb3fc28f7ac7bdbdeae6e917c89d1fc668892b25af20555fbd2832/init.pid 9deace634eeb3fc28f7ac7bdbdeae6e917c89d1fc668892b25af20555fbd2832\",\n        \"ImageRegistryInfo\": {\n            \"Name\": \"registry01\",\n            \"Type\": \"tcr\",\n            \"Address\": \"ccr.ccs.tencentyun.com/t-pot/logstash\"\n        }\n    }\n}",
+        "title": "查询镜像拦截事件详情"
+      }
+    ],
+    "DescribeImageDenyEventList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageDenyEventList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ClusterID\": \"cls-m2x0ndjy\",\n                \"ClusterName\": \"cls-m2x0ndjy\",\n                \"DealBehavior\": \"BEHAVIOR_HOLDUP_SUCCESSED\",\n                \"EventCount\": 185,\n                \"EventID\": 2414001,\n                \"EventType\": \"EVENT_RISK\",\n                \"FoundTime\": \"2024-11-02 00:03:32\",\n                \"ImageID\": \"sha256:d41059c812a8741c15695046857b90747aef9c7f9d67733962d7bbb025b9d159\",\n                \"ImageName\": \"registry.tce.com/etcd/etcd:3.4.18.amd64\",\n                \"LatestFoundTime\": \"2024-11-02 15:42:37\",\n                \"NodeID\": \"5a540076-d38a-4078-aa98-e7c86371d322\",\n                \"NodeIP\": \"10.206.67.153\",\n                \"NodeName\": \"tcs-10-206-67-153\",\n                \"NodeType\": \"NORMAL\",\n                \"NodeUniqueID\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"PodIP\": \"127.0.0.1\",\n                \"PodName\": \"name02\",\n                \"PublicIP\": \"118.195.195.86\",\n                \"QUUID\": \"46d3b4de-add7-4378-af19-ad34baeb6b4b\",\n                \"RuleDescription\": \"测试\",\n                \"RuleEffectStatus\": \"IN_EFFECT\",\n                \"RuleID\": \"ce25d78c-d247-4e2f-80ee-190e089ea434\",\n                \"RuleInfo\": [\n                    \"IMAGE_DENY_VUL_CLASS\"\n                ],\n                \"RuleName\": \"name03\",\n                \"RuleStatus\": 1,\n                \"RuleType\": \"RULE_RISK\",\n                \"ImageRegistryInfo\": {\n                    \"Name\": \"name01\",\n                    \"Type\": \"tcr\",\n                    \"Address\": \"ccr.ccs.tencentyun.com/t-pot/logstash\"\n                }\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"a11d268f-1601-4f63-9131-0382537b9e55\"\n    }\n}",
+        "title": "查询镜像拦截事件列表"
+      }
+    ],
+    "DescribeImageDenyEventTendency": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageDenyEventTendency\n<公共请求参数>\n\n{\n    \"EndTime\": \"2021-05-01\",\n    \"StartTime\": \"2021-05-07\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmList\": [\n            {\n                \"Date\": \"2020-09-22\",\n                \"EventCount\": 0\n            }\n        ],\n        \"DenyList\": [\n            {\n                \"Date\": \"2020-09-22\",\n                \"EventCount\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询镜像拦截事件趋势"
+      }
+    ],
+    "DescribeImageDenyRuleDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageDenyRuleDetail\n<公共请求参数>\n\n{\n    \"RuleID\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VulLabelSet\": [\n            \"xx\"\n        ],\n        \"EffectImageSet\": [\n            \"xx\"\n        ],\n        \"OperationUin\": \"xx\",\n        \"EffectImageCount\": 1,\n        \"ComponentSet\": [\n            \"xx\"\n        ],\n        \"EffectStatus\": \"xx\",\n        \"Status\": 0,\n        \"EffectTime\": \"xx\",\n        \"Risk\": 1,\n        \"RiskLevelSet\": [\n            \"xx\"\n        ],\n        \"RuleDescription\": \"xx\",\n        \"Virus\": 0,\n        \"VulLevelSet\": [\n            \"xx\"\n        ],\n        \"PrivilegeDetail\": [],\n        \"IsEffectAllImage\": 0,\n        \"VirusMD5Set\": [\n            \"xx\"\n        ],\n        \"RiskType\": [\n            \"xx\"\n        ],\n        \"VirusName\": [\n            \"xx\"\n        ],\n        \"RuleID\": \"xx\",\n        \"Vul\": 0,\n        \"UpdateTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"CVEIDSet\": [\n            \"xx\"\n        ],\n        \"ID\": 1,\n        \"PrivilegeRun\": 0,\n        \"VulClassSet\": [\n            \"xx\"\n        ],\n        \"VirusLevelSet\": [\n            \"xx\"\n        ],\n        \"RuleType\": \"xx\",\n        \"RuleName\": \"xx\",\n        \"EffectDay\": 1\n    }\n}",
+        "title": "查询镜像拦截规则详情"
+      }
+    ],
+    "DescribeImageDenyRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageDenyRuleList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Status\": 0,\n                \"RuleType\": \"xx\",\n                \"OperationUin\": \"xx\",\n                \"EffectImageCount\": 0,\n                \"RuleID\": \"xx\",\n                \"EffectTime\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"ID\": 0,\n                \"RuleName\": \"xx\",\n                \"EffectStatus\": \"xx\",\n                \"IsEffectAllImage\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询镜像拦截规则列表"
+      }
+    ],
+    "DescribeImageDenyRuleSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageDenyRuleSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRuleCount\": 1,\n        \"RuleTotalCount\": 1,\n        \"EffectiveRuleCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ObservedRuleCount\": 1\n    }\n}",
+        "title": "查询镜像拦截规则统计"
+      }
+    ],
     "DescribeImageRegistryNamespaceList": [
       {
         "document": "",
@@ -1558,6 +1606,22 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogStorageStatistic\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"UsedSize\": 89546766804,\n        \"TotalSize\": 1073741824000,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
         "title": "获取日志检索容量使用统计"
+      }
+    ],
+    "DescribeMaliciousConnectionBlackList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaliciousConnectionBlackList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"RuleID\": 1,\n                \"CreatedTime\": \"xx\",\n                \"RuleType\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Address\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询恶意外连黑名单"
+      }
+    ],
+    "DescribeMaliciousConnectionWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaliciousConnectionWhiteList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"RuleID\": 1,\n                \"CreatedTime\": \"xx\",\n                \"RuleType\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Address\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询恶意外连白名单"
       }
     ],
     "DescribeNetworkFirewallAuditRecord": [
@@ -1748,6 +1812,22 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeReverseShellEventsExport\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt\",\n        \"JobId\": \"94b72f91-5827-4314-bc65-6b07c0d77a9c\",\n        \"RequestId\": \"2f5665c4-6bf5-4d99-a3b5-ee16d5f9bae9\"\n    }\n}",
         "title": "查询运行时反弹shell事件列表信息导出"
+      }
+    ],
+    "DescribeReverseShellRegexpWhiteList": [
+      {
+        "document": "查询反弹shell正则白名单列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellRegexpWhiteList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"RuleName\",\n            \"Values\": [\n                \"test\"\n            ],\n            \"ExactMatch\": true\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"By\": \"UpdateTime\",\n    \"Order\": \"asc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"RuleName\": \"test\",\n                \"EffectiveExpression\": 1,\n                \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"OperatorUin\": \"test1\",\n                \"Status\": true\n            }\n        ],\n        \"RequestId\": \"test1\"\n    }\n}",
+        "title": "查询反弹shell正则白名单列表"
+      }
+    ],
+    "DescribeReverseShellRegexpWhiteListInfo": [
+      {
+        "document": "查询反弹shell正则白名单详情",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellRegexpWhiteListInfo\n<公共请求参数>\n\n{\n    \"RuleID\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleInfo\": {\n            \"RuleName\": \"test\",\n            \"Status\": true,\n            \"ExpressionList\": [\n                {\n                    \"LogicSymbol\": \"NOT\",\n                    \"MatchField\": \"test\",\n                    \"MatchContent\": \"test\"\n                }\n            ],\n            \"UpdateTime\": \"2020-01-02 03:04:05\",\n            \"OperatorUIN\": \"test111\"\n        },\n        \"RequestId\": \"test111\"\n    }\n}",
+        "title": "查询反弹shell正则白名单详情"
       }
     ],
     "DescribeReverseShellWhiteListDetail": [

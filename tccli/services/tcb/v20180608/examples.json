@@ -248,6 +248,26 @@
         "title": "DescribeCreateMySQLResult"
       }
     ],
+    "DescribeCurveData": [
+      {
+        "document": "静态托管相关指标，无须传入ResourceID。传入与时间范围相匹配的时间粒度Period，返回指定时间粒度和时间范围的监控数据。",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCurveData\n<公共请求参数>\n\n{\n    \"EnvId\": \"envid-xxxxx\",\n    \"MetricName\": \"StaticFsSizePkg\",\n    \"StartTime\": \"2026-02-05 00:00:00\",\n    \"EndTime\": \"2026-02-06 23:59:59\",\n    \"Period\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-02-06 23:00:00\",\n        \"MetricName\": \"StaticFsSizePkg\",\n        \"NewValues\": [\n            1\n        ],\n        \"Period\": 3600,\n        \"StartTime\": \"2026-02-05 00:00:00\",\n        \"Statistics\": \"last\",\n        \"Time\": [\n            1770220800\n        ],\n        \"Values\": [\n            1\n        ],\n        \"RequestId\": \"74126bc4-9fa1-4891-891b-b9ba41ea664a\"\n    }\n}",
+        "title": "根据用户传入的指标以及时间粒度，拉取一段时间内的监控数据"
+      },
+      {
+        "document": "云托管相关指标，需要传入ResourceID。不传入period，返回默认时间粒度的指标。",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCurveData\n<公共请求参数>\n\n{\n    \"EnvId\": \"envid-xxxxxxx\",\n    \"MetricName\": \"TkeInvokeNumService\",\n    \"StartTime\": \"2026-03-16 00:00:00\",\n    \"EndTime\": \"2026-03-16 23:59:59\",\n    \"ResourceID\": \"ibot-agent123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-03-16 23:55:00\",\n        \"MetricName\": \"TkeInvokeNumService\",\n        \"NewValues\": [\n            0\n        ],\n        \"Period\": 300,\n        \"StartTime\": \"2026-03-16 00:00:00\",\n        \"Statistics\": \"sum\",\n        \"Time\": [\n            1773590400\n        ],\n        \"Values\": [\n            0\n        ],\n        \"RequestId\": \"cd2cec9d-c0e9-4bab-b889-0ccc230cdc83\"\n    }\n}",
+        "title": "根据用户传入的指标，拉取一段时间内的监控数据"
+      },
+      {
+        "document": "查询云托管某个版本的监控数据，需要传入ResourceID以及SubresourceID。不传入period，返回默认时间粒度的指标。",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCurveData\n<公共请求参数>\n\n{\n    \"EnvId\": \"envid-xxxxx\",\n    \"MetricName\": \"TkeHttpErrorService\",\n    \"StartTime\": \"2026-03-13 00:00:00\",\n    \"EndTime\": \"2026-03-16 23:59:59\",\n    \"ResourceID\": \"ibot-agent123\",\n    \"SubresourceID\": \"ibot-agent123-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-03-16 23:00:00\",\n        \"MetricName\": \"TkeHttpErrorService\",\n        \"NewValues\": [\n            0\n        ],\n        \"Period\": 3600,\n        \"StartTime\": \"2026-03-13 00:00:00\",\n        \"Statistics\": \"sum\",\n        \"Time\": [\n            1773331200\n        ],\n        \"Values\": [\n            0\n        ],\n        \"RequestId\": \"e9271644-4eb0-4b17-981a-330f2ca534b1\"\n    }\n}",
+        "title": "根据用户传入的指标以及资源id，拉取一段时间内的监控数据"
+      }
+    ],
     "DescribeDatabaseACL": [
       {
         "document": "查询数据库集合的ACL",

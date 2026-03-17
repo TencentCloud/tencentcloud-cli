@@ -6,23 +6,32 @@ Input:
 
 ```
 tccli bh CreateAcl --cli-unfold-argument  \
-    --CmdTemplateIdSet 1 \
-    --Name test-name \
-    --UserGroupIdSet 1 \
-    --DeviceGroupIdSet 1 \
+    --Name acl_test \
     --AllowDiskRedirect True \
-    --AccountSet root \
     --AllowAnyAccount True \
-    --DeviceIdSet 1 \
-    --UserIdSet 1
+    --AllowClipFileUp True \
+    --AllowClipFileDown False \
+    --AllowClipTextUp False \
+    --AllowClipTextDown False \
+    --AllowFileUp False \
+    --AllowFileDown False \
+    --AllowDiskFileUp False \
+    --AllowDiskFileDown False \
+    --AllowShellFileUp False \
+    --AllowShellFileDown False \
+    --AllowFileDel False \
+    --DepartmentId 1 \
+    --AllowAccessCredential True \
+    --AllowKeyboardLogger False \
+    --MaxAccessCredentialDuration 86400
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Id": 1,
-        "RequestId": "31jshapqhxmajh12knskal2"
+        "Id": 16790787,
+        "RequestId": "afaab2dd-23d2-4c40-8c6d-19e87dffa9d8"
     }
 }
 ```

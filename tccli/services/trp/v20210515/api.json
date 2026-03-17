@@ -377,6 +377,13 @@
       "name": "离线筛选包数据推送",
       "output": "ReportBatchCallbackStatusResponse",
       "status": "online"
+    },
+    "ReportScanDetail": {
+      "document": "扫码数据上报",
+      "input": "ReportScanDetailRequest",
+      "name": "扫码数据上报",
+      "output": "ReportScanDetailResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -6351,6 +6358,146 @@
         }
       ],
       "type": "object"
+    },
+    "ReportScanDetailRequest": {
+      "document": "ReportScanDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求参数</p>",
+          "example": "无",
+          "member": "ScanDetailItem",
+          "name": "ScanDetails",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportScanDetailResponse": {
+      "document": "ReportScanDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果返回，成功数</p>",
+          "example": "无",
+          "member": "ReportScanDetailResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportScanDetailResult": {
+      "document": "扫码明细上报响应，成功数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>成功数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScanDetailItem": {
+      "document": "扫码信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户ID，也可以为手机号</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间</p><p>参数格式：YYYYMMDDHHMMSS</p>",
+          "example": "20260317090809",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>省</p>",
+          "example": "湖北",
+          "member": "string",
+          "name": "ProvinceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>市</p>",
+          "example": "武汉",
+          "member": "string",
+          "name": "CityName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>区</p>",
+          "example": "洪山区",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>品牌</p>",
+          "example": "品牌2",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>品规</p>",
+          "example": "7",
+          "member": "string",
+          "name": "SpecName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP，可选，需符合IP格式</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>码</p>",
+          "example": "9",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ScanLog": {
       "document": "扫码明细",

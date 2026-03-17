@@ -724,6 +724,14 @@
         "title": "样例"
       }
     ],
+    "DescribeDatabaseByName": [
+      {
+        "document": "根据数据库名称查询数据库信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseByName\n<公共请求参数>\n\n{\n    \"DatabaseName\": \"atta_boss\",\n    \"DatasourceId\": 146721,\n    \"SchemaName\": null,\n    \"ClusterId\": null\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req_id_***\",\n        \"DatabaseMeta\": {\n            \"DatabaseId\": null,\n            \"DatabaseGuid\": null,\n            \"DatabaseName\": \"atta_boss\",\n            \"ProjectId\": \"project_id_***\",\n            \"ProjectName\": \"project_eng_name\",\n            \"ProjectDisplayName\": \"项目中文名称\",\n            \"MetastoreType\": \"DLC\",\n            \"DatasourceId\": 146721,\n            \"DatasourceName\": \"dlc_***\",\n            \"DisplayName\": \"dlc_***.atta_boss\",\n            \"Category\": \"CLUSTER\",\n            \"Catalog\": \"DataLakeCatalog\",\n            \"Description\": \"员工域数据\",\n            \"Instance\": \"fkiqo0om\",\n            \"OwnerAccount\": 100000123456,\n            \"OwnerAccountName\": \"root\",\n            \"Region\": \"ap-guangzhou\",\n            \"Status\": 1,\n            \"StorageSize\": 536870912,\n            \"StorageSizeWithUnit\": \"512.00MB\",\n            \"CreateTime\": \"2023-03-09 15:42:59\",\n            \"TableCount\": 12,\n            \"DatasourceList\": [\n                {\n                    \"DatasourceId\": \"146721\",\n                    \"DatasourceName\": \"dlc_***\",\n                    \"DatasourceClusterId\": \"fkiqo0om\",\n                    \"DatasourceUrn\": \"dlc_***\",\n                    \"DatasourceEnv\": \"production\"\n                }\n            ],\n            \"CollectJobId\": \"collect_job_***\",\n            \"CollectJobName\": \"dlc_采集任务\",\n            \"ClusterId\": \"fkiqo0om\",\n            \"ClusterName\": \"DLC实例-***\",\n            \"OperateOption\": null,\n            \"ModifiedTimeByTables\": 1770625474000,\n            \"LastAccessTimeByTables\": 1770625474000\n        }\n    }\n}",
+        "title": "根据数据库名称查询数据库信息"
+      }
+    ],
     "DescribeDatabaseInfoList": [
       {
         "document": "获取数据库信息",
@@ -732,11 +740,19 @@
         "title": "获取数据库信息"
       }
     ],
+    "DescribeDatabaseMeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseMeta\n<公共请求参数>\n\n{\n    \"DatabaseId\": \"guid_of_database_***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req_id_***\",\n        \"DatabaseMeta\": {\n            \"DatabaseId\": null,\n            \"DatabaseGuid\": \"guid_of_database_***\",\n            \"DatabaseName\": \"example_db\",\n            \"ProjectId\": \"project_id_***\",\n            \"ProjectName\": \"project_eng_name\",\n            \"ProjectDisplayName\": \"项目中文名称\",\n            \"MetastoreType\": \"HIVE\",\n            \"DatasourceId\": 79541,\n            \"DatasourceName\": \"hive_emr-***\",\n            \"DisplayName\": \"hive_emr-***.example_db\",\n            \"Category\": \"CLUSTER\",\n            \"Catalog\": \"hive\",\n            \"Description\": \"业务数据库\",\n            \"Instance\": \"emr-***\",\n            \"OwnerAccount\": 100000,\n            \"OwnerAccountName\": \"hadoop\",\n            \"Region\": \"ap-guangzhou\",\n            \"Status\": 1,\n            \"StorageSize\": 1073741824,\n            \"StorageSizeWithUnit\": \"1.00GB\",\n            \"CreateTime\": \"2023-03-09 15:42:59\",\n            \"TableCount\": 56,\n            \"DatasourceList\": [\n                {\n                    \"DatasourceId\": \"79541\",\n                    \"DatasourceName\": \"hive_emr-***\",\n                    \"DatasourceClusterId\": \"emr-***\",\n                    \"DatasourceUrn\": \"hive_emr-***\",\n                    \"DatasourceEnv\": \"production\"\n                }\n            ],\n            \"CollectJobId\": \"collect_job_***\",\n            \"CollectJobName\": \"hive_采集任务\",\n            \"ClusterId\": \"emr-***\",\n            \"ClusterName\": \"EMR-***集群\",\n            \"OperateOption\": null,\n            \"ModifiedTimeByTables\": 1770625474000,\n            \"LastAccessTimeByTables\": 1770625474000\n        }\n    }\n}",
+        "title": "查询数据源元数据"
+      }
+    ],
     "DescribeDatabaseMetas": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseMetas\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"a1\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"OrderFields\": [\n        {\n            \"Name\": \"a1b1c\",\n            \"Direction\": \"a1b1c\"\n        }\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"DatabaseMeta\": [\n            {\n                \"Catalog\": null,\n                \"Category\": null,\n                \"ClusterId\": null,\n                \"ClusterName\": null,\n                \"CollectJobId\": null,\n                \"CollectJobName\": null,\n                \"CreateTime\": \"2025-08-12T16:00:53+08:00\",\n                \"DatabaseGuid\": \"FB-gjv53p2TZcPaaZmsGHw\",\n                \"DatabaseId\": \"31712\",\n                \"DatabaseName\": \"barry_4\",\n                \"DatasourceId\": 93731,\n                \"DatasourceList\": null,\n                \"DatasourceName\": \"hive_emr-3f0wn6y7\",\n                \"Description\": null,\n                \"DisplayName\": \"hive_emr-3f0wn6y7.barry_4\",\n                \"Environment\": null,\n                \"Instance\": null,\n                \"LastAccessTimeByTables\": null,\n                \"MetastoreType\": \"HIVE\",\n                \"ModifiedTimeByTables\": null,\n                \"OwnerAccountName\": null,\n                \"ProjectDisplayName\": null,\n                \"ProjectId\": null,\n                \"ProjectName\": null,\n                \"Region\": null,\n                \"Status\": null,\n                \"StorageSize\": null,\n                \"StorageSizeWithUnit\": null,\n                \"TableCount\": null\n            }\n        ],\n        \"RequestId\": \"d271201e-984c-439c-9672-142817b5414d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseMetas\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 9999,\n    \"Filters\": [\n        {\n            \"Name\": \"datasourceId\",\n            \"Values\": [\n                \"146721\"\n            ]\n        }\n    ],\n    \"OrderFields\": [\n        {\n            \"Name\": \"databaseName\",\n            \"Direction\": \"ASC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4037646-f140-4b15-bc22-aec12e2e1d70\",\n        \"DatabaseMeta\": [\n            {\n                \"DatabaseId\": null,\n                \"DatabaseGuid\": null,\n                \"DatabaseName\": \"atta_boss\",\n                \"ProjectId\": \"project_id_***\",\n                \"ProjectName\": \"project_eng_name\",\n                \"ProjectDisplayName\": \"项目中文名称\",\n                \"MetastoreType\": \"DLC\",\n                \"DatasourceId\": 146721,\n                \"DatasourceName\": \"dlc_***\",\n                \"DisplayName\": \"dlc_***.atta_boss\",\n                \"Category\": \"CLUSTER\",\n                \"Catalog\": \"DataLakeCatalog\",\n                \"Description\": \"员工域数据\",\n                \"Instance\": \"fkiqo0om\",\n                \"OwnerAccount\": 100000,\n                \"OwnerAccountName\": \"root\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"StorageSize\": 536870912,\n                \"StorageSizeWithUnit\": \"512.00MB\",\n                \"CreateTime\": \"2023-03-09 15:42:59\",\n                \"TableCount\": 12,\n                \"DatasourceList\": [\n                    {\n                        \"DatasourceId\": \"146721\",\n                        \"DatasourceName\": \"dlc_***\",\n                        \"DatasourceClusterId\": \"fkiqo0om\",\n                        \"DatasourceUrn\": \"dlc_***\",\n                        \"DatasourceEnv\": \"production\"\n                    }\n                ],\n                \"CollectJobId\": \"collect_job_***\",\n                \"CollectJobName\": \"dlc_采集任务\",\n                \"ClusterId\": \"fkiqo0om\",\n                \"ClusterName\": \"DLC实例-***\",\n                \"OperateOption\": null,\n                \"ModifiedTimeByTables\": 1770625474000,\n                \"LastAccessTimeByTables\": 1770625474000\n            },\n            {\n                \"DatabaseId\": null,\n                \"DatabaseGuid\": null,\n                \"DatabaseName\": \"atta_dw_base\",\n                \"ProjectId\": \"project_id_***\",\n                \"ProjectName\": \"project_eng_name\",\n                \"ProjectDisplayName\": \"项目中文名称\",\n                \"MetastoreType\": \"DLC\",\n                \"DatasourceId\": 146721,\n                \"DatasourceName\": \"dlc_***\",\n                \"DisplayName\": \"dlc_***.atta_dw_base\",\n                \"Category\": \"CLUSTER\",\n                \"Catalog\": \"DataLakeCatalog\",\n                \"Description\": \"ODS层：数据冷备\",\n                \"Instance\": \"fkiqo0om\",\n                \"OwnerAccount\": 100000,\n                \"OwnerAccountName\": \"root\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"StorageSize\": 268435456,\n                \"StorageSizeWithUnit\": \"256.00MB\",\n                \"CreateTime\": \"2023-03-09 15:42:59\",\n                \"TableCount\": 8,\n                \"DatasourceList\": [],\n                \"CollectJobId\": null,\n                \"CollectJobName\": null,\n                \"ClusterId\": \"fkiqo0om\",\n                \"ClusterName\": \"DLC实例-***\",\n                \"OperateOption\": null,\n                \"ModifiedTimeByTables\": null,\n                \"LastAccessTimeByTables\": null\n            }\n        ]\n    }\n}",
         "title": "请求demo"
       }
     ],
@@ -1060,6 +1076,14 @@
         "title": "查询集成任务版本节点信息"
       }
     ],
+    "DescribeLineageColumns": [
+      {
+        "document": "列出血缘中心字段信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLineageColumns\n<公共请求参数>\n\n{\n    \"TableId\": \"GXCyOE2-TGeJjjihf5oY_A\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ColumnSet\": [\n            {\n                \"TableId\": \"GXCyOE2-TGeJjjihf5oY_A\",\n                \"ParentId\": \"10\",\n                \"Params\": \"\",\n                \"MetastoreType\": \"1\",\n                \"RelationParams\": \"\",\n                \"QualifiedName\": \"\",\n                \"Description\": \"\",\n                \"TableName\": \"name\",\n                \"ColumnNameCn\": \"\",\n                \"ParentSet\": \"\",\n                \"ChildSet\": \"\",\n                \"ColumnType\": \"\",\n                \"UpStreamCount\": 0,\n                \"PrefixPath\": \"\",\n                \"DatasourceId\": \"\",\n                \"ModifyTime\": \"\",\n                \"MetastoreTypeName\": \"\",\n                \"Tasks\": [\n                    \"\"\n                ],\n                \"DownStreamCount\": 0,\n                \"ExtParams\": [\n                    {\n                        \"Name\": \"\",\n                        \"Value\": \"\"\n                    }\n                ],\n                \"Id\": \"\",\n                \"ColumnName\": \"\",\n                \"CreateTime\": \"\"\n            }\n        ],\n        \"TableName\": \"name\",\n        \"RequestId\": \"\",\n        \"MetastoreTypeName\": \"\",\n        \"MetastoreType\": [\n            \"\"\n        ]\n    }\n}",
+        "title": "列出血缘中心字段信息"
+      }
+    ],
     "DescribeLineageInfo": [
       {
         "document": "查询血缘",
@@ -1216,6 +1240,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealTimeTaskSpeed\n<公共请求参数>\n\n{\n    \"TaskId\": \"task33\",\n    \"StartTime\": 1712803796000,\n    \"EndTime\": 1712803996000,\n    \"Granularity\": 1213,\n    \"ProjectId\": \"1486804694126882816\"\n}",
         "output": "{\n    \"Response\": {\n        \"RecordsSpeedList\": [\n            {\n                \"NodeType\": \"INPUT\",\n                \"NodeName\": \"1\",\n                \"Values\": [\n                    {\n                        \"Time\": 1,\n                        \"Speed\": 0\n                    }\n                ]\n            }\n        ],\n        \"BytesSpeedList\": [\n            {\n                \"NodeType\": \"INPUT\",\n                \"NodeName\": \"1\",\n                \"Values\": [\n                    {\n                        \"Time\": 1,\n                        \"Speed\": 0\n                    }\n                ]\n            }\n        ],\n        \"Data\": {\n            \"RecordsSpeedList\": [\n                {\n                    \"NodeType\": \"INPUT\",\n                    \"NodeName\": \"1\",\n                    \"Values\": [\n                        {\n                            \"Time\": 1,\n                            \"Speed\": 0\n                        }\n                    ]\n                }\n            ],\n            \"BytesSpeedList\": [\n                {\n                    \"Values\": [\n                        {\n                            \"Speed\": 0,\n                            \"Time\": 1\n                        }\n                    ],\n                    \"NodeType\": \"INPUT\",\n                    \"NodeName\": \"1\"\n                }\n            ]\n        },\n        \"RequestId\": \"977662\"\n    }\n}",
         "title": "实时任务同步速度趋势"
+      }
+    ],
+    "DescribeRealViewDatabasePage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealViewDatabasePage\n<公共请求参数>\n\n{\n    \"DatasourceId\": 0,\n    \"ProjectId\": \"a1b1c\",\n    \"Asc\": true,\n    \"ConnectionType\": \"a1b1c\",\n    \"Keyword\": \"a1b1c\",\n    \"PageNumber\": 0,\n    \"PageSize\": 0,\n    \"ResourceGroupId\": \"a1bc1\",\n    \"ResourceType\": 0,\n    \"Sort\": \"a1b1c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PageNumber\": 1,\n            \"PageSize\": 2,\n            \"Rows\": [\n                {\n                    \"DataSourceId\": 8575,\n                    \"DataSourceName\": \"di_doris\",\n                    \"DataSourceType\": \"DORIS\",\n                    \"DatabaseName\": \"cockpit\"\n                },\n                {\n                    \"DataSourceId\": 8575,\n                    \"DataSourceName\": \"di_doris\",\n                    \"DataSourceType\": \"DORIS\",\n                    \"DatabaseName\": \"db_01\"\n                }\n            ],\n            \"TotalCount\": 816,\n            \"TotalPageNumber\": 408\n        },\n        \"RequestId\": \"99a63938-9900-4fac-ab37-3d7f14e95007\"\n    }\n}",
+        "title": "DescribeRealViewDatabasePage"
       }
     ],
     "DescribeRealViewSchemaPage": [
@@ -1480,6 +1512,22 @@
         "title": "错误1"
       }
     ],
+    "DescribeTableContentPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableContentPreview\n<公共请求参数>\n\n{\n    \"TableId\": \"lr_At9jPStaeO9p_wMYjsQ\",\n    \"TechnologyType\": \"ICEBERG\",\n    \"ClusterId\": \"emr-dbcygrxq\",\n    \"ResourceType\": \"TABLE\",\n    \"TableName\": \"t1\",\n    \"ProjectId\": \"2566642341118603264\",\n    \"DatabaseName\": \"worinimao\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req_id_***\",\n        \"ColumnNames\": [\n            \"col1\",\n            \"col2\",\n            \"col3\",\n            \"pt_day\"\n        ],\n        \"TableRecordSet\": [\n            {\n                \"TableRecordFieldSet\": [\n                    {\n                        \"Name\": \"col1\",\n                        \"Value\": \"value1\"\n                    },\n                    {\n                        \"Name\": \"col2\",\n                        \"Value\": \"value2\"\n                    },\n                    {\n                        \"Name\": \"col3\",\n                        \"Value\": \"value3\"\n                    },\n                    {\n                        \"Name\": \"pt_day\",\n                        \"Value\": \"2026-03-10\"\n                    }\n                ]\n            },\n            {\n                \"TableRecordFieldSet\": [\n                    {\n                        \"Name\": \"col1\",\n                        \"Value\": \"value4\"\n                    },\n                    {\n                        \"Name\": \"col2\",\n                        \"Value\": \"value5\"\n                    },\n                    {\n                        \"Name\": \"col3\",\n                        \"Value\": \"value6\"\n                    },\n                    {\n                        \"Name\": \"pt_day\",\n                        \"Value\": \"2026-03-10\"\n                    }\n                ]\n            }\n        ],\n        \"TaskId\": \"123000\",\n        \"AsyncState\": null\n    }\n}",
+        "title": "异步预览表信息"
+      }
+    ],
+    "DescribeTableDdl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableDdl\n<公共请求参数>\n\n{\n    \"TableId\": \"guid_of_table_***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req_id_***\",\n        \"Ddl\": \"CREATE TABLE `database_name`.`table_name` (\\n  `col1` string COMMENT '字段描述',\\n  `col2` bigint COMMENT '字段描述'\\n)\\nPARTITIONED BY (`pt_day` string)\\nROW FORMAT SERDE 'org.apache.hadoop.hive.ql.io.orc.OrcSerde'\\nSTORED AS ORC\\nLOCATION 'hdfs://HDFS***/warehouse/...'\\nTBLPROPERTIES (...)\"\n    }\n}",
+        "title": "查询表的DDL"
+      }
+    ],
     "DescribeTableInfoList": [
       {
         "document": "",
@@ -1568,6 +1616,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableScoreTrend\n<公共请求参数>\n\n{\n    \"StatisticsStartDate\": 1679414400,\n    \"StatisticsEndDate\": 1679414400,\n    \"ProjectId\": \"153161111111111111\",\n    \"TableId\": \"dsjhj-dsada\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f440fef-24c6-4f5c-a58e-7e0aa7aa19d7\",\n        \"Data\": {\n            \"AverageScore\": 12.0,\n            \"DailyScoreList\": [\n                {\n                    \"StatisticsDate\": 1679414400,\n                    \"Score\": 8.0\n                }\n            ]\n        }\n    }\n}",
         "title": "查询表得分趋势"
+      }
+    ],
+    "DescribeTableSelect": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableSelect\n<公共请求参数>\n\n{\n    \"TableId\": \"guid_of_table_***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req_id_***\",\n        \"Select\": \"SELECT `col1`, `col2`, `col3`, `pt_day` FROM `database_name`.`table_name` WHERE `pt_day` = '${bizdate}' LIMIT 1000\"\n    }\n}",
+        "title": "查询表的select语句"
       }
     ],
     "DescribeTaskAlarmRegulations": [

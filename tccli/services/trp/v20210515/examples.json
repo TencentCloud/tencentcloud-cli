@@ -431,6 +431,14 @@
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"操作成功\",\n            \"Value\": \"用户信息已获取\"\n        },\n        \"RequestId\": \"eaa3ccac-d2f5-4df0-a8b3-7b51324e9283\"\n    }\n}",
         "title": "离线筛选包数据推送"
       }
+    ],
+    "ReportScanDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportScanDetail\n<公共请求参数>\n\n{\n    \"ScanDetails\": [\n        {\n            \"Uid\": \"1\",\n            \"Time\": \"20260317090809\",\n            \"ProvinceName\": \"湖北\",\n            \"CityName\": \"武汉\",\n            \"RegionName\": \"洪山区\",\n            \"BrandName\": \"品牌2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 1\n        },\n        \"RequestId\": \"fc2e4ade-956e-4c9c-91bc-d47b417a59bf\"\n    }\n}",
+        "title": "请求示例"
+      }
     ]
   },
   "version": "1.0"
