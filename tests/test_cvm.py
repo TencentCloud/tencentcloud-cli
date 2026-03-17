@@ -1,3 +1,5 @@
+from multiprocessing import Process, Queue
+from tccli.command import CLICommand
 from utils import TestCli
 
 def test_describe_regions():
@@ -51,3 +53,24 @@ def test_create_image_dry_run_with_unfold_argument():
     test_cli = TestCli()
     test_cli.equal(cmd, expect)
 
+
+def test_multi_process():
+    queue = Queue()
+    def run_cvm_describe_regions(idx, q):
+        args = ["cvm", "DescribeRegions"]
+        try:
+            CLICommand()(args)
+            q.put(0)
+        except Exception:
+            q.put(255)
+
+    processes = []
+    for i in range(10):
+        p = Process(target=run_cvm_describe_regions, args=(i, queue))
+        p.start()
+        processes.append(p)
+    for p in processes:
+        p.join()
+    while not queue.empty():
+        ret = queue.get()
+        assert ret == 0
