@@ -2036,10 +2036,10 @@
     ],
     "ModifyClusterSchedulerPolicy": [
       {
-        "document": "修改集群调度策略",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterSchedulerPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kasybnzk\",\n    \"Priorities\": [\n        {\n            \"Name\": \"EvenPodsSpreadPriority\",\n            \"Weight\": 2\n        },\n        {\n            \"Name\": \"TaintTolerationPriority\",\n            \"Weight\": 1\n        },\n        {\n            \"Name\": \"InterPodAffinityPriority\",\n            \"Weight\": 1\n        },\n        {\n            \"Name\": \"LeastRequestedPriority\",\n            \"Weight\": 2\n        },\n        {\n            \"Name\": \"NodeAffinityPriority\",\n            \"Weight\": 1\n        },\n        {\n            \"Name\": \"NodePreferAvoidPodsPriority\",\n            \"Weight\": 10000\n        },\n        {\n            \"Name\": \"BalancedResourceAllocation\",\n            \"Weight\": 1\n        },\n        {\n            \"Name\": \"SelectorSpreadPriority\",\n            \"Weight\": 1\n        },\n        {\n            \"Name\": \"ImageLocalityPriority\",\n            \"Weight\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c39624e5-9536-4cd0-a3b2-8830cdfef2a1\"\n    }\n}",
-        "title": "修改集群调度策略"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterSchedulerPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-ncmx45jw\",\n    \"HighPerformance\": true,\n    \"PoolSchedulerStartArg\": {\n        \"PoolingShardingCount\": 10,\n        \"VirtualNodeCount\": 150,\n        \"PoolingKeyLabels\": \"\\\"aaa_ccc\\\"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96fbca81-f0fe-46d6-ad81-ab87f6ae24f6\"\n    }\n}",
+        "title": "修改调度器参数信息"
       }
     ],
     "ModifyClusterTags": [

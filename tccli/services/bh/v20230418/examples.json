@@ -67,8 +67,8 @@
     "CreateAcl": [
       {
         "document": "新建访问权限",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"Name\": \"test-name\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AccountSet\": [\n        \"root\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"UserIdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"31jshapqhxmajh12knskal2\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"Name\": \"acl_test\",\n    \"AllowDiskRedirect\": true,\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileUp\": true,\n    \"AllowClipFileDown\": false,\n    \"AllowClipTextUp\": false,\n    \"AllowClipTextDown\": false,\n    \"AllowFileUp\": false,\n    \"AllowFileDown\": false,\n    \"AllowDiskFileUp\": false,\n    \"AllowDiskFileDown\": false,\n    \"AllowShellFileUp\": false,\n    \"AllowShellFileDown\": false,\n    \"AllowFileDel\": false,\n    \"DepartmentId\": \"1\",\n    \"AllowAccessCredential\": true,\n    \"AllowKeyboardLogger\": false,\n    \"MaxAccessCredentialDuration\": 86400\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 16790787,\n        \"RequestId\": \"afaab2dd-23d2-4c40-8c6d-19e87dffa9d8\"\n    }\n}",
         "title": "新建访问权限"
       }
     ],

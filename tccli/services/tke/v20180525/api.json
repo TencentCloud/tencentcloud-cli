@@ -23654,11 +23654,29 @@
         {
           "disabled": false,
           "document": "调度打分",
-          "example": "[{\"Name\":\"TaintTolerationPriority\",\"Weight\":1},{\"Name\":\"ImageLocalityPriority\",\"Weight\":1}]",
+          "example": "无",
           "member": "SchedulerPolicyPriority",
           "name": "Priorities",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "高性能模式",
+          "example": "true",
+          "member": "bool",
+          "name": "HighPerformance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "池化调度器参数",
+          "example": "无",
+          "member": "PoolSchedulerStartArg",
+          "name": "PoolSchedulerStartArg",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -25918,6 +25936,45 @@
         }
       ],
       "usage": "out"
+    },
+    "PoolSchedulerStartArg": {
+      "document": "池化调度器启动参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分片数量",
+          "example": "2",
+          "member": "int64",
+          "name": "PoolingShardingCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每个分片的虚拟节点数量",
+          "example": "106",
+          "member": "int64",
+          "name": "VirtualNodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片时用于计算哈希 key 的 Node Label 列表，用于 Node 分片，多个 Label 用 _ 分割",
+          "example": "\"aaa_ccc\"",
+          "member": "string",
+          "name": "PoolingKeyLabels",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Probe": {
       "document": "健康检查探测参数",

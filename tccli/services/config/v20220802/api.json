@@ -984,7 +984,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页限制",
+          "document": "<p>每页限制</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -993,7 +993,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -1002,7 +1002,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组ID",
+          "document": "<p>账号组ID</p>",
           "example": "ca-sdfs7734h24h3",
           "member": "string",
           "name": "AccountGroupId",
@@ -1011,7 +1011,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型, 倒序：desc，顺序：asc",
+          "document": "<p>排序类型, 倒序：desc，顺序：asc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderType",
@@ -1020,7 +1020,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "RiskLevel",
@@ -1029,7 +1029,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态",
+          "document": "<p>规则状态</p>",
           "example": "ACTIVE",
           "member": "string",
           "name": "State",
@@ -1038,7 +1038,7 @@
         },
         {
           "disabled": false,
-          "document": "评估结果",
+          "document": "<p>评估结果</p>",
           "example": "[\"COMPLIANT\"]",
           "member": "string",
           "name": "ComplianceResult",
@@ -1047,7 +1047,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名",
+          "document": "<p>规则名</p>",
           "example": "规则1",
           "member": "string",
           "name": "RuleName",
@@ -1056,7 +1056,7 @@
         },
         {
           "disabled": false,
-          "document": "规则所属账号ID",
+          "document": "<p>规则所属账号ID</p>",
           "example": "98332222",
           "member": "uint64",
           "name": "RuleOwnerId",
@@ -1071,7 +1071,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "4",
           "member": "uint64",
           "name": "Total",
@@ -1081,7 +1081,7 @@
         },
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "无",
           "member": "ConfigRule",
           "name": "Items",

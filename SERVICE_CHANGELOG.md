@@ -1,10 +1,29 @@
-# Release 3.0.1384.1
+# Release 3.0.1385.1
 
-## 腾讯混元生3D(ai3d) 版本：2025-05-13
+## 应用性能监控(apm) 版本：2021-06-22
 
-### 第 12 次发布
+### 第 28 次发布
 
-发布时间：2026-03-17 01:07:45
+发布时间：2026-03-18 01:10:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ServiceDetail)
+
+	* 新增成员：EnableThresholdConfig, ErrRateThreshold, ResponseDurationWarningThreshold
+
+
+
+
+## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+
+### 第 32 次发布
+
+发布时间：2026-03-18 01:11:51
 
 本次发布包含了以下内容：
 
@@ -12,18 +31,33 @@
 
 修改接口：
 
-* [QueryHunyuanTo3DProJob](http://document.tencentcloudapi.woa.com/document/product/1800/87647)
+* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85297)
 
-	* 新增出参：ResultCreditDetails, ResultCreditConsumed
+	* 新增入参：MaxAccessCredentialDuration
+
+* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85291)
+
+	* 新增入参：MaxAccessCredentialDuration
+
+
+修改数据结构：
+
+* [Acl](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Acl)
+
+	* 新增成员：MaxAccessCredentialDuration
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Resource)
+
+	* 新增成员：ResourceEdition, TimeUnit, TimeSpan, PayMode
 
 
 
 
-## 大模型安全网关(apis) 版本：2024-08-01
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 7 次发布
+### 第 142 次发布
 
-发布时间：2026-03-17 01:10:18
+发布时间：2026-03-18 01:27:07
 
 本次发布包含了以下内容：
 
@@ -31,28 +65,54 @@
 
 新增接口：
 
-* [CreateAIMCredential](http://document.tencentcloudapi.woa.com/document/product/1805/89006)
-* [DeleteAIMCredential](http://document.tencentcloudapi.woa.com/document/product/1805/89005)
-* [DescribeAIMCredential](http://document.tencentcloudapi.woa.com/document/product/1805/89004)
-* [DescribeAIMCredentials](http://document.tencentcloudapi.woa.com/document/product/1805/89003)
-* [GetAIMCredential](http://document.tencentcloudapi.woa.com/document/product/1805/89002)
-* [ModifyAIMCredential](http://document.tencentcloudapi.woa.com/document/product/1805/89001)
+* [DescribeAttackType](http://document.tencentcloudapi.woa.com/document/product/296/89042)
+* [DescribeInjectRiskyServiceSwitch](http://document.tencentcloudapi.woa.com/document/product/296/89030)
+* [DescribeLoginTypeGlobalConf](http://document.tencentcloudapi.woa.com/document/product/296/89033)
+* [DescribeLoginTypeHost](http://document.tencentcloudapi.woa.com/document/product/296/89032)
+* [DescribeMemShellRules](http://document.tencentcloudapi.woa.com/document/product/296/89046)
+* [DescribeRaspEventCWP](http://document.tencentcloudapi.woa.com/document/product/296/89041)
+* [DescribeRaspEventDetailCWP](http://document.tencentcloudapi.woa.com/document/product/296/89040)
+* [DescribeRaspEventDetailTCSS](http://document.tencentcloudapi.woa.com/document/product/296/89039)
+* [DescribeRaspEventTCSS](http://document.tencentcloudapi.woa.com/document/product/296/89038)
+* [DescribeRaspLicenseList](http://document.tencentcloudapi.woa.com/document/product/296/89027)
+* [DescribeRaspMemShellDetailTCSS](http://document.tencentcloudapi.woa.com/document/product/296/89037)
+* [DescribeRaspMemShellListTCSS](http://document.tencentcloudapi.woa.com/document/product/296/89036)
+* [DescribeRaspPluginList](http://document.tencentcloudapi.woa.com/document/product/296/89026)
+* [DescribeReverseShellRulesAggregation](http://document.tencentcloudapi.woa.com/document/product/296/89045)
+* [DescribeReverseShellSystemPolicyConfig](http://document.tencentcloudapi.woa.com/document/product/296/89044)
+* [DescribeShellPolicyList](http://document.tencentcloudapi.woa.com/document/product/296/89043)
+* [DescribeVulDefenceOverviewCount](http://document.tencentcloudapi.woa.com/document/product/296/89029)
+* [DescribeVulDefenceSettingList](http://document.tencentcloudapi.woa.com/document/product/296/89028)
+* [DescribeYDRaspBlackWhite](http://document.tencentcloudapi.woa.com/document/product/296/89035)
+* [RaspEventOverview](http://document.tencentcloudapi.woa.com/document/product/296/89034)
 
 新增数据结构：
 
-* [AccessCredential](http://document.tencentcloudapi.woa.com/document/product/1805/87916#AccessCredential)
-* [DescribeAIMCredentialResp](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeAIMCredentialResp)
-* [DescribeAIMCredentialsResp](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeAIMCredentialsResp)
-* [GetAIMCredentialResp](http://document.tencentcloudapi.woa.com/document/product/1805/87916#GetAIMCredentialResp)
-* [STSCredential](http://document.tencentcloudapi.woa.com/document/product/1805/87916#STSCredential)
+* [ClientSettingHost](http://document.tencentcloudapi.woa.com/document/product/296/19867#ClientSettingHost)
+* [MemShellRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#MemShellRule)
+* [OrderDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#OrderDetail)
+* [RaspAttackTypeListItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspAttackTypeListItem)
+* [RaspEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspEvent)
+* [RaspEventDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspEventDetail)
+* [RaspEventOverview](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspEventOverview)
+* [RaspLicenseList](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspLicenseList)
+* [RaspLicensePlugin](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspLicensePlugin)
+* [RaspMemShellDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspMemShellDetail)
+* [RaspMemShellEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspMemShellEvent)
+* [ReverseShellRuleAggregation](http://document.tencentcloudapi.woa.com/document/product/296/19867#ReverseShellRuleAggregation)
+* [RiskMainClass](http://document.tencentcloudapi.woa.com/document/product/296/19867#RiskMainClass)
+* [ShellPolicyList](http://document.tencentcloudapi.woa.com/document/product/296/19867#ShellPolicyList)
+* [UuidHostip](http://document.tencentcloudapi.woa.com/document/product/296/19867#UuidHostip)
+* [VulDefenceSetting](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulDefenceSetting)
+* [YDRaspBlackWhiteListItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#YDRaspBlackWhiteListItem)
 
 
 
-## 日志服务(cls) 版本：2020-10-16
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 140 次发布
+### 第 156 次发布
 
-发布时间：2026-03-17 01:24:03
+发布时间：2026-03-18 01:32:31
 
 本次发布包含了以下内容：
 
@@ -60,49 +120,52 @@
 
 修改接口：
 
-* [CreateCloudProductLogCollection](http://document.tencentcloudapi.woa.com/document/product/614/86055)
+* [CreateBackup](http://document.tencentcloudapi.woa.com/document/product/1003/75917)
 
-	* 新增入参：Tags
+	* 新增入参：Vaults
 
-* [CreateCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83989)
+* [DescribeRollbackTimeRange](http://document.tencentcloudapi.woa.com/document/product/1003/48092)
 
-	* 新增入参：Tags
+	* 新增入参：VaultId, VaultRegion
 
-* [CreateSplunkDeliver](http://document.tencentcloudapi.woa.com/document/product/614/88549)
+* [RollBackCluster](http://document.tencentcloudapi.woa.com/document/product/1003/70115)
 
-	* 新增入参：ExternalRole
-
-* [DeleteCloudProductLogCollection](http://document.tencentcloudapi.woa.com/document/product/614/86054)
-
-	* 新增入参：IsDeleteTopic, IsDeleteLogset
-
-* [DeleteCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83988)
-
-	* 新增入参：IsDeleteTopic, IsDeleteLogset
-
-* [ModifySplunkDeliver](http://document.tencentcloudapi.woa.com/document/product/614/88545)
-
-	* 新增入参：ExternalRole
+	* 新增入参：VaultId
 
 
-新增数据结构：
 
-* [ExternalRole](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExternalRole)
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 61 次发布
+
+发布时间：2026-03-18 01:38:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRecordList](http://document.tencentcloudapi.woa.com/document/product/1427/56166)
+
+	* 新增入参：ErrorOnEmpty
+
 
 修改数据结构：
 
-* [SplunkDeliverInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#SplunkDeliverInfo)
+* [Deals](http://document.tencentcloudapi.woa.com/document/product/1427/56185#Deals)
 
-	* 新增成员：ExternalRole
-
-
+	* 新增成员：ResourceId
 
 
-## 云游戏(gs) 版本：2019-11-18
 
-### 第 52 次发布
 
-发布时间：2026-03-17 01:44:53
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 221 次发布
+
+发布时间：2026-03-18 01:44:25
 
 本次发布包含了以下内容：
 
@@ -110,70 +173,78 @@
 
 修改接口：
 
-* [CreateAndroidInstanceADB](http://document.tencentcloudapi.woa.com/document/product/1162/86951)
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
 
-	* 新增入参：ExpiredTime
+	* 新增入参：FlowOperateLimit
 
+
+新增数据结构：
+
+* [FlowOperateLimit](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowOperateLimit)
+
+修改数据结构：
+
+* [FlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowInfo)
+
+	* 新增成员：FlowOperateLimit
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 50 次发布
+
+发布时间：2026-03-18 02:16:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeImageDenyEventDetail](http://document.tencentcloudapi.woa.com/document/product/1662/89052)
+* [DescribeImageDenyEventList](http://document.tencentcloudapi.woa.com/document/product/1662/89051)
+* [DescribeImageDenyEventTendency](http://document.tencentcloudapi.woa.com/document/product/1662/89050)
+* [DescribeImageDenyRuleDetail](http://document.tencentcloudapi.woa.com/document/product/1662/89049)
+* [DescribeImageDenyRuleList](http://document.tencentcloudapi.woa.com/document/product/1662/89048)
+* [DescribeImageDenyRuleSummary](http://document.tencentcloudapi.woa.com/document/product/1662/89047)
+* [DescribeMaliciousConnectionBlackList](http://document.tencentcloudapi.woa.com/document/product/1662/89054)
+* [DescribeMaliciousConnectionWhiteList](http://document.tencentcloudapi.woa.com/document/product/1662/89053)
+* [DescribeReverseShellRegexpWhiteList](http://document.tencentcloudapi.woa.com/document/product/1662/89056)
+* [DescribeReverseShellRegexpWhiteListInfo](http://document.tencentcloudapi.woa.com/document/product/1662/89055)
+
+新增数据结构：
+
+* [ImageDenyEvent](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImageDenyEvent)
+* [ImageDenyEventTendency](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImageDenyEventTendency)
+* [ImageDenyRule](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImageDenyRule)
+* [MaliciousConnectionRuleInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#MaliciousConnectionRuleInfo)
+* [RegexpRuleInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#RegexpRuleInfo)
+* [RegexpRuleListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#RegexpRuleListItem)
+* [WhiteListRegexpExpressionInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#WhiteListRegexpExpressionInfo)
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 118 次发布
+### 第 119 次发布
 
-发布时间：2026-03-17 02:21:15
+发布时间：2026-03-18 02:24:22
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
-
-* [CreateDataSource](http://document.tencentcloudapi.woa.com/document/product/851/89016)
-* [CreateMountLimit](http://document.tencentcloudapi.woa.com/document/product/851/89015)
-* [DeleteDataSource](http://document.tencentcloudapi.woa.com/document/product/851/89014)
-* [DeleteMountLimit](http://document.tencentcloudapi.woa.com/document/product/851/89013)
-* [DescribeDataSource](http://document.tencentcloudapi.woa.com/document/product/851/89012)
-* [DescribeMountInstance](http://document.tencentcloudapi.woa.com/document/product/851/89011)
-* [DescribeMountInstances](http://document.tencentcloudapi.woa.com/document/product/851/89010)
-* [DescribeMountLimits](http://document.tencentcloudapi.woa.com/document/product/851/89009)
-* [UpdateDataSource](http://document.tencentcloudapi.woa.com/document/product/851/89008)
-* [UpdateMountLimit](http://document.tencentcloudapi.woa.com/document/product/851/89007)
-
-修改接口：
-
-* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
-
-	* 新增入参：GatewayConfig
-
-* [DescribeBillingResourceGroup](http://document.tencentcloudapi.woa.com/document/product/851/82745)
-
-	* 新增出参：SpaceEditEnabled
-
-* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
-
-	* 新增入参：TargetProjectId
-
-
-新增数据结构：
-
-* [GatewayConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#GatewayConfig)
-* [MountInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#MountInstanceInfo)
-* [MountLimitInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#MountLimitInfo)
-
 修改数据结构：
 
-* [ResourceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ResourceGroup)
+* [GitSecret](http://document.tencentcloudapi.woa.com/document/product/851/74915#GitSecret)
 
-	* 新增成员：SpaceEditEnabled
-
-* [ServiceCallInfoV2](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceCallInfoV2)
-
-	* 新增成员：GatewayConfig
-
-* [ServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceGroup)
-
-	* 新增成员：GatewayConfig
+	* 新增成员：SecretId
 
 
 
@@ -184,13 +255,9 @@
 
 ## 容器服务(tke) 版本：2022-05-01
 
+### 第 20 次发布
 
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 116 次发布
-
-发布时间：2026-03-17 02:23:51
+发布时间：2026-03-18 02:28:02
 
 本次发布包含了以下内容：
 
@@ -198,21 +265,31 @@
 
 新增接口：
 
-* [CreateExternalNodePool](http://document.tencentcloudapi.woa.com/document/product/457/89025)
-* [DeleteExternalNode](http://document.tencentcloudapi.woa.com/document/product/457/89024)
-* [DeleteExternalNodePool](http://document.tencentcloudapi.woa.com/document/product/457/89023)
-* [DescribeExternalNode](http://document.tencentcloudapi.woa.com/document/product/457/89022)
-* [DescribeExternalNodePools](http://document.tencentcloudapi.woa.com/document/product/457/89021)
-* [DescribeExternalNodeScript](http://document.tencentcloudapi.woa.com/document/product/457/89020)
-* [DrainExternalNode](http://document.tencentcloudapi.woa.com/document/product/457/89019)
-* [EnableExternalNodeSupport](http://document.tencentcloudapi.woa.com/document/product/457/89018)
-* [ModifyExternalNodePool](http://document.tencentcloudapi.woa.com/document/product/457/89017)
+* [DescribeGPUInfo](http://document.tencentcloudapi.woa.com/document/product/457/89057)
+* [DescribeZoneInstanceConfigInfos](http://document.tencentcloudapi.woa.com/document/product/457/89058)
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 117 次发布
+
+发布时间：2026-03-18 02:25:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyClusterSchedulerPolicy](http://document.tencentcloudapi.woa.com/document/product/457/77529)
+
+	* 新增入参：HighPerformance, PoolSchedulerStartArg
+
 
 新增数据结构：
 
-* [ClusterExternalConfig](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterExternalConfig)
-* [ExternalNode](http://document.tencentcloudapi.woa.com/document/product/457/31866#ExternalNode)
-* [ExternalNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#ExternalNodePool)
+* [PoolSchedulerStartArg](http://document.tencentcloudapi.woa.com/document/product/457/31866#PoolSchedulerStartArg)
 
 
 

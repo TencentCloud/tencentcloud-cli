@@ -8213,7 +8213,7 @@
         {
           "disabled": false,
           "document": "【deprecated】Git用户名密码base64编码后的字符串\n编码前的内容应为Json字符串，如\n{\"UserName\": \"用户名\", \"Password\":\"密码\"}",
-          "example": "xxxxx",
+          "example": "AIADHDOASDJAHSJHSASAHSH",
           "member": "string",
           "name": "Secret",
           "required": false,
@@ -8222,7 +8222,7 @@
         {
           "disabled": false,
           "document": "加密公钥ID",
-          "example": "xxx",
+          "example": "aaa2A13789123hbcnksjcs",
           "member": "string",
           "name": "KeyId",
           "required": false,
@@ -8231,7 +8231,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "test",
+          "example": "gituser",
           "member": "string",
           "name": "Username",
           "required": false,
@@ -8240,9 +8240,18 @@
         {
           "disabled": false,
           "document": "用使用PublicKey加密的密文",
-          "example": "xxx",
+          "example": "AIHAHDBADHABDSABKSHASNASB",
           "member": "string",
           "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "复制已有的秘钥ID",
+          "example": "test-xxxxew232131",
+          "member": "string",
+          "name": "SecretId",
           "required": false,
           "type": "string"
         }
