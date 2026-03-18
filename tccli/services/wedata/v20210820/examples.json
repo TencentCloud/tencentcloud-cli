@@ -18,16 +18,10 @@
     ],
     "BatchCreateTaskVersionAsync": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTaskVersionAsync\n<公共请求参数>\n\n{\n    \"Tasks\": [\n        {\n            \"TaskId\": \"20250227112817430\",\n            \"VersionRemark\": \"备注\"\n        }\n    ],\n    \"AutoRun\": true,\n    \"AlarmWays\": \"true\",\n    \"AlarmRecipientTypes\": \"all\",\n    \"ProjectId\": \"1470547050521227264\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"JobId\": 1\n        },\n        \"RequestId\": \"2c66cc14-ea0a-4f25-bb2c-3a315bd9b606\"\n    }\n}",
-        "title": "示例"
-      },
-      {
-        "document": "错误示例",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTaskVersionAsync\n<公共请求参数>\n\n{\n    \"Tasks\": [\n        {\n            \"TaskId\": \"20230425181533351\",\n            \"VersionRemark\": \"ces\"\n        }\n    ],\n    \"AutoRun\": true,\n    \"AlarmWays\": \"email\",\n    \"AlarmRecipientTypes\": \"2\",\n    \"ProjectId\": \"1470561602745229312\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"操作失败\"\n        },\n        \"RequestId\": \"6218d665-282f-4e43-972a-262dc311618e\"\n    }\n}",
-        "title": "错误示例"
+        "document": "批量提交任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTaskVersionAsync\n<公共请求参数>\n\n{\n    \"Tasks\": [\n        {\n            \"TaskId\": \"20260120104606329\"\n        }\n    ],\n    \"ProjectId\": \"1464962169590902784\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"JobId\": 2528\n        },\n        \"RequestId\": \"e1362eb3-40b7-456d-b801-c8f1e319fc63\"\n    }\n}",
+        "title": "批量提交任务"
       }
     ],
     "BatchDeleteIntegrationTasks": [

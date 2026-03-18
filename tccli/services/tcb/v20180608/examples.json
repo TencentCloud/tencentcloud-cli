@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddProvider": [
+      {
+        "document": "添加谷歌认证源",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddProvider\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"Name\": {\n        \"Message\": \"谷歌\"\n    },\n    \"ProviderType\": \"OAUTH\",\n    \"Id\": \"google\",\n    \"Picture\": \"https://qcloudimg.tencent-cloud.cn/raw/f3c2d4c33223231e42135df51723a59c.svg\",\n    \"Config\": {\n        \"ClientId\": \"example\",\n        \"ClientSecret\": \"example\",\n        \"Scope\": \"openid profile email\",\n        \"AuthorizationEndpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\",\n        \"TokenEndpoint\": \"https://oauth2.googleapis.com/token\",\n        \"UserinfoEndpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\",\n        \"TokenEndpointAuthMethod\": \"CLIENT_SECRET_BASIC\",\n        \"RequestParametersMap\": {\n            \"RegisterUserType\": \"externalUser\"\n        }\n    },\n    \"TransparentMode\": \"FALSE\",\n    \"Description\": {\n        \"Message\": \"GitHub OAuth身份认证\"\n    },\n    \"On\": \"TRUE\",\n    \"AutoSignInWhenEmailMatch\": \"TRUE\",\n    \"AutoSignInWhenPhoneNumberMatch\": \"TRUE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a3a7e6b-7982-4acd-bb52-206d6e57f2b7\"\n    }\n}",
+        "title": "添加谷歌认证源"
+      }
+    ],
     "BindCloudBaseAccessDomain": [
       {
         "document": "",
@@ -92,6 +100,14 @@
         "title": "创建个人版环境"
       }
     ],
+    "CreateEnvResource": [
+      {
+        "document": "用户在开通环境成功后，如果需要查询服务上报日志，需要调用此接口开通日志资源",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvResource\n<公共请求参数>\n\n{\n    \"EnvId\": \"wzr-0gp9mmjwba501429\",\n    \"Resources\": [\n        \"log\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44e44515-8ef8-4ffe-a301-b6c1cb23795a\"\n    }\n}",
+        "title": "开通环境下日志资源"
+      }
+    ],
     "CreateHostingDomain": [
       {
         "document": "",
@@ -140,10 +156,10 @@
     ],
     "DeleteAuthDomain": [
       {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DeleteAuthDomain\n&EnvId=yourEnv\n&DomainIds.0=abc.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Deleted\": 1,\n        \"RequestId\": \"68fbd710-0e87-4943-8988-c91d05e6d0f5\"\n    }\n}",
-        "title": "示例一"
+        "document": "使用DescribeAuthDomains获取安全域名的id，将想要删除的安全域名的id填入。",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuthDomain\n<公共请求参数>\n\n{\n    \"EnvId\": \"envid-xxxxx\",\n    \"DomainIds\": [\n        \"61dc0b24-4df6-49ab-9b79-ea611650xxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Deleted\": 1,\n        \"RequestId\": \"584b45af-ee33-4dca-a57a-fd60fca92fad\"\n    }\n}",
+        "title": "删除安全域名"
       }
     ],
     "DeleteCloudBaseGWAPI": [
@@ -160,6 +176,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DeleteCloudBaseGWDomain\n&ServiceId=“testenv-123”\n&Domain=\"www.user-test.com\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Count\": 1\n    }\n}",
         "title": "DeleteCloudBaseGWDomain 示例"
+      }
+    ],
+    "DeleteProvider": [
+      {
+        "document": "添加github认证源",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProvider\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxx\",\n    \"Id\": \"google\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "添加github认证源"
       }
     ],
     "DeleteTable": [
@@ -206,6 +230,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeBillingInfo\r\n&EnvId=tnt-j715s5gda\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EnvBillingInfoList\": [\n            {\n                \"EnvId\": \"tnt-j715s5gda\",\n                \"PackageId\": \"professional\",\n                \"IsAutoRenew\": true,\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"PREPAYMENT\",\n                \"IsolatedTime\": \"2011-5-16 12:15:01\",\n                \"ExpireTime\": \"2019-5-25 12:15:01\",\n                \"CreateTime\": \"2016-5-25 12:15:01\",\n                \"UpdateTime\": \"2019-4-25 12:15:01\",\n                \"FreeQuota\": \"\",\n                \"PaymentChannel\": \"qcloud\",\n                \"ExtPackageType\": \"baas\",\n                \"OrderInfo\": {\n                    \"CreateTime\": \"\",\n                    \"ExtensionId\": \"\",\n                    \"Flag\": \"\",\n                    \"PackageId\": \"\",\n                    \"PayMode\": \"\",\n                    \"ReqBody\": \"\",\n                    \"ResourceReady\": \"\",\n                    \"TranId\": \"\",\n                    \"TranStatus\": \"\",\n                    \"TranType\": \"\",\n                    \"UpdateTime\": \"\"\n                },\n                \"IsAlwaysFree\": false,\n                \"EnableOverrun\": true\n            }\n        ],\n        \"RequestId\": \"ec5dde6a-6c21-4777-bf4a-99e1f910247e\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeClient": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClient\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"Id\": \"env-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req_123\",\n        \"Id\": \"env-123\",\n        \"RefreshTokenExpiresIn\": 2592000,\n        \"AccessTokenExpiresIn\": 7200,\n        \"MaxDevice\": 1,\n        \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n        \"UpdatedAt\": \"2024-01-01T00:00:00+00:00\"\n    }\n}",
+        "title": "查询客户端详情"
       }
     ],
     "DescribeCloudBaseBuildService": [
@@ -308,6 +340,14 @@
         "title": "查询环境静态托管域名任务状态"
       }
     ],
+    "DescribeLoginConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AnonymousLogin\": true,\n        \"EmailLogin\": true,\n        \"MfaConfig\": {\n            \"Email\": \"FALSE\",\n            \"On\": \"TRUE\",\n            \"RequiredBindPhone\": \"TRUE\",\n            \"Sms\": \"TRUE\"\n        },\n        \"PhoneNumberLogin\": true,\n        \"PwdUpdateStrategy\": {\n            \"FirstLoginUpdate\": true,\n            \"PeriodType\": \"MONTH\",\n            \"PeriodUpdate\": true,\n            \"PeriodValue\": 6\n        },\n        \"SmsVerificationConfig\": {\n            \"Method\": \"\",\n            \"Name\": \"\",\n            \"SmsDayLimit\": -1,\n            \"Type\": \"default\"\n        },\n        \"UserNameLogin\": true,\n        \"RequestId\": \"9f69a66b-7302-4c00-b83a-04526851dd8f\"\n    }\n}",
+        "title": "查询登录配置"
+      }
+    ],
     "DescribeMySQLClusterDetail": [
       {
         "document": "",
@@ -378,6 +418,14 @@
         "title": "查询用户列表"
       }
     ],
+    "DescribeVmSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVmSpec\n<公共请求参数>\n\n{\n    \"Type\": \"LightHouse\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SpecList\": [\n            {\n                \"LightHouseSpec\": {\n                    \"BundleConfig\": \"{\\\"BundleId\\\":\\\"bundle_starter_mc_med2_01\\\",\\\"Memory\\\":2,\\\"SystemDiskType\\\":\\\"CLOUD_SSD\\\",\\\"SystemDiskSize\\\":40,\\\"MonthlyTraffic\\\":200,\\\"SupportLinuxUnixPlatform\\\":true,\\\"SupportWindowsPlatform\\\":true,\\\"Price\\\":{\\\"InstancePrice\\\":{\\\"OriginalBundlePrice\\\":40,\\\"OriginalPrice\\\":40,\\\"Discount\\\":100,\\\"DiscountPrice\\\":40,\\\"Currency\\\":\\\"CNY\\\"}},\\\"CPU\\\":2,\\\"InternetMaxBandwidthOut\\\":3,\\\"InternetChargeType\\\":\\\"TRAFFIC_POSTPAID_BY_HOUR\\\",\\\"BundleSalesState\\\":\\\"AVAILABLE\\\",\\\"BundleType\\\":\\\"STARTER_BUNDLE\\\",\\\"BundleTypeDescription\\\":\\\"入门型\\\",\\\"BundleTypePriority\\\":20,\\\"BundleDisplayLabel\\\":\\\"NORMAL\\\",\\\"TrafficUnlimited\\\":false,\\\"BandwidthType\\\":\\\"BANDWIDTH\\\"}\",\n                    \"BundleId\": \"bundle_starter_mc_med2_01\"\n                },\n                \"Price\": {\n                    \"Currency\": \"CNY\",\n                    \"Discount\": 100,\n                    \"DiscountCredits\": 1333.3334,\n                    \"DiscountPrice\": 40,\n                    \"OriginalCredits\": 1333.3334,\n                    \"OriginalPrice\": 40\n                },\n                \"Type\": \"LightHouse\"\n            }\n        ],\n        \"RequestId\": \"435b540b-3677-4960-9f5c-3960f0d837c5\"\n    }\n}",
+        "title": "查询LightHouse规格"
+      }
+    ],
     "DestroyEnv": [
       {
         "document": "用于给云开发环境退款。\n退款后，环境会进入隔离期。通过接口 [DescribeBillingInfo](https://cloud.tencent.com/document/product/876/94390) 可以查到环境的计费状态。",
@@ -416,6 +464,14 @@
         "title": "修改登录密码更新策略配置"
       }
     ],
+    "GetProviders": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetProviders\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AutoSignUpWithProviderUser\": \"TRUE\",\n                \"Config\": {\n                    \"AuthorizationEndpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\",\n                    \"ClientId\": \"example\",\n                    \"ClientSecret\": \"example\",\n                    \"Issuer\": \"\",\n                    \"JwksUri\": \"\",\n                    \"RedirectUri\": \"\",\n                    \"RequestParametersMap\": {\n                        \"RegisterUserType\": \"externalUser\"\n                    },\n                    \"ResponseParametersMap\": {\n                        \"Email\": \"email\",\n                        \"Groups\": \"groups\",\n                        \"Name\": \"name\",\n                        \"PhoneNumber\": \"phone_number\",\n                        \"Picture\": \"picture\",\n                        \"Sub\": \"sub\",\n                        \"Username\": \"username\"\n                    },\n                    \"ResponseType\": \"\",\n                    \"SamlMetadata\": \"\",\n                    \"Scope\": \"email openid profile\",\n                    \"SignoutEndpoint\": \"\",\n                    \"TokenEndpoint\": \"https://oauth2.googleapis.com/token\",\n                    \"TokenEndpointAuthMethod\": \"CLIENT_SECRET_BASIC\",\n                    \"UserinfoEndpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\"\n                },\n                \"Description\": {\n                    \"Localized\": [],\n                    \"Message\": \"\"\n                },\n                \"Homepage\": \"\",\n                \"Id\": \"google\",\n                \"Name\": {\n                    \"Localized\": [],\n                    \"Message\": \"Google\"\n                },\n                \"On\": \"TRUE\",\n                \"Picture\": \"https://qcloudimg.tencent-cloud.cn/raw/f9131c00dcbcbccd5899a449d68da3ba.png\",\n                \"ProviderType\": \"OAUTH\",\n                \"TransparentMode\": \"FALSE\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"490fbbcb-c5e3-4037-b851-099e636768cc\"\n    }\n}",
+        "title": "查询身份源列表"
+      }
+    ],
     "ListTables": [
       {
         "document": "",
@@ -428,6 +484,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTables\n<公共请求参数>\n\n{\n    \"MgoLimit\": 10,\n    \"MgoOffset\": 0,\n    \"Tag\": \"mongo_conn\",\n    \"ShowHidden\": false,\n    \"EnvId\": \"lowcode-2gqvfid5936609f4\",\n    \"MongoConnector\": {\n        \"InstanceId\": \"mongo_conn\",\n        \"DatabaseName\": \"demo_db\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee8f0898-b446-44cd-8773-676d8758c45c\",\n        \"Pager\": {\n            \"Offset\": 0,\n            \"Limit\": 10,\n            \"Total\": 2\n        },\n        \"Tables\": [\n            {\n                \"TableName\": \"demo_db\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 1,\n                \"IndexSize\": 4096\n            },\n            {\n                \"TableName\": \"demo_users\",\n                \"Count\": 0,\n                \"Size\": 0,\n                \"IndexCount\": 2,\n                \"IndexSize\": 8192\n            }\n        ]\n    }\n}",
         "title": "查询表-使用MongoDB连接器"
+      }
+    ],
+    "ModifyClient": [
+      {
+        "document": "修改AccessToken和RefreshToken失效时间以及最大在线会话数",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClient\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"Id\": \"env-123\",\n    \"RefreshTokenExpiresIn\": 2592000,\n    \"MaxDevice\": 3,\n    \"AccessTokenExpiresIn\": 7200\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da6c7a9e-efa2-46c9-b13d-f02cc2ceafda\"\n    }\n}",
+        "title": "修改客户端配置"
       }
     ],
     "ModifyCloudBaseGWAPI": [
@@ -468,6 +532,34 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvPlan\n<公共请求参数>\n\n{\n    \"EnvId\": \"cloudbase-8grqda2hfc2f62bb\",\n    \"PackageId\": \"baas_pf_standard\",\n    \"AutoVoucher\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4caf24c6-3cb8-438a-ae46-cfa75694224a\"\n    }\n}",
         "title": "云开发环境套餐变更为标准版"
+      }
+    ],
+    "ModifyLoginConfig": [
+      {
+        "document": "使用默认云开发短信包发送登录短信",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"PhoneNumberLogin\": true,\n    \"EmailLogin\": true,\n    \"UserNameLogin\": false,\n    \"AnonymousLogin\": false,\n    \"SmsVerificationConfig\": {\n        \"Type\": \"default\",\n        \"SmsDayLimit\": 30\n    },\n    \"MfaConfig\": {\n        \"On\": \"TRUE\",\n        \"Sms\": \"TRUE\",\n        \"Email\": \"FALSE\",\n        \"RequiredBindPhone\": \"TRUE\"\n    },\n    \"PwdUpdateStrategy\": {\n        \"FirstLoginUpdate\": true,\n        \"PeriodUpdate\": true,\n        \"PeriodValue\": 6,\n        \"PeriodType\": \"MONTH\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70b8908d-5c99-4a20-be23-f84aff0bfd37\"\n    }\n}",
+        "title": "修改环境登录配置"
+      },
+      {
+        "document": "使用自定义apis发送登录短信",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"PhoneNumberLogin\": true,\n    \"EmailLogin\": true,\n    \"UserNameLogin\": false,\n    \"AnonymousLogin\": false,\n    \"SmsVerificationConfig\": {\n        \"Type\": \"apis\",\n        \"Name\": \"method_53978f9f96a35\",\n        \"Method\": \"SendVerificationCode\",\n        \"SmsDayLimit\": 20\n    },\n    \"MfaConfig\": {\n        \"On\": \"TRUE\",\n        \"Sms\": \"TRUE\",\n        \"Email\": \"FALSE\",\n        \"RequiredBindPhone\": \"TRUE\"\n    },\n    \"PwdUpdateStrategy\": {\n        \"FirstLoginUpdate\": true,\n        \"PeriodUpdate\": true,\n        \"PeriodValue\": 6,\n        \"PeriodType\": \"MONTH\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26d3461b-b116-4862-bbaf-6233d2922aca\"\n    }\n}",
+        "title": "修改登录配置"
+      }
+    ],
+    "ModifyProvider": [
+      {
+        "document": "修改谷歌认证源",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProvider\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxx\",\n    \"Id\": \"google\",\n    \"Name\": {\n        \"Message\": \"Google\",\n        \"Localized\": [\n            {\n                \"Locale\": \"zh\",\n                \"Message\": \"谷歌\"\n            }\n        ]\n    },\n    \"ProviderType\": \"OIDC\",\n    \"Picture\": \"https://example.com/google.svg\",\n    \"Homepage\": \"https://google.com\",\n    \"Config\": {\n        \"Issuer\": \"http://accounts.google.com\",\n        \"ResponseType\": \"id_token\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74402479-adf8-47aa-9479-0dd0e922d024\"\n    }\n}",
+        "title": "修改谷歌认证源"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProvider\n<公共请求参数>\n\n{\n    \"EnvId\": \"tcb-env-01\",\n    \"Id\": \"email\",\n    \"EmailConfig\": {\n        \"On\": \"FALSE\",\n        \"SmtpConfig\": {\n            \"SenderAddress\": \"123@qq.com\",\n            \"ServerHost\": \"smtp.qq.com\",\n            \"ServerPort\": 465,\n            \"AccountUsername\": \"123@qq.com\",\n            \"AccountPassword\": \"xyzvyu\",\n            \"SecurityMode\": \"SSL\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74402479-adf8-47aa-9479-0dd0e922d024\"\n    }\n}",
+        "title": "修改邮箱认证源"
       }
     ],
     "ModifySafeRule": [

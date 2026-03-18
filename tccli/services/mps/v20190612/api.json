@@ -3049,7 +3049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "译制视频路径。",
+          "document": "<p>译制视频路径。</p>",
           "example": "/output/dub-result-0.mp4",
           "member": "string",
           "name": "VideoPath",
@@ -3059,7 +3059,7 @@
         },
         {
           "disabled": false,
-          "document": "标记文件路径\n",
+          "document": "<p>标记文件路径</p>",
           "example": "/output/dub-result-0.json",
           "member": "string",
           "name": "SpeakerPath",
@@ -3069,7 +3069,7 @@
         },
         {
           "disabled": false,
-          "document": "音色id",
+          "document": "<p>音色id</p>",
           "example": "v1_cjYJK5SMrD583Pa28RJIGirQltxJz2M7opo7kX9OaPi3zqUitPkBTfSWSZw=",
           "member": "string",
           "name": "VoiceId",
@@ -3079,7 +3079,7 @@
         },
         {
           "disabled": false,
-          "document": "译制视频存储位置。",
+          "document": "<p>译制视频存储位置。</p>",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",

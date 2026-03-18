@@ -27,7 +27,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "左上顶点x坐标",
+          "document": "<p>左上顶点x坐标</p>",
           "example": "0",
           "member": "int64",
           "name": "X",
@@ -37,7 +37,7 @@
         },
         {
           "disabled": false,
-          "document": "左上顶点y坐标",
+          "document": "<p>左上顶点y坐标</p>",
           "example": "0",
           "member": "int64",
           "name": "Y",
@@ -47,7 +47,7 @@
         },
         {
           "disabled": false,
-          "document": "宽",
+          "document": "<p>宽</p><p>单位：px</p>",
           "example": "10",
           "member": "int64",
           "name": "Width",
@@ -57,7 +57,7 @@
         },
         {
           "disabled": false,
-          "document": "高",
+          "document": "<p>高</p><p>单位：px</p>",
           "example": "10",
           "member": "int64",
           "name": "Height",
@@ -376,7 +376,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前行的原文本",
+          "document": "<p>当前行的原文本</p>",
           "example": "你好",
           "member": "string",
           "name": "SourceLineText",
@@ -386,7 +386,7 @@
         },
         {
           "disabled": false,
-          "document": "当前行的译文",
+          "document": "<p>当前行的译文</p>",
           "example": "hello",
           "member": "string",
           "name": "TargetLineText",
@@ -396,7 +396,7 @@
         },
         {
           "disabled": false,
-          "document": "段落文本框位置",
+          "document": "<p>段落文本框位置</p>",
           "example": "无",
           "member": "BoundingBox",
           "name": "BoundingBox",
@@ -406,7 +406,7 @@
         },
         {
           "disabled": false,
-          "document": "行数",
+          "document": "<p>行数</p>",
           "example": "1",
           "member": "int64",
           "name": "LinesCount",
@@ -416,7 +416,7 @@
         },
         {
           "disabled": false,
-          "document": "行高",
+          "document": "<p>行高</p><p>单位：px</p>",
           "example": "10",
           "member": "int64",
           "name": "LineHeight",
@@ -426,7 +426,7 @@
         },
         {
           "disabled": false,
-          "document": "正常段落spam_code字段为0；如果存在spam_code字段且值大于0（1: 命中垃圾检查；2: 命中安全策略；3: 其他。），则命中安全检查被过滤。",
+          "document": "<p>正常段落spam_code字段为0；如果存在spam_code字段且值大于0（1: 命中垃圾检查；2: 命中安全策略；3: 其他。），则命中安全检查被过滤。</p>",
           "example": "0",
           "member": "int64",
           "name": "SpamCode",
@@ -436,7 +436,7 @@
         },
         {
           "disabled": false,
-          "document": "段落文本旋转信息，只在valid为true时表示坐标有效",
+          "document": "<p>段落文本旋转信息，只在valid为true时表示坐标有效</p>",
           "example": "无",
           "member": "RotateParagraphRect",
           "name": "RotateParagraphRect",

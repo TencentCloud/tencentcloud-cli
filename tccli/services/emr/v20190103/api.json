@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateSLInstance": {
-      "document": "本接口（CreateSLInstance）用于创建Serverless HBase实例\n- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回创建实例的InstaceId和请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。",
+      "document": "本接口（CreateSLInstance）用于创建Serverless实例、如HBase、Starrocks、TCBase等\n- 接口调用成功，会创建Serverless实例，创建实例请求成功会返回创建实例的InstaceId和请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。",
       "input": "CreateSLInstanceRequest",
       "name": "Serverless HBase创建实例",
       "output": "CreateSLInstanceResponse",
@@ -4213,6 +4213,15 @@
           "example": "Active-Standby",
           "member": "string",
           "name": "DeploymentMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字",
+          "example": "admin",
+          "member": "string",
+          "name": "UserName",
           "required": false,
           "type": "string"
         }
@@ -18691,12 +18700,32 @@
         },
         {
           "disabled": false,
+          "document": "主可用区私有网络名",
+          "example": "vpc-ts4xd",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "主可用区子网ID",
           "example": "3422",
           "member": "uint64",
           "name": "SubnetId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区子网名",
+          "example": "subnet-d44sdf",
+          "member": "string",
+          "name": "SubnetName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -18785,6 +18814,16 @@
           "example": "Active",
           "member": "string",
           "name": "DeployRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "webui地址",
+          "example": "http://tcbase.com",
+          "member": "string",
+          "name": "WebUIUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

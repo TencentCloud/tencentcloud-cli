@@ -49,11 +49,25 @@
       "output": "BindClusterResourcePackagesResponse",
       "status": "online"
     },
+    "CalculateBackupSaveSecExpires": {
+      "document": "计算修改备份保留时长后将会过期删除的备份文件列表",
+      "input": "CalculateBackupSaveSecExpiresRequest",
+      "name": "修改保险箱备份保存时间将会删除备份文件",
+      "output": "CalculateBackupSaveSecExpiresResponse",
+      "status": "online"
+    },
     "CheckCreateLibraDBInstance": {
       "document": "本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例",
       "input": "CheckCreateLibraDBInstanceRequest",
       "name": "校验集群是否可以添加只读分析引擎",
       "output": "CheckCreateLibraDBInstanceResponse",
+      "status": "online"
+    },
+    "CheckTransferClusterZone": {
+      "document": "本接口（CheckTransferClusterZone）用于检查是否可以发起跨可用区迁移。",
+      "input": "CheckTransferClusterZoneRequest",
+      "name": "检查跨可用区迁移",
+      "output": "CheckTransferClusterZoneResponse",
       "status": "online"
     },
     "CloseAuditService": {
@@ -96,6 +110,13 @@
       "input": "CloseWanRequest",
       "name": "关闭外网",
       "output": "CloseWanResponse",
+      "status": "online"
+    },
+    "CopyBackupToVault": {
+      "document": "将备份文件复制到指定的备份保险箱",
+      "input": "CopyBackupToVaultRequest",
+      "name": "存量备份手动投递到保险箱",
+      "output": "CopyBackupToVaultResponse",
       "status": "online"
     },
     "CopyClusterPasswordComplexity": {
@@ -203,6 +224,13 @@
       "output": "CreateResourcePackageResponse",
       "status": "online"
     },
+    "CreateVault": {
+      "document": "创建备份保险箱",
+      "input": "CreateVaultRequest",
+      "name": "创建保险箱",
+      "output": "CreateVaultResponse",
+      "status": "online"
+    },
     "DeleteAccounts": {
       "document": "本接口（DeleteAccounts）用于删除用户账号。",
       "input": "DeleteAccountsRequest",
@@ -229,6 +257,13 @@
       "input": "DeleteBackupRequest",
       "name": "删除手动备份",
       "output": "DeleteBackupResponse",
+      "status": "online"
+    },
+    "DeleteBackupVault": {
+      "document": "从备份保险箱中删除指定的备份文件",
+      "input": "DeleteBackupVaultRequest",
+      "name": "从备份保险箱中删除指定的备份文件",
+      "output": "DeleteBackupVaultResponse",
       "status": "online"
     },
     "DeleteCLSDelivery": {
@@ -271,6 +306,13 @@
       "input": "DeleteParamTemplateRequest",
       "name": "删除参数模板",
       "output": "DeleteParamTemplateResponse",
+      "status": "online"
+    },
+    "DeleteVaults": {
+      "document": "批量删除备份保险箱",
+      "input": "DeleteVaultsRequest",
+      "name": "批量删除备份保险箱",
+      "output": "DeleteVaultsResponse",
       "status": "online"
     },
     "DescribeAccountAllGrantPrivileges": {
@@ -364,6 +406,13 @@
       "output": "DescribeBackupListResponse",
       "status": "online"
     },
+    "DescribeBackupListByVault": {
+      "document": "根据保险箱ID查询备份文件列表",
+      "input": "DescribeBackupListByVaultRequest",
+      "name": "查询保险箱内的备份",
+      "output": "DescribeBackupListByVaultResponse",
+      "status": "online"
+    },
     "DescribeBinlogConfig": {
       "document": "该接口（DescribeBinlogConfig）用于查询binlog配置",
       "input": "DescribeBinlogConfigRequest",
@@ -376,6 +425,13 @@
       "input": "DescribeBinlogDownloadUrlRequest",
       "name": "查询 Binlog下载地址",
       "output": "DescribeBinlogDownloadUrlResponse",
+      "status": "online"
+    },
+    "DescribeBinlogListByVault": {
+      "document": "查询保险箱内binlog备份",
+      "input": "DescribeBinlogListByVaultRequest",
+      "name": "根据保险箱ID查询Binlog文件列表",
+      "output": "DescribeBinlogListByVaultResponse",
       "status": "online"
     },
     "DescribeBinlogSaveDays": {
@@ -707,6 +763,13 @@
       "output": "DescribeProxySpecsResponse",
       "status": "online"
     },
+    "DescribeRedoLogListByVault": {
+      "document": "查询RedoLog备份",
+      "input": "DescribeRedoLogListByVaultRequest",
+      "name": "查询保险箱内redolog备份",
+      "output": "DescribeRedoLogListByVaultResponse",
+      "status": "online"
+    },
     "DescribeRedoLogs": {
       "document": "本接口（DescribeRedoLogs）用于查询redo日志列表。",
       "input": "DescribeRedoLogsRequest",
@@ -796,6 +859,20 @@
       "input": "DescribeTasksRequest",
       "name": "查询任务列表",
       "output": "DescribeTasksResponse",
+      "status": "online"
+    },
+    "DescribeVaultBackupClusterInfo": {
+      "document": "查询备份保险箱关联的集群信息列表",
+      "input": "DescribeVaultBackupClusterInfoRequest",
+      "name": "查询备份保险箱关联的集群信息列表",
+      "output": "DescribeVaultBackupClusterInfoResponse",
+      "status": "online"
+    },
+    "DescribeVaults": {
+      "document": "查询备份保险箱列表，支持分页、筛选和排序",
+      "input": "DescribeVaultsRequest",
+      "name": "查询备份保险箱列表，支持分页、筛选和排序",
+      "output": "DescribeVaultsResponse",
       "status": "online"
     },
     "DescribeZones": {
@@ -985,6 +1062,13 @@
       "input": "ModifyBinlogSaveDaysRequest",
       "name": "修改Binlog保留天数",
       "output": "ModifyBinlogSaveDaysResponse",
+      "status": "online"
+    },
+    "ModifyClusterBinlogRedoLogAutoCopyVault": {
+      "document": "修改集群Binlog和RedoLog自动拷贝到保险箱的配置",
+      "input": "ModifyClusterBinlogRedoLogAutoCopyVaultRequest",
+      "name": "修改集群Binlog和RedoLog自动拷贝到保险箱的配置",
+      "output": "ModifyClusterBinlogRedoLogAutoCopyVaultResponse",
       "status": "online"
     },
     "ModifyClusterDatabase": {
@@ -1188,6 +1272,13 @@
       "input": "ModifySnapBackupCrossRegionConfigRequest",
       "name": "修改快照备份跨地域配置",
       "output": "ModifySnapBackupCrossRegionConfigResponse",
+      "status": "online"
+    },
+    "ModifyVault": {
+      "document": "修改备份保险箱配置，包括名称、描述、保留时长、加密密钥、锁定时间等",
+      "input": "ModifyVaultRequest",
+      "name": "修改保险箱",
+      "output": "ModifyVaultResponse",
       "status": "online"
     },
     "ModifyVipVport": {
@@ -1440,6 +1531,13 @@
       "input": "SwitchProxyVpcRequest",
       "name": "更换数据库代理vpc",
       "output": "SwitchProxyVpcResponse",
+      "status": "online"
+    },
+    "TransferClusterZone": {
+      "document": "本接口（TransferClusterZone）用于发起跨可用区迁移。",
+      "input": "TransferClusterZoneRequest",
+      "name": "跨可用区迁移",
+      "output": "TransferClusterZoneResponse",
       "status": "online"
     },
     "UnbindClusterResourcePackages": {
@@ -2809,6 +2907,56 @@
       ],
       "usage": "out"
     },
+    "AutoCopyConfig": {
+      "document": "保险箱自动投递关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-n88ncn7l",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱ID",
+          "example": "vault-cd077124-65a5-4d7d-aa95-2791b4ec2554",
+          "member": "string",
+          "name": "VaultId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "VaultRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递类型：binlog, redolog, snapshot, logic",
+          "example": "redolog",
+          "member": "string",
+          "name": "CopyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AutoMapRule": {
       "document": "高级映射，自动映射规则",
       "members": [
@@ -4106,6 +4254,138 @@
       ],
       "usage": "in"
     },
+    "CalculateBackupSaveSecExpiresRequest": {
+      "document": "CalculateBackupSaveSecExpires请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份保险箱ID",
+          "example": "vault-01b0a50a-33b5-4104-8d10-e55a79d10562",
+          "member": "string",
+          "name": "VaultId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份保留时长（秒），必须大于0",
+          "example": "604800",
+          "member": "int64",
+          "name": "BackupSaveSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，范围(0,100]，默认10",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，范围[0,INF)，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值：VaultId,VaultName,BackupSaveSeconds,LockedTime,CreateTime,UpdateTime，默认endTime",
+          "example": "VaultId",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可选值：desc,asc,DESC,ASC，默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CalculateBackupSaveSecExpiresResponse": {
+      "document": "CalculateBackupSaveSecExpires返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "将被删除的备份文件总数",
+          "example": "0",
+          "member": "int64",
+          "name": "WillDeleteBackupFileCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "将被删除的备份文件列表",
+          "example": "无",
+          "member": "WillDeleteItem",
+          "name": "WillDeleteBackupFiles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "将被删除的Binlog文件总数",
+          "example": "45192",
+          "member": "int64",
+          "name": "WillDeleteBinlogFileCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "将被删除的Binlog文件列表",
+          "example": "无",
+          "member": "WillDeleteItem",
+          "name": "WillDeleteBinlogFiles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "将被删除的Redolog文件总数",
+          "example": "19098",
+          "member": "int64",
+          "name": "WillDeleteRedoLogFileCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "将被删除的Redolog文件列表",
+          "example": "无",
+          "member": "WillDeleteItem",
+          "name": "WillDeleteRedoLogFiles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CheckCreateLibraDBInstanceRequest": {
       "document": "CheckCreateLibraDBInstance请求参数结构体",
       "members": [
@@ -4207,6 +4487,71 @@
         }
       ],
       "usage": "out"
+    },
+    "CheckTransferClusterZoneRequest": {
+      "document": "CheckTransferClusterZone请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源集群Id",
+          "example": "cynosdbmysql-drpy5ppk",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标可用区",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "DstZone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "proxy迁移的目标可用区信息",
+          "example": "无",
+          "member": "ProxyZone",
+          "name": "ProxyZones",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckTransferClusterZoneResponse": {
+      "document": "CheckTransferClusterZone返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否check成功",
+          "example": "false",
+          "member": "bool",
+          "name": "CheckStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "check失败的原因",
+          "example": "库存不足",
+          "member": "string",
+          "name": "CheckMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CloseAuditServiceRequest": {
       "document": "CloseAuditService请求参数结构体",
@@ -4893,6 +5238,52 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyBackupToVaultRequest": {
+      "document": "CopyBackupToVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标保险箱ID，备份文件将复制到此保险箱",
+          "example": "vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a",
+          "member": "string",
+          "name": "VaultId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份文件ID列表，支持批量复制多个备份文件",
+          "example": "[126511]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyBackupToVaultResponse": {
+      "document": "CopyBackupToVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "4295131269",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CopyClusterPasswordComplexityRequest": {
       "document": "CopyClusterPasswordComplexity请求参数结构体",
@@ -7100,6 +7491,97 @@
           "name": "DealNames",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVaultRequest": {
+      "document": "CreateVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱名称，长度必须大于0",
+          "example": "create",
+          "member": "string",
+          "name": "VaultName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份保留时长（秒），必须大于0",
+          "example": "73800",
+          "member": "int64",
+          "name": "BackupSaveSeconds",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱描述",
+          "example": "create",
+          "member": "string",
+          "name": "VaultDescribe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "KMS密钥ID，长度0-36字符",
+          "example": "90200ee5-f2aa-47bb-8a0b-450f58e0a58f",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥类型，可选值：cloud（云托管密钥）、custom（自定义密钥）",
+          "example": "cloud",
+          "member": "string",
+          "name": "KeyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥所在地域，长度0-32字符",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KeyRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "锁定时间，格式：YYYY-MM-DD HH:mm:ss",
+          "example": "2026-03-16 12:00:00",
+          "member": "string",
+          "name": "LockedTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVaultResponse": {
+      "document": "CreateVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，用于查询任务执行状态",
+          "example": "4295147756",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -10123,6 +10605,52 @@
       ],
       "type": "object"
     },
+    "DeleteBackupVaultRequest": {
+      "document": "DeleteBackupVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份保险箱ID，长度必须大于0",
+          "example": "vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a",
+          "member": "string",
+          "name": "VaultId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待删除的备份文件ID列表，不能为空",
+          "example": "[631]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupVaultResponse": {
+      "document": "DeleteBackupVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，用于查询任务执行状态",
+          "example": "4295131366",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCLSDeliveryRequest": {
       "document": "DeleteCLSDelivery请求参数结构体",
       "members": [
@@ -10360,6 +10888,69 @@
     "DeleteParamTemplateResponse": {
       "document": "DeleteParamTemplate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVaultTask": {
+      "document": "删除保险箱任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱ID",
+          "example": "vault-b63cedd8-1574-4390-89b5-6e703ef33e25",
+          "member": "string",
+          "name": "VaultId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "4295131368",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteVaultsRequest": {
+      "document": "DeleteVaults请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除的备份保险箱ID列表，不能为空，保险箱内必须已清空所有文件",
+          "example": "[\"vault-b63cedd8-1574-4390-89b5-6e703ef33e25\"]",
+          "member": "string",
+          "name": "VaultIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVaultsResponse": {
+      "document": "DeleteVaults返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除任务列表，每个保险箱对应一个任务",
+          "example": "无",
+          "member": "DeleteVaultTask",
+          "name": "VaultTask",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11353,6 +11944,170 @@
       ],
       "type": "object"
     },
+    "DescribeBackupListByVaultItem": {
+      "document": "DescribeBackupListByVaultItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-h30xf5d7",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群name",
+          "example": "backupT_202602021412",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份信息",
+          "example": "无",
+          "member": "BackupFileInfo",
+          "name": "BackupFileInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeBackupListByVaultRequest": {
+      "document": "DescribeBackupListByVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱ID，长度必须大于0",
+          "example": "vault-b5044c44-9e41-4c88-b75d-72a77ed8a759",
+          "member": "string",
+          "name": "VaultId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份文件ID列表，用于筛选特定备份",
+          "example": "[123]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID，用于筛选特定集群的备份",
+          "example": "cynosdbmysql-lzvkp2d0",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份名称列表，用于精确匹配筛选",
+          "example": "[\"query\"]",
+          "member": "string",
+          "name": "BackupNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件名称列表，用于精确匹配筛选",
+          "example": "[\"query\"]",
+          "member": "string",
+          "name": "FileNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页数量，取值范围：(0, 100]，默认100",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，取值范围：[0, INF)，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值：VaultId, VaultName, BackupSaveSeconds, LockedTime, CreateTime, UpdateTime，默认createTime",
+          "example": "VaultId",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可选值：desc, asc, DESC, ASC，默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupListByVaultResponse": {
+      "document": "DescribeBackupListByVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的备份文件总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件列表",
+          "example": "无",
+          "member": "DescribeBackupListByVaultItem",
+          "name": "BackupList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBackupListRequest": {
       "document": "DescribeBackupList请求参数结构体",
       "members": [
@@ -11490,6 +12245,15 @@
           "name": "IsCrossRegionsBackup",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的状态",
+          "example": "[\"done\"]",
+          "member": "string",
+          "name": "BackupStatus",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11617,6 +12381,170 @@
           "name": "DownloadUrl",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogListByVaultItem": {
+      "document": "binlog备份信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-0n3rg5on",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "backupT_202602011518",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Binlog文件信息",
+          "example": "无",
+          "member": "BinlogItem",
+          "name": "BinlogFileInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeBinlogListByVaultRequest": {
+      "document": "DescribeBinlogListByVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱ID",
+          "example": "vault-b5044c44-9e41-4c88-b75d-72a77ed8a759",
+          "member": "string",
+          "name": "VaultId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-lzvkp2d0",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份ID列表",
+          "example": "[123]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备份名称列表",
+          "example": "[\"query\"]",
+          "member": "string",
+          "name": "BackupNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件名列表",
+          "example": "[\"query\"]",
+          "member": "string",
+          "name": "FileNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，范围: (0, 100]，默认100",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，范围: [0, INF)，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值: VaultId, VaultName, BackupSaveSeconds, LockedTime, CreateTime, UpdateTime，默认createTime",
+          "example": "VaultId",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可选值: desc, asc, DESC, ASC，默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogListByVaultResponse": {
+      "document": "DescribeBinlogListByVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Binlog文件列表",
+          "example": "无",
+          "member": "DescribeBinlogListByVaultItem",
+          "name": "BinlogList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15301,6 +16229,170 @@
       ],
       "type": "object"
     },
+    "DescribeRedoLogListByVaultItem": {
+      "document": "redolog信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-03e2xlyd",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "backupT_202602021239",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RedoLog文件信息",
+          "example": "无",
+          "member": "RedoLogItem",
+          "name": "RedoFileInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeRedoLogListByVaultRequest": {
+      "document": "DescribeRedoLogListByVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱ID",
+          "example": "vault-b5044c44-9e41-4c88-b75d-72a77ed8a759",
+          "member": "string",
+          "name": "VaultId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份ID列表",
+          "example": "[123]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-drpy5ppk",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份名称列表",
+          "example": "[\"query\"]",
+          "member": "string",
+          "name": "BackupNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件名称列表",
+          "example": "[\"query\"]",
+          "member": "string",
+          "name": "FileNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，范围(0,100]，默认100",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，范围[0,INF)，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值：VaultId,VaultName,BackupSaveSeconds,LockedTime,CreateTime,UpdateTime，默认createTime",
+          "example": "VaultId",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可选值：desc,asc,DESC,ASC，默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedoLogListByVaultResponse": {
+      "document": "DescribeRedoLogListByVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的RedoLog文件总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RedoLog文件列表",
+          "example": "无",
+          "member": "DescribeRedoLogListByVaultItem",
+          "name": "RedoLogList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRedoLogsRequest": {
       "document": "DescribeRedoLogs请求参数结构体",
       "members": [
@@ -16256,6 +17348,404 @@
           "name": "TaskList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVaultBackupClusterInfo": {
+      "document": "集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-h30xf5d7",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "backupT_202602021412",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态",
+          "example": "deleted",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClusterRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群所在可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "ClusterZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeVaultBackupClusterInfoRequest": {
+      "document": "DescribeVaultBackupClusterInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份保险箱ID",
+          "example": "vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a",
+          "member": "string",
+          "name": "VaultId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVaultBackupClusterInfoResponse": {
+      "document": "DescribeVaultBackupClusterInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱信息",
+          "example": "无",
+          "member": "DescribeVaultBackupClusterInfo",
+          "name": "ClusterInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVaultsItem": {
+      "document": "保险箱信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱ID",
+          "example": "vault-76653436-944b-4c10-a753-f65d389f289e",
+          "member": "string",
+          "name": "VaultId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱名称",
+          "example": "vaults_1769772861_lQH8o",
+          "member": "string",
+          "name": "VaultName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱描述",
+          "example": "demo",
+          "member": "string",
+          "name": "VaultDescribe",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密密钥ID",
+          "example": "1764ae22-72f0-11f0-8904-52540009df14",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KeyRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥类型",
+          "example": "cloud",
+          "member": "string",
+          "name": "KeyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件数量",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupFileCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件总大小（字节）",
+          "example": "4183356",
+          "member": "int64",
+          "name": "BackupFileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Binlog文件数量",
+          "example": "9",
+          "member": "int64",
+          "name": "BinlogFileCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Binlog文件总大小（字节）",
+          "example": "1214",
+          "member": "int64",
+          "name": "BinlogFileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RedoLog文件数量",
+          "example": "3",
+          "member": "int64",
+          "name": "RedoLogFileCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RedoLog文件总大小（字节）",
+          "example": "40574",
+          "member": "int64",
+          "name": "RedoLogFileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份保留时长（秒）",
+          "example": "604800",
+          "member": "int64",
+          "name": "BackupSaveSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "锁定时间",
+          "example": "2026-02-12 00:00:00",
+          "member": "string",
+          "name": "LockedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联任务列表",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险箱所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "VaultRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动投递关系",
+          "example": "无",
+          "member": "AutoCopyConfig",
+          "name": "AutoCopyConfigs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeVaultsRequest": {
+      "document": "DescribeVaults请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱ID列表，用于精确筛选",
+          "example": "[\"vault-01b0a50a-33b5-4104-8d10-e55a79d10562\"]",
+          "member": "string",
+          "name": "VaultIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱名称，用于模糊筛选",
+          "example": "create",
+          "member": "string",
+          "name": "VaultName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱状态列表，用于筛选",
+          "example": "[\"running\"]",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，范围(0,100]，默认100",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，范围[0,+∞)，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值：VaultId, VaultName, BackupSaveSeconds, LockedTime, CreateTime, UpdateTime",
+          "example": "vaultId",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可选值：desc, asc, DESC, ASC",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVaultsResponse": {
+      "document": "DescribeVaults返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱列表",
+          "example": "无",
+          "member": "DescribeVaultsItem",
+          "name": "Vaults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -21506,6 +22996,52 @@
       ],
       "type": "object"
     },
+    "ModifyClusterBinlogRedoLogAutoCopyVaultRequest": {
+      "document": "ModifyClusterBinlogRedoLogAutoCopyVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-03e2xlyd",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动拷贝保险箱配置列表",
+          "example": "无",
+          "member": "CreateBackupVaultItem",
+          "name": "AutoCopyVaults",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterBinlogRedoLogAutoCopyVaultResponse": {
+      "document": "ModifyClusterBinlogRedoLogAutoCopyVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "4295131272",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterDatabaseRequest": {
       "document": "ModifyClusterDatabase请求参数结构体",
       "members": [
@@ -23573,6 +25109,124 @@
           "disabled": false,
           "document": "任务id",
           "example": "234321",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVaultRequest": {
+      "document": "ModifyVault请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保险箱ID",
+          "example": "vault-8b430b41-74e0-4c95-82c7-e2dfc50e21d6",
+          "member": "string",
+          "name": "VaultId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱名称，最大255字符",
+          "example": "create",
+          "member": "string",
+          "name": "VaultName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保险箱描述，最大1024字符",
+          "example": "modify",
+          "member": "string",
+          "name": "VaultDescribe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份保留时长（秒），范围: (0, 632448000]",
+          "example": "604800",
+          "member": "int64",
+          "name": "BackupSaveSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加密密钥ID，最大36字符",
+          "example": "90200ee5-f2aa-47bb-8a0b-450f58e0a58f",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥类型，可选值: cloud、custom",
+          "example": "custom",
+          "member": "string",
+          "name": "KeyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥所在地域，最大32字符",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KeyRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否锁定保险箱",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLock",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "锁定到期时间，格式: 2006-01-02 15:04:05，锁定时间距当前最多15天",
+          "example": "2026-03-16 20:00:00",
+          "member": "string",
+          "name": "LockedTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否加密",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEncryption",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVaultResponse": {
+      "document": "ModifyVault返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "4295147847",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -30559,6 +32213,88 @@
       ],
       "usage": "out"
     },
+    "TransferClusterZoneRequest": {
+      "document": "TransferClusterZone请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源集群Id",
+          "example": "cynosdbmysql-drpy5ppk",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标可用区",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "DstZone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxLag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Immediate:立即执行，InMaintain:时间窗口执行",
+          "example": "Immediate",
+          "member": "string",
+          "name": "TransferType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多可用区备区",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "DstSlaveZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "proxy迁移的目标可用区信息",
+          "example": "无",
+          "member": "ProxyZone",
+          "name": "ProxyZones",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferClusterZoneResponse": {
+      "document": "TransferClusterZone返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UnbindClusterResourcePackagesRequest": {
       "document": "UnbindClusterResourcePackages请求参数结构体",
       "members": [
@@ -31149,6 +32885,32 @@
         }
       ],
       "usage": "both"
+    },
+    "WillDeleteItem": {
+      "document": "将被删除的备份文件列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份文件ID",
+          "example": "301005969",
+          "member": "int64",
+          "name": "BackupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件名称",
+          "example": "__PERF_TEST__mysql-bin.001014_301",
+          "member": "string",
+          "name": "BackupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ZoneStockInfo": {
       "document": "可用区库存信息",

@@ -6,16 +6,19 @@ Input:
 
 ```
 tccli ccc DeleteStaff --cli-unfold-argument  \
-    --SdkAppId 1400000000 \
-    --StaffList staff1@xxx.com staff2@xxx.com
+    --SdkAppId 1400692008 \
+    --StaffList 1610598376@qq.com
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "48edd236-7ef1-45af-9e12-fc376ba355bf",
-        "OnlineStaffList": []
+        "DeleteStatusInfo": "Members in OnlineStaffList are online and cannot be deleted",
+        "OnlineStaffList": [
+            "1610598376@qq.com"
+        ],
+        "RequestId": "298dca51-0c8b-4efe-aa10-0c7a415089fa"
     }
 }
 ```

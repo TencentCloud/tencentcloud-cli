@@ -753,7 +753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "提取的类型是文本",
+          "document": "<p>提取的类型是文本</p>",
           "example": "xx省xx市xx区xx街道",
           "member": "string",
           "name": "Text",
@@ -763,7 +763,7 @@
         },
         {
           "disabled": false,
-          "document": "提取的内型是选项",
+          "document": "<p>提取的类型是选项</p>",
           "example": "[\"动力\",\"价格\"]",
           "member": "string",
           "name": "Chosen",
@@ -773,7 +773,7 @@
         },
         {
           "disabled": false,
-          "document": "提取类型是布尔值",
+          "document": "<p>提取类型是布尔值</p>",
           "example": "true",
           "member": "bool",
           "name": "Boolean",
@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "提取类型是数字",
+          "document": "<p>提取类型是数字</p>",
           "example": "7.0",
           "member": "float",
           "name": "Number",
@@ -4062,7 +4062,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -4071,7 +4071,7 @@
         },
         {
           "disabled": false,
-          "document": "待删除客服邮箱列表，一次最大支持200个。",
+          "document": "<p>待删除客服邮箱列表，一次最大支持200个。</p>",
           "example": "[\"staff1@xxx.com\",\"staff2@xxx.com\"]",
           "member": "string",
           "name": "StaffList",
@@ -4086,12 +4086,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "无法删除的状态为在线的客服列表",
+          "document": "<p>无法删除的状态为在线的客服列表</p>",
           "example": "[\"staff1@xxx.com\",\"staff2@xxx.com\"]",
           "member": "string",
           "name": "OnlineStaffList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>坐席删除详情</p>",
+          "example": "All members have been deleted",
+          "member": "string",
+          "name": "DeleteStatusInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5787,7 +5797,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -5796,7 +5806,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，从0开始",
+          "document": "<p>页数，从0开始</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNumber",
@@ -5805,7 +5815,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认20",
+          "document": "<p>分页大小，默认20</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -5820,7 +5830,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数量",
+          "document": "<p>总数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -5830,8 +5840,8 @@
         },
         {
           "disabled": false,
-          "document": "号码列表",
-          "example": "[{\"Number\":\"0086075512345678\",\"State\":1,\"CallOutSkillGroupIds\":[1]}]",
+          "document": "<p>号码列表</p>",
+          "example": "无",
           "member": "NumberInfo",
           "name": "Numbers",
           "output_required": true,
@@ -8544,7 +8554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "号码",
+          "document": "<p>号码</p>",
           "example": "0086075512345678",
           "member": "string",
           "name": "Number",
@@ -8554,7 +8564,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的外呼技能组",
+          "document": "<p>绑定的外呼技能组</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "CallOutSkillGroupIds",
@@ -8564,11 +8574,21 @@
         },
         {
           "disabled": false,
-          "document": "号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用",
+          "document": "<p>号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用</p>",
           "example": "1",
           "member": "int64",
           "name": "State",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自携号码</p><p>枚举值：</p><ul><li>0： 非自携</li><li>1： 自携</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "CostType",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }

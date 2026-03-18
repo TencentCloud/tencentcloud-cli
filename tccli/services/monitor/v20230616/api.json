@@ -458,6 +458,51 @@
       ],
       "usage": "both"
     },
+    "GoogleChatRobotNoticeTmpl": {
+      "document": "Google Chat 机器人内容模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容模板",
+          "example": "IyMjIFnt7Sku",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GoogleChatRobotNoticeTmplMatcher": {
+      "document": "Google Chat 机器人通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配状态 Invalid;\nTrigger 告警触发; Recovery 告警恢复",
+          "example": "[\"Trigger\"]",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板配置",
+          "example": "无",
+          "member": "GoogleChatRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyNoticeContentTmplRequest": {
       "document": "ModifyNoticeContentTmpl请求参数结构体",
       "members": [
@@ -715,6 +760,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GoogleChat",
+          "example": "无",
+          "member": "GoogleChatRobotNoticeTmplMatcher",
+          "name": "GoogleChatRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

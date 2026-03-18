@@ -18336,7 +18336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群",
+          "document": "集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群、外部集群",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -19099,7 +19099,7 @@
         },
         {
           "disabled": false,
-          "document": "被采集的点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被采集的点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.8",
           "member": "float",
           "name": "ScrapedRate",
@@ -19119,7 +19119,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤前的指标采集速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每秒过滤前的指标采集速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.8",
           "member": "float",
           "name": "SamplesRate",
@@ -19257,7 +19257,7 @@
         },
         {
           "disabled": false,
-          "document": "被采集的点数",
+          "document": "每秒被采集的点数",
           "example": "0.8",
           "member": "float",
           "name": "ScrapedRate",
@@ -19287,7 +19287,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤前的指标采集速率",
+          "document": "过滤前的每秒指标采集速率",
           "example": "0.8",
           "member": "float",
           "name": "SamplesRate",
@@ -19333,7 +19333,7 @@
         },
         {
           "disabled": false,
-          "document": "基础指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础指标用量个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "float",
           "name": "Basic",
@@ -19343,7 +19343,7 @@
         },
         {
           "disabled": false,
-          "document": "付费指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费指标用量个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "float",
           "name": "Fee",
@@ -19370,7 +19370,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "test",
+          "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -19490,7 +19490,7 @@
         {
           "disabled": false,
           "document": "实例关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "PrometheusTag",
           "name": "TagSpecification",
           "output_required": true,
@@ -19580,7 +19580,7 @@
         {
           "disabled": false,
           "document": "Proxy 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://url",
+          "example": "0.0.0.0:9090",
           "member": "string",
           "name": "ProxyAddress",
           "output_required": true,
@@ -19610,7 +19610,7 @@
         {
           "disabled": false,
           "document": "实例的授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "PrometheusInstanceGrantInfo",
           "name": "Grant",
           "output_required": true,
@@ -21354,7 +21354,7 @@
         {
           "disabled": false,
           "document": "服务发现名称",
-          "example": "",
+          "example": "online-service",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -21364,7 +21364,7 @@
         {
           "disabled": false,
           "document": "服务发现属于的 Namespace",
-          "example": "",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -21374,7 +21374,7 @@
         {
           "disabled": false,
           "document": "服务发现类型: ServiceMonitor/PodMonitor",
-          "example": "",
+          "example": "ServiceMonitor",
           "member": "string",
           "name": "Kind",
           "required": true,
@@ -21384,7 +21384,7 @@
         {
           "disabled": false,
           "document": "Namespace 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"any\":true,\"matchNames\":[\"default\"]}",
           "member": "string",
           "name": "NamespaceSelector",
           "required": true,
@@ -21394,7 +21394,7 @@
         {
           "disabled": false,
           "document": "Label 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"matchLabels\": {\"app\":\"k8s\"}}",
           "member": "string",
           "name": "Selector",
           "required": true,
@@ -21404,7 +21404,7 @@
         {
           "disabled": false,
           "document": "Endpoints 信息（PodMonitor 不含该参数）",
-          "example": "",
+          "example": "[{\"port\":\"http\",\"path\":\"/metrics\",\"scheme\":\"http\"}]",
           "member": "string",
           "name": "Endpoints",
           "required": true,
@@ -21414,7 +21414,7 @@
         {
           "disabled": false,
           "document": "服务发现对应的配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "name: online-service",
           "member": "string",
           "name": "Yaml",
           "required": true,

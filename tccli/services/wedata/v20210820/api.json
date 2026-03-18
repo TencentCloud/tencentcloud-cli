@@ -2376,7 +2376,7 @@
         {
           "disabled": false,
           "document": "事件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "bkk1215",
           "member": "string",
           "name": "EventName",
           "output_required": false,
@@ -2387,7 +2387,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2026-01-21 16:01:12",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -2398,7 +2398,7 @@
         {
           "disabled": false,
           "document": "项目展示名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "wedata数据开发",
           "member": "string",
           "name": "ProjectDisplayName",
           "output_required": false,
@@ -2409,7 +2409,7 @@
         {
           "disabled": false,
           "document": "事件周期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DAY",
           "member": "string",
           "name": "EventSubType",
           "output_required": false,
@@ -2420,7 +2420,7 @@
         {
           "disabled": false,
           "document": "事件项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1464962169590902784",
           "member": "string",
           "name": "ProjectId",
           "output_required": false,
@@ -2442,9 +2442,64 @@
         {
           "disabled": false,
           "document": "事件广播类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "BROADCAST",
           "member": "string",
           "name": "EventBroadcastType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件生产者任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260129162245972",
+          "member": "string",
+          "name": "ProducerTaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026012916",
+          "member": "string",
+          "name": "Dimension",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COMPLETED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-02-02 23:02:21",
+          "member": "string",
+          "name": "EventTriggerTs",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e781b06ee96648babd306b2b57bf3b2b",
+          "member": "string",
+          "name": "CaseId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -5421,6 +5476,15 @@
           "name": "EnableMakeUp",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定审批人列表",
+          "example": "[\"1203245\"]",
+          "member": "string",
+          "name": "AssignApprovalList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9830,7 +9894,7 @@
         {
           "disabled": false,
           "document": "模版关联的任务以及调度参数设置",
-          "example": "[{\"TaskId\":\"20250327221647427\",\"MapParamList\":[{\"Key\":\"aadd sadasd\",\"Value\":\"aa\"}]},{\"TaskId\":\"20250327222417287\",\"MapParamList\":[{\"Key\":\"aadd sadasd\",\"Value\":\"aa\"}]},{\"TaskId\":\"20250321162854699\",\"MapParamList\":[{\"Key\":\"aadd sadasd\",\"Value\":\"aa\"}]}]",
+          "example": "无",
           "member": "TaskFormParams",
           "name": "Tasks",
           "required": false,
@@ -9839,7 +9903,7 @@
         {
           "disabled": false,
           "document": "代码模本脚本内置参数",
-          "example": "[\"aa\"]",
+          "example": "[\"te1\"]",
           "member": "string",
           "name": "OriginalParams",
           "required": false,
@@ -9862,6 +9926,15 @@
           "name": "NeedSubmitScheduleForTemplate",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定审批人列表",
+          "example": "[\"4234553\"]",
+          "member": "string",
+          "name": "AssignApprovalList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11995,6 +12068,15 @@
           "name": "EnableMakeUp",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定审批人列表",
+          "example": "[\"23153\",\"23213\"]",
+          "member": "string",
+          "name": "AssignApprovalList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -31200,9 +31282,10 @@
         {
           "disabled": false,
           "document": "事件实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "890bef797f4a4d78a968947736b76bd8",
           "member": "string",
           "name": "CaseId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31210,9 +31293,10 @@
         {
           "disabled": false,
           "document": "事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hour_event",
           "member": "string",
           "name": "EventName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31220,9 +31304,10 @@
         {
           "disabled": false,
           "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TIME_SERIES",
           "member": "string",
           "name": "EventType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31230,9 +31315,10 @@
         {
           "disabled": false,
           "document": "事件分割类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HOUR",
           "member": "string",
           "name": "EventSubType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31240,9 +31326,10 @@
         {
           "disabled": false,
           "document": "事件广播类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SINGLE",
           "member": "string",
           "name": "EventBroadcastType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31250,9 +31337,10 @@
         {
           "disabled": false,
           "document": "事件实例存活时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "30",
           "member": "uint64",
           "name": "TTL",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -31260,9 +31348,10 @@
         {
           "disabled": false,
           "document": "事件实例存活时间单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DAYS",
           "member": "string",
           "name": "TimeUnit",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31270,9 +31359,10 @@
         {
           "disabled": false,
           "document": "数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "202508120105",
           "member": "string",
           "name": "Dimension",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31280,9 +31370,10 @@
         {
           "disabled": false,
           "document": "事件实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CONSUMING",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31290,9 +31381,10 @@
         {
           "disabled": false,
           "document": "事件实例触发时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2026-01-29T09:46:27.384003Z",
           "member": "string",
           "name": "EventTriggerTimestamp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31300,9 +31392,10 @@
         {
           "disabled": false,
           "document": "事件实例消费时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2026-01-29T11:23:37.774462Z",
           "member": "string",
           "name": "LogTimestamp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -31310,15 +31403,27 @@
         {
           "disabled": false,
           "document": "事件实例描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "改事件为小时周期事件",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ConsumeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "EventCaseAuditLogVOCollection": {
       "document": "事件实例分页查询结果",
@@ -37921,7 +38026,7 @@
         {
           "disabled": false,
           "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1052313454\t",
+          "example": "1052313454",
           "member": "string",
           "name": "TenantId",
           "output_required": true,
@@ -38158,6 +38263,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventCaseAuditLogOptDto",
+          "name": "RelatedEventList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -41836,6 +41952,16 @@
           "example": "无",
           "member": "StrToStrMap",
           "name": "MapParamList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录扩展属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StrToStrMap",
+          "name": "MakeExtList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
@@ -62292,7 +62418,7 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "20251223142222919",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -62314,7 +62440,7 @@
         {
           "disabled": false,
           "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "124",
+          "example": "43a7e80d-d65a-47a8-b950-ca89b2addb91",
           "member": "string",
           "name": "WorkflowId",
           "output_required": false,
@@ -62325,7 +62451,7 @@
         {
           "disabled": false,
           "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "workflow1",
           "member": "string",
           "name": "WorkflowName",
           "output_required": false,
@@ -62336,7 +62462,7 @@
         {
           "disabled": false,
           "document": "负责人ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "45872369",
           "member": "string",
           "name": "InChargeId",
           "output_required": false,
@@ -62347,7 +62473,7 @@
         {
           "disabled": false,
           "document": "负责人名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "user",
           "member": "string",
           "name": "InCharge",
           "output_required": false,
@@ -62358,7 +62484,7 @@
         {
           "disabled": false,
           "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "task_1",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -62391,9 +62517,20 @@
         {
           "disabled": false,
           "document": "保存版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "w3dw34rf-d65a-47a8-b950-ca89b2addb91",
           "member": "string",
           "name": "LatestSavedVersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "N",
+          "member": "string",
+          "name": "Status",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -64414,6 +64551,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

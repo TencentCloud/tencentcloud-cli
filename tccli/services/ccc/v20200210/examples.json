@@ -203,8 +203,8 @@
     "DeleteStaff": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStaff\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffList\": [\n        \"staff1@xxx.com\",\n        \"staff2@xxx.com\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"OnlineStaffList\": []\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStaff\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"StaffList\": [\n        \"1610598376@qq.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteStatusInfo\": \"Members in OnlineStaffList are online and cannot be deleted\",\n        \"OnlineStaffList\": [\n            \"1610598376@qq.com\"\n        ],\n        \"RequestId\": \"298dca51-0c8b-4efe-aa10-0c7a415089fa\"\n    }\n}",
         "title": "删除坐席信息示例"
       }
     ],
@@ -362,9 +362,9 @@
     ],
     "DescribeNumbers": [
       {
-        "document": "查询号码列表",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNumbers\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Numbers\": [\n            {\n                \"Number\": \"0086075512345678\",\n                \"State\": 1,\n                \"CallOutSkillGroupIds\": [\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNumbers\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Numbers\": [\n            {\n                \"CallOutSkillGroupIds\": [\n                    1536\n                ],\n                \"CostType\": 0,\n                \"Number\": \"008617308248432\",\n                \"State\": 1\n            }\n        ],\n        \"TotalCount\": 52,\n        \"RequestId\": \"a7d2c6d4-29ca-4815-8f0d-c68fb7644a22\"\n    }\n}",
         "title": "查询号码列表"
       }
     ],

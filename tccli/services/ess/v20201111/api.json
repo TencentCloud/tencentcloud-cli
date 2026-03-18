@@ -1736,6 +1736,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审核失败原因，\n当 AuditStatus 返回2时，则会返回具体的原因。",
+          "example": "请加盖与企业名称一致的企业公章",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1863,6 +1873,16 @@
           "example": "三要素校验失败: 工商库未能查询到企业信息，请核实信息或切换为上传营业执照认证。",
           "member": "string",
           "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。认证流 Id可以通过回调[授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs/#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)",
+          "example": "yD3a0UUckpmkiihyUNCHklBa6PG9DuFp",
+          "member": "string",
+          "name": "AuthorizationInfoId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3253,7 +3273,7 @@
         },
         {
           "disabled": false,
-          "document": "合同审查中的角色信息，通过明确入参角色的名称和描述，可以提高合同审查的效率和准确性。用户不做配置时大模型会根据合同内容推荐出风险识别角色的名称和描述信息。(Depricated)",
+          "document": "该字段已不再使用！\n合同审查中的角色信息，通过明确入参角色的名称和描述，可以提高合同审查的效率和准确性。用户不做配置时大模型会根据合同内容推荐出风险识别角色的名称和描述信息。",
           "example": "无",
           "member": "RiskIdentificationRoleInfo",
           "name": "Role",
@@ -3271,7 +3291,7 @@
         },
         {
           "disabled": false,
-          "document": "用户配置的审查清单ID，基于此清单ID批量创建合同审查任务，为32位字符串。[点击查看审查清单ID在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/2c6588549e28ca49bd8bb7f4a072b19e.png)。如果用户不做此配置大模型会根据合同内容在当前企业下的审查清单和系统默认的清单中选择一个清单进行审查。(Depricated)",
+          "document": "该字段已不再使用！\n用户配置的审查清单ID，基于此清单ID批量创建合同审查任务，为32位字符串。[点击查看审查清单ID在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/2c6588549e28ca49bd8bb7f4a072b19e.png)。如果用户不做此配置大模型会根据合同内容在当前企业下的审查清单和系统默认的清单中选择一个清单进行审查。",
           "example": "yDtCMUUckpx3boo7UysNTh4vx0j0a6Ii",
           "member": "string",
           "name": "ChecklistId",
@@ -9424,6 +9444,15 @@
           "name": "PickUpAfterJoined",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul> 注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 使用此功能时，FlowIds参数必传。3. 对于企业签署方，如果对印章/签名控件有限制要求，需要保证所有印章/签名签署控件限制要求(印章id或印章/签名类型限制)一致，否则无法使用此功能。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanSkipReadFlow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11833,7 +11862,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于审查任务的审查清单ID（Depricated）。注意：如果用户没有配置清单时此值可能为空，需要等大模型根据合同内容推荐出可以使用的审查清单。",
+          "document": "该字段已不再使用！\n用于审查任务的审查清单ID。注意：如果用户没有配置清单时此值可能为空，需要等大模型根据合同内容推荐出可以使用的审查清单。",
           "example": "yDtCMUUckpx3boo7Uyxx4vx0j0a6Ii",
           "member": "string",
           "name": "ChecklistId",
@@ -11903,7 +11932,7 @@
         },
         {
           "disabled": false,
-          "document": "合同审查中的角色信息（Depricated）。注意： `如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段已不再使用！\n合同审查中的角色信息。注意： `如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RiskIdentificationRoleInfo",
           "name": "Role",
@@ -13396,6 +13425,15 @@
           "example": "张三",
           "member": "string",
           "name": "LegalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证流 Id 是指在企业认证过程中，当前操作人的认证流程的唯一标识。每个企业在认证过程中只能有一条认证流认证成功。这意味着在同一认证过程内，一个企业只能有一个认证流程处于成功状态，以确保认证的唯一性和有效性。\n\n\n认证流 Id可以通过回调[授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs/#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)获取\n\n注意：\n如果传递了认证流Id，则下面的参数 超管二要素不会生效\n示例值：yDCHHUUckpbdaiqbUxJVsHWy99WG6kTY",
+          "example": "yD3a0UUckpmkiihyUNCHklBa6PG9DuFp",
+          "member": "string",
+          "name": "AuthorizationInfoId",
           "required": false,
           "type": "string"
         }

@@ -336,6 +336,13 @@
       "output": "DescribePlatformImagesResponse",
       "status": "online"
     },
+    "DescribePublicAlgoVersionList": {
+      "document": "公共算法版本列表",
+      "input": "DescribePublicAlgoVersionListRequest",
+      "name": "公共算法版本列表",
+      "output": "DescribePublicAlgoVersionListResponse",
+      "status": "online"
+    },
     "DescribeSubAccountLinuxUserInfos": {
       "document": "批量查询子账号Linux用户信息",
       "input": "DescribeSubAccountLinuxUserInfosRequest",
@@ -491,6 +498,34 @@
     "serviceShortName": "tione"
   },
   "objects": {
+    "AggregatePublicAlgoVersion": {
+      "document": "聚合后的公共算法版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于聚合的系列名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "llama",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "算法公共版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicAlgoVersion",
+          "name": "PublicAlgoVersions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Attribute": {
       "document": "镜像属性",
       "members": [
@@ -6196,6 +6231,90 @@
       ],
       "type": "object"
     },
+    "DescribePublicAlgoVersionListRequest": {
+      "document": "DescribePublicAlgoVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要聚合",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedsAggregate",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicAlgoVersionListResponse": {
+      "document": "DescribePublicAlgoVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算法版本数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公共算法版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicAlgoVersion",
+          "name": "PublicAlgoVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "聚合后的公共算法版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AggregatePublicAlgoVersion",
+          "name": "AggregatePublicAlgoVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubAccountLinuxUserInfosRequest": {
       "document": "DescribeSubAccountLinuxUserInfos请求参数结构体",
       "members": [],
@@ -6500,6 +6619,62 @@
         }
       ],
       "type": "object"
+    },
+    "DeviceImageInfo": {
+      "document": "设备对应的镜像信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备类型, 支持GPU等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GPU",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceMaterialInfo": {
+      "document": "对应设备的物料信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GPU",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物料信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "MaterialInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "EncodedStartCmdInfo": {
       "document": "编码后的启动命令信息",
@@ -7874,6 +8049,67 @@
         }
       ],
       "usage": "out"
+    },
+    "MaterialInfo": {
+      "document": "物料信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Cos存储信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "CosPathInfo",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物料名，支持Code、Model\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Code",
+          "member": "string",
+          "name": "MaterialName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物料类型，支持PreSet(预置)、 Custom(自定义)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PreSet",
+          "member": "string",
+          "name": "MaterialType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "训练任务挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Message": {
       "document": "对话输入内容",
@@ -11236,6 +11472,272 @@
       ],
       "usage": "both"
     },
+    "PublicAlgoVersion": {
+      "document": "公共算法版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公共算法版本Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-version-id1",
+          "member": "string",
+          "name": "PublicAlgoVersionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应的公共算法组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-group-id1",
+          "member": "string",
+          "name": "PublicAlgoGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.0.0",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "混元大模型是...",
+          "member": "string",
+          "name": "Introduction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预览信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "操作流程介绍Markdown",
+          "member": "string",
+          "name": "PreviewInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预置训练镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "PresetTrainImageInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预置训练代码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "PresetTrainCodeInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预置模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "PresetModelInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已经被导入到我的算法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsImported",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-10 22:10:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-10 22:10:11",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认训练资源规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceSpec",
+          "name": "DefaultResourceSpec",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认推理资源规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceSpec",
+          "name": "DefaultInferenceResourceSpec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持直接部署推理服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportDeploy",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内置训练数据集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "PresetTrainDataset",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "训练代码包下载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"testurl\"",
+          "member": "string",
+          "name": "TrainCodeDownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内置数据下载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"testurl\"",
+          "member": "string",
+          "name": "TrainDataDownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "训练参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrainParam",
+          "name": "TrainParams",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "训练启动命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"bash\"",
+          "member": "string",
+          "name": "PresetTrainCodeStartCmd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否非公开模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPrivateModel",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "各种设备下的训练镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceImageInfo",
+          "name": "PresetTrainImageInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "各种设备下的推理镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceImageInfo",
+          "name": "PresetInferenceImageInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "各种设备下的训练代码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceMaterialInfo",
+          "name": "PresetTrainCodeInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "各种设备下的内置模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceMaterialInfo",
+          "name": "PresetModelInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型类别，比如LLM/MultiModal\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LLM",
+          "member": "string",
+          "name": "ModelCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公共算法Id",
+          "example": "test-id1",
+          "member": "string",
+          "name": "PublicAlgoSeriesId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PublicDataSourceFS": {
       "document": "公有云数据源结构",
       "members": [
@@ -11735,6 +12237,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceSpec": {
+      "document": "TI资源规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2C4G",
+          "member": "string",
+          "name": "SpecAlias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_tio_platform_cloud_post_cpu_2c4g",
+          "member": "string",
+          "name": "SpecId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TI.S.MEDIUM.POST",
+          "member": "string",
+          "name": "SpecName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RollingUpdate": {
       "document": "滚动更新策略",
@@ -13949,6 +14487,100 @@
           "example": "{\"test\",\"test\"}",
           "member": "string",
           "name": "TagValues",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TrainParam": {
+      "document": "训练超参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "epoch",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "注释",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否必选",
+          "example": "true",
+          "member": "bool",
+          "name": "Required",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "0.2",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数范围",
+          "example": "[\"0.1\", \"2\"]",
+          "member": "string",
+          "name": "Range",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数选项",
+          "example": "[\"1\", \"2\"]",
+          "member": "string",
+          "name": "Enum",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
