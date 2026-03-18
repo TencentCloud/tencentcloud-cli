@@ -420,6 +420,13 @@
       "output": "DescribeUsersResponse",
       "status": "online"
     },
+    "DisableClientTcpAccess": {
+      "document": "关闭客户端TCP访问堡垒机",
+      "input": "DisableClientTcpAccessRequest",
+      "name": "关闭客户端TCP访问堡垒机",
+      "output": "DisableClientTcpAccessResponse",
+      "status": "online"
+    },
     "DisableExternalAccess": {
       "document": "关闭公网访问堡垒机",
       "input": "DisableExternalAccessRequest",
@@ -434,6 +441,20 @@
       "output": "DisableIntranetAccessResponse",
       "status": "online"
     },
+    "DisableWebAccess": {
+      "document": "关闭web访问堡垒机",
+      "input": "DisableWebAccessRequest",
+      "name": "关闭web访问堡垒机",
+      "output": "DisableWebAccessResponse",
+      "status": "online"
+    },
+    "EnableClientTcpAccess": {
+      "document": "开启客户端TCP访问堡垒机",
+      "input": "EnableClientTcpAccessRequest",
+      "name": "开启客户端TCP访问堡垒机",
+      "output": "EnableClientTcpAccessResponse",
+      "status": "online"
+    },
     "EnableExternalAccess": {
       "document": "开启公网访问堡垒机",
       "input": "EnableExternalAccessRequest",
@@ -446,6 +467,13 @@
       "input": "EnableIntranetAccessRequest",
       "name": "开通内网访问",
       "output": "EnableIntranetAccessResponse",
+      "status": "online"
+    },
+    "EnableWebAccess": {
+      "document": "开启web访问堡垒机",
+      "input": "EnableWebAccessRequest",
+      "name": "开启web访问堡垒机",
+      "output": "EnableWebAccessResponse",
       "status": "online"
     },
     "ImportExternalDevice": {
@@ -7280,6 +7308,33 @@
       ],
       "usage": "out"
     },
+    "DisableClientTcpAccessRequest": {
+      "document": "DisableClientTcpAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableClientTcpAccessResponse": {
+      "document": "DisableClientTcpAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableExternalAccessRequest": {
       "document": "DisableExternalAccess请求参数结构体",
       "members": [
@@ -7324,6 +7379,33 @@
     },
     "DisableIntranetAccessResponse": {
       "document": "DisableIntranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableWebAccessRequest": {
+      "document": "DisableWebAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableWebAccessResponse": {
+      "document": "DisableWebAccess返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7430,6 +7512,33 @@
       ],
       "usage": "out"
     },
+    "EnableClientTcpAccessRequest": {
+      "document": "EnableClientTcpAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableClientTcpAccessResponse": {
+      "document": "EnableClientTcpAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableExternalAccessRequest": {
       "document": "EnableExternalAccess请求参数结构体",
       "members": [
@@ -7510,6 +7619,33 @@
     },
     "EnableIntranetAccessResponse": {
       "document": "EnableIntranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableWebAccessRequest": {
+      "document": "EnableWebAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableWebAccessResponse": {
+      "document": "EnableWebAccess返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

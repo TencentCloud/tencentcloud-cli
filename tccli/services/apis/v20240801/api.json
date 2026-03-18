@@ -7124,6 +7124,15 @@
           "name": "Access",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "[\"testtag\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

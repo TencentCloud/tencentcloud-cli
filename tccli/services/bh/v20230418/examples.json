@@ -510,6 +510,14 @@
         "title": "根据主机查询有访问权限的用户信息"
       }
     ],
+    "DisableClientTcpAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableClientTcpAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sefwlij\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DisableExternalAccess": [
       {
         "document": "",
@@ -526,6 +534,22 @@
         "title": "关闭内网访问"
       }
     ],
+    "DisableWebAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableWebAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sefwlij\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "EnableClientTcpAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableClientTcpAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sefwlij\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "EnableExternalAccess": [
       {
         "document": "",
@@ -540,6 +564,14 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableIntranetAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sdfesaf\",\n    \"VpcId\": \"vpc-ewaesfx\",\n    \"SubnetId\": \"subnet-23seffse\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
         "title": "开通内网访问示例"
+      }
+    ],
+    "EnableWebAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableWebAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sefwlij\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
+        "title": "实例1"
       }
     ],
     "ImportExternalDevice": [

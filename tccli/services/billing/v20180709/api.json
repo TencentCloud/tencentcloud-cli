@@ -20700,7 +20700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品一层",
+          "document": "<p>产品一层</p>",
           "example": "p_ccc",
           "member": "string",
           "name": "ProductCode",
@@ -20709,7 +20709,7 @@
         },
         {
           "disabled": false,
-          "document": "账户状态：0-有效 1-已退款 2-已过期 3-已用完， 非必须",
+          "document": "<p>账户状态：0-有效 1-已退款 2-已过期 3-已用完， 非必须</p>",
           "example": "[0]",
           "member": "uint64",
           "name": "Status",
@@ -20718,7 +20718,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页",
+          "document": "<p>当前页</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -20727,7 +20727,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页大小",
+          "document": "<p>当前页大小</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -20736,7 +20736,7 @@
         },
         {
           "disabled": false,
-          "document": "二层列表",
+          "document": "<p>二层列表</p>",
           "example": "[\"sp_rav_audio_video\"]",
           "member": "string",
           "name": "SubProductCodes",
@@ -20745,7 +20745,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包ID",
+          "document": "<p>资源包ID</p>",
           "example": "[\"test-1068325\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -20754,7 +20754,7 @@
         },
         {
           "disabled": false,
-          "document": "使用类型：1-总量递减型 2-周期递减型 3-无限容量型",
+          "document": "<p>使用类型：1-总量递减型 2-周期递减型 3-无限容量型</p>",
           "example": "1",
           "member": "int64",
           "name": "CapacityType",
@@ -20763,7 +20763,7 @@
         },
         {
           "disabled": false,
-          "document": "资源包名称",
+          "document": "<p>资源包名称</p>",
           "example": "语音通话包",
           "member": "string",
           "name": "PackageName",
@@ -20772,7 +20772,7 @@
         },
         {
           "disabled": false,
-          "document": "生效日期起始查询时间，格式：\"yyyy-MM-dd HH:mm:ss\"",
+          "document": "<p>生效日期起始查询时间，格式：&quot;yyyy-MM-dd HH:mm:ss&quot;</p>",
           "example": "\"2025-12-01 00:00:00\"",
           "member": "string",
           "name": "PackageStartTimeRangeBegin",
@@ -20781,7 +20781,7 @@
         },
         {
           "disabled": false,
-          "document": "生效日期截止查询时间， 生效日期的查询起始时间和截止时间必须同时存在",
+          "document": "<p>生效日期截止查询时间， 生效日期的查询起始时间和截止时间必须同时存在</p>",
           "example": "\"2025-12-30 00:00:00\"",
           "member": "string",
           "name": "PackageStartTimeRangeEnd",
@@ -20790,7 +20790,7 @@
         },
         {
           "disabled": false,
-          "document": "失效日期起始查询时间",
+          "document": "<p>失效日期起始查询时间</p>",
           "example": "\"2025-12-01 00:00:00\"",
           "member": "string",
           "name": "PackageEndTimeRangeBegin",
@@ -20799,7 +20799,7 @@
         },
         {
           "disabled": false,
-          "document": "失效日期截止查询时间, 失效日期的查询起始时间和截止时间必须同时存在",
+          "document": "<p>失效日期截止查询时间, 失效日期的查询起始时间和截止时间必须同时存在</p>",
           "example": "\"2025-12-30 00:00:00\"",
           "member": "string",
           "name": "PackageEndTimeRangeEnd",
@@ -20808,8 +20808,8 @@
         },
         {
           "disabled": false,
-          "document": "排序方式：asc，desc，默认asc",
-          "example": "\"asc\"",
+          "document": "<p>排序字段：“buyTime” “startTime” “endTime”</p>",
+          "example": "“buyTime” “startTime” “endTime”",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -20817,8 +20817,8 @@
         },
         {
           "disabled": false,
-          "document": "排序字段：“buyTime” ”startTime“ ”endTime“ ",
-          "example": "\"buyTime\"",
+          "document": "<p>排序方式：asc，desc，默认asc</p>",
+          "example": "\"asc\"",
           "member": "string",
           "name": "SortBy",
           "required": false,
@@ -20826,7 +20826,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示隐藏包：true/false",
+          "document": "<p>是否展示隐藏包：true/false</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDisplayHiddenPackage",
@@ -20835,7 +20835,7 @@
         },
         {
           "disabled": false,
-          "document": "商品码Code",
+          "document": "<p>商品码Code</p>",
           "example": "[\"TRADE_T_S_code_001_xfIvsFKugT\"]",
           "member": "string",
           "name": "PackageCodes",
@@ -20844,7 +20844,7 @@
         },
         {
           "disabled": false,
-          "document": "费用类型：免费1/付费2",
+          "document": "<p>费用类型：免费1/付费2</p>",
           "example": "1",
           "member": "int64",
           "name": "FeeType",
@@ -20853,8 +20853,8 @@
         },
         {
           "disabled": false,
-          "document": "订单号",
-          "example": "\"20221226556001271963881\"\t",
+          "document": "<p>订单号</p>",
+          "example": "\"20221226556001271963881\"",
           "member": "string",
           "name": "DealName",
           "required": false,
@@ -20862,7 +20862,7 @@
         },
         {
           "disabled": false,
-          "document": "切片/周期起始查询时间",
+          "document": "<p>切片/周期起始查询时间</p>",
           "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "SlicePeriodStartTime",
@@ -20871,7 +20871,7 @@
         },
         {
           "disabled": false,
-          "document": "切片/周期截止查询时间, 切片/周期日期的查询起始时间和截止时间必须同时存在",
+          "document": "<p>切片/周期截止查询时间, 切片/周期日期的查询起始时间和截止时间必须同时存在</p>",
           "example": "\"2024-11-01 00:00:00\"",
           "member": "string",
           "name": "SlicePeriodEndTime",
@@ -20886,7 +20886,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "正常返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>正常返回值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeResourceDetailsData",
           "name": "Data",

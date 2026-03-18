@@ -2044,7 +2044,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒资图片文件大小，单位为Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资图片文件大小，单位为Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
           "member": "int64",
           "name": "FileSize",
@@ -2054,7 +2054,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资图片文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资图片文件MD5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
           "member": "string",
           "name": "MD5",
@@ -2064,7 +2064,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资图片文件宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资图片文件宽度</p><p>单位：像素（px）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1920",
           "member": "int64",
           "name": "Width",
@@ -2074,7 +2074,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资图片文件高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资图片文件高度</p><p>单位：像素（px）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1080",
           "member": "int64",
           "name": "Height",
@@ -2084,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资图片文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资图片文件格式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jpg",
           "member": "string",
           "name": "Format",
@@ -2911,7 +2911,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "矩形框左上角水平座标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>矩形框左上角水平座标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "float",
           "name": "X",
@@ -2921,7 +2921,7 @@
         },
         {
           "disabled": false,
-          "document": "矩形框左上角竖直座标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>矩形框左上角竖直座标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "float",
           "name": "Y",
@@ -2931,7 +2931,7 @@
         },
         {
           "disabled": false,
-          "document": "矩形框宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>矩形框宽度</p><p>单位：像素（px）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
           "member": "float",
           "name": "Width",
@@ -2941,7 +2941,7 @@
         },
         {
           "disabled": false,
-          "document": "矩形框长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>矩形框长度</p><p>单位：像素（px）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "float",
           "name": "Height",
@@ -3289,7 +3289,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "“task-g8lqk737”",
           "member": "string",
           "name": "TaskId",
@@ -3299,7 +3299,7 @@
         },
         {
           "disabled": false,
-          "document": "描述任务名称，指定后可根据名称筛选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述任务名称，指定后可根据名称筛选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"本地新闻\"",
           "member": "string",
           "name": "TaskName",
@@ -3309,7 +3309,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资文件ID",
+          "document": "<p>媒资文件ID</p>",
           "example": "\"media-2aHsU6sj\"",
           "member": "string",
           "name": "MediaId",
@@ -3319,7 +3319,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行状态",
+          "document": "<p>任务执行状态</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskStatus",
@@ -3329,7 +3329,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度，范围为[0，100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务进度，范围为[0，100]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "75",
           "member": "float",
           "name": "TaskProgress",
@@ -3339,7 +3339,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务执行时间</p><p>单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
           "member": "int64",
           "name": "TaskTimeCost",
@@ -3349,7 +3349,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "2006-01-02T15:04:05Z07:00",
           "member": "string",
           "name": "TaskCreateTime",
@@ -3359,7 +3359,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务开始执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2006-01-02T15:04:05Z07:00",
           "member": "string",
           "name": "TaskStartTime",
@@ -3369,7 +3369,7 @@
         },
         {
           "disabled": false,
-          "document": "任务失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"分析失败\"",
           "member": "string",
           "name": "FailedReason",
@@ -3379,7 +3379,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行时指定的先验知识",
+          "document": "<p>任务执行时指定的先验知识</p>",
           "example": "无",
           "member": "MediaPreknownInfo",
           "name": "MediaPreknownInfo",
@@ -3389,7 +3389,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资文件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"test-video\"",
           "member": "string",
           "name": "MediaName",
@@ -3399,7 +3399,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资自定义标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"tag\"",
           "member": "string",
           "name": "Label",
@@ -3409,7 +3409,7 @@
         },
         {
           "disabled": false,
-          "document": "任务分析完成后的后调地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务分析完成后的后调地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"http://example.com/api/callback\"",
           "member": "string",
           "name": "CallbackURL",
@@ -3419,7 +3419,7 @@
         },
         {
           "disabled": false,
-          "document": "任务对应的媒资文件元信息，仅在MediaType为Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务对应的媒资文件元信息，仅在MediaType为Audio时有效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioMetadata",
           "name": "AudioMetadata",
@@ -3429,7 +3429,7 @@
         },
         {
           "disabled": false,
-          "document": "任务对应的媒资文件元信息，仅在MediaType为Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务对应的媒资文件元信息，仅在MediaType为Audio时有效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageMetadata",
           "name": "ImageMetadata",
@@ -3439,7 +3439,7 @@
         },
         {
           "disabled": false,
-          "document": "任务对应的媒资文件元信息，仅在MediaType为Text时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务对应的媒资文件元信息，仅在MediaType为Text时有效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextMetadata",
           "name": "TextMetadata",
@@ -3449,7 +3449,7 @@
         },
         {
           "disabled": false,
-          "document": "任务对应的媒资文件元信息，仅在MediaType为Video时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务对应的媒资文件元信息，仅在MediaType为Video时有效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetadata",
           "name": "Metadata",
@@ -3593,7 +3593,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒资文本文件大小，单位为字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资文本文件大小，单位为字节</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
           "member": "int64",
           "name": "FileSize",
@@ -3603,7 +3603,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资文本文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资文本文件MD5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
           "member": "string",
           "name": "MD5",
@@ -3613,7 +3613,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资文本文件字符数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资文本文件字符数</p><p>单位：字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
           "name": "Length",
@@ -3623,7 +3623,7 @@
         },
         {
           "disabled": false,
-          "document": "媒资文本文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒资文本文件格式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "txt",
           "member": "string",
           "name": "Format",
@@ -3633,7 +3633,7 @@
         },
         {
           "disabled": false,
-          "document": "封装格式短后缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>封装格式短后缀</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "txt",
           "member": "string",
           "name": "ShortFormat",

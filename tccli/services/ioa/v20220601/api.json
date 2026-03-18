@@ -3354,7 +3354,7 @@
         {
           "disabled": false,
           "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ID",
           "output_required": false,
@@ -3364,7 +3364,7 @@
         {
           "disabled": false,
           "document": "软件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "qwe",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -3374,7 +3374,7 @@
         {
           "disabled": false,
           "document": "盗版风险\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0=无风险;1=有风险;2=未开启检查",
+          "example": "0",
           "member": "int64",
           "name": "PiracyRisk",
           "output_required": true,
@@ -3384,7 +3384,7 @@
         {
           "disabled": false,
           "document": "系统平台\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0=未知;1=windows;2=mac;3=linux",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "output_required": true,
@@ -3394,7 +3394,7 @@
         {
           "disabled": false,
           "document": "企业名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "CorpName",
           "output_required": true,
@@ -3404,7 +3404,7 @@
         {
           "disabled": false,
           "document": "安装设备数量(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstalledDeviceNum",
           "output_required": true,
@@ -3414,7 +3414,7 @@
         {
           "disabled": false,
           "document": "盗版安装设备数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PiracyInstalledDeviceNum",
           "output_required": true,
@@ -3424,7 +3424,7 @@
         {
           "disabled": false,
           "document": "已安装用户数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstalledUserNum",
           "output_required": true,
@@ -3434,7 +3434,7 @@
         {
           "disabled": false,
           "document": "盗版软件用户数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PiracyInstalledUserNum",
           "output_required": true,
@@ -3444,7 +3444,7 @@
         {
           "disabled": false,
           "document": "授权总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AuthNum",
           "output_required": true,
@@ -3454,7 +3454,7 @@
         {
           "disabled": false,
           "document": "正版率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "GenuineRate",
           "output_required": true,
@@ -3467,6 +3467,16 @@
           "example": "0",
           "member": "int64",
           "name": "UpgradableDeviceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有新版本可升级的设备数量",
+          "example": "0",
+          "member": "int64",
+          "name": "UpgradeDeviceNum",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -3747,6 +3757,17 @@
           "example": "C541951B73E564FDD66EFAB55F2784BC696073F602",
           "member": "string",
           "name": "Mid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息",
+          "example": "{A:B}",
+          "member": "string",
+          "name": "ExtInfo",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -8577,6 +8598,15 @@
           "example": "无",
           "member": "NGNDynamicStrategyDeviceCondition",
           "name": "DeviceCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "应用程序链条件",
+          "example": "",
+          "member": "NGNDynamicStrategyProcessChainCondition",
+          "name": "ProcessChainCondition",
           "required": false,
           "type": "object"
         }
@@ -39936,6 +39966,15 @@
           "name": "DeviceCondition",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "应用程序链条件",
+          "example": "",
+          "member": "NGNDynamicStrategyProcessChainCondition",
+          "name": "ProcessChainCondition",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -41617,6 +41656,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用程序链条件",
+          "example": "",
+          "member": "NGNDynamicStrategyProcessChainCondition",
+          "name": "ProcessChainCondition",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -42192,6 +42242,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NGNDynamicStrategyProcessChainCondition": {
+      "document": "动态访问策略应用程序链条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启用类型",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用程序链数组",
+          "example": "",
+          "member": "ProcessChain",
+          "name": "ProcessChains",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -44138,6 +44216,45 @@
       ],
       "usage": "both"
     },
+    "ProcessChain": {
+      "document": "动态访问策略应用程序链",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识值",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统类型",
+          "example": "",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ProfileFieldDetail": {
       "document": "描述字段详情",
       "members": [
@@ -44626,6 +44743,17 @@
           "example": "and",
           "member": "string",
           "name": "RelateOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "ValueType",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -45842,6 +45970,16 @@
           "name": "OsType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息",
+          "example": "{\"A\":\"B\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

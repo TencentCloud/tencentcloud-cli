@@ -440,7 +440,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱工具名称，长度 1-50 字符，支持英文、数字、下划线和连接线。同一 AppId 下沙箱工具名称必须唯一",
+          "document": "<p>沙箱工具名称，长度 1-50 字符，支持英文、数字、下划线和连接线。同一 AppId 下沙箱工具名称必须唯一</p>",
           "example": "code-interpreter-v1",
           "member": "string",
           "name": "ToolName",
@@ -449,7 +449,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具类型，目前支持：browser、code-interpreter、custom",
+          "document": "<p>沙箱工具类型，目前支持：browser、code-interpreter、custom</p>",
           "example": "code-interpreter",
           "member": "string",
           "name": "ToolType",
@@ -458,7 +458,7 @@
         },
         {
           "disabled": false,
-          "document": "网络配置",
+          "document": "<p>网络配置</p>",
           "example": "无",
           "member": "NetworkConfiguration",
           "name": "NetworkConfiguration",
@@ -467,7 +467,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具描述，最大长度 200 字符",
+          "document": "<p>沙箱工具描述，最大长度 200 字符</p>",
           "example": "代码解释器沙箱工具",
           "member": "string",
           "name": "Description",
@@ -476,7 +476,7 @@
         },
         {
           "disabled": false,
-          "document": "默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时",
+          "document": "<p>默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时</p>",
           "example": "5m",
           "member": "string",
           "name": "DefaultTimeout",
@@ -485,7 +485,7 @@
         },
         {
           "disabled": false,
-          "document": "标签规格，为沙箱工具绑定标签，支持多种资源类型的标签绑定",
+          "document": "<p>标签规格，为沙箱工具绑定标签，支持多种资源类型的标签绑定</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -494,7 +494,7 @@
         },
         {
           "disabled": false,
-          "document": "幂等性 Token，长度不超过 64 字符",
+          "document": "<p>幂等性 Token，长度不超过 64 字符</p>",
           "example": "your-unique-client-token",
           "member": "string",
           "name": "ClientToken",
@@ -503,7 +503,7 @@
         },
         {
           "disabled": false,
-          "document": "角色ARN",
+          "document": "<p>角色ARN</p>",
           "example": "qcs::cam::uin/100000001:roleName/test_role",
           "member": "string",
           "name": "RoleArn",
@@ -512,7 +512,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具存储配置",
+          "document": "<p>沙箱工具存储配置</p>",
           "example": "无",
           "member": "StorageMount",
           "name": "StorageMounts",
@@ -521,7 +521,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具自定义配置",
+          "document": "<p>沙箱工具自定义配置</p>",
           "example": "无",
           "member": "CustomConfiguration",
           "name": "CustomConfiguration",
@@ -530,7 +530,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具日志推送相关配置",
+          "document": "<p>沙箱工具日志推送相关配置</p>",
           "example": "无",
           "member": "LogConfiguration",
           "name": "LogConfiguration",
@@ -545,7 +545,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的沙箱工具 ID",
+          "document": "<p>创建的沙箱工具 ID</p>",
           "example": "sdt-dibk4rra",
           "member": "string",
           "name": "ToolId",
@@ -1542,8 +1542,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱实例唯一标识符",
-          "example": "sdi-xyz789abc123",
+          "document": "<p>沙箱实例唯一标识符</p>",
+          "example": "48dd1132cfb96ccee5fd0aa58da2562d2fe3a929",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -1553,7 +1553,7 @@
         },
         {
           "disabled": false,
-          "document": "所属沙箱工具 ID",
+          "document": "<p>所属沙箱工具 ID</p>",
           "example": "sdt-def456ghi789",
           "member": "string",
           "name": "ToolId",
@@ -1564,7 +1564,7 @@
         },
         {
           "disabled": false,
-          "document": "所属沙箱工具名称",
+          "document": "<p>所属沙箱工具名称</p>",
           "example": "code-interpreter-v1",
           "member": "string",
           "name": "ToolName",
@@ -1575,7 +1575,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）",
+          "document": "<p>实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
@@ -1586,7 +1586,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时间（秒），null 表示无超时设置",
+          "document": "<p>超时时间（秒），null 表示无超时设置</p>",
           "example": "600",
           "member": "uint64",
           "name": "TimeoutSeconds",
@@ -1597,7 +1597,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间（ISO 8601 格式），null 表示无过期时间",
+          "document": "<p>过期时间（ISO 8601 格式），null 表示无过期时间</p>",
           "example": "2024-01-01T10:30:00Z",
           "member": "string",
           "name": "ExpiresAt",
@@ -1608,7 +1608,7 @@
         },
         {
           "disabled": false,
-          "document": "停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error",
+          "document": "<p>停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error</p>",
           "example": "timeout",
           "member": "string",
           "name": "StopReason",
@@ -1619,7 +1619,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间（ISO 8601 格式）",
+          "document": "<p>创建时间（ISO 8601 格式）</p>",
           "example": "2024-01-01T10:00:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间（ISO 8601 格式）",
+          "document": "<p>更新时间（ISO 8601 格式）</p>",
           "example": "2024-01-01T10:10:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -1641,7 +1641,7 @@
         },
         {
           "disabled": false,
-          "document": "存储挂载选项",
+          "document": "<p>存储挂载选项</p>",
           "example": "无",
           "member": "MountOption",
           "name": "MountOptions",
@@ -1652,7 +1652,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱实例自定义配置",
+          "document": "<p>沙箱实例自定义配置</p>",
           "example": "无",
           "member": "CustomConfigurationDetail",
           "name": "CustomConfiguration",
@@ -1999,7 +1999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对象存储桶配置",
+          "document": "<p>对象存储桶配置</p>",
           "example": "无",
           "member": "CosStorageSource",
           "name": "Cos",
@@ -2010,7 +2010,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像卷配置",
+          "document": "<p>镜像卷配置</p>",
           "example": "无",
           "member": "ImageStorageSource",
           "name": "Image",
@@ -2021,7 +2021,7 @@
         },
         {
           "disabled": false,
-          "document": "文件存储配置",
+          "document": "<p>文件存储配置</p>",
           "example": "无",
           "member": "CfsStorageSource",
           "name": "Cfs",
