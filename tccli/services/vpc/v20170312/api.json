@@ -28992,7 +28992,7 @@
           "example": "bwp-e40edw8y",
           "member": "string",
           "name": "BandwidthPackageId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -29001,7 +29001,7 @@
           "example": "demo",
           "member": "string",
           "name": "BandwidthPackageName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -29154,6 +29154,15 @@
           "example": "true",
           "member": "bool",
           "name": "TrafficMarkingPolicyFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否切换为混合计费",
+          "example": "true",
+          "member": "bool",
+          "name": "MixedBillingFlag",
           "required": false,
           "type": "bool"
         }

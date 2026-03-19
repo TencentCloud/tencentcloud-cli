@@ -140,6 +140,13 @@
       "output": "CreateConvertTaskApiResponse",
       "status": "online"
     },
+    "CreateDigitalDataSign": {
+      "document": "创建数据加签请求",
+      "input": "CreateDigitalDataSignRequest",
+      "name": "创建数据加签",
+      "output": "CreateDigitalDataSignResponse",
+      "status": "online"
+    },
     "CreateDocument": {
       "document": "创建签署流程电子文档<br />\n\n###  调用流程\n该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。需要配置<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow\" target=\"_blank\">创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。具体逻辑可以参考下图:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/1f38ebd7c5afed8763ad961741d81438.png)\n\n\n### 填充模板中定义的填写控件\n模板中配置的<font color=\"red\">发起人填充控件</font>可以通过本接口的**FormFields数组**字段填充。\n\n**<font color=\"red\">填充填写控件需要进行Pdf合成工作，文档合成完成后会收到[合同文档合成完成回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign#%E4%B9%9D-%E5%90%88%E5%90%8C%E6%96%87%E6%A1%A3%E5%90%88%E6%88%90%E5%AE%8C%E6%88%90%E5%9B%9E%E8%B0%83),建议在收到此回调后再调用 [StartFlow](https://qian.tencent.com/developers/companyApis/startFlows/StartFlow) 接口。</font>**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/37457e0e450fc221effddfcb8b1bad55.png)\n\n填充的传参示例如下\n\n```\n    request.FormFields = [{\n            \"ComponentName\": \"项目的名字\",\n            \"ComponentValue\": \"休闲山庄\"\n        }, {\n            \"ComponentName\": \"项目的地址\",\n            \"ComponentValue\": \"凤凰山北侧\",\n        }, {\n            \"ComponentName\": \"范围\",\n            \"ComponentValue\": \"凤凰山至107国道\",\n        }, {\n            \"ComponentName\": \"面积\",\n            \"ComponentValue\": \"100亩\",\n        }, {\n            \"ComponentName\": \"基本情况\",\n            \"ComponentValue\": \"完好\",\n        }, , {\n            \"ComponentName\": \"用途\",\n            \"ComponentValue\": \"经营农家乐\",\n        }\n    ]\n```\n合成后合同样子示例\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/140a2fb771ac66a185d0a000d37485f6.png)",
       "input": "CreateDocumentRequest",
@@ -978,6 +985,13 @@
       "input": "VerifyDigitFileRequest",
       "name": "加签文件验签接口",
       "output": "VerifyDigitFileResponse",
+      "status": "online"
+    },
+    "VerifyDigitalDataSign": {
+      "document": "数据加签验签接口",
+      "input": "VerifyDigitalDataSignRequest",
+      "name": "数据加签验证",
+      "output": "VerifyDigitalDataSignResponse",
       "status": "online"
     },
     "VerifyPdf": {
@@ -4495,6 +4509,91 @@
           "member": "string",
           "name": "TaskId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDigitalDataSignRequest": {
+      "document": "CreateDigitalDataSign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。支持填入集团子公司经办人 userId 代发合同。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据加签的原文",
+          "example": "测试abc",
+          "member": "string",
+          "name": "PlainText",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDigitalDataSignResponse": {
+      "document": "CreateDigitalDataSign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加签签名值",
+          "example": "MIAGCSqGSIb3DQEHAqCAMIACAQGSIb3DQEHATAcBgkqhkiG9w0B",
+          "member": "string",
+          "name": "SignValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加签时间戳",
+          "example": "MIIQHgYJKoZIhvNdoQ7niijSz8RtbRgul09Kcac9xiHwaU0SxCmU4pzu8IY0zL3Sk3qULParIU=",
+          "member": "string",
+          "name": "SignTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署证书信息",
+          "example": "无",
+          "member": "SignCertificate",
+          "name": "Certificate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署算法",
+          "example": "RSA",
+          "member": "string",
+          "name": "SignAlgorithm",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20654,6 +20753,67 @@
       ],
       "usage": "both"
     },
+    "SignCertificate": {
+      "document": "签署证书信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书序列号",
+          "example": "220**********959",
+          "member": "string",
+          "name": "SerialNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书持有者名称",
+          "example": "ESS**********698",
+          "member": "string",
+          "name": "CommonName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书生效时间",
+          "example": "1773213985",
+          "member": "int64",
+          "name": "NotBefore",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书失效时间",
+          "example": "1804749985",
+          "member": "int64",
+          "name": "NotAfter",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书颁发者名称",
+          "example": "NM**********S****CA1",
+          "member": "string",
+          "name": "IssuerCommonName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SignComponentConfig": {
       "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括\n\n- 签署控件是否默认展示日期.",
       "members": [
@@ -22293,6 +22453,80 @@
         }
       ],
       "usage": "both"
+    },
+    "VerifyDigitalDataSignRequest": {
+      "document": "VerifyDigitalDataSign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。支持填入集团子公司经办人 userId 代发合同。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "加签原文",
+          "example": "测试******23",
+          "member": "string",
+          "name": "PlainText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "MIAGCSqGSIb3DQE1UBg3UERzBFAiEAvMEVUnoR2hWQSNqZAuyoMquMEyiNoEGbTBKhsU0SNsYCIHBzwcKT7jSQop+jsQwtkcxNri90GoowhROnIqpb5dDBAAAAAAAA",
+          "member": "string",
+          "name": "SignValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyDigitalDataSignResponse": {
+      "document": "VerifyDigitalDataSign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签名值验证结果；1-验证成功；2-验证失败",
+          "example": "1",
+          "member": "int64",
+          "name": "VerifyResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名证书信息",
+          "example": "无",
+          "member": "SignCertificate",
+          "name": "Certificate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VerifyPdfRequest": {
       "document": "VerifyPdf请求参数结构体",

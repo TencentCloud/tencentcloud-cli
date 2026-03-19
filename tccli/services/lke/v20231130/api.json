@@ -3512,7 +3512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签来源，1：标签",
+          "document": "标签来源，1：标签。\n使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。",
           "example": "1",
           "member": "uint64",
           "name": "Source",
@@ -18613,7 +18613,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态\n2：待发布\n3：发布中\n4：已发布\n5：发布失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "Action",

@@ -1,25 +1,22 @@
-**Example 1: 修改带宽包名称**
+**Example 1: 开启带宽包流量校验开关**
 
 
 
 Input: 
 
 ```
-tccli vpc ModifyBandwidthPackageAttribute --cli-unfold-argument  \
-    --BandwidthPackageName demo \
-    --BandwidthPackageId bwp-e40edw8y
-```
+tccli vpc ModifyBandwidthPackageAttribute --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2ece8f4a-c0f5-4b83-8054-a9b808a5c465"
+        "RequestId": "54c9bac3-c94d-4d2d-8104-54f0691bffdd"
     }
 }
 ```
 
-**Example 2: 修改带宽包计费模式**
+**Example 2: 修改带宽包名称**
 
 
 
@@ -27,16 +24,15 @@ Input:
 
 ```
 tccli vpc ModifyBandwidthPackageAttribute --cli-unfold-argument  \
-    --BandwidthPackageName demo \
-    --BandwidthPackageId bwp-e40edw8y \
-    --ChargeType TOP5_POSTPAID_BY_MONTH
+    --BandwidthPackageId bwp-il9224p5 \
+    --BandwidthPackageName demo
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2ece8f4a-c0f5-4b83-8054-a9b808a5c465"
+        "RequestId": "6b864a91-9ab6-4977-9641-d99bf55f6fed"
     }
 }
 ```

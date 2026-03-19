@@ -416,7 +416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "requestHeader ：对请求头部进行访问控制\nurl ： 对访问url进行访问控制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则类型：<br>requestHeader ：对请求头部进行访问控制<br>url ： 对访问url进行访问控制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "requestHeader",
           "member": "string",
           "name": "RuleType",
@@ -427,7 +427,7 @@
         },
         {
           "disabled": false,
-          "document": "封禁内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>封禁内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "example",
           "member": "string",
           "name": "RuleContent",
@@ -438,7 +438,7 @@
         },
         {
           "disabled": false,
-          "document": "on ：正则匹配\noff ：字面匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>on ：正则匹配<br>off ：字面匹配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "Regex",
@@ -449,7 +449,7 @@
         },
         {
           "disabled": false,
-          "document": "RuleType为requestHeader时必填，否则不需要填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>RuleType为requestHeader时必填，否则不需要填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "X-rule",
           "member": "string",
           "name": "RuleHeader",
@@ -972,7 +972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义Tls数据开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义Tls数据开关<br>on - 开<br>off - 关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "CustomTlsStatus",
@@ -982,7 +982,7 @@
         },
         {
           "disabled": false,
-          "document": "Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"TLSv1\",\"TLSv1.1\",\"TLSv1.2\",\"TLSv1.3\"]",
           "member": "string",
           "name": "TlsVersion",
@@ -992,7 +992,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义加密套件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义加密套件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"EECDH+AES128\"",
           "member": "string",
           "name": "Cipher",
@@ -1002,7 +1002,7 @@
         },
         {
           "disabled": false,
-          "document": "回源双向校验开启状态\noff - 关闭校验\noneWay - 校验源站\ntwoWay - 双向校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回源双向校验开启状态<br>off - 关闭校验<br>oneWay - 校验源站<br>twoWay - 双向校验</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "VerifyOriginType",
@@ -1012,7 +1012,7 @@
         },
         {
           "disabled": false,
-          "document": "回源层证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回源层证书配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServerCert",
           "name": "CertInfo",
@@ -1022,7 +1022,7 @@
         },
         {
           "disabled": false,
-          "document": "源站证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>源站证书配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClientCert",
           "name": "OriginCertInfo",
@@ -3516,7 +3516,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间\n根据指定时间粒度参数不同，会进行向前取整，如指定起始时间为 2018-09-04 10:40:00 按小时粒度查询，返回的第一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天",
+          "document": "<p>查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间<br>根据指定时间粒度参数不同，会进行向前取整，如指定起始时间为 2018-09-04 10:40:00 按小时粒度查询，返回的第一个数据对应时间点为 2018-09-04 10:00:00<br>起始时间与结束时间间隔小于等于 90 天</p>",
           "example": "2018-09-04 10:40:00",
           "member": "datetime",
           "name": "StartTime",
@@ -3525,7 +3525,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间\n根据指定时间粒度参数不同，会进行向前取整，如指定结束时间为  2018-09-04 10:40:00 按小时粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天",
+          "document": "<p>查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间<br>根据指定时间粒度参数不同，会进行向前取整，如指定结束时间为  2018-09-04 10:40:00 按小时粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:00:00<br>起始时间与结束时间间隔小于等于 90 天</p>",
           "example": "2018-09-04 10:40:00",
           "member": "datetime",
           "name": "EndTime",
@@ -3534,7 +3534,7 @@
         },
         {
           "disabled": false,
-          "document": "时间粒度，支持模式如下：\nmin：1 分钟粒度，查询区间需要小于等于 24 小时\n5min：5 分钟粒度，查询区间需要小于等于 31 天(计费数据粒度)\nhour：1 小时粒度，查询区间需要小于等于 31 天内\nday：天粒度，查询区间需要大于 31 天\n\nArea 字段为 overseas 时暂不支持1分钟粒度数据查询",
+          "document": "<p>时间粒度，支持模式如下：<br>min：1 分钟粒度，查询区间需要小于等于 24 小时<br>5min：5 分钟粒度，查询区间需要小于等于 31 天(计费数据粒度)<br>hour：1 小时粒度，查询区间需要小于等于 31 天内<br>day：天粒度，查询区间需要大于 31 天</p><p>Area 字段为 overseas 时暂不支持1分钟粒度数据查询</p>",
           "example": "5min",
           "member": "string",
           "name": "Interval",
@@ -3543,7 +3543,7 @@
         },
         {
           "disabled": false,
-          "document": "指定域名查询计费数据",
+          "document": "<p>指定域名查询计费数据</p>",
           "example": "www.test.com",
           "member": "string",
           "name": "Domain",
@@ -3552,7 +3552,7 @@
         },
         {
           "disabled": false,
-          "document": "指定项目 ID 查询，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n若 Domain 参数填充了具体域名信息，则返回该域名的计费数据，而非指定项目计费数据",
+          "document": "<p>指定项目 ID 查询，<a href=\"https://console.cloud.tencent.com/project\">前往查看项目 ID</a><br>若 Domain 参数填充了具体域名信息，则返回该域名的计费数据，而非指定项目计费数据</p>",
           "example": "0",
           "member": "int64",
           "name": "Project",
@@ -3561,7 +3561,7 @@
         },
         {
           "disabled": false,
-          "document": "指定加速区域查询计费数据：\nmainland：中国境内\noverseas：中国境外\n不填充时，默认为 mainland",
+          "document": "<p>指定加速区域查询计费数据：<br>mainland：中国境内<br>overseas：中国境外<br>不填充时，默认为 mainland</p>",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -3570,7 +3570,7 @@
         },
         {
           "disabled": false,
-          "document": "Area 为 overseas 时，指定国家/地区查询\n省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)\n不填充时，查询所有国家/地区",
+          "document": "<p>Area 为 overseas 时，指定国家/地区查询<br>省份、国家/地区编码可以查看 <a href=\"https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84\">省份编码映射</a><br>不填充时，查询所有国家/地区</p>",
           "example": "10",
           "member": "int64",
           "name": "District",
@@ -3579,7 +3579,7 @@
         },
         {
           "disabled": false,
-          "document": "计费统计类型\nflux：计费流量\nbandwidth：计费带宽\n默认为 bandwidth",
+          "document": "<p>计费统计类型<br>flux：计费流量<br>bandwidth：计费带宽<br>https：https请求数<br>默认为 bandwidth</p>",
           "example": "bandwidth",
           "member": "string",
           "name": "Metric",
@@ -3588,7 +3588,7 @@
         },
         {
           "disabled": false,
-          "document": "指定查询的产品数据，可选为cdn或者ecdn，默认为cdn",
+          "document": "<p>指定查询的产品数据，可选为cdn或者ecdn，默认为cdn</p>",
           "example": "cdn",
           "member": "string",
           "name": "Product",
@@ -3597,7 +3597,7 @@
         },
         {
           "disabled": false,
-          "document": "指定查询时间的时区，默认UTC+08:00",
+          "document": "<p>指定查询时间的时区，默认UTC+08:00</p>",
           "example": "UTC+08:00",
           "member": "string",
           "name": "TimeZone",
@@ -3612,7 +3612,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间粒度，根据查询时传递参数指定：\nmin：1 分钟粒度\n5min：5 分钟粒度\nhour：1 小时粒度\nday：天粒度",
+          "document": "<p>时间粒度，根据查询时传递参数指定：<br>min：1 分钟粒度<br>5min：5 分钟粒度<br>hour：1 小时粒度<br>day：天粒度</p>",
           "example": "5min",
           "member": "string",
           "name": "Interval",
@@ -3622,7 +3622,7 @@
         },
         {
           "disabled": false,
-          "document": "数据明细",
+          "document": "<p>数据明细</p>",
           "example": "无",
           "member": "ResourceBillingData",
           "name": "Data",
@@ -4066,7 +4066,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名列表，最多支持20个域名",
+          "document": "<p>域名列表，最多支持20个域名</p>",
           "example": "[\"www.test.com\"]",
           "member": "string",
           "name": "Domains",
@@ -4075,7 +4075,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间\n支持近 60 天内的数据查询，每次查询时间区间为 3 小时",
+          "document": "<p>查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间<br>支持近 60 天内的数据查询，每次查询时间区间为 3 小时</p>",
           "example": "2020-03-27 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -4084,7 +4084,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间\n结束时间与起始时间区间最大为 3 小时",
+          "document": "<p>查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间<br>结束时间与起始时间区间最大为 3 小时</p>",
           "example": "2020-03-27 00:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -4093,7 +4093,7 @@
         },
         {
           "disabled": false,
-          "document": "指定查询指标，支持:\nbandwidth：带宽，单位为 bps\nflux：流量，单位为 byte\nrequest：请求数，单位为 次\nstatusCode：状态码，返回 0、2xx、3xx、4xx、5xx 汇总数据，单位为 次\n2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 次\n3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 次\n4xx：返回 4xx 状态码汇总及各 4 开头状态码数据，单位为 次\n5xx：返回 5xx 状态码汇总及各 5 开头状态码数据，单位为 次\n支持指定具体状态码查询，若未产生过，则返回为空",
+          "document": "<p>指定查询指标，支持:<br>bandwidth：带宽，单位为 bps<br>flux：流量，单位为 byte<br>request：请求数，单位为 次<br>statusCode：状态码，返回 0、2xx、3xx、4xx、5xx 汇总数据，单位为 次<br>2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 次<br>3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 次<br>4xx：返回 4xx 状态码汇总及各 4 开头状态码数据，单位为 次<br>5xx：返回 5xx 状态码汇总及各 5 开头状态码数据，单位为 次<br>支持指定具体状态码查询，若未产生过，则返回为空</p>",
           "example": "bandwidth",
           "member": "string",
           "name": "Metric",
@@ -4102,7 +4102,7 @@
         },
         {
           "disabled": false,
-          "document": "指定省份查询，不填充表示查询所有省份\n省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)",
+          "document": "<p>指定省份查询，不填充表示查询所有省份（注：指定条件查询只支持映射表范围）<br>省份、国家/地区编码可以查看 <a href=\"https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8\">省份编码映射</a></p>",
           "example": "[122]",
           "member": "int64",
           "name": "Districts",
@@ -4111,7 +4111,7 @@
         },
         {
           "disabled": false,
-          "document": "指定运营商查询，不填充表示查询所有运营商\n运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)",
+          "document": "<p>指定运营商查询，不填充表示查询所有运营商（注：指定条件查询只支持映射表范围）<br>运营商编码可以查看 <a href=\"https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8\">运营商编码映射</a></p>",
           "example": "[3947]",
           "member": "int64",
           "name": "Isps",
@@ -4120,7 +4120,7 @@
         },
         {
           "disabled": false,
-          "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标",
+          "document": "<p>指定协议查询，不填充表示查询所有协议<br>all：所有协议<br>http：指定查询 HTTP 对应指标<br>https：指定查询 HTTPS 对应指标</p>",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -4129,7 +4129,7 @@
         },
         {
           "disabled": false,
-          "document": "指定IP协议查询，不填充表示查询所有协议\nall：所有协议\nipv4：指定查询 ipv4 对应指标\nipv6：指定查询 ipv6 对应指标\n指定IP协议查询时，不可同时指定省份、运营商查询",
+          "document": "<p>指定IP协议查询，不填充表示查询所有协议<br>all：所有协议<br>ipv4：指定查询 ipv4 对应指标<br>ipv6：指定查询 ipv6 对应指标<br>指定IP协议查询时，不可同时指定省份、运营商查询</p>",
           "example": "ipv4",
           "member": "string",
           "name": "IpProtocol",
@@ -4138,7 +4138,7 @@
         },
         {
           "disabled": false,
-          "document": "时间粒度，支持以下几种模式（默认5min）：\nmin：1 分钟粒度，支持近 60 天内的数据查询，每次查询时间区间不超过10分钟，可返回 1 分钟粒度明细数据\n5min：5 分钟粒度，支持近 60 天内的数据查询，每次查询时间区间不超过3 小时，可返回 5 分钟粒度明细数据",
+          "document": "<p>时间粒度，支持以下几种模式（默认5min）：<br>min：1 分钟粒度，支持近 60 天内的数据查询，每次查询时间区间不超过10分钟，可返回 1 分钟粒度明细数据<br>5min：5 分钟粒度，支持近 60 天内的数据查询，每次查询时间区间不超过3 小时，可返回 5 分钟粒度明细数据</p>",
           "example": "5min",
           "member": "string",
           "name": "Interval",
@@ -4153,7 +4153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地区运营商数据明细",
+          "document": "<p>地区运营商数据明细</p>",
           "example": "无",
           "member": "DistrictIspInfo",
           "name": "Data",
@@ -5382,8 +5382,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为起始日期\n返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00\n仅支持 90 天内数据查询",
-          "example": "2021-01-01 00:00:00",
+          "document": "<p>查询起始日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为起始日期<br>返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04，返回数据的起始时间为2018-09-04 00:00:00<br>仅支持 90 天内数据查询</p>",
+          "example": "2021-01-01",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -5391,8 +5391,8 @@
         },
         {
           "disabled": false,
-          "document": "查询结束日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为结束日期\n返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59\nEndTime 需要大于等于 StartTime",
-          "example": "2021-01-01 23:59:59",
+          "document": "<p>查询结束日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为结束日期<br>返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05，返回数据的结束时间为2018-09-05 23:59:59<br>EndTime 需要大于等于 StartTime</p>",
+          "example": "2021-01-01",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -5400,7 +5400,7 @@
         },
         {
           "disabled": false,
-          "document": "排序对象，支持以下几种形式：\nip、ua_device、ua_browser、ua_os、referer",
+          "document": "<p>排序对象，支持以下几种形式：<br>ip、ua_device、ua_browser、ua_os、referer</p>",
           "example": "ip",
           "member": "string",
           "name": "Metric",
@@ -5409,7 +5409,7 @@
         },
         {
           "disabled": false,
-          "document": "排序使用的指标名称：\nflux：Metric 为 host 时指代访问流量\nrequest：Metric 为 host 时指代访问请求数",
+          "document": "<p>排序使用的指标名称：<br>flux：Metric 为 host 时指代访问流量<br>request：Metric 为 host 时指代访问请求数</p>",
           "example": "flux",
           "member": "string",
           "name": "Filter",
@@ -5418,8 +5418,8 @@
         },
         {
           "disabled": false,
-          "document": "指定查询域名列表，最多可一次性查询 30 个加速域名明细",
-          "example": "www.test.com",
+          "document": "<p>指定查询域名列表，最多可一次性查询 30 个加速域名明细</p>",
+          "example": "[\"www.test.com\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -5427,7 +5427,7 @@
         },
         {
           "disabled": false,
-          "document": "未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主",
+          "document": "<p>未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主</p>",
           "example": "0",
           "member": "int64",
           "name": "Project",
@@ -5436,7 +5436,7 @@
         },
         {
           "disabled": false,
-          "document": "是否详细显示每个域名的的具体数值",
+          "document": "<p>是否详细显示每个域名的的具体数值</p>",
           "example": "false",
           "member": "bool",
           "name": "Detail",
@@ -5445,7 +5445,7 @@
         },
         {
           "disabled": false,
-          "document": "指定服务地域查询，不填充表示查询中国境内 CDN 数据\nmainland：指定查询中国境内 CDN 数据\noverseas：指定查询中国境外 CDN 数据",
+          "document": "<p>指定服务地域查询，不填充表示查询中国境内 CDN 数据<br>mainland：指定查询中国境内 CDN 数据<br>overseas：指定查询中国境外 CDN 数据</p>",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -5454,7 +5454,7 @@
         },
         {
           "disabled": false,
-          "document": "指定查询的产品数据，目前仅可使用cdn",
+          "document": "<p>指定查询的产品数据，目前仅可使用cdn</p>",
           "example": "cdn",
           "member": "string",
           "name": "Product",
@@ -5469,8 +5469,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "各个资源的Top 访问数据详情。",
-          "example": "[]",
+          "document": "<p>各个资源的Top 访问数据详情。</p>",
+          "example": "无",
           "member": "TopDataMore",
           "name": "Data",
           "output_required": true,
@@ -6947,7 +6947,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "封禁类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>封禁类型<br>forbidden - 封禁</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "forbidden",
           "member": "string",
           "name": "FilterType",
@@ -6958,7 +6958,7 @@
         },
         {
           "disabled": false,
-          "document": "封禁规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>封禁规则类型<br>all - 全部请求<br>file - 指定后缀的文件请求</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
           "member": "string",
           "name": "RuleType",
@@ -6969,7 +6969,7 @@
         },
         {
           "disabled": false,
-          "document": "封禁规则路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>封禁规则路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"*\"]",
           "member": "string",
           "name": "RulePaths",

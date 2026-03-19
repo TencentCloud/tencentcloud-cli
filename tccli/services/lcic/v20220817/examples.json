@@ -314,6 +314,14 @@
         "title": "获取群组成员列表"
       }
     ],
+    "DescribeLiveRelayConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveRelayConfig\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 358219518\n}",
+        "output": "{\n    \"Response\": {\n        \"RelayType\": 0,\n        \"Urls\": [\n            \"rtmp://***5*l*v**u********oud.**m*li*e/*l**?*****ret=*****58d9846f***4b*b*0*c****885d&txT********5C73\"\n        ],\n        \"RequestId\": \"298d771b-21f5-4861-95b0-1f956b71e776\"\n    }\n}",
+        "title": "DescribeLiveRelayConfig"
+      }
+    ],
     "DescribeMarquee": [
       {
         "document": "",
@@ -558,6 +566,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"2CvDgjRNjylAs\",\n    \"SdkAppId\": 13465287,\n    \"GroupName\": \"myGroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "修改群组"
+      }
+    ],
+    "ModifyLiveRelayConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveRelayConfig\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 358219518,\n    \"RelayType\": 0,\n    \"Urls\": [\n        \"rtmp://2****.*i******.my***oud**o*/*rt*_*4*0315010/1400315010*****4*********s*****_main?txSecret=55************79b40fd3fc2a*8ab*9&*x*i*e*****ECB8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1f1b04e-100b-4d7f-9928-797ba492d438\"\n    }\n}",
+        "title": "ModifyLiveRelayConfig"
       }
     ],
     "ModifyRoom": [

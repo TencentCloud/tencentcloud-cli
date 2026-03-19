@@ -10628,6 +10628,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "摘要配置参数",
+          "example": "无",
+          "member": "VisionSummaryConfig",
+          "name": "SummaryConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存事件 ID 过滤规则配置项",
+          "example": "无",
+          "member": "SeeEventIdFilterConfig",
+          "name": "EventIdFilterConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -17339,6 +17359,15 @@
           "name": "SummaryConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "云存事件 ID 过滤规则配置，不传则不修改",
+          "example": "无",
+          "member": "SeeEventIdFilterConfig",
+          "name": "EventIdFilterConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -19677,6 +19706,34 @@
         }
       ],
       "type": "object"
+    },
+    "SeeEventIdFilterConfig": {
+      "document": "TWeSee 处理云存事件 EventId 的过滤规则配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含的云存事件 ID 集合",
+          "example": "[\"_sys_id2_data\"]",
+          "member": "string",
+          "name": "IncludeOnly",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除的云存事件 ID 集合",
+          "example": "[\"_sys_id3_data\"]",
+          "member": "string",
+          "name": "Exclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SubscribedTopicItem": {
       "document": "已订阅Topic信息",

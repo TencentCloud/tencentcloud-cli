@@ -94,6 +94,14 @@
         "title": "请求示例"
       }
     ],
+    "CopyLiveAvatarRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: CopyLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"Name\": \"room name\",\n    \"SourceRoomId\": \"10001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"RoomId\": \"10002\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateAuditKeywordLib": [
       {
         "document": "",
@@ -168,6 +176,22 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCommonMixStream\n<公共请求参数>\n\n{\n    \"InputStreamList\": [\n        {\n            \"LayoutParams\": {\n                \"ImageLayer\": 1,\n                \"ImageHeight\": 720,\n                \"ImageWidth\": 1280\n            },\n            \"InputStreamName\": \"test_stream1\"\n        },\n        {\n            \"LayoutParams\": {\n                \"ImageLayer\": 2,\n                \"ImageHeight\": 320,\n                \"ImageWidth\": 240,\n                \"LocationX\": 100,\n                \"LocationY\": 100\n            },\n            \"InputStreamName\": \"test_stream2\"\n        }\n    ],\n    \"OutputParams\": {\n        \"OutputStreamName\": \"test_stream1\"\n    },\n    \"MixStreamSessionId\": \"test_room\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "申请混流-使用自定义布局参数"
+      }
+    ],
+    "CreateLiveAvatarRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: CreateLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"Name\": \"live\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"RoomId\": \"10002\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateLiveAvatarScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: CreateLiveAvatarScript\n<公共请求参数>\n\n{\n    \"Title\": \"标题\",\n    \"RoomId\": \"10002\",\n    \"Content\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ScriptId\": \"1001\",\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "CreateLiveCallbackRule": [
@@ -396,6 +420,22 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterOutputInfo\n<公共请求参数>\n\n{\n    \"OutputIndex\": 1,\n    \"CasterId\": 63501\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求删除Index为1的推流配置"
+      }
+    ],
+    "DeleteLiveAvatarRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DeleteLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"10002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteLiveAvatarScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DeleteLiveAvatarScript\n<公共请求参数>\n\n{\n    \"ScriptId\": \"10002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DeleteLiveCallbackRule": [
@@ -747,6 +787,54 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHttpStatusInfoList\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-01T00:01:00+08:00\",\n    \"StartTime\": \"2019-03-01T00:00:00+08:00\",\n    \"PlayDomains\": [\n        \"5000.liveplay.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T00:00:00+08:00\",\n                \"HttpStatusInfoList\": [\n                    {\n                        \"HttpStatus\": \"200\",\n                        \"Num\": 100\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveAvatarBackgroundList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveAvatarBackgroundList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"InfoList\": [\n            {\n                \"BackgroundId\": \"2000\",\n                \"VerticalImageUrl\": \"http://test.background.com/live/image.url\",\n                \"HorizontalImageUrl\": \"http://test.background.com/live/image.url\",\n                \"Scene\": \"办公\"\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveAvatarImageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveAvatarImageList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ImageInfoList\": [\n            {\n                \"AnchorName\": \"云舞\",\n                \"AnchorId\": \"yunwu_red_dress_half_stand_20\",\n                \"AnchorGender\": \"femal\",\n                \"HorizontalAvatar\": {\n                    \"AvatarKey\": \"myavatarkey\",\n                    \"OriginZoom\": 1.0,\n                    \"Resolution\": \"1920x1080\"\n                },\n                \"PoseImage\": \"https://virtualhuman-cos-prod-1251316161.cos.ap-nanjing.myqcloud.com/resource-manager/yunwu/pose.png\",\n                \"ReferenceVideoSegmentUrl\": \"\",\n                \"VerticalAvatar\": {\n                    \"AvatarKey\": \"myavatarkey\",\n                    \"OriginZoom\": 1.0,\n                    \"Resolution\": \"1080x1920\"\n                }\n            }\n        ],\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveAvatarRooms": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveAvatarRooms\n<公共请求参数>\n\n{\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"InfoList\": [\n            {\n                \"AvatarKey\": \"9a7a2894ebd44ad3877ce98caac9a7cc\",\n                \"CreateTime\": \"2025-07-02T07:19:08Z\",\n                \"RoomId\": \"10002\",\n                \"Name\": \"测试直播间\",\n                \"TimbreKey\": \"male_1\",\n                \"ToUrl\": \"rtmp://5000.livepush.myqcloud.com/live/testavatar?txSecret=9f84eb128c7414074e9b14651b6d03e0&txTime=68629cf1\",\n                \"UpdateTime\": \"2025-07-02T07:19:08Z\"\n            }\n        ],\n        \"LimitCreateNum\": 100,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"TotalNum\": 1\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveAvatarScripts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveAvatarScripts\n<公共请求参数>\n\n{\n    \"RoomId\": \"1002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InfoList\": [\n            {\n                \"Title\": \"title\",\n                \"Content\": \"hello\",\n                \"CreateTime\": \"2025-07-02T07:19:08Z\",\n                \"ScriptId\": \"100\",\n                \"Duration\": 0,\n                \"Status\": \"PENDING\",\n                \"UpdateTime\": \"2025-07-02T07:19:08Z\"\n            }\n        ],\n        \"LimitCreateNum\": 100,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"TotalNum\": 1\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveAvatarTemporaryScriptList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveAvatarTemporaryScriptList\n<公共请求参数>\n\n{\n    \"RoomId\": \"1001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"InfoList\": [\n            {\n                \"Content\": \"text\",\n                \"CreateTime\": \"2025-09-11T00:00:00Z\"\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveAvatarTimbreList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveAvatarTimbreList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"TimbreList\": [\n            {\n                \"TimbreType\": \"对话\",\n                \"TimbreInfoList\": [\n                    {\n                        \"TimbreDesc\": \"甜美可爱\",\n                        \"TimbreGender\": \"femal\",\n                        \"TimbreKey\": \"604162\",\n                        \"TimbreName\": \"爱小静\",\n                        \"TimbreSample\": \"https://virtualhuman-cos-prod-1251316161.cos.ap-nanjing.myqcloud.com/virtualman-config/4f3592f6-f425-456e-ae2b-1b18339c7cbd-10001_1_00_2D_demo_n1.wav\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -1366,6 +1454,14 @@
         "title": "请求示例"
       }
     ],
+    "GenerateLiveAvatarScriptBroadcast": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: GenerateLiveAvatarScriptBroadcast\n<公共请求参数>\n\n{\n    \"RoomId\": \"10001\",\n    \"ScriptId\": \"20003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PreviewAudioUrl\": \"http://audio.com/avatr/audio.mp3\",\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "InsertTaskTemporaryFiles": [
       {
         "document": "",
@@ -1420,6 +1516,22 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterOutputInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 63501,\n    \"OutputInfo\": {\n        \"OutputIndex\": 1,\n        \"OutputUrl\": \"rtmp://another.third.push.domain/live/another_stream_id\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改Index为1的推流信息"
+      }
+    ],
+    "ModifyLiveAvatarRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: ModifyLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"1002\",\n    \"TimbreKey\": \"xfsdsf\",\n    \"Name\": \"room\",\n    \"AvatarKey\": \"sfdse\",\n    \"BackgroundUrl\": \"http://avatar.image.com/live/background.jpg\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyLiveAvatarScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: ModifyLiveAvatarScript\n<公共请求参数>\n\n{\n    \"ScriptId\": \"1002\",\n    \"Content\": \"hello\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "ModifyLiveCallbackTemplate": [
@@ -1582,6 +1694,22 @@
         "title": "请求示例"
       }
     ],
+    "SendTemporaryScriptToAvatarRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: SendTemporaryScriptToAvatarRoom\n<公共请求参数>\n\n{\n    \"Content\": \"中午吃饭了么\",\n    \"RoomId\": \"10003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StartLiveAvatarRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StartLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"10001\",\n    \"Comment\": \"wx\",\n    \"ToUrl\": \"rtmp://5000.livepush.com/live/stream\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "StartLivePadStream": [
       {
         "document": "",
@@ -1611,6 +1739,14 @@
         "document": "停止预监任务",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCasterPvw\n<公共请求参数>\n\n{\n    \"CasterId\": 63501\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StopLiveAvatarRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StopLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"10001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
     ],

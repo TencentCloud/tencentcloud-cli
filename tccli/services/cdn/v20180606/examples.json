@@ -235,7 +235,7 @@
     "DescribeTopData": [
       {
         "document": "查询ua_device指标的数据",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeTopData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=ua_device\n&Filter=request\n&Domains.0=www.test.com\n&Domains.1=www.test.com\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeTopData\n&StartTime=2018-09-04\n&EndTime=2018-09-04\n&Metric=ua_device\n&Filter=request\n&Domains.0=www.test.com\n&Domains.1=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"37aabaa8-c4c1-45ea-a4aa-8bafea1a496d\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"桌面\",\n                        \"Value\": 635,\n                        \"Percent\": 0.6642\n                    },\n                    {\n                        \"Name\": \"其他/未知\",\n                        \"Value\": 260,\n                        \"Percent\": 0.272\n                    },\n                    {\n                        \"Name\": \"移动\",\n                        \"Value\": 61,\n                        \"Percent\": 0.0638\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "设备数据返回"
       }

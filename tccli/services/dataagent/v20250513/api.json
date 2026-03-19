@@ -831,7 +831,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件名称",
+          "document": "<p>文件名称</p>",
           "example": "信息.txt",
           "member": "string",
           "name": "FileName",
@@ -842,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小，字节",
+          "document": "<p>文件大小，字节</p>",
           "example": "1231.1",
           "member": "float",
           "name": "FileSize",
@@ -853,7 +853,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型,0=文本,1=表格，默认0\n",
+          "document": "<p>文件类型,0=文本,1=表格，默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -864,7 +864,7 @@
         },
         {
           "disabled": false,
-          "document": "文件ID",
+          "document": "<p>文件ID</p>",
           "example": "xkewk9",
           "member": "string",
           "name": "FileId",
@@ -875,7 +875,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，0：数据处理中  1：可用 -1：错误",
+          "document": "<p>状态，0：数据处理中  1：可用 -1：错误</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -886,7 +886,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者\n",
+          "document": "<p>操作者</p>",
           "example": "u8j8j",
           "member": "string",
           "name": "CreateUser",
@@ -897,7 +897,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-12-23 18:23:32",
           "member": "string",
           "name": "CreateTime",
@@ -908,7 +908,7 @@
         },
         {
           "disabled": false,
-          "document": "分片策略",
+          "document": "<p>分片策略</p>",
           "example": "无",
           "member": "KnowledgeTaskConfig",
           "name": "ChunkConfig",
@@ -919,7 +919,7 @@
         },
         {
           "disabled": false,
-          "document": "文件来源0=unknow,1=user_cos,2=local",
+          "document": "<p>文件来源0=unknow,1=user_cos,2=local</p>",
           "example": "1",
           "member": "int64",
           "name": "Source",
@@ -930,7 +930,7 @@
         },
         {
           "disabled": false,
-          "document": "文件url",
+          "document": "<p>文件url</p>",
           "example": "http://abc/dcd",
           "member": "string",
           "name": "FileUrl",
@@ -941,7 +941,7 @@
         },
         {
           "disabled": false,
-          "document": "是否官方示例，0=否，1=是",
+          "document": "<p>是否官方示例，0=否，1=是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsShowCase",
@@ -952,10 +952,21 @@
         },
         {
           "disabled": false,
-          "document": "文档摘要",
+          "document": "<p>文档摘要</p>",
           "example": "sfsd",
           "member": "string",
           "name": "DocumentSummary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网页地址</p>",
+          "example": "http://www.baidu.com",
+          "member": "string",
+          "name": "WebUrl",
           "output_required": false,
           "required": false,
           "type": "string",

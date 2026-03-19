@@ -233,9 +233,9 @@
     "CreateSmartSubtitleTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"示例\",\n    \"VideoSrcLanguage\": \"zh\",\n    \"SubtitleType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 202281,\n        \"RequestId\": \"42dc919b-2ec7-412c-85f0-88f003813d04\"\n    }\n}",
-        "title": "创建模板"
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"创建智能字幕模板\",\n    \"VideoSrcLanguage\": \"auto\",\n    \"SubtitleType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 286972,\n        \"RequestId\": \"d16800f5-479c-49b9-8ff1-62580cc87712\"\n    }\n}",
+        "title": "创建智能字幕模板"
       }
     ],
     "CreateSnapshotByTimeOffsetTemplate": [
@@ -284,6 +284,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamLinkSecurityGroup\n<公共请求参数>\n\n{\n    \"Name\": \"live_test\",\n    \"Whitelist\": [\n        \"102.102.102.102/32\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": \"019202e96d9f09dc0f325e7f7a2a\",\n        \"RequestId\": \"01937702c54509dc0f3269ca341f\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "CreateSubtitleEmbedTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubtitleEmbedTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"字幕压制模板\",\n    \"SubtitleEmbedConfig\": {\n        \"FontType\": \"kai\",\n        \"FontSize\": 50,\n        \"FontSizeUnit\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 260513,\n        \"RequestId\": \"3fceb699-e7de-4e17-8f6f-48976bf04c9e\"\n    }\n}",
+        "title": "创建字幕压制模板"
       }
     ],
     "CreateTranscodeTemplate": [
@@ -524,6 +532,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamLinkSecurityGroup\n<公共请求参数>\n\n{\n    \"Id\": \"01937702c54509dc0f3269ca341f\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"019202e96d9f09dc0f325e7f7a2a\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DeleteSubtitleEmbedTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSubtitleEmbedTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 259484\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81d235bc-7137-4346-919f-0d7343ce04ec\"\n    }\n}",
+        "title": "删除字幕压制模板"
       }
     ],
     "DeleteTranscodeTemplate": [
@@ -876,6 +892,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamLinkSecurityGroups\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Id\": \"019202e96d9f09dc0f325e7f7a2a\",\n                \"Name\": \"live_test\",\n                \"Whitelist\": [\n                    \"0.0.0.0\"\n                ],\n                \"OccupiedInputs\": [\n                    \"01937702c54509dc0f3269ca341f\"\n                ],\n                \"Region\": \"ap-shanghai\"\n            }\n        ],\n        \"RequestId\": \"019202e96d9f09dc0f325e7f7a2a\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeSubtitleEmbedTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubtitleEmbedTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SubtitleEmbedTemplateSet\": [\n            {\n                \"AliasName\": \"AutoFont-Background-LargeSize\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2026-03-17T15:06:16+08:00\",\n                \"Definition\": 4,\n                \"Name\": \"自动字体-有底大字幕\",\n                \"SubtitleEmbedConfig\": {\n                    \"CosInputInfo\": {\n                        \"Bucket\": \"\",\n                        \"Object\": \"\",\n                        \"Region\": \"\"\n                    },\n                    \"FontAlpha\": 1,\n                    \"FontColor\": \"0xFFFFFF\",\n                    \"FontPath\": \"\",\n                    \"FontSize\": 10,\n                    \"FontSizeUnit\": 1,\n                    \"FontType\": \"auto\",\n                    \"PosX\": 0,\n                    \"PosXUnit\": 1,\n                    \"PosY\": 13,\n                    \"PosYUnit\": 1,\n                    \"SampleHeight\": 0,\n                    \"SampleWidth\": 0,\n                    \"SubtitleBoardConfig\": {\n                        \"BoardAlpha\": 1,\n                        \"BoardColor\": \"0x000000\",\n                        \"BoardHeight\": 30,\n                        \"BoardHeightUnit\": 1,\n                        \"BoardWidth\": 90,\n                        \"BoardWidthUnit\": 1,\n                        \"BoardX\": 0,\n                        \"BoardXUnit\": 1,\n                        \"BoardY\": 10,\n                        \"BoardYUnit\": 1,\n                        \"SubtitleBoardConfigSwitch\": 1\n                    },\n                    \"SubtitleLayoutConfig\": {\n                        \"Alignment\": \"bottom\",\n                        \"LineSpacing\": 0,\n                        \"LineSpacingUnit\": 0,\n                        \"SubtitleLayoutConfigSwitch\": 0\n                    },\n                    \"SubtitleOutlineConfig\": {\n                        \"OutlineAlpha\": 1,\n                        \"OutlineColor\": \"0x000000\",\n                        \"OutlineWidth\": 1,\n                        \"OutlineWidthUnit\": 0,\n                        \"SubtitleOutlineConfigSwitch\": 1\n                    },\n                    \"SubtitleShadowConfig\": {\n                        \"ShadowAlpha\": 1,\n                        \"ShadowColor\": \"0x000000\",\n                        \"ShadowWidth\": 0,\n                        \"ShadowWidthUnit\": 0,\n                        \"SubtitleShadowConfigSwitch\": 0\n                    }\n                },\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2026-03-17T15:06:16+08:00\"\n            }\n        ],\n        \"TotalCount\": 12,\n        \"RequestId\": \"52176f0d-29bd-4b2c-bb84-1670cbbeac0f\"\n    }\n}",
+        "title": "获取字幕压制模板列表"
       }
     ],
     "DescribeTaskDetail": [
@@ -1235,8 +1259,8 @@
     "ModifySmartSubtitleTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 202281,\n    \"TranslateSwitch\": \"ON\",\n    \"Name\": \"新名字\",\n    \"SubtitleType\": 1,\n    \"TranslateDstLanguage\": \"en\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"569d5d19-d01c-4efc-97dc-4ea53ae95647\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 266307,\n    \"Name\": \"修改智能字幕模板名称\",\n    \"VideoSrcLanguage\": \"auto\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38bc8ff-9826-4a43-a7d3-ed4c370d305f\"\n    }\n}",
         "title": "修改智能字幕模板"
       }
     ],
@@ -1286,6 +1310,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamLinkSecurityGroup\n<公共请求参数>\n\n{\n    \"Id\": \"019202e96d9f09dc0f325e7f7a2a\",\n    \"Name\": \"live_test\",\n    \"Whitelist\": [\n        \"0.0.0.0\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"01937702c54509dc0f3269ca341f\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifySubtitleEmbedTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubtitleEmbedTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 278210,\n    \"Name\": \"camm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d5c55a9-6471-4877-8e8c-486b69e3810c\"\n    }\n}",
+        "title": "修改字幕压制模板"
       }
     ],
     "ModifyTranscodeTemplate": [

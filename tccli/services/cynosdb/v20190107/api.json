@@ -8759,7 +8759,7 @@
         {
           "disabled": false,
           "document": "用户Uin",
-          "example": "11111111",
+          "example": "700000611343",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -8769,7 +8769,7 @@
         {
           "disabled": false,
           "document": "用户AppId",
-          "example": "11111111",
+          "example": "251238074",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -9249,7 +9249,7 @@
         {
           "disabled": false,
           "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ap-guangzhou-4",
+          "example": "[\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "SlaveZones",
           "output_required": true,
@@ -17194,7 +17194,7 @@
         {
           "disabled": false,
           "document": "从可用区",
-          "example": "ap-guangzhou-6",
+          "example": "[\"ap-guangzhou-3\", \"ap-guangzhou-4\"]",
           "member": "string",
           "name": "SlaveZones",
           "output_required": true,

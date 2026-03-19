@@ -4523,7 +4523,7 @@
         {
           "disabled": false,
           "document": "四层匹配的目的端口",
-          "example": "7501",
+          "example": "[7501]",
           "member": "uint64",
           "name": "DestinationPorts",
           "required": false,
@@ -4564,6 +4564,15 @@
           "name": "RegexPriority",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "queryString参数",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "QueryStringParameters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7971,6 +7980,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关可以升级的版本号列表",
+          "example": "[\"2.5.1\",\"2.8.5\"]",
+          "member": "string",
+          "name": "AvailableUpgradeVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否提示可升级",
+          "example": "true",
+          "member": "bool",
+          "name": "AvailableUpgrade",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13928,7 +13957,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "GET",
+          "example": "[\"GET\"]",
           "member": "string",
           "name": "Methods",
           "output_required": true,
@@ -13939,7 +13968,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/v1/users",
+          "example": "[\"/v1/users\"]",
           "member": "string",
           "name": "Paths",
           "output_required": true,
@@ -13950,7 +13979,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tencent.com",
+          "example": "[\"tencent.com\"]",
           "member": "string",
           "name": "Hosts",
           "output_required": true,
@@ -13961,7 +13990,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "http",
+          "example": "[\"http\"]",
           "member": "string",
           "name": "Protocols",
           "output_required": true,
@@ -14049,7 +14078,7 @@
         {
           "disabled": false,
           "document": "目的端口",
-          "example": "8000",
+          "example": "[8000]",
           "member": "uint64",
           "name": "DestinationPorts",
           "output_required": true,
@@ -14099,6 +14128,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "querystring参数",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "QueryStringParameters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -15678,7 +15718,7 @@
         {
           "disabled": false,
           "document": "四层匹配的目的端口\t",
-          "example": "8000",
+          "example": "[8000]",
           "member": "uint64",
           "name": "DestinationPorts",
           "required": false,
@@ -15719,6 +15759,15 @@
           "name": "RegexPriority",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "querysring参数",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "QueryStringParameters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

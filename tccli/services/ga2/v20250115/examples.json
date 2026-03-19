@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeCrossBorderSettlement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderSettlement\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-00000020\",\n    \"AccelerateRegion\": \"ap-beijing\",\n    \"EndpointGroupRegion\": \"ap-singapore\",\n    \"SettlementMonth\": 202512\n}",
+        "output": "{\n    \"Response\": {\n        \"Traffic\": 47.024,\n        \"RequestId\": \"b2917667-b75c-4959-833a-b8b9d57022c9\"\n    }\n}",
+        "title": "查询跨境账单数据"
+      }
+    ]
+  },
+  "version": "1.0"
+}

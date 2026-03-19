@@ -322,6 +322,14 @@
         "title": "word文件转换示例"
       }
     ],
+    "CreateDigitalDataSign": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDigitalDataSign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw**********************Rl77mox\"\n    },\n    \"PlainText\": \"测试abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Certificate\": {\n            \"CommonName\": \"ESS*******************782683\",\n            \"IssuerCommonName\": \"NMGSCA TEST RSA OCA1\",\n            \"NotAfter\": 1800385201,\n            \"NotBefore\": 1768849201,\n            \"SerialNumber\": \"220***********ab\"\n        },\n        \"SignAlgorithm\": \"RSA\",\n        \"SignTimestamp\": \"MIIQHgYJKoZIhvNdoQ7niijSz8RtbRgul09Kcac9xiHwaU0SxCmU4pzu8IY0zL3Sk3qULParIU=\",\n        \"SignValue\": \"MIAGCSqGSIb3DQEHAqCAMIACAQGSIb3DQEHATAcBgkqhkiG9w0B\",\n        \"RequestId\": \"fe8f8be8-b5b6-4ca1-bc04-979139f95ebc\"\n    }\n}",
+        "title": "输入原文进行签名"
+      }
+    ],
     "CreateDocument": [
       {
         "document": "1.设置流程合同ID为yDwFmUUckpst10i3UubBSat8PWOt2iQF\n2.设置文档模板ID为yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR\n3.设置模板内的图片填写控件值",
@@ -2348,6 +2356,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyDigitFile\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"FileId\": \"yDwFdUUckpsveo27UEQPEVo14KnASuGI\"\n}",
         "output": "{\n    \"Response\": {\n        \"PdfResourceMd5\": \"213CA8C1C84B7BAA73F6FD3959C2F079\",\n        \"RequestId\": \"s1739352792186436957\",\n        \"VerifyDigitFileResults\": [\n            {\n                \"CertNotAfter\": 1754852419000,\n                \"CertNotBefore\": 1723316419000,\n                \"CertSn\": \"2201c8e9cdd3abb6\",\n                \"SignAlgorithm\": \"SHA256withRSA\",\n                \"SignTime\": 1737103505000,\n                \"SignType\": 1,\n                \"SignerName\": \"ESS@XXXXX责任公司测试@662001\"\n            }\n        ],\n        \"VerifyResult\": 1,\n        \"VerifySerialNo\": \"17393527923979\"\n    }\n}",
         "title": "加签文件验证成功示例"
+      }
+    ],
+    "VerifyDigitalDataSign": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyDigitalDataSign\n<公共请求参数>\n\n{\n    \"PlainText\": \"测试******23\",\n    \"SignValue\": \"MIAGCSqGSIb3DQE1UBg3UERzBFAiEAvMEVUnoR2hWQSNqZAuyoMquMEyiNoEGbTBKhsU0SNsYCIHBzwcKT7jSQop+jsQwtkcxNri90GoowhROnIqpb5dDBAAAAAAAA\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Certificate\": {\n            \"CommonName\": \"ESS*********8698\",\n            \"IssuerCommonName\": \"NMGSCA TEST SM2 OCA1\",\n            \"NotAfter\": 1804749985,\n            \"NotBefore\": 1773213985,\n            \"SerialNumber\": \"220**********959\"\n        },\n        \"VerifyResult\": 1,\n        \"RequestId\": \"11fde571-5c11-477c-9973-7734f8d87c3b\"\n    }\n}",
+        "title": "对签名数据进行验证"
       }
     ],
     "VerifyPdf": [

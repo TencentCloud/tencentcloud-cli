@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdn DescribeTopData --cli-unfold-argument  \
-    --StartTime '2018-09-04 00:00:00' \
-    --EndTime '2018-09-04 12:00:00' \
+    --StartTime 2018-09-04 \
+    --EndTime 2018-09-04 \
     --Metric ua_device \
     --Filter request \
     --Domains www.test.com www.test.com

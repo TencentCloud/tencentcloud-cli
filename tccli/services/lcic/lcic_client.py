@@ -1942,7 +1942,7 @@ def doCreateGroupLiveCodes(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteUser(args, parsed_globals):
+def doDescribeLiveRelayConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1974,11 +1974,11 @@ def doDeleteUser(args, parsed_globals):
     client = mod.LcicClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteUserRequest()
+    model = models.DescribeLiveRelayConfigRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteUser(model)
+        rsp = client.DescribeLiveRelayConfig(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2877,7 +2877,7 @@ def doDescribeGroupList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLoginUser(args, parsed_globals):
+def doDeleteUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2909,11 +2909,11 @@ def doLoginUser(args, parsed_globals):
     client = mod.LcicClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LoginUserRequest()
+    model = models.DeleteUserRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.LoginUser(model)
+        rsp = client.DeleteUser(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3189,6 +3189,61 @@ def doDescribeGroupMemberList(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeGroupMemberList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyLiveRelayConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LcicClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyLiveRelayConfigRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyLiveRelayConfig(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3537,7 +3592,7 @@ def doBatchDeleteRecord(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetRooms(args, parsed_globals):
+def doLoginUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3569,11 +3624,11 @@ def doGetRooms(args, parsed_globals):
     client = mod.LcicClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetRoomsRequest()
+    model = models.LoginUserRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GetRooms(model)
+        rsp = client.LoginUser(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4142,6 +4197,61 @@ def doUnblockKickedUser(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetRooms(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LcicClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetRoomsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.GetRooms(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeMarquee(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -4463,7 +4573,7 @@ ACTION_MAP = {
     "BatchAddGroupMember": doBatchAddGroupMember,
     "BatchDeleteGroupMember": doBatchDeleteGroupMember,
     "CreateGroupLiveCodes": doCreateGroupLiveCodes,
-    "DeleteUser": doDeleteUser,
+    "DescribeLiveRelayConfig": doDescribeLiveRelayConfig,
     "DescribeRoom": doDescribeRoom,
     "DescribeUserDetail": doDescribeUserDetail,
     "DescribeDocuments": doDescribeDocuments,
@@ -4480,19 +4590,20 @@ ACTION_MAP = {
     "DescribePlaybackList": doDescribePlaybackList,
     "ForbidSendMsg": doForbidSendMsg,
     "DescribeGroupList": doDescribeGroupList,
-    "LoginUser": doLoginUser,
+    "DeleteUser": doDeleteUser,
     "CreateGroupWithMembers": doCreateGroupWithMembers,
     "CreateSupervisor": doCreateSupervisor,
     "DescribeQuestionList": doDescribeQuestionList,
     "SetAppCustomContent": doSetAppCustomContent,
     "DescribeGroupMemberList": doDescribeGroupMemberList,
+    "ModifyLiveRelayConfig": doModifyLiveRelayConfig,
     "DescribeCurrentMemberList": doDescribeCurrentMemberList,
     "DescribeAppDetail": doDescribeAppDetail,
     "GetRoomEvent": doGetRoomEvent,
     "DeleteDocument": doDeleteDocument,
     "StopRecord": doStopRecord,
     "BatchDeleteRecord": doBatchDeleteRecord,
-    "GetRooms": doGetRooms,
+    "LoginUser": doLoginUser,
     "EndRoom": doEndRoom,
     "SetMarquee": doSetMarquee,
     "DescribeAnswerList": doDescribeAnswerList,
@@ -4503,6 +4614,7 @@ ACTION_MAP = {
     "DescribeGroupLiveCodes": doDescribeGroupLiveCodes,
     "StartRecord": doStartRecord,
     "UnblockKickedUser": doUnblockKickedUser,
+    "GetRooms": doGetRooms,
     "DescribeMarquee": doDescribeMarquee,
     "ModifyUserProfile": doModifyUserProfile,
     "BatchCreateGroupWithMembers": doBatchCreateGroupWithMembers,

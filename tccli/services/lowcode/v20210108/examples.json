@@ -84,7 +84,7 @@
       {
         "document": "查询环境下的知识库列表",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeSetList\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxxx\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KnowledgeSets\": [\n                {\n                    \"Name\": \"name\",\n                    \"Title\": \"title\",\n                    \"Desc\": \"desc\",\n                    \"Active\": \"ENABLED\",\n                    \"CreateTime\": \"2024-06-04 18:07:38\",\n                    \"UpdateTime\": \"2024-06-04 18:09:29\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"f549082e-0cff-4026-96f6-a570d9f1c22d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KnowledgeSets\": [\n                {\n                    \"Name\": \"name\",\n                    \"Title\": \"title\",\n                    \"Desc\": \"desc\",\n                    \"Active\": \"ENABLED\",\n                    \"CreateTime\": \"2024-06-04 18:07:38\",\n                    \"UpdateTime\": \"2024-06-04 18:09:29\",\n                    \"Meta\": \"meta信息\",\n                    \"TotalSize\": \"1024\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"f549082e-0cff-4026-96f6-a570d9f1c22d\"\n    }\n}",
         "title": "查询环境下的知识库列表"
       }
     ],

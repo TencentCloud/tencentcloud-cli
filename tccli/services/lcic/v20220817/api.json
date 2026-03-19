@@ -259,6 +259,13 @@
       "output": "DescribeGroupMemberListResponse",
       "status": "online"
     },
+    "DescribeLiveRelayConfig": {
+      "document": "获取转推配置",
+      "input": "DescribeLiveRelayConfigRequest",
+      "name": "获取转推配置",
+      "output": "DescribeLiveRelayConfigResponse",
+      "status": "online"
+    },
     "DescribeMarquee": {
       "document": "查询跑马灯配置",
       "input": "DescribeMarqueeRequest",
@@ -467,6 +474,13 @@
       "input": "ModifyGroupRequest",
       "name": "修改群组",
       "output": "ModifyGroupResponse",
+      "status": "online"
+    },
+    "ModifyLiveRelayConfig": {
+      "document": "修改转推配置",
+      "input": "ModifyLiveRelayConfigRequest",
+      "name": "修改转推配置",
+      "output": "ModifyLiveRelayConfigResponse",
       "status": "online"
     },
     "ModifyRoom": {
@@ -3515,6 +3529,72 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveRelayConfigRequest": {
+      "document": "DescribeLiveRelayConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码互动课堂的SdkAppId</p>",
+          "example": "3520371",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID</p>",
+          "example": "358219518",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveRelayConfigResponse": {
+      "document": "DescribeLiveRelayConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转推类型</p><p>枚举值：</p><ul><li>0： 单流</li><li>1： 混流</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RelayType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>转推URL</p>",
+          "example": "[\"rtmp://***5*l*v**u********oud.**m*li*e/*l**?*****ret=*****58d9846f***4b*b*0*c****885d&txT********5C73\"]",
+          "member": "string",
+          "name": "Urls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是腾讯云CDN。</p><p>枚举值：</p><ul><li>0： 转推非腾讯云CDN</li><li>1： 转推腾讯CDN</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsTencentCdn",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6796,6 +6876,69 @@
       ],
       "type": "object"
     },
+    "ModifyLiveRelayConfigRequest": {
+      "document": "ModifyLiveRelayConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>低代码互动课堂的SdkAppId</p>",
+          "example": "3520371",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间ID</p>",
+          "example": "358219518",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转推类型</p><p>枚举值：</p><ul><li>0： 单流</li><li>1： 混流</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RelayType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转推URL</p>",
+          "example": "[\"rtmp://2****.*i******.my***oud**o*/*rt*_*4*0315010/1400315010*****4*********s*****_main?txSecret=55************79b40fd3fc2a*8ab*9&*x*i*e*****ECB8\"]",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是腾讯云CDN（默认为0）</p><p>枚举值：</p><ul><li>0： 转推非腾讯CDN</li><li>1： 转推腾讯CDN</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsTencentCdn",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveRelayConfigResponse": {
+      "document": "ModifyLiveRelayConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRoomRequest": {
       "document": "ModifyRoom请求参数结构体",
       "members": [
@@ -7326,6 +7469,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小。</p><p>单位：MB</p>",
+          "example": "0",
+          "member": "float",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

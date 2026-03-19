@@ -77,6 +77,13 @@
       "output": "CopyCasterResponse",
       "status": "online"
     },
+    "CopyLiveAvatarRoom": {
+      "document": "调用该接口，用于复制数字人直播间。",
+      "input": "CopyLiveAvatarRoomRequest",
+      "name": "复制数字人直播间",
+      "output": "CopyLiveAvatarRoomResponse",
+      "status": "online"
+    },
     "CreateAuditKeywordLib": {
       "document": "创建关键词库，直播审核功能使用。",
       "input": "CreateAuditKeywordLibRequest",
@@ -131,6 +138,20 @@
       "input": "CreateCommonMixStreamRequest",
       "name": "创建通用混流",
       "output": "CreateCommonMixStreamResponse",
+      "status": "online"
+    },
+    "CreateLiveAvatarRoom": {
+      "document": "调用该接口，用于创建数字人直播间。",
+      "input": "CreateLiveAvatarRoomRequest",
+      "name": "创建数字人直播间",
+      "output": "CreateLiveAvatarRoomResponse",
+      "status": "online"
+    },
+    "CreateLiveAvatarScript": {
+      "document": "调用该接口，用于创建数字人直播间话术。",
+      "input": "CreateLiveAvatarScriptRequest",
+      "name": "创建数字人直播间话术",
+      "output": "CreateLiveAvatarScriptResponse",
       "status": "online"
     },
     "CreateLiveCallbackRule": {
@@ -320,6 +341,20 @@
       "input": "DeleteCasterOutputInfoRequest",
       "name": "删除导播台推流信息",
       "output": "DeleteCasterOutputInfoResponse",
+      "status": "online"
+    },
+    "DeleteLiveAvatarRoom": {
+      "document": "调用该接口，用于删除已有的数字人直播间。",
+      "input": "DeleteLiveAvatarRoomRequest",
+      "name": "删除数字人直播间",
+      "output": "DeleteLiveAvatarRoomResponse",
+      "status": "online"
+    },
+    "DeleteLiveAvatarScript": {
+      "document": "调用该接口，用于删除已有的数字人直播间里面的话术。",
+      "input": "DeleteLiveAvatarScriptRequest",
+      "name": "删除数字人直播间话术",
+      "output": "DeleteLiveAvatarScriptResponse",
       "status": "online"
     },
     "DeleteLiveCallbackRule": {
@@ -628,6 +663,48 @@
       "input": "DescribeHttpStatusInfoListRequest",
       "name": "查询播放http状态码明细数据",
       "output": "DescribeHttpStatusInfoListResponse",
+      "status": "online"
+    },
+    "DescribeLiveAvatarBackgroundList": {
+      "document": "调用该接口，获取可用的数字人背景列表信息列表。根据入参，可返回官方预设背景，以及用户上传背景。",
+      "input": "DescribeLiveAvatarBackgroundListRequest",
+      "name": "查询直播数字人背景列表",
+      "output": "DescribeLiveAvatarBackgroundListResponse",
+      "status": "online"
+    },
+    "DescribeLiveAvatarImageList": {
+      "document": "调用该接口，获取可用的数字人形象信息列表。包括官方预制形象，以及个人定制形象。",
+      "input": "DescribeLiveAvatarImageListRequest",
+      "name": "查询直播数字人形象列表",
+      "output": "DescribeLiveAvatarImageListResponse",
+      "status": "online"
+    },
+    "DescribeLiveAvatarRooms": {
+      "document": "调用该接口，查询数字人直播间信息列表。",
+      "input": "DescribeLiveAvatarRoomsRequest",
+      "name": "查询数字人直播间",
+      "output": "DescribeLiveAvatarRoomsResponse",
+      "status": "online"
+    },
+    "DescribeLiveAvatarScripts": {
+      "document": "调用该接口，查询数字人直播间话术信息列表。",
+      "input": "DescribeLiveAvatarScriptsRequest",
+      "name": "查询数字人直播间话术列表",
+      "output": "DescribeLiveAvatarScriptsResponse",
+      "status": "online"
+    },
+    "DescribeLiveAvatarTemporaryScriptList": {
+      "document": "调用该接口，用于查询临时驱动数字人播报话术列表。",
+      "input": "DescribeLiveAvatarTemporaryScriptListRequest",
+      "name": "查询数字人直播间临时话术列表",
+      "output": "DescribeLiveAvatarTemporaryScriptListResponse",
+      "status": "online"
+    },
+    "DescribeLiveAvatarTimbreList": {
+      "document": "调用该接口，获取可用的数字人声音信息列表。包括官方预制音色，以及个人复刻音色。",
+      "input": "DescribeLiveAvatarTimbreListRequest",
+      "name": "查询直播数字人音色列表",
+      "output": "DescribeLiveAvatarTimbreListResponse",
       "status": "online"
     },
     "DescribeLiveCallbackRules": {
@@ -1169,6 +1246,13 @@
       "output": "ForbidLiveStreamResponse",
       "status": "online"
     },
+    "GenerateLiveAvatarScriptBroadcast": {
+      "document": "调用该接口，用于触发话术播报生成，并返回音频播报URL。",
+      "input": "GenerateLiveAvatarScriptBroadcastRequest",
+      "name": "生成数字人话术播报",
+      "output": "GenerateLiveAvatarScriptBroadcastResponse",
+      "status": "online"
+    },
     "InsertTaskTemporaryFiles": {
       "document": "可通过调用该接口，对点播源的直播拉流任务进行插播操作。\n注意：\n1. 仅支持对有效且运行中的点播源任务进行插播操作。\n2. 拉转推插播文件时，事件及回调中的索引均保持为插播前的值。",
       "input": "InsertTaskTemporaryFilesRequest",
@@ -1216,6 +1300,20 @@
       "input": "ModifyCasterOutputInfoRequest",
       "name": "修改导播台推流信息",
       "output": "ModifyCasterOutputInfoResponse",
+      "status": "online"
+    },
+    "ModifyLiveAvatarRoom": {
+      "document": "调用该接口，用于修改数字人直播间。",
+      "input": "ModifyLiveAvatarRoomRequest",
+      "name": "修改数字人直播间配置",
+      "output": "ModifyLiveAvatarRoomResponse",
+      "status": "online"
+    },
+    "ModifyLiveAvatarScript": {
+      "document": "调用该接口，用于修改数字人直播间话术。",
+      "input": "ModifyLiveAvatarScriptRequest",
+      "name": "修改数字人直播间话术",
+      "output": "ModifyLiveAvatarScriptResponse",
       "status": "online"
     },
     "ModifyLiveCallbackTemplate": {
@@ -1358,6 +1456,20 @@
       "output": "SendLiveCloudEffectResponse",
       "status": "online"
     },
+    "SendTemporaryScriptToAvatarRoom": {
+      "document": "调用该接口，用于临时驱动数字人播报。",
+      "input": "SendTemporaryScriptToAvatarRoomRequest",
+      "name": "发送数字人直播间临时话术",
+      "output": "SendTemporaryScriptToAvatarRoomResponse",
+      "status": "online"
+    },
+    "StartLiveAvatarRoom": {
+      "document": "调用该接口，用于启动数字人直播间。",
+      "input": "StartLiveAvatarRoomRequest",
+      "name": "启动数字人直播间",
+      "output": "StartLiveAvatarRoomResponse",
+      "status": "online"
+    },
     "StartLivePadStream": {
       "document": "使用该接口将直播流开始切入垫片。",
       "input": "StartLivePadStreamRequest",
@@ -1384,6 +1496,13 @@
       "input": "StopCasterPvwRequest",
       "name": "停止导播台预监任务",
       "output": "StopCasterPvwResponse",
+      "status": "online"
+    },
+    "StopLiveAvatarRoom": {
+      "document": "调用该接口，用于停止数字人直播间。",
+      "input": "StopLiveAvatarRoomRequest",
+      "name": "停止数字人直播间",
+      "output": "StopLiveAvatarRoomResponse",
       "status": "online"
     },
     "StopLivePadStream": {
@@ -2073,6 +2192,544 @@
         }
       ],
       "type": "object"
+    },
+    "AvatarAnchorInfo": {
+      "document": "数字人主播信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主播昵称。同一个主播可以存在多个数字人ID。",
+          "example": "小王",
+          "member": "string",
+          "name": "AnchorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主播 ID。用于标识主播形象。同一个主播ID可存在竖屏和横屏两种数字人。",
+          "example": "self_male_green_dress_half_stand_1",
+          "member": "string",
+          "name": "AnchorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主播性别。male-男性，femal-女性。",
+          "example": "femal",
+          "member": "string",
+          "name": "AnchorGender",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "形象图片。",
+          "example": "https://test.cos.ap-nanjing.myqcloud.com/prod/resource-manager/swap/773/8479/sit/yc_blue_suit/15411_20240227200115/preview.png",
+          "member": "string",
+          "name": "PoseImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主播形象图片的分辨率。",
+          "example": "562*1923",
+          "member": "string",
+          "name": "PoseImageResolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "形象预览视频段。",
+          "example": "https://test.cos.ap-nanjing.myqcloud.com/prod/resource-manager/swap/773/8479/sit/yc_blue_suit/15411_20240227200115/preview.mp4",
+          "member": "string",
+          "name": "ReferenceVideoSegmentUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "横屏数字人信息。",
+          "example": "无",
+          "member": "AvatarImageInfo",
+          "name": "HorizontalAvatar",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "竖屏数字人信息。",
+          "example": "无",
+          "member": "AvatarImageInfo",
+          "name": "VerticalAvatar",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推荐音色。",
+          "example": "601001",
+          "member": "string",
+          "name": "SuggestTimbreKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvatarBackgroundInfo": {
+      "document": "数字人背景信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "背景 ID。",
+          "example": "2000",
+          "member": "string",
+          "name": "BackgroundId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "背景场景。如：带货，娱乐等。",
+          "example": "带货",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "竖屏背景图片 URL。",
+          "example": "https://test.cos.ap-nanjing.myqcloud.com/prod/resource-manager/swap/yc_blue_suit/15411_20240227200115/preview.png",
+          "member": "string",
+          "name": "VerticalImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "横屏背景图片 URL。",
+          "example": "https://test.cos.ap-nanjing.myqcloud.com/prod/resource-manager/swap/yc_blue_suit/preview.png",
+          "member": "string",
+          "name": "HorizontalImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvatarImageInfo": {
+      "document": "数字人形象信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人原始缩放系数。数字人展示大小=原始大小*缩放系数。",
+          "example": "1.0",
+          "member": "float",
+          "name": "OriginZoom",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字人KEY。",
+          "example": "2e763fcec0604ad984ff0bbe60200e7f",
+          "member": "string",
+          "name": "AvatarKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分辨率。",
+          "example": "1080x1920",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvatarRoomInfo": {
+      "document": "数字人直播间信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "RoomId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字人直播间名称。",
+          "example": "live",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字人直播间状态，\nCLOSE - 未开播。\nOPEN - 直播中。\n",
+          "example": "live",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字人形象 KEY。",
+          "example": "fessdfs",
+          "member": "string",
+          "name": "AvatarKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色 KEy。",
+          "example": "fsefsae",
+          "member": "string",
+          "name": "TimbreKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字人形象图片 URL。",
+          "example": "http://avatar.image.com/live/test.png",
+          "member": "string",
+          "name": "AvatarImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "背景图片 URL。",
+          "example": "http://avatar.background.com/live/test.png",
+          "member": "string",
+          "name": "BackgroundUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推流目标描述。",
+          "example": "第三方平台",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标推流地址。",
+          "example": "rtmp://my.push.com/live/test",
+          "member": "string",
+          "name": "ToUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主播大小，默认1.00。 取值范围(0, 15.00]。",
+          "example": "1.00",
+          "member": "float",
+          "name": "AnchorScale",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主播纵向位置。默认-1贴底部。",
+          "example": "10",
+          "member": "int64",
+          "name": "AnchorVerticalPos",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主播横向位置。默认-1居中。",
+          "example": "8",
+          "member": "int64",
+          "name": "AnchorHorizontalPos",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语速（1.0为正常语速，范围[0.5-1.5]，值为0.5时播报语速最慢，值为1.5时播报语速最快。",
+          "example": "1.0",
+          "member": "float",
+          "name": "SpeechSpeed",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音量大小，范围[0，10]，对应音量大小。默认为0，代表正常音量，值越大音量越高。",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeechVolume",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "直播间创建时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "example": "2025-07-02T00:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "直播间最后更新时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "example": "2025-07-03T00:00:00Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvatarScriptInfo": {
+      "document": "数字人直播间话术信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间话术 ID。",
+          "example": "1000",
+          "member": "string",
+          "name": "ScriptId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "话术标题。",
+          "example": "标题",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "话术内容。",
+          "example": "live",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "话术状态。\nPENDING --未生成。\nPROCESSING --生成中。\nREADY --已生成。",
+          "example": "PENDING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时长。单位：毫秒。",
+          "example": "1200",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "话术位置。",
+          "example": "100",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "话术创建时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "example": "2025-07-02T00:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "话术最后更新时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "example": "2025-07-03T00:00:00Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvatarTemporaryScriptInfo": {
+      "document": "数字人直播间临时话术信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "话术内容。",
+          "example": "今天卖方便面",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "话术创建时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "example": "2025-08-11T00:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvatarTimbreInfo": {
+      "document": "数字人声音信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音色 Key。",
+          "example": "female_1",
+          "member": "string",
+          "name": "TimbreKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色名称。",
+          "example": "女声1",
+          "member": "string",
+          "name": "TimbreName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色描述。",
+          "example": "温柔磁性",
+          "member": "string",
+          "name": "TimbreDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色试听样例 URL。",
+          "example": "https://virtualhuman-cos-prod-1251316161.cos.ap-nanjing.test.wav",
+          "member": "string",
+          "name": "TimbreSample",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色性别，male:男音，femal:女音。",
+          "example": "male",
+          "member": "string",
+          "name": "TimbreGender",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvatarTimbreList": {
+      "document": "数字人音色信息列表。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音色 类型。",
+          "example": "对话",
+          "member": "string",
+          "name": "TimbreType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色信息列表。",
+          "example": "无",
+          "member": "AvatarTimbreInfo",
+          "name": "TimbreInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BackupStreamDetailData": {
       "document": "主备流详细信息。",
@@ -4533,6 +5190,70 @@
       ],
       "type": "object"
     },
+    "CopyLiveAvatarRoomRequest": {
+      "document": "CopyLiveAvatarRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新直播间名称。",
+          "example": "new live room",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源数字人直播间 ID。",
+          "example": "10001",
+          "member": "string",
+          "name": "SourceRoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否复制话术列表。默认：true。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCopyScript",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyLiveAvatarRoomResponse": {
+      "document": "CopyLiveAvatarRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "RoomId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAuditKeywordLibRequest": {
       "document": "CreateAuditKeywordLib请求参数结构体",
       "members": [
@@ -5078,6 +5799,125 @@
     "CreateCommonMixStreamResponse": {
       "document": "CreateCommonMixStream返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveAvatarRoomRequest": {
+      "document": "CreateLiveAvatarRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播间名称。",
+          "example": "my live",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveAvatarRoomResponse": {
+      "document": "CreateLiveAvatarRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10003",
+          "member": "string",
+          "name": "RoomId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveAvatarScriptRequest": {
+      "document": "CreateLiveAvatarScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "话术标题。限制500字节。",
+          "example": "进入主题",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。",
+          "example": "hello, this is avatar.",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "话术所属的数字人直播间 ID。",
+          "example": "10001",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "话术插入时，可根据已有话术位置，指定新话术插入位置。\n如已有三条话术100，200，300。\n新话术可选择150插入到第一条和第二条中间。",
+          "example": "50",
+          "member": "int64",
+          "name": "SpecifyPosition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveAvatarScriptResponse": {
+      "document": "CreateLiveAvatarScript返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "话术 ID。",
+          "example": "10003",
+          "member": "string",
+          "name": "ScriptId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7583,6 +8423,60 @@
       ],
       "type": "object"
     },
+    "DeleteLiveAvatarRoomRequest": {
+      "document": "DeleteLiveAvatarRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播间ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveAvatarRoomResponse": {
+      "document": "DeleteLiveAvatarRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveAvatarScriptRequest": {
+      "document": "DeleteLiveAvatarScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "话术ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "ScriptId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveAvatarScriptResponse": {
+      "document": "DeleteLiveAvatarScript返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLiveCallbackRuleRequest": {
       "document": "DeleteLiveCallbackRule请求参数结构体",
       "members": [
@@ -9613,6 +10507,302 @@
           "member": "HttpStatusData",
           "name": "DataInfoList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarBackgroundListRequest": {
+      "document": "DescribeLiveAvatarBackgroundList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveAvatarBackgroundListResponse": {
+      "document": "DescribeLiveAvatarBackgroundList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人背景图片信息列表。",
+          "example": "无",
+          "member": "AvatarBackgroundInfo",
+          "name": "InfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarImageListRequest": {
+      "document": "DescribeLiveAvatarImageList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveAvatarImageListResponse": {
+      "document": "DescribeLiveAvatarImageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人形象信息列表。",
+          "example": "无",
+          "member": "AvatarAnchorInfo",
+          "name": "ImageInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarRoomsRequest": {
+      "document": "DescribeLiveAvatarRooms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字人直播间名称。",
+          "example": "live",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询的页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询的每页个数。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarRoomsResponse": {
+      "document": "DescribeLiveAvatarRooms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间信息列表。",
+          "example": "无",
+          "member": "AvatarRoomInfo",
+          "name": "InfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限制可创建的数字人直播间总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "LimitCreateNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前数字人直播间总个数。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarScriptsRequest": {
+      "document": "DescribeLiveAvatarScripts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "1001",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字人直播间话术 ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "ScriptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询的页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询的每页个数。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarScriptsResponse": {
+      "document": "DescribeLiveAvatarScripts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间话术信息列表。",
+          "example": "无",
+          "member": "AvatarScriptInfo",
+          "name": "InfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限制可创建的数字人直播间话术总条数。",
+          "example": "100",
+          "member": "int64",
+          "name": "LimitCreateNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前数字人直播间话术总条数。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarTemporaryScriptListRequest": {
+      "document": "DescribeLiveAvatarTemporaryScriptList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10001",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarTemporaryScriptListResponse": {
+      "document": "DescribeLiveAvatarTemporaryScriptList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时话术列表。",
+          "example": "无",
+          "member": "AvatarTemporaryScriptInfo",
+          "name": "InfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarTimbreListRequest": {
+      "document": "DescribeLiveAvatarTimbreList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤音色性别。默认不过滤。\nmale - 男性，\nfemale -女性。",
+          "example": "male",
+          "member": "string",
+          "name": "TimbreGender",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarTimbreListResponse": {
+      "document": "DescribeLiveAvatarTimbreList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人声音信息列表。",
+          "example": "无",
+          "member": "AvatarTimbreList",
+          "name": "TimbreList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15273,6 +16463,79 @@
       ],
       "type": "object"
     },
+    "GenerateLiveAvatarScriptBroadcastRequest": {
+      "document": "GenerateLiveAvatarScriptBroadcast请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10020",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "话术 ID。",
+          "example": "20013",
+          "member": "string",
+          "name": "ScriptId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音色 Key。如果不填，则默认使用数字人直播已经保存的音色。",
+          "example": "14356",
+          "member": "string",
+          "name": "TimbreKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。不传默认使用数字人直播间已设置的语速。",
+          "example": "1.0",
+          "member": "float",
+          "name": "SpeechSpeed",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。不传使用数字人直播已设置的音量。",
+          "example": "5",
+          "member": "int64",
+          "name": "SpeechVolume",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateLiveAvatarScriptBroadcastResponse": {
+      "document": "GenerateLiveAvatarScriptBroadcast返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频播报 URL。",
+          "example": "http://audio.com/preview/audio.mp3",
+          "member": "string",
+          "name": "PreviewAudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GroupProIspDataInfo": {
       "document": "某省份某运营商在某段时间内的带宽，流量，请求数和并发数",
       "members": [
@@ -16665,6 +17928,186 @@
     },
     "ModifyCasterResponse": {
       "document": "ModifyCaster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveAvatarRoomRequest": {
+      "document": "ModifyLiveAvatarRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "直播间名称。",
+          "example": "my live",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字人形象KEY。",
+          "example": "sfsdfefsd",
+          "member": "string",
+          "name": "AvatarKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音色KEY。",
+          "example": "afdsdfs",
+          "member": "string",
+          "name": "TimbreKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "背景图片URL。",
+          "example": "http://avatar.image.com/live/background.png",
+          "member": "string",
+          "name": "BackgroundUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主播大小，默认1.00。\n取值范围(0, 15.00]。\n精度：使用小数点后两位。",
+          "example": "1.00",
+          "member": "float",
+          "name": "AnchorScale",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "主播纵向位置。默认-1贴底部。\n左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。\n即该纵向位置最大为：数字人分辨率的高 - 形象高。",
+          "example": "10",
+          "member": "int64",
+          "name": "AnchorVerticalPos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主播横向位置。默认-1居中。\n左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。\n即最大值为：数字人分辨率的宽 - 形象宽。",
+          "example": "10",
+          "member": "int64",
+          "name": "AnchorHorizontalPos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。",
+          "example": "1.0",
+          "member": "float",
+          "name": "SpeechSpeed",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。",
+          "example": "5",
+          "member": "int64",
+          "name": "SpeechVolume",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveAvatarRoomResponse": {
+      "document": "ModifyLiveAvatarRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveAvatarScriptRequest": {
+      "document": "ModifyLiveAvatarScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间话术 ID。",
+          "example": "10002",
+          "member": "string",
+          "name": "ScriptId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "话术标题，限制500字节。",
+          "example": "标题",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "话术内容，限制1000字节。",
+          "example": "hello",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改已有话术的位置。\n比如已有话术三条，位置分别为100，200，300。\n可将第三条话术改到第一条和第二条中间，则可指定第三条话术的位置为 150。\n每次指定尽量取两条话术的中间位置，如50,150等，为后面顺序调整预留位置。",
+          "example": "50",
+          "member": "int64",
+          "name": "SpecifyPosition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveAvatarScriptResponse": {
+      "document": "ModifyLiveAvatarScript返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20632,6 +22075,42 @@
       ],
       "type": "object"
     },
+    "SendTemporaryScriptToAvatarRoomRequest": {
+      "document": "SendTemporaryScriptToAvatarRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10023",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "临时话术，最长不超过500字。",
+          "example": "今天中午吃饭了么",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendTemporaryScriptToAvatarRoomResponse": {
+      "document": "SendTemporaryScriptToAvatarRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SnapshotTemplateInfo": {
       "document": "截图模板信息。",
       "members": [
@@ -20757,6 +22236,60 @@
         }
       ],
       "usage": "out"
+    },
+    "StartLiveAvatarRoomRequest": {
+      "document": "StartLiveAvatarRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10001",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标地址描述。",
+          "example": "推往视频号",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "推流目标地址。",
+          "example": "rtmp://5000.livepush.com/live/stream",
+          "member": "string",
+          "name": "ToUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartLiveAvatarRoomResponse": {
+      "document": "StartLiveAvatarRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StartLivePadStreamRequest": {
       "document": "StartLivePadStream请求参数结构体",
@@ -20892,6 +22425,42 @@
     },
     "StopCasterPvwResponse": {
       "document": "StopCasterPvw返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLiveAvatarRoomRequest": {
+      "document": "StopLiveAvatarRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字人直播间 ID。",
+          "example": "10001",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLiveAvatarRoomResponse": {
+      "document": "StopLiveAvatarRoom返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

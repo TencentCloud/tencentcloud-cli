@@ -253,11 +253,11 @@
       "status": "online"
     },
     "DeletePolicyGroup": {
-      "document": "删除告警策略组",
+      "document": "告警 1.0 API，不能再使用否则会导致后端数据不一致\n\n删除告警策略组",
       "input": "DeletePolicyGroupRequest",
       "name": "删除告警策略组",
       "output": "DeletePolicyGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeletePrometheusAlertGroups": {
       "document": "删除Prometheus告警规则分组",

@@ -7,6 +7,13 @@
       "output": "CreateApplicationResponse",
       "status": "online"
     },
+    "CreateInferServiceByTemplate": {
+      "document": "本接口(CreateInferServiceByTemplate)用于根据模板创建服务",
+      "input": "CreateInferServiceByTemplateRequest",
+      "name": "根据模板创建服务",
+      "output": "CreateInferServiceByTemplateResponse",
+      "status": "online"
+    },
     "CreateMuskPrompt": {
       "document": "创建musk prompt 任务",
       "input": "CreateMuskPromptRequest",
@@ -14,11 +21,25 @@
       "output": "CreateMuskPromptResponse",
       "status": "online"
     },
+    "DeployInferService": {
+      "document": "本接口(DeployInferService)用于部署推理服务",
+      "input": "DeployInferServiceRequest",
+      "name": "部署推理服务",
+      "output": "DeployInferServiceResponse",
+      "status": "online"
+    },
     "DescribeApplications": {
       "document": "本接口（DescribeApplications）用于查询应用",
       "input": "DescribeApplicationsRequest",
       "name": "查询应用",
       "output": "DescribeApplicationsResponse",
+      "status": "online"
+    },
+    "DescribeDeployTemplates": {
+      "document": "本接口(DescribeDeployTemplates)用于查询模型支持的部署模板",
+      "input": "DescribeDeployTemplatesRequest",
+      "name": "查询模型支持的部署模板",
+      "output": "DescribeDeployTemplatesResponse",
       "status": "online"
     },
     "DescribeInstanceNetworkStatus": {
@@ -33,6 +54,13 @@
       "input": "DescribeInstancesRequest",
       "name": "查询实例",
       "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribeModels": {
+      "document": "本接口(DescribeModels)用于查询模型",
+      "input": "DescribeModelsRequest",
+      "name": "查询模型",
+      "output": "DescribeModelsResponse",
       "status": "online"
     },
     "DescribeMuskPrompts": {
@@ -330,6 +358,54 @@
       ],
       "usage": "out"
     },
+    "ComputeInfo": {
+      "document": "资源相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型及数量",
+          "example": "无",
+          "member": "ComputeResource",
+          "name": "ComputeResources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "副本数",
+          "example": "3",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComputeResource": {
+      "document": "推理服务的算力资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算力套餐的类型",
+          "example": "96G_A*8",
+          "member": "string",
+          "name": "BundleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "ContainerInfo": {
       "document": "容器信息",
       "members": [
@@ -446,6 +522,88 @@
       ],
       "type": "object"
     },
+    "CreateInferServiceByTemplateRequest": {
+      "document": "CreateInferServiceByTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模版ID",
+          "example": "tpl-gxbn79mi",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "Qwen3-235B-A22B",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "副本数",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费方式，POSTPAID_BY_HOUR按量后付费",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ServiceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述了服务的超参数配置",
+          "example": "无",
+          "member": "HyperParam",
+          "name": "HyperParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "网络设置",
+          "example": "无",
+          "member": "NetworkSetting",
+          "name": "NetworkSetting",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInferServiceByTemplateResponse": {
+      "document": "CreateInferServiceByTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "svc-rwyu5sv2",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMuskPromptRequest": {
       "document": "CreateMuskPrompt请求参数结构体",
       "members": [
@@ -489,6 +647,79 @@
           "member": "string",
           "name": "PromptId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployInferServiceRequest": {
+      "document": "DeployInferService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务元数据信息，如服务名",
+          "example": "无",
+          "member": "ServiceMetaData",
+          "name": "ServiceMetaData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源相关信息",
+          "example": "无",
+          "member": "ComputeInfo",
+          "name": "ComputeInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务部署信息",
+          "example": "无",
+          "member": "DeploymentConfig",
+          "name": "DeploymentConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务超参数配置",
+          "example": "无",
+          "member": "HyperParam",
+          "name": "HyperParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "网络设置",
+          "example": "无",
+          "member": "NetworkSetting",
+          "name": "NetworkSetting",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployInferServiceResponse": {
+      "document": "DeployInferService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "svc-8z2f0oik",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -621,6 +852,53 @@
       ],
       "type": "object"
     },
+    "DescribeDeployTemplatesRequest": {
+      "document": "DescribeDeployTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型ID",
+          "example": "mdl-s1cop2oq",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployTemplatesResponse": {
+      "document": "DescribeDeployTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板列表",
+          "example": "无",
+          "member": "TemplateDetail",
+          "name": "TemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的推理引擎",
+          "example": "[\"Sglang\"]",
+          "member": "string",
+          "name": "EngineTypes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceNetworkStatusRequest": {
       "document": "DescribeInstanceNetworkStatus请求参数结构体",
       "members": [
@@ -729,6 +1007,80 @@
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelsRequest": {
+      "document": "DescribeModels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型id",
+          "example": "[\"mdl-k8vm3q7f\"]",
+          "member": "string",
+          "name": "ModelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器。Name的可选值有scene-id",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，不得小于0，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回量，不得大于100，默认为20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelsResponse": {
+      "document": "DescribeModels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的模型列表",
+          "example": "无",
+          "member": "ModelDetail",
+          "name": "ModelSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1662,6 +2014,92 @@
       ],
       "usage": "out"
     },
+    "ModelDetail": {
+      "document": "模型详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "DeepSeek-V3.2-Channel-INT8",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型ID",
+          "example": "mdl-s1cop2oq",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用描述\t",
+          "example": "DeepSeek-V3.2-Channel-INT8量化版本",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "官方社区链接\t",
+          "example": "https://tairos.tencent.com/docs",
+          "member": "string",
+          "name": "CommunityUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最佳实践链接",
+          "example": "https://tairos.tencent.com/docs",
+          "member": "string",
+          "name": "GuideUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型状态",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ModelState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用对应的标签，如机器学习",
+          "example": "[\"大语言模型\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置环境",
+          "example": "CentOS 5.4 64位; nvidia 535.216.01| cuda12.2 | LLM",
+          "member": "string",
+          "name": "ConfigEnvironment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MuskPromptInfo": {
       "document": "musk prompt详情",
       "members": [
@@ -1759,6 +2197,56 @@
           "example": " ",
           "member": "string",
           "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NetworkSetting": {
+      "document": "推理集群的网络设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网访问",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicEndpointEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网访问",
+          "example": "false",
+          "member": "bool",
+          "name": "VpcEndpointEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc内网ID",
+          "example": "vpc-a1b2c3d4",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-a1b2c3d4",
+          "member": "string",
+          "name": "SubnetId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2221,6 +2709,34 @@
       ],
       "usage": "out"
     },
+    "ServiceMetaData": {
+      "document": "服务元数据信息，如服务名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "Qwen3-Reranker-8B",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "收费类型",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ServiceChargeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ServicePriceDetail": {
       "document": "推理集群费用数据结构体",
       "members": [
@@ -2404,6 +2920,62 @@
         }
       ],
       "usage": "both"
+    },
+    "TemplateDetail": {
+      "document": "模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板id",
+          "example": "tpl-2czq2lnm",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署方式",
+          "example": "SINGLE_NODE",
+          "member": "string",
+          "name": "DeployMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推理引擎",
+          "example": "Sglang",
+          "member": "string",
+          "name": "EngineType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算力详情",
+          "example": "无",
+          "member": "ComputeDetail",
+          "name": "ComputeSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前部署模板所支持的增强功能",
+          "example": "[\"hicache\"]",
+          "member": "string",
+          "name": "SupportFunc",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TerminateInstancesRequest": {
       "document": "TerminateInstances请求参数结构体",
