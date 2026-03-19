@@ -329,6 +329,13 @@
       "output": "DescribeAntiInfoLeakageRulesResponse",
       "status": "online"
     },
+    "DescribeApiAggregateTopN": {
+      "document": "获取Api安全模块的访问日志聚合topN",
+      "input": "DescribeApiAggregateTopNRequest",
+      "name": "获取Api安全模块的访问日志聚合topN",
+      "output": "DescribeApiAggregateTopNResponse",
+      "status": "online"
+    },
     "DescribeApiDetail": {
       "document": "获取Api请求详情信息",
       "input": "DescribeApiDetailRequest",
@@ -341,6 +348,13 @@
       "input": "DescribeApiListVersionTwoRequest",
       "name": "api资产列表",
       "output": "DescribeApiListVersionTwoResponse",
+      "status": "online"
+    },
+    "DescribeApiSecSensitiveRuleList": {
+      "document": "获取api安全敏感规则列表",
+      "input": "DescribeApiSecSensitiveRuleListRequest",
+      "name": "获取api安全配置规则列表",
+      "output": "DescribeApiSecSensitiveRuleListResponse",
       "status": "online"
     },
     "DescribeAreaBanAreas": {
@@ -4134,6 +4148,82 @@
       ],
       "usage": "both"
     },
+    "ApiSecSensitiveRule": {
+      "document": "api安全敏感规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份证号，唯一主键",
+          "example": "id_card",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示OS系统内置，\"custom\"表示客户自定义",
+          "example": "\"OS\",\"custom\"",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态，0：表示关，1表示开",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，100，200,300表示低中高三个等级",
+          "example": "\"100\"",
+          "member": "string",
+          "name": "Level",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，默认0，表示没有进行修改",
+          "example": "1312",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则部分",
+          "example": "{\"waf\":1}",
+          "member": "ApiSecCustomSensitiveRule",
+          "name": "CustomRule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否泛化 0:不泛化，1:泛化",
+          "example": "0",
+          "member": "int64",
+          "name": "IsPan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Area": {
       "document": "地域信息",
       "members": [
@@ -4725,6 +4815,45 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotDataFilter": {
+      "document": "搜索框内容，冒号前面是key, 冒号是操作，值是最后一位，操作（冒号）默认是相等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询维度",
+          "example": "engine",
+          "member": "string",
+          "name": "Entity",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": "=",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作值，多个值用",
+          "example": "ucb",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6154,6 +6283,42 @@
           "name": "DisableMultiJson",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotTopItem": {
+      "document": "bot的topN复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对应的key",
+          "example": "monitor",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应的值",
+          "example": "88",
+          "member": "uint64",
+          "name": "Value",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "key对应的展示描述语",
+          "example": "监控",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10475,6 +10640,97 @@
       ],
       "usage": "out"
     },
+    "DescribeApiAggregateTopNRequest": {
+      "document": "DescribeApiAggregateTopN请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要的Top数，默认5， 最大值100",
+          "example": "10",
+          "member": "uint64",
+          "name": "TopN",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1224256678",
+          "member": "uint64",
+          "name": "StartTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1224256679",
+          "member": "uint64",
+          "name": "EndTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询TOP的维度名",
+          "example": "ip",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "BotDataFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询全域名的三个特殊图标",
+          "example": "true",
+          "member": "bool",
+          "name": "GlobalFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAggregateTopNResponse": {
+      "document": "DescribeApiAggregateTopN返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "topN结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BotTopItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApiDetailRequest": {
       "document": "DescribeApiDetail请求参数结构体",
       "members": [
@@ -10778,6 +11034,177 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiSecSensitiveRuleListRequest": {
+      "document": "DescribeApiSecSensitiveRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api提取规则策略，true表示查询",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiExtractRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api鉴权规则",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiPrivilegeRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api场景规则",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiSceneRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询鉴权配置的时候，该rule只返回鉴权配置的规则",
+          "example": "\"ddpd\"",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询api自定义事件规则",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiCustomEventRule",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询无效api排除策略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryApiExcludeRule",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiSecSensitiveRuleListResponse": {
+      "document": "DescribeApiSecSensitiveRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "api敏感规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecSensitiveRule",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义敏感检测规则总开关",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "非内置规则的rulename列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"asd\"]",
+          "member": "string",
+          "name": "RuleNameList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api提取规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecExtractRule",
+          "name": "ApiExtractRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api鉴权规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecPrivilegeRule",
+          "name": "ApiSecPrivilegeRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api场景规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecSceneRule",
+          "name": "ApiSecSceneRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义事件规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecCustomEventRule",
+          "name": "ApiSecCustomEventRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无效api排除规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiSecExcludeRule",
+          "name": "ApiExcludeRule",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -31096,7 +31523,7 @@
         },
         {
           "disabled": false,
-          "document": "CC的匹配条件JSON序列化的字符串，示例：[{\\\"key\\\":\\\"Method\\\",\\\"args\\\":[\\\"=R0VU\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
+          "document": "CC的匹配条件JSON序列化的字符串，示例：[{\"key\":\"Method\",\"args\":[\"=R0VU\"],\"match\":\"0\",\"encodeflag\":true}] Key可选值为 URL、Method、Post、Referer、Cookie、User-Agent、CustomHeader、IPLocation、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore，match可选值为：当Key为URL的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）。 当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）， 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、4（内容为空）、5（不存在）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为15（数值等于）、16（数值不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true。当匹配字段（Key）为Post、Cookie、CustomHeader时，需要将具体的参数名和参数值分别进行Base64编码并去掉末尾的等号=，然后再用等号=连接起来，类似YWJj=ZGVm；当匹配字段（Key）为Referer、User-Agent时，只需将目标值进行Base64编码并去掉末尾的等号=，然后再在其前面用等号=来串接，类似=YWJj。",
           "example": "\"[]\"",
           "member": "string",
           "name": "OptionsArr",

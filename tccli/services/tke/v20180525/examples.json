@@ -236,6 +236,14 @@
         "title": "弹性集群创建日志采集规则"
       }
     ],
+    "CreateExternalNodePool": [
+      {
+        "document": "创建注册节点池",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"InstanceAdvancedSettings\": {\n        \"PreStartUserScript\": \"xx\",\n        \"DockerGraphPath\": \"xx\",\n        \"Labels\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"ExtraArgs\": {\n            \"Kubelet\": [\n                \"xx\"\n            ]\n        },\n        \"Taints\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\",\n                \"Effect\": \"xx\"\n            }\n        ],\n        \"Unschedulable\": 0,\n        \"UserScript\": \"xx\",\n        \"DesiredPodNumber\": 61,\n        \"GPUArgs\": {\n            \"MIGEnable\": true,\n            \"CustomDriver\": {\n                \"Address\": \"xx\"\n            },\n            \"Driver\": {\n                \"Version\": \"xx\",\n                \"Name\": \"xx\"\n            },\n            \"CUDA\": {\n                \"Version\": \"xx\",\n                \"Name\": \"xx\"\n            },\n            \"CUDNN\": {\n                \"DocName\": \"xx\",\n                \"Version\": \"xx\",\n                \"Name\": \"xx\",\n                \"DevName\": \"xx\"\n            }\n        },\n        \"MountTarget\": \"xx\",\n        \"DataDisks\": [\n            {\n                \"DiskPartition\": \"xx\",\n                \"DiskType\": \"xx\",\n                \"DiskSize\": 0,\n                \"FileSystem\": \"xx\",\n                \"AutoFormatAndMount\": true,\n                \"MountTarget\": \"xx\"\n            }\n        ]\n    },\n    \"Name\": \"IDC节点池\",\n    \"ContainerRuntime\": \"docker\",\n    \"RuntimeVersion\": \"19.3\",\n    \"Labels\": [\n        {\n            \"Name\": \"lkong1\",\n            \"Value\": \"lkong1\"\n        },\n        {\n            \"Name\": \"tke.cloud.tencent.com/location\",\n            \"Value\": \"gz\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePoolId\": \"np-kennkdng\",\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx\"\n    }\n}",
+        "title": "创建第三方节点池"
+      }
+    ],
     "CreateGlobalMaintenanceWindowAndExclusions": [
       {
         "document": "创建一个全局维护窗口和排除项",
@@ -496,6 +504,22 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeClusterInstances\n&ClusterId=cls-2wds9k9p\n&InstanceIds.0=cvm-xgj3ca32\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
         "title": "删除边缘计算实例"
+      }
+    ],
+    "DeleteExternalNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"Names\": [\n        \"node1\",\n        \"node2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "删除第三方节点"
+      }
+    ],
+    "DeleteExternalNodePool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExternalNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"NodePoolIds\": [\n        \"np-kennkdng\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "删除第三方节点池"
       }
     ],
     "DeleteGlobalMaintenanceWindowAndExclusion": [
@@ -1062,6 +1086,30 @@
         "title": "查询已经存在的节点"
       }
     ],
+    "DescribeExternalNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodePoolId\": \"np-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Nodes\": [\n            {\n                \"CreatedTime\": \"2021-04-29T06:30:44Z\",\n                \"IP\": \"10.0.0.135\",\n                \"Name\": \"lkongtest\",\n                \"NodePoolId\": \"np-0nwzqj10\",\n                \"Location\": \"gz\"\n            }\n        ],\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看第三方节点列表"
+      }
+    ],
+    "DescribeExternalNodePools": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodePools\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"ClusterCIDR\": \"172.16.0.0/16\",\n                \"InstanceAdvancedSettings\": {\n                    \"DockerGraphPath\": \"/var/lib/docker\",\n                    \"ExtraArgs\": {\n                        \"Kubelet\": null\n                    },\n                    \"Unschedulable\": 0\n                },\n                \"Labels\": [\n                    {\n                        \"Name\": \"lkong1\",\n                        \"Value\": \"lkong1\"\n                    },\n                    {\n                        \"Name\": \"tke.cloud.tencent.com/location\",\n                        \"Value\": \"gz\"\n                    }\n                ],\n                \"LifeState\": \"normal\",\n                \"Name\": \"IDC节点池\",\n                \"NetworkType\": \"\",\n                \"NodePoolId\": \"np-0nwzqj10\",\n                \"RuntimeConfig\": {\n                    \"RuntimeType\": \"docker\",\n                    \"RuntimeVersion\": \"19.3\"\n                },\n                \"Taints\": []\n            }\n        ],\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看第三方节点池列表"
+      }
+    ],
+    "DescribeExternalNodeScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodeScript\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"NodePoolId\": \"np-0nwzqj10\",\n    \"Interface\": \"eth0\",\n    \"Name\": \"node1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48849133-f394-4c4c-9891-f013e209c025\",\n        \"Link\": \"https://tke-edge-1253687700.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-19zn81yu3321337994100018114712ap-guangzhou%2Fadd2tkectl?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDTeaJo55GyQgvzojguuSl24qNey3wa7NN%26q-sign-time%3D1618561008%3B1618564608%26q-key-time%3D1618561008%3B1618564608%26q-header-list%3Dx-cos-token%26q-url-param-list%3D%26q-signature%3D7994096869abf8492c0c6cbc68f93701bab7ac4f\",\n        \"Token\": \"UAkOh6wCxzr8M8zf\",\n        \"Command\": \"wget --header=\\\"x-cos-token:UAkOh6wCxzr8M8zf\\\" https://tke-edge-1253687700.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-19zn81yu3321337994100018114712ap-guangzhou%2Fadd2tkectl?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDTeaJo55GyQgvzojguuSl24qNey3wa7NN%26q-sign-time%3D1618561008%3B1618564608%26q-key-time%3D1618561008%3B1618564608%26q-header-list%3Dx-cos-token%26q-url-param-list%3D%26q-signature%3D7994096869abf8492c0c6cbc68f93701bab7ac4f -O add2tkectl && chmod +x add2tkectl\"\n    }\n}",
+        "title": "查看第三方节点列表"
+      }
+    ],
     "DescribeExternalNodeSupportConfig": [
       {
         "document": "",
@@ -1618,6 +1666,14 @@
         "title": "驱逐超级节点"
       }
     ],
+    "DrainExternalNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DrainExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"Name\": \"node1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "驱逐第三方节点"
+      }
+    ],
     "EnableClusterAudit": [
       {
         "document": "",
@@ -1664,6 +1720,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEventPersistence\n<公共请求参数>\n\n{\n    \"TopicId\": \"660305bf-935a-49de-a893-58f421feec98\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"LogsetId\": \"cddc14ab-947c-4326-87b9-7b226f371f78\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "开启事件采集功能示例"
+      }
+    ],
+    "EnableExternalNodeSupport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableExternalNodeSupport\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"ClusterExternalConfig\": {\n        \"ClusterCIDR\": \"172.22.0.0/16\",\n        \"NetworkType\": \"CiliumVXLan\",\n        \"SubnetId\": \"subnet-drsvvxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx\"\n    }\n}",
+        "title": "开启第三方节点池支持"
       }
     ],
     "EnableVpcCniNetworkType": [
@@ -1896,6 +1960,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterVirtualNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"NodePoolId\": \"np-e55paxnt\",\n    \"Name\": \"virtual-node-prod\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
         "title": "修改超级节点池"
+      }
+    ],
+    "ModifyExternalNodePool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExternalNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"NodePoolId\": \"np-kennkdng\",\n    \"Name\": \"IDC节点池Modified\",\n    \"Labels\": [\n        {\n            \"Name\": \"lkong1modify\",\n            \"Value\": \"lkong1modify\"\n        },\n        {\n            \"Name\": \"tke.cloud.tencent.com/location\",\n            \"Value\": \"gz\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "修改第三方节点池"
       }
     ],
     "ModifyGlobalMaintenanceWindowAndExclusions": [

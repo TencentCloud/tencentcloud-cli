@@ -479,7 +479,7 @@
   },
   "metadata": {
     "apiVersion": "2018-07-09",
-    "api_brief": "介绍如何使用API对计费相关进行操作，包括资金管理、账单管理、订单管理等。",
+    "api_brief": "用户通过云费用账户管理云费用，如对账户进行充值，使用账户金额来购买腾讯云服务等。 腾讯云产品有预付费和后付费两种付费方式： 预付费是先购买再使用的方式，用户在预付费方式购买云服务时，系统会根据用户选购买的资源对用户云费用账户中的金额进行扣除。 后付费是按量付费的模式，在购买时不进行实际扣费，系统会根据选购的资源确定需要冻结的金额，在进行月度结算时，按照实际使用量再进行最终扣费。如果用户的云费用账户的余额<=0，则要先充值再购买云服务资源。",
     "serviceNameCN": "费用中心",
     "serviceShortName": "billing"
   },
@@ -4277,7 +4277,7 @@
       "usage": "both"
     },
     "AnalyseTimeDetail": {
-      "document": "成本分返回值复杂类型",
+      "document": "成本分析返回值复杂类型",
       "members": [
         {
           "disabled": false,
@@ -12433,7 +12433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "格式：yyyy-MM\n账单月份，month和timeFrom&timeTo必传一个，如果有传timeFrom&timeTo则month字段无效",
+          "document": "<p>格式：yyyy-MM<br>账单月份，month和timeFrom&amp;timeTo必传一个，如果有传timeFrom&amp;timeTo则month字段无效</p>",
           "example": "2024-10",
           "member": "string",
           "name": "Month",
@@ -12442,7 +12442,7 @@
         },
         {
           "disabled": false,
-          "document": "格式：yyyy-MM-dd\n开始时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据",
+          "document": "<p>格式：yyyy-MM-dd<br>开始时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>",
           "example": "2024-10-01",
           "member": "string",
           "name": "TimeFrom",
@@ -12451,10 +12451,19 @@
         },
         {
           "disabled": false,
-          "document": "格式：yyyy-MM-dd\n截止时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据",
+          "document": "<p>格式：yyyy-MM-dd<br>截止时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>",
           "example": "2024-10-02",
           "member": "string",
           "name": "TimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -12466,7 +12475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据总量",
+          "document": "<p>数据总量</p>",
           "example": "4",
           "member": "int64",
           "name": "Total",
@@ -12476,8 +12485,8 @@
         },
         {
           "disabled": false,
-          "document": "明细数据",
-          "example": "{                 \"PayerUin\": \"909619400\",                 \"Month\": \"2024-01\",                 \"AdjustType\": \"manualAdjustment\",                 \"AdjustNum\": \"20240104164623\",                 \"AdjustCompletionTime\": \"2024-01-04 17:30:00\",                 \"AdjustAmount\": -0.3             },             {                 \"PayerUin\": \"909619400\",                 \"Month\": \"2024-01\",                 \"AdjustType\": \"manualAdjustment\",                 \"AdjustNum\": \"20240104172501\",                 \"AdjustCompletionTime\": \"2024-01-04 18:30:00\",                 \"AdjustAmount\": -0.3             },             {                 \"PayerUin\": \"909619400\",                 \"Month\": \"2024-01\",                 \"AdjustType\": \"manualAdjustment\",                 \"AdjustNum\": \"20240318141714\",                 \"AdjustCompletionTime\": \"2024-03-18 15:42:45\",                 \"AdjustAmount\": -0.1             },             {                 \"PayerUin\": \"909619400\",                 \"Month\": \"2024-01\",                 \"AdjustType\": \"manualAdjustment\",                 \"AdjustNum\": \"20240731169036\",                 \"AdjustCompletionTime\": \"2024-07-31 16:31:14\",                 \"AdjustAmount\": -1             }",
+          "document": "<p>明细数据</p>",
+          "example": "无",
           "member": "AdjustInfoDetail",
           "name": "Data",
           "output_required": false,
@@ -13832,7 +13841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单月份，格式为2023-04",
+          "document": "<p>账单月份，格式为2023-04</p>",
           "example": "2023-05",
           "member": "string",
           "name": "Month",
@@ -13841,7 +13850,7 @@
         },
         {
           "disabled": false,
-          "document": "账单维度类型，枚举值如下：business、project、region、payMode、tag",
+          "document": "<p>账单维度类型，枚举值如下：business、project、region、payMode、tag</p>",
           "example": "business",
           "member": "string",
           "name": "GroupType",
@@ -13850,7 +13859,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键，GroupType=tag获取标签维度账单时传",
+          "document": "<p>标签键，GroupType=tag获取标签维度账单时传</p>",
           "example": "[\"测试键\"]",
           "member": "string",
           "name": "TagKey",
@@ -13859,10 +13868,19 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）",
+          "document": "<p>操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）</p>",
           "example": "909619400",
           "member": "string",
           "name": "OperateUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -13874,7 +13892,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）",
+          "document": "<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>",
           "example": "0",
           "member": "uint64",
           "name": "Ready",
@@ -13884,7 +13902,7 @@
         },
         {
           "disabled": false,
-          "document": "账单多维度汇总消费详情",
+          "document": "<p>账单多维度汇总消费详情</p>",
           "example": "无",
           "member": "SummaryDetail",
           "name": "SummaryDetail",

@@ -1,0 +1,165 @@
+{
+  "actions": {
+    "CreateEtcdInstance": [
+      {
+        "document": "创建etcd实例",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEtcdInstance\n<公共请求参数>\n\n{\n    \"Name\": \"etcd-cluster-1\",\n    \"Description\": \"examplecluster\",\n    \"VpcId\": \"vpc-abcd1234\",\n    \"ServiceSubnetId\": \"subnet-abcd1234\",\n    \"SubnetIds\": [\n        \"subnet-abcd1234\"\n    ],\n    \"EtcdVersion\": \"v3.4.9\",\n    \"Size\": 3,\n    \"AdvancedSettings\": {\n        \"MonitorSettings\": {\n            \"ExistedPrometheusInstanceId\": \"prom-abcd1234\"\n        },\n        \"BackupSettings\": {\n            \"BackupInterval\": 300,\n            \"MaxBackupCount\": 5\n        }\n    },\n    \"DeletionProtection\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"etcd-abcd1234\",\n        \"RequestId\": \"51abd77d-f503-41e7-ab28-010083e02a78\"\n    }\n}",
+        "title": "创建etcd实例"
+      }
+    ],
+    "CreateEtcdSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEtcdSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1345\",\n    \"SnapshotName\": \"test\",\n    \"User\": \"test\",\n    \"Password\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13b59a2d-dd68-48ab-845e-8cba577eca6d\"\n    }\n}",
+        "title": "创建etcd快照"
+      }
+    ],
+    "CreateEtcdSnapshotPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEtcdSnapshotPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\",\n    \"SnapshotPolicyName\": \"test\",\n    \"BackupSettings\": {\n        \"BackupInterval\": 3600,\n        \"MaxBackupCount\": 24\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13b59a2d-dd68-48ab-845e-8cba577eca6d\"\n    }\n}",
+        "title": "创建etcd快照策略"
+      }
+    ],
+    "DescribeEtcdAvailableVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdAvailableVersions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"32daac92-b940-4894-b9d8-1d325f1ee9d1\",\n        \"Versions\": [\n            {\n                \"Name\": \"etcd\",\n                \"Version\": \"v3.4.9\"\n            },\n            {\n                \"Name\": \"etcd\",\n                \"Version\": \"v3.3.25\"\n            }\n        ]\n    }\n}",
+        "title": "查看etcd可用版本"
+      }
+    ],
+    "DescribeEtcdCreatingProgress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdCreatingProgress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg\",\n        \"Steps\": [\n            {\n                \"EndAt\": \"2020-10-02T10:54:12Z\",\n                \"FailedMsg\": \"\",\n                \"LifeState\": \"success\",\n                \"StartAt\": \"2020-10-02T10:54:08Z\",\n                \"Step\": \"prepare_env\"\n            },\n            {\n                \"EndAt\": \"2020-10-02T10:54:15Z\",\n                \"FailedMsg\": \"\",\n                \"LifeState\": \"success\",\n                \"StartAt\": \"2020-10-02T10:54:12Z\",\n                \"Step\": \"install_suit\"\n            },\n            {\n                \"EndAt\": null,\n                \"FailedMsg\": \"\",\n                \"LifeState\": \"running\",\n                \"StartAt\": \"2020-10-02T10:54:15Z\",\n                \"Step\": \"create_etcd\"\n            },\n            {\n                \"EndAt\": null,\n                \"FailedMsg\": \"\",\n                \"LifeState\": \"pending\",\n                \"StartAt\": null,\n                \"Step\": \"install_monitor\"\n            },\n            {\n                \"EndAt\": null,\n                \"FailedMsg\": \"\",\n                \"LifeState\": \"pending\",\n                \"StartAt\": null,\n                \"Step\": \"create_backup_policy\"\n            }\n        ]\n    }\n}",
+        "title": "查看etcd集群创建进度"
+      }
+    ],
+    "DescribeEtcdCredentials": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdCredentials\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": [\n            {\n                \"CACert\": \"-----BEGIN CERTIFICATE-----\\nMIIDujCCAqKgAwIBAgIUS+2+HlS/tqmBHQLCXYAdQgMqAiIwDQYJKoZIhvcNAQEL\\nBQAwdTELMAkGA1UEBhMCVVMxFjAUBgNVBAgTDVNhbiBGcmFuY2lzY28xCzAJBgNV\\nBAcTAkNBMRgwFgYDVQQKEw9NeSBDb21wYW55IE5hbWUxEzARBgNVBAsTCk9yZyBV\\nbml0IDExEjAQBgNVBAMTCU15IG93biBDQTAeFw0xOTA3MDMxOTA2MDBaFw0yNDA3\\nMDExOTA2MDBaMHUxCzAJBgNVBAYTAlVTMRYwFAYDVQQIEw1TYW4gRnJhbmNpc2Nv\\nMQswCQYDVQQHEwJDQTEYMBYGA1UEChMPTXkgQ29tcGFueSBOYW1lMRMwEQYDVQQL\\nEwpPcmcgVW5pdCAxMRIwEAYDVQQDEwlNeSBvd24gQ0EwggEiMA0GCSqGSIb3DQEB\\nAQUAA4IBDwAwggEKAoIBAQCvtsDmHpnZ1oIUK0SBErS3b64r99flAJS918FCJJP\\nQmQXSASNTZdCFEGvgqEJuEWEcEPBU/6pEM4Ejgti+s557BEohHGdrNF/jzZw+Iak\\nXL/cQ1c3CWQKq/jKotlEJ4W1Lw9lUPgXY7HjPOxnGS2gDR785Mzo5I3JfaZEpqED\\nHLXoFj2UOOf9ySOZzPizvPPseGif1W6i25rdusg/FFJRcvNZ+y7qqIlNj8bwHSau\\nFS1BTJp3NfJb9LgNlr+3Iy+ksDKO1fsZKKIZGICaCiMzs6IIA6Y5fEdYik64oJNy\\npLjxEfcC/S+2KR6KBNvDKGzouqbUt5QezbzDDW9YwkDHAgMBAAGjQjBAMA4GA1Ud\\nDwEB/wQEAwIBB1UdDgQWBBSQLpwyCuhdr78y\\neCAHMEuFoXuEQDANBgkqhkiG9w0BAQsFAAOCAQEAfkF+TWPJrrHT/HF+jgmwGoft\\nYvYGARiC5XFAodeOWHlHOuhMdRvXCH1VlrzL06ZOn4EeeGMObSak6G0HZO32m8nY\\nz3vzc8DGPM1rHVcpCZlToPW87N7I88dIxaXVeImRTkzrgNEB6CnNiE4bE8PYWt2y\\nlBhdihP7bEuBhsAF5SremFay9oyGmouaUcpb4EU+dr3DcBRklHZ4jNl53JF8LBwk\\nGRLzuQCUl38FSD03s38PsqWbbuCB0E6XcizKCWWbLXC1dfXYGmyhA0Ir/x+vuq+e\\nKEpM8lktVLbaFkJTiBvSCGEMGmN4KEDZTDZO4PBY7EN9X3V+hEk4DOO5VeWSgA==\\n-----END CERTIFICATE-----\\n\",\n                \"Cert\": \"-----BEGIN CERTIFICATE-----\\nMIIF4jCCBMqgAwIBAgIIf7uwaAjnhJUwDQYJKoZIhvcNAQELBQAwdTELMAkGA1UE\\nBhMCVVMxFjAUBgNVBAgTDVNhbiBGcmFuY2lzY28xCzAJBgNVBAcTAkNBMRgwFgYD\\nVQQKEw9NeSBDb21wYW55IE5hbWUxEzARBgNVBAsTCk9yZyBVbml0IDExEjAQBgNV\\nBAMTCU15IG93biBDQTAeFw0yMDA5MTcxMzM0NDZaFw00MDA5MTcxMzM0NDZaMGYx\\nCzAJBgNVBAYTAkNOMREwDwYDVQQIEwhTaGVuWmhlbjESMBAGA1UEBxMJR3VhbmdE\\nb25nMRAwDgYDVQQKEwdUZW5jZW50MQ8wDQYDVQQLEwZTeXN0ZW0xDTALBgNVBAMT\\nBHJvb3QwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChjMa0DYaekpdr\\nHIHs11af7IiLloAT1nxGdKoz+BPWea7Pjlf6p4Oq5cKvz4thindOcXzvsIjQFCAP\\n1aqsCCEJ2LCGwJSmlfFDHdG1GD0+xmECA9GTpu33WeKaD3pZUBRkTqy4BO4zByrU\\n93RpsAPpBd05krisWf2WZWXiFioy3+fLhzBUT7Sciko9w/VwpzhDcSC0qpmhYEJl\\nfX7ZUMzvvDcG45/JTFbH1f9aCDVgKwz+uRMiIrCKsDAAHQf4z1bpcPqhzw2lzlNO\\nbQx2ZCPz9wlhW0jKSK9kSkGfzJc8xQcd5ZmvtWvNxpMSYFRiV4tVdy7/DAq2Z52w\\nZE9MeBmlAgMBAAGjggKDMIICfzAOBgNVHQ8BAf8EBAMCAoQwHQYDVR0lBBYwFAYI\\nKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFBP/\\ncbnart+MaewAxZi06TisnUT+MB8GA1UdIwQYMBaAFJAunDIK6F2vvzJ4IAcwS4Wh\\ne4RAMIIB+wYDVR0RBIIB8jCCAe6CCWxvY2FsaG9zdIIrZXRjZC1pbmZ2anN0OS5r\\ndWJlLXN5c3RlbS5zdmMuY2x1c3Rlci5sb2NhbIIgZXRjZC1pbmZ2anN0OS5jY3Mu\\ndGVuY2VudHl1bi5jb22CJGV0Y2QtaW5mdmpzdDktZXRjZC5ldGNkLWluZnZqc3Q5\\nLnN2Y4ImKi5ldGNkLWluZnZqc3Q5LWV0Y2QuZXRjZC1pbmZ2anN0OS5zdmOCMmV0\\nY2QtGNkLWluZnZqc3Q5LnN2Yy5jbHVzdGVyLmxvY2Fs\\ngjQqLmV0Y2QtaW5mdmpzdDktZXRjZC5ldGNkLWluZnZqc3Q5LnN2Yy5jbHVzdGVy\\nLmxvY2Fsgi1ldGNkLWluZnZqc3Q5LWV0Y2QtaGVhZGxlc3MuZXRjZC1pbmZ2anN0\\nOS5zdmOCLyouZXRjZC1pbmZ2anN0OS1ldGNkLWhlYWRsZXNzLmV0Y2QtaW5mdmpz\\ndDkuc3ZjgjtldGNkLWluZnZqc3Q5LWV0Y2QtaGVhZGxlc3MuZXRjZC1pbmZ2anN0\\nOS5zdmMuY2x1c3Rlci5sb2NhbII9Ki5ldGNkLWluZnZqc3Q5LWV0Y2QtaGVhZGxl\\nc3MuZXRjZC1pbmZ2anN0OS5zdmMuY2x1c3Rlci5sb2NhbDANBgkqhkiG9w0BAQsF\\nAAOCAQEAoUBlH3Cn1rlUnZ9SYG8aM+ikB/eoKIH/+QBs2tOv/+8jNqt3INMBtk+g\\nGUqcnb/ld3MrnsO71K+v6rME4kpvI3YkCO6daWHtliqxa7Xll+Q6+/3TXCIV9f8X\\nM8d0FAqIN08GMu6hFD6QhLIzxYm+G8Gz3IxkRviq8onzPxwkeTpx33ItFS6BJYPk\\n3wnWqVelkz1b/36X0c5U5Ze1S44Nz5vDuy4cXx178guK8CjGAl6QbOe8mD6O05E/\\nrRnVXpwTvQCT8VpWajHc+W0tPMiExQmydVfWT8RMPuUYxJWVDMk6wv1aCbbDjbqY\\nlc9CrZCC0XXbMeWC/u98dAeYCFpbPw==\\n-----END CERTIFICATE-----\\n\",\n                \"Key\": \"-----BEGIN RSA PRIVATE KEY-----\\nMIIEpAIBAAKCAQEAoYzGtA2GnpKXaxyB7NdWn+yIi5aAE9Z8RnSqM/gT1nmuz45X\\n+qeDquXCr8+LYYp3TnF877CI0BQgD9WqrAghCdiwhsCUppXxQx3RtRg9PsZhAgPR\\nk6bt91nimg96WVAUZE6suATuMwcq1Pd0abAD6QXdOZK4rFn9lmVl4hYqMt/ny4cw\\nVE+0nIpKPcP1cKc4Q3EgtKqZoWBCZX1+2VDM77w3BuOfyUxWx9X/Wgg1YCsM/rkT\\nIiKwirAwAB0H+M9W6XD6oc8Npc5TTm0MdmQj8/cJYVtIykivZEpBn8yXPMUHHeWZ\\nr7VrzcaTEmBUYKtmedsGRPTHgZpQIDAQABAoIBAQCcPiMPkOVaCD0a\\nAwBFqB7HnWSSXISSqyaWnc7fZFcLX7SKWQkOC2V0q7KXhwsu01SAMZK73ujzFgPM\\nTMI8j8AkXcadDTS3yN0GJJjlpQPW6tZ3tGnFe/U6/VwD1GRobOLMAKtbbqlSAOSU\\nBKA6d1nQzTMgs56YUpDIHFllSDqX6Bw8cAhTe/V8m5+M4APxpnrleHOBNn41c0kC\\n9IrBqnHuyupXx54RNawIhqPxRQGWgT0ixPN/EasqFcJZOVDiPFfP/DAyIwZk8fv2\\nIxtHmMOHSoaovqRRWG1k7GgR9PL6dLT3NPhsChjQizgoka359wrh0QXCG33JOa2S\\nCewR4aIhAoGBAM9ivW+qeXbvA2QU7uQN5ZUKGDC5to9ZCoOQR+9zTh+RBR2QMhGl\\nMBgM/OdkP7yC4I7mHXYnH1zBMKJ8sLwA5UjToaW0AG1/9DGV0LWQoKSmGCAc9MPg\\n4VatpeWvYrUqYiMuCfAlwU3J1BsDECAlVOV3kAhlGUdxsXomvV53PTHzAoGBAMdr\\na5yGiTUlPBUSs3YPYl3N1dDC2nPDFBA7OZNx0LW7yJuBJ4gH64f8dfpMiMaO5KI0\\nIN7pOJlerKQaVTfbTEWsyHLjU0rY0jY89dXN3pf1DkFNKurSFptAoo/WUYAsApsf\\n3UeA1Orjhd5wJFTj2BMjnUHb9GD1lYJzz9qm+QtQMj\\nEvzNiuBx/3pSibxZ1Pf41Xr2lse7Lm7tT5000ZYQCSJ8s+YnM32AOuWEtIPHQ8vu\\n/KbVUIg/e9NMJdJE+eekZ9H1aXZDAl0LKI/IcoRuiAfftSk+fwUO9ASEjpBQeA1a\\nIKJwmNZijsCFQc3gyvFDDSUCgYA3v4bw1gdrbQJT3ct/mKNmF9HLL33EWOe19eiN\\nmIbBF0Loff2gIJ6ugFw24chmwbGWyr3ZsxcYgQgAREBIgizbWYcb3wL87IovkXEk\\nGQ4+KsqWZM03og2hzzrivQZBr4v287x3bcOX+o0E9xKhDKTuDMm8jJHPvTfTpS6Z\\nMI5BZwKBgQCi2GIAajUvKU6Ht2BzOkMrlILd3bbx3BUlq71OAGjtjCZvKhD8ZnQE\\nxIpAmWDEjZcGTd5vevF9/vvnBB3IbaWwVRf2X4T5ynQ6gqGPYnU0F0QdpuXBSCCj\\nqfjFLYp66YBcuvg9zTe/z80BqmzltIhrs2UAukq7bNLqGQVAykwRiw==\\n-----END RSA PRIVATE KEY-----\\n\"\n            }\n        ],\n        \"RequestId\": \"84d7d7eb-ba89-45fa-b1ee-9d45698ed2b2\"\n    }\n}",
+        "title": "查询etcd访问凭证"
+      }
+    ],
+    "DescribeEtcdInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"etcd-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Etcds\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"Name\": \"abc\",\n                \"Description\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"Version\": \"abc\",\n                \"Status\": \"abc\",\n                \"Members\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Version\": \"abc\",\n                        \"Zone\": \"abc\",\n                        \"Status\": \"abc\"\n                    }\n                ],\n                \"Endpoint\": \"abc\",\n                \"DeletionProtection\": true\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeEtcdInstances"
+      }
+    ],
+    "DescribeEtcdQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdQuota\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"QuotaLimit\": 5,\n        \"RequestId\": \"32daac92-b940-4894-b9d8-1d325f1ee9d1\"\n    }\n}",
+        "title": "查看etcd集群配额"
+      }
+    ],
+    "DescribeEtcdRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Regions\": [\n            {\n                \"Alias\": \"gz\",\n                \"RegionId\": 1,\n                \"RegionName\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"32daac92-b940-4894-b9d8-1d325f1ee9d1\"\n    }\n}",
+        "title": "查看etcd支持地域"
+      }
+    ],
+    "DescribeEtcdSnapshotPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdSnapshotPolicies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13b59a2d-dd68-48ab-845e-8cba577eca6d\",\n        \"SnapshotPolicies\": [\n            {\n                \"Name\": \"test\",\n                \"BackupSettings\": {\n                    \"BackupInterval\": 3600,\n                    \"MaxBackupCount\": 24\n                }\n            }\n        ]\n    }\n}",
+        "title": "查看etcd快照策略"
+      }
+    ],
+    "DescribeEtcdSnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdSnapshots\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13b59a2d-dd68-48ab-845e-8cba577eca6d\",\n        \"Snapshots\": [\n            {\n                \"Name\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "查看etcd快照列表"
+      }
+    ],
+    "DescribeEtcdTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdTasks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"taskType\",\n            \"Values\": [\n                \"enable_internet\",\n                \"disable_internet\"\n            ]\n        },\n        {\n            \"Name\": \"resourceId\",\n            \"Values\": [\n                \"etcd-xxxx\"\n            ]\n        },\n        {\n            \"Name\": \"lifeState\",\n            \"Values\": [\n                \"process\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49035d1e-66c6-4ee5-a74f-21d869fccab9\",\n        \"Tasks\": [\n            {\n                \"CreatedAt\": \"2021-09-01T10:43:29Z\",\n                \"LifeState\": \"done\",\n                \"ResourceID\": \"etcd-jirlfihs\",\n                \"TaskID\": \"4fee3bfe-7670-4014-82d4-31507e3a93f4\",\n                \"TaskType\": \"enable_internet\",\n                \"UpdatedAt\": \"2021-09-01T10:43:40Z\"\n            },\n            {\n                \"CreatedAt\": \"2021-08-26T03:04:06Z\",\n                \"LifeState\": \"done\",\n                \"ResourceID\": \"etcd-jirlfihs\",\n                \"TaskID\": \"a59278a0-debb-4e85-861b-961a2d2f0f46\",\n                \"TaskType\": \"create_instance\",\n                \"UpdatedAt\": \"2021-08-26T03:07:09Z\"\n            }\n        ]\n    }\n}",
+        "title": "查看etcd相关tasks"
+      }
+    ],
+    "DescribeRPCMethodList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRPCMethodList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\",\n    \"PodName\": \"etcd-abcd1234-etcd-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MethodList\": [\n            {\n                \"Name\": \"Alarm\"\n            }\n        ],\n        \"RequestId\": \"51abd77d-f503-41e7-ab28-010083e02a78\"\n    }\n}",
+        "title": "DescribeRPCMethodList"
+      }
+    ],
+    "DisableEtcdInstanceDeletionProtection": [
+      {
+        "document": "关闭etcd实例删除保护",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableETCDInstanceDeletionProtection\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51abd77d-f503-41e7-ab28-010083e02a78\"\n    }\n}",
+        "title": "关闭etcd实例删除保护"
+      }
+    ],
+    "EnableEtcdInstanceDeletionProtection": [
+      {
+        "document": "启用etcd实例删除保护",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableETCDInstanceDeletionProtection\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51abd77d-f503-41e7-ab28-010083e02a90\"\n    }\n}",
+        "title": "启用etcd实例删除保护"
+      }
+    ],
+    "ModifyEtcdAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEtcdAttribute\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-1234abcd\",\n    \"Name\": \"test\",\n    \"Description\": \"example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg\"\n    }\n}",
+        "title": "修改etcd实例属性"
+      }
+    ],
+    "ModifyEtcdConfiguration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEtcdConfiguration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\",\n    \"AutoCompactionSettings\": {\n        \"AutoCompactionRetention\": \"2h\",\n        \"AutoCompactionMode\": \"period\"\n    },\n    \"MonitorSettings\": {\n        \"ExistedPrometheusInstanceId\": \"prom-abcd1234\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg\"\n    }\n}",
+        "title": "修改etcd实例配置"
+      }
+    ],
+    "ModifyEtcdSnapshotPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEtcdSnapshotPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\",\n    \"SnapshotPolicyName\": \"test\",\n    \"BackupSettings\": {\n        \"BackupInterval\": 3600,\n        \"MaxBackupCount\": 24\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13b59a2d-dd68-48ab-845e-8cba577eca6d\"\n    }\n}",
+        "title": "修改etcd快照策略"
+      }
+    ],
+    "ResizeEtcdInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeEtcdInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\",\n    \"Size\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg\"\n    }\n}",
+        "title": "扩容etcd实例"
+      }
+    ],
+    "UpgradeEtcdInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeEtcdInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\",\n    \"EtcdVersion\": \"v3.5.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg\"\n    }\n}",
+        "title": "扩容etcd实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

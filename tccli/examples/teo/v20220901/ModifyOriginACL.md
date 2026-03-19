@@ -1,22 +1,20 @@
-**Example 1: 新增七层加速域名使用特定回源 IP 网段回源**
+**Example 1: 修改回源 IP 网段为指定控制域的**
 
-ZoneId 为 'zone-276zs184g93m' 的站点新增七层加速域名 ‘www.qq.com’ 使用特定回源 IP 网段回源。
+ZoneId 为 'zone-3ey0mmcs899o' 的站点指定控制域为 gaz 的 IP 网段回源。
 
 Input: 
 
 ```
 tccli teo ModifyOriginACL --cli-unfold-argument  \
-    --ZoneId zone-276zs184g93m \
-    --OriginACLEntities.0.OperationMode enable \
-    --OriginACLEntities.0.Type l7 \
-    --OriginACLEntities.0.Instances www.qq.com
+    --ZoneId zone-3ey0mmcs899o \
+    --OriginACLFamily plat-emc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fe0a2b4f-df6d-4d2a-ac39-1706cbf8a868"
+        "RequestId": "285f505b-ed21-4efb-86e6-5f05cd6c299c"
     }
 }
 ```
@@ -39,7 +37,30 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fe0a2b4f-df6d-4d2a-ac39-1706cbf8a868"
+        "RequestId": "7517b2b9-4edd-4f79-baa8-c6938e7f3399"
+    }
+}
+```
+
+**Example 3: 新增七层加速域名使用特定回源 IP 网段回源**
+
+ZoneId 为 'zone-276zs184g93m' 的站点新增七层加速域名 ‘www.qq.com’ 使用特定回源 IP 网段回源。
+
+Input: 
+
+```
+tccli teo ModifyOriginACL --cli-unfold-argument  \
+    --ZoneId zone-276zs184g93m \
+    --OriginACLEntities.0.OperationMode enable \
+    --OriginACLEntities.0.Type l7 \
+    --OriginACLEntities.0.Instances www.qq.com
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "764fcb13-30a1-4b7c-92a2-f3fa93d5ae3e"
     }
 }
 ```

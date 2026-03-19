@@ -56,6 +56,14 @@
         "title": "添加共享单元成员"
       }
     ],
+    "AddShareUnitNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddShareUnitNode\n<公共请求参数>\n\n{\n    \"UnitId\": \"shareUnit-pj96**f0du\",\n    \"NodeId\": 10001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"220edcce-3105-4a58-bb5a-81b06e7244d2\"\n    }\n}",
+        "title": "添加共享单元部门"
+      }
+    ],
     "AddShareUnitResources": [
       {
         "document": "",
@@ -360,6 +368,14 @@
         "title": "删除共享单元成员"
       }
     ],
+    "DeleteShareUnitNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteShareUnitNode\n<公共请求参数>\n\n{\n    \"UnitId\": \"shareUnit-pj96**f0du\",\n    \"NodeId\": 10001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9ab72d7-8f20-4197-8bb1-cba1e4fcf5d9\"\n    }\n}",
+        "title": "删除共享单元部门"
+      }
+    ],
     "DeleteShareUnitResources": [
       {
         "document": "",
@@ -534,6 +550,14 @@
         "input": "https://organization.tencentcloudapi.com/?Action=DescribeShareUnitMembers\n&UnitId=shareUnit-xhre**ra2p\n&Area=ap-guangzhou\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-03-06 17:08:38\",\n                \"ShareMemberUin\": 333333333333\n            }\n        ],\n        \"RequestId\": \"dd22e981-ad22-4676-865b-2d2184bf879b\",\n        \"Total\": 1\n    }\n}",
         "title": "获取共享单元成员列表"
+      }
+    ],
+    "DescribeShareUnitNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeShareUnitNodes\n<公共请求参数>\n\n{\n    \"UnitId\": \"shareUnit-pj9**1f0du\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2026-02-02 21:21:52\",\n                \"ShareNodeId\": 10001\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"628aeb1f-7645-4c9f-9bcb-31484b89a8d4\"\n    }\n}",
+        "title": "获取共享单元部门列表"
       }
     ],
     "DescribeShareUnitResources": [

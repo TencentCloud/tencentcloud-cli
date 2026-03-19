@@ -1,6 +1,6 @@
-**Example 1: 获取当前用户工作空间列表**
+**Example 1: 查询指定地域的工作空间**
 
-获取当前用户工作空间列表
+
 
 Input: 
 
@@ -13,23 +13,23 @@ Output:
     "Response": {
         "Data": [
             {
-                "Id": 9,
-                "Name": "open_api_test-1",
-                "SpaceKey": "ryvzki",
-                "Status": "CREATING",
-                "LastOpsDate": "2022-06-10T06:55:45Z",
-                "Description": "this is a description",
-                "WorkspaceType": "NORMAL",
-                "CreateDate": "2022-06-10T06:55:45Z",
-                "Icon": "https://cs-res-1258344699.file.myqcloud.com/workspace/assets/icons/all-in-one.svg",
-                "StatusReason": "OK",
-                "VersionControlUrl": "git@github.com:koajs/koa.git",
-                "VersionControlRef": "refs/heads/main",
                 "Cpu": 2,
-                "Memory": 4
+                "CreateDate": "2025-05-29T01:18:07.000+00:00",
+                "Description": "",
+                "Icon": "https://cs-res-1258344699.file.myqcloud.com/workspace/assets/icons/all-in-one.svg",
+                "Id": 36039,
+                "LastOpsDate": "2025-05-29T01:18:07.000+00:00",
+                "Memory": 4,
+                "Name": "AllinOne-wqigru",
+                "SpaceKey": "wqigru",
+                "Status": "PENDING",
+                "StatusReason": "",
+                "VersionControlRef": "",
+                "VersionControlUrl": "https://e.coding.net/coding-public/cloud-studio-samples/programming-language-demo.git",
+                "WorkspaceType": "NORMAL"
             }
         ],
-        "RequestId": "ff57bfab-60d0-47ce-883c-f5230245636a"
+        "RequestId": "d3bd7a2d-caf9-4984-98b8-a94a14b52a95"
     }
 }
 ```

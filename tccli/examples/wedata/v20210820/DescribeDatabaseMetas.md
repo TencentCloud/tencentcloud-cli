@@ -6,52 +6,93 @@ Input:
 
 ```
 tccli wedata DescribeDatabaseMetas --cli-unfold-argument  \
-    --Filters.0.Name a1 \
-    --Filters.0.Values 1 \
-    --OrderFields.0.Name a1b1c \
-    --OrderFields.0.Direction a1b1c \
-    --PageSize 10 \
-    --PageNumber 1
+    --PageNumber 1 \
+    --PageSize 9999 \
+    --Filters.0.Name datasourceId \
+    --Filters.0.Values 146721 \
+    --OrderFields.0.Name databaseName \
+    --OrderFields.0.Direction ASC
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "e4037646-f140-4b15-bc22-aec12e2e1d70",
         "DatabaseMeta": [
             {
-                "Catalog": null,
-                "Category": null,
-                "ClusterId": null,
-                "ClusterName": null,
+                "DatabaseId": null,
+                "DatabaseGuid": null,
+                "DatabaseName": "atta_boss",
+                "ProjectId": "project_id_***",
+                "ProjectName": "project_eng_name",
+                "ProjectDisplayName": "项目中文名称",
+                "MetastoreType": "DLC",
+                "DatasourceId": 146721,
+                "DatasourceName": "dlc_***",
+                "DisplayName": "dlc_***.atta_boss",
+                "Category": "CLUSTER",
+                "Catalog": "DataLakeCatalog",
+                "Description": "员工域数据",
+                "Instance": "fkiqo0om",
+                "OwnerAccount": 100000,
+                "OwnerAccountName": "root",
+                "Region": "ap-guangzhou",
+                "Status": 1,
+                "StorageSize": 536870912,
+                "StorageSizeWithUnit": "512.00MB",
+                "CreateTime": "2023-03-09 15:42:59",
+                "TableCount": 12,
+                "DatasourceList": [
+                    {
+                        "DatasourceId": "146721",
+                        "DatasourceName": "dlc_***",
+                        "DatasourceClusterId": "fkiqo0om",
+                        "DatasourceUrn": "dlc_***",
+                        "DatasourceEnv": "production"
+                    }
+                ],
+                "CollectJobId": "collect_job_***",
+                "CollectJobName": "dlc_采集任务",
+                "ClusterId": "fkiqo0om",
+                "ClusterName": "DLC实例-***",
+                "OperateOption": null,
+                "ModifiedTimeByTables": 1770625474000,
+                "LastAccessTimeByTables": 1770625474000
+            },
+            {
+                "DatabaseId": null,
+                "DatabaseGuid": null,
+                "DatabaseName": "atta_dw_base",
+                "ProjectId": "project_id_***",
+                "ProjectName": "project_eng_name",
+                "ProjectDisplayName": "项目中文名称",
+                "MetastoreType": "DLC",
+                "DatasourceId": 146721,
+                "DatasourceName": "dlc_***",
+                "DisplayName": "dlc_***.atta_dw_base",
+                "Category": "CLUSTER",
+                "Catalog": "DataLakeCatalog",
+                "Description": "ODS层：数据冷备",
+                "Instance": "fkiqo0om",
+                "OwnerAccount": 100000,
+                "OwnerAccountName": "root",
+                "Region": "ap-guangzhou",
+                "Status": 1,
+                "StorageSize": 268435456,
+                "StorageSizeWithUnit": "256.00MB",
+                "CreateTime": "2023-03-09 15:42:59",
+                "TableCount": 8,
+                "DatasourceList": [],
                 "CollectJobId": null,
                 "CollectJobName": null,
-                "CreateTime": "2025-08-12T16:00:53+08:00",
-                "DatabaseGuid": "FB-gjv53p2TZcPaaZmsGHw",
-                "DatabaseId": "31712",
-                "DatabaseName": "barry_4",
-                "DatasourceId": 93731,
-                "DatasourceList": null,
-                "DatasourceName": "hive_emr-3f0wn6y7",
-                "Description": null,
-                "DisplayName": "hive_emr-3f0wn6y7.barry_4",
-                "Environment": null,
-                "Instance": null,
-                "LastAccessTimeByTables": null,
-                "MetastoreType": "HIVE",
+                "ClusterId": "fkiqo0om",
+                "ClusterName": "DLC实例-***",
+                "OperateOption": null,
                 "ModifiedTimeByTables": null,
-                "OwnerAccountName": null,
-                "ProjectDisplayName": null,
-                "ProjectId": null,
-                "ProjectName": null,
-                "Region": null,
-                "Status": null,
-                "StorageSize": null,
-                "StorageSizeWithUnit": null,
-                "TableCount": null
+                "LastAccessTimeByTables": null
             }
-        ],
-        "RequestId": "d271201e-984c-439c-9672-142817b5414d"
+        ]
     }
 }
 ```

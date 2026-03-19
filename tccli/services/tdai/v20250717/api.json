@@ -179,6 +179,17 @@
         },
         {
           "disabled": false,
+          "document": "架构：共享版-intranet，企业版-userVpc",
+          "example": "intranet",
+          "member": "string",
+          "name": "DeployPlace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "智能体状态",
           "example": "normal",
           "member": "string",
@@ -736,7 +747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能体ID",
+          "document": "<p>智能体ID</p>",
           "example": "agt-xpcn2t3e",
           "member": "string",
           "name": "AgentId",
@@ -745,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体版本",
+          "document": "<p>智能体版本</p>",
           "example": "v1.0.0.0",
           "member": "string",
           "name": "AgentVersion",
@@ -754,7 +765,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "风险SQL治理Agent实例",
           "member": "string",
           "name": "InstanceName",
@@ -763,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例的参数列表",
+          "document": "<p>智能体实例的参数列表</p>",
           "example": "无",
           "member": "Parameter",
           "name": "Parameters",
@@ -772,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "资源的标签信息",
+          "document": "<p>资源的标签信息</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -787,7 +798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能体实例ID",
+          "document": "<p>智能体实例ID</p>",
           "example": "agentins-efbt5y3h",
           "member": "string",
           "name": "InstanceId",
@@ -797,7 +808,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例名称",
+          "document": "<p>智能体实例名称</p>",
           "example": "agentins-efbt5y3h",
           "member": "string",
           "name": "InstanceName",
@@ -1323,6 +1334,15 @@
           "example": "normal",
           "member": "string",
           "name": "AgentStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "架构，共享版-intranet，企业版-userVpc",
+          "example": "intranet",
+          "member": "string",
+          "name": "DeployPlace",
           "required": false,
           "type": "string"
         }

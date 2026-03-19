@@ -521,6 +521,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -714,6 +723,15 @@
           "name": "DataKeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -751,6 +769,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -778,6 +805,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1299,6 +1335,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号appId",
+          "example": "251002343",
+          "member": "uint64",
+          "name": "AccountAppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号uin",
+          "example": "100000007998",
+          "member": "uint64",
+          "name": "AccountUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号名称",
+          "example": "加密组测试环境账号",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1442,6 +1508,15 @@
           "name": "DataKeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1479,6 +1554,15 @@
           "name": "DataKeyIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1489,7 +1573,7 @@
         {
           "disabled": false,
           "document": "返回数据密钥属性信息列表",
-          "example": " { \"DataKeyName\": \"x\", \"CreateTime\": xxx, \"CreatorUin\": xxx, \"DeletionDate\": 0, \"Description\": \"x\", \"HsmClusterId\": \"cls-x-x\",\"NumberOfBytes\":32, \"DataKeyId\": \"xxx\", \"KeyId\": \"xxx\",  \"KeyState\": \"xxx\", \"Origin\": \"xxx\",\"ResourceId\": \"creatorUin/xxx/xxx\" } ",
+          "example": "无",
           "member": "DataKeyMetadata",
           "name": "DataKeyMetadatas",
           "output_required": true,
@@ -1516,6 +1600,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1553,6 +1646,15 @@
           "name": "KeyIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1563,7 +1665,7 @@
         {
           "disabled": false,
           "document": "返回的属性信息列表",
-          "example": "{\"Alias\":\"test11lzc\",\"CreateTime\":1730357927,\"CreatorUin\":700001224419,\"DeletionDate\":0,\"Description\":\"倒入外部密钥\",\"HsmClusterId\":\"\",\"KeyId\":\"93866e69-9755-11ef-8e65-52540089bc41\",\"KeyRotationEnabled\":false}",
+          "example": "无",
           "member": "KeyMetadata",
           "name": "KeyMetadatas",
           "output_required": true,
@@ -1858,6 +1960,15 @@
           "name": "DataKeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1885,6 +1996,15 @@
           "name": "DataKeyIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1912,6 +2032,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1939,6 +2068,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1966,6 +2104,15 @@
           "name": "KeyIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2047,6 +2194,15 @@
           "name": "DataKeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2069,11 +2225,20 @@
         {
           "disabled": false,
           "document": "需要批量启用的DataKey Id 列表， 数据密钥数量最大支持100",
-          "example": "\t [\"23e80852-1e38-11e9-b129-5cb9019b4b02\"]",
+          "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\"]",
           "member": "string",
           "name": "DataKeyIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2101,6 +2266,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2137,6 +2311,15 @@
           "name": "RotateDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2164,6 +2347,15 @@
           "name": "KeyIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2615,6 +2807,15 @@
           "name": "DataKeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2707,6 +2908,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3542,6 +3752,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号appId",
+          "example": "260082377",
+          "member": "uint64",
+          "name": "AccountAppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号uin",
+          "example": "700002334915",
+          "member": "uint64",
+          "name": "AccountUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号名称",
+          "example": "kms-700002334915",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3692,6 +3932,15 @@
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "成员账号信息数组",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccounts",
           "required": false,
           "type": "list"
         }
@@ -3882,7 +4131,7 @@
         {
           "disabled": false,
           "document": "标签过滤条件",
-          "example": "[{\"TagKey\":\"env\",\"TagValue\":[\"dev\"]}]",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -3896,6 +4145,15 @@
           "name": "HsmClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息数组",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccounts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4005,6 +4263,34 @@
         }
       ],
       "type": "object"
+    },
+    "MemberAccount": {
+      "document": "共享成员账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员账号appid\n",
+          "example": "260082377",
+          "member": "uint64",
+          "name": "MemberAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号uin",
+          "example": "700002334915881",
+          "member": "uint64",
+          "name": "MemberUin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OverwriteWhiteBoxDeviceFingerprintsRequest": {
       "document": "OverwriteWhiteBoxDeviceFingerprints请求参数结构体",
@@ -4364,7 +4650,7 @@
         {
           "disabled": false,
           "document": "数据密钥的唯一标志符",
-          "example": "\t 93866e69-9755-11ef-8e65-52540089bc41",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
           "member": "string",
           "name": "DataKeyId",
           "required": true,
@@ -4378,6 +4664,15 @@
           "name": "PendingWindowInDays",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4434,6 +4729,15 @@
           "name": "PendingWindowInDays",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4647,6 +4951,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4683,6 +4996,15 @@
           "name": "Description",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4714,11 +5036,20 @@
         {
           "disabled": false,
           "document": "数据密钥的名称",
-          "example": "test",
+          "example": "testDatakeyName",
           "member": "string",
           "name": "DataKeyName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4755,6 +5086,15 @@
           "name": "KeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可信服务成员账号信息,当前账号时管理员或者委派管理员时有效。",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

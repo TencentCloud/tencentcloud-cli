@@ -141,11 +141,11 @@
       "status": "online"
     },
     "CreatePrometheusGlobalNotification": {
-      "document": "创建全局告警通知渠道。集群内创建的告警规则如果未配置告警通知渠道，默认走全局告警通知渠道（建议在控制台创建告警，集群内创建告警不易维护）",
+      "document": "之前TPS的接口，迁移后已经不需要该功能\n\n创建全局告警通知渠道。集群内创建的告警规则如果未配置告警通知渠道，默认走全局告警通知渠道（建议在控制台创建告警，集群内创建告警不易维护）",
       "input": "CreatePrometheusGlobalNotificationRequest",
       "name": "创建全局告警通知渠道",
       "output": "CreatePrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreatePrometheusMultiTenantInstancePostPayMode": {
       "document": "创建按量 Prometheus 实例，根据用量收费实例",
@@ -553,6 +553,13 @@
       "output": "DescribeMonitorTypesResponse",
       "status": "online"
     },
+    "DescribeNotificationContentTemplateSupports": {
+      "document": "查询告警通知内容模板支持的变量或者函数列表",
+      "input": "DescribeNotificationContentTemplateSupportsRequest",
+      "name": "查询通知内容模板支持的变量及函数",
+      "output": "DescribeNotificationContentTemplateSupportsResponse",
+      "status": "online"
+    },
     "DescribePhoneAlarmFlowTotalCount": {
       "document": "查询周期内电话流水总数",
       "input": "DescribePhoneAlarmFlowTotalCountRequest",
@@ -659,11 +666,11 @@
       "status": "online"
     },
     "DescribePrometheusGlobalNotification": {
-      "document": "查询全局告警通知渠道",
+      "document": "之前TPS的接口，迁移后已经不需要\n\n查询全局告警通知渠道",
       "input": "DescribePrometheusGlobalNotificationRequest",
       "name": "查询全局告警通知渠道",
       "output": "DescribePrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePrometheusInstanceDetail": {
       "document": "获取TMP实例详情",
@@ -841,7 +848,7 @@
       "status": "online"
     },
     "GetMonitorData": {
-      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n拉取数据的粒度和统计方式的对应关系尽量在接入平台进行配置，如果没有配置对应统计方式，请提工单反馈。\n\n>?\n>- 2022年9月1日起，腾讯云可观测平台开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
+      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取50个实例的监控数据，单请求的数据点数限制为7200个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n拉取数据的粒度和统计方式的对应关系尽量在接入平台进行配置，如果没有配置对应统计方式，请提工单反馈。\n\n>?\n>- 2022年9月1日起，腾讯云可观测平台开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
       "input": "GetMonitorDataRequest",
       "name": "拉取指标监控数据",
       "output": "GetMonitorDataResponse",
@@ -953,11 +960,11 @@
       "status": "online"
     },
     "ModifyPrometheusGlobalNotification": {
-      "document": "修改全局告警通知渠道",
+      "document": "之前TPS接口，迁移后不需要\n\n修改全局告警通知渠道",
       "input": "ModifyPrometheusGlobalNotificationRequest",
       "name": "修改全局告警通知渠道",
       "output": "ModifyPrometheusGlobalNotificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyPrometheusInstanceAttributes": {
       "document": "修改 Prometheus 实例相关属性",
@@ -9656,6 +9663,43 @@
       ],
       "type": "object"
     },
+    "DescribeNotificationContentTemplateSupportsRequest": {
+      "document": "DescribeNotificationContentTemplateSupports请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_PROM",
+          "member": "string",
+          "name": "MonitorType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotificationContentTemplateSupportsResponse": {
+      "document": "DescribeNotificationContentTemplateSupports返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationContentTemplateSupport",
+          "name": "Support",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePhoneAlarmFlowTotalCountRequest": {
       "document": "DescribePhoneAlarmFlowTotalCount请求参数结构体",
       "members": [
@@ -14621,7 +14665,7 @@
         },
         {
           "disabled": false,
-          "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取10个实例的监控数据。",
+          "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取50个实例的监控数据。",
           "example": "无",
           "member": "Instance",
           "name": "Instances",
@@ -14630,7 +14674,7 @@
         },
         {
           "disabled": false,
-          "document": "监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的统计周期列即为支持的统计周期。单请求的数据点数限制为1440个。",
+          "document": "监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的统计周期列即为支持的统计周期。单请求的数据点数限制为7200个。",
           "example": "300",
           "member": "uint64",
           "name": "Period",
@@ -17681,6 +17725,84 @@
       ],
       "usage": "both"
     },
+    "NotificationContentTemplateSupport": {
+      "document": "告警通知内容模板支持的变量或者函数列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_PROM",
+          "member": "string",
+          "name": "MonitorType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationContentTemplateSupportDetail",
+          "name": "Variables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationContentTemplateSupportDetail",
+          "name": "Functions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NotificationContentTemplateSupportDetail": {
+      "document": "告警通知内容模板支持的变量或者函数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量/函数名称",
+          "example": "status_fmt",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "告警状态格式化信息",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "示例",
+          "example": "触发",
+          "member": "string",
+          "name": "Example",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Operator": {
       "document": "维度支持的操作符信息",
       "members": [
@@ -18214,7 +18336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群",
+          "document": "集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群、外部集群",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -18977,7 +19099,7 @@
         },
         {
           "disabled": false,
-          "document": "被采集的点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被采集的点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.8",
           "member": "float",
           "name": "ScrapedRate",
@@ -18997,7 +19119,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤前的指标采集速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每秒过滤前的指标采集速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.8",
           "member": "float",
           "name": "SamplesRate",
@@ -19135,7 +19257,7 @@
         },
         {
           "disabled": false,
-          "document": "被采集的点数",
+          "document": "每秒被采集的点数",
           "example": "0.8",
           "member": "float",
           "name": "ScrapedRate",
@@ -19165,7 +19287,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤前的指标采集速率",
+          "document": "过滤前的每秒指标采集速率",
           "example": "0.8",
           "member": "float",
           "name": "SamplesRate",
@@ -19211,7 +19333,7 @@
         },
         {
           "disabled": false,
-          "document": "基础指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础指标用量个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "float",
           "name": "Basic",
@@ -19221,7 +19343,7 @@
         },
         {
           "disabled": false,
-          "document": "付费指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费指标用量个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "float",
           "name": "Fee",
@@ -19248,7 +19370,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "test",
+          "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -19368,7 +19490,7 @@
         {
           "disabled": false,
           "document": "实例关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "PrometheusTag",
           "name": "TagSpecification",
           "output_required": true,
@@ -19458,7 +19580,7 @@
         {
           "disabled": false,
           "document": "Proxy 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://url",
+          "example": "0.0.0.0:9090",
           "member": "string",
           "name": "ProxyAddress",
           "output_required": true,
@@ -19488,7 +19610,7 @@
         {
           "disabled": false,
           "document": "实例的授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "PrometheusInstanceGrantInfo",
           "name": "Grant",
           "output_required": true,
@@ -21232,7 +21354,7 @@
         {
           "disabled": false,
           "document": "服务发现名称",
-          "example": "",
+          "example": "online-service",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -21242,7 +21364,7 @@
         {
           "disabled": false,
           "document": "服务发现属于的 Namespace",
-          "example": "",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -21252,7 +21374,7 @@
         {
           "disabled": false,
           "document": "服务发现类型: ServiceMonitor/PodMonitor",
-          "example": "",
+          "example": "ServiceMonitor",
           "member": "string",
           "name": "Kind",
           "required": true,
@@ -21262,7 +21384,7 @@
         {
           "disabled": false,
           "document": "Namespace 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"any\":true,\"matchNames\":[\"default\"]}",
           "member": "string",
           "name": "NamespaceSelector",
           "required": true,
@@ -21272,7 +21394,7 @@
         {
           "disabled": false,
           "document": "Label 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"matchLabels\": {\"app\":\"k8s\"}}",
           "member": "string",
           "name": "Selector",
           "required": true,
@@ -21282,7 +21404,7 @@
         {
           "disabled": false,
           "document": "Endpoints 信息（PodMonitor 不含该参数）",
-          "example": "",
+          "example": "[{\"port\":\"http\",\"path\":\"/metrics\",\"scheme\":\"http\"}]",
           "member": "string",
           "name": "Endpoints",
           "required": true,
@@ -21292,7 +21414,7 @@
         {
           "disabled": false,
           "document": "服务发现对应的配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "name: online-service",
           "member": "string",
           "name": "Yaml",
           "required": true,

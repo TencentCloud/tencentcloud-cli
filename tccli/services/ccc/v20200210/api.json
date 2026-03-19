@@ -358,7 +358,7 @@
       "status": "online"
     },
     "DescribeSessionDetail": {
-      "document": "获取通话详情",
+      "document": "此接口用于在通话结束后，通过 session id 和时间戳，查询单一通话的通话详情。包括：主被叫信息、录音等。",
       "input": "DescribeSessionDetailRequest",
       "name": "查询通话详情",
       "output": "DescribeSessionDetailResponse",
@@ -374,7 +374,7 @@
     "DescribeStaffInfoList": {
       "document": "获取坐席信息列表",
       "input": "DescribeStaffInfoListRequest",
-      "name": "获取坐席信息列表",
+      "name": "获取座席信息列表",
       "output": "DescribeStaffInfoListResponse",
       "status": "online"
     },
@@ -753,7 +753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "提取的类型是文本",
+          "document": "<p>提取的类型是文本</p>",
           "example": "xx省xx市xx区xx街道",
           "member": "string",
           "name": "Text",
@@ -763,7 +763,7 @@
         },
         {
           "disabled": false,
-          "document": "提取的内型是选项",
+          "document": "<p>提取的类型是选项</p>",
           "example": "[\"动力\",\"价格\"]",
           "member": "string",
           "name": "Chosen",
@@ -773,7 +773,7 @@
         },
         {
           "disabled": false,
-          "document": "提取类型是布尔值",
+          "document": "<p>提取类型是布尔值</p>",
           "example": "true",
           "member": "bool",
           "name": "Boolean",
@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "提取类型是数字",
+          "document": "<p>提取类型是数字</p>",
           "example": "7.0",
           "member": "float",
           "name": "Number",
@@ -2675,6 +2675,24 @@
           "name": "MaxRingTimeoutSecond",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "环境音场景，没有的话不填。\ncoffee_shops：咖啡店氛围，背景中有人聊天\nbusy_office：客服中心",
+          "example": "coffee_shops",
+          "member": "string",
+          "name": "AmbientSoundType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境音音量。如果AmbientSoundType 为空，该字段不填。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。",
+          "example": "1",
+          "member": "float",
+          "name": "AmbientSoundVolume",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -4044,7 +4062,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -4053,7 +4071,7 @@
         },
         {
           "disabled": false,
-          "document": "待删除客服邮箱列表，一次最大支持200个。",
+          "document": "<p>待删除客服邮箱列表，一次最大支持200个。</p>",
           "example": "[\"staff1@xxx.com\",\"staff2@xxx.com\"]",
           "member": "string",
           "name": "StaffList",
@@ -4068,12 +4086,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "无法删除的状态为在线的客服列表",
+          "document": "<p>无法删除的状态为在线的客服列表</p>",
           "example": "[\"staff1@xxx.com\",\"staff2@xxx.com\"]",
           "member": "string",
           "name": "OnlineStaffList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>坐席删除详情</p>",
+          "example": "All members have been deleted",
+          "member": "string",
+          "name": "DeleteStatusInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5355,7 +5383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1500098920",
           "member": "int64",
           "name": "SdkAppId",
@@ -5364,7 +5392,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "document": "<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>",
           "example": "1769730111",
           "member": "int64",
           "name": "StartTimestamp",
@@ -5373,7 +5401,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。",
+          "document": "<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>",
           "example": "1769749111",
           "member": "int64",
           "name": "EndTimestamp",
@@ -5382,7 +5410,7 @@
         },
         {
           "disabled": false,
-          "document": "闪信投递号码（被叫号码）",
+          "document": "<p>闪信投递号码（被叫号码）</p>",
           "example": "00860755******88",
           "member": "string",
           "name": "DeliveryNumber",
@@ -5391,7 +5419,7 @@
         },
         {
           "disabled": false,
-          "document": "呼叫关联的系统号码",
+          "document": "<p>呼叫关联的系统号码</p>",
           "example": "0086021******07",
           "member": "string",
           "name": "ServingNumber",
@@ -5400,7 +5428,7 @@
         },
         {
           "disabled": false,
-          "document": "会话 ID",
+          "document": "<p>会话 ID</p>",
           "example": "15adb830-****-****-****-20c7d825d845",
           "member": "string",
           "name": "SessionId",
@@ -5409,7 +5437,7 @@
         },
         {
           "disabled": false,
-          "document": "投递结果 1 为成功，其他为失败",
+          "document": "<p>投递结果 1 为成功，其他为失败</p>",
           "example": "1",
           "member": "int64",
           "name": "DeliveryStatus",
@@ -5418,7 +5446,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认 20，最大 100",
+          "document": "<p>分页大小，默认 20，最大 1000</p><p>取值范围：[20, 1000]</p><p>单位：条</p><p>默认值：20</p>",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
@@ -5427,7 +5455,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码，从 0 开始",
+          "document": "<p>分页页码，从 0 开始</p>",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",
@@ -5442,7 +5470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录总数",
+          "document": "<p>记录总数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -5452,7 +5480,7 @@
         },
         {
           "disabled": false,
-          "document": "闪信记录列表",
+          "document": "<p>闪信记录列表</p>",
           "example": "无",
           "member": "FlashSMSRecord",
           "name": "FlashSMSList",
@@ -5769,7 +5797,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -5778,7 +5806,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，从0开始",
+          "document": "<p>页数，从0开始</p>",
           "example": "0",
           "member": "uint64",
           "name": "PageNumber",
@@ -5787,7 +5815,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认20",
+          "document": "<p>分页大小，默认20</p>",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -5802,7 +5830,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数量",
+          "document": "<p>总数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -5812,8 +5840,8 @@
         },
         {
           "disabled": false,
-          "document": "号码列表",
-          "example": "[{\"Number\":\"0086075512345678\",\"State\":1,\"CallOutSkillGroupIds\":[1]}]",
+          "document": "<p>号码列表</p>",
+          "example": "无",
           "member": "NumberInfo",
           "name": "Numbers",
           "output_required": true,
@@ -6381,7 +6409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -6390,7 +6418,7 @@
         },
         {
           "disabled": false,
-          "document": "通话的 session id",
+          "document": "<p>通话的 session id</p>",
           "example": "6164325c-39aa-45dc-83e2-2ecbc9b37ad5",
           "member": "string",
           "name": "SessionId",
@@ -6399,7 +6427,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "document": "<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>",
           "example": "1756372067",
           "member": "int64",
           "name": "StartTimestamp",
@@ -6408,7 +6436,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。",
+          "document": "<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>",
           "example": "1756372167",
           "member": "int64",
           "name": "EndTimestamp",
@@ -6423,7 +6451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主叫号码",
+          "document": "<p>主叫号码</p>",
           "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "Caller",
@@ -6433,7 +6461,7 @@
         },
         {
           "disabled": false,
-          "document": "被叫号码",
+          "document": "<p>被叫号码</p>",
           "example": "0086010xxxxxxxx",
           "member": "string",
           "name": "Callee",
@@ -6443,7 +6471,7 @@
         },
         {
           "disabled": false,
-          "document": "通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫",
+          "document": "<p>通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫</p>",
           "example": "1",
           "member": "int64",
           "name": "CallType",
@@ -6453,7 +6481,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳，Unix 秒级时间戳",
+          "document": "<p>开始时间戳，Unix 秒级时间戳</p>",
           "example": "1611631881",
           "member": "int64",
           "name": "StartTimeStamp",
@@ -6463,7 +6491,7 @@
         },
         {
           "disabled": false,
-          "document": "振铃时间戳，UNIX 秒级时间戳",
+          "document": "<p>振铃时间戳，UNIX 秒级时间戳</p>",
           "example": "1611631885",
           "member": "int64",
           "name": "RingTimestamp",
@@ -6473,7 +6501,7 @@
         },
         {
           "disabled": false,
-          "document": "接听时间戳，UNIX 秒级时间戳",
+          "document": "<p>接听时间戳，UNIX 秒级时间戳</p>",
           "example": "1611631891",
           "member": "int64",
           "name": "AcceptTimestamp",
@@ -6483,7 +6511,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳，UNIX 秒级时间戳",
+          "document": "<p>结束时间戳，UNIX 秒级时间戳</p>",
           "example": "1611631991",
           "member": "int64",
           "name": "EndedTimestamp",
@@ -6493,7 +6521,7 @@
         },
         {
           "disabled": false,
-          "document": "进入排队时间，Unix 秒级时间戳",
+          "document": "<p>进入排队时间，Unix 秒级时间戳</p>",
           "example": "1611631889",
           "member": "int64",
           "name": "QueuedTimestamp",
@@ -6503,7 +6531,7 @@
         },
         {
           "disabled": false,
-          "document": "座席账号",
+          "document": "<p>座席账号</p>",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "StaffUserId",
@@ -6513,7 +6541,7 @@
         },
         {
           "disabled": false,
-          "document": "参考 DescribeTelCdr 接口 EndStatus 字段",
+          "document": "<p>参考 DescribeTelCdr 接口 EndStatus 字段</p>",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
@@ -6523,7 +6551,7 @@
         },
         {
           "disabled": false,
-          "document": "排队技能组 ID",
+          "document": "<p>排队技能组 ID</p>",
           "example": "203",
           "member": "int64",
           "name": "QueuedSkillGroupId",
@@ -6533,7 +6561,7 @@
         },
         {
           "disabled": false,
-          "document": "排队技能组名称",
+          "document": "<p>排队技能组名称</p>",
           "example": "销售组",
           "member": "string",
           "name": "QueuedSkillGroupName",
@@ -6543,7 +6571,7 @@
         },
         {
           "disabled": false,
-          "document": "录音链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接",
+          "document": "<p>录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>",
           "example": "https://xxxxx",
           "member": "string",
           "name": "RecordURL",
@@ -6553,7 +6581,7 @@
         },
         {
           "disabled": false,
-          "document": "录音转存第三方 COS 链接",
+          "document": "<p>录音转存第三方 COS 链接</p>",
           "example": "https://xxxxx",
           "member": "string",
           "name": "CustomRecordURL",
@@ -6563,7 +6591,7 @@
         },
         {
           "disabled": false,
-          "document": "录音文本信息链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接",
+          "document": "<p>录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>",
           "example": "https://xxxxx",
           "member": "string",
           "name": "AsrURL",
@@ -6573,7 +6601,7 @@
         },
         {
           "disabled": false,
-          "document": "语音留言录音链接",
+          "document": "<p>语音留言录音链接</p>",
           "example": "[\"https://xxxxx\"]",
           "member": "string",
           "name": "VoicemailRecordURL",
@@ -6583,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关",
+          "document": "<p>语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关</p>",
           "example": "[\"https://xxxxx\"]",
           "member": "string",
           "name": "VoicemailAsrURL",
@@ -6593,7 +6621,7 @@
         },
         {
           "disabled": false,
-          "document": "IVR 按键信息",
+          "document": "<p>IVR 按键信息</p>",
           "example": "无",
           "member": "IVRKeyPressedElement",
           "name": "IVRKeyPressed",
@@ -6603,7 +6631,7 @@
         },
         {
           "disabled": false,
-          "document": "满意度按键信息",
+          "document": "<p>满意度按键信息</p>",
           "example": "无",
           "member": "IVRKeyPressedElement",
           "name": "PostIVRKeyPressed",
@@ -6613,7 +6641,7 @@
         },
         {
           "disabled": false,
-          "document": "挂机方 seat 座席 user 用户 system 系统",
+          "document": "<p>挂机方 seat 座席 user 用户 system 系统</p>",
           "example": "user",
           "member": "string",
           "name": "HungUpSide",
@@ -6623,7 +6651,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义数据（User-to-User Interface）",
+          "document": "<p>客户自定义数据（User-to-User Interface）</p>",
           "example": "foo-bar",
           "member": "string",
           "name": "UUI",
@@ -6633,7 +6661,7 @@
         },
         {
           "disabled": false,
-          "document": "通话中的事件列表",
+          "document": "<p>通话中的事件列表</p>",
           "example": "无",
           "member": "SessionEvent",
           "name": "Events",
@@ -6643,12 +6671,32 @@
         },
         {
           "disabled": false,
-          "document": "服务参与者列表",
+          "document": "<p>服务参与者列表</p>",
           "example": "无",
           "member": "ServeParticipant",
           "name": "ServeParticipants",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接通后系统挂断原因状态码</p><p><a href=\"https://cloud.tencent.com/document/product/679/123938\">详见</a></p>",
+          "example": "1010",
+          "member": "int64",
+          "name": "SysHangupReason",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接通后系统挂断原因</p><p><a href=\"https://cloud.tencent.com/document/product/679/123938\">详见</a></p>",
+          "example": "userHangupDuringAIAgent",
+          "member": "string",
+          "name": "SysHangupReasonString",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6757,7 +6805,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -6766,7 +6814,7 @@
         },
         {
           "disabled": false,
-          "document": "分页尺寸，上限 9999",
+          "document": "<p>分页尺寸，上限 9999</p>",
           "example": "9999",
           "member": "int64",
           "name": "PageSize",
@@ -6775,7 +6823,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页码，从 0 开始",
+          "document": "<p>分页页码，从 0 开始</p>",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",
@@ -6784,7 +6832,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席账号，查询单个坐席时使用",
+          "document": "<p>坐席账号，查询单个坐席时使用</p>",
           "example": "102992@qq.com",
           "member": "string",
           "name": "StaffMail",
@@ -6793,7 +6841,7 @@
         },
         {
           "disabled": false,
-          "document": "查询修改时间大于等于ModifiedTime的坐席时使用",
+          "document": "<p>查询修改时间大于等于ModifiedTime的坐席时使用</p>",
           "example": "1611631881",
           "member": "int64",
           "name": "ModifiedTime",
@@ -6802,7 +6850,7 @@
         },
         {
           "disabled": false,
-          "document": "技能组ID",
+          "document": "<p>技能组ID</p>",
           "example": "1145",
           "member": "int64",
           "name": "SkillGroupId",
@@ -6817,7 +6865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "坐席用户总数",
+          "document": "<p>坐席用户总数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -6827,8 +6875,8 @@
         },
         {
           "disabled": false,
-          "document": "坐席用户信息列表",
-          "example": "[{\"Name\":\"n\",\"Mail\":\"m@e.com\",\"Phone\":\"123\",\"Nick\":\"t\",\"StaffNumber\":\"1\",\"RoleId\":1,\"SkillGroupList\":[{\"SkillGroupId\":1,\"SkillGroupName\":\"sg\",\"Priority\":1,\"Type\":\"IM\"}],\"LastModifyTimestamp\":1}]",
+          "document": "<p>坐席用户信息列表</p>",
+          "example": "无",
           "member": "StaffInfo",
           "name": "StaffList",
           "output_required": true,
@@ -6995,8 +7043,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间戳，Unix 时间戳(查询维度仅支持天，例如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
-          "example": "0",
+          "document": "<p>起始时间戳，Unix 时间戳(查询维度仅支持天，例如查询5月1日应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-01 23:59:59&quot;的时间戳,查5月1日和5月2日的应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-02 23:59:59&quot;的时间戳)</p>",
+          "example": "1773041460",
           "member": "int64",
           "name": "StartTimeStamp",
           "required": true,
@@ -7004,8 +7052,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天(查询维度仅支持天，例如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
-          "example": "0",
+          "document": "<p>结束时间戳，Unix 时间戳，查询时间范围最大为90天(查询维度仅支持天，例如查询5月1日应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-01 23:59:59&quot;的时间戳,查5月1日和5月2日的应该传startTime:&quot;2023-05-01 00:00:00&quot;,&quot;endTime&quot;:&quot;2023-05-02 23:59:59&quot;的时间戳)</p>",
+          "example": "1773042460",
           "member": "int64",
           "name": "EndTimeStamp",
           "required": true,
@@ -7013,8 +7061,8 @@
         },
         {
           "disabled": false,
-          "document": "应用ID列表，多个ID时，返回值为多个ID使用总和",
-          "example": "[\"0\\n\"]",
+          "document": "<p>应用ID列表，多个ID时，返回值为多个ID使用总和</p>",
+          "example": "[140000000]",
           "member": "int64",
           "name": "SdkAppIdList",
           "required": true,
@@ -7028,7 +7076,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "呼出套餐包消耗分钟数",
+          "document": "<p>呼出套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "TelCallOutCount",
@@ -7038,7 +7086,7 @@
         },
         {
           "disabled": false,
-          "document": "呼入套餐包消耗分钟数",
+          "document": "<p>呼入套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "TelCallInCount",
@@ -7048,7 +7096,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席使用统计个数",
+          "document": "<p>坐席使用统计个数</p>",
           "example": "50",
           "member": "int64",
           "name": "SeatUsedCount",
@@ -7058,7 +7106,7 @@
         },
         {
           "disabled": true,
-          "document": "音频套餐包消耗分钟数",
+          "document": "<p>音频套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "VoipCallInCount",
@@ -7068,7 +7116,7 @@
         },
         {
           "disabled": false,
-          "document": "音频套餐包消耗分钟数",
+          "document": "<p>音频套餐包消耗分钟数</p>",
           "example": "10",
           "member": "int64",
           "name": "VOIPCallInCount",
@@ -7078,7 +7126,7 @@
         },
         {
           "disabled": false,
-          "document": "离线语音转文字套餐包消耗分钟数",
+          "document": "<p>离线语音转文字套餐包消耗分钟数</p>",
           "example": "1",
           "member": "int64",
           "name": "AsrOfflineCount",
@@ -7088,7 +7136,7 @@
         },
         {
           "disabled": false,
-          "document": "实时语音转文字套餐包消耗分钟数",
+          "document": "<p>实时语音转文字套餐包消耗分钟数</p>",
           "example": "1",
           "member": "int64",
           "name": "AsrRealtimeCount",
@@ -8506,7 +8554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "号码",
+          "document": "<p>号码</p>",
           "example": "0086075512345678",
           "member": "string",
           "name": "Number",
@@ -8516,7 +8564,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的外呼技能组",
+          "document": "<p>绑定的外呼技能组</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "CallOutSkillGroupIds",
@@ -8526,11 +8574,21 @@
         },
         {
           "disabled": false,
-          "document": "号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用",
+          "document": "<p>号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用</p>",
           "example": "1",
           "member": "int64",
           "name": "State",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自携号码</p><p>枚举值：</p><ul><li>0： 非自携</li><li>1： 自携</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "CostType",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -10996,6 +11054,26 @@
           "example": "新款智能体销售",
           "member": "string",
           "name": "AIAgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接通后系统挂断原因，枚举类似",
+          "example": "1010",
+          "member": "int64",
+          "name": "SysHangupReason",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接通后系统挂断原因，文字描述信息",
+          "example": "用户挂断智能体通话",
+          "member": "string",
+          "name": "SysHangupReasonString",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

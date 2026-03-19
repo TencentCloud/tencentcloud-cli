@@ -1197,6 +1197,48 @@
       "output": "DescribeImageComponentListResponse",
       "status": "online"
     },
+    "DescribeImageDenyEventDetail": {
+      "document": "查询镜像拦截事件详情",
+      "input": "DescribeImageDenyEventDetailRequest",
+      "name": "查询镜像拦截事件详情",
+      "output": "DescribeImageDenyEventDetailResponse",
+      "status": "online"
+    },
+    "DescribeImageDenyEventList": {
+      "document": "查询镜像拦截事件列表",
+      "input": "DescribeImageDenyEventListRequest",
+      "name": "查询镜像拦截事件列表",
+      "output": "DescribeImageDenyEventListResponse",
+      "status": "online"
+    },
+    "DescribeImageDenyEventTendency": {
+      "document": "查询镜像拦截事件趋势",
+      "input": "DescribeImageDenyEventTendencyRequest",
+      "name": "查询镜像拦截事件趋势",
+      "output": "DescribeImageDenyEventTendencyResponse",
+      "status": "online"
+    },
+    "DescribeImageDenyRuleDetail": {
+      "document": "查询镜像拦截规则详情",
+      "input": "DescribeImageDenyRuleDetailRequest",
+      "name": "查询镜像拦截规则详情",
+      "output": "DescribeImageDenyRuleDetailResponse",
+      "status": "online"
+    },
+    "DescribeImageDenyRuleList": {
+      "document": "查询镜像拦截规则列表",
+      "input": "DescribeImageDenyRuleListRequest",
+      "name": "查询镜像拦截规则列表",
+      "output": "DescribeImageDenyRuleListResponse",
+      "status": "online"
+    },
+    "DescribeImageDenyRuleSummary": {
+      "document": "查询镜像拦截规则统计",
+      "input": "DescribeImageDenyRuleSummaryRequest",
+      "name": "查询镜像拦截规则统计",
+      "output": "DescribeImageDenyRuleSummaryResponse",
+      "status": "online"
+    },
     "DescribeImageRegistryNamespaceList": {
       "document": "查询用户镜像仓库下的命令空间列表",
       "input": "DescribeImageRegistryNamespaceListRequest",
@@ -1300,6 +1342,20 @@
       "input": "DescribeLogStorageStatisticRequest",
       "name": "获取日志检索容量使用统计",
       "output": "DescribeLogStorageStatisticResponse",
+      "status": "online"
+    },
+    "DescribeMaliciousConnectionBlackList": {
+      "document": "查询恶意外连黑名单",
+      "input": "DescribeMaliciousConnectionBlackListRequest",
+      "name": "查询恶意外连黑名单",
+      "output": "DescribeMaliciousConnectionBlackListResponse",
+      "status": "online"
+    },
+    "DescribeMaliciousConnectionWhiteList": {
+      "document": "查询恶意外连白名单",
+      "input": "DescribeMaliciousConnectionWhiteListRequest",
+      "name": "查询恶意外连白名单",
+      "output": "DescribeMaliciousConnectionWhiteListResponse",
       "status": "online"
     },
     "DescribeNetworkFirewallAuditRecord": {
@@ -1461,6 +1517,20 @@
       "input": "DescribeReverseShellEventsExportRequest",
       "name": "运行时反弹shell列表导出",
       "output": "DescribeReverseShellEventsExportResponse",
+      "status": "online"
+    },
+    "DescribeReverseShellRegexpWhiteList": {
+      "document": "查询反弹shell正则白名单列表",
+      "input": "DescribeReverseShellRegexpWhiteListRequest",
+      "name": "查询反弹shell正则白名单列表",
+      "output": "DescribeReverseShellRegexpWhiteListResponse",
+      "status": "online"
+    },
+    "DescribeReverseShellRegexpWhiteListInfo": {
+      "document": "查询反弹shell正则白名单详情",
+      "input": "DescribeReverseShellRegexpWhiteListInfoRequest",
+      "name": "查询反弹shell正则白名单详情",
+      "output": "DescribeReverseShellRegexpWhiteListInfoResponse",
       "status": "online"
     },
     "DescribeReverseShellWhiteListDetail": {
@@ -2426,7 +2496,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略模式，   RULE_MODE_RELEASE: 放行\n   RULE_MODE_ALERT: 告警\n   RULE_MODE_HOLDUP:拦截",
+          "document": "<p>策略模式，   RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>",
           "example": "RULE_MODE_RELEASE",
           "member": "string",
           "name": "RuleMode",
@@ -2437,7 +2507,7 @@
         },
         {
           "disabled": false,
-          "document": "进程路径",
+          "document": "<p>进程路径</p>",
           "example": "/bin/busybox",
           "member": "string",
           "name": "ProcessPath",
@@ -2448,7 +2518,7 @@
         },
         {
           "disabled": false,
-          "document": "子策略id",
+          "document": "<p>子策略id</p>",
           "example": "childsub1",
           "member": "string",
           "name": "RuleId",
@@ -2459,11 +2529,22 @@
         },
         {
           "disabled": false,
-          "document": "威胁等级，HIGH:高，MIDDLE:中，LOW:低",
+          "document": "<p>威胁等级，HIGH:高，MIDDLE:中，LOW:低</p>",
           "example": "MIDDLE",
           "member": "string",
           "name": "RuleLevel",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令行参数</p>",
+          "example": "ls -l",
+          "member": "string",
+          "name": "CmdLine",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2562,7 +2643,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "进程目录",
+          "document": "<p>进程目录</p>",
           "example": "/home/work",
           "member": "string",
           "name": "ProcessPath",
@@ -2572,7 +2653,7 @@
         },
         {
           "disabled": false,
-          "document": "事件类型，MALICE_PROCESS_START:恶意进程启动",
+          "document": "<p>事件类型，MALICE_PROCESS_START:恶意进程启动</p>",
           "example": "MALICE_PROCESS_START",
           "member": "string",
           "name": "EventType",
@@ -2582,7 +2663,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则",
+          "document": "<p>命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则</p>",
           "example": "USER_DEFINED_RULE",
           "member": "string",
           "name": "MatchRuleName",
@@ -2592,7 +2673,7 @@
         },
         {
           "disabled": false,
-          "document": "生成时间",
+          "document": "<p>生成时间</p>",
           "example": "2020-2-2 13:00:00",
           "member": "datetime",
           "name": "FoundTime",
@@ -2602,7 +2683,7 @@
         },
         {
           "disabled": false,
-          "document": "容器名",
+          "document": "<p>容器名</p>",
           "example": "/condescending_allen",
           "member": "string",
           "name": "ContainerName",
@@ -2612,7 +2693,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名",
+          "document": "<p>镜像名</p>",
           "example": "tcs_runtime:latest",
           "member": "string",
           "name": "ImageName",
@@ -2622,7 +2703,7 @@
         },
         {
           "disabled": false,
-          "document": "动作执行结果，    BEHAVIOR_NONE: 无\n    BEHAVIOR_ALERT: 告警\n    BEHAVIOR_RELEASE：放行\n    BEHAVIOR_HOLDUP_FAILED:拦截失败\n    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败",
+          "document": "<p>动作执行结果，    BEHAVIOR_NONE: 无<br>    BEHAVIOR_ALERT: 告警<br>    BEHAVIOR_RELEASE：放行<br>    BEHAVIOR_HOLDUP_FAILED:拦截失败<br>    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败</p>",
           "example": "BEHAVIOR_NONE",
           "member": "string",
           "name": "Behavior",
@@ -2632,7 +2713,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，EVENT_UNDEAL:事件未处理\n    EVENT_DEALED:事件已经处理\n    EVENT_INGNORE：事件已经忽略",
+          "document": "<p>状态，EVENT_UNDEAL:事件未处理<br>    EVENT_DEALED:事件已经处理<br>    EVENT_INGNORE：事件已经忽略</p>",
           "example": "EVENT_UNDEAL",
           "member": "string",
           "name": "Status",
@@ -2642,7 +2723,7 @@
         },
         {
           "disabled": false,
-          "document": "事件记录的唯一id",
+          "document": "<p>事件记录的唯一id</p>",
           "example": "81abdbc1427b1983b63a2e7bf48ab156a9a22",
           "member": "string",
           "name": "Id",
@@ -2652,7 +2733,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像id，用于跳转",
+          "document": "<p>镜像id，用于跳转</p>",
           "example": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
           "member": "string",
           "name": "ImageId",
@@ -2662,7 +2743,7 @@
         },
         {
           "disabled": false,
-          "document": "容器id，用于跳转",
+          "document": "<p>容器id，用于跳转</p>",
           "example": "29df80b60872a40d91935c81cd7f7845f92f7e25d32bf18938208eedf0acf4b3",
           "member": "string",
           "name": "ContainerId",
@@ -2672,7 +2753,7 @@
         },
         {
           "disabled": false,
-          "document": "事件解决方案",
+          "document": "<p>事件解决方案</p>",
           "example": "解决方案",
           "member": "string",
           "name": "Solution",
@@ -2682,7 +2763,7 @@
         },
         {
           "disabled": false,
-          "document": "事件详细描述",
+          "document": "<p>事件详细描述</p>",
           "example": "事件描述",
           "member": "string",
           "name": "Description",
@@ -2692,7 +2773,7 @@
         },
         {
           "disabled": false,
-          "document": "命中策略id",
+          "document": "<p>命中策略id</p>",
           "example": "sub1",
           "member": "string",
           "name": "MatchRuleId",
@@ -2702,7 +2783,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则行为：\nRULE_MODE_RELEASE 放行\nRULE_MODE_ALERT  告警\nRULE_MODE_HOLDUP 拦截",
+          "document": "<p>命中规则行为：<br>RULE_MODE_RELEASE 放行<br>RULE_MODE_ALERT  告警<br>RULE_MODE_HOLDUP 拦截</p>",
           "example": "RULE_MODE_HOLDUP",
           "member": "string",
           "name": "MatchAction",
@@ -2712,7 +2793,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则进程信息",
+          "document": "<p>命中规则进程信息</p>",
           "example": "*/syscall",
           "member": "string",
           "name": "MatchProcessPath",
@@ -2722,7 +2803,7 @@
         },
         {
           "disabled": false,
-          "document": "规则是否存在",
+          "document": "<p>规则是否存在</p>",
           "example": "true",
           "member": "bool",
           "name": "RuleExist",
@@ -2732,7 +2813,7 @@
         },
         {
           "disabled": false,
-          "document": "事件数量",
+          "document": "<p>事件数量</p>",
           "example": "1001",
           "member": "int64",
           "name": "EventCount",
@@ -2742,7 +2823,7 @@
         },
         {
           "disabled": false,
-          "document": "最近生成时间",
+          "document": "<p>最近生成时间</p>",
           "example": "2020-2-2 13:00:00",
           "member": "datetime",
           "name": "LatestFoundTime",
@@ -2752,7 +2833,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组Id",
+          "document": "<p>规则组Id</p>",
           "example": "10091",
           "member": "string",
           "name": "RuleId",
@@ -2762,7 +2843,7 @@
         },
         {
           "disabled": false,
-          "document": "命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字",
+          "document": "<p>命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字</p>",
           "example": "SYSTEM_DEFINED_RULE",
           "member": "string",
           "name": "MatchGroupName",
@@ -2772,7 +2853,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。",
+          "document": "<p>命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。</p>",
           "example": "MIDDLE",
           "member": "string",
           "name": "MatchRuleLevel",
@@ -2782,7 +2863,7 @@
         },
         {
           "disabled": false,
-          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "document": "<p>网络状态<br>未隔离      NORMAL<br>已隔离        ISOLATED<br>隔离中        ISOLATING<br>隔离失败    ISOLATE_FAILED<br>解除隔离中  RESTORING<br>解除隔离失败 RESTORE_FAILED</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "ContainerNetStatus",
@@ -2792,7 +2873,7 @@
         },
         {
           "disabled": false,
-          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知",
+          "document": "<p>容器子状态<br>&quot;AGENT_OFFLINE&quot;       //Agent离线<br>&quot;NODE_DESTROYED&quot;      //节点已销毁<br>&quot;CONTAINER_EXITED&quot;    //容器已退出<br>&quot;CONTAINER_DESTROYED&quot; //容器已销毁<br>&quot;SHARED_HOST&quot;         // 容器与主机共享网络<br>&quot;RESOURCE_LIMIT&quot;      //隔离操作资源超限<br>&quot;UNKNOW&quot;              // 原因未知</p>",
           "example": "NONE",
           "member": "string",
           "name": "ContainerNetSubStatus",
@@ -2802,7 +2883,7 @@
         },
         {
           "disabled": false,
-          "document": "容器隔离操作来源",
+          "document": "<p>容器隔离操作来源</p>",
           "example": "AccessControl",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
@@ -2812,7 +2893,7 @@
         },
         {
           "disabled": false,
-          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "document": "<p>容器状态<br>正在运行: RUNNING<br>暂停: PAUSED<br>停止: STOPPED<br>已经创建: CREATED<br>已经销毁: DESTROYED<br>正在重启中: RESTARTING<br>迁移中: REMOVING</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "ContainerStatus",
@@ -2822,7 +2903,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-dfj4f***",
           "member": "string",
           "name": "ClusterID",
@@ -2832,7 +2913,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型：NORMAL普通节点、SUPER超级节点",
+          "document": "<p>节点类型：NORMAL普通节点、SUPER超级节点</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "NodeType",
@@ -2842,7 +2923,7 @@
         },
         {
           "disabled": false,
-          "document": "pod 名称",
+          "document": "<p>pod 名称</p>",
           "example": "demoset",
           "member": "string",
           "name": "PodName",
@@ -2852,7 +2933,7 @@
         },
         {
           "disabled": false,
-          "document": "pod ip",
+          "document": "<p>pod ip</p>",
           "example": "10.0.0.11",
           "member": "string",
           "name": "PodIP",
@@ -2862,7 +2943,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "d41d8cd98f00b204e9800998e*****",
           "member": "string",
           "name": "NodeUniqueID",
@@ -2872,7 +2953,7 @@
         },
         {
           "disabled": false,
-          "document": "节点公网ip",
+          "document": "<p>节点公网ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIP",
@@ -2882,7 +2963,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称",
+          "document": "<p>节点名称</p>",
           "example": "demoset",
           "member": "string",
           "name": "NodeName",
@@ -2892,7 +2973,7 @@
         },
         {
           "disabled": false,
-          "document": "节点id",
+          "document": "<p>节点id</p>",
           "example": "5a540076-d38a-4078-aa98-e7c86371d322",
           "member": "string",
           "name": "NodeID",
@@ -2902,7 +2983,7 @@
         },
         {
           "disabled": false,
-          "document": "uuid",
+          "document": "<p>uuid</p>",
           "example": "5a540076-d38a-4078-aa98-e7c86371d322",
           "member": "string",
           "name": "HostID",
@@ -2912,7 +2993,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内网ip",
+          "document": "<p>节点内网ip</p>",
           "example": "10.0.0.11",
           "member": "string",
           "name": "HostIP",
@@ -2922,11 +3003,21 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "clus-dev",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令行参数</p>",
+          "example": "ls -l",
+          "member": "string",
+          "name": "CmdLine",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3178,7 +3269,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略模式,  RULE_MODE_RELEASE: 放行\n   RULE_MODE_ALERT: 告警\n   RULE_MODE_HOLDUP:拦截",
+          "document": "<p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>",
           "example": "RULE_MODE_RELEASE",
           "member": "string",
           "name": "RuleMode",
@@ -3189,7 +3280,7 @@
         },
         {
           "disabled": false,
-          "document": "进程路径",
+          "document": "<p>进程路径</p>",
           "example": "/home/bin/",
           "member": "string",
           "name": "ProcessPath",
@@ -3200,7 +3291,7 @@
         },
         {
           "disabled": false,
-          "document": "被访问文件路径，仅仅在访问控制生效",
+          "document": "<p>被访问文件路径，仅仅在访问控制生效</p>",
           "example": "/home/file/a.txt",
           "member": "string",
           "name": "TargetFilePath",
@@ -3211,11 +3302,22 @@
         },
         {
           "disabled": false,
-          "document": "子策略id",
+          "document": "<p>子策略id</p>",
           "example": "645c925a18d0c0e2365173a7",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令行参数</p>",
+          "example": "ls -l",
+          "member": "string",
+          "name": "CmdLine",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3304,7 +3406,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "进程名称",
+          "document": "<p>进程名称</p>",
           "example": "/bin/busybox",
           "member": "string",
           "name": "ProcessName",
@@ -3314,7 +3416,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则名称",
+          "document": "<p>命中规则名称</p>",
           "example": "myruletest",
           "member": "string",
           "name": "MatchRuleName",
@@ -3324,7 +3426,7 @@
         },
         {
           "disabled": false,
-          "document": "生成时间",
+          "document": "<p>生成时间</p>",
           "example": "2020-2-2 13:00:00",
           "member": "datetime",
           "name": "FoundTime",
@@ -3334,7 +3436,7 @@
         },
         {
           "disabled": false,
-          "document": "容器名",
+          "document": "<p>容器名</p>",
           "example": "b1a95186d40db53682751a3d51981abdbc1427b1983b63a2e7bf48ab156a9a22",
           "member": "string",
           "name": "ContainerName",
@@ -3344,7 +3446,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名",
+          "document": "<p>镜像名</p>",
           "example": "sha256:9aae1601d6832af6c69ef257f09f9d4e41646ed287a269cf62ac39d8d",
           "member": "string",
           "name": "ImageName",
@@ -3354,7 +3456,7 @@
         },
         {
           "disabled": false,
-          "document": "动作执行结果，   BEHAVIOR_NONE: 无\n    BEHAVIOR_ALERT: 告警\n    BEHAVIOR_RELEASE：放行\n    BEHAVIOR_HOLDUP_FAILED:拦截失败\n    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败",
+          "document": "<p>动作执行结果，   BEHAVIOR_NONE: 无<br>    BEHAVIOR_ALERT: 告警<br>    BEHAVIOR_RELEASE：放行<br>    BEHAVIOR_HOLDUP_FAILED:拦截失败<br>    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败</p>",
           "example": "BEHAVIOR_NONE",
           "member": "string",
           "name": "Behavior",
@@ -3364,8 +3466,8 @@
         },
         {
           "disabled": false,
-          "document": "状态0:未处理  “EVENT_UNDEAL”:事件未处理\n    \"EVENT_DEALED\":事件已经处理\n    \"EVENT_INGNORE\"：事件已经忽略",
-          "example": " EVENT_UNDEAL",
+          "document": "<p>状态0:未处理  “EVENT_UNDEAL”:事件未处理<br>    &quot;EVENT_DEALED&quot;:事件已经处理<br>    &quot;EVENT_INGNORE&quot;：事件已经忽略</p>",
+          "example": "EVENT_UNDEAL",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -3374,7 +3476,7 @@
         },
         {
           "disabled": false,
-          "document": "事件记录的唯一id",
+          "document": "<p>事件记录的唯一id</p>",
           "example": "95186d40db53682751a3d51981abdbc1427b1983b63a2e7324bf48ab156a9a22",
           "member": "string",
           "name": "Id",
@@ -3384,7 +3486,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名称",
+          "document": "<p>文件名称</p>",
           "example": "1.txt",
           "member": "string",
           "name": "FileName",
@@ -3394,7 +3496,7 @@
         },
         {
           "disabled": false,
-          "document": "事件类型， FILE_ABNORMAL_READ:文件异常读取",
+          "document": "<p>事件类型， FILE_ABNORMAL_READ:文件异常读取</p>",
           "example": "FILE_ABNORMAL_READ",
           "member": "string",
           "name": "EventType",
@@ -3404,7 +3506,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像id, 用于跳转",
+          "document": "<p>镜像id, 用于跳转</p>",
           "example": "95186d40db53682751a3d51981abdbc1427b1983b63a2e7324bf48ab156a9a22",
           "member": "string",
           "name": "ImageId",
@@ -3414,7 +3516,7 @@
         },
         {
           "disabled": false,
-          "document": "容器id, 用于跳转",
+          "document": "<p>容器id, 用于跳转</p>",
           "example": "95186d40db53682751a3d51981abdbc1427b1983b63a2e7324bf48ab156a9a22",
           "member": "string",
           "name": "ContainerId",
@@ -3424,7 +3526,7 @@
         },
         {
           "disabled": false,
-          "document": "事件解决方案",
+          "document": "<p>事件解决方案</p>",
           "example": "解决方案",
           "member": "string",
           "name": "Solution",
@@ -3434,7 +3536,7 @@
         },
         {
           "disabled": false,
-          "document": "事件详细描述",
+          "document": "<p>事件详细描述</p>",
           "example": "事件描述",
           "member": "string",
           "name": "Description",
@@ -3444,7 +3546,7 @@
         },
         {
           "disabled": false,
-          "document": "命中策略id",
+          "document": "<p>命中策略id</p>",
           "example": "sub1",
           "member": "string",
           "name": "MatchRuleId",
@@ -3454,7 +3556,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则行为：\nRULE_MODE_RELEASE 放行\nRULE_MODE_ALERT  告警\nRULE_MODE_HOLDUP 拦截",
+          "document": "<p>命中规则行为：<br>RULE_MODE_RELEASE 放行<br>RULE_MODE_ALERT  告警<br>RULE_MODE_HOLDUP 拦截</p>",
           "example": "RULE_MODE_RELEASE",
           "member": "string",
           "name": "MatchAction",
@@ -3464,7 +3566,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则进程信息",
+          "document": "<p>命中规则进程信息</p>",
           "example": "*/syscall",
           "member": "string",
           "name": "MatchProcessPath",
@@ -3474,7 +3576,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则文件信息",
+          "document": "<p>命中规则文件信息</p>",
           "example": "*/syscall",
           "member": "string",
           "name": "MatchFilePath",
@@ -3484,7 +3586,7 @@
         },
         {
           "disabled": false,
-          "document": "文件路径，包含名字",
+          "document": "<p>文件路径，包含名字</p>",
           "example": "/sys/a.txt",
           "member": "string",
           "name": "FilePath",
@@ -3494,7 +3596,7 @@
         },
         {
           "disabled": false,
-          "document": "规则是否存在",
+          "document": "<p>规则是否存在</p>",
           "example": "true",
           "member": "bool",
           "name": "RuleExist",
@@ -3504,7 +3606,7 @@
         },
         {
           "disabled": false,
-          "document": "事件数量",
+          "document": "<p>事件数量</p>",
           "example": "11021",
           "member": "int64",
           "name": "EventCount",
@@ -3514,7 +3616,7 @@
         },
         {
           "disabled": false,
-          "document": "最近生成时间",
+          "document": "<p>最近生成时间</p>",
           "example": "2020-2-2 13:00:00",
           "member": "string",
           "name": "LatestFoundTime",
@@ -3524,7 +3626,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组id",
+          "document": "<p>规则组id</p>",
           "example": "\"10021\"",
           "member": "string",
           "name": "RuleId",
@@ -3534,7 +3636,7 @@
         },
         {
           "disabled": false,
-          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "document": "<p>网络状态<br>未隔离      NORMAL<br>已隔离        ISOLATED<br>隔离中        ISOLATING<br>隔离失败    ISOLATE_FAILED<br>解除隔离中  RESTORING<br>解除隔离失败 RESTORE_FAILED</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "ContainerNetStatus",
@@ -3544,7 +3646,7 @@
         },
         {
           "disabled": false,
-          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知",
+          "document": "<p>容器子状态<br>&quot;AGENT_OFFLINE&quot;       //Agent离线<br>&quot;NODE_DESTROYED&quot;      //节点已销毁<br>&quot;CONTAINER_EXITED&quot;    //容器已退出<br>&quot;CONTAINER_DESTROYED&quot; //容器已销毁<br>&quot;SHARED_HOST&quot;         // 容器与主机共享网络<br>&quot;RESOURCE_LIMIT&quot;      //隔离操作资源超限<br>&quot;UNKNOW&quot;              // 原因未知</p>",
           "example": "None",
           "member": "string",
           "name": "ContainerNetSubStatus",
@@ -3554,7 +3656,7 @@
         },
         {
           "disabled": false,
-          "document": "容器隔离操作来源",
+          "document": "<p>容器隔离操作来源</p>",
           "example": "system",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
@@ -3564,7 +3666,7 @@
         },
         {
           "disabled": false,
-          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "document": "<p>容器状态<br>正在运行: RUNNING<br>暂停: PAUSED<br>停止: STOPPED<br>已经创建: CREATED<br>已经销毁: DESTROYED<br>正在重启中: RESTARTING<br>迁移中: REMOVING</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "ContainerStatus",
@@ -3574,7 +3676,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称：如果是超级节点，展示的实质上是它的node_id",
+          "document": "<p>节点名称：如果是超级节点，展示的实质上是它的node_id</p>",
           "example": "qsh4-k8s-sh-prod4-202206287zr4r-47",
           "member": "string",
           "name": "NodeName",
@@ -3584,7 +3686,7 @@
         },
         {
           "disabled": false,
-          "document": "pod名称",
+          "document": "<p>pod名称</p>",
           "example": "demoset",
           "member": "string",
           "name": "PodName",
@@ -3594,7 +3696,7 @@
         },
         {
           "disabled": false,
-          "document": "pod ip",
+          "document": "<p>pod ip</p>",
           "example": "10.0.0.11",
           "member": "string",
           "name": "PodIP",
@@ -3604,7 +3706,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型：NORMAL普通节点、SUPER超级节点",
+          "document": "<p>节点类型：NORMAL普通节点、SUPER超级节点</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "NodeType",
@@ -3614,7 +3716,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cls-fjijfdf****",
           "member": "string",
           "name": "ClusterID",
@@ -3624,7 +3726,7 @@
         },
         {
           "disabled": false,
-          "document": "节点的唯一id，主要是超级节点使用",
+          "document": "<p>节点的唯一id，主要是超级节点使用</p>",
           "example": "qsh4-k****",
           "member": "string",
           "name": "NodeUniqueID",
@@ -3634,7 +3736,7 @@
         },
         {
           "disabled": false,
-          "document": "节点公网IP",
+          "document": "<p>节点公网IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIP",
@@ -3644,7 +3746,7 @@
         },
         {
           "disabled": false,
-          "document": "节点id",
+          "document": "<p>节点id</p>",
           "example": "8a5772dee965c8223aebc*****",
           "member": "string",
           "name": "NodeID",
@@ -3654,7 +3756,7 @@
         },
         {
           "disabled": false,
-          "document": "uuid",
+          "document": "<p>uuid</p>",
           "example": "75D3326A-9B9C-4275-895A-1*****",
           "member": "string",
           "name": "HostID",
@@ -3664,7 +3766,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内网ip",
+          "document": "<p>节点内网ip</p>",
           "example": "10.0.0.11",
           "member": "string",
           "name": "HostIP",
@@ -3674,11 +3776,21 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cls-2341fj****",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令行参数</p>",
+          "example": "ls -l",
+          "member": "string",
+          "name": "CmdLine",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -21760,6 +21872,988 @@
       ],
       "type": "object"
     },
+    "DescribeImageDenyEventDetailRequest": {
+      "document": "DescribeImageDenyEventDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "1002",
+          "member": "int64",
+          "name": "EventID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyEventDetailResponse": {
+      "document": "DescribeImageDenyEventDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "1",
+          "member": "int64",
+          "name": "EventID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型 EVENT_RISK:风险事件类型，EVENT_PRIVILEGE:特权",
+          "example": "EVENT_RISK",
+          "member": "string",
+          "name": "EventType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "name01",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则RuleID",
+          "example": "1",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "GLOBAL",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则启用状态 0:开启，1:关闭",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则策略状态 IN_THE_TEST ：观察中，IN_EFFECT：生效中",
+          "example": "IN_THE_TEST",
+          "member": "string",
+          "name": "RuleEffectStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule info",
+          "member": "string",
+          "name": "RuleInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "rule desc",
+          "member": "string",
+          "name": "RuleDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
+          "member": "string",
+          "name": "ImageID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "name1",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "nodeName",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "NodeIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网IP",
+          "example": "10.2.0.1",
+          "member": "string",
+          "name": "PublicIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机Quuid",
+          "example": "5a540076-d38a-4078-aa98-e7c86371d322",
+          "member": "string",
+          "name": "QUUID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次生成时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "FoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近生成时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "LatestFoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件数量",
+          "example": "1",
+          "member": "int64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行动作:\nBEHAVIOR_ALERT:告警，\nBEHAVIOR_HOLDUP_SUCCESSED:拦截",
+          "example": "BEHAVIOR_ALERT",
+          "member": "string",
+          "name": "DealBehavior",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod名称",
+          "example": "name2",
+          "member": "string",
+          "name": "PodName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开始拦截时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "RuleEffectTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件描述",
+          "example": "event desc",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像启动参数",
+          "example": "/etc/",
+          "member": "string",
+          "name": "StartParam",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "solution content",
+          "member": "string",
+          "name": "Solution",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PodIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " pod状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "PodStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cls-4waue9dh",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "NOMRAL",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点id",
+          "example": "eklet-subnet-1ewk3avk",
+          "member": "string",
+          "name": "NodeID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点唯一id",
+          "example": "eb7b9af448345924bab44fc90a1b4e3b",
+          "member": "string",
+          "name": "NodeUniqueID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点子网id",
+          "example": "subnet01",
+          "member": "string",
+          "name": "NodeSubNetID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点子网名称",
+          "example": "subnet02",
+          "member": "string",
+          "name": "NodeSubNetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点子网cidr",
+          "example": "10.10.2.0/24",
+          "member": "string",
+          "name": "NodeSubNetCIDR",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "prom-g62znlhv",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库信息",
+          "example": "{}",
+          "member": "ImageRegistryInfo",
+          "name": "ImageRegistryInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyEventListRequest": {
+      "document": "DescribeImageDenyEventList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>EventType- String - 是否必填：否 -事件类型 EVENT_RISK:风险事件类型，EVENT_PRIVILEGE:特权。</li>\n<li>DealBehavior- String - 是否必填：否 - 执行动作,BEHAVIOR_ALERT:告警，BEHAVIOR_HOLDUP_SUCCESSED:拦截。</li>\n<li>RuleName- string - 是否必填：否 - 规则名称。</li>\n<li>NodeName- string - 是否必填：否 - 节点名称。</li>\n<li>NodeIP- string - 是否必填：否 - 内外IP。</li>\n<li>PublicIP- string - 是否必填：否 - 外网IP。</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称。</li>\n<li>ImageID- string - 是否必填：否 - 镜像ID。</li>\n<li>TimeRange- String -是否必填: 否 -  时间范围，第一个值表示开始时间，第二个值表示结束时间 </li>",
+          "example": "{  \"Name\": \"NodeIP\",  \"Values\": [“127.0.0.1”],  \"ExactMatch\": false }",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：asc/desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：告警数量：EventCount，最近生成时间：LatestFoundTime",
+          "example": "EventCount",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyEventListResponse": {
+      "document": "DescribeImageDenyEventList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像拦截列表",
+          "example": "[{\"ClusterID\":\"cls-m2x0ndjy\",\"ClusterName\":\"cls-m2x0ndjy\",\"DealBehavior\":\"BEHAVIOR_HOLDUP_SUCCESSED\",\"EventCount\":185,\"EventID\":2414001,\"EventType\":\"EVENT_RISK\",\"FoundTime\":\"2024-11-02 00:03:32\",\"ImageID\":\"sha256:d41059c812a8741c15695046857b90747aef9c7f9d67733962d7bbb025b9d159\",\"ImageName\":\"registry.tce.com/etcd/etcd:3.4.18.amd64\",\"LatestFoundTime\":\"2024-11-02 15:42:37\",\"NodeID\":\"5a540076-d38a-4078-aa98-e7c86371d322\",\"NodeIP\":\"10.206.67.153\",\"NodeName\":\"tcs-10-206-67-153\",\"NodeType\":\"NORMAL\",\"NodeUniqueID\":\"d41d8cd98f00b204e9800998ecf8427e\",\"PodIP\":\"127.0.0.1\",\"PodName\":\"name02\",\"PublicIP\":\"118.195.195.86\",\"QUUID\":\"46d3b4de-add7-4378-af19-ad34baeb6b4b\",\"RuleDescription\":\"测试\",\"RuleEffectStatus\":\"IN_EFFECT\",\"RuleID\":\"ce25d78c-d247-4e2f-80ee-190e089ea434\",\"RuleInfo\":[\"IMAGE_DENY_VUL_CLASS\"],\"RuleName\":\"name03\",\"RuleStatus\":1,\"RuleType\":\"RULE_RISK\",\"ImageRegistryInfo\":{\"Name\":\"name01\",\"Type\":\"tcr\",\"Address\":\"ccr.ccs.tencentyun.com/t-pot/logstash\"}}]",
+          "member": "ImageDenyEvent",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyEventTendencyRequest": {
+      "document": "DescribeImageDenyEventTendency请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2021-05-01",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2021-05-07",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyEventTendencyResponse": {
+      "document": "DescribeImageDenyEventTendency返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像拦截成功事件趋势",
+          "example": "无",
+          "member": "ImageDenyEventTendency",
+          "name": "DenyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像拦截告警事件趋势",
+          "example": "无",
+          "member": "ImageDenyEventTendency",
+          "name": "AlarmList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyRuleDetailRequest": {
+      "document": "DescribeImageDenyRuleDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则RuleID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyRuleDetailResponse": {
+      "document": "DescribeImageDenyRuleDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型 RULE_RISK：风险， RULE_PRIVILEGE：特权",
+          "example": "无",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效的镜像数量",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectImageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否对全部扫描镜像生效。0:全选镜像，1:自选镜像",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEffectAllImage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开始生效时间",
+          "example": "无",
+          "member": "string",
+          "name": "EffectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作用户",
+          "example": "无",
+          "member": "string",
+          "name": "OperationUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效状态 IN_THE_TEST ：观察中，IN_EFFECT：生效中",
+          "example": "无",
+          "member": "string",
+          "name": "EffectStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "RuleDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用状态 0:开启，1:关闭",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞，0:未选中，1:选中",
+          "example": "1",
+          "member": "int64",
+          "name": "Vul",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cve编号",
+          "example": "无",
+          "member": "string",
+          "name": "CVEIDSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件编号",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞分类",
+          "example": "无",
+          "member": "string",
+          "name": "VulClassSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞等级",
+          "example": "无",
+          "member": "string",
+          "name": "VulLevelSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞标签",
+          "example": "无",
+          "member": "string",
+          "name": "VulLabelSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马，0:未选中，1:选中",
+          "example": "无",
+          "member": "int64",
+          "name": "Virus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马md5列表",
+          "example": "无",
+          "member": "string",
+          "name": "VirusMD5Set",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马等级",
+          "example": "无",
+          "member": "string",
+          "name": "VirusLevelSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "病毒名",
+          "example": "无",
+          "member": "string",
+          "name": "VirusName",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感信息，0:未选中，1:选中",
+          "example": "无",
+          "member": "int64",
+          "name": "Risk",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感等级",
+          "example": "无",
+          "member": "string",
+          "name": "RiskLevelSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感信息分类",
+          "example": "无",
+          "member": "string",
+          "name": "RiskType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特权启动 0:不允许，1:允许",
+          "example": "无",
+          "member": "int64",
+          "name": "PrivilegeRun",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特权类型,\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PrivilegeDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "EffectImageSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多少天后生效",
+          "example": "无",
+          "member": "uint64",
+          "name": "EffectDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则RuelD",
+          "example": "无",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyRuleListRequest": {
+      "document": "DescribeImageDenyRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>RuleType- String - 是否必填：否 -规则类型 RULE_RISK：风险， RULE_PRIVILEGE：特权</li>\n<li>EffectStatus- String - 是否必填：否 - 生效状态 IN_THE_TEST ：观察中，IN_EFFECT：生效中。</li>\n<li>RuleName- string - 是否必填：否 - 规则名称。</li>\n<li>Status- string - 是否必填：否 - 开启状态 0：开启，1：关闭。</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：asc/desc",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：生效时间：EffectTime，更新时间：UpdateTime",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "置顶已开启规则 true：是 ，否：false",
+          "example": "true",
+          "member": "bool",
+          "name": "TopTurnOn",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyRuleListResponse": {
+      "document": "DescribeImageDenyRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "ImageDenyRule",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则总数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageDenyRuleSummaryRequest": {
+      "document": "DescribeImageDenyRuleSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeImageDenyRuleSummaryResponse": {
+      "document": "DescribeImageDenyRuleSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像拦截规则总数(含关闭的和开启的)",
+          "example": "20",
+          "member": "uint64",
+          "name": "RuleTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启的镜像拦截规则数",
+          "example": "10",
+          "member": "uint64",
+          "name": "EnabledRuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "观察期中的镜像拦截规则数",
+          "example": "5",
+          "member": "uint64",
+          "name": "ObservedRuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已生效的镜像拦截规则数",
+          "example": "5",
+          "member": "uint64",
+          "name": "EffectiveRuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeImageRegistryNamespaceListRequest": {
       "document": "DescribeImageRegistryNamespaceList请求参数结构体",
       "members": [
@@ -22696,6 +23790,172 @@
           "name": "UsedSize",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaliciousConnectionBlackListRequest": {
+      "document": "DescribeMaliciousConnectionBlackList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>RequestType- string - 是否必填：否 - 请求类型，全部请求类型：ALL；域名：DOMAIN；IP: IP</li>\n<li>BlackDomain- string - 是否必填：否 - 自定义黑域名</li>\n<li>BlackIP- string - 是否必填：否 - 自定义黑IP</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "LatestFoundTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaliciousConnectionBlackListResponse": {
+      "document": "DescribeMaliciousConnectionBlackList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "恶意请求白名单总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "恶意请求白名单列表",
+          "example": "无",
+          "member": "MaliciousConnectionRuleInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaliciousConnectionWhiteListRequest": {
+      "document": "DescribeMaliciousConnectionWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>RequestType- string - 是否必填：是 - 请求类型，全部请求类型：ALL；域名：DOMAIN；IP: IP</li>\n<li>WhiteDomain- string - 是否必填：否 - 自定义白域名</li>\n<li>WhiteIP- string - 是否必填：否 - 自定义白名单IP</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "LatestFoundTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaliciousConnectionWhiteListResponse": {
+      "document": "DescribeMaliciousConnectionWhiteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "恶意请求白名单总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "恶意请求白名单列表",
+          "example": "无",
+          "member": "MaliciousConnectionRuleInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -24589,6 +25849,123 @@
           "member": "ReverseShellEventInfo",
           "name": "EventSet",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellRegexpWhiteListInfoRequest": {
+      "document": "DescribeReverseShellRegexpWhiteListInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellRegexpWhiteListInfoResponse": {
+      "document": "DescribeReverseShellRegexpWhiteListInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则详情",
+          "example": "无",
+          "member": "RegexpRuleInfo",
+          "name": "RuleInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellRegexpWhiteListRequest": {
+      "document": "DescribeReverseShellRegexpWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n\nRuleName- String - 是否必填：否 - 规则名称",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellRegexpWhiteListResponse": {
+      "document": "DescribeReverseShellRegexpWhiteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "RegexpRuleListItem",
+          "name": "List",
           "type": "list",
           "value_allowed_null": false
         },
@@ -26565,11 +27942,21 @@
         {
           "disabled": false,
           "document": "接入日志列表",
-          "example": "[{\"ClusterCount\": 0, \"Count\": 0, \"IsJoined\": true, \"LogType\": \"asset_conta****\", \"SuperNodeCount\": 0}]",
+          "example": "无",
           "member": "SecLogJoinInfo",
           "name": "List",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语言类型",
+          "example": "zh",
+          "member": "string",
+          "name": "MsgLanguage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -32610,6 +33997,424 @@
       ],
       "usage": "out"
     },
+    "ImageDenyEvent": {
+      "document": "镜像拦截事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件类型 EVENT_RISK:风险事件类型，EVENT_PRIVILEGE:特权",
+          "example": "EVENT_RISK",
+          "member": "string",
+          "name": "EventType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "name01",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则RuleID",
+          "example": "ce25d78c-d247-4e2f-80ee-190e089ea434",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "RULE_RISK",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则启用状态 0:开启，1:关闭",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则策略状态 IN_THE_TEST ：观察中，IN_EFFECT：生效中",
+          "example": "IN_EFFECT",
+          "member": "string",
+          "name": "RuleEffectStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则内容",
+          "example": "[\"IMAGE_DENY_VUL_CLASS\"]",
+          "member": "string",
+          "name": "RuleInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "\"测试\"",
+          "member": "string",
+          "name": "RuleDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "\"sha256:d41059c812a8741c15695046857b90747aef9c7f9d67733962d7bbb025b9d159\"",
+          "member": "string",
+          "name": "ImageID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "imageName01",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "tcs-10-206-67-153",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "NodeIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机Quuid",
+          "example": "5a540076-d38a-4078-aa98-e7c86371d322",
+          "member": "string",
+          "name": "QUUID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次生成时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "FoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近生成时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "LatestFoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件数量",
+          "example": "10",
+          "member": "int64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行动作:\nBEHAVIOR_ALERT:告警，\nBEHAVIOR_HOLDUP_SUCCESSED:拦截",
+          "example": "BEHAVIOR_ALERT",
+          "member": "string",
+          "name": "DealBehavior",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "1024",
+          "member": "int64",
+          "name": "EventID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PublicIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "5a540076-d38a-4078-aa98-e7c86371d322",
+          "member": "string",
+          "name": "NodeID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-m2x0ndjy",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点唯一id",
+          "example": "645c925a18d0c0e2365173a7",
+          "member": "string",
+          "name": "NodeUniqueID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PodIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod name",
+          "example": "name02",
+          "member": "string",
+          "name": "PodName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "cls-m2x0ndjy",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库信息",
+          "example": "{  \"Name\": \"name01\",  \"Type\": \"tcr\",  \"Address\": \"ccr.ccs.tencentyun.com/t-pot/logstash\" }",
+          "member": "ImageRegistryInfo",
+          "name": "ImageRegistryInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageDenyEventTendency": {
+      "document": "镜像拦截事件趋势",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日期",
+          "example": "2021-05-01",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件数量",
+          "example": "1",
+          "member": "int64",
+          "name": "EventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageDenyRule": {
+      "document": "镜像拦截规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则RuleID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型 RULE_RISK：风险， RULE_PRIVILEGE：特权",
+          "example": "无",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效的镜像数量",
+          "example": "无",
+          "member": "int64",
+          "name": "EffectImageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否对全部扫描镜像生效。0:全选镜像，1:自选镜像",
+          "example": "false",
+          "member": "int64",
+          "name": "IsEffectAllImage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开始生效时间",
+          "example": "无",
+          "member": "string",
+          "name": "EffectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作用户",
+          "example": "无",
+          "member": "string",
+          "name": "OperationUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效状态 IN_THE_TEST ：观察中，IN_EFFECT：生效中",
+          "example": "无",
+          "member": "string",
+          "name": "EffectStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ImageHost": {
       "document": "容器安全 主机镜像关联列表",
       "members": [
@@ -35646,6 +37451,72 @@
           "member": "uint64",
           "name": "PrivilegeContainerCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaliciousConnectionRuleInfo": {
+      "document": "恶意外连黑白名单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "枚举：\nIP: 表示ipv4或者ipv6\nDOMAIN: 表示域名",
+          "example": "IP",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义黑白名单的域名/IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-09-05 12:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2022-09-05 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是一条白名单",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleID",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -39097,6 +40968,138 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegexpRuleInfo": {
+      "document": "正则规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "正则表达式列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WhiteListRegexpExpressionInfo",
+          "name": "ExpressionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RuleID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近操作账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorUIN",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RegexpRuleListItem": {
+      "document": "正则规则列表Item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效表达式个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "uint64",
+          "name": "EffectiveExpression",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近编辑账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -46593,6 +48596,45 @@
           "name": "ControlBits",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WhiteListRegexpExpressionInfo": {
+      "document": "白名单正则表达式信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "逻辑符号\n与 (AND)\n或 (OR)\n非 (NOT)",
+          "example": "AND",
+          "member": "string",
+          "name": "LogicSymbol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配字段",
+          "example": "process_path",
+          "member": "string",
+          "name": "MatchField",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配内容",
+          "example": "/home/usr/bin/bash",
+          "member": "string",
+          "name": "MatchContent",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

@@ -27,7 +27,7 @@ Output:
                 }
             }
         },
-        "RequestId": "abc"
+        "RequestId": "test-requestId"
     }
 }
 ```

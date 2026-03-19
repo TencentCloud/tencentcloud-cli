@@ -51,3 +51,60 @@ Output:
 }
 ```
 
+**Example 2: 查询Splunk投递任务-包含ExternalRole信息**
+
+
+
+Input: 
+
+```
+tccli cls DescribeSplunkDelivers --cli-unfold-argument  \
+    --TopicId 6b81282d-f355-404f-ae1f-6e00b27dfc70
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Infos": [
+            {
+                "Channel": "",
+                "CreateTime": 1772715227,
+                "Enable": 1,
+                "ExternalRole": {
+                    "ExternalId": "testsplunk",
+                    "RoleArn": "qcs::cam::uin/1000011275:roleName/splunk"
+                },
+                "HasServiceLog": 2,
+                "Index": "",
+                "IndexAck": 1,
+                "Metadata": {
+                    "EnableTag": true,
+                    "Format": "json",
+                    "TagJsonTiled": true
+                },
+                "Name": "SplunkTask",
+                "NetInfo": {
+                    "Host": "10.0.0.113",
+                    "IsSSL": true,
+                    "NetType": 1,
+                    "Port": 8088,
+                    "Token": "59f9b80c-ae2f-43c1-8c93-436094323e",
+                    "VirtualGatewayType": 0,
+                    "VpcId": "vpc-k1bdf0"
+                },
+                "Source": "",
+                "SourceType": "",
+                "Status": 1,
+                "TaskId": "565a2f82-22d3-4f2e-b417-0e251805c6",
+                "TopicId": "6b81282d-f355-404f-ae1f-6e00b27dfc",
+                "Uin": 1000010010,
+                "UpdateTime": 1772715227
+            }
+        ],
+        "Total": 1,
+        "RequestId": "7b8bee46-7f7f-4551-9e2c-2e5766e8bb2a"
+    }
+}
+```
+

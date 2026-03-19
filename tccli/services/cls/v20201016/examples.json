@@ -278,6 +278,14 @@
         "title": "创建指标订阅配置"
       }
     ],
+    "CreateNetworkApplication": [
+      {
+        "document": "用于创建网络应用",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkApplication\n<公共请求参数>\n\n{\n    \"Name\": \"network_application_demo\",\n    \"LogsetId\": \"0af7e6bb-fc91-4ee8-ad24-1129e9c91c6c\",\n    \"TopicName\": \"network_application_demo1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkAppId\": \"c902ffc9-48ad-40b1-9ef0-0bce45c050c2\",\n        \"RequestId\": \"24339c03-22ee-4399-a1ba-fcf74807e769\"\n    }\n}",
+        "title": "创建网络应用"
+      }
+    ],
     "CreateNoticeContent": [
       {
         "document": "创建通知内容信息",
@@ -538,6 +546,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMetricSubscribe\n<公共请求参数>\n\n{\n    \"TaskId\": \"5871c48d-219b-4274-829b-5aa7fb24229b\",\n    \"TopicId\": \"1111c48d-219b-4274-829b-5aa7fb24229b\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\"\n    }\n}",
         "title": "删除指标订阅配置"
+      }
+    ],
+    "DeleteNetworkApplication": [
+      {
+        "document": "用于删除网络应用",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNetworkApplication\n<公共请求参数>\n\n{\n    \"NetworkAppId\": \"64f5ef50-f46a-4903-9091-a4640e566083\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e12687a-744d-49b6-bc3d-e52139a0dabb\"\n    }\n}",
+        "title": "删除网络应用"
       }
     ],
     "DeleteNoticeContent": [
@@ -922,6 +938,22 @@
         "title": "获取指标订阅配置信息"
       }
     ],
+    "DescribeNetworkApplicationDetail": [
+      {
+        "document": "用于查询网络应用详情",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkApplicationDetail\n<公共请求参数>\n\n{\n    \"NetworkAppId\": \"64f5ef50-f46a-4903-9091-a4640e566083\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"CreateTime\": 1766490528,\n            \"LogsetId\": \"f1a7c428-e500-4e0b-8ed6-bfbe991560e6\",\n            \"Name\": \"api_name\",\n            \"NetworkAppId\": \"64f5ef50-f46a-4903-9091-a4640e566083\",\n            \"Region\": \"ap-guangzhou\",\n            \"SubUin\": 100039234035,\n            \"Token\": \"eyJuX2FfaWQiOiI2NG***C1mNDZhLTQ5MDMtOTA5MS1hNDY0MGU1NjYwODMiLCJ1aW4iOjEwMDAyNjQyMzA5NSwia2V5IjoiZDUxMWZmMGYtN2E4Zi00MzIxLWJhNGQtO***cmVnaW9uIjoiYXAtZ3Vhbmd6aG91LW9wZW4i***BpY19pZCI6IjQ2NzNiMzM0LWFlZTUtNDgxZS1iNjQzLTAyOWExMGY0YTI1NCJ9\",\n            \"TopicId\": \"4673b334-aee5-481e-b643-029a10f4a254\",\n            \"Uin\": 100026423095,\n            \"UpdateTime\": 1766490528\n        },\n        \"RequestId\": \"4941ebb4-8937-4ac1-a3a7-05b3b07540ec\"\n    }\n}",
+        "title": "查询网络应用详情"
+      }
+    ],
+    "DescribeNetworkApplications": [
+      {
+        "document": "用于查询网络应用列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkApplications\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Values\": [\n                \"api\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"CreateTime\": 1766490528,\n                \"LogsetId\": \"f1a7c428-e500-4e0b-8ed6-bfbe991560e6\",\n                \"Name\": \"api_name\",\n                \"NetworkAppId\": \"64f5ef50-f46a-4903-9091-a4640e566083\",\n                \"Region\": \"ap-guangzhou\",\n                \"SubUin\": 100039234035,\n                \"TopicId\": \"4673b334-aee5-481e-b643-029a10f4a254\",\n                \"Uin\": 100026423095,\n                \"UpdateTime\": 1766490528\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"dfcf166d-be6b-44cb-bbce-4528c1295b71\"\n    }\n}",
+        "title": "查询网络应用列表"
+      }
+    ],
     "DescribeNoticeContents": [
       {
         "document": "获取通知内容配置列表。",
@@ -976,6 +1008,12 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSplunkDelivers\n<公共请求参数>\n\n{\n    \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n    \"Filters\": [\n        {\n            \"Key\": \"taskId\",\n            \"Values\": [\n                \"46bb8292-1974-4663-8ce5-498256a42431\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"CreateTime\": 1757657329,\n                \"Enable\": 1,\n                \"HasServiceLog\": 2,\n                \"Index\": \"\",\n                \"IndexAck\": 1,\n                \"Metadata\": {\n                    \"Format\": \"json\"\n                },\n                \"Name\": \"name-test14\",\n                \"NetInfo\": {\n                    \"Host\": \"10.0.0.112\",\n                    \"IsSSL\": true,\n                    \"NetType\": 1,\n                    \"Port\": 8088,\n                    \"Token\": \"59f9b80c-ae2f-43c1-8c93-436094343125\",\n                    \"VirtualGatewayType\": 0,\n                    \"VpcId\": \"vpc-k1bdf0es\"\n                },\n                \"Source\": \"\",\n                \"SourceType\": \"\",\n                \"Status\": 1,\n                \"TaskId\": \"46bb8292-1974-4663-8ce5-498256a42431\",\n                \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n                \"Uin\": 100001127589,\n                \"UpdateTime\": 1757657329,\n                \"DSLFilter\": \"log_keep(op_str_eq(v(\\\"type\\\"), \\\"kibana_stats\\\"))\"\n            }\n        ],\n        \"RequestId\": \"964ff3ff-ec82-40d2-90ab-bb9b8bc43125\",\n        \"Total\": 1\n    }\n}",
         "title": "查询Splunk投递任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSplunkDelivers\n<公共请求参数>\n\n{\n    \"TopicId\": \"6b81282d-f355-404f-ae1f-6e00b27dfc70\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Channel\": \"\",\n                \"CreateTime\": 1772715227,\n                \"Enable\": 1,\n                \"ExternalRole\": {\n                    \"ExternalId\": \"testsplunk\",\n                    \"RoleArn\": \"qcs::cam::uin/1000011275:roleName/splunk\"\n                },\n                \"HasServiceLog\": 2,\n                \"Index\": \"\",\n                \"IndexAck\": 1,\n                \"Metadata\": {\n                    \"EnableTag\": true,\n                    \"Format\": \"json\",\n                    \"TagJsonTiled\": true\n                },\n                \"Name\": \"SplunkTask\",\n                \"NetInfo\": {\n                    \"Host\": \"10.0.0.113\",\n                    \"IsSSL\": true,\n                    \"NetType\": 1,\n                    \"Port\": 8088,\n                    \"Token\": \"59f9b80c-ae2f-43c1-8c93-436094323e\",\n                    \"VirtualGatewayType\": 0,\n                    \"VpcId\": \"vpc-k1bdf0\"\n                },\n                \"Source\": \"\",\n                \"SourceType\": \"\",\n                \"Status\": 1,\n                \"TaskId\": \"565a2f82-22d3-4f2e-b417-0e251805c6\",\n                \"TopicId\": \"6b81282d-f355-404f-ae1f-6e00b27dfc\",\n                \"Uin\": 1000010010,\n                \"UpdateTime\": 1772715227\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"7b8bee46-7f7f-4551-9e2c-2e5766e8bb2a\"\n    }\n}",
+        "title": "查询Splunk投递任务-包含ExternalRole信息"
       }
     ],
     "DescribeSplunkPreview": [
@@ -1043,8 +1081,8 @@
     "GetMetricLabelValues": [
       {
         "document": "获取时序label values列表",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:  GetMetricLabelValues\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"x20\",\n        \"Values\": [\n            \"123\",\n            \"456\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMetricLabelValues\n<公共请求参数>\n\n{\n    \"TopicId\": \"3a05cb9c-3471-42b8-b212-6ecbc0c49a4a\",\n    \"LabelName\": \"__name__\",\n    \"Start\": 1772787397,\n    \"End\": 1772787697\n}",
+        "output": "{\n    \"Response\": {\n        \"Values\": [\n            \"http_server_requests_seconds_count\"\n        ],\n        \"RequestId\": \"7ab209e6-fa54-4583-997a-86fafb9cd32a\"\n    }\n}",
         "title": "获取时序label values列表"
       }
     ],
@@ -1254,6 +1292,14 @@
         "title": "修改指标订阅配置"
       }
     ],
+    "ModifyNetworkApplication": [
+      {
+        "document": "用于修改网络应用",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkApplication\n<公共请求参数>\n\n{\n    \"NetworkAppId\": \"64f5ef50-f46a-4903-9091-a4640e566083\",\n    \"Name\": \"name_update\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62f7e5f4-fd52-4d66-8ee3-815fc7b787ee\"\n    }\n}",
+        "title": "修改网络应用"
+      }
+    ],
     "ModifyNoticeContent": [
       {
         "document": "修改通知内容配置",
@@ -1290,6 +1336,12 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySplunkDeliver\n<公共请求参数>\n\n{\n    \"TaskId\": \"65a07eec-96ee-458d-850b-53dfe9b43125\",\n    \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n    \"MetadataInfo\": {\n        \"Format\": \"json\",\n        \"MetaFields\": [\n            \"__SOURCE__\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"89b26245-ec3e-4b00-829a-bcc835d43125\"\n    }\n}",
         "title": "修改Splun投递任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySplunkDeliver\n<公共请求参数>\n\n{\n    \"TaskId\": \"565a2f82-22d3-4f2e-b417-0e251805c63a\",\n    \"TopicId\": \"6b81282d-f355-404f-ae1f-6e00b27dfc70\",\n    \"ExternalRole\": {\n        \"RoleArn\": \"qcs::cam::uin/1000011275:roleName/splunk\",\n        \"ExternalId\": \"splunk\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f4f486d-00f6-4cad-b212-37b789d78d45\"\n    }\n}",
+        "title": "修改Splun投递任务-跨账户投递任务"
       }
     ],
     "ModifyTopic": [

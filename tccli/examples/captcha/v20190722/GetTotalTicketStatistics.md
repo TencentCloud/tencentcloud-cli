@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli captcha GetTotalTicketStatistics --cli-unfold-argument  \
-    --EndTimeStr "2022-08-14 14:00" \
-    --StartTimeStr “2022-05-14 10:00” \
-    --Dimension "3"
+    --EndTimeStr 2022-08-14 14:00 \
+    --StartTimeStr 2022-05-14 10:00 \
+    --Dimension 3
 ```
 
 Output: 

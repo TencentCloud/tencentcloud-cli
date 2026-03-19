@@ -16,6 +16,7 @@ Output:
             {
                 "LinuxGid": 20000,
                 "LinuxUid": 20001,
+                "LinuxUserName": "100040359585",
                 "SubUin": "0",
                 "SubUinName": "ExampleUser",
                 "Uin": "100033122983"

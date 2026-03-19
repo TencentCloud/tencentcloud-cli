@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import copy
 import os
 import sys
 import six
@@ -47,6 +47,9 @@ class BasicConfigure(BasicCommand):
         is_exist, config_path = self._profile_existed(profile_name)
         if is_exist:
             conf_data = Utils.load_json_msg(config_path)
+            old_data = copy.deepcopy(conf_data)
+        else:
+            old_data = None
 
         if profile_name.endswith(".configure") and OptionsDefine.SysParam not in conf_data:
             conf_data[OptionsDefine.SysParam] = {}
@@ -84,7 +87,8 @@ class BasicConfigure(BasicCommand):
                                          "Received input format: %s\n "
                                          "Valid input format eg. set cvm.version 2017-03-12"
                                          % (err, k))
-        Utils.dump_json_msg(config_path, conf_data)
+        if conf_data != old_data:
+            Utils.dump_json_msg(config_path, conf_data)
 
     def _checkout_config(self, profile_name):
         is_conexit, config_path = self._profile_existed(profile_name + ".configure")

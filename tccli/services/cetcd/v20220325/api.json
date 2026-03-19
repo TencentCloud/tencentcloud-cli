@@ -1,0 +1,1938 @@
+{
+  "actions": {
+    "CreateEtcdInstance": {
+      "document": "创建etcd实例",
+      "input": "CreateEtcdInstanceRequest",
+      "name": "创建etcd实例",
+      "output": "CreateEtcdInstanceResponse",
+      "status": "online"
+    },
+    "CreateEtcdSnapshot": {
+      "document": "创建etcd快照",
+      "input": "CreateEtcdSnapshotRequest",
+      "name": "创建etcd快照",
+      "output": "CreateEtcdSnapshotResponse",
+      "status": "online"
+    },
+    "CreateEtcdSnapshotPolicy": {
+      "document": "创建etcd快照策略",
+      "input": "CreateEtcdSnapshotPolicyRequest",
+      "name": "创建etcd快照策略",
+      "output": "CreateEtcdSnapshotPolicyResponse",
+      "status": "online"
+    },
+    "DescribeEtcdAvailableVersions": {
+      "document": "查看etcd可用版本",
+      "input": "DescribeEtcdAvailableVersionsRequest",
+      "name": "查看etcd可用版本",
+      "output": "DescribeEtcdAvailableVersionsResponse",
+      "status": "online"
+    },
+    "DescribeEtcdCreatingProgress": {
+      "document": "查看etcd集群创建进度",
+      "input": "DescribeEtcdCreatingProgressRequest",
+      "name": "查看etcd集群创建进度",
+      "output": "DescribeEtcdCreatingProgressResponse",
+      "status": "online"
+    },
+    "DescribeEtcdCredentials": {
+      "document": "查询etcd访问凭证",
+      "input": "DescribeEtcdCredentialsRequest",
+      "name": "查询etcd访问凭证",
+      "output": "DescribeEtcdCredentialsResponse",
+      "status": "online"
+    },
+    "DescribeEtcdInstances": {
+      "document": "查询etcd实例列表",
+      "input": "DescribeEtcdInstancesRequest",
+      "name": "查询etcd实例列表",
+      "output": "DescribeEtcdInstancesResponse",
+      "status": "online"
+    },
+    "DescribeEtcdQuota": {
+      "document": "查看etcd集群配额",
+      "input": "DescribeEtcdQuotaRequest",
+      "name": "查看etcd集群配额",
+      "output": "DescribeEtcdQuotaResponse",
+      "status": "online"
+    },
+    "DescribeEtcdRegions": {
+      "document": "查看etcd支持地域",
+      "input": "DescribeEtcdRegionsRequest",
+      "name": "查看etcd支持地域",
+      "output": "DescribeEtcdRegionsResponse",
+      "status": "online"
+    },
+    "DescribeEtcdSnapshotPolicies": {
+      "document": "查看etcd快照策略",
+      "input": "DescribeEtcdSnapshotPoliciesRequest",
+      "name": "查看etcd快照策略",
+      "output": "DescribeEtcdSnapshotPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeEtcdSnapshots": {
+      "document": "查看etcd快照列表",
+      "input": "DescribeEtcdSnapshotsRequest",
+      "name": "查看etcd快照列表",
+      "output": "DescribeEtcdSnapshotsResponse",
+      "status": "online"
+    },
+    "DescribeEtcdTasks": {
+      "document": "查看etcd相关tasks",
+      "input": "DescribeEtcdTasksRequest",
+      "name": "查看etcd相关tasks",
+      "output": "DescribeEtcdTasksResponse",
+      "status": "online"
+    },
+    "DescribeRPCMethodList": {
+      "document": "获取etcd集群的gRPC方法列表",
+      "input": "DescribeRPCMethodListRequest",
+      "name": "获取gRPC方法列表",
+      "output": "DescribeRPCMethodListResponse",
+      "status": "online"
+    },
+    "DisableEtcdInstanceDeletionProtection": {
+      "document": "关闭etcd实例删除保护",
+      "input": "DisableEtcdInstanceDeletionProtectionRequest",
+      "name": "关闭etcd实例删除保护",
+      "output": "DisableEtcdInstanceDeletionProtectionResponse",
+      "status": "online"
+    },
+    "EnableEtcdInstanceDeletionProtection": {
+      "document": "启用etcd实例删除保护",
+      "input": "EnableEtcdInstanceDeletionProtectionRequest",
+      "name": "启用etcd实例删除保护",
+      "output": "EnableEtcdInstanceDeletionProtectionResponse",
+      "status": "online"
+    },
+    "ModifyEtcdAttribute": {
+      "document": "修改etcd实例属性",
+      "input": "ModifyEtcdAttributeRequest",
+      "name": "修改etcd实例属性",
+      "output": "ModifyEtcdAttributeResponse",
+      "status": "online"
+    },
+    "ModifyEtcdConfiguration": {
+      "document": "修改etcd实例配置",
+      "input": "ModifyEtcdConfigurationRequest",
+      "name": "修改etcd实例配置",
+      "output": "ModifyEtcdConfigurationResponse",
+      "status": "online"
+    },
+    "ModifyEtcdSnapshotPolicy": {
+      "document": "修改etcd快照策略",
+      "input": "ModifyEtcdSnapshotPolicyRequest",
+      "name": "修改etcd快照策略",
+      "output": "ModifyEtcdSnapshotPolicyResponse",
+      "status": "online"
+    },
+    "ResizeEtcdInstance": {
+      "document": "扩容etcd实例",
+      "input": "ResizeEtcdInstanceRequest",
+      "name": "扩容etcd实例",
+      "output": "ResizeEtcdInstanceResponse",
+      "status": "online"
+    },
+    "UpgradeEtcdInstance": {
+      "document": "升级etcd实例",
+      "input": "UpgradeEtcdInstanceRequest",
+      "name": "升级etcd实例",
+      "output": "UpgradeEtcdInstanceResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-03-25",
+    "api_brief": "介绍如何使用API对etcd服务进行操作，包括创建etcd实例，创建备份以及恢复备份等。",
+    "serviceNameCN": "云原生xa0etcd",
+    "serviceShortName": "cetcd"
+  },
+  "objects": {
+    "ChargePrepaidConfig": {
+      "document": "预付费类型相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预付费购买周期，单位：月",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费自动续费设置：\nNOTIFY_AND_MANUAL_RENEW：表示默认状态(用户未设置，即初始状态)， NOTIFY_AND_AUTO_RENEW：表示自动续费，DISABLE_NOTIFY_AND_MANUAL_RENEW：表示明确不自动续费(用户设置)",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateEtcdInstanceRequest": {
+      "document": "CreateEtcdInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例名称",
+          "example": "etcd-cluster-1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd所属vpc",
+          "example": "vpc-abcd1234",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd对外提供访问ip地址所在子网",
+          "example": "subnet-abcd1234",
+          "member": "string",
+          "name": "ServiceSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd部署子网",
+          "example": "[\"subnet-abcd1234\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "etcd版本",
+          "example": "v3.4.9",
+          "member": "string",
+          "name": "EtcdVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd节点个数，可选范围: 1, 3, 5, 7, 9",
+          "example": "3",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "etcd集群描述信息",
+          "example": "examplecluster",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级设置",
+          "example": "无",
+          "member": "EtcdAdvancedSettings",
+          "name": "AdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "付费类型：\nPREPAID 预付费\nPOSTPAID_BY_HOUR 后付费按小时付费",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预付费相关配置",
+          "example": "无",
+          "member": "ChargePrepaidConfig",
+          "name": "ChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "存储大小GB",
+          "example": "50",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "删除保护，true 删除保护开启；false删除保护关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEtcdInstanceResponse": {
+      "document": "CreateEtcdInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建etcd实例的Id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEtcdSnapshotPolicyRequest": {
+      "document": "CreateEtcdSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例Id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照策略名",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotPolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份参数设置",
+          "example": "无",
+          "member": "EtcdBackupSettings",
+          "name": "BackupSettings",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEtcdSnapshotPolicyResponse": {
+      "document": "CreateEtcdSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEtcdSnapshotRequest": {
+      "document": "CreateEtcdSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例id",
+          "example": "etcd-abcd1345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd快照名称",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份用户名",
+          "example": "test",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份密码",
+          "example": "123",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEtcdSnapshotResponse": {
+      "document": "CreateEtcdSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdAvailableVersionsRequest": {
+      "document": "DescribeEtcdAvailableVersions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEtcdAvailableVersionsResponse": {
+      "document": "DescribeEtcdAvailableVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持的版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VersionInstance",
+          "name": "Versions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdCreatingProgressRequest": {
+      "document": "DescribeEtcdCreatingProgress请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdCreatingProgressResponse": {
+      "document": "DescribeEtcdCreatingProgress返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskStepInfo",
+          "name": "Steps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdCredentialsRequest": {
+      "document": "DescribeEtcdCredentials请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdCredentialsResponse": {
+      "document": "DescribeEtcdCredentials返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问凭证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EtcdCredential",
+          "name": "Credentials",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdInstancesRequest": {
+      "document": "DescribeEtcdInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按照一个或者多个实例ID查询。实例ID形如：etcd-xxxxxxxx。参数不支持同时指定InstanceIds和Filters",
+          "example": "[\"etcd-abcd1234\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "支持按照vpc-id和instance-id过滤。参数不支持同时指定InstanceIds和Filters",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，最大值为50",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdInstancesResponse": {
+      "document": "DescribeEtcdInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Etcd",
+          "name": "Etcds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdQuotaRequest": {
+      "document": "DescribeEtcdQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEtcdQuotaResponse": {
+      "document": "DescribeEtcdQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前配额限制",
+          "example": "5",
+          "member": "uint64",
+          "name": "QuotaLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdRegionsRequest": {
+      "document": "DescribeEtcdRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEtcdRegionsResponse": {
+      "document": "DescribeEtcdRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持的地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RegionInstance",
+          "name": "Regions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdSnapshotPoliciesRequest": {
+      "document": "DescribeEtcdSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例Id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdSnapshotPoliciesResponse": {
+      "document": "DescribeEtcdSnapshotPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EtcdSnapshotPolicy",
+          "name": "SnapshotPolicies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdSnapshotsRequest": {
+      "document": "DescribeEtcdSnapshots请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例Id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdSnapshotsResponse": {
+      "document": "DescribeEtcdSnapshots返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd快照列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EtcdSnapshot",
+          "name": "Snapshots",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdTasksRequest": {
+      "document": "DescribeEtcdTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "xxx-xxx",
+          "member": "string",
+          "name": "TaskID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "taskType：\n    按照任务类型过滤，当前支持enable_internet，disable_internet, restore_remote_snapshot\nresourceId：\n    按照资源ID过滤\nlifeState：\n    按照任务状态过滤，当前支持process， done",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEtcdTasksResponse": {
+      "document": "DescribeEtcdTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EtcdTaskInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRPCMethodListRequest": {
+      "document": "DescribeRPCMethodList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例ID",
+          "example": "etcd-ctq51lvf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd集群pod名称",
+          "example": "etcd-ctq51lvf-etcd-0",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大长度",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRPCMethodListResponse": {
+      "document": "DescribeRPCMethodList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "gRPC方法列表",
+          "example": "无",
+          "member": "RPCMethod",
+          "name": "MethodList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableEtcdInstanceDeletionProtectionRequest": {
+      "document": "DisableEtcdInstanceDeletionProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例ID",
+          "example": "etcd-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableEtcdInstanceDeletionProtectionResponse": {
+      "document": "DisableEtcdInstanceDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEtcdInstanceDeletionProtectionRequest": {
+      "document": "EnableEtcdInstanceDeletionProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例ID",
+          "example": "etcd-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEtcdInstanceDeletionProtectionResponse": {
+      "document": "EnableEtcdInstanceDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Etcd": {
+      "document": "etcd信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "etcd-ctq51lvf",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所属vpcId",
+          "example": "vpc-35lahm68",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "etcd版本",
+          "example": "v3.5.0",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "etcd成员信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EtcdMember",
+          "name": "Members",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对外访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://10.0.1.127:1234",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "删除保护，true 删除保护开启；false删除保护关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EtcdAdvancedSettings": {
+      "document": "etcd高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全相关设置",
+          "example": "x",
+          "member": "EtcdSecuritySettings",
+          "name": "SecuritySettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动压缩设置",
+          "example": "x",
+          "member": "EtcdAutoCompactionSettings",
+          "name": "AutoCompactionSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控设置",
+          "example": "x",
+          "member": "EtcdMonitorSettings",
+          "name": "MonitorSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份相关设置",
+          "example": "x",
+          "member": "EtcdBackupSettings",
+          "name": "BackupSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义域名",
+          "example": "*.abc.com",
+          "member": "string",
+          "name": "CustomDomains",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "CustomIPs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EtcdAutoCompactionSettings": {
+      "document": "etcd自动压缩设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自动压缩模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "periodic",
+          "member": "string",
+          "name": "AutoCompactionMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动压缩保留时间/revison数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5m",
+          "member": "string",
+          "name": "AutoCompactionRetention",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EtcdBackupSettings": {
+      "document": "etcd备份设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份间隔(s)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupInterval",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大备份个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "MaxBackupCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "COS桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tencentcloud-tke-etcd-backups-ap-guangzhou-1234567",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EtcdCredential": {
+      "document": "etcd访问凭证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CA证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"-----BEGIN CERTIFICATE-----\\n\"",
+          "member": "string",
+          "name": "CACert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"-----BEGIN CERTIFICATE-----\\n\"",
+          "member": "string",
+          "name": "Cert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"-----BEGIN RSA PRIVATE KEY-----\"",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EtcdMember": {
+      "document": "etcd集群成员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点名字",
+          "example": "etcd-6app8i2u-etcd-0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点当前版本",
+          "example": "v3.4.13.tke.2",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属可用区",
+          "example": "ap-chongqing-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EtcdMonitorSettings": {
+      "document": "etcd监控设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Prometheus创建参数",
+          "example": "无",
+          "member": "PrometheusCreationParam",
+          "name": "PrometheusCreationParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus Id",
+          "example": "prom-kkfzhlcn",
+          "member": "string",
+          "name": "ExistedPrometheusInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EtcdSecuritySettings": {
+      "document": "etcd安全相关设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Https",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启用客户端证书认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ClientCertAuth",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EtcdSnapshot": {
+      "document": "etcd快照",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照名称",
+          "example": "test-snapshot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照大小",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EtcdSnapshotPolicy": {
+      "document": "etcd快照策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照策略名称",
+          "example": "default-backup-policy",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份参数",
+          "example": "无",
+          "member": "EtcdBackupSettings",
+          "name": "BackupSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EtcdTaskInfo": {
+      "document": "etcd task信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "xxx-xxx",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "enable_internet",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "etcd-xxx",
+          "member": "string",
+          "name": "ResourceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "process",
+          "member": "string",
+          "name": "LifeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "2021-08-23 10:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务更新时间",
+          "example": "2021-08-23 10:00:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "example": "instance-id",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "example": "[\"abc\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "InstanceConfig": {
+      "document": "实例配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "核数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存大小Gi",
+          "example": "2",
+          "member": "uint64",
+          "name": "Mem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群规模",
+          "example": "1",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyEtcdAttributeRequest": {
+      "document": "ModifyEtcdAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "etcd-1234abcd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例描述",
+          "example": "example",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "root账号密码",
+          "example": "123",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步auth状态",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableAuth",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "删除集群关联的cos数据",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeleteCos",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "子网id，数组",
+          "example": "[\"subnet-roxjj71s\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEtcdAttributeResponse": {
+      "document": "ModifyEtcdAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEtcdConfigurationRequest": {
+      "document": "ModifyEtcdConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动压缩设置",
+          "example": "无",
+          "member": "EtcdAutoCompactionSettings",
+          "name": "AutoCompactionSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "监控设置",
+          "example": "无",
+          "member": "EtcdMonitorSettings",
+          "name": "MonitorSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "计费类型\nPREPAID：预付费\nPOSTPAID_BY_HOUR：后付费",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例配置信息",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "预付费配置信息",
+          "example": "无",
+          "member": "ChargePrepaidConfig",
+          "name": "PrepaidConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEtcdConfigurationResponse": {
+      "document": "ModifyEtcdConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEtcdSnapshotPolicyRequest": {
+      "document": "ModifyEtcdSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "etcd实例id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照策略名称",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotPolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份参数设置",
+          "example": "无",
+          "member": "EtcdBackupSettings",
+          "name": "BackupSettings",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEtcdSnapshotPolicyResponse": {
+      "document": "ModifyEtcdSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PrometheusCreationParam": {
+      "document": "Prometheus创建参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保存时长，只支持天单位\n12d = 12天",
+          "example": "10",
+          "member": "int64",
+          "name": "DataRetention",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "grafana用户名",
+          "example": "admin",
+          "member": "string",
+          "name": "GrafanaUserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "grafana密码",
+          "example": "admin",
+          "member": "string",
+          "name": "GrafanaPassword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RPCMethod": {
+      "document": "RPC方法信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "方法名称",
+          "example": "Alarm",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegionInstance": {
+      "document": "地域属性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域特性开关(按照JSON的形式返回所有属性)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL  ",
+          "member": "string",
+          "name": "FeatureGates",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz ",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州地域 ",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResizeEtcdInstanceRequest": {
+      "document": "ResizeEtcdInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd节点个数",
+          "example": "5",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeEtcdInstanceResponse": {
+      "document": "ResizeEtcdInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TaskStepInfo": {
+      "document": "任务步骤信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤名称",
+          "example": "prepare_env",
+          "member": "string",
+          "name": "Step",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期\npending : 步骤未开始\nrunning: 步骤执行中\nsuccess: 步骤成功完成\nfailed: 步骤失败",
+          "example": "running",
+          "member": "string",
+          "name": "LifeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-03-29T11:30:17Z",
+          "member": "string",
+          "name": "StartAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "步骤结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-03-29T11:30:17Z",
+          "member": "string",
+          "name": "EndAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "若步骤生命周期为failed,则此字段显示错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "FailedMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpgradeEtcdInstanceRequest": {
+      "document": "UpgradeEtcdInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "etcd-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "etcd版本",
+          "example": "v3.5.2",
+          "member": "string",
+          "name": "EtcdVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeEtcdInstanceResponse": {
+      "document": "UpgradeEtcdInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VersionInstance": {
+      "document": "版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "etcd",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v3.4.13.tke.2",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Remark信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

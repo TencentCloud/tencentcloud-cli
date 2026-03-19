@@ -3208,7 +3208,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书套餐类型：\n3：SecureSite 增强型企业版（EV Pro）， \n4：SecureSite 增强型（EV）， \n5：SecureSite 企业型专业版（OV Pro），\n6：SecureSite 企业型（OV）， \n7：SecureSite 企业型（OV）通配符， \n8：Geotrust 增强型（EV）， \n9：Geotrust 企业型（OV）， \n10：Geotrust 企业型（OV）通配符， \n11：TrustAsia 域名型多域名 SSL 证书， \n12：TrustAsia 域名型（DV）通配符， \n13：TrustAsia 企业型通配符（OV）SSL 证书（D3）， \n14：TrustAsia 企业型（OV）SSL 证书（D3）， \n15：TrustAsia 企业型多域名 （OV）SSL 证书（D3）， \n16：TrustAsia 增强型 （EV）SSL 证书（D3）， \n17：TrustAsia 增强型多域名（EV）SSL 证书（D3）， \n18：GlobalSign 企业型（OV）SSL 证书， \n19：GlobalSign 企业型通配符 （OV）SSL 证书， \n20：GlobalSign 增强型 （EV）SSL 证书， \n21：TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， \n22：GlobalSign 企业型多域名（OV）SSL 证书， \n23：GlobalSign 企业型通配符多域名（OV）SSL 证书，\n24：GlobalSign 增强型多域名（EV）SSL 证书，\n25：Wotrus 域名型证书，\n26：Wotrus 域名型多域名证书，\n27：Wotrus 域名型通配符证书，\n28：Wotrus 企业型证书，\n29：Wotrus 企业型多域名证书，\n30：Wotrus 企业型通配符证书，\n31：Wotrus 增强型证书，\n32：Wotrus 增强型多域名证书，\n33：WoTrus-国密域名型证书，\n34：WoTrus-国密域名型证书（多域名），\n35：WoTrus-国密域名型证书（通配符），\n37：WoTrus-国密企业型证书，\n38：WoTrus-国密企业型证书（多域名），\n39：WoTrus-国密企业型证书（通配符），\n40：WoTrus-国密增强型证书，\n41：WoTrus-国密增强型证书（多域名），\n42：TrustAsia-域名型证书（通配符多域名），\n43：DNSPod-企业型(OV)SSL证书\n44：DNSPod-企业型(OV)通配符SSL证书\n45：DNSPod-企业型(OV)多域名SSL证书\n46：DNSPod-增强型(EV)SSL证书\n47：DNSPod-增强型(EV)多域名SSL证书\n48：DNSPod-域名型(DV)SSL证书\n49：DNSPod-域名型(DV)通配符SSL证书\n50：DNSPod-域名型(DV)多域名SSL证书\n51：DNSPod（国密）-企业型(OV)SSL证书\n52：DNSPod（国密）-企业型(OV)通配符SSL证书\n53：DNSPod（国密）-企业型(OV)多域名SSL证书\n54：DNSPod（国密）-域名型(DV)SSL证书\n55：DNSPod（国密）-域名型(DV)通配符SSL证书\n56：DNSPod（国密）-域名型(DV)多域名SSL证书\n57：SecureSite 企业型专业版多域名(OV Pro)\n58：SecureSite 企业型多域名(OV)\n59：SecureSite 增强型专业版多域名(EV Pro)\n60：SecureSite 增强型多域名(EV)\n61：Geotrust 增强型多域名(EV)\n75：SecureSite 企业型(OV)\n76：SecureSite 企业型(OV)通配符\n77：SecureSite 增强型(EV)\n78：Geotrust 企业型(OV)\n79：Geotrust 企业型(OV)通配符\n80：Geotrust 增强型(EV)\n81：GlobalSign 企业型（OV）SSL证书\n82：GlobalSign 企业型通配符 （OV）SSL证书\n85：GlobalSign 增强型 （EV）SSL证书\n88：GlobalSign 企业型通配符多域名 （OV）SSL证书\n89：GlobalSign 企业型多域名 （OV）SSL证书\n90：GlobalSign 增强型多域名（EV） SSL证书\n91：Geotrust 增强型多域名(EV)\n92：SecureSite 企业型专业版多域名(OV Pro)\n93：SecureSite 企业型多域名(OV)\n94：SecureSite 增强型专业版多域名(EV Pro)\n95：SecureSite 增强型多域名(EV)\n96：SecureSite 增强型专业版(EV Pro)\n97：SecureSite 企业型专业版(OV Pro)\n98：CFCA 企业型(OV)SSL证书\n99：CFCA 企业型多域名(OV)SSL证书，不支持多年期\n100：CFCA 企业型通配符(OV)SSL证书，不支持多年期\n101：CFCA 增强型(EV)SSL证书，不支持多年期\n102:  Rapid-域名型(DV)SSL证书\n103: Rapid-域名型(DV)SSL证书(通配符)\n104: TrustAsia-域名型(单域名)\n105: SSL单域名证书(一年期)",
+          "document": "<p>证书套餐类型：<br>3：SecureSite 增强型企业版（EV Pro），<br>4：SecureSite 增强型（EV），<br>5：SecureSite 企业型专业版（OV Pro），<br>6：SecureSite 企业型（OV），<br>7：SecureSite 企业型（OV）通配符，<br>8：Geotrust 增强型（EV），<br>9：Geotrust 企业型（OV），<br>10：Geotrust 企业型（OV）通配符，<br>11：TrustAsia 域名型多域名 SSL 证书，<br>12：TrustAsia 域名型（DV）通配符，<br>13：TrustAsia 企业型通配符（OV）SSL 证书（D3），<br>14：TrustAsia 企业型（OV）SSL 证书（D3），<br>15：TrustAsia 企业型多域名 （OV）SSL 证书（D3），<br>16：TrustAsia 增强型 （EV）SSL 证书（D3），<br>17：TrustAsia 增强型多域名（EV）SSL 证书（D3），<br>18：GlobalSign 企业型（OV）SSL 证书，<br>19：GlobalSign 企业型通配符 （OV）SSL 证书，<br>20：GlobalSign 增强型 （EV）SSL 证书，<br>21：TrustAsia 企业型通配符多域名（OV）SSL 证书（D3），<br>22：GlobalSign 企业型多域名（OV）SSL 证书，<br>23：GlobalSign 企业型通配符多域名（OV）SSL 证书，<br>24：GlobalSign 增强型多域名（EV）SSL 证书，<br>25：Wotrus 域名型证书，<br>26：Wotrus 域名型多域名证书，<br>27：Wotrus 域名型通配符证书，<br>28：Wotrus 企业型证书，<br>29：Wotrus 企业型多域名证书，<br>30：Wotrus 企业型通配符证书，<br>31：Wotrus 增强型证书，<br>32：Wotrus 增强型多域名证书，<br>33：WoTrus-国密域名型证书，<br>34：WoTrus-国密域名型证书（多域名），<br>35：WoTrus-国密域名型证书（通配符），<br>37：WoTrus-国密企业型证书，<br>38：WoTrus-国密企业型证书（多域名），<br>39：WoTrus-国密企业型证书（通配符），<br>40：WoTrus-国密增强型证书，<br>41：WoTrus-国密增强型证书（多域名），<br>42：TrustAsia-域名型证书（通配符多域名），<br>43：DNSPod-企业型(OV)SSL证书<br>44：DNSPod-企业型(OV)通配符SSL证书<br>45：DNSPod-企业型(OV)多域名SSL证书<br>46：DNSPod-增强型(EV)SSL证书<br>47：DNSPod-增强型(EV)多域名SSL证书<br>48：DNSPod-域名型(DV)SSL证书<br>49：DNSPod-域名型(DV)通配符SSL证书<br>50：DNSPod-域名型(DV)多域名SSL证书<br>51：DNSPod（国密）-企业型(OV)SSL证书<br>52：DNSPod（国密）-企业型(OV)通配符SSL证书<br>53：DNSPod（国密）-企业型(OV)多域名SSL证书<br>54：DNSPod（国密）-域名型(DV)SSL证书<br>55：DNSPod（国密）-域名型(DV)通配符SSL证书<br>56：DNSPod（国密）-域名型(DV)多域名SSL证书<br>57：SecureSite 企业型专业版多域名(OV Pro)<br>58：SecureSite 企业型多域名(OV)<br>59：SecureSite 增强型专业版多域名(EV Pro)<br>60：SecureSite 增强型多域名(EV)<br>61：Geotrust 增强型多域名(EV)<br>75：SecureSite 企业型(OV)<br>76：SecureSite 企业型(OV)通配符<br>77：SecureSite 增强型(EV)<br>78：Geotrust 企业型(OV)<br>79：Geotrust 企业型(OV)通配符<br>80：Geotrust 增强型(EV)<br>81：GlobalSign 企业型（OV）SSL证书<br>82：GlobalSign 企业型通配符 （OV）SSL证书<br>85：GlobalSign 增强型 （EV）SSL证书<br>88：GlobalSign 企业型通配符多域名 （OV）SSL证书<br>89：GlobalSign 企业型多域名 （OV）SSL证书<br>90：GlobalSign 增强型多域名（EV） SSL证书<br>91：Geotrust 增强型多域名(EV)<br>92：SecureSite 企业型专业版多域名(OV Pro)<br>93：SecureSite 企业型多域名(OV)<br>94：SecureSite 增强型专业版多域名(EV Pro)<br>95：SecureSite 增强型多域名(EV)<br>96：SecureSite 增强型专业版(EV Pro)<br>97：SecureSite 企业型专业版(OV Pro)<br>98：CFCA 企业型(OV)SSL证书<br>99：CFCA 企业型多域名(OV)SSL证书，不支持多年期<br>100：CFCA 企业型通配符(OV)SSL证书，不支持多年期<br>101：CFCA 增强型(EV)SSL证书，不支持多年期<br>102:  Rapid-域名型(DV)SSL证书<br>103: Rapid-域名型(DV)SSL证书(通配符)<br>104: TrustAsia-域名型(单域名)<br>105: SSL单域名证书(一年期)</p>",
           "example": "25",
           "member": "int64",
           "name": "ProductId",
@@ -3217,7 +3217,7 @@
         },
         {
           "disabled": false,
-          "document": "证书包含的域名数量。 多域名或者多泛域名证书类型必须大于1",
+          "document": "<p>证书包含的域名数量。 多域名或者多泛域名证书类型必须大于1</p>",
           "example": "1",
           "member": "int64",
           "name": "DomainNum",
@@ -3226,7 +3226,7 @@
         },
         {
           "disabled": false,
-          "document": "证书年限。 支持多年期的证书才可以大于1年",
+          "document": "<p>证书年限。 支持多年期的证书才可以大于1年</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -3235,7 +3235,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券：1是，0否；默认为1",
+          "document": "<p>是否自动使用代金券：1是，0否；默认为1</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoVoucher",
@@ -3244,7 +3244,7 @@
         },
         {
           "disabled": false,
-          "document": "标签， 生成证书打标签",
+          "document": "<p>标签， 生成证书打标签</p>",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
@@ -3259,7 +3259,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书ID列表",
+          "document": "<p>证书ID列表</p>",
           "example": "[\"gf16kv3A\"]",
           "member": "string",
           "name": "CertificateIds",
@@ -3269,11 +3269,21 @@
         },
         {
           "disabled": false,
-          "document": "订单号列表",
+          "document": "<p>订单号列表</p>",
           "example": "[\"20200923877000003022941\"]",
           "member": "string",
           "name": "DealIds",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID列表</p>",
+          "example": "[\"202603051034VOZX2CMB\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

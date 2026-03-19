@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateSLInstance": {
-      "document": "本接口（CreateSLInstance）用于创建Serverless HBase实例\n- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回创建实例的InstaceId和请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。",
+      "document": "本接口（CreateSLInstance）用于创建Serverless实例、如HBase、Starrocks、TCBase等\n- 接口调用成功，会创建Serverless实例，创建实例请求成功会返回创建实例的InstaceId和请求的 RequestID。\n- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。",
       "input": "CreateSLInstanceRequest",
       "name": "Serverless HBase创建实例",
       "output": "CreateSLInstanceResponse",
@@ -152,6 +152,13 @@
       "input": "DescribeDAGInfoRequest",
       "name": "查询DAG信息",
       "output": "DescribeDAGInfoResponse",
+      "status": "online"
+    },
+    "DescribeEMREventList": {
+      "document": "查询EMR事件监控数据",
+      "input": "DescribeEMREventListRequest",
+      "name": "查询EMR事件数据信息",
+      "output": "DescribeEMREventListResponse",
       "status": "online"
     },
     "DescribeEmrApplicationStatics": {
@@ -4208,6 +4215,15 @@
           "name": "DeploymentMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字",
+          "example": "admin",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5341,6 +5357,116 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEMREventListRequest": {
+      "document": "DescribeEMREventList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-32xv111",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询事件的开始时间",
+          "example": "1767671005",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询事件的结束时间",
+          "example": "1767671005",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件触发的IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件受影响服务角色",
+          "example": "CPU",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件名称",
+          "example": "CPU利用率连续高于阈值",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件列表的偏移量",
+          "example": "20",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件列表的Limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEMREventListResponse": {
+      "document": "DescribeEMREventList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件详情列表",
+          "example": "无",
+          "member": "EMREventListItem",
+          "name": "EventList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合的事件总量",
+          "example": "200",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9217,6 +9343,67 @@
           "name": "LimitMemory",
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EMREventListItem": {
+      "document": "事件详情列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件受影响ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件受影响的服务角色",
+          "example": "CPU",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件名称",
+          "example": "CPU利用率连续高于阈值",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件告警详情",
+          "example": "[NODE - CPU : 10.0.17.3] CPU utilization >= 0 % in 300 seconds",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件发生时间",
+          "example": "2026-01-03 00:33:43",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -18513,12 +18700,32 @@
         },
         {
           "disabled": false,
+          "document": "主可用区私有网络名",
+          "example": "vpc-ts4xd",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "主可用区子网ID",
           "example": "3422",
           "member": "uint64",
           "name": "SubnetId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区子网名",
+          "example": "subnet-d44sdf",
+          "member": "string",
+          "name": "SubnetName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -18607,6 +18814,16 @@
           "example": "Active",
           "member": "string",
           "name": "DeployRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "webui地址",
+          "example": "http://tcbase.com",
+          "member": "string",
+          "name": "WebUIUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

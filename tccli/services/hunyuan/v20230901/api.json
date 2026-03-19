@@ -21,11 +21,39 @@
       "output": "ChatTranslationsResponse",
       "status": "online"
     },
+    "CreateGlossary": {
+      "document": "创建自定义术语库，在翻译时自动将源语言术语替换为指定的目标语言译文，确保专业术语翻译的一致性和准确性。",
+      "input": "CreateGlossaryRequest",
+      "name": "创建术语库",
+      "output": "CreateGlossaryResponse",
+      "status": "online"
+    },
+    "CreateGlossaryEntry": {
+      "document": "添加术语条目。",
+      "input": "CreateGlossaryEntryRequest",
+      "name": "添加术语条目",
+      "output": "CreateGlossaryEntryResponse",
+      "status": "online"
+    },
     "CreateThread": {
       "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "CreateThreadRequest",
       "name": "创建会话",
       "output": "CreateThreadResponse",
+      "status": "online"
+    },
+    "DeleteGlossary": {
+      "document": "删除术语库。",
+      "input": "DeleteGlossaryRequest",
+      "name": "删除术语库",
+      "output": "DeleteGlossaryResponse",
+      "status": "online"
+    },
+    "DeleteGlossaryEntry": {
+      "document": "删除术语条目。",
+      "input": "DeleteGlossaryEntryRequest",
+      "name": "删除术语条目",
+      "output": "DeleteGlossaryEntryResponse",
       "status": "online"
     },
     "FilesDeletions": {
@@ -98,6 +126,20 @@
       "output": "ImageQuestionResponse",
       "status": "online"
     },
+    "ListGlossary": {
+      "document": "查询术语库。",
+      "input": "ListGlossaryRequest",
+      "name": "查询术语库",
+      "output": "ListGlossaryResponse",
+      "status": "online"
+    },
+    "ListGlossaryEntry": {
+      "document": "查询术语条目。",
+      "input": "ListGlossaryEntryRequest",
+      "name": "查询术语条目",
+      "output": "ListGlossaryEntryResponse",
+      "status": "online"
+    },
     "QueryHunyuanImageChatJob": {
       "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "QueryHunyuanImageChatJobRequest",
@@ -145,6 +187,13 @@
       "input": "TextToImageLiteRequest",
       "name": "文生图轻量版",
       "output": "TextToImageLiteResponse",
+      "status": "online"
+    },
+    "UpdateGlossaryEntry": {
+      "document": "更新术语条目。",
+      "input": "UpdateGlossaryEntryRequest",
+      "name": "更新术语条目",
+      "output": "UpdateGlossaryEntryResponse",
       "status": "online"
     }
   },
@@ -661,6 +710,15 @@
           "name": "References",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关联的术语库 ID 列表，用于术语翻译\u0005，最大支持5个术语库",
+          "example": "[\"3177dfae1f8cb180dfcc1bea2ddf19f6\"]",
+          "member": "string",
+          "name": "GlossaryIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -854,6 +912,126 @@
       ],
       "usage": "both"
     },
+    "CreateGlossaryEntryRequest": {
+      "document": "CreateGlossaryEntry请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID",
+          "example": "3177dfae1f8cb180dfcc1bea2ddf19f6",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语条目列表，单次请求限制100个",
+          "example": "无",
+          "member": "GlossaryEntryCreateItem",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryEntryResponse": {
+      "document": "CreateGlossaryEntry返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功创建的术语条目\u0005",
+          "example": "无",
+          "member": "GlossaryEntry",
+          "name": "Entries",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryRequest": {
+      "document": "CreateGlossary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库名称，限制50个字符",
+          "example": "我的术语库",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言代码，取值范围：zh(中文)、en(英语)、fr(法语)、pt(葡萄牙语)、es(西班牙语)、ja(日语)、tr(土耳其语)、ru(俄语)、ar(阿拉伯语)、ko(韩语)、th(泰语)、it(意大利语)、de(德语)、vi(越南语)、ms(马来语)、id(印尼语)、yue(粤语)、zh-TR(繁体中文)、hi(印地语)、fil(菲律宾语)、pl(波兰语)、cs(捷克语)、nl(荷兰语)、km(高棉语)、my(缅甸语)、fa(波斯语)、gu(古吉拉特语)、ur(乌尔都语)、te(泰卢固语)、mr(马拉地语)、he(希伯来语)、bn(孟加拉语)、ta(泰米尔语)、uk(乌克兰语)、bo(藏语)、kk(哈萨克语)、mn(蒙古语)、ug(维吾尔语)",
+          "example": "en",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言代码，取值范围：zh(中文)、en(英语)、fr(法语)、pt(葡萄牙语)、es(西班牙语)、ja(日语)、tr(土耳其语)、ru(俄语)、ar(阿拉伯语)、ko(韩语)、th(泰语)、it(意大利语)、de(德语)、vi(越南语)、ms(马来语)、id(印尼语)、yue(粤语)、zh-TR(繁体中文)、hi(印地语)、fil(菲律宾语)、pl(波兰语)、cs(捷克语)、nl(荷兰语)、km(高棉语)、my(缅甸语)、fa(波斯语)、gu(古吉拉特语)、ur(乌尔都语)、te(泰卢固语)、mr(马拉地语)、he(希伯来语)、bn(孟加拉语)、ta(泰米尔语)、uk(乌克兰语)、bo(藏语)、kk(哈萨克语)、mn(蒙古语)、ug(维吾尔语)",
+          "example": "zh",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语库描述，限制255个字符",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryResponse": {
+      "document": "CreateGlossary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库名称\u0005",
+          "example": "我的术语库",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库唯一 ID",
+          "example": "6df696144203027ba838dbfb5b8c2fba",
+          "member": "string",
+          "name": "GlossaryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateThreadRequest": {
       "document": "CreateThread请求参数结构体",
       "members": [],
@@ -904,6 +1082,69 @@
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntryRequest": {
+      "document": "DeleteGlossaryEntry请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID",
+          "example": "36c0033b405c84107d68e1c03788c4f6",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要更新的术语条目列表，单次请求限制100个",
+          "example": "无",
+          "member": "GlossaryEntryDeleteItem",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntryResponse": {
+      "document": "DeleteGlossaryEntry返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryRequest": {
+      "document": "DeleteGlossary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID",
+          "example": "452ed9fea07fd1e58be56bd329c28941",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryResponse": {
+      "document": "DeleteGlossary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1797,6 +2038,170 @@
       ],
       "type": "object"
     },
+    "Glossary": {
+      "document": "术语库",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库唯一 ID",
+          "example": "36c0033b405c84107d68e1c03788c4f6",
+          "member": "string",
+          "name": "GlossaryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库名称",
+          "example": "My Glossary",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库描述",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源语言代码",
+          "example": "en",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标语言代码",
+          "example": "zh",
+          "member": "string",
+          "name": "Target",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GlossaryEntry": {
+      "document": "术语条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源语言术语，限制1000字符\n",
+          "example": "zh",
+          "member": "string",
+          "name": "SourceTerm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语，限制1000字符\n",
+          "example": "en",
+          "member": "string",
+          "name": "TargetTerm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语条目 ID",
+          "example": "816465be55d68d66fe1989c75a9f482f",
+          "member": "string",
+          "name": "EntryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GlossaryEntryCreateItem": {
+      "document": "术语条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源语言术语，限制1000字符\n",
+          "example": "Cloud Storage",
+          "member": "string",
+          "name": "SourceTerm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语，限制1000字符\n",
+          "example": "云存储",
+          "member": "string",
+          "name": "TargetTerm",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "GlossaryEntryDeleteItem": {
+      "document": "术语条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID",
+          "example": "993c20e70d423efed83864d9cc7df288",
+          "member": "string",
+          "name": "EntryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "GlossaryEntryUpdateItem": {
+      "document": "术语条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID",
+          "example": "cf0a1f13edae52ef71be9e46fc26ec59",
+          "member": "string",
+          "name": "EntryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言术语，限制1000字符\n",
+          "example": "Cloud Storage1",
+          "member": "string",
+          "name": "SourceTerm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语，限制1000字符\n",
+          "example": "云存储1",
+          "member": "string",
+          "name": "TargetTerm",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "GroupChatCompletionsRequest": {
       "document": "GroupChatCompletions请求参数结构体",
       "members": [
@@ -2289,6 +2694,167 @@
         }
       ],
       "usage": "in"
+    },
+    "ListGlossaryEntryRequest": {
+      "document": "ListGlossaryEntry请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID",
+          "example": "3177dfae1f8cb180dfcc1bea2ddf19f6",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认 1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 10，最大200",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGlossaryEntryResponse": {
+      "document": "ListGlossaryEntry返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目列表",
+          "example": "无",
+          "member": "GlossaryEntry",
+          "name": "Entries",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条目总数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGlossaryRequest": {
+      "document": "ListGlossary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，默认 1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 10，最大 100",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGlossaryResponse": {
+      "document": "ListGlossary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库列表",
+          "example": "无",
+          "member": "Glossary",
+          "name": "Glossaries",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库总数量",
+          "example": "180",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "LogoParam": {
       "document": "logo参数",
@@ -4149,6 +4715,52 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateGlossaryEntryRequest": {
+      "document": "UpdateGlossaryEntry请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID",
+          "example": "3177dfae1f8cb180dfcc1bea2ddf19f6",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要更新的术语条目列表，单次请求限制100个",
+          "example": "无",
+          "member": "GlossaryEntryUpdateItem",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGlossaryEntryResponse": {
+      "document": "UpdateGlossaryEntry返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功更新的术语条目\u0005",
+          "example": "无",
+          "member": "GlossaryEntry",
+          "name": "Entries",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Usage": {
       "document": "Token 数量",

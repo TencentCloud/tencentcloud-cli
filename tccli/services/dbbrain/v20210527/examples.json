@@ -88,6 +88,14 @@
         "title": "创建定期生成/数据库巡检 的邮件发送模板"
       }
     ],
+    "CreateMongoDBKillTask": [
+      {
+        "document": "创建kill任务",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMongoDBKillTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-841j039d\",\n    \"Duration\": 123,\n    \"Product\": \"mongodb\",\n    \"Time\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0a3a18e5-f4f9-4c2e-82a6-e16ddd186af9\",\n        \"Status\": 1\n    }\n}",
+        "title": "创建mongodb kill 任务示例"
+      }
+    ],
     "CreateProxySessionKillTask": [
       {
         "document": "",

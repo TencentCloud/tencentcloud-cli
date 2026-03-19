@@ -176,6 +176,14 @@
         "title": "获取DAG信息样列"
       }
     ],
+    "DescribeEMREventList": [
+      {
+        "document": "通过事件相关信息查询EMR集群的事件详情信息",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEMREventList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-jhpvgwao\",\n    \"StartTime\": 1767750493,\n    \"EndTime\": 1767756493,\n    \"Offset\": 0,\n    \"Limit\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"EventList\": [\n            {\n                \"CreateTime\": \"2026-01-07T11:23:32Z\",\n                \"Detail\": \"HDFS NameNode has not performed Checkpoint for an extended period\",\n                \"Host\": \"10.0.17.5\",\n                \"Name\": \"HDFS NameNode长时间未做 Checkpoint\",\n                \"Role\": \"NameNode\"\n            },\n            {\n                \"CreateTime\": \"2026-01-07T11:23:01Z\",\n                \"Detail\": \"Node:10.0.17.5,  allocated memory >= alarm threshold: 90 \\n Memory Node:32768MB \\nDeployment component memory Roles HDFS:NN:4096.00MB HIVE:H2:4096.00MB HIVE:HMS:4096.00MB IMPALA:CATALOG:7079.50MB TRINO:M:3072.00MB YARN:AH:3072.00MB YARN:JH:1024.00MB YARN:RM:2000.00MB ZK:QM:1024.00MB  \",\n                \"Host\": \"10.0.17.5\",\n                \"Name\": \"节点内存使用配置超过阈值\",\n                \"Role\": \"CPU\"\n            }\n        ],\n        \"RequestId\": \"7e40cf0a-1208-4fe2-a964-6568d8583cf4\",\n        \"TotalNum\": 37\n    }\n}",
+        "title": "查询EMR事件详情"
+      }
+    ],
     "DescribeEmrApplicationStatics": [
       {
         "document": "",

@@ -1,4 +1,43 @@
-**Example 1: 示例**
+**Example 1: 房间信息**
+
+获取课堂房间信息
+
+Input: 
+
+```
+tccli lcic DescribeRoom --cli-unfold-argument  \
+    --RoomId 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AutoMic": 1,
+        "RecordUrl": "https://example.com/test.mp4",
+        "Name": "sdsdsdf",
+        "AudioQuality": 1,
+        "MaxMicNumber": 1,
+        "SubType": "videodoc",
+        "SdkAppId": 1,
+        "RequestId": "sdfgsdfg",
+        "StartTime": 1,
+        "AudienceType": 1,
+        "TeacherId": "sdfgsdefg",
+        "Assistants": [
+            "sdfgsdefg"
+        ],
+        "EndTime": 1,
+        "Resolution": 1,
+        "DisableRecord": 1,
+        "Status": 0,
+        "EnableDirectControl": 0,
+        "GroupId": "afdg"
+    }
+}
+```
+
+**Example 2: 示例**
 
 获取房间信息
 
@@ -36,45 +75,6 @@ Output:
         "TeacherId": "2O2bjPEXxStIac3NC9kfH3mHeBC",
         "VideoOrientation": 1,
         "VideoDuration": 0
-    }
-}
-```
-
-**Example 2: 房间信息**
-
-获取课堂房间信息
-
-Input: 
-
-```
-tccli lcic DescribeRoom --cli-unfold-argument  \
-    --RoomId 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "AutoMic": 1,
-        "RecordUrl": "https://example.com/test.mp4",
-        "Name": "sdsdsdf",
-        "AudioQuality": 1,
-        "MaxMicNumber": 1,
-        "SubType": "videodoc",
-        "SdkAppId": 1,
-        "RequestId": "sdfgsdfg",
-        "StartTime": 1,
-        "AudienceType": 1,
-        "TeacherId": "sdfgsdefg",
-        "Assistants": [
-            "sdfgsdefg"
-        ],
-        "EndTime": 1,
-        "Resolution": 1,
-        "DisableRecord": 1,
-        "Status": 0,
-        "EnableDirectControl": 0,
-        "GroupId": "afdg"
     }
 }
 ```

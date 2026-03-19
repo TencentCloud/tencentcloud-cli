@@ -1495,7 +1495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键列表",
+          "document": "<p>标签键列表</p>",
           "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
@@ -1504,7 +1504,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "document": "<p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>",
           "example": "1000052481",
           "member": "uint64",
           "name": "CreateUin",
@@ -1513,7 +1513,7 @@
         },
         {
           "disabled": false,
-          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "document": "<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1522,7 +1522,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小，默认为 15",
+          "document": "<p>每页大小，默认为 15，最大1000</p>",
           "example": "15",
           "member": "uint64",
           "name": "Limit",
@@ -1531,7 +1531,7 @@
         },
         {
           "disabled": false,
-          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。",
+          "document": "<p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>",
           "example": "All",
           "member": "string",
           "name": "Category",
@@ -1546,7 +1546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果总数",
+          "document": "<p>结果总数</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -1556,7 +1556,7 @@
         },
         {
           "disabled": false,
-          "document": "数据位移偏量",
+          "document": "<p>数据位移偏量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1566,7 +1566,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小",
+          "document": "<p>每页大小</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1576,7 +1576,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1692,7 +1692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "document": "<p>标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签</p>",
           "example": "testTagKey",
           "member": "string",
           "name": "TagKey",
@@ -1701,7 +1701,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "document": "<p>标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签</p>",
           "example": "testTagValue",
           "member": "string",
           "name": "TagValue",
@@ -1710,7 +1710,7 @@
         },
         {
           "disabled": false,
-          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "document": "<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1719,7 +1719,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小，默认为 15",
+          "document": "<p>每页大小，默认为 15，最大1000</p>",
           "example": "15",
           "member": "uint64",
           "name": "Limit",
@@ -1728,7 +1728,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "document": "<p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>",
           "example": "121",
           "member": "uint64",
           "name": "CreateUin",
@@ -1737,7 +1737,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
+          "document": "<p>标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值</p>",
           "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
@@ -1746,7 +1746,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展现项目标签。1:展示  0:不展示",
+          "document": "<p>是否展现项目标签。1:展示  0:不展示</p>",
           "example": "1",
           "member": "uint64",
           "name": "ShowProject",
@@ -1761,7 +1761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果总数",
+          "document": "<p>结果总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -1771,7 +1771,7 @@
         },
         {
           "disabled": false,
-          "document": "数据位移偏量",
+          "document": "<p>数据位移偏量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1781,7 +1781,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小",
+          "document": "<p>每页大小</p>",
           "example": "15",
           "member": "uint64",
           "name": "Limit",
@@ -1791,7 +1791,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "TagWithDelete",
           "name": "Tags",

@@ -420,6 +420,13 @@
       "output": "DescribeUsersResponse",
       "status": "online"
     },
+    "DisableClientTcpAccess": {
+      "document": "关闭客户端TCP访问堡垒机",
+      "input": "DisableClientTcpAccessRequest",
+      "name": "关闭客户端TCP访问堡垒机",
+      "output": "DisableClientTcpAccessResponse",
+      "status": "online"
+    },
     "DisableExternalAccess": {
       "document": "关闭公网访问堡垒机",
       "input": "DisableExternalAccessRequest",
@@ -434,6 +441,20 @@
       "output": "DisableIntranetAccessResponse",
       "status": "online"
     },
+    "DisableWebAccess": {
+      "document": "关闭web访问堡垒机",
+      "input": "DisableWebAccessRequest",
+      "name": "关闭web访问堡垒机",
+      "output": "DisableWebAccessResponse",
+      "status": "online"
+    },
+    "EnableClientTcpAccess": {
+      "document": "开启客户端TCP访问堡垒机",
+      "input": "EnableClientTcpAccessRequest",
+      "name": "开启客户端TCP访问堡垒机",
+      "output": "EnableClientTcpAccessResponse",
+      "status": "online"
+    },
     "EnableExternalAccess": {
       "document": "开启公网访问堡垒机",
       "input": "EnableExternalAccessRequest",
@@ -446,6 +467,13 @@
       "input": "EnableIntranetAccessRequest",
       "name": "开通内网访问",
       "output": "EnableIntranetAccessResponse",
+      "status": "online"
+    },
+    "EnableWebAccess": {
+      "document": "开启web访问堡垒机",
+      "input": "EnableWebAccessRequest",
+      "name": "开启web访问堡垒机",
+      "output": "EnableWebAccessResponse",
       "status": "online"
     },
     "ImportExternalDevice": {
@@ -1504,6 +1532,16 @@
           "name": "TicketName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍",
+          "example": "86400",
+          "member": "uint64",
+          "name": "MaxAccessCredentialDuration",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3002,6 +3040,15 @@
           "name": "AllowKeyboardLogger",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍",
+          "example": "86400",
+          "member": "uint64",
+          "name": "MaxAccessCredentialDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3688,7 +3735,7 @@
         {
           "disabled": false,
           "document": "目录名称",
-          "example": "测试",
+          "example": "dept1",
           "member": "string",
           "name": "DirName",
           "required": true,
@@ -3697,7 +3744,7 @@
         {
           "disabled": false,
           "document": "ioa分组信息",
-          "example": "[{\"OrgId\":47723,\"OrgName\":\"开发部\"\"}]",
+          "example": "无",
           "member": "UserOrg",
           "name": "UserOrgSet",
           "required": true,
@@ -5906,7 +5953,7 @@
         {
           "disabled": false,
           "document": "ou 列表",
-          "example": "[]",
+          "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "UnitSet",
           "output_required": true,
@@ -6017,7 +6064,7 @@
         },
         {
           "disabled": false,
-          "document": "分页每页记录数，默认20",
+          "document": "分页每页记录数，默认20，最大200",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6154,7 +6201,7 @@
         },
         {
           "disabled": false,
-          "document": "分页每页记录数，默认20",
+          "document": "分页每页记录数，默认20，最大200",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6401,7 +6448,7 @@
         {
           "disabled": false,
           "document": "认证源信息",
-          "example": "[{\"Source\":1002, \"Name\":\"钉钉\"}]",
+          "example": "无",
           "member": "SourceType",
           "name": "SourceTypeSet",
           "output_required": false,
@@ -7261,6 +7308,33 @@
       ],
       "usage": "out"
     },
+    "DisableClientTcpAccessRequest": {
+      "document": "DisableClientTcpAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableClientTcpAccessResponse": {
+      "document": "DisableClientTcpAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableExternalAccessRequest": {
       "document": "DisableExternalAccess请求参数结构体",
       "members": [
@@ -7305,6 +7379,33 @@
     },
     "DisableIntranetAccessResponse": {
       "document": "DisableIntranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableWebAccessRequest": {
+      "document": "DisableWebAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableWebAccessResponse": {
+      "document": "DisableWebAccess返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7411,6 +7512,33 @@
       ],
       "usage": "out"
     },
+    "EnableClientTcpAccessRequest": {
+      "document": "EnableClientTcpAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableClientTcpAccessResponse": {
+      "document": "EnableClientTcpAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableExternalAccessRequest": {
       "document": "EnableExternalAccess请求参数结构体",
       "members": [
@@ -7491,6 +7619,33 @@
     },
     "EnableIntranetAccessResponse": {
       "document": "EnableIntranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableWebAccessRequest": {
+      "document": "EnableWebAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableWebAccessResponse": {
+      "document": "EnableWebAccess返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7978,7 +8133,7 @@
         {
           "disabled": false,
           "document": "同步周期，30～60000之间的整数",
-          "example": "true",
+          "example": "30",
           "member": "uint64",
           "name": "SyncPeriod",
           "output_required": true,
@@ -8000,7 +8155,7 @@
         {
           "disabled": false,
           "document": "同步OU列表",
-          "example": "无",
+          "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "SyncUnitSet",
           "output_required": true,
@@ -8564,6 +8719,15 @@
           "name": "AllowKeyboardLogger",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍",
+          "example": "86400",
+          "member": "uint64",
+          "name": "MaxAccessCredentialDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9162,7 +9326,7 @@
         {
           "disabled": false,
           "document": "同步OU列表，SyncAll为false时必传",
-          "example": "[]",
+          "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "SyncUnitSet",
           "required": false,
@@ -10789,6 +10953,46 @@
           "name": "IOAResourceId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm",
+          "example": "pro",
+          "member": "string",
+          "name": "ResourceEdition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费时长",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式 0后付费，1预付费",
+          "example": "1",
+          "member": "uint64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -12498,7 +12702,7 @@
         },
         {
           "disabled": false,
-          "document": "运维父任务执行状态",
+          "document": "运维父任务执行状态。1 - 执行中，2 - 成功，3 - 失败，4 - 超时",
           "example": "[1, 2]",
           "member": "uint64",
           "name": "Status",
@@ -12519,6 +12723,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维子任务执行结果",
+          "example": "无",
+          "member": "SubtaskResult",
+          "name": "SubtaskResult",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13095,6 +13309,162 @@
           "example": "mini_iam",
           "member": "string",
           "name": "Target",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubtaskResult": {
+      "document": "运维子任务执行结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行日志ID",
+          "example": "ops-x2julw6p75997988",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机实例ID",
+          "example": "ins-61lt4n7u",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "执行主机名称",
+          "example": "测试任务",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机外网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行主机内网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务状态 1 - 执行中，2 - 成功， 3 - 失败，4 - 超时",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务失败原因",
+          "example": "脚本异常退出码",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务命令退出码",
+          "example": "0",
+          "member": "int64",
+          "name": "ExitCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务开始时间",
+          "example": "2022-04-13T19:44:57+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务结束时间",
+          "example": "2022-04-13T19:44:57+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务执行结果输出。默认超出16384字节的内容会被自动截断",
+          "example": "stdout data",
+          "member": "string",
+          "name": "StdOut",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务执行结果错误",
+          "example": "stderr data",
+          "member": "string",
+          "name": "StdErr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产名",
+          "example": "push_account_ubuntupush_account_ubuntu",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产账号",
+          "example": "root",
+          "member": "string",
+          "name": "Account",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

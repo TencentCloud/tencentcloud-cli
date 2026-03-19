@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli live CreateAuditKeywordLib --cli-unfold-argument ```
+tccli live CreateAuditKeywordLib --cli-unfold-argument  \
+    --MatchType ExactMatch \
+    --Name 黄暴过滤 \
+    --Suggestion Block \
+    --Description 自定义词库
+```
 
 Output: 
 ```

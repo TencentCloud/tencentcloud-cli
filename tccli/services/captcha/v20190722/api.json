@@ -357,7 +357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求总量",
+          "document": "<p>请求总量</p>",
           "example": "0",
           "member": "int64",
           "name": "ActionTotal",
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "验证总量",
+          "document": "<p>验证总量</p>",
           "example": "0",
           "member": "int64",
           "name": "VerifyTotal",
@@ -377,7 +377,7 @@
         },
         {
           "disabled": false,
-          "document": "验证通过总量",
+          "document": "<p>验证通过总量</p>",
           "example": "0",
           "member": "int64",
           "name": "VerifyThroughTotal",
@@ -387,7 +387,7 @@
         },
         {
           "disabled": false,
-          "document": "验证拦截总量",
+          "document": "<p>验证拦截总量</p>",
           "example": "0",
           "member": "int64",
           "name": "VerifyInterceptTotal",
@@ -397,7 +397,7 @@
         },
         {
           "disabled": false,
-          "document": "票据校验总量",
+          "document": "<p>票据校验总量</p>",
           "example": "0",
           "member": "int64",
           "name": "TicketTotal",
@@ -407,7 +407,7 @@
         },
         {
           "disabled": false,
-          "document": "票据通过总量",
+          "document": "<p>票据通过总量</p>",
           "example": "0",
           "member": "int64",
           "name": "TicketThroughTotal",
@@ -417,7 +417,7 @@
         },
         {
           "disabled": false,
-          "document": "票据拦截总量",
+          "document": "<p>票据拦截总量</p>",
           "example": "0",
           "member": "int64",
           "name": "TicketInterceptTotal",
@@ -427,8 +427,8 @@
         },
         {
           "disabled": false,
-          "document": "请求趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " [                 {                     \"Ftime\": \"2022-05-14\", ",
+          "document": "<p>请求趋势图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RequestTrendObj",
           "name": "RequestTrend",
           "required": true,
@@ -437,8 +437,8 @@
         },
         {
           "disabled": false,
-          "document": "拦截率趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[                 {                     \"Ftime\": \"2022-05-14\",  ",
+          "document": "<p>拦截率趋势图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InterceptPerTrendObj",
           "name": "InterceptPerTrend",
           "required": true,
@@ -447,8 +447,8 @@
         },
         {
           "disabled": false,
-          "document": "票据校验趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[                 {                     \"Ftime\": \"2022-05-14\",  ",
+          "document": "<p>票据校验趋势图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TicketCheckTrendObj",
           "name": "TicketCheckTrend",
           "required": true,
@@ -2110,7 +2110,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证码AppId",
+          "document": "<p>验证码AppId</p>",
           "example": "\"19901111\"",
           "member": "string",
           "name": "CaptchaAppId",
@@ -2119,7 +2119,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间字符串",
+          "document": "<p>开始时间字符串</p>",
           "example": "\"2022-05-14 01:00\"",
           "member": "string",
           "name": "StartTimeStr",
@@ -2128,7 +2128,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间字符串",
+          "document": "<p>结束时间字符串</p>",
           "example": "\"2022-06-15 20:00\"",
           "member": "string",
           "name": "EndTimeStr",
@@ -2137,7 +2137,7 @@
         },
         {
           "disabled": false,
-          "document": "查询粒度",
+          "document": "<p>查询粒度</p>",
           "example": "\"3\"",
           "member": "string",
           "name": "Dimension",
@@ -2152,8 +2152,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询后数据块\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
+          "document": "<p>查询后数据块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CaptchaStatisticObj",
           "name": "Data",
           "output_required": true,
@@ -2162,7 +2162,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码返回码",
+          "document": "<p>验证码返回码</p>",
           "example": "11000",
           "member": "int64",
           "name": "CaptchaCode",
@@ -2172,7 +2172,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码返回信息",
+          "document": "<p>验证码返回信息</p>",
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
@@ -2278,7 +2278,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间字符串",
+          "document": "<p>开始时间字符串</p>",
           "example": "\"2022-05-14 01:00\"",
           "member": "string",
           "name": "StartTimeStr",
@@ -2287,7 +2287,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间字符串",
+          "document": "<p>结束时间字符串</p>",
           "example": "\"2022-06-15 20:00\"",
           "member": "string",
           "name": "EndTimeStr",
@@ -2296,7 +2296,7 @@
         },
         {
           "disabled": false,
-          "document": "查询粒度",
+          "document": "<p>查询粒度</p>",
           "example": "\"3\"",
           "member": "string",
           "name": "Dimension",
@@ -2311,8 +2311,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询后数据块\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
+          "document": "<p>查询后数据块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CaptchaStatisticObj",
           "name": "Data",
           "output_required": true,
@@ -2321,7 +2321,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码返回码",
+          "document": "<p>验证码返回码</p>",
           "example": "11000",
           "member": "int64",
           "name": "CaptchaCode",
@@ -2331,7 +2331,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码返回信息",
+          "document": "<p>验证码返回信息</p>",
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
@@ -2353,7 +2353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "\"2022-05-14 01:00\"",
           "member": "string",
           "name": "StartTimeStr",
@@ -2362,7 +2362,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "\"2022-06-15 20:00\"",
           "member": "string",
           "name": "EndTimeStr",
@@ -2371,7 +2371,7 @@
         },
         {
           "disabled": false,
-          "document": "查询粒度\n分钟：“1”\n小时：“2”\n天：“3”",
+          "document": "<p>查询粒度<br>分钟：“1”<br>小时：“2”<br>天：“3”</p>",
           "example": "\"3\"",
           "member": "string",
           "name": "Dimension",
@@ -2386,8 +2386,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
+          "document": "<p>返回数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CaptchaStatisticObj",
           "name": "Data",
           "output_required": true,
@@ -2396,7 +2396,7 @@
         },
         {
           "disabled": false,
-          "document": "返回码",
+          "document": "<p>返回码</p>",
           "example": "11000",
           "member": "int64",
           "name": "CaptchaCode",
@@ -2406,7 +2406,7 @@
         },
         {
           "disabled": false,
-          "document": "返回信息",
+          "document": "<p>返回信息</p>",
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",

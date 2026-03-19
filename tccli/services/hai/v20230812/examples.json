@@ -72,6 +72,14 @@
         "title": "查询实例hai-xxxxxxxx包含的服务登录配置"
       }
     ],
+    "DescribeServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServices\n<公共请求参数>\n\n{\n    \"ServiceIds\": [\n        \"svc-dde3hd4i\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceInfoSet\": [\n            {\n                \"ComputeSet\": [\n                    {\n                        \"BundleType\": \"96G_A*8\",\n                        \"CPU\": \"384\",\n                        \"Count\": 1,\n                        \"GPUCount\": \"8\",\n                        \"GPUMemory\": \"768\",\n                        \"GPUPerformance\": \"352\",\n                        \"Memory\": \"2304\"\n                    }\n                ],\n                \"CreateTime\": \"2026-02-13 17:28:31\",\n                \"DeploymentConfigs\": [],\n                \"HyperParam\": {},\n                \"ModelName\": \"GLM-4.7-FP8\",\n                \"RunningReplicas\": 0,\n                \"ServiceId\": \"svc-dde3hd4i\",\n                \"ServiceName\": \"glm4.7-fp8\",\n                \"ServiceState\": \"RUNNING\",\n                \"TotalReplicas\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"02632e20-8bc6-4a27-b26a-92a44da57456\"\n    }\n}",
+        "title": "DescribeServices"
+      }
+    ],
     "InquirePriceRunInstances": [
       {
         "document": "",

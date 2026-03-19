@@ -7,6 +7,13 @@
       "output": "ActivateTWeCallLicenseResponse",
       "status": "online"
     },
+    "ActivateTWeTalk": {
+      "document": "TWeTalk设备激活接口。",
+      "input": "ActivateTWeTalkRequest",
+      "name": "激活TWeTalk",
+      "output": "ActivateTWeTalkResponse",
+      "status": "online"
+    },
     "BatchCreateTWeSeeRecognitionTask": {
       "document": "批量同步执行 TWeSee 语义理解任务",
       "input": "BatchCreateTWeSeeRecognitionTaskRequest",
@@ -973,6 +980,20 @@
       "output": "GetTWeTalkAIBotListResponse",
       "status": "online"
     },
+    "GetTWeTalkActiveRecordList": {
+      "document": "TWeTalk消耗账单明细。",
+      "input": "GetTWeTalkActiveRecordListRequest",
+      "name": "查询TweTalk激活记录",
+      "output": "GetTWeTalkActiveRecordListResponse",
+      "status": "online"
+    },
+    "GetTWeTalkActiveStatus": {
+      "document": "查询TWeTalk设备激活状态。",
+      "input": "GetTWeTalkActiveStatusRequest",
+      "name": "查询TWeTalk激活状态",
+      "output": "GetTWeTalkActiveStatusResponse",
+      "status": "online"
+    },
     "GetTWeTalkProductConfigList": {
       "document": "用于获取TWeTalk服务连接产品配置信息列表。",
       "input": "GetTWeTalkProductConfigListRequest",
@@ -1037,7 +1058,7 @@
       "status": "online"
     },
     "InvokeTWeSeeRecognitionTaskWithFile": {
-      "document": "同步执行 TWeSee 语义理解任务",
+      "document": "上传文件并同步执行 TWeSee 语义理解任务",
       "input": "InvokeTWeSeeRecognitionTaskWithFileRequest",
       "name": "上传文件并同步执行 TWeSee 语义理解任务",
       "output": "InvokeTWeSeeRecognitionTaskWithFileResponse",
@@ -1562,6 +1583,62 @@
           "example": "无",
           "member": "DeviceActiveResult",
           "name": "SuccessList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateTWeTalkRequest": {
+      "document": "ActivateTWeTalk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TWeTalk类型：1-基础版；2-高级版；3-多模态；",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备列表, 产品ID_设备名；",
+          "example": "[\"HX3VWPFMVX_dev\"]",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateTWeTalkResponse": {
+      "document": "ActivateTWeTalk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备激活失败返回数据",
+          "example": "无",
+          "member": "TalkActivationInfo",
+          "name": "FailureRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备激活成功返回数据",
+          "example": "无",
+          "member": "TalkActivationInfo",
+          "name": "SuccessRecords",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5233,7 +5310,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "LPIOACT1NG",
+          "example": "示例bot",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5242,7 +5319,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "LPIOACT1NG",
+          "example": "test1",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -5301,6 +5378,42 @@
           "name": "InstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义工具配置，最多可创建10个",
+          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"type\":\"object\",\"properties\":{\"device_id\":{\"type\":\"string\",\"description\":\"设备ID\"}},\"required\":[\"device_id\"]}}}]",
+          "member": "string",
+          "name": "CustomTools",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WebHook工具配置(JSON字符串格式)",
+          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"type\":\"string\",\"description\":\"订单ID\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
+          "member": "string",
+          "name": "WebhookTools",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体模板类型",
+          "example": "mobile_app",
+          "member": "string",
+          "name": "BotType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库相关配置(JSON字符串格式)",
+          "example": "{\n  \"RAGEnabled\": true,\n  \"KnowledgeBaseId\": \"kb-test-001\",\n  \"RAGRegion\": \"ap-guangzhou\",\n  \"RAGTopK\": 5,\n  \"RAGScoreThreshold\": 0.75,\n  \"RAGRoleExternalId\": \"external-id-demo\",\n  \"RAGRoleDurationSeconds\": 3600\n}",
+          "member": "string",
+          "name": "RAGConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5311,7 +5424,7 @@
         {
           "disabled": false,
           "document": "智能体ID",
-          "example": "bot-1TzRAz42oi",
+          "example": "bot-PuzbxMQnHk",
           "member": "string",
           "name": "BotId",
           "output_required": false,
@@ -13660,6 +13773,144 @@
       ],
       "type": "object"
     },
+    "GetTWeTalkActiveRecordListRequest": {
+      "document": "GetTWeTalkActiveRecordList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最早的时间。",
+          "example": "1772014291",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询的最晚时间。\n跟StartTime形成时间段，用于查询时间段中的记录。",
+          "example": "1772019291",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的大小。\n默认为10，最大不超过500。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "RNSEEMTZB0",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TWeTalk类型：1-基础版；2-高级版；3-多模态；",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ServiceType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeTalkActiveRecordListResponse": {
+      "document": "GetTWeTalkActiveRecordList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备激活记录列表。",
+          "example": "无",
+          "member": "TalkActivateRecordLogInfo",
+          "name": "ActiveRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据总数量。",
+          "example": "283",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeTalkActiveStatusRequest": {
+      "document": "GetTWeTalkActiveStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备列表， 产品ID_设备名称",
+          "example": "[\"RNSEEMTZB0_dev\"]",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeTalkActiveStatusResponse": {
+      "document": "GetTWeTalkActiveStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "激活状态",
+          "example": "无",
+          "member": "TalkActivationStatusInfo",
+          "name": "TalkActivationRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetTWeTalkProductConfigListRequest": {
       "document": "GetTWeTalkProductConfigList请求参数结构体",
       "members": [
@@ -17110,7 +17361,7 @@
         {
           "disabled": false,
           "document": "智能体ID",
-          "example": "bot-0vVbAeOMxU",
+          "example": "bot-PuzbxMQnHk",
           "member": "string",
           "name": "BotId",
           "required": true,
@@ -17119,7 +17370,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "test003",
+          "example": "智能体名称",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -17128,7 +17379,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "test003",
+          "example": "智能体描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -17178,6 +17429,42 @@
           "name": "AgentConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义工具配置，最多可创建10个",
+          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"type\":\"object\",\"properties\":{\"device_id\":{\"type\":\"string\",\"description\":\"设备ID\"}},\"required\":[\"device_id\"]}}}]",
+          "member": "string",
+          "name": "CustomTools",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WebHook工具配置(JSON字符串格式)",
+          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"type\":\"string\",\"description\":\"订单ID\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
+          "member": "string",
+          "name": "WebhookTools",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体模板类型",
+          "example": "mobile_app",
+          "member": "string",
+          "name": "BotType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库相关配置(JSON字符串格式)",
+          "example": "{\n  \"RAGEnabled\": true,\n  \"KnowledgeBaseId\": \"kb-test-001\",\n  \"RAGRegion\": \"ap-guangzhou\",\n  \"RAGTopK\": 5,\n  \"RAGScoreThreshold\": 0.75,\n  \"RAGRoleExternalId\": \"external-id-demo\",\n  \"RAGRoleDurationSeconds\": 1600\n}",
+          "member": "string",
+          "name": "RAGConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19754,9 +20041,215 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义工具列表，最多可创建10个",
+          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"properties\":{\"device_id\":{\"description\":\"设备ID\",\"type\":\"string\"}},\"required\":[\"device_id\"],\"type\":\"object\"}}}]",
+          "member": "string",
+          "name": "CustomTools",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WebHook工具配置(JSON字符串格式)",
+          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"description\":\"订单ID\",\"type\":\"string\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
+          "member": "string",
+          "name": "WebhookTools",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体模板类型",
+          "example": "mobile_app",
+          "member": "string",
+          "name": "BotType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库相关配置(JSON字符串格式)",
+          "example": "{\"RAGEnabled\":true,\"KnowledgeBaseId\":\"kb-test-001\",\"RAGRegion\":\"ap-guangzhou\",\"RAGTopK\":5,\"RAGScoreThreshold\":0.75,\"RAGRetrievalMethod\":\"SEMANTIC\",\"RAGRoleExternalId\":\"external-id-demo\",\"RAGRoleDurationSeconds\":3600}",
+          "member": "string",
+          "name": "RAGConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "TalkActivateRecordLogInfo": {
+      "document": "Talk激活审计信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "EMN48GTRHG",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "d1",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "激活时间，秒级时间戳",
+          "example": "1772015225",
+          "member": "int64",
+          "name": "ActiveTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，秒级时间戳",
+          "example": "10986480696",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TWeTalk类型：1-基础版；2-高级版；3-多模态；",
+          "example": "3",
+          "member": "int64",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态: 0-未激活, 1-已激活, 2-已过期, 3-已作废",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TalkActivationInfo": {
+      "document": "Talk设备激活信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID，产品ID_设备名称",
+          "example": "HX3VWPFMVX_dev",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备激活状态，0：激活成功；60001：激活码类型不匹配；60002：激活码数量不足；60003：设备不存在；60004：产品不存在；60005：权限不足；60006：设备已激活；60007：无效的参数；60008：系统错误；60009：产品不是码音视频类型",
+          "example": "60009",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "激活错误信息",
+          "example": "激活码数量不足",
+          "member": "string",
+          "name": "ErrMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，秒级时间戳",
+          "example": "1804747877",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TalkActivationStatusInfo": {
+      "document": "Talk激活状态响应定义。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID，产品ID_设备名称",
+          "example": "RNSEEMTZB0_dev",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，秒级时间戳",
+          "example": "11270477496",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TWeTalk类型：1-基础版；2-高级版；3-多模态；",
+          "example": "0",
+          "member": "int64",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TalkAgentConfigInfo": {
       "document": "智能体配置信息。",
@@ -19913,6 +20406,39 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时字幕回调地址，支持HTTP/HTTPS",
+          "example": "https://aaa.bb.com/callback",
+          "member": "string",
+          "name": "SubtitleCallbackUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回调签名密钥，最大32字符，用于HMAC SHA256签名",
+          "example": "aabbcc key",
+          "member": "string",
+          "name": "SubtitleCallbackSignKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕推送超时时间（秒），参考TRTC规范",
+          "example": "5",
+          "member": "int64",
+          "name": "SubtitleCallbackTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

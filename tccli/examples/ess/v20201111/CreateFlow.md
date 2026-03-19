@@ -95,3 +95,37 @@ Output:
 }
 ```
 
+**Example 4: 创建签署流程-开启发起审批流**
+
+
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --Workflow True \
+    --FlowName 西红柿采购合同 \
+    --Unordered False \
+    --DeadLine 1604912664 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.Required True \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.Required True \
+    --Approvers.1.ApproverName 李四 \
+    --Approvers.1.ApproverMobile 15100000000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDwfGUUckps86q8kUoTIbgRXTZbVk9I2",
+        "RequestId": "001uSHUNDy"
+    }
+}
+```
+

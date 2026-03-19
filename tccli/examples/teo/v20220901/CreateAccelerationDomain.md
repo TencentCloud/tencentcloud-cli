@@ -13,7 +13,8 @@ tccli teo CreateAccelerationDomain --cli-unfold-argument  \
     --OriginProtocol FOLLOW \
     --HttpOriginPort 80 \
     --HttpsOriginPort 443 \
-    --IPv6Status follow
+    --IPv6Status follow \
+    --SharedCNAME sharedomain.225qgrnvbi9w.share.dnse5.com
 ```
 
 Output: 

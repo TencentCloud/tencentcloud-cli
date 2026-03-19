@@ -63,6 +63,13 @@
       "output": "DescribeServiceLoginSettingsResponse",
       "status": "online"
     },
+    "DescribeServices": {
+      "document": "本接口 (DescribeServices) 用于查询一个或多个服务",
+      "input": "DescribeServicesRequest",
+      "name": "查询服务",
+      "output": "DescribeServicesResponse",
+      "status": "online"
+    },
     "InquirePriceRunInstances": {
       "document": "本接口 (InquirePriceRunInstances) 用于实例询价。",
       "input": "InquirePriceRunInstancesRequest",
@@ -230,6 +237,160 @@
       ],
       "usage": "out"
     },
+    "COSStorage": {
+      "document": "cos挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos桶uri",
+          "example": "cos://hai-model-bj-1319662662/Qwen/Qwen3-Reranker-8B",
+          "member": "string",
+          "name": "URI",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ComputeDetail": {
+      "document": "算力详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算力套餐ID",
+          "example": "96G_A*8",
+          "member": "string",
+          "name": "BundleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显卡数量",
+          "example": "16",
+          "member": "string",
+          "name": "GPUCount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显存",
+          "example": "1536",
+          "member": "string",
+          "name": "GPUMemory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算力",
+          "example": "704",
+          "member": "string",
+          "name": "GPUPerformance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数",
+          "example": "768",
+          "member": "string",
+          "name": "CPU",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "4608",
+          "member": "string",
+          "name": "Memory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ContainerInfo": {
+      "document": "容器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像相关信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务监听端口",
+          "example": "30000",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动命令",
+          "example": "[\"echo \\\"Hello, World!\\\"\"]",
+          "member": "string",
+          "name": "Scripts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量列表",
+          "example": "无",
+          "member": "EnvParam",
+          "name": "Envs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载配置",
+          "example": "无",
+          "member": "StorageInfo",
+          "name": "Storages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateApplicationRequest": {
       "document": "CreateApplication请求参数结构体",
       "members": [
@@ -339,6 +500,34 @@
         }
       ],
       "type": "object"
+    },
+    "DeploymentConfig": {
+      "document": "服务部署信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "容器配置",
+          "example": "无",
+          "member": "ContainerInfo",
+          "name": "Container",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器数量",
+          "example": "2",
+          "member": "int64",
+          "name": "ContainerCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DescribeApplicationsRequest": {
       "document": "DescribeApplications请求参数结构体",
@@ -746,6 +935,99 @@
       ],
       "type": "object"
     },
+    "DescribeServicesRequest": {
+      "document": "DescribeServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务列表",
+          "example": "[\"svc-dde3hd4i\"]",
+          "member": "string",
+          "name": "ServiceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesResponse": {
+      "document": "DescribeServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务列表",
+          "example": "无",
+          "member": "ServiceDetail",
+          "name": "ServiceInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnvParam": {
+      "document": "环境变量键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量名",
+          "example": "MODEL_NAME",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量值",
+          "example": "Qwen3-Embedding-8B",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n- 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n- 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
@@ -769,6 +1051,57 @@
         }
       ],
       "usage": "in"
+    },
+    "HiCacheInfo": {
+      "document": "HiCache信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HiCache缓存等级",
+          "example": "L3",
+          "member": "string",
+          "name": "HiCacheLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HyperParam": {
+      "document": "描述了服务的超参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HiCache缓存",
+          "example": "无",
+          "member": "HiCacheInfo",
+          "name": "HiCache",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageInfo": {
+      "document": "镜像相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tcr仓库地址",
+          "example": "hai-beijing.tencentcloudcr.com/ai/vllm:v0.11.2",
+          "member": "string",
+          "name": "ImageRegistryUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "InquirePriceRunInstancesRequest": {
       "document": "InquirePriceRunInstances请求参数结构体",
@@ -1782,6 +2115,112 @@
       ],
       "usage": "both"
     },
+    "ServiceDetail": {
+      "document": "服务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务id",
+          "example": "svc-6cidi7xs",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "hai-infer",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ServiceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行中的副本数",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunningReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "期望的副本总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2026-02-13 12:25:55",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算力套餐详情",
+          "example": "无",
+          "member": "ComputeDetail",
+          "name": "ComputeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "Kimi-k2.5",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务部署信息",
+          "example": "无",
+          "member": "DeploymentConfig",
+          "name": "DeploymentConfigs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务超参数配置",
+          "example": "无",
+          "member": "HyperParam",
+          "name": "HyperParam",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ServicePriceDetail": {
       "document": "推理集群费用数据结构体",
       "members": [
@@ -1898,6 +2337,34 @@
         }
       ],
       "type": "object"
+    },
+    "StorageInfo": {
+      "document": "存储信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载路径",
+          "example": "/hai",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos挂载信息",
+          "example": "无",
+          "member": "COSStorage",
+          "name": "COSStorage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SystemDisk": {
       "document": "描述了操作系统所在块设备即系统盘的信息",

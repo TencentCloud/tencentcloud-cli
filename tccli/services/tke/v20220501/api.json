@@ -56,6 +56,13 @@
       "output": "DescribeClustersResponse",
       "status": "online"
     },
+    "DescribeGPUInfo": {
+      "document": "请求该接口，会返回所有适配该机型和操作系统组合的gpu驱动版本",
+      "input": "DescribeGPUInfoRequest",
+      "name": "获取GPU信息",
+      "output": "DescribeGPUInfoResponse",
+      "status": "online"
+    },
     "DescribeHealthCheckPolicies": {
       "document": "查询健康检测策略",
       "input": "DescribeHealthCheckPoliciesRequest",
@@ -82,6 +89,13 @@
       "input": "DescribeNodePoolsRequest",
       "name": "查询 TKE 节点池列表",
       "output": "DescribeNodePoolsResponse",
+      "status": "online"
+    },
+    "DescribeZoneInstanceConfigInfos": {
+      "document": "查询原生节点机型配置",
+      "input": "DescribeZoneInstanceConfigInfosRequest",
+      "name": "查询原生节点机型配置",
+      "output": "DescribeZoneInstanceConfigInfosResponse",
       "status": "online"
     },
     "ModifyClusterMachine": {
@@ -1245,6 +1259,52 @@
       ],
       "type": "object"
     },
+    "DescribeGPUInfoRequest": {
+      "document": "DescribeGPUInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例机型名称，默认值\"\"",
+          "example": "GN7.2XLARGE40",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统oskey，默认值\"\"",
+          "example": "tlinux3.1x86_64",
+          "member": "string",
+          "name": "OsName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGPUInfoResponse": {
+      "document": "DescribeGPUInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUParams",
+          "name": "GPUParams",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHealthCheckPoliciesRequest": {
       "document": "DescribeHealthCheckPolicies请求参数结构体",
       "members": [
@@ -1494,6 +1554,33 @@
       ],
       "type": "object"
     },
+    "DescribeZoneInstanceConfigInfosRequest": {
+      "document": "DescribeZoneInstanceConfigInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机型过滤设置",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneInstanceConfigInfosResponse": {
+      "document": "DescribeZoneInstanceConfigInfos返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Disk": {
       "document": "节点系统盘和数据盘配置",
       "members": [
@@ -1510,7 +1597,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘大小(G）",
+          "document": "云盘大小 (G）",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -1558,6 +1645,28 @@
           "example": "disk-kped07j8",
           "member": "string",
           "name": "DiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密系统盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENCRYPT",
+          "member": "string",
+          "name": "Encrypt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义 KMS ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "65932f38-0106-11f1-bda4-5254008811d0",
+          "member": "string",
+          "name": "KmsKeyId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2251,7 +2360,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽",
+          "document": "带宽，单位为Mbps",
           "example": "50",
           "member": "int64",
           "name": "MaxBandwidthOut",
@@ -2749,6 +2858,15 @@
           "name": "SystemDisk",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "安全组列表",
+          "example": "[\"sg-4h43fuxj\"]",
+          "member": "string",
+          "name": "SecurityGroupIDs",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4413,7 +4531,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新存量节点",
+          "document": "是否更新存量节点MetaData(包括： metadata、annotation、label)",
           "example": "false",
           "member": "bool",
           "name": "UpdateExistedNode",
@@ -4428,6 +4546,15 @@
           "name": "DataDisks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选\n\nmanagement包括：nameserver、host、kubelet、kernel参数",
+          "example": "disable",
+          "member": "string",
+          "name": "UpdateMachineManagement",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

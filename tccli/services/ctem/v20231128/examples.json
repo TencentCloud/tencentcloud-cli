@@ -322,9 +322,9 @@
     ],
     "DescribeJobRecordDetails": [
       {
-        "document": "查看链路详情",
-        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobRecordDetails\n<公共请求参数>\n\n{\n    \"Module\": \"http\",\n    \"Id\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"a2752b92-54c9-48ad-9307-1a8838aa64bf\",\n        \"Total\": 0\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobRecordDetails\n<公共请求参数>\n\n{\n    \"Module\": \"enterprise\",\n    \"Id\": 32811\n}",
+        "output": "{\n    \"Response\": {\n        \"EnterpriseEquityPath\": [\n            {\n                \"EnterpriseUid\": \"b12afac95c9ff6c2c3b71618351d61ef\",\n                \"Name\": \"主体公司\",\n                \"ShareholdingRatio\": \"55%\"\n            }\n        ],\n        \"List\": [\n            {\n                \"Data\": [\n                    {\n                        \"Id\": 32811,\n                        \"Value\": \"子公司B\"\n                    }\n                ],\n                \"JobRecordId\": 0,\n                \"Module\": \"enterprise\",\n                \"ModuleName\": \"企业架构\",\n                \"TimeAt\": \"2026-03-04 10:36:10\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"e80d7900-eba9-43c7-8b59-d60b74616fc2\"\n    }\n}",
         "title": "查看链路详情"
       }
     ],

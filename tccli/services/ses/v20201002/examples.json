@@ -140,6 +140,14 @@
         "title": "删除收件人列表"
       }
     ],
+    "GetAbuseReport": [
+      {
+        "document": "获取垃圾投诉数据",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAbuseReport\n<公共请求参数>\n\n{\n    \"StartTime\": \"2025-08-19\",\n    \"EndTime\": \"2025-08-25\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ComplainTime\": \"2025-09-09 08:06:54\",\n                \"DeliverTime\": \"2025-08-19 08:06:39\",\n                \"FromDomain\": \"example.com\",\n                \"InsertTime\": \"2025-09-09 19:13:07\",\n                \"Mta\": \"qq.com\",\n                \"OriginalMailFrom\": \"info@example.com\",\n                \"OriginalRcptTo\": \"test@qq.com\",\n                \"SourceIp\": \"\"\n            }\n        ],\n        \"TotalCount\": 88,\n        \"RequestId\": \"f211a0fe-2b62-4fdb-a9d9-b8b420b8be24\"\n    }\n}",
+        "title": "获取垃圾投诉数据"
+      }
+    ],
     "GetEmailIdentity": [
       {
         "document": "",

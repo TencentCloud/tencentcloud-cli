@@ -9,7 +9,7 @@ tccli vpc ModifyVpnConnectionAttribute --cli-unfold-argument  \
     --VpnConnectionName test-abc \
     --VpnConnectionId vpnx-abc123x \
     --PreShareKey qwer12ty \
-    --EnableHealthCheck false
+    --EnableHealthCheck False
 ```
 
 Output: 

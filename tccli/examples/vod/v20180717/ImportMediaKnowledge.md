@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli vod ImportMediaKnowledge --cli-unfold-argument  \
-    --SubAppId 1490012345 \
-    --FileId 966263*******14024 \
-    --ImportTasks AiAnalysis.DescriptionTask
+    --SubAppId 221086 \
+    --FileId 966263618988054052 \
+    --Definition 100003
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "82d8af52-0bab-4894-bf4b-831e38fba6f4",
-        "TaskId": "1490012345-ImportMediaKnowledge-6c93a80f3f49a2426299c0ec0096349ft"
+        "TaskId": "221086-ImportMediaKnowledge-5838a3e1d4855683e93991e35f8a3ccet",
+        "RequestId": "2cf4b3ad-fd68-46f5-8456-e9f0a34f021a"
     }
 }
 ```

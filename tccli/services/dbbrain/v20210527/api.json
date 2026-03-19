@@ -77,6 +77,13 @@
       "output": "CreateMailProfileResponse",
       "status": "online"
     },
+    "CreateMongoDBKillTask": {
+      "document": "创建中断会话的任务。",
+      "input": "CreateMongoDBKillTaskRequest",
+      "name": "创建MongoDB中断会话的任务",
+      "output": "CreateMongoDBKillTaskResponse",
+      "status": "online"
+    },
     "CreateProxySessionKillTask": {
       "document": "创建中止所有代理节点连接会话的异步任务。当前仅支持 Redis。得到的返回值为异步任务 id，可以作为参数传入接口 DescribeProxySessionKillTasks 查询kill会话任务执行状态。",
       "input": "CreateProxySessionKillTaskRequest",
@@ -2323,6 +2330,107 @@
     "CreateMailProfileResponse": {
       "document": "CreateMailProfile返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMongoDBKillTaskRequest": {
+      "document": "CreateMongoDBKillTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kill会话任务的关联实例ID。",
+          "example": "cdb-test1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务持续时间，单位秒，手动关闭任务传-1。",
+          "example": "10",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务过滤条件，客户端IP。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "db1",
+          "member": "string",
+          "name": "DB",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "update,insert,query,getmore,remove,killcursors,command,compressed,none",
+          "example": "Type",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kill任务过滤条件，会话持续时长，单位秒。",
+          "example": "10",
+          "member": "int64",
+          "name": "Time",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMongoDBKillTaskResponse": {
+      "document": "CreateMongoDBKillTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kill会话任务创建成功返回1",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "创建kill任务失败",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6853,7 +6961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -6862,8 +6970,8 @@
         },
         {
           "disabled": false,
-          "document": "查询范围的开始时间，时间格式如：2019-09-10 12:13:14。",
-          "example": "2019-09-10 12:13:14",
+          "document": "查询范围的开始时间，格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"。",
+          "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -6871,8 +6979,8 @@
         },
         {
           "disabled": false,
-          "document": "查询范围的结束时间，时间格式如：2019-09-10 12:13:14。",
-          "example": "2019-09-10 12:13:14",
+          "document": "查询范围的结束时间，格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"。",
+          "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -6895,6 +7003,24 @@
           "name": "Md5",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅Redis产品使用；实例Proxy ID。",
+          "example": "ca7848437614df37a3365afaeb98dcf9baaae983",
+          "member": "string",
+          "name": "InstanceProxyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅Redis产品使用；命令。",
+          "example": "set",
+          "member": "string",
+          "name": "Cmd",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6915,7 +7041,7 @@
         {
           "disabled": false,
           "document": "各来源地址的慢日志占比详情列表。",
-          "example": "[{\"UserHost\":\"xx.xx.xx.xx\",\"Ratio\":100,\"Count\":1}]",
+          "example": "无",
           "member": "SlowLogHost",
           "name": "Items",
           "output_required": true,
@@ -6925,7 +7051,7 @@
         {
           "disabled": false,
           "document": "各来源用户名的慢日志占比详情列表。",
-          "example": "[{\"UserName\":\"test\",\"Ratio\":100,\"Count\":1}]",
+          "example": "无",
           "member": "SlowLogUser",
           "name": "UserNameItems",
           "output_required": true,

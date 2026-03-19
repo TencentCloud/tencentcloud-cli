@@ -1,4 +1,4 @@
-**Example 1: 设置实例的自动备份规则**
+**Example 1: 设置备份规则**
 
 
 
@@ -6,19 +6,18 @@ Input:
 
 ```
 tccli mongodb SetBackupRules --cli-unfold-argument  \
-    --InstanceId cmgo-******** \
-    --BackupFrequency 24 \
-    --BackupTime 22 \
-    --BackupMethod 1 \
+    --InstanceId cmgo-xxxxxx \
+    --BackupMethod 0 \
+    --BackupFrequency 12 \
     --BackupRetentionPeriod 7 \
-    --Notify True
+    --BackupVersion 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "58f3a6a0-2330-11ef-ad75-7139c2c3f68c"
+        "RequestId": "1e9c4e16-f7a5-4db1-8978-3f92e8ca4790"
     }
 }
 ```

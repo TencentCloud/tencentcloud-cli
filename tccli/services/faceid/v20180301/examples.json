@@ -74,14 +74,14 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=CheckIdCardInformation\n&ImageBase64=/9j/4AAQSkZJRg.....s97n//2Q==\n&Config={\"CopyWarn\":true}\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Address\": \"北京市东城区景山前街4号紫禁城敬事房\",\n        \"Birth\": \"1654/12/20\",\n        \"Description\": \"成功\",\n        \"Encryption\": null,\n        \"IdNum\": \"11204416541220243X\",\n        \"Name\": \"韦小宝\",\n        \"Nation\": \"汉\",\n        \"Portrait\": \"/9j/4AAQSk...m3Zt62P//Z\",\n        \"Quality\": 98,\n        \"RequestId\": \"8dc2b640-caad-4a13-ad8c-204d46d29fe1\",\n        \"Result\": \"Success\",\n        \"Sex\": \"男\",\n        \"Sim\": 99.76,\n        \"Warnings\": \"\"\n    }\n}",
-        "title": "身份证人像照片验真成功示例"
+        "output": "{\n    \"Response\": {\n        \"Address\": \"北京市东城区景山前街4号紫禁城敬事房\",\n        \"Birth\": \"1654/12/20\",\n        \"Description\": \"出现OCR告警\",\n        \"IdNum\": \"11204416541220243X\",\n        \"Name\": \"韦小宝\",\n        \"Nation\": \"满\",\n        \"Portrait\": \"/9j/4AAQSk...Se/wDkf//Z\",\n        \"Quality\": 99,\n        \"Encryption\": null,\n        \"RequestId\": \"6e6cfaad-3271-4eb1-a203-2866100eb283\",\n        \"Result\": \"FailedOperation.OcrWarningOccurred\",\n        \"Sex\": \"男\",\n        \"Sim\": 0,\n        \"Warnings\": \"-9101\"\n    }\n}",
+        "title": "身份证人像照片验真失败示例"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=CheckIdCardInformation\n&ImageBase64=/9j/4AAQSkZJRg.....s97n//2Q==\n&Config={\"CopyWarn\":true}\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Address\": \"北京市东城区景山前街4号紫禁城敬事房\",\n        \"Birth\": \"1654/12/20\",\n        \"Description\": \"出现OCR告警\",\n        \"IdNum\": \"11204416541220243X\",\n        \"Name\": \"韦小宝\",\n        \"Nation\": \"满\",\n        \"Portrait\": \"/9j/4AAQSk...Se/wDkf//Z\",\n        \"Quality\": 99,\n        \"Encryption\": null,\n        \"RequestId\": \"6e6cfaad-3271-4eb1-a203-2866100eb283\",\n        \"Result\": \"FailedOperation.OcrWarningOccurred\",\n        \"Sex\": \"男\",\n        \"Sim\": 0,\n        \"Warnings\": \"-9101\"\n    }\n}",
-        "title": "身份证人像照片验真失败示例"
+        "output": "{\n    \"Response\": {\n        \"Address\": \"北京市东城区景山前街4号紫禁城敬事房\",\n        \"Birth\": \"1654/12/20\",\n        \"Description\": \"成功\",\n        \"Encryption\": null,\n        \"IdNum\": \"11204416541220243X\",\n        \"Name\": \"韦小宝\",\n        \"Nation\": \"汉\",\n        \"Portrait\": \"/9j/4AAQSk...m3Zt62P//Z\",\n        \"Quality\": 98,\n        \"RequestId\": \"8dc2b640-caad-4a13-ad8c-204d46d29fe1\",\n        \"Result\": \"Success\",\n        \"Sex\": \"男\",\n        \"Sim\": 99.76,\n        \"Warnings\": \"\"\n    }\n}",
+        "title": "身份证人像照片验真成功示例"
       }
     ],
     "CheckIdNameDate": [
@@ -374,14 +374,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessCompare\n<公共请求参数>\n\n{\n    \"LivenessType\": \"SILENT\",\n    \"ImageBase64\": \"/9j/4AAQSk...GArFYH/9k=\",\n    \"VideoBase64\": \"AAAAIGZ0eX...cBQCKAowc=\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"/9j/4AAQSk...W8+nU//9k=\",\n        \"BestFrameList\": [\n            \"/9j/4AAQSk...px72+8/9k=\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "静默活体人脸比对成功示例"
+        "output": "{\n    \"Response\": {\n        \"BestFrameBase64\": \"/9j/4AAQSk...RgkelAH//Z\",\n        \"BestFrameList\": [],\n        \"Description\": \"实人检测失败\",\n        \"RequestId\": \"09fe2045-af63-43d5-8d7a-d9f7834ca62e\",\n        \"Result\": \"FailedOperation.SilentDetectFail\",\n        \"Sim\": 0\n    }\n}",
+        "title": "静默活体人脸比对失败示例"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessCompare\n<公共请求参数>\n\n{\n    \"LivenessType\": \"SILENT\",\n    \"ImageBase64\": \"/9j/4AAQSk...GArFYH/9k=\",\n    \"VideoBase64\": \"AAAAIGZ0eX...cBQCKAowc=\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BestFrameBase64\": \"/9j/4AAQSk...RgkelAH//Z\",\n        \"BestFrameList\": [],\n        \"Description\": \"实人检测失败\",\n        \"RequestId\": \"09fe2045-af63-43d5-8d7a-d9f7834ca62e\",\n        \"Result\": \"FailedOperation.SilentDetectFail\",\n        \"Sim\": 0\n    }\n}",
-        "title": "静默活体人脸比对失败示例"
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"/9j/4AAQSk...W8+nU//9k=\",\n        \"BestFrameList\": [\n            \"/9j/4AAQSk...px72+8/9k=\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
+        "title": "静默活体人脸比对成功示例"
       }
     ],
     "LivenessRecognition": [

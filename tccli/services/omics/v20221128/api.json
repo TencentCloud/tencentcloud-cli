@@ -269,7 +269,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云服务器可用区。",
+          "document": "<p>云服务器可用区。</p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
@@ -279,7 +279,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器实例规格。",
+          "document": "<p>云服务器实例规格。详情参见<a href=\"https://cloud.tencent.com/document/product/213/11518\">实例规格</a>描述</p>",
           "example": "SA3.MEDIUM8",
           "member": "string",
           "name": "InstanceType",
@@ -331,7 +331,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算集群可用区。",
+          "document": "<p>计算集群可用区。</p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
@@ -340,7 +340,7 @@
         },
         {
           "disabled": false,
-          "document": "计算集群类型，取值范围：\n- KUBERNETES",
+          "document": "<p>计算集群类型，取值范围：</p><ul><li>KUBERNETES</li></ul>",
           "example": "KUBERNETES",
           "member": "string",
           "name": "Type",
@@ -349,7 +349,7 @@
         },
         {
           "disabled": false,
-          "document": "计算集群Service CIDR，不能与VPC网段重合。",
+          "document": "<p>计算集群Service CIDR，不能与VPC网段重合。</p>",
           "example": "192.168.0.0/20",
           "member": "string",
           "name": "ServiceCidr",
@@ -358,8 +358,8 @@
         },
         {
           "disabled": false,
-          "document": "资源配额。",
-          "example": "{\"CPULimit\": \"30\",\"MemoryLimit\": \"60Gi\",\"Pods\": \"10\"}",
+          "document": "<p>资源配额。</p>",
+          "example": "无",
           "member": "ResourceQuota",
           "name": "ResourceQuota",
           "required": false,
@@ -367,8 +367,8 @@
         },
         {
           "disabled": false,
-          "document": "限制范围。",
-          "example": "{\"MaxCPU\": \"5\",\"MaxMemory\": \"10Gi\"}",
+          "document": "<p>限制范围。</p>",
+          "example": "无",
           "member": "LimitRange",
           "name": "LimitRange",
           "required": false,
@@ -376,7 +376,7 @@
         },
         {
           "disabled": false,
-          "document": "系统节点池实例规格。",
+          "document": "<p>系统节点池实例规格。详情参见<a href=\"https://cloud.tencent.com/document/product/213/11518\">实例规格</a>描述</p>",
           "example": "SA3.MEDIUM4",
           "member": "string",
           "name": "SystemNodeInstanceType",
@@ -385,7 +385,7 @@
         },
         {
           "disabled": false,
-          "document": "系统节点池实例数量。",
+          "document": "<p>系统节点池实例数量。</p>",
           "example": "2",
           "member": "uint64",
           "name": "SystemNodeCount",
@@ -394,7 +394,7 @@
         },
         {
           "disabled": false,
-          "document": "纳管环境自动升配",
+          "document": "<p>纳管环境自动升配</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoUpgradeClusterLevel",

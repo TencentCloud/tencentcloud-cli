@@ -9507,7 +9507,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "base64加密后的密码",
           "example": "pwd1",
           "member": "string",
           "name": "PassWord",
@@ -9516,7 +9516,7 @@
         },
         {
           "disabled": false,
-          "document": "用户链接来自的 IP",
+          "document": "用户链接来自的 IP地址",
           "example": "10.0.2.123",
           "member": "string",
           "name": "WhiteHost",

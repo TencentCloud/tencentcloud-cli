@@ -56,12 +56,28 @@
         "title": "为集群绑定资源包"
       }
     ],
+    "CalculateBackupSaveSecExpires": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CalculateBackupSaveSecExpires\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\",\n    \"BackupSaveSeconds\": 604800\n}",
+        "output": "{\n    \"Response\": {\n        \"WillDeleteBackupFileCount\": 0,\n        \"WillDeleteBackupFiles\": [],\n        \"WillDeleteBinlogFileCount\": 0,\n        \"WillDeleteBinlogFiles\": [],\n        \"WillDeleteRedoLogFileCount\": 0,\n        \"WillDeleteRedoLogFiles\": [],\n        \"RequestId\": \"1d7f4916-bd01-4bef-949b-1ee1aef21e7f\"\n    }\n}",
+        "title": "调整保险箱备份保存时间将会删除多少备份"
+      }
+    ],
     "CheckCreateLibraDBInstance": [
       {
         "document": "本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCreateLibraDBInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-6474meew\",\n    \"InstanceId\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"Status\": \"\",\n        \"CheckItem\": [\n            {}\n        ]\n    }\n}",
         "title": "校验集群是否可以添加只读分析引擎"
+      }
+    ],
+    "CheckTransferClusterZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckTransferClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-86dzof1j\",\n    \"DstZone\": \"ap-guangzhou-5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckStatus\": true,\n        \"RequestId\": \"6febb6f0-b0fc-11ee-93cb-73a07daf38c5\"\n    }\n}",
+        "title": "检查是否可以发起跨可用区迁移"
       }
     ],
     "CloseAuditService": [
@@ -110,6 +126,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=CloseWan\n&InstanceGrpId=cynosdbmysql-grp-o48ssqs5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 734,\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\"\n    }\n}",
         "title": "关闭RO组外网"
+      }
+    ],
+    "CopyBackupToVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyBackupToVault\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\",\n    \"BackupIds\": [\n        126511\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4295131269,\n        \"RequestId\": \"43fcda86-c0c8-4115-a298-702fd26868e0\"\n    }\n}",
+        "title": "手动备份投递到保险箱"
       }
     ],
     "CopyClusterPasswordComplexity": [
@@ -238,6 +262,14 @@
         "title": "新购资源包"
       }
     ],
+    "CreateVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVault\n<公共请求参数>\n\n{\n    \"VaultName\": \"dylaa_test\",\n    \"BackupSaveSeconds\": 1,\n    \"KeyRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4295117983,\n        \"RequestId\": \"f15e9603-50b4-4e77-9388-5031d4ca2508\"\n    }\n}",
+        "title": "创建保险箱"
+      }
+    ],
     "DeleteAccounts": [
       {
         "document": "删除用户账号",
@@ -268,6 +300,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DeleteBackup\n&ClusterId=cynosdbpg-45knmnra\n&SnapshotIdList.0=4928\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "删除备份"
+      }
+    ],
+    "DeleteBackupVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupVault\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\",\n    \"BackupIds\": [\n        631\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4295131366,\n        \"RequestId\": \"24db1d68-f25f-4da7-a8f7-f9a8bd2a0307\"\n    }\n}",
+        "title": "删除保险箱内备份"
       }
     ],
     "DeleteCLSDelivery": [
@@ -316,6 +356,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 93\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"855d70ae-2815-4311-a42e-75a41ee0af8b\"\n    }\n}",
         "title": "删除参数模板"
+      }
+    ],
+    "DeleteVaults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVaults\n<公共请求参数>\n\n{\n    \"VaultIds\": [\n        \"vault-b63cedd8-1574-4390-89b5-6e703ef33e25\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"VaultTask\": [\n            {\n                \"TaskId\": 4295131368,\n                \"VaultId\": \"vault-b63cedd8-1574-4390-89b5-6e703ef33e25\"\n            }\n        ],\n        \"RequestId\": \"6619b3c9-0c5d-402a-bac5-fc0f6f7617e2\"\n    }\n}",
+        "title": "删除保险箱"
       }
     ],
     "DescribeAccountAllGrantPrivileges": [
@@ -434,6 +482,14 @@
         "title": "查询备份文件列表"
       }
     ],
+    "DescribeBackupListByVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupListByVault\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupList\": [\n            {\n                \"BackupFileInfo\": {\n                    \"BackupId\": 631,\n                    \"BackupMethod\": \"manual\",\n                    \"BackupName\": \"\",\n                    \"BackupStatus\": \"success\",\n                    \"BackupType\": \"snapshot\",\n                    \"CopyStatus\": \"done\",\n                    \"FileName\": \"backupT_202602021412_20260202150536\",\n                    \"FileSize\": 4183356,\n                    \"FinishTime\": \"2026-02-02 15:05:41\",\n                    \"SnapShotType\": \"full\",\n                    \"SnapshotId\": 631,\n                    \"SnapshotTime\": \"2026-02-02 14:47:38\",\n                    \"StartTime\": \"2026-02-02 15:05:36\"\n                },\n                \"ClusterId\": \"cynosdbmysql-h30xf5d7\",\n                \"ClusterName\": \"backupT_202602021412\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"805500d0-0399-4f8c-acaf-3d6de1d607d5\"\n    }\n}",
+        "title": "查询保险箱下数据备份列表"
+      }
+    ],
     "DescribeBinlogConfig": [
       {
         "document": "查询binlog配置信息",
@@ -448,6 +504,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogDownloadUrl\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-ck8fmktd\",\n    \"BinlogId\": 3364561\n}",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://ncdb-cdc-bj-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/cdc/BinlogCapture/71***d45-8cfd-11ef-b99a-b02628437590/29.18.12.168_20650_1/mysql-bin.001002/file?q-sign-algorithm=sha1&q-ak=**************&q-sign-time=17300***57%3B1730123657&q-key-time=17300***57%3B1730123657&q-header-list=host&q-url-param-list=&q-signature=**************\",\n        \"RequestId\": \"e3159885-b774-40c5-bacb-5d99f2ad1c2c\"\n    }\n}",
         "title": "查询 Binlog 的下载地址"
+      }
+    ],
+    "DescribeBinlogListByVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogListByVault\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BinlogList\": [\n            {\n                \"BinlogFileInfo\": {\n                    \"BinlogId\": 6547,\n                    \"CrossRegions\": [],\n                    \"FileName\": \"mysql-bin.001012\",\n                    \"FileSize\": 374,\n                    \"FinishTime\": \"2026-02-02 15:19:15\",\n                    \"StartTime\": \"2026-02-02 12:20:09\"\n                },\n                \"ClusterId\": \"cynosdbmysql-0n3rg5on\",\n                \"ClusterName\": \"backupT_202602011518\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"2cbe8037-f3c4-4124-9eb8-588d07a6c045\"\n    }\n}",
+        "title": "查询保险箱下的binlog备份列表"
       }
     ],
     "DescribeBinlogSaveDays": [
@@ -832,6 +896,14 @@
         "title": "查询数据库代理规格"
       }
     ],
+    "DescribeRedoLogListByVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRedoLogListByVault\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RedoLogList\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-03e2xlyd\",\n                \"ClusterName\": \"backupT_202602021239\",\n                \"RedoFileInfo\": {\n                    \"BackupTime\": \"1970-01-01 08:00:01\",\n                    \"CopyStatus\": \"done\",\n                    \"FileName\": \"backupT_202602021239_20260202153128\",\n                    \"FileSize\": 600941264,\n                    \"FinishTime\": \"1970-01-01 08:00:01\",\n                    \"RedoCrossRegions\": [],\n                    \"RedoLogId\": 1282,\n                    \"StartTime\": \"1970-01-01 08:00:01\",\n                    \"Status\": \"creating\"\n                }\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"603b58ae-3e3e-41a7-9dcd-d0bf13044ce0\"\n    }\n}",
+        "title": "查询保险箱下redoLog的列表"
+      }
+    ],
     "DescribeRedoLogs": [
       {
         "document": "Describe Redo Logs",
@@ -934,6 +1006,22 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"TaskList\": [\n            {\n                \"ID\": 1,\n                \"AppId\": 23623651237,\n                \"ClusterId\": \"cynoadbmysql-ydtwlxig\",\n                \"CreateTime\": \"2024-10-01 23:22:54\",\n                \"DelayTime\": \"2024-10-12 17:52:19\",\n                \"ErrMsg\": \"\",\n                \"FlowId\": 6521,\n                \"Input\": \"{\\\"AppId\\\":251232125,\\\"uin\\\":\\\"700000433509\\\",\\\"operateUin\\\":\\\"700000433509\\\",\\\"region\\\":1,\\\"zoneId\\\":100007,\\\"dealName\\\":\\\"20240627509001289127581\\\",\\\"bigDealId\\\":\\\"20240627509001289141381\\\",\\\"tranId\\\":\\\"20240627509001289127591\\\",\\\"productCode\\\":\\\"p_cynosdb\\\",\\\"subProductCode\\\":\\\"sp_cynosdb_mysql\\\",\\\"payMode\\\":0,\\\"projectId\\\":0,\\\"goodsDetail\\\":{\\\"requestId\\\":\\\"3d56fe0b-f839-42c6-b84e-1d5fbc874cba\\\",\\\"Action\\\":\\\"CreateMultiSpecClusters\\\",\\\"pid\\\":1001166,\\\"extparam\\\":{\\\"token\\\":\\\"\\\"},\\\"timeSpan\\\":3600,\\\"timeUnit\\\":\\\"s\\\",\\\"productCode\\\":\\\"p_cynosdb\\\",\\\"subProductCode\\\":\\\"sp_cynosdb_mysql\\\",\\\"goodsNum\\\":1,\\\"sv_cynosdb_cpu_mysql\\\":1,\\\"sv_cynosdb_memory_mysql\\\":1,\\\"sv_cynosdb_cpu_smallcommoncpu\\\":0,\\\"sv_cynosdb_memory_smallcommonmem\\\":0,\\\"sv_cynosdb_cpu_largecommoncpu\\\":0,\\\"sv_cynosdb_memory_largecommonmem\\\":0,\\\"sv_cynosdb_storage_mysql\\\":0,\\\"sv_cynosdb_ccu_mysql\\\":0,\\\"resourceTags\\\":[{\\\"tagKey\\\":\\\"mockTagKey\\\",\\\"tagValue\\\":\\\"mockTagValue\\\"}],\\\"productInfo\\\":[{\\\"name\\\":\\\"配置\\\",\\\"value\\\":\\\"1核,1GB内存\\\"},{\\\"name\\\":\\\"地域\\\",\\\"value\\\":\\\"ap-guangzhou\\\"},{\\\"name\\\":\\\"可用区\\\",\\\"value\\\":\\\"ap-guangzhou-7\\\"}],\\\"zone\\\":\\\"ap-guangzhou-7\\\",\\\"source\\\":\\\"API\\\",\\\"slaveZone\\\":\\\"\\\",\\\"businessType\\\":\\\"\\\",\\\"vpcId\\\":\\\"vpc-rhfuibtt\\\",\\\"subnetId\\\":\\\"subnet-87qviva4\\\",\\\"dbType\\\":\\\"MYSQL\\\",\\\"dbVersion\\\":\\\"5.7\\\",\\\"cynosVersion\\\":\\\"\\\",\\\"clusterName\\\":\\\"后付费集群\\\",\\\"adminPassword\\\":\\\"Abcde@123\\\",\\\"port\\\":3306,\\\"count\\\":1,\\\"haCount\\\":0,\\\"instanceCount\\\":1,\\\"storageTraceId\\\":\\\"\\\",\\\"storagePayMode\\\":0,\\\"rollbackStrategy\\\":\\\"noneRollback\\\",\\\"OrderSource\\\":\\\"go_test\\\",\\\"isLhdb\\\":\\\"no\\\",\\\"lhdbAppId\\\":0,\\\"isDisableConsole\\\":\\\"no\\\",\\\"sourcePlatform\\\":\\\"\\\",\\\"clusterParams\\\":[{\\\"ParamName\\\":\\\"character_set_server\\\",\\\"CurrentValue\\\":\\\"utf8\\\",\\\"OldValue\\\":\\\"\\\"},{\\\"ParamName\\\":\\\"collation_server\\\",\\\"CurrentValue\\\":\\\"utf8_general_ci\\\",\\\"OldValue\\\":\\\"\\\"}],\\\"ParamTemplateId\\\":0,\\\"instanceType\\\":\\\"rw\\\",\\\"clusterTraceId\\\":\\\"9642a74e-fa27-4f8f-b854-653b3083c4cb\\\",\\\"outside_invisible_is_skip_trade\\\":\\\"\\\",\\\"ClusterInstanceCount\\\":1}}\",\n                \"InstanceGrpId\": \"cynosdbmysql-grp-ywnxpisy\",\n                \"InstanceGroupId\": \"cynosdbmysql-grp-ywnxpisy\",\n                \"InstanceId\": \"cynosdbmysql-qjuxpows\",\n                \"ObjectId\": \"cynosdbmysql-grwlskip\",\n                \"ObjectType\": \"taskCreateCluster\",\n                \"Operator\": \"700000433509\",\n                \"Output\": \"{\\\"Storage\\\":3000}\",\n                \"Status\": \"success\",\n                \"TaskType\": \"taskCreateCluster\",\n                \"TriggerTaskId\": 0,\n                \"UpdateTime\": \"2024-06-27 16:18:12\",\n                \"StartTime\": \"2024-06-27 16:18:07\",\n                \"EndTime\": \"2024-06-27 16:18:12\",\n                \"ClusterName\": \"MyClusterName\",\n                \"InstanceName\": \"MyInstanceName\",\n                \"Process\": 100,\n                \"ModifyParamsData\": [\n                    {\n                        \"Name\": \"sql_auto_is_null\",\n                        \"OldValue\": \"OFF\",\n                        \"CurValue\": \"ON\"\n                    }\n                ],\n                \"CreateClustersData\": {\n                    \"Cpu\": 1,\n                    \"Memory\": 2,\n                    \"StorageLimit\": 200\n                },\n                \"RollbackData\": {\n                    \"Cpu\": 1,\n                    \"Memory\": 2,\n                    \"StorageLimit\": 200,\n                    \"OriginalClusterId\": \"cynosdbmysql-tiwgxyts\",\n                    \"OriginalClusterName\": \"MyOriginalClusterName\",\n                    \"RollbackStrategy\": \"timeRollback\",\n                    \"SnapshotTime\": \"2024-05-12 11:28:55\",\n                    \"MinCpu\": 2,\n                    \"MaxCpu\": 8,\n                    \"SnapShotId\": 5562,\n                    \"RollbackDatabases\": [\n                        {\n                            \"OldDatabase\": \"test_database\",\n                            \"NewDatabase\": \"new_test_database\"\n                        }\n                    ],\n                    \"RollbackTables\": [\n                        {\n                            \"Database\": \"test-database\",\n                            \"Tables\": [\n                                {\n                                    \"OldTable\": \"test-table-1\",\n                                    \"NewTable\": \"new-test-table-1\"\n                                }\n                            ]\n                        }\n                    ],\n                    \"BackupFileName\": \"cynosdbmysql-oaj6te97_20240610111357\"\n                },\n                \"ModifyInstanceData\": {\n                    \"Cpu\": 2,\n                    \"Memory\": 4,\n                    \"StorageLimit\": 400,\n                    \"OldCpu\": 1,\n                    \"OldMemory\": 2,\n                    \"OldStorageLimit\": 200,\n                    \"UpgradeType\": \"upgradeInMaintain\"\n                },\n                \"ManualBackupData\": {\n                    \"BackupType\": \"snapshot\",\n                    \"BackupMethod\": \"manual\",\n                    \"SnapshotTime\": \"2023-11-03 15:27:22\"\n                },\n                \"ModifyDbVersionData\": {\n                    \"OldVersion\": \"3.1.11\",\n                    \"NewVersion\": \"3.1.13\",\n                    \"UpgradeType\": \"upgradeInMaintain\"\n                },\n                \"ClusterSlaveData\": {\n                    \"OldMasterZone\": \"ap-guangzhou-4\",\n                    \"OldSlaveZone\": [\n                        \"ap-guangzhou-7\"\n                    ],\n                    \"NewMasterZone\": \"ap-guangzhou-7\",\n                    \"NewSlaveZone\": [\n                        \"ap-guangzhou-4\"\n                    ],\n                    \"NewSlaveZoneAttr\": [\n                        {\n                            \"Zone\": \"ap-guangzhou-4\",\n                            \"BinlogSyncWay\": \"sync\",\n                            \"SemiSyncTimeout\": 10000\n                        }\n                    ],\n                    \"OldSlaveZoneAttr\": [\n                        {\n                            \"Zone\": \"ap-guangzhou-7\",\n                            \"BinlogSyncWay\": \"async\",\n                            \"SemiSyncTimeout\": 10000\n                        }\n                    ]\n                },\n                \"SwitchClusterLogBin\": {\n                    \"Status\": \"OFF\"\n                },\n                \"ModifyInstanceParamsData\": {\n                    \"ClusterId\": \"cynosdbmysql-tiwgxyts\",\n                    \"ClusterParamList\": [\n                        {\n                            \"ParamName\": \"innodb_backquery_history_limit\",\n                            \"CurrentValue\": \"1100\",\n                            \"OldValue\": \"1000\"\n                        }\n                    ],\n                    \"ModifyInstanceParams\": [\n                        {\n                            \"InstanceId\": \"cynosdbmysql-ins-twpmnatl\",\n                            \"ModifyInstanceParamList\": [\n                                {\n                                    \"ParamName\": \"innodb_secondary_evict_only_lru\",\n                                    \"CurrentValue\": \"ON\",\n                                    \"OldValue\": \"OFF\"\n                                }\n                            ]\n                        }\n                    ]\n                },\n                \"TaskMaintainInfo\": {\n                    \"MaintainStartTime\": 10800,\n                    \"MaintainDuration\": 3600,\n                    \"MaintainWeekDays\": [\n                        \"Mon\",\n                        \"Tue\",\n                        \"Wed\",\n                        \"Thu\",\n                        \"Fri\"\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"3d56fe0b-f839-42c6-b84e-1d5fbc874cba\"\n    }\n}",
         "title": "查询任务列表"
+      }
+    ],
+    "DescribeVaultBackupClusterInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVaultBackupClusterInfo\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterInfos\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-h30xf5d7\",\n                \"ClusterName\": \"backupT_202602021412\",\n                \"ClusterRegion\": \"ap-guangzhou\",\n                \"ClusterStatus\": \"deleted\",\n                \"ClusterZone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"34994a5c-df6c-4ff0-8de6-295665165d35\"\n    }\n}",
+        "title": "查询保险箱下备份所属集群信息"
+      }
+    ],
+    "DescribeVaults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVaults\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 229,\n        \"Vaults\": [\n            {\n                \"AutoCopyConfigs\": [\n                    {\n                        \"ClusterId\": \"cynosdbmysql-03e2xlyd\",\n                        \"CopyType\": \"binlog\",\n                        \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\",\n                        \"VaultRegion\": \"ap-guangzhou\"\n                    }\n                ],\n                \"BackupFileCount\": 1,\n                \"BackupFileSize\": 4183356,\n                \"BackupSaveSeconds\": 604800,\n                \"BinlogFileCount\": 9,\n                \"BinlogFileSize\": 1320651467,\n                \"RedoLogFileCount\": 3,\n                \"RedoLogFileSize\": 1123284320,\n                \"Status\": \"running\",\n                \"Tasks\": [],\n                \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\",\n                \"VaultName\": \"testtttt\",\n                \"VaultRegion\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"af30455b-61bd-495c-b751-e43a47978c1d\"\n    }\n}",
+        "title": "查询保险箱列表"
       }
     ],
     "DescribeZones": [
@@ -1150,6 +1238,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBinlogSaveDays\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdb-xxxxxxxx\",\n    \"BinlogSaveDays\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
         "title": "修改集群Binlog保留天数"
+      }
+    ],
+    "ModifyClusterBinlogRedoLogAutoCopyVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterBinlogRedoLogAutoCopyVault\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-03e2xlyd\",\n    \"AutoCopyVaults\": [\n        {\n            \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\",\n            \"VaultRegion\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4295131272,\n        \"RequestId\": \"448df343-49af-4fea-a79a-82580248996c\"\n    }\n}",
+        "title": "设置binlog和redoLog自动投递"
       }
     ],
     "ModifyClusterDatabase": [
@@ -1388,6 +1484,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapBackupCrossRegionConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-gfo7ejhl\",\n    \"CrossRegionsEnable\": \"OFF\",\n    \"CrossRegions\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be38b494-263a-45f7-b6f3-ecbd66ac65bb\",\n        \"TaskId\": 49297\n    }\n}",
         "title": "修改快照备份跨地域配置"
+      }
+    ],
+    "ModifyVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVault\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-bb80705c-e6cb-4e40-b9f6-93e540a50f61\",\n    \"BackupSaveSeconds\": 600\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4295126097,\n        \"RequestId\": \"7968c0b3-88e6-4ad5-b8a0-cf5fde099627\"\n    }\n}",
+        "title": "修改保险箱名称"
       }
     ],
     "ModifyVipVport": [
@@ -1676,6 +1780,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchProxyVpc\n<公共请求参数>\n\n{\n    \"OldIpReserveHours\": 1,\n    \"UniqSubnetId\": \"subnet-123\",\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"UniqVpcId\": \"vpc-123\",\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-qwe\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123\n    }\n}",
         "title": "转换网络"
+      }
+    ],
+    "TransferClusterZone": [
+      {
+        "document": "发起跨可用区迁移",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-ejccn17r\",\n    \"DstZone\": \"ap-guangzhou-4\",\n    \"MaxLag\": 10,\n    \"TransferType\": \"Immediate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "发起跨可用区迁移"
       }
     ],
     "UnbindClusterResourcePackages": [

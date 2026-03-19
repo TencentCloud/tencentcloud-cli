@@ -10,7 +10,8 @@ tccli tione UpdateSubAccountLinuxUserInfo --cli-unfold-argument  \
     --SubAccountList.0.SubUin 100033176827 \
     --SubAccountList.0.SubUinName ExampleUser \
     --SubAccountList.0.LinuxUid 50000 \
-    --SubAccountList.0.LinuxGid 50000
+    --SubAccountList.0.LinuxGid 50000 \
+    --SubAccountList.0.LinuxUserName example_user
 ```
 
 Output: 

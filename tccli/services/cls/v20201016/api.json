@@ -217,6 +217,13 @@
       "output": "CreateMetricSubscribeResponse",
       "status": "online"
     },
+    "CreateNetworkApplication": {
+      "document": "创建网络应用",
+      "input": "CreateNetworkApplicationRequest",
+      "name": "创建网络应用",
+      "output": "CreateNetworkApplicationResponse",
+      "status": "online"
+    },
     "CreateNoticeContent": {
       "document": "该接口用于创建通知内容。",
       "input": "CreateNoticeContentRequest",
@@ -439,6 +446,13 @@
       "input": "DeleteMetricSubscribeRequest",
       "name": "删除指标订阅配置",
       "output": "DeleteMetricSubscribeResponse",
+      "status": "online"
+    },
+    "DeleteNetworkApplication": {
+      "document": "删除网络应用",
+      "input": "DeleteNetworkApplicationRequest",
+      "name": "删除网络应用",
+      "output": "DeleteNetworkApplicationResponse",
       "status": "online"
     },
     "DeleteNoticeContent": {
@@ -770,6 +784,20 @@
       "output": "DescribeMetricSubscribesResponse",
       "status": "online"
     },
+    "DescribeNetworkApplicationDetail": {
+      "document": "获取网络应用详情",
+      "input": "DescribeNetworkApplicationDetailRequest",
+      "name": "获取网络应用详情",
+      "output": "DescribeNetworkApplicationDetailResponse",
+      "status": "online"
+    },
+    "DescribeNetworkApplications": {
+      "document": "获取网络应用列表",
+      "input": "DescribeNetworkApplicationsRequest",
+      "name": "获取网络应用列表",
+      "output": "DescribeNetworkApplicationsResponse",
+      "status": "online"
+    },
     "DescribeNoticeContents": {
       "document": "获取通知内容列表",
       "input": "DescribeNoticeContentsRequest",
@@ -1050,6 +1078,13 @@
       "output": "ModifyMetricSubscribeResponse",
       "status": "online"
     },
+    "ModifyNetworkApplication": {
+      "document": "修改网络应用",
+      "input": "ModifyNetworkApplicationRequest",
+      "name": "修改网络应用",
+      "output": "ModifyNetworkApplicationResponse",
+      "status": "online"
+    },
     "ModifyNoticeContent": {
       "document": "该接口用于修改通知内容配置",
       "input": "ModifyNoticeContentRequest",
@@ -1163,7 +1198,7 @@
       "status": "online"
     },
     "UploadLog": {
-      "document": "## 提示\n为了保障您日志数据的可靠性以及更高效地使用日志服务，建议您使用CLS优化后的接口[上传结构化日志](https://cloud.tencent.com/document/product/614/16873)。\n\n同时我们给此接口专门优化定制了多个语言版本的SDK供您选择，SDK提供统一的异步发送、资源控制、自动重试、优雅关闭、感知上报等功能，使上报日志功能更完善，详情请参考[SDK采集](https://cloud.tencent.com/document/product/614/67157)。\n\n同时云API上传日志接口也支持同步上传日志数据，如果您选择继续使用此接口请参考下文。\n\n## 功能描述\n\n本接口用于将日志写入到指定的日志主题。\n\n#### 输入参数(pb二进制流，位于body中)\n\n| 字段名       | 类型    | 位置 | 必须 | 含义                                                         |\n| ------------ | ------- | ---- | ---- | ------------------------------------------------------------ |\n| logGroupList | message | pb   | 是   | logGroup 列表，封装好的日志组列表内容，建议 logGroup 数量不要超过5个 |\n\nLogGroup 说明：\n\n| 字段名      | 是否必选 | 含义                                                         |\n| ----------- | -------- | ------------------------------------------------------------ |\n| logs        | 是       | 日志数组，表示有多个 Log 组成的集合，一个 Log 表示一条日志，一个 LogGroup 中 Log 个数不能超过10000 |\n| contextFlow | 否       | LogGroup 的唯一ID，需要使用上下文功能时传入。格式：\"{上下文ID}-{LogGroupID}\"。<br>上下文ID：唯一标识一个上下文（连续滚动的一系列日志文件，或者是需要保序的一系列日志），16进制64位整型字符串。<br>LogGroupID：连续递增的一串整型，16进制64位整型字符串。样例：\"102700A66102516A-59F59\"。                        |\n| filename    | 否       | 日志文件名                                                   |\n| source      | 否       | 日志来源，一般使用机器 IP 作为标识                           |\n| logTags     | 否       | 日志的标签列表                                               |\n\nLog 说明：\n\n| 字段名   | 是否必选 | 含义                                                         |\n| -------- | -------- | ------------------------------------------------------------ |\n| time     | 是       | 日志时间（Unix 格式时间戳），支持秒、毫秒，建议采用毫秒      |\n| contents | 否       | key-value 格式的日志内容，表示一条日志里的多个 key-value 组合 |\n\nContent 说明：\n\n| 字段名 | 是否必选 | 含义                                                         |\n| ------ | -------- | ------------------------------------------------------------ |\n| key    | 是       | 单条日志里某个字段组的 key 值，不能以`_`开头                 |\n| value  | 是       | 单条日志某个字段组的 value 值，单条日志 value 不能超过1MB，LogGroup 中所有 value 总和不能超过5MB |\n\nLogTag 说明：\n\n| 字段名 | 是否必选 | 含义                             |\n| ------ | -------- | -------------------------------- |\n| key    | 是       | 自定义的标签 key                 |\n| value  | 是       | 自定义的标签 key 对应的 value 值 |\n\n## PB 编译示例\n\n本示例将说明如何使用官方 protoc 编译工具将 PB 描述文件 编译生成为 C++ 语言可调用的上传日志接口。\n\n> ?目前 protoc 官方支持 Java、C++、Python 等语言的编译，详情请参见 [protoc](https://github.com/protocolbuffers/protobuf)。\n\n#### 1. 安装 Protocol Buffer\n\n下载 [Protocol Buffer](https://main.qcloudimg.com/raw/d7810aaf8b3073fbbc9d4049c21532aa/protobuf-2.6.1.tar.gz) ，解压并安装。示例版本为 protobuf 2.6.1，环境为 Centos 7.3 系统。 解压`protobuf-2.6.1.tar.gz`压缩包至`/usr/local`目录并进入该目录，执行命令如下：\n\n```\ntar -zxvf protobuf-2.6.1.tar.gz -C /usr/local/ && cd /usr/local/protobuf-2.6.1\n```\n\n开始编译和安装，配置环境变量，执行命令如下：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# ./configure \n[root@VM_0_8_centos protobuf-2.6.1]# make && make install\n[root@VM_0_8_centos protobuf-2.6.1]# export PATH=$PATH:/usr/local/protobuf-2.6.1/bin\n```\n\n编译成功后，您可以使用以下命令查看版本：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# protoc --version\nliprotoc 2.6.1\n```\n\n#### 2. 创建 PB 描述文件\n\nPB 描述文件是通信双方约定的数据交换格式，上传日志时须将规定的协议格式编译成对应语言版本的调用接口，然后添加到工程代码里，详情请参见 [protoc](https://github.com/protocolbuffers/protobuf) 。\n\n以日志服务所规定的 PB 数据格式内容为准， 在本地创建 PB 消息描述文件 cls.proto。\n\n> !PB 描述文件内容不可更改，且文件名须以`.proto`结尾。\n\ncls.proto 内容（PB 描述文件）如下：\n\n```\npackage cls;\n\nmessage Log\n{\n    message Content\n    {\n        required string key   = 1; // 每组字段的 key\n        required string value = 2; // 每组字段的 value\n    }\n    required int64   time     = 1; // 时间戳，UNIX时间格式\n    repeated Content contents = 2; // 一条日志里的多个kv组合\n}\n\nmessage LogTag\n{\n    required string key       = 1;\n    required string value     = 2;\n}\n\nmessage LogGroup\n{\n    repeated Log    logs        = 1; // 多条日志合成的日志数组\n    optional string contextFlow = 2; // 目前暂无效用\n    optional string filename    = 3; // 日志文件名\n    optional string source      = 4; // 日志来源，一般使用机器IP\n    repeated LogTag logTags     = 5;\n}\n\nmessage LogGroupList\n{\n    repeated LogGroup logGroupList = 1; // 日志组列表\n}\n```\n\n#### 3. 编译生成\n\n此例中，使用 proto 编译器生成 C++ 语言的文件，在 cls.proto 文件的同一目录下，执行如下编译命令：\n\n```\nprotoc --cpp_out=./ ./cls.proto \n```\n\n> ?`--cpp_out=./`表示编译成 cpp 格式并输出当前目录下，`./cls.proto`表示位于当前目录下的 cls.proto 描述文件。\n\n编译成功后，会输出对应语言的代码文件。此例会生成 cls.pb.h 头文件和 [cls.pb.cc](http://cls.pb.cc) 代码实现文件，如下所示：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# protoc --cpp_out=./ ./cls.proto\n[root@VM_0_8_centos protobuf-2.6.1]# ls\ncls.pb.cc cls.pb.h cls.proto\n```\n\n#### 4. 调用\n\n将生成的 cls.pb.h 头文件引入代码中，调用接口进行数据格式封装。",
+      "document": "## 提示\n为了保障您日志数据的可靠性以及更高效地使用日志服务，建议您使用CLS优化后的接口[上传结构化日志](https://cloud.tencent.com/document/product/614/16873)。\n\n同时我们给此接口专门优化定制了多个语言版本的SDK供您选择，SDK提供统一的异步发送、资源控制、自动重试、优雅关闭、感知上报等功能，使上报日志功能更完善，详情请参考[SDK采集](https://cloud.tencent.com/document/product/614/67157)。\n\n同时云API上传日志接口也支持同步上传日志数据，如果您选择继续使用此接口请参考下文。\n\n## 功能描述\n\n本接口用于将日志写入到指定的日志主题。\n\n#### 输入参数(pb二进制流，位于body中)\n\n| 字段名       | 类型    | 位置 | 必须 | 含义                                                         |\n| ------------ | ------- | ---- | ---- | ------------------------------------------------------------ |\n| logGroupList | message | pb   | 是   | logGroup 列表，封装好的日志组列表内容，建议 logGroup 数量不要超过5个 |\n\nLogGroup 说明：\n\n| 字段名      | 是否必选 | 含义                                                         |\n| ----------- | -------- | ------------------------------------------------------------ |\n| logs        | 是       | 日志数组，表示有多个 Log 组成的集合，一个 Log 表示一条日志，一个 LogGroup 中 Log 个数不能超过10000 |\n| contextFlow | 否       | LogGroup 的唯一ID，需要使用上下文功能时传入。格式：\"{上下文ID}-{LogGroupID}\"。<br>上下文ID：唯一标识一个上下文（连续滚动的一系列日志文件，或者是需要保序的一系列日志），16进制64位整型字符串。<br>LogGroupID：连续递增的一串整型，16进制64位整型字符串。样例：\"102700A66102516A-59F59\"。                        |\n| filename    | 否       | 日志文件名                                                   |\n| source      | 否       | 日志来源，一般使用机器 IP 作为标识                           |\n| logTags     | 否       | 日志的标签列表                                               |\n\nLog 说明：\n\n| 字段名   | 是否必选 | 含义                                                         |\n| -------- | -------- | ------------------------------------------------------------ |\n| time     | 是       | 日志时间（Unix 格式时间戳），支持秒、毫秒、微秒，建议采用毫秒      |\n| contents | 否       | key-value 格式的日志内容，表示一条日志里的多个 key-value 组合 |\n\nContent 说明：\n\n| 字段名 | 是否必选 | 含义                                                         |\n| ------ | -------- | ------------------------------------------------------------ |\n| key    | 是       | 单条日志里某个字段组的 key 值，不能以`_`开头                 |\n| value  | 是       | 单条日志某个字段组的 value 值，单条日志 value 不能超过1MB，LogGroup 中所有 value 总和不能超过5MB |\n\nLogTag 说明：\n\n| 字段名 | 是否必选 | 含义                             |\n| ------ | -------- | -------------------------------- |\n| key    | 是       | 自定义的标签 key                 |\n| value  | 是       | 自定义的标签 key 对应的 value 值 |\n\n## PB 编译示例\n\n本示例将说明如何使用官方 protoc 编译工具将 PB 描述文件 编译生成为 C++ 语言可调用的上传日志接口。\n\n> ?目前 protoc 官方支持 Java、C++、Python 等语言的编译，详情请参见 [protoc](https://github.com/protocolbuffers/protobuf)。\n\n#### 1. 安装 Protocol Buffer\n\n下载 [Protocol Buffer](https://main.qcloudimg.com/raw/d7810aaf8b3073fbbc9d4049c21532aa/protobuf-2.6.1.tar.gz) ，解压并安装。示例版本为 protobuf 2.6.1，环境为 Centos 7.3 系统。 解压`protobuf-2.6.1.tar.gz`压缩包至`/usr/local`目录并进入该目录，执行命令如下：\n\n```\ntar -zxvf protobuf-2.6.1.tar.gz -C /usr/local/ && cd /usr/local/protobuf-2.6.1\n```\n\n开始编译和安装，配置环境变量，执行命令如下：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# ./configure \n[root@VM_0_8_centos protobuf-2.6.1]# make && make install\n[root@VM_0_8_centos protobuf-2.6.1]# export PATH=$PATH:/usr/local/protobuf-2.6.1/bin\n```\n\n编译成功后，您可以使用以下命令查看版本：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# protoc --version\nliprotoc 2.6.1\n```\n\n#### 2. 创建 PB 描述文件\n\nPB 描述文件是通信双方约定的数据交换格式，上传日志时须将规定的协议格式编译成对应语言版本的调用接口，然后添加到工程代码里，详情请参见 [protoc](https://github.com/protocolbuffers/protobuf) 。\n\n以日志服务所规定的 PB 数据格式内容为准， 在本地创建 PB 消息描述文件 cls.proto。\n\n> !PB 描述文件内容不可更改，且文件名须以`.proto`结尾。\n\ncls.proto 内容（PB 描述文件）如下：\n\n```\npackage cls;\n\nmessage Log\n{\n    message Content\n    {\n        required string key   = 1; // 每组字段的 key\n        required string value = 2; // 每组字段的 value\n    }\n    required int64   time     = 1; // 时间戳，UNIX时间格式\n    repeated Content contents = 2; // 一条日志里的多个kv组合\n}\n\nmessage LogTag\n{\n    required string key       = 1;\n    required string value     = 2;\n}\n\nmessage LogGroup\n{\n    repeated Log    logs        = 1; // 多条日志合成的日志数组\n    optional string contextFlow = 2; // 目前暂无效用\n    optional string filename    = 3; // 日志文件名\n    optional string source      = 4; // 日志来源，一般使用机器IP\n    repeated LogTag logTags     = 5;\n}\n\nmessage LogGroupList\n{\n    repeated LogGroup logGroupList = 1; // 日志组列表\n}\n```\n\n#### 3. 编译生成\n\n此例中，使用 proto 编译器生成 C++ 语言的文件，在 cls.proto 文件的同一目录下，执行如下编译命令：\n\n```\nprotoc --cpp_out=./ ./cls.proto \n```\n\n> ?`--cpp_out=./`表示编译成 cpp 格式并输出当前目录下，`./cls.proto`表示位于当前目录下的 cls.proto 描述文件。\n\n编译成功后，会输出对应语言的代码文件。此例会生成 cls.pb.h 头文件和 [cls.pb.cc](http://cls.pb.cc) 代码实现文件，如下所示：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# protoc --cpp_out=./ ./cls.proto\n[root@VM_0_8_centos protobuf-2.6.1]# ls\ncls.pb.cc cls.pb.h cls.proto\n```\n\n#### 4. 调用\n\n将生成的 cls.pb.h 头文件引入代码中，调用接口进行数据格式封装。",
       "input": "UploadLogRequest",
       "name": "上传日志",
       "output": "UploadLogResponse",
@@ -4570,7 +4605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略名称。最大支持255个字节。 不支持 '|'。",
+          "document": "<p>告警策略名称。最大支持255个字节。 不支持 &#39;|&#39;。</p>",
           "example": "p1-业务告警",
           "member": "string",
           "name": "Name",
@@ -4579,7 +4614,7 @@
         },
         {
           "disabled": false,
-          "document": "监控对象列表。",
+          "document": "<p>监控对象列表。</p>",
           "example": "无",
           "member": "AlarmTarget",
           "name": "AlarmTargets",
@@ -4588,7 +4623,7 @@
         },
         {
           "disabled": false,
-          "document": "监控任务运行时间点。",
+          "document": "<p>监控任务运行时间点。</p>",
           "example": "无",
           "member": "MonitorTime",
           "name": "MonitorTime",
@@ -4597,7 +4632,7 @@
         },
         {
           "disabled": false,
-          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。",
+          "document": "<p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。</p>",
           "example": "1",
           "member": "int64",
           "name": "TriggerCount",
@@ -4606,7 +4641,7 @@
         },
         {
           "disabled": false,
-          "document": "告警重复的周期，单位是分钟。取值范围是0~1440。",
+          "document": "<p>告警重复的周期，单位是分钟。取值范围是0~1440。</p>",
           "example": "0",
           "member": "int64",
           "name": "AlarmPeriod",
@@ -4615,16 +4650,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥",
-          "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
-          "member": "string",
-          "name": "AlarmNoticeIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "告警发送通知的触发条件\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。\n",
+          "document": "<p>告警发送通知的触发条件<br> 注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "$1.count > 10",
           "member": "string",
           "name": "Condition",
@@ -4633,7 +4659,7 @@
         },
         {
           "disabled": false,
-          "document": "告警级别\n0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。\n注意:  \n- 不填则默认为0。\n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>告警级别<br>0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。<br>注意:  </p><ul><li>不填则默认为0。</li><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "AlarmLevel",
@@ -4642,7 +4668,7 @@
         },
         {
           "disabled": false,
-          "document": "多触发条件\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。\n\n\n",
+          "document": "<p>多触发条件<br> 注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "无",
           "member": "MultiCondition",
           "name": "MultiConditions",
@@ -4651,7 +4677,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启告警策略。\n默认值为true",
+          "document": "<p>是否开启告警策略。<br>默认值为true</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -4660,7 +4686,7 @@
         },
         {
           "disabled": true,
-          "document": "请使用Status参数控制是否开启告警策略。",
+          "document": "<p>请使用Status参数控制是否开启告警策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -4669,7 +4695,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义告警内容",
+          "document": "<p>用户自定义告警内容</p>",
           "example": "{{range .AnalysisResult.sync}}\\n\\n集群{{.ClusterID}}中节点失败\\n\\n{{end}}",
           "member": "string",
           "name": "MessageTemplate",
@@ -4678,7 +4704,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义回调",
+          "document": "<p>用户自定义回调</p>",
           "example": "无",
           "member": "CallBackInfo",
           "name": "CallBack",
@@ -4687,7 +4713,7 @@
         },
         {
           "disabled": false,
-          "document": "多维分析",
+          "document": "<p>多维分析</p>",
           "example": "无",
           "member": "AnalysisDimensional",
           "name": "Analysis",
@@ -4696,7 +4722,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发状态。\n默认值false",
+          "document": "<p>分组触发状态。<br>默认值false</p>",
           "example": "true",
           "member": "bool",
           "name": "GroupTriggerStatus",
@@ -4705,7 +4731,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发条件。",
+          "document": "<p>分组触发条件。</p>",
           "example": "[\"$1.conut\"]",
           "member": "string",
           "name": "GroupTriggerCondition",
@@ -4714,7 +4740,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。\n\n最大支持10个标签键值对，并且不能有重复的键值对。",
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。</p><p>最大支持10个标签键值对，并且不能有重复的键值对。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -4723,7 +4749,7 @@
         },
         {
           "disabled": false,
-          "document": "监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n不填则默认为0。\n当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。\n",
+          "document": "<p>监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。<br>不填则默认为0。<br>当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MonitorObjectType",
@@ -4732,12 +4758,30 @@
         },
         {
           "disabled": false,
-          "document": "告警附加分类信息列表。\nClassifications元素个数不能超过20个。\nClassifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。\nClassifications元素的Value长度不能超过200个字符。",
+          "document": "<p>告警附加分类信息列表。<br>Classifications元素个数不能超过20个。<br>Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 <code>^[a-z]([a-z0-9_]{0,49})$</code>。<br>Classifications元素的Value长度不能超过200个字符。</p>",
           "example": "无",
           "member": "AlarmClassification",
           "name": "Classifications",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的日志服务告警通知渠道组列表。-通过<a href=\"https://cloud.tencent.com/document/product/614/56462\">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>",
+          "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
+          "member": "string",
+          "name": "AlarmNoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的可观测平台通知模板，与 AlarmNoticeIds 参数互斥，不能同时使用</p>",
+          "example": "无",
+          "member": "MonitorNotice",
+          "name": "MonitorNotice",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4747,7 +4791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略ID。",
+          "document": "<p>告警策略ID。</p>",
           "example": "alarm-479dec34-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
@@ -4851,7 +4895,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n- 通过各个接入云产品官方文档获取",
+          "document": "<p>实例ID</p><ul><li>通过各个接入云产品官方文档获取</li></ul>",
           "example": "ins-r8hrxxx",
           "member": "string",
           "name": "InstanceId",
@@ -4860,7 +4904,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "document": "<p>云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS</p>",
           "example": "CDB",
           "member": "string",
           "name": "AssumerName",
@@ -4869,7 +4913,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "document": "<p>日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS</p>",
           "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
@@ -4878,7 +4922,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "<p>云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：</p><ul><li>CDS所有日志类型：ap-guangzhou</li><li>CDB-AUDIT: gz</li><li>TDSQL-C-AUDIT:  gz</li><li>MongoDB-AUDIT:  gz</li><li>MongoDB-SlowLog：ap-guangzhou</li><li>MongoDB-ErrorLog：ap-guangzhou</li><li>TDMYSQL-SLOW：gz</li><li>DCDB所有日志类型：gz</li><li>MariaDB所有日志类型：gz</li><li>PostgreSQL所有日志类型：gz</li><li>BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)</li><li>APIS所有日志类型：gz</li></ul>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -4887,7 +4931,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS目标地域\n- 支持地域参考  [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档   ",
+          "document": "<p>CLS目标地域</p><ul><li>支持地域参考  <a href=\"https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8\">地域列表</a> 文档</li></ul>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ClsRegion",
@@ -4896,7 +4940,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集名称，未填LogsetId时必填。若日志集不存在, 将自动创建",
+          "document": "<p>日志集名称，未填LogsetId时必填。若日志集不存在, 将自动创建</p>",
           "example": "logset",
           "member": "string",
           "name": "LogsetName",
@@ -4905,7 +4949,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称，在未填TopicId时必填。 若日志主题不存在，将自动创建",
+          "document": "<p>日志主题名称，在未填TopicId时必填。 若日志主题不存在，将自动创建</p>",
           "example": "topic",
           "member": "string",
           "name": "TopicName",
@@ -4914,7 +4958,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置扩展信息， 一般用于存储额外的日志投递配置",
+          "document": "<p>日志配置扩展信息， 一般用于存储额外的日志投递配置</p>",
           "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
@@ -4923,7 +4967,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集id\n- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。",
+          "document": "<p>日志集id</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/api/614/58624\">获取日志集列表</a>获取日志集Id。</li></ul>",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "LogsetId",
@@ -4932,12 +4976,21 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题id</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "92cdd6d4-da98-4a6e-",
           "member": "string",
           "name": "TopicId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4947,7 +5000,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "TopicId",
@@ -4957,7 +5010,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称",
+          "document": "<p>日志主题名称</p>",
           "example": "test-topic",
           "member": "string",
           "name": "TopicName",
@@ -4967,7 +5020,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "LogsetId",
@@ -4977,7 +5030,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集名称",
+          "document": "<p>日志集名称</p>",
           "example": "test-logset",
           "member": "string",
           "name": "LogsetName",
@@ -4987,7 +5040,7 @@
         },
         {
           "disabled": false,
-          "document": "-1 创建中，1创建完成 ",
+          "document": "<p>-1 创建中，1创建完成</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -5771,7 +5824,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 最长 255 个字符",
+          "document": "加工任务名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 最长128 个字符",
           "example": "task1",
           "member": "string",
           "name": "Name",
@@ -7009,6 +7062,61 @@
       ],
       "type": "object"
     },
+    "CreateNetworkApplicationRequest": {
+      "document": "CreateNetworkApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用名称：长度不超过64字符，名称不能重复。</p><ul><li>只能包含以下字符：<ul><li>英文字母（大小写）</li><li>数字</li><li>下划线</li><li>连字符（减号）</li><li>汉字</li></ul></li><li>至少包含一个字符</li><li>不能包含空格</li><li>不能包含其他特殊字符（如 @、#、$、% 等）</li></ul>",
+          "example": "network_application_demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集ID</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/58624\">获取日志集列表</a>获取日志集Id。</li></ul>",
+          "example": "b2927b70-6650-4bae-ba42-2cdc569f202e",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题名称。名称限制如下：</p><ul><li>不能为空字符串</li><li>不能包含字符&#39;|&#39;</li><li>不能使用以下名称[&quot;cls_service_log&quot;,&quot;loglistener_status&quot;,&quot;loglistener_alarm&quot;,&quot;loglistener_business&quot;,&quot;cls_service_metric&quot;]</li></ul>",
+          "example": "network_application_topic_name",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNetworkApplicationResponse": {
+      "document": "CreateNetworkApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id</p>",
+          "example": "78c9c041-be1c-476e-b05b-84eb51d87e02",
+          "member": "string",
+          "name": "NetworkAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNoticeContentRequest": {
       "document": "CreateNoticeContent请求参数结构体",
       "members": [
@@ -7441,7 +7549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>日志主题id- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
+          "document": "<p>日志主题id</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
           "member": "string",
           "name": "TopicId",
@@ -7450,7 +7558,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>",
+          "document": "<p>splunk投递任务名称；<br>name有如下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>",
           "example": "template-1",
           "member": "string",
           "name": "Name",
@@ -7486,7 +7594,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>高级配置-是否启用索引器；1-不启用；2-启用；默认：1</p>",
+          "document": "<p>高级配置-是否启用索引器；1-不启用；2-启用；<br>默认：1</p>",
           "example": "1",
           "member": "int64",
           "name": "IndexAck",
@@ -7522,7 +7630,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>高级配置-通道需满足限制：如果启用索引器，那么Channel必填</p>",
+          "document": "<p>高级配置-通道<br>需满足限制：如果启用索引器，那么Channel必填</p>",
           "example": "template-1",
           "member": "string",
           "name": "Channel",
@@ -7537,6 +7645,15 @@
           "name": "DSLFilter",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级配置-跨账户投递用户角色授权信息</p><p>取值参考：<a href=\"https://console.cloud.tencent.com/cam/role/create?payloadType=account\">新建自定义角色</a></p>",
+          "example": "无",
+          "member": "ExternalRole",
+          "name": "ExternalRole",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8373,7 +8490,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题ID</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "abdeace6-9484-4d2e-b670-28289c42b60f",
           "member": "string",
           "name": "TopicId",
@@ -8384,11 +8501,66 @@
         },
         {
           "disabled": false,
-          "document": "别名\n限制：不能包含字符 |。",
+          "document": "<p>别名<br>限制：不能包含字符 |。</p>",
           "example": "topicname",
           "member": "string",
           "name": "Alias",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是跨账号主题，false不是跨账号主题，true是跨账号主题</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCrossAccount",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨账号场景下，被投递账号给投递账号创建的角色ARN值，在被投递账号的角色里查找</p>",
+          "example": "qcs::cam::uin/1234567890:roleName/cls_online_role",
+          "member": "string",
+          "name": "RoleARN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部ID值，可以在被投递账号的角色-载体里找到该值</p>",
+          "example": "hello123",
+          "member": "string",
+          "name": "ExternalId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名称</p>",
+          "example": "topic_name_1",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集的名称</p>",
+          "example": "logset_name_1",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8809,7 +8981,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -8818,7 +8990,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "document": "<p>云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS</p>",
           "example": "CDB",
           "member": "string",
           "name": "AssumerName",
@@ -8827,7 +8999,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "document": "<p>日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS</p>",
           "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
@@ -8836,12 +9008,30 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "<p>云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：</p><ul><li>CDS所有日志类型：ap-guangzhou</li><li>CDB-AUDIT: gz</li><li>TDSQL-C-AUDIT: gz</li><li>MongoDB-AUDIT: gz</li><li>MongoDB-SlowLog：ap-guangzhou</li><li>MongoDB-ErrorLog：ap-guangzhou</li><li>TDMYSQL-SLOW：gz</li><li>DCDB所有日志类型：gz</li><li>MariaDB所有日志类型：gz</li><li>PostgreSQL所有日志类型：gz</li><li>BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)</li><li>APIS所有日志类型：gz</li></ul>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否删除关联的topic</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDeleteTopic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否删除关联的logset。如果logset下还有topic的话，不会进行删除</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDeleteLogset",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8851,7 +9041,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "枚举值，0创建中 1创建完成 2删除中 3删除完成",
+          "document": "<p>枚举值，0创建中 1创建完成 2删除中 3删除完成</p>",
           "example": "3",
           "member": "int64",
           "name": "Status",
@@ -9525,6 +9715,33 @@
       ],
       "type": "object"
     },
+    "DeleteNetworkApplicationRequest": {
+      "document": "DeleteNetworkApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id。</p>",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNetworkApplicationResponse": {
+      "document": "DeleteNetworkApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNoticeContentRequest": {
       "document": "DeleteNoticeContent请求参数结构体",
       "members": [
@@ -10045,7 +10262,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的偏移量，默认值为0。",
+          "document": "<p>分页的偏移量，默认值为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -10054,7 +10271,7 @@
         },
         {
           "disabled": false,
-          "document": "分页单页限制数目，默认值为100，最大值100。",
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -10063,7 +10280,7 @@
         },
         {
           "disabled": false,
-          "document": "- assumerName\n  - 按照【云产品标识】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS\n- logType\n  - 按照【日志类型】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS\n- instanceId\n  - 按照【实例ID】进行过滤。\n  - 类型：String\n  - 必选：否",
+          "document": "<ul><li>assumerName<ul><li>按照【云产品标识】进行过滤。</li><li>类型：String</li><li>必选：否</li><li>枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS</li></ul></li><li>logType<ul><li>按照【日志类型】进行过滤。</li><li>类型：String</li><li>必选：否</li><li>枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS</li></ul></li><li>instanceId<ul><li>按照【实例ID】进行过滤。</li><li>类型：String</li><li>必选：否</li></ul></li></ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -10078,7 +10295,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志配置详情列表",
+          "document": "<p>日志配置详情列表</p>",
           "example": "无",
           "member": "CloudProductLogTaskInfo",
           "name": "Tasks",
@@ -10088,7 +10305,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置总数",
+          "document": "<p>日志配置总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -11405,7 +11622,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题Id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "75f531f6-3644-45e5-8717-af1dc294cc93",
           "member": "string",
           "name": "TopicId",
@@ -11420,7 +11637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题Id",
+          "document": "<p>日志主题Id</p>",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
           "name": "TopicId",
@@ -11430,7 +11647,7 @@
         },
         {
           "disabled": false,
-          "document": "索引状态。true：开启状态，false：关闭状态\n开启后可对日志进行检索分析，将产生索引流量、索引存储及相应费用。[费用详情](https://cloud.tencent.com/document/product/614/45802#.E8.AE.A1.E8.B4.B9.E9.A1.B9)",
+          "document": "<p>索引状态。true：开启状态，false：关闭状态<br>开启后可对日志进行检索分析，将产生索引流量、索引存储及相应费用。<a href=\"https://cloud.tencent.com/document/product/614/45802#.E8.AE.A1.E8.B4.B9.E9.A1.B9\">费用详情</a></p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -11440,7 +11657,7 @@
         },
         {
           "disabled": false,
-          "document": "索引配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuleInfo",
           "name": "Rule",
@@ -11450,8 +11667,8 @@
         },
         {
           "disabled": false,
-          "document": "索引修改时间，初始值为索引创建时间。格式 `YYYY-MM-DD HH:MM:SS`",
-          "example": "2021-01-13 21:00:08 ",
+          "document": "<p>索引修改时间，初始值为索引创建时间。格式 <code>YYYY-MM-DD HH:MM:SS</code></p>",
+          "example": "2021-01-13 21:00:08",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -11460,7 +11677,7 @@
         },
         {
           "disabled": false,
-          "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引\n* false:不包含\n* true:包含",
+          "document": "<p>内置保留字段（<code>__FILENAME__</code>，<code>__HOSTNAME__</code>及<code>__SOURCE__</code>）是否包含至全文索引</p><ul><li>false:不包含</li><li>true:包含</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "IncludeInternalFields",
@@ -11470,7 +11687,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段",
+          "document": "<p>元数据字段（前缀为<code>__TAG__</code>的字段）是否包含至全文索引</p><ul><li>0:仅包含开启键值索引的元数据字段</li><li>1:包含所有元数据字段</li><li>2:不包含任何元数据字段</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "MetadataFlag",
@@ -11480,7 +11697,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义日志解析异常存储字段。",
+          "document": "<p>自定义日志解析异常存储字段。</p>",
           "example": "ROWLOG",
           "member": "string",
           "name": "CoverageField",
@@ -12541,6 +12758,108 @@
       ],
       "type": "object"
     },
+    "DescribeNetworkApplicationDetailRequest": {
+      "document": "DescribeNetworkApplicationDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id</p>",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkApplicationDetailResponse": {
+      "document": "DescribeNetworkApplicationDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询指定的网络应用详情</p>",
+          "example": "无",
+          "member": "NetworkApplicationDetail",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkApplicationsRequest": {
+      "document": "DescribeNetworkApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤项</p><ul><li><p>name<br>按照【任务名称】进行过滤。模糊匹配方式查询。<br>类型：String<br>必选：否</p></li><li><p>networkAppId<br>按照【网络应用id】进行过滤。<br>类型：String<br>必选：否</p></li></ul><p>每次请求的Filters的上限为10，Filter.Values的上限为10。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkApplicationsResponse": {
+      "document": "DescribeNetworkApplications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合查询条件的大模型性能剖析任务列表</p>",
+          "example": "无",
+          "member": "NetworkApplicationInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合查询条件的任务总数。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNoticeContentsRequest": {
       "document": "DescribeNoticeContents请求参数结构体",
       "members": [
@@ -12933,7 +13252,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>日志主题Id- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
+          "document": "<p>日志主题Id</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
           "member": "string",
           "name": "TopicId",
@@ -12942,7 +13261,7 @@
         },
         {
           "disabled": false,
-          "document": "<ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br /> 每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>",
+          "document": "<ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br>每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -13560,7 +13879,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cls日志中的字段名",
+          "document": "<p>cls日志中的字段名</p>",
           "example": "table_name",
           "member": "string",
           "name": "ClsField",
@@ -13571,7 +13890,7 @@
         },
         {
           "disabled": false,
-          "document": "数据湖计算服务表的列名",
+          "document": "<p>数据湖计算服务表的列名</p>",
           "example": "table_name",
           "member": "string",
           "name": "DlcField",
@@ -13582,7 +13901,7 @@
         },
         {
           "disabled": false,
-          "document": "数据湖计算服务字段类型",
+          "document": "<p>数据湖计算服务字段类型</p><p>枚举值：</p><ul><li>int|string|struct等： 参考 <a href=\"https://cloud.tencent.com/document/product/1342/53778#Column\">DLC  cloumn中的Type 定义 </a></li></ul>",
           "example": "string",
           "member": "string",
           "name": "DlcFieldType",
@@ -13593,7 +13912,7 @@
         },
         {
           "disabled": false,
-          "document": "解析失败填充字段",
+          "document": "<p>解析失败填充字段</p>",
           "example": "NULL",
           "member": "string",
           "name": "FillField",
@@ -13604,7 +13923,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用",
+          "document": "<p>是否禁用</p>",
           "example": "false",
           "member": "bool",
           "name": "Disable",
@@ -13699,7 +14018,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cls日志中的字段名",
+          "document": "<p>cls日志中的字段名</p>",
           "example": "table_name",
           "member": "string",
           "name": "ClsField",
@@ -13710,7 +14029,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc表的列名",
+          "document": "<p>dlc表的列名</p>",
           "example": "table_name",
           "member": "string",
           "name": "DlcField",
@@ -13721,7 +14040,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc字段类型",
+          "document": "<p>请参考 <a href=\"https://cloud.tencent.com/document/product/1342/53778#Column\">DLC  cloumn中的Type 定义 </a></p><p>枚举值：</p><ul><li>int|string|array等： 请参考 <a href=\"https://cloud.tencent.com/document/product/1342/53778#Column\">DLC  cloumn中的Type 定义 </a></li></ul>",
           "example": "string",
           "member": "string",
           "name": "DlcFieldType",
@@ -14409,7 +14728,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -14419,7 +14738,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出任务ID",
+          "document": "<p>日志导出任务ID</p>",
           "example": "export-57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
           "name": "ExportId",
@@ -14429,7 +14748,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出查询语句",
+          "document": "<p>日志导出查询语句</p>",
           "example": "status:200",
           "member": "string",
           "name": "Query",
@@ -14439,7 +14758,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出文件名",
+          "document": "<p>日志导出文件名</p>",
           "example": "log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_571",
           "member": "string",
           "name": "FileName",
@@ -14449,7 +14768,7 @@
         },
         {
           "disabled": false,
-          "document": "日志文件大小",
+          "document": "<p>日志文件大小</p><p>单位：Byte</p>",
           "example": "0",
           "member": "uint64",
           "name": "FileSize",
@@ -14459,7 +14778,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出时间排序",
+          "document": "<p>日志导出时间排序</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -14469,7 +14788,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出格式",
+          "document": "<p>日志导出格式</p>",
           "example": "json",
           "member": "string",
           "name": "Format",
@@ -14479,7 +14798,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出数量",
+          "document": "<p>日志导出数量</p>",
           "example": "100",
           "member": "uint64",
           "name": "Count",
@@ -14489,7 +14808,7 @@
         },
         {
           "disabled": false,
-          "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
+          "document": "<p>日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中</p>",
           "example": "Expired",
           "member": "string",
           "name": "Status",
@@ -14499,7 +14818,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出起始时间，毫秒时间戳",
+          "document": "<p>日志导出起始时间，毫秒时间戳</p>",
           "example": "1607499207000",
           "member": "int64",
           "name": "From",
@@ -14509,7 +14828,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出结束时间，毫秒时间戳",
+          "document": "<p>日志导出结束时间，毫秒时间戳</p>",
           "example": "1607499208000",
           "member": "int64",
           "name": "To",
@@ -14519,7 +14838,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
+          "document": "<p>日志导出路径,有效期一个小时，请尽快使用该路径下载。</p>",
           "example": "/cos_path/file/1",
           "member": "string",
           "name": "CosPath",
@@ -14529,7 +14848,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>日志导出创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2020-08-08 12:12:12",
           "member": "string",
           "name": "CreateTime",
@@ -14539,7 +14858,7 @@
         },
         {
           "disabled": false,
-          "document": "语法规则。 默认值为0。\n0：Lucene语法，1：CQL语法。",
+          "document": "<p>语法规则。 默认值为0。<br>0：Lucene语法，1：CQL语法。</p>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -14549,7 +14868,7 @@
         },
         {
           "disabled": false,
-          "document": "导出字段",
+          "document": "<p>导出字段</p>",
           "example": "[\"__timestamp__\"]",
           "member": "string",
           "name": "DerivedFields",
@@ -14559,6 +14878,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ExternalRole": {
+      "document": "跨账户投递外部角色",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>跨账户投递-用户角色RoleArn</p>",
+          "example": "qcs::cam::uin/10000***7589:roleName/ro*-test-splunk",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨账户投递-用户角色名称</p>",
+          "example": "roytestsplunk",
+          "member": "string",
+          "name": "ExternalId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExtractRuleInfo": {
       "document": "日志提取规则",
@@ -15110,7 +15457,53 @@
     },
     "GetMetricLabelValuesRequest": {
       "document": "GetMetricLabelValues请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>时序主题id</p>",
+          "example": "3a05cb9c-3471-42b8-b212-6ecbc0c49a4a",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时序label名称</p>",
+          "example": "__name__",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间</p>",
+          "example": "1772787397",
+          "member": "uint64",
+          "name": "Start",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "1772787697",
+          "member": "uint64",
+          "name": "End",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Label匹配规则</p>",
+          "example": "[\"http_server_requests_seconds_count\"]",
+          "member": "string",
+          "name": "Match",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "GetMetricLabelValuesResponse": {
@@ -15118,8 +15511,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "时序metric label values",
-          "example": "[\"123\",\"456\"]",
+          "document": "<p>时序metric label values</p>",
+          "example": "[\"http_server_requests_seconds_count\"]",
           "member": "string",
           "name": "Values",
           "output_required": true,
@@ -17443,7 +17836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID",
+          "document": "<p>告警策略ID。-通过<a href=\"https://cloud.tencent.com/document/product/614/56461\">获取告警策略列表</a>获取告警策略ID</p>",
           "example": "alarm-bea71170-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
@@ -17452,7 +17845,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略名称。最大支持255个字节，不支持 '|'。",
+          "document": "<p>告警策略名称。最大支持255个字节，不支持 &#39;|&#39;。</p>",
           "example": "访问拦截告警",
           "member": "string",
           "name": "Name",
@@ -17461,7 +17854,7 @@
         },
         {
           "disabled": false,
-          "document": "监控任务运行时间点。",
+          "document": "<p>监控任务运行时间点。</p>",
           "example": "无",
           "member": "MonitorTime",
           "name": "MonitorTime",
@@ -17470,7 +17863,7 @@
         },
         {
           "disabled": false,
-          "document": "告警信息发送的触发条件。\n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>告警信息发送的触发条件。</p><p>注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "$1.source='10.0.0.1'",
           "member": "string",
           "name": "Condition",
@@ -17479,7 +17872,7 @@
         },
         {
           "disabled": false,
-          "document": "告警级别。\n\n0:警告(Warn);1:提醒(Info);2:紧急 (Critical)\n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>告警级别。</p><p>0:警告(Warn);1:提醒(Info);2:紧急 (Critical)</p><p>注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "AlarmLevel",
@@ -17488,7 +17881,7 @@
         },
         {
           "disabled": false,
-          "document": "多触发条件。 \n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "<p>多触发条件。 </p><p>注意:  </p><ul><li>Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li></ul>",
           "example": "无",
           "member": "MultiCondition",
           "name": "MultiConditions",
@@ -17497,7 +17890,7 @@
         },
         {
           "disabled": false,
-          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。",
+          "document": "<p>持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。</p>",
           "example": "1",
           "member": "int64",
           "name": "TriggerCount",
@@ -17506,7 +17899,7 @@
         },
         {
           "disabled": false,
-          "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
+          "document": "<p>告警重复的周期。单位是分钟。取值范围是0~1440。</p>",
           "example": "0",
           "member": "int64",
           "name": "AlarmPeriod",
@@ -17515,16 +17908,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥",
-          "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
-          "member": "string",
-          "name": "AlarmNoticeIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "监控对象列表。",
+          "document": "<p>监控对象列表。</p>",
           "example": "无",
           "member": "AlarmTarget",
           "name": "AlarmTargets",
@@ -17533,7 +17917,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启告警策略。",
+          "document": "<p>是否开启告警策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -17542,7 +17926,7 @@
         },
         {
           "disabled": true,
-          "document": "该参数已废弃，请使用Status参数控制是否开启告警策略。",
+          "document": "<p>该参数已废弃，请使用Status参数控制是否开启告警策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -17551,7 +17935,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义告警内容",
+          "document": "<p>用户自定义告警内容</p>",
           "example": "{{.Label}}",
           "member": "string",
           "name": "MessageTemplate",
@@ -17560,7 +17944,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义回调",
+          "document": "<p>用户自定义回调</p>",
           "example": "无",
           "member": "CallBackInfo",
           "name": "CallBack",
@@ -17569,7 +17953,7 @@
         },
         {
           "disabled": false,
-          "document": "多维分析",
+          "document": "<p>多维分析</p>",
           "example": "无",
           "member": "AnalysisDimensional",
           "name": "Analysis",
@@ -17578,7 +17962,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发状态。true：开启，false：关闭（默认）",
+          "document": "<p>分组触发状态。true：开启，false：关闭（默认）</p>",
           "example": "true",
           "member": "bool",
           "name": "GroupTriggerStatus",
@@ -17587,7 +17971,7 @@
         },
         {
           "disabled": false,
-          "document": "分组触发条件。",
+          "document": "<p>分组触发条件。</p>",
           "example": "[\"$1.conut\"]",
           "member": "string",
           "name": "GroupTriggerCondition",
@@ -17596,7 +17980,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。最大支持10个标签键值对，并且不能有重复的键值对。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -17605,7 +17989,7 @@
         },
         {
           "disabled": false,
-          "document": "监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。\n",
+          "document": "<p>监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。<br>当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MonitorObjectType",
@@ -17614,12 +17998,30 @@
         },
         {
           "disabled": false,
-          "document": "告警附加分类信息列表。\nClassifications元素个数不能超过20个。\nClassifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 `^[a-z]([a-z0-9_]{0,49})$`。\nClassifications元素的Value长度不能超过200个字符。",
+          "document": "<p>告警附加分类信息列表。<br>Classifications元素个数不能超过20个。<br>Classifications元素的Key不能为空，不能重复，长度不能超过50个字符，符合正则 <code>^[a-z]([a-z0-9_]{0,49})$</code>。<br>Classifications元素的Value长度不能超过200个字符。</p>",
           "example": "无",
           "member": "AlarmClassification",
           "name": "Classifications",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的日志服务告警通知渠道组列表。-通过<a href=\"https://cloud.tencent.com/document/product/614/56462\">获取通知渠道组列表</a>获取关联的告警通知渠道组列表，和MonitorNotice互斥</p>",
+          "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
+          "member": "string",
+          "name": "AlarmNoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的可观测平台通知模板，与 AlarmNoticeIds 参数互斥，不能同时使用</p>",
+          "example": "无",
+          "member": "MonitorNotice",
+          "name": "MonitorNotice",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -18631,7 +19033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TopicId",
@@ -18640,7 +19042,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id。",
+          "document": "<p>任务id。</p>",
           "example": "111024e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TaskId",
@@ -18649,7 +19051,7 @@
         },
         {
           "disabled": false,
-          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "document": "<p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>",
           "example": "template_1",
           "member": "string",
           "name": "Name",
@@ -18658,7 +19060,7 @@
         },
         {
           "disabled": false,
-          "document": "投递类型。0:批投递,1:实时投递",
+          "document": "<p>投递类型。0:批投递,1:实时投递</p>",
           "example": "1",
           "member": "uint64",
           "name": "DeliverType",
@@ -18667,7 +19069,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的开始时间",
+          "document": "<p>投递时间范围的开始时间</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "StartTime",
@@ -18676,7 +19078,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的结束时间。 如果为空，则表示不限时",
+          "document": "<p>投递时间范围的结束时间。 如果为空，则表示不限时</p>",
           "example": "1741006340",
           "member": "uint64",
           "name": "EndTime",
@@ -18685,7 +19087,7 @@
         },
         {
           "disabled": false,
-          "document": "投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。",
+          "document": "<p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>",
           "example": "5",
           "member": "uint64",
           "name": "MaxSize",
@@ -18694,7 +19096,7 @@
         },
         {
           "disabled": false,
-          "document": "投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。",
+          "document": "<p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>",
           "example": "300",
           "member": "uint64",
           "name": "Interval",
@@ -18703,7 +19105,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc配置信息",
+          "document": "<p>dlc配置信息</p>",
           "example": "无",
           "member": "DlcInfo",
           "name": "DlcInfo",
@@ -18712,7 +19114,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。1关闭，2开启。默认开启",
+          "document": "<p>是否开启投递服务日志。1关闭，2开启。默认开启</p>",
           "example": "2",
           "member": "uint64",
           "name": "HasServicesLog",
@@ -18721,7 +19123,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。",
+          "document": "<p>任务状态。</p><p>枚举值：</p><ul><li>1： 运行</li><li>2： 停止</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -19571,6 +19973,42 @@
       ],
       "type": "object"
     },
+    "ModifyNetworkApplicationRequest": {
+      "document": "ModifyNetworkApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络应用id</p>",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络应用名称：长度不超过64字符，名称不能重复。</p><ul><li>只能包含以下字符：<ul><li>英文字母（大小写）</li><li>数字</li><li>下划线</li><li>连字符（减号）</li><li>汉字</li></ul></li><li>至少包含一个字符</li><li>不能包含空格</li><li>不能包含其他特殊字符（如 @、#、$、% 等）</li></ul>",
+          "example": "network_application_demo_update",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkApplicationResponse": {
+      "document": "ModifyNetworkApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNoticeContentRequest": {
       "document": "ModifyNoticeContent请求参数结构体",
       "members": [
@@ -19909,7 +20347,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志主题id- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
+          "document": "<p>日志主题id</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
           "member": "string",
           "name": "TopicId",
@@ -19918,7 +20356,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>投递任务名称name有以下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>",
+          "document": "<p>投递任务名称<br>name有以下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>",
           "example": "template-1",
           "member": "string",
           "name": "Name",
@@ -19963,7 +20401,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>高级配置-是否启用索引器;1-不开启；2-开启；默认为：1</p>",
+          "document": "<p>高级配置-是否启用索引器;<br>1-不开启；2-开启；默认为：1</p>",
           "example": "1",
           "member": "int64",
           "name": "IndexAck",
@@ -19999,7 +20437,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>高级配置-通道。需满足限制：如果启用索引器，该值不能为空</p>",
+          "document": "<p>高级配置-通道。<br>需满足限制：如果启用索引器，该值不能为空</p>",
           "example": "template-1",
           "member": "string",
           "name": "Channel",
@@ -20014,6 +20452,15 @@
           "name": "DSLFilter",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级配置-跨账户投递用户角色授权信息</p><p>取值参考：<a href=\"https://console.cloud.tencent.com/cam/role/create?payloadType=account\">新建自定义角色</a></p>",
+          "example": "无",
+          "member": "ExternalRole",
+          "name": "ExternalRole",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -20286,8 +20733,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云可观测平台通知模板 ID",
-          "example": "notice-erictest",
+          "document": "<p>腾讯云可观测平台通知模板 ID</p>",
+          "example": "notice-xxx",
           "member": "string",
           "name": "NoticeId",
           "output_required": false,
@@ -20297,8 +20744,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云可观测平台内容模板ID，不传默认内容模板\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tmpl-erictest",
+          "document": "<p>腾讯云可观测平台内容模板ID，为空时使用默认内容模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tmpl-xxx",
           "member": "string",
           "name": "ContentTmplId",
           "output_required": false,
@@ -20308,8 +20755,8 @@
         },
         {
           "disabled": false,
-          "document": "告警级别,0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)",
-          "example": "[0,1]",
+          "document": "<p>告警级别,0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)</p>",
+          "example": "[0,1,2]",
           "member": "uint64",
           "name": "AlarmLevels",
           "output_required": false,
@@ -20495,6 +20942,208 @@
         }
       ],
       "usage": "both"
+    },
+    "NetworkApplicationDetail": {
+      "document": "网络应用任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络应用Id",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络应用名称",
+          "example": "network_application_demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域code",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "edce15b6-b85c-48e2-94e5-042aa9ad99d7",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "7fb0245e-2006-4e0f-9153-c5f6b7110b4c",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "eyJuX2FfaWQiOiI2MzhjYTdmZC1jN2QzLTQ5MmItYmMwMS02NTMwNDQyNjc4M2UiLCJ1aW4iOjEwMDAwMTEyNzU4OSwia2V5IjoiYTc3ZWZhNWEtOTkyZS00MzU1LThkYmMtNzE5MGU1NzA2ZmYyIiwicmVnaW9uIjoiYXAteGlhbi1lYyIsInRvcGljX2lkIjoiZWRjZTE1YjYtYjg1Yy00OGUyLTk0ZTUtMDQyYWE5YWQ5OWQ3In0=",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号id",
+          "example": "1000010101",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号id",
+          "example": "1000010102",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NetworkApplicationInfo": {
+      "document": "网络应用任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络应用Id",
+          "example": "638ca7fd-c7d3-492b-bc01-65304426783e",
+          "member": "string",
+          "name": "NetworkAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络应用名称",
+          "example": "network_application_demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域code",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "edce15b6-b85c-48e2-94e5-042aa9ad99d7",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "7fb0245e-2006-4e0f-9153-c5f6b7110b4c",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号id",
+          "example": "1000010101",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号id",
+          "example": "1000010102",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，秒级时间戳",
+          "example": "1764593137",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "NoticeContent": {
       "document": "通知内容模板详细配置",
@@ -22615,7 +23264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则ID",
+          "document": "<p>投递规则ID</p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ShipperId",
@@ -22625,7 +23274,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicId",
@@ -22635,7 +23284,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的bucket地址",
+          "document": "<p>投递的bucket地址</p>",
           "example": "alexxxx-1254011120",
           "member": "string",
           "name": "Bucket",
@@ -22645,7 +23294,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的前缀目录",
+          "document": "<p>投递的前缀目录</p>",
           "example": "user-zip",
           "member": "string",
           "name": "Prefix",
@@ -22655,7 +23304,7 @@
         },
         {
           "disabled": false,
-          "document": "投递规则的名字",
+          "document": "<p>投递规则的名字</p>",
           "example": "testShipper",
           "member": "string",
           "name": "ShipperName",
@@ -22665,7 +23314,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的时间间隔，单位 秒",
+          "document": "<p>投递的时间间隔，单位 秒</p>",
           "example": "300",
           "member": "uint64",
           "name": "Interval",
@@ -22675,7 +23324,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的文件的最大值，单位 MB",
+          "document": "<p>投递的文件的最大值，单位 MB</p>",
           "example": "256",
           "member": "uint64",
           "name": "MaxSize",
@@ -22685,7 +23334,7 @@
         },
         {
           "disabled": false,
-          "document": "是否生效",
+          "document": "<p>是否生效</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -22695,7 +23344,7 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的过滤规则",
+          "document": "<p>投递日志的过滤规则</p>",
           "example": "无",
           "member": "FilterRuleInfo",
           "name": "FilterRules",
@@ -22705,7 +23354,7 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的分区规则，支持strftime的时间格式表示",
+          "document": "<p>投递日志的分区规则，支持strftime的时间格式表示</p>",
           "example": "/%Y/%m/%d/%H/",
           "member": "string",
           "name": "Partition",
@@ -22715,7 +23364,7 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的压缩配置",
+          "document": "<p>投递日志的压缩配置</p>",
           "example": "无",
           "member": "CompressInfo",
           "name": "Compress",
@@ -22725,7 +23374,7 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的内容格式配置",
+          "document": "<p>投递日志的内容格式配置</p>",
           "example": "无",
           "member": "ContentInfo",
           "name": "Content",
@@ -22735,7 +23384,7 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS",
+          "document": "<p>投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS</p>",
           "example": "2023-08-22 22:02:52",
           "member": "string",
           "name": "CreateTime",
@@ -22745,7 +23394,7 @@
         },
         {
           "disabled": false,
-          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
+          "document": "<p>投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）</p>",
           "example": "1",
           "member": "uint64",
           "name": "FilenameMode",
@@ -22755,7 +23404,7 @@
         },
         {
           "disabled": false,
-          "document": "投递数据范围的开始时间点",
+          "document": "<p>投递数据范围的开始时间点</p>",
           "example": "1670642281",
           "member": "int64",
           "name": "StartTime",
@@ -22765,7 +23414,7 @@
         },
         {
           "disabled": false,
-          "document": "投递数据范围的结束时间点",
+          "document": "<p>投递数据范围的结束时间点</p>",
           "example": "0",
           "member": "int64",
           "name": "EndTime",
@@ -22775,7 +23424,7 @@
         },
         {
           "disabled": false,
-          "document": "历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）",
+          "document": "<p>历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）</p>",
           "example": "5.6",
           "member": "float",
           "name": "Progress",
@@ -22785,7 +23434,7 @@
         },
         {
           "disabled": false,
-          "document": "历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）",
+          "document": "<p>历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）</p><p>单位：秒</p>",
           "example": "23",
           "member": "int64",
           "name": "RemainTime",
@@ -22795,7 +23444,7 @@
         },
         {
           "disabled": false,
-          "document": "历史任务状态：\n0：实时任务\n1：任务准备中\n2：任务运行中\n3：任务运行异常\n4：任务运行结束",
+          "document": "<p>历史任务状态：<br>0：实时任务<br>1：任务准备中<br>2：任务运行中<br>3：任务运行异常<br>4：任务运行结束</p>",
           "example": "1",
           "member": "int64",
           "name": "HistoryStatus",
@@ -22805,7 +23454,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。\n参考值有：\nSTANDARD：标准存储\nSTANDARD_IA：低频存储\nARCHIVE：归档存储\nDEEP_ARCHIVE：深度归档存储\nMAZ_STANDARD：标准存储（多 AZ）\nMAZ_STANDARD_IA：低频存储（多 AZ）\nINTELLIGENT_TIERING：智能分层存储\nMAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）",
+          "document": "<p>对象存储类型，默认值为 STANDARD。枚举值请参见<a href=\"https://cloud.tencent.com/document/product/436/33417\"> 存储类型概述</a> 文档。<br>参考值有：<br>STANDARD：标准存储<br>STANDARD_IA：低频存储<br>ARCHIVE：归档存储<br>DEEP_ARCHIVE：深度归档存储<br>MAZ_STANDARD：标准存储（多 AZ）<br>MAZ_STANDARD_IA：低频存储（多 AZ）<br>INTELLIGENT_TIERING：智能分层存储<br>MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）</p>",
           "example": "MAZ_STANDARD",
           "member": "string",
           "name": "StorageType",
@@ -22815,7 +23464,7 @@
         },
         {
           "disabled": false,
-          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "document": "<p>角色访问描述名 <a href=\"https://cloud.tencent.com/document/product/598/19381\">创建角色</a></p>",
           "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
           "member": "string",
           "name": "RoleArn",
@@ -22825,7 +23474,7 @@
         },
         {
           "disabled": false,
-          "document": "外部ID",
+          "document": "<p>外部ID</p>",
           "example": "external_id_demo",
           "member": "string",
           "name": "ExternalId",
@@ -22835,7 +23484,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行状态。支持`0`,`1`,`2`\n\n- `0`: 停止\n- `1`: 运行中\n- `2`: 异常",
+          "document": "<p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code></p><ul><li><code>0</code>: 停止</li><li><code>1</code>: 运行中</li><li><code>2</code>: 异常</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "TaskStatus",
@@ -23177,6 +23826,16 @@
           "name": "DSLFilter",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级配置-跨账户投递参数</p>",
+          "example": "无",
+          "member": "ExternalRole",
+          "name": "ExternalRole",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli ckafka DescribeTopic --cli-unfold-argument  \
-    --InstanceId ckafka-xxooa0
+    --InstanceId ckafka-xxooa0 \
+    --Limit 2
 ```
 
 Output: 
