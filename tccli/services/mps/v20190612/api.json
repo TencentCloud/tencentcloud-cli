@@ -37806,7 +37806,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合成文本，语音合成时必填，文本长度不超过2000字符",
+          "document": "<p>合成文本，语音合成时必填，文本长度不超过2000字符</p>",
           "example": "你好",
           "member": "string",
           "name": "Text",
@@ -37815,7 +37815,7 @@
         },
         {
           "disabled": false,
-          "document": "文本语言，不填默认中文。\n当前支持语言：\nzh\t中文 (Chinese)\nen\t英语 (English)\nja\t日语 (Japanese)\nde\t德语 (German)\nfr\t法语 (French)\nko\t韩语 (Korean)\nru\t俄语 (Russian)\nuk\t乌克兰语 (Ukrainian)\npt\t葡萄牙语 (Portuguese)\nit\t意大利语 (Italian)\nes\t西班牙语 (Spanish)\nid\t印度尼西亚语 (Indonesian)\nnl\t荷兰语 (Dutch)\ntr\t土耳其语 (Turkish)\nfil\t菲律宾语 (Filipino)\nms\t马来语 (Malay)\nel\t希腊语 (Greek)\nfi\t芬兰语 (Finnish)\nhr\t克罗地亚语 (Croatian)\nsk\t斯洛伐克语 (Slovak)\npl\t波兰语 (Polish)\nsv\t瑞典语 (Swedish)\nhi\t印地语 (Hindi)\nbg\t保加利亚语 (Bulgarian)\nro\t罗马尼亚语 (Romanian)\nar\t阿拉伯语 (Arabic)\ncs\t捷克语 (Czech)\nda\t丹麦语 (Danish)\nta\t泰米尔语 (Tamil)\nhun\t匈牙利语（Hungarian）\nvi\t越南语（Vietnamese）\nno\t挪威语（Norwegian）\nyue\t粤语（Cantonese）\nth\t泰语（Thai）\nhe\t希伯来语（Hebrew）\nca\t加泰罗尼亚语（Catalan）\nnn\t尼诺斯克语（Nynorsk）\naf\t阿非利卡语（Afrikaans）\nfa\t波斯语（Persian）\nsl\t斯洛文尼亚语（Slovenian）\n",
+          "document": "<p>文本语言，不填默认中文。<br>当前支持语言：<br>zh    中文 (Chinese)<br>en    英语 (English)<br>ja    日语 (Japanese)<br>de    德语 (German)<br>fr    法语 (French)<br>ko    韩语 (Korean)<br>ru    俄语 (Russian)<br>uk    乌克兰语 (Ukrainian)<br>pt    葡萄牙语 (Portuguese)<br>it    意大利语 (Italian)<br>es    西班牙语 (Spanish)<br>id    印度尼西亚语 (Indonesian)<br>nl    荷兰语 (Dutch)<br>tr    土耳其语 (Turkish)<br>fil    菲律宾语 (Filipino)<br>ms    马来语 (Malay)<br>el    希腊语 (Greek)<br>fi    芬兰语 (Finnish)<br>hr    克罗地亚语 (Croatian)<br>sk    斯洛伐克语 (Slovak)<br>pl    波兰语 (Polish)<br>sv    瑞典语 (Swedish)<br>hi    印地语 (Hindi)<br>bg    保加利亚语 (Bulgarian)<br>ro    罗马尼亚语 (Romanian)<br>ar    阿拉伯语 (Arabic)<br>cs    捷克语 (Czech)<br>da    丹麦语 (Danish)<br>ta    泰米尔语 (Tamil)<br>hun    匈牙利语（Hungarian）<br>vi    越南语（Vietnamese）<br>no    挪威语（Norwegian）<br>yue    粤语（Cantonese）<br>th    泰语（Thai）<br>he    希伯来语（Hebrew）<br>ca    加泰罗尼亚语（Catalan）<br>nn    尼诺斯克语（Nynorsk）<br>af    阿非利卡语（Afrikaans）<br>fa    波斯语（Persian）<br>sl    斯洛文尼亚语（Slovenian）</p>",
           "example": "zh",
           "member": "string",
           "name": "TextLang",
@@ -37824,7 +37824,7 @@
         },
         {
           "disabled": false,
-          "document": "音色Id，指定音色合成时填写，支持系统音色和克隆音色。",
+          "document": "<p>音色Id，指定音色合成时填写，支持系统音色和克隆音色。</p>",
           "example": "s1_2GSzVAf00hl7+A+LJTNvVI6nFJB0qliIvR8wntPeaniVSstd7Z4E4UL8Hky3azMHVlDSps1zWW4nJ7ll9w==",
           "member": "string",
           "name": "VoiceId",
@@ -37833,7 +37833,7 @@
         },
         {
           "disabled": false,
-          "document": "克隆音频base64编码。",
+          "document": "<p>克隆音频base64编码。</p>",
           "example": "UklGRoxnAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YWhnAABBAEUAQwBFAEcARwBKAEsASABLAEsASQBNAEoASQBMAEwASwBNAE0ASwBLAEsATABKAEoASwBLAEwASgBLAEwA",
           "member": "string",
           "name": "AudioData",
@@ -37842,7 +37842,16 @@
         },
         {
           "disabled": false,
-          "document": "克隆音频语言，默认中文。\n当前支持语言同TextLang",
+          "document": "<p>克隆音频Url，AudioData为空时有效</p>",
+          "example": "https://ie-mps-1258344699.cos-internal.ap-nanjing.tencentcos.cn/common/lauriehuang/dubbing/test/leleqihang/AI_voice.mp4",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆音频语言，默认中文。<br>当前支持语言同TextLang</p>",
           "example": "zh",
           "member": "string",
           "name": "AudioLang",
@@ -37851,8 +37860,8 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数，json字符串",
-          "example": "{\"engine\": \"\"}",
+          "document": "<p>扩展参数，json字符串</p><p>synExt    Object    语音合成扩展参数<br>    -duration    Float    合成音频时长，单位秒，示例：5.2<br>    -sampleRate    Integer    合成音频采样率，默认16000，支持[8000,16000,22050,32000,44100]<br>    -pitch    Integer    音调，默认0原音色输出，取值[-12, 12]<br>cloneExt    Object    音色克隆扩展参数<br>    -timeRanges    Float[][]    指定克隆音频时间范围，默认[[0, 20]]，示例[[5.2, 10], [45, 59.8]]</p>",
+          "example": "{\n    \"synExt\": {\n        \"duration\": 10\n    }\n}",
           "member": "string",
           "name": "ExtParam",
           "required": false,
@@ -37866,7 +37875,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码，成功时返回0",
+          "document": "<p>错误码，成功时返回0</p>",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -37876,7 +37885,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息，成功时返回success",
+          "document": "<p>错误信息，成功时返回success</p>",
           "example": "success",
           "member": "string",
           "name": "Msg",
@@ -37886,7 +37895,7 @@
         },
         {
           "disabled": false,
-          "document": "合成音频的base64编码，wav格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合成音频的base64编码，wav格式。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UklGRuxnAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YchnAABBAEUAQwBFA",
           "member": "string",
           "name": "AudioData",
@@ -37896,7 +37905,7 @@
         },
         {
           "disabled": false,
-          "document": "克隆的音色Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>克隆的音色Id。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "s1_2GSzVAf00hl7+A+LJTNvVI6nFJB0qliIvR8wntPeaniVSstd7Z4E4UL8Hky3azMHVlDSps1zWW4nJ7ll9w==",
           "member": "string",
           "name": "VoiceId",

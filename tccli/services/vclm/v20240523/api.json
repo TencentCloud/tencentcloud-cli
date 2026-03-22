@@ -1014,8 +1014,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "预签名的上传url，支持把视频直接传到客户指定的地址。",
-          "example": "http://tencent.com/result/video.mp4\t",
+          "document": "<p>预签名的上传url，支持把视频直接传到客户指定的地址。</p>",
+          "example": "http://tencent.com/result/video.mp4",
           "member": "string",
           "name": "UserDesignatedUrl",
           "required": false,
@@ -1023,10 +1023,19 @@
         },
         {
           "disabled": false,
-          "document": "回调地址\n需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。\n数据格式如下：\n{\n    \"JobId\": \"1397428070633955328\",\n    \"Status\": \"DONE\",\n    \"ErrorCode\": \"\",\n    \"ErrorMessage\": \"\",\n    \"ResultVideoUrl\": \"https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4\"\n}",
+          "document": "<p>回调地址<br>需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。<br>数据格式如下：<br>{<br>    &quot;JobId&quot;: &quot;1397428070633955328&quot;,<br>    &quot;Status&quot;: &quot;DONE&quot;,<br>    &quot;ErrorCode&quot;: &quot;&quot;,<br>    &quot;ErrorMessage&quot;: &quot;&quot;,<br>    &quot;ResultVideoUrl&quot;: &quot;https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4&quot;<br>}</p>",
           "example": "http://vclm.tencent.com/template2video/callback",
           "member": "string",
           "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BGM音频文本。</p>",
+          "example": "祝大家身体健康，万事如意，心想事成。",
+          "member": "string",
+          "name": "BGMText",
           "required": false,
           "type": "string"
         }
@@ -1820,7 +1829,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "特效模板名称。请在 [视频特效模板列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。",
+          "document": "<p>特效模板名称。请在 <a href=\"https://cloud.tencent.com/document/product/1616/119194\">视频特效模板列表</a>  中选择想要生成的特效对应的 template 名称。</p>",
           "example": "hug",
           "member": "string",
           "name": "Template",
@@ -1829,7 +1838,7 @@
         },
         {
           "disabled": false,
-          "document": "参考图像，不同特效输入图片的数量详见： [视频特效模板-图片要求说明](https://cloud.tencent.com/document/product/1616/119194)\n- 支持传入图片Base64编码或图片URL（确保可访问）\n- 图片格式：支持png、jpg、jpeg、webp、bmp、tiff\n- 图片文件：大小不能超过10MB（base64后），图片分辨率不小于300*300px，不大于4096*4096，图片宽高比应在1:4 ~ 4:1之间",
+          "document": "<p>参考图像，不同特效输入图片的数量详见： <a href=\"https://cloud.tencent.com/document/product/1616/119194\">视频特效模板-图片要求说明</a></p><ul><li>支持传入图片Base64编码或图片URL（确保可访问）</li><li>图片格式：支持png、jpg、jpeg、webp、bmp、tiff</li><li>图片文件：大小不能超过10MB（base64后），图片分辨率不小于300×300px，不大于4096×4096，图片宽高比应在1:4 ~ 4:1之间</li></ul>",
           "example": "无",
           "member": "Image",
           "name": "Images",
@@ -1838,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "为生成视频添加标识的开关，默认为1。传0 需前往  [控制台](https://console.cloud.tencent.com/vtc/setting) 申请开启显式标识自主完成后方可生效。\n1：添加标识；\n0：不添加标识；\n其他数值：默认按1处理。\n建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "document": "<p>为生成视频添加标识的开关，默认为1。传0 需前往  <a href=\"https://console.cloud.tencent.com/vtc/setting\">控制台</a> 申请开启显式标识自主完成后方可生效。<br>1：添加标识；<br>0：不添加标识；<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示，该视频是 AI 生成的视频。</p>",
           "example": "1",
           "member": "int64",
           "name": "LogoAdd",
@@ -1847,7 +1856,7 @@
         },
         {
           "disabled": false,
-          "document": "标识内容设置。\n默认在生成视频的右下角添加“ AI 生成”或“视频由 AI 生成”字样，如需替换为其他的标识图片，需前往  [控制台](https://console.cloud.tencent.com/vtc/setting) 申请开启显式标识自主完成。\n",
+          "document": "<p>标识内容设置。<br>默认在生成视频的右下角添加“ AI 生成”或“视频由 AI 生成”字样，如需替换为其他的标识图片，需前往  <a href=\"https://console.cloud.tencent.com/vtc/setting\">控制台</a> 申请开启显式标识自主完成。</p>",
           "example": "无",
           "member": "LogoParam",
           "name": "LogoParam",
@@ -1856,7 +1865,7 @@
         },
         {
           "disabled": false,
-          "document": "视频输出分辨率，默认值：360p 。不同特效支持的清晰度及消耗积分数详见：[视频特效模板-单次调用消耗积分数列](https://cloud.tencent.com/document/product/1616/119194 )",
+          "document": "<p>视频输出分辨率，默认值：360p 。不同特效支持的清晰度及消耗积分数详见：<a href=\"https://cloud.tencent.com/document/product/1616/119194\">视频特效模板-单次调用消耗积分数列</a></p>",
           "example": "360p",
           "member": "string",
           "name": "Resolution",
@@ -1865,7 +1874,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。",
+          "document": "<p>是否为生成的视频添加背景音乐。默认：false，  传 true 时系统将从预设 BGM 库中自动挑选合适的音乐并添加；不传或为 false 则不添加 BGM。</p>",
           "example": "false",
           "member": "bool",
           "name": "BGM",
@@ -1874,7 +1883,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段。",
+          "document": "<p>扩展字段。</p>",
           "example": "无",
           "member": "ExtraParam",
           "name": "ExtraParam",
@@ -1889,7 +1898,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID。",
+          "document": "<p>任务ID。</p>",
           "example": "1194931538865782784",
           "member": "string",
           "name": "JobId",

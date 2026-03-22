@@ -1360,6 +1360,14 @@
         "title": "修改告警渠道回调配置"
       }
     ],
+    "OpenClawService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClawService\n<公共请求参数>\n\n{\n    \"Tag\": \"ClawPro\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppLogConfigId\": \"b1ba2eba-8d9f-4091-a6a8-820ac2b2d85c\",\n        \"AppLogConfigName\": \"clawpro_app_log_collect\",\n        \"LogsetId\": \"claw-logset-ap-guangzhou-open-1254139626\",\n        \"LogsetName\": \"claw_logset\",\n        \"MachineGroupId\": \"da7b700c-2d4b-475b-b8a1-d2ecfbe3df81\",\n        \"MachineGroupName\": \"ClawPro_MachineGroup\",\n        \"MetricTopicId\": \"clawpro-metric-topic-ap-guangzhou-open-1254139626\",\n        \"MetricTopicName\": \"clawpro_metric_topic\",\n        \"SessionLogConfigId\": \"39134e29-ed4d-4299-9929-2fa94a060838\",\n        \"SessionLogConfigName\": \"clawpro_session_log_collect\",\n        \"TopicId\": \"clawpro-topic-ap-guangzhou-open-1254139626\",\n        \"TopicName\": \"clawpro_log_topic\",\n        \"RequestId\": \"ca5966ab-6fa6-4cdb-bdf7-695b551c005b\"\n    }\n}",
+        "title": "创建OpenClawService日志服务"
+      }
+    ],
     "OpenKafkaConsumer": [
       {
         "document": "打开Kafka协议消费功能",

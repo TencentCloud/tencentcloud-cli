@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CreateQACate": {
-      "document": "创建QA分类\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956",
+      "document": "创建QA分类\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956\n单个知识库内支持创建的分类数量上限为 2000 个。",
       "input": "CreateQACateRequest",
       "name": "创建QA分类",
       "output": "CreateQACateResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "CreateWorkflowRun": {
-      "document": "本接口用来创建工作流的异步运行实例，创建成功后工作流会在后台异步运行，接口返回工作流运行实例ID（WorkflowRunId）等信息。后面可通过调用DescribeWorkflowRun接口查工作流运行的详情。\n注意：工作流的异步运行是基于应用的，需要先把对应的应用配置成“单工作流模式”，并且打开“异步调用”的开关，才能创建成功。",
+      "document": "本接口用来创建工作流的异步运行实例，创建成功后工作流会在后台异步运行，接口返回工作流运行实例ID（WorkflowRunId）等信息。后面可通过调用DescribeWorkflowRun接口查工作流运行的详情。\n注意：工作流的异步运行是基于应用的，需要先把对应的应用配置成“单工作流模式”，才能创建成功。",
       "input": "CreateWorkflowRunRequest",
       "name": "创建工作流的异步运行实例",
       "output": "CreateWorkflowRunResponse",
@@ -5984,7 +5984,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID。\n删除知识库文档时，该参数填入知识库ID。",
           "example": "1714970520775950336",
           "member": "string",
           "name": "BotBizId",
@@ -13268,7 +13268,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
+          "document": "应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。\n查询知识库下文档时，该参数填入知识库ID。",
           "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
@@ -16116,7 +16116,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
+          "document": "应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)\n修改知识库文档时，该参数填入知识库ID。",
           "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
@@ -19226,7 +19226,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
+          "document": "应用ID。应用ID 获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)\n导入知识库文档时，该参数填入知识库 ID。\n",
           "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",

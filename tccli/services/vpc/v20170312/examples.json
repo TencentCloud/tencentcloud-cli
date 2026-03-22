@@ -3294,10 +3294,10 @@
     ],
     "ModifyNetworkInterfaceAttribute": [
       {
-        "document": "修改弹性网卡",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkInterfaceAttribute\n<公共请求参数>\n\n{\n    \"NetworkInterfaceId\": \"eni-afo43z61\",\n    \"NetworkInterfaceName\": \"NewName\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
-        "title": "修改弹性网卡"
+        "document": "修改弹性网卡属性。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkInterfaceAttribute\n<公共请求参数>\n\n{\n    \"NetworkInterfaceId\": \"eni-emcijdrf\",\n    \"NetworkInterfaceName\": \"eni-emcijdrf\",\n    \"NetworkInterfaceDescription\": \"eni-emcijdrf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d788c349-f806-4778-9d42-89be6e4e8ab9\"\n    }\n}",
+        "title": "修改弹性网卡属性"
       }
     ],
     "ModifyNetworkInterfaceQos": [

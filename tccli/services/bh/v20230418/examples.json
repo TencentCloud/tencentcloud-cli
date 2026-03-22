@@ -370,6 +370,28 @@
         "title": "查询主机账号列表"
       }
     ],
+    "DescribeDeviceCount": [
+      {
+        "document": "查询堡垒机服务已经导入的主机数",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCount\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-1jku8g\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "查询堡垒机服务已经导入的主机数"
+      },
+      {
+        "document": "查询全部已导入的主机数",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "查询导入的主机总数"
+      }
+    ],
+    "DescribeDeviceCountSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCountSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DeviceCountSet\": [\n            {\n                \"Kind\": 1,\n                \"Count\": 10\n            },\n            {\n                \"Kind\": 2,\n                \"Count\": 20\n            }\n        ],\n        \"AppAssetCountSet\": [\n            {\n                \"Kind\": 1,\n                \"Count\": 1\n            }\n        ],\n        \"RequestId\": \"e4120a51-f130-4d11-a86c-fde256b347fb\"\n    }\n}",
+        "title": "查询资产数统计数据"
+      }
+    ],
     "DescribeDeviceGroupMembers": [
       {
         "document": "",

@@ -170,10 +170,10 @@
     ],
     "SubmitTemplateToVideoJob": [
       {
-        "document": "成功提交任务",
-        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTemplateToVideoJob\n<公共请求参数>\n\n{\n    \"Template\": \"hug\",\n    \"Images\": [\n        {\n            \"Url\": \"https://test.jpg\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"1305518294765740032\",\n        \"RequestId\": \"2392f73f-6436-4f79-85dc-6283d2ca78ef\"\n    }\n}",
-        "title": "成功提交"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTemplateToVideoJob\n<公共请求参数>\n\n{\n    \"Template\": \"hug\",\n    \"Images\": [\n        {\n            \"Url\": \"https://cos-internal.ap-guangzhou.tencentcos.cn/templatetovideo/example.png\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1421389687608336384\",\n        \"RequestId\": \"a81b4c44-c865-4ca1-ad69-08be3f63528c\"\n    }\n}",
+        "title": "提交视频特效任务"
       }
     ],
     "SubmitVideoEditJob": [

@@ -5658,7 +5658,7 @@
         {
           "disabled": false,
           "document": "批量删除的任务TaskId",
-          "example": "[\"1111\",\"2222\"]",
+          "example": "[\"1486804694126882816\"]",
           "member": "string",
           "name": "TaskIdList",
           "required": true,
@@ -5690,6 +5690,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除任务时是否删除脚本文件",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteScript",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5700,7 +5709,7 @@
         {
           "disabled": false,
           "document": "返回批量操作成功个数、失败个数、操作总数",
-          "example": "{\"FailedCount\":0,\"SuccessCount\":2,\"TotalCount\":2}",
+          "example": "无",
           "member": "BatchOperationOpsDto",
           "name": "Data",
           "output_required": false,

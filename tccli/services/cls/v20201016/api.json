@@ -1127,6 +1127,13 @@
       "output": "ModifyWebCallbackResponse",
       "status": "online"
     },
+    "OpenClawService": {
+      "document": "本接口用于创建OpenClaw依赖的资源与索引",
+      "input": "OpenClawServiceRequest",
+      "name": "创建OpenClaw服务",
+      "output": "OpenClawServiceResponse",
+      "status": "online"
+    },
     "OpenKafkaConsumer": {
       "document": "打开Kafka协议消费功能",
       "input": "OpenKafkaConsumerRequest",
@@ -21484,6 +21491,153 @@
         }
       ],
       "usage": "both"
+    },
+    "OpenClawServiceRequest": {
+      "document": "OpenClawService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签类型</p><p>枚举值：</p><ul><li>OpenClaw： OpenClaw类型</li><li>ClawPro： ClawPro类型</li></ul>",
+          "example": "ClawPro",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenClawServiceResponse": {
+      "document": "OpenClawService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志集id</p><p><a href=\"https://cloud.tencent.com/document/product/614/41034\">日志集文档</a></p>",
+          "example": "claw-logset-ap-guangzhou-open-1254139626",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集名称</p>",
+          "example": "claw_logset",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题id</p><p><a href=\"https://cloud.tencent.com/document/product/614/41035\">日志主题文档</a></p>",
+          "example": "clawpro-topic-ap-guangzhou-open-1254139626",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题名称</p>",
+          "example": "clawpro_log_topic",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标主题id</p><p><a href=\"https://cloud.tencent.com/document/product/614/90328\">指标主题文档</a></p>",
+          "example": "clawpro-metric-topic-ap-guangzhou-open-1254139626",
+          "member": "string",
+          "name": "MetricTopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标主题名称</p>",
+          "example": "clawpro_metric_topic",
+          "member": "string",
+          "name": "MetricTopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器组id</p><p><a href=\"https://cloud.tencent.com/document/product/614/17412\">机器组文档</a></p>",
+          "example": "da7b700c-2d4b-475b-b8a1-d2ecfbe3df81",
+          "member": "string",
+          "name": "MachineGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器组名称</p>",
+          "example": "ClawPro_MachineGroup",
+          "member": "string",
+          "name": "MachineGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集配置id。应用日志</p><p><a href=\"https://cloud.tencent.com/document/product/614/33494\">采集概述文档</a> - <a href=\"https://cloud.tencent.com/document/product/614/57497\">LogListener 采集配置导入</a></p>",
+          "example": "b1ba2eba-8d9f-4091-a6a8-820ac2b2d85c",
+          "member": "string",
+          "name": "AppLogConfigId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集配置名称。应用日志</p>",
+          "example": "clawpro_app_log_collect",
+          "member": "string",
+          "name": "AppLogConfigName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集配置id。会话日志</p><p><a href=\"https://cloud.tencent.com/document/product/614/33494\">采集概述文档</a> - <a href=\"https://cloud.tencent.com/document/product/614/57497\">LogListener 采集配置导入</a></p>",
+          "example": "39134e29-ed4d-4299-9929-2fa94a060838",
+          "member": "string",
+          "name": "SessionLogConfigId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集配置名称。会话日志</p>",
+          "example": "clawpro_session_log_collect",
+          "member": "string",
+          "name": "SessionLogConfigName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "OpenKafkaConsumerRequest": {
       "document": "OpenKafkaConsumer请求参数结构体",

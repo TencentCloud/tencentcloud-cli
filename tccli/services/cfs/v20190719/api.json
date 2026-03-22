@@ -755,8 +755,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议与售卖详情",
-          "example": "NFS",
+          "document": "<p>协议与售卖详情</p>",
+          "example": "无",
           "member": "AvailableProtoStatus",
           "name": "Protocols",
           "output_required": true,
@@ -765,7 +765,7 @@
         },
         {
           "disabled": false,
-          "document": "存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。",
+          "document": "<p>存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>",
           "example": "SD",
           "member": "string",
           "name": "Type",
@@ -775,12 +775,22 @@
         },
         {
           "disabled": false,
-          "document": "是否支持预付费。返回值中 true 为支持、false 为不支持",
+          "document": "<p>是否支持预付费。返回值中 true 为支持、false 为不支持</p>",
           "example": "true",
           "member": "bool",
           "name": "Prepayment",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统版本</p><p>枚举值：</p><ul><li>v1.5： 通用系列</li><li>v3.1： 通用系列（增强型）</li><li>v4.0： Turbo系列</li></ul>",
+          "example": "v1.5",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2737,7 +2747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "各可用区的资源售卖情况以及支持的存储类型、存储协议等信息",
+          "document": "<p>各可用区的资源售卖情况以及支持的存储类型、存储协议等信息</p>",
           "example": "无",
           "member": "AvailableRegion",
           "name": "RegionZones",
