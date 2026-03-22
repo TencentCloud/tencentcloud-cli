@@ -8,6 +8,14 @@
         "title": "hai实例制作自定义应用"
       }
     ],
+    "CreateInferServiceByTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferServiceByTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tpl-ydcs88qr\",\n    \"ServiceName\": \"hai-infer\",\n    \"Replicas\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"svc-bhbxouv0\",\n        \"RequestId\": \"3cb9720e-c96c-47fc-be47-6463197641c2\"\n    }\n}",
+        "title": "CreateInferServiceByTemplate"
+      }
+    ],
     "CreateMuskPrompt": [
       {
         "document": "创建prompt任务",
@@ -16,12 +24,28 @@
         "title": "创建prompt任务"
       }
     ],
+    "DeployInferService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployInferService\n<公共请求参数>\n\n{\n    \"ServiceMetaData\": {\n        \"ServiceName\": \"hai-infer\",\n        \"ServiceChargeType\": \"POSTPAID_BY_HOUR\"\n    },\n    \"ComputeInfo\": {\n        \"ComputeResources\": [\n            {\n                \"BundleType\": \"96G_A*1\",\n                \"Count\": 1\n            }\n        ],\n        \"Replicas\": 1\n    },\n    \"DeploymentConfigs\": [\n        {\n            \"Container\": {\n                \"Image\": {\n                    \"ImageRegistryUrl\": \"aicompute.tencentcloudcr.com/aibench/sglang:v0.5.2rc2-hml-mooncake-0.3.6\"\n                },\n                \"Port\": \"30000\",\n                \"Scripts\": [\n                    \"bash\"\n                ],\n                \"Envs\": [\n                    {\n                        \"Name\": \"MODEL_DIRECTORY\",\n                        \"Value\": \"/hai/model\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"MountPath\": \"/hai/model\",\n                        \"COSStorage\": {\n                            \"URI\": \"cos://hai-model-bj-1319662662/Qwen3-Embedding-8B\"\n                        }\n                    }\n                ]\n            },\n            \"ContainerCount\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"svc-8iia9ryo\",\n        \"RequestId\": \"ced0e2a2-36e4-49fa-b86b-542befeb3629\"\n    }\n}",
+        "title": "DeployInferService"
+      }
+    ],
     "DescribeApplications": [
       {
         "document": "查询应用",
         "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"ApplicationIds\": [\n        \"app-7j7f9jhn\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"ApplicationId\": \"app-7j7f9jhn\",\n                \"ApplicationName\": \"混元-DiT WebUI\",\n                \"ApplicationSize\": 120,\n                \"ApplicationState\": \"ONLINE\",\n                \"ApplicationType\": \"PUBLIC_APPLICATION\",\n                \"ConfigEnvironment\": \"Ubuntu20.04, Python 3.8.12, CUDA 11.7, cuDNN 8, HunYuanDiT, JupyterLab, Gradio\",\n                \"CreateTime\": \"2024-07-11 16:36:08\",\n                \"Description\": \"混元-DiT是腾讯自研的高性能细粒度中文理解多分辨率扩散Transformer模型。提供双语生成能力，中国元素理解具有优势。\",\n                \"MinSystemDiskSize\": 150\n            }\n        ],\n        \"RequestId\": \"c344dc00-13a2-4d80-ae95-6e2d9fd0105d\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询应用"
+      }
+    ],
+    "DescribeDeployTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployTemplates\n<公共请求参数>\n\n{\n    \"ModelId\": \"mdl-nbb23f5v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EngineTypes\": [\n            \"Sglang\"\n        ],\n        \"RequestId\": \"8835934f-5769-4df6-b1e4-0a36236d4968\",\n        \"TemplateSet\": [\n            {\n                \"ComputeSet\": [\n                    {\n                        \"BundleType\": \"96G_A\",\n                        \"CPU\": \"16\",\n                        \"Count\": 2,\n                        \"GPUCount\": 1,\n                        \"GPUMemory\": \"96\",\n                        \"GPUPerformance\": \"88 tflops++\",\n                        \"Memory\": \"160\"\n                    }\n                ],\n                \"DeployMode\": \"DISTRIBUTED\",\n                \"EngineType\": \"Sglang\",\n                \"TemplateId\": \"tpl-0j2qaa8t\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeDeployTemplates"
       }
     ],
     "DescribeInstanceNetworkStatus": [
@@ -38,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-jklfaded\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"hai-jklfaded\",\n                \"InstanceName\": \"hai\",\n                \"InstanceState\": \"RUNNING\",\n                \"ApplicationName\": \"pytorch\",\n                \"BundleName\": \"基础型\",\n                \"GPUPerformance\": \"8+TFlops\",\n                \"GPUMemory\": \"16+GB\",\n                \"CPU\": \"20C\",\n                \"Memory\": \"80GB\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_SSD\",\n                    \"DiskSize\": 80\n                },\n                \"PrivateIpAddresses\": [\n                    \"1.1.1.1\"\n                ],\n                \"PublicIpAddresses\": [\n                    \"2.2.2.2\"\n                ],\n                \"SecurityGroupIds\": [\n                    \"sg-xxxxxxxx\"\n                ],\n                \"LatestOperation\": \"RunInstances\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"CreateTime\": \"2023-08-01 00:00:00\",\n                \"MaxOutBandwidth\": \"10Mbps\",\n                \"MaxFreeTraffic\": \"1000GB\",\n                \"ConfigurationEnvironment\": \"cuda 10 | pytorch | tensorflow\",\n                \"LoginServices\": [\n                    {\n                        \"ServiceName\": \"jupyter\"\n                    }\n                ],\n                \"OSType\": \"linux\"\n            }\n        ],\n        \"RequestId\": \"41fa870d-8592-493c-b794-9fe19f23e800\"\n    }\n}",
         "title": "查看指定实例hai-jklfaded的信息"
+      }
+    ],
+    "DescribeModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModels\n<公共请求参数>\n\n{\n    \"ModelIds\": [\n        \"mdl-x39pcr9u\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelSet\": [\n            {\n                \"CommunityUrl\": \"https://cloud.tencent.com/developer/article/2496039\",\n                \"ConfigEnvironment\": \"CentOS 5.4 64位; nvidia 535.216.01| cuda12.2 | LLM\",\n                \"Description\": \"模型进行了一个小版本升级，当前版本为 DeepSeek-R1-0528。在最新更新中，DeepSeek R1 通过利用更多的计算资源并在后训练过程中引入算法优化机制，显著提高了其推理和推断能力的深度。该模型在各种基准测试中表现出色，包括数学、编程和一般逻辑方面。其整体性能现已接近领先模型，如 O3 和 Gemini 2.5 Pro。\",\n                \"GuideUrl\": \"https://cloud.tencent.com/developer/article/2498480\",\n                \"ModelId\": \"mdl-x39pcr9u\",\n                \"ModelName\": \"deepseek R1\",\n                \"ModelState\": \"ONLINE\",\n                \"Tags\": [\n                    \"大语言模型\",\n                    \"文本生成\",\n                    \"NVDIA\",\n                    \"深度求索\",\n                    \"600B以上\"\n                ]\n            }\n        ],\n        \"RequestId\": \"c6d968d0-9082-44c5-bf39-8726c900d6ea\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "DescribeModels"
       }
     ],
     "DescribeMuskPrompts": [

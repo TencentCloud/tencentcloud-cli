@@ -23,7 +23,9 @@ Output:
                     "Desc": "desc",
                     "Active": "ENABLED",
                     "CreateTime": "2024-06-04 18:07:38",
-                    "UpdateTime": "2024-06-04 18:09:29"
+                    "UpdateTime": "2024-06-04 18:09:29",
+                    "Meta": "meta信息",
+                    "TotalSize": "1024"
                 }
             ],
             "Total": 1

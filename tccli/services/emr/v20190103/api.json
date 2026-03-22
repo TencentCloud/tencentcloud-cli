@@ -56,6 +56,13 @@
       "output": "CreateClusterResponse",
       "status": "online"
     },
+    "CreateEngineJob": {
+      "document": "创建周期性调度任务",
+      "input": "CreateEngineJobRequest",
+      "name": "创建周期性任务",
+      "output": "CreateEngineJobResponse",
+      "status": "online"
+    },
     "CreateGroupsSTD": {
       "document": "用户管理-批量创建用户组",
       "input": "CreateGroupsSTDRequest",
@@ -684,6 +691,13 @@
       "input": "ModifyYarnQueueV2Request",
       "name": "修改yarn资源调度的队列信息",
       "output": "ModifyYarnQueueV2Response",
+      "status": "online"
+    },
+    "MountCFSPoint": {
+      "document": "集群挂载CFS",
+      "input": "MountCFSPointRequest",
+      "name": "集群挂载CFS",
+      "output": "MountCFSPointResponse",
       "status": "online"
     },
     "NotifyEmr": {
@@ -4848,6 +4862,115 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateEngineJobRequest": {
+      "document": "CreateEngineJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-3x4a7b6u",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎任务类型，例如：notebook",
+          "example": "notebook",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ipynb文件所在路径（绝对路径）",
+          "example": "/workspace/999/ttt.ipynb",
+          "member": "string",
+          "name": "JobContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端提交任务的唯一UUID，用于防止重复执行",
+          "example": "test_user_3",
+          "member": "string",
+          "name": "JobUUID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行任务的集群用户，用于鉴权和权限校验",
+          "example": "test_user",
+          "member": "string",
+          "name": "ExecuteUser",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎必填参数，KERNEL_TYPE PySpark  Python; notebook.cfsRootPath 工作空间",
+          "example": "无",
+          "member": "EngineJobParameters",
+          "name": "Parameters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引擎扩展参数，如内存、CPU、实例数、YARN队列配置等",
+          "example": "无",
+          "member": "EngineJobExtParameters",
+          "name": "ExtParameters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "执行用户的认证密码",
+          "example": "asdasfa",
+          "member": "string",
+          "name": "ExecutePassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "依赖资源路径：公有云为COS存储路径，私有化部署为CSP路径",
+          "example": "/a/b/c",
+          "member": "string",
+          "name": "ResourcePath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEngineJobResponse": {
+      "document": "CreateEngineJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎计算作业ID，唯一标识一次提交的作业",
+          "example": "139",
+          "member": "string",
+          "name": "EngineJobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateGroupsSTDRequest": {
       "document": "CreateGroupsSTD请求参数结构体",
@@ -12279,6 +12402,62 @@
       ],
       "usage": "out"
     },
+    "EngineJobExtParameters": {
+      "document": "引擎扩展参数，如内存、CPU、实例数、YARN队列配置等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "spark.yarn.queue",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "default",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EngineJobParameters": {
+      "document": "引擎必填参数，KERNEL_TYPE PySpark  Python; notebook.cfsRootPath 工作空间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "KERNEL_TYPE",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "PySpark",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Execution": {
       "document": "执行动作。",
       "members": [
@@ -16941,6 +17120,120 @@
         }
       ],
       "usage": "both"
+    },
+    "MountCFSPointRequest": {
+      "document": "MountCFSPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "emr-kpcccpd4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1122",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群挂载CFS信息",
+          "example": "无",
+          "member": "MountInfo",
+          "name": "MountInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集群挂载CFS列表",
+          "example": "无",
+          "member": "MountInfo",
+          "name": "MountInfoList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "MountCFSPointResponse": {
+      "document": "MountCFSPoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MountInfo": {
+      "document": "cfs挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点挂载目录",
+          "example": "/11223/workspace",
+          "member": "string",
+          "name": "HostMountShareDir",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CFS目录",
+          "example": "/data/wedata/share/1126",
+          "member": "string",
+          "name": "CFSMountShareDir",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ip",
+          "example": "21.77.154.44",
+          "member": "string",
+          "name": "FsIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "cfs-3cbobyu5",
+          "member": "string",
+          "name": "FsId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "11226",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "挂载key",
+          "example": "workspace",
+          "member": "string",
+          "name": "MountDirType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "MultiDisk": {
       "document": "多云盘参数",

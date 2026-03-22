@@ -6,18 +6,16 @@ Input:
 
 ```
 tccli mps ModifySmartSubtitleTemplate --cli-unfold-argument  \
-    --Definition 202281 \
-    --TranslateSwitch ON \
-    --Name 新名字 \
-    --SubtitleType 1 \
-    --TranslateDstLanguage en
+    --Definition 266307 \
+    --Name 修改智能字幕模板名称 \
+    --VideoSrcLanguage auto
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "569d5d19-d01c-4efc-97dc-4ea53ae95647"
+        "RequestId": "a38bc8ff-9826-4a43-a7d3-ed4c370d305f"
     }
 }
 ```

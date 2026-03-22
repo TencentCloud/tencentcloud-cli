@@ -1,4 +1,4 @@
-**Example 1: 创建模板**
+**Example 1: 创建智能字幕模板**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mps CreateSmartSubtitleTemplate --cli-unfold-argument  \
-    --Name 示例 \
-    --VideoSrcLanguage zh \
+    --Name 创建智能字幕模板 \
+    --VideoSrcLanguage auto \
     --SubtitleType 0
 ```
 
@@ -15,8 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "Definition": 202281,
-        "RequestId": "42dc919b-2ec7-412c-85f0-88f003813d04"
+        "Definition": 286972,
+        "RequestId": "d16800f5-479c-49b9-8ff1-62580cc87712"
     }
 }
 ```

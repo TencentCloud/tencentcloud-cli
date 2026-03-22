@@ -1,21 +1,21 @@
-**Example 1: 成功提交**
+**Example 1: 提交视频特效任务**
 
-成功提交任务
+
 
 Input: 
 
 ```
 tccli vclm SubmitTemplateToVideoJob --cli-unfold-argument  \
     --Template hug \
-    --Images.0.Url https://test.jpg
+    --Images.0.Url https://cos-internal.ap-guangzhou.tencentcos.cn/templatetovideo/example.png
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "JobId": "1305518294765740032",
-        "RequestId": "2392f73f-6436-4f79-85dc-6283d2ca78ef"
+        "JobId": "1421389687608336384",
+        "RequestId": "a81b4c44-c865-4ca1-ad69-08be3f63528c"
     }
 }
 ```

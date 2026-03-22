@@ -64,6 +64,14 @@
         "title": "创建EMR集群实例"
       }
     ],
+    "CreateEngineJob": [
+      {
+        "document": "创建周期性任务",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEngineJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-3x4a7b6u\",\n    \"JobType\": \"notebook\",\n    \"JobContent\": \"/workspace/999/ttt.ipynb\",\n    \"JobUUID\": \"test_user_3\",\n    \"ExecuteUser\": \"test_user\",\n    \"Parameters\": [\n        {\n            \"Name\": \"KERNEL_TYPE\",\n            \"Value\": \"PySpark\"\n        }\n    ],\n    \"ExtParameters\": [\n        {\n            \"Name\": \"spark.yarn.queue\",\n            \"Value\": \"default\"\n        }\n    ],\n    \"ExecutePassword\": \"asdasfa\",\n    \"ResourcePath\": \"/a/b/c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EngineJobId\": \"139\",\n        \"RequestId\": \"4ef63fc5-b02e-4cd0-9bf4-5c98a432d4b1\"\n    }\n}",
+        "title": "创建周期性任务"
+      }
+    ],
     "CreateGroupsSTD": [
       {
         "document": "",
@@ -782,6 +790,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyYarnQueueV2\n<公共请求参数>\n\n{\n    \"ConfigModifyInfoList\": [\n        {\n            \"ConfigSetParams\": [\n                {\n                    \"ConfigSet\": \"default\",\n                    \"LabelParams\": [\n                        {\n                            \"Items\": [\n                                {\n                                    \"Key\": \"labelName\",\n                                    \"Value\": \"<DEFAULT_PARTITION>\"\n                                },\n                                {\n                                    \"Key\": \"capacity\",\n                                    \"Value\": \"50.0\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"MyId\": \"root.QPlt\",\n            \"OpType\": 6\n        },\n        {\n            \"ConfigSetParams\": [\n                {\n                    \"ConfigSet\": \"default\",\n                    \"LabelParams\": [\n                        {\n                            \"Items\": [\n                                {\n                                    \"Key\": \"labelName\",\n                                    \"Value\": \"<DEFAULT_PARTITION>\"\n                                },\n                                {\n                                    \"Key\": \"capacity\",\n                                    \"Value\": \"50.0\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"MyId\": \"root.default\",\n            \"OpType\": 6\n        }\n    ],\n    \"InstanceId\": \"emr-h81\",\n    \"Scheduler\": \"capacity\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2330fead-9b98-4bbc-a777-c9523ffb8e76\"\n    }\n}",
         "title": "修改资源调度中队列信息"
+      }
+    ],
+    "MountCFSPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MountCFSPoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-kpcccpd4\",\n    \"MountInfo\": {\n        \"HostMountShareDir\": \"/1122/workspace\",\n        \"CFSMountShareDir\": \"/data/wedata/share/1122\",\n        \"FsIp\": \"10.0.1.114\",\n        \"FsId\": \"cfs-icxljejj\",\n        \"ProjectId\": \"1122\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"278fb14d-4fd6-44a5-b8a8-22a8c17bcb0c\"\n    }\n}",
+        "title": "集群挂载CFS"
       }
     ],
     "NotifyEmr": [

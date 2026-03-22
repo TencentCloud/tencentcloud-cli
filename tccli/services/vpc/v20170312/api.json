@@ -7786,9 +7786,90 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量校验开关状态",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficValidationEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否欠费",
+          "example": "true",
+          "member": "bool",
+          "name": "IsArrears",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "BandwidthPackageAttribute": {
+      "document": "共享带宽包属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享带宽包 ID",
+          "example": "bwp-il9224p5",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享带宽包名称",
+          "example": "demo",
+          "member": "string",
+          "name": "BandwidthPackageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享带宽包计费模式",
+          "example": "PERCENT95_POSTPAID_BY_MONTH",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出带宽计费属性",
+          "example": "true",
+          "member": "bool",
+          "name": "OutTraffic",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量校验开关",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficValidationEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BandwidthPackageBillBandwidth": {
       "document": "后付费共享带宽包的当前计费用量",
@@ -38946,10 +39027,28 @@
         },
         {
           "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "VPN-NFV",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "解绑时是否保持绑定弹性网卡。可选值：true、false。\n默认值：false",
           "example": "false",
           "member": "bool",
           "name": "KeepBindWithEni",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "跳过流量校验",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipTrafficValidation",
           "required": false,
           "type": "bool"
         }
@@ -44246,7 +44345,7 @@
           "example": "bwp-e40edw8y",
           "member": "string",
           "name": "BandwidthPackageId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -44255,7 +44354,7 @@
           "example": "demo",
           "member": "string",
           "name": "BandwidthPackageName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -44270,11 +44369,20 @@
         {
           "disabled": false,
           "document": "出带宽计费属性，默认按出带宽计费",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "OutTraffic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "共享带宽包属性列表",
+          "example": "无",
+          "member": "BandwidthPackageAttribute",
+          "name": "BandwidthPackageAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -44311,6 +44419,15 @@
           "name": "BandwidthPackageId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跳过流量校验",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipTrafficValidation",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -44417,6 +44534,15 @@
           "example": "true",
           "member": "bool",
           "name": "TrafficMarkingPolicyFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否切换为混合计费",
+          "example": "true",
+          "member": "bool",
+          "name": "MixedBillingFlag",
           "required": false,
           "type": "bool"
         }
@@ -45337,6 +45463,24 @@
           "name": "DeletionProtectionEnabled",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启流量校验",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficValidationEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性公网IPv6地址网卡可见",
+          "example": "true",
+          "member": "bool",
+          "name": "EipVisibleOnEni",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -45373,6 +45517,15 @@
           "name": "InternetMaxBandwidthOut",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跳过流量校验",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipTrafficValidation",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -45418,6 +45571,15 @@
           "name": "Ip6AddressIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跳过流量校验",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipTrafficValidation",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -46191,6 +46353,33 @@
           "example": "false",
           "member": "bool",
           "name": "DeleteOnTermination",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "删除保护。",
+          "example": "true",
+          "member": "bool",
+          "name": "TerminationProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "流量保护。",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "跨租户创建弹性网卡是否支持安全组",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportSecurityGroups",
           "required": false,
           "type": "bool"
         }
