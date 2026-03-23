@@ -88,6 +88,14 @@
         "title": "创建app的secretKey"
       }
     ],
+    "CreateAgentCredential": [
+      {
+        "document": "创建Credential",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Name\": \"测试凭据\",\n    \"Type\": \"reqKey\",\n    \"Content\": {\n        \"Headers\": [\n            {\n                \"Key\": \"x-rio-signature\",\n                \"Value\": \"123456789\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"agc-f4431972\"\n        },\n        \"RequestId\": \"70f5a87e-91d0-4b6a-8720-efd5f3ccec9e\"\n    }\n}",
+        "title": "创建Credential"
+      }
+    ],
     "CreateMcpServer": [
       {
         "document": "创建mcp server",
@@ -160,6 +168,14 @@
         "title": "删除app的secretKey"
       }
     ],
+    "DeleteAgentCredential": [
+      {
+        "document": "删除Credential",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableAgentCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"ID\": \"agc-f4431972\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"agc-f4431972\"\n        },\n        \"RequestId\": \"3ff5f982-8e21-42e9-834a-e6f4e50bb83d\"\n    }\n}",
+        "title": "删除Credential"
+      }
+    ],
     "DeleteMcpServer": [
       {
         "document": "删除mcp server",
@@ -230,6 +246,22 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentApps\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"InstanceID\": \"ins-e6fbc9b9\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"ApiKeys\": [\n                        \"sk-***************************\"\n                    ],\n                    \"AppID\": 1300273807,\n                    \"AuthType\": \"apiKey\",\n                    \"CreateTime\": \"2025-07-14T06:09:49.354Z\",\n                    \"Description\": \"desp\",\n                    \"ID\": \"aga-71702335\",\n                    \"InstanceID\": \"ins-e6fbc9b9\",\n                    \"McpServers\": [],\n                    \"Name\": \"测试\",\n                    \"SecretKeys\": [],\n                    \"Status\": \"normal\",\n                    \"Uin\": \"700001136234\",\n                    \"UpdateTime\": \"2025-07-14T06:09:49.354Z\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"73c48cae-cbf1-4377-b230-f1f42c89ff4c\"\n    }\n}",
         "title": "查询app列表"
+      }
+    ],
+    "DescribeAgentCredential": [
+      {
+        "document": "查询Credential详情",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"ID\": \"agc-f4431972\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppID\": 1300273807,\n            \"Content\": {\n                \"Headers\": [\n                    {\n                        \"Key\": \"x-rio-signature\",\n                        \"Value\": \"123456789\"\n                    }\n                ],\n                \"STSService\": \"\",\n                \"STSSystem\": \"\"\n            },\n            \"CreateTime\": \"2025-07-14T07:22:40.347Z\",\n            \"ID\": \"agc-f4431972\",\n            \"InstanceID\": \"ins-e6fbc9b9\",\n            \"LastUpdateTime\": \"2025-07-14T07:22:40.347Z\",\n            \"Name\": \"测试凭据\",\n            \"RelateAgentAppNum\": 0,\n            \"RelateMcpServerNum\": 0,\n            \"Status\": \"normal\",\n            \"Type\": \"reqKey\",\n            \"Uin\": \"700001136234\"\n        },\n        \"RequestId\": \"fb5e8042-5259-4fe3-b07d-cdecb73a5554\"\n    }\n}",
+        "title": "查询Credential详情"
+      }
+    ],
+    "DescribeAgentCredentials": [
+      {
+        "document": "查询Credential列表",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentCredentials\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Offset\": 0,\n    \"Keyword\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AppID\": 1300273807,\n                    \"Content\": {\n                        \"Headers\": [\n                            {\n                                \"Key\": \"x-rio-signature\",\n                                \"Value\": \"123456789\"\n                            }\n                        ],\n                        \"STSService\": \"\",\n                        \"STSSystem\": \"\"\n                    },\n                    \"CreateTime\": \"2025-07-14T07:22:40.347Z\",\n                    \"ID\": \"agc-f4431972\",\n                    \"InstanceID\": \"ins-e6fbc9b9\",\n                    \"LastUpdateTime\": \"2025-07-14T07:22:40.347Z\",\n                    \"Name\": \"测试凭据\",\n                    \"RelateAgentAppNum\": 0,\n                    \"RelateMcpServerNum\": 0,\n                    \"Status\": \"normal\",\n                    \"Type\": \"reqKey\",\n                    \"Uin\": \"700001136234\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"77fc4cfd-ca44-4986-9f71-9175b3aaaaca\"\n    }\n}",
+        "title": "查询Credential列表"
       }
     ],
     "DescribeMcpSecurityRule": [
@@ -382,6 +414,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentAppModelServices\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"aga-41d42939\",\n    \"ModelServices\": [\n        {\n            \"ID\": \"mds-ea8d96c6\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-41d42939\"\n        },\n        \"RequestId\": \"075b6412-222d-4994-9d93-c04d922c6b6d\"\n    }\n}",
         "title": "修改应用关联模型服务"
+      }
+    ],
+    "ModifyAgentCredential": [
+      {
+        "document": "修改Credential",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentCredential\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"ID\": \"agc-f4431972\",\n    \"Name\": \"测试\",\n    \"Type\": \"reqKey\",\n    \"Content\": {\n        \"STSSystem\": \"\",\n        \"STSService\": \"\",\n        \"Headers\": [\n            {\n                \"Key\": \"x-rio-signature\",\n                \"Value\": \"123456789\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"agc-f4431972\"\n        },\n        \"RequestId\": \"0cd7d9e9-5eb8-456d-b50d-747c5b236ef8\"\n    }\n}",
+        "title": "修改Credential"
       }
     ],
     "ModifyMcpServer": [

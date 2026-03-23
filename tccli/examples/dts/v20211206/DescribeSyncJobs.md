@@ -168,10 +168,7 @@ Output:
                             "ViewMode": "All"
                         }
                     ],
-                    "Mode": "Partial",
-                    "OnlineDDL": {
-                        "Status": ""
-                    }
+                    "Mode": "Partial"
                 },
                 "OfflineTime": "0000-00-00 00:00:00",
                 "OptObjStatus": "Normal",

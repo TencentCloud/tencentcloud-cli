@@ -602,7 +602,7 @@
     ],
     "ModifyTags": [
       {
-        "document": "",
+        "document": "编辑一个服务组的标签",
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTags\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"abc-1234\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"author\",\n            \"TagValue\": \"allen\"\n        }\n    ],\n    \"ServiceCategory\": \"TAIJI_HY\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-1234\"\n    }\n}",
         "title": "标记服务组标签"

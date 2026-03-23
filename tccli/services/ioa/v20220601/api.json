@@ -7578,7 +7578,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -7740,7 +7740,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ； 默认值0）(只支持32位)",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -9412,7 +9412,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型(只支持32位)",
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -9837,7 +9837,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -13798,7 +13798,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)",
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -17578,7 +17578,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -17978,7 +17978,7 @@
         },
         {
           "disabled": false,
-          "document": "【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配",
+          "document": "【必填】系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -18334,7 +18334,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -18461,7 +18461,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -26435,7 +26435,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -27222,7 +27222,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -31282,7 +31282,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -34702,7 +34702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios；默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -39286,7 +39286,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -39376,7 +39376,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)",
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -40859,7 +40859,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -40922,7 +40922,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）。直接从终端组添加设备时使用",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)。直接从终端组添加设备时使用",
           "example": "无",
           "member": "int64",
           "name": "OsType",

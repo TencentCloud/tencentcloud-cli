@@ -8197,6 +8197,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Isaac Sim GUI 配置",
+          "example": "无",
+          "member": "IsaacSimConfig",
+          "name": "IsaacSimConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9759,6 +9770,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点隔离人subuin",
+          "example": "100040092353",
+          "member": "string",
+          "name": "IsolateSubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点隔离人名",
+          "example": "shuozhuo",
+          "member": "string",
+          "name": "IsolateSubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10014,6 +10045,45 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IsaacSimConfig": {
+      "document": "具身智能 Isaac Sim GUI 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问方式：BROWSER（浏览器访问）/ STREAMING（串流访问）",
+          "example": "BROWSER",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动命令（仅详情/查询场景由后端填充返回，创建时不需要传入）",
+          "example": "cd /isaac-sim && bash ti_run_gui.sh",
+          "member": "string",
+          "name": "StartupCommand",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14770,6 +14840,15 @@
           "name": "PodName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制重建Pod",
+          "example": "false",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15660,6 +15739,32 @@
         }
       ],
       "usage": "both"
+    },
+    "SanityCheckDetail": {
+      "document": "健康检测详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-12-16T10:30:00+08",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检测结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-27T11:59:59+08",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SanityCheckItem": {
       "document": "健康检测配置",
@@ -19070,6 +19175,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "累计运行总时长（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalRuntimeInSeconds",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检测详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SanityCheckDetail",
+          "name": "SanityCheckDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

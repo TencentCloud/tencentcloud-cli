@@ -54,3 +54,34 @@ Output:
 }
 ```
 
+**Example 2: 查询指定磁盘类型支持的版本号列表**
+
+新购实例、升级实例版本号时，可通过此接口查询指定磁盘类型下有效的数据库版本号列表
+
+Input: 
+
+```
+tccli postgres DescribeDBVersions --cli-unfold-argument  \
+    --StorageType CLOUD_PREMIUM
+```
+
+Output: 
+```
+{
+    "Response": {
+        "VersionSet": [
+            {
+                "AvailableUpgradeTarget": [],
+                "DBEngine": "postgresql",
+                "DBKernelVersion": "v18.1_r1.4",
+                "DBMajorVersion": "18",
+                "DBVersion": "18.1",
+                "Status": "AVAILABLE",
+                "SupportedFeatureNames": []
+            }
+        ],
+        "RequestId": "a6f68a99-e781-4017-84bb-a0ad975c1ef1"
+    }
+}
+```
+

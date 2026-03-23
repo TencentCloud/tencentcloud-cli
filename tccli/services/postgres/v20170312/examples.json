@@ -302,6 +302,12 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClasses\n<公共请求参数>\n\n{\n    \"DBEngine\": \"postgresql\",\n    \"DBMajorVersion\": \"12\",\n    \"Zone\": \"ap-guangzhou-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"CPU\": 16,\n                \"MaxStorage\": 3000,\n                \"Memory\": 131072,\n                \"MinStorage\": 1000,\n                \"QPS\": 79000,\n                \"SpecCode\": \"cdb.pg.sh1.128g\"\n            },\n            {\n                \"CPU\": 48,\n                \"MaxStorage\": 6000,\n                \"Memory\": 491520,\n                \"MinStorage\": 1000,\n                \"QPS\": 238000,\n                \"SpecCode\": \"cdb.pg.sh1.480g\"\n            }\n        ],\n        \"RequestId\": \"012ed950-e375-4a2e-a7f8-15ec9fcd1d48\"\n    }\n}",
         "title": "查询规格列表"
+      },
+      {
+        "document": "根据指定磁盘类型查询规格列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClasses\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-7\",\n    \"DBEngine\": \"postgresql\",\n    \"DBMajorVersion\": \"17\",\n    \"StorageType\": \"PHYSICAL_LOCAL_SSD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"CPU\": 1,\n                \"MaxStorage\": 3000,\n                \"Memory\": 2048,\n                \"MinStorage\": 10,\n                \"QPS\": 1800,\n                \"SpecCode\": \"pg.it.small2\"\n            }\n        ],\n        \"RequestId\": \"8f9ec783-2944-4068-94ff-a33e9498cf6c\"\n    }\n}",
+        "title": "根据指定磁盘类型查询规格列表"
       }
     ],
     "DescribeCloneDBInstanceSpec": [
@@ -412,6 +418,12 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBVersions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99fd1cde-d477-4cb4-8a05-12b62502e6fc\",\n        \"VersionSet\": [\n            {\n                \"AvailableUpgradeTarget\": [],\n                \"DBEngine\": \"mssql_compatible\",\n                \"DBKernelVersion\": \"v14.3_r1.3\",\n                \"DBMajorVersion\": \"14\",\n                \"DBVersion\": \"14.3\",\n                \"Status\": \"AVAILABLE\",\n                \"SupportedFeatureNames\": []\n            },\n            {\n                \"AvailableUpgradeTarget\": [\n                    \"v14.3_r1.3\"\n                ],\n                \"DBEngine\": \"postgresql\",\n                \"DBKernelVersion\": \"v14.2_r1.1\",\n                \"DBMajorVersion\": \"14\",\n                \"DBVersion\": \"14.2\",\n                \"Status\": \"AVAILABLE\",\n                \"SupportedFeatureNames\": [\n                    \"TDE\"\n                ]\n            },\n            {\n                \"AvailableUpgradeTarget\": [\n                    \"v14.3_r1.3\",\n                    \"v14.2_r1.1\"\n                ],\n                \"DBEngine\": \"postgresql\",\n                \"DBKernelVersion\": \"v14.2_r1.0\",\n                \"DBMajorVersion\": \"14\",\n                \"DBVersion\": \"14.2\",\n                \"Status\": \"AVAILABLE\",\n                \"SupportedFeatureNames\": [\n                    \"TDE\"\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询版本号列表"
+      },
+      {
+        "document": "新购实例、升级实例版本号时，可通过此接口查询指定磁盘类型下有效的数据库版本号列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBVersions\n<公共请求参数>\n\n{\n    \"StorageType\": \"CLOUD_PREMIUM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionSet\": [\n            {\n                \"AvailableUpgradeTarget\": [],\n                \"DBEngine\": \"postgresql\",\n                \"DBKernelVersion\": \"v18.1_r1.4\",\n                \"DBMajorVersion\": \"18\",\n                \"DBVersion\": \"18.1\",\n                \"Status\": \"AVAILABLE\",\n                \"SupportedFeatureNames\": []\n            }\n        ],\n        \"RequestId\": \"a6f68a99-e781-4017-84bb-a0ad975c1ef1\"\n    }\n}",
+        "title": "查询指定磁盘类型支持的版本号列表"
       }
     ],
     "DescribeDBXlogs": [
