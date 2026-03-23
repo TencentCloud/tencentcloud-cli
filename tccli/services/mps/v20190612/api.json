@@ -19317,7 +19317,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始日期。使用 ISO 日期格式。",
+          "document": "<p>起始日期。使用 ISO 日期格式。</p>",
           "example": "2019-07-02T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -19326,7 +19326,7 @@
         },
         {
           "disabled": false,
-          "document": "结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "document": "<p>结束日期，需大于等于起始日期。使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F\">ISO 日期格式</a>。</p>",
           "example": "2019-07-03T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
@@ -19335,7 +19335,7 @@
         },
         {
           "disabled": false,
-          "document": "查询媒体处理任务类型，默认查询转码。\n<li>Transcode：转码</li>\n<li>Enhance：增强</li>\n<li>AIAnalysis：智能分析</li>\n<li>AIRecognition：智能识别</li>\n<li>AIReview：内容审核</li>\n<li>Snapshot：截图</li>\n<li>AnimatedGraphics：转动图</li>\n<li>AiQualityControl：质检</li>\n<li>Evaluation：视频评测</li>\n<li>ImageProcess: 图片处理</li>\n<li>AddBlindWatermark: 添加基础版权数字水印</li>\n<li>AddNagraWatermark: 添加NAGRA数字水印</li>\n<li>ExtractBlindWatermark: 提取基础版权数字水印</li>\n<li>AIGC: AIGC</li>",
+          "document": "<p>查询媒体处理任务类型，默认查询转码。</p><li>Transcode：转码</li><li>Enhance：增强</li><li>AIAnalysis：智能分析</li><li>AIRecognition：智能识别</li><li>AIReview：内容审核</li><li>Snapshot：截图</li><li>AnimatedGraphics：转动图</li><li>AiQualityControl：质检</li><li>Evaluation：视频评测</li><li>ImageProcess: 图片处理</li><li>AddBlindWatermark: 添加基础版权数字水印</li><li>AddNagraWatermark: 添加NAGRA数字水印</li><li>ExtractBlindWatermark: 提取基础版权数字水印</li><li>AIGC: AIGCVideo</li>",
           "example": "[\"Transcode\"]",
           "member": "string",
           "name": "Types",
@@ -19344,7 +19344,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理园区，默认返回 ap-guangzhou 园区。\n<li>ap-guangzhou：广州</li>\n<li>ap-hongkong：中国香港</li>\n<li>ap-taipei：中国台北</li>\n<li>ap-singapore：新加坡</li>\n<li>ap-mumbai：印度</li>\n<li>ap-jakarta：雅加达</li>\n<li>ap-seoul：首尔</li>\n<li>ap-bangkok：泰国</li>\n<li>ap-tokyo：日本</li>\n<li>na-siliconvalley：美国硅谷</li>\n<li>na-ashburn：弗吉尼亚</li>\n<li>na-toronto：多伦多</li>\n<li>sa-saopaulo：圣保罗</li>\n<li>eu-frankfurt：法兰克福</li>\n<li>eu-moscow：俄罗斯</li>\n<li>aws：AWS</li>",
+          "document": "<p>媒体处理园区，默认返回 ap-guangzhou 园区。</p><li>ap-guangzhou：广州</li><li>ap-hongkong：中国香港</li><li>ap-taipei：中国台北</li><li>ap-singapore：新加坡</li><li>ap-mumbai：印度</li><li>ap-jakarta：雅加达</li><li>ap-seoul：首尔</li><li>ap-bangkok：泰国</li><li>ap-tokyo：日本</li><li>na-siliconvalley：美国硅谷</li><li>na-ashburn：弗吉尼亚</li><li>na-toronto：多伦多</li><li>sa-saopaulo：圣保罗</li><li>eu-frankfurt：法兰克福</li><li>eu-moscow：俄罗斯</li><li>aws：AWS</li>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "ProcessRegions",
@@ -19359,7 +19359,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理统计数据概览，展示所查询任务的概览以及详细数据。",
+          "document": "<p>媒体处理统计数据概览，展示所查询任务的概览以及详细数据。</p>",
           "example": "无",
           "member": "TaskStatData",
           "name": "Data",
@@ -37801,6 +37801,21 @@
       ],
       "usage": "in"
     },
+    "SyncDubbingOutputOption": {
+      "document": "同步配音输出参数设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合成结果输出类型</p><p>枚举值：</p><ul><li>data： 音频base64编码</li><li>url： 音频url，有效期24小时</li></ul>",
+          "example": "url",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "SyncDubbingRequest": {
       "document": "SyncDubbing请求参数结构体",
       "members": [
@@ -37860,6 +37875,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>输出相关参数</p><p>可以指定输出形式等</p>",
+          "example": "无",
+          "member": "SyncDubbingOutputOption",
+          "name": "Output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>扩展参数，json字符串</p><p>synExt    Object    语音合成扩展参数<br>    -duration    Float    合成音频时长，单位秒，示例：5.2<br>    -sampleRate    Integer    合成音频采样率，默认16000，支持[8000,16000,22050,32000,44100]<br>    -pitch    Integer    音调，默认0原音色输出，取值[-12, 12]<br>cloneExt    Object    音色克隆扩展参数<br>    -timeRanges    Float[][]    指定克隆音频时间范围，默认[[0, 20]]，示例[[5.2, 10], [45, 59.8]]</p>",
           "example": "{\n    \"synExt\": {\n        \"duration\": 10\n    }\n}",
           "member": "string",
@@ -37905,6 +37929,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>合成音频url，有效期24小时</p>",
+          "example": "https://laurie-tmp-1300828900.cos.ap-nanjing.myqcloud.com/sync_dubbing/1b753121-49fa-4ce2-9499-eef6d10ccdce.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>克隆的音色Id。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "s1_2GSzVAf00hl7+A+LJTNvVI6nFJB0qliIvR8wntPeaniVSstd7Z4E4UL8Hky3azMHVlDSps1zWW4nJ7ll9w==",
           "member": "string",
@@ -37912,6 +37946,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息，json字符串</p><p>duration: 结果音频时长，单位秒</p>",
+          "example": "{\"duration\":15.000063}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -3934,7 +3934,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "f8656fa3-e7fa-4cad-a4cc-************",
           "member": "string",
           "name": "DeviceId",
@@ -3944,7 +3944,7 @@
         },
         {
           "disabled": false,
-          "document": "设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）",
+          "document": "<p>设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）</p>",
           "example": "6101320000132000****",
           "member": "string",
           "name": "Code",
@@ -3954,7 +3954,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "设备1",
           "member": "string",
           "name": "Name",
@@ -3964,7 +3964,7 @@
         },
         {
           "disabled": false,
-          "document": "设备接入协议，1:RTMP,2:GB,3:GW ",
+          "document": "<p>设备接入协议，1:RTMP,2:GB,3:GW</p>",
           "example": "2",
           "member": "int64",
           "name": "AccessProtocol",
@@ -3974,7 +3974,7 @@
         },
         {
           "disabled": false,
-          "document": "设备类型，1:IPC,2:NVR",
+          "document": "<p>设备类型，1:IPC,2:NVR</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -3984,7 +3984,7 @@
         },
         {
           "disabled": false,
-          "document": "设备接入服务节点id",
+          "document": "<p>设备接入服务节点id</p>",
           "example": "b2181417-03ce-4ea3-ae39-************",
           "member": "string",
           "name": "ClusterId",
@@ -3994,7 +3994,7 @@
         },
         {
           "disabled": false,
-          "document": "设备接入服务节点名称\n",
+          "document": "<p>设备接入服务节点名称</p>",
           "example": "上海1",
           "member": "string",
           "name": "ClusterName",
@@ -4004,7 +4004,7 @@
         },
         {
           "disabled": false,
-          "document": "设备流传输协议，1:UDP,2:TCP ",
+          "document": "<p>设备流传输协议，1:UDP,2:TCP</p>",
           "example": "1",
           "member": "int64",
           "name": "TransportProtocol",
@@ -4014,8 +4014,8 @@
         },
         {
           "disabled": false,
-          "document": "设备密码",
-          "example": "111111",
+          "document": "<p>设备密码</p>",
+          "example": "zxczxc",
           "member": "string",
           "name": "Password",
           "output_required": true,
@@ -4024,7 +4024,7 @@
         },
         {
           "disabled": false,
-          "document": "设备描述",
+          "document": "<p>设备描述</p>",
           "example": "这是个设备",
           "member": "string",
           "name": "Description",
@@ -4034,7 +4034,7 @@
         },
         {
           "disabled": false,
-          "document": "sip服务ID",
+          "document": "<p>sip服务ID</p>",
           "example": "7101000000200000****",
           "member": "string",
           "name": "SipId",
@@ -4044,7 +4044,7 @@
         },
         {
           "disabled": false,
-          "document": "sip服务域",
+          "document": "<p>sip服务域</p>",
           "example": "7101000000",
           "member": "string",
           "name": "SipDomain",
@@ -4054,7 +4054,7 @@
         },
         {
           "disabled": false,
-          "document": "sip服务IP地址",
+          "document": "<p>sip服务IP地址</p>",
           "example": "88.88.88.88",
           "member": "string",
           "name": "SipIp",
@@ -4064,7 +4064,7 @@
         },
         {
           "disabled": false,
-          "document": "sip服务端口",
+          "document": "<p>sip服务端口</p>",
           "example": "5870",
           "member": "int64",
           "name": "SipPort",
@@ -4074,7 +4074,7 @@
         },
         {
           "disabled": false,
-          "document": "Rtmp设备推流地址(仅rtmp设备有效)",
+          "document": "<p>Rtmp设备推流地址(仅rtmp设备有效)</p>",
           "example": "rtmp://88.88.88.88/live/I3Pocd****",
           "member": "string",
           "name": "PushStreamUrl",
@@ -4084,7 +4084,7 @@
         },
         {
           "disabled": false,
-          "document": "设备状态，0:未注册,1:在线,2:离线,3:禁用",
+          "document": "<p>设备状态，0:未注册,1:在线,2:离线,3:禁用</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -4094,7 +4094,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属组织ID",
+          "document": "<p>设备所属组织ID</p>",
           "example": "237",
           "member": "string",
           "name": "OrganizationId",
@@ -4104,7 +4104,7 @@
         },
         {
           "disabled": false,
-          "document": "设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）",
+          "document": "<p>设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）</p>",
           "example": "f6d2540d-1d13-4873-b10e-************",
           "member": "string",
           "name": "GatewayId",
@@ -4114,7 +4114,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属网关名称",
+          "document": "<p>设备所属网关名称</p>",
           "example": "网关1",
           "member": "string",
           "name": "GatewayName",
@@ -4124,7 +4124,7 @@
         },
         {
           "disabled": false,
-          "document": "设备网关协议名称",
+          "document": "<p>设备网关协议名称</p>",
           "example": "Onvif",
           "member": "string",
           "name": "ProtocolTypeName",
@@ -4134,7 +4134,7 @@
         },
         {
           "disabled": false,
-          "document": "网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）",
+          "document": "<p>网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）</p>",
           "example": "4",
           "member": "int64",
           "name": "ProtocolType",
@@ -4144,7 +4144,7 @@
         },
         {
           "disabled": false,
-          "document": "设备接入IP",
+          "document": "<p>设备接入IP</p>",
           "example": "192.168.*.1",
           "member": "string",
           "name": "Ip",
@@ -4154,7 +4154,7 @@
         },
         {
           "disabled": false,
-          "document": "设备Port",
+          "document": "<p>设备Port</p>",
           "example": "9000",
           "member": "int64",
           "name": "Port",
@@ -4164,7 +4164,7 @@
         },
         {
           "disabled": false,
-          "document": "设备用户名",
+          "document": "<p>设备用户名</p>",
           "example": "admin",
           "member": "string",
           "name": "Username",
@@ -4174,7 +4174,7 @@
         },
         {
           "disabled": false,
-          "document": "设备地域",
+          "document": "<p>设备地域</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -4184,7 +4184,7 @@
         },
         {
           "disabled": false,
-          "document": "设备厂商",
+          "document": "<p>设备厂商</p>",
           "example": "Hikvision",
           "member": "string",
           "name": "Manufacturer",
@@ -4194,7 +4194,7 @@
         },
         {
           "disabled": false,
-          "document": "音频关开（0：关闭；1：开启）关闭时丢弃音频\t",
+          "document": "<p>音频关开（0：关闭；1：开启）关闭时丢弃音频</p>",
           "example": "0",
           "member": "int64",
           "name": "AudioSwitch",
@@ -4204,7 +4204,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效\t",
+          "document": "<p>订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效</p>",
           "example": "1",
           "member": "int64",
           "name": "SubscribeSwitch",
@@ -4214,7 +4214,7 @@
         },
         {
           "disabled": false,
-          "document": "RTMP推流地址自定义appName",
+          "document": "<p>RTMP推流地址自定义appName</p>",
           "example": "live",
           "member": "string",
           "name": "AppName",
@@ -4224,7 +4224,7 @@
         },
         {
           "disabled": false,
-          "document": "RTMP推流地址自定义streamName",
+          "document": "<p>RTMP推流地址自定义streamName</p>",
           "example": "00cuDZBadN",
           "member": "string",
           "name": "StreamName",
@@ -4234,12 +4234,22 @@
         },
         {
           "disabled": false,
-          "document": "是否开启静音帧（0：关闭；1 开启）",
+          "document": "<p>是否开启静音帧（0：关闭；1 开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "SilentFrameSwitch",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Rtmp设备安全认证推流地址(仅rtmp设备有效)</p>",
+          "example": "rtmps://rtmp.live.com:11935/live/I3Pocdaeq",
+          "member": "string",
+          "name": "PushStreamSecureUrl",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

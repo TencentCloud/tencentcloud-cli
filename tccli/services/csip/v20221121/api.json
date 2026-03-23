@@ -49,6 +49,13 @@
       "output": "DeleteRiskScanTaskResponse",
       "status": "online"
     },
+    "DescribeAIAgentAssetList": {
+      "document": "获取 AI agent 资产列表",
+      "input": "DescribeAIAgentAssetListRequest",
+      "name": "获取 AI Agent 资产列表",
+      "output": "DescribeAIAgentAssetListResponse",
+      "status": "online"
+    },
     "DescribeAbnormalCallRecord": {
       "document": "获取调用记录列表",
       "input": "DescribeAbnormalCallRecordRequest",
@@ -582,6 +589,112 @@
     "serviceShortName": "csip"
   },
   "objects": {
+    "AIAgentAsset": {
+      "document": "Ai Agent 资产信息列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID 标识",
+          "example": "870",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent 名称",
+          "example": "OpenClaw",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent 使用模型名称",
+          "example": "[\"hunyuan-turbos-latest\"]",
+          "member": "string",
+          "name": "AgentModel",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "ins-eu96gt2i",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA",
+          "example": "[\"USER_DATA\"]",
+          "member": "string",
+          "name": "MetadataRiskList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次检出时间",
+          "example": "2026-03-16T06:17:43Z",
+          "member": "datetime_iso",
+          "name": "IdentityTimeFirst",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近检出时间",
+          "example": "2026-03-16T08:14:29Z",
+          "member": "datetime_iso",
+          "name": "IdentityTimeLast",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出",
+          "example": "ASSET",
+          "member": "string",
+          "name": "IdentityMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；\n3. UNKNOWN;",
+          "example": "UNKNOWN",
+          "member": "string",
+          "name": "ExposureStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "metadata 有风险时对应路径",
+          "example": "http://metadata.tencentyun.com/latest/meta-data/cam/security-credentials",
+          "member": "string",
+          "name": "MetadataRiskURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AKInfo": {
       "document": "AK简要信息",
       "members": [
@@ -8460,6 +8573,62 @@
     "DeleteRiskScanTaskResponse": {
       "document": "DeleteRiskScanTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAgentAssetListRequest": {
+      "document": "DescribeAIAgentAssetList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAgentAssetListResponse": {
+      "document": "DescribeAIAgentAssetList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产列表",
+          "example": "无",
+          "member": "AIAgentAsset",
+          "name": "AssetList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

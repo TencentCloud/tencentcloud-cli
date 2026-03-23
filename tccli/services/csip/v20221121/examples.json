@@ -56,6 +56,14 @@
         "title": "删除风险中心扫描任务"
       }
     ],
+    "DescribeAIAgentAssetList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAgentAssetList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"ebdae81e-e3cf-4694-a081-196d38c0038e\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeAbnormalCallRecord": [
       {
         "document": "",

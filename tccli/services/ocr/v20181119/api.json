@@ -19780,8 +19780,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "收件人姓名",
-          "example": "李明",
+          "document": "<p>收件人姓名</p>",
+          "example": "无",
           "member": "WaybillObj",
           "name": "RecName",
           "output_required": true,
@@ -19790,8 +19790,8 @@
         },
         {
           "disabled": false,
-          "document": "收件人手机号",
-          "example": "021-54569595",
+          "document": "<p>收件人手机号</p>",
+          "example": "无",
           "member": "WaybillObj",
           "name": "RecNum",
           "output_required": true,
@@ -19800,8 +19800,8 @@
         },
         {
           "disabled": false,
-          "document": "收件人地址",
-          "example": "上海市,上海市，徐汇区,古美路1528号A1幢2楼",
+          "document": "<p>收件人地址</p>",
+          "example": "无",
           "member": "WaybillObj",
           "name": "RecAddr",
           "output_required": true,
@@ -19810,8 +19810,8 @@
         },
         {
           "disabled": false,
-          "document": "寄件人姓名",
-          "example": "海购商品",
+          "document": "<p>寄件人姓名</p>",
+          "example": "无",
           "member": "WaybillObj",
           "name": "SenderName",
           "output_required": true,
@@ -19820,8 +19820,8 @@
         },
         {
           "disabled": false,
-          "document": "寄件人手机号",
-          "example": "021-54569595",
+          "document": "<p>寄件人手机号</p>",
+          "example": "无",
           "member": "WaybillObj",
           "name": "SenderNum",
           "output_required": true,
@@ -19830,8 +19830,8 @@
         },
         {
           "disabled": false,
-          "document": "寄件人地址",
-          "example": "杭州市江干区12号路口跨境贸易电子商务产业园",
+          "document": "<p>寄件人地址</p>",
+          "example": "无",
           "member": "WaybillObj",
           "name": "SenderAddr",
           "output_required": true,
@@ -19840,11 +19840,21 @@
         },
         {
           "disabled": false,
-          "document": "运单号",
-          "example": "456732006925",
+          "document": "<p>运单号, 当同时存在 母 / 子 运单号时， 该字段为子运单号</p>",
+          "example": "无",
           "member": "WaybillObj",
           "name": "WaybillNum",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>母运单号， 当不存在母运单号时， 该字段为不存在</p>",
+          "example": "无",
+          "member": "WaybillObj",
+          "name": "MainWaybillNum",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         }

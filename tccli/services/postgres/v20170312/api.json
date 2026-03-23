@@ -2442,6 +2442,15 @@
           "name": "DeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3575,6 +3584,16 @@
           "name": "DeletionProtection",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "DBInstanceStorageType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5045,6 +5064,15 @@
           "name": "DBMajorVersion",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，根据存储类型返回支持的规格。</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 物理机本地ssd硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： ssd云硬盘</li><li>CLOUD_HSSD： 增强型ssd云硬盘</li></ul><p>默认值：PHYSICAL_LOCAL_SSD</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5687,7 +5715,17 @@
     },
     "DescribeDBVersionsRequest": {
       "document": "DescribeDBVersions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，根据磁盘类型返回支持的版本</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 物理机本地ssd硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： ssd云硬盘</li><li>CLOUD_HSSD： 增强型ssd云硬盘</li></ul><p>默认值：PHYSICAL_LOCAL_SSD</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDBVersionsResponse": {
@@ -6570,6 +6608,15 @@
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，根据存储类型返回支持的版本和规格</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 物理机本地ssd硬盘</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： ssd云硬盘</li><li>CLOUD_HSSD： 增强型ssd云硬盘</li></ul><p>默认值：PHYSICAL_LOCAL_SSD</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
           "required": false,
           "type": "string"
         }
@@ -7577,6 +7624,15 @@
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>",
+          "example": "PHYSICAL_LOCAL_SSD",
+          "member": "string",
+          "name": "StorageType",
           "required": false,
           "type": "string"
         }
