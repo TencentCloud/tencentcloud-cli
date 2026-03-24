@@ -8967,6 +8967,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属catalog名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属catalog 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LAKEHOUSE",
+          "member": "string",
+          "name": "CatalogType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否InformationSchema\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInformationSchema",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -16498,12 +16528,12 @@
       "usage": "both"
     },
     "Filter": {
-      "document": "查询列表过滤条件参数",
+      "document": "筛选条件定义",
       "members": [
         {
           "disabled": false,
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。",
-          "example": "house_name",
+          "example": "status",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -16512,7 +16542,7 @@
         {
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
-          "example": "dlc-engine",
+          "example": "[\"dlc-engine\"]",
           "member": "string",
           "name": "Values",
           "required": true,

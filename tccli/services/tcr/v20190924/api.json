@@ -7374,7 +7374,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "tcr-xxx",
           "member": "string",
           "name": "RegistryId",
@@ -7383,7 +7383,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "<p>命名空间名称</p>",
           "example": "nginx",
           "member": "string",
           "name": "NamespaceName",
@@ -7392,7 +7392,7 @@
         },
         {
           "disabled": false,
-          "document": "访问级别，True为公开，False为私有",
+          "document": "<p>访问级别，True为公开，False为私有</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPublic",
@@ -7401,7 +7401,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描级别，True为自动，False为手动",
+          "document": "<p>扫描级别，True为自动，False为手动</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAutoScan",
@@ -7410,7 +7410,7 @@
         },
         {
           "disabled": false,
-          "document": "阻断开关，True为开放，False为关闭",
+          "document": "<p>阻断开关，True为开放，False为关闭</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPreventVUL",
@@ -7419,7 +7419,7 @@
         },
         {
           "disabled": false,
-          "document": "阻断漏洞等级，目前仅支持 low、medium、high",
+          "document": "<p>阻断漏洞等级，目前仅支持 low、medium、high</p>",
           "example": "high",
           "member": "string",
           "name": "Severity",
@@ -7428,12 +7428,21 @@
         },
         {
           "disabled": false,
-          "document": "漏洞白名单列表",
+          "document": "<p>漏洞白名单列表</p>",
           "example": "无",
           "member": "CVEWhitelistItem",
           "name": "CVEWhitelistItems",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>tag列表</p>",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

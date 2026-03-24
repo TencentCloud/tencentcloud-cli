@@ -1016,6 +1016,14 @@
         "title": "查询指定产品的云存 AI 服务开通状态"
       }
     ],
+    "DescribeProductDynamicRegister": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeProductDynamicRegister\n&ProductId=KO9JAFB9W\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductSecret\": \"y4cQABvFmabopcklMliuobY3\",\n        \"RegisterLimit\": 50,\n        \"RegisterType\": 2,\n        \"RequestId\": \"1aa7421b-f69b-4ea9-acf5-4bf22681f3b1\"\n    }\n}",
+        "title": "获取产品动态注册详情"
+      }
+    ],
     "DescribeProject": [
       {
         "document": "查询项目详情",
@@ -1576,6 +1584,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProductCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"Enabled\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改指定产品的云存 AI 服务开通状态"
+      }
+    ],
+    "ModifyProductDynamicRegister": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyProductDynamicRegister\n&ProductId=KO9JAFB9W\n&RegisterType=2\n&RegisterLimit=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductSecret\": \"Secret\",\n        \"RegisterLimit\": 50,\n        \"RegisterType\": 2,\n        \"RequestId\": \"1aa7421b-f69b-4ea9-acf5-4bf22681f3b1\"\n    }\n}",
+        "title": "修改产品动态注册"
       }
     ],
     "ModifyProject": [

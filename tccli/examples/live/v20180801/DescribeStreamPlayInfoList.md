@@ -19,22 +19,22 @@ Output:
         "DataInfoList": [
             {
                 "Time": "2019-03-01T00:00:00+08:00",
-                "Bandwidth": 10.0,
-                "Flux": 75.0,
+                "Bandwidth": 10,
+                "Flux": 75,
                 "Request": 50,
                 "Online": 10
             },
             {
                 "Time": "2019-03-01T00:02:00+08:00",
-                "Bandwidth": 20.0,
-                "Flux": 150.0,
+                "Bandwidth": 20,
+                "Flux": 150,
                 "Request": 50,
                 "Online": 20
             },
             {
                 "Time": "2019-03-01T00:03:00+08:00",
-                "Bandwidth": 30.0,
-                "Flux": 225.0,
+                "Bandwidth": 30,
+                "Flux": 225,
                 "Request": 50,
                 "Online": 30
             }

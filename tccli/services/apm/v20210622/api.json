@@ -1005,6 +1005,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否默认使用探针自带熔断阈值</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseDefaultFuseConfig",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1560,6 +1570,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用探针默认熔断阈值</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseDefaultFuseConfig",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -5710,6 +5731,15 @@
           "name": "ResponseDurationWarningThreshold",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用探针默认熔断阈值</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseDefaultFuseConfig",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

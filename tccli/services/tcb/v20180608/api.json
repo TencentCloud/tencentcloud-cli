@@ -140,6 +140,13 @@
       "output": "DeleteUsersResponse",
       "status": "online"
     },
+    "DeleteVmInstance": {
+      "document": "销毁云服务器实例",
+      "input": "DeleteVmInstanceRequest",
+      "name": "销毁服务器实例",
+      "output": "DeleteVmInstanceResponse",
+      "status": "online"
+    },
     "DescribeAuthDomains": {
       "document": "本接口用于获取当前环境的安全域名列表。\n云开发会校验网页应用请求的来源域名，您需要将来源域名加入到WEB安全域名列表中。\n可以通过接口 [CreateAuthDomain](https://cloud.tencent.com/document/product/876/42764) 增加安全域名。",
       "input": "DescribeAuthDomainsRequest",
@@ -308,6 +315,13 @@
       "output": "DescribeUserListResponse",
       "status": "online"
     },
+    "DescribeVmInstances": {
+      "document": "查询环境下的云服务器列表",
+      "input": "DescribeVmInstancesRequest",
+      "name": "查询环境下的服务器实例",
+      "output": "DescribeVmInstancesResponse",
+      "status": "online"
+    },
     "DescribeVmSpec": {
       "document": "云服务器规格list",
       "input": "DescribeVmSpecRequest",
@@ -348,6 +362,13 @@
       "input": "GetProvidersRequest",
       "name": "获取三方认证源列表",
       "output": "GetProvidersResponse",
+      "status": "online"
+    },
+    "InquireVmPrice": {
+      "document": "查询服务器价格",
+      "input": "InquireVmPriceRequest",
+      "name": "查询云服务器价格",
+      "output": "InquireVmPriceResponse",
       "status": "online"
     },
     "ListTables": {
@@ -2863,6 +2884,42 @@
       ],
       "type": "object"
     },
+    "DeleteVmInstanceRequest": {
+      "document": "DeleteVmInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器实例id",
+          "example": "lhins-4amyetqm",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "reinstate-3gle1iv1f6e5c582",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVmInstanceResponse": {
+      "document": "DeleteVmInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAuthDomainsRequest": {
       "document": "DescribeAuthDomains请求参数结构体",
       "members": [
@@ -5272,6 +5329,52 @@
       ],
       "type": "object"
     },
+    "DescribeVmInstancesRequest": {
+      "document": "DescribeVmInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "test-lighthouse-3gb1eshz5a3811de",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务器类型： LightHouse = 轻量云服务器 CVM = 云服务器",
+          "example": "LightHouse",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVmInstancesResponse": {
+      "document": "DescribeVmInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主机实例列表",
+          "example": "无",
+          "member": "VmInstance",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVmSpecRequest": {
       "document": "DescribeVmSpec请求参数结构体",
       "members": [
@@ -6282,6 +6385,111 @@
         }
       ],
       "usage": "out"
+    },
+    "InquireVmPriceRequest": {
+      "document": "InquireVmPrice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器类型：\nLightHouse = 轻量云服务器\nCVM = 云服务器",
+          "example": "LightHouse",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "轻量云服务器套餐ID。\n当Type=LightHouse时必传",
+          "example": "bundle_rs_mc_med1_02",
+          "member": "string",
+          "name": "LightHouseBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "轻量云服务器镜像ID。当Type=LightHouse时必传",
+          "example": "lhbp-3qjk6slu",
+          "member": "string",
+          "name": "LightHouseBlueprintId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquireVmPriceResponse": {
+      "document": "InquireVmPrice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "价格货币单位。取值范围CNY:人民币。USD:美元。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价（主机原始每月价格）",
+          "example": "40",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣率",
+          "example": "100",
+          "member": "float",
+          "name": "Discount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣后每月价格",
+          "example": "40",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣前每天资源点",
+          "example": "1333.3334",
+          "member": "float",
+          "name": "OriginalCredits",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣后每天资源点",
+          "example": "1333.3334",
+          "member": "float",
+          "name": "DiscountCredits",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "KVPair": {
       "document": "键值对",
@@ -9406,6 +9614,45 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VmInstance": {
+      "document": "云主机实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "lhins-20gnw292",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

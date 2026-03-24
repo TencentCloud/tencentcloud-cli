@@ -366,6 +366,14 @@
         "title": "示例"
       }
     ],
+    "CreateVideoRedrawTask": [
+      {
+        "document": "创建AIGC视频转绘任务",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoRedrawTask\n<公共请求参数>\n\n{\n    \"Input\": {\n        \"Url\": \"https://****************.cos.ap-guangzhou.myqcloud.com/fod_1.mp4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"d6f9bb2a-d1cd-****-447a-a4842e4279c6\",\n        \"RequestId\": \"74ab0e9d-2b15-46ae-9c6c-042f360ae32b\"\n    }\n}",
+        "title": "创建AIGC视频转绘任务"
+      }
+    ],
     "DeleteAuditKeywords": [
       {
         "document": "",
@@ -1354,7 +1362,7 @@
       {
         "document": "查询流的播放信息列表",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPlayInfoList\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"5000.playdomain.com\",\n    \"StreamName\": \"stream1\",\n    \"EndTime\": \"2019-03-01T00:03:00+08:00\",\n    \"StartTime\": \"2019-03-01T00:00:00+08:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T00:00:00+08:00\",\n                \"Bandwidth\": 10.0,\n                \"Flux\": 75.0,\n                \"Request\": 50,\n                \"Online\": 10\n            },\n            {\n                \"Time\": \"2019-03-01T00:02:00+08:00\",\n                \"Bandwidth\": 20.0,\n                \"Flux\": 150.0,\n                \"Request\": 50,\n                \"Online\": 20\n            },\n            {\n                \"Time\": \"2019-03-01T00:03:00+08:00\",\n                \"Bandwidth\": 30.0,\n                \"Flux\": 225.0,\n                \"Request\": 50,\n                \"Online\": 30\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T00:00:00+08:00\",\n                \"Bandwidth\": 10,\n                \"Flux\": 75,\n                \"Request\": 50,\n                \"Online\": 10\n            },\n            {\n                \"Time\": \"2019-03-01T00:02:00+08:00\",\n                \"Bandwidth\": 20,\n                \"Flux\": 150,\n                \"Request\": 50,\n                \"Online\": 20\n            },\n            {\n                \"Time\": \"2019-03-01T00:03:00+08:00\",\n                \"Bandwidth\": 30,\n                \"Flux\": 225,\n                \"Request\": 50,\n                \"Online\": 30\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],

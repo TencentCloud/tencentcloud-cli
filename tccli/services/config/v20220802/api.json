@@ -1,5 +1,124 @@
 {
   "actions": {
+    "AddAggregateCompliancePack": {
+      "document": "账号组新建合规包",
+      "input": "AddAggregateCompliancePackRequest",
+      "name": "账号组新建合规包",
+      "output": "AddAggregateCompliancePackResponse",
+      "status": "online"
+    },
+    "AddAggregateConfigRule": {
+      "document": "账号组新建规则",
+      "input": "AddAggregateConfigRuleRequest",
+      "name": "账号组新建规则",
+      "output": "AddAggregateConfigRuleResponse",
+      "status": "online"
+    },
+    "AddCompliancePack": {
+      "document": "新建合规包",
+      "input": "AddCompliancePackRequest",
+      "name": "新建合规包",
+      "output": "AddCompliancePackResponse",
+      "status": "online"
+    },
+    "AddConfigRule": {
+      "document": "新建 规则",
+      "input": "AddConfigRuleRequest",
+      "name": "新建规则",
+      "output": "AddConfigRuleResponse",
+      "status": "online"
+    },
+    "CloseAggregateConfigRule": {
+      "document": "账号组关闭规则",
+      "input": "CloseAggregateConfigRuleRequest",
+      "name": "账号组关闭规则",
+      "output": "CloseAggregateConfigRuleResponse",
+      "status": "online"
+    },
+    "CloseConfigRecorder": {
+      "document": "资源监控管理-关闭监控",
+      "input": "CloseConfigRecorderRequest",
+      "name": "关闭监控",
+      "output": "CloseConfigRecorderResponse",
+      "status": "online"
+    },
+    "CloseConfigRule": {
+      "document": "关闭规则",
+      "input": "CloseConfigRuleRequest",
+      "name": "关闭规则",
+      "output": "CloseConfigRuleResponse",
+      "status": "online"
+    },
+    "CreateAggregator": {
+      "document": "新建账号组",
+      "input": "CreateAggregatorRequest",
+      "name": "新建账号组",
+      "output": "CreateAggregatorResponse",
+      "status": "online"
+    },
+    "CreateRemediation": {
+      "document": "新增规则修正设置",
+      "input": "CreateRemediationRequest",
+      "name": "新建修正设置",
+      "output": "CreateRemediationResponse",
+      "status": "online"
+    },
+    "DeleteAggregateCompliancePack": {
+      "document": "账号组删除合规包",
+      "input": "DeleteAggregateCompliancePackRequest",
+      "name": "账号组删除合规包",
+      "output": "DeleteAggregateCompliancePackResponse",
+      "status": "online"
+    },
+    "DeleteAggregateConfigRule": {
+      "document": "账号组删除规则",
+      "input": "DeleteAggregateConfigRuleRequest",
+      "name": "账号组删除规则",
+      "output": "DeleteAggregateConfigRuleResponse",
+      "status": "online"
+    },
+    "DeleteCompliancePack": {
+      "document": "删除合规包",
+      "input": "DeleteCompliancePackRequest",
+      "name": "删除合规包",
+      "output": "DeleteCompliancePackResponse",
+      "status": "online"
+    },
+    "DeleteConfigRule": {
+      "document": "删除规则",
+      "input": "DeleteConfigRuleRequest",
+      "name": "删除规则",
+      "output": "DeleteConfigRuleResponse",
+      "status": "online"
+    },
+    "DeleteRemediations": {
+      "document": "删除规则修正设置",
+      "input": "DeleteRemediationsRequest",
+      "name": "删除修正设置",
+      "output": "DeleteRemediationsResponse",
+      "status": "online"
+    },
+    "DescribeAggregateCompliancePack": {
+      "document": "账号组合规包详情",
+      "input": "DescribeAggregateCompliancePackRequest",
+      "name": "账号组合规包详情",
+      "output": "DescribeAggregateCompliancePackResponse",
+      "status": "online"
+    },
+    "DescribeAggregateConfigDeliver": {
+      "document": "账号组获取投递设置详情",
+      "input": "DescribeAggregateConfigDeliverRequest",
+      "name": "账号组获取投递设置详情",
+      "output": "DescribeAggregateConfigDeliverResponse",
+      "status": "online"
+    },
+    "DescribeAggregateConfigRule": {
+      "document": "账号组获取规则详情",
+      "input": "DescribeAggregateConfigRuleRequest",
+      "name": "账号组获取规则详情",
+      "output": "DescribeAggregateConfigRuleResponse",
+      "status": "online"
+    },
     "DescribeAggregateDiscoveredResource": {
       "document": "账号组资源详情",
       "input": "DescribeAggregateDiscoveredResourceRequest",
@@ -7,11 +126,88 @@
       "output": "DescribeAggregateDiscoveredResourceResponse",
       "status": "online"
     },
+    "DescribeAggregator": {
+      "document": "账号组详情",
+      "input": "DescribeAggregatorRequest",
+      "name": "账号组详情",
+      "output": "DescribeAggregatorResponse",
+      "status": "online"
+    },
+    "DescribeCompliancePack": {
+      "document": "合规包详情",
+      "input": "DescribeCompliancePackRequest",
+      "name": "合规包详情",
+      "output": "DescribeCompliancePackResponse",
+      "status": "online"
+    },
+    "DescribeConfigDeliver": {
+      "document": "获取投递设置详情",
+      "input": "DescribeConfigDeliverRequest",
+      "name": "获取投递设置详情",
+      "output": "DescribeConfigDeliverResponse",
+      "status": "online"
+    },
+    "DescribeConfigRecorder": {
+      "document": "获取监控详情",
+      "input": "DescribeConfigRecorderRequest",
+      "name": "获取监控详情",
+      "output": "DescribeConfigRecorderResponse",
+      "status": "online"
+    },
+    "DescribeConfigRule": {
+      "document": "获取规则详情",
+      "input": "DescribeConfigRuleRequest",
+      "name": "获取规则详情",
+      "output": "DescribeConfigRuleResponse",
+      "status": "online"
+    },
     "DescribeDiscoveredResource": {
       "document": "资源详情",
       "input": "DescribeDiscoveredResourceRequest",
       "name": "资源详情",
       "output": "DescribeDiscoveredResourceResponse",
+      "status": "online"
+    },
+    "DescribeSystemCompliancePack": {
+      "document": "获取系统合规包详情",
+      "input": "DescribeSystemCompliancePackRequest",
+      "name": "获取系统合规包详情",
+      "output": "DescribeSystemCompliancePackResponse",
+      "status": "online"
+    },
+    "DescribeSystemRule": {
+      "document": "预设规则详情",
+      "input": "DescribeSystemRuleRequest",
+      "name": "预设规则详情",
+      "output": "DescribeSystemRuleResponse",
+      "status": "online"
+    },
+    "DetachAggregateConfigRuleToCompliancePack": {
+      "document": "账号组合规包移除规则",
+      "input": "DetachAggregateConfigRuleToCompliancePackRequest",
+      "name": "账号组合规包移除规则",
+      "output": "DetachAggregateConfigRuleToCompliancePackResponse",
+      "status": "online"
+    },
+    "DetachConfigRuleToCompliancePack": {
+      "document": "合规包移除规则",
+      "input": "DetachConfigRuleToCompliancePackRequest",
+      "name": "合规包移除规则",
+      "output": "DetachConfigRuleToCompliancePackResponse",
+      "status": "online"
+    },
+    "ListAggregateCompliancePacks": {
+      "document": "账号组获取合规包列表",
+      "input": "ListAggregateCompliancePacksRequest",
+      "name": "账号组获取合规包列表",
+      "output": "ListAggregateCompliancePacksResponse",
+      "status": "online"
+    },
+    "ListAggregateConfigRuleEvaluationResults": {
+      "document": "账号组获取评估结果--规则维度（某个规则下资源的评估结果列表）",
+      "input": "ListAggregateConfigRuleEvaluationResultsRequest",
+      "name": "账号组获取评估结果（规则维度）",
+      "output": "ListAggregateConfigRuleEvaluationResultsResponse",
       "status": "online"
     },
     "ListAggregateConfigRules": {
@@ -28,6 +224,27 @@
       "output": "ListAggregateDiscoveredResourcesResponse",
       "status": "online"
     },
+    "ListAggregators": {
+      "document": "账号组列表",
+      "input": "ListAggregatorsRequest",
+      "name": "账号组列表",
+      "output": "ListAggregatorsResponse",
+      "status": "online"
+    },
+    "ListCompliancePacks": {
+      "document": "获取合规包列表",
+      "input": "ListCompliancePacksRequest",
+      "name": "获取合规包列表",
+      "output": "ListCompliancePacksResponse",
+      "status": "online"
+    },
+    "ListConfigRuleEvaluationResults": {
+      "document": " 获取评估结果--规则维度（某个规则下资源的评估结果列表）",
+      "input": "ListConfigRuleEvaluationResultsRequest",
+      "name": "获取评估结果（规则维度）",
+      "output": "ListConfigRuleEvaluationResultsResponse",
+      "status": "online"
+    },
     "ListConfigRules": {
       "document": "获取规则列表",
       "input": "ListConfigRulesRequest",
@@ -42,11 +259,158 @@
       "output": "ListDiscoveredResourcesResponse",
       "status": "online"
     },
+    "ListRemediationExecutions": {
+      "document": "修正记录",
+      "input": "ListRemediationExecutionsRequest",
+      "name": "查询修正执行记录",
+      "output": "ListRemediationExecutionsResponse",
+      "status": "online"
+    },
+    "ListRemediations": {
+      "document": "修正设置列表",
+      "input": "ListRemediationsRequest",
+      "name": "修正设置列表",
+      "output": "ListRemediationsResponse",
+      "status": "online"
+    },
+    "ListResourceTypes": {
+      "document": "获取资源类型列表",
+      "input": "ListResourceTypesRequest",
+      "name": "获取资源类型列表",
+      "output": "ListResourceTypesResponse",
+      "status": "online"
+    },
+    "ListSystemCompliancePacks": {
+      "document": "获取系统合规包列表",
+      "input": "ListSystemCompliancePacksRequest",
+      "name": "获取系统合规包列表",
+      "output": "ListSystemCompliancePacksResponse",
+      "status": "online"
+    },
+    "ListSystemRules": {
+      "document": "获取预设规则列表",
+      "input": "ListSystemRulesRequest",
+      "name": "获取预设规则列表",
+      "output": "ListSystemRulesResponse",
+      "status": "online"
+    },
+    "OpenAggregateConfigRule": {
+      "document": "账号组开启规则",
+      "input": "OpenAggregateConfigRuleRequest",
+      "name": "账号组开启规则",
+      "output": "OpenAggregateConfigRuleResponse",
+      "status": "online"
+    },
+    "OpenConfigRecorder": {
+      "document": "资源监控管理-开启监控",
+      "input": "OpenConfigRecorderRequest",
+      "name": "开启监控",
+      "output": "OpenConfigRecorderResponse",
+      "status": "online"
+    },
+    "OpenConfigRule": {
+      "document": "开启规则",
+      "input": "OpenConfigRuleRequest",
+      "name": "开启规则",
+      "output": "OpenConfigRuleResponse",
+      "status": "online"
+    },
     "PutEvaluations": {
       "document": "上报自定义规则评估结果",
       "input": "PutEvaluationsRequest",
       "name": "上报自定义规则评估结果",
       "output": "PutEvaluationsResponse",
+      "status": "online"
+    },
+    "StartAggregateConfigRuleEvaluation": {
+      "document": "账号组触发评估",
+      "input": "StartAggregateConfigRuleEvaluationRequest",
+      "name": "账号组触发评估",
+      "output": "StartAggregateConfigRuleEvaluationResponse",
+      "status": "online"
+    },
+    "StartConfigRuleEvaluation": {
+      "document": "触发评估",
+      "input": "StartConfigRuleEvaluationRequest",
+      "name": "触发评估",
+      "output": "StartConfigRuleEvaluationResponse",
+      "status": "online"
+    },
+    "StartRemediation": {
+      "document": "手动执行规则修复",
+      "input": "StartRemediationRequest",
+      "name": "手动执行修正",
+      "output": "StartRemediationResponse",
+      "status": "online"
+    },
+    "UpdateAggregateCompliancePack": {
+      "document": "账号组编辑合规包",
+      "input": "UpdateAggregateCompliancePackRequest",
+      "name": "账号组编辑合规包",
+      "output": "UpdateAggregateCompliancePackResponse",
+      "status": "online"
+    },
+    "UpdateAggregateCompliancePackStatus": {
+      "document": "账号组开启、关闭合规包",
+      "input": "UpdateAggregateCompliancePackStatusRequest",
+      "name": "账号组修改合规包状态",
+      "output": "UpdateAggregateCompliancePackStatusResponse",
+      "status": "online"
+    },
+    "UpdateAggregateConfigDeliver": {
+      "document": "账号组编辑投递设置",
+      "input": "UpdateAggregateConfigDeliverRequest",
+      "name": "账号组编辑投递设置",
+      "output": "UpdateAggregateConfigDeliverResponse",
+      "status": "online"
+    },
+    "UpdateAggregateConfigRule": {
+      "document": "账号组编辑规则",
+      "input": "UpdateAggregateConfigRuleRequest",
+      "name": "账号组编辑规则",
+      "output": "UpdateAggregateConfigRuleResponse",
+      "status": "online"
+    },
+    "UpdateCompliancePack": {
+      "document": "编辑合规包",
+      "input": "UpdateCompliancePackRequest",
+      "name": "编辑合规包",
+      "output": "UpdateCompliancePackResponse",
+      "status": "online"
+    },
+    "UpdateCompliancePackStatus": {
+      "document": "开启、关闭合规包",
+      "input": "UpdateCompliancePackStatusRequest",
+      "name": "修改合规包状态",
+      "output": "UpdateCompliancePackStatusResponse",
+      "status": "online"
+    },
+    "UpdateConfigDeliver": {
+      "document": "编辑投递设置",
+      "input": "UpdateConfigDeliverRequest",
+      "name": "编辑投递设置",
+      "output": "UpdateConfigDeliverResponse",
+      "status": "online"
+    },
+    "UpdateConfigRecorder": {
+      "document": "编辑监控范围",
+      "input": "UpdateConfigRecorderRequest",
+      "name": "编辑监控范围",
+      "output": "UpdateConfigRecorderResponse",
+      "status": "online"
+    },
+    "UpdateConfigRule": {
+      "document": "编辑规则",
+      "input": "UpdateConfigRuleRequest",
+      "name": "编辑规则",
+      "output": "UpdateConfigRuleResponse",
+      "status": "online"
+    },
+    "UpdateRemediation": {
+      "document": "新增告警监控规则",
+      "input": "UpdateRemediationRequest",
+      "name": "编辑修正设置",
+      "output": "UpdateRemediationResponse",
       "status": "online"
     }
   },
@@ -57,6 +421,542 @@
     "serviceShortName": "config"
   },
   "objects": {
+    "AddAggregateCompliancePackRequest": {
+      "document": "AddAggregateCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合规包规则</p>",
+          "example": "无",
+          "member": "CompliancePackRule",
+          "name": "ConfigRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合规包名称</p>",
+          "example": "合规包1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组ID</p>",
+          "example": "ca-sdfs7734h24",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "安全合规",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAggregateCompliancePackResponse": {
+      "document": "AddAggregateCompliancePack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合规包Id</p>",
+          "example": "cp-33mA27YUlOJWG4sJ53Sx",
+          "member": "string",
+          "name": "CompliancePackId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAggregateConfigRuleRequest": {
+      "document": "AddAggregateConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则模板标识，预设规则模板为Identifier, 自定义规则为云函数arn（region:functionName）",
+          "example": "1",
+          "member": "string",
+          "name": "Identifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则模板类型，SYSTEM, CUSTOMIZE",
+          "example": "SYSTEM",
+          "member": "string",
+          "name": "IdentifierType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则支持的资源",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "触发类型，最多支持两种",
+          "example": "1",
+          "member": "TriggerType",
+          "name": "TriggerType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账号组Id",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "入参",
+          "example": "无",
+          "member": "InputParameter",
+          "name": "InputParameter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联地域",
+          "example": "无",
+          "member": "string",
+          "name": "RegionScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关联标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagsScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排除的资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeResourceIdsScope",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAggregateConfigRuleResponse": {
+      "document": "AddAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCompliancePackRequest": {
+      "document": "AddCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合规包规则</p>",
+          "example": "无",
+          "member": "CompliancePackRule",
+          "name": "ConfigRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合规包名称</p>",
+          "example": "合规包1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "安全合规",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCompliancePackResponse": {
+      "document": "AddCompliancePack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合规包Id</p>",
+          "example": "cp-33mA27YUlOJWG4sJ53Sx",
+          "member": "string",
+          "name": "CompliancePackId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddConfigRuleRequest": {
+      "document": "AddConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则模板标识，预设规则模板为Identifier, 自定义规则为云函数arn（region:functionName）",
+          "example": "1",
+          "member": "string",
+          "name": "Identifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则模板类型，SYSTEM, CUSTOMIZE",
+          "example": "SYSTEM",
+          "member": "string",
+          "name": "IdentifierType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则支持的资源",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "触发类型，最多支持两种",
+          "example": "1",
+          "member": "TriggerType",
+          "name": "TriggerType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "入参",
+          "example": "无",
+          "member": "InputParameter",
+          "name": "InputParameter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述。长度范围0~1024字符",
+          "example": "RAM用户开启MFA，视为“合规”。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则评估地域范围，规则仅对指定地域中的资源生效。\n支持的地域范围config:ListResourceRegions返回的地域",
+          "example": "无",
+          "member": "string",
+          "name": "RegionsScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则评估标签范围，规则仅对绑定指定标签的资源生效。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagsScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则对指定资源ID无效，即不对该资源执行评估。",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeResourceIdsScope",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddConfigRuleResponse": {
+      "document": "AddConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AggregateEvaluationResult": {
+      "document": "评估结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "vpc-1222",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "QCS::VPC::Subnet",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源地域",
+          "example": "ap-gaungzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "私有网络1",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "cr-13vkg****ixgabkepxe",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "CAM访问管理子用户必须关联用户组",
+          "member": "string",
+          "name": "ConfigRuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cp-xzfz0*****07feuhwi8auv",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Annotation",
+          "name": "Annotation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COMPLIANT",
+          "member": "string",
+          "name": "ComplianceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则发起类型",
+          "example": "Manul",
+          "member": "string",
+          "name": "InvokingEventMessageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估发起时间",
+          "example": "2022-10-10 12:56:37",
+          "member": "string",
+          "name": "ConfigRuleInvokedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估实际时间",
+          "example": "2022-10-10 12:56:37",
+          "member": "string",
+          "name": "ResultRecordedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源所属用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "324****234234",
+          "member": "uint64",
+          "name": "ResourceOwnerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源所属用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceOwnerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AggregateResourceInfo": {
       "document": "资源列列表信息",
       "members": [
@@ -183,6 +1083,130 @@
       ],
       "usage": "out"
     },
+    "Aggregator": {
+      "document": "用户组列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号组名称",
+          "example": "账号组1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组描述",
+          "example": "账号组描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者用户ID",
+          "example": "6958****3922",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-10-09 09:04:37",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组成员数量",
+          "example": "4",
+          "member": "uint64",
+          "name": "AccountCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RD:全局账号组",
+          "example": "账号组类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-acco****",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "AggregatorStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "计费组",
+          "member": "string",
+          "name": "MemberName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AggregatorAccount": {
+      "document": "成员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员ID",
+          "example": "345****4234",
+          "member": "uint64",
+          "name": "MemberUin",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张*",
+          "member": "string",
+          "name": "MemberName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Annotation": {
       "document": "合规详情",
       "members": [
@@ -232,6 +1256,575 @@
         }
       ],
       "usage": "both"
+    },
+    "CloseAggregateConfigRuleRequest": {
+      "document": "CloseAggregateConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-3xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组Id",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAggregateConfigRuleResponse": {
+      "document": "CloseAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseConfigRecorderRequest": {
+      "document": "CloseConfigRecorder请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CloseConfigRecorderResponse": {
+      "document": "CloseConfigRecorder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseConfigRuleRequest": {
+      "document": "CloseConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-3xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseConfigRuleResponse": {
+      "document": "CloseConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ComplianceConfigRule": {
+      "document": "合规包规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cr-a234",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估结果\n合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COMPLIANT",
+          "member": "string",
+          "name": "ComplianceResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lab",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputParameter",
+          "name": "InputParameter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceConditionForManage",
+          "name": "SourceCondition",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Identifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建方式 user、compliancePack、system\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateByType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputParameterForManage",
+          "name": "ManageInputParameter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CompliancePackRule": {
+      "document": "合规包规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "CAM访问管理子用户必须关联用户组",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入参",
+          "example": "无",
+          "member": "InputParameter",
+          "name": "InputParameter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则身份标识",
+          "example": "cam-user-group-bound",
+          "member": "string",
+          "name": "Identifier",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "帐号访问管理中用户至少关联一个用户组，则符合规则。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预设规则身份标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cam-user-group-bound",
+          "member": "string",
+          "name": "ManagedRuleIdentifier",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-13vkg9c31dixgabkepxe",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cp-xzfz0vu007feuhwi8auv",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CompliancePackRuleForManage": {
+      "document": "管理端系统合规包规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则唯一身份标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cbs-disk-encrypted",
+          "member": "string",
+          "name": "Identifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CAM访问管理不存在闲置的权限策略",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CBS自动快照策略设置快照保留天数大于设置的天数，视为“合规”。默认值：7天。",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级</p><p>1：高风险 2：中风险  3：低风险</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>合规包规则</p>",
+          "example": "无",
+          "member": "CompliancePackRules",
+          "name": "CompliancePackRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则编号信息</p>",
+          "example": "无",
+          "member": "Control",
+          "name": "Control",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "[\"QCS::SCF::Namespace\"]",
+          "member": "string",
+          "name": "ResourceTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CompliancePackRules": {
+      "document": "合规包规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则标识</p>",
+          "example": "cbs-snapshot-retention-days",
+          "member": "string",
+          "name": "Identifier",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则编号信息</p>",
+          "example": "无",
+          "member": "Control",
+          "name": "Control",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "[\"QCS::CBS::Disk\"]",
+          "member": "string",
+          "name": "ResourceTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigCompliancePack": {
+      "document": "用户合规包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-fc507gbwtks141giu8p2",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "帐号访问管理中用户至少关联一个用户组，则符合规则。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "安全合规包",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NON_COMPLIANT",
+          "member": "string",
+          "name": "ComplianceResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-11-16 14:11:48",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不合规规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NoCompliantNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规包规则数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConfigResource": {
+      "document": "资源类型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CAM",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "访问管理",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QCS::CAM::Group",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "访问管理-用户组",
+          "member": "string",
+          "name": "ResourceTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ConfigRule": {
       "document": "规则详情",
@@ -509,6 +2102,582 @@
       ],
       "usage": "out"
     },
+    "Control": {
+      "document": "规则编号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则编号</p>",
+          "example": "3546",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>编号描述</p>",
+          "example": "567567",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAggregatorRequest": {
+      "document": "CreateAggregator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账号组名称</p>",
+          "example": "账号组1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组描述</p>",
+          "example": "账号组描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组类型 </p><p>枚举值：</p><ul><li>RD： 全局账号组</li><li>CUSTOM： 自定义账号组</li></ul>",
+          "example": "RD",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组成员信息列表，最多100个</p>",
+          "example": "无",
+          "member": "AggregatorAccount",
+          "name": "AggregatorAccounts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAggregatorResponse": {
+      "document": "CreateAggregator返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账号组Id</p>",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRemediationRequest": {
+      "document": "CreateRemediation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则 ID</p>",
+          "example": "cr-oPTxveTx0NbmcNmDNoQG",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修正类型取值：   SCF：云函数（自定义修正）。</p>",
+          "example": "SCF",
+          "member": "string",
+          "name": "RemediationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修正模板 ID</p>",
+          "example": "qcs::scf:ap-guangzhou:100000005287:namespace/test/functions/aaa",
+          "member": "string",
+          "name": "RemediationTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修正执行方式。<br>取值：   MANUAL_EXECUTION：手动执行</p>",
+          "example": "MANUAL_EXECUTION",
+          "member": "string",
+          "name": "InvokeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行修正的模板来源<br>CUSTOM：自定义模板。</p>",
+          "example": "CUSTOM",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRemediationResponse": {
+      "document": "CreateRemediation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>修正设置Id</p>",
+          "example": "crr-lKj43O4nbSD78XYlvGS9",
+          "member": "string",
+          "name": "RemediationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAggregateCompliancePackRequest": {
+      "document": "DeleteAggregateCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-p2fnfklc7sdwho2t4wcf",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h2",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAggregateCompliancePackResponse": {
+      "document": "DeleteAggregateCompliancePack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAggregateConfigRuleRequest": {
+      "document": "DeleteAggregateConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-3xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAggregateConfigRuleResponse": {
+      "document": "DeleteAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCompliancePackRequest": {
+      "document": "DeleteCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-p2fnfklc7sdwho2t4wcf",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCompliancePackResponse": {
+      "document": "DeleteCompliancePack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigRuleRequest": {
+      "document": "DeleteConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-3xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigRuleResponse": {
+      "document": "DeleteConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRemediationsRequest": {
+      "document": "DeleteRemediations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修正设置ID",
+          "example": "[\"crr-GBPkhQhe0UHodWPnZNRD\"]",
+          "member": "string",
+          "name": "RemediationIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRemediationsResponse": {
+      "document": "DeleteRemediations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateCompliancePackRequest": {
+      "document": "DescribeAggregateCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-1g118yvw28p142zr17kz",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateCompliancePackResponse": {
+      "document": "DescribeAggregateCompliancePack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "合规包1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceConfigRule",
+          "name": "ConfigRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规包id",
+          "example": "cp-4bndf012mx7nrk9zs0lr",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateConfigDeliverRequest": {
+      "document": "DescribeAggregateConfigDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24h",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateConfigDeliverResponse": {
+      "document": "DescribeAggregateConfigDeliver返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "投递设置1",
+          "member": "string",
+          "name": "DeliverName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源六段式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qcs::cos:ap-hangzhou:45354345345:prefix/24234234/345345345",
+          "member": "string",
+          "name": "TargetArn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递状态 DeliverStatus：0 关闭  1 开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-25 03:05:02",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "config",
+          "member": "string",
+          "name": "DeliverPrefix",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COS",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持跨账号投递的成员账号uin，只能是委派管理员。默认为0，即投递到管理员账号下\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeliverUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1：配置变更 2： 资源列表 3：全部",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeliverContentType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateConfigRuleRequest": {
+      "document": "DescribeAggregateConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-2d3brhnvyazqb9j1el6o",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateConfigRuleResponse": {
+      "document": "DescribeAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则详情",
+          "example": "无",
+          "member": "ConfigRule",
+          "name": "ConfigRule",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAggregateDiscoveredResourceRequest": {
       "document": "DescribeAggregateDiscoveredResource请求参数结构体",
       "members": [
@@ -662,6 +2831,390 @@
       ],
       "type": "object"
     },
+    "DescribeAggregatorRequest": {
+      "document": "DescribeAggregator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账号组ID</p>",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组创建者ID</p>",
+          "example": "234234124234",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregatorResponse": {
+      "document": "DescribeAggregator返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账号组名称</p>",
+          "example": "账号组1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组描述</p>",
+          "example": "账号组描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组类型</p>",
+          "example": "RD",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>成员信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AggregatorAccount",
+          "name": "AggregatorAccounts",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建状态</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AggregatorStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompliancePackRequest": {
+      "document": "DescribeCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-1g118yvw28p142zr17kz",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompliancePackResponse": {
+      "document": "DescribeCompliancePack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "合规包1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceConfigRule",
+          "name": "ConfigRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规包id",
+          "example": "cp-4bndf012mx7nrk9zs0lr",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigDeliverRequest": {
+      "document": "DescribeConfigDeliver请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeConfigDeliverResponse": {
+      "document": "DescribeConfigDeliver返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "投递设置1",
+          "member": "string",
+          "name": "DeliverName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源六段式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qcs::cos:ap-hangzhou:45354345345:prefix/24234234/345345345",
+          "member": "string",
+          "name": "TargetArn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递状态 DeliverStatus：0 关闭  1 开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-25 03:05:02",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "config",
+          "member": "string",
+          "name": "DeliverPrefix",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COS",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1：配置变更   2： 资源列表 3：全部",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeliverContentType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigRecorderRequest": {
+      "document": "DescribeConfigRecorder请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeConfigRecorderResponse": {
+      "document": "DescribeConfigRecorder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户监控资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserConfigResource",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 关闭1 打开",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当日快照次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TriggerCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当日打开监控次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "OpenCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当日修改监控范围次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpdateCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-12 12:12:13",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigRuleRequest": {
+      "document": "DescribeConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-2d3brhnvyazqb9j1el6o",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigRuleResponse": {
+      "document": "DescribeConfigRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则详情",
+          "example": "无",
+          "member": "ConfigRule",
+          "name": "ConfigRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDiscoveredResourceRequest": {
       "document": "DescribeDiscoveredResource请求参数结构体",
       "members": [
@@ -797,6 +3350,201 @@
       ],
       "type": "object"
     },
+    "DescribeSystemCompliancePackRequest": {
+      "document": "DescribeSystemCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-wn7attowki",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSystemCompliancePackResponse": {
+      "document": "DescribeSystemCompliancePack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-wn7attowki",
+          "member": "string",
+          "name": "CompliancePackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "网络及数据安全最佳实践",
+          "member": "string",
+          "name": "CompliancePackName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包描述",
+          "example": "从网络架构和数据安全等方面进行全面检测，以确保系统和数据进行了合理的设置和保护，有效减少网络和数据泄漏的风险。参考CIS Benchmarks文件要求。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包规则列表",
+          "example": "无",
+          "member": "CompliancePackRuleForManage",
+          "name": "ConfigRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSystemRuleRequest": {
+      "document": "DescribeSystemRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则唯一标识",
+          "example": "cam-user-group-bound",
+          "member": "string",
+          "name": "Identifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSystemRuleResponse": {
+      "document": "DescribeSystemRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "SystemConfigRule",
+          "name": "SystemConfigRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachAggregateConfigRuleToCompliancePackRequest": {
+      "document": "DetachAggregateConfigRuleToCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-3kr5im1ssbg6tdo5jbi9",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachAggregateConfigRuleToCompliancePackResponse": {
+      "document": "DetachAggregateConfigRuleToCompliancePack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachConfigRuleToCompliancePackRequest": {
+      "document": "DetachConfigRuleToCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-3kr5im1ssbg6tdo5jbi9",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachConfigRuleToCompliancePackResponse": {
+      "document": "DetachConfigRuleToCompliancePack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Evaluation": {
       "document": "自定义规则评估结果",
       "members": [
@@ -852,6 +3600,142 @@
         }
       ],
       "usage": "in"
+    },
+    "EvaluationResult": {
+      "document": "评估结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-1222",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QCS::VPC::Subnet",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-gaungzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "私有网络1",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cr-13vkg9c31dixgabkepxe",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CAM访问管理子用户必须关联用户组",
+          "member": "string",
+          "name": "ConfigRuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规包id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cp-xzfz0vu007feuhwi8auv",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Annotation",
+          "name": "Annotation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COMPLIANT",
+          "member": "string",
+          "name": "ComplianceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则发起类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Manul",
+          "member": "string",
+          "name": "InvokingEventMessageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估发起时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-10 12:56:37",
+          "member": "string",
+          "name": "ConfigRuleInvokedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估实际时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-10 12:56:37",
+          "member": "string",
+          "name": "ResultRecordedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "资源列表筛选",
@@ -978,6 +3862,224 @@
         }
       ],
       "usage": "both"
+    },
+    "ListAggregateCompliancePacksRequest": {
+      "document": "ListAggregateCompliancePacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合规包状态 ACTIVE、NO_ACTIVE",
+          "example": "ACTICE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评估状态合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'",
+          "example": "COMPLIANT",
+          "member": "string",
+          "name": "ComplianceResult",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型, 倒序：desc，顺序：asc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAggregateCompliancePacksResponse": {
+      "document": "ListAggregateCompliancePacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "ConfigCompliancePack",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAggregateConfigRuleEvaluationResultsRequest": {
+      "document": "ListAggregateConfigRuleEvaluationResults请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID</p>",
+          "example": "101",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号组ID</p>",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "[\"QCS::CVM::Instance\"]",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>评估结果 COMPLIANT：合规   NON_COMPLIANT：不合规</p>",
+          "example": "[\"COMPLIANT\"]",
+          "member": "string",
+          "name": "ComplianceType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源所属用户ID</p>",
+          "example": "23424234",
+          "member": "uint64",
+          "name": "ResourceOwnerId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选的资源拥有者uin集合</p>",
+          "example": "[100001,1000002]",
+          "member": "uint64",
+          "name": "ResourceOwnerIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAggregateConfigRuleEvaluationResultsResponse": {
+      "document": "ListAggregateConfigRuleEvaluationResults返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>详情</p>",
+          "example": "无",
+          "member": "AggregateEvaluationResult",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListAggregateConfigRulesRequest": {
       "document": "ListAggregateConfigRules请求参数结构体",
@@ -1190,6 +4292,244 @@
       ],
       "type": "object"
     },
+    "ListAggregatorsRequest": {
+      "document": "ListAggregators请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页显示数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAggregatorsResponse": {
+      "document": "ListAggregators返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号组列表",
+          "example": "无",
+          "member": "Aggregator",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCompliancePacksRequest": {
+      "document": "ListCompliancePacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合规包状态 ACTIVE、NO_ACTIVE",
+          "example": "ACTICE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评估状态合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'",
+          "example": "COMPLIANT",
+          "member": "string",
+          "name": "ComplianceResult",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型, 倒序：desc，顺序：asc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCompliancePacksResponse": {
+      "document": "ListCompliancePacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "ConfigCompliancePack",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConfigRuleEvaluationResultsRequest": {
+      "document": "ListConfigRuleEvaluationResults请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "111",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "QCS::CVM::Instance",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "评估结果 COMPLIANT：合规   NON_COMPLIANT：不合规",
+          "example": "[\"COMPLIANT\"]",
+          "member": "string",
+          "name": "ComplianceType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConfigRuleEvaluationResultsResponse": {
+      "document": "ListConfigRuleEvaluationResults返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "EvaluationResult",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListConfigRulesRequest": {
       "document": "ListConfigRules请求参数结构体",
       "members": [
@@ -1374,6 +4714,373 @@
       ],
       "type": "object"
     },
+    "ListRemediationExecutionsRequest": {
+      "document": "ListRemediationExecutions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID",
+          "example": "cr-RhUgJXUIOisba3r8uEqf",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页条数。默认20， 取值1~200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修正状态 1：运行中 2：成功 3：失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutionStatus",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRemediationExecutionsResponse": {
+      "document": "ListRemediationExecutions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复记录",
+          "example": "无",
+          "member": "RemediationExecutions",
+          "name": "RemediationExecutions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRemediationsRequest": {
+      "document": "ListRemediations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页条数。默认20， 取值1~200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "[\"cr-hZWheBkQnPHGoRDUPd0N\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRemediationsResponse": {
+      "document": "ListRemediations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修正设置",
+          "example": "无",
+          "member": "Remediation",
+          "name": "Remediations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListResourceTypesRequest": {
+      "document": "ListResourceTypes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListResourceTypesResponse": {
+      "document": "ListResourceTypes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "ConfigResource",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSystemCompliancePacksRequest": {
+      "document": "ListSystemCompliancePacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSystemCompliancePacksResponse": {
+      "document": "ListSystemCompliancePacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SystemCompliancePack",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSystemRulesRequest": {
+      "document": "ListSystemRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前页",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字。支持标识/名称/标签/描述搜索",
+          "example": "ap-456-1",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSystemRulesResponse": {
+      "document": "ListSystemRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "SystemConfigRule",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAggregateConfigRuleRequest": {
+      "document": "OpenAggregateConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-3xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAggregateConfigRuleResponse": {
+      "document": "OpenAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenConfigRecorderRequest": {
+      "document": "OpenConfigRecorder请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "OpenConfigRecorderResponse": {
+      "document": "OpenConfigRecorder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenConfigRuleRequest": {
+      "document": "OpenConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-3xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenConfigRuleResponse": {
+      "document": "OpenConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PutEvaluationsRequest": {
       "document": "PutEvaluations请求参数结构体",
       "members": [
@@ -1409,6 +5116,145 @@
         }
       ],
       "type": "object"
+    },
+    "Remediation": {
+      "document": "修复设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修正模板 ID。",
+          "example": "",
+          "member": "string",
+          "name": "RemediationTemplateId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修正设置 ID。",
+          "example": "",
+          "member": "string",
+          "name": "RemediationId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行修正的模板来源",
+          "example": "",
+          "member": "string",
+          "name": "RemediationSourceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修正类型。取值：\nSCF：函数计算（自定义修正）。",
+          "example": "",
+          "member": "string",
+          "name": "RemediationType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号ID",
+          "example": "",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修正执行方式。取值：\nMANUAL_EXECUTION：手动执行。",
+          "example": "",
+          "member": "string",
+          "name": "InvokeType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则 ID。",
+          "example": "",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RemediationExecutions": {
+      "document": "修正记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修正状态 1：运行中 2：成功 3：失败",
+          "example": "",
+          "member": "uint64",
+          "name": "ExecutionStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "",
+          "member": "string",
+          "name": "ExecutionResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复时间",
+          "example": "",
+          "member": "string",
+          "name": "ExecutionCreateDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "",
+          "member": "string",
+          "name": "ExecutionStatusMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "",
+          "member": "string",
+          "name": "ExecutionResourceIds",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResourceListInfo": {
       "document": "资源列列表信息",
@@ -1577,6 +5423,325 @@
       ],
       "usage": "both"
     },
+    "StartAggregateConfigRuleEvaluationRequest": {
+      "document": "StartAggregateConfigRuleEvaluation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "手动触发：MANUAL  周期触发：SCHEDULE",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "TriggerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-3kr5im1ssbg6tdo5jbi9",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartAggregateConfigRuleEvaluationResponse": {
+      "document": "StartAggregateConfigRuleEvaluation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartConfigRuleEvaluationRequest": {
+      "document": "StartConfigRuleEvaluation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-3kr5im1ssbg6tdo5jbi9",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartConfigRuleEvaluationResponse": {
+      "document": "StartConfigRuleEvaluation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartRemediationRequest": {
+      "document": "StartRemediation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID",
+          "example": "cr-k7t0U3UrwBLOZe97lL20",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartRemediationResponse": {
+      "document": "StartRemediation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SystemCompliancePack": {
+      "document": "系统合规包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-fc507gbwtks141giu8p2",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "网络实践",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "安全合规包描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规包风险等级1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合规包规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompliancePackRuleForManage",
+          "name": "ConfigRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SystemConfigRule": {
+      "document": "管理端规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cam-user-group-bound",
+          "member": "string",
+          "name": "Identifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CAM访问管理子用户必须关联用户组",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputParameterForManage",
+          "name": "InputParameter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceConditionForManage",
+          "name": "SourceCondition",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[   \"QCS::CAM::User\" ]",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[   \"用户\",   \"用户组\" ]",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，1，2，3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应的函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ServiceFunction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[   \"ScheduledNotification\" ]",
+          "member": "string",
+          "name": "TriggerType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "帐号访问管理中用户至少关联一个用户组，则符合规则。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ReferenceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "SYSTEM",
+          "member": "string",
+          "name": "IdentifierType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "标签",
       "members": [
@@ -1632,6 +5797,737 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateAggregateCompliancePackRequest": {
+      "document": "UpdateAggregateCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "合规包1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-fc507gbwtks141giu8p2",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合规包规则",
+          "example": "无",
+          "member": "CompliancePackRule",
+          "name": "ConfigRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAggregateCompliancePackResponse": {
+      "document": "UpdateAggregateCompliancePack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAggregateCompliancePackStatusRequest": {
+      "document": "UpdateAggregateCompliancePackStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-3kr5im1ssbg6tdo5jbi9",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ACTIVE：启用\nUN_ACTIVE ：停用",
+          "example": "ACTIVE 、UN_ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24h",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAggregateCompliancePackStatusResponse": {
+      "document": "UpdateAggregateCompliancePackStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAggregateConfigDeliverRequest": {
+      "document": "UpdateAggregateConfigDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 关闭  1 开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递服务名称",
+          "example": "投递服务1",
+          "member": "string",
+          "name": "DeliverName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源六段式  \nCOS：qcs::cos:$region:$account:prefix/$appid/$BucketName\nCLS:\nqcs::cls:$region:$account:cls/topicId",
+          "example": "qcs::cos:ap-hangzhou:45354345345:prefix/24234234/345345345",
+          "member": "string",
+          "name": "TargetArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源前缀",
+          "example": "clonfig_fix",
+          "member": "string",
+          "name": "DeliverPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递类型  COS CLS",
+          "example": "COS、CLS",
+          "member": "string",
+          "name": "DeliverType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持跨账号投递的成员账号uin，只能是委派管理员。默认为0，即投递到管理员账号下",
+          "example": "100020328651",
+          "member": "int64",
+          "name": "DeliverUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1：配置变更 2： 资源列表 3：全选",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeliverContentType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAggregateConfigDeliverResponse": {
+      "document": "UpdateAggregateConfigDeliver返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAggregateConfigRuleRequest": {
+      "document": "UpdateAggregateConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "触发类型，最多支持两种",
+          "example": "无",
+          "member": "TriggerType",
+          "name": "TriggerType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-2xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "入参",
+          "example": "无",
+          "member": "InputParameter",
+          "name": "InputParameter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联地域",
+          "example": "无",
+          "member": "string",
+          "name": "RegionScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关联标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagsScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排除的资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeResourceIdsScope",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAggregateConfigRuleResponse": {
+      "document": "UpdateAggregateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCompliancePackRequest": {
+      "document": "UpdateCompliancePack请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包名称",
+          "example": "合规包1",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-fc507gbwtks141giu8p2",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合规包规则",
+          "example": "无",
+          "member": "CompliancePackRule",
+          "name": "ConfigRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCompliancePackResponse": {
+      "document": "UpdateCompliancePack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCompliancePackStatusRequest": {
+      "document": "UpdateCompliancePackStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规包ID",
+          "example": "cp-3kr5im1ssbg6tdo5jbi9",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ACTIVE：启用\nUN_ACTIVE ：停用",
+          "example": "ACTIVE 、UN_ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCompliancePackStatusResponse": {
+      "document": "UpdateCompliancePackStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigDeliverRequest": {
+      "document": "UpdateConfigDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 关闭  1 开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递服务名称",
+          "example": "投递服务1",
+          "member": "string",
+          "name": "DeliverName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源六段式  \nCOS：qcs::cos:$region:$account:prefix/$appid/$BucketName\nCLS:\nqcs::cls:$region:$account:cls/topicId",
+          "example": "qcs::cos:ap-hangzhou:45354345345:prefix/24234234/345345345",
+          "member": "string",
+          "name": "TargetArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "clonfig_fix",
+          "example": "资源前缀",
+          "member": "string",
+          "name": "DeliverPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递类型",
+          "example": "COS、CLS",
+          "member": "string",
+          "name": "DeliverType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1：配置变更 2： 资源列表 3：全选",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeliverContentType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigDeliverResponse": {
+      "document": "UpdateConfigDeliver返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigRecorderRequest": {
+      "document": "UpdateConfigRecorder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型列表",
+          "example": "[\"QCS::CAM::Group\",   \"QCS::CAM::Role\",   \"QCS::CAM::Policy]",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigRecorderResponse": {
+      "document": "UpdateConfigRecorder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigRuleRequest": {
+      "document": "UpdateConfigRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "触发类型，最多支持两种",
+          "example": "无",
+          "member": "TriggerType",
+          "name": "TriggerType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "cr-2xhsd76j603v0a8ma0i73",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "入参",
+          "example": "无",
+          "member": "InputParameter",
+          "name": "InputParameter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则评估地域范围，规则仅对指定地域中的资源生效。\n支持的地域范围config:ListResourceRegions返回的地域",
+          "example": "无",
+          "member": "string",
+          "name": "RegionsScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则评估标签范围，规则仅对绑定指定标签的资源生效。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagsScope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则对指定资源ID无效，即不对该资源执行评估。",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeResourceIdsScope",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigRuleResponse": {
+      "document": "UpdateConfigRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRemediationRequest": {
+      "document": "UpdateRemediation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修正设置 ID",
+          "example": "crr-Z80LHNfW09bakPGFd9cj",
+          "member": "string",
+          "name": "RemediationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修正类型。取值： SCF：函数计算（自定义修正）。",
+          "example": "SCF",
+          "member": "string",
+          "name": "RemediationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修正模板 ID",
+          "example": "qcs::scf:ap-guangzhou:100000005287:namespace/test/functions/bbb",
+          "member": "string",
+          "name": "RemediationTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修正执行方式。取值：  NON_EXECUTION：不执行。  AUTO_EXECUTION：自动执行。  MANUAL_EXECUTION：手动执行。  NOT_CONFIG：未设置。",
+          "example": "MANUAL_EXECUTION",
+          "member": "string",
+          "name": "InvokeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行修正来源",
+          "example": "CUSTOM",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRemediationResponse": {
+      "document": "UpdateRemediation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserConfigResource": {
+      "document": "资源类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CAM",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QCS::CAM::Group",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云服务器-实例",
+          "member": "string",
+          "name": "ResourceTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-10 12:56:37",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

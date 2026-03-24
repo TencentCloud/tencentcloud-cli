@@ -16,6 +16,14 @@
         "title": "快照回滚前检查"
       }
     ],
+    "CreateAndPayDeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndPayDeal\n<公共请求参数>\n\n{\n    \"DealType\": 2,\n    \"GoodsType\": 1,\n    \"GoodsChildType\": \"DP_EXPERT\",\n    \"GoodsNum\": 1,\n    \"AutoRenew\": 1,\n    \"Domain\": \"qqqqq.asia\",\n    \"TimeSpan\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealId\": \"20260112880021950228161\",\n        \"DealList\": [\n            {\n                \"DealId\": \"\",\n                \"DealName\": \"20260112880021950228171\",\n                \"ResourceId\": \"\"\n            }\n        ],\n        \"RequestId\": \"2e90d5a6-9a4a-4b37-bbc1-3796a11c712d\"\n    }\n}",
+        "title": "续费专业版套餐"
+      }
+    ],
     "CreateDeal": [
       {
         "document": " DNSPod商品下单示例",

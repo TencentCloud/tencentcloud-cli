@@ -691,6 +691,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "SkillState",
+          "name": "SkillState",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19844,6 +19854,42 @@
           "name": "IsSupport",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillState": {
+      "document": "SKILL安装状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SKILL安装状态\n枚举值：\n0：未安装\n1：安装中\n2：已安装\n3：安装失败\n4：卸载中\n5：卸载失败",
+          "example": "2",
+          "member": "int64",
+          "name": "SkillInstallStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SKILL安装/卸载操作时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-03-19T10:30:00+08:00",
+          "member": "string",
+          "name": "SkillInstallTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SKILL安装/卸载结果描述信息",
+          "example": "success",
+          "member": "string",
+          "name": "SkillInstallResult",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -1175,7 +1175,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例 ID。",
+          "document": "<p>负载均衡实例 ID。</p>",
           "example": "lb-dx98lwo0",
           "member": "string",
           "name": "LoadBalancerId",
@@ -1184,7 +1184,7 @@
         },
         {
           "disabled": false,
-          "document": "要批量修改权重的列表。",
+          "document": "<p>要批量修改权重的列表。ModifyList数组最多100个元素，ModifyList[i].Targets最多50个，全部Targets累加不超过500。</p>",
           "example": "无",
           "member": "RsWeightRule",
           "name": "ModifyList",
@@ -6137,7 +6137,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的负载均衡实例ID列表。",
+          "document": "<p>要查询的负载均衡实例ID列表。数组大小最大支持30。</p>",
           "example": "[\"lb-qc2iq5yc\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -6146,7 +6146,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的监听器ID列表。",
+          "document": "<p>要查询的监听器ID列表。</p>",
           "example": "[\"lbl-cpu5e38u\"]",
           "member": "string",
           "name": "ListenerIds",
@@ -6155,7 +6155,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的转发规则ID列表。",
+          "document": "<p>要查询的转发规则ID列表。</p>",
           "example": "[\"loc-q41gixxq\"]",
           "member": "string",
           "name": "LocationIds",
@@ -6170,7 +6170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例列表。",
+          "document": "<p>负载均衡实例列表。</p>",
           "example": "无",
           "member": "LoadBalancerHealth",
           "name": "LoadBalancers",

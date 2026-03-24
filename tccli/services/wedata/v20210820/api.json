@@ -47754,6 +47754,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产调度任务状态，参考调度任务侧状态信息，“DELETED”状态为质量侧单独加的，查不到任务时认为任务“DELETED”\n'Y': '调度中',\n'F': '已下线',\n'O': '已暂停',\n'INVALID': '已失效',\n'DELETED': '已删除' \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DELETED",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -53573,11 +53584,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询结果总数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -53587,8 +53598,18 @@
           "example": "无",
           "member": "RuleGroup",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已开启监控任务数量（在查询结果总量中）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MonitorEnabledCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

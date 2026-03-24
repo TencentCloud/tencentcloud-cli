@@ -853,8 +853,8 @@
     "ModifyNamespace": [
       {
         "document": "用于更新命名空间信息",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyNamespace\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=mytest\r\n&IsPublic=true\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNamespace\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-lfhgf4d3\",\n    \"NamespaceName\": \"nginx\",\n    \"IsPublic\": false,\n    \"TagSpecification\": {\n        \"ResourceType\": \"namespace\",\n        \"Tags\": [\n            {\n                \"Key\": \"tcr\",\n                \"Value\": \"development\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47871759-7155-41f6-bba3-0bc195a43791\"\n    }\n}",
         "title": "更新命名空间信息"
       }
     ],

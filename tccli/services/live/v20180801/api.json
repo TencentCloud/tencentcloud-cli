@@ -294,6 +294,13 @@
       "output": "CreateScreenshotTaskResponse",
       "status": "online"
     },
+    "CreateVideoRedrawTask": {
+      "document": "创建AI转绘任务",
+      "input": "CreateVideoRedrawTaskRequest",
+      "name": "创建AIGC视频转绘任务",
+      "output": "CreateVideoRedrawTaskResponse",
+      "status": "online"
+    },
     "DeleteAuditKeywords": {
       "document": "删除关键词信息。",
       "input": "DeleteAuditKeywordsRequest",
@@ -8028,6 +8035,52 @@
       ],
       "type": "object"
     },
+    "CreateVideoRedrawTaskRequest": {
+      "document": "CreateVideoRedrawTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入待转绘视频url信息</p>",
+          "example": "无",
+          "member": "VideoRedrawInput",
+          "name": "Input",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户自定义cos信息</p>",
+          "example": "无",
+          "member": "VideoRedrawCosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoRedrawTaskResponse": {
+      "document": "CreateVideoRedrawTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "d6f9bb2a-d1cd-****-447a-a4842e4279c6",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DayStreamPlayInfo": {
       "document": "流播放信息",
       "members": [
@@ -15119,7 +15172,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n开始时间和结束时间的格式需要保持一致。",
+          "document": "<p>起始时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。</p>",
           "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -15128,7 +15181,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。",
+          "document": "<p>结束时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。</p>",
           "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
@@ -15137,7 +15190,7 @@
         },
         {
           "disabled": false,
-          "document": "播放域名，\n若不填，则为查询所有播放域名的在线流数据。",
+          "document": "<p>播放域名，<br>若不填，则为查询所有播放域名的在线流数据。</p>",
           "example": "5000.playdomain.com",
           "member": "string",
           "name": "PlayDomain",
@@ -15146,7 +15199,7 @@
         },
         {
           "disabled": false,
-          "document": "流名称，精确匹配。\n若不填，则为查询总体播放数据。",
+          "document": "<p>流名称，精确匹配。<br>若不填，则为查询总体播放数据。</p>",
           "example": "stream1",
           "member": "string",
           "name": "StreamName",
@@ -15155,7 +15208,7 @@
         },
         {
           "disabled": false,
-          "document": "推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。\n若不填，则为查询总体播放数据。",
+          "document": "<p>该参数暂不可用。</p>",
           "example": "live",
           "member": "string",
           "name": "AppName",
@@ -15164,7 +15217,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
+          "document": "<p>服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。</p>",
           "example": "LVB",
           "member": "string",
           "name": "ServiceName",
@@ -15179,7 +15232,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计信息列表，时间粒度是1分钟。",
+          "document": "<p>统计信息列表，时间粒度是1分钟。</p>",
           "example": "无",
           "member": "DayStreamPlayInfo",
           "name": "DataInfoList",
@@ -24163,6 +24216,81 @@
         }
       ],
       "type": "object"
+    },
+    "VideoRedrawCosInfo": {
+      "document": "aigc cos信息，存储用户请求时填写的cos信息，存放结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>cos所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶信息</p>",
+          "example": "testbuckut",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务存放cos的目录</p>",
+          "example": "tempdir",
+          "member": "string",
+          "name": "Dir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时Cos SecretId</p>",
+          "example": "tempSecret",
+          "member": "string",
+          "name": "TmpSecretId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时Cos SecretKey</p>",
+          "example": "tempkey",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时token</p>",
+          "example": "testToken",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoRedrawInput": {
+      "document": "视频转绘的输入源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入待转绘的视频URL</p>",
+          "example": "https://****************.cos.ap-guangzhou.myqcloud.com/fod_1.mp4",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "WatermarkInfo": {
       "document": "水印信息。",

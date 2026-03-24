@@ -208,6 +208,14 @@
         "title": "删除用户"
       }
     ],
+    "DeleteVmInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-4amyetqm\",\n    \"EnvId\": \"reinstate-3gle1iv1f6e5c582\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29aa6dd0-d8f9-479a-8e65-8c2c7ae48b54\"\n    }\n}",
+        "title": "删除云主机"
+      }
+    ],
     "DescribeAuthDomains": [
       {
         "document": "查询安全域名列表",
@@ -418,6 +426,14 @@
         "title": "查询用户列表"
       }
     ],
+    "DescribeVmInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVmInstances\n<公共请求参数>\n\n{\n    \"EnvId\": \"test-lighthouse-3gb1eshz5a3811de\",\n    \"Type\": \"LightHouse\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"InstanceId\": \"lhins-20gnw292\",\n                \"Region\": \"ap-shanghai\",\n                \"Status\": \"Running\"\n            }\n        ],\n        \"RequestId\": \"76629e26-4dd6-4d8f-a523-5ecc1ba9e979\"\n    }\n}",
+        "title": "查询环境下的云主机实例"
+      }
+    ],
     "DescribeVmSpec": [
       {
         "document": "",
@@ -470,6 +486,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetProviders\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AutoSignUpWithProviderUser\": \"TRUE\",\n                \"Config\": {\n                    \"AuthorizationEndpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\",\n                    \"ClientId\": \"example\",\n                    \"ClientSecret\": \"example\",\n                    \"Issuer\": \"\",\n                    \"JwksUri\": \"\",\n                    \"RedirectUri\": \"\",\n                    \"RequestParametersMap\": {\n                        \"RegisterUserType\": \"externalUser\"\n                    },\n                    \"ResponseParametersMap\": {\n                        \"Email\": \"email\",\n                        \"Groups\": \"groups\",\n                        \"Name\": \"name\",\n                        \"PhoneNumber\": \"phone_number\",\n                        \"Picture\": \"picture\",\n                        \"Sub\": \"sub\",\n                        \"Username\": \"username\"\n                    },\n                    \"ResponseType\": \"\",\n                    \"SamlMetadata\": \"\",\n                    \"Scope\": \"email openid profile\",\n                    \"SignoutEndpoint\": \"\",\n                    \"TokenEndpoint\": \"https://oauth2.googleapis.com/token\",\n                    \"TokenEndpointAuthMethod\": \"CLIENT_SECRET_BASIC\",\n                    \"UserinfoEndpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\"\n                },\n                \"Description\": {\n                    \"Localized\": [],\n                    \"Message\": \"\"\n                },\n                \"Homepage\": \"\",\n                \"Id\": \"google\",\n                \"Name\": {\n                    \"Localized\": [],\n                    \"Message\": \"Google\"\n                },\n                \"On\": \"TRUE\",\n                \"Picture\": \"https://qcloudimg.tencent-cloud.cn/raw/f9131c00dcbcbccd5899a449d68da3ba.png\",\n                \"ProviderType\": \"OAUTH\",\n                \"TransparentMode\": \"FALSE\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"490fbbcb-c5e3-4037-b851-099e636768cc\"\n    }\n}",
         "title": "查询身份源列表"
+      }
+    ],
+    "InquireVmPrice": [
+      {
+        "document": "查询LightHouse实例价格",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquireVmPrice\n<公共请求参数>\n\n{\n    \"Type\": \"LightHouse\",\n    \"LightHouseBundleId\": \"bundle_rs_mc_med1_02\",\n    \"LightHouseBlueprintId\": \"lhbp-3qjk6slu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"Discount\": 100,\n        \"DiscountCredits\": 1333.3334,\n        \"DiscountPrice\": 40,\n        \"OriginalCredits\": 1333.3334,\n        \"OriginalPrice\": 40,\n        \"RequestId\": \"6e898b9d-19e4-4a46-b26a-86f74a459ca6\"\n    }\n}",
+        "title": "查询价格"
       }
     ],
     "ListTables": [
