@@ -106,6 +106,15 @@
           "name": "OfflineVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型 0批任务 1 sql作业",
+          "example": "",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -819,13 +828,13 @@
         },
         {
           "disabled": false,
-          "document": "离线版本",
+          "document": "离线版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3.3.4",
           "member": "string",
           "name": "OfflineVersion",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -833,6 +842,16 @@
           "example": "0",
           "member": "int64",
           "name": "RetryCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业类型 0 批处理  1 spark-sql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "TaskType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

@@ -6,16 +6,19 @@ Input:
 
 ```
 tccli tcr ModifyNamespace --cli-unfold-argument  \
-    --RegistryId tcr-okmj78 \
-    --NamespaceName mytest \
-    --IsPublic true
+    --RegistryId tcr-lfhgf4d3 \
+    --NamespaceName nginx \
+    --IsPublic False \
+    --TagSpecification.ResourceType namespace \
+    --TagSpecification.Tags.0.Key tcr \
+    --TagSpecification.Tags.0.Value development
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2ac430cd-f7de-482e-b98e-f78a48e785e8"
+        "RequestId": "47871759-7155-41f6-bba3-0bc195a43791"
     }
 }
 ```

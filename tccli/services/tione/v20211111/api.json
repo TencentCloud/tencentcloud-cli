@@ -2816,6 +2816,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Isaac Sim GUI 配置",
+          "example": "无",
+          "member": "IsaacSimConfig",
+          "name": "IsaacSimConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -12018,6 +12027,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Isaac Sim GUI 配置",
+          "example": "无",
+          "member": "IsaacSimConfig",
+          "name": "IsaacSimConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -12848,6 +12866,82 @@
           "example": "开发机描述信息",
           "member": "string",
           "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Isaac Sim GUI 配置",
+          "example": "无",
+          "member": "IsaacSimConfig",
+          "name": "IsaacSimConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行记录列表",
+          "example": "无",
+          "member": "NotebookRunRecord",
+          "name": "RunRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookRunRecord": {
+      "document": "开发机单次运行记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行ID (Job 实例ID)",
+          "example": "nb-1546257743399831680-bqx47f0hdwu8",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-23T02:29:10Z",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-23T03:29:19Z",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "停止原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AutoStopDueToIdle",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Job 状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Stopped",
+          "member": "string",
+          "name": "Status",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
