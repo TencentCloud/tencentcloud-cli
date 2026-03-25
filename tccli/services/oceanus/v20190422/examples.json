@@ -328,7 +328,7 @@
       {
         "document": "查询变量列表",
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVariables\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VariableSet\": [\n            {\n                \"Remark\": \"xx\",\n                \"Name\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"Value\": \"xx\",\n                \"SerialId\": \"xx\",\n                \"Type\": 0,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "变量列表展示"
       }
     ],

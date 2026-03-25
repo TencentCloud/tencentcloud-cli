@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ApplyDecision": [
+      {
+        "document": "决策结果反馈",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyDecision\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0013c8df-2390-482e-adf1-74b5bbec7c3a\"\n    }\n}",
+        "title": "决策结果反馈调用示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

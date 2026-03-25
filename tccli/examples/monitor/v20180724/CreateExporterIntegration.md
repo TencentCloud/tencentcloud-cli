@@ -21,7 +21,7 @@ Input:
 tccli monitor CreateExporterIntegration --cli-unfold-argument  \
     --InstanceId prom-1 \
     --Kind qcloud-exporter \
-    --Content {"name":"test-qcloud","kind":"qcloud-exporter","spec":{"instanceSpec":{"region":"广州","delaySeconds":0,"reload_interval_minutes":10,"useRole":true,"labels":{"labelKey":"labelValue","test":"test"},"restart":1770373080},"exporterSpec":{"cvm":true,"cbs":true},"scrapeSpec":{"relabelConfigs":"metric_relabel_configs:\n- action: labeldrop\n  regex: tmp_test_label\n"}}}
+    --Content {"name":"test-qcloud","kind":"qcloud-exporter","spec":{"instanceSpec":{"region":"成都","delaySeconds":0,"reload_interval_minutes":10,"only_include_instances":{"cvm":"ins-1flt9bih"},"tag_filters":{},"tag_key_replace":{},"tag_key_operation":"ToUnderLineAndLower","extra_instance_info":[],"dimension_whitelist":["lb_public:listener"],"labels":{},"authProvider":{"method":1,"presetRole":"CM_QCSLinkedRoleInTMP","customRole":"","targetCustomRole":"","targetUin":""},"resource_spec":"0.25C0.5Gi","useRole":true},"exporterSpec":{"cvm":true,"lb_public":true},"scrapeSpec":{"interval":"1m","timeout":"1m","relabelConfigs":"#metric_relabel_configs:\n#- action: labeldrop\n#  regex: tmp_test_label\n"}}}
 ```
 
 Output: 
@@ -644,6 +644,32 @@ Output:
             "auth-test"
         ],
         "RequestId": "xyz"
+    }
+}
+```
+
+**Example 20: 创建 非腾讯云主机监控 集成**
+
+安装 非腾讯云主机监控。参数说明： 1. InstanceId 是 Prometheus 实例 ID，必填 2. Kind 参数固定为 `external-node-exporter`，必填 3. Content 参数格式如示例。说明如下： 3.1. name 是集成名，必填且全局唯一，需要符合正则表达式`^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$` 3.2. kind 是集成类型，必填且这里固定为 `external-node-exporter` 3.3. spec.instanceSpec.servers 是 主机 node-exporter 服务的连接地址，必填 3.4. spec.instanceSpec.interval 是 采集间隔，单位为s，必填 3.5. spec.instanceSpec.path 是指标采集路径，默认为 /metrics，选填
+
+Input: 
+
+```
+tccli monitor CreateExporterIntegration --cli-unfold-argument  \
+    --InstanceId prom-111 \
+    --Kind external-node-exporter \
+    --Content {"kind":"external-node-exporter","name":"external-node-test","spec":{"instanceSpec":{"interval":30,"path":"/metrics","servers":["10.0.0.1:9100"]}}} \
+    --KubeType 3
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Names": [
+            "external-node-test"
+        ],
+        "RequestId": "4bbc6724-b348-4fb5-ae05-5bc8820d745b"
     }
 }
 ```

@@ -6,19 +6,23 @@ Input:
 
 ```
 tccli redis InquiryPriceUpgradeInstance --cli-unfold-argument  \
-    --InstanceId crs-xjhsdjcxjd \
-    --MemSize 4096
+    --InstanceId crs-i7flj4ir \
+    --MemSize 1024 \
+    --RedisShardNum 1 \
+    --RedisReplicasNum 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Price": 30400,
-        "HighPrecisionPrice": 30400.123,
-        "Currency": "CNY",
         "AmountUnit": "pent",
-        "RequestId": "0115d979-2c38-4ad2-b282-bec09d5b4c01"
+        "Currency": "CNY",
+        "HighPrecisionOriginalPrice": 21.111112,
+        "HighPrecisionPrice": 21.111112,
+        "OriginalPrice": 21,
+        "Price": 21,
+        "RequestId": "6b36919f-29e6-43cf-bf94-24af6b0c8c93"
     }
 }
 ```

@@ -7,9 +7,9 @@ Input:
 ```
 tccli trro DescribeSessionStatistics --cli-unfold-argument  \
     --ProjectId abcdefg \
-    --EndTime 1670000000 \
     --DeviceId dev2 \
-    --StartTime 0
+    --StartTime 1670000000 \
+    --EndTime 1670000000
 ```
 
 Output: 

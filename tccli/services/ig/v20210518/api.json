@@ -55,7 +55,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -64,7 +64,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数目",
+          "document": "<p>每页数目</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -73,7 +73,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型",
+          "document": "<p>产品类型</p><p>枚举值：</p><ul><li>ig： 导诊</li><li>ipc： 预问诊</li></ul><p>默认值：ig</p>",
           "example": "ig",
           "member": "string",
           "name": "ProductType",
@@ -82,7 +82,7 @@
         },
         {
           "disabled": false,
-          "document": "订单状态",
+          "document": "<p>订单状态</p><p>枚举值：</p><ul><li>0： 无状态</li><li>1： 未激活</li><li>2： 使用中</li><li>3： 暂停使用</li><li>4： 已到期</li><li>5： 已删除</li><li>6： 已失效</li></ul><p>默认值：0</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderStatus",
@@ -91,7 +91,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "<p>搜索关键字</p>",
           "example": "20210512936000413352781",
           "member": "string",
           "name": "KeyWord",

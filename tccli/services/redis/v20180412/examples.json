@@ -701,24 +701,24 @@
     "InquiryPriceCreateInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceCreateInstance\n&ZoneId=100002\n&TypeId=6\n&MemSize=4096\n&GoodsNum=1\n&Period=1\n&BillingMode=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": 30400,\n        \"HighPrecisionPrice\": 30400.123,\n        \"Currency\": \"CNY\",\n        \"AmountUnit\": \"pent\",\n        \"RequestId\": \"0115d979-2c38-4ad2-b282-bec09d5b4c0b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceCreateInstance\n<公共请求参数>\n\n{\n    \"TypeId\": 9,\n    \"MemSize\": 4096,\n    \"GoodsNum\": 3,\n    \"Period\": 1,\n    \"BillingMode\": 0,\n    \"ZoneId\": 100002,\n    \"RedisShardNum\": 1,\n    \"RedisReplicasNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AmountUnit\": \"pent\",\n        \"Currency\": \"CNY\",\n        \"HighPrecisionOriginalPrice\": 280.0224,\n        \"HighPrecisionPrice\": 280.0224,\n        \"OriginalPrice\": 280,\n        \"Price\": 280,\n        \"RequestId\": \"e250b8cf-6beb-462f-aa17-34b08ed6c164\"\n    }\n}",
         "title": "示例"
       }
     ],
     "InquiryPriceRenewInstance": [
       {
         "document": "查询续费价格",
-        "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceRenewInstance\n&Period=1\n&InstanceId=crs-qkdj****\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": 100800,\n        \"HighPrecisionPrice\": 100800.98,\n        \"Currency\": \"CNY\",\n        \"AmountUnit\": \"pent\",\n        \"RequestId\": \"4bd77cc7-ece7-4660-bbdd-6892d96f35a1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstance\n<公共请求参数>\n\n{\n    \"Period\": 1,\n    \"InstanceId\": \"crs-f21jya09\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AmountUnit\": \"pent\",\n        \"Currency\": \"CNY\",\n        \"HighPrecisionOriginalPrice\": 30400,\n        \"HighPrecisionPrice\": 30400,\n        \"OriginalPrice\": 30400,\n        \"Price\": 30400,\n        \"RequestId\": \"dafd42cd-220d-44d7-b2cd-b50da5dc0002\"\n    }\n}",
         "title": "查询示例"
       }
     ],
     "InquiryPriceUpgradeInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceUpgradeInstance\n&InstanceId=crs-xjhsdjcxjd\n&MemSize=4096\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": 30400,\n        \"HighPrecisionPrice\": 30400.123,\n        \"Currency\": \"CNY\",\n        \"AmountUnit\": \"pent\",\n        \"RequestId\": \"0115d979-2c38-4ad2-b282-bec09d5b4c01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceUpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-i7flj4ir\",\n    \"MemSize\": 1024,\n    \"RedisShardNum\": 1,\n    \"RedisReplicasNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AmountUnit\": \"pent\",\n        \"Currency\": \"CNY\",\n        \"HighPrecisionOriginalPrice\": 21.111112,\n        \"HighPrecisionPrice\": 21.111112,\n        \"OriginalPrice\": 21,\n        \"Price\": 21,\n        \"RequestId\": \"6b36919f-29e6-43cf-bf94-24af6b0c8c93\"\n    }\n}",
         "title": "示例"
       }
     ],

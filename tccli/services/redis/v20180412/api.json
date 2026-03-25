@@ -7311,7 +7311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。\n- 200:Memcached 1.6 内存版（集群架构）。",
+          "document": "<p>实例类型。- 2：Redis 2.8 内存版（标准架构）。- 6：Redis 4.0 内存版（标准架构）。- 7：Redis 4.0 内存版（集群架构）。- 8：Redis 5.0 内存版（标准架构）。- 9：Redis 5.0 内存版（集群架构）。- 15：Redis 6.2 内存版（标准架构）。- 16：Redis 6.2 内存版（集群架构）。- 17：Redis 7.0 内存版（标准架构）。- 18：Redis 7.0 内存版（集群架构）。- 200:Memcached 1.6 内存版（集群架构）。</p>",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -7320,7 +7320,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。\nTypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。",
+          "document": "<p>内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 <a href=\"https://cloud.tencent.com/document/api/239/30600\">查询产品售卖规格</a> 返回的规格为准。TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。</p>",
           "example": "4096",
           "member": "uint64",
           "name": "MemSize",
@@ -7329,7 +7329,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。",
+          "document": "<p>实例数量，单次购买实例数量以 <a href=\"https://cloud.tencent.com/document/api/239/30600\">查询产品售卖规格</a> 返回的规格为准。</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -7338,7 +7338,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "document": "<p>购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -7347,7 +7347,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式。\n- 0：按量计费。\n- 1：包年包月。",
+          "document": "<p>付费方式。- 0：按量计费。- 1：包年包月。</p>",
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
@@ -7356,7 +7356,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。\n**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。",
+          "document": "<p>实例所属的可用区 ID，可参考<a href=\"https://cloud.tencent.com/document/product/239/4106\">地域和可用区</a>  。<strong>说明</strong>：请在 <strong>ZoneId</strong> 与 <strong>ZoneName</strong> 中至少指定一个参数。</p>",
           "example": "100002",
           "member": "uint64",
           "name": "ZoneId",
@@ -7365,7 +7365,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分片数量。\n- 标准架构需要配置分片数量为1。\n- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。",
+          "document": "<p>实例分片数量。- 标准架构需要配置分片数量为1。- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。</p>",
           "example": "1",
           "member": "int64",
           "name": "RedisShardNum",
@@ -7374,7 +7374,7 @@
         },
         {
           "disabled": false,
-          "document": "实例副本数量。取值范围为：1、2、3、4、5。",
+          "document": "<p>实例副本数量。取值范围为：1、2、3、4、5。</p>",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -7383,7 +7383,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持副本只读。Redis2.8标准架构、CKV标准架构无需填写。\n- true：无需支持副本只读。\n- false：需支持。",
+          "document": "<p>是否支持副本只读。Redis2.8标准架构、CKV标准架构无需填写。- true：无需支持副本只读。- false：需支持。</p>",
           "example": "false",
           "member": "bool",
           "name": "ReplicasReadonly",
@@ -7392,7 +7392,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。\n**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。",
+          "document": "<p>实例所属的可用区名称，可参考<a href=\"https://cloud.tencent.com/document/product/239/4106\">地域和可用区</a>  。<strong>说明</strong>：请在 <strong>ZoneId</strong> 与 <strong>ZoneName</strong> 中至少指定一个参数。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ZoneName",
@@ -7401,7 +7401,7 @@
         },
         {
           "disabled": false,
-          "document": "部署方式。\n- local：本地盘版，默认为 local。\n- cloud：云盘版。\n- cdc：独享集群版。",
+          "document": "<p>部署方式。- local：本地盘版，默认为 local。- cloud：云盘版。- cdc：独享集群版。</p>",
           "example": "cloud",
           "member": "string",
           "name": "ProductVersion",
@@ -7416,7 +7416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格",
+          "document": "<p>折扣后价格</p>",
           "example": "30400.0",
           "member": "float",
           "name": "Price",
@@ -7426,7 +7426,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度价格",
+          "document": "<p>高精度折扣后价格</p>",
           "example": "30400.123",
           "member": "float",
           "name": "HighPrecisionPrice",
@@ -7436,7 +7436,27 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>原价</p>",
+          "example": "280",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高精度原价</p>",
+          "example": "280.0224",
+          "member": "float",
+          "name": "HighPrecisionOriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -7446,7 +7466,7 @@
         },
         {
           "disabled": false,
-          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "document": "<p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>",
           "example": "pent",
           "member": "string",
           "name": "AmountUnit",
@@ -7468,7 +7488,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "包年包月实例的购买时长。\n- 单位：月。\n- 取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "document": "<p>包年包月实例的购买时长。- 单位：月。- 取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -7477,7 +7497,7 @@
         },
         {
           "disabled": false,
-          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis)在实例列表复制包年包月实例 ID。",
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录 <a href=\"https://console.cloud.tencent.com/redis\">Redis 控制台</a>在实例列表复制包年包月实例 ID。</p>",
           "example": "crs-rhlppeye",
           "member": "string",
           "name": "InstanceId",
@@ -7492,7 +7512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格",
+          "document": "<p>折扣后价格</p>",
           "example": "100800.00",
           "member": "float",
           "name": "Price",
@@ -7502,7 +7522,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度价格",
+          "document": "<p>高精度折扣后价格</p>",
           "example": "30400.123",
           "member": "float",
           "name": "HighPrecisionPrice",
@@ -7512,7 +7532,27 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>原价</p>",
+          "example": "30400",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高精度原价</p>",
+          "example": "30400",
+          "member": "float",
+          "name": "HighPrecisionOriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -7522,7 +7562,7 @@
         },
         {
           "disabled": false,
-          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "document": "<p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>",
           "example": "pent",
           "member": "string",
           "name": "AmountUnit",
@@ -7544,7 +7584,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID，请登录<a href=\"https://console.cloud.tencent.com/redis/instance/list\">Redis控制台</a>在实例列表复制实例 ID。</p>",
           "example": "crs-xjhsdjcxjd",
           "member": "string",
           "name": "InstanceId",
@@ -7553,7 +7593,7 @@
         },
         {
           "disabled": false,
-          "document": "分片大小，单位：MB。",
+          "document": "<p>分片大小，单位：MB。</p>",
           "example": "4096",
           "member": "uint64",
           "name": "MemSize",
@@ -7562,7 +7602,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量。\n- 实例为标准架构，RedisShardNum 默认为1。\n- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。",
+          "document": "<p>分片数量。- 实例为标准架构，RedisShardNum 默认为1。- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。</p>",
           "example": "3",
           "member": "uint64",
           "name": "RedisShardNum",
@@ -7571,7 +7611,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。",
+          "document": "<p>副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RedisReplicasNum",
@@ -7586,7 +7626,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格",
+          "document": "<p>折扣后价格</p>",
           "example": "30400.00",
           "member": "float",
           "name": "Price",
@@ -7596,7 +7636,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度价格",
+          "document": "<p>高精度折扣后价格</p>",
           "example": "30400.123",
           "member": "float",
           "name": "HighPrecisionPrice",
@@ -7606,7 +7646,27 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>原价</p>",
+          "example": "21",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高精度原价</p>",
+          "example": "21.111112",
+          "member": "float",
+          "name": "HighPrecisionOriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -7616,7 +7676,7 @@
         },
         {
           "disabled": false,
-          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "document": "<p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>",
           "example": "pent",
           "member": "string",
           "name": "AmountUnit",

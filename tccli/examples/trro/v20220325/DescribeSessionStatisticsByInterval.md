@@ -7,10 +7,10 @@ Input:
 ```
 tccli trro DescribeSessionStatisticsByInterval --cli-unfold-argument  \
     --ProjectId abcdefg \
-    --EndTime 1670000000 \
     --StatisticInterval hour \
     --DeviceId dev2 \
-    --StartTime 0
+    --StartTime 1670000000 \
+    --EndTime 1670000000
 ```
 
 Output: 

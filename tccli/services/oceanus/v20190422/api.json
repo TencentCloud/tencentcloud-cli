@@ -1746,7 +1746,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要复制的作业serial id",
+          "document": "<p>需要复制的作业serial id</p>",
           "example": "cql-pqx9zh30",
           "member": "string",
           "name": "SourceId",
@@ -1756,7 +1756,7 @@
         },
         {
           "disabled": false,
-          "document": "目标集群的cluster serial id",
+          "document": "<p>目标集群的cluster serial id</p>",
           "example": "cluster-l0elpxde",
           "member": "string",
           "name": "TargetClusterId",
@@ -1766,7 +1766,7 @@
         },
         {
           "disabled": false,
-          "document": "需要复制的作业名称",
+          "document": "<p>需要复制的作业名称</p>",
           "example": "job1",
           "member": "string",
           "name": "SourceName",
@@ -1776,7 +1776,7 @@
         },
         {
           "disabled": false,
-          "document": "新作业的名称",
+          "document": "<p>新作业的名称</p>",
           "example": "job2",
           "member": "string",
           "name": "TargetName",
@@ -1786,7 +1786,7 @@
         },
         {
           "disabled": false,
-          "document": "新作业的目录id",
+          "document": "<p>新作业的目录id</p>",
           "example": "folder-2ue9i8ny",
           "member": "string",
           "name": "TargetFolderId",
@@ -1796,7 +1796,7 @@
         },
         {
           "disabled": false,
-          "document": "源作业类型",
+          "document": "<p>作业类型</p><p>枚举值：</p><ul><li>1： sql作业</li><li>2： jar作业</li><li>4： python作业</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "JobType",
@@ -5201,6 +5201,16 @@
       "document": "DescribeVariables返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "[\"x\",\"y\"]",
+          "example": "无",
+          "member": "VariableItem",
+          "name": "VariableSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5682,7 +5692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ClusterGroupSerialId",
+          "document": "<p>ClusterGroupSerialId</p>",
           "example": "cluster-aa",
           "member": "string",
           "name": "ClusterGroupSerialId",
@@ -5693,7 +5703,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>1： 停止</li><li>2： 开启中</li><li>3： 启动</li><li>4： 开启失败</li><li>5： 停止中</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -5704,7 +5714,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cpu</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
           "name": "Cpu",
@@ -5715,7 +5725,7 @@
         },
         {
           "disabled": false,
-          "document": "mem",
+          "document": "<p>mem</p>",
           "example": "2048",
           "member": "float",
           "name": "Mem",
@@ -5726,7 +5736,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-03-14 07:36:34",
           "member": "string",
           "name": "CreateTime",
@@ -5737,7 +5747,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-03-14 07:38:34",
           "member": "string",
           "name": "UpdateTime",
@@ -5748,7 +5758,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件内容",
+          "document": "<p>配置文件内容</p>",
           "example": "{\"hdfs-site.xml\":\"\"}",
           "member": "string",
           "name": "Config",
@@ -5759,7 +5769,7 @@
         },
         {
           "disabled": false,
-          "document": "CreatorUin",
+          "document": "<p>CreatorUin</p>",
           "example": "111222",
           "member": "string",
           "name": "CreatorUin",
@@ -8077,7 +8087,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource-123",
           "member": "string",
           "name": "ResourceId",
@@ -8088,7 +8098,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Version",
@@ -8099,7 +8109,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>1： Main资源</li><li>2： 依赖资源</li><li>3： python文件</li><li>4： 数据文件</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -8110,7 +8120,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>1： 活跃</li><li>-2： 删除</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8121,7 +8131,7 @@
         },
         {
           "disabled": false,
-          "document": "空间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "space-g7pfiemf",
           "member": "string",
           "name": "WorkspaceId",
@@ -8132,7 +8142,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "c.conf",
           "member": "string",
           "name": "Name",
@@ -9928,12 +9938,88 @@
       ],
       "type": "object"
     },
+    "VariableItem": {
+      "document": "变量信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-111",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量值是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x x x",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Warehouse": {
       "document": "Setats Warehouse结构",
       "members": [
         {
           "disabled": false,
-          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 开启中</li><li>2： 已开启</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -9955,7 +10041,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>catalogtype</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>catalog类型</p><p>枚举值：</p><ul><li>hadoop： hadoop catalog</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hadoop",
           "member": "string",
           "name": "CatalogType",
