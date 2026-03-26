@@ -533,7 +533,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测模式，参数取值如下：\n1：OCR+活体检测+人脸比对；\n2：活体检测+人脸比对；\n3：活体检测；\n默认值为1。",
+          "document": "<p>检测模式，参数取值如下：<br>1：OCR+活体检测+人脸比对；<br>2：活体检测+人脸比对；<br>3：活体检测；<br>默认值为1。</p>",
           "example": "1",
           "member": "int64",
           "name": "CheckMode",
@@ -542,7 +542,7 @@
         },
         {
           "disabled": false,
-          "document": "认证的安全等级：\n1：静默活体； \n2：动作活体； \n3：光线活体： \n4：动作+光线活体；\n 默认值为4。",
+          "document": "<p>认证的安全等级：<br>1：静默活体；<br>2：动作活体；<br>3：光线活体：<br>4：动作+光线活体；<br> 默认值为4。</p>",
           "example": "4",
           "member": "int64",
           "name": "SecurityLevel",
@@ -551,7 +551,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. ThailandIDCard: 泰国身份证\n11. MainlandIDCard: 大陆身份证\n12. SingaporeIDCard: 新加坡身份证\n13. HMTPermit：港澳台通行证",
+          "document": "<p>认证使用的卡证类型，当前支持:  </p><ol><li>HK (默认): 中国香港身份证</li><li>ML: 马来西亚身份证</li><li>IndonesiaIDCard: 印度尼西亚身份证</li><li>PhilippinesVoteID: 菲律宾选民卡</li><li>PhilippinesDrivingLicense: 菲律宾驾驶证</li><li>PhilippinesTinID: 菲律宾TinID</li><li>PhilippinesSSSID: 菲律宾SSSID</li><li>PhilippinesUMID: 菲律宾UMID</li><li>MLIDPassport: 港澳台地区以及境外护照</li><li>ThailandIDCard: 泰国身份证</li><li>MainlandIDCard: 大陆身份证</li><li>SingaporeIDCard: 新加坡身份证</li><li>HMTPermit：港澳台通行证</li></ol>",
           "example": "HK",
           "member": "string",
           "name": "IdCardType",
@@ -560,7 +560,7 @@
         },
         {
           "disabled": false,
-          "document": "比对照片的base64，仅当CheakMode为2时，本参数才需要传入。",
+          "document": "<p>比对照片的base64，仅当CheakMode为2时，本参数才需要传入。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "CompareImage",
@@ -569,7 +569,7 @@
         },
         {
           "disabled": true,
-          "document": "是否需要身份证鉴伪，如果不需要，则仅做证件OCR。当前仅IdCardType为HK支持鉴伪。",
+          "document": "<p>是否需要身份证鉴伪，如果不需要，则仅做证件OCR。当前仅IdCardType为HK支持鉴伪。</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedVerifyIdCard",
@@ -578,7 +578,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁止用户修改ocr结果，默认false，允许用户修改。（该参数目前暂不启用）",
+          "document": "<p>是否禁止用户修改ocr结果，默认false，允许用户修改。（该参数目前暂不启用）</p>",
           "example": "true",
           "member": "bool",
           "name": "DisableChangeOcrResult",
@@ -587,7 +587,7 @@
         },
         {
           "disabled": false,
-          "document": "是否关闭证件告警，默认false，开启。如果开启证件告警，我们会根据告警信息进行拦截。\n该功能当前仅支持香港身份证、马来西亚身份证和护照。",
+          "document": "<p>是否关闭证件告警，默认false，开启。如果开启证件告警，我们会根据告警信息进行拦截。<br>该功能当前仅支持香港身份证、马来西亚身份证和护照。</p>",
           "example": "true",
           "member": "bool",
           "name": "DisableCheckOcrWarnings",
@@ -596,7 +596,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义拦截哪些告警码，不填默认拦截所有告警码",
+          "document": "<p>自定义拦截哪些告警码，不填默认拦截所有告警码</p>",
           "example": "[-9101]",
           "member": "int64",
           "name": "SelectedWarningCodes",
@@ -605,7 +605,7 @@
         },
         {
           "disabled": false,
-          "document": "透传字段，在获取验证结果时返回，最长1024位。",
+          "document": "<p>透传字段，在获取验证结果时返回，最长1024位。</p>",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -614,7 +614,7 @@
         },
         {
           "disabled": false,
-          "document": "PLUS：PLUS版\nPRO：PRO版\nENHANCED：增强版\nBASIC：基础版（默认）",
+          "document": "<p>PLUS：PLUS版<br>PRO：PRO版<br>ENHANCED：增强版<br>BASIC：基础版（默认）</p>",
           "example": "ENHANCED",
           "member": "string",
           "name": "SdkVersion",
@@ -623,7 +623,7 @@
         },
         {
           "disabled": false,
-          "document": "此接口用于控制动作序列，动作类型如下：\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecurityLevel为2或4时传入此参数不同动作类型生效；否则接口报错。",
+          "document": "<p>此接口用于控制动作序列，动作类型如下：<br>“blink”<br>“mouth”<br>“nod”<br>“shake”<br>可以选择四个中的1-2个动作。<br>单动作示例：“blink”<br>多动作示例：“blink,mouth”.<br>默认值为blink<br>仅当SecurityLevel为2或4时传入此参数不同动作类型生效；否则接口报错。</p>",
           "example": "blink",
           "member": "string",
           "name": "ActionList",
@@ -632,12 +632,30 @@
         },
         {
           "disabled": false,
-          "document": "是否允许过期身份证件进入活体检测流程。此参数仅在证件类型为香港身份证（HKID）时生效。\ntrue（默认值）：允许过期香港身份证进入活体检测流程。\nfalse：拒绝过期香港身份证，不可进入活体检测流程。",
+          "document": "<p>是否允许过期身份证件进入活体检测流程。此参数仅在证件类型为香港身份证（HKID）时生效。<br>true（默认值）：允许过期香港身份证进入活体检测流程。<br>false：拒绝过期香港身份证，不可进入活体检测流程。</p>",
           "example": "true",
           "member": "bool",
           "name": "AllowExpiredDocument",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示最终结果页</p><p>枚举值：</p><ul><li>true： 不展示结果页</li><li>false： 展示结果页</li></ul><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipResultPage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>卡证OCR阶段展示的识别字段</p><p>参数格式：[&quot;ChineseName&quot;,&quot;FullName&quot;]</p><p>入参限制：<strong>卡证类型支持的字段名称：</strong><br><strong>HK(中国香港身份证):</strong> &quot;ChineseName&quot;,&quot;FullName&quot;,&quot;LicenseNumber&quot;,&quot;Birthday&quot;,&quot;Sex&quot;, &quot;IssuedDate&quot;, &quot;Permanent&quot;, &quot;Symbol&quot;, &quot;CurrentIssueDate&quot;<br><strong>ML(马来西亚身份证):</strong> &quot;FullName&quot;,&quot;LicenseNumber&quot;,&quot;Sex&quot;, &quot;Birthday&quot;, &quot;Type&quot;, &quot;FormattedAddress&quot;<br><strong>IndonesiaIDCard(印度尼西亚身份证):</strong> &quot;LicenseNumber&quot;,&quot;FullName&quot;,&quot;Sex&quot;, &quot;Birthday&quot;, &quot;FormattedAddress&quot;, &quot;Nationality&quot;, &quot;DueDate&quot;, &quot;IssuedDate&quot;, &quot;Street&quot;, &quot;Village&quot;,&quot;Area&quot;,&quot;Province&quot;,&quot;City&quot;,&quot;MaritalStatus&quot;, &quot;BloodType&quot;, &quot;Religion&quot;, &quot;Occupation&quot;<br><strong>PhilippinesVoteID(菲律宾选民卡): **&quot;FirstName&quot;,&quot;LastName&quot;,&quot;Birthday&quot;<br>**PhilippinesDrivingLicense(菲律宾驾驶证):</strong> &quot;LastName&quot;,&quot;FirstName&quot;,&quot;MiddleName&quot;,&quot;Sex&quot;,&quot;Birthday&quot;<br><strong>PhilippinesTinID(菲律宾TinID): **&quot;LicenseNumber&quot;, &quot;FullName&quot;, &quot;Birthday&quot;<br>**PhilippinesSSSID(菲律宾SSSID):</strong>&quot;LicenseNumber&quot;, &quot;FullName&quot;, &quot;Birthday&quot;<br><strong>PhilippinesUMID(菲律宾UMID):</strong>&quot;Surname&quot;, &quot;MiddleName&quot;, &quot;GivenName&quot;, &quot;Sex&quot;, &quot;Birthday&quot;<br><strong>MLIDPassport(港澳台地区以及境外护照):</strong>&quot;LicenseNumber&quot;,&quot;FullName&quot;, &quot;Surname&quot;, &quot;GivenName&quot;, &quot;Birthday&quot;, &quot;Sex&quot;,&quot;DateOfExpiration&quot;,&quot;IssuingCountry&quot;<br><strong>ThailandIDCard(泰国身份证):</strong>&quot;FullName&quot;, &quot;LastName&quot;, &quot;FirstName&quot;, &quot;FormattedAddress&quot;, &quot;LicenseNumber&quot;, &quot;Birthday&quot;, &quot;ExpirationDate&quot;, &quot;IssuedDate&quot;, &quot;RegistrationNumber&quot;, &quot;Religion&quot;, &quot;ThaiBirthday&quot;, &quot;ThaiExpirationDate&quot;, &quot;ThaiIssueDate&quot;<br><strong>MainlandIDCard(大陆身份证):</strong>&quot;LicenseNumber&quot;, &quot;FullName&quot;, &quot;Sex&quot;, &quot;Nation&quot;, &quot;Birthday&quot;, &quot;FormattedAddress&quot;<br><strong>SingaporeIDCard(新加坡身份证):</strong>&quot;ChineseName&quot;,&quot;Sex&quot;,&quot;Birthday&quot;,&quot;LicenseNumber&quot;,&quot;Nationality&quot;,&quot;FullName&quot;,&quot;Address&quot;<br><strong>HMTPermit(港澳台通行证):</strong>&quot;Name&quot;, &quot;EnglishName&quot;, &quot;Sex&quot;, &quot;Number&quot;, &quot;ValidDate&quot;, &quot;Birthday&quot;</p><p>字段不传则按照默认逻辑展示全部识别字段</p>",
+          "example": "[\"ChineseName\",\"FullName\"]",
+          "member": "string",
+          "name": "CardOcrDisplayFields",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -647,7 +665,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识一次SDK核验流程的令牌，有效时间为10分钟。流程结束后可用该令牌获取核验结果信息。",
+          "document": "<p>标识一次SDK核验流程的令牌，有效时间为10分钟。流程结束后可用该令牌获取核验结果信息。</p>",
           "example": "A561B769-C347-4724-A69A-6C3B3483E107",
           "member": "string",
           "name": "SdkToken",

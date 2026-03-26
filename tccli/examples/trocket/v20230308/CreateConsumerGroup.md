@@ -1,28 +1,27 @@
-**Example 1: 创建消费组**
+**Example 1: 成功创建消费组**
 
-创建消费组成功
+
 
 Input: 
 
 ```
 tccli trocket CreateConsumerGroup --cli-unfold-argument  \
-    --InstanceId rmq-72mo3a9o \
-    --ConsumerGroup test_group \
+    --InstanceId rmq-16ogwxoxmm \
     --MaxRetryTimes 16 \
     --ConsumeEnable True \
-    --ConsumeMessageOrderly True \
-    --Remark remark info
+    --ConsumeMessageOrderly False \
+    --ConsumerGroup test_group \
+    --RetryPolicy.PolicyType EXPONENTIAL \
+    --RetryPolicy.RetryInterval 120
 ```
 
 Output: 
 ```
 {
-    "Error": null,
-    "RequestId": null,
     "Response": {
         "ConsumerGroup": "test_group",
-        "InstanceId": "rmq-72mo3a9o",
-        "RequestId": "58f60891-002f-4b8a-b71f-3767a645c28e"
+        "InstanceId": "rmq-16ogwxoxmm",
+        "RequestId": "03ff82e0-631d-47aa-9bbd-6aa1949f1efd"
     }
 }
 ```

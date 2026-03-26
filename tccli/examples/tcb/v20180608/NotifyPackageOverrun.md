@@ -6,16 +6,18 @@ Input:
 
 ```
 tccli tcb NotifyPackageOverrun --cli-unfold-argument  \
-    --ResourceType xx \
-    --ResourceName xx \
-    --ResourceIndex xx
+    --ResourceType abc \
+    --ResourceName abc \
+    --ResourceIndex abc \
+    --UserUin abc \
+    --UserAppId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

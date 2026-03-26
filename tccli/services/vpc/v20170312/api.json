@@ -48579,6 +48579,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NAT网关实例是否支持开启流量镜像",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportTrafficMirror",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

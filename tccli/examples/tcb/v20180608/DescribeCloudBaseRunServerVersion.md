@@ -6,66 +6,66 @@ Input:
 
 ```
 tccli tcb DescribeCloudBaseRunServerVersion --cli-unfold-argument  \
-    --EnvId abc \
-    --ServerName abc \
-    --VersionName abc
+    --EnvId env-sdfd \
+    --ServerName server \
+    --VersionName ver
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "VersionName": "abc",
-        "Remark": "abc",
-        "DockerfilePath": "abc",
-        "BuildDir": "abc",
+        "VersionName": "",
+        "Remark": "",
+        "DockerfilePath": "",
+        "BuildDir": "",
         "Cpu": 0,
         "Mem": 0,
         "MinNum": 0,
         "MaxNum": 0,
-        "PolicyType": "abc",
+        "PolicyType": "",
         "PolicyThreshold": 0,
-        "EnvParams": "abc",
-        "CreatedTime": "abc",
-        "UpdatedTime": "abc",
-        "VersionIP": "abc",
+        "EnvParams": "",
+        "CreatedTime": "",
+        "UpdatedTime": "",
+        "VersionIP": "",
         "VersionPort": 0,
-        "Status": "abc",
-        "PackageName": "abc",
-        "PackageVersion": "abc",
-        "UploadType": "abc",
-        "RepoType": "abc",
-        "Repo": "abc",
-        "Branch": "abc",
-        "ServerName": "abc",
+        "Status": "",
+        "PackageName": "",
+        "PackageVersion": "",
+        "UploadType": "",
+        "RepoType": "",
+        "Repo": "",
+        "Branch": "",
+        "ServerName": "",
         "IsPublic": true,
-        "VpcId": "abc",
+        "VpcId": "",
         "SubnetIds": [
-            "abc"
+            ""
         ],
-        "CustomLogs": "abc",
+        "CustomLogs": "",
         "ContainerPort": 0,
         "InitialDelaySeconds": 0,
-        "ImageUrl": "abc",
+        "ImageUrl": "",
         "CpuSize": 0,
         "MemSize": 0,
         "HasDockerfile": 0,
-        "BaseImage": "abc",
-        "EntryPoint": "abc",
-        "RepoLanguage": "abc",
+        "BaseImage": "",
+        "EntryPoint": "",
+        "RepoLanguage": "",
         "PolicyDetail": [
             {
-                "PolicyType": "abc",
+                "PolicyType": "",
                 "PolicyThreshold": 0
             }
         ],
         "TkeClusterInfo": {
-            "ClusterId": "abc",
-            "VpcId": "abc",
-            "VersionClbSubnetId": "abc"
+            "ClusterId": "",
+            "VpcId": "",
+            "VersionClbSubnetId": ""
         },
-        "TkeWorkloadType": "abc",
-        "RequestId": "abc"
+        "TkeWorkloadType": "",
+        "RequestId": ""
     }
 }
 ```

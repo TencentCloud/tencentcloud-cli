@@ -11,8 +11,8 @@
     "ApplySdkVerificationToken": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplySdkVerificationToken\n<公共请求参数>\n\n{\n    \"CheckMode\": 1,\n    \"SecurityLevel\": 4,\n    \"IdCardType\": \"HK\",\n    \"CompareImage\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n    \"DisableChangeOcrResult\": true,\n    \"DisableCheckOcrWarnings\": true,\n    \"SdkVersion\": \"ENHANCED\",\n    \"ActionList\": \"blink\",\n    \"AllowExpiredDocument\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"SdkToken\": \"65474840-81919-014342-85A1-1F2B3E3DC7BF\",\n        \"RequestId\": \"319f2c60-09db-4120-aedb-90579e3f430a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplySdkVerificationToken\n<公共请求参数>\n\n{\n    \"CheckMode\": 3,\n    \"SecurityLevel\": 1,\n    \"SdkVersion\": \"BASIC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70666678-fe01-411b-abc0-f0ea7a1518ce\",\n        \"SdkToken\": \"C7FD7E30-93AA8-0148B2-BAD3-9F385C1AE648\"\n    }\n}",
         "title": "ApplySdkVerificationToken调用示例"
       }
     ],

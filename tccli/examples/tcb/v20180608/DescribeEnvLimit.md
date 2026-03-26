@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb DescribeEnvLimit --cli-unfold-argument  \
-    --Source sss
+    --Source miniapp
 ```
 
 Output: 
@@ -27,7 +27,7 @@ Output:
         "CurrentFreeTrialNum": 0,
         "MaxFreeTrialNum": 0,
         "MaxFreeEnvNum": 0,
-        "RequestId": "xx"
+        "RequestId": "uuid-here"
     }
 }
 ```
