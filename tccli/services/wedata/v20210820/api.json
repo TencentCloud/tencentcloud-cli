@@ -12938,7 +12938,7 @@
         {
           "disabled": false,
           "document": "判断是否是分区表1 是 0否\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "IsPartitionTable",
           "output_required": false,
@@ -13471,6 +13471,16 @@
           "example": "TC_CATALOG",
           "member": "string",
           "name": "MetaFrom",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎侧责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hadoop",
+          "member": "string",
+          "name": "EngineOwner",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -66629,7 +66639,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流ID",
+          "document": "手动工作流ID",
           "example": "9256-11ed-8909-bc",
           "member": "string",
           "name": "WorkflowId",
@@ -66647,7 +66657,7 @@
         },
         {
           "disabled": false,
-          "document": "需要运行的任务列表\nTriggerScope=ENTIRE_WORKFLOW 时无需传此参数，TriggerScope=SPECIFIED_TASK此参数必传",
+          "document": "需要运行的手动工作流任务列表TriggerScope=ENTIRE_WORKFLOW 时无需传此参数，TriggerScope=SPECIFIED_TASK此参数必传",
           "example": "[20240611101643545]",
           "member": "string",
           "name": "TaskIds",
@@ -66726,7 +66736,7 @@
         {
           "disabled": false,
           "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Web",
           "member": "string",
           "name": "RequestFromSource",
           "output_required": false,

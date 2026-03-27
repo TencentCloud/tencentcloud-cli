@@ -11,6 +11,17 @@ Output:
 ```
 {
     "Response": {
+        "VariableSet": [
+            {
+                "Remark": "xx",
+                "Name": "xx",
+                "CreatorUin": "xx",
+                "Value": "xx",
+                "SerialId": "xx",
+                "Type": 0,
+                "CreateTime": "xx"
+            }
+        ],
         "RequestId": "123"
     }
 }

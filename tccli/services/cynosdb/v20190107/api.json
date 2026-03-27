@@ -1736,6 +1736,16 @@
         },
         {
           "disabled": false,
+          "document": "主机",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "数据库账号描述",
           "example": "andyuse",
           "member": "string",
@@ -1766,21 +1776,21 @@
         },
         {
           "disabled": false,
-          "document": "主机",
-          "example": "%",
-          "member": "string",
-          "name": "Host",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "用户最大连接数",
           "example": "3000",
           "member": "int64",
           "name": "MaxUserConnections",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启密码轮转(0:关闭;1:开启)",
+          "example": "0",
+          "member": "int64",
+          "name": "PasswordRotation",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -16057,7 +16067,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "document": "搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。\n说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。",
           "example": "无",
           "member": "QueryParamFilter",
           "name": "Filters",
@@ -25487,7 +25497,7 @@
       "usage": "both"
     },
     "NewAccount": {
-      "document": "x08新创建的账号",
+      "document": "新建账号",
       "members": [
         {
           "disabled": false,
@@ -25495,6 +25505,15 @@
           "example": "0",
           "member": "string",
           "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机(%或ipv4地址)",
+          "example": "0",
+          "member": "string",
+          "name": "Host",
           "required": true,
           "type": "string"
         },
@@ -25509,12 +25528,12 @@
         },
         {
           "disabled": false,
-          "document": "主机(%或ipv4地址)",
+          "document": "是否开启密码轮转(0:关闭;1:开启)",
           "example": "0",
-          "member": "string",
-          "name": "Host",
-          "required": true,
-          "type": "string"
+          "member": "int64",
+          "name": "PasswordRotation",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -32427,7 +32446,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型",
+          "document": "实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",

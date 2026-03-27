@@ -614,6 +614,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeAIGCTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIGCTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"ff08e8bb-b378-****-40ee-83ba685f8fdd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-03-19 10:59:08\",\n        \"FinishedTime\": \"2026-03-19 10:59:09\",\n        \"OutputUrl\": \"https://********************.cos.ap-guangzhou.myqcloud.com/acc08f31-1449-bd0d-fec1-6912c1d2db9a_0.png\",\n        \"ScheduledTime\": \"2026-03-19 10:59:09\",\n        \"TaskId\": \"ff08e8bb-b378-****-40ee-83ba685f8fdd\",\n        \"TaskResultCode\": -401,\n        \"TaskResultMsg\": \"Invalid Para\",\n        \"TaskStatus\": \"FAILED\",\n        \"RequestId\": \"4aa73c85-8159-4911-87d7-32852738f9af\"\n    }\n}",
+        "title": "查询AIGC任务详情"
+      }
+    ],
     "DescribeAllStreamPlayInfoList": [
       {
         "document": "",

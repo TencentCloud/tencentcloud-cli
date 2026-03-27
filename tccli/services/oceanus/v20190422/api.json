@@ -1653,7 +1653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要复制的作业serial id",
+          "document": "<p>需要复制的作业serial id</p>",
           "example": "cql-pqx9zh30",
           "member": "string",
           "name": "SourceId",
@@ -1663,7 +1663,7 @@
         },
         {
           "disabled": false,
-          "document": "目标集群的cluster serial id",
+          "document": "<p>目标集群的cluster serial id</p>",
           "example": "cluster-l0elpxde",
           "member": "string",
           "name": "TargetClusterId",
@@ -1673,7 +1673,7 @@
         },
         {
           "disabled": false,
-          "document": "需要复制的作业名称",
+          "document": "<p>需要复制的作业名称</p>",
           "example": "job1",
           "member": "string",
           "name": "SourceName",
@@ -1683,7 +1683,7 @@
         },
         {
           "disabled": false,
-          "document": "新作业的名称",
+          "document": "<p>新作业的名称</p>",
           "example": "job2",
           "member": "string",
           "name": "TargetName",
@@ -1693,7 +1693,7 @@
         },
         {
           "disabled": false,
-          "document": "新作业的目录id",
+          "document": "<p>新作业的目录id</p>",
           "example": "folder-2ue9i8ny",
           "member": "string",
           "name": "TargetFolderId",
@@ -1703,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "源作业类型",
+          "document": "<p>作业类型</p><p>枚举值：</p><ul><li>1： sql作业</li><li>2： jar作业</li><li>4： python作业</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "JobType",
@@ -2017,7 +2017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业Id",
+          "document": "<p>作业Id</p>",
           "example": "cql-abcdefg",
           "member": "string",
           "name": "JobId",
@@ -2026,7 +2026,7 @@
         },
         {
           "disabled": false,
-          "document": "主类",
+          "document": "<p>主类</p>",
           "example": "com.tencent.cloud.test.WordCount",
           "member": "string",
           "name": "EntrypointClass",
@@ -2035,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值",
+          "document": "<p>主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值</p>",
           "example": "--conf Key=Value",
           "member": "string",
           "name": "ProgramArgs",
@@ -2044,7 +2044,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "example",
           "member": "string",
           "name": "Remark",
@@ -2053,7 +2053,7 @@
         },
         {
           "disabled": false,
-          "document": "资源引用数组",
+          "document": "<p>资源引用数组</p>",
           "example": "无",
           "member": "ResourceRef",
           "name": "ResourceRefs",
@@ -2062,7 +2062,7 @@
         },
         {
           "disabled": false,
-          "document": "作业默认并行度",
+          "document": "<p>作业默认并行度</p>",
           "example": "2",
           "member": "uint64",
           "name": "DefaultParallelism",
@@ -2071,7 +2071,7 @@
         },
         {
           "disabled": false,
-          "document": "系统参数",
+          "document": "<p>系统参数</p>",
           "example": "无",
           "member": "Property",
           "name": "Properties",
@@ -2080,7 +2080,7 @@
         },
         {
           "disabled": false,
-          "document": "1: 作业配置达到上限之后，自动删除可删除的最早版本",
+          "document": "<p>1: 作业配置达到上限之后，自动删除可删除的最早版本</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoDelete",
@@ -2089,7 +2089,7 @@
         },
         {
           "disabled": false,
-          "document": "作业使用的 COS 存储桶名",
+          "document": "<p>作业使用的 COS 存储桶名</p>",
           "example": "example-oceanus-1257058918",
           "member": "string",
           "name": "COSBucket",
@@ -2098,7 +2098,7 @@
         },
         {
           "disabled": false,
-          "document": "是否采集作业日志",
+          "document": "<p>是否采集作业日志</p>",
           "example": "true",
           "member": "bool",
           "name": "LogCollect",
@@ -2107,7 +2107,7 @@
         },
         {
           "disabled": false,
-          "document": "JobManager规格",
+          "document": "<p>JobManager规格</p>",
           "example": "0.5",
           "member": "float",
           "name": "JobManagerSpec",
@@ -2116,7 +2116,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManager规格",
+          "document": "<p>TaskManager规格</p>",
           "example": "0.5",
           "member": "float",
           "name": "TaskManagerSpec",
@@ -2125,7 +2125,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集ID",
+          "document": "<p>CLS日志集ID</p>",
           "example": "544002e3-299b-41d2-b18f-19194fb0660b",
           "member": "string",
           "name": "ClsLogsetId",
@@ -2134,7 +2134,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志主题ID",
+          "document": "<p>CLS日志主题ID</p>",
           "example": "544002e3-299b-41d2-b18f-19194fb0660b",
           "member": "string",
           "name": "ClsTopicId",
@@ -2143,7 +2143,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集类型 2：CLS；3：COS",
+          "document": "<p>日志采集类型 2：CLS；3：COS</p>",
           "example": "2",
           "member": "int64",
           "name": "LogCollectType",
@@ -2152,7 +2152,7 @@
         },
         {
           "disabled": false,
-          "document": "pyflink作业运行时使用的python版本",
+          "document": "<p>pyflink作业运行时使用的python版本</p>",
           "example": "Python-3.7",
           "member": "string",
           "name": "PythonVersion",
@@ -2161,7 +2161,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
@@ -2170,7 +2170,7 @@
         },
         {
           "disabled": false,
-          "document": "日志级别",
+          "document": "<p>日志级别</p>",
           "example": "INFO",
           "member": "string",
           "name": "LogLevel",
@@ -2179,7 +2179,7 @@
         },
         {
           "disabled": false,
-          "document": "Oceanus 平台恢复作业开关 1:开启 -1: 关闭",
+          "document": "<p>Oceanus 平台恢复作业开关 1:开启 -1: 关闭</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRecover",
@@ -2188,7 +2188,7 @@
         },
         {
           "disabled": false,
-          "document": "类日志级别",
+          "document": "<p>类日志级别</p>",
           "example": "无",
           "member": "ClazzLevel",
           "name": "ClazzLevels",
@@ -2197,7 +2197,7 @@
         },
         {
           "disabled": false,
-          "document": "是否打开专家模式",
+          "document": "<p>是否打开专家模式</p>",
           "example": "false",
           "member": "bool",
           "name": "ExpertModeOn",
@@ -2206,7 +2206,7 @@
         },
         {
           "disabled": false,
-          "document": "专家模式的配置",
+          "document": "<p>专家模式的配置</p>",
           "example": "无",
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
@@ -2215,7 +2215,7 @@
         },
         {
           "disabled": false,
-          "document": "trace链路",
+          "document": "<p>trace链路</p>",
           "example": "false",
           "member": "bool",
           "name": "TraceModeOn",
@@ -2224,7 +2224,7 @@
         },
         {
           "disabled": false,
-          "document": "trace链路配置",
+          "document": "<p>trace链路配置</p>",
           "example": "无",
           "member": "TraceModeConfiguration",
           "name": "TraceModeConfiguration",
@@ -2233,7 +2233,7 @@
         },
         {
           "disabled": false,
-          "document": "checkpoint保留个数",
+          "document": "<p>checkpoint保留个数</p>",
           "example": "1",
           "member": "int64",
           "name": "CheckpointRetainedNum",
@@ -2242,7 +2242,7 @@
         },
         {
           "disabled": false,
-          "document": "算子拓扑图",
+          "document": "<p>算子拓扑图</p>",
           "example": "无",
           "member": "JobGraph",
           "name": "JobGraph",
@@ -2251,7 +2251,7 @@
         },
         {
           "disabled": false,
-          "document": "es索引名称",
+          "document": "<p>es索引名称</p>",
           "example": "\"index-xxxxx\"",
           "member": "string",
           "name": "EsServerlessIndex",
@@ -2260,7 +2260,7 @@
         },
         {
           "disabled": false,
-          "document": "es索引空间",
+          "document": "<p>es索引空间</p>",
           "example": "\"space-xxxxx\"",
           "member": "string",
           "name": "EsServerlessSpace",
@@ -2269,7 +2269,7 @@
         },
         {
           "disabled": false,
-          "document": "flink版本",
+          "document": "<p>flink版本</p>",
           "example": "Flink-1.13",
           "member": "string",
           "name": "FlinkVersion",
@@ -2278,7 +2278,7 @@
         },
         {
           "disabled": false,
-          "document": "JobManager cpu",
+          "document": "<p>JobManager cpu</p>",
           "example": "1.0",
           "member": "float",
           "name": "JobManagerCpu",
@@ -2287,7 +2287,7 @@
         },
         {
           "disabled": false,
-          "document": "JobManager 内存",
+          "document": "<p>JobManager 内存</p>",
           "example": "1.0",
           "member": "float",
           "name": "JobManagerMem",
@@ -2296,7 +2296,7 @@
         },
         {
           "disabled": false,
-          "document": "jdk版本",
+          "document": "<p>jdk版本</p>",
           "example": "8",
           "member": "string",
           "name": "JdkVersion",
@@ -2305,7 +2305,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManager cpu",
+          "document": "<p>TaskManager cpu</p>",
           "example": "1.0",
           "member": "float",
           "name": "TaskManagerCpu",
@@ -2314,7 +2314,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManager 内存",
+          "document": "<p>TaskManager 内存</p>",
           "example": "1.0",
           "member": "float",
           "name": "TaskManagerMem",
@@ -2323,7 +2323,7 @@
         },
         {
           "disabled": false,
-          "document": "0=默认使用老的 1=使用新的",
+          "document": "<p>0=默认使用老的 1=使用新的</p>",
           "example": "0",
           "member": "int64",
           "name": "UseOldSystemConnector",
@@ -2332,7 +2332,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩参数",
+          "document": "<p>压缩参数</p>",
           "example": "压缩参数",
           "member": "string",
           "name": "ProgramArgsAfterGzip",
@@ -2341,7 +2341,7 @@
         },
         {
           "disabled": false,
-          "document": "checkpoint 超时时间",
+          "document": "<p>checkpoint 超时时间</p>",
           "example": "36000",
           "member": "int64",
           "name": "CheckpointTimeoutSecond",
@@ -2350,10 +2350,19 @@
         },
         {
           "disabled": false,
-          "document": "checkpoint 间隔时间",
+          "document": "<p>checkpoint 间隔时间</p>",
           "example": "600",
           "member": "int64",
           "name": "CheckpointIntervalSecond",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量替换模式</p><p>枚举值：</p><ul><li>0： 表变量替换</li><li>1： SQL全局变量替换</li></ul><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "VariableReplaceMode",
           "required": false,
           "type": "int"
         }
@@ -2365,7 +2374,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业配置版本号",
+          "document": "<p>作业配置版本号</p>",
           "example": "1",
           "member": "uint64",
           "name": "Version",
@@ -4712,6 +4721,16 @@
       "document": "DescribeVariables返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "[\"x\",\"y\"]",
+          "example": "无",
+          "member": "VariableItem",
+          "name": "VariableSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5165,7 +5184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ClusterGroupSerialId",
+          "document": "<p>ClusterGroupSerialId</p>",
           "example": "cluster-aa",
           "member": "string",
           "name": "ClusterGroupSerialId",
@@ -5176,7 +5195,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>1： 停止</li><li>2： 开启中</li><li>3： 启动</li><li>4： 开启失败</li><li>5： 停止中</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -5187,7 +5206,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cpu</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
           "name": "Cpu",
@@ -5198,7 +5217,7 @@
         },
         {
           "disabled": false,
-          "document": "mem",
+          "document": "<p>mem</p>",
           "example": "2048",
           "member": "float",
           "name": "Mem",
@@ -5209,7 +5228,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-03-14 07:36:34",
           "member": "string",
           "name": "CreateTime",
@@ -5220,7 +5239,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-03-14 07:38:34",
           "member": "string",
           "name": "UpdateTime",
@@ -5231,7 +5250,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件内容",
+          "document": "<p>配置文件内容</p>",
           "example": "{\"hdfs-site.xml\":\"\"}",
           "member": "string",
           "name": "Config",
@@ -5242,7 +5261,7 @@
         },
         {
           "disabled": false,
-          "document": "CreatorUin",
+          "document": "<p>CreatorUin</p>",
           "example": "111222",
           "member": "string",
           "name": "CreatorUin",
@@ -5259,7 +5278,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业Id",
+          "document": "<p>作业Id</p>",
           "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
@@ -5269,7 +5288,7 @@
         },
         {
           "disabled": false,
-          "document": "主类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主类</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hello",
           "member": "string",
           "name": "EntrypointClass",
@@ -5279,7 +5298,7 @@
         },
         {
           "disabled": false,
-          "document": "主类入参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主类入参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "--config key=value",
           "member": "string",
           "name": "ProgramArgs",
@@ -5289,7 +5308,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hello",
           "member": "string",
           "name": "Remark",
@@ -5299,7 +5318,7 @@
         },
         {
           "disabled": false,
-          "document": "作业配置创建时间",
+          "document": "<p>作业配置创建时间</p>",
           "example": "2021-01-22 20:06:19",
           "member": "string",
           "name": "CreateTime",
@@ -5309,7 +5328,7 @@
         },
         {
           "disabled": false,
-          "document": "作业配置的版本号",
+          "document": "<p>作业配置的版本号</p>",
           "example": "1",
           "member": "int64",
           "name": "Version",
@@ -5319,7 +5338,7 @@
         },
         {
           "disabled": false,
-          "document": "作业默认并行度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业默认并行度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "DefaultParallelism",
@@ -5329,7 +5348,7 @@
         },
         {
           "disabled": false,
-          "document": "系统参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Property",
           "name": "Properties",
@@ -5339,7 +5358,7 @@
         },
         {
           "disabled": false,
-          "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引用资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceRefDetail",
           "name": "ResourceRefDetails",
@@ -5349,7 +5368,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建者uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1132",
           "member": "string",
           "name": "CreatorUin",
@@ -5359,7 +5378,7 @@
         },
         {
           "disabled": false,
-          "document": "作业配置上次启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业配置上次启动时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-22 20:06:19",
           "member": "string",
           "name": "UpdateTime",
@@ -5369,7 +5388,7 @@
         },
         {
           "disabled": false,
-          "document": "作业绑定的存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业绑定的存储桶</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "oceanus-example",
           "member": "string",
           "name": "COSBucket",
@@ -5379,7 +5398,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用日志收集，0-未启用，1-采集到cls，4-采集到cos，5-采集到es\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否启用日志收集，0-未启用，1-采集到cls，4-采集到cos，5-采集到es</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "LogCollect",
@@ -5389,7 +5408,7 @@
         },
         {
           "disabled": false,
-          "document": "作业的最大并行度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>作业的最大并行度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2048",
           "member": "uint64",
           "name": "MaxParallelism",
@@ -5399,7 +5418,7 @@
         },
         {
           "disabled": false,
-          "document": "JobManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>JobManager规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
           "member": "float",
           "name": "JobManagerSpec",
@@ -5409,7 +5428,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>TaskManager规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
           "member": "float",
           "name": "TaskManagerSpec",
@@ -5419,7 +5438,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CLS日志集ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx-xx",
           "member": "string",
           "name": "ClsLogsetId",
@@ -5429,7 +5448,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CLS日志主题ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx-xxx",
           "member": "string",
           "name": "ClsTopicId",
@@ -5439,7 +5458,7 @@
         },
         {
           "disabled": false,
-          "document": "pyflink作业运行的python版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pyflink作业运行的python版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Python-3.7",
           "member": "string",
           "name": "PythonVersion",
@@ -5449,7 +5468,7 @@
         },
         {
           "disabled": false,
-          "document": "Oceanus 平台恢复作业开关 1:开启 -1: 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Oceanus 平台恢复作业开关 1:开启 -1: 关闭</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AutoRecover",
@@ -5459,7 +5478,7 @@
         },
         {
           "disabled": false,
-          "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志级别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "INFO",
           "member": "string",
           "name": "LogLevel",
@@ -5469,7 +5488,7 @@
         },
         {
           "disabled": false,
-          "document": "类日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>类日志级别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClazzLevel",
           "name": "ClazzLevels",
@@ -5479,7 +5498,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启专家模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启专家模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ExpertModeOn",
@@ -5489,7 +5508,7 @@
         },
         {
           "disabled": false,
-          "document": "专家模式的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>专家模式的配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
@@ -5499,7 +5518,7 @@
         },
         {
           "disabled": false,
-          "document": "trace链路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>trace链路</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "TraceModeOn",
@@ -5509,7 +5528,7 @@
         },
         {
           "disabled": false,
-          "document": "trace链路配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>trace链路配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TraceModeConfiguration",
           "name": "TraceModeConfiguration",
@@ -5519,7 +5538,7 @@
         },
         {
           "disabled": false,
-          "document": "checkpoint保留个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>checkpoint保留个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CheckpointRetainedNum",
@@ -5529,7 +5548,7 @@
         },
         {
           "disabled": false,
-          "document": "算子拓扑图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>算子拓扑图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "JobGraph",
           "name": "JobGraph",
@@ -5539,7 +5558,7 @@
         },
         {
           "disabled": false,
-          "document": "es索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es索引</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "index-**",
           "member": "string",
           "name": "EsServerlessIndex",
@@ -5549,7 +5568,7 @@
         },
         {
           "disabled": false,
-          "document": "es空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "space-**",
           "member": "string",
           "name": "EsServerlessSpace",
@@ -5559,7 +5578,7 @@
         },
         {
           "disabled": false,
-          "document": "es索引中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es索引中文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "index-**",
           "member": "string",
           "name": "IndexName",
@@ -5569,7 +5588,7 @@
         },
         {
           "disabled": false,
-          "document": "es空间中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es空间中文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "space-**",
           "member": "string",
           "name": "WorkspaceName",
@@ -5579,7 +5598,7 @@
         },
         {
           "disabled": false,
-          "document": "flink 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>flink 版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Flink-1.13",
           "member": "string",
           "name": "FlinkVersion",
@@ -5589,7 +5608,7 @@
         },
         {
           "disabled": false,
-          "document": "jdk版本",
+          "document": "<p>jdk版本</p>",
           "example": "8",
           "member": "string",
           "name": "JdkVersion",
@@ -5599,7 +5618,7 @@
         },
         {
           "disabled": false,
-          "document": "jm使用cpu数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>jm使用cpu数目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "JobManagerCpu",
@@ -5609,7 +5628,7 @@
         },
         {
           "disabled": false,
-          "document": "jm使用内存数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>jm使用内存数目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "JobManagerMem",
@@ -5619,7 +5638,7 @@
         },
         {
           "disabled": false,
-          "document": "tm使用cpu数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>tm使用cpu数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "TaskManagerCpu",
@@ -5629,7 +5648,7 @@
         },
         {
           "disabled": false,
-          "document": "tm使用mem数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>tm使用mem数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "TaskManagerMem",
@@ -5639,7 +5658,7 @@
         },
         {
           "disabled": false,
-          "document": "运行中配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行中配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "JobConfig",
           "name": "JobConfigItem",
@@ -5649,7 +5668,7 @@
         },
         {
           "disabled": false,
-          "document": "checkpoint 超时时间",
+          "document": "<p>checkpoint 超时时间</p>",
           "example": "36000",
           "member": "int64",
           "name": "CheckpointTimeoutSecond",
@@ -5659,10 +5678,20 @@
         },
         {
           "disabled": false,
-          "document": "checkpoint 间隔时间",
+          "document": "<p>checkpoint 间隔时间</p>",
           "example": "600",
           "member": "int64",
           "name": "CheckpointIntervalSecond",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量替换模式</p><p>枚举值：</p><ul><li>0： 表变量替换</li><li>1： 全局SQL变量替换</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VariableReplaceMode",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7543,7 +7572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource-123",
           "member": "string",
           "name": "ResourceId",
@@ -7554,7 +7583,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Version",
@@ -7565,7 +7594,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>1： Main资源</li><li>2： 依赖资源</li><li>3： python文件</li><li>4： 数据文件</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -7576,7 +7605,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>1： 活跃</li><li>-2： 删除</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7587,7 +7616,7 @@
         },
         {
           "disabled": false,
-          "document": "空间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "space-g7pfiemf",
           "member": "string",
           "name": "WorkspaceId",
@@ -7598,7 +7627,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "c.conf",
           "member": "string",
           "name": "Name",
@@ -9339,12 +9368,88 @@
       ],
       "type": "object"
     },
+    "VariableItem": {
+      "document": "变量信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-111",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量值是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x x x",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Warehouse": {
       "document": "Setats Warehouse结构",
       "members": [
         {
           "disabled": false,
-          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 开启中</li><li>2： 已开启</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -9366,7 +9471,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>catalogtype</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>catalog类型</p><p>枚举值：</p><ul><li>hadoop： hadoop catalog</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hadoop",
           "member": "string",
           "name": "CatalogType",

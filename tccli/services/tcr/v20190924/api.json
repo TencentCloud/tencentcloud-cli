@@ -8222,7 +8222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
@@ -8232,7 +8232,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "nicokang-tcr-gz",
           "member": "string",
           "name": "RegistryName",
@@ -8242,7 +8242,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格",
+          "document": "<p>实例规格</p>",
           "example": "premium",
           "member": "string",
           "name": "RegistryType",
@@ -8252,7 +8252,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态。有以下状态：\nPending, 初始化中\nDeploying, 创建中\nRunning, 运行中\nUnhealthy, 状态异常\nFailedCreated, 创建失败\nFailedUpdated, 更新失败\nBucket-Error, 存储桶异常\nIsolate, 待回收\nDeleting, 删除中\nDeleteBucketFailed, 实例删除存储桶失败\nDeleteFailed, 实例删除失败",
+          "document": "<p>实例状态。有以下状态：<br>Pending, 初始化中<br>Deploying, 创建中<br>Running, 运行中<br>Unhealthy, 状态异常<br>FailedCreated, 创建失败<br>FailedUpdated, 更新失败<br>Bucket-Error, 存储桶异常<br>Isolate, 待回收<br>Deleting, 删除中<br>DeleteBucketFailed, 实例删除存储桶失败<br>DeleteFailed, 实例删除失败</p>",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -8262,7 +8262,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的公共访问地址",
+          "document": "<p>实例的公共访问地址</p>",
           "example": "nicokang-tcr-gz.tencentcloudcr.com",
           "member": "string",
           "name": "PublicDomain",
@@ -8272,7 +8272,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间",
+          "document": "<p>实例创建时间</p>",
           "example": "2024-07-19T15:33:22+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -8282,7 +8282,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名称",
+          "document": "<p>地域名称</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
@@ -8292,7 +8292,7 @@
         },
         {
           "disabled": false,
-          "document": "地域Id",
+          "document": "<p>地域Id</p>",
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
@@ -8302,7 +8302,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持匿名",
+          "document": "<p>是否支持匿名</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableAnonymous",
@@ -8312,7 +8312,7 @@
         },
         {
           "disabled": false,
-          "document": "Token有效时间",
+          "document": "<p>Token有效时间</p>",
           "example": "87600",
           "member": "uint64",
           "name": "TokenValidTime",
@@ -8322,7 +8322,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内部访问地址",
+          "document": "<p>实例内部访问地址</p>",
           "example": "10.1.66.46",
           "member": "string",
           "name": "InternalEndpoint",
@@ -8332,8 +8332,8 @@
         },
         {
           "disabled": false,
-          "document": "实例云标签",
-          "example": "{\"ResourceType\":\"instance\",\"Tags\":[{\"Key\":\"tcr-test2\",\"Value\":\"ericyyyang2\"},{\"Key\":\"tcr-test\",\"Value\":\"nicokang\"}]}",
+          "document": "<p>实例云标签</p>",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "output_required": true,
@@ -8342,7 +8342,7 @@
         },
         {
           "disabled": false,
-          "document": "实例过期时间（预付费）",
+          "document": "<p>实例过期时间（预付费）</p>",
           "example": "2034-07-19T15:33:22+08:00",
           "member": "string",
           "name": "ExpiredAt",
@@ -8352,7 +8352,7 @@
         },
         {
           "disabled": false,
-          "document": "实例付费类型，0表示后付费，1表示预付费",
+          "document": "<p>实例付费类型，0表示后付费，1表示预付费</p>",
           "example": "0",
           "member": "int64",
           "name": "PayMod",
@@ -8362,7 +8362,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知",
+          "document": "<p>预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知</p>",
           "example": "0",
           "member": "int64",
           "name": "RenewFlag",
@@ -8372,13 +8372,23 @@
         },
         {
           "disabled": false,
-          "document": "是否开启实例删除保护，false表示不开启",
+          "document": "<p>是否开启实例删除保护，false表示不开启</p>",
           "example": "true",
           "member": "bool",
           "name": "DeletionProtection",
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持AI特性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AIFeature",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

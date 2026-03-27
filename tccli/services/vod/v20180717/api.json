@@ -7393,7 +7393,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储模式。取值有： <li>Permanent：永久存储，生成的图片文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的图片文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>\n默认值：Temporary",
+          "document": "<p>存储模式。取值有： <li>Permanent：永久存储，生成的图片文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的图片文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li><br>默认值：Temporary</p>",
           "example": "Permanent",
           "member": "string",
           "name": "StorageMode",
@@ -7404,7 +7404,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "document": "<p>输出文件名，最长 64 个字符。缺省由系统指定生成文件名。</p>",
           "example": "myfile",
           "member": "string",
           "name": "MediaName",
@@ -7415,7 +7415,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "document": "<p>分类ID，用于对媒体进行分类管理，可通过 <a href=\"/document/product/266/7812\">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>",
           "example": "0",
           "member": "int64",
           "name": "ClassId",
@@ -7426,7 +7426,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式说明</a>。</p>",
           "example": "0000-00-00T00:00:00Z",
           "member": "string",
           "name": "ExpireTime",
@@ -7437,7 +7437,7 @@
         },
         {
           "disabled": false,
-          "document": "生成图片的分辨率。\n\n* GEM 2.5 可选值：1K、2K、4K，默认1K；\n* GEM 3.0 可选值：1K、2K、4K，默认1K；\n* Vidu q2 可选值：1080p、2K、4K，默认1080p；\n* Kling 2.1 可选值：1k、2k，默认1k；\n* Hunyuan 3.0 可选值：720P、1080P、2K、4K。",
+          "document": "<p>生成图片的分辨率。各模型可选值：</p><ul><li>GG 2.5：1K、2K、4K，默认1K；</li><li>GG 3.0：1K、2K、4K，默认1K；</li><li>GG 3.1：512、1K、2K、4K，默认1K；</li><li>Kling 2.1：1k、2k，默认1k；</li><li>Kling 3.0：1k、2k，默认1k；</li><li>Kling 3.0-Omni：1k、2k、4k，默认1k；</li><li>SI 4.0：1K、2K、4K，默认1K；</li><li>SI 4.5：2K、4K，默认2K；</li><li>SI 5.0-lite：2K、3K，默认2K；</li><li>Vidu q2：1080p、2K、4K，默认1080p；</li><li>Hunyuan 3.0：宽、高均在 [512, 2048] 像素范围内，宽高乘积 ≤ 1024:1024 像素。示例：1024:1024；</li><li>Qwen 2.0：支持自由设置宽高，输出图像总像素需在512 * 512 至 2048 * 2048之间。默认分辨率为1024*1024；</li><li>Qwen 0925：不支持；</li></ul>",
           "example": "1024x1024",
           "member": "string",
           "name": "Resolution",
@@ -7448,7 +7448,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所生成图片的宽高比。\n<li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>\n<li>当 ModelName 是 Qwen，则暂不支持。</li>\n<li>当 ModelName 是 Hunyuan，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>\n<li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>\n<li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>",
+          "document": "<p>指定所生成图片的宽高比。</p><ul><li>GG 2.5：1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9；</li><li>GG 3.0：1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9；</li><li>GG 3.1：1:1, 1:4, 1:8, 2:3, 3:2, 3:4, 4:1, 4:3, 4:5, 5:4, 8:1, 9:16, 16:9, 21:9；</li><li>Kling 2.1：16:9, 9:16, 1:1, 4:3, 3:4, 3:2, 2:3, 21:9；</li><li>Kling 3.0：16:9, 9:16, 1:1, 4:3, 3:4, 3:2, 2:3, 21:9；</li><li>Kling 3.0-Omni：16:9, 9:16, 1:1, 4:3, 3:4, 3:2, 2:3, 21:9；</li><li>Vidu q2：16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2；</li><li>SI 4.0：<strong>不支持</strong>此参数，可通过prompt指定16:9, 9:16, 1:1, 4:3, 3:4, 3:2, 2:3, 21:9；</li><li>SI 4.5：<strong>不支持</strong>此参数，可通过prompt指定16:9, 9:16, 1:1, 4:3, 3:4, 3:2, 2:3, 21:9；</li><li>SI 5.0-lite：<strong>不支持</strong>此参数，可通过prompt指定16:9, 9:16, 1:1, 4:3, 3:4, 3:2, 2:3, 21:9；</li><li>Hunyuan 3.0：不支持；</li><li>Qwen 2.0：不支持；</li><li>Qwen 0925：不支持；</li></ul>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -7459,7 +7459,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> ",
+          "document": "<p>是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li></p>",
           "example": "AllowAdult",
           "member": "string",
           "name": "PersonGeneration",
@@ -7470,7 +7470,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "document": "<p>是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>",
           "example": "Enabled",
           "member": "string",
           "name": "InputComplianceCheck",
@@ -7481,7 +7481,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "document": "<p>是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>",
           "example": "Enabled",
           "member": "string",
           "name": "OutputComplianceCheck",
@@ -8348,7 +8348,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li> ",
+          "document": "<p>输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 Url；</li></p>",
           "example": "File",
           "member": "string",
           "name": "Type",
@@ -8359,7 +8359,7 @@
         },
         {
           "disabled": false,
-          "document": "文件分类。取值为：\n<li>Image: 图片；</li>\n<li>Video: 视频。</li>",
+          "document": "<p>文件分类。取值为：</p><li>Image: 图片；</li><li>Video: 视频。</li>",
           "example": "Image",
           "member": "string",
           "name": "Category",
@@ -8370,7 +8370,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。说明：\n1. 推荐使用小于10M的图片；\n2. 图片格式的取值为：jpeg，jpg, png。",
+          "document": "<p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href=\"/document/product/266/7830\">视频上传完成事件通知</a> 或 <a href=\"https://console.cloud.tencent.com/vod/media\">云点播控制台</a> 获取该字段。当 Type 取值为 File 时，本参数有效。说明：</p><ol><li>推荐使用小于10M的图片；</li><li>图片格式的取值为：jpeg，jpg, png。</li></ol>",
           "example": "3704211***509819",
           "member": "string",
           "name": "FileId",
@@ -8381,7 +8381,7 @@
         },
         {
           "disabled": false,
-          "document": "可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。\n说明：\n1. 推荐使用小于10M的图片；\n2. 图片格式的取值为：jpeg，jpg, png。",
+          "document": "<p>可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。<br>说明：</p><ol><li>推荐使用小于10M的图片；</li><li>图片格式的取值为：jpeg，jpg, png。</li></ol>",
           "example": "https://test.com/1.png",
           "member": "string",
           "name": "Url",
@@ -8392,7 +8392,7 @@
         },
         {
           "disabled": false,
-          "document": "参考类型，GV模型适用。\n注意：\n当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；\n当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。",
+          "document": "<p>参考类型，GV模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。</p>",
           "example": "asset",
           "member": "string",
           "name": "ReferenceType",
@@ -8403,7 +8403,7 @@
         },
         {
           "disabled": false,
-          "document": "主体 Id。\n适用模型：Vidu-q2.\n当需要对图片标识主体时，需要每个图片都带主体 Id，后续生成时可以通过@主体 Id 的方式使用。当 Category 为 Image 时有效。",
+          "document": "<p>用法：Vidu主体Id、参考图模式。<br>参考图模式：只有一张图时候，ObjectId必须不为空（一张图、ObjectId为空，为首帧模式）。<br>Vidu主体Id：prompt可以通过 @主体Id 的方式使用。当 Category 为 Image 时有效。</p>",
           "example": "obj1",
           "member": "string",
           "name": "ObjectId",
@@ -8414,7 +8414,7 @@
         },
         {
           "disabled": false,
-          "document": "适用于 Vidu-q2 模型。\n当全部图片携带主体 Id 时，可针对主体设置音色 Id。 当 Category 为 Image 时有效。音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg",
+          "document": "<p>适用于 Vidu-q2 模型。<br>当全部图片携带主体 Id 时，可针对主体设置音色 Id。 当 Category 为 Image 时有效。音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg</p>",
           "example": "male-qn-qingse",
           "member": "string",
           "name": "VoiceId",
@@ -8425,10 +8425,21 @@
         },
         {
           "disabled": false,
-          "document": "是否保留视频原声。当 Category 为 Video 时有效。取值如下：\n<li>Enabled：保留</li>\n<li>Disabled：不保留</li>",
+          "document": "<p>是否保留视频原声。当 Category 为 Video 时有效。取值如下：</p><li>Enabled：保留</li><li>Disabled：不保留</li>",
           "example": "Enabled",
           "member": "string",
           "name": "KeepOriginalSound",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于区分输入是首帧或参考帧。可选值：</p><ul><li>FirstFrame：首帧；</li><li>Reference：参考帧；</li></ul>",
+          "example": "FirstFrame",
+          "member": "string",
+          "name": "Usage",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -12525,7 +12536,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型名称。取值：</p><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li><li>MJ：Midjourney。</li>",
+          "document": "<p>模型名称。取值：</p><li>GG</li><li>SI</li><li>Qwen</li><li>Hunyuan</li><li>Vidu</li><li>Kling</li>",
           "example": "Hunyuan",
           "member": "string",
           "name": "ModelName",
@@ -12534,7 +12545,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型版本。取值：<li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1、3.0、3.0-Omni；</li><li>当 ModelName 是 MJ，可选值为 v7；</li></p>",
+          "document": "<p>模型版本。取值：</p><li>当 ModelName 是 GG，可选值为 2.5、3.0、3.1；</li><li>当 ModelName 是 Jimeng，可选值为 4.0；</li><li>当 ModelName 是 SI，可选值为 4.0、4.5、5.0-lite；</li><li>当 ModelName 是 Qwen，可选值为 0925、2.0；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1、3.0、3.0-Omni；</li>",
           "example": "3.0",
           "member": "string",
           "name": "ModelVersion",
@@ -12543,7 +12554,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：<li>GEM 2.5：0～3张图片；</li><li>Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；</li></p>",
+          "document": "<p>AIGC 生图任务的输入图片的文件信息。各模型支持最大参考图数量：</p><ul><li>GG 2.5： 3张；</li><li>GG 3.0：14张；</li><li>GG 3.1：14张；</li><li>Kling 2.1：4张；</li><li>Kling 3.0：1张；</li><li>Kling 3.0-Omni：1张；</li><li>SI 4.0：14张；</li><li>SI 4.5：14张；</li><li>SI 5.0-lite：14张；</li><li>Vidu q2：7张；</li><li>Hunyuan 3.0：3张；</li><li>Qwen 0925：1张；</li><li>Qwen 2.0：3张；</li><li>MJ v7：3张。</li></ul>",
           "example": "无",
           "member": "AigcImageTaskInputFileInfo",
           "name": "FileInfos",
@@ -12588,7 +12599,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。</p>",
+          "document": "<p>输入的区域信息。可选值：</p><ul><li>Mainland：中国大陆；</li><li>Oversea：海外；</li><li>OverseaUSWest：海外-美西；</li></ul>",
           "example": "Mainland",
           "member": "string",
           "name": "InputRegion",

@@ -91,7 +91,7 @@
     "DescribeDeviceSessionList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceSessionList\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\",\n    \"ProjectId\": \"abcdefg\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": \"0\",\n    \"EndTime\": \"1670000000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceSessionList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"ProjectId\": \"abcdefg\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": 1650000000,\n    \"EndTime\": \"1670000000\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeviceSessionList\": [\n            {\n                \"EndTime\": 1650000060,\n                \"FieldDeviceId\": \"dev2\",\n                \"Quality\": \"good\",\n                \"RemoteDeviceId\": \"dev2\",\n                \"Resolution\": \"1920*1080\",\n                \"SessionId\": \"abcdefg-50f7-4c60-9c89-e7076c8529a9-0\",\n                \"StartTime\": 1650000000\n            }\n        ],\n        \"RequestId\": \"abcdefg-186d-4dc5-9a36-6849446dd921\",\n        \"Total\": 1,\n        \"Num\": 1\n    }\n}",
         "title": "示例1"
       }
@@ -123,7 +123,7 @@
     "DescribeRecentSessionList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecentSessionList\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\",\n    \"ProjectId\": \"abcdefg\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": \"0\",\n    \"EndTime\": \"1670000000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecentSessionList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"ProjectId\": \"abcdefg\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": 1670000000,\n    \"EndTime\": 1670000000\n}",
         "output": "{\n    \"Response\": {\n        \"RecentSessionList\": [\n            {\n                \"LatestUpdateTime\": 1650000060,\n                \"FieldDeviceId\": \"dev2\",\n                \"RemoteDeviceId\": \"dev2\",\n                \"Resolution\": \"1920*1080\",\n                \"SessionId\": \"abcdefg-50f7-4c60-9c89-e7076c8529a9-0\",\n                \"StartTime\": 1650000000\n            }\n        ],\n        \"RequestId\": \"abcdefg-186d-4dc5-9a36-6849446dd921\",\n        \"Total\": 1,\n        \"Num\": 1\n    }\n}",
         "title": "示例1"
       }
@@ -131,7 +131,7 @@
     "DescribeSessionStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionStatistics\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abcdefg\",\n    \"EndTime\": \"1670000000\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionStatistics\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abcdefg\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": 1670000000,\n    \"EndTime\": 1670000000\n}",
         "output": "{\n    \"Response\": {\n        \"ActiveFieldDeviceNum\": 1,\n        \"ActiveRemoteDeviceNum\": 1,\n        \"NotBadSessionRatio\": 100,\n        \"RequestId\": \"abcdefg-1d31-47bc-8725-76124984f005\",\n        \"SessionNum\": 6,\n        \"TotalDuration\": 604\n    }\n}",
         "title": "示例1"
       }
@@ -139,7 +139,7 @@
     "DescribeSessionStatisticsByInterval": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionStatisticsByInterval\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abcdefg\",\n    \"EndTime\": \"1670000000\",\n    \"StatisticInterval\": \"hour\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionStatisticsByInterval\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abcdefg\",\n    \"StatisticInterval\": \"hour\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": 1670000000,\n    \"EndTime\": 1670000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg-774e-4756-9f5b-8faa55ae1e5b\",\n        \"SessionStatistics\": [\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 1,\n                \"StartTime\": 1661151600,\n                \"EndTime\": 1661152600,\n                \"TotalDuration\": 20,\n                \"NotBadSessionRatio\": 50\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 2,\n                \"StartTime\": 1661162400,\n                \"EndTime\": 1661152600,\n                \"TotalDuration\": 20,\n                \"NotBadSessionRatio\": 10\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 1,\n                \"SessionNum\": 4,\n                \"StartTime\": 1661166000,\n                \"EndTime\": 1661176000,\n                \"TotalDuration\": 604,\n                \"NotBadSessionRatio\": 20\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 1,\n                \"StartTime\": 1661166000,\n                \"EndTime\": 1661176000,\n                \"TotalDuration\": 10,\n                \"NotBadSessionRatio\": 30\n            }\n        ]\n    }\n}",
         "title": "示例"
       }

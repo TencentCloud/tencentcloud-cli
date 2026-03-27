@@ -70,11 +70,25 @@
       "output": "CloneInstancesResponse",
       "status": "online"
     },
+    "CloseLog": {
+      "document": "关闭日志",
+      "input": "CloseLogRequest",
+      "name": "关闭日志",
+      "output": "CloseLogResponse",
+      "status": "online"
+    },
     "CloseSSL": {
       "document": "本接口（CloseSSL）用于关闭SSL加密认证。",
       "input": "CloseSSLRequest",
       "name": "关闭SSL",
       "output": "CloseSSLResponse",
+      "status": "online"
+    },
+    "CreateExportTask": {
+      "document": "创建日志下载任务",
+      "input": "CreateExportTaskRequest",
+      "name": "创建日志下载任务",
+      "output": "CreateExportTaskResponse",
       "status": "online"
     },
     "CreateInstanceAccount": {
@@ -103,6 +117,13 @@
       "input": "CreateReplicationGroupRequest",
       "name": "创建复制组接口",
       "output": "CreateReplicationGroupResponse",
+      "status": "online"
+    },
+    "DeleteExportTask": {
+      "document": "删除日志下载任务",
+      "input": "DeleteExportTaskRequest",
+      "name": "删除日志下载任务",
+      "output": "DeleteExportTaskResponse",
       "status": "online"
     },
     "DeleteInstanceAccount": {
@@ -173,6 +194,13 @@
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组详情",
       "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeExportTasks": {
+      "document": "本接口（DescribeExportTasks）用于查询日志文件的下载任务。",
+      "input": "DescribeExportTasksRequest",
+      "name": "查询日志下载任务",
+      "output": "DescribeExportTasksResponse",
       "status": "online"
     },
     "DescribeGlobalReplicationArea": {
@@ -341,6 +369,20 @@
       "input": "DescribeInstancesRequest",
       "name": "查询Redis实例列表",
       "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribeLogInstanceList": {
+      "document": "日志实例列表查询",
+      "input": "DescribeLogInstanceListRequest",
+      "name": "查询日志实例列表",
+      "output": "DescribeLogInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeLogs": {
+      "document": "查询日志",
+      "input": "DescribeLogsRequest",
+      "name": "查询日志",
+      "output": "DescribeLogsResponse",
       "status": "online"
     },
     "DescribeMaintenanceWindow": {
@@ -630,6 +672,13 @@
       "output": "ModifyInstanceReadOnlyResponse",
       "status": "online"
     },
+    "ModifyLog": {
+      "document": "修改日志",
+      "input": "ModifyLogRequest",
+      "name": "修改日志",
+      "output": "ModifyLogResponse",
+      "status": "online"
+    },
     "ModifyMaintenanceWindow": {
       "document": "本接口（ModifyMaintenanceWindow）用于修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。",
       "input": "ModifyMaintenanceWindowRequest",
@@ -656,6 +705,13 @@
       "input": "ModifyReplicationGroupRequest",
       "name": "修改复制组信息",
       "output": "ModifyReplicationGroupResponse",
+      "status": "online"
+    },
+    "OpenLog": {
+      "document": "开启日志",
+      "input": "OpenLogRequest",
+      "name": "开启日志",
+      "output": "OpenLogResponse",
       "status": "online"
     },
     "OpenSSL": {
@@ -1887,6 +1943,42 @@
       ],
       "type": "object"
     },
+    "CloseLogRequest": {
+      "document": "CloseLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "crs-rc9ldwf9",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseLogResponse": {
+      "document": "CloseLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloseSSLRequest": {
       "document": "CloseSSL请求参数结构体",
       "members": [
@@ -1949,6 +2041,78 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateExportTaskRequest": {
+      "document": "CreateExportTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-hnio60jv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志。</li></ul>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志检索的起始时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 00:00:00。返回结果中仅包含该时间点及之后的日志。</p>",
+          "example": "2026-03-05 12:42:39",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志检索的结束时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 23:59:59。返回结果中仅包含该时间点及之前的日志。</p>",
+          "example": "2026-03-05 16:42:39",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设置日志筛选字段，过滤并下载符合条件的日志。</p>",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义下载的日志字段，多个字段以逗号分隔，例如 &quot;timestamp,operation,user&quot;。指定后仅下载所选字段的数据。不传该参数时，默认下载所有字段。</p>",
+          "example": "[\"Timestamp\"]",
+          "member": "string",
+          "name": "ColumnFilter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportTaskResponse": {
+      "document": "CreateExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateInstanceAccountRequest": {
       "document": "CreateInstanceAccount请求参数结构体",
@@ -2506,6 +2670,51 @@
       ],
       "usage": "out"
     },
+    "DeleteExportTaskRequest": {
+      "document": "DeleteExportTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定删除的日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志。</li></ul>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定删除日志的文件名。</p>",
+          "example": "crs-hnio60jv_20260305-124239_to_20260305-164239_1772705315834.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-hnio****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExportTaskResponse": {
+      "document": "DeleteExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteInstanceAccountRequest": {
       "document": "DeleteInstanceAccount请求参数结构体",
       "members": [
@@ -2633,6 +2842,67 @@
         }
       ],
       "type": "object"
+    },
+    "DeliverSummary": {
+      "document": "投递信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>投递类型，store（存储类），mq（消息通道）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "store",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递子类型：cls，ckafka。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLS",
+          "member": "string",
+          "name": "DeliverSubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递订阅者</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLS",
+          "member": "string",
+          "name": "DeliverConsumer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递订阅者名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "client_cls",
+          "member": "string",
+          "name": "DeliverConsumerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kafka error",
+          "member": "string",
+          "name": "DeliverError",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeAutoBackupConfigRequest": {
       "document": "DescribeAutoBackupConfig请求参数结构体",
@@ -3332,6 +3602,80 @@
           "name": "VPort",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportTasksRequest": {
+      "document": "DescribeExportTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志。</li></ul>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页输出的任务列表大小。</p><ul><li>默认值：20。</li><li>取值范围：[1,100]。</li></ul>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p><ul><li>默认值：0。</li><li>取值：Limit 整数倍。计算公式：offset=limit*(页码-1)。</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定查询的实例 ID。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis 控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-f9o8****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportTasksResponse": {
+      "document": "DescribeExportTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询日志记录的总数目。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志文件属性信息，包含：文件名、文件大小、下载地址等。</p>",
+          "example": "无",
+          "member": "ExportFile",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5103,6 +5447,217 @@
       ],
       "type": "object"
     },
+    "DescribeLogInstanceListRequest": {
+      "document": "DescribeLogInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志。</li></ul>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页输出的任务列表大小。</p><ul><li>取值范围：[1,100]。</li><li>默认值：20。</li></ul>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。默认为0。取值为 Limit 整数倍。计算公式：offset=limit*(页码-1)。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设置日志筛选字段，过滤并返回符合条件的日志。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志子类型。</p><p>枚举值：</p><ul><li>write： 写日志。</li><li>read： 读日志。</li><li>all： 读写日志。</li></ul>",
+          "example": "write",
+          "member": "string",
+          "name": "LogSubType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志开关。不传查询所有日志实例。</p><ul><li>on：开启。</li><li>off：关闭。</li></ul>",
+          "example": "on",
+          "member": "string",
+          "name": "LogSwitch",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogInstanceListResponse": {
+      "document": "DescribeLogInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询到的日志的数量。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志平台实例信息。</p>",
+          "example": "无",
+          "member": "LogInstance",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsRequest": {
+      "document": "DescribeLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-k2vh****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志检索的起始时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 00:00:00。返回结果中仅包含该时间点及之后的日志。</p>",
+          "example": "2025-12-11 14:00:09",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志检索的结束时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 23:59:59。返回结果中仅包含该时间点及之前的日志。</p>",
+          "example": "2025-12-11 14:50:09",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志。</li></ul>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回的日志列表大小。</p><ul><li>默认值：20。</li><li>取值范围：[1,100]。</li></ul>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的起始偏移量。</p><ul><li>默认：0。</li><li>取值：Limit 整数倍。计算公式：offset=limit*(页码-1)。</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志排序方式，默认值为 DESC。取值如下：</p><ul><li>ASC：按时间升序排列，最早的日志在前。</li><li>DESC：按时间降序排列，最新的日志在前。</li></ul>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，指定按哪个字段对日志进行排序。</p>",
+          "example": "Timestamp",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsResponse": {
+      "document": "DescribeLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询的日志总数量。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志详情。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogResult",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMaintenanceWindowRequest": {
       "document": "DescribeMaintenanceWindow请求参数结构体",
       "members": [
@@ -6686,6 +7241,150 @@
       ],
       "type": "object"
     },
+    "ExportFile": {
+      "document": "导出文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "crs-hnio60jv_20260305-124239_to_20260305-164239_1772705315834.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态值。</p><p>枚举值：</p><ul><li>creating： 文件创建中。</li><li>success： 文件已生成。</li><li>failed： 文件生成失败。</li><li>deleted： 文件已删除。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小，单位：byte。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件创建时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-05 18:08:36",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件下载地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://audit-test-1308612106.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出文件的错误信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Not Found",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出文件的进度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出文件的完成时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-05 19:35:56",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步请求 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "业务侧实例过滤参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤字段。</p><p>枚举值：</p><ul><li>InstanceId： 实例 ID。</li><li>InstanceName： 实例名称。</li><li>TagKey： 标签键。</li><li>InstanceTags： 实例标签键值，标签key值&amp;标签value值。</li></ul>",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤字段的值。</p>",
+          "example": "[\"crs-d285tydf\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>精确匹配开关。</p><ul><li>false：关闭。</li><li>true：开启。</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "ExactMatch",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Groups": {
       "document": "复制组信息",
       "members": [
@@ -6899,7 +7598,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。\n- 200:Memcached 1.6 内存版（集群架构）。",
+          "document": "<p>实例类型。- 2：Redis 2.8 内存版（标准架构）。- 6：Redis 4.0 内存版（标准架构）。- 7：Redis 4.0 内存版（集群架构）。- 8：Redis 5.0 内存版（标准架构）。- 9：Redis 5.0 内存版（集群架构）。- 15：Redis 6.2 内存版（标准架构）。- 16：Redis 6.2 内存版（集群架构）。- 17：Redis 7.0 内存版（标准架构）。- 18：Redis 7.0 内存版（集群架构）。- 200:Memcached 1.6 内存版（集群架构）。</p>",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -6908,7 +7607,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。\nTypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。",
+          "document": "<p>内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 <a href=\"https://cloud.tencent.com/document/api/239/30600\">查询产品售卖规格</a> 返回的规格为准。TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。</p>",
           "example": "4096",
           "member": "uint64",
           "name": "MemSize",
@@ -6917,7 +7616,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。",
+          "document": "<p>实例数量，单次购买实例数量以 <a href=\"https://cloud.tencent.com/document/api/239/30600\">查询产品售卖规格</a> 返回的规格为准。</p>",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -6926,7 +7625,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "document": "<p>购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -6935,7 +7634,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式。\n- 0：按量计费。\n- 1：包年包月。",
+          "document": "<p>付费方式。- 0：按量计费。- 1：包年包月。</p>",
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
@@ -6944,7 +7643,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。\n**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。",
+          "document": "<p>实例所属的可用区 ID，可参考<a href=\"https://cloud.tencent.com/document/product/239/4106\">地域和可用区</a>  。<strong>说明</strong>：请在 <strong>ZoneId</strong> 与 <strong>ZoneName</strong> 中至少指定一个参数。</p>",
           "example": "100002",
           "member": "uint64",
           "name": "ZoneId",
@@ -6953,7 +7652,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分片数量。\n- 标准架构需要配置分片数量为1。\n- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。",
+          "document": "<p>实例分片数量。- 标准架构需要配置分片数量为1。- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。</p>",
           "example": "1",
           "member": "int64",
           "name": "RedisShardNum",
@@ -6962,7 +7661,7 @@
         },
         {
           "disabled": false,
-          "document": "实例副本数量。取值范围为：1、2、3、4、5。",
+          "document": "<p>实例副本数量。取值范围为：1、2、3、4、5。</p>",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -6971,7 +7670,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持副本只读。Redis2.8标准架构、CKV标准架构无需填写。\n- true：无需支持副本只读。\n- false：需支持。",
+          "document": "<p>是否支持副本只读。Redis2.8标准架构、CKV标准架构无需填写。- true：无需支持副本只读。- false：需支持。</p>",
           "example": "false",
           "member": "bool",
           "name": "ReplicasReadonly",
@@ -6980,7 +7679,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。\n**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。",
+          "document": "<p>实例所属的可用区名称，可参考<a href=\"https://cloud.tencent.com/document/product/239/4106\">地域和可用区</a>  。<strong>说明</strong>：请在 <strong>ZoneId</strong> 与 <strong>ZoneName</strong> 中至少指定一个参数。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ZoneName",
@@ -6989,7 +7688,7 @@
         },
         {
           "disabled": false,
-          "document": "部署方式。\n- local：本地盘版，默认为 local。\n- cloud：云盘版。\n- cdc：独享集群版。",
+          "document": "<p>部署方式。- local：本地盘版，默认为 local。- cloud：云盘版。- cdc：独享集群版。</p>",
           "example": "cloud",
           "member": "string",
           "name": "ProductVersion",
@@ -7004,7 +7703,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格",
+          "document": "<p>折扣后价格</p>",
           "example": "30400.0",
           "member": "float",
           "name": "Price",
@@ -7014,7 +7713,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度价格",
+          "document": "<p>高精度折扣后价格</p>",
           "example": "30400.123",
           "member": "float",
           "name": "HighPrecisionPrice",
@@ -7024,7 +7723,27 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>原价</p>",
+          "example": "280",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高精度原价</p>",
+          "example": "280.0224",
+          "member": "float",
+          "name": "HighPrecisionOriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -7034,7 +7753,7 @@
         },
         {
           "disabled": false,
-          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "document": "<p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>",
           "example": "pent",
           "member": "string",
           "name": "AmountUnit",
@@ -7056,7 +7775,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "包年包月实例的购买时长。\n- 单位：月。\n- 取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "document": "<p>包年包月实例的购买时长。- 单位：月。- 取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -7065,7 +7784,7 @@
         },
         {
           "disabled": false,
-          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis)在实例列表复制包年包月实例 ID。",
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录 <a href=\"https://console.cloud.tencent.com/redis\">Redis 控制台</a>在实例列表复制包年包月实例 ID。</p>",
           "example": "crs-rhlppeye",
           "member": "string",
           "name": "InstanceId",
@@ -7080,7 +7799,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格",
+          "document": "<p>折扣后价格</p>",
           "example": "100800.00",
           "member": "float",
           "name": "Price",
@@ -7090,7 +7809,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度价格",
+          "document": "<p>高精度折扣后价格</p>",
           "example": "30400.123",
           "member": "float",
           "name": "HighPrecisionPrice",
@@ -7100,7 +7819,27 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>原价</p>",
+          "example": "30400",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高精度原价</p>",
+          "example": "30400",
+          "member": "float",
+          "name": "HighPrecisionOriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -7110,7 +7849,7 @@
         },
         {
           "disabled": false,
-          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "document": "<p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>",
           "example": "pent",
           "member": "string",
           "name": "AmountUnit",
@@ -7132,7 +7871,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID，请登录<a href=\"https://console.cloud.tencent.com/redis/instance/list\">Redis控制台</a>在实例列表复制实例 ID。</p>",
           "example": "crs-xjhsdjcxjd",
           "member": "string",
           "name": "InstanceId",
@@ -7141,7 +7880,7 @@
         },
         {
           "disabled": false,
-          "document": "分片大小，单位：MB。",
+          "document": "<p>分片大小，单位：MB。</p>",
           "example": "4096",
           "member": "uint64",
           "name": "MemSize",
@@ -7150,7 +7889,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量。\n- 实例为标准架构，RedisShardNum 默认为1。\n- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。",
+          "document": "<p>分片数量。- 实例为标准架构，RedisShardNum 默认为1。- Redis 2.8主从版、CKV主从版和 Redis 2.8单机版不需要填写。</p>",
           "example": "3",
           "member": "uint64",
           "name": "RedisShardNum",
@@ -7159,7 +7898,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。",
+          "document": "<p>副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RedisReplicasNum",
@@ -7174,7 +7913,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格",
+          "document": "<p>折扣后价格</p>",
           "example": "30400.00",
           "member": "float",
           "name": "Price",
@@ -7184,7 +7923,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度价格",
+          "document": "<p>高精度折扣后价格</p>",
           "example": "30400.123",
           "member": "float",
           "name": "HighPrecisionPrice",
@@ -7194,7 +7933,27 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>原价</p>",
+          "example": "21",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高精度原价</p>",
+          "example": "21.111112",
+          "member": "float",
+          "name": "HighPrecisionOriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -7204,7 +7963,7 @@
         },
         {
           "disabled": false,
-          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "document": "<p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>",
           "example": "pent",
           "member": "string",
           "name": "AmountUnit",
@@ -7569,6 +8328,111 @@
       ],
       "usage": "out"
     },
+    "InstanceInfo": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "审计功能测试",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程中的实例返回的子状态。</p><p>枚举值：</p><ul><li>0： 磁盘只读，</li></ul>",
+          "example": "19",
+          "member": "int64",
+          "name": "SubStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>降级策略，单位：毫秒，实例P99达到降级策略后，审计数据自动丢弃，优先保障业务的可用性,默认值：500毫秒，范围值：300-1000毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "int64",
+          "name": "DegradeStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceTagInfo",
+          "name": "InstanceTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>架构版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceIntegerParam": {
       "document": "实例整型参数描述",
       "members": [
@@ -7874,7 +8738,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "慢查询耗时时长。单位：毫秒。",
+          "document": "<p>慢查询耗时时长。单位：毫秒。</p>",
           "example": "45",
           "member": "int64",
           "name": "Duration",
@@ -7884,7 +8748,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端地址。",
+          "document": "<p>客户端地址。</p>",
           "example": "172.16.21.78",
           "member": "string",
           "name": "Client",
@@ -7894,7 +8758,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询的命令。",
+          "document": "<p>慢查询的命令。</p>",
           "example": "hget",
           "member": "string",
           "name": "Command",
@@ -7904,7 +8768,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询详细命令行信息。",
+          "document": "<p>慢查询详细命令行信息。</p>",
           "example": "hget",
           "member": "string",
           "name": "CommandLine",
@@ -7914,7 +8778,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间。",
+          "document": "<p>执行时间。</p>",
           "example": "2019-09-08 12:13:08",
           "member": "string",
           "name": "ExecuteTime",
@@ -7924,7 +8788,7 @@
         },
         {
           "disabled": false,
-          "document": "收客户端请求时长(ms)",
+          "document": "<p>收客户端请求时长(ms)</p>",
           "example": "100",
           "member": "int64",
           "name": "RecvClientEnd",
@@ -7934,12 +8798,22 @@
         },
         {
           "disabled": false,
-          "document": "发送客户端请求时长(ms)",
+          "document": "<p>发送客户端请求时长(ms)</p>",
           "example": "100",
           "member": "int64",
           "name": "SendClientEnd",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy节点ID。</p>",
+          "example": "af5c3a1d70187f0005e3f03a6285a5f622",
+          "member": "string",
+          "name": "Node",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9088,6 +9962,296 @@
       ],
       "usage": "both"
     },
+    "LogFilter": {
+      "document": "日志过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件名称。</p><p>枚举值：</p><ul><li>Timestamp： 创建时间（格式：2006-01-02 15:04:05.000）</li><li>UserName： 用户名</li><li>CacheCode： 缓存代码，后端redis节点</li><li>ClientAddr： 客户端地址</li><li>CommandDetail： 命令详情</li><li>CommandLatency： 命令延迟（毫秒）</li><li>CommandType： 命令类型</li><li>DBId： 数据库ID</li><li>ErrMsg： 错误信息</li></ul>",
+          "example": "UserName",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件匹配类型。</p><p>枚举值：</p><ul><li>INC： 包含，多个值之前是||的关系</li><li>EXC： 不包含，多个值之前是||的关系</li><li>EQS： 等于，多个值之前是||的关系</li><li>NEQ： 不等于，多个值之前是&amp;&amp;的关系</li><li>RA： 范围</li></ul>",
+          "example": "EQS",
+          "member": "string",
+          "name": "Compare",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件匹配值。当Compare=RA时，例如：[&quot;1-100&quot;,&quot;200-300&quot;]。</p>",
+          "example": "[\"default\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogInstance": {
+      "document": "实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "crs-mock0001",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志状态，create：创建中；normal：开启；close：关闭中。</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可以切换日志查询-取值：yes-可以，no-不可以。该参数主要为控制存量日志迁移到日志平台做查询使用，只有为yes状态才可以调用查询日志接口。</p>",
+          "example": "true",
+          "member": "string",
+          "name": "EnableQuery",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启时间</p>",
+          "example": "2026-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频存储天数</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "HighLogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>低频存储天数</p>",
+          "example": "23",
+          "member": "int64",
+          "name": "LowLogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总存储时长</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频存储量，单位：MB</p>",
+          "example": "256",
+          "member": "float",
+          "name": "HighStorage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>低频存储量，单位：MB</p>",
+          "example": "768.5",
+          "member": "float",
+          "name": "LowStorage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总存储量</p>",
+          "example": "1024.5",
+          "member": "float",
+          "name": "LogStorage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递：ON，OFF</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Deliver",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志投递信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliverSummary",
+          "name": "DeliverSummary",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务侧实例相关信息，根据业务不同，返回相关信息不同。</p>",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "InstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计子类型</p>",
+          "example": "all",
+          "member": "string",
+          "name": "LogSubType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogResult": {
+      "document": "日志结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库ID</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DBId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令延迟（毫秒）</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "CommandLatency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（格式：2006-01-02 15:04:05.000）</p>",
+          "example": "2026-03-24 19:00:00.000",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端地址</p>",
+          "example": "10.0.0.100:6379",
+          "member": "string",
+          "name": "ClientAddr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令类型</p>",
+          "example": "GET",
+          "member": "string",
+          "name": "CommandType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存代码，后端redis节点</p>",
+          "example": "redis-node-0",
+          "member": "string",
+          "name": "CacheCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命令详情</p>",
+          "example": "GET mykey",
+          "member": "string",
+          "name": "CommandDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "client error",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ManualBackupInstanceRequest": {
       "document": "ManualBackupInstance请求参数结构体",
       "members": [
@@ -10120,6 +11284,78 @@
       ],
       "type": "object"
     },
+    "ModifyLogRequest": {
+      "document": "ModifyLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-kqqge823",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志</li></ul>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志子类型。</p><p>枚举值：</p><ul><li>write： 写命令</li><li>read： 读命令</li><li>all： 全部命令</li></ul>",
+          "example": "write",
+          "member": "string",
+          "name": "LogSubType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志过期时间，单位：天。</p><p>枚举值：</p><ul><li>7：  7 天</li><li>30： 30 天</li></ul>",
+          "example": "7",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频日志过期时间，单位：天。</p><p>枚举值：</p><ul><li>7： 7 天</li></ul><p>默认值： 7</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "HighLogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>降级策略，单位：毫秒，实例P99达到降级策略后，审计数据自动丢弃，优先保障业务的可用性，默认值：500毫秒。</p><p>取值范围：[300, 1000]</p>",
+          "example": "600",
+          "member": "int64",
+          "name": "DegradeStrategy",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogResponse": {
+      "document": "ModifyLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMaintenanceWindowRequest": {
       "document": "ModifyMaintenanceWindow请求参数结构体",
       "members": [
@@ -10395,6 +11631,78 @@
     },
     "ModifyReplicationGroupResponse": {
       "document": "ModifyReplicationGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenLogRequest": {
+      "document": "OpenLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-k2vhnkix",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志。</li></ul>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志子类型。</p><p>枚举值：</p><ul><li>write： 写命令。</li><li>read： 读命令。</li><li>all： 读写命令。</li></ul>",
+          "example": "write",
+          "member": "string",
+          "name": "LogSubType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志有效期, 单位：天。</p><p>枚举值：</p><ul><li>7：  7 天</li><li>30： 30 天</li></ul><p>默认值：7</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频日志有效期, 单位：天。</p><p>枚举值：</p><ul><li>7： 7天</li></ul><p>默认值：7</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "HighLogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志降级策略阈值。当实例 P99 延迟达到该阈值后，系统将自动丢弃审计日志数据，以优先保障业务可用性。</p><ul><li>单位：毫秒。</li><li>默认值：500。</li><li>取值范围：[300, 1000]。</li></ul>",
+          "example": "600",
+          "member": "int64",
+          "name": "DegradeStrategy",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenLogResponse": {
+      "document": "OpenLog返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

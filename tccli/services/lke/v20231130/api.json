@@ -5648,6 +5648,15 @@
           "name": "CustomVariables",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user-123",
+          "member": "string",
+          "name": "VisitorId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -1,34 +1,35 @@
-**Example 1: 创建工作流的异步运行实例**
+**Example 1: 正确示例**
 
-针对运行时间比较长的工作流的场景。步骤：在平台上创建好符合条件（不含参数提取节点、选项卡节点和回复节点）的工作流并调试通过，编辑应用设置成“单工作流模式”，选择工作流，然后再调用本接口。
+正确示例
 
 Input: 
 
 ```
 tccli lke CreateWorkflowRun --cli-unfold-argument  \
-    --RunEnv 1 \
-    --AppBizId 1854548189164339200 \
-    --Query 发起任务 \
-    --CustomVariables.0.Name name \
-    --CustomVariables.0.Value 张三
+    --AppBizId 2013099073199108224 \
+    --RunEnv 0 \
+    --Query 你好 \
+    --CustomVariables.0.Name Url \
+    --CustomVariables.0.Value https://www.baidu.com \
+    --VisitorId user-123
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "42c23cf3-0dbb-4676-a5a0-bb9cb0787f5d",
-        "AppBizId": "1854548189164339200",
-        "WorkflowRunId": "67c23cf3-077b-4644-225a0-bb9cb078322",
-        "RunEnv": 1,
-        "CreateTime": "1672531200000",
-        "Query": "发起任务",
+        "AppBizId": "2013099073199108224",
+        "CreateTime": "1774444678419",
         "CustomVariables": [
             {
-                "Name": "name",
-                "Value": "张三"
+                "Name": "Url",
+                "Value": "https://www.baidu.com"
             }
-        ]
+        ],
+        "Query": "你好",
+        "RunEnv": 0,
+        "WorkflowRunId": "wfr-brem67jp5pmo",
+        "RequestId": "c62597e1-994b-48cd-be41-ba9dee88d5ed"
     }
 }
 ```

@@ -59,8 +59,8 @@
     "BatchGetPlaybackToken": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchGetPlaybackToken\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3923193,\n    \"RoomIds\": [\n        305745891\n    ],\n    \"ExpireSeconds\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"RoomId\": 305745891,\n                \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.***********p******A1NzQ1ODkxLCJleHAiOjQ5MjQyOTMzMzh9.WvaoCqfns************lRXNr6tgylgWmM1ocAz0kw\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"9a4a9095-f250-4dcd-8650-21861a0ebbb0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchGetPlaybackToken\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3923193,\n    \"RoomIds\": [\n        305745891\n    ],\n    \"ExpireSeconds\": 0,\n    \"UserId\": \"2aiT64yygu***5**k***r3hhM3x\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"RoomId\": 305745891,\n                \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.***********p******A1NzQ1ODkxLCJleHAiOjQ5MjQyOTMzMzh9.WvaoCqfns************lRXNr6tgylgWmM1ocAz0kw\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"9a4a9095-f250-4dcd-8650-21861a0ebbb0\",\n        \"UserId\": \"2aiT64y****U********r3hhM3x\"\n    }\n}",
         "title": "BatchGetPlaybackToken"
       }
     ],

@@ -10,7 +10,7 @@ tccli trro DescribeDeviceSessionList --cli-unfold-argument  \
     --PageSize 10 \
     --ProjectId abcdefg \
     --DeviceId dev2 \
-    --StartTime 0 \
+    --StartTime 1650000000 \
     --EndTime 1670000000
 ```
 

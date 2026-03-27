@@ -56,10 +56,10 @@
     ],
     "CreateJobConfig": [
       {
-        "document": "创建一个Jar作业配置",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobConfig\n<公共请求参数>\n\n{\n    \"ProgramArgs\": \"2000\",\n    \"EntrypointClass\": \"com.tencent.flink.test.WordCount\",\n    \"JobId\": \"cql-n8yaia0y\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Version\": 2,\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
-        "title": "新建Jar作业配置示例"
+        "document": "创建python作业配置示例",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobConfig\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-68w5vlip\",\n    \"EntrypointClass\": \"com.tencent.cloud.oceanus.wordcount.WordCount\",\n    \"ProgramArgs\": \"\",\n    \"Remark\": \"v1\",\n    \"ResourceRefs\": [\n        {\n            \"ResourceId\": \"resource-lbi8h92t\",\n            \"Version\": 1,\n            \"Type\": 1\n        }\n    ],\n    \"DefaultParallelism\": 1,\n    \"Properties\": [\n        {\n            \"Key\": \"pipeline.max-parallelism\",\n            \"Value\": \"2048\"\n        }\n    ],\n    \"LogCollect\": true,\n    \"ClsLogsetId\": \"10981e21-aee9-4a01-9ed9-eadf5956fe3c\",\n    \"ClsTopicId\": \"544002e3-299b-41d2-b18f-19194fb0660b\",\n    \"LogCollectType\": 2,\n    \"PythonVersion\": \"Python-3.7\",\n    \"WorkSpaceId\": \"space-1257058945ap-guangzhou\",\n    \"LogLevel\": \"INFO\",\n    \"AutoRecover\": 1,\n    \"ClazzLevels\": [],\n    \"ExpertModeOn\": false,\n    \"ExpertModeConfiguration\": {},\n    \"TraceModeOn\": false,\n    \"TraceModeConfiguration\": {},\n    \"CheckpointRetainedNum\": 0,\n    \"JobGraph\": {\n        \"Nodes\": [],\n        \"Edges\": []\n    },\n    \"EsServerlessIndex\": \"\",\n    \"EsServerlessSpace\": \"\",\n    \"FlinkVersion\": \"Flink-1.13\",\n    \"JobManagerCpu\": 0,\n    \"JobManagerMem\": 0,\n    \"TaskManagerCpu\": 0,\n    \"TaskManagerMem\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b4433c9-3efc-4afc-a2bd-78d682f5c3dd\",\n        \"Version\": 2\n    }\n}",
+        "title": "创建Python作业配置示例"
       },
       {
         "document": "创建SQL作业配置，\n其中ProgramArgs参数包括了大量的入参，SqlCode 、Metadata 都采用了base64加密",
@@ -68,10 +68,10 @@
         "title": "创建SQL作业配置示例"
       },
       {
-        "document": "创建python作业配置示例",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobConfig\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-68w5vlip\",\n    \"EntrypointClass\": \"com.tencent.cloud.oceanus.wordcount.WordCount\",\n    \"ProgramArgs\": \"\",\n    \"Remark\": \"v1\",\n    \"ResourceRefs\": [\n        {\n            \"ResourceId\": \"resource-lbi8h92t\",\n            \"Version\": 1,\n            \"Type\": 1\n        }\n    ],\n    \"DefaultParallelism\": 1,\n    \"Properties\": [\n        {\n            \"Key\": \"pipeline.max-parallelism\",\n            \"Value\": \"2048\"\n        }\n    ],\n    \"LogCollect\": true,\n    \"ClsLogsetId\": \"10981e21-aee9-4a01-9ed9-eadf5956fe3c\",\n    \"ClsTopicId\": \"544002e3-299b-41d2-b18f-19194fb0660b\",\n    \"LogCollectType\": 2,\n    \"PythonVersion\": \"Python-3.7\",\n    \"WorkSpaceId\": \"space-1257058945ap-guangzhou\",\n    \"LogLevel\": \"INFO\",\n    \"AutoRecover\": 1,\n    \"ClazzLevels\": [],\n    \"ExpertModeOn\": false,\n    \"ExpertModeConfiguration\": {},\n    \"TraceModeOn\": false,\n    \"TraceModeConfiguration\": {},\n    \"CheckpointRetainedNum\": 0,\n    \"JobGraph\": {\n        \"Nodes\": [],\n        \"Edges\": []\n    },\n    \"EsServerlessIndex\": \"\",\n    \"EsServerlessSpace\": \"\",\n    \"FlinkVersion\": \"Flink-1.13\",\n    \"JobManagerCpu\": 0,\n    \"JobManagerMem\": 0,\n    \"TaskManagerCpu\": 0,\n    \"TaskManagerMem\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b4433c9-3efc-4afc-a2bd-78d682f5c3dd\",\n        \"Version\": 2\n    }\n}",
-        "title": "创建Python作业配置示例"
+        "document": "创建一个Jar作业配置",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobConfig\n<公共请求参数>\n\n{\n    \"ProgramArgs\": \"2000\",\n    \"EntrypointClass\": \"com.tencent.flink.test.WordCount\",\n    \"JobId\": \"cql-n8yaia0y\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Version\": 2,\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
+        "title": "新建Jar作业配置示例"
       }
     ],
     "CreateResource": [
@@ -296,7 +296,7 @@
       {
         "document": "查询变量列表",
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVariables\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VariableSet\": [\n            {\n                \"Remark\": \"xx\",\n                \"Name\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"Value\": \"xx\",\n                \"SerialId\": \"xx\",\n                \"Type\": 0,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "变量列表展示"
       }
     ],

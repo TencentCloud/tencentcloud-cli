@@ -4495,7 +4495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。",
+          "document": "<p>角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。</p>",
           "example": "test_role_name",
           "member": "string",
           "name": "RoleName",
@@ -4504,7 +4504,7 @@
         },
         {
           "disabled": false,
-          "document": "必填字段，集群Id",
+          "document": "<p>必填字段，集群Id</p>",
           "example": "rocketmq-2p9vx3ax9jxg",
           "member": "string",
           "name": "ClusterId",
@@ -4513,7 +4513,7 @@
         },
         {
           "disabled": false,
-          "document": "备注说明，长度必须大等于0且小等于128。",
+          "document": "<p>备注说明，长度必须大等于0且小等于128。</p>",
           "example": "测试角色",
           "member": "string",
           "name": "Remark",
@@ -4522,10 +4522,37 @@
         },
         {
           "disabled": false,
-          "document": "角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）",
+          "document": "<p>角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）</p>",
           "example": "Cluster",
           "member": "string",
           "name": "PermType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入</p>",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "RoleGenerateMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择MANUAL模式下，需要手动输入AK值</p>",
+          "example": "private-diy-accesskey",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择MANUAL模式下，需要手动输入SK值</p>",
+          "example": "private-diy-secretkey",
+          "member": "string",
+          "name": "SecretKey",
           "required": false,
           "type": "string"
         }
@@ -4537,7 +4564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色名称",
+          "document": "<p>角色名称</p>",
           "example": "test_role_name",
           "member": "string",
           "name": "RoleName",
@@ -4547,7 +4574,7 @@
         },
         {
           "disabled": false,
-          "document": "角色token",
+          "document": "<p>角色token</p>",
           "example": "eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY",
           "member": "string",
           "name": "Token",
@@ -4557,7 +4584,7 @@
         },
         {
           "disabled": false,
-          "document": "备注说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试角色",
           "member": "string",
           "name": "Remark",
@@ -14656,7 +14683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专享实例ID",
+          "document": "<p>专享实例ID</p>",
           "example": "rocketmq-4k4orqgq",
           "member": "string",
           "name": "InstanceId",
@@ -14665,7 +14692,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格，\nrocket-vip-basic-1 基础型\nrocket-vip-basic-2 标准型\nrocket-vip-basic-3 高阶Ⅰ型\nrocket-vip-basic-4 高阶Ⅱ型",
+          "document": "<p>实例规格，<br>rocket-vip-basic-1 基础型<br>rocket-vip-basic-2 标准型<br>rocket-vip-basic-3 高阶Ⅰ型<br>rocket-vip-basic-4 高阶Ⅱ型</p>",
           "example": "rocket-vip-basic-1",
           "member": "string",
           "name": "Specification",
@@ -14674,7 +14701,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数量",
+          "document": "<p>节点数量</p>",
           "example": "2",
           "member": "uint64",
           "name": "NodeCount",
@@ -14683,12 +14710,21 @@
         },
         {
           "disabled": false,
-          "document": "存储空间，GB为单位",
+          "document": "<p>存储空间，GB为单位</p>",
           "example": "1000",
           "member": "uint64",
           "name": "StorageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署可用区列表</p>",
+          "example": "[\"100001\",\"100002\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14698,7 +14734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单号",
+          "document": "<p>订单号</p>",
           "example": "20230720073017608094121",
           "member": "string",
           "name": "OrderId",
@@ -22181,20 +22217,20 @@
         },
         {
           "disabled": false,
-          "document": "客户端ID",
-          "example": "127.0.0.1@25760#13749780392400",
-          "member": "string",
-          "name": "ClientId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "主题名称",
           "example": "test_topic",
           "member": "string",
           "name": "TopicName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端",
+          "example": "127.0.0.1@25760#13749780392400",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
           "type": "string"
         }
       ],

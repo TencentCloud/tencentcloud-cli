@@ -21,6 +21,13 @@
       "output": "CreateMuskPromptResponse",
       "status": "online"
     },
+    "DeleteService": {
+      "document": "本接口 (DeleteService) 用于删除一个指定配置的实例。",
+      "input": "DeleteServiceRequest",
+      "name": "删除服务",
+      "output": "DeleteServiceResponse",
+      "status": "online"
+    },
     "DeployInferService": {
       "document": "本接口(DeployInferService)用于部署推理服务",
       "input": "DeployInferServiceRequest",
@@ -96,6 +103,13 @@
       "input": "DescribeServicesRequest",
       "name": "查询服务",
       "output": "DescribeServicesResponse",
+      "status": "online"
+    },
+    "DescribeServicesCallInfo": {
+      "document": "本接口 (DescribeServciesCallInfo) 用于查询服务调用信息。",
+      "input": "DescribeServicesCallInfoRequest",
+      "name": "查询服务调用信息",
+      "output": "DescribeServicesCallInfoResponse",
       "status": "online"
     },
     "InquirePriceRunInstances": {
@@ -281,6 +295,52 @@
         }
       ],
       "usage": "both"
+    },
+    "CallInfo": {
+      "document": "服务调用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "svc-fnay2k0u",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务调用地址",
+          "example": "http://lb-kiogvjyj-a6ejxd0rvihp9tyo.clb.bj-tencentclb.net",
+          "member": "string",
+          "name": "PublicEndpoint",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务调用的API_KEY",
+          "example": "6e38ef289496e88d7876b22b82190a41a56b2bbdf1f9c80f26154f00353781dc",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网调用地址",
+          "example": "http://127.0.0.1",
+          "member": "string",
+          "name": "VpcEndpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ComputeDetail": {
       "document": "算力详情",
@@ -650,6 +710,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceRequest": {
+      "document": "DeleteService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "svc-fnay2k0u",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceResponse": {
+      "document": "DeleteService返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1274,6 +1361,61 @@
           "example": "[{\"ServiceName\": \"jupyter\",\"Url\": \"http://1.14.52.185:80?40a0153b6c8ff839b2b83f9a3918daa55facad3c3e7a9b4a0e2377bd08f4aaa2\"}]",
           "member": "LoginSetting",
           "name": "LoginSettings",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesCallInfoRequest": {
+      "document": "DescribeServicesCallInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推理服务ID列表",
+          "example": "[\"svc-fnay2k0u\"]",
+          "member": "string",
+          "name": "ServiceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesCallInfoResponse": {
+      "document": "DescribeServicesCallInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用信息",
+          "example": "无",
+          "member": "CallInfo",
+          "name": "CallInfoSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false

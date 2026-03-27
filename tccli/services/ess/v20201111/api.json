@@ -20383,7 +20383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否允许编辑企业注册时的法人姓名。\n<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>\n\n注意：\nRegisterInfo 中的LegalName值不为空的时候，才可设置为不可编辑。",
+          "document": "是否允许编辑企业注册时的法人姓名。\n<br/>true：不允许编辑<br/>false：允许编辑（默认值）<br/>\n\n注意：\nRegisterInfo 中的LegalName值不为空的时候，才可设置为不可编辑。",
           "example": "true",
           "member": "bool",
           "name": "LegalNameSame",
@@ -20393,7 +20393,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否允许编辑企业注册时统一社会信用代码。\n<br/>true:不允许编辑。\n<br/>false:允许编辑（默认值）。\n<br/>\n\n\n注意：\nRegisterInfo 中的UnifiedSocialCreditCode值不为空的时候，才可设置为不可编辑。\n",
           "example": "true",
           "member": "bool",
@@ -20409,6 +20409,17 @@
           "example": "true",
           "member": "bool",
           "name": "OrganizationIdCardTypeSame",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许编辑企业注册时统一社会信用代码。\n<br/>true:不允许编辑。\n<br/>false:允许编辑（默认值）。\n<br/>\n\n\n注意：\nRegisterInfo 中的UnifiedSocialCreditCode值不为空的时候，才可设置为不可编辑。",
+          "example": "true",
+          "member": "bool",
+          "name": "UnifiedSocialCreditCodeSame",
           "output_required": false,
           "required": false,
           "type": "bool",

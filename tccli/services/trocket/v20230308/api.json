@@ -92,7 +92,7 @@
       "status": "online"
     },
     "DescribeConsumerGroupList": {
-      "document": "获取消费组列表，Filter参数使用说明如下：\n\n- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n- ConsumeMessageOrderly，投递顺序性，枚举值如下：\n    - true 顺序投递\n    - false 并发投递\n\nFilters示例： \n[{ \"Name\": \"ConsumeMessageOrderly\", \"Values\": [\"true\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的获取消费组列表接口文档见 [DescribeRocketMQGroups](https://cloud.tencent.com/document/api/1179/63420)。",
+      "document": "获取消费组列表，Filter参数使用说明如下：\n\n- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n- ConsumeMessageOrderly，投递顺序性，枚举值如下：\n    - true 顺序投递\n    - false 并发投递\n- RetryPolicy，重试策略，枚举值如下：\n    - EXPONENTIAL：固定间隔\n    - CUSTOMIZED：阶梯退避\n\nFilters示例： \n[{ \"Name\": \"ConsumeMessageOrderly\", \"Values\": [\"true\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的获取消费组列表接口文档见 [DescribeRocketMQGroups](https://cloud.tencent.com/document/api/1179/63420)。",
       "input": "DescribeConsumerGroupListRequest",
       "name": "查询消费组列表",
       "output": "DescribeConsumerGroupListResponse",
@@ -106,7 +106,7 @@
       "status": "online"
     },
     "DescribeFusionInstanceList": {
-      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n\n- InstanceName 集群名称，支持模糊查询，从本接口返回值或控制台获得\n- InstanceId 集群ID，精确查询，从当前接口或控制台获得\n- InstanceType 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选\n- Version 集群版本，枚举值如下：\n    - 4 RocketMQ 4.x 集群\n    - 5 RocketMQ 5.x 集群\n\nFilters示例：\n [{ \"Name\": \"InstanceId\", \"Values\": [\"rmq-72mo3a9o\"] }]",
+      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n\n- InstanceName: 集群名称，支持模糊查询，从本接口返回值或控制台获得\n- InstanceId: 集群ID，精确查询，从当前接口或控制台获得\n- InstanceType: 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选\n- Version: 集群版本，枚举值如下：\n    - 4 RocketMQ 4.x 集群\n    - 5 RocketMQ 5.x 集群\n-  InstanceStatus: 集群状态筛选条件，支持多选，枚举值如下：\n    - RUNNING：运行中\n    - ABNORMAL：异常\n    - OVERDUE：隔离中\n    - DESTROYED：已销毁\n    - CREATING：创建中\n    - MODIFYING：变配中\n    - CREATE_FAILURE：创建失败\n    - MODIFY_FAILURE：变配失败\n    - DELETING：删除中\n\nFilters示例：\n [{ \"Name\": \"InstanceId\", \"Values\": [\"rmq-72mo3a9o\"] }]",
       "input": "DescribeFusionInstanceListRequest",
       "name": "查询集群列表",
       "output": "DescribeFusionInstanceListResponse",
@@ -593,6 +593,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重试策略",
+          "example": "无",
+          "member": "RetryPolicy",
+          "name": "RetryPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -728,6 +739,15 @@
           "name": "TagList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "重试策略",
+          "example": "无",
+          "member": "RetryPolicy",
+          "name": "RetryPolicy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1001,6 +1021,33 @@
           "name": "DetailedPerms",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "RoleGenerateMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选择MANUAL模式下，需要手动输入AK值",
+          "example": "text-private-accesskey",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选择MANUAL模式下，需要手动输入SK值",
+          "example": "test-private-secretkey",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1700,6 +1747,16 @@
           "name": "MessageModel",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重试策略",
+          "example": "无",
+          "member": "RetryPolicy",
+          "name": "RetryPolicy",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -4969,6 +5026,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重试策略",
+          "example": "无",
+          "member": "RetryPolicy",
+          "name": "RetryPolicy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5149,6 +5215,15 @@
           "name": "EnableDeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "部署可用区列表",
+          "example": "[\"160001\",\"160002\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5690,6 +5765,34 @@
         }
       ],
       "type": "object"
+    },
+    "RetryPolicy": {
+      "document": "重试策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重试策略类型，枚举值如下：\n\n- EXPONENTIAL：固定间隔\n- CUSTOMIZED：阶梯退避",
+          "example": "EXPONENTIAL",
+          "member": "string",
+          "name": "PolicyType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "固定重试间隔，仅在重试策略为固定间隔时生效",
+          "example": "180",
+          "member": "int64",
+          "name": "RetryInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RoleItem": {
       "document": "角色信息",
@@ -6702,20 +6805,20 @@
         },
         {
           "disabled": false,
-          "document": "客户端ID",
-          "example": "10.185.22.31@7#782332544",
-          "member": "string",
-          "name": "ClientId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "消息ID",
           "example": "1464F14500017DAF6ECC79CA6CAA0288",
           "member": "string",
           "name": "MsgId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端",
+          "example": "10.185.22.31@7#782332544",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
           "type": "string"
         },
         {

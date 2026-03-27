@@ -10,10 +10,10 @@
     ],
     "CreateConsumerGroup": [
       {
-        "document": "创建消费组成功",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumerGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\",\n    \"MaxRetryTimes\": 16,\n    \"ConsumeEnable\": true,\n    \"ConsumeMessageOrderly\": true,\n    \"Remark\": \"remark info\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ConsumerGroup\": \"test_group\",\n        \"InstanceId\": \"rmq-72mo3a9o\",\n        \"RequestId\": \"58f60891-002f-4b8a-b71f-3767a645c28e\"\n    }\n}",
-        "title": "创建消费组"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumerGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16ogwxoxmm\",\n    \"MaxRetryTimes\": 16,\n    \"ConsumeEnable\": true,\n    \"ConsumeMessageOrderly\": false,\n    \"ConsumerGroup\": \"test_group\",\n    \"RetryPolicy\": {\n        \"PolicyType\": \"EXPONENTIAL\",\n        \"RetryInterval\": 120\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsumerGroup\": \"test_group\",\n        \"InstanceId\": \"rmq-16ogwxoxmm\",\n        \"RequestId\": \"03ff82e0-631d-47aa-9bbd-6aa1949f1efd\"\n    }\n}",
+        "title": "成功创建消费组"
       }
     ],
     "CreateInstance": [
@@ -296,10 +296,10 @@
     ],
     "ModifyConsumerGroup": [
       {
-        "document": "修改消费组属性成功",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumerGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\",\n    \"ConsumeEnable\": true,\n    \"ConsumeMessageOrderly\": true,\n    \"MaxRetryTimes\": 16,\n    \"Remark\": \"测试修改\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"239a3769-8dc6-41e9-bc01-67be452db5a3\"\n    }\n}",
-        "title": "修改消费组属性"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumerGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-16ogwxoxmm\",\n    \"ConsumeEnable\": true,\n    \"ConsumeMessageOrderly\": false,\n    \"ConsumerGroup\": \"test_group\",\n    \"MaxRetryTimes\": 3,\n    \"Remark\": \"test modify\",\n    \"RetryPolicy\": {\n        \"PolicyType\": \"EXPONENTIAL\",\n        \"RetryInterval\": 180\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e65dd-bd8a-4685-8b17-5770686276f3\"\n    }\n}",
+        "title": "成功修改消费组"
       }
     ],
     "ModifyInstance": [

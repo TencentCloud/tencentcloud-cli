@@ -8,28 +8,26 @@
         "title": "添加谷歌认证源"
       }
     ],
-    "BindCloudBaseAccessDomain": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindCloudBaseAccessDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"example.cpm\",\n    \"ServiceId\": \"envid-12133\",\n    \"CertId\": \"certid-1212\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"ServiceId\": \"envid-12133\"\n    }\n}",
-        "title": "云接入绑定自定义域名(CDN)"
-      }
-    ],
-    "BindCloudBaseGWDomain": [
-      {
-        "document": "云接入绑定自定义域名 ",
-        "input": "{\n  \"ServiceId\": \"xx\",\n  \"Domain\": \"xx\",\n  \"CertId\": \"xx\",\n  \"EnableRegion\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "云接入绑定自定义域名"
-      }
-    ],
     "CheckTcbService": [
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=CheckTcbService\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Initialized\": false,\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "CreateApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiKey\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"KeyType\": \"publish_key\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"eyJhbGciOiJSUzI1NiIsImtpZCskdfhss\",\n        \"CreateAt\": \"2026-03-16T15:48:48+08:00\",\n        \"ExpireAt\": \"2099-03-16T15:48:48+08:00\",\n        \"KeyId\": \"6qBr24a4Tn3sKs1UZSsv_w\",\n        \"Name\": \"publish_key\",\n        \"RequestId\": \"fd103953-d395-449c-9f1d-ea3822e48af6\"\n    }\n}",
+        "title": "新增publish_key类型的key"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiKey\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"KeyType\": \"api_key\",\n    \"KeyName\": \"server_key\",\n    \"ExpireIn\": 7776000\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"eyJhbGciOiJSUzI1NiIsImtpZCskdfhss\",\n        \"CreateAt\": \"2026-03-16T15:48:48+08:00\",\n        \"ExpireAt\": \"2026-06-16T15:48:48+08:00\",\n        \"KeyId\": \"6qBr24a4Tn3sKs1UZSsv_w\",\n        \"Name\": \"server_key\",\n        \"RequestId\": \"ddea6362-324d-4485-b32c-7b93044639b1\"\n    }\n}",
+        "title": "新增90天过期的api_key类型的key"
       }
     ],
     "CreateAuthDomain": [
@@ -84,14 +82,6 @@
         "title": "续费云开发baas套餐"
       }
     ],
-    "CreateCloudBaseGWAPI": [
-      {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=CreateCloudBaseGWAPI\n&Path=\"/second\"\n&Type=1\n&Name=\"function-2\"\n&ServiceId=\"roy-test-666\"\n&AuthSwitch=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"APIId\": \"096d11d0-6f3f-4915-a872-4bcba43b7d31\",\n        \"RequestId\": \"a7998619-e189-484b-b439-922104d2321f\"\n    }\n}",
-        "title": "示例一"
-      }
-    ],
     "CreateEnv": [
       {
         "document": "创建个人版环境(PackageId=baas_personal)，并指定包含 文档型数据库(flexdb)、云存储(storage)、云函数(function) 三种资源。\n购买周期为1个月(Period=1)。\n自动使用代金券支付(AutoVoucher=true)。\n环境别名为 cloudbase(Alias=cloudbase)。\n创建成功，则自动拿到一个以 Alias(当前值为cloudbase) 为前缀的 EnvId：cloudbase-8grqda2hfc2f62bb",
@@ -106,6 +96,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvResource\n<公共请求参数>\n\n{\n    \"EnvId\": \"wzr-0gp9mmjwba501429\",\n    \"Resources\": [\n        \"log\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"44e44515-8ef8-4ffe-a301-b6c1cb23795a\"\n    }\n}",
         "title": "开通环境下日志资源"
+      }
+    ],
+    "CreateHTTPServiceRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****************-7ezncwdd421446\",\n    \"Domain\": {\n        \"Domain\": \"xxx.***************.cn\",\n        \"AccessType\": \"DIRECT\",\n        \"CertId\": \"VF******\",\n        \"Protocol\": \"HTTP_AND_HTTPS\",\n        \"CustomCname\": \"xxx.*********************.dns.com\",\n        \"Enable\": true,\n        \"Routes\": [\n            {\n                \"Path\": \"/api/v1\",\n                \"UpstreamResourceType\": \"CBR\",\n                \"UpstreamResourceName\": \"my-service\",\n                \"EnableSafeDomain\": false,\n                \"EnablePathTransmission\": false,\n                \"QPSPolicy\": {\n                    \"QPSTotal\": 100,\n                    \"QPSPerClient\": {\n                        \"LimitBy\": \"ClientIP\",\n                        \"LimitValue\": 10\n                    }\n                },\n                \"Enable\": true\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"424af1fa-ea4d-4a63-b96c-b374d5dfb020\"\n    }\n}",
+        "title": "创建完整路由"
       }
     ],
     "CreateHostingDomain": [
@@ -130,6 +128,12 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=CreateStaticStore\n&EnvId=lotestapi100004\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "创建静态托管资源"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStaticStore\n<公共请求参数>\n\n{\n    \"EnvId\": \"cloudbase-0gx36sm8ddc58be0\",\n    \"ExternalStorage\": {\n        \"BucketName\": \"tencent-cos-v2-1257619089\",\n        \"Region\": \"ap-shanghai\",\n        \"BasePath\": \"cloudbase-0gx36sm8ddc58be-static\",\n        \"Enabled\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"RequestId\": \"39ec0c65-d979-4990-90df-facb97c78e73\"\n    }\n}",
+        "title": "以腾讯云COS作为外部存储源开通静态托管"
       }
     ],
     "CreateTable": [
@@ -154,6 +158,22 @@
         "title": "创建用户"
       }
     ],
+    "CreateVmInstance": [
+      {
+        "document": "创建LightHouse实例",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVmInstance\n<公共请求参数>\n\n{\n    \"EnvId\": \"free2-2gi6dzbde85f86a0\",\n    \"Type\": \"LightHouse\",\n    \"LightHouseBundleId\": \"bundle_rs_mc_med1_02\",\n    \"LightHouseBlueprintId\": \"lhbp-3qjk6slu\",\n    \"InstanceName\": \"my new lighthouse instance\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12f533b-bc0a-403a-97a5-0a5cb9299d25\"\n    }\n}",
+        "title": "创建LightHouse实例"
+      }
+    ],
+    "DeleteApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiKey\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"KeyId\": \"akdj3jsk3112ks\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"265d4d16-7be1-4d8c-b270-8e5fe07d979b\"\n    }\n}",
+        "title": "删除API Key"
+      }
+    ],
     "DeleteAuthDomain": [
       {
         "document": "使用DescribeAuthDomains获取安全域名的id，将想要删除的安全域名的id填入。",
@@ -162,20 +182,12 @@
         "title": "删除安全域名"
       }
     ],
-    "DeleteCloudBaseGWAPI": [
+    "DeleteHTTPServiceRoute": [
       {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DeleteCloudBaseGWAPI\n&ServiceId=lotestapi100004\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
-    "DeleteCloudBaseGWDomain": [
-      {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DeleteCloudBaseGWDomain\n&ServiceId=“testenv-123”\n&Domain=\"www.user-test.com\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Count\": 1\n    }\n}",
-        "title": "DeleteCloudBaseGWDomain 示例"
+        "document": "删除域名及所有路由",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****************-7ezncwdd421446\",\n    \"Domain\": \"xxx.***************.cn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac011e66-c9f3-4de9-8d76-df3316b3c5f8\"\n    }\n}",
+        "title": "删除所有路由"
       }
     ],
     "DeleteProvider": [
@@ -216,6 +228,14 @@
         "title": "删除云主机"
       }
     ],
+    "DescribeApiKeyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiKeyList\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"KeyType\": \"api_key\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ApiKey\": \"agKSFS******jKdhas\",\n                \"CreateAt\": \"2026-02-19T14:25:17+08:00\",\n                \"ExpireAt\": \"2026-03-19T14:25:17+08:00\",\n                \"KeyId\": \"akdj3jsk3112ks\",\n                \"Name\": \"example_key\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"13ef3988-16d7-48b5-91b8-505e35ea51b3\"\n    }\n}",
+        "title": "查询API Key列表"
+      }
+    ],
     "DescribeAuthDomains": [
       {
         "document": "查询安全域名列表",
@@ -254,22 +274,6 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseBuildService\n&EnvId=cdnheader-v2a\n&ServiceName=nginx-test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DownloadHeaders\": [\n            {\n                \"Value\": \"value\",\n                \"Key\": \"key\"\n            }\n        ],\n        \"UploadHeaders\": [\n            {\n                \"Value\": \"value1\",\n                \"Key\": \"key1\"\n            }\n        ],\n        \"UploadUrl\": \"http://url\",\n        \"DownloadUrl\": \"http://url/download\",\n        \"RequestId\": \"asdasd-asfasfas-asfasfa\",\n        \"OutDate\": true,\n        \"PackageVersion\": \"version\",\n        \"PackageName\": \"name\"\n    }\n}",
         "title": "获取云托管代码上传url"
-      }
-    ],
-    "DescribeCloudBaseGWAPI": [
-      {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseGWAPI\n&ServiceId=\"roy-test-666\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"APISet\": [\n            {\n                \"ServiceId\": \"roy-test-666\",\n                \"IsShortPath\": false,\n                \"APIId\": \"3171368e-e641-4788-bd0e-e856aa713995\",\n                \"Path\": \"/lowcode-datasource\",\n                \"Type\": 1,\n                \"Name\": \"lowcode-datasource\",\n                \"CreateTime\": 1741184090,\n                \"EnvId\": \"roy-test-666\",\n                \"EnableAuth\": false,\n                \"Custom\": \"\",\n                \"AccessType\": 13,\n                \"Domain\": \"*\",\n                \"UnionStatus\": 1,\n                \"ConflictFlag\": false,\n                \"DomainStatus\": 0,\n                \"PathTransmission\": 2,\n                \"EnableCheckAcrossDomain\": 1,\n                \"StaticFileDirectory\": \"\"\n            }\n        ],\n        \"EnableService\": true,\n        \"Limit\": 100,\n        \"Offset\": 0,\n        \"RequestId\": \"c16af20e-8b15-421a-8c4a-c9269e3eb38a\",\n        \"Total\": 1\n    }\n}",
-        "title": "DescribeCloudBaseGWAPI示例"
-      }
-    ],
-    "DescribeCloudBaseGWService": [
-      {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseGWService\n&ServiceId=“aa”\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ServiceSet\": [\n            {\n                \"Status\": 0,\n                \"EnableRegion\": true,\n                \"Domain\": \"www.domain.com\",\n                \"OpenTime\": 1,\n                \"ForceHttps\": true,\n                \"IcpForbidStatus\": 0,\n                \"Cname\": \"www.cname.com\",\n                \"CertId\": \"certid\",\n                \"ServiceId\": \"envid\",\n                \"IsPreempted\": true,\n                \"UnionStatus\": 0,\n                \"CustomRoutingRules\": \"{route}\",\n                \"CnameStatus\": 0\n            }\n        ],\n        \"CustomRoutingRules\": \"{route}\",\n        \"EnableService\": true,\n        \"RequestId\": \"requestid\",\n        \"EnableUnion\": true,\n        \"EnableCheckAcrossDomain\": true,\n        \"DefaultDomain\": \"envid-appid.app.tcloudbase.com\",\n        \"OriginDomain\": \".app-in.tencentcloudbase.com\"\n    }\n}",
-        "title": "DescribeCloudBaseGWService示例"
       }
     ],
     "DescribeCloudBaseRunServerVersion": [
@@ -338,6 +342,22 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvs\n&EnvId=yourenvid-2fb346\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"EnvList\": [\n            {\n                \"EnvId\": \"yourenvid-2fb346\",\n                \"PackageType\": \"\",\n                \"EnvType\": \"baas\",\n                \"IsDauPackage\": false,\n                \"Source\": \"miniapp\",\n                \"Alias\": \"默认环境\",\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"postpaid\",\n                \"Tags\": [],\n                \"PackageName\": \"free\",\n                \"IsAutoDegrade\": true,\n                \"EnvChannel\": \"web\",\n                \"Region\": \"ap-shanghai\",\n                \"IsDefault\": true,\n                \"PackageId\": \"free\",\n                \"CreateTime\": \"2018-08-13 10:52:09\",\n                \"UpdateTime\": \"2018-08-13 10:52:40\",\n                \"LogServices\": [],\n                \"StaticStorages\": [],\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"default\",\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": \"RUNNING\",\n                        \"UpdateTime\": \"2023-10-05T14:48:00Z\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"topicId\",\n                        \"ClsRegion\": \"ap-shanghai\",\n                        \"ClsLogsetId\": \"logset\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Bucket\": \"yourenvid-2fb346-12532284\",\n                        \"CdnDomain\": \"yourenvid-2fb346.tcb.qcloud.la\",\n                        \"AppId\": \"1234567890\"\n                    }\n                ],\n                \"Functions\": [\n                    {\n                        \"Namespace\": \"yourenvid-2fb346\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"75ec26f6-b624-40f1-a3f4-e724843f483e\"\n    }\n}",
         "title": "查询环境信息"
+      }
+    ],
+    "DescribeGatewayVersions": [
+      {
+        "document": "根据网关ID查询版本信息",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayVersions\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayId\": \"gw-002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayId\": \"gw-xxx\",\n        \"TotalCount\": 1,\n        \"GatewayVersionItems\": [\n            {\n                \"VersionName\": \"versionName-xxx\",\n                \"Weight\": 100\n            }\n        ],\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "查询网关版本信息接口实例"
+      }
+    ],
+    "DescribeHTTPServiceRoute": [
+      {
+        "document": "通过域名过滤查询单个域名信息",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****************-7ezncwdd421446\",\n    \"Filters\": [\n        {\n            \"Name\": \"Domain\",\n            \"Values\": [\n                \"xxx.***************.cn\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"AccessType\": \"DIRECT\",\n                \"CertId\": \"VF******\",\n                \"Cname\": \"xxx.*********************************.tencentcloudbase.com\",\n                \"CreateTime\": \"2026-03-13T10:03:25+08:00\",\n                \"DNSStatus\": \"INVALID\",\n                \"Domain\": \"xxx.***************.cn\",\n                \"DomainType\": \"HTTPSERVICE\",\n                \"Enable\": true,\n                \"IsDefault\": false,\n                \"Protocol\": \"HTTP_AND_HTTPS\",\n                \"Routes\": [\n                    {\n                        \"CreateTime\": \"2026-03-13T10:03:26+08:00\",\n                        \"Enable\": true,\n                        \"EnableAuth\": false,\n                        \"EnablePathTransmission\": false,\n                        \"EnableSafeDomain\": false,\n                        \"Path\": \"/api/v1\",\n                        \"PathRewrite\": {},\n                        \"QPSPolicy\": {\n                            \"QPSPerClient\": {\n                                \"LimitBy\": \"ClientIP\",\n                                \"LimitValue\": 10\n                            },\n                            \"QPSTotal\": 100\n                        },\n                        \"UpdateTime\": \"2026-03-13T10:03:26+08:00\",\n                        \"UpstreamResourceName\": \"my-service\",\n                        \"UpstreamResourceType\": \"CBR\"\n                    }\n                ],\n                \"Status\": \"SUCCESS\",\n                \"UpdateTime\": \"2026-03-13T10:03:25+08:00\"\n            }\n        ],\n        \"OriginDomain\": \"***********************************************.tencentcloudbase.com\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"9d15e1e6-24a7-4de5-9be0-d6470f32120b\"\n    }\n}",
+        "title": "查询路由信息"
       }
     ],
     "DescribeHostingDomainTask": [
@@ -518,14 +538,6 @@
         "title": "修改客户端配置"
       }
     ],
-    "ModifyCloudBaseGWAPI": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudBaseGWAPI\n<公共请求参数>\n\n{\n    \"APIId\": \"096d11d0-6f3f-4915-a872-4bcba43b7d31\",\n    \"ServiceId\": \"aa\",\n    \"Options\": [\n        {\n            \"Value\": \"path\",\n            \"Key\": \"/aaa-modify\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7998619-e189-484b-b439-922104d2321f\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
     "ModifyClsTopic": [
       {
         "document": "",
@@ -556,6 +568,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvPlan\n<公共请求参数>\n\n{\n    \"EnvId\": \"cloudbase-8grqda2hfc2f62bb\",\n    \"PackageId\": \"baas_pf_standard\",\n    \"AutoVoucher\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4caf24c6-3cb8-438a-ae46-cfa75694224a\"\n    }\n}",
         "title": "云开发环境套餐变更为标准版"
+      }
+    ],
+    "ModifyHTTPServiceRoute": [
+      {
+        "document": "修改上游服务名",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****************-7ezncwdd421446\",\n    \"Domain\": {\n        \"Domain\": \"xxx.***************.cn\",\n        \"Routes\": [\n            {\n                \"Path\": \"/api/v1\",\n                \"UpstreamResourceType\": \"CBR\",\n                \"UpstreamResourceName\": \"my-service-new\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ebe9641-2c38-4ebd-b429-dc74ba74bcb7\"\n    }\n}",
+        "title": "修改路由信息"
       }
     ],
     "ModifyLoginConfig": [

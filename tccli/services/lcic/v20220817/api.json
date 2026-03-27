@@ -1219,6 +1219,15 @@
           "name": "ExpireSeconds",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID</p>",
+          "example": "2aiT64yygu***5**k***r3hhM3x",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1244,6 +1253,16 @@
           "name": "Total",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID</p>",
+          "example": "2aiT64y****U********r3hhM3x",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

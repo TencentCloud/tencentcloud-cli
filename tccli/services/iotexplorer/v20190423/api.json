@@ -11256,6 +11256,16 @@
         },
         {
           "disabled": false,
+          "document": "错误信息",
+          "example": "激活成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "过期时间",
           "example": "1945563456",
           "member": "int64",

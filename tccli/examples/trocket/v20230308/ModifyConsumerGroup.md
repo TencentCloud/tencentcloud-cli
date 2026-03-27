@@ -1,26 +1,26 @@
-**Example 1: 修改消费组属性**
+**Example 1: 成功修改消费组**
 
-修改消费组属性成功
+
 
 Input: 
 
 ```
 tccli trocket ModifyConsumerGroup --cli-unfold-argument  \
-    --InstanceId rmq-72mo3a9o \
-    --ConsumerGroup test_group \
+    --InstanceId rmq-16ogwxoxmm \
     --ConsumeEnable True \
-    --ConsumeMessageOrderly True \
-    --MaxRetryTimes 16 \
-    --Remark 测试修改
+    --ConsumeMessageOrderly False \
+    --ConsumerGroup test_group \
+    --MaxRetryTimes 3 \
+    --Remark test modify \
+    --RetryPolicy.PolicyType EXPONENTIAL \
+    --RetryPolicy.RetryInterval 180
 ```
 
 Output: 
 ```
 {
-    "Error": null,
-    "RequestId": null,
     "Response": {
-        "RequestId": "239a3769-8dc6-41e9-bc01-67be452db5a3"
+        "RequestId": "6e2e65dd-bd8a-4685-8b17-5770686276f3"
     }
 }
 ```

@@ -24,6 +24,14 @@
         "title": "创建prompt任务"
       }
     ],
+    "DeleteService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-fnay2k0u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e3f0f2d-f548-4a93-a06f-b15e8f5691a5\"\n    }\n}",
+        "title": "DeleteService"
+      }
+    ],
     "DeployInferService": [
       {
         "document": "",
@@ -110,6 +118,14 @@
         "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServices\n<公共请求参数>\n\n{\n    \"ServiceIds\": [\n        \"svc-dde3hd4i\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"ServiceInfoSet\": [\n            {\n                \"ComputeSet\": [\n                    {\n                        \"BundleType\": \"96G_A*8\",\n                        \"CPU\": \"384\",\n                        \"Count\": 1,\n                        \"GPUCount\": \"8\",\n                        \"GPUMemory\": \"768\",\n                        \"GPUPerformance\": \"352\",\n                        \"Memory\": \"2304\"\n                    }\n                ],\n                \"CreateTime\": \"2026-02-13 17:28:31\",\n                \"DeploymentConfigs\": [],\n                \"HyperParam\": {},\n                \"ModelName\": \"GLM-4.7-FP8\",\n                \"RunningReplicas\": 0,\n                \"ServiceId\": \"svc-dde3hd4i\",\n                \"ServiceName\": \"glm4.7-fp8\",\n                \"ServiceState\": \"RUNNING\",\n                \"TotalReplicas\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"02632e20-8bc6-4a27-b26a-92a44da57456\"\n    }\n}",
         "title": "DescribeServices"
+      }
+    ],
+    "DescribeServicesCallInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServicesCallInfo\n<公共请求参数>\n\n{\n    \"ServiceIds\": [\n        \"svc-fnay2k0u\"\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"CallInfoSet\": [\n            {\n                \"ApiKey\": \"55*f0c9f*77*1a0589a*0019960*59*7*3*4*c2*56*f*ec*d2f9*8475d83*dbc\",\n                \"PublicEndpoint\": \"http://lb-*p**ypc*-4*xo*d*yk7ra1vsm.clb.bj-tencentclb.net\",\n                \"ServiceId\": \"svc-fnay2k0u\",\n                \"VpcEndpoint\": \"http://127.0.0.1\"\n            }\n        ],\n        \"RequestId\": \"353df959-b901-47be-9da6-8c94f67cd061\"\n    }\n}",
+        "title": "DescribeServicesCallInfo"
       }
     ],
     "InquirePriceRunInstances": [

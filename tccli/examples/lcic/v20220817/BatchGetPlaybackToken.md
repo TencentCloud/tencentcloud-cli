@@ -8,7 +8,8 @@ Input:
 tccli lcic BatchGetPlaybackToken --cli-unfold-argument  \
     --SdkAppId 3923193 \
     --RoomIds 305745891 \
-    --ExpireSeconds 0
+    --ExpireSeconds 0 \
+    --UserId 2aiT64yygu***5**k***r3hhM3x
 ```
 
 Output: 
@@ -22,7 +23,8 @@ Output:
             }
         ],
         "Total": 1,
-        "RequestId": "9a4a9095-f250-4dcd-8650-21861a0ebbb0"
+        "RequestId": "9a4a9095-f250-4dcd-8650-21861a0ebbb0",
+        "UserId": "2aiT64y****U********r3hhM3x"
     }
 }
 ```

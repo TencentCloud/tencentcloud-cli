@@ -933,7 +933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "m82k5408n123phvb",
           "member": "string",
           "name": "ProjectId",
@@ -942,7 +942,7 @@
         },
         {
           "disabled": false,
-          "document": "页码，从1开始",
+          "document": "<p>页码，从1开始</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -951,7 +951,7 @@
         },
         {
           "disabled": false,
-          "document": "每页个数",
+          "document": "<p>每页个数</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -960,7 +960,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "trro_dev",
           "member": "string",
           "name": "DeviceId",
@@ -969,7 +969,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1650000000",
           "member": "uint64",
           "name": "StartTime",
@@ -978,7 +978,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1650000050",
           "member": "uint64",
           "name": "EndTime",
@@ -993,7 +993,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总个数",
+          "document": "<p>总个数</p>",
           "example": "100",
           "member": "uint64",
           "name": "Total",
@@ -1003,7 +1003,7 @@
         },
         {
           "disabled": false,
-          "document": "会话列表",
+          "document": "<p>会话列表</p>",
           "example": "无",
           "member": "SessionInfo",
           "name": "DeviceSessionList",
@@ -1013,7 +1013,7 @@
         },
         {
           "disabled": false,
-          "document": "本页数量",
+          "document": "<p>本页数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "Num",
@@ -1290,7 +1290,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "m82k5408n123phvb",
           "member": "string",
           "name": "ProjectId",
@@ -1299,7 +1299,7 @@
         },
         {
           "disabled": false,
-          "document": "页码，从1开始",
+          "document": "<p>页码，从1开始</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -1308,7 +1308,7 @@
         },
         {
           "disabled": false,
-          "document": "每页个数",
+          "document": "<p>每页个数</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -1317,7 +1317,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID，支持过滤远端设备或现场设备",
+          "document": "<p>设备ID，支持过滤远端设备或现场设备</p>",
           "example": "trro_dev1",
           "member": "string",
           "name": "DeviceId",
@@ -1326,7 +1326,7 @@
         },
         {
           "disabled": false,
-          "document": "时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算",
+          "document": "<p>时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算</p>",
           "example": "1650000000",
           "member": "uint64",
           "name": "StartTime",
@@ -1335,7 +1335,7 @@
         },
         {
           "disabled": false,
-          "document": "时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算",
+          "document": "<p>时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算</p>",
           "example": "1650000050",
           "member": "uint64",
           "name": "EndTime",
@@ -1350,7 +1350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总个数",
+          "document": "<p>总个数</p>",
           "example": "100",
           "member": "uint64",
           "name": "Total",
@@ -1360,7 +1360,7 @@
         },
         {
           "disabled": false,
-          "document": "会话列表",
+          "document": "<p>会话列表</p>",
           "example": "无",
           "member": "RecentSessionInfo",
           "name": "RecentSessionList",
@@ -1370,7 +1370,7 @@
         },
         {
           "disabled": false,
-          "document": "本页数量",
+          "document": "<p>本页数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "Num",
@@ -1392,7 +1392,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "f3glr49ry0i0xlm7",
           "member": "string",
           "name": "ProjectId",
@@ -1401,7 +1401,7 @@
         },
         {
           "disabled": false,
-          "document": "统计时间间隔：hour|day|month",
+          "document": "<p>统计时间间隔：hour|day|month</p>",
           "example": "hour",
           "member": "string",
           "name": "StatisticInterval",
@@ -1410,7 +1410,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "dev1",
           "member": "string",
           "name": "DeviceId",
@@ -1419,7 +1419,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间，单位：秒",
+          "document": "<p>起始时间，单位：秒</p>",
           "example": "1600000000",
           "member": "uint64",
           "name": "StartTime",
@@ -1428,7 +1428,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，单位：秒",
+          "document": "<p>结束时间，单位：秒</p>",
           "example": "1610000000",
           "member": "uint64",
           "name": "EndTime",
@@ -1443,7 +1443,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "各时间段的会话统计数据",
+          "document": "<p>各时间段的会话统计数据</p>",
           "example": "无",
           "member": "SessionIntervalStatistic",
           "name": "SessionStatistics",
@@ -1465,7 +1465,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "f3glr49ry0i0xlm7",
           "member": "string",
           "name": "ProjectId",
@@ -1474,7 +1474,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "dev1",
           "member": "string",
           "name": "DeviceId",
@@ -1483,7 +1483,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间，单位：秒",
+          "document": "<p>起始时间，单位：秒</p>",
           "example": "1600000000",
           "member": "uint64",
           "name": "StartTime",
@@ -1492,7 +1492,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，单位：秒",
+          "document": "<p>结束时间，单位：秒</p>",
           "example": "1610000000",
           "member": "uint64",
           "name": "EndTime",
@@ -1507,7 +1507,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "会话数量",
+          "document": "<p>会话数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "SessionNum",
@@ -1517,7 +1517,7 @@
         },
         {
           "disabled": false,
-          "document": "通话时长，单位：分钟",
+          "document": "<p>通话时长，单位：分钟</p>",
           "example": "100",
           "member": "uint64",
           "name": "TotalDuration",
@@ -1527,7 +1527,7 @@
         },
         {
           "disabled": false,
-          "document": "活跃现场设备数",
+          "document": "<p>活跃现场设备数</p>",
           "example": "30",
           "member": "uint64",
           "name": "ActiveFieldDeviceNum",
@@ -1537,7 +1537,7 @@
         },
         {
           "disabled": false,
-          "document": "活跃远端设备数",
+          "document": "<p>活跃远端设备数</p>",
           "example": "60",
           "member": "uint64",
           "name": "ActiveRemoteDeviceNum",
@@ -1547,7 +1547,7 @@
         },
         {
           "disabled": false,
-          "document": "优良会话占比，单位：%",
+          "document": "<p>优良会话占比，单位：%</p>",
           "example": "90",
           "member": "uint64",
           "name": "NotBadSessionRatio",

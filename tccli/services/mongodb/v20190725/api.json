@@ -413,6 +413,13 @@
       "output": "ModifyDBInstanceSpecResponse",
       "status": "online"
     },
+    "ModifyInstanceAz": {
+      "document": "本接口(ModifyInstanceAz)用于调整 MongoDB 云数据库的节点可用区分布，可通过指定主可用区和全部可用区分布信息完成云数据库的节点分布调整。",
+      "input": "ModifyInstanceAzRequest",
+      "name": "调整云数据库实例节点的可用区",
+      "output": "ModifyInstanceAzResponse",
+      "status": "online"
+    },
     "ModifyInstanceParams": {
       "document": "本接口（ModifyInstanceParams）用于修改mongoDB实例的参数配置。",
       "input": "ModifyInstanceParamsRequest",
@@ -7658,6 +7665,88 @@
           "member": "string",
           "name": "DealId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceAzRequest": {
+      "document": "ModifyInstanceAz请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，例如：cmgo-p8vn****。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主节点所在的可用区 ID。获取方式，请参见<a href=\"https://cloud.tencent.com/document/product/240/3637\">地域和可用区</a>。</p>",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "PrimaryNodeZone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>从节点所在的可用区 ID 列表。<br><strong>注意</strong>：不可包含主节点与 Hidden 节点所在的可用区。</p>",
+          "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\"]",
+          "member": "string",
+          "name": "SecondaryNodeZone",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>若当前实例未配置 Hidden 节点，则无需传入此参数。</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "HiddenNodeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>只读节点所在的可用区 ID 列表。<br><strong>注意</strong>：若当前实例已包含只读节点，则此参数为必填项。</p>",
+          "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\"]",
+          "member": "string",
+          "name": "ReadonlyNodeZone",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定切换可用区的执行时间策略。</p><ul><li>0：立即执行切换。</li><li>1：在设定的维护时间窗执行切换。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/240/19910\">设置实例维护时间</a>。</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "InMaintenance",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceAzResponse": {
+      "document": "ModifyInstanceAz返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可用区调整订单ID。</p>",
+          "example": "20250116027002******",
+          "member": "string",
+          "name": "DealId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
