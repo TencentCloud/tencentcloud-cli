@@ -1355,7 +1355,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "testaccess",
+          "example": "tencent",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1391,9 +1391,18 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "[\"testtag\"]",
+          "example": "[\"aim\"]",
           "member": "string",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID列表",
+          "example": "[\"res-LDFxL6nq\"]",
+          "member": "string",
+          "name": "ResourceIDs",
           "required": false,
           "type": "list"
         }
@@ -7508,6 +7517,15 @@
           "example": "[\"testtag\"]",
           "member": "string",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID列表",
+          "example": "[\"res-xxxxxxxx\"]",
+          "member": "string",
+          "name": "ResourceIDs",
           "required": false,
           "type": "list"
         }

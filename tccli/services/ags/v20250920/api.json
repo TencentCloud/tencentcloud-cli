@@ -1,10 +1,24 @@
 {
   "actions": {
+    "AcquireOAuth2AccessToken": {
+      "document": "Agent 凭 WorkloadIdentityToken 获取第三方服务的 OAuth2 AccessToken。\n●若已有该用户的授权记录，直接返回 AccessToken（必要时自动 refresh）。\n●若尚无授权记录（首次），返回授权引导 URL，引导用户完成 3LO 流程。",
+      "input": "AcquireOAuth2AccessTokenRequest",
+      "name": "获取OAuth2AccessToken",
+      "output": "AcquireOAuth2AccessTokenResponse",
+      "status": "online"
+    },
     "AcquireSandboxInstanceToken": {
       "document": "获取访问沙箱工具时所需要使用的访问Token，创建沙箱实例后需调用此接口获取沙箱实例访问Token。\n此Token可用于调用代码沙箱实例执行代码，或浏览器沙箱实例进行浏览器操作等。",
       "input": "AcquireSandboxInstanceTokenRequest",
       "name": "获取沙箱实例的访问Token",
       "output": "AcquireSandboxInstanceTokenResponse",
+      "status": "online"
+    },
+    "CompleteOAuth2AccessTokenAuth": {
+      "document": "完成OAuth2 session的授权流程",
+      "input": "CompleteOAuth2AccessTokenAuthRequest",
+      "name": "完成OAuth2 AccessToken授权流程",
+      "output": "CompleteOAuth2AccessTokenAuthResponse",
       "status": "online"
     },
     "CreateAPIKey": {
@@ -26,6 +40,13 @@
       "input": "CreateSandboxToolRequest",
       "name": "创建沙箱工具",
       "output": "CreateSandboxToolResponse",
+      "status": "online"
+    },
+    "CreateWorkloadAccessTokenForUserId": {
+      "document": "获取Agent的代表用户执行动作的访问Token",
+      "input": "CreateWorkloadAccessTokenForUserIdRequest",
+      "name": "CreateWorkloadAccessTokenForUserId",
+      "output": "CreateWorkloadAccessTokenForUserIdResponse",
       "status": "online"
     },
     "DeleteAPIKey": {
@@ -181,6 +202,155 @@
       ],
       "usage": "both"
     },
+    "AcquireOAuth2AccessTokenRequest": {
+      "document": "AcquireOAuth2AccessToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>绑定了用户和Agent Workload身份的Token</p>",
+          "example": "eyJ****s3w",
+          "member": "string",
+          "name": "WorkloadIdentityToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth2授权流程模式 </p><p>枚举值：</p><ul><li>AUTHORIZATION_CODE： 3LO OAuth2.0 authorization code flow</li></ul>",
+          "example": "AUTHORIZATION_CODE",
+          "member": "string",
+          "name": "OAuth2Flow",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CredentialProvider的ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialProviderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权范围</p>",
+          "example": "[\"read:user\"]",
+          "member": "string",
+          "name": "Scopes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth2授权流程完成后，AGS后台收到Authorization code回调之后返回给浏览器的302重定向地址</p><p>入参限制：WorkloadIdentity中必须提前配置允许这个URL</p>",
+          "example": "https://**********************",
+          "member": "string",
+          "name": "OAuth2ReturnUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调给ReturnURL时所带state参数内的值</p>",
+          "example": "12********371",
+          "member": "string",
+          "name": "CustomState",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>传递给第三方IdP的自定义参数</p>",
+          "example": "无",
+          "member": "CustomParameters",
+          "name": "CustomParameters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否强制重新授权</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceAuthentication",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth2 授权session唯一标识</p>",
+          "example": "urn:ietf:params:oauth:request_uri:****************************************************************",
+          "member": "string",
+          "name": "SessionUri",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcquireOAuth2AccessTokenResponse": {
+      "document": "AcquireOAuth2AccessToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>OAuth2.0授权完成后，返回的Access Token</p>",
+          "example": "ntn_**********************************************",
+          "member": "string",
+          "name": "AccessToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Access Token过期时间</p>",
+          "example": "2026-03-25T15:50:25Z",
+          "member": "string",
+          "name": "ExpiresAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权链接</p>",
+          "example": "https://auth.tencentags.com/identities/oauth2/authorize?**************************************************************************************************************",
+          "member": "string",
+          "name": "AuthorizationUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数中所传递的授权Session的状态</p><p>枚举值：</p><ul><li>IN_PROGRESS： 授权进行中</li><li>CALLBACK_RECEIVED： 已接收到回调</li><li>COMPLETED： 授权已完成</li><li>FAILED： 失败</li></ul>",
+          "example": "IN_PROGRESS",
+          "member": "string",
+          "name": "SessionStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth2 授权session唯一标识</p>",
+          "example": "urn:ietf:params:oauth:request_uri:****************************************************************",
+          "member": "string",
+          "name": "SessionUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AcquireSandboxInstanceTokenRequest": {
       "document": "AcquireSandboxInstanceToken请求参数结构体",
       "members": [
@@ -272,6 +442,42 @@
         }
       ],
       "usage": "both"
+    },
+    "CompleteOAuth2AccessTokenAuthRequest": {
+      "document": "CompleteOAuth2AccessTokenAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>OAuth 授权session标识</p><p>参数格式：urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+</p>",
+          "example": "urn:ietf:params:oauth:request_uri:d********************7a042c70a0c******************106b6f0ca2969e",
+          "member": "string",
+          "name": "SessionUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>收到returnUrl时，当前登录的自定义用户ID</p>",
+          "example": "********",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CompleteOAuth2AccessTokenAuthResponse": {
+      "document": "CompleteOAuth2AccessTokenAuth返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CosStorageSource": {
       "document": "沙箱实例对象存储挂载配置",
@@ -562,6 +768,52 @@
       ],
       "type": "object"
     },
+    "CreateWorkloadAccessTokenForUserIdRequest": {
+      "document": "CreateWorkloadAccessTokenForUserId请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent Workload身份ID</p>",
+          "example": "wi-********",
+          "member": "string",
+          "name": "WorkloadIdentityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>由调用方自定义的用户ID</p>",
+          "example": "test-user",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkloadAccessTokenForUserIdResponse": {
+      "document": "CreateWorkloadAccessTokenForUserId返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>绑定了用户和Agent Workload信息的身份Token</p>",
+          "example": "**Kw",
+          "member": "string",
+          "name": "WorkloadAccessToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CustomConfiguration": {
       "document": "沙箱自定义配置",
       "members": [
@@ -756,6 +1008,34 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomParameters": {
+      "document": "一组自定义参数，用于向发送给资源凭据提供方的授权请求中添加额外的参数。这些参数是对标准 OAuth 2.0 流程参数的补充，且不会覆盖标准参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义参数 key</p>",
+          "example": "hello",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义参数 value</p>",
+          "example": "world",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1266,6 +1546,34 @@
       ],
       "usage": "both"
     },
+    "MetadataVar": {
+      "document": "metadata 项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>沙箱元数据名</p>",
+          "example": "b",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱元数据值</p>",
+          "example": "b",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MountOption": {
       "document": "沙箱实例存储挂载配置可选项，用于覆盖沙箱工具的存储配置的部分选项，并提供子路径挂载配置。",
       "members": [
@@ -1349,7 +1657,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱实例ID",
+          "document": "<p>沙箱实例ID</p>",
           "example": "4729e19d67fb4ba38854dbbfc63c72e9",
           "member": "string",
           "name": "InstanceId",
@@ -1660,6 +1968,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>",
+          "example": "VPC",
+          "member": "string",
+          "name": "NetworkMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱实例元数据</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1840,7 +2170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱工具 ID，与 ToolName 至少有一个要填",
+          "document": "<p>沙箱工具 ID，与 ToolName 至少有一个要填</p>",
           "example": "sdt-ee4ywozw",
           "member": "string",
           "name": "ToolId",
@@ -1849,7 +2179,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具名称，与 ToolId 至少有一个要填",
+          "document": "<p>沙箱工具名称，与 ToolId 至少有一个要填</p>",
           "example": "my-browser-sandbox",
           "member": "string",
           "name": "ToolName",
@@ -1858,7 +2188,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h",
+          "document": "<p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>",
           "example": "10m",
           "member": "string",
           "name": "Timeout",
@@ -1867,7 +2197,7 @@
         },
         {
           "disabled": false,
-          "document": "幂等性 Token，长度不超过 64 字符",
+          "document": "<p>幂等性 Token，长度不超过 64 字符</p>",
           "example": "instance-token-456",
           "member": "string",
           "name": "ClientToken",
@@ -1876,7 +2206,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱实例存储挂载配置",
+          "document": "<p>沙箱实例存储挂载配置</p>",
           "example": "无",
           "member": "MountOption",
           "name": "MountOptions",
@@ -1885,12 +2215,30 @@
         },
         {
           "disabled": false,
-          "document": "沙箱实例自定义配置",
+          "document": "<p>沙箱实例自定义配置</p>",
           "example": "无",
           "member": "CustomConfiguration",
           "name": "CustomConfiguration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 跟随系统策略</li><li>TOKEN： Token认证</li><li>NONE： 免认证 </li></ul><p>默认值：DEFAULT</p>",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "AuthMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱元数据</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1900,7 +2248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的沙箱实例完整信息",
+          "document": "<p>创建的沙箱实例完整信息</p>",
           "example": "无",
           "member": "SandboxInstance",
           "name": "Instance",
@@ -2066,7 +2414,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱实例ID",
+          "document": "<p>沙箱实例ID</p>",
           "example": "953e15d3655e4daab120b885c908edf7",
           "member": "string",
           "name": "InstanceId",
@@ -2075,12 +2423,21 @@
         },
         {
           "disabled": false,
-          "document": "新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置",
+          "document": "<p>新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置</p>",
           "example": "1h",
           "member": "string",
           "name": "Timeout",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱实例元数据</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

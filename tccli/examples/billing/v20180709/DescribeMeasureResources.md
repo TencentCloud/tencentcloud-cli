@@ -1,6 +1,6 @@
 **Example 1: 资源包查询**
 
-无
+
 
 Input: 
 
@@ -55,6 +55,7 @@ Output:
                     "PackageCode": "TRTC_code_002_2dlMNkas9L",
                     "CycleCapacityRemain": 10000,
                     "CycleCapacitySize": 10000,
+                    "CycleCapacityUsed": 0,
                     "CreateTime": 1679382429000,
                     "OriginUnit": "min",
                     "TotalCycles": 2,

@@ -1,11 +1,27 @@
 {
   "actions": {
+    "AcquireOAuth2AccessToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcquireOAuth2AccessToken\n<公共请求参数>\n\n{\n    \"WorkloadIdentityToken\": \"eyJ**************************************c*******Y*************************************Zpbm9mbGl1YXZjIiwiYXVkIjpbInNhbmR********************iOjE3NzQ***************I*******Q1MjY1NiwianRpIjoiZTc1M2VjOTAtMDY2YS00ZWZiLWJk****Mjc4ZjUwNmM4YzA***********xvY***aWRlbnRpdHlfaWQiOiJ3aS0wMzA5YTViOSIsInV*************************Yy**************************NZID4**************************SElAxJ-kk9gB7Qu94seH8n4fm66_2wVLxIJp**********Y**U*****8IdGhdPm********c**h**L****c*****VcZdbsm-RI***_***********m1zQn0o**********************kcxvzQvCfft***u********xxZu5vDYtsrbsxQv********r******QO_Za3wQADjNAj*******************u6Zea8ywK******************kpof_nIN_8gFCD40gmnfwlwlLouZQs3w\",\n    \"OAuth2Flow\": \"AUTHORIZATION_CODE\",\n    \"CredentialProviderId\": \"agc-********\",\n    \"Scopes\": [\n        \"read:user\"\n    ],\n    \"OAuth2ReturnUrl\": \"https://**********************\",\n    \"CustomState\": \"12********371\",\n    \"CustomParameters\": [\n        {\n            \"Key\": \"hello\",\n            \"Value\": \"world\"\n        }\n    ],\n    \"ForceAuthentication\": false,\n    \"SessionUri\": \"urn:ietf:params:oauth:request_uri:****************************************************************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthorizationUrl\": \"https://auth.tencentags.com/identities/oauth2/authorize?**************************************************************************************************************\",\n        \"SessionStatus\": \"IN_PROGRESS\",\n        \"SessionUri\": \"urn:ietf:params:oauth:request_uri:****************************************************************\",\n        \"RequestId\": \"1746590e-10dd-48a5-8fb2-794469a8e63e\",\n        \"AccessToken\": \"ntn_**********************************************\"\n    }\n}",
+        "title": "查询 session 状态"
+      }
+    ],
     "AcquireSandboxInstanceToken": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcquireSandboxInstanceToken\n<公共请求参数>\n\n{\n    \"InstanceId\": \"a123478903213307971e7bc5793\"\n}",
         "output": "{\n    \"Response\": {\n        \"Token\": \"sit_1XXJWXVbosp4ZeSSlnZBMs4wsWirZtx3Ixp1Ndz2_gQ\",\n        \"ExpiresAt\": \"2025-09-12T09:00:03.116Z\",\n        \"RequestId\": \"e3e03fc7-0194-436a-a179-6c5ac824e287\"\n    }\n}",
         "title": "获取访问沙箱工具时所需要使用的访问Token"
+      }
+    ],
+    "CompleteOAuth2AccessTokenAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteOAuth2AccessTokenAuth\n<公共请求参数>\n\n{\n    \"SessionUri\": \"urn:ietf:params:oauth:request_uri:d********************7a042c70a0c******************106b6f0ca2969e\",\n    \"UserId\": \"********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"250a63d7-e15c-45c2-a83b-1f80b55d93ce\"\n    }\n}",
+        "title": "确认OAuth2 session完成授权"
       }
     ],
     "CreateAPIKey": [
@@ -30,6 +46,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-sandbox\",\n    \"ToolType\": \"browser\",\n    \"Description\": \"浏览器沙箱环境\",\n    \"DefaultTimeout\": \"30m\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Production\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        }\n    ],\n    \"ClientToken\": \"unique-token-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-ee4ywozw\",\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
         "title": "创建沙箱工具"
+      }
+    ],
+    "CreateWorkloadAccessTokenForUserId": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkloadAccessTokenForUserId\n<公共请求参数>\n\n{\n    \"WorkloadIdentityId\": \"wi-********\",\n    \"UserId\": \"test-user\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkloadAccessToken\": \"*************************************************************************************OnR*************************YW5k*********************j***zc0NDU0N*g*LC**YX**Oj*****0*TA5ODAsImp0aSI6Ij*iMz****Q***M4MjEtNGRiNS0*YjF***V***d***RhZDJmMyIsInd**mtsb2FkX*lk**50aXR5X2lkIjoi**ktMDMw***1***iLCJ1c2VyX2lk**oidGVz***1c2*yIn0.l8QbuByGL*xwqefv-I**EQm_0Cduc4X0l9w28y-ypoOWuA*******Dl5rDMGyKkHCvJ******kx-ggzYF4*****xS6bdMbxhRwv3EOX6oHkRwBk0G4**URc_UHSs*********************1QRYgR61XPHeBOVpI5WyDHBcO28Bky2rLqYkb********************NQOSYcX7Z6Z5mMSdF7hEuPqctunMowZ_Z7GcqGEpv0fR7QEHTl7JTBymO53iLSia***********************26v471K52muh-84C-bMjUSuaDGb0ciJ8OXLbr_D4_hGhopDvYtiKw\",\n        \"RequestId\": \"689fddf2-f6e4-41a3-835e-d923d1cad46e\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "DeleteAPIKey": [
@@ -82,7 +106,7 @@
     ],
     "PauseSandboxInstance": [
       {
-        "document": "暂停沙箱实例",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
         "title": "暂停沙箱实例"
@@ -99,7 +123,7 @@
     "StartSandboxInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Timeout\": \"10m\",\n    \"ClientToken\": \"instance-token-456\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Timeout\": \"10m\",\n    \"ClientToken\": \"instance-token-456\"\n}",
         "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"12345678123412341234123456789abc\",\n            \"ToolId\": \"sdt-ee4ywozw\",\n            \"ToolName\": \"my-browser-tool\",\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 600,\n            \"ExpiresAt\": \"2024-01-01T10:30:00Z\",\n            \"CreateTime\": \"2024-01-01T10:00:00Z\",\n            \"UpdateTime\": \"2024-01-01T10:00:00Z\"\n        },\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
         "title": "启动沙箱实例"
       }

@@ -16908,7 +16908,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "document": "搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。\n说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。",
           "example": "无",
           "member": "QueryParamFilter",
           "name": "Filters",
@@ -35074,7 +35074,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型",
+          "document": "实例机器类型\n1. common，通用型。\n2. exclusive，独享型。",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",

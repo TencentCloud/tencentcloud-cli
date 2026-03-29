@@ -3,8 +3,8 @@
     "CreateLibrary": [
       {
         "document": "创建媒体库",
-        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLibrary\n<公共请求参数>\n\n{\n    \"Name\": \"名称\",\n    \"Remark\": \"备注\",\n    \"LibraryExtension\": {\n        \"IsFileLibrary\": true\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"LibraryId\": \"smh0q8nrvsg7t6y6\",\n        \"RequestId\": \"1586674e-e04c-4315-943a-c282b5f8ed6b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLibrary\n<公共请求参数>\n\n{\n    \"Name\": \"测试媒体库\",\n    \"LibraryExtension\": {\n        \"IsFileLibrary\": true,\n        \"IsMultiSpace\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessDomain\": \"smh3etdq8gpi2201.api.tencentmsh.cn\",\n        \"LibraryId\": \"smh3etdq8gpi2201\",\n        \"RequestId\": \"5cc1bd23-8ff1-4f7a-86f9-640c97266c15\"\n    }\n}",
         "title": "创建媒体库"
       }
     ],

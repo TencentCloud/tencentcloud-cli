@@ -135,9 +135,19 @@
         {
           "disabled": false,
           "document": "<p>媒体库 ID</p>",
-          "example": "smhfoobar",
+          "example": "smh3etdq8gpi2201",
           "member": "string",
           "name": "LibraryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "smh3etdq8gpi2201.api.tencentmsh.cn",
+          "member": "string",
+          "name": "AccessDomain",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

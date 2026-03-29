@@ -49202,7 +49202,7 @@
         },
         {
           "disabled": false,
-          "document": "授权类型",
+          "document": "授权类型\n- 0 按量付费-专业版\n- 1 包年包月-专业版\n- 2 包年包月-旗舰版\n- 3 包年包月-轻量版",
           "example": "0",
           "member": "uint64",
           "name": "LicenseType",
