@@ -56,6 +56,13 @@
       "output": "DescribeAIAgentAssetListResponse",
       "status": "online"
     },
+    "DescribeAKAnalysisDetail": {
+      "document": "访问密钥告警记录AI分析结果详情",
+      "input": "DescribeAKAnalysisDetailRequest",
+      "name": "获取访问密钥告警AI分析详情",
+      "output": "DescribeAKAnalysisDetailResponse",
+      "status": "online"
+    },
     "DescribeAbnormalCallRecord": {
       "document": "获取调用记录列表",
       "input": "DescribeAbnormalCallRecordRequest",
@@ -8637,6 +8644,102 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAKAnalysisDetailRequest": {
+      "document": "DescribeAKAnalysisDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警记录ID",
+          "example": "10001",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAKAnalysisDetailResponse": {
+      "document": "DescribeAKAnalysisDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警AI分析状态 -1 分析失败 0 未分析 1 分析中 2 分析成功，真实告警 3 分析成功，可疑告警",
+          "example": "0",
+          "member": "int64",
+          "name": "AIStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI分析任务ID",
+          "example": "event-1cvqwsd",
+          "member": "string",
+          "name": "AITaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警AI分析结果，base64格式，避免数据被拦截",
+          "example": "6L+Z5piv5LiA5LiqYWnliIbmnpDnu5Pmnpw=",
+          "member": "string",
+          "name": "AIResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "反馈建议",
+          "example": "这是一个建议",
+          "member": "string",
+          "name": "Feedback",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "反馈状态  0表示没有反馈，1表示认可，2表示不认可",
+          "example": "0",
+          "member": "int64",
+          "name": "FeedbackResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因",
+          "example": "失败原因",
+          "member": "string",
+          "name": "FailedReason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

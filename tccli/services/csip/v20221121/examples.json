@@ -64,6 +64,14 @@
         "title": "调用示例"
       }
     ],
+    "DescribeAKAnalysisDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAKAnalysisDetail\n<公共请求参数>\n\n{\n    \"ID\": 42940241\n}",
+        "output": "{\n    \"Response\": {\n        \"AIResult\": \"QUnliIbmnpDmiJDlip/vvIzov5nmmK/kuKrlj6/nlpHlkYroraY=\",\n        \"AIStatus\": 3,\n        \"AITaskID\": \"event-2c1N4d1bsa\",\n        \"Feedback\": \"反馈分析正常\",\n        \"FeedbackResult\": 1,\n        \"RequestId\": \"5af41b9c-0ac6-4ff2-819c-ab662a669b58\"\n    }\n}",
+        "title": "1"
+      }
+    ],
     "DescribeAbnormalCallRecord": [
       {
         "document": "",

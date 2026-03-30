@@ -344,6 +344,14 @@
         "title": "创建电子文档并填充图片控件"
       }
     ],
+    "CreateDraftContractByPromptsTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDraftContractByPromptsTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwayUUckpsz*******rxROEDY8LJBJ9\"\n    },\n    \"Requirement\": \"我公司（深圳市星辰科技有限公司）需要与北京云端数据服务有限公司签订一份软件开发服务合同。\\n\\n项目概述：\\n我们需要对方为我们开发一套企业级客户关系管理系统（CRM系统），包括客户信息管理、销售流程管理、数据分析仪表盘等核心模块。\\n\\n主要需求：\\n1. 项目总金额为人民币80万元，分三期支付：合同签订后支付30%，中期验收后支付40%，终验收后支付30%。\\n2. 项目开发周期为6个月，从合同生效之日起计算。\\n3. 需要乙方提供至少1年的免费维护服务。\\n4. 源代码和知识产权归甲方所有。\\n5. 乙方需签署保密协议，对甲方的商业数据和业务逻辑严格保密。\\n6. 如果项目延期超过30天，甲方有权扣除合同金额的5%作为违约金。\\n7. 需要明确的验收标准和验收流程。\\n\",\n    \"ReferenceTemplateId\": \"yD3azUUck****n**UEFfm*Wv6Fm7tFzY\",\n    \"RequirementFileIds\": [\n        \"yD3aWUUc*********u5ahO3EgYkkoe1E\"\n    ],\n    \"ContractLanguage\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"yD3a5UUc*********E3o0MpRNHSEruSi\",\n        \"RequestId\": \"cf71b8f1-aa74-491a-abde-5cffc9c9db66\"\n    }\n}",
+        "title": "创建智能合同起草任务"
+      }
+    ],
     "CreateDynamicFlowApprover": [
       {
         "document": "补充企业自动签签署人",
@@ -1698,6 +1706,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3o2rzmUxHsV0j1FlhYIKo7\"\n    },\n    \"TaskId\": \"yDt4MUUckp9j4zj5UugsjbKvB0vibmas\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1755602790251475316\",\n        \"Status\": 1,\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4mUUckp9shfedUx7mkC9zwLgqGdH6&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW&taskId=yDt4mUUckp9sgohiUugsjbKR241Yq5F7&preTaskId=yDt4mUUckp9sgoh6UugsjbKsbOWqWA2o\"\n    }\n}",
         "title": "获取合同审查结果web页面"
+      }
+    ],
+    "DescribeDraftContractByPromptsTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDraftContractByPromptsTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCZcUUpn********ZGci8dkgk03ZIow\"\n    },\n    \"TaskId\": \"yD3a5UUs1b********Hu4sn4VpzPXtIy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ContractName\": \"软件开发服务合同\",\n        \"Message\": \"需求校验未通过: 该需求意图为“**买卖合同”*******，属于严重违法犯罪行为，内容违法违规，无法用于生成任何合同。\",\n        \"ResourceId\": \"yD3a5UUs1i****UEMs3KDC7ewKOitKTm\",\n        \"Status\": 2,\n        \"RequestId\": \"47c5c8a5-e32d-4ba1-bbd2-25cc41ea96f9\"\n    }\n}",
+        "title": "查询起草任务结果"
       }
     ],
     "DescribeEnterpriseContractReviewChecklists": [

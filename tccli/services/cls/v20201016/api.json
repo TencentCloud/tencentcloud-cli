@@ -91,6 +91,13 @@
       "output": "CreateConfigExtraResponse",
       "status": "online"
     },
+    "CreateConsole": {
+      "document": "本接口用于创建DataSight控制台",
+      "input": "CreateConsoleRequest",
+      "name": "创建DataSight控制台",
+      "output": "CreateConsoleResponse",
+      "status": "online"
+    },
     "CreateConsoleSharing": {
       "document": "创建控制台分享",
       "input": "CreateConsoleSharingRequest",
@@ -320,6 +327,13 @@
       "input": "DeleteConfigFromMachineGroupRequest",
       "name": "删除应用到机器组的采集配置",
       "output": "DeleteConfigFromMachineGroupResponse",
+      "status": "online"
+    },
+    "DeleteConsole": {
+      "document": "本接口用于删除DataSight控制台",
+      "input": "DeleteConsoleRequest",
+      "name": "删除DataSight控制台",
+      "output": "DeleteConsoleResponse",
       "status": "online"
     },
     "DeleteConsoleSharing": {
@@ -572,6 +586,13 @@
       "input": "DescribeConsoleSharingListRequest",
       "name": "获取免密分享列表",
       "output": "DescribeConsoleSharingListResponse",
+      "status": "online"
+    },
+    "DescribeConsoles": {
+      "document": "查询DataSight控制台实例列表",
+      "input": "DescribeConsolesRequest",
+      "name": "查询DataSight控制台实例列表",
+      "output": "DescribeConsolesResponse",
       "status": "online"
     },
     "DescribeConsumer": {
@@ -952,6 +973,13 @@
       "output": "ModifyConfigExtraResponse",
       "status": "online"
     },
+    "ModifyConsole": {
+      "document": "本接口用于编辑DataSight控制台",
+      "input": "ModifyConsoleRequest",
+      "name": "编辑DataSight控制台",
+      "output": "ModifyConsoleResponse",
+      "status": "online"
+    },
     "ModifyConsoleSharing": {
       "document": "修改控制台分享，目前仅允许修改有效期",
       "input": "ModifyConsoleSharingRequest",
@@ -1219,6 +1247,23 @@
     "serviceShortName": "cls"
   },
   "objects": {
+    "AccessControlRule": {
+      "document": "DataSight访问控制规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问方式：public - 公网，internal - 内网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "public",
+          "member": "string",
+          "name": "AccessMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AddMachineGroupInfoRequest": {
       "document": "AddMachineGroupInfo请求参数结构体",
       "members": [
@@ -2454,6 +2499,34 @@
       ],
       "usage": "both"
     },
+    "AnonymousLoginInfo": {
+      "document": "DataSight内网匿名登录账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匿名登录账号secretId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>匿名登录账号secretKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ApplyConfigToMachineGroupRequest": {
       "document": "ApplyConfigToMachineGroup请求参数结构体",
       "members": [
@@ -2513,6 +2586,45 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthRoleInfo": {
+      "document": "dataSight 第三方验证登录角色配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Auth角色名称</p>",
+          "example": "rolename",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Auth角色对应权限SecretId</p>",
+          "example": "id",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Auth角色对应权限SecretKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3463,6 +3575,233 @@
         }
       ],
       "usage": "out"
+    },
+    "Console": {
+      "document": "DataSight控制台实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DataSight控制台Id</p>",
+          "example": "clsconsole-xxxxxxxx",
+          "member": "string",
+          "name": "ConsoleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问方式：public-公网，internal-内网</p>",
+          "example": "[\"public\"]",
+          "member": "string",
+          "name": "AccessMode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录方式：0-账号密码鉴权，1-匿名登录，2-第三方认证登录</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LoginMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义域名前缀</p>",
+          "example": "datasight",
+          "member": "string",
+          "name": "DomainPrefix",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户账号信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsoleAccount",
+          "name": "Accounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网类型，默认为0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntranetType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "IntranetRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网私有网络VpcId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网子网SubnetId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>匿名登录账号信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnonymousLoginInfo",
+          "name": "AnonymousLogin",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>auth用户角色信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthRoleInfo",
+          "name": "AuthRoles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义隐藏参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"hideTopNav\"]",
+          "member": "string",
+          "name": "HideParams",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessControlRule",
+          "name": "AccessControlRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "remarks",
+          "member": "string",
+          "name": "Remarks",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义显示菜单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/cls/search\",\"/cls/dashboard\"]",
+          "member": "string",
+          "name": "Menus",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsoleAccount": {
+      "document": "DataSight控制台用户账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "username",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户密码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云账号SecretId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云账号SecretKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>电子邮箱，用于发送验证码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test@mail.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ConsoleSharingConfig": {
       "document": "控制台分享配置",
@@ -5359,6 +5698,169 @@
           "example": "72294392-a730-410a-bbdc-d998c27ecd4f",
           "member": "string",
           "name": "ConfigId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsoleRequest": {
+      "document": "CreateConsole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问方式：public - 公网，internal - 内网</p>",
+          "example": "[\"public\"]",
+          "member": "string",
+          "name": "AccessMode",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LoginMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义域名前缀</p>",
+          "example": "datasight",
+          "member": "string",
+          "name": "DomainPrefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>",
+          "example": "无",
+          "member": "ConsoleAccount",
+          "name": "Accounts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>",
+          "example": "无",
+          "member": "AnonymousLoginInfo",
+          "name": "AnonymousLogin",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网类型，默认为0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntranetType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "IntranetRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网私有网络VpcId</p>",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网子网SubnetId</p>",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Auth角色信息</p><p>“第三方认证登录”登录方式必传</p>",
+          "example": "无",
+          "member": "AuthRoleInfo",
+          "name": "AuthRoles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义隐藏参数</p>",
+          "example": "[\"hideTopNav\"]",
+          "member": "string",
+          "name": "HideParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制规则</p><p>“第三方认证登录”登录方式必传 AccessMode: internal &amp;&amp; Action: ACCEPT 规则</p>",
+          "example": "无",
+          "member": "AccessControlRule",
+          "name": "AccessControlRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "remarks",
+          "member": "string",
+          "name": "Remarks",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义显示菜单</p>",
+          "example": "[\"/cls/search\",\"/cls/dashboard\"]",
+          "member": "string",
+          "name": "Menus",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsoleResponse": {
+      "document": "CreateConsole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DataSight控制台Id</p>",
+          "example": "clsconsole-xxxxxxxx",
+          "member": "string",
+          "name": "ConsoleId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9155,6 +9657,33 @@
       ],
       "type": "object"
     },
+    "DeleteConsoleRequest": {
+      "document": "DeleteConsole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DataSight控制台Id</p>",
+          "example": "clsconsole-xxxxxxxx",
+          "member": "string",
+          "name": "ConsoleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsoleResponse": {
+      "document": "DeleteConsole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteConsoleSharingRequest": {
       "document": "DeleteConsoleSharing请求参数结构体",
       "members": [
@@ -10670,6 +11199,71 @@
           "name": "ConsoleSharingInfos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsolesRequest": {
+      "document": "DescribeConsoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为100，最大值100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<li> DomainPrefix按照【域名前缀】进行过滤。类型：String必选：否</li><li> ConsoleId按照【DataSight实例ID】进行过滤。类型：String必选：否</li><li> tagKey按照【标签键】进行过滤。类型：String必选：否</li><li> tag:tagKey按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，例如tag:exampleKey。类型：String必选：否</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsolesResponse": {
+      "document": "DescribeConsoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DataSight控制台实例列表</p>",
+          "example": "无",
+          "member": "Console",
+          "name": "Consoles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例总数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -18477,6 +19071,169 @@
     "ModifyConfigResponse": {
       "document": "ModifyConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsoleRequest": {
+      "document": "ModifyConsole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DataSight控制台ConsoleId</p>",
+          "example": "clsconsole-xxxxxxxx",
+          "member": "string",
+          "name": "ConsoleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问方式：public - 公网，internal - 内网</p>",
+          "example": "[\"public\"]",
+          "member": "string",
+          "name": "AccessMode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LoginMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义域名前缀</p>",
+          "example": "datasight",
+          "member": "string",
+          "name": "DomainPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>",
+          "example": "无",
+          "member": "ConsoleAccount",
+          "name": "Accounts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>",
+          "example": "无",
+          "member": "AnonymousLoginInfo",
+          "name": "AnonymousLogin",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网类型，默认为0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntranetType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "IntranetRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网私有网络VpcId</p>",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网子网SubnetId</p>",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Auth用户角色信息</p><p>“第三方认证登录”登录方式必传</p>",
+          "example": "无",
+          "member": "AuthRoleInfo",
+          "name": "AuthRoles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义隐藏参数</p>",
+          "example": "[\"hideTopNav\"]",
+          "member": "string",
+          "name": "HideParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制规则</p><p>“第三方认证登录”登录方式必传 AccessMode: internal &amp;&amp; Action: ACCEPT 规则</p>",
+          "example": "无",
+          "member": "AccessControlRule",
+          "name": "AccessControlRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "remarks",
+          "member": "string",
+          "name": "Remarks",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义显示菜单</p>",
+          "example": "[\"/cls/search\",\"/cls/dashboard\"]",
+          "member": "string",
+          "name": "Menus",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsoleResponse": {
+      "document": "ModifyConsole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DataSight控制台Id</p>",
+          "example": "clsconsole-xxxxxxxx",
+          "member": "string",
+          "name": "ConsoleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -16,6 +16,30 @@
         "title": "删除通知内容模板"
       }
     ],
+    "DescribeAIWorkbenchSREDigitalTwinTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchSREDigitalTwinTaskList\n<公共请求参数>\n\n{\n    \"TwinID\": 12,\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Tasks\": [\n                {\n                    \"ID\": 15,\n                    \"CreatedAt\": \"2025-07-15T12:52:14.257741+08:00\",\n                    \"TwinID\": 12,\n                    \"Name\": \"告警分析\",\n                    \"TaskType\": \"custom\",\n                    \"TaskConfig\": \"{\\\"uin\\\":456}\"\n                }\n            ],\n            \"Total\": 10\n        },\n        \"JSONStrPaths\": [],\n        \"RequestId\": \"efeb4cb7-7180-4436-bfef-b3a4fdb55fd1\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchSREDigitalTwinWorkLogDetail\n<公共请求参数>\n\n{\n    \"WorkLogID\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"https://xxx-12345.cos.ap-guangzhou.myqcloud.com/report/12345/xxx\",\n            \"TaskType\": \"custom\",\n            \"DialogID\": 1341\n        },\n        \"JSONStrPaths\": [],\n        \"RequestId\": \"4f3491c3-8c4f-4597-b2b6-3c88044a2a60\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchSREDigitalTwinWorkLogList\n<公共请求参数>\n\n{\n    \"TwinID\": 12,\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WorkLogs\": [\n                {\n                    \"ID\": 3,\n                    \"CreatedAt\": \"2025-07-18T20:02:53.248255+08:00\",\n                    \"TwinID\": 14,\n                    \"TaskID\": 17,\n                    \"StartTime\": \"2025-07-18T20:02:53.247301+08:00\",\n                    \"Status\": \"failed\",\n                    \"Result\": \"{\\\"error\\\":\\\"invalid uin\\\"}\",\n                    \"TaskName\": \"报告生成1\",\n                    \"TaskType\": \"custom\"\n                }\n            ],\n            \"Total\": 10\n        },\n        \"JSONStrPaths\": [],\n        \"RequestId\": \"09c3c111-12b9-477d-8758-98792dcdc8be\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "DescribeAlarmNotifyHistories": [
       {
         "document": "",
@@ -38,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNoticeContentTmpl\n<公共请求参数>\n\n{\n    \"TmplName\": \"Eric-test-1117-2318-修改\",\n    \"TmplContents\": {\n        \"QCloudYehe\": [\n            {\n                \"MatchingStatus\": [\n                    \"Trigger\"\n                ],\n                \"Template\": {\n                    \"Email\": {\n                        \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0KCuaNouihjOWQjuWPiOS/ruaUueS6hnt7LlRlc3R9fQ==\",\n                        \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                    },\n                    \"QYWX\": {\n                        \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0=\",\n                        \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                    },\n                    \"SMS\": {\n                        \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0=\",\n                        \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                    },\n                    \"Voice\": {\n                        \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0=\",\n                        \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                    },\n                    \"WeChat\": {},\n                    \"Site\": {\n                        \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0=\",\n                        \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                    },\n                    \"Andon\": {\n                        \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0=\",\n                        \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                    }\n                }\n            }\n        ],\n        \"WeWorkRobot\": [\n            {\n                \"MatchingStatus\": [\n                    \"Trigger\"\n                ],\n                \"Template\": {\n                    \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0KCuaNouihjOWQjuWPiOS/ruaUueS6hnt7LlRlc3R9fQ==\"\n                }\n            }\n        ],\n        \"DingDingRobot\": [\n            {\n                \"MatchingStatus\": [\n                    \"Trigger\"\n                ],\n                \"Template\": {\n                    \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0=\",\n                    \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                }\n            }\n        ],\n        \"FeiShuRobot\": [\n            {\n                \"MatchingStatus\": [\n                    \"Trigger\"\n                ],\n                \"Template\": {\n                    \"ContentTmpl\": \"RXJpY+a1i+ivleaooeadv3t7LlRlc3R9fQrov5nmmK/mjaLooYzlkI7nmoTlhoXlrrl7ey5UZXN0fX0=\",\n                    \"TitleTmpl\": \"RXJpY+a1i+ivleagh+mimOaooeadv3t7LlRlc3R9fQ==\"\n                }\n            }\n        ]\n    },\n    \"TmplID\": \"ntpl-k3auv6kz\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"90049244-2b8c-4f38-bff0-aca06367ab51\"\n    }\n}",
         "title": "修改模板"
+      }
+    ],
+    "TriggerAIWorkbenchSREDigitalTwinTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerAIWorkbenchSREDigitalTwinTask\n<公共请求参数>\n\n{\n    \"TaskID\": 228\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskID\": 228\n        },\n        \"JSONStrPaths\": [\n            \"null\"\n        ],\n        \"RequestId\": \"14fe4fec-536c-47e7-80a6-29f42979f4c0\"\n    }\n}",
+        "title": "触发AI工作台SRE数字分身任务"
       }
     ]
   },

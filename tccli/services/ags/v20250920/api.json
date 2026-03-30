@@ -1266,6 +1266,34 @@
       ],
       "usage": "both"
     },
+    "MetadataVar": {
+      "document": "metadata 项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>沙箱元数据名</p>",
+          "example": "b",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱元数据值</p>",
+          "example": "b",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MountOption": {
       "document": "沙箱实例存储挂载配置可选项，用于覆盖沙箱工具的存储配置的部分选项，并提供子路径挂载配置。",
       "members": [
@@ -1349,7 +1377,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱实例ID",
+          "document": "<p>沙箱实例ID</p>",
           "example": "4729e19d67fb4ba38854dbbfc63c72e9",
           "member": "string",
           "name": "InstanceId",
@@ -1660,6 +1688,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>",
+          "example": "VPC",
+          "member": "string",
+          "name": "NetworkMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱实例元数据</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1840,7 +1890,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱工具 ID，与 ToolName 至少有一个要填",
+          "document": "<p>沙箱工具 ID，与 ToolName 至少有一个要填</p>",
           "example": "sdt-ee4ywozw",
           "member": "string",
           "name": "ToolId",
@@ -1849,7 +1899,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具名称，与 ToolId 至少有一个要填",
+          "document": "<p>沙箱工具名称，与 ToolId 至少有一个要填</p>",
           "example": "my-browser-sandbox",
           "member": "string",
           "name": "ToolName",
@@ -1858,7 +1908,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h",
+          "document": "<p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>",
           "example": "10m",
           "member": "string",
           "name": "Timeout",
@@ -1867,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "幂等性 Token，长度不超过 64 字符",
+          "document": "<p>幂等性 Token，长度不超过 64 字符</p>",
           "example": "instance-token-456",
           "member": "string",
           "name": "ClientToken",
@@ -1876,7 +1926,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱实例存储挂载配置",
+          "document": "<p>沙箱实例存储挂载配置</p>",
           "example": "无",
           "member": "MountOption",
           "name": "MountOptions",
@@ -1885,12 +1935,30 @@
         },
         {
           "disabled": false,
-          "document": "沙箱实例自定义配置",
+          "document": "<p>沙箱实例自定义配置</p>",
           "example": "无",
           "member": "CustomConfiguration",
           "name": "CustomConfiguration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 跟随系统策略</li><li>TOKEN： Token认证</li><li>NONE： 免认证 </li></ul><p>默认值：DEFAULT</p>",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "AuthMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱元数据</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1900,7 +1968,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的沙箱实例完整信息",
+          "document": "<p>创建的沙箱实例完整信息</p>",
           "example": "无",
           "member": "SandboxInstance",
           "name": "Instance",
@@ -2066,7 +2134,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱实例ID",
+          "document": "<p>沙箱实例ID</p>",
           "example": "953e15d3655e4daab120b885c908edf7",
           "member": "string",
           "name": "InstanceId",
@@ -2075,12 +2143,21 @@
         },
         {
           "disabled": false,
-          "document": "新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置",
+          "document": "<p>新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置</p>",
           "example": "1h",
           "member": "string",
           "name": "Timeout",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱实例元数据</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

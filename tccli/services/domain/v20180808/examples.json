@@ -356,6 +356,14 @@
         "title": "批量域名 DNS 修改"
       }
     ],
+    "ModifyDomainOwner": [
+      {
+        "document": "域名转移给其他腾讯云账户",
+        "input": "https://domain.tencentcloudapi.com/?Action=ModifyDomainOwner\n&DomainId=域名ID\n&NewOwnerUin=新用户UIN\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TransferDnsResult\": null,\n        \"RequestId\": \"abcd-abcd-abcd-abcd\"\n    }\n}",
+        "title": "域名过户"
+      }
+    ],
     "ModifyDomainOwnerBatch": [
       {
         "document": "域名批量过户",

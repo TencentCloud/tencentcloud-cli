@@ -128,6 +128,14 @@
         "title": "创建特殊采集配置任务"
       }
     ],
+    "CreateConsole": [
+      {
+        "document": "创建DataSight控制台实例",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsole\n<公共请求参数>\n\n{\n    \"AccessMode\": [\n        \"public\"\n    ],\n    \"LoginMode\": 0,\n    \"DomainPrefix\": \"datasight\",\n    \"Accounts\": [\n        {\n            \"UserName\": \"username\",\n            \"Password\": \"xxxxxxxx\",\n            \"SecretId\": \"secretid\",\n            \"SecretKey\": \"secretkey\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxxx\",\n        \"ConsoleId\": \"clsconsole-xxxxxxxx\"\n    }\n}",
+        "title": "创建DataSight控制台实例"
+      }
+    ],
     "CreateConsoleSharing": [
       {
         "document": "创建控制台检索页/仪表盘免登录分享站点",
@@ -402,6 +410,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigFromMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a\",\n    \"ConfigId\": \"3581a3be-aa41-423b-995a-54ec84da6264\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除应用到机器组的采集配置"
+      }
+    ],
+    "DeleteConsole": [
+      {
+        "document": "删除DataSight控制台示例",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsole\n<公共请求参数>\n\n{\n    \"ConsoleId\": \"clsconsole-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx\"\n    }\n}",
+        "title": "删除DataSight控制台示例"
       }
     ],
     "DeleteConsoleSharing": [
@@ -690,6 +706,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleSharingList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ConsoleSharingInfos\": [\n            {\n                \"SharingId\": \"13cez28h\",\n                \"SharingUrl\": \"https://clsshare.tencent-cloud.com/s/13cez28h\",\n                \"SharingConfig\": {\n                    \"Name\": \"my-sharing\",\n                    \"Type\": 1,\n                    \"VerifyCode\": \"lEC0V0\",\n                    \"DurationMilliseconds\": 18000,\n                    \"NowTime\": 1706787306086,\n                    \"IsLockTimeRange\": true,\n                    \"IsLockQuery\": true,\n                    \"Params\": [],\n                    \"Resources\": [\n                        \"qcs::cls:ap-guangzhou:uin/10000000001:topic/c1306921-2180-3e45-9azb-31d12217871e6\"\n                    ]\n                },\n                \"ExpiredTime\": 1706789065000,\n                \"CreateTime\": 1706787264000,\n                \"UpdateTime\": 1706787264000\n            }\n        ],\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
         "title": "批量查询控制台检索页/仪表盘免登录分享站点示例"
+      }
+    ],
+    "DescribeConsoles": [
+      {
+        "document": "批量查询DataSight控制台实例列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoles\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Consoles\": [\n            {\n                \"AccessMode\": [\n                    \"internal\"\n                ],\n                \"Accounts\": null,\n                \"AnonymousLogin\": null,\n                \"AuthRoles\": [\n                    {\n                        \"RoleName\": \"rolename\",\n                        \"SecretId\": \"secretid\",\n                        \"SecretKey\": null\n                    }\n                ],\n                \"ConsoleId\": \"clsconsole-xxxxxxxx\",\n                \"DomainPrefix\": \"datasight\",\n                \"IntranetRegion\": \"ap-guangzhou\",\n                \"IntranetType\": 0,\n                \"LoginMode\": 2,\n                \"SubnetId\": \"subnet-xxxxxxxx\",\n                \"VpcId\": \"vpc-xxxxxxxx\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
+        "title": "批量查询DataSight控制台实例列表"
       }
     ],
     "DescribeConsumer": [
@@ -1140,6 +1164,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Name\": \"testname\",\n    \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Type\": \"host_file\",\n    \"HostFile\": {\n        \"LogPath\": \"/var/log/tmep\",\n        \"FilePattern\": \"*.log\",\n        \"CustomLabels\": [\n            \"key1=value1\",\n            \"key=value2\"\n        ]\n    },\n    \"LogType\": \"minimalist_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"test-key\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    },\n    \"ExcludePaths\": [\n        {\n            \"Type\": \"path\",\n            \"Value\": \"/var/log\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\"\n    }\n}",
         "title": "修改特殊采集配置任务"
+      }
+    ],
+    "ModifyConsole": [
+      {
+        "document": "修改DataSight控制台实例",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsole\n<公共请求参数>\n\n{\n    \"ConsoleId\": \"clsconsole-xxxxxxxx\",\n    \"DomainPrefix\": \"datasight\",\n    \"AccessMode\": [\n        \"public\"\n    ],\n    \"LoginMode\": 0,\n    \"Accounts\": [\n        {\n            \"UserName\": \"username\",\n            \"Password\": \"xxxxxxxx\",\n            \"SecretId\": \"AKIDxxxxxxxxxCIAi4V\",\n            \"SecretKey\": \"xxxxxxxxxxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleId\": \"clsconsole-xxxxxxxx\",\n        \"RequestId\": \"xxxx-xxxx\"\n    }\n}",
+        "title": "修改DataSight控制台实例"
       }
     ],
     "ModifyConsoleSharing": [

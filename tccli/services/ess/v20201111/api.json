@@ -154,6 +154,13 @@
       "output": "CreateDocumentResponse",
       "status": "online"
     },
+    "CreateDraftContractByPromptsTask": {
+      "document": "此接口（CreateDraftContractByPromptsTask）用于创建智能合同起草任务。",
+      "input": "CreateDraftContractByPromptsTaskRequest",
+      "name": "创建智能合同起草任务",
+      "output": "CreateDraftContractByPromptsTaskResponse",
+      "status": "online"
+    },
     "CreateDynamicFlowApprover": {
       "document": "此接口（CreateDynamicFlowApprover）接口主要用于补充动态签署方2.0合同的签署方信息，包括但不限于名字、手机号和签署区域等信息。\n\n\n**使用条件**\n- 在发起合同时，必须将OpenDynamicSignFlow参数设置为true，以确保合同以动态签署方2.0的方式处理，否则默认处理为普通合同。\n- 此接口只能在合同处于非终态时调用。一旦合同进入终态（例如：过期、拒签或撤销），将无法通过此接口添加新的签署方。\n- 此接口补充的动态签署人暂不支持他方企业自动签署。\n\n\n动态签署方2.0合同<font color=\"red\">不会自动结束（整个合同变为签署完成）</font>，需要通过调用<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/ArchiveDynamicFlow/\" target=\"_blank\">结束动态签署合同</a>来手动结束签署流程。整体的流程如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/75d323c66e44b05bbc8e949c18664455.png)",
       "input": "CreateDynamicFlowApproverRequest",
@@ -656,6 +663,13 @@
       "input": "DescribeContractReviewWebUrlRequest",
       "name": "获取合同审查结果web页面",
       "output": "DescribeContractReviewWebUrlResponse",
+      "status": "online"
+    },
+    "DescribeDraftContractByPromptsTask": {
+      "document": "此接口（DescribeDraftContractByPromptsTask）用于查询智能合同起草任务状态。",
+      "input": "DescribeDraftContractByPromptsTaskRequest",
+      "name": "查询智能合同起草任务",
+      "output": "DescribeDraftContractByPromptsTaskResponse",
       "status": "online"
     },
     "DescribeEnterpriseContractReviewChecklists": {
@@ -4739,6 +4753,79 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDraftContractByPromptsTaskRequest": {
+      "document": "CreateDraftContractByPromptsTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "起草要求",
+          "example": "我公司（深圳市星辰科技有限公司）需要与北京云端数据服务有限公司签订一份软件开发服务合同。",
+          "member": "string",
+          "name": "Requirement",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参考模板文件资源id（PDF/Word格式）",
+          "example": "yD3azUUck****n**UEFfm*Wv6Fm7tFzY",
+          "member": "string",
+          "name": "ReferenceTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "相关规定文件资源id列表（PDF/Word格式）",
+          "example": "[\"yD3aWUUc*********u5ahO3EgYkkoe1E\"]",
+          "member": "string",
+          "name": "RequirementFileIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "起草合同的语言要求（zh，en）默认zh",
+          "example": "zh",
+          "member": "string",
+          "name": "ContractLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDraftContractByPromptsTaskResponse": {
+      "document": "CreateDraftContractByPromptsTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起草任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yD3a5UUc*********E3o0MpRNHSEruSi",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12262,6 +12349,82 @@
           "name": "Status",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDraftContractByPromptsTaskRequest": {
+      "document": "DescribeDraftContractByPromptsTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "yD3a5UUs1b********Hu4sn4VpzPXtIy",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDraftContractByPromptsTaskResponse": {
+      "document": "DescribeDraftContractByPromptsTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，枚举，0 已创建，1 执行中，2 成功，3 失败",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务错误信息，仅在失败时返回",
+          "example": "需求校验未通过: 该需求意图为“**买卖合同”*******，属于严重违法犯罪行为，内容违法违规，无法用于生成任何合同。",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的合同名称",
+          "example": "软件开发服务合同",
+          "member": "string",
+          "name": "ContractName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的合同文件资源id",
+          "example": "yD3a5UUs1i****UEMs3KDC7ewKOitKTm",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

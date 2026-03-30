@@ -19110,7 +19110,7 @@
         {
           "disabled": false,
           "document": "Session相关配置，当前支持：eni、roleArn以及用户指定的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"eni\":\"test_eni\"]",
+          "example": "无",
           "member": "KVPair",
           "name": "Arguments",
           "output_required": true,
@@ -19120,7 +19120,7 @@
         {
           "disabled": false,
           "document": "运行程序地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[cosn://xxx]",
+          "example": "[\"cosn://xxx\"]",
           "member": "string",
           "name": "ProgramDependentFiles",
           "output_required": true,
@@ -19130,7 +19130,7 @@
         {
           "disabled": false,
           "document": "依赖的jar程序地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[cosn://xxx]",
+          "example": "[\"cosn://xxx\"]",
           "member": "string",
           "name": "ProgramDependentJars",
           "output_required": true,
@@ -19140,7 +19140,7 @@
         {
           "disabled": false,
           "document": "依赖的python程序地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[cosn://xxx]",
+          "example": "[\"cosn://xxx\"]",
           "member": "string",
           "name": "ProgramDependentPython",
           "output_required": true,
@@ -19150,7 +19150,7 @@
         {
           "disabled": false,
           "document": "依赖的pyspark虚拟环境地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[cosn://xxx]",
+          "example": "[\"cosn://xxx\"]",
           "member": "string",
           "name": "ProgramArchives",
           "output_required": true,
@@ -19250,7 +19250,7 @@
         {
           "disabled": false,
           "document": "其它信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"sparkUiUrl\":\"xxx\"]",
+          "example": "无",
           "member": "KVPair",
           "name": "AppInfo",
           "output_required": true,
@@ -19335,6 +19335,16 @@
           "name": "PodNumbers",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark app名称",
+          "example": "sparkapp_2026-03-13_12-01-21",
+          "member": "string",
+          "name": "SparkAppName",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -19632,6 +19642,26 @@
           "member": "string",
           "name": "ResourceGroupName",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kernel id",
+          "example": "d4bb0573-ccfa-4bc4-9a7e-67f989c5226b",
+          "member": "string",
+          "name": "KernelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark app名称",
+          "example": "sparkapp_2026-03-13_12-01-21",
+          "member": "string",
+          "name": "SparkAppName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

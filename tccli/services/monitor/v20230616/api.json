@@ -14,6 +14,27 @@
       "output": "DeleteNoticeContentTmplsResponse",
       "status": "online"
     },
+    "DescribeAIWorkbenchSREDigitalTwinTaskList": {
+      "document": "查询AI工作台SRE数字分身任务列表",
+      "input": "DescribeAIWorkbenchSREDigitalTwinTaskListRequest",
+      "name": "查询AI工作台SRE数字分身任务列表",
+      "output": "DescribeAIWorkbenchSREDigitalTwinTaskListResponse",
+      "status": "online"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogDetail": {
+      "document": "查询AI工作台SRE数字分身工作日志详细信息",
+      "input": "DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest",
+      "name": "查询AI工作台SRE数字分身工作日志详细信息",
+      "output": "DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse",
+      "status": "online"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogList": {
+      "document": "查询AI工作台SRE数字分身任务工作日志列表",
+      "input": "DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest",
+      "name": "查询AI工作台SRE数字分身任务工作日志列表",
+      "output": "DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse",
+      "status": "online"
+    },
     "DescribeAlarmNotifyHistories": {
       "document": "按需查询告警的通知历史",
       "input": "DescribeAlarmNotifyHistoriesRequest",
@@ -34,6 +55,13 @@
       "name": "修改通知内容模板",
       "output": "ModifyNoticeContentTmplResponse",
       "status": "online"
+    },
+    "TriggerAIWorkbenchSREDigitalTwinTask": {
+      "document": "触发数字分身任务请求",
+      "input": "TriggerAIWorkbenchSREDigitalTwinTaskRequest",
+      "name": "触发AI工作台SRE数字分身任务",
+      "output": "TriggerAIWorkbenchSREDigitalTwinTaskResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -43,6 +71,262 @@
     "serviceShortName": "monitor"
   },
   "objects": {
+    "AIWorkbenchSREDigitalTwinTask": {
+      "document": "AI工作台SRE数字分身任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "报告生成",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "custom",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务配置",
+          "example": "{\\\"uin\\\": 1234}",
+          "member": "string",
+          "name": "TaskConfig",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-07-11T10:50:14.872087+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属数字分身ID",
+          "example": "2",
+          "member": "uint64",
+          "name": "TwinID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIWorkbenchSREDigitalTwinTaskList": {
+      "document": "AI工作台SRE数字分身任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "[{}]",
+          "member": "AIWorkbenchSREDigitalTwinTask",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AIWorkbenchSREDigitalTwinWorkLog": {
+      "document": "AI工作台SRE数字分身工作日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识符",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-07-11T10:50:14.872087+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属数字分身ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TwinID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属数字分身任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析时间",
+          "example": "2025-07-11T10:50:14.872087+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析状态",
+          "example": "analyzing",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析结果摘要",
+          "example": "分析结果：xxxx",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属任务名称",
+          "example": "任务1",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属任务类型",
+          "example": "custom",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AIWorkbenchSREDigitalTwinWorkLogDetail": {
+      "document": "AI工作台SRE数字分身工作日志详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作日志详细内容",
+          "example": "https://12345.cos.ap-guangzhou.myqcloud.com/report/12345/xxxx",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作日志任务类型",
+          "example": "custom",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作日志相关对话ID",
+          "example": "1",
+          "member": "int64",
+          "name": "DialogID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AIWorkbenchSREDigitalTwinWorkLogList": {
+      "document": "AI工作台SRE数字分身工作日志列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作日志列表",
+          "example": "[{}]",
+          "member": "AIWorkbenchSREDigitalTwinWorkLog",
+          "name": "WorkLogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateNoticeContentTmplRequest": {
       "document": "CreateNoticeContentTmpl请求参数结构体",
       "members": [
@@ -125,6 +409,183 @@
     "DeleteNoticeContentTmplsResponse": {
       "document": "DeleteNoticeContentTmpls返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinTaskListRequest": {
+      "document": "DescribeAIWorkbenchSREDigitalTwinTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字分身ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TwinID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量限制",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinTaskListResponse": {
+      "document": "DescribeAIWorkbenchSREDigitalTwinTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字分身任务列表",
+          "example": "{\"Tasks\":[{\"ID\":15,\"CreatedAt\":\"2025-07-15T12:52:14.257741+08:00\",\"TwinID\":12,\"Name\":\"告警分析\",\"TaskType\":\"custom\",\"TaskConfig\":\"{\\\"uin\\\":456}\"}],\"Total\":10}",
+          "member": "AIWorkbenchSREDigitalTwinTaskList",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest": {
+      "document": "DescribeAIWorkbenchSREDigitalTwinWorkLogDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作日志ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkLogID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse": {
+      "document": "DescribeAIWorkbenchSREDigitalTwinWorkLogDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径",
+          "example": "无",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字分身详细信息",
+          "example": "无",
+          "member": "AIWorkbenchSREDigitalTwinWorkLogDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest": {
+      "document": "DescribeAIWorkbenchSREDigitalTwinWorkLogList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字分身ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TwinID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页限制条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse": {
+      "document": "DescribeAIWorkbenchSREDigitalTwinWorkLogList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字分身工作日志列表",
+          "example": "{\"WorkLogs\":[{\"ID\":3,\"CreatedAt\":\"2025-07-18T20:02:53.248255+08:00\",\"TwinID\":14,\"TaskID\":17,\"StartTime\":\"2025-07-18T20:02:53.247301+08:00\",\"Status\":\"failed\",\"Result\":\"{\\\"error\\\":\\\"invalid uin\\\"}\",\"TaskName\":\"报告生成1\",\"TaskType\":\"custom\"}],\"Total\":10}",
+          "member": "AIWorkbenchSREDigitalTwinWorkLogList",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1127,6 +1588,70 @@
           "output_required": false,
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TriggerAIWorkbenchSREDigitalTwinTaskRequest": {
+      "document": "TriggerAIWorkbenchSREDigitalTwinTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字分身任务ID",
+          "example": "228",
+          "member": "int64",
+          "name": "TaskID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerAIWorkbenchSREDigitalTwinTaskResponse": {
+      "document": "TriggerAIWorkbenchSREDigitalTwinTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Json序列化路径",
+          "example": "[\"null\"]",
+          "member": "string",
+          "name": "JSONStrPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字分身任务信息",
+          "example": "无",
+          "member": "TriggerDigitalTwinTaskResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerDigitalTwinTaskResp": {
+      "document": "触发数字分身任务响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字分身任务ID",
+          "example": "228",
+          "member": "int64",
+          "name": "TaskID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
