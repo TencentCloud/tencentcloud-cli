@@ -27,7 +27,8 @@ Output:
                 "CosStorageType": 0,
                 "RemoteInfo": [],
                 "Type": "binlog",
-                "InstanceId": "cdb-xxx"
+                "InstanceId": "cdb-xxx",
+                "Progress": 0
             },
             {
                 "BinlogFinishTime": "2020-11-12 21:13:04",
@@ -42,7 +43,8 @@ Output:
                 "CosStorageType": 0,
                 "RemoteInfo": [],
                 "Type": "binlog",
-                "InstanceId": "cdb-xxx"
+                "InstanceId": "cdb-xxx",
+                "Progress": 0
             }
         ],
         "RequestId": "2d8504a5-157d-4753-a060-6464b0e875e5",

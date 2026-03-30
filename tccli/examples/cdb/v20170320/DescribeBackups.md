@@ -36,6 +36,7 @@ Output:
                 "CosStorageType": 0,
                 "Size": 653226,
                 "InstanceId": "cdb-sadq",
+                "Progress": 0,
                 "EncryptionFlag": "off"
             },
             {
@@ -58,6 +59,7 @@ Output:
                 "CosStorageType": 0,
                 "Size": 653226,
                 "InstanceId": "cdb-asdqwdqd",
+                "Progress": 0,
                 "EncryptionFlag": "on"
             }
         ]

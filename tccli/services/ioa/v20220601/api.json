@@ -8801,7 +8801,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）；默认值0",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -13687,9 +13687,19 @@
           "example": "-",
           "member": "AuthSourceType",
           "name": "AuthSourceTypeSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏企业微信的某些配置",
+          "example": "",
+          "member": "bool",
+          "name": "HideWeComConfig",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14857,7 +14867,7 @@
         {
           "disabled": false,
           "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "525",
           "member": "int64",
           "name": "Id",
           "required": false,
@@ -14867,7 +14877,7 @@
         {
           "disabled": false,
           "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "DisableExtraInfoSwitch_Mac",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -14877,7 +14887,7 @@
         {
           "disabled": false,
           "document": "配置描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "no description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -14887,7 +14897,7 @@
         {
           "disabled": false,
           "document": "配置值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -14897,7 +14907,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2025-11-10 17:26:04",
           "member": "string",
           "name": "CreateTime",
           "required": false,
@@ -14907,7 +14917,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2026-03-14 11:10:13",
           "member": "string",
           "name": "UpdateTime",
           "required": false,
@@ -14960,7 +14970,7 @@
         {
           "disabled": false,
           "document": "具体的查询响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "无",
           "member": "DescribeCommonConfigsItem",
           "name": "Items",
           "required": false,
@@ -16896,7 +16906,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统类型（0：win，1：linux，2：mac，4：android，5：ios；默认0：系统win）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -26986,66 +26996,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源模块状态，1正常，0软删除，不会返回(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "EnableFlag",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源模块id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "资源模块id",
+          "example": "1",
           "member": "int64",
           "name": "AreaId",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源模块的插入时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Itime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "管理域id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "DomainId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "资源模块名称",
+          "example": "测试分组",
           "member": "string",
           "name": "AreaName",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源模块的最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "资源模块状态，1正常，0（未启用），不会返回(只支持32位)",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源模块的插入时间",
+          "example": "2026-01-14 14:50:33",
           "member": "string",
-          "name": "Utime",
+          "name": "Itime",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源模块的最后更新时间",
+          "example": "2026-01-14 14:50:33",
+          "member": "string",
+          "name": "Utime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理域id(只支持32位)",
+          "example": "0",
+          "member": "int64",
+          "name": "DomainId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组下，资源数量",
+          "example": "30",
+          "member": "uint64",
+          "name": "ResourceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DescribeResourceModulesPageRsp": {
       "document": "资源模块的分页返回对象",

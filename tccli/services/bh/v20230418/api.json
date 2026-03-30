@@ -2104,7 +2104,7 @@
         {
           "disabled": false,
           "document": "资产信息",
-          "example": "{\"Id\":1,\"Name\":\"运维机器\"}",
+          "example": "无",
           "member": "Device",
           "name": "Device",
           "output_required": false,
@@ -2123,10 +2123,20 @@
         },
         {
           "disabled": false,
-          "document": "上次改密结果。0-未改密  1-改密成功 2-改密失败",
+          "document": "上次改密结果。0-未改密  1-改密成功 2-改密失败,3-改密中，4-改密超时",
           "example": "0",
           "member": "uint64",
           "name": "LastChangeStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时",
+          "example": "2",
+          "member": "uint64",
+          "name": "TaskStatus",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2170,7 +2180,7 @@
         {
           "disabled": false,
           "document": "所属部门信息",
-          "example": "{\"Id\":\"1.2\",\"Name\":运维部}",
+          "example": "无",
           "member": "Department",
           "name": "Department",
           "output_required": false,
@@ -2300,7 +2310,7 @@
         {
           "disabled": false,
           "document": "需要改密的主机",
-          "example": "[{\"Id\":1,\"Name\":“运维主机”}]",
+          "example": "无",
           "member": "Device",
           "name": "DeviceSet",
           "output_required": false,
@@ -2355,6 +2365,16 @@
           "name": "LastTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -11143,6 +11163,26 @@
           "name": "PayMode",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费侧地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BillingRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费侧可用区",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "BillingZone",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

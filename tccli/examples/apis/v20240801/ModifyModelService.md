@@ -1,26 +1,44 @@
-**Example 1: 编辑模型服务**
+**Example 1: ModifyModelService**
 
-
+ModifyModelService
 
 Input: 
 
 ```
 tccli apis ModifyModelService --cli-unfold-argument  \
-    --InstanceID ins-a7af1980 \
-    --ID mds-11401891 \
-    --Name heheh \
-    --Description heheh \
-    --TargetModels.0.ID mod-fe2c8801 \
-    --TargetModels.0.Name heheh \
-    --TargetModels.0.Rank 1 \
+    --InstanceID ins-******** \
+    --ID mds-******** \
+    --Name deepseek \
+    --Description deepseek \
+    --TargetModels.0.ID mod-78bd8b5e \
+    --TargetModels.0.Name deepseek \
+    --TargetModels.0.Rank 10 \
     --InvokeLimitConfigStatus False \
+    --InvokeLimitConfig.Type tokenBucket \
+    --InvokeLimitConfig.TokenBucketMaxNum 20000 \
+    --InvokeLimitConfig.TokenBucketRate 1 \
+    --InvokeLimitConfig.FunnelMaxNum 20000 \
+    --InvokeLimitConfig.FunnelRate 1 \
+    --InvokeLimitConfig.SlidingWindowMaxNum 20000 \
+    --InvokeLimitConfig.SlidingWindowSize 1 \
+    --InvokeLimitConfig.TimeWindow 20000 \
+    --InvokeLimitConfig.TimeWindowInterval 1 \
     --TokenLimitStatus False \
+    --TokenLimitConfig.LimitRequestBody 10 \
+    --TokenLimitConfig.LimitWindows.0.Interval 60 \
+    --TokenLimitConfig.LimitWindows.0.Limit 100 \
     --TmsStatus False \
+    --TmsConfig.Mode  \
+    --TmsConfig.Action  \
+    --TmsConfig.MergeCount 0 \
+    --TmsConfig.BizType  \
+    --TmsConfig.InterceptMessage  \
     --IpWhiteStatus False \
-    --IpWhiteList 1.1.1.1 \
     --IpBlackStatus False \
-    --IpBlackList 1.1.1.1 \
-    --Timeout 12
+    --Timeout 60 \
+    --PromptModerateStatus False \
+    --PromptModerateConfig.Action watch \
+    --PromptModerateConfig.InterceptMessage 
 ```
 
 Output: 
@@ -28,9 +46,9 @@ Output:
 {
     "Response": {
         "Data": {
-            "ID": "mds-11401891"
+            "ID": "mds-********"
         },
-        "RequestId": "626bc38a-ef7b-4b4d-832d-ee675e46a4e5"
+        "RequestId": "ebd06dc9-30ae-4f30-84eb-a1ed61d7a098"
     }
 }
 ```

@@ -819,7 +819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "test.tencentcloudcr.com/example/nginx:latest",
           "member": "string",
           "name": "Image",
@@ -830,7 +830,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
@@ -841,7 +841,7 @@
         },
         {
           "disabled": false,
-          "document": "启动命令",
+          "document": "<p>启动命令</p>",
           "example": "[\"/bin/bash\", \"-c\"]",
           "member": "string",
           "name": "Command",
@@ -852,7 +852,7 @@
         },
         {
           "disabled": false,
-          "document": "启动参数",
+          "document": "<p>启动参数</p>",
           "example": "[\"-h\", \"0.0.0.0\", \"-p\", \"8000\"]",
           "member": "string",
           "name": "Args",
@@ -863,7 +863,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>",
           "example": "无",
           "member": "EnvVar",
           "name": "Env",
@@ -874,7 +874,7 @@
         },
         {
           "disabled": false,
-          "document": "端口配置",
+          "document": "<p>端口配置</p>",
           "example": "无",
           "member": "PortConfiguration",
           "name": "Ports",
@@ -885,7 +885,7 @@
         },
         {
           "disabled": false,
-          "document": "资源配置",
+          "document": "<p>资源配置</p>",
           "example": "无",
           "member": "ResourceConfiguration",
           "name": "Resources",
@@ -896,10 +896,21 @@
         },
         {
           "disabled": false,
-          "document": "探针配置",
+          "document": "<p>探针配置</p>",
           "example": "无",
           "member": "ProbeConfiguration",
           "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱 DNS 配置</p>",
+          "example": "无",
+          "member": "DNSConfig",
+          "name": "DNSConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -913,7 +924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "test.tencentcloudcr.com/example/nginx:latest",
           "member": "string",
           "name": "Image",
@@ -924,7 +935,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`TCR`、`CCR`。",
+          "document": "<p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>",
           "example": "TCR",
           "member": "string",
           "name": "ImageRegistryType",
@@ -935,7 +946,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest",
+          "document": "<p>镜像 Digest</p>",
           "example": "sha256:abc123def456...",
           "member": "string",
           "name": "ImageDigest",
@@ -946,7 +957,7 @@
         },
         {
           "disabled": false,
-          "document": "启动命令",
+          "document": "<p>启动命令</p>",
           "example": "[\"/bin/bash\", \"-c\"]",
           "member": "string",
           "name": "Command",
@@ -957,7 +968,7 @@
         },
         {
           "disabled": false,
-          "document": "启动参数",
+          "document": "<p>启动参数</p>",
           "example": "[\"-h\", \"0.0.0.0\", \"-p\", \"8000\"]",
           "member": "string",
           "name": "Args",
@@ -968,7 +979,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>",
           "example": "无",
           "member": "EnvVar",
           "name": "Env",
@@ -979,7 +990,7 @@
         },
         {
           "disabled": false,
-          "document": "端口配置",
+          "document": "<p>端口配置</p>",
           "example": "无",
           "member": "PortConfiguration",
           "name": "Ports",
@@ -990,7 +1001,7 @@
         },
         {
           "disabled": false,
-          "document": "资源配置",
+          "document": "<p>资源配置</p>",
           "example": "无",
           "member": "ResourceConfiguration",
           "name": "Resources",
@@ -1001,10 +1012,21 @@
         },
         {
           "disabled": false,
-          "document": "探针配置",
+          "document": "<p>探针配置</p>",
           "example": "无",
           "member": "ProbeConfiguration",
           "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱 DNS 配置</p>",
+          "example": "无",
+          "member": "DNSConfig",
+          "name": "DNSConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -1036,6 +1058,45 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DNSConfig": {
+      "document": "沙箱自定义 dns 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DNS 服务器地址</p><p>参数格式：需要有效 IP 地址</p><p>默认值：10.0.0.1</p>",
+          "example": "[\"9.9.9.9\"]",
+          "member": "string",
+          "name": "Servers",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索域(对应 resolv.conf 的 search 指令)</p>",
+          "example": "[\"example.internal\"]",
+          "member": "string",
+          "name": "Searches",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置项(对应  resolv.conf 选项)</p>",
+          "example": "[\"ndots:5\"]",
+          "member": "string",
+          "name": "Options",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

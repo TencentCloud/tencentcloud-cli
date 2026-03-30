@@ -1436,7 +1436,7 @@
         {
           "disabled": false,
           "document": "分页参数",
-          "example": "{1,2}",
+          "example": "无",
           "member": "PageByNoParams",
           "name": "PageParams",
           "required": true,
@@ -1532,7 +1532,7 @@
         {
           "disabled": false,
           "document": "告警历史",
-          "example": "[{}]",
+          "example": "无",
           "member": "AlarmNotifyHistory",
           "name": "AlarmNotifyHistoryList",
           "output_required": false,
@@ -1542,7 +1542,7 @@
         {
           "disabled": false,
           "document": "分页情况",
-          "example": "{\"PerPage\": 10}",
+          "example": "无",
           "member": "PageByNoResult",
           "name": "PageResult",
           "output_required": false,
@@ -2534,8 +2534,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "是否遍历到末尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "【已弃用】是否遍历到末尾\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsEnd",
@@ -2543,6 +2543,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否遍历到末尾",
+          "example": "0",
+          "member": "bool",
+          "name": "End",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

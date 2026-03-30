@@ -168,6 +168,14 @@
         "title": "创建服务来源实例"
       }
     ],
+    "CreateOrModifyCloudNativeAPIGatewayCORS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrModifyCloudNativeAPIGatewayCORS\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-3e49c57e\",\n    \"SourceType\": \"route\",\n    \"SourceId\": \"462885df-28d0-4b57-b7c3-6b7e22d08799\",\n    \"Enabled\": true,\n    \"Origins\": [\n        \"GET\"\n    ],\n    \"Headers\": [\n        \"header\"\n    ],\n    \"Methods\": [\n        \"GET\"\n    ],\n    \"ExposedHeaders\": [\n        \"respHeader\"\n    ],\n    \"MaxAge\": 30,\n    \"Credentials\": false,\n    \"PreFlightContinue\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88e7aa4b-de0a-46b2-817c-435ddc736694\"\n    }\n}",
+        "title": "创建跨域配置"
+      }
+    ],
     "CreateOrModifyCloudNativeAPIGatewayIPRestriction": [
       {
         "document": "创建或编辑云原生网关访问控制",
@@ -206,6 +214,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9922cab4-4ad3-4146-9535-cbc788082899\",\n        \"Result\": {\n            \"GatewayId\": \"gateway-8d8b6b2d\",\n            \"Status\": \"Deleting\"\n        }\n    }\n}",
         "title": "测试删除云原生API网关实例"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayCORS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayCORS\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-2ac0a2ce\",\n    \"SourceType\": \"route\",\n    \"SourceId\": \"9a4e0f39-fa6a-44d8-8e3e-10f016ad78de\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88e7aa4b-de0a-46b2-817c-435ddc736694\"\n    }\n}",
+        "title": "删除跨域配置"
       }
     ],
     "DeleteCloudNativeAPIGatewayCanaryRule": [
@@ -406,6 +422,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde03767\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"gateway-dde03767\",\n            \"Status\": \"Running\",\n            \"Name\": \"公网入口网关\",\n            \"Type\": \"kong\",\n            \"GatewayVersion\": \"2.5.1\",\n            \"NodeConfig\": {\n                \"Specification\": \"1c2g\",\n                \"Number\": 2\n            },\n            \"VpcConfig\": {\n                \"VpcId\": \"vpc-83p0o405\",\n                \"SubnetId\": \"subnet-8tzp8ugg\"\n            },\n            \"Description\": \"公网入口网关\",\n            \"CreateTime\": \"2024-10-08 20:27:38\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"app\",\n                    \"TagValue\": \"learn\"\n                }\n            ],\n            \"EnableCls\": true,\n            \"TradeType\": 0,\n            \"FeatureVersion\": \"STANDARD\",\n            \"InternetMaxBandwidthOut\": 1,\n            \"AutoRenewFlag\": 0,\n            \"CurDeadline\": \"2024-12-02 16:11:41\",\n            \"IsolateTime\": \"2024-10-08 20:27:38\",\n            \"EnableInternet\": true,\n            \"EngineRegion\": \"ap-guangzhou\",\n            \"IngressClassName\": \"kong\",\n            \"InternetPayMode\": \"TRAFFIC\",\n            \"GatewayMinorVersion\": \"2.5.1.11\",\n            \"InstancePort\": {\n                \"HttpPort\": \"80\",\n                \"HttpsPort\": \"443\",\n                \"TcpPort\": \"8000\",\n                \"UdpPort\": \"7000\"\n            },\n            \"LoadBalancerType\": \"L7\"\n        },\n        \"RequestId\": \"9b2bc5f8-0c9f-43b4-8517-3e6cf6c6a7a0\"\n    }\n}",
         "title": "测试获取云原生API网关基础信息"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayCORS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayCORS\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-37bf89a6\",\n    \"SourceType\": \"service\",\n    \"SourceId\": \"b7acf724-f356-479c-90a1-0e0200f0da4c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {},\n        \"RequestId\": \"88e7aa4b-de0a-46b2-817c-435ddc736694\"\n    }\n}",
+        "title": "查询缓存配置"
       }
     ],
     "DescribeCloudNativeAPIGatewayCanaryRules": [
