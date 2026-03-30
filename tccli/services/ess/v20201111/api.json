@@ -13482,7 +13482,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，单页最大支持 20。",
+          "document": "指定分页每页返回的数据条数，单页最大支持 20。\n如果没有传递， 则为默认值20。",
           "example": "10",
           "member": "int64",
           "name": "Limit",

@@ -398,6 +398,30 @@
         "title": "请求例子"
       }
     ],
+    "DescribeResourcePoolPackInstances": [
+      {
+        "document": "查询实例资源池内已创建的实例列表",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePoolPackInstances\n<公共请求参数>\n\n{\n    \"DedicatedResourcePackIds\": [\n        \"rpp-2gyonkx7\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DedicatedResourcePackInstanceSet\": [\n            {\n                \"DedicatedResourcePackId\": \"rpp-2gyonkx7\",\n                \"InstanceFamily\": \"S9\",\n                \"InstanceIdSet\": [\n                    \"ins-mmnxwk8y\"\n                ],\n                \"InstanceType\": \"S9.8XLARGE64\",\n                \"Zone\": \"ap-guangzhou-7\"\n            }\n        ],\n        \"RequestId\": \"f25c2f8b-cc99-430b-8cdd-905bfc56698e\"\n    }\n}",
+        "title": "查询实例资源池内已创建的实例列表"
+      }
+    ],
+    "DescribeResourcePoolPackTypeConfigs": [
+      {
+        "document": "查询支持实例资源池的机型规格列表",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePoolPackTypeConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-7\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigSet\": [\n            {\n                \"CPU\": 256,\n                \"FPGA\": 0,\n                \"GPU\": 0,\n                \"GpuCount\": 0,\n                \"InstanceFamily\": \"SA5\",\n                \"InstanceType\": \"SA5.64XLARGE1152\",\n                \"Memory\": 1152,\n                \"Zone\": \"ap-guangzhou-7\"\n            }\n        ],\n        \"RequestId\": \"0b93f550-b77f-4cf1-896e-574458fd5cb1\"\n    }\n}",
+        "title": "查询支持实例资源池的机型规格列表"
+      }
+    ],
+    "DescribeResourcePoolPacks": [
+      {
+        "document": "查询实例资源池预扣包列表",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePoolPacks\n<公共请求参数>\n\n{\n    \"MaxResults\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DedicatedResourcePackSet\": [\n            {\n                \"AutoPlacement\": true,\n                \"AvailableCapacity\": {\n                    \"Cpu\": 28,\n                    \"Disk\": 0,\n                    \"Gpu\": 0,\n                    \"Memory\": 56\n                },\n                \"DedicatedResourcePackId\": \"rpp-2gyonkx7\",\n                \"DedicatedResourcePackName\": \"\",\n                \"EndTime\": \"2026-03-07T10:19:40Z\",\n                \"HostIp\": \"28F18A615F13777FCD220D3D4AF9D956\",\n                \"InstanceFamily\": \"S9\",\n                \"InstanceType\": \"S9.8XLARGE64\",\n                \"RackId\": \"1A2A88376C7181435588E9FA520CE151\",\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"ResourcePoolPackType\": \"EXCLUSIVE\",\n                \"StartTime\": \"2026-02-07T10:19:40Z\",\n                \"Status\": \"ACTIVE\",\n                \"SwitchId\": \"3A7F5B75F1B7E292920E7118FD652EFD\",\n                \"TotalCapacity\": {\n                    \"Cpu\": 32,\n                    \"Disk\": 0,\n                    \"Gpu\": 0,\n                    \"Memory\": 64\n                },\n                \"Zone\": \"ap-guangzhou-7\"\n            }\n        ],\n        \"RequestId\": \"ff3e17a5-592c-4391-83d7-904210e92e95\"\n    }\n}",
+        "title": "查询实例资源池预扣包列表"
+      }
+    ],
     "DescribeTaskInfo": [
       {
         "document": "根据以下条件，查询并获取维修任务返回列表：\n\n- 任务的创建时间在 `2023-03-01 00:00:00` ~ `2023-04-01 00:00:00` 范围内。\n- 任务当前的状态为`待授权`。\n- 返回的任务列表按照`CreateTime`创建时间降序返回，偏移量为`0`，最多返回`20`条数据。",
@@ -490,6 +514,14 @@
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportKeyPair\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"KeyName\": \"operation_key\",\n    \"PublicKey\": \"ssh-rsa XXXXXXXXXXXX== skey_45071\"\n}",
         "output": "{\n    \"Response\": {\n        \"KeyId\": \"skey-4e5ty7i8\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "导入密钥对"
+      }
+    ],
+    "InquirePricePurchaseResourcePoolPacks": [
+      {
+        "document": "创建实例资源池预扣包询价",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePricePurchaseResourcePoolPacks\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-7\",\n    \"InstanceType\": \"S9.8XLARGE64\",\n    \"InstanceCount\": 1,\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"ChargeUnit\": \"HOUR\",\n            \"Discount\": 100,\n            \"UnitPrice\": 1.36,\n            \"UnitPriceDiscount\": 1.36\n        },\n        \"RequestId\": \"0ea883b1-0fc2-4e9b-afc7-d1a28d216083\"\n    }\n}",
+        "title": "创建实例资源池预扣包询价"
       }
     ],
     "InquiryPriceModifyInstancesChargeType": [
@@ -716,6 +748,14 @@
         "title": "在线烧录FPGA镜像"
       }
     ],
+    "PurchaseResourcePoolPacks": [
+      {
+        "document": "创建一个实例资源池预扣包",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PurchaseResourcePoolPacks\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-7\",\n    \"InstanceType\": \"S9.8XLARGE64\",\n    \"InstanceCount\": 1,\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DedicatedResourcePackIdSet\": [\n            \"rpp-2gyonkx7\"\n        ],\n        \"RequestId\": \"b0c7e70b-c576-40d7-b2fd-1807a7400616\"\n    }\n}",
+        "title": "创建实例资源池预扣包"
+      }
+    ],
     "RebootInstances": [
       {
         "document": "本示例用于重启两个实例。",
@@ -878,6 +918,14 @@
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-3jaw1j8m\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a2f76a2-3b5b-4760-a90b-eff0c611b360\"\n    }\n}",
         "title": "销毁指定ID实例"
+      }
+    ],
+    "TerminateResourcePoolPacks": [
+      {
+        "document": "销毁实例资源池预扣包",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateResourcePoolPacks\n<公共请求参数>\n\n{\n    \"DedicatedResourcePackIds\": [\n        \"rpp-6rk3550n\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"185b3d23-c70e-4569-84c1-652b4f177232\"\n    }\n}",
+        "title": "销毁实例资源池预扣包"
       }
     ]
   },

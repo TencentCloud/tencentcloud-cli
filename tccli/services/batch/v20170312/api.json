@@ -4738,6 +4738,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属的实例资源池机架ID，仅用于出参。",
+          "example": "3F3327994BA4C23134DDCBD7828CD4CC",
+          "member": "string",
+          "name": "RackId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

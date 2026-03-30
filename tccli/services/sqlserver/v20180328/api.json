@@ -28,6 +28,13 @@
       "output": "CloseInterCommunicationResponse",
       "status": "online"
     },
+    "CloseLog": {
+      "document": "关闭日志",
+      "input": "CloseLogRequest",
+      "name": "关闭日志",
+      "output": "CloseLogResponse",
+      "status": "online"
+    },
     "CompleteExpansion": {
       "document": "本接口（CompleteExpansion）在实例发起扩容后，实例状态处于“升级待切换”时，可立即完成实例升级切换操作，无需等待可维护时间窗。本接口需要在实例低峰时调用，在完全切换成功前，存在部分库不可访问的风险。",
       "input": "CompleteExpansionRequest",
@@ -112,6 +119,13 @@
       "output": "CreateDBInstancesResponse",
       "status": "online"
     },
+    "CreateExportTask": {
+      "document": "创建日志下载任务",
+      "input": "CreateExportTaskRequest",
+      "name": "创建日志下载任务",
+      "output": "CreateExportTaskResponse",
+      "status": "online"
+    },
     "CreateIncrementalMigration": {
       "document": "本接口（CreateIncrementalMigration）用于创建增量备份导入任务。",
       "input": "CreateIncrementalMigrationRequest",
@@ -180,6 +194,13 @@
       "input": "DeleteDBInstanceRequest",
       "name": "立即下线实例",
       "output": "DeleteDBInstanceResponse",
+      "status": "online"
+    },
+    "DeleteExportTask": {
+      "document": "删除日志下载任务",
+      "input": "DeleteExportTaskRequest",
+      "name": "删除日志下载任务",
+      "output": "DeleteExportTaskResponse",
       "status": "online"
     },
     "DeleteIncrementalMigration": {
@@ -406,6 +427,13 @@
       "output": "DescribeDatabasesNormalResponse",
       "status": "online"
     },
+    "DescribeExportTasks": {
+      "document": "查询日志下载任务",
+      "input": "DescribeExportTasksRequest",
+      "name": "查询日志下载任务",
+      "output": "DescribeExportTasksResponse",
+      "status": "online"
+    },
     "DescribeFlowStatus": {
       "document": "本接口(DescribeFlowStatus)用于查询流程状态。",
       "input": "DescribeFlowStatusRequest",
@@ -467,6 +495,20 @@
       "input": "DescribeInstanceTradeParameterRequest",
       "name": "查询实例的计费参数",
       "output": "DescribeInstanceTradeParameterResponse",
+      "status": "online"
+    },
+    "DescribeLogInstanceList": {
+      "document": "日志实例列表查询",
+      "input": "DescribeLogInstanceListRequest",
+      "name": "查询日志实例列表",
+      "output": "DescribeLogInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeLogs": {
+      "document": "查询日志",
+      "input": "DescribeLogsRequest",
+      "name": "查询日志",
+      "output": "DescribeLogsResponse",
       "status": "online"
     },
     "DescribeMaintenanceSpan": {
@@ -854,6 +896,13 @@
       "output": "ModifyInstanceParamResponse",
       "status": "online"
     },
+    "ModifyLog": {
+      "document": "修改日志",
+      "input": "ModifyLogRequest",
+      "name": "修改日志",
+      "output": "ModifyLogResponse",
+      "status": "online"
+    },
     "ModifyMaintenanceSpan": {
       "document": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗",
       "input": "ModifyMaintenanceSpanRequest",
@@ -901,6 +950,13 @@
       "input": "OpenInterCommunicationRequest",
       "name": "打开实例的互通",
       "output": "OpenInterCommunicationResponse",
+      "status": "online"
+    },
+    "OpenLog": {
+      "document": "开启审计日志",
+      "input": "OpenLogRequest",
+      "name": "开启日志",
+      "output": "OpenLogResponse",
       "status": "online"
     },
     "QueryMigrationCheckProcess": {
@@ -2035,6 +2091,42 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseLogRequest": {
+      "document": "CloseLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "mssql-8lv5ti3v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseLogResponse": {
+      "document": "CloseLog返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3624,6 +3716,78 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportTaskRequest": {
+      "document": "CreateExportTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "mssql-8lv5ti3v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型：auditLog,slowLog,errLog</p>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要检索日志的起始时间</p>",
+          "example": "2024-01-18 10:52:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要检索日志的结束时间</p>",
+          "example": "2024-01-18 11:52:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件[type, Compare, Value]</p>",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤列</p>",
+          "example": "[\"UserName\"]",
+          "member": "string",
+          "name": "ColumnFilter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportTaskResponse": {
+      "document": "CreateExportTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5775,6 +5939,51 @@
       ],
       "type": "object"
     },
+    "DeleteExportTaskRequest": {
+      "document": "DeleteExportTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志类型：auditLog,slowLog,errLog</p>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "mssql-8eei3sy5_20260316-124617_to_20260316-154617_1773647182589.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "mssql-8lv5ti3v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExportTaskResponse": {
+      "document": "DeleteExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIncrementalMigrationRequest": {
       "document": "DeleteIncrementalMigration请求参数结构体",
       "members": [
@@ -5918,6 +6127,67 @@
         }
       ],
       "type": "object"
+    },
+    "DeliverSummary": {
+      "document": "投递信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递类型，store（存储类），mq（消息通道）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "store",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递子类型：cls，ckafka。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls",
+          "member": "string",
+          "name": "DeliverSubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递订阅者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topci-a",
+          "member": "string",
+          "name": "DeliverConsumer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递订阅者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abv",
+          "member": "string",
+          "name": "DeliverConsumerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "DeliverError",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeAccountPrivilegeByDBRequest": {
       "document": "DescribeAccountPrivilegeByDB请求参数结构体",
@@ -8655,6 +8925,80 @@
       ],
       "type": "object"
     },
+    "DescribeExportTasksRequest": {
+      "document": "DescribeExportTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志类型：auditLog,slowLog,errLog</p>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页条数限制，取值1-100，默认100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，大于0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "mssql-8lv5ti3v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportTasksResponse": {
+      "document": "DescribeExportTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数目</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出文件</p>",
+          "example": "无",
+          "member": "ExportFile",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowStatusRequest": {
       "document": "DescribeFlowStatus请求参数结构体",
       "members": [
@@ -9487,6 +9831,208 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogInstanceListRequest": {
+      "document": "DescribeLogInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志类型：auditLog,slowLog,errorLog</p>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页条数限制，取值[0, 100)</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，大于0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务侧实例过滤参数</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志开关,不传查询所有日志实例： on-开启，off-未开启。</p>",
+          "example": "on",
+          "member": "string",
+          "name": "LogSwitch",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogInstanceListResponse": {
+      "document": "DescribeLogInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志平台实例信息</p>",
+          "example": "无",
+          "member": "LogInstance",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsRequest": {
+      "document": "DescribeLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "mssql-8lv5ti3v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要检索日志的起始时间</p>",
+          "example": "2024-08-14 16:24:24",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要检索日志的结束时间</p>",
+          "example": "2026-08-14 16:24:24",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p>",
+          "example": "auditLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件[type, Compare, Value]</p>",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页条数限制，取值1-100，默认100</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，大于0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序，可选：ASC，DESC</p>",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序条件，根据业务字段不同，可选排序字段不一样</p>",
+          "example": "UserName",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsResponse": {
+      "document": "DescribeLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志详情，根据产品的不同返回的字段有差异</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogResult",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12080,6 +12626,111 @@
       ],
       "usage": "out"
     },
+    "ExportFile": {
+      "document": "导出文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1315732698_mssql-d0bu8ifj_1774249384_99764045.csv",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-07",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://gz-audit-1256375829.cos.ap-guangzhou.myqcloud.com/xxx",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"下载失败\"",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>进度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-09-07",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>req</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FileAction": {
       "document": "允许动作信息",
       "members": [
@@ -12105,6 +12756,45 @@
         }
       ],
       "usage": "out"
+    },
+    "Filter": {
+      "document": "业务侧实例过滤参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1. 项目 ProjectId\n    - true = 精确查找\n    - false = 模糊匹配\n2. 标签键 TagKey\n    - true = 精确查找\n    - false = 模糊匹配\n3. 标签 Tag\n    - true = 精确查找\n    - false = 模糊匹配\n4. 实例名称 InstanceName\n    - true = 精确查找\n    - false = 模糊匹配\n5. 实例ID InstanceId\n    - true = 精确查找\n    - false = 模糊匹配\n\n",
+          "example": "ProjectId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "InquiryPriceCreateDBInstancesRequest": {
       "document": "InquiryPriceCreateDBInstances请求参数结构体",
@@ -12408,6 +13098,243 @@
       ],
       "usage": "out"
     },
+    "InstanceInfo": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "acv",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "mssql-m84zbsdj",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "Architecture",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "ROFlag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "HAFlag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志状态 ON, OFF, ERROR</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "AuditLogStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志上报地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "AuditLogHosts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志状态信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "AuditLogStatusMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>区id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceRenewInfo": {
       "document": "实例续费状态信息",
       "members": [
@@ -12659,6 +13586,561 @@
         }
       ],
       "usage": "out"
+    },
+    "LogFilter": {
+      "document": "日志过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件名称。\n\n如：sql - SQL命令详情\n\nhost – 客户端 IP；\nuser – 数据库账户；\ndbName – 数据库名称；\nsqlType - SQL类型；\nerrCode - 错误码\n\nexecTime - 执行时间\nlockWaitTime - 锁等待时间\nioWaitTime - IO等待时间\ntrxLivingTime - 事务执行时间\ncpuTime- Cpu时间\n\nthreadId - 线程ID\ntrxId - 事务ID\ncheckRows - 扫描行数\naffectRows - 影响行数\nsentRows - 返回行数",
+          "example": "host",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件匹配类型。支持：\nINC – 包含；     （多个值之前是||的关系）\nEXC – 不包含； （多个值之前是&&的关系）\nEQS – 等于；     （多个值之前是||的关系）\nNEQ – 不等于；（多个值之前是&&的关系）\n\nRA – 范围；",
+          "example": "EQS",
+          "member": "string",
+          "name": "Compare",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件匹配值。当Compare=RG时，例：[\"1-100\",\"200-300\"]",
+          "example": "[\"1-100\",\"200-300\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogInstance": {
+      "document": "日志实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-8lv5ti3v",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志状态，create：创建中；normal：开启；close：关闭中。",
+          "example": "create",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t\n是否可以切换日志查询-取值：yes-可以，no-不可以。该参数主要为控制存量日志迁移到日志平台做查询使用，只有为yes状态才可以调用查询日志接口。",
+          "example": "yes",
+          "member": "string",
+          "name": "EnableQuery",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启时间",
+          "example": "2024-01-01 15:15:15",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高频存储天数",
+          "example": "1",
+          "member": "int64",
+          "name": "HighLogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "低频存储天数",
+          "example": "1",
+          "member": "int64",
+          "name": "LowLogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总存储时长",
+          "example": "1",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高频存储量，单位：MB",
+          "example": "1.0",
+          "member": "float",
+          "name": "HighStorage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "低频存储量，单位：MB",
+          "example": "1.0",
+          "member": "float",
+          "name": "LowStorage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总存储量",
+          "example": "1.0",
+          "member": "float",
+          "name": "LogStorage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递：ON，OFF",
+          "example": "ON",
+          "member": "string",
+          "name": "Deliver",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志投递信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliverSummary",
+          "name": "DeliverSummary",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务侧实例相关信息，根据业务不同，返回相关信息不同。",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "InstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogResult": {
+      "document": "日志结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端应用程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ClientAppName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ClientHostName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPU 时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CpuTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DatabaseId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ErrorNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否被拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "IsIntercepted",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后行计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LastRowCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "逻辑读取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogicalReads",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ObjectId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ObjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "OutputParameters",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数化计划句柄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ParameterizedPlanHandle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物理读取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PhysicalReads",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RowCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务器主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ServerPrincipalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话服务器主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "SessionServerPrincipalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "严重性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Severity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源数据库 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceDatabaseId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SQL 文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "SqlText",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "Statement",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统线程 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SystemThreadId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TransactionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "UserDefined",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "写入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Writes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\" \"",
+          "member": "string",
+          "name": "Destination",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "MigrateDB": {
       "document": "需要迁移的DB列表",
@@ -14855,6 +16337,60 @@
       ],
       "type": "object"
     },
+    "ModifyLogRequest": {
+      "document": "ModifyLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID，例如：mssql-xjhsdj****。</p>",
+          "example": "\"mssql-8lv5ti3v\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志。</li></ul>",
+          "example": "\"auditLog\"",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志有效期, 单位：天。</p><p>枚举值：</p><ul><li>7： 7天</li><li>30： 30天</li><li>90： 90天</li><li>180： 180天</li><li>365： 365天</li><li>1095： 1095天</li><li>1825： 1825天</li></ul>",
+          "example": "30",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频日志有效期, 单位：天。</p><p>枚举值：</p><ul><li>7： 7天</li></ul>",
+          "example": "7",
+          "member": "int64",
+          "name": "HighLogExpireDay",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogResponse": {
+      "document": "ModifyLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMaintenanceSpanRequest": {
       "document": "ModifyMaintenanceSpan请求参数结构体",
       "members": [
@@ -15300,6 +16836,60 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenLogRequest": {
+      "document": "OpenLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID，例如：mssql-xjhsdj****。</p>",
+          "example": "\"mssql-8lv5ti3v\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型。</p><p>枚举值：</p><ul><li>auditLog： 审计日志</li></ul>",
+          "example": "\"auditLog\"",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志有效期, 单位：天。</p><p>枚举值：</p><ul><li>7：  7 天</li><li>30： 30 天</li></ul><p>默认值：7</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高频日志有效期, 单位：天。</p><p>枚举值：</p><ul><li>7： 7天</li></ul><p>默认值：7</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "HighLogExpireDay",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenLogResponse": {
+      "document": "OpenLog返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -18215,6 +19805,34 @@
         }
       ],
       "usage": "out"
+    },
+    "TagList": {
+      "document": "实例标签Tag",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key",
+          "example": "一级业务",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "value",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TerminateDBInstanceRequest": {
       "document": "TerminateDBInstance请求参数结构体",

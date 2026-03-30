@@ -101,7 +101,7 @@
     "CreateAdaptiveDynamicStreamingTemplate": [
       {
         "document": "创建转自适应码流模板。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAdaptiveDynamicStreamingTemplate\n<公共请求参数>\n\n{\n    \"StreamInfos\": [\n        {\n            \"Audio\": {\n                \"SampleRate\": \"44100\",\n                \"Codec\": \"flac\",\n                \"Bitrate\": \"1024\"\n            },\n            \"Video\": {\n                \"Codec\": \"libx264\",\n                \"Bitrate\": \"2000\",\n                \"Fps\": \"25\"\n            }\n        }\n    ],\n    \"Name\": \"转自适应码流模板1\",\n    \"Format\": \"HLS\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAdaptiveDynamicStreamingTemplate\n<公共请求参数>\n\n{\n    \"StreamInfos\": [\n        {\n            \"Audio\": {\n                \"SampleRate\": 44100,\n                \"Codec\": \"flac\",\n                \"Bitrate\": 1024\n            },\n            \"Video\": {\n                \"Codec\": \"libx264\",\n                \"Bitrate\": 2000,\n                \"Fps\": 25\n            }\n        }\n    ],\n    \"Name\": \"转自适应码流模板1\",\n    \"Format\": \"HLS\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 30018,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建转自适应码流模板"
       }

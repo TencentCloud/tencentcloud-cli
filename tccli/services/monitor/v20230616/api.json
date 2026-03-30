@@ -327,6 +327,249 @@
       ],
       "usage": "out"
     },
+    "AlarmLable": {
+      "document": "告警中的Label",
+      "members": [
+        {
+          "disabled": false,
+          "document": "label name",
+          "example": "key1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "label value",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmNotifyHistory": {
+      "document": "单个告警通知历史",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知的唯一ID",
+          "example": "d9729feb74992cc3482b350163a1a010_cdc",
+          "member": "string",
+          "name": "NotifyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警策略ID",
+          "example": "policy-123",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警周期iD",
+          "example": "r_ad-123",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知时间 unix秒级时间戳",
+          "example": "1732802380",
+          "member": "int64",
+          "name": "NotifyTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发时间 unix秒级时间戳",
+          "example": "1732802380",
+          "member": "int64",
+          "name": "TriggerTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别",
+          "example": "None",
+          "member": "string",
+          "name": "TriggerLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警内容",
+          "example": "content",
+          "member": "string",
+          "name": "AlarmContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警对象",
+          "example": "object",
+          "member": "string",
+          "name": "AlarmObject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次告警通知涉及到的渠道合集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"QCloudYehe_sms\"]",
+          "member": "string",
+          "name": "ChannelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "渠道的接收人信息",
+          "example": "无",
+          "member": "ChannelsReceivers",
+          "name": "ChannelsReceivers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警策略名称",
+          "example": "默认告警策略",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus实例ID, 仅当 MT_PROME 时有效",
+          "example": "prom-123",
+          "member": "string",
+          "name": "PromeInstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus实例所在的地域, 仅当 MT_PROME 时有效",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "PromeInstanceRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知模板相关的配置信息",
+          "example": "无",
+          "member": "NotifyRelatedNotice",
+          "name": "Notices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "TriggerStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效",
+          "example": "https://console.cloud.tencent.com/monitor/prometheus/detail/prom-h72esnds/alertRule?rid=19&policyId=alert-xx",
+          "member": "string",
+          "name": "PromeConsoleURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警的lable",
+          "example": "无",
+          "member": "AlarmLable",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ChannelsReceivers": {
+      "document": "接受人详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知渠道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "叮叮",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[124,234]",
+          "member": "string",
+          "name": "Receivers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送结果,0-无效,1-成功,2-失败,3-无需发送\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "SendStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateNoticeContentTmplRequest": {
       "document": "CreateNoticeContentTmpl请求参数结构体",
       "members": [
@@ -628,7 +871,7 @@
         {
           "disabled": false,
           "document": "分页参数",
-          "example": "{1,2}",
+          "example": "无",
           "member": "PageByNoParams",
           "name": "PageParams",
           "required": true,
@@ -667,6 +910,26 @@
     "DescribeAlarmNotifyHistoriesResponse": {
       "document": "DescribeAlarmNotifyHistories返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "告警历史",
+          "example": "无",
+          "member": "AlarmNotifyHistory",
+          "name": "AlarmNotifyHistoryList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页情况",
+          "example": "无",
+          "member": "PageByNoResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1236,6 +1499,32 @@
       ],
       "usage": "both"
     },
+    "NotifyRelatedNotice": {
+      "document": "通知历史中关联的通知模板信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知模板ID",
+          "example": "notice-123",
+          "member": "string",
+          "name": "NoticeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知模板的名称",
+          "example": "默认通知模板",
+          "member": "string",
+          "name": "NoticeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PageByNoParams": {
       "document": "分页请求参数",
       "members": [
@@ -1260,6 +1549,67 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PageByNoResult": {
+      "document": "分页结果参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总共有多少数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总共有多少个分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前的分页号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentPageNo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "【已弃用】是否遍历到末尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnd",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否遍历到末尾",
+          "example": "0",
+          "member": "bool",
+          "name": "End",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

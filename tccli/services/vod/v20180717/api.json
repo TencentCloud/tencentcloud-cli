@@ -1865,7 +1865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转自适应码流规格。",
+          "document": "<p>转自适应码流规格。</p>",
           "example": "10",
           "member": "int64",
           "name": "Definition",
@@ -1875,7 +1875,7 @@
         },
         {
           "disabled": false,
-          "document": "打包格式，取值范围：\n<li>HLS；</li>\n<li>DASH。</li>",
+          "document": "<p>打包格式，取值范围：</p><li>HLS；</li><li>DASH。</li>",
           "example": "HLS",
           "member": "string",
           "name": "Package",
@@ -1885,7 +1885,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型。",
+          "document": "<p>加密类型。</p>",
           "example": "SimpleAES",
           "member": "string",
           "name": "DrmType",
@@ -1895,7 +1895,7 @@
         },
         {
           "disabled": false,
-          "document": "播放地址。",
+          "document": "<p>播放地址。</p>",
           "example": "http://xxx.myqcloud.com/xxx.mp4",
           "member": "string",
           "name": "Url",
@@ -1905,7 +1905,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件大小，单位：字节。\n<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>\n<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>\n<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>",
+          "document": "<p>媒体文件大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li><li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li><li><font color=\"red\">注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>",
           "example": "100",
           "member": "int64",
           "name": "Size",
@@ -1915,7 +1915,7 @@
         },
         {
           "disabled": false,
-          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>CopyRight 表示经过版权水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
+          "document": "<p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
           "name": "DigitalWatermarkType",
@@ -1925,7 +1925,7 @@
         },
         {
           "disabled": false,
-          "document": "子流信息列表。",
+          "document": "<p>子流信息列表。</p>",
           "example": "无",
           "member": "MediaSubStreamInfoItem",
           "name": "SubStreamSet",
@@ -1935,7 +1935,7 @@
         },
         {
           "disabled": false,
-          "document": "版权信息。",
+          "document": "<p>版权信息。</p>",
           "example": "CopyRightXXX",
           "member": "string",
           "name": "CopyRightWatermarkText",
@@ -1945,7 +1945,7 @@
         },
         {
           "disabled": false,
-          "document": "数字水印模板id。",
+          "document": "<p>数字水印模板id。</p>",
           "example": "10000",
           "member": "int64",
           "name": "BlindWatermarkDefinition",
@@ -1955,7 +1955,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕信息列表。",
+          "document": "<p>字幕信息列表。</p>",
           "example": "无",
           "member": "MediaSubtitleItem",
           "name": "SubtitleSet",
@@ -1965,10 +1965,20 @@
         },
         {
           "disabled": false,
-          "document": "默认字幕的唯一标识。",
+          "document": "<p>默认字幕的唯一标识。</p>",
           "example": "subtitle1",
           "member": "string",
           "name": "DefaultSubtitleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DRM加密方法。</p>",
+          "example": "cbcs",
+          "member": "string",
+          "name": "DrmEncryptType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2053,7 +2063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转自适应码流模板唯一标识。",
+          "document": "<p>转自适应码流模板唯一标识。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Definition",
@@ -2063,7 +2073,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "document": "<p>模板类型，取值范围：</p><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>",
           "example": "Preset",
           "member": "string",
           "name": "Type",
@@ -2073,7 +2083,7 @@
         },
         {
           "disabled": false,
-          "document": "转自适应码流模板名称。",
+          "document": "<p>转自适应码流模板名称。</p>",
           "example": "MyTemplateName",
           "member": "string",
           "name": "Name",
@@ -2083,7 +2093,7 @@
         },
         {
           "disabled": false,
-          "document": "转自适应码流模板描述信息。",
+          "document": "<p>转自适应码流模板描述信息。</p>",
           "example": "comment",
           "member": "string",
           "name": "Comment",
@@ -2093,7 +2103,7 @@
         },
         {
           "disabled": false,
-          "document": "自适应转码格式，取值范围：\n<li>HLS。</li>",
+          "document": "<p>自适应转码格式，取值范围：</p><li>HLS。</li>",
           "example": "HLS",
           "member": "string",
           "name": "Format",
@@ -2103,7 +2113,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 类型，取值范围：\n<li>SimpleAES</li>\n<li>Widevine</li>\n<li>FairPlay</li>\n如果取值为空字符串，代表不对视频做 DRM 保护。",
+          "document": "<p>DRM 类型，取值范围：</p><li>SimpleAES</li><li>Widevine</li><li>FairPlay</li><li>Widevine+FairPlay</li>如果取值为空字符串，代表不对视频做 DRM 保护。",
           "example": "SimpleAES",
           "member": "string",
           "name": "DrmType",
@@ -2113,7 +2123,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 的密钥提供商，取值范围：\n<li>SDMC：华曦达；</li>\n<li>VOD：云点播。</li>\n默认值为 VOD 。",
+          "document": "<p>DRM 的密钥提供商，取值范围：</p><li>SDMC：华曦达；</li><li>VOD：云点播。</li>默认值为 VOD 。<p>华曦达服务后续逐步下线，请使用VOD DRM加密服务。</p>",
           "example": "SDMC",
           "member": "string",
           "name": "DrmKeyProvider",
@@ -2123,7 +2133,17 @@
         },
         {
           "disabled": false,
-          "document": "自适应转码输入流参数信息，最多输入10路流。",
+          "document": "<p>DRM的加密类型，取值范围：{&quot;cbcs&quot;, &quot;cenc&quot;}</p>",
+          "example": "cenc",
+          "member": "string",
+          "name": "DrmEncryptType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自适应转码输入流参数信息，最多输入10路流。</p>",
           "example": "无",
           "member": "AdaptiveStreamTemplate",
           "name": "StreamInfos",
@@ -2133,7 +2153,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "document": "<p>是否禁止视频低码率转高码率，取值范围：</p><li>0：否，</li><li>1：是。</li>",
           "example": "0",
           "member": "uint64",
           "name": "DisableHigherVideoBitrate",
@@ -2143,7 +2163,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "document": "<p>是否禁止视频分辨率转高分辨率，取值范围：</p><li>0：否，</li><li>1：是。</li>",
           "example": "0",
           "member": "uint64",
           "name": "DisableHigherVideoResolution",
@@ -2153,7 +2173,7 @@
         },
         {
           "disabled": false,
-          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>模板创建时间，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "CreateTime",
@@ -2163,7 +2183,7 @@
         },
         {
           "disabled": false,
-          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "<p>模板最后修改时间，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>。</p>",
           "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "UpdateTime",
@@ -2173,7 +2193,7 @@
         },
         {
           "disabled": false,
-          "document": "切片类型，仅当 Format 为 HLS 时有效。",
+          "document": "<p>切片类型，仅当 Format 为 HLS 时有效。</p>",
           "example": "HLS",
           "member": "string",
           "name": "SegmentType",
@@ -11745,7 +11765,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自适应转码格式，取值范围：\n<li>HLS；</li>\n<li>MPEG-DASH。</li>",
+          "document": "<p>自适应转码格式，取值范围：</p><li>HLS；</li><li>MPEG-DASH。</li>",
           "example": "HLS",
           "member": "string",
           "name": "Format",
@@ -11754,7 +11774,7 @@
         },
         {
           "disabled": false,
-          "document": "自适应转码输出子流参数信息，最多输出10路子流。\n注意：各个子流的帧率必须保持一致；如果不一致，采用第一个子流的帧率作为输出帧率。",
+          "document": "<p>自适应转码输出子流参数信息，最多输出10路子流。<br>注意：各个子流的帧率必须保持一致；如果不一致，采用第一个子流的帧率作为输出帧率。</p>",
           "example": "无",
           "member": "AdaptiveStreamTemplate",
           "name": "StreamInfos",
@@ -11763,7 +11783,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -11772,7 +11792,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称，长度限制：64 个字符。",
+          "document": "<p>模板名称，长度限制：64 个字符。</p>",
           "example": "TestTemplate",
           "member": "string",
           "name": "Name",
@@ -11781,8 +11801,8 @@
         },
         {
           "disabled": false,
-          "document": "DRM 方案类型，取值范围：\n<li>SimpleAES</li>\n<li>Widevine</li>\n<li>FairPlay</li>\n默认值为空字符串，如果取值为空字符串，代表不对视频做 DRM 保护。",
-          "example": "CreateAdaptiveDynamicStreamingTemplate",
+          "document": "<p>DRM 方案类型，取值范围：</p><li>SimpleAES</li><li>Widevine</li><li>FairPlay</li><li>Widevine+FairPlay</li>默认值为空字符串，如果取值为空字符串，代表不对视频做 DRM 保护。",
+          "example": "FairPlay",
           "member": "string",
           "name": "DrmType",
           "required": false,
@@ -11790,7 +11810,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 的密钥提供商，取值范围：\n<li>SDMC：华曦达；</li>\n<li>VOD：云点播。</li>\n默认为 VOD 。",
+          "document": "<p>DRM 的密钥提供商，取值范围：</p><li>SDMC：华曦达；</li><li>VOD：云点播。</li>默认为 VOD 。<p>华曦达服务后续逐步下线，请使用VOD DRM加密服务。</p>",
           "example": "VOD",
           "member": "string",
           "name": "DrmKeyProvider",
@@ -11799,7 +11819,16 @@
         },
         {
           "disabled": false,
-          "document": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。",
+          "document": "<p>加密方式，可选值：<br>cbcs：Widevine，FairPlay，WideVine+FairPlay支持；<br>cenc：Widevine支持；   </p><p>若不填<br>FairPlay 默认cbcs;<br>Widevine 默认cenc;<br>WideVine+FairPlay默认cbcs;</p>",
+          "example": "cenc",
+          "member": "string",
+          "name": "DrmEncryptType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁止视频低码率转高码率，取值范围：</p><li>0：否，</li><li>1：是。</li>默认为否。",
           "example": "1",
           "member": "uint64",
           "name": "DisableHigherVideoBitrate",
@@ -11808,7 +11837,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。",
+          "document": "<p>是否禁止视频分辨率转高分辨率，取值范围：</p><li>0：否，</li><li>1：是。</li>默认为否。",
           "example": "1",
           "member": "uint64",
           "name": "DisableHigherVideoResolution",
@@ -11817,7 +11846,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述信息，长度限制：256 个字符。",
+          "document": "<p>模板描述信息，长度限制：256 个字符。</p>",
           "example": "test template",
           "member": "string",
           "name": "Comment",
@@ -11826,7 +11855,7 @@
         },
         {
           "disabled": false,
-          "document": "切片类型，当 Format 为 HLS 时有效，可选值：\n<li>ts：ts 切片；</li>\n<li>fmp4：fmp4 切片。</li>\n默认值：ts。",
+          "document": "<p>切片类型，当 Format 为 HLS 时有效，可选值：</p><li>ts：ts 切片；</li><li>fmp4：fmp4 切片。</li>默认值：ts。",
           "example": "ts",
           "member": "string",
           "name": "SegmentType",
@@ -11841,7 +11870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自适应转码模板唯一标识。",
+          "document": "<p>自适应转码模板唯一标识。</p>",
           "example": "30018",
           "member": "uint64",
           "name": "Definition",
@@ -18957,7 +18986,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -18972,7 +19001,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "华曦达（SDMC）相关的 DRM 密钥提供商信息。",
+          "document": "<p>华曦达（SDMC）相关的 DRM 密钥提供商信息。</p><p>华曦达服务后续逐步下线，请使用VOD DRM加密服务。</p>",
           "example": "无",
           "member": "SDMCDrmKeyProviderInfo",
           "name": "SDMCInfo",
@@ -43333,7 +43362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "华曦达（SDMC）相关的 DRM 密钥提供商信息。",
+          "document": "<p>华曦达（SDMC）相关的 DRM 密钥提供商信息。</p><p>华曦达服务后续逐步下线，请使用VOD DRM加密服务。</p>",
           "example": "无",
           "member": "SDMCDrmKeyProviderInfo",
           "name": "SDMCInfo",
@@ -43342,7 +43371,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1500000001",
           "member": "uint64",
           "name": "SubAppId",

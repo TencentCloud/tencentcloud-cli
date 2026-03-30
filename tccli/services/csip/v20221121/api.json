@@ -266,6 +266,20 @@
       "output": "DescribeHighBaseLineRiskListResponse",
       "status": "online"
     },
+    "DescribeKeySandboxCredential": {
+      "document": "查询凭证详情，返回凭证元数据和打码后的凭据数据。access类型返回Access数组（Key原文、Value打码），sts类型返回STS对象（System原文、SecretID和SecretKey打码）",
+      "input": "DescribeKeySandboxCredentialRequest",
+      "name": "查询凭证详情",
+      "output": "DescribeKeySandboxCredentialResponse",
+      "status": "online"
+    },
+    "DescribeKeySandboxCredentialList": {
+      "document": "查询凭证列表",
+      "input": "DescribeKeySandboxCredentialListRequest",
+      "name": "查询凭证列表",
+      "output": "DescribeKeySandboxCredentialListResponse",
+      "status": "online"
+    },
     "DescribeListenerList": {
       "document": "查询clb监听器列表",
       "input": "DescribeListenerListRequest",
@@ -751,6 +765,32 @@
           "example": "这是一个备注",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessCredentialOutput": {
+      "document": "常规密钥凭据（出参专用），用于查询详情接口的响应。Value字段返回打码后的值，不暴露明文",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据键名（原文），如SecretId、SecretKey、Token等",
+          "example": "SecretId",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据键值（打码后）\n补充说明：保留前3后4位，中间用***替代；长度不足7位时全部替换为***",
+          "example": "AKI***abcd",
+          "member": "string",
+          "name": "Value",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7847,6 +7887,34 @@
       ],
       "type": "object"
     },
+    "CredentialEffectScope": {
+      "document": "生效机器范围，用于指定凭证在哪些机器上生效",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否排除模式\n枚举值：\n0：包含模式（仅Instances中的机器生效），此时Instances必填\n1：排除模式（Instances中的机器不生效，其余机器生效），此时Instances可选（空列表表示全部机器生效）",
+          "example": "1",
+          "member": "int64",
+          "name": "Exclude",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器实例ID列表。Exclude为0时必填，表示仅这些机器可访问凭证；Exclude为1时可选，表示这些机器不可访问凭证（空列表表示全部机器生效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ins-abc12345\",\"ins-def67890\"]",
+          "member": "string",
+          "name": "Instances",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CsipRiskCenterStatistics": {
       "document": "风险中心风险概览统计数据",
       "members": [
@@ -11371,6 +11439,178 @@
           "name": "HighBaseLineRiskList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKeySandboxCredentialListRequest": {
+      "document": "DescribeKeySandboxCredentialList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件列表，支持的过滤条件如下：\nCredentialName - 凭证名称（模糊匹配）\nCredentialType - 凭证类型（精确匹配），取值：access、sts",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-b98xkd7g\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKeySandboxCredentialListResponse": {
+      "document": "DescribeKeySandboxCredentialList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭证数据列表",
+          "example": "无",
+          "member": "KeySandboxCredential",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "26",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKeySandboxCredentialRequest": {
+      "document": "DescribeKeySandboxCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭证ID",
+          "example": "cred-abc12345",
+          "member": "string",
+          "name": "CredentialId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKeySandboxCredentialResponse": {
+      "document": "DescribeKeySandboxCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭证ID",
+          "example": "cred-abc12345",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭证名称",
+          "example": "腾讯云-生产环境密钥",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭证类型\n枚举值：\naccess：常规密钥\nsts：STS临时密钥",
+          "example": "access",
+          "member": "string",
+          "name": "CredentialType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效机器范围",
+          "example": "无",
+          "member": "CredentialEffectScope",
+          "name": "CredentialEffectScope",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "常规密钥凭据数据（打码后），CredentialType为access时返回\n补充说明：Key为原文，Value为打码后的值（保留前3后4位，中间用***替代）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessCredentialOutput",
+          "name": "Access",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "STS凭据数据（打码后），CredentialType为sts时返回\n补充说明：System为原文，SecretID和SecretKey为打码后的值（保留前3后4位，中间用***替代）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "STSCredentialOutput",
+          "name": "STS",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-01-15T08:30:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-03-10T14:29:03Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -16610,6 +16850,72 @@
       ],
       "usage": "out"
     },
+    "KeySandboxCredential": {
+      "document": "凭证数据结构，用于列表查询和详情查询的响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭证ID",
+          "example": "cred-abc12345",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭证名称",
+          "example": "腾讯云-生产环境密钥",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭证类型\n枚举值：\naccess：常规密钥（Key/Value键值对）\nsts：STS临时密钥凭据",
+          "example": "access",
+          "member": "string",
+          "name": "CredentialType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效机器范围",
+          "example": "无",
+          "member": "CredentialEffectScope",
+          "name": "CredentialEffectScope",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-01-15T08:30:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-03-10T14:29:03Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "KeyValue": {
       "document": "KeyValue对",
       "members": [
@@ -19081,6 +19387,42 @@
         }
       ],
       "usage": "both"
+    },
+    "STSCredentialOutput": {
+      "document": "STS临时密钥凭据（出参专用），用于查询详情接口的响应。SecretID和SecretKey字段返回打码后的值，System返回原文",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据提供商标识（原文），如tencentCam、aws、aliyun等",
+          "example": "tencentCam",
+          "member": "string",
+          "name": "System",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SecretID（打码后）\n补充说明：保留前3后4位，中间用***替代；长度不足7位时全部替换为***",
+          "example": "AKI***efgh",
+          "member": "string",
+          "name": "SecretID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SecretKey（打码后）\n补充说明：保留前3后4位，中间用***替代；长度不足7位时全部替换为***",
+          "example": "abc***wxyz",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ScanTaskInfo": {
       "document": "扫描任务详情",

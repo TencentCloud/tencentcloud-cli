@@ -147,6 +147,13 @@
       "output": "CreateNativeGatewayServiceSourceResponse",
       "status": "online"
     },
+    "CreateOrModifyCloudNativeAPIGatewayCORS": {
+      "document": "创建或编辑云原生网关跨域配置",
+      "input": "CreateOrModifyCloudNativeAPIGatewayCORSRequest",
+      "name": "创建或编辑云原生网关跨域配置",
+      "output": "CreateOrModifyCloudNativeAPIGatewayCORSResponse",
+      "status": "online"
+    },
     "CreateOrModifyCloudNativeAPIGatewayIPRestriction": {
       "document": "创建或编辑云原生网关访问控制",
       "input": "CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest",
@@ -180,6 +187,13 @@
       "input": "DeleteCloudNativeAPIGatewayRequest",
       "name": "删除云原生API网关实例",
       "output": "DeleteCloudNativeAPIGatewayResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayCORS": {
+      "document": "删除云原生网关跨域插件",
+      "input": "DeleteCloudNativeAPIGatewayCORSRequest",
+      "name": "删除云原生网关跨域配置",
+      "output": "DeleteCloudNativeAPIGatewayCORSResponse",
       "status": "online"
     },
     "DeleteCloudNativeAPIGatewayCanaryRule": {
@@ -355,6 +369,13 @@
       "input": "DescribeCloudNativeAPIGatewayRequest",
       "name": "获取云原生API网关实例信息",
       "output": "DescribeCloudNativeAPIGatewayResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayCORS": {
+      "document": "查询云原生网关跨域配置",
+      "input": "DescribeCloudNativeAPIGatewayCORSRequest",
+      "name": "查询云原生网关跨域配置",
+      "output": "DescribeCloudNativeAPIGatewayCORSResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayCanaryRules": {
@@ -5564,6 +5585,123 @@
       ],
       "type": "object"
     },
+    "CreateOrModifyCloudNativeAPIGatewayCORSRequest": {
+      "document": "CreateOrModifyCloudNativeAPIGatewayCORS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-3e49c57e",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨域插件绑定的资源类型：route|service",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由或服务的id",
+          "example": "462885df-28d0-4b57-b7c3-6b7e22d08799",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用插件",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Access-Control-Allow-Origin",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "Origins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Access-Control-Allow-Headers header",
+          "example": "[\"Auth\"]",
+          "member": "string",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Access-Control-Allow-Methods",
+          "example": "[\"GETT\"]",
+          "member": "string",
+          "name": "Methods",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Access-Control-Expose-Headers",
+          "example": "[\"RespHeader\"]",
+          "member": "string",
+          "name": "ExposedHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "preflight 请求缓存时间",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxAge",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Access-Control-Allow-Credentials",
+          "example": "false",
+          "member": "bool",
+          "name": "Credentials",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否把OPTIONS请求透传后端",
+          "example": "false",
+          "member": "bool",
+          "name": "PreFlightContinue",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrModifyCloudNativeAPIGatewayCORSResponse": {
+      "document": "CreateOrModifyCloudNativeAPIGatewayCORS返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest": {
       "document": "CreateOrModifyCloudNativeAPIGatewayIPRestriction请求参数结构体",
       "members": [
@@ -5820,6 +5958,51 @@
           "type": "bool",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayCORSRequest": {
+      "document": "DeleteCloudNativeAPIGatewayCORS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-54338359",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨域插件绑定的资源类型：route|service",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由或服务的id",
+          "example": "19ffff7a-d84c-4fe1-86b2-49b8fe09c817",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayCORSResponse": {
+      "document": "DeleteCloudNativeAPIGatewayCORS返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7167,6 +7350,61 @@
       ],
       "type": "object"
     },
+    "DescribeCloudNativeAPIGatewayCORSRequest": {
+      "document": "DescribeCloudNativeAPIGatewayCORS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-54338359",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨域插件绑定的资源类型：route|service",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由或服务的id",
+          "example": "19ffff7a-d84c-4fe1-86b2-49b8fe09c817",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayCORSResponse": {
+      "document": "DescribeCloudNativeAPIGatewayCORS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeKongCORSResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayCanaryRulesRequest": {
       "document": "DescribeCloudNativeAPIGatewayCanaryRules请求参数结构体",
       "members": [
@@ -7999,6 +8237,16 @@
           "name": "AvailableUpgrade",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可回退的版本",
+          "example": "2.5.1",
+          "member": "string",
+          "name": "AvailableRollbackVersion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10131,6 +10379,112 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeKongCORSResult": {
+      "document": "查询跨域配置出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "route",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "19ffff7a-d84c-4fe1-86b2-49b8fe09c817",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Origins",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "Origins",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Headers",
+          "example": "[\"Authorization\"]",
+          "member": "string",
+          "name": "Headers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨域 Methods",
+          "example": "[\"GET\"]",
+          "member": "string",
+          "name": "Methods",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨域 ExposedHeaders",
+          "example": "[\"Content-Encoding\"]",
+          "member": "string",
+          "name": "ExposedHeaders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨域OPTIONS请求缓存时间",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxAge",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨域请求是否允许携带身份信息",
+          "example": "false",
+          "member": "bool",
+          "name": "Credentials",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨域请求是否透传后端",
+          "example": "false",
+          "member": "bool",
+          "name": "PreFlightContinue",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeKongIpRestrictionResult": {
       "document": "查询云原生网关访问控制配置出参",

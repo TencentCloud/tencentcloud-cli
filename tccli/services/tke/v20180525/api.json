@@ -4583,7 +4583,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态",
+          "document": "集群状态\n运行中：Running\n集群等级中：ClusterLevelUpgrading\n集群升级中：Upgrading\n集群控制面扩容中：MasterScaling\n托管集群修改参数中：RuntimeUpgrading\n节点升级中：NodeUpgrading\n集群删除中：Deleting\n集群创建中：Creating\n集群已隔离：Isolated\n集群升级暂停：Pause\n集群执行隔离：ResourceIsolate\n集群隔离：ResourceIsolated\n集群执行冲正：ResourceReverse\n集群冲正：ResourceReversal\n集群执行销毁：ResourceDestroy\n集群销毁：ResourceDestroyed\n集群变配交易中：ClusterLevelTrading",
           "example": "\"Running\"",
           "member": "string",
           "name": "ClusterState",
@@ -4593,7 +4593,7 @@
         },
         {
           "disabled": false,
-          "document": "集群下机器实例的状态",
+          "document": "集群下机器实例的状态\n节点全部正常：AllNormal\n节点全部异常：\nAllAbnormal\n节点部分异常：PartialAbnormal",
           "example": " \"AllNormal\"",
           "member": "string",
           "name": "ClusterInstanceState",

@@ -3716,51 +3716,61 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）",
+          "document": "<p>私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）</p>",
           "example": "vpc-codnv14w",
           "member": "string",
           "name": "VPCId",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）",
+          "document": "<p>子网ID（SubnetId和SubnetZone&amp;SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&amp;SubnetCIDRBlock，则创建新的子网）</p>",
           "example": "subnet-schfcd1x",
           "member": "string",
           "name": "SubnetId",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网可用区。",
+          "document": "<p>子网可用区。</p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "SubnetZone",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "私有网络CIDR。",
+          "document": "<p>私有网络CIDR。</p>",
           "example": "10.8.0.0/16",
           "member": "string",
           "name": "VPCCIDRBlock",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网CIDR。",
+          "document": "<p>子网CIDR。</p>",
           "example": "10.8.16.0/20",
           "member": "string",
           "name": "SubnetCIDRBlock",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Volume": {
       "document": "缓存卷。",

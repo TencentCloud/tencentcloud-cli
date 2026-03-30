@@ -395,9 +395,9 @@
     "DescribeSubAccountLinuxUserInfos": [
       {
         "document": "批量查询子账号Linux用户信息",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubAccountLinuxUserInfos\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5dee4285-b87f-4005-ad48-45729a5942d8\",\n        \"SubAccountList\": [\n            {\n                \"LinuxGid\": 20000,\n                \"LinuxUid\": 20001,\n                \"LinuxUserName\": \"100040359585\",\n                \"SubUin\": \"0\",\n                \"SubUinName\": \"ExampleUser\",\n                \"Uin\": \"100033122983\"\n            }\n        ]\n    }\n}",
-        "title": "DescribeSubAccountLinuxUserInfos"
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubAccountLinuxUserInfos\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"SubUinName\",\n            \"Values\": [\n                \"willyao\"\n            ],\n            \"Fuzzy\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SubAccountList\": [\n            {\n                \"EnableRootLogin\": true,\n                \"LinuxGid\": 20000,\n                \"LinuxUid\": 20002,\n                \"LinuxUserName\": \"willyao\",\n                \"SubUin\": \"100009152467\",\n                \"SubUinName\": \"willyao\",\n                \"Uin\": \"100031385875\",\n                \"UpdateTime\": \"2026-03-26T16:52:34+08:00\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"99dcb853-bc96-432e-b0b4-d155688746a2\"\n    }\n}",
+        "title": "批量查询子账号Linux用户信息"
       }
     ],
     "DescribeTrainingModelVersion": [

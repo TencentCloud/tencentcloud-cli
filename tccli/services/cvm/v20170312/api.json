@@ -322,6 +322,27 @@
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
+    "DescribeResourcePoolPackInstances": {
+      "document": "本接口(DescribeResourcePoolPackInstances)用于查询指定实例资源池内已创建的实例列表及其物理拓扑信息。",
+      "input": "DescribeResourcePoolPackInstancesRequest",
+      "name": "查询实例资源池内已创建的实例列表",
+      "output": "DescribeResourcePoolPackInstancesResponse",
+      "status": "online"
+    },
+    "DescribeResourcePoolPackTypeConfigs": {
+      "document": "本接口(DescribeResourcePoolPackTypeConfigs)用于查询当前地域/可用区支持创建实例资源池的整机/半整机规格列表。",
+      "input": "DescribeResourcePoolPackTypeConfigsRequest",
+      "name": "查询支持实例资源池的机型规格列表",
+      "output": "DescribeResourcePoolPackTypeConfigsResponse",
+      "status": "online"
+    },
+    "DescribeResourcePoolPacks": {
+      "document": "本接口(DescribeResourcePoolPacks)用于查询用户已创建的实例资源池列表，包括资源池基本信息、剩余容量、底层物理拓扑信息等。",
+      "input": "DescribeResourcePoolPacksRequest",
+      "name": "查询实例资源池预扣包列表",
+      "output": "DescribeResourcePoolPacksResponse",
+      "status": "online"
+    },
     "DescribeTaskInfo": {
       "document": "本接口 (DescribeTaskInfo) 用于查询云服务器维修任务列表及详细信息。\n\n- 可以根据实例ID、实例名称或任务状态等信息来查询维修任务列表。过滤信息详情可参考入参说明。\n- 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的维修任务列表。",
       "input": "DescribeTaskInfoRequest",
@@ -397,6 +418,13 @@
       "input": "ImportKeyPairRequest",
       "name": "导入密钥对",
       "output": "ImportKeyPairResponse",
+      "status": "online"
+    },
+    "InquirePricePurchaseResourcePoolPacks": {
+      "document": "本接口(InquirePricePurchaseResourcePoolPacks)用于查询创建实例资源池的价格。",
+      "input": "InquirePricePurchaseResourcePoolPacksRequest",
+      "name": "创建实例资源池预扣包询价",
+      "output": "InquirePricePurchaseResourcePoolPacksResponse",
       "status": "online"
     },
     "InquiryPriceModifyInstancesChargeType": {
@@ -574,6 +602,13 @@
       "output": "ProgramFpgaImageResponse",
       "status": "online"
     },
+    "PurchaseResourcePoolPacks": {
+      "document": "本接口(PurchaseResourcePoolPacks)用于创建一个或多个实例资源池，每个资源池绑定一个整机或半整机规格的物理资源容量。\n\n* 实例资源池为剩余容量按量付费模式，购买前请确保账户余额充足。\n* 本接口为异步接口，创建请求发送成功后会返回DedicatedResourcePackIds，此时创建任务并未完成。",
+      "input": "PurchaseResourcePoolPacksRequest",
+      "name": "创建实例资源池预扣包",
+      "output": "PurchaseResourcePoolPacksResponse",
+      "status": "online"
+    },
     "RebootInstances": {
       "document": "本接口 (RebootInstances) 用于重启实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`REBOOTING`状态；重启实例成功时，实例会进入`RUNNING`状态。\n* 支持强制重启。强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "RebootInstancesRequest",
@@ -684,6 +719,13 @@
       "input": "TerminateInstancesRequest",
       "name": "退还实例",
       "output": "TerminateInstancesResponse",
+      "status": "online"
+    },
+    "TerminateResourcePoolPacks": {
+      "document": "本接口(TerminateResourcePoolPacks)用于销毁指定的实例资源池。\n\n* 销毁资源池不会销毁池内已创建的实例。\n* 池内实例会从专属资源池解绑，转移至公共资源池，继续按原生命周期运行。\n* 转移后无法再查询底层物理拓扑信息。\n* 释放底层物理资源并删除资源池记录。",
+      "input": "TerminateResourcePoolPacksRequest",
+      "name": "销毁实例资源池预扣包",
+      "output": "TerminateResourcePoolPacksResponse",
       "status": "online"
     }
   },
@@ -4625,6 +4667,145 @@
       ],
       "type": "object"
     },
+    "DescribeResourcePoolPackInstancesRequest": {
+      "document": "DescribeResourcePoolPackInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID列表。形如：rpp-39kj2fsb。每次请求的实例的上限为100。",
+          "example": "[\"rpp-2gyonkx7\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPackInstancesResponse": {
+      "document": "DescribeResourcePoolPackInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池内已创建的实例详情列表。",
+          "example": "无",
+          "member": "ResourcePoolPackInstance",
+          "name": "DedicatedResourcePackInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPackTypeConfigsRequest": {
+      "document": "DescribeResourcePoolPackTypeConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：是</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例族</strong>】进行过滤。形如：SA9。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例规格</strong>】进行过滤。形如：SA9.96XLARGE1152。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPackTypeConfigsResponse": {
+      "document": "DescribeResourcePoolPackTypeConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持实例资源池的机型规格列表。",
+          "example": "无",
+          "member": "InstanceTypeConfig",
+          "name": "InstanceTypeConfigSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPacksRequest": {
+      "document": "DescribeResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认值为10，最小值为10，最大值为100。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页标记，用于获取下一页数据。",
+          "example": "HlyieKNKhSHMWHVqZOjzlhKBK1ar2qPnSdoW9YMz84kYuRMJlvGgMfAh68VpTOIS",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<li><strong>dedicated-resource-pack-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例资源池ID</strong>】进行过滤。形如：rpp-rn99mzt2。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例类型</strong>】进行过滤。形如：SA9。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例规格</strong>】进行过滤。形如：SA9.96XLARGE1152。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>status</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例资源池状态</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：CREATING (创建中) | ACTIVE (运行中) | RETIRED (已过期)</p>\n每次请求的`Filters`的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPacksResponse": {
+      "document": "DescribeResourcePoolPacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的实例资源池列表。",
+          "example": "无",
+          "member": "ResourcePoolPack",
+          "name": "DedicatedResourcePackSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一页数据的标记，用于分页查询。值为空时表示已到最后一页。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DmfvOh9/PDSxjhK9C1m7xWt3GwgUbcW+D4qc2Nfu5ytgQNy7iXh21v7KeIK8Qni6",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskInfoRequest": {
       "document": "DescribeTaskInfo请求参数结构体",
       "members": [
@@ -6318,6 +6499,70 @@
           "name": "KeyId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePricePurchaseResourcePoolPacksRequest": {
+      "document": "InquirePricePurchaseResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包所在可用区。形如：ap-guangzhou-6。可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取可用区列表。",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的规格，仅支持整机/半整机规格。形如：SA9.96XLARGE1152。",
+          "example": "S9.8XLARGE64",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的数量。1个数量代表1个半整机/整机资源池。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的时长，单位：月。取值范围：1-60。",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePricePurchaseResourcePoolPacksResponse": {
+      "document": "InquirePricePurchaseResourcePoolPacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池价格信息。",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -9911,6 +10156,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属的实例资源池机架ID，仅用于出参。",
+          "example": "3F3327994BA4C23134DDCBD7828CD4CC",
+          "member": "string",
+          "name": "RackId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10088,6 +10344,115 @@
     "ProgramFpgaImageResponse": {
       "document": "ProgramFpgaImage返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PurchaseResourcePoolPacksRequest": {
+      "document": "PurchaseResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包所在可用区。形如：ap-guangzhou-6。可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取可用区列表。",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的规格，仅支持半整机/整机规格。形如：SA9.96XLARGE1152（SA9半整机）。",
+          "example": "S9.8XLARGE64",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的数量。1个数量代表1个半整机/整机资源池。取值范围：1-100。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的时长，单位：月。取值范围：1-60。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池类型。取值范围：\n<li>EXCLUSIVE：独享（默认值）</li>\n<li>SHARED：共享</li>\n注意：第一期仅支持EXCLUSIVE类型。",
+          "example": "EXCLUSIVE",
+          "member": "string",
+          "name": "ResourcePoolPackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动放置开关，默认开启（true）。\n<li>开启：在不指定实例资源池创建实例时，系统会在开启了该能力的实例资源池里寻找合适的池子创建实例。</li>\n<li>关闭：在不指定实例资源池创建实例时，系统不会在该池子里创建实例，只有在指定实例资源池创建实例时，指定了该池子的ID，才允许在池子内创建实例。</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoPlacement",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的名称。长度限制：1-60个字符，支持中文、英文、数字、连接线\"-\"、下划线\"_\"。",
+          "example": "测试实例资源池",
+          "member": "string",
+          "name": "DedicatedResourcePoolPackName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（默认值）</li>\n<li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "试运行，用于校验请求参数是否正确。默认为false。\n<li>true：发送检查请求，不会创建实例资源池。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId。</li>\n<li>false（默认值）：发送正常请求，通过检查后直接创建实例资源池。</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "PurchaseResourcePoolPacksResponse": {
+      "document": "PurchaseResourcePoolPacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的实例资源池ID列表。形如：rpp-39kj2fsb。",
+          "example": "[\"rpp-2gyonkx7\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10937,6 +11302,274 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceCount": {
+      "document": "实例资源池容量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vCPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "uint64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位：GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Gpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地盘大小，单位：GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Disk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourcePoolPack": {
+      "document": "实例资源池",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID。形如：rpp-rn99mzt2。",
+          "example": "rpp-mzeh03bj",
+          "member": "string",
+          "name": "DedicatedResourcePackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的名称。",
+          "example": "自动放置池测试",
+          "member": "string",
+          "name": "DedicatedResourcePackName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包所在可用区。形如：ap-guangzhou-6。\n返回项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a>",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的规格，仅支持半整机/整机规格。形如：SA9.96XLARGE1152（SA9半整机）。",
+          "example": "SA9.96XLARGE1152",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的实例类型。形如：SA9。",
+          "example": "SA9",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池类型。\n返回项：EXCLUSIVE (独享) | SHARED (共享)。",
+          "example": "EXCLUSIVE",
+          "member": "string",
+          "name": "ResourcePoolPackType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池状态。\n返回项：CREATING (创建中) | ACTIVE (运行中) | FAILED (创建失败) | RETIRED (已过期)。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池总容量。",
+          "example": "无",
+          "member": "ResourceCount",
+          "name": "TotalCapacity",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池剩余容量。",
+          "example": "无",
+          "member": "ResourceCount",
+          "name": "AvailableCapacity",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "底层物理机IP（已加密）。",
+          "example": "3E7A16039D8E141849DE7C837DE70ECC",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架ID（已加密）。",
+          "example": "3E5BA837F9B5FFD91DCC02DBF501C7A7",
+          "member": "string",
+          "name": "RackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交换机ID（已加密）。",
+          "example": "7E87DEECE245155C880A7CF5355CD81F",
+          "member": "string",
+          "name": "SwitchId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动放置开关状态。开启则在不指定实例资源池创建实例时，系统会在开启了该能力的实例资源池里寻找合适的池子创建实例。关闭则在不指定实例资源池创建实例时，系统不会在该池子里创建实例，只有在指定实例资源池创建实例时，指定了该池子的ID，才允许在池子内创建实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoPlacement",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。\n返回项：NOTIFY_AND_AUTO_RENEW (通知且自动续费) | NOTIFY_AND_MANUAL_RENEW (通知不自动续费) | DISABLE_NOTIFY_AND_MANUAL_RENEW (不通知不自动续费)。",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2026-01-14T06:47:14Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2026-01-14T06:47:14Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourcePoolPackInstance": {
+      "document": "描述实例资源池内已创建实例的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID。形如：rpp-fb7bzcyt。",
+          "example": "rpp-fb7bzcyt",
+          "member": "string",
+          "name": "DedicatedResourcePackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池内的实例ID列表。形如：[\"ins-5u8lxsum\"]。",
+          "example": "[\"ins-5u8lxsum\"]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例族。形如：SA9。",
+          "example": "SA9",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例规格。形如：SA9.96XLARGE1152。",
+          "example": "SA9.96XLARGE1152",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区。形如：ap-guangzhou-6。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RunAutomationServiceEnabled": {
       "document": "描述了 “云自动化助手” 服务相关的信息",
@@ -11856,6 +12489,33 @@
     },
     "TerminateInstancesResponse": {
       "document": "TerminateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateResourcePoolPacksRequest": {
+      "document": "TerminateResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID列表，支持批量销毁。形如：rpp-6rk3550n。每次请求的实例的上限为100。",
+          "example": "[\"rpp-6rk3550n\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateResourcePoolPacksResponse": {
+      "document": "TerminateResourcePoolPacks返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

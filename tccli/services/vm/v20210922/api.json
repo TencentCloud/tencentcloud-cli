@@ -672,7 +672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，创建任务后返回的TaskId字段",
+          "document": "<p>任务ID，创建任务后返回的TaskId字段</p>",
           "example": "w-video-aqwfdNiA4vq3Zysfa1",
           "member": "string",
           "name": "TaskId",
@@ -681,7 +681,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示所有分片，默认只展示命中规则的分片",
+          "document": "<p>是否展示所有分片，默认只展示命中规则的分片</p>",
           "example": "true",
           "member": "bool",
           "name": "ShowAllSegments",
@@ -696,7 +696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。",
+          "document": "<p>该字段用于返回创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。</p>",
           "example": "w-video-aqwfdNiA4vq3Zysfa1",
           "member": "string",
           "name": "TaskId",
@@ -706,7 +706,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回调用视频审核接口时传入的数据ID参数，方便数据的辨别和管理。",
+          "document": "<p>该字段用于返回调用视频审核接口时传入的数据ID参数，方便数据的辨别和管理。</p>",
           "example": "dataid_1",
           "member": "string",
           "name": "DataId",
@@ -716,7 +716,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回调用视频审核接口时传入的BizType参数，方便数据的辨别和管理。",
+          "document": "<p>该字段用于返回调用视频审核接口时传入的BizType参数，方便数据的辨别和管理。</p>",
           "example": "default",
           "member": "string",
           "name": "BizType",
@@ -726,7 +726,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回调用视频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。",
+          "document": "<p>该字段用于返回调用视频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。</p>",
           "example": "video_name",
           "member": "string",
           "name": "Name",
@@ -736,7 +736,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回所查询内容的任务状态。\n<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。",
+          "document": "<p>该字段用于返回所查询内容的任务状态。<br><br>取值：<strong>FINISH</strong>（任务已完成）、<strong>PENDING</strong> （任务等待中）、<strong>RUNNING</strong> （任务进行中）、<strong>ERROR</strong> （任务出错）、<strong>CANCELLED</strong> （任务已取消）。</p>",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
@@ -746,7 +746,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回调用视频审核接口时输入的视频审核类型，取值为：**VIDEO**（点播视频）、**LIVE_VIDEO**（直播视频）和**VIDEO_AIGC**（AI生成检测），默认值为VIDEO。",
+          "document": "<p>该字段用于返回调用视频审核接口时输入的视频审核类型，取值为：<strong>VIDEO</strong>（点播视频）、<strong>LIVE_VIDEO</strong>（直播视频）和<strong>VIDEO_AIGC</strong>（AI生成检测），默认值为VIDEO。</p>",
           "example": "VIDEO",
           "member": "string",
           "name": "Type",
@@ -756,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
+          "document": "<p>该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：<strong>Block</strong>：建议屏蔽，<strong>Review</strong> ：建议人工复审，<strong>Pass</strong>：建议通过</p>",
           "example": "Block",
           "member": "string",
           "name": "Suggestion",
@@ -766,7 +766,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。",
+          "document": "<p>该字段用于返回检测结果所对应的恶意标签。<br>返回值：<strong>Porn</strong>：色情，<strong>Abuse</strong>：谩骂，<strong>Ad</strong>：广告，<strong>Custom</strong>：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。</p>",
           "example": "无",
           "member": "TaskLabel",
           "name": "Labels",
@@ -776,7 +776,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回输入媒体文件的详细信息，包括编解码格式、分片时长等信息。详细内容敬请参考MediaInfo数据结构的描述。",
+          "document": "<p>该字段用于返回输入媒体文件的详细信息，包括编解码格式、分片时长等信息。详细内容敬请参考MediaInfo数据结构的描述。</p>",
           "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfo",
@@ -786,7 +786,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。",
+          "document": "<p>该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。</p>",
           "example": "无",
           "member": "InputInfo",
           "name": "InputInfo",
@@ -796,7 +796,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。",
+          "document": "<p>该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。</p>",
           "example": "2020-07-13T11:47:01.925Z",
           "member": "string",
           "name": "CreatedAt",
@@ -806,7 +806,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。",
+          "document": "<p>该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。</p>",
           "example": "2020-07-13T11:47:25.840Z",
           "member": "string",
           "name": "UpdatedAt",
@@ -816,7 +816,7 @@
         },
         {
           "disabled": false,
-          "document": "在秒后重试",
+          "document": "<p>在秒后重试</p>",
           "example": "0",
           "member": "int64",
           "name": "TryInSeconds",
@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。",
+          "document": "<p>该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。</p>",
           "example": "无",
           "member": "ImageSegments",
           "name": "ImageSegments",
@@ -836,7 +836,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。",
+          "document": "<p>该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。</p>",
           "example": "无",
           "member": "AudioSegments",
           "name": "AudioSegments",
@@ -846,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "当任务状态为Error时，返回对应错误的类型，取值：\n**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）\n**URL_ERROR**：下载地址验证失败。\n**TIMEOUT_ERROR**：处理超时。\n**CALLBACK_ERRORR**：回调错误。\n**MODERATION_ERROR**：审核失败。\n**URL_NOT_SUPPORTED**：源文件太大或没有图片音频帧\n任务状态非Error时默认返回为空。",
+          "document": "<p>当任务状态为Error时，返回对应错误的类型，取值：<br><strong>DECODE_ERROR</strong>: 解码失败。（输入资源中可能包含无法解码的视频）<br><strong>URL_ERROR</strong>：下载地址验证失败。<br><strong>TIMEOUT_ERROR</strong>：处理超时。<br><strong>CALLBACK_ERRORR</strong>：回调错误。<br><strong>MODERATION_ERROR</strong>：审核失败。<br><strong>URL_NOT_SUPPORTED</strong>：源文件太大或没有图片音频帧<br>任务状态非Error时默认返回为空。</p>",
           "example": "URL_ERROR",
           "member": "string",
           "name": "ErrorType",
@@ -856,7 +856,7 @@
         },
         {
           "disabled": false,
-          "document": "当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。",
+          "document": "<p>当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。</p>",
           "example": "InvalidArgument",
           "member": "string",
           "name": "ErrorDescription",
@@ -866,7 +866,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果所对应的标签。如果未命中恶意，返回Normal，如果命中恶意，则返回Labels中优先级最高的标签",
+          "document": "<p>该字段用于返回检测结果所对应的标签。如果未命中恶意，返回Normal，如果命中恶意，则返回Labels中优先级最高的标签</p>",
           "example": "Normal",
           "member": "string",
           "name": "Label",
@@ -876,7 +876,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。",
+          "document": "<p>该字段用于返回音频文件识别出的对应文本内容，最大支持<strong>前1000个字符</strong>。</p>",
           "example": "金牌讲师认证",
           "member": "string",
           "name": "AudioText",
@@ -886,7 +886,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回音频文件识别出的对应文本内容。",
+          "document": "<p>该字段用于返回音频文件识别出的对应文本内容。</p>",
           "example": "无",
           "member": "RcbAsr",
           "name": "Asrs",
@@ -896,12 +896,22 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果明细数据相关的cos url\t",
+          "document": "<p>该字段用于返回检测结果明细数据相关的cos url</p>",
           "example": "无",
           "member": "SegmentCosUrlList",
           "name": "SegmentCosUrlList",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该字段用于返回视频中视频切片审核的结果</p>",
+          "example": "无",
+          "member": "VideoSegment",
+          "name": "VideoSegments",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1461,7 +1471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "传入的类型可选：URL，COS",
+          "document": "<p>传入的类型可选：URL，COS</p>",
           "example": "URL",
           "member": "string",
           "name": "Type",
@@ -1471,7 +1481,7 @@
         },
         {
           "disabled": false,
-          "document": "Url地址",
+          "document": "<p>Url地址</p>",
           "example": "http://tianyu-content-moderation-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/vod/w-video-aEYxv6I1xsadDsq/screenshot_15_1749430725.jpg",
           "member": "string",
           "name": "Url",
@@ -1481,13 +1491,33 @@
         },
         {
           "disabled": false,
-          "document": "桶信息。当输入当时COS时，该字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>桶信息。当输入当时COS时，该字段不为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
           "name": "BucketInfo",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型审核可选输入图片列表</p>",
+          "example": "[\"https://adsfs.heytapimage.com/ads-material-depot/image/aede6f87d2ba8fcd0ff4f5d8d60d078f.jpg\"]",
+          "member": "string",
+          "name": "ImageUrlList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型审核场景下，base64编码的审核要求内容</p>",
+          "example": "772b5p0772d5bu66K6u5pma5LiK55yL77yM5LiA5qyh5oCn55yL5Liq",
+          "member": "string",
+          "name": "TextContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1865,7 +1895,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型 可选：\nURL 资源链接类型\nCOS 腾讯云对象存储类型",
+          "document": "<p>类型 可选：<br>URL 资源链接类型<br>COS 腾讯云对象存储类型</p>",
           "example": "URL",
           "member": "string",
           "name": "Type",
@@ -1874,7 +1904,7 @@
         },
         {
           "disabled": false,
-          "document": "资源链接",
+          "document": "<p>资源链接</p>",
           "example": "https://cmstest-123.cos.ap-guangzhou.myqcloud.com/audio.mp4",
           "member": "string",
           "name": "Url",
@@ -1883,12 +1913,30 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云存储桶信息",
+          "document": "<p>腾讯云存储桶信息</p>",
           "example": "无",
           "member": "BucketInfo",
           "name": "BucketInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型审核场景下，送审的图片列表</p>",
+          "example": "[\"https://adsfs.xxx.com/ads-material-depot/image/aede6f87d2ba8fcd0ff4f5d8d60d078f.jpg\"]",
+          "member": "string",
+          "name": "ImageUrlList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型审核场景下，base64编码的审核要求内容</p>",
+          "example": "772b5pe26Ze0d5bu66K6u5pma5LiK55yL77yM5LiA5qyh5oCn55yL5Liq",
+          "member": "string",
+          "name": "TextContent",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2465,6 +2513,174 @@
         }
       ],
       "usage": "in"
+    },
+    "VideoLLMDetail": {
+      "document": "大模型原子能力审核明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命中的标签名</p>",
+          "example": "素材文案质量度",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中标签的原因</p>",
+          "example": "文本内容未涉及阶级对立或恶意对比，仅为观看建议，无煽动情绪或极端观点。",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的文本内容</p>",
+          "example": "[\"违规文本\"]",
+          "member": "string",
+          "name": "TargetText",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>违规建议</p>",
+          "example": "Review",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoSegment": {
+      "document": "单个视频切片审核结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频切片审核结果</p>",
+          "example": "无",
+          "member": "VideoSegmentResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频切片的起始时间偏移</p>",
+          "example": "180",
+          "member": "string",
+          "name": "OffsetTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>切片保存时间</p>",
+          "example": "2026-03-26T07:45:12Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoSegmentResult": {
+      "document": "单个视频切片审核详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>违规标志 0 未命中 1 命中</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "HitFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审核建议，可选值： Pass 通过， Review 建议人审， Block 确认违规</p>",
+          "example": "Pass",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Asr文本内容</p>",
+          "example": "等代的证明也是一天，你和我别不识抬举，就迎着风揭竿而起，叛逆的真气。",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审核结果</p>",
+          "example": "无",
+          "member": "VideoLLMDetail",
+          "name": "Detail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频切片存储URL</p>",
+          "example": "http://x.1.cos.ap-guangzhou.myqcloud.com/segment-/vod/w-video_llm-acTjfJNxsdLRn8b-/video_180_1774511027.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频切片存储URL</p>",
+          "example": "http://x.1.cos.ap-guangzhou.myqcloud.com/segment-/vod/w-video_llm-acTjfJNxsdLRn8b-/video_180_1774511027.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>切片时长</p>",
+          "example": "31",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>切片请求ID</p>",
+          "example": "d2254a58-9a7b-4b57-b365-f6a6f110e0fe",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

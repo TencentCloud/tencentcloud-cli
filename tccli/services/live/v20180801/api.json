@@ -1072,7 +1072,7 @@
       "status": "online"
     },
     "DescribeLogDownloadList": {
-      "document": "批量获取日志URL。",
+      "document": "批量获取日志URL。\n日志数据打包存在一定延迟，24小时候数据包趋于完整。",
       "input": "DescribeLogDownloadListRequest",
       "name": "批量获取日志URL",
       "output": "DescribeLogDownloadListResponse",
@@ -7847,7 +7847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流名称。",
+          "document": "<p>流名称。</p>",
           "example": "livetest",
           "member": "string",
           "name": "StreamName",
@@ -7856,7 +7856,7 @@
         },
         {
           "disabled": false,
-          "document": "推流域名。",
+          "document": "<p>推流域名。</p>",
           "example": "5000.live.push.com",
           "member": "string",
           "name": "DomainName",
@@ -7865,7 +7865,7 @@
         },
         {
           "disabled": false,
-          "document": "推流路径。",
+          "document": "<p>推流路径。</p>",
           "example": "live",
           "member": "string",
           "name": "AppName",
@@ -7874,7 +7874,7 @@
         },
         {
           "disabled": false,
-          "document": "录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。",
+          "document": "<p>录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。</p>",
           "example": "1589904000",
           "member": "uint64",
           "name": "EndTime",
@@ -7883,7 +7883,7 @@
         },
         {
           "disabled": false,
-          "document": "录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。",
+          "document": "<p>录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。</p>",
           "example": "1589889600",
           "member": "uint64",
           "name": "StartTime",
@@ -7892,7 +7892,7 @@
         },
         {
           "disabled": false,
-          "document": "推流类型，默认0。取值：\n0-直播推流。\n1-合成流，即 A+B=C 类型混流。",
+          "document": "<p>推流类型，默认0。取值：<br>0-直播推流。<br>1-合成流，即 A+B=C 类型混流。</p>",
           "example": "0",
           "member": "uint64",
           "name": "StreamType",
@@ -7901,7 +7901,7 @@
         },
         {
           "disabled": false,
-          "document": "录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。",
+          "document": "<p>录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制 HLS 格式、永久存储至 VOD 主应用下。<br>示例值：0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "TemplateId",
@@ -7910,7 +7910,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段，暂无定义。默认为空。",
+          "document": "<p>扩展字段，暂无定义。默认为空。</p>",
           "example": "extension",
           "member": "string",
           "name": "Extension",
@@ -7925,7 +7925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。",
+          "document": "<p>任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。</p>",
           "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
           "member": "string",
           "name": "TaskId",

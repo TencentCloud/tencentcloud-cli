@@ -20955,6 +20955,15 @@
           "name": "ThreadCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全停止超时时间，单位秒",
+          "example": "80",
+          "member": "int64",
+          "name": "GraceDownTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

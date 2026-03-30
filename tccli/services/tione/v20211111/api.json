@@ -6317,7 +6317,35 @@
     },
     "DescribeSubAccountLinuxUserInfosRequest": {
       "document": "DescribeSubAccountLinuxUserInfos请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量（0 表示全量）",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量（0 表示全量）",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeSubAccountLinuxUserInfosResponse": {
@@ -6331,6 +6359,16 @@
           "name": "SubAccountList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数（配合分页使用）",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -14381,6 +14419,28 @@
           "example": "example_user",
           "member": "string",
           "name": "LinuxUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 root 登录",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRootLogin",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2026-03-26T16:52:34+08:00",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": false,
           "required": false,
           "type": "string",

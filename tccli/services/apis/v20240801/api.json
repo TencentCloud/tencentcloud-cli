@@ -1283,7 +1283,7 @@
         {
           "disabled": false,
           "document": "实例",
-          "example": "ins-a7af1980",
+          "example": "ins-********",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -1292,7 +1292,7 @@
         {
           "disabled": false,
           "document": "模型服务名称",
-          "example": "heheh",
+          "example": "deepseek",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1301,7 +1301,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "haha",
+          "example": "deepseek",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1310,7 +1310,7 @@
         {
           "disabled": false,
           "document": "访问路径",
-          "example": "/v222",
+          "example": "/deepseek",
           "member": "string",
           "name": "PubPath",
           "required": true,
@@ -1427,11 +1427,29 @@
         {
           "disabled": false,
           "document": "超时配置，秒",
-          "example": "10",
+          "example": "60",
           "member": "int64",
           "name": "Timeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启提示词安全检测",
+          "example": "true",
+          "member": "bool",
+          "name": "PromptModerateStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "提示词安全检测配置",
+          "example": "无",
+          "member": "PromptModerateConfigDTO",
+          "name": "PromptModerateConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3331,7 +3349,7 @@
         {
           "disabled": false,
           "document": "腾讯云Uin",
-          "example": "700001136234",
+          "example": "70000*******",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -3341,7 +3359,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-a7af1980",
+          "example": "ins-********",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,
@@ -3351,7 +3369,7 @@
         {
           "disabled": false,
           "document": "模型ID",
-          "example": "mds-36d0b658",
+          "example": "mds-********",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -3587,6 +3605,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启提示词安全检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "PromptModerateStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提示词安全检测配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PromptModerateConfigDTO",
+          "name": "PromptModerateConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5024,7 +5062,7 @@
         {
           "disabled": false,
           "document": "实例",
-          "example": "ins-a7af1980",
+          "example": "ins-********",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -5033,7 +5071,7 @@
         {
           "disabled": false,
           "document": "模型服务ID",
-          "example": "mds-11401891",
+          "example": "mds-********",
           "member": "string",
           "name": "ID",
           "required": true,
@@ -5042,7 +5080,7 @@
         {
           "disabled": false,
           "document": "模型服务名称",
-          "example": "heheh",
+          "example": "deepseek",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5051,7 +5089,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "heheh",
+          "example": "deepseek",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -5168,11 +5206,29 @@
         {
           "disabled": false,
           "document": "超时配置，秒",
-          "example": "12",
+          "example": "60",
           "member": "int64",
           "name": "Timeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启提示词安全检测配置",
+          "example": "false",
+          "member": "bool",
+          "name": "PromptModerateStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "提示词安全检测配置",
+          "example": "无",
+          "member": "PromptModerateConfigDTO",
+          "name": "PromptModerateConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5291,6 +5347,34 @@
           "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PromptModerateConfigDTO": {
+      "document": "提示词安全配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "watch",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应拦截内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "intercept",
+          "member": "string",
+          "name": "InterceptMessage",
           "output_required": false,
           "required": false,
           "type": "string",

@@ -1357,6 +1357,46 @@
       "document": "DescribeLicenseList返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "临期license数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正式license总览统计数据",
+          "example": "无",
+          "member": "Overview",
+          "name": "Overview",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临期license列表",
+          "example": "无",
+          "member": "OverviewLicense",
+          "name": "LicenseList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测试license总览统计数据",
+          "example": "无",
+          "member": "Overview",
+          "name": "TrialOverview",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3105,6 +3145,244 @@
         }
       ],
       "usage": "both"
+    },
+    "Overview": {
+      "document": "总览统计数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过期license数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Expired",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效license数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Valid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临期license数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "Near",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewAppInfo": {
+      "document": "应用包名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用Id",
+          "example": "345345",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "云智",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ios 包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tencent",
+          "member": "string",
+          "name": "BundleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Andorid 包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tenent",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Mac 进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tenent",
+          "member": "string",
+          "name": "MacBundleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "windows 进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.tenent",
+          "member": "string",
+          "name": "WinProcessName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"a.com\"]",
+          "member": "string",
+          "name": "DomainList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewLicense": {
+      "document": "视立方应用license",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所属应用",
+          "example": "application",
+          "member": "OverviewAppInfo",
+          "name": "Application",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license生效时间",
+          "example": "2021-06-01",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license失效时间",
+          "example": "2022-06-01",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license对应的功能Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "FeatureId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "license是测试：test还是正式：formal",
+          "example": "formal",
+          "member": "string",
+          "name": "LicenseType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license索引",
+          "example": "2453242",
+          "member": "uint64",
+          "name": "LicenseId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license名称",
+          "example": "短视频",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回还有多少秒过期，过期返回负值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23356",
+          "member": "uint64",
+          "name": "RestTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-05-07T10:12:01+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2022-05-07T10:12:01+08:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优图套餐名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S1-04",
+          "member": "string",
+          "name": "Plan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "licenseType",
+          "example": "视频播放",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Package": {
       "document": "资源包结构",

@@ -304,6 +304,28 @@
         "title": "查询云边界分析-暴露路径下主机节点的高危基线风险列表"
       }
     ],
+    "DescribeKeySandboxCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeySandboxCredential\n<公共请求参数>\n\n{\n    \"CredentialId\": \"cred-abc12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialId\": \"cred-abc12345\",\n        \"CredentialName\": \"腾讯云-生产环境密钥\",\n        \"CredentialType\": \"access\",\n        \"CredentialEffectScope\": {\n            \"Exclude\": 1,\n            \"Instances\": []\n        },\n        \"Access\": [\n            {\n                \"Key\": \"SecretId\",\n                \"Value\": \"AKI***abcd\"\n            },\n            {\n                \"Key\": \"SecretKey\",\n                \"Value\": \"abc***wxyz\"\n            }\n        ],\n        \"CreateTime\": \"2026-01-15T08:30:00Z\",\n        \"UpdateTime\": \"2026-03-10T14:29:03Z\",\n        \"RequestId\": \"c368eae2-8739-4cc2-b4f8-8f4284a93b41\"\n    }\n}",
+        "title": "查询access类型凭证详情"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeySandboxCredential\n<公共请求参数>\n\n{\n    \"CredentialId\": \"cred-sts56789\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialId\": \"cred-sts56789\",\n        \"CredentialName\": \"STS临时密钥-测试环境\",\n        \"CredentialType\": \"sts\",\n        \"CredentialEffectScope\": {\n            \"Exclude\": 1,\n            \"Instances\": [\n                \"ins-abc12345\",\n                \"ins-def67890\"\n            ]\n        },\n        \"STS\": {\n            \"System\": \"tencentCam\",\n            \"SecretID\": \"AKI***efgh\",\n            \"SecretKey\": \"abc***wxyz\"\n        },\n        \"CreateTime\": \"2026-02-20T10:00:00Z\",\n        \"UpdateTime\": \"2026-03-09T10:15:00Z\",\n        \"RequestId\": \"a1b2c3d4-5678-90ab-cdef-1234567890ab\"\n    }\n}",
+        "title": "查询sts类型凭证详情"
+      }
+    ],
+    "DescribeKeySandboxCredentialList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeySandboxCredentialList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreateTime\": \"2026-03-23T23:27:35.595Z\",\n                \"CredentialEffectScope\": {\n                    \"Exclude\": 1,\n                    \"Instances\": []\n                },\n                \"CredentialId\": \"crd-923a222b\",\n                \"CredentialName\": \"test1234\",\n                \"CredentialType\": \"sts\",\n                \"UpdateTime\": \"2026-03-23T23:27:35.595Z\"\n            }\n        ],\n        \"TotalCount\": 26,\n        \"RequestId\": \"9859afca-3e75-425b-9685-db32b0564d4a\"\n    }\n}",
+        "title": "查询凭证列表"
+      }
+    ],
     "DescribeListenerList": [
       {
         "document": "示例1",

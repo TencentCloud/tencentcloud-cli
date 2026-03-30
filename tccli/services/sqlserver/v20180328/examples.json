@@ -32,6 +32,14 @@
         "title": "设置实例移出互通组"
       }
     ],
+    "CloseLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8lv5ti3v\",\n    \"LogType\": \"auditLog\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6807a5b4-ef25-480d-b77b-803d160e2603\"\n    }\n}",
+        "title": "关闭日志"
+      }
+    ],
     "CompleteExpansion": [
       {
         "document": "立即完成实例状态为“升级待切换”的升级操作。",
@@ -128,6 +136,14 @@
         "title": "创建实例"
       }
     ],
+    "CreateExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8lv5ti3v\",\n    \"LogType\": \"auditLog\",\n    \"StartTime\": \"2025-08-14 16:24:24\",\n    \"EndTime\": \"2026-08-14 16:24:24\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f210476a-a621-4bf2-95a9-cd3d6a4dbde5\"\n    }\n}",
+        "title": "创建日志下载任务"
+      }
+    ],
     "CreateIncrementalMigration": [
       {
         "document": "",
@@ -206,6 +222,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteDBInstance\n&InstanceId=mssql-ms2m7vut\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5098dad3-077b-4a3b-9c7d-fb1b0415027b\"\n    }\n}",
         "title": "删除SQL server实例"
+      }
+    ],
+    "DeleteExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExportTask\n<公共请求参数>\n\n{\n    \"LogType\": \"auditLog\",\n    \"FileName\": \"mssql-8eei3sy5_20260316-124617_to_20260316-154617_1773647182589.tar.gz\",\n    \"InstanceId\": \"mssql-8lv5ti3v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c753537d-f095-455b-ace1-6c0790a3ab2d\"\n    }\n}",
+        "title": "删除日志下载任务"
       }
     ],
     "DeleteIncrementalMigration": [
@@ -488,6 +512,14 @@
         "title": "查询数据库详细配置信息"
       }
     ],
+    "DescribeExportTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExportTasks\n<公共请求参数>\n\n{\n    \"LogType\": \"auditLog\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"InstanceId\": \"mssql-8lv5ti3v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"5191e7bc-df5f-4266-abc8-2df2f2e0c4f3\"\n    }\n}",
+        "title": "查询日志下载任务"
+      }
+    ],
     "DescribeFlowStatus": [
       {
         "document": "",
@@ -558,6 +590,22 @@
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceTradeParameter\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-6\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"InstanceType\": \"cvmHA\",\n    \"Memory\": 4,\n    \"Storage\": 200,\n    \"GoodsNum\": 1,\n    \"SubnetId\": \"subnet-15y3y4eo\",\n    \"VpcId\": \"vpc-hqxhp43z\",\n    \"Period\": 1,\n    \"DBVersion\": \"2008R2\",\n    \"AutoRenewFlag\": 1,\n    \"Weekly\": [\n        \"1\",\n        \"3\",\n        \"5\"\n    ],\n    \"StartTime\": \"01:00\",\n    \"Span\": 3,\n    \"MultiZones\": \"true\",\n    \"Cpu\": 2,\n    \"MachineType\": \"CLOUD_BSSD\"\n}",
         "output": "{\n    \"Response\": {\n        \"Parameter\": \"{\\\"uin\\\":\\\"2919041563\\\",\\\"ownerUin\\\":\\\"2919041563\\\",\\\"appId\\\":251000111,\\\"goods\\\":[{\\\"goodsCategoryId\\\":1025890,\\\"goodsNum\\\":1,\\\"payMode\\\":1,\\\"regionId\\\":1,\\\"zoneId\\\":100006,\\\"goodsDetail\\\":{\\\"pid\\\":1019180,\\\"productCode\\\":\\\"p_sqlserver\\\",\\\"subProductCode\\\":\\\"sp_sqlserver_dual_exclusive_cloud\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"m\\\",\\\"productInfo\\\":[{\\\"name\\\":\\\"项目\\\",\\\"value\\\":\\\"default project\\\"},{\\\"name\\\":\\\"配置\\\",\\\"value\\\":\\\"4GB内存，200GB存储空间，0次每秒，SQL Server 2008R2\\\"},{\\\"name\\\":\\\"实例版本\\\",\\\"value\\\":\\\"双机高可用\\\"},{\\\"name\\\":\\\"地域\\\",\\\"value\\\":\\\"广州\\\"},{\\\"name\\\":\\\"所属网络\\\",\\\"value\\\":\\\"三区专属\\\"},{\\\"name\\\":\\\"可用区\\\",\\\"value\\\":\\\"广州六区\\\"},{\\\"name\\\":\\\"RequestSource\\\",\\\"value\\\":\\\"API\\\"}],\\\"autoRenewFlag\\\":1,\\\"goodsNum\\\":1,\\\"type\\\":\\\"CLOUD_BSSD\\\",\\\"version\\\":\\\"2008R2\\\",\\\"subnetId\\\":1604224,\\\"vpcId\\\":74483,\\\"model\\\":3,\\\"weekly\\\":[1,3,5],\\\"startTime\\\":\\\"01:00\\\",\\\"span\\\":3,\\\"RoGroupForcedUpgrade\\\":0,\\\"ResourceTags\\\":null,\\\"waitSwitch\\\":1,\\\"ExtParam\\\":{\\\"token\\\":\\\"\\\",\\\"useragent\\\":\\\"\\\",\\\"referer\\\":\\\"\\\",\\\"from\\\":\\\"\\\"},\\\"collation\\\":\\\"Chinese_PRC_CI_AS\\\",\\\"timeZone\\\":\\\"China Standard Time\\\",\\\"sv_sqlserver_cpu_dual_exclusive_cloud_enterprise\\\":2,\\\"sv_sqlserver_cpu_dual_exclusive_cloud_standard\\\":0,\\\"sv_sqlserver_mem_dual_exclusive_cloud_enterprise\\\":4,\\\"sv_sqlserver_mem_dual_exclusive_cloud_standard\\\":0,\\\"sv_sqlserver_disk_dual_enhancedssd\\\":0,\\\"sv_sqlserver_disk_dual_fastssd\\\":0,\\\"sv_sqlserver_disk_dual_universalssd\\\":200},\\\"platform\\\":1,\\\"projectId\\\":0}]}\\n\",\n        \"RequestId\": \"2a2c00b5-77a8-4eda-be01-3f58230da22e\"\n    }\n}",
         "title": "查询OnCvm双节点的新购计费参数"
+      }
+    ],
+    "DescribeLogInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogInstanceList\n<公共请求参数>\n\n{\n    \"LogType\": \"auditLog\",\n    \"Limit\": 3,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateAt\": \"\",\n                \"Deliver\": \"\",\n                \"DeliverSummary\": null,\n                \"EnableQuery\": \"\",\n                \"HighLogExpireDay\": 0,\n                \"HighStorage\": 0,\n                \"InstanceId\": \"mssql-m7v8e9k9\",\n                \"InstanceInfo\": {\n                    \"Architecture\": \"DOUBLE\",\n                    \"AuditLogHosts\": null,\n                    \"AuditLogStatus\": \"OFF\",\n                    \"AuditLogStatusMessage\": null,\n                    \"HAFlag\": \"ALWAYSON\",\n                    \"InstanceId\": \"mssql-m7v8e9k9\",\n                    \"InstanceName\": \"sqlsvr_auto_usage_20260314040300\",\n                    \"InstanceType\": \"cvmHA\",\n                    \"ProjectId\": 0,\n                    \"ROFlag\": \"\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"RegionId\": 1,\n                    \"Status\": 2,\n                    \"TagList\": null,\n                    \"Type\": \"CLOUD_BSSD\",\n                    \"Version\": \"2017\",\n                    \"VersionName\": \"SQL Server 2017 Enterprise\",\n                    \"Vip\": \"172.16.80.46\",\n                    \"Vport\": null,\n                    \"Zone\": \"ap-guangzhou-7\",\n                    \"ZoneId\": 100007\n                },\n                \"LogExpireDay\": 0,\n                \"LogStorage\": 0,\n                \"LowLogExpireDay\": 0,\n                \"LowStorage\": 0,\n                \"Status\": \"\"\n            }\n        ],\n        \"TotalCount\": 38,\n        \"RequestId\": \"0fc9d9c5-0e51-422c-8f93-707670a9f41f\"\n    }\n}",
+        "title": "查询日志实例列表"
+      }
+    ],
+    "DescribeLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8lv5ti3v\",\n    \"StartTime\": \"2024-08-14 16:24:24\",\n    \"EndTime\": \"2026-08-14 16:24:24\",\n    \"LogType\": \"auditLog\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"95e72033-4d5d-49f9-aa24-45adfafa2d09\"\n    }\n}",
+        "title": "查询日志"
       }
     ],
     "DescribeMaintenanceSpan": [
@@ -1006,6 +1054,14 @@
         "title": "修改实例参数"
       }
     ],
+    "ModifyLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8eei3sy5\",\n    \"LogType\": \"auditLog\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7d8112c-4b91-42a9-a6e4-2cd202d00f3f\"\n    }\n}",
+        "title": "修改日志"
+      }
+    ],
     "ModifyMaintenanceSpan": [
       {
         "document": "修改实例的可维护时间窗：修改为每周的周一，周二，周三，从0点开始持续6个小时。",
@@ -1066,6 +1122,14 @@
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenInterCommunication\n<公共请求参数>\n\n{\n    \"InstanceIdSet\": [\n        \"mssql-hlh6yka1\",\n        \"mssql-gfh54fg2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"InterInstanceFlowSet\": [\n            {\n                \"FlowId\": 0,\n                \"InstanceId\": \"mssql-hlh6yka1\"\n            },\n            {\n                \"FlowId\": 1253,\n                \"InstanceId\": \"mssql-gfh54fg2\"\n            }\n        ],\n        \"RequestId\": \"fc3376a3-4585-4442-87cd-6076d3b510bc\"\n    }\n}",
         "title": "设置实例加入互通组"
+      }
+    ],
+    "OpenLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8eei3sy5\",\n    \"LogType\": \"auditLog\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8e9d3de-b429-460c-9a95-aa2805f42be2\"\n    }\n}",
+        "title": "开启日志"
       }
     ],
     "QueryMigrationCheckProcess": [

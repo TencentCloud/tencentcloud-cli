@@ -11,8 +11,8 @@
     "DescribeFraudBase": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudBase\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v2:s6kBRbiOKZp/kenOxxxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Brand\": \"HONOR\",\n        \"SdkBuildNo\": \"75\",\n        \"AppVersion\": \"1.0.0\",\n        \"Platform\": \"2\",\n        \"SystemVersion\": \"10\",\n        \"RequestId\": \"19a13dc5-1c2c-4d0e-bd08-13534b53c8f4\",\n        \"NetworkType\": \"0\",\n        \"Model\": \"LLD-AL20\",\n        \"PackageName\": \"a.b.c\",\n        \"ClientIp\": \"223.73.63.151\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudBase\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v3:AVbaFsoWz9V5oORxxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Brand\": \"HONOR\",\n        \"SdkBuildNo\": \"75\",\n        \"AppVersion\": \"1.0.0\",\n        \"Platform\": \"2\",\n        \"SystemVersion\": \"10\",\n        \"RequestId\": \"19a13dc5-1c2c-4d0e-bd08-13534b53c8f4\",\n        \"NetworkType\": \"0\",\n        \"Model\": \"LLD-AL20\",\n        \"PackageName\": \"a.b.c\",\n        \"ClientIp\": \"223.73.63.151\",\n        \"ExtraInfos\": [\n            {\n                \"Key\": \"DegradationType\",\n                \"Value\": \"2\"\n            }\n        ],\n        \"RiskCheckTimestamp\": \"1774319387108\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ]\n    }\n}",
         "title": "查询设备风险"
       }
     ],

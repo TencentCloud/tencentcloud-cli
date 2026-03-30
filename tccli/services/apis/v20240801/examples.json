@@ -50,10 +50,10 @@
     ],
     "CreateModelService": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"Name\": \"heheh\",\n    \"Description\": \"haha\",\n    \"PubPath\": \"/v222\",\n    \"TargetModels\": [\n        {\n            \"ID\": \"mod-fe2c8801\",\n            \"Name\": \"hello\",\n            \"Rank\": 1\n        }\n    ],\n    \"PathMatchType\": \"prefix\",\n    \"InvokeLimitConfigStatus\": false,\n    \"TokenLimitStatus\": false,\n    \"TmsStatus\": false,\n    \"IpWhiteStatus\": false,\n    \"IpWhiteList\": [\n        \"1.1.1.1\"\n    ],\n    \"IpBlackList\": [\n        \"1.1.1.1\"\n    ],\n    \"Timeout\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-11401891\"\n        },\n        \"RequestId\": \"2dc457fd-0753-4f29-a1bd-a1f44e295118\"\n    }\n}",
-        "title": "创建模型服务"
+        "document": "CreateModelService",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-********\",\n    \"Name\": \"deepseek\",\n    \"Description\": \"deepseek\",\n    \"PubPath\": \"/deepseek\",\n    \"TargetModels\": [\n        {\n            \"ID\": \"mod-********\",\n            \"Name\": \"deepseek\",\n            \"Rank\": 10\n        }\n    ],\n    \"PathMatchType\": \"prefix\",\n    \"InvokeLimitConfigStatus\": false,\n    \"InvokeLimitConfig\": {\n        \"Type\": \"tokenBucket\",\n        \"TokenBucketMaxNum\": 20000,\n        \"TokenBucketRate\": 1,\n        \"FunnelMaxNum\": 20000,\n        \"FunnelRate\": 1,\n        \"SlidingWindowMaxNum\": 20000,\n        \"SlidingWindowSize\": 1,\n        \"TimeWindow\": 20000,\n        \"TimeWindowInterval\": 1\n    },\n    \"TokenLimitStatus\": false,\n    \"TokenLimitConfig\": {\n        \"LimitRequestBody\": 10,\n        \"LimitWindows\": [\n            {\n                \"Interval\": 60,\n                \"Limit\": 100\n            }\n        ]\n    },\n    \"TmsStatus\": false,\n    \"TmsConfig\": {\n        \"Scope\": [],\n        \"Mode\": \"\",\n        \"Action\": \"\",\n        \"MergeCount\": 0,\n        \"BizType\": \"\",\n        \"InterceptMessage\": \"\"\n    },\n    \"IpWhiteStatus\": false,\n    \"IpWhiteList\": [],\n    \"IpBlackList\": [],\n    \"PluginConfigs\": [],\n    \"Timeout\": 60,\n    \"PromptModerateStatus\": true,\n    \"PromptModerateConfig\": {\n        \"Action\": \"intercept\",\n        \"InterceptMessage\": \"intercept\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-********\"\n        },\n        \"RequestId\": \"19539a7c-9462-4cd2-9064-0edaec692f17\"\n    }\n}",
+        "title": "CreateModelService"
       }
     ],
     "DeleteAgentApp": [
@@ -250,10 +250,10 @@
     ],
     "ModifyModelService": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"mds-11401891\",\n    \"Name\": \"heheh\",\n    \"Description\": \"heheh\",\n    \"TargetModels\": [\n        {\n            \"ID\": \"mod-fe2c8801\",\n            \"Name\": \"heheh\",\n            \"Rank\": 1\n        }\n    ],\n    \"InvokeLimitConfigStatus\": false,\n    \"TokenLimitStatus\": false,\n    \"TmsStatus\": false,\n    \"IpWhiteStatus\": false,\n    \"IpWhiteList\": [\n        \"1.1.1.1\"\n    ],\n    \"IpBlackStatus\": false,\n    \"IpBlackList\": [\n        \"1.1.1.1\"\n    ],\n    \"Timeout\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-11401891\"\n        },\n        \"RequestId\": \"626bc38a-ef7b-4b4d-832d-ee675e46a4e5\"\n    }\n}",
-        "title": "编辑模型服务"
+        "document": "ModifyModelService",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-********\",\n    \"ID\": \"mds-********\",\n    \"Name\": \"deepseek\",\n    \"Description\": \"deepseek\",\n    \"TargetModels\": [\n        {\n            \"ID\": \"mod-78bd8b5e\",\n            \"Name\": \"deepseek\",\n            \"Rank\": 10\n        }\n    ],\n    \"InvokeLimitConfigStatus\": false,\n    \"InvokeLimitConfig\": {\n        \"Type\": \"tokenBucket\",\n        \"TokenBucketMaxNum\": 20000,\n        \"TokenBucketRate\": 1,\n        \"FunnelMaxNum\": 20000,\n        \"FunnelRate\": 1,\n        \"SlidingWindowMaxNum\": 20000,\n        \"SlidingWindowSize\": 1,\n        \"TimeWindow\": 20000,\n        \"TimeWindowInterval\": 1\n    },\n    \"TokenLimitStatus\": false,\n    \"TokenLimitConfig\": {\n        \"LimitRequestBody\": 10,\n        \"LimitWindows\": [\n            {\n                \"Interval\": 60,\n                \"Limit\": 100\n            }\n        ]\n    },\n    \"TmsStatus\": false,\n    \"TmsConfig\": {\n        \"Scope\": [],\n        \"Mode\": \"\",\n        \"Action\": \"\",\n        \"MergeCount\": 0,\n        \"BizType\": \"\",\n        \"InterceptMessage\": \"\"\n    },\n    \"IpWhiteStatus\": false,\n    \"IpWhiteList\": [],\n    \"IpBlackStatus\": false,\n    \"IpBlackList\": [],\n    \"PluginConfigs\": [],\n    \"Timeout\": 60,\n    \"PromptModerateStatus\": false,\n    \"PromptModerateConfig\": {\n        \"Action\": \"watch\",\n        \"InterceptMessage\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-********\"\n        },\n        \"RequestId\": \"ebd06dc9-30ae-4f30-84eb-a1ed61d7a098\"\n    }\n}",
+        "title": "ModifyModelService"
       }
     ]
   },

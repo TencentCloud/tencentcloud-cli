@@ -73,7 +73,7 @@
     "DescribeVideoStylizationJob": {
       "document": "用于查询视频风格化任务。视频风格化支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。",
       "input": "DescribeVideoStylizationJobRequest",
-      "name": "查询视频风格化任务",
+      "name": "查询视频风格化任务（下线中）",
       "output": "DescribeVideoStylizationJobResponse",
       "status": "online"
     },
@@ -150,7 +150,7 @@
     "SubmitVideoStylizationJob": {
       "document": "用于提交视频风格化任务。支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。",
       "input": "SubmitVideoStylizationJobRequest",
-      "name": "提交视频风格化任务",
+      "name": "提交视频风格化任务（下线中）",
       "output": "SubmitVideoStylizationJobResponse",
       "status": "online"
     },
@@ -1086,7 +1086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸框左上角横坐标。",
+          "document": "<p>人脸框左上角横坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "X",
@@ -1097,7 +1097,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框左上角纵坐标。",
+          "document": "<p>人脸框左上角纵坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "Y",
@@ -1108,7 +1108,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框宽度。",
+          "document": "<p>人脸框宽度。<br>单位：px</p>",
           "example": "30",
           "member": "int64",
           "name": "Width",
@@ -1119,7 +1119,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框高度。",
+          "document": "<p>人脸框高度。<br>单位：px</p>",
           "example": "30",
           "member": "int64",
           "name": "Height",

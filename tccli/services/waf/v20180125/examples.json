@@ -726,6 +726,14 @@
         "title": "Waf  IP封堵状态查询"
       }
     ],
+    "DescribeLLMContentSecCheck": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMContentSecCheck\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002887\",\n    \"Content\": \"***\",\n    \"Type\": 1,\n    \"InstanceId\": \"waf_2l15cfe009ya8lg3\",\n    \"UserId\": \"700002174132\",\n    \"TokenUsage\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Action\": \"deny\",\n            \"KeyWordsResult\": [\n                {\n                    \"Id\": \"politics_high\",\n                    \"Name\": \"涉政-高敏感\"\n                }\n            ],\n            \"Payload\": \"风险类型:内置关键词库-涉政-高敏感,风险内容:胡海峰\",\n            \"RuleId\": \"5100000000\",\n            \"RuleName\": \"关键词库检测\"\n        },\n        \"RequestId\": \"badc7789-41d7-44b9-84e3-38efd8d833d8\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
     "DescribeLogHistogram": [
       {
         "document": "根据指定的检索条件，获取符合检索条件的日志分布直方图",
@@ -828,6 +836,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectionModes\n<公共请求参数>\n\n{\n    \"Edition\": \"sparta-waf\",\n    \"Domain\": \"test.domain.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Modes\": [\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"010000000\"\n            },\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"020000000\"\n            },\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"030000000\"\n            },\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"040000000\"\n            },\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"050000000\"\n            },\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"060000000\"\n            },\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"090000000\"\n            },\n            {\n                \"Mode\": 1,\n                \"TypeID\": \"110000000\"\n            }\n        ],\n        \"RequestId\": \"a73259ca-b59a-44e4-ab6d-13010a3e00ea\"\n    }\n}",
         "title": "查询Tiga引擎大类规则及其防护模式"
+      }
+    ],
+    "DescribeQClawContentSecCheck": [
+      {
+        "document": "高危命令",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQClawContentSecCheck\n<公共请求参数>\n\n{\n    \"ServiceId\": \"sdfsfs\",\n    \"Content\": {\n        \"Prompt\": \"rm -rf / ***\"\n    },\n    \"UserId\": \"sd\",\n    \"SessionId\": \"sdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Risks\": [\n                {\n                    \"RiskType\": \"tool_call\",\n                    \"RuleId\": \"gtc-baseline-001\",\n                    \"RuleName\": \"高危系统命令工具阻断\",\n                    \"Score\": 0.99\n                }\n            ]\n        },\n        \"RequestId\": \"f4a85fb0-28a8-43f0-a5ac-e0a1232346cb\"\n    }\n}",
+        "title": "审核测试用例"
       }
     ],
     "DescribeRateLimitsV2": [

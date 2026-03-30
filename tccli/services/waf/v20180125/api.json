@@ -609,6 +609,13 @@
       "output": "DescribeIpHitItemsResponse",
       "status": "online"
     },
+    "DescribeLLMContentSecCheck": {
+      "document": "大模型请求内容和响应内容审核接口",
+      "input": "DescribeLLMContentSecCheckRequest",
+      "name": "大模型内容审核接口",
+      "output": "DescribeLLMContentSecCheckResponse",
+      "status": "online"
+    },
     "DescribeLogHistogram": {
       "document": "本接口用于构建日志数量直方图",
       "input": "DescribeLogHistogramRequest",
@@ -698,6 +705,13 @@
       "input": "DescribeProtectionModesRequest",
       "name": "查询tiga引擎下大类规则的防护模式",
       "output": "DescribeProtectionModesResponse",
+      "status": "online"
+    },
+    "DescribeQClawContentSecCheck": {
+      "document": "大模型请求内容和响应内容审核接口",
+      "input": "DescribeQClawContentSecCheckRequest",
+      "name": "Qclaw大模型内容审核接口",
+      "output": "DescribeQClawContentSecCheckResponse",
       "status": "online"
     },
     "DescribeRateLimitsV2": {
@@ -2698,7 +2712,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段",
           "example": "80",
           "member": "string",
@@ -3271,6 +3285,23 @@
           "name": "FullReqLog",
           "output_required": false,
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiGuardContent": {
+      "document": "guard content",
+      "members": [
+        {
+          "disabled": false,
+          "document": "prompt",
+          "example": "rm -rf /",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7010,6 +7041,56 @@
       ],
       "usage": "both"
     },
+    "ClawRiskItem": {
+      "document": "ClawRiskItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险类别",
+          "example": "sensitive_content",
+          "member": "string",
+          "name": "RiskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "grl-safety-politics-strict",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "涉政内容-严格",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分数",
+          "example": "0.99",
+          "member": "float",
+          "name": "Score",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClbDomainsInfo": {
       "document": "负载均衡型WAF域名详情",
       "members": [
@@ -9659,7 +9740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "域名，当操作对象为全局规则时，Domain参数应填写为\"global\"",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -9695,7 +9776,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为多域名黑白名单",
+          "document": "用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护\t），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则",
           "example": "batch",
           "member": "string",
           "name": "SourceType",
@@ -9751,7 +9832,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "域名，当操作对象为全局规则时，Domain参数应填写为\"global\"",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -9778,7 +9859,7 @@
         },
         {
           "disabled": false,
-          "document": "batch表示为批量防护的IP黑白名单",
+          "document": "用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护\t），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则",
           "example": "batch",
           "member": "string",
           "name": "SourceType",
@@ -14242,7 +14323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "域名，当操作对象为全局规则时，Domain参数应填写为\"global\"",
           "example": "test.testwaf.com",
           "member": "string",
           "name": "Domain",
@@ -14323,7 +14404,7 @@
         },
         {
           "disabled": false,
-          "document": "来源",
+          "document": "用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 \"\" (空字符串)\t，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护\t），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则",
           "example": "custom",
           "member": "string",
           "name": "Source",
@@ -14570,6 +14651,97 @@
           "member": "IpHitItemsData",
           "name": "Data",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMContentSecCheckRequest": {
+      "document": "DescribeLLMContentSecCheck请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则",
+          "example": "9000002887",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要审核的内容",
+          "example": "***",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量类型，是入向流量还是出向流量，入向：1，出向：2；入向和出向必填",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例id，必传",
+          "example": "waf_2l15cfe009ya8lg3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对话的id",
+          "example": "test-request-001",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标识用户的id，限速使用，不填，则限速会不生效",
+          "example": "700002174132",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "token使用量，不填，会采用默认的token计算方法，计算的是模型的消耗，因为该值时在出向方向上添加，即Type=2",
+          "example": "10000",
+          "member": "uint64",
+          "name": "TokenUsage",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMContentSecCheckResponse": {
+      "document": "DescribeLLMContentSecCheck返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测结果",
+          "example": "无",
+          "member": "LLMDetectResult",
+          "name": "Data",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15547,6 +15719,70 @@
           "name": "Modes",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQClawContentSecCheckRequest": {
+      "document": "DescribeQClawContentSecCheck请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则",
+          "example": "sdfsfs",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要审核的内容",
+          "example": "无",
+          "member": "ApiGuardContent",
+          "name": "Content",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标识用户的id，限速使用，不填，则限速会不生效",
+          "example": "sd",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话id",
+          "example": "sdf",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQClawContentSecCheckResponse": {
+      "document": "DescribeQClawContentSecCheck返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测结果",
+          "example": "无",
+          "member": "LLMRisks",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -20318,7 +20554,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空",
+          "document": "用于按数据来源导入黑白名单记录，必填。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护\t），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则",
           "example": "custom",
           "member": "string",
           "name": "SourceType",
@@ -21835,6 +22071,120 @@
       ],
       "usage": "out"
     },
+    "KeyWordInfo": {
+      "document": "大模型安全检测敏感词库命中信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命中的词库id",
+          "example": "politics_high",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中的词库名称",
+          "example": "涉政-高敏感",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LLMDetectResult": {
+      "document": "大模型安全检测综合结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 仅输出侧：涉敏信息",
+          "example": "无",
+          "member": "LLMSensitiveValueLevel",
+          "name": "SensitiveResult",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 输入输出均检测：关键词库命中信息",
+          "example": "无",
+          "member": "KeyWordInfo",
+          "name": "KeyWordsResult",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入输出均检测：数据分类分级结果",
+          "example": "[\"微信openid\"]",
+          "member": "string",
+          "name": "DataCategoryResult",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 仅输入侧检出：prompt检测的结果",
+          "example": "无",
+          "member": "PromptDetectResult",
+          "name": "PromptInjectionResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中的规则ID",
+          "example": "5200038493",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中的规则名称",
+          "example": "ddptest",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则动作",
+          "example": "log",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击payload",
+          "example": "风险类型:内置关键词库-涉政-高敏感,风险内容:胡海峰",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LLMMonPkg": {
       "document": "有效预付费大模型安全包信息",
       "members": [
@@ -22011,6 +22361,49 @@
         }
       ],
       "usage": "both"
+    },
+    "LLMRisks": {
+      "document": "LLMRisks",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分数",
+          "example": "无",
+          "member": "ClawRiskItem",
+          "name": "Risks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LLMSensitiveValueLevel": {
+      "document": "涉敏信息结果结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "敏感数据标签，如政治、色情",
+          "example": "隐私",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感数据等级，250,300，400分别代表超严格、严格、标准等级",
+          "example": "250",
+          "member": "uint64",
+          "name": "Level",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LimitHeader": {
       "document": "限流Header数据结构",
@@ -28670,6 +29063,34 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PromptDetectResult": {
+      "document": "prompt注入检测结果结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测结果",
+          "example": "prompt_injection",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "置信度",
+          "example": "100",
+          "member": "uint64",
+          "name": "Confidence",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
