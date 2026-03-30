@@ -5,15 +5,9 @@
 2. TCCLI依赖于TencentCloudApi Python SDK，**如果TencentCloudApi Python SDK的版本号小于要安装TCCLI版本号，在安装TCCLI时会自动升级TencentCloudApi Python SDK**。
 3. 安装TCCLI，执行以下命令：
 ```bash
-pip install tccli
+pip install -i https://mirrors.tencent.com/pypi/simple/ tccli-internal
 ```
-如果是MacOS用户，您还可以使用homebrew来安装tccli：
 
-> 执行如下命令之前您需要先安装homebrew，安装的方法可以参考[homebrew官网](https://brew.sh/index_zh-cn)
-```bash
-brew tap tencentcloud/tccli
-brew install tccli
-```
 注意：如果是从3.0.252.3以下版本升级的需要执行
 ```bash
 sudo pip uninstall tccli jmespath
