@@ -1757,9 +1757,9 @@
     "GetMostSuitableImageCache": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMostSuitableImageCache\n<公共请求参数>\n\n{\n    \"Images\": [\n        \"nginx:latest\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ccccc-5ed9-4cb7-9194-a95e2cd626e5\",\n        \"Found\": false,\n        \"ImageCache\": null\n    }\n}",
-        "title": "查询匹配的镜像缓存"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMostSuitableImageCache\n<公共请求参数>\n\n{\n    \"Images\": [\n        \"redis:8.6.1-trixie\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Found\": true,\n        \"ImageCache\": {\n            \"CreationTime\": \"2026-03-30 07:03:35 +0000 UTC\",\n            \"Events\": [\n                {\n                    \"FirstTimestamp\": \"2026-03-30 07:03:45 +0000 UTC\",\n                    \"ImageCacheId\": \"imc-r1htp8tg\",\n                    \"LastTimestamp\": \"2026-03-30 07:03:45 +0000 UTC\",\n                    \"Message\": \"create disk disk-320438xa successfully\",\n                    \"Reason\": \"DiskCreated\",\n                    \"Type\": \"Normal\"\n                }\n            ],\n            \"ExpireDateTime\": \"2126-03-30 07:03:35 +0000 UTC\",\n            \"ImageCacheId\": \"imc-r1htp8tg\",\n            \"ImageCacheName\": \"munaltest2\",\n            \"ImageCacheSize\": 20,\n            \"ImageCacheType\": \"manual\",\n            \"ImageRegistryCredentials\": [],\n            \"Images\": [\n                \"redis:8.6.1-trixie\"\n            ],\n            \"LastMatchedTime\": \"2026-03-30 17:07:11.389402882 +0800 CST m=+893.262707991\",\n            \"RetentionDays\": 0,\n            \"SnapshotId\": \"snap-fji6ytcl\",\n            \"Snapshotter\": \"overlay\",\n            \"Status\": \"Ready\",\n            \"Tags\": []\n        },\n        \"RequestId\": \"d981508f-969e-449d-a0ba-8cc4193c33ac\"\n    }\n}",
+        "title": "获取适合的自动镜像缓存"
       }
     ],
     "GetTkeAppChartList": [

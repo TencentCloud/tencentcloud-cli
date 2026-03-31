@@ -19183,11 +19183,20 @@
         {
           "disabled": false,
           "document": "容器镜像列表",
-          "example": "img-1cghhuuu",
+          "example": "[\"redis:8.6.1\"]",
           "member": "string",
           "name": "Images",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "容器镜像制作snapshotter",
+          "example": "overlay",
+          "member": "string",
+          "name": "Snapshotter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19596,7 +19605,7 @@
         {
           "disabled": false,
           "document": "镜像缓存包含的镜像列表",
-          "example": "[\"nginx:latest\"]]",
+          "example": "[\"nginx:latest\"]",
           "member": "string",
           "name": "Images",
           "output_required": true,
@@ -19686,11 +19695,31 @@
         {
           "disabled": false,
           "document": "腾讯云标签",
-          "example": "[{\"Key\":\"project\",\"Value\":\"tke-serverless\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像缓存类型",
+          "example": "auto",
+          "member": "string",
+          "name": "ImageCacheType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像缓存所属snapshotter类型",
+          "example": "overlay",
+          "member": "string",
+          "name": "Snapshotter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

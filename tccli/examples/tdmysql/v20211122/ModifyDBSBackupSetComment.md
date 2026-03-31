@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tdmysql ModifyDBSBackupSetComment --cli-unfold-argument  \
-    --InstanceId tdsql3-31l2r0yn912rg \
-    --BackupSetId 28217173338212 \
-    --NewBackupName test-manual
+    --InstanceId tdsql3-3f17e49d \
+    --BackupSetId 73094409561375 \
+    --NewBackupName newBackName
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
     "Response": {
         "IsSuccess": true,
         "Msg": "Modify backup set successfully",
-        "RequestId": "fa6a683c-5625-402b-9ab1-7b2a82a85fee"
+        "RequestId": "570461d1-4936-4f07-8a5f-952c9161544f"
     }
 }
 ```

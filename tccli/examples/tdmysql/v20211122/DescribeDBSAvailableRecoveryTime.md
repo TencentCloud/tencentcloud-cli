@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli tdmysql DescribeDBSAvailableRecoveryTime --cli-unfold-argument  \
-    --InstanceId tdpg-qw8te1qw
+    --InstanceId tdsql3-3f17e49d
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "StartTime": "2024-10-16 12:00:00",
-        "EndTime": "2024-10-21 12:00:00",
+        "EndTime": "2026-03-26 20:12:29",
         "Intervals": [
             {
-                "StartTime": "2024-10-16 12:00:00",
-                "EndTime": "2024-10-21 12:00:00",
-                "MajorVersion": "18.3",
-                "MinorVersion": "18.3.0"
+                "EndTime": "2026-03-26 20:12:29",
+                "MajorVersion": "",
+                "MinorVersion": "",
+                "StartTime": "2026-03-23 22:14:09"
             }
         ],
-        "RequestId": "ea784d7e-cdcc-41e0-bc6b-4532815d6bf2"
+        "StartTime": "2026-03-23 22:14:09",
+        "RequestId": "2c15b222-d578-4173-a2fb-fb4843a9983e"
     }
 }
 ```

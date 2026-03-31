@@ -8,16 +8,16 @@
       "status": "online"
     },
     "CreateDBSBackup": {
-      "document": "创建实例备份集",
+      "document": "创建实例手工备份  CreateDBSBackup",
       "input": "CreateDBSBackupRequest",
-      "name": "创建实例备份",
+      "name": "创建实例手工备份",
       "output": "CreateDBSBackupResponse",
       "status": "online"
     },
     "DeleteDBSBackupSets": {
-      "document": "删除实例备份集",
+      "document": "删除实例手工备份 DeleteDBSBackupSets",
       "input": "DeleteDBSBackupSetsRequest",
-      "name": "清理实例备份",
+      "name": "删除实例手工备份",
       "output": "DeleteDBSBackupSetsResponse",
       "status": "online"
     },
@@ -29,14 +29,14 @@
       "status": "online"
     },
     "DescribeDBSAvailableRecoveryTime": {
-      "document": "可恢复时间查询",
+      "document": "获取可恢复时间 DescribeDBSAvailableRecoveryTime",
       "input": "DescribeDBSAvailableRecoveryTimeRequest",
       "name": "获取可恢复时间",
       "output": "DescribeDBSAvailableRecoveryTimeResponse",
       "status": "online"
     },
     "DescribeDBSCloneInstances": {
-      "document": "查询实例克隆列表",
+      "document": "查询实例克隆列表 DescribeDBSCloneInstances",
       "input": "DescribeDBSCloneInstancesRequest",
       "name": "查询实例克隆列表",
       "output": "DescribeDBSCloneInstancesResponse",
@@ -99,16 +99,16 @@
       "status": "online"
     },
     "ModifyDBSBackupPolicy": {
-      "document": "修改实例备份策略",
+      "document": "修改实例备份策略 ModifyDBSBackupPolicy",
       "input": "ModifyDBSBackupPolicyRequest",
       "name": "修改实例备份策略",
       "output": "ModifyDBSBackupPolicyResponse",
       "status": "online"
     },
     "ModifyDBSBackupSetComment": {
-      "document": "修改备份集备注",
+      "document": "修改实例备份备注 ModifyDBSBackupSetComment",
       "input": "ModifyDBSBackupSetCommentRequest",
-      "name": "修改实例备份备注名",
+      "name": "修改实例备份备注",
       "output": "ModifyDBSBackupSetCommentResponse",
       "status": "online"
     },
@@ -497,7 +497,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>备份方式：physical、snapshot 这个值和DescribeDBSBackupPolicy接口返回的backupMethod保持一致</p>枚举值：<ul><li> physical： 物理备份</li><li> snapshot： 快照备份</li></ul>",
+          "document": "<p>备份方式：physical、snapshot 这个值和DescribeDBSBackupPolicy接口返回的backupMethod保持一致</p><p>枚举值：</p><ul><li>physical： 物理备份</li><li>snapshot： 快照备份</li></ul>",
           "example": "physical",
           "member": "string",
           "name": "BackupMethod",
@@ -516,7 +516,7 @@
         {
           "disabled": false,
           "document": "<p>实例ID</p>",
-          "example": "tdsql3-f31c034x",
+          "example": "tdsql3-3f17e49d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -525,7 +525,7 @@
         {
           "disabled": false,
           "document": "<p>备份备注</p>",
-          "example": "mybak",
+          "example": "myback",
           "member": "string",
           "name": "BackupName",
           "required": false,
@@ -662,7 +662,7 @@
         {
           "disabled": false,
           "document": "<p>实例ID</p>",
-          "example": "tdsql3-f31c034x",
+          "example": "tdsql3-3f17e49d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -671,7 +671,7 @@
         {
           "disabled": false,
           "document": "<p>备份集列表 ,值来自 DescribeDBSBackupSets 接口返回</p>",
-          "example": "[1]",
+          "example": "[73165397733012]",
           "member": "int64",
           "name": "BackupSetIdList",
           "required": false,
@@ -774,8 +774,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>db实例ID</p>",
-          "example": "tdsql3-d2ba1f6b",
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-3f17e49d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -784,7 +784,7 @@
         {
           "disabled": false,
           "document": "<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>",
-          "example": "36154356969282",
+          "example": "0",
           "member": "int64",
           "name": "BackupSetId",
           "required": false,
@@ -799,7 +799,7 @@
         {
           "disabled": false,
           "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2024-05-18 00:00:57",
+          "example": "2026-03-26 20:12:29",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -819,7 +819,7 @@
         {
           "disabled": false,
           "document": "<p>开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2024-05-18 00:00:57",
+          "example": "2026-03-23 22:14:09",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -1341,7 +1341,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份策略",
+          "document": "<p>备份策略</p>",
           "example": "无",
           "member": "BackupPolicyModelInput",
           "name": "BackupPolicy",
@@ -1350,8 +1350,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "tdsql3-b8dfc518",
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-3f17e49d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1365,7 +1365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功",
+          "document": "<p>是否成功</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSuccess",
@@ -1375,7 +1375,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "Modify backup policy successfully",
           "member": "string",
           "name": "Msg",
@@ -1398,7 +1398,7 @@
         {
           "disabled": false,
           "document": "<p>实例ID</p>",
-          "example": "tdsql3-f31c034x",
+          "example": "tdsql3-3f17e49d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1407,7 +1407,7 @@
         {
           "disabled": false,
           "document": "<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>",
-          "example": "1",
+          "example": "73094409561375",
           "member": "int64",
           "name": "BackupSetId",
           "required": true,
@@ -1416,7 +1416,7 @@
         {
           "disabled": false,
           "document": "<p>备份备注</p>",
-          "example": "my-backup",
+          "example": "newBackName",
           "member": "string",
           "name": "NewBackupName",
           "required": true,

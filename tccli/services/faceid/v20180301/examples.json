@@ -429,15 +429,15 @@
     "MobileStatus": [
       {
         "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=MobileStatus\n&Mobile=13800138000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"StatusCode\": 1,\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
-        "title": "手机号状态查询成功示例"
-      },
-      {
-        "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MobileStatus\n&Mobile=16137688175\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Description\": \"手机号格式不正确\",\n        \"RequestId\": \"7411a5fc-0ba6-431d-9e8a-5f6537fb8701\",\n        \"Result\": \"-2\",\n        \"StatusCode\": 99\n    }\n}",
         "title": "手机号状态查询异常示例"
+      },
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=MobileStatus\n&Mobile=13800138000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"StatusCode\": 1,\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
+        "title": "手机号状态查询成功示例"
       }
     ],
     "ParseNfcData": [

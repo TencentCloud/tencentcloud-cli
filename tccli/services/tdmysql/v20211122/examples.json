@@ -11,16 +11,16 @@
     "CreateDBSBackup": [
       {
         "document": "手工创建一个备份集",
-        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-xxx\",\n    \"BackupMethod\": \"physical\",\n    \"BackupType\": \"full\",\n    \"BackupName\": \"test-backup\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"BackupSetId\": 0,\n        \"RequestId\": \"fsafdsfasdfasdfsd\"\n    }\n}",
-        "title": "创建备份集"
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBSBackup\n<公共请求参数>\n\n{\n    \"BackupMethod\": \"physical\",\n    \"BackupType\": \"full\",\n    \"InstanceId\": \"tdsql3-3f17e49d\",\n    \"BackupName\": \"myback\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupSetId\": 73165397733012,\n        \"IsSuccess\": true,\n        \"RequestId\": \"048bd43c-279c-4d32-97a4-c65b378bf550\"\n    }\n}",
+        "title": "创建手工备份"
       }
     ],
     "DeleteDBSBackupSets": [
       {
         "document": "删除一个手工备份集",
-        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupSets\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdstore-dfasfa\",\n    \"BackupSetIdList\": [\n        0\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Total\": 0,\n        \"Deleted\": 0,\n        \"RequestId\": \"f234c20b-d71a-4abe-af8c-a8ef15df73d8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBSBackupSets\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\",\n    \"BackupSetIdList\": [\n        73165397733012\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Deleted\": 1,\n        \"IsSuccess\": true,\n        \"Total\": 1,\n        \"RequestId\": \"bb46e0a1-2e6f-4483-9317-78197c170bdc\"\n    }\n}",
         "title": "删除备份集"
       }
     ],
@@ -35,8 +35,8 @@
     "DescribeDBSAvailableRecoveryTime": [
       {
         "document": "可恢复时间查询",
-        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableRecoveryTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdpg-qw8te1qw\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2024-10-16 12:00:00\",\n        \"EndTime\": \"2024-10-21 12:00:00\",\n        \"Intervals\": [\n            {\n                \"StartTime\": \"2024-10-16 12:00:00\",\n                \"EndTime\": \"2024-10-21 12:00:00\",\n                \"MajorVersion\": \"18.3\",\n                \"MinorVersion\": \"18.3.0\"\n            }\n        ],\n        \"RequestId\": \"ea784d7e-cdcc-41e0-bc6b-4532815d6bf2\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSAvailableRecoveryTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-03-26 20:12:29\",\n        \"Intervals\": [\n            {\n                \"EndTime\": \"2026-03-26 20:12:29\",\n                \"MajorVersion\": \"\",\n                \"MinorVersion\": \"\",\n                \"StartTime\": \"2026-03-23 22:14:09\"\n            }\n        ],\n        \"StartTime\": \"2026-03-23 22:14:09\",\n        \"RequestId\": \"2c15b222-d578-4173-a2fb-fb4843a9983e\"\n    }\n}",
         "title": "可恢复时间查询"
       }
     ],
@@ -115,16 +115,16 @@
     "ModifyDBSBackupPolicy": [
       {
         "document": "修改实例备份策略",
-        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-31l2r0yn912rg\",\n    \"BackupPolicy\": {\n        \"FullRetentionPeriod\": 7,\n        \"LogRetentionPeriod\": 8,\n        \"PeriodTime\": \"0,1,2,3,4,5,6\",\n        \"BackupMethod\": \"physical\",\n        \"BackupStartTime\": \"00:00\",\n        \"BackupEndTime\": \"04:00\",\n        \"StorageType\": \"COS\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Msg\": \"Modify backup policy successfully\",\n        \"RequestId\": \"5cf77a8a-94e8-4fae-8abf-a48284f75606\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBSBackupPolicy\n<公共请求参数>\n\n{\n    \"BackupPolicy\": {\n        \"BackupEndTime\": \"04:00\",\n        \"BackupMethod\": \"physical\",\n        \"BackupStartTime\": \"00:00\",\n        \"EnableFull\": 1,\n        \"EnableLog\": 1,\n        \"FullRetentionPeriod\": 7,\n        \"InstanceId\": \"tdsql3-3f17e49d\",\n        \"PeriodTime\": \"0,1,2,3,4,5,6\",\n        \"StorageType\": \"COS\"\n    },\n    \"InstanceId\": \"tdsql3-3f17e49d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Msg\": \"Modify backup policy successfully\",\n        \"RequestId\": \"823cf9b7-d0b0-4a77-a16c-058634190809\"\n    }\n}",
         "title": "修改实例备份策略"
       }
     ],
     "ModifyDBSBackupSetComment": [
       {
         "document": "修改备份集备注",
-        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupSetComment\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-31l2r0yn912rg\",\n    \"BackupSetId\": 28217173338212,\n    \"NewBackupName\": \"test-manual\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Msg\": \"Modify backup set successfully\",\n        \"RequestId\": \"fa6a683c-5625-402b-9ab1-7b2a82a85fee\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBSBackupSetComment\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-3f17e49d\",\n    \"BackupSetId\": 73094409561375,\n    \"NewBackupName\": \"newBackName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"Msg\": \"Modify backup set successfully\",\n        \"RequestId\": \"570461d1-4936-4f07-8a5f-952c9161544f\"\n    }\n}",
         "title": "修改备份集备注"
       }
     ],

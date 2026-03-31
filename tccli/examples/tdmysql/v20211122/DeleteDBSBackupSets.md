@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tdmysql DeleteDBSBackupSets --cli-unfold-argument  \
-    --InstanceId tdstore-dfasfa \
-    --BackupSetIdList 0
+    --InstanceId tdsql3-3f17e49d \
+    --BackupSetIdList 73165397733012
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "Deleted": 1,
         "IsSuccess": true,
-        "Total": 0,
-        "Deleted": 0,
-        "RequestId": "f234c20b-d71a-4abe-af8c-a8ef15df73d8"
+        "Total": 1,
+        "RequestId": "bb46e0a1-2e6f-4483-9317-78197c170bdc"
     }
 }
 ```

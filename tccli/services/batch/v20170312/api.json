@@ -4741,6 +4741,28 @@
         },
         {
           "disabled": false,
+          "document": "专有资源预扣策略。取值范围：<li>ResourcePool：使用实例资源池进行资源预扣</li>",
+          "example": "ResourcePool",
+          "member": "string",
+          "name": "DedicatedResourcePackTenancy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专有预扣资源ID列表。形如：rpp-7eumgm3l。通过指定专有预扣资源创建实例时，必须同时指定匹配的DedicatedResourcePackTenancy。",
+          "example": "[\"rpp-7eumgm3l\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "实例所属的实例资源池机架ID，仅用于出参。",
           "example": "3F3327994BA4C23134DDCBD7828CD4CC",
           "member": "string",

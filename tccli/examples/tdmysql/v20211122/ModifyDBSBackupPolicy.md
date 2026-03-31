@@ -6,14 +6,16 @@ Input:
 
 ```
 tccli tdmysql ModifyDBSBackupPolicy --cli-unfold-argument  \
-    --InstanceId tdsql3-31l2r0yn912rg \
-    --BackupPolicy.FullRetentionPeriod 7 \
-    --BackupPolicy.LogRetentionPeriod 8 \
-    --BackupPolicy.PeriodTime 0,1,2,3,4,5,6 \
+    --BackupPolicy.BackupEndTime 04:00 \
     --BackupPolicy.BackupMethod physical \
     --BackupPolicy.BackupStartTime 00:00 \
-    --BackupPolicy.BackupEndTime 04:00 \
-    --BackupPolicy.StorageType COS
+    --BackupPolicy.EnableFull 1 \
+    --BackupPolicy.EnableLog 1 \
+    --BackupPolicy.FullRetentionPeriod 7 \
+    --BackupPolicy.InstanceId tdsql3-3f17e49d \
+    --BackupPolicy.PeriodTime 0,1,2,3,4,5,6 \
+    --BackupPolicy.StorageType COS \
+    --InstanceId tdsql3-3f17e49d
 ```
 
 Output: 
@@ -22,7 +24,7 @@ Output:
     "Response": {
         "IsSuccess": true,
         "Msg": "Modify backup policy successfully",
-        "RequestId": "5cf77a8a-94e8-4fae-8abf-a48284f75606"
+        "RequestId": "823cf9b7-d0b0-4a77-a16c-058634190809"
     }
 }
 ```

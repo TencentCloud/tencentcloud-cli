@@ -8944,7 +8944,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "12*****488",
+          "example": "12488",
           "member": "uint64",
           "name": "AppId",
           "output_required": true,
@@ -9174,7 +9174,7 @@
         {
           "disabled": false,
           "document": "实例标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\":\"自动化\",\"TagValue\":\"自动化\"}]",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "output_required": true,
@@ -9210,6 +9210,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义dns配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.70.0.10",
+          "member": "string",
+          "name": "UserDnsIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13287,6 +13297,15 @@
           "example": "{\\\"slowlog.threshold.warn\\\":\\\"2s\\\",\\\"slowlog.threshold.info\\\":\\\"1s\\\",\\\"slowlog.threshold.debug\\\":\\\"500ms\\\",\\\"slowlog.threshold.trace\\\":\\\"100ms\\\"}",
           "member": "string",
           "name": "YMLConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义dns配置",
+          "example": "10.70.0.10",
+          "member": "string",
+          "name": "UserDnsIp",
           "required": false,
           "type": "string"
         },

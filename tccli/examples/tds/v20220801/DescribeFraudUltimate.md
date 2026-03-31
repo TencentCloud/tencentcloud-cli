@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tds DescribeFraudUltimate --cli-unfold-argument  \
-    --DeviceToken v2:s6kBRbiOKZp/kenOxxxxxxxxx \
+    --DeviceToken v3:AVbaFsoWz9V5oORUvQ41xxxxxxxxxx \
     --SceneCode login \
     --UserId user1 \
     --EventTime 1666684836384 \
@@ -37,6 +37,13 @@ Output:
         "Model": "LLD-AL20",
         "PackageName": "a.b.c",
         "ClientIp": "223.73.63.151",
+        "ExtraInfos": [
+            {
+                "Key": "DegradationType",
+                "Value": "2"
+            }
+        ],
+        "RiskCheckTimestamp": "1774319866532",
         "RiskInfos": [
             {
                 "Type": 201,

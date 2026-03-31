@@ -15988,36 +15988,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID",
           "example": "InstanceId",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例ID内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID内容",
           "example": "[\"ins-dsd1671\"]",
           "member": "string",
           "name": "Values",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模糊匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模糊匹配",
           "example": "1",
           "member": "string",
           "name": "ExactMatch",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

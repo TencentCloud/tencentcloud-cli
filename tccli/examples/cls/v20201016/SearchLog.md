@@ -9,12 +9,12 @@ tccli cls SearchLog --cli-unfold-argument  \
     --TopicId 601c2a87-ca8e-49c9-xxxx-27286a970db5 \
     --From 1679901909686 \
     --To 1679902809686 \
-    --Query http_code:"200" \
+    --QueryString http_code:"200" \
     --Limit 1 \
     --Sort desc \
     --HighLight True \
     --UseNewAnalysis True \
-    --SyntaxRule 1
+    --QuerySyntax 1
 ```
 
 Output: 

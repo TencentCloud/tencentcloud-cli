@@ -1712,7 +1712,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDraftContractByPromptsTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCZcUUpn********ZGci8dkgk03ZIow\"\n    },\n    \"TaskId\": \"yD3a5UUs1b********Hu4sn4VpzPXtIy\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ContractName\": \"软件开发服务合同\",\n        \"Message\": \"需求校验未通过: 该需求意图为“**买卖合同”*******，属于严重违法犯罪行为，内容违法违规，无法用于生成任何合同。\",\n        \"ResourceId\": \"yD3a5UUs1i****UEMs3KDC7ewKOitKTm\",\n        \"Status\": 2,\n        \"RequestId\": \"47c5c8a5-e32d-4ba1-bbd2-25cc41ea96f9\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ContractName\": \"软件开发服务合同\",\n        \"Message\": \"需求校验未通过: 该需求意图为“**买卖合同”*******，属于严重违法犯罪行为，内容违法违规，无法用于生成任何合同。\",\n        \"ResourceId\": \"yD3a5UUs1i****UEMs3KDC7ewKOitKTm\",\n        \"Status\": 2,\n        \"RequestId\": \"47c5c8a5-e32d-4ba1-bbd2-25cc41ea96f9\",\n        \"ContractUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.DOCX?hkey=483e25687aa346406a47bb85ebd2a3c344ccd82e8f1bdcd0b*****c619366746dd65aa9b2877d**e**a1c73802075f7d71d2c8471**79c**c6ea5761c943d3181de0a**dd0bd**b4137abc57b33fe151d6*519399f0***570f12cfc97e07314*\"\n    }\n}",
         "title": "查询起草任务结果"
       }
     ],

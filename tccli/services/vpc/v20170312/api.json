@@ -9362,7 +9362,7 @@
         {
           "disabled": false,
           "document": "是否开启`HAVIP`漂移时子机或网卡范围的校验。默认不开启。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "CheckAssociate",
           "required": false,
@@ -9371,7 +9371,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[\"Key\":\"HAVIP1\", \"Value\":\"HAVIP1\"]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -9380,7 +9380,7 @@
         {
           "disabled": false,
           "document": "HaVip绑定的子机或网卡。最多支持10个实例。",
-          "example": "[{\"InstanceType\": \"CVM\", \"InstanceId\": \"ins-mdunqeb6\"}]",
+          "example": "无",
           "member": "HaVipAssociation",
           "name": "HaVipAssociationSet",
           "required": false,
@@ -9404,7 +9404,7 @@
         {
           "disabled": false,
           "document": "`HAVIP`对象。",
-          "example": "{'HaVipId': 'havip-72alakye','State': 'UNBIND', 'HaVipName': 'HAVIP1', 'VpcId': 'vpc-6v2ht8q5', 'Business': '', 'InstanceId': '', 'AddressIp': '', 'Vip': '10.4.6.15', 'SubnetId': 'subnet-qq51iwr4'}",
+          "example": "无",
           "member": "HaVip",
           "name": "HaVip",
           "output_required": true,
@@ -26351,7 +26351,7 @@
         {
           "disabled": false,
           "document": "`HAVIP`的飘移范围。",
-          "example": "[{\"HaVipId\": \"havip-nswq8wkq\", \"InstanceId\": \"ins-kngiybxl\", \"InstanceType\": \"CVM\"}]",
+          "example": "无",
           "member": "HaVipAssociation",
           "name": "HaVipAssociationSet",
           "output_required": false,
@@ -26360,8 +26360,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启`HAVIP`的飘移范围校验。",
-          "example": "True",
+          "document": "是否开启`HAVIP`的漂移范围校验。",
+          "example": "true",
           "member": "bool",
           "name": "CheckAssociate",
           "output_required": false,
@@ -26380,7 +26380,7 @@
         },
         {
           "disabled": false,
-          "document": "HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00",
+          "document": "HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00",
           "example": "2024-06-06 22:24:45",
           "member": "string",
           "name": "FlushedTime",
@@ -26391,7 +26391,7 @@
         {
           "disabled": false,
           "document": "标签键值对。\t",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
@@ -39497,9 +39497,29 @@
         {
           "disabled": false,
           "document": "流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。",
-          "example": "{\"TargetId\": \"eni-kiaim12s\", \"TargetName\": \"demo\"}",
+          "example": "无",
           "member": "TrafficMirrorTargetResourceInfo",
           "name": "TargetInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -39517,7 +39537,7 @@
           "member": "string",
           "name": "SrcNet",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39528,7 +39548,7 @@
           "member": "string",
           "name": "DstNet",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39539,14 +39559,14 @@
           "member": "string",
           "name": "Protocol",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "过滤规则的源端口，默认值1-65535",
-          "example": "5000",
+          "example": "1001-2000",
           "member": "string",
           "name": "SrcPort",
           "output_required": true,
@@ -39557,10 +39577,65 @@
         {
           "disabled": false,
           "document": "过滤规则的目的端口，默认值1-65535",
-          "example": "3456",
+          "example": "1001-2000",
           "member": "string",
           "name": "DstPort",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像过滤规则唯一ID。",
+          "example": "tmfi-qfhrb7yj",
+          "member": "string",
+          "name": "TrafficMirrorFilterRuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像过滤规则优先级。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像过滤规则策略，支持类型：\"ACCEPT\", \"DROP\"。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像过滤规则描述。",
+          "example": "filter_rule",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2025-11-26 16:49:48",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false

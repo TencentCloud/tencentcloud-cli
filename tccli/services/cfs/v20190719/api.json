@@ -1113,7 +1113,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名称，例如ap-beijing-1，请参考 [概览](https://cloud.tencent.com/document/product/582/13225) 文档中的地域与可用区列表",
+          "document": "<p>可用区名称，例如ap-beijing-1，请参考 <a href=\"https://cloud.tencent.com/document/product/582/13225\">概览</a> 文档中的地域与可用区列表</p>",
           "example": "ap-beijing-1",
           "member": "string",
           "name": "Zone",
@@ -1122,7 +1122,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型，可选值为 VPC，CCN；其中 VPC 为私有网络， CCN 为云联网。通用标准型/性能型请选择VPC，Turbo标准型/性能型请选择CCN。",
+          "document": "<p>网络类型，可选值为 VPC，CCN；其中 VPC 为私有网络， CCN 为云联网。通用标准型/性能型请选择VPC，Turbo标准型/性能型请选择CCN。</p>",
           "example": "VPC",
           "member": "string",
           "name": "NetInterface",
@@ -1131,7 +1131,7 @@
         },
         {
           "disabled": false,
-          "document": "权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)",
+          "document": "<p>权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取<a href=\"https://cloud.tencent.com/document/product/582/38157\">DescribeCfsPGroups</a></p>",
           "example": "pgroupbasic",
           "member": "string",
           "name": "PGroupId",
@@ -1140,7 +1140,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS",
+          "document": "<p>文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS</p>",
           "example": "NFS",
           "member": "string",
           "name": "Protocol",
@@ -1149,7 +1149,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。",
+          "document": "<p>文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>",
           "example": "SD",
           "member": "string",
           "name": "StorageType",
@@ -1158,7 +1158,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，\n[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)",
+          "document": "<p>私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，<br><a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a></p>",
           "example": "vpc-abc123",
           "member": "string",
           "name": "VpcId",
@@ -1167,7 +1167,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，\n[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)",
+          "document": "<p>子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，<br><a href=\"https://cloud.tencent.com/document/product/215/15784\">DescribeSubnets</a></p>",
           "example": "subnet-abc234",
           "member": "string",
           "name": "SubnetId",
@@ -1176,7 +1176,7 @@
         },
         {
           "disabled": false,
-          "document": "指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定",
+          "document": "<p>指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定</p>",
           "example": "10.0.0.1",
           "member": "string",
           "name": "MountIP",
@@ -1185,7 +1185,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义文件系统名称",
+          "document": "<p>用户自定义文件系统名称</p>",
           "example": "QcloudCfs",
           "member": "string",
           "name": "FsName",
@@ -1194,8 +1194,17 @@
         },
         {
           "disabled": false,
-          "document": "文件系统标签",
-          "example": "[{\"TagKey\":\"a\",\"TagValue\":1}]",
+          "document": "<p>文件系统是否加密，若留空则默认为不加密</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Encrypted",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统标签</p>",
+          "example": "无",
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
@@ -1203,7 +1212,7 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。用于保证请求幂等性的字符串失效时间为2小时。",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。用于保证请求幂等性的字符串失效时间为2小时。</p>",
           "example": "QcloudCfs001",
           "member": "string",
           "name": "ClientToken",
@@ -1212,7 +1221,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口\n[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)\n",
+          "document": "<p>云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口<br><a href=\"https://cloud.tencent.com/document/product/215/19199\">DescribeCcns</a></p>",
           "example": "ccn-abc123",
           "member": "string",
           "name": "CcnId",
@@ -1221,7 +1230,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突",
+          "document": "<p>云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突</p>",
           "example": "10.0.0.1/24",
           "member": "string",
           "name": "CidrBlock",
@@ -1230,7 +1239,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。",
+          "document": "<p>文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。</p>",
           "example": "40960",
           "member": "uint64",
           "name": "Capacity",
@@ -1239,7 +1248,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统快照ID，通过查询快照列表获取该参数，\n[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)",
+          "document": "<p>文件系统快照ID，通过查询快照列表获取该参数，<br><a href=\"https://cloud.tencent.com/document/product/582/80206\">DescribeCfsSnapshots</a></p>",
           "example": "snapcfs-abc1234",
           "member": "string",
           "name": "SnapshotId",
@@ -1248,7 +1257,7 @@
         },
         {
           "disabled": false,
-          "document": "定期快照策略ID，通过查询快照策略信息获取,\n[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)",
+          "document": "<p>定期快照策略ID，通过查询快照策略信息获取,<br><a href=\"https://cloud.tencent.com/document/product/582/38157\">DescribeAutoSnapshotPolicies</a></p>",
           "example": "asp-abc1234",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -1257,7 +1266,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启默认扩容，仅turbo类型文件存储支持",
+          "document": "<p>是否开启默认扩容，仅turbo类型文件存储支持</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAutoScaleUp",
@@ -1266,7 +1275,7 @@
         },
         {
           "disabled": false,
-          "document": "v1.5：创建普通版的通用文件系统；\nv3.1：创建增强版的通用文件系统\n说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。",
+          "document": "<p>v1.5：创建普通版的通用文件系统；<br>v3.1：创建增强版的通用文件系统<br>说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。</p>",
           "example": "v1.5",
           "member": "string",
           "name": "CfsVersion",
@@ -1275,7 +1284,7 @@
         },
         {
           "disabled": false,
-          "document": "turbo文件系统元数据属性\nbasic：创建标准型的元数据\nenhanced：创建增强型的元数据",
+          "document": "<p>turbo文件系统元数据属性<br>basic：创建标准型的元数据<br>enhanced：创建增强型的元数据</p>",
           "example": "basic",
           "member": "string",
           "name": "MetaType",
@@ -1290,7 +1299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统创建时间",
+          "document": "<p>文件系统创建时间</p>",
           "example": "2017-02-24 11:28:12",
           "member": "string",
           "name": "CreationTime",
@@ -1300,7 +1309,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义文件系统名称",
+          "document": "<p>用户自定义文件系统名称</p>",
           "example": "QcloudCfs",
           "member": "string",
           "name": "CreationToken",
@@ -1310,7 +1319,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "<p>文件系统 ID</p>",
           "example": "cfs-abc",
           "member": "string",
           "name": "FileSystemId",
@@ -1320,7 +1329,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统状态，可能出现状态包括：“creating”  创建中, “create_failed” 创建失败, “available” 可用, “unserviced” 不可用, “upgrading” 升级中， “deleting” 删除中。",
+          "document": "<p>文件系统状态，可能出现状态包括：“creating”  创建中, “create_failed” 创建失败, “available” 可用, “unserviced” 不可用, “upgrading” 升级中， “deleting” 删除中。</p>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "LifeCycleState",
@@ -1330,7 +1339,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统已使用容量大小，单位为 Byte",
+          "document": "<p>文件系统已使用容量大小，单位为 Byte</p>",
           "example": "1000",
           "member": "uint64",
           "name": "SizeByte",
@@ -1340,7 +1349,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区 ID",
+          "document": "<p>可用区 ID</p>",
           "example": "800001",
           "member": "uint64",
           "name": "ZoneId",
@@ -1350,7 +1359,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义文件系统名称",
+          "document": "<p>用户自定义文件系统名称</p>",
           "example": "QcloudCfs",
           "member": "string",
           "name": "FsName",
@@ -1360,8 +1369,8 @@
         },
         {
           "disabled": false,
-          "document": "文件系统是否加密",
-          "example": "False",
+          "document": "<p>文件系统是否加密</p>",
+          "example": "false",
           "member": "bool",
           "name": "Encrypted",
           "output_required": true,

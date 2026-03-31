@@ -4777,7 +4777,7 @@
         },
         {
           "disabled": false,
-          "document": "起草要求",
+          "document": "起草要求，范围要求 5-1000 字",
           "example": "我公司（深圳市星辰科技有限公司）需要与北京云端数据服务有限公司签订一份软件开发服务合同。",
           "member": "string",
           "name": "Requirement",
@@ -4786,7 +4786,7 @@
         },
         {
           "disabled": false,
-          "document": "参考模板文件资源id（PDF/Word格式）",
+          "document": "参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。",
           "example": "yD3azUUck****n**UEFfm*Wv6Fm7tFzY",
           "member": "string",
           "name": "ReferenceTemplateId",
@@ -4795,7 +4795,7 @@
         },
         {
           "disabled": false,
-          "document": "相关规定文件资源id列表（PDF/Word格式）",
+          "document": "相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。",
           "example": "[\"yD3aWUUc*********u5ahO3EgYkkoe1E\"]",
           "member": "string",
           "name": "RequirementFileIds",
@@ -12390,7 +12390,7 @@
         {
           "disabled": false,
           "document": "任务状态，枚举，0 已创建，1 执行中，2 成功，3 失败",
-          "example": "3",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -12423,6 +12423,16 @@
           "example": "yD3a5UUs1i****UEMs3KDC7ewKOitKTm",
           "member": "string",
           "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的合同文件下载链接，有效期2小时",
+          "example": "https://file.test.ess.tencent.cn/",
+          "member": "string",
+          "name": "ContractUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
