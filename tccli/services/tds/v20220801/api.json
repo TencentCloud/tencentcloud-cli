@@ -108,7 +108,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端通过SDK获取的设备Token",
+          "document": "<p>客户端通过SDK获取的设备Token</p>",
           "example": "eHh4eHh4eHg=",
           "member": "string",
           "name": "DeviceToken",
@@ -117,7 +117,7 @@
         },
         {
           "disabled": false,
-          "document": "使用场景。目前仅支持login-登录场景、register-注册场景",
+          "document": "<p>使用场景。目前仅支持login-登录场景、register-注册场景</p>",
           "example": "login",
           "member": "string",
           "name": "SceneCode",
@@ -126,7 +126,7 @@
         },
         {
           "disabled": false,
-          "document": "用户唯一标识",
+          "document": "<p>用户唯一标识</p>",
           "example": "15000000000",
           "member": "string",
           "name": "UserId",
@@ -135,7 +135,7 @@
         },
         {
           "disabled": false,
-          "document": "事件时间戳（毫秒）",
+          "document": "<p>事件时间戳（毫秒）</p>",
           "example": "1666684836384",
           "member": "uint64",
           "name": "EventTime",
@@ -144,7 +144,7 @@
         },
         {
           "disabled": false,
-          "document": "事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时",
+          "document": "<p>事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时</p>",
           "example": "1",
           "member": "uint64",
           "name": "ElapsedTime",
@@ -153,7 +153,7 @@
         },
         {
           "disabled": false,
-          "document": "微信的OpenId",
+          "document": "<p>微信的OpenId</p>",
           "example": "oOn8tchm7************0vlzm",
           "member": "string",
           "name": "WeChatOpenId",
@@ -162,7 +162,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5",
+          "document": "<p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>",
           "example": "15000000000",
           "member": "string",
           "name": "PhoneNumber",
@@ -171,7 +171,7 @@
         },
         {
           "disabled": false,
-          "document": "业务客户端IP",
+          "document": "<p>业务客户端IP</p>",
           "example": "183.60.88.11",
           "member": "string",
           "name": "BizClientIp",
@@ -180,7 +180,7 @@
         },
         {
           "disabled": false,
-          "document": "QQ的OpenId",
+          "document": "<p>QQ的OpenId</p>",
           "example": "A8E0232CD************2058B0EA885",
           "member": "string",
           "name": "QQOpenId",
@@ -189,7 +189,7 @@
         },
         {
           "disabled": false,
-          "document": "数据授权信息",
+          "document": "<p>数据授权信息</p>",
           "example": "无",
           "member": "DataAuthorizationInfo",
           "name": "DataAuthorization",
@@ -204,7 +204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "App版本信息",
+          "document": "<p>App版本信息</p>",
           "example": "6.8.50",
           "member": "string",
           "name": "AppVersion",
@@ -214,7 +214,7 @@
         },
         {
           "disabled": false,
-          "document": "品牌",
+          "document": "<p>品牌</p>",
           "example": "OPPO",
           "member": "string",
           "name": "Brand",
@@ -224,7 +224,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端IP",
+          "document": "<p>客户端IP</p>",
           "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
           "member": "string",
           "name": "ClientIp",
@@ -234,7 +234,7 @@
         },
         {
           "disabled": false,
-          "document": "机型",
+          "document": "<p>机型</p>",
           "example": "PEMM00",
           "member": "string",
           "name": "Model",
@@ -244,7 +244,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "<p>网络类型</p>",
           "example": "1",
           "member": "string",
           "name": "NetworkType",
@@ -254,7 +254,7 @@
         },
         {
           "disabled": false,
-          "document": "应用包名",
+          "document": "<p>应用包名</p>",
           "example": "com.xx.xxx",
           "member": "string",
           "name": "PackageName",
@@ -264,7 +264,7 @@
         },
         {
           "disabled": false,
-          "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
+          "document": "<p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>",
           "example": "2",
           "member": "string",
           "name": "Platform",
@@ -274,7 +274,7 @@
         },
         {
           "disabled": false,
-          "document": "系统版本",
+          "document": "<p>系统版本</p>",
           "example": "11",
           "member": "string",
           "name": "SystemVersion",
@@ -284,7 +284,7 @@
         },
         {
           "disabled": false,
-          "document": "SDK版本号",
+          "document": "<p>SDK版本号</p>",
           "example": "74",
           "member": "string",
           "name": "SdkBuildNo",
@@ -294,7 +294,7 @@
         },
         {
           "disabled": false,
-          "document": "实时风险信息",
+          "document": "<p>实时风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "RiskInfos",
@@ -304,7 +304,7 @@
         },
         {
           "disabled": false,
-          "document": "离线风险信息",
+          "document": "<p>离线风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "HistRiskInfos",
@@ -314,7 +314,7 @@
         },
         {
           "disabled": false,
-          "document": "设备匿名标识",
+          "document": "<p>设备匿名标识</p>",
           "example": "85ADB490D96D6A0044D00798",
           "member": "string",
           "name": "Openid",
@@ -324,7 +324,7 @@
         },
         {
           "disabled": false,
-          "document": "场景风险信息",
+          "document": "<p>场景风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "SceneRiskInfos",
@@ -334,7 +334,7 @@
         },
         {
           "disabled": false,
-          "document": "建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀",
+          "document": "<p>建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀</p>",
           "example": "1",
           "member": "uint64",
           "name": "SuggestionLevel",
@@ -344,12 +344,32 @@
         },
         {
           "disabled": false,
-          "document": "图灵盾统一ID",
+          "document": "<p>图灵盾统一ID</p>",
           "example": "BCC4AD40983ACF9CA18A55BC0A4401489833F362",
           "member": "string",
           "name": "Unionid",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测时间戳（毫秒）</p>",
+          "example": "1774319387108",
+          "member": "string",
+          "name": "RiskCheckTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -670,7 +690,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端通过SDK获取的设备Token",
+          "document": "<p>客户端通过SDK获取的设备Token</p>",
           "example": "eHh4eHh4eHg=",
           "member": "string",
           "name": "DeviceToken",
@@ -679,7 +699,7 @@
         },
         {
           "disabled": false,
-          "document": "使用场景。目前仅支持login-登录场景、register-注册场景",
+          "document": "<p>使用场景。目前仅支持login-登录场景、register-注册场景</p>",
           "example": "login",
           "member": "string",
           "name": "SceneCode",
@@ -688,7 +708,7 @@
         },
         {
           "disabled": false,
-          "document": "用户唯一标识",
+          "document": "<p>用户唯一标识</p>",
           "example": "15000000000",
           "member": "string",
           "name": "UserId",
@@ -697,7 +717,7 @@
         },
         {
           "disabled": false,
-          "document": "事件时间戳（毫秒）",
+          "document": "<p>事件时间戳（毫秒）</p>",
           "example": "1666684836384",
           "member": "uint64",
           "name": "EventTime",
@@ -706,7 +726,7 @@
         },
         {
           "disabled": false,
-          "document": "事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时",
+          "document": "<p>事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时</p>",
           "example": "1",
           "member": "uint64",
           "name": "ElapsedTime",
@@ -715,7 +735,7 @@
         },
         {
           "disabled": false,
-          "document": "微信的OpenId",
+          "document": "<p>微信的OpenId</p>",
           "example": "oOn8tchm7************0vlzm",
           "member": "string",
           "name": "WeChatOpenId",
@@ -724,7 +744,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5",
+          "document": "<p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>",
           "example": "15000000000",
           "member": "string",
           "name": "PhoneNumber",
@@ -733,7 +753,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端IP",
+          "document": "<p>客户端IP</p>",
           "example": "183.60.88.11",
           "member": "string",
           "name": "ClientIP",
@@ -742,7 +762,7 @@
         },
         {
           "disabled": false,
-          "document": "QQ的OpenId",
+          "document": "<p>QQ的OpenId</p>",
           "example": "A8E0232CD************2058B0EA885",
           "member": "string",
           "name": "QQOpenId",
@@ -751,7 +771,7 @@
         },
         {
           "disabled": false,
-          "document": "数据授权信息",
+          "document": "<p>数据授权信息</p>",
           "example": "无",
           "member": "DataAuthorizationInfo",
           "name": "DataAuthorization",
@@ -766,7 +786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "App版本信息",
+          "document": "<p>App版本信息</p>",
           "example": "6.8.50",
           "member": "string",
           "name": "AppVersion",
@@ -776,7 +796,7 @@
         },
         {
           "disabled": false,
-          "document": "品牌",
+          "document": "<p>品牌</p>",
           "example": "OPPO",
           "member": "string",
           "name": "Brand",
@@ -786,7 +806,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端IP",
+          "document": "<p>客户端IP</p>",
           "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
           "member": "string",
           "name": "ClientIp",
@@ -796,7 +816,7 @@
         },
         {
           "disabled": false,
-          "document": "机型",
+          "document": "<p>机型</p>",
           "example": "PEMM00",
           "member": "string",
           "name": "Model",
@@ -806,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "<p>网络类型</p>",
           "example": "1",
           "member": "string",
           "name": "NetworkType",
@@ -816,7 +836,7 @@
         },
         {
           "disabled": false,
-          "document": "应用包名",
+          "document": "<p>应用包名</p>",
           "example": "com.xx.xxx",
           "member": "string",
           "name": "PackageName",
@@ -826,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
+          "document": "<p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>",
           "example": "2",
           "member": "string",
           "name": "Platform",
@@ -836,7 +856,7 @@
         },
         {
           "disabled": false,
-          "document": "系统版本",
+          "document": "<p>系统版本</p>",
           "example": "11",
           "member": "string",
           "name": "SystemVersion",
@@ -846,7 +866,7 @@
         },
         {
           "disabled": false,
-          "document": "SDK版本号",
+          "document": "<p>SDK版本号</p>",
           "example": "74",
           "member": "string",
           "name": "SdkBuildNo",
@@ -856,7 +876,7 @@
         },
         {
           "disabled": false,
-          "document": "实时风险信息",
+          "document": "<p>实时风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "RiskInfos",
@@ -866,7 +886,7 @@
         },
         {
           "disabled": false,
-          "document": "离线风险信息",
+          "document": "<p>离线风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "HistRiskInfos",
@@ -876,7 +896,7 @@
         },
         {
           "disabled": false,
-          "document": "设备匿名标识",
+          "document": "<p>设备匿名标识</p>",
           "example": "85ADB490D96D6A0044D00798",
           "member": "string",
           "name": "Openid",
@@ -886,7 +906,7 @@
         },
         {
           "disabled": false,
-          "document": "场景风险信息",
+          "document": "<p>场景风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "SceneRiskInfos",
@@ -896,7 +916,7 @@
         },
         {
           "disabled": false,
-          "document": "建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀",
+          "document": "<p>建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀</p>",
           "example": "1",
           "member": "uint64",
           "name": "SuggestionLevel",
@@ -906,12 +926,32 @@
         },
         {
           "disabled": false,
-          "document": "图灵盾统一ID",
+          "document": "<p>图灵盾统一ID</p>",
           "example": "BCC4AD40983ACF9CA18A55BC0A4401489833F362",
           "member": "string",
           "name": "Unionid",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测时间戳（毫秒）</p>",
+          "example": "1774319866532",
+          "member": "string",
+          "name": "RiskCheckTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

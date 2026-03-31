@@ -122,7 +122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸框的横坐标",
+          "document": "<p>人脸框的横坐标</p>",
           "example": "271",
           "member": "int64",
           "name": "X",
@@ -133,7 +133,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框的纵坐标",
+          "document": "<p>人脸框的纵坐标</p>",
           "example": "153",
           "member": "int64",
           "name": "Y",
@@ -144,7 +144,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框的宽度",
+          "document": "<p>人脸框的宽度。<br>单位：px</p>",
           "example": "772",
           "member": "int64",
           "name": "Width",
@@ -155,7 +155,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框的高度",
+          "document": "<p>人脸框的高度。<br>单位：px</p>",
           "example": "634",
           "member": "int64",
           "name": "Height",

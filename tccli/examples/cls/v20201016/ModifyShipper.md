@@ -72,3 +72,24 @@ Output:
 }
 ```
 
+**Example 3: 修改Cos投递时区**
+
+
+
+Input: 
+
+```
+tccli cls ModifyShipper --cli-unfold-argument  \
+    --ShipperId cd21db88-cfda-4164-8f8b-b236128f1f69 \
+    --TimeZone UTC+04:30
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "ff84fdef-f2aa-43a2-8208-74481e99cd89"
+    }
+}
+```
+

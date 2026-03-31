@@ -361,6 +361,15 @@
           "name": "ResultType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词</p>",
+          "example": "你是一名专业药师助手，请根据用户输入回答。",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -472,6 +481,15 @@
           "name": "ResultType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词</p>",
+          "example": "你是一名专业药师助手，请根据用户输入回答。",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -721,6 +739,24 @@
           "name": "ResultType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>报告解读提示词</p>",
+          "example": "识别报告异常，给出医疗建议",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无报告问答提示词</p>",
+          "example": "识别报告异常，给出医疗建议",
+          "member": "string",
+          "name": "QaPrompt",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
