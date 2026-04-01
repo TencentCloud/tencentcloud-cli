@@ -4887,6 +4887,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的值的类型，与TargetType或DestType所代表的目的类型含义有所不同，如目的类型是template,但template分ip模板和域名模板，故需通过DestValueType进一步区分",
+          "example": "domain,net,template",
+          "member": "string",
+          "name": "DestValueType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则分区，1最前分区，2中间分区，3最后分区",
+          "example": "",
+          "member": "int64",
+          "name": "RulePartition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17457,6 +17477,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的值的类型，与TargetType或DestType所代表的目的类型含义有所不同，如目的类型是template,但template分ip模板和域名模板，故需通过DestValueType进一步区分",
+          "example": "domain,net,template",
+          "member": "string",
+          "name": "DestValueType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则分区，1最前分区，2中间分区，3最后分区，增删改查规则时无需传入此参数",
+          "example": "",
+          "member": "int64",
+          "name": "RulePartition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

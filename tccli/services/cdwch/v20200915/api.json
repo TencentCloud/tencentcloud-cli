@@ -2279,7 +2279,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例ID",
+          "document": "<p>集群实例ID</p>",
           "example": "cdwch-12345678",
           "member": "string",
           "name": "InstanceId",
@@ -2288,7 +2288,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是open api查询",
+          "document": "<p>是否是open api查询</p>",
           "example": "false",
           "member": "bool",
           "name": "IsOpenApi",
@@ -2303,7 +2303,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例描述信息",
+          "document": "<p>实例描述信息</p>",
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
@@ -2985,110 +2985,143 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "<p>配置项名称</p>",
           "example": "max_connections",
           "member": "string",
           "name": "ConfKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置项内容",
+          "document": "<p>配置项内容</p>",
           "example": "100",
           "member": "string",
           "name": "ConfValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "默认值",
+          "document": "<p>默认值</p>",
           "example": "100",
           "member": "string",
           "name": "DefaultValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否需要重启",
+          "document": "<p>是否需要重启</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedRestart",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否可编辑",
+          "document": "<p>是否可编辑</p>",
           "example": "true",
           "member": "bool",
           "name": "Editable",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置项解释",
+          "document": "<p>配置项解释</p>",
           "example": "The maximum number of inbound connections.",
           "member": "string",
           "name": "ConfDesc",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件名称",
+          "document": "<p>文件名称</p>",
           "example": "config.xml",
           "member": "string",
           "name": "FileName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则名称类型",
+          "document": "<p>规则名称类型</p>",
           "example": "number",
           "member": "string",
           "name": "ModifyRuleType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则名称内容",
+          "document": "<p>规则名称内容</p>",
           "example": "bigint",
           "member": "string",
           "name": "ModifyRuleValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "修改人的uin",
-          "example": "1234567890",
+          "document": "<p>修改人的uin</p>",
+          "example": "234543",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2021-01-01 11:11:11",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>取值范围</p>",
+          "example": "[\"DEFINER\", \"INVOKER\", \"NONE\"]",
+          "member": "string",
+          "name": "ValueRange",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记异常</p>",
+          "example": "false",
+          "member": "string",
+          "name": "AbnormalParam",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3101,7 +3134,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "key",
+          "document": "<p>key</p>",
           "example": "max_connections",
           "member": "string",
           "name": "ConfKey",
@@ -3110,11 +3143,38 @@
         },
         {
           "disabled": false,
-          "document": "value",
+          "document": "<p>value</p>",
           "example": "\"4097\"",
           "member": "string",
           "name": "ConfValue",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>add/delete/update</p>",
+          "example": "update",
+          "member": "string",
+          "name": "ModifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要重启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedRestart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改前的值</p>",
+          "example": "1",
+          "member": "string",
+          "name": "OriginalConfValue",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3142,7 +3202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例ID, \"cdw-xxxx\" 字符串类型",
+          "document": "<p>集群实例ID, &quot;cdw-xxxx&quot; 字符串类型</p>",
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -3152,7 +3212,7 @@
         },
         {
           "disabled": false,
-          "document": "集群实例名称",
+          "document": "<p>集群实例名称</p>",
           "example": "clickhouse集群",
           "member": "string",
           "name": "InstanceName",
@@ -3162,7 +3222,7 @@
         },
         {
           "disabled": false,
-          "document": "状态,\nInit 创建中; Serving 运行中； \nDeleted已销毁；Deleting 销毁中；\nModify 集群变更中；",
+          "document": "<p>状态,<br>Init 创建中; Serving 运行中；<br>Deleted已销毁；Deleting 销毁中；<br>Modify 集群变更中；</p>",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -3172,7 +3232,7 @@
         },
         {
           "disabled": false,
-          "document": "版本",
+          "document": "<p>版本</p>",
           "example": "20.7.2.30",
           "member": "string",
           "name": "Version",
@@ -3182,7 +3242,7 @@
         },
         {
           "disabled": false,
-          "document": "地域, ap-guangzhou",
+          "document": "<p>地域, ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -3192,7 +3252,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区， ap-guangzhou-3",
+          "document": "<p>可用区， ap-guangzhou-3</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -3202,7 +3262,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络名称",
+          "document": "<p>私有网络名称</p>",
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -3212,7 +3272,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名称",
+          "document": "<p>子网名称</p>",
           "example": "subnet-xxxxx",
           "member": "string",
           "name": "SubnetId",
@@ -3222,7 +3282,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，\"hour\", \"prepay\"",
+          "document": "<p>付费类型，&quot;hour&quot;, &quot;prepay&quot;</p>",
           "example": "hour",
           "member": "string",
           "name": "PayMode",
@@ -3232,7 +3292,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2020-01-01 11:11:11",
           "member": "string",
           "name": "CreateTime",
@@ -3242,7 +3302,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2020-02-01 11:11:11",
           "member": "string",
           "name": "ExpireTime",
@@ -3252,7 +3312,7 @@
         },
         {
           "disabled": false,
-          "document": "数据节点描述信息",
+          "document": "<p>数据节点描述信息</p>",
           "example": "无",
           "member": "NodesSummary",
           "name": "MasterSummary",
@@ -3262,7 +3322,7 @@
         },
         {
           "disabled": false,
-          "document": "zookeeper节点描述信息",
+          "document": "<p>zookeeper节点描述信息</p>",
           "example": "无",
           "member": "NodesSummary",
           "name": "CommonSummary",
@@ -3272,7 +3332,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用,\"true\" \"false\"",
+          "document": "<p>高可用,&quot;true&quot; &quot;false&quot;</p>",
           "example": "false",
           "member": "string",
           "name": "HA",
@@ -3282,7 +3342,7 @@
         },
         {
           "disabled": false,
-          "document": "访问地址，例如 \"10.0.0.1:9000\"",
+          "document": "<p>访问地址，例如 &quot;10.0.0.1:9000&quot;</p>",
           "example": "\"10.0.0.1:9000\"",
           "member": "string",
           "name": "AccessInfo",
@@ -3292,7 +3352,7 @@
         },
         {
           "disabled": false,
-          "document": "记录ID，数值型",
+          "document": "<p>记录ID，数值型</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -3302,7 +3362,7 @@
         },
         {
           "disabled": false,
-          "document": "regionId, 表示地域",
+          "document": "<p>regionId, 表示地域</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -3312,7 +3372,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区说明，例如 \"广州二区\"",
+          "document": "<p>可用区说明，例如 &quot;广州二区&quot;</p>",
           "example": "广州三区",
           "member": "string",
           "name": "ZoneDesc",
@@ -3322,7 +3382,7 @@
         },
         {
           "disabled": false,
-          "document": "错误流程说明信息",
+          "document": "<p>错误流程说明信息</p>",
           "example": "error",
           "member": "string",
           "name": "FlowMsg",
@@ -3332,7 +3392,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述，例如“运行中”等",
+          "document": "<p>状态描述，例如“运行中”等</p>",
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
@@ -3342,7 +3402,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记",
+          "document": "<p>自动续费标记</p>",
           "example": "false",
           "member": "bool",
           "name": "RenewFlag",
@@ -3352,7 +3412,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3362,7 +3422,7 @@
         },
         {
           "disabled": false,
-          "document": "监控信息",
+          "document": "<p>监控信息</p>",
           "example": "prom-aaaaa",
           "member": "string",
           "name": "Monitor",
@@ -3372,7 +3432,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通日志",
+          "document": "<p>是否开通日志</p>",
           "example": "true",
           "member": "bool",
           "name": "HasClsTopic",
@@ -3382,7 +3442,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "error",
           "member": "string",
           "name": "ClsTopicId",
@@ -3392,7 +3452,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "error",
           "member": "string",
           "name": "ClsLogSetId",
@@ -3402,7 +3462,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持xml配置管理",
+          "document": "<p>是否支持xml配置管理</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableXMLConfig",
@@ -3412,7 +3472,7 @@
         },
         {
           "disabled": false,
-          "document": "区域",
+          "document": "<p>区域</p>",
           "example": "广州",
           "member": "string",
           "name": "RegionDesc",
@@ -3422,7 +3482,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡地址",
+          "document": "<p>弹性网卡地址</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Eip",
@@ -3432,7 +3492,7 @@
         },
         {
           "disabled": false,
-          "document": "冷热分层系数",
+          "document": "<p>冷热分层系数</p>",
           "example": "20",
           "member": "int64",
           "name": "CosMoveFactor",
@@ -3442,7 +3502,7 @@
         },
         {
           "disabled": false,
-          "document": "external/local/yunti",
+          "document": "<p>external/local/yunti</p>",
           "example": "yunti",
           "member": "string",
           "name": "Kind",
@@ -3452,7 +3512,7 @@
         },
         {
           "disabled": false,
-          "document": "是否弹性ck",
+          "document": "<p>是否弹性ck</p>",
           "example": "false",
           "member": "bool",
           "name": "IsElastic",
@@ -3462,7 +3522,7 @@
         },
         {
           "disabled": false,
-          "document": "集群详细状态",
+          "document": "<p>集群详细状态</p>",
           "example": "无",
           "member": "InstanceStateInfo",
           "name": "InstanceStateInfo",
@@ -3472,7 +3532,7 @@
         },
         {
           "disabled": false,
-          "document": "ZK高可用",
+          "document": "<p>ZK高可用</p>",
           "example": "true",
           "member": "bool",
           "name": "HAZk",
@@ -3482,7 +3542,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载盘,默认0:没有类型；1:裸盘;2:lvm",
+          "document": "<p>挂载盘,默认0:没有类型；1:裸盘;2:lvm</p>",
           "example": "1",
           "member": "int64",
           "name": "MountDiskType",
@@ -3492,7 +3552,7 @@
         },
         {
           "disabled": false,
-          "document": "chproxy连接ip",
+          "document": "<p>chproxy连接ip</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "CHProxyVip",
@@ -3502,7 +3562,7 @@
         },
         {
           "disabled": false,
-          "document": "cos buket的名字",
+          "document": "<p>cos buket的名字</p>",
           "example": "ayuan-chq-test-1301087413",
           "member": "string",
           "name": "CosBucketName",
@@ -3512,7 +3572,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以挂载云盘",
+          "document": "<p>是否可以挂载云盘</p>",
           "example": "true",
           "member": "bool",
           "name": "CanAttachCbs",
@@ -3522,7 +3582,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以挂载云盘阵列",
+          "document": "<p>是否可以挂载云盘阵列</p>",
           "example": "true",
           "member": "bool",
           "name": "CanAttachCbsLvm",
@@ -3532,7 +3592,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以挂载cos",
+          "document": "<p>是否可以挂载cos</p>",
           "example": "true",
           "member": "bool",
           "name": "CanAttachCos",
@@ -3542,7 +3602,7 @@
         },
         {
           "disabled": false,
-          "document": "服务信息",
+          "document": "<p>服务信息</p>",
           "example": "无",
           "member": "ServiceInfo",
           "name": "Components",
@@ -3552,7 +3612,7 @@
         },
         {
           "disabled": false,
-          "document": "可升级的内核版本",
+          "document": "<p>可升级的内核版本</p>",
           "example": "error",
           "member": "string",
           "name": "UpgradeVersions",
@@ -3562,7 +3622,7 @@
         },
         {
           "disabled": false,
-          "document": "ex-index",
+          "document": "<p>ex-index</p>",
           "example": "es-index",
           "member": "string",
           "name": "EsIndexId",
@@ -3572,7 +3632,7 @@
         },
         {
           "disabled": false,
-          "document": "username",
+          "document": "<p>username</p>",
           "example": "cdwchtest",
           "member": "string",
           "name": "EsIndexUsername",
@@ -3582,7 +3642,7 @@
         },
         {
           "disabled": false,
-          "document": "password",
+          "document": "<p>password</p>",
           "example": "cdwchtest",
           "member": "string",
           "name": "EsIndexPassword",
@@ -3592,7 +3652,7 @@
         },
         {
           "disabled": false,
-          "document": "true",
+          "document": "<p>true</p>",
           "example": "false",
           "member": "bool",
           "name": "HasEsIndex",
@@ -3602,7 +3662,7 @@
         },
         {
           "disabled": false,
-          "document": "true",
+          "document": "<p>true</p>",
           "example": "false",
           "member": "bool",
           "name": "IsSecondaryZone",
@@ -3612,7 +3672,7 @@
         },
         {
           "disabled": false,
-          "document": "desc",
+          "document": "<p>desc</p>",
           "example": "[{\"SecondaryZone\":\"ap-nanjing-1\",\"SecondarySubnet\":\"\",\"ZoneDesc\":\"南京一区\"},{\"SecondaryZone\":\"ap-nanjing-3\",\"SecondarySubnet\":\"subnet-861hei6i\",\"ZoneDesc\":\"南京三区\"}]",
           "member": "string",
           "name": "SecondaryZoneInfo",
@@ -3622,7 +3682,7 @@
         },
         {
           "disabled": false,
-          "document": "是否clickhouse-keeper",
+          "document": "<p>是否clickhouse-keeper</p>",
           "example": "false",
           "member": "bool",
           "name": "ClickHouseKeeper",
@@ -3632,7 +3692,7 @@
         },
         {
           "disabled": false,
-          "document": "实例扩展信息",
+          "document": "<p>实例扩展信息</p>",
           "example": "无",
           "member": "InstanceDetail",
           "name": "Details",
@@ -3642,7 +3702,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组白名单",
+          "document": "<p>安全组白名单</p>",
           "example": "true",
           "member": "bool",
           "name": "IsWhiteSGs",
@@ -3652,7 +3712,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组",
+          "document": "<p>绑定的安全组</p>",
           "example": "[\"cdr\",\"cdwch\"]",
           "member": "string",
           "name": "BindSGs",
@@ -3662,7 +3722,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启公网clb",
+          "document": "<p>是否开启公网clb</p>",
           "example": "true",
           "member": "bool",
           "name": "HasPublicCloudClb",
@@ -3672,7 +3732,7 @@
         },
         {
           "disabled": false,
-          "document": "可升级的zk版本",
+          "document": "<p>可升级的zk版本</p>",
           "example": "3.6.1,3.8.3",
           "member": "string",
           "name": "UpgradeZkVersions",
@@ -3682,7 +3742,7 @@
         },
         {
           "disabled": false,
-          "document": "是否显示rip",
+          "document": "<p>是否显示rip</p>",
           "example": "disable",
           "member": "string",
           "name": "ShowRip",
@@ -3692,10 +3752,20 @@
         },
         {
           "disabled": false,
-          "document": "实例类型：标准型 standard，无keeper节点类型noKeeper；",
+          "document": "<p>实例类型：标准型 standard，无keeper节点类型noKeeper；</p>",
           "example": "standard,noKeeper",
           "member": "string",
           "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>keyvalue视图</p>",
+          "example": "\"true\"",
+          "member": "string",
+          "name": "EnableConfigKeyValue",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3874,96 +3944,116 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群状态，例如：Serving",
+          "document": "<p>集群状态，例如：Serving</p>",
           "example": "Serving",
           "member": "string",
           "name": "InstanceState",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群操作创建时间",
+          "document": "<p>集群操作创建时间</p>",
           "example": "2025-01-01 10:00:10",
           "member": "string",
           "name": "FlowCreateTime",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群操作名称",
+          "document": "<p>集群操作名称</p>",
           "example": "create_instance",
           "member": "string",
           "name": "FlowName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群操作进度",
+          "document": "<p>集群操作进度</p>",
           "example": "30",
           "member": "int64",
           "name": "FlowProgress",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群状态描述，例如：运行中",
+          "document": "<p>集群状态描述，例如：运行中</p>",
           "example": "运行中",
           "member": "string",
           "name": "InstanceStateDesc",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群流程错误信息，例如：“创建失败，资源不足”",
+          "document": "<p>集群流程错误信息，例如：“创建失败，资源不足”</p>",
           "example": "购买机器",
           "member": "string",
           "name": "FlowMsg",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前步骤的名称，例如：”购买资源中“",
+          "document": "<p>当前步骤的名称，例如：”购买资源中“</p>",
           "example": "purchaseStage",
           "member": "string",
           "name": "ProcessName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "请求id",
+          "document": "<p>请求id</p>",
           "example": "b17d6cd6-870a-4dd5-a3b2-d28c4663a81e",
           "member": "string",
           "name": "RequestId",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流程的二级名称",
+          "document": "<p>流程的二级名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "购买集群",
           "member": "string",
           "name": "ProcessSubName",
           "output_required": false,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1223-eee",
+          "member": "string",
+          "name": "RequestID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "MapConfigItem": {
       "document": "kv配置，多层级item",

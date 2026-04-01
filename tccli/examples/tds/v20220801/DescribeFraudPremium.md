@@ -6,36 +6,62 @@ Input:
 
 ```
 tccli tds DescribeFraudPremium --cli-unfold-argument  \
-    --DeviceToken v2:s6kBRbiOKZp/kenOxxxxxxxxx
+    --DeviceToken v3:AAAAAZ0PYUPDnfxhxxxxxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Brand": "HONOR",
-        "SdkBuildNo": "75",
-        "AppVersion": "1.0.0",
-        "Platform": "2",
-        "SystemVersion": "10",
-        "RequestId": "19a13dc5-1c2c-4d0e-bd08-13534b53c8f4",
+        "AppVersion": "1.0",
+        "Brand": "google",
+        "ClientIp": "183.60.88.16",
+        "ExtraInfos": [
+            {
+                "Key": "DegradationType",
+                "Value": "1"
+            }
+        ],
+        "HistRiskInfos": [],
+        "Model": "Pixel 8 Pro",
         "NetworkType": "0",
-        "Model": "LLD-AL20",
-        "PackageName": "a.b.c",
-        "ClientIp": "223.73.63.151",
+        "Openid": "07F6312A3C9A060045930BF9",
+        "PackageName": "com.turingfd",
+        "Platform": "2",
+        "RequestId": "00d67bd2-9e80-4045-8634-f10fa144735d",
+        "RiskCheckTimestamp": "1774320814544",
         "RiskInfos": [
             {
-                "Type": 201,
-                "Level": 1
-            }
-        ],
-        "HistRiskInfos": [
+                "Level": 2,
+                "Type": 401
+            },
             {
-                "Type": 201,
-                "Level": 1
+                "Level": 1,
+                "Type": 402
+            },
+            {
+                "Level": 3,
+                "Type": 211
+            },
+            {
+                "Level": 1,
+                "Type": 213
+            },
+            {
+                "Level": 3,
+                "Type": 217
+            },
+            {
+                "Level": 1,
+                "Type": 1001
+            },
+            {
+                "Level": 3,
+                "Type": 201
             }
         ],
-        "Openid": "A10254A0046CEA0448A387BF"
+        "SdkBuildNo": "209303",
+        "SystemVersion": "16"
     }
 }
 ```

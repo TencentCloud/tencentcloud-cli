@@ -55,6 +55,7 @@ Output:
                 ]
             }
         ],
+        "TotalCount": 3,
         "RequestId": "404428db-f850-40c2-803d-0aae49aba43a"
     }
 }

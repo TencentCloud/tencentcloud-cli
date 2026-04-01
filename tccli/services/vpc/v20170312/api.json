@@ -11392,7 +11392,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像的采集对象。",
+          "document": "流量镜像的采集对象 (最多支持20个采集对象)。",
           "example": "[\"vpc-39lpv32n\"]",
           "member": "string",
           "name": "CollectorSrcs",
@@ -11447,9 +11447,27 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
           "required": false,
           "type": "list"
         }
@@ -21992,7 +22010,7 @@
         {
           "disabled": false,
           "document": "流量镜像实例ID集合",
-          "example": "imgf-cvfp7xo8",
+          "example": "[\"imgf-cvfp7xo8\"]",
           "member": "string",
           "name": "TrafficMirrorIds",
           "required": false,
@@ -22039,6 +22057,16 @@
           "name": "TrafficMirrorSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的对象数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -34882,7 +34910,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。",
+          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。<li>EIP资源列表：可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取。高防EIP、Anycast EIP、精品BGP EIP默认不支持从共享带宽包中移除，其中高防EIP和精品BGP IP可以迁移到其他同线路类型的共享带宽包中。</li><li>LB资源列表：可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。</li>\n",
           "example": "[\"eip-alfxy9c8\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -36002,6 +36030,24 @@
           "example": "无",
           "member": "TrafficMirrorFilter",
           "name": "CollectorNormalFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
           "required": false,
           "type": "list"
         }
@@ -40456,7 +40502,7 @@
           "example": "ALL",
           "member": "string",
           "name": "Direction",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -40483,6 +40529,24 @@
           "example": "无",
           "member": "TrafficMirrorFilter",
           "name": "CollectorNormalFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
           "required": false,
           "type": "list"
         }
@@ -40515,7 +40579,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像采集方向",
+          "document": "流量镜像采集方向。取值范围：\n\n- EGRESS - 出方向采集\n\n- INGRESS - 入方向采集\n\n- ALL - 出入双向采集\n\n- NO-DIRECTION - 不区分采集方向（新模式）。切换为该模式后将不再支持按方向采集，需通过 CreateTrafficMirrorFilterRules 接口创建带方向的过滤规则，过滤规则支持设置优先级和单独编辑。",
           "example": "INGRESS",
           "member": "string",
           "name": "Direction",

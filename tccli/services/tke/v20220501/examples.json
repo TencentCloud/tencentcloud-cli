@@ -144,6 +144,14 @@
         "title": "重启原生节点实例"
       }
     ],
+    "ScaleNodePool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleNodePool\n<公共请求参数>\n\n{\n    \"Replicas\": 10,\n    \"ClusterId\": \"cls-ht45hcgx\",\n    \"NodePoolId\": \"np-2xrt4w7h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b398fbff-f9db-40a3-8cbe-22b88aa7c8ca\"\n    }\n}",
+        "title": "设置 TKE 节点池期望节点数"
+      }
+    ],
     "SetMachineLogin": [
       {
         "document": "",

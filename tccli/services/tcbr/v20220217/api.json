@@ -3238,7 +3238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "serverName",
           "member": "string",
           "name": "ServerName",
@@ -3248,7 +3248,7 @@
         },
         {
           "disabled": false,
-          "document": "默认服务域名",
+          "document": "<p>默认服务域名</p>",
           "example": "http://xxx.xxx.xxx",
           "member": "string",
           "name": "DefaultDomainName",
@@ -3258,7 +3258,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义域名",
+          "document": "<p>自定义域名</p>",
           "example": "http://xxx.xxx.xxx",
           "member": "string",
           "name": "CustomDomainName",
@@ -3268,7 +3268,7 @@
         },
         {
           "disabled": false,
-          "document": "服务状态：running/deploying/deploy_failed",
+          "document": "<p>服务状态：creating/create_failed/freezing/freeze_fail/froze/unfreezing/unfreeze_fail/normal/deleting/delete_failed/abnormal</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>create_failed： 创建失败</li><li>freezing： 冻结中</li><li>freeze_fail： 冻结失败</li><li>froze： 已冻结</li><li>unfreezing： 解冻中</li><li>unfreeze_fail： 解冻失败</li><li>normal： 正常</li><li>deleting： 删除中</li><li>delete_failed： 删除失败</li><li>abnormal： 服务异常</li></ul>",
           "example": "runnig",
           "member": "string",
           "name": "Status",
@@ -3278,7 +3278,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2022-03-09 14:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -3288,7 +3288,7 @@
         },
         {
           "disabled": false,
-          "document": "公网访问类型",
+          "document": "<p>公网访问类型</p>",
           "example": "[\"OA\",\"MINIAPP\",\"VPC\"]",
           "member": "string",
           "name": "AccessTypes",
@@ -3298,7 +3298,7 @@
         },
         {
           "disabled": false,
-          "document": "展示自定义域名",
+          "document": "<p>展示自定义域名</p>",
           "example": "[\"http://xxx.xxx.xxx\",\"http://xxx.xxx.xxx\"]",
           "member": "string",
           "name": "CustomDomainNames",
@@ -3308,7 +3308,7 @@
         },
         {
           "disabled": false,
-          "document": "服务类型: function 云函数2.0；container 容器服务",
+          "document": "<p>服务类型: function 云函数2.0；container 容器服务</p>",
           "example": "function",
           "member": "string",
           "name": "ServerType",
@@ -3318,7 +3318,7 @@
         },
         {
           "disabled": false,
-          "document": "流量类型，目前只有 FLOW",
+          "document": "<p>流量类型，目前只有 FLOW</p>",
           "example": "FLOW",
           "member": "string",
           "name": "TrafficType",
@@ -3328,7 +3328,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2022-03-09 14:00:00",
           "member": "string",
           "name": "CreateTime",

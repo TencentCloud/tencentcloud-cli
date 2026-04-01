@@ -6167,7 +6167,7 @@
           "example": "topic-test",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6189,7 +6189,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "关键字匹配",
           "example": "search-test",
           "member": "string",

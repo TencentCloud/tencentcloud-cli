@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "InstanceInfo": {
+            "UpgradeZkVersions": "3.1.8",
             "InstanceId": "cdwch-xxxxxxxx",
             "InstanceName": "测试集群",
             "Status": "Serving",
