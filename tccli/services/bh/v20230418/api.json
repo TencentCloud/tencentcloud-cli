@@ -8658,7 +8658,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启剪贴板文件上行",
+          "document": "是否开启剪贴板文件上行，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowClipFileUp",
@@ -8667,7 +8667,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启剪贴板文件下行",
+          "document": "是否开启剪贴板文件下行，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowClipFileDown",
@@ -8676,7 +8676,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启剪贴板文本（含图片）上行",
+          "document": "是否开启剪贴板文本（含图片）上行，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextUp",
@@ -8685,7 +8685,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启剪贴板文本（含图片）下行",
+          "document": "是否开启剪贴板文本（含图片）下行，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextDown",
@@ -8694,7 +8694,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启文件传输上传",
+          "document": "是否开启文件传输上传，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowFileUp",
@@ -8703,7 +8703,7 @@
         },
         {
           "disabled": false,
-          "document": "文件传输上传大小限制（预留参数，目前暂未使用）",
+          "document": "文件传输上传大小限制（预留参数，目前暂未使用），不传时默认为0",
           "example": "1",
           "member": "uint64",
           "name": "MaxFileUpSize",
@@ -8712,7 +8712,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启文件传输下载",
+          "document": "是否开启文件传输下载，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDown",
@@ -8721,7 +8721,7 @@
         },
         {
           "disabled": false,
-          "document": "文件传输下载大小限制（预留参数，目前暂未使用）",
+          "document": "文件传输下载大小限制（预留参数，目前暂未使用），不传时默认为0",
           "example": "1",
           "member": "uint64",
           "name": "MaxFileDownSize",
@@ -8757,7 +8757,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的应用资产ID集合",
+          "document": "关联的应用资产ID集合，不传时表示不选择任何应用资产",
           "example": "[1,2]",
           "member": "uint64",
           "name": "AppAssetIdSet",
@@ -8766,7 +8766,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的资产组ID",
+          "document": "关联的资产组ID，不传时表示不选择任何资产组",
           "example": "[1]",
           "member": "uint64",
           "name": "DeviceGroupIdSet",
@@ -8775,7 +8775,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的账号",
+          "document": "关联的资产账号，不传时表示不选择任何资产账号",
           "example": "[\"admin\"]",
           "member": "string",
           "name": "AccountSet",
@@ -8784,7 +8784,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的高危命令模板ID",
+          "document": "关联的高危命令模板ID，不传时表示不选择任何模板",
           "example": "[1]",
           "member": "uint64",
           "name": "CmdTemplateIdSet",
@@ -8793,7 +8793,7 @@
         },
         {
           "disabled": false,
-          "document": "关联高危DB模板ID",
+          "document": "关联高危DB模板ID，不传时表示不选择任何模板",
           "example": "[\"1\"]",
           "member": "string",
           "name": "ACTemplateIdSet",
@@ -8802,7 +8802,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 RDP 磁盘映射文件上传",
+          "document": "是否开启 RDP 磁盘映射文件上传，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileUp",
@@ -8811,7 +8811,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 RDP 磁盘映射文件下载",
+          "document": "是否开启 RDP 磁盘映射文件下载，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileDown",
@@ -8820,7 +8820,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启rz sz文件上传",
+          "document": "是否开启rz sz文件上传，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowShellFileUp",
@@ -8829,7 +8829,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启rz sz文件下载",
+          "document": "是否开启rz sz文件下载，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowShellFileDown",
@@ -8838,7 +8838,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 SFTP 文件删除",
+          "document": "是否开启 SFTP 文件删除，不传时默认为false",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDel",
@@ -8874,7 +8874,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许使用访问串",
+          "document": "是否允许使用访问串，不传时默认为true",
           "example": "true",
           "member": "bool",
           "name": "AllowAccessCredential",
@@ -8883,7 +8883,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许键盘记录",
+          "document": "是否允许键盘记录，不传时默认为false",
           "example": "false",
           "member": "bool",
           "name": "AllowKeyboardLogger",
@@ -8892,7 +8892,7 @@
         },
         {
           "disabled": false,
-          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍",
+          "document": "访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍，不传时默认为9999天对应的秒数",
           "example": "86400",
           "member": "uint64",
           "name": "MaxAccessCredentialDuration",

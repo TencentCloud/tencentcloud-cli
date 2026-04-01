@@ -180,6 +180,14 @@
         "title": "查询成功"
       }
     ],
+    "DescribeCustomerOwnVoucherUsageDetails": [
+      {
+        "document": "子客查询自身代金券使用详情",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerOwnVoucherUsageDetails\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 100,\n    \"VoucherId\": 12365856,\n    \"Month\": \"2026-03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"Month\": \"2026-03\",\n        \"RecordsCountByMonth\": 0,\n        \"RemainAmount\": 0,\n        \"TotalAmount\": 0,\n        \"TotalRecordsCount\": 0,\n        \"VoucherId\": 12365856,\n        \"RequestId\": \"3a9de07b-5f47-4f20-98b4-6fcb562af626\"\n    }\n}",
+        "title": "子客查询自身代金券使用详情"
+      }
+    ],
     "DescribeCustomerUin": [
       {
         "document": "查询子客uin列表",
@@ -194,6 +202,14 @@
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerVoucherList\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"VoucherId\": 12342356\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ApplyReason\": \"接口测试使用，请勿审核，子客券\",\n                \"CustomerUin\": 800000183985,\n                \"EffectiveTime\": \"2025-07-21 06:10:24\",\n                \"ExpireTime\": \"2025-10-19 23:59:59\",\n                \"PaymentMode\": \"AllPayment\",\n                \"ProductScope\": \"AllProducts\",\n                \"RemainingAmount\": 0.797104,\n                \"TotalAmount\": 1,\n                \"Usage\": \"CustomerOffer\",\n                \"VoucherId\": 12342356,\n                \"VoucherStatus\": \"Canceled\"\n            }\n        ],\n        \"RequestId\": \"0849df12-3c82-4edb-a4be-18df464ce468\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询成功"
+      }
+    ],
+    "DescribeCustomerVoucherUsageDetails": [
+      {
+        "document": "经销商查询子客代金券使用详情",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerVoucherUsageDetails\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"CustomerUin\": 800000495142,\n    \"VoucherId\": 12130012,\n    \"Month\": \"2024-03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomerUin\": 800000495142,\n        \"Data\": [],\n        \"Month\": \"2024-03\",\n        \"RecordsCountByMonth\": 0,\n        \"RemainAmount\": 0,\n        \"TotalAmount\": 1,\n        \"TotalRecordsCount\": 2,\n        \"VoucherId\": 12130012,\n        \"RequestId\": \"28404cbe-6694-4b52-84a7-74e61efac79f\"\n    }\n}",
+        "title": "经销商查询子客代金券使用详情"
       }
     ],
     "DescribeRebateDownloadUrl": [
