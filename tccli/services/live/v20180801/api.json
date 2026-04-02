@@ -21438,7 +21438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "录制间隔。\n单位秒，默认：1800。\nFLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。\n此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。",
+          "document": "<p>录制间隔。<br>单位秒，默认：1800。<br>FLV、MP4取值范围： 60-43200， AAC取值范围： 60-7200 。<br>此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。</p>",
           "example": "400",
           "member": "int64",
           "name": "RecordInterval",
@@ -21449,7 +21449,7 @@
         },
         {
           "disabled": false,
-          "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。\n注：此参数只对录制到VOD有效。",
+          "document": "<p>录制存储时长。<br>单位秒，取值范围： 0 - 1500天。<br>0：表示永久存储。<br>注：此参数只对录制到VOD有效。</p>",
           "example": "800",
           "member": "int64",
           "name": "StorageTime",
@@ -21460,7 +21460,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启当前格式录制，默认值为0，0：否， 1：是。",
+          "document": "<p>是否开启当前格式录制，默认值为0，0：否， 1：是。</p>",
           "example": "0",
           "member": "int64",
           "name": "Enable",
@@ -21471,7 +21471,7 @@
         },
         {
           "disabled": false,
-          "document": "点播子应用 ID。",
+          "document": "<p>点播子应用 ID。</p>",
           "example": "1",
           "member": "int64",
           "name": "VodSubAppId",
@@ -21482,7 +21482,7 @@
         },
         {
           "disabled": false,
-          "document": "录制文件名。\n支持的特殊占位符有：\n{StreamID}: 流ID\n{StartYear}: 开始时间-年\n{StartMonth}: 开始时间-月\n{StartDay}: 开始时间-日\n{StartHour}: 开始时间-小时\n{StartMinute}: 开始时间-分钟\n{StartSecond}: 开始时间-秒\n{StartMillisecond}: 开始时间-毫秒\n{EndYear}: 结束时间-年\n{EndMonth}: 结束时间-月\n{EndDay}: 结束时间-日\n{EndHour}: 结束时间-小时\n{EndMinute}: 结束时间-分钟\n{EndSecond}: 结束时间-秒\n{EndMillisecond}: 结束时间-毫秒\n\n若未设置默认录制文件名为{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}",
+          "document": "<p>录制文件名。<br>支持的特殊占位符有：<br>{StreamID}: 流ID<br>{StartYear}: 开始时间-年<br>{StartMonth}: 开始时间-月<br>{StartDay}: 开始时间-日<br>{StartHour}: 开始时间-小时<br>{StartMinute}: 开始时间-分钟<br>{StartSecond}: 开始时间-秒<br>{StartMillisecond}: 开始时间-毫秒<br>{EndYear}: 结束时间-年<br>{EndMonth}: 结束时间-月<br>{EndDay}: 结束时间-日<br>{EndHour}: 结束时间-小时<br>{EndMinute}: 结束时间-分钟<br>{EndSecond}: 结束时间-秒<br>{EndMillisecond}: 结束时间-毫秒</p><p>若未设置默认录制文件名为{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}</p>",
           "example": "{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}",
           "member": "string",
           "name": "VodFileName",
@@ -21493,7 +21493,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务流</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "liu",
           "member": "string",
           "name": "Procedure",
@@ -21504,7 +21504,7 @@
         },
         {
           "disabled": false,
-          "document": "视频存储策略。\nnormal：标准存储。\ncold：低频存储。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频存储策略。<br>normal：标准存储。<br>cold：低频存储。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
           "name": "StorageMode",
@@ -21515,7 +21515,7 @@
         },
         {
           "disabled": false,
-          "document": "点播应用分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>点播应用分类</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4512",
           "member": "int64",
           "name": "ClassId",
@@ -21526,7 +21526,7 @@
         },
         {
           "disabled": false,
-          "document": "存储至 cos 的 bucket 桶名称。\n注：CosBucketName参数值不能包含-[appid] 部分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储至 cos 的 bucket 桶名称。<br>注：CosBucketName参数值不能包含-[appid] 部分。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket",
           "member": "string",
           "name": "CosBucketName",
@@ -21537,7 +21537,7 @@
         },
         {
           "disabled": false,
-          "document": "存储至 cos 的 bucket 区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储至 cos 的 bucket 区域。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket",
           "member": "string",
           "name": "CosBucketRegion",
@@ -21548,7 +21548,7 @@
         },
         {
           "disabled": false,
-          "document": "存储至 cos 的 bucket 路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储至 cos 的 bucket 路径。<br>注意：若为输入参数，则该参数必填，且必须以斜杠（/）开头，建议至少包含 {StartYear}、{StartMonth}、{StartDay}、{StartHour}、{StartMinute}、{StartSecond} 或 {RandomID} 任意一种，否则可能出现录制文件名重复造成文件相互覆盖；若为返回参数，则此字段可能返回 null，表示取不到有效值。<br>示例值：/{RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}-{RandomID}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}</p><p>支持的特殊占位符有：<br>{RecordSource}：区分录制内容，若录制原始流、水印流则为“origin”，录制转码流时，代表转码模板ID<br>{StreamID}: 流ID<br>{RecordId}：录制任务ID，断流前后该值可能重复；<br>{RandomID}：随机数，断流前后该值不同；<br>{StartYear}: 开始时间-年<br>{StartMonth}: 开始时间-月<br>{StartDay}: 开始时间-日<br>{StartHour}: 开始时间-小时<br>{StartMinute}: 开始时间-分钟<br>{StartSecond}: 开始时间-秒<br>{StartMillisecond}: 开始时间-毫秒<br>{EndYear}: 结束时间-年<br>{EndMonth}: 结束时间-月<br>{EndDay}: 结束时间-日<br>{EndHour}: 结束时间-小时<br>{EndMinute}: 结束时间-分钟<br>{EndSecond}: 结束时间-秒<br>{EndMillisecond}: 结束时间-毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket",
           "member": "string",
           "name": "CosBucketPath",

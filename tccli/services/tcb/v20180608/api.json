@@ -35,6 +35,13 @@
       "output": "CreateBillDealResponse",
       "status": "online"
     },
+    "CreateCustomLoginKey": {
+      "document": "创建自定义登录密钥。在指定云开发环境下生成一对 RSA 1024 位非对称密钥对，系统仅存储公钥，私钥仅在创建时返回一次且不可恢复，请妥善保存。创建新密钥后，该环境下原有未设置过期时间的旧密钥将被自动标记为 2 小时后过期，请确保客户端及时更新密钥配置。\n返回的 KeyID 和 PrivateKey 需与环境 ID 一起组装为 JSON 配置文件，供客户端 Admin SDK 初始化时使用，文件格式如下：\n{\n  \"private_key_id\": \"<返回的 KeyID>\",\n  \"private_key\": \"<返回的 PrivateKey>\",\n  \"env_id\": \"<请求时传入的 EnvId>\"\n}",
+      "input": "CreateCustomLoginKeyRequest",
+      "name": "自定义登录密钥生成",
+      "output": "CreateCustomLoginKeyResponse",
+      "status": "online"
+    },
     "CreateEnv": {
       "document": "本接口用于购买云开发环境。\n该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。\n该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。\n环境下单成功之后会返回EnvId。EnvId是全局唯一表示。\n环境发货是异步行为，后续可以通过接口 [DescribeEnvs ](https://cloud.tencent.com/document/product/876/34820) 查询环境状态和各项资源信息；通过 [DescribeBillingInfo](https://cloud.tencent.com/document/product/876/94390) 查询环境套餐信息，包括 到期时间、当前套餐等。",
       "input": "CreateEnvRequest",
@@ -50,7 +57,7 @@
       "status": "online"
     },
     "CreateHTTPServiceRoute": {
-      "document": "本接口CreateHTTPServiceRoute用于创建HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。",
+      "document": "本接口CreateHTTPServiceRoute用于创建HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。此外HTTP访问服务提供了默认域名，通过DescribeHTTPServiceRoute接口可直接获取默认域名。",
       "input": "CreateHTTPServiceRouteRequest",
       "name": "创建HTTP访问服务路由",
       "output": "CreateHTTPServiceRouteResponse",
@@ -246,7 +253,7 @@
       "status": "online"
     },
     "DescribeHTTPServiceRoute": {
-      "document": "本接口DescribeHTTPServiceRoute用于查询环境下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。",
+      "document": "本接口DescribeHTTPServiceRoute用于查询环境下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。HTTP访问服务提供了默认域名，通过本接口可直接获取默认域名。",
       "input": "DescribeHTTPServiceRouteRequest",
       "name": "查询HTTP访问服务路由信息",
       "output": "DescribeHTTPServiceRouteResponse",
@@ -421,7 +428,7 @@
       "status": "online"
     },
     "ModifyHTTPServiceRoute": {
-      "document": "本接口ModifyHTTPServiceRoute用于修改HTTP访问服务路由。支持增量修改，对应字段不传参数表示不需要修改",
+      "document": "本接口ModifyHTTPServiceRoute用于修改HTTP访问服务路由。支持增量修改，对应字段不传参数则不修改",
       "input": "ModifyHTTPServiceRouteRequest",
       "name": "修改HTTP访问服务路由",
       "output": "ModifyHTTPServiceRouteResponse",
@@ -1395,6 +1402,53 @@
     "CreateBillDealResponse": {
       "document": "CreateBillDeal返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomLoginKeyRequest": {
+      "document": "CreateCustomLoginKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "xxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomLoginKeyResponse": {
+      "document": "CreateCustomLoginKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义登录的 RSA 私钥（1024 位），PEM 编码格式（PKCS#1）。调用方需使用该私钥对包含用户身份信息的 JSON 数据进行 JWS 签名，生成 JWT Token 后传入自定义登录接口完成身份认证。出于安全考虑，系统仅存储公钥，私钥仅在创建时返回一次且无法恢复，请妥善保存。创建新密钥后，该环境下原有未设置过期时间的旧密钥将被自动标记为 2 小时后过期",
+          "example": "xxx",
+          "member": "string",
+          "name": "PrivateKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥对的唯一标识符（UUID 格式），由系统自动生成。在自定义登录时，需将该 KeyID 拼接到 ProviderToken 参数中（格式：{KeyID}/{algorithm}/{signedJWT}），服务端通过 KeyID 查找对应的公钥以验证签名",
+          "example": "xxx",
+          "member": "string",
+          "name": "KeyID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5211,7 +5265,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "smtp配置",
+          "document": "<p>smtp配置</p>",
           "example": "无",
           "member": "EmailSmtpConfig",
           "name": "SmtpConfig",
@@ -5222,7 +5276,7 @@
         },
         {
           "disabled": false,
-          "document": "可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。",
+          "document": "<p>可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。</p>",
           "example": "TRUE",
           "member": "string",
           "name": "On",
@@ -5230,6 +5284,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>邮件模板配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmailTemplateConfig",
+          "name": "TemplateConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5302,6 +5367,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EmailTemplateConfig": {
+      "document": "邮件模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>注册登录模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LocalizedTemplate",
+          "name": "RegisterSignIn",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LocalizedTemplate",
+          "name": "DefaultTpl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6120,6 +6213,16 @@
         },
         {
           "disabled": false,
+          "document": "扩展字段，内部包含headers处理等",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "域名创建时间",
           "example": "2026-03-13T10:03:25+08:00",
           "member": "datetime_iso",
@@ -6146,8 +6249,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败",
-          "example": "xxx.woyaodaguaishou.cn",
+          "document": "<p>域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败</p>",
+          "example": "xxx.***************.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6155,7 +6258,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）",
+          "document": "<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>",
           "example": "DIRECT",
           "member": "string",
           "name": "AccessType",
@@ -6164,8 +6267,8 @@
         },
         {
           "disabled": false,
-          "document": "证书ID。当前账户下SSL平台的证书ID",
-          "example": "VFw9N3uC",
+          "document": "<p>证书ID。当前账户下SSL平台的证书ID</p>",
+          "example": "VFw*****",
           "member": "string",
           "name": "CertId",
           "required": false,
@@ -6173,7 +6276,7 @@
         },
         {
           "disabled": false,
-          "document": "协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向",
+          "document": "<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>",
           "example": "HTTP_AND_HTTPS",
           "member": "string",
           "name": "Protocol",
@@ -6182,7 +6285,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义CNAME。对应AccessType: Custom",
+          "document": "<p>自定义CNAME。对应AccessType: Custom</p>",
           "example": "cdn.xxx.***************.cn",
           "member": "string",
           "name": "CustomCname",
@@ -6191,7 +6294,7 @@
         },
         {
           "disabled": false,
-          "document": "域名开启状态，不传默认开启",
+          "document": "<p>域名开启状态，不传默认开启</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -6200,15 +6303,130 @@
         },
         {
           "disabled": false,
-          "document": "创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个",
+          "document": "<p>创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个</p>",
           "example": "无",
           "member": "HTTPServiceRouteParam",
           "name": "Routes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展字段，内部包含headers处理等</p>",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
+    },
+    "HTTPServiceExtension": {
+      "document": "HTTP访问服务路由扩展字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加请求头列表",
+          "example": "无",
+          "member": "HTTPServiceHeadersHandler",
+          "name": "HeadersHandler",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HTTPServiceHeaderToAdd": {
+      "document": "HTTP访问服务路由添加header",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加头部的key",
+          "example": "X-Custom-Header",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加头部的值",
+          "example": "custom-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加头部的处理行为。默认：OVERWRITE_IF_EXISTS_OR_ADD。APPEND_IF_EXISTS_OR_ADD: 已存在时追加值，不存在时添加，ADD_IF_ABSENT:  仅在 header 不存在时添加，已存在时不做任何操作，OVERWRITE_IF_EXISTS_OR_ADD: 已存在时覆盖值，不存在时添加（默认值），OVERWRITE_IF_EXISTS: 仅在 header 已存在时覆盖值，不存在时不做任何操作",
+          "example": "OVERWRITE_IF_EXISTS_OR_ADD",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HTTPServiceHeadersHandler": {
+      "document": "HTTP访问服务路由headers处理",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加请求头列表",
+          "example": "无",
+          "member": "HTTPServiceHeaderToAdd",
+          "name": "RequestHeadersToAdd",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除请求头列表",
+          "example": "[\"X-Remove-Me\"]",
+          "member": "string",
+          "name": "RequestHeadersToRemove",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加返回头列表",
+          "example": "无",
+          "member": "HTTPServiceHeaderToAdd",
+          "name": "ResponseHeadersToAdd",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除返回头列表",
+          "example": "[\"X-Resp-Remove\"]",
+          "member": "string",
+          "name": "ResponseHeadersToRemove",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "HTTPServicePathRewrite": {
       "document": "HTTP访问服务路径重写配置",
@@ -6350,6 +6568,16 @@
         },
         {
           "disabled": false,
+          "document": "扩展字段，内部包含headers处理等",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "路由创建时间",
           "example": "2026-03-13T10:03:26+08:00",
           "member": "datetime_iso",
@@ -6454,6 +6682,15 @@
           "name": "Enable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段，内部包含headers处理等",
+          "example": "无",
+          "member": "HTTPServiceExtension",
+          "name": "Extension",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -6887,6 +7124,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LocalizedTemplate": {
+      "document": "多语言模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>中文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<html><body><h1>验证码</h1><p>您的验证码是: {{.VerificationCode}}</p><p>5分钟内有效</p></body></html>",
+          "member": "string",
+          "name": "ZhCN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>英文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<html><body><h1>VerificationCode</h1><p>Your VerificationCode Is: {{.VerificationCode}}</p><p>expire in 5 min</p></body></html>",
+          "member": "string",
+          "name": "EnUS",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

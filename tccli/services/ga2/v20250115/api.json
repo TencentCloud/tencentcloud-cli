@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateGlobalAccelerator": {
+      "document": "创建全球加速实例",
+      "input": "CreateGlobalAcceleratorRequest",
+      "name": "创建全球加速实例",
+      "output": "CreateGlobalAcceleratorResponse",
+      "status": "online"
+    },
     "DescribeCrossBorderSettlement": {
       "document": "查询跨境账单",
       "input": "DescribeCrossBorderSettlementRequest",
@@ -15,6 +22,98 @@
     "serviceShortName": "ga2"
   },
   "objects": {
+    "CreateGlobalAcceleratorRequest": {
+      "document": "CreateGlobalAccelerator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称，最大长度不能超过60个字节。</p>",
+          "example": "ga-name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。当前仅支持后付费。</p>",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨境类型；HighQuality：精品BGP-IP跨境；Unicom：联通专线跨境。</p>",
+          "example": "HighQuality",
+          "member": "string",
+          "name": "CrossBorderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>此Flag代表签署跨境服务承诺书。当使用跨境服务时候，此字段必传。True：代表签署。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CrossBorderPromiseFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalAcceleratorResponse": {
+      "document": "CreateGlobalAccelerator返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "37f82c4e-a9b3-4c05-bf21-9c5492f9f856",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例ID。</p>",
+          "example": "ga-5lkgru6k",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCrossBorderSettlementRequest": {
       "document": "DescribeCrossBorderSettlement请求参数结构体",
       "members": [
@@ -78,6 +177,34 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "标签键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "tag-key",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "tag-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

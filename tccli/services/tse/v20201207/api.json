@@ -1060,6 +1060,7 @@
           "example": "EXACT",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1067,9 +1068,10 @@
         {
           "disabled": false,
           "document": "匹配值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "blue",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1080,6 +1082,7 @@
           "example": "TEXT",
           "member": "string",
           "name": "ValueType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6782,7 +6785,7 @@
         {
           "disabled": false,
           "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123345",
+          "example": "12732395",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -6815,7 +6818,7 @@
         {
           "disabled": false,
           "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123123",
+          "example": "lanegroup",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -9712,7 +9715,7 @@
         {
           "disabled": false,
           "document": "引擎实例ID",
-          "example": "ins-1231345",
+          "example": "ins-f72d4820",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9739,7 +9742,7 @@
         {
           "disabled": false,
           "document": "泳道名称",
-          "example": "123123",
+          "example": "groupa",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -9748,7 +9751,7 @@
         {
           "disabled": false,
           "document": "泳道ID",
-          "example": "123123",
+          "example": "group-1x3f",
           "member": "string",
           "name": "GroupID",
           "required": false,
@@ -9772,7 +9775,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -12757,7 +12760,7 @@
         {
           "disabled": false,
           "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123345",
+          "example": "a887255ebd1349b59b862fa3caeca2c4",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -12790,7 +12793,7 @@
         {
           "disabled": false,
           "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123123",
+          "example": "lanegroup",
           "member": "string",
           "name": "Description",
           "output_required": false,

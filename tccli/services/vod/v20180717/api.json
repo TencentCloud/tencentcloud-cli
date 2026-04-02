@@ -204,7 +204,7 @@
       "status": "online"
     },
     "CreateMPSTemplate": {
-      "document": "该接口用于创建自定义模板，模板用于 ProcessMediaByMPS 接口的部分功能。\n创建模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSCreateTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。\n当前支持创建自定义模板的 MPS 功能：\n1. [音视频增强](https://cloud.tencent.com/document/product/862/118703)。\n\n> 以该种方式创建的任务模板：\n> 1. 模板的管理仍在点播平台中完成。\n> 2. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
+      "document": "该接口用于创建自定义模板，模板用于 ProcessMediaByMPS 接口的部分功能。\n创建模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSCreateTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。\n当前支持创建自定义模板的 MPS 功能：\n1. [音视频增强](https://cloud.tencent.com/document/product/862/118703)。\n2. [媒体AI](https://cloud.tencent.com/document/product/862/113756)\n\n> 以该种方式创建的任务模板：\n> 1. 模板的管理仍在点播平台中完成。\n> 2. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
       "input": "CreateMPSTemplateRequest",
       "name": "创建 MPS 任务模板",
       "output": "CreateMPSTemplateResponse",
@@ -1352,7 +1352,7 @@
       "status": "online"
     },
     "ProcessMediaByMPS": {
-      "document": "使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。 \n当前支持的 MPS 功能：\n1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。\n2. [音视频增强](https://cloud.tencent.com/document/product/862/118703)：该功能支持分布式实时画质增强，包含视频去毛刺、降噪、色彩增强、细节增强、人脸增强、SDR2HDR、大模型增强等功能，可大幅提升音视频质量，广泛应用于 OTT、电商、赛事等场景，有效实现 QoE 与 QoS 双维度提升，创造显著业务价值。\n\n> 以该种方式发起的视频处理任务：\n> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。\n> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。\n> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
+      "document": "使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。 \n当前支持的 MPS 功能：\n1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。\n2. [音视频增强](https://cloud.tencent.com/document/product/862/118703)：该功能支持分布式实时画质增强，包含视频去毛刺、降噪、色彩增强、细节增强、人脸增强、SDR2HDR、大模型增强等功能，可大幅提升音视频质量，广泛应用于 OTT、电商、赛事等场景，有效实现 QoE 与 QoS 双维度提升，创造显著业务价值。\n3. [智能字幕](https://cloud.tencent.com/document/product/862/89091)：该功能支持处理离线音频文件、视频文件及直播流，可通过 ASR 语音识别或 OCR 文本识别提取视频源语言字幕，并实现多语言翻译。\n4. [智能分析](https://cloud.tencent.com/document/product/862/113756)：该功能支持智能封面、智能高光、智能摘要、视频理解等功能。\n\n\n> 以该种方式发起的视频处理任务：\n> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。\n> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。\n> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
       "input": "ProcessMediaByMPSRequest",
       "name": "使用 MPS 进行视频处理",
       "output": "ProcessMediaByMPSResponse",
@@ -7529,7 +7529,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AI生图场景类型，可选值：\n- change_clothes：AI换衣。\n- product_image：AI生商品图。\n- outpainting: AI扩图。",
+          "document": "<p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>",
           "example": "change_clothes",
           "member": "string",
           "name": "Type",
@@ -7540,7 +7540,7 @@
         },
         {
           "disabled": false,
-          "document": "当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。",
+          "document": "<p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>",
           "example": "无",
           "member": "ChangeClothesConfig",
           "name": "ChangeClothesConfig",
@@ -7551,7 +7551,7 @@
         },
         {
           "disabled": false,
-          "document": "当 Type 为 product_image 时有效，表示AI 生商品图配置参数。",
+          "document": "<p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>",
           "example": "无",
           "member": "ProductImageConfig",
           "name": "ProductImageConfig",
@@ -10088,7 +10088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入需要更换的**衣物**图片列表。目前最大支持4张图片。",
+          "document": "<p>输入需要更换的<strong>衣物</strong>图片列表。各类型最大支持衣物数量：</p><ul><li>change_clothes：4 张图片；</li><li>change_clothes_under：1 张图片；</li><li>change_clothes_full_wear：1 张图片；</li><li>change_clothes_top_wear：1 张图片；</li><li>change_clothes_bottom_wear：1 张图片；</li></ul>",
           "example": "无",
           "member": "SceneAigcImageTaskInputFileInfo",
           "name": "ClothesFileInfos",
@@ -10099,7 +10099,7 @@
         },
         {
           "disabled": false,
-          "document": "AI换衣的提示词。",
+          "document": "<p>AI换衣的提示词。<strong>仅Type为change_clothes有效。</strong></p>",
           "example": "衬衫打开一点",
           "member": "string",
           "name": "Prompt",
@@ -14395,7 +14395,7 @@
         },
         {
           "disabled": false,
-          "document": "需要创建的 MPS 模板的类型。取值：\n<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>",
+          "document": "需要创建的 MPS 模板的类型。取值：\n<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>\n<li>AIAnalysis: 创建智能分析模板。</li>\n<li>SmartSubtitle: 创建智能字幕模板。</li>\n<li>SmartErase: 创建智能擦除模板。</li>",
           "example": "Transcode",
           "member": "string",
           "name": "TemplateType",
@@ -14404,7 +14404,7 @@
         },
         {
           "disabled": false,
-          "document": "MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。\n目前仅支持通过此方式创建以下任务类型的模板：\n1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。\n\n目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。\n",
+          "document": "MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。\n目前仅支持通过此方式创建以下任务类型的模板：\n1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。\n2. 智能分析：仅支持填写“[创建内容分析模板](https://cloud.tencent.com/document/api/862/40249)”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n3. 智能字幕：仅支持填写“[创建智能字幕模板](https://cloud.tencent.com/document/api/862/117004)”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n4. 智能擦除：仅支持填写“[创建智能擦除模板](https://cloud.tencent.com/document/api/862/123735)”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n\n目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。\n",
           "example": "{\"Container\":\"mp4\",\"Name\":\"test\",\"RemoveAudio\":1,\"VideoTemplate\":{\"Codec\":\"h264\",\"Fps\":0,\"Bitrate\":0},\"EnhanceConfig\":{\"VideoEnhance\":{\"FrameRate\":{\"Switch\":\"ON\",\"Fps\":50}}}}",
           "member": "string",
           "name": "MPSCreateTemplateParams",
@@ -16833,7 +16833,7 @@
         },
         {
           "disabled": false,
-          "document": "需要删除的 MPS 模板的类型。取值：\n<li>Transcode: 删除转码模板。</li>",
+          "document": "需要删除的 MPS 模板的类型。取值：\n<li>Transcode: 删除转码模板。</li>\n<li>AIAnalysis: 创建智能分析模板。</li>\n<li>SmartSubtitle: 创建智能字幕模板。</li>\n<li>SmartErase: 创建智能擦除模板。</li>",
           "example": "Transcode",
           "member": "string",
           "name": "TemplateType",
@@ -19183,7 +19183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -19198,7 +19198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待进行拉取的事件通知数，为近似值，约5秒延迟。",
+          "document": "<p>待进行拉取的事件通知数，为近似值，约有3分钟延迟。</p><p><strong>注意：不建议使用此字段作为是否拉取事件通知的依据。</strong></p>",
           "example": "1",
           "member": "uint64",
           "name": "CountOfEventsToPull",
@@ -19959,7 +19959,7 @@
         },
         {
           "disabled": false,
-          "document": "MPS 模板类型。根据需要查询的 MPS 模板的类型对结果进行过滤。取值：\n<li>Transcode: 查询转码模板列表。</li>",
+          "document": "MPS 模板类型。根据需要查询的 MPS 模板的类型对结果进行过滤。取值：\n<li>Transcode: 查询转码模板列表。</li>\n<li>AIAnalysis: 创建智能分析模板。</li>\n<li>SmartSubtitle: 创建智能字幕模板。</li>\n<li>SmartErase: 创建智能擦除模板。</li>",
           "example": "Transcode",
           "member": "string",
           "name": "TemplateType",
@@ -19968,7 +19968,7 @@
         },
         {
           "disabled": false,
-          "document": "MPS 查询模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧查询 MPS 任务模板列表。目前仅支持通过此方式查询以下任务类型的模板：\n1. 音视频增强：仅支持填写“[获取转码模板列表](https://cloud.tencent.com/document/product/862/37593)”接口中的 Definitions、Offset 和 Limit 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。",
+          "document": "MPS 查询模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧查询 MPS 任务模板列表。目前仅支持通过此方式查询以下任务类型的模板：\n1. 音视频增强：仅支持填写“[获取转码模板列表](https://cloud.tencent.com/document/product/862/37593)”接口中的 Definitions、Type、Name、Offset 和 Limit 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n2. 智能分析：仅支持填写“[获取智能分析模板列表](https://cloud.tencent.com/document/product/862/40247)”接口中的 Definitions、Type、Name、Offset 和 Limit 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n3. 智能字幕：仅支持填写“[获取智能字幕模板列表](https://cloud.tencent.com/document/product/862/117002)”接口中的 Definitions、Type、Name、Offset 和 Limit 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n4. 智能擦除：仅支持填写“[获取智能擦除模板列表](https://cloud.tencent.com/document/product/862/123733)”接口中的 Definitions、Type、Name、Offset 和 Limit 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。",
           "example": "{\"Limit\": 10}",
           "member": "string",
           "name": "MPSDescribeTemplateParams",
@@ -20015,7 +20015,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体文件 ID 列表，N 从 0 开始取值，最大 19。",
+          "document": "<p>媒体文件 ID 列表，N 从 0 开始取值，最大 19。</p>",
           "example": "[\"5285485487985271487\",\"5285485487985271488\"]",
           "member": "string",
           "name": "FileIds",
@@ -20024,7 +20024,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -20033,7 +20033,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>\n<li>miniProgramReviewInfo（小程序审核信息）。</li>\n<li>subtitleInfo（字幕信息）。</li>\n<li>reviewInfo（审核信息）。</li>",
+          "document": "<p>指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：</p><li>basicInfo（视频基础信息）。</li><li>metaData（视频元信息）。</li><li>transcodeInfo（视频转码结果信息）。</li><li>animatedGraphicsInfo（视频转动图结果信息）。</li><li>imageSpriteInfo（视频雪碧图信息）。</li><li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li><li>sampleSnapshotInfo（采样截图信息）。</li><li>keyFrameDescInfo（打点信息）。</li><li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li><li>miniProgramReviewInfo（小程序审核信息）。</li><li>subtitleInfo（字幕信息）。</li><li>reviewInfo（审核信息）。</li><li>mpsAiMediaInfo（mps智能媒资信息）。</li>",
           "example": "[\"basicInfo\"]",
           "member": "string",
           "name": "Filters",
@@ -20048,7 +20048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体文件信息列表。",
+          "document": "<p>媒体文件信息列表。</p>",
           "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfoSet",
@@ -20058,7 +20058,7 @@
         },
         {
           "disabled": false,
-          "document": "不存在的文件 ID 列表。",
+          "document": "<p>不存在的文件 ID 列表。</p>",
           "example": "[\"5285485487985271488\"]",
           "member": "string",
           "name": "NotExistFileIdSet",
@@ -24916,6 +24916,74 @@
       ],
       "usage": "both"
     },
+    "FaceRecognitionInfo": {
+      "document": "人脸识别的媒体信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>人脸识别任务列表</p>",
+          "example": "无",
+          "member": "FaceRecognitionTask",
+          "name": "FaceRecognitionTasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceRecognitionOutputFileInfo": {
+      "document": "人脸识别输出文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>人脸识别输出文件类型</p><p>枚举值：</p><ul><li>Output： 任务生成的结果输出，文件对应人脸识别任务返回中的结果，以 JSON 格式生成文件。</li></ul>",
+          "example": "Output",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>人脸识别输出文件的URL</p>",
+          "example": "https://*****************.com/**********************************************/face_recognition_100006.json",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceRecognitionTask": {
+      "document": "人脸识别任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>人脸识别模板编号</p>",
+          "example": "100006",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出文件信息</p>",
+          "example": "无",
+          "member": "FaceRecognitionOutputFileInfo",
+          "name": "OutputFile",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FastEditMediaFileInfo": {
       "document": "快速媒体编辑操作的输入媒体类型",
       "members": [
@@ -27029,6 +27097,22 @@
       ],
       "usage": "out"
     },
+    "KnowledgeBasesInfo": {
+      "document": "媒资智能知识库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前媒资当导入的知识库列表</p>",
+          "example": "[\"default\"]",
+          "member": "string",
+          "name": "Bases",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LLMComprehendAsr": {
       "document": "大模型解析文本转录解析配置",
       "members": [
@@ -28467,7 +28551,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频流的码率，单位：bps。",
+          "document": "<p>音频流的码率，单位：bps。</p>",
           "example": "1",
           "member": "int64",
           "name": "Bitrate",
@@ -28477,7 +28561,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的采样率，单位：hz。",
+          "document": "<p>音频流的采样率，单位：hz。</p>",
           "example": "1",
           "member": "int64",
           "name": "SamplingRate",
@@ -28487,7 +28571,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的编码格式，例如 aac。",
+          "document": "<p>音频流的编码格式，例如 aac。</p>",
           "example": "aac",
           "member": "string",
           "name": "Codec",
@@ -29237,7 +29321,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基础信息。包括视频名称、分类、播放地址、封面图片等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>基础信息。包括视频名称、分类、播放地址、封面图片等。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaBasicInfo",
           "name": "BasicInfo",
@@ -29247,7 +29331,7 @@
         },
         {
           "disabled": false,
-          "document": "元信息。包括大小、时长、视频流信息、音频流信息等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>元信息。包括大小、时长、视频流信息、音频流信息等。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -29257,7 +29341,7 @@
         },
         {
           "disabled": false,
-          "document": "转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaTranscodeInfo",
           "name": "TranscodeInfo",
@@ -29267,7 +29351,7 @@
         },
         {
           "disabled": false,
-          "document": "转动图结果信息。对视频转动图（如 gif）后，动图相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转动图结果信息。对视频转动图（如 gif）后，动图相关信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaAnimatedGraphicsInfo",
           "name": "AnimatedGraphicsInfo",
@@ -29277,7 +29361,7 @@
         },
         {
           "disabled": false,
-          "document": "采样截图信息。对视频采样截图后，相关截图信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>采样截图信息。对视频采样截图后，相关截图信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSampleSnapshotInfo",
           "name": "SampleSnapshotInfo",
@@ -29287,7 +29371,7 @@
         },
         {
           "disabled": false,
-          "document": "雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaImageSpriteInfo",
           "name": "ImageSpriteInfo",
@@ -29297,7 +29381,7 @@
         },
         {
           "disabled": false,
-          "document": "指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSnapshotByTimeOffsetInfo",
           "name": "SnapshotByTimeOffsetInfo",
@@ -29307,7 +29391,7 @@
         },
         {
           "disabled": false,
-          "document": "视频打点信息。对视频设置的各个打点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频打点信息。对视频设置的各个打点信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaKeyFrameDescInfo",
           "name": "KeyFrameDescInfo",
@@ -29317,7 +29401,7 @@
         },
         {
           "disabled": false,
-          "document": "转自适应码流信息。包括规格、加密类型、打包格式等相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转自适应码流信息。包括规格、加密类型、打包格式等相关信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaAdaptiveDynamicStreamingInfo",
           "name": "AdaptiveDynamicStreamingInfo",
@@ -29327,7 +29411,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序审核信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>小程序审核信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMiniProgramReviewInfo",
           "name": "MiniProgramReviewInfo",
@@ -29337,7 +29421,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字幕信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSubtitleInfo",
           "name": "SubtitleInfo",
@@ -29347,7 +29431,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件唯一标识 ID。",
+          "document": "<p>媒体文件唯一标识 ID。</p>",
           "example": "327083******3604148",
           "member": "string",
           "name": "FileId",
@@ -29357,7 +29441,7 @@
         },
         {
           "disabled": false,
-          "document": "审核信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审核信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileReviewInfo",
           "name": "ReviewInfo",
@@ -29367,7 +29451,7 @@
         },
         {
           "disabled": false,
-          "document": "MPS智能媒资信息",
+          "document": "<p>MPS智能媒资信息</p>",
           "example": "无",
           "member": "MPSAiMediaInfo",
           "name": "MPSAiMediaInfo",
@@ -29377,13 +29461,33 @@
         },
         {
           "disabled": false,
-          "document": "图片理解信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片理解信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageUnderstandingInfo",
           "name": "ImageUnderstandingInfo",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能知识库信息。</p>",
+          "example": "无",
+          "member": "KnowledgeBasesInfo",
+          "name": "KnowledgeBasesInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>人脸识别信息。</p>",
+          "example": "无",
+          "member": "FaceRecognitionInfo",
+          "name": "FaceRecognitionInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -32656,7 +32760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。</b></p>",
           "example": "1500000001",
           "member": "uint64",
           "name": "SubAppId",
@@ -32665,7 +32769,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改的 MPS 模板的类型。取值：\n<li>Transcode: 创建转码模板，目前仅支持修改增强参数。</li>",
+          "document": "<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>Transcode： 转码模板，目前仅支持修改增强参数</li><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>",
           "example": "Transcode",
           "member": "string",
           "name": "TemplateType",
@@ -32674,7 +32778,7 @@
         },
         {
           "disabled": false,
-          "document": "MPS 修改模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧修改用户自定义的 MPS 任务模板。\n 目前仅支持通过此方式修改以下任务类型的模板：\n1. 音视频增强：仅支持填写“[修改转码模板](https://cloud.tencent.com/document/api/862/37578)”接口中的 Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。",
+          "document": "<p>MPS 修改模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧修改用户自定义的 MPS 任务模板。<br> 目前仅支持通过此方式修改以下任务类型的模板：</p><ol><li>音视频增强：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/37578\">修改转码模板</a>”接口中的 Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能分析：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/40246\">修改内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/117001\">修改智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href=\"https://cloud.tencent.com/document/api/862/123732\">修改智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol>",
           "example": "{\"Definition\":24214,\"Container\":\"mp4\",\"Name\":\"test\",\"RemoveAudio\":1,\"VideoTemplate\":{\"Codec\":\"h264\",\"Fps\":0,\"Bitrate\":0},\"EnhanceConfig\":{\"VideoEnhance\":{\"FrameRate\":{\"Switch\":\"ON\",\"Fps\":50}}}}",
           "member": "string",
           "name": "MPSModifyTemplateParams",
@@ -36744,7 +36848,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "document": "<p>媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 <a href=\"/document/product/266/7830\">视频上传完成事件通知</a> 或 <a href=\"https://console.cloud.tencent.com/vod/media\">云点播控制台</a> 获取该字段。</p>",
           "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
@@ -36753,7 +36857,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。</b></p>",
           "example": "1500000001",
           "member": "uint64",
           "name": "SubAppId",
@@ -36762,7 +36866,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。\n视频处理参数详情请参考：[MPS 发起媒体处理](https://cloud.tencent.com/document/api/862/37578)。\n填写说明：\n1. 目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；\n2. 当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；\n3. 音视频增强任务目前不支持使用预置模板发起，可通过 [CreateMPSTemplate](https://cloud.tencent.com/document/product/266/122580) 接口创建自定义模板。",
+          "document": "<p>该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。<br>视频处理参数详情请参考：<a href=\"https://cloud.tencent.com/document/api/862/37578\">MPS 发起媒体处理</a>。<br>填写说明：</p><ol><li>目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；</li><li>当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；</li><li>音视频增强任务目前不支持使用预置模板发起，可通过 <a href=\"https://cloud.tencent.com/document/product/266/122580\">CreateMPSTemplate</a> 接口创建自定义模板。</li></ol>",
           "example": "{\"AiAnalysisTask\":{\"Definition\":25,\"ExtendedParameter\":\"\"}}",
           "member": "string",
           "name": "MPSProcessMediaParams",
@@ -36771,7 +36875,7 @@
         },
         {
           "disabled": false,
-          "document": "保留字段，特殊用途时使用。",
+          "document": "<p>保留字段，特殊用途时使用。</p>",
           "example": "ExtInfo",
           "member": "string",
           "name": "ExtInfo",
@@ -36786,7 +36890,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID。",
+          "document": "<p>任务 ID。</p>",
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",

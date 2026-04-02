@@ -16532,24 +16532,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。",
+          "document": "筛选字段名，对应实体属性名（驼峰命名）",
           "example": "status",
           "member": "string",
           "name": "Name",
-          "required": true,
-          "type": "string"
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "document": "筛选操作符：EQ/NE/GT/GE/LT/LE/LIKE/IN，默认EQ",
+          "example": "EQ",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "筛选值列表，EQ/NE/GT/GE/LT/LE/LIKE取第一个值，IN使用完整列表",
           "example": "[\"dlc-engine\"]",
           "member": "string",
           "name": "Values",
-          "required": true,
-          "type": "list"
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "GPUInfo": {
       "document": "GPU 机型",

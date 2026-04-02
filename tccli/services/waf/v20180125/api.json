@@ -15735,7 +15735,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " 服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则",
+          "document": "<p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>",
           "example": "sdfsfs",
           "member": "string",
           "name": "ServiceId",
@@ -15744,16 +15744,16 @@
         },
         {
           "disabled": false,
-          "document": "要审核的内容",
+          "document": "<p>要审核的内容</p>",
           "example": "无",
           "member": "ApiGuardContent",
           "name": "Content",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
           "disabled": false,
-          "document": "标识用户的id，限速使用，不填，则限速会不生效",
+          "document": "<p>标识用户的id，限速使用，不填，则限速会不生效</p>",
           "example": "sd",
           "member": "string",
           "name": "UserId",
@@ -15762,10 +15762,28 @@
         },
         {
           "disabled": false,
-          "document": "会话id",
+          "document": "<p>会话id</p>",
           "example": "sdf",
           "member": "string",
           "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具名称</p>",
+          "example": "exec",
+          "member": "string",
+          "name": "ToolName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具执行的参数</p>",
+          "example": "rm -rf",
+          "member": "string",
+          "name": "ToolArgs",
           "required": false,
           "type": "string"
         }
@@ -15777,7 +15795,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测结果",
+          "document": "<p>检测结果</p>",
           "example": "无",
           "member": "LLMRisks",
           "name": "Data",
@@ -22104,7 +22122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": " 仅输出侧：涉敏信息",
+          "document": "<p>仅输出侧：涉敏信息</p>",
           "example": "无",
           "member": "LLMSensitiveValueLevel",
           "name": "SensitiveResult",
@@ -22114,7 +22132,7 @@
         },
         {
           "disabled": false,
-          "document": " 输入输出均检测：关键词库命中信息",
+          "document": "<p>输入输出均检测：关键词库命中信息</p>",
           "example": "无",
           "member": "KeyWordInfo",
           "name": "KeyWordsResult",
@@ -22124,7 +22142,7 @@
         },
         {
           "disabled": false,
-          "document": "输入输出均检测：数据分类分级结果",
+          "document": "<p>输入输出均检测：数据分类分级结果</p>",
           "example": "[\"微信openid\"]",
           "member": "string",
           "name": "DataCategoryResult",
@@ -22134,7 +22152,7 @@
         },
         {
           "disabled": false,
-          "document": " 仅输入侧检出：prompt检测的结果",
+          "document": "<p>仅输入侧检出：prompt检测的结果</p>",
           "example": "无",
           "member": "PromptDetectResult",
           "name": "PromptInjectionResult",
@@ -22144,7 +22162,7 @@
         },
         {
           "disabled": false,
-          "document": "命中的规则ID",
+          "document": "<p>命中的规则ID</p>",
           "example": "5200038493",
           "member": "string",
           "name": "RuleId",
@@ -22154,7 +22172,7 @@
         },
         {
           "disabled": false,
-          "document": "命中的规则名称",
+          "document": "<p>命中的规则名称</p>",
           "example": "ddptest",
           "member": "string",
           "name": "RuleName",
@@ -22164,7 +22182,7 @@
         },
         {
           "disabled": false,
-          "document": "规则动作",
+          "document": "<p>规则动作</p>",
           "example": "log",
           "member": "string",
           "name": "Action",
@@ -22174,8 +22192,8 @@
         },
         {
           "disabled": false,
-          "document": "攻击payload",
-          "example": "风险类型:内置关键词库-涉政-高敏感,风险内容:胡海峰",
+          "document": "<p>攻击payload</p>",
+          "example": "风险类型:内置关键词库-涉政-高敏感,风险内容:***",
           "member": "string",
           "name": "Payload",
           "output_required": false,
