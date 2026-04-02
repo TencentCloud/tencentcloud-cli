@@ -1316,6 +1316,14 @@
         "title": "查询策略模板的绑定关系"
       }
     ],
+    "DescribeSharedCNAME": [
+      {
+        "document": "查询共享CNAME列表",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedCNAME\n<公共请求参数>\n\n{\n    \"Direction\": \"desc\",\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"qq.com\"\n            ],\n            \"Name\": \"shared-cname\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Order\": \"create-time\",\n    \"Match\": \"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"SharedCNAMEInfo\": [\n            {\n                \"SharedCNAME\": \"qq.com.share.eo.dnse5.com\",\n                \"Description\": \"用于业务A场景\",\n                \"BindDomainCount\": 3\n            }\n        ]\n    }\n}",
+        "title": "查询共享CNAME列表"
+      }
+    ],
     "DescribeTimingL4Data": [
       {
         "document": "查询 ZoneId = zone-28kw53cmc6ky 的站点下，全部四层实例在 2025-10-01T08:00:00+08:00 ~ 2025-10-01T10:00:00+08:00 期间的并发连接数时序数据。",
@@ -2050,6 +2058,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityPolicy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-fa89j239a\",\n    \"Entity\": \"*.eotest.com\",\n    \"SecurityConfig\": {\n        \"ExceptConfig\": {\n            \"Switch\": \"on\",\n            \"ExceptUserRules\": [\n                {\n                    \"Action\": \"skip\",\n                    \"ExceptUserRuleConditions\": [\n                        {\n                            \"MatchContent\": \"/skipwaf\",\n                            \"MatchFrom\": \"cgi\",\n                            \"Operator\": \"equal\"\n                        }\n                    ],\n                    \"ExceptUserRuleScope\": {\n                        \"Type\": \"partial\",\n                        \"PartialModules\": [\n                            {\n                                \"Module\": \"waf\",\n                                \"Include\": [\n                                    106247778\n                                ]\n                            }\n                        ],\n                        \"SkipConditions\": [\n                            {\n                                \"MatchContent\": [],\n                                \"MatchFrom\": [\n                                    \"YourSkipHeader\"\n                                ],\n                                \"MatchFromType\": \"equal\",\n                                \"Selector\": \"values\",\n                                \"Type\": \"header_fields\"\n                            }\n                        ]\n                    },\n                    \"RuleID\": 0,\n                    \"RuleName\": \"first_webshell\",\n                    \"RulePriority\": 0,\n                    \"RuleStatus\": \"on\",\n                    \"UpdateTime\": \"2022-09-22T03:00:10Z\"\n                }\n            ]\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08b32010-ab25-42a4-b923-2e6c481dae66\"\n    }\n}",
         "title": "修改安全配置中的例外规则并加白Header指定key字段的场景"
+      }
+    ],
+    "ModifySharedCNAME": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySharedCNAME\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3njjbwxjh9uh\",\n    \"SharedCNAME\": \"qwde31a.3njjbwxjh9uh.share.eodev-ov.com\",\n    \"Description\": \"用于共享CNAME绑定IP SSL\",\n    \"IPSSLSetting\": {\n        \"Operation\": \"bind\",\n        \"AssociatedDomain\": \"oshare1.more.top\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5975d48-af10-4ceb-b730-1f00e41463f5\"\n    }\n}",
+        "title": "共享CNAME绑定IP SSL"
       }
     ],
     "ModifyWebSecurityTemplate": [

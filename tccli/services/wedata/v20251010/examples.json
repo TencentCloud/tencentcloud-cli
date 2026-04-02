@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CheckTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckTable\n<公共请求参数>\n\n{\n    \"CatalogName\": \"c4\",\n    \"SchemaName\": \"default\",\n    \"TableName\": \"tableA\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Exists\": false\n        },\n        \"RequestId\": \"f0bd2597-6ef6-4f3e-8886-72e26e6a2fa4\"\n    }\n}",
+        "title": "TableNoteExists"
+      }
+    ],
+    "CreateCatalog": [
+      {
+        "document": "创建数据目录",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCatalog\n<公共请求参数>\n\n{\n    \"Name\": \"mico_catalog_1025\",\n    \"Type\": \"TABLE\",\n    \"WorkspaceId\": \"default\",\n    \"Comment\": \"test create\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CatalogId\": \"9282d7bd-9fde-4ec1-bd8f-c0096146095b\"\n        },\n        \"RequestId\": \"ef2c4e2b-8795-407e-902a-aae86b620b86\"\n    }\n}",
+        "title": "创建数据目录"
+      }
+    ],
     "CreateCodeFile": [
       {
         "document": "",
@@ -48,6 +64,14 @@
         "title": "调试数据接入任务"
       }
     ],
+    "CreateSchema": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchema\n<公共请求参数>\n\n{\n    \"CatalogName\": \"mico_test_1018\",\n    \"Name\": \"mico_schema_1027\",\n    \"Comment\": \"test create schema\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9c4c3f5-4c1c-4264-bc1c-2824578420ad\",\n        \"Data\": {\n            \"Schema\": {\n                \"Audit\": {\n                    \"CreatedAt\": \"1761627980744\",\n                    \"Creator\": \"1290245077@qq.com\",\n                    \"LastModifiedAt\": \"0\",\n                    \"LastModifier\": \"\"\n                },\n                \"Comment\": \"test create schema\",\n                \"Name\": \"mico_schema_1027\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"tccatalog.identifier\",\n                        \"Value\": \"tccatalog.v1.uid1052210150648680833\"\n                    }\n                ]\n            }\n        }\n    }\n}",
+        "title": "创建schema"
+      }
+    ],
     "CreateTableByDDL": [
       {
         "document": "",
@@ -70,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteWorkflow\n<公共请求参数>\n\n{\n    \"WorkflowId\": \"02b789442dcf92505741eb33f55162d6\",\n    \"ExecuteType\": 1,\n    \"WorkspaceId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorMessage\": null,\n            \"ExecutionActionId\": \"23b50c21-eb37-3aed-982b-e042da0cbcc8\",\n            \"ItemId\": \"02b789442dcf92505741eb33f55162d6\",\n            \"ItemName\": \"new_workflow_20251025_100729\",\n            \"OpStatus\": true\n        },\n        \"RequestId\": \"039e2422-5fdf-4736-8a01-931239321d03\"\n    }\n}",
         "title": "运行工作流"
+      }
+    ],
+    "DownloadJobResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadJobResult\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"12345677\",\n    \"JobId\": \"12\",\n    \"SubJobId\": \"12\",\n    \"RequestType\": null\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DownloadUrls\": [\n                \"https://log-detail.example.com/jobs/12/logs\"\n            ],\n            \"ResultMeta\": {\n                \"CostTime\": 123,\n                \"CreateTime\": \"1764819834754\",\n                \"ResultSchema\": [\n                    {\n                        \"Name\": \"id\",\n                        \"Type\": \"int\"\n                    }\n                ],\n                \"SQL\": \"/tmp/job_logs/12/default_output.log\"\n            }\n        },\n        \"RequestId\": \"f034a107-5055-4517-8acd-320e13232629\"\n    }\n}",
+        "title": "获取任务结果"
       }
     ],
     "DrawWorkflow": [
@@ -176,6 +208,22 @@
         "title": "获取任务日志"
       }
     ],
+    "GetSchema": [
+      {
+        "document": "查询schema详情",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSchema\n<公共请求参数>\n\n{\n    \"CatalogName\": \"mico_test_1018\",\n    \"SchemaName\": \"mico_schema_1027\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c38c8e21-b9f0-4d60-b8da-45e21b31d1d2\",\n        \"Data\": {\n            \"Schema\": {\n                \"Audit\": {\n                    \"CreatedAt\": \"1761627980744\",\n                    \"Creator\": \"1290245077@qq.com\",\n                    \"LastModifiedAt\": \"0\",\n                    \"LastModifier\": \"\"\n                },\n                \"Comment\": \"test create schema\",\n                \"MetaOwner\": {\n                    \"FullName\": \"mico_test_1018.mico_schema_1027\",\n                    \"Owner\": \"1290245077@qq.com\",\n                    \"OwnerType\": \"user\"\n                },\n                \"Name\": \"mico_schema_1027\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"tccatalog.identifier\",\n                        \"Value\": \"tccatalog.v1.uid1052210150648680833\"\n                    }\n                ]\n            }\n        }\n    }\n}",
+        "title": "查询schema详情"
+      }
+    ],
+    "GetTable": [
+      {
+        "document": "获取table详情",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTable\n<公共请求参数>\n\n{\n    \"CatalogName\": \"DataLakeCatalog\",\n    \"SchemaName\": \"default\",\n    \"TableName\": \"modify_1024_05\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43e5f86e-235b-4902-9914-5c2fbba39373\",\n        \"Data\": {\n            \"Table\": {\n                \"Audit\": {\n                    \"CreatedAt\": \"0\",\n                    \"Creator\": \"\",\n                    \"LastModifiedAt\": \"1761300621782\",\n                    \"LastModifier\": \"1290245077@qq.com\"\n                },\n                \"Columns\": [\n                    {\n                        \"Comment\": \"id\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"id\",\n                        \"Type\": \"string\"\n                    }\n                ],\n                \"Comment\": \"qw\",\n                \"Indexes\": [],\n                \"Name\": \"modify_1024_05\",\n                \"Partitioning\": [],\n                \"Properties\": [\n                    {\n                        \"Key\": \"write.parquet.compression-codec\",\n                        \"Value\": \"zstd\"\n                    },\n                    {\n                        \"Key\": \"format-version\",\n                        \"Value\": \"1\"\n                    },\n                    {\n                        \"Key\": \"provider\",\n                        \"Value\": \"iceberg\"\n                    },\n                    {\n                        \"Key\": \"write.metadata.previous-versions-max\",\n                        \"Value\": \"100\"\n                    },\n                    {\n                        \"Key\": \"metadata_location\",\n                        \"Value\": \"cosn://dlc4634-700001601851-1740545216-700001779129-251301051/1300298608/warehouse/default.db/myquser.1760698472074/metadata/00000-c09780b5-0893-40b1-9531-8332be94db68.metadata.json\"\n                    },\n                    {\n                        \"Key\": \"\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"write.upsert.enabled\",\n                        \"Value\": \"false\"\n                    },\n                    {\n                        \"Key\": \"format\",\n                        \"Value\": \"iceberg/parquet\"\n                    },\n                    {\n                        \"Key\": \"uuid\",\n                        \"Value\": \"2e8b0aa3-d253-4a04-bc57-9376ac9c1d84\"\n                    },\n                    {\n                        \"Key\": \"current-snapshot-id\",\n                        \"Value\": \"none\"\n                    },\n                    {\n                        \"Key\": \"tccatalog.identifier\",\n                        \"Value\": \"tccatalog.v1.uid4284773195429403503\"\n                    },\n                    {\n                        \"Key\": \"write.distribution-mode\",\n                        \"Value\": \"none\"\n                    },\n                    {\n                        \"Key\": \"write.metadata.delete-after-commit.enabled\",\n                        \"Value\": \"true\"\n                    },\n                    {\n                        \"Key\": \"write.metadata.metrics.default\",\n                        \"Value\": \"full\"\n                    }\n                ],\n                \"TableFormat\": \"\"\n            }\n        }\n    }\n}",
+        "title": "获取table详情"
+      }
+    ],
     "GetTableSchemaInfo": [
       {
         "document": "",
@@ -246,6 +294,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApplicationDatasets\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17663856806379896\",\n    \"DashboardAccessKey\": \"801469279624839168\",\n    \"PageRequest\": {\n        \"PageNumber\": 1,\n        \"PageSize\": 20\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Catalog\": \"c4\",\n                    \"CreatedBy\": \"700002164618\",\n                    \"CreatedOn\": \"1768893180863\",\n                    \"CustomSql\": \"SELECT * from c4.default.lingshou\",\n                    \"DataFrom\": \"SQL\",\n                    \"DatasetVersion\": 5,\n                    \"Description\": \"\",\n                    \"DisplayName\": \"无标题数据集test\",\n                    \"FieldInfoList\": [\n                        {\n                            \"CalcAggregation\": \"\",\n                            \"CalcFormula\": \"\",\n                            \"DataType\": \"DATE\",\n                            \"DataTypePrecision\": 0,\n                            \"DataTypeScale\": 0,\n                            \"Description\": \"\",\n                            \"DisplayName\": \"time\",\n                            \"FieldCategory\": \"\",\n                            \"FieldType\": \"PHYSICAL\",\n                            \"FormatRule\": \"yyyy-MM-dd\",\n                            \"Key\": \"92a3273c17690016062549d7c3752\",\n                            \"OriginalFields\": \"\",\n                            \"PhysicalFieldName\": \"time\"\n                        }\n                    ],\n                    \"Key\": \"fb9e4d1f176889318086406b99645\",\n                    \"ModifiedBy\": \"700002164618\",\n                    \"ModifiedOn\": \"1769003451243\",\n                    \"Owner\": \"700002164618\",\n                    \"ParameterList\": [],\n                    \"RefCount\": 1,\n                    \"Schema\": \"default\",\n                    \"TableName\": \"\",\n                    \"TempCosUrl\": \"/801469279624839168/fb9e4d1f176889318086406b99645/DRAFT/ff8024a1716b53f2052bd1fc0c73a162_700002164618_1769001555218.csv\"\n                }\n            ],\n            \"PageResponse\": {\n                \"PageNumber\": 1,\n                \"PageSize\": 20,\n                \"TotalCount\": 5,\n                \"TotalPageNumber\": 1\n            }\n        },\n        \"RequestId\": \"e170f1ca-73cd-4231-acd6-1a0397917421\"\n    }\n}",
         "title": "数据集列表"
+      }
+    ],
+    "ListCatalogNames": [
+      {
+        "document": "获取数据目录名称列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCatalogNames\n<公共请求参数>\n\n{\n    \"MaxResults\": 1,\n    \"WorkspaceId\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"myq_test1234\",\n                    \"Namespace\": []\n                }\n            ],\n            \"NextPageToken\": \"eyJvZmZzZXQiOjF9\"\n        },\n        \"RequestId\": \"69bff9cd-542a-4b80-86f1-351460ebe267\"\n    }\n}",
+        "title": "获取数据目录名称列表"
       }
     ],
     "ListCatalogs": [
@@ -358,6 +414,14 @@
         "title": "分页查询标签"
       }
     ],
+    "ListSchemaNames": [
+      {
+        "document": "获取schema名称列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSchemaNames\n<公共请求参数>\n\n{\n    \"CatalogName\": \"mico_catalog_table_1027\",\n    \"MaxResults\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"default\",\n                    \"Namespace\": [\n                        \"mico_catalog_table_1027\"\n                    ]\n                }\n            ],\n            \"NextPageToken\": \"eyJvZmZzZXQiOjF9\"\n        },\n        \"RequestId\": \"7bd7de24-b051-4971-be3b-45f76381082f\"\n    }\n}",
+        "title": "获取schema名称列表"
+      }
+    ],
     "ListSchemas": [
       {
         "document": "获取schema列表",
@@ -372,6 +436,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSchemasPage\n<公共请求参数>\n\n{\n    \"DatabaseName\": \"c4\",\n    \"ConnectionType\": \"TCLake\",\n    \"WorkspaceId\": \"17663856806379896\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"SchemaName\": \"default\"\n                }\n            ],\n            \"NextPageToken\": \"\"\n        },\n        \"RequestId\": \"d346a26d-5227-4a9c-a947-1400179da312\"\n    }\n}",
         "title": "获取TCLake Schema信息"
+      }
+    ],
+    "ListTableNames": [
+      {
+        "document": "获取表名称列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTableNames\n<公共请求参数>\n\n{\n    \"CatalogName\": \"DataLakeCatalog\",\n    \"SchemaName\": \"default\",\n    \"MaxResults\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"order_managed_table\",\n                    \"Namespace\": [\n                        \"DataLakeCatalog\",\n                        \"default\"\n                    ]\n                }\n            ],\n            \"NextPageToken\": \"eyJvZmZzZXQiOjF9\"\n        },\n        \"RequestId\": \"9854afad-1afe-4f20-91f0-46bf3c3c01c2\"\n    }\n}",
+        "title": "获取表名称列表"
       }
     ],
     "ListTables": [
