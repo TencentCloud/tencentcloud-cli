@@ -9468,8 +9468,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除虚拟集群的名称数组",
-          "example": "[\"xxx\"]",
+          "document": "<p>删除虚拟集群的名称数组</p>",
+          "example": "[\"public-engine\"]",
           "member": "string",
           "name": "DataEngineNames",
           "required": true,

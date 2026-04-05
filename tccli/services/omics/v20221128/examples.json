@@ -48,6 +48,22 @@
         "title": "查询环境列表"
       }
     ],
+    "DescribeHPCClusters": [
+      {
+        "document": "查询HPC集群列表。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHPCClusters\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"hpc-an7qz1jg\",\n                \"CreateTime\": \"2024-08-07T16:00:00+08:00\",\n                \"Description\": \"test hpc desc\",\n                \"Name\": \"test hpc\",\n                \"NodeCount\": 3,\n                \"Scheduler\": \"SLURM\",\n                \"Status\": \"RUNNING\",\n                \"Tags\": null,\n                \"VPCId\": \"vpc-36feogq7\"\n            }\n        ],\n        \"RequestId\": \"e01bb16d-e71f-4522-ac67-51591f999dae\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询HPC集群列表"
+      }
+    ],
+    "DescribeHPCNodes": [
+      {
+        "document": "查询HPC节点列表。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHPCNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-an7qz1jg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Nodes\": [\n            {\n                \"ClusterId\": \"hpc-an7qz1jg\",\n                \"ImageId\": \"img-l8og963d\",\n                \"Instance\": {\n                    \"CPU\": 2,\n                    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                    \"CreateTime\": \"2024-07-09T16:53:15+08:00\",\n                    \"ExpireTime\": \"2024-08-09T16:53:15+08:00\",\n                    \"InstanceId\": \"ins-hsjwv87a\",\n                    \"Memory\": 4,\n                    \"Name\": \"未命名\",\n                    \"OSName\": \"CentOS 7.9 64位\",\n                    \"PrivateIPAddresses\": [\n                        \"10.1.0.91\"\n                    ],\n                    \"PublicIPAddresses\": [],\n                    \"State\": \"RUNNING\",\n                    \"SystemDisk\": {\n                        \"DiskId\": \"disk-hajjdzfu\",\n                        \"Size\": 50,\n                        \"Type\": \"CLOUD_PREMIUM\"\n                    },\n                    \"Type\": \"SA2.MEDIUM4\"\n                },\n                \"NodeId\": \"node-exg8nn7f\",\n                \"QueueId\": \"\",\n                \"Role\": \"MANAGER\",\n                \"Tags\": [],\n                \"Type\": \"STATIC\",\n                \"Zone\": \"ap-guangzhou-6\"\n            },\n            {\n                \"ClusterId\": \"hpc-an7qz1jg\",\n                \"ImageId\": \"img-l8og963d\",\n                \"Instance\": {\n                    \"CPU\": 2,\n                    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                    \"CreateTime\": \"2024-07-09T16:52:46+08:00\",\n                    \"ExpireTime\": \"2024-08-09T16:52:46+08:00\",\n                    \"InstanceId\": \"ins-hwifb6n8\",\n                    \"Memory\": 4,\n                    \"Name\": \"未命名\",\n                    \"OSName\": \"CentOS 7.9 64位\",\n                    \"PrivateIPAddresses\": [\n                        \"10.1.8.62\"\n                    ],\n                    \"PublicIPAddresses\": [\n                        \"106.53.59.92\"\n                    ],\n                    \"State\": \"RUNNING\",\n                    \"SystemDisk\": {\n                        \"DiskId\": \"disk-dvfroio2\",\n                        \"Size\": 50,\n                        \"Type\": \"CLOUD_PREMIUM\"\n                    },\n                    \"Type\": \"SA2.MEDIUM4\"\n                },\n                \"NodeId\": \"node-ifrzwo4f\",\n                \"QueueId\": \"queue-dq1spf9m\",\n                \"Role\": \"COMPUTE\",\n                \"Tags\": [],\n                \"Type\": \"DYNAMIC\",\n                \"Zone\": \"ap-guangzhou-6\"\n            },\n            {\n                \"ClusterId\": \"hpc-an7qz1jg\",\n                \"ImageId\": \"img-l8og963d\",\n                \"Instance\": {\n                    \"CPU\": 4,\n                    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                    \"CreateTime\": \"2024-07-16T18:14:07+08:00\",\n                    \"ExpireTime\": \"2024-08-09T16:52:46+08:00\",\n                    \"InstanceId\": \"ins-8rrp4n6s\",\n                    \"Memory\": 8,\n                    \"Name\": \"未命名\",\n                    \"OSName\": \"CentOS 7.9 64位\",\n                    \"PrivateIPAddresses\": [\n                        \"10.1.3.200\"\n                    ],\n                    \"PublicIPAddresses\": [],\n                    \"State\": \"RUNNING\",\n                    \"SystemDisk\": {\n                        \"DiskId\": \"disk-ofrnd2a4\",\n                        \"Size\": 50,\n                        \"Type\": \"CLOUD_PREMIUM\"\n                    },\n                    \"Type\": \"SA2.LARGE8\"\n                },\n                \"NodeId\": \"node-cqjk6pbz\",\n                \"QueueId\": \"queue-dq1spf9m\",\n                \"Role\": \"COMPUTE\",\n                \"Tags\": [],\n                \"Type\": \"STATIC\",\n                \"Zone\": \"ap-guangzhou-6\"\n            }\n        ],\n        \"RequestId\": \"1ab0bd99-190f-4419-b048-8bf798164944\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询HPC节点列表"
+      }
+    ],
     "DescribeRunGroups": [
       {
         "document": "查询任务批次列表。",
@@ -132,6 +148,14 @@
         "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVolume\n<公共请求参数>\n\n{\n    \"VolumeId\": \"vol-mpcb5xnl\",\n    \"Name\": \"新名称\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ad01102-de15-43fb-8de3-02b0107cf08c\"\n    }\n}",
         "title": "修改缓存卷"
+      }
+    ],
+    "RebootHPCNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootHPCNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-9jragud9\",\n    \"NodeIds\": [\n        \"ins-85ckz3bg\"\n    ],\n    \"StopType\": \"SOFT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e73ad829-d0b8-418c-a07f-17561c294e71\"\n    }\n}",
+        "title": "重启集群节点"
       }
     ],
     "RetryRuns": [

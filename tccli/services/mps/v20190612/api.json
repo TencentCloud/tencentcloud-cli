@@ -742,6 +742,13 @@
       "output": "DescribeVideoSearchTaskDetailResponse",
       "status": "online"
     },
+    "DescribeVoices": {
+      "document": "同步接口。查询可用音色，支持通过类型、标签、语言等条件检索音色",
+      "input": "DescribeVoicesRequest",
+      "name": "查询可用音色",
+      "output": "DescribeVoicesResponse",
+      "status": "online"
+    },
     "DescribeWatermarkTemplates": {
       "document": "查询用户自定义水印模板，支持根据条件，分页查询。",
       "input": "DescribeWatermarkTemplatesRequest",
@@ -19477,6 +19484,72 @@
           "example": "无",
           "member": "SearchTaskResult",
           "name": "SearchTaskResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoicesRequest": {
+      "document": "DescribeVoices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音色类别</p><p>枚举值：</p><ul><li>system： 系统音色</li></ul>",
+          "example": "system",
+          "member": "string",
+          "name": "VoiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，json字符串</p><p>其他筛选条件voiceName String 音色名，模糊匹配labels Array of String 标签，匹配包含这些标签的音色</p>",
+          "example": "{\n    \"labels\": [\"温柔\"]\n}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoicesResponse": {
+      "document": "DescribeVoices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用音色列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VoiceInfo",
+          "name": "Voices",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
@@ -40801,6 +40874,111 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VoiceInfo": {
+      "document": "音色信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音色ID</p>",
+          "example": "s1_NTEwPE5DPwpdXDH2X2CM/YFaeHm73AGz8NmUwRJti8zvCO0BmWRc+Rz4",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色名</p>",
+          "example": "甜美女声",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色描述信息</p>",
+          "example": "一位温柔甜美的青年女性声音，标准普通话。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色类别</p><p>枚举值：</p><ul><li>system： 系统音色</li></ul>",
+          "example": "system",
+          "member": "string",
+          "name": "Category",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别</p><p>枚举值：</p><ul><li>male： 男</li><li>famale： 女</li></ul>",
+          "example": "male",
+          "member": "string",
+          "name": "Gender",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持语种列表</p><p>如：en</p>",
+          "example": "[\"zh\"]",
+          "member": "string",
+          "name": "Languages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>试听音频URL</p>",
+          "example": "https://ie-mps-1258344699.cos.ap-nanjing.myqcloud.com/common/lauriehuang/dubbing/voice/samples/s1_3NM2Z1I1O.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p><p>如：温柔</p>",
+          "example": "[\"温柔\"]",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推荐场景</p><p>如：教育</p>",
+          "example": "[\"教学\"]",
+          "member": "string",
+          "name": "Scenes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -119,6 +119,13 @@
       "output": "CreateDnsRecordResponse",
       "status": "online"
     },
+    "CreateEdgeKVNamespace": {
+      "document": "本接口用于在指定站点下创建 KV 命名空间。",
+      "input": "CreateEdgeKVNamespaceRequest",
+      "name": "创建 KV 命名空间",
+      "output": "CreateEdgeKVNamespaceResponse",
+      "status": "online"
+    },
     "CreateFunction": {
       "document": "创建并部署边缘函数至 EdgeOne 的边缘节点。",
       "input": "CreateFunctionRequest",
@@ -341,6 +348,13 @@
       "input": "DeleteDnsRecordsRequest",
       "name": "批量删除 DNS 记录",
       "output": "DeleteDnsRecordsResponse",
+      "status": "online"
+    },
+    "DeleteEdgeKVNamespace": {
+      "document": "本接口用于删除指定的 KV 命名空间。删除后命名空间内的所有键值对数据将被清空且不可恢复。若命名空间正被边缘函数引用，需先解除绑定关系后方可删除。",
+      "input": "DeleteEdgeKVNamespaceRequest",
+      "name": "删除 KV 命名空间",
+      "output": "DeleteEdgeKVNamespaceResponse",
       "status": "online"
     },
     "DeleteFunction": {
@@ -609,11 +623,25 @@
       "output": "DescribeDnsRecordsResponse",
       "status": "online"
     },
+    "DescribeEdgeKVNamespaces": {
+      "document": "查询指定站点下的 KV 命名空间列表，支持分页、排序和条件过滤。返回命名空间的基本信息、存储容量使用情况以及被引用关系。若查询不到数据，则返回空数组。",
+      "input": "DescribeEdgeKVNamespacesRequest",
+      "name": "查询 KV 命名空间",
+      "output": "DescribeEdgeKVNamespacesResponse",
+      "status": "online"
+    },
     "DescribeEnvironments": {
       "document": "在版本管理模式下，用于查询环境信息，可获取环境 ID、类型、当前生效版本等。版本管理功能内测中，当前仅白名单开放。",
       "input": "DescribeEnvironmentsRequest",
       "name": "查询环境信息",
       "output": "DescribeEnvironmentsResponse",
+      "status": "online"
+    },
+    "DescribeFunctionComponentBindings": {
+      "document": "本接口用于查询指定边缘函数的组件绑定列表，支持分页和条件过滤，返回绑定的组件类型、变量名及配置参数等详细信息。当前支持的绑定组件类型为 KV 命名空间（kv_namespace）。",
+      "input": "DescribeFunctionComponentBindingsRequest",
+      "name": "查询函数组件绑定列表",
+      "output": "DescribeFunctionComponentBindingsResponse",
       "status": "online"
     },
     "DescribeFunctionRules": {
@@ -1001,6 +1029,34 @@
       "output": "DownloadL7LogsResponse",
       "status": "online"
     },
+    "EdgeKVDelete": {
+      "document": "本接口用于删除指定命名空间中的一个或多个键值对数据，支持批量删除。删除后数据不可恢复。",
+      "input": "EdgeKVDeleteRequest",
+      "name": "删除 KV 数据",
+      "output": "EdgeKVDeleteResponse",
+      "status": "online"
+    },
+    "EdgeKVGet": {
+      "document": "本接口用于从指定命名空间中批量读取键的值，支持一次查询最多 20 个键。",
+      "input": "EdgeKVGetRequest",
+      "name": "查询 KV 数据",
+      "output": "EdgeKVGetResponse",
+      "status": "online"
+    },
+    "EdgeKVList": {
+      "document": "本接口用于列出指定命名空间下的所有键名，支持前缀过滤。通过 Cursor 实现游标遍历，返回下一个游标用于继续查询。适用于遍历命名空间中的所有键。",
+      "input": "EdgeKVListRequest",
+      "name": "查询 KV 键名列表",
+      "output": "EdgeKVListResponse",
+      "status": "online"
+    },
+    "EdgeKVPut": {
+      "document": "本接口用于向指定命名空间写入键值对数据，支持设置过期时间。若键已存在则覆盖原有值，若不存在则创建新键值对。",
+      "input": "EdgeKVPutRequest",
+      "name": "写入 KV 数据",
+      "output": "EdgeKVPutResponse",
+      "status": "online"
+    },
     "EnableOriginACL": {
       "document": "本接口用于站点首次开启源站防护，启用后 EdgeOne 将会使用特定的回源 IP 网段为七层加速域名/四层代理实例回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需要启用超过 200 个资源，可先通过指定资源的方式以最大数量启用，剩余资源通过 ModifyOriginACL 接口启用。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。同时开启的时候对开白的账户支持选择其他回源 IP 网段版本，例如精简版，来达到使用更少的 IP 网段回源效果。\n\n注意：\n- 调用本接口视为同意 [源站防护启用特别约定](https://cloud.tencent.com/document/product/1552/120141)；\n- 回源 IP 网段会不定期变更，EdgeOne 将在回源 IP 网段变更前 14 天、前 7 天、前 3 天和前 1 天分别通过站内信、短信、邮件等一种或多种方式发起通知，为了能正常收到回源 IP 网段的变更通知，请务必确保您在 [腾讯云消息中心控制台](https://console.cloud.tencent.com/message)内，已勾选边缘安全加速平台 EO 的产品服务相关消息通知，并配置正确的消息接收人。配置方式请参考 [消息订阅管理](https://cloud.tencent.com/document/product/567/43476)。",
       "input": "EnableOriginACLRequest",
@@ -1134,11 +1190,25 @@
       "output": "ModifyDnsRecordsStatusResponse",
       "status": "online"
     },
+    "ModifyEdgeKVNamespace": {
+      "document": "本接口用于修改指定 KV 命名空间的属性信息，当前支持修改命名空间描述。",
+      "input": "ModifyEdgeKVNamespaceRequest",
+      "name": "修改 KV 命名空间",
+      "output": "ModifyEdgeKVNamespaceResponse",
+      "status": "online"
+    },
     "ModifyFunction": {
       "document": "修改边缘函数，支持修改函数的内容及描述信息，修改且重新部署后，函数立刻生效。",
       "input": "ModifyFunctionRequest",
       "name": "修改边缘函数",
       "output": "ModifyFunctionResponse",
+      "status": "online"
+    },
+    "ModifyFunctionComponentBindings": {
+      "document": "修改边缘函数与组件的绑定关系，支持绑定（bind）、覆盖绑定（bind-override）、解绑（unbind）和重置绑定（rebind）四种操作模式。通过指定操作类型和组件列表，可实现对函数组件绑定关系的管理。",
+      "input": "ModifyFunctionComponentBindingsRequest",
+      "name": "修改函数组件绑定",
+      "output": "ModifyFunctionComponentBindingsResponse",
       "status": "online"
     },
     "ModifyFunctionRule": {
@@ -5803,6 +5873,72 @@
       ],
       "usage": "both"
     },
+    "ComponentReference": {
+      "document": "组件被引用的实例信息，用于展示该组件与边缘函数等资源的绑定关系。当边缘函数需要访问组件（如 KV 命名空间）时，会建立引用关系，通过此结构体可查看引用的具体实例详情及所属站点信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引用的实例类型。取值有：\n<li>edge-function：边缘函数。</li>",
+          "example": "edge-function",
+          "member": "string",
+          "name": "ReferenceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用的实例 ID。根据 ReferenceType 的取值不同，返回对应的实例 ID：\n<li>当 ReferenceType 为 edge-function 时：返回边缘函数 ID，格式形如：ef-2vc5oe9mzqhm。</li>\n",
+          "example": "ef-x5tuixcj",
+          "member": "string",
+          "name": "ReferenceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用的实例名称。根据 ReferenceType 的取值不同，返回对应的实例名称：\n<li>当 ReferenceType 为 edge-function 时：返回边缘函数名称。</li>\n",
+          "example": "b1-zone-3j1xw7910arp-260068243",
+          "member": "string",
+          "name": "ReferenceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID。引用该命名空间的实例所属的站点标识。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点名称。引用该命名空间的实例所属的站点名称。",
+          "example": "abellshe.xyz",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用该命名空间的实例所属站点的别名。若未设置站点别名，则返回空字符串。",
+          "example": "zone-example",
+          "member": "string",
+          "name": "AliasZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Compression": {
       "document": "智能压缩配置。",
       "members": [
@@ -6882,6 +7018,51 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeKVNamespaceRequest": {
+      "document": "CreateEdgeKVNamespace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称。输入内容有以下限制：支持输入 1-50 个字符，允许的字符为 a-z、A-Z、0-9、-，且 - 不能单独注册或连续使用，不能放在开头或结尾。在同站点下，名称需保证唯一。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间描述。用于说明命名空间的用途或业务含义。最大支持 256 个字符。",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeKVNamespaceResponse": {
+      "document": "CreateEdgeKVNamespace返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8913,7 +9094,7 @@
       "usage": "both"
     },
     "CustomRule": {
-      "document": "Web安全的自定义规则",
+      "document": "Web 防护功能下的自定义规则。",
       "members": [
         {
           "disabled": false,
@@ -8928,7 +9109,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "document": "自定义规则的具体内容，需符合表达式语法，详细规范参见 [产品文档](https://cloud.tencent.com/document/product/1552/125343) 。",
           "example": "${http.request.ip} in ['1.1.1.1', '10.10.10.0/24', ${security.ip_group['123'@'zone-2xsnpvkhdjes']} ]",
           "member": "string",
           "name": "Condition",
@@ -8939,7 +9120,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则的执行动作。\tSecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Allow：放行。</li>",
+          "document": "自定义规则的处置动作。SecurityAction.Name 取值范围如下：<ul><li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Allow：放行。</li></ul>",
           "example": "参考SecurityAction结构",
           "member": "SecurityAction",
           "name": "Action",
@@ -8950,7 +9131,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则是否开启。取值有：<li>on：开启</li><li>off：关闭</li>",
+          "document": "自定义规则是否开启。取值有：<ul><li>on：开启</li><li>off：关闭</li></ul>",
           "example": "on",
           "member": "string",
           "name": "Enabled",
@@ -8961,7 +9142,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> - 增加新规则：ID 为空或不指定 ID 参数；<br> - 修改已有规则：指定需要更新/修改的规则 ID；<br> - 删除已有规则：CustomRules 参数中，Rules 列表中未包含的已有规则将被删除。",
+          "document": "自定义规则的 ID。通过规则 ID 可支持不同的规则配置操作：<ul><li>增加新规则：ID 为空或不指定 ID 参数；</li><li>修改已有规则：指定需要更新/修改的规则 ID；</li><li>删除已有规则：CustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li></ul>",
           "example": "1492837231",
           "member": "string",
           "name": "Id",
@@ -8972,7 +9153,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则的类型。取值有：<li>BasicAccessRule：基础访问管控；</li><li>PreciseMatchRule：精准匹配规则，默认；</li><li>ManagedAccessRule：专家定制规则，仅出参。</li><br/>默认为PreciseMatchRule。",
+          "document": "自定义规则的类型。取值有：<ul><li>BasicAccessRule：基础访问管控；</li><li>PreciseMatchRule：精准匹配规则；</li><li>ManagedAccessRule：专家定制规则，仅出参支持。</li></ul>说明：当未指定 RuleType 时，默认为 `PreciseMatchRule`。",
           "example": "PreciseMatchRule",
           "member": "string",
           "name": "RuleType",
@@ -8983,7 +9164,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则的优先级，范围是 0 ~ 100，默认为 0，仅支持精准匹配规则（PreciseMatchRule）。",
+          "document": "自定义规则的优先级，范围是 0 ~ 100，默认为 0，仅支持精准匹配规则（`PreciseMatchRule`）。",
           "example": "10",
           "member": "int64",
           "name": "Priority",
@@ -9340,6 +9521,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DefaultDenySecurityActionParameters": {
+      "document": "默认拦截动作配置。当安全规则命中并触发拦截处置动作时，若 SecurityAction 仅指定了 Name 为 Deny 且未指定 DenyActionParameters，则按功能模块维度匹配并使用此处定义的默认参数配置：\n<li>ManagedRules 托管规则默认拦截处置动作配置。</li>\n<li>OtherModules 除托管规则外的安全防护规则（自定义规则、速率限制 和 Bot 管理功能）默认拦截处置动作配置。</li>",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管规则默认拦截处置动作配置。\tDenyActionParameters 支持的配置参数：<li>ReturnCustomPage：是否使用自定义页面。</li><li>ResponseCode：自定义页面的状态码。</li><li>ErrorPageId：自定义页面的 PageId。</li>",
+          "example": "无",
+          "member": "DenyActionParameters",
+          "name": "ManagedRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "除托管规则外的安全防护规则（自定义规则、速率限制 和 Bot 管理功能）默认拦截处置动作配置。\tDenyActionParameters 支持的配置参数：<li>ReturnCustomPage：是否使用自定义页面。</li><li>ResponseCode：自定义页面的状态码。</li><li>ErrorPageId：自定义页面的 PageId。</li>",
+          "example": "无",
+          "member": "DenyActionParameters",
+          "name": "OtherModules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DefaultServerCertInfo": {
       "document": "https 服务端证书配置",
@@ -9708,6 +9917,42 @@
     },
     "DeleteDnsRecordsResponse": {
       "document": "DeleteDnsRecords返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeKVNamespaceRequest": {
+      "document": "DeleteEdgeKVNamespace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的命名空间名称。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeKVNamespaceResponse": {
+      "document": "DeleteEdgeKVNamespace返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11992,6 +12237,98 @@
       ],
       "type": "object"
     },
+    "DescribeEdgeKVNamespacesRequest": {
+      "document": "DescribeEdgeKVNamespaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：1000。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序依据，取值有：\n<li>created-on：创建时间；</li>\n<li>updated-on：更新时间。</li>\n默认值为 created-on。",
+          "example": "created-on",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列表排序方式，取值有：\n<li>asc：升序排列；</li>\n<li>desc：降序排列。</li>\n默认值为 desc。\n",
+          "example": "desc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回站点 ID 下全部 KV 命名空间。详细的过滤条件如下：\n<li>namespace：按照 KV 命名空间名称进行过滤，支持模糊查询；</li>\n<li>remark：按照命名空间描述进行过滤，支持模糊查询。</li>\n",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeKVNamespacesResponse": {
+      "document": "DescribeEdgeKVNamespaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的命名空间总数。",
+          "example": "9",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KV 命名空间信息列表。若无符合条件的命名空间，则返回空数组。",
+          "example": "无",
+          "member": "KVNamespace",
+          "name": "KVNamespaces",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEnvironmentsRequest": {
       "document": "DescribeEnvironments请求参数结构体",
       "members": [
@@ -12026,6 +12363,89 @@
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionComponentBindingsRequest": {
+      "document": "DescribeFunctionComponentBindings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-x5tuixcj",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：1000。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：\n<li>name：按照绑定的变量名进行过滤，支持模糊查询；</li>\n<li>type：按照绑定类型进行过滤，不支持模糊查询。</li>\n",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionComponentBindingsResponse": {
+      "document": "DescribeFunctionComponentBindings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的函数绑定总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数组件绑定列表。",
+          "example": "无",
+          "member": "FunctionComponentBinding",
+          "name": "FunctionComponentBindings",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -15928,7 +16348,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView。</li>",
+          "document": "客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView；</li><li>WeChatMiniProgram。</li>",
           "example": "Android",
           "member": "string",
           "name": "ClientType",
@@ -16542,6 +16962,261 @@
         }
       ],
       "usage": "both"
+    },
+    "EdgeKVDeleteRequest": {
+      "document": "EdgeKVDelete请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "键名列表。数组长度上限为 20。每个键名不能为空，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。删除单个键时传入包含一个元素的数组。",
+          "example": "[\"hello\"]",
+          "member": "string",
+          "name": "Keys",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeKVDeleteResponse": {
+      "document": "EdgeKVDelete返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeKVGetRequest": {
+      "document": "EdgeKVGet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称。可通过 DescribeEdgeKVNamespaces 接口获取站点下的命名空间列表。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "键名列表。数组长度上限为 20。每个键名不能为空，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。查询单个键时传入包含一个元素的数组。",
+          "example": "[\"hello\"]",
+          "member": "string",
+          "name": "Keys",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeKVGetResponse": {
+      "document": "EdgeKVGet返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键值对数据列表。按入参 Keys 的顺序依次返回结果，若某键不存在，则对应项的 Value 字段返回空字符串。",
+          "example": "无",
+          "member": "KeyValuePair",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeKVListRequest": {
+      "document": "EdgeKVList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "键名前缀过滤。只返回以指定前缀开头的键名，长度为 1-512 个字符。不填写表示返回所有键名；不允许传入空字符串。",
+          "example": "he",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "游标位置。标识当前查询的起始位置，用于遍历大量数据。首次查询时不填写，从头开始遍历；后续查询时填写上一次返回的 Cursor 值，从该位置继续向后遍历。\n",
+          "example": "hello",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回的键名数量。默认值：20，最大值：1000。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeKVListResponse": {
+      "document": "EdgeKVList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键名列表。",
+          "example": "[\"hello\"]",
+          "member": "string",
+          "name": "Keys",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "游标位置。标识当前遍历的位置，用于获取下一批数据。将此值填入下次请求的 Cursor 参数中，可继续向后遍历。若为空字符串，表示已遍历完所有数据。\n",
+          "example": "hello",
+          "member": "string",
+          "name": "Cursor",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeKVPutRequest": {
+      "document": "EdgeKVPut请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "键名，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。",
+          "example": "hello",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "键值。不能为空，最大支持 1 MB。支持存储字符串数据。",
+          "example": "world",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，绝对时间。表示从 1970 年 1 月 1 日（UTC/GMT 的午夜）开始所经过的秒数，不能小于当前时间。若 Expiration 和 ExpirationTTL 都填写，以 ExpirationTTL 为准。若 Expiration 和 ExpirationTTL 都不填写，则该键值对永不过期。",
+          "example": "1774513200",
+          "member": "int64",
+          "name": "Expiration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，相对时间，单位为秒。表示数据将在指定秒数后过期，必须大于 0。若 Expiration 和 ExpirationTTL 都填写，以 ExpirationTTL 为准。若 Expiration 和 ExpirationTTL 都不填写，则该键值对永不过期。",
+          "example": "3600",
+          "member": "int64",
+          "name": "ExpirationTTL",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EdgeKVPutResponse": {
+      "document": "EdgeKVPut返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EnableOriginACLRequest": {
       "document": "EnableOriginACL请求参数结构体",
@@ -17662,6 +18337,45 @@
         }
       ],
       "usage": "out"
+    },
+    "FunctionComponentBinding": {
+      "document": "边缘函数组件绑定配置，用于建立边缘函数与组件（如 KV 命名空间）的关联关系。通过绑定配置，边缘函数代码可在运行时通过指定的变量名访问绑定的资源。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定的组件类型。取值有：\n<li>kv_namespace：KV 命名空间。</li>\n",
+          "example": "kv_namespace",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于绑定的变量名。限制 1-50 个字符，允许的字符为字母、数字和下划线，其中数字不能在开头。在边缘函数代码中通过该变量名访问绑定的组件。根据 Type 的取值不同，使用方式如下：\n<li>当 Type 为 kv_namespace 时：在代码中可通过该变量名访问 KV 命名空间，例如设置为 \"MY_KV\" 时，可通过 MY_KV.get(\"key\") 进行读写操作。</li>\n",
+          "example": "MY_KV",
+          "member": "string",
+          "name": "VariableName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KV 命名空间配置参数。用于指定绑定的 KV 命名空间详情。当 Type 为 kv_namespace 时，此字段必填。\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KVNamespaceParameters",
+          "name": "KVNamespaceParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "FunctionEnvironmentVariable": {
       "document": "边缘函数环境变量",
@@ -19458,6 +20172,146 @@
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KVNamespace": {
+      "document": "KV 命名空间信息，包含命名空间的基本属性、存储容量使用情况以及被引用关系。KV 命名空间是边缘函数存储键值对数据的容器，可在边缘函数中通过绑定方式进行读写操作。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间名称。在同站点下具有唯一性。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间描述。创建时填写的备注信息，用于说明命名空间的用途或业务含义。最大支持 256 个字符。",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KV 存储空间可用容量，单位为字节（Byte）。表示该命名空间可存储数据的最大容量上限，当前默认为 1 GB。",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "Capacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KV 存储空间已用容量，单位为字节（Byte）。表示该命名空间当前已使用的存储空间大小。",
+          "example": "0",
+          "member": "int64",
+          "name": "CapacityUsed",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间被引用实例的列表。展示当前命名空间被哪些边缘函数实例引用，以及引用的站点信息。若未被引用，则返回空数组。",
+          "example": "无",
+          "member": "ComponentReference",
+          "name": "References",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间的创建时间，遵循 ISO 8601 标准，格式为 YYYY-MM-DDThh:mm:ssZ（UTC 时间）。",
+          "example": "2026-03-25T17:16:01+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间的最后修改时间，遵循 ISO 8601 标准，格式为 YYYY-MM-DDThh:mm:ssZ（UTC 时间）。",
+          "example": "2026-03-25T17:16:01+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KVNamespaceParameters": {
+      "document": "边缘函数绑定 KV 命名空间时所需的详细配置参数，用于指定绑定的命名空间来源。通过此配置，边缘函数可操作指定站点下的 KV 命名空间。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "KV 命名空间所属的站点 ID。指定要绑定的 KV 命名空间所在的站点，支持跨站点绑定。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KV 命名空间名称。指定要绑定的具体命名空间，可通过 DescribeKVNamespace 接口获取站点下的命名空间列表。",
+          "example": "ns-001",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyValuePair": {
+      "document": "KV 键值对数据，包含键名、键值和过期时间信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键名。每个键名不能为空，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。",
+          "example": "hello",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "键值。入参时不能为空，最大支持 1 MB。出参时若键不存在，则返回空字符串。",
+          "example": "world",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，遵循 ISO 8601 标准，格式为 YYYY-MM-DDThh:mm:ssZ（UTC 时间）。出参时若为空字符串，表示该键值对永不过期。",
+          "example": "2026-03-26T08:20:00Z",
+          "member": "datetime_iso",
+          "name": "Expiration",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -21376,6 +22230,105 @@
     },
     "ModifyDnsRecordsStatusResponse": {
       "document": "ModifyDnsRecordsStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeKVNamespaceRequest": {
+      "document": "ModifyEdgeKVNamespace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称。",
+          "example": "ns-011",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间描述。用于说明命名空间的用途或业务含义。最大支持 256 个字符。",
+          "example": "second remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeKVNamespaceResponse": {
+      "document": "ModifyEdgeKVNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionComponentBindingsRequest": {
+      "document": "ModifyFunctionComponentBindings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3j1xw7910arp",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数 ID。",
+          "example": "ef-x5tuixcj",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，取值有：\n<li>bind：绑定组件；</li>\n<li>bind-override：绑定组件。若绑定已存在则为重绑定行为，否则为绑定行为；</li>\n<li>unbind：解绑组件；</li>\n<li>rebind：重置绑定关系。清空所有现有绑定，并设置为传入的绑定列表。若传入空列表，则清空所有绑定。</li>\n",
+          "example": "bind",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作的函数组件绑定列表。当 Operation 为 rebind 且传入空列表时，表示清空所有绑定。",
+          "example": "无",
+          "member": "FunctionComponentBinding",
+          "name": "FunctionComponentBindings",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFunctionComponentBindingsResponse": {
+      "document": "ModifyFunctionComponentBindings返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -28593,6 +29546,17 @@
           "example": "无",
           "member": "BotManagementLite",
           "name": "BotManagementLite",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认拦截动作配置。",
+          "example": "无",
+          "member": "DefaultDenySecurityActionParameters",
+          "name": "DefaultDenySecurityActionParameters",
           "output_required": false,
           "required": false,
           "type": "object",

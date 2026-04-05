@@ -134,6 +134,14 @@
         "title": "删除指定定时任务"
       }
     ],
+    "DeleteInstancesDisasterRecoverGroups": [
+      {
+        "document": "将云服务器实例 ins-23sh03x7 从置放群组 ps-c119a27y 中移除",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstancesDisasterRecoverGroups\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-23sh03x7\"\n    ],\n    \"DisasterRecoverGroupIds\": [\n        \"ps-c119a27y\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c43bdac-5c17-4c35-8bb7-7d5aff400472\"\n    }\n}",
+        "title": "将云服务器实例从指定的置放群组中批量移除"
+      }
+    ],
     "DeleteKeyPairs": [
       {
         "document": "",

@@ -1,5 +1,29 @@
 {
   "actions": {
+    "CreateAccelerateAreas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerateAreas\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"AcceleratorAreas\": [\n        {\n            \"AccelerateRegion\": \"ap-guangzhou\",\n            \"Bandwidth\": 13\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfbf77c2-5852-4ae3-b44a-fa6a5fd98b23\",\n        \"TaskId\": \"5d1c5e75-a83b-49b4-be26-5bb3d2a376e8\"\n    }\n}",
+        "title": "创建加速地域"
+      }
+    ],
+    "CreateEndpointGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEndpointGroup\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-kzjzfs7n\",\n    \"EndpointGroupType\": \"DEFAULT\",\n    \"EndpointGroupConfiguration\": {\n        \"Name\": \"group-1\",\n        \"EndpointGroupRegion\": \"ap-guangzhou\",\n        \"Description\": \"description\",\n        \"EndpointConfigurations\": [\n            {\n                \"EndpointType\": \"CustomDomain\",\n                \"EndpointService\": \"www.aaa.com\",\n                \"Weight\": 10\n            }\n        ],\n        \"EnableHealthCheck\": true,\n        \"ConnectTimeout\": 10,\n        \"HealthCheckInterval\": 5,\n        \"UnhealthyThreshold\": 10,\n        \"HealthyThreshold\": 10,\n        \"CheckType\": \"HTTP\",\n        \"CheckPort\": \"12\",\n        \"ContextType\": \"context\",\n        \"CheckSendContext\": \"context\",\n        \"CheckRecvContext\": \"context\",\n        \"CheckDomain\": \"www.ccc.com\",\n        \"CheckPath\": \"/url1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6e9b84a-fa0f-4db7-820e-3a268871ec28\",\n        \"EndpointGroupId\": \"epg-agq25w5q\",\n        \"TaskId\": \"c6fc23d3-2b36-4262-89f9-1c0ab634e44c\"\n    }\n}",
+        "title": "创建终端节点组"
+      }
+    ],
+    "CreateForwardingRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateForwardingRule\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-nd3qmz7h\",\n    \"ForwardingPolicyId\": \"dm-kzk3neks\",\n    \"RuleConditions\": [\n        {\n            \"RuleConditionType\": \"Path\",\n            \"RuleConditionValue\": [\n                \"/a\"\n            ]\n        }\n    ],\n    \"RuleActions\": [\n        {\n            \"RuleActionType\": \"Drop\"\n        }\n    ],\n    \"OriginHeaders\": [\n        {\n            \"Key\": \"key-123\",\n            \"Value\": \"value-123\"\n        }\n    ],\n    \"EnableOriginSni\": true,\n    \"OriginSni\": \"123\",\n    \"OriginHost\": \"www.bbb.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f7be96f3-c499-4efe-badd-0178c2921d8f\",\n        \"TaskId\": \"6fa13601-49eb-4982-abee-513fbab41fc1\",\n        \"ForwardingRuleId\": \"rule-kfn3oc78\"\n    }\n}",
+        "title": "创建七层转发规则"
+      }
+    ],
     "CreateGlobalAccelerator": [
       {
         "document": "",
@@ -8,12 +32,148 @@
         "title": "创建全球加速实例"
       }
     ],
+    "CreateListener": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"Name\": \"garendu-UDP\",\n    \"PortRanges\": {\n        \"FromPort\": 12,\n        \"ToPort\": 12\n    },\n    \"Description\": \"garendu-UDP-desc\",\n    \"ListenerType\": \"Standard\",\n    \"IdleTimeout\": 13,\n    \"GetRealIpType\": \"TOA\",\n    \"ClientAffinity\": \"Open\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ListenerId\": \"lsr-5lkfom8v\",\n        \"RequestId\": \"3ca6812c-4782-4ca8-8ef7-e3753ab8a4c7\",\n        \"TaskId\": \"85233b38-72cf-49ef-b3e8-c63ac9be774c\"\n    }\n}",
+        "title": "创建监听器"
+      }
+    ],
+    "DeleteAccelerateAreas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccelerateAreas\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"AcceleratorAreaIds\": [\n        \"area-kjilm8w0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6753db25-7802-44af-935d-6c1300f571ad\",\n        \"TaskId\": \"3a09adb0-589a-4c72-9d18-1f0f29f80af1\"\n    }\n}",
+        "title": "删除加速地域"
+      }
+    ],
+    "DeleteEndpointGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEndpointGroups\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-kzjzfs7n\",\n    \"EndpointGroupIds\": [\n        \"epg-5lkfesga\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f536f297-f2a9-466f-b54d-2ab56285e4c7\",\n        \"TaskId\": \"bbf56063-b48e-4caa-a721-11139fb63344\"\n    }\n}",
+        "title": "删除终端节点组"
+      }
+    ],
+    "DeleteForwardingRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteForwardingRule\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-n28np7la\",\n    \"ListenerId\": \"lsr-n28osngd\",\n    \"ForwardingPolicyId\": \"dm-80bzejra\",\n    \"ForwardingRuleId\": \"rule-80osy9vy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23e8949a-487c-4c6a-82e9-fb1636eeac33\",\n        \"TaskId\": \"eb498124-8195-429a-872a-7d33697efe4c\"\n    }\n}",
+        "title": "删除七层转发规则"
+      }
+    ],
+    "DeleteGlobalAccelerator": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalAccelerator\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-agq60v0o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3451ba58-1e89-4ce1-b33f-3b13939cf5a0\",\n        \"TaskId\": \"d120e0f5-9875-4a4d-af15-cdc68977a001\"\n    }\n}",
+        "title": "删除全球加速实例"
+      }
+    ],
+    "DeleteListener": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteListener\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-5lkfom8v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8c8e0d0-4d92-48ec-b256-27858445b725\",\n        \"TaskId\": \"f186dd1c-1f01-44a3-91bb-e6b81a0c7c39\"\n    }\n}",
+        "title": "删除监听器"
+      }
+    ],
+    "DescribeAccelerateAreas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccelerateAreas\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-ibay3qzs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccelerateAreaSet\": [\n            {\n                \"AccelerateRegion\": \"ap-beijing\",\n                \"AcceleratorAreaId\": \"area-03ylr758\",\n                \"Bandwidth\": 100,\n                \"IpAddress\": [\n                    \"43.144.128.212\"\n                ],\n                \"IpVersion\": \"IPv4\",\n                \"IspType\": \"BGP\"\n            },\n            {\n                \"AccelerateRegion\": \"ap-shanghai\",\n                \"AcceleratorAreaId\": \"area-4axcep7u\",\n                \"Bandwidth\": 50,\n                \"IpAddress\": [\n                    \"49.234.245.60\"\n                ],\n                \"IpVersion\": \"IPv4\",\n                \"IspType\": \"BGP\"\n            },\n            {\n                \"AccelerateRegion\": \"ap-hongkong\",\n                \"AcceleratorAreaId\": \"area-9ocqek4k\",\n                \"Bandwidth\": 200,\n                \"IpAddress\": [\n                    \"129.226.79.200\"\n                ],\n                \"IpVersion\": \"IPv4\",\n                \"IspType\": \"BGP\"\n            },\n            {\n                \"AccelerateRegion\": \"ap-guangzhou\",\n                \"AcceleratorAreaId\": \"area-n5gb14ck\",\n                \"Bandwidth\": 1,\n                \"IpAddress\": [\n                    \"81.71.246.171\"\n                ],\n                \"IpVersion\": \"IPv4\",\n                \"IspType\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"14bd9eb8-8e53-4c12-942a-186666d4811f\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "查询加速地域"
+      }
+    ],
+    "DescribeAccelerateRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccelerateRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AcceleratorRegionSet\": [\n            {\n                \"IsAvailable\": 1,\n                \"Name\": \"北京\",\n                \"Region\": \"ap-beijing\",\n                \"IsChinaMainland\": 1,\n                \"AreaName\": \"中国大陆\",\n                \"SupportIspType\": [\n                    \"CMCC\"\n                ]\n            }\n        ],\n        \"RequestId\": \"616ddd83-2e8f-4419-938d-c08250e5c319\"\n    }\n}",
+        "title": "查看可加速地域"
+      }
+    ],
     "DescribeCrossBorderSettlement": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderSettlement\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-00000020\",\n    \"AccelerateRegion\": \"ap-beijing\",\n    \"EndpointGroupRegion\": \"ap-singapore\",\n    \"SettlementMonth\": 202512\n}",
         "output": "{\n    \"Response\": {\n        \"Traffic\": 47.024,\n        \"RequestId\": \"b2917667-b75c-4959-833a-b8b9d57022c9\"\n    }\n}",
         "title": "查询跨境账单数据"
+      }
+    ],
+    "DescribeEndpointGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEndpointGroups\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndpointGroupConfigurationSet\": [\n            {\n                \"GlobalAcceleratorId\": \"ga-80d9rt60\",\n                \"ListenerId\": \"lsr-d5u7fac7\",\n                \"EndpointGroupId\": \"epg-3j2j37kw\",\n                \"Name\": \"sasac\",\n                \"EndpointGroupRegion\": \"ap-beijing\",\n                \"Description\": \"\",\n                \"EndpointGroupType\": \"DEFAULT\",\n                \"EnableHealthCheck\": false,\n                \"ConnectTimeout\": 2,\n                \"HealthCheckInterval\": 30,\n                \"UnhealthyThreshold\": 3,\n                \"HealthyThreshold\": 3,\n                \"CheckType\": \"\",\n                \"CheckPort\": 0,\n                \"ContextType\": \"\",\n                \"CheckSendContext\": \"\",\n                \"CheckRecvContext\": \"\",\n                \"ForwardProtocol\": \"HTTPS\",\n                \"CheckDomain\": \"\",\n                \"CheckPath\": \"\",\n                \"CheckMethod\": \"\",\n                \"OriginPublicIps\": [\n                    \"49.233.210.240\",\n                    \"82.156.37.248\",\n                    \"49.233.108.234\",\n                    \"81.70.235.113\",\n                    \"101.42.53.111\",\n                    \"49.233.248.15\",\n                    \"101.43.214.93\",\n                    \"152.136.226.86\",\n                    \"81.70.101.190\",\n                    \"62.234.94.120\",\n                    \"152.136.97.154\",\n                    \"43.138.28.144\",\n                    \"62.234.163.16\",\n                    \"62.234.146.108\",\n                    \"82.156.101.252\",\n                    \"152.136.156.197\",\n                    \"62.234.138.210\",\n                    \"101.43.140.145\",\n                    \"42.193.118.160\",\n                    \"49.233.85.107\"\n                ],\n                \"StatusMask\": [],\n                \"PortOverrides\": [\n                    {\n                        \"ListenerPort\": 56413,\n                        \"EndpointPort\": 26\n                    }\n                ],\n                \"VirtualExistForwardingRuleFlag\": false,\n                \"EndpointConfigurations\": [\n                    {\n                        \"EndpointType\": \"CustomDomain\",\n                        \"EndpointService\": \"www.qq.com\",\n                        \"Weight\": 100,\n                        \"HealthCheckStatus\": \"\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 12,\n        \"RequestId\": \"7a848272-260f-46f6-965e-5d4b7b31eb85\"\n    }\n}",
+        "title": "查询终端节点组"
+      }
+    ],
+    "DescribeForwardingRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForwardingRule\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-r0aukpq8\",\n    \"ListenerId\": \"lsr-rk9g6p8x\",\n    \"ForwardingPolicyId\": \"dm-9z3ue2yq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ForwardingRuleSet\": [\n            {\n                \"EnableOriginSni\": false,\n                \"ForwardingPolicyId\": \"dm-9z3ue2yq\",\n                \"ForwardingRuleId\": \"rule-bydbpo9y\",\n                \"GlobalAcceleratorId\": \"ga-r0aukpq8\",\n                \"ListenerId\": \"lsr-rk9g6p8x\",\n                \"OriginHeaders\": [],\n                \"OriginHost\": \"\",\n                \"OriginSni\": \"\",\n                \"RuleAction\": [\n                    {\n                        \"RuleActionType\": \"ForwardGroup\",\n                        \"RuleActionValue\": \"epg-hru0z2dc\"\n                    }\n                ],\n                \"RuleCondition\": [\n                    {\n                        \"RuleConditionType\": \"Path\",\n                        \"RuleConditionValue\": [\n                            \"\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c894e656-4f87-4d7d-a272-636c2de7633d\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看七层转发规则"
+      }
+    ],
+    "DescribeGlobalAccelerators": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalAccelerators\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"GlobalAcceleratorSet\": [\n            {\n                \"CreateTime\": \"2025-02-26 19:51:26\",\n                \"DdosId\": \"\",\n                \"Description\": \"zemin_test\",\n                \"GlobalAcceleratorId\": \"ga-00000kf6\",\n                \"InstanceChargeType\": \"POSTPAY\",\n                \"Name\": \"zemin_test\",\n                \"State\": \"CREATING\",\n                \"Status\": \"ACTIVE\",\n                \"ListenerCounts\": 1,\n                \"AcceleratorAreaCounts\": 2,\n                \"Cname\": \"cname\"\n            }\n        ],\n        \"RequestId\": \"5a99afb5-277f-4400-a8ed-eb586e946a20\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询全球加速实例"
+      }
+    ],
+    "DescribeListeners": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListeners\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ListenerSet\": [\n            {\n                \"GlobalAcceleratorId\": \"ga-reu65tl8\",\n                \"ListenerId\": \"lsr-cu9t0glx\",\n                \"Name\": \"diozhou_tcp_test_8888\",\n                \"Description\": \"\",\n                \"Protocol\": \"TCP\",\n                \"PortRanges\": {\n                    \"FromPort\": 8888,\n                    \"ToPort\": 8888\n                },\n                \"XForwardedForRealIp\": false,\n                \"ClientAffinity\": \"Close\",\n                \"ClientAffinityTime\": 0,\n                \"RequestTimeout\": 60,\n                \"CertificationType\": \"UNIDIRECTIONAL\",\n                \"ServerCertificates\": [],\n                \"ClientCaCertificates\": [],\n                \"CipherPolicyId\": \"\",\n                \"HttpVersion\": \"HTTP/1.1\",\n                \"CreateTime\": \"2025-04-04 14:11:42\",\n                \"ListenerType\": \"Standard\",\n                \"Status\": \"ACTIVE\",\n                \"EndpointGroupCounts\": 1\n            }\n        ],\n        \"RequestId\": \"7ecf173c-1cd3-46a9-afe0-5c18fbd04202\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询监听器"
+      }
+    ],
+    "ModifyAccelerateAreas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccelerateAreas\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"AcceleratorAreas\": [\n        {\n            \"AccelerateRegion\": \"ap-guangzhou\",\n            \"Bandwidth\": 14\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9febac8-ac1a-4caf-93d8-e15f5d51a2c1\",\n        \"TaskId\": \"9cd20fe4-0557-430c-95df-b06800da12f9\"\n    }\n}",
+        "title": "修改加速地域"
+      }
+    ],
+    "ModifyEndpointGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEndpointGroup\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-lb2dx0f4\",\n    \"ListenerId\": \"lsr-7sadofix\",\n    \"EndpointGroupId\": \"epg-poo6fkq2\",\n    \"Name\": \"moify\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82c22f64-a8e3-4958-9655-e5a425e1e046\",\n        \"TaskId\": \"0668dba1-f4fa-4edc-84c5-f8bf91ba7b5f\"\n    }\n}",
+        "title": "修改终端接节点组"
+      }
+    ],
+    "ModifyForwardingRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyForwardingRule\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-nd3qmz7h\",\n    \"ForwardingPolicyId\": \"dm-kzk3neks\",\n    \"ForwardingRuleId\": \"rule-5lybgwaw\",\n    \"RuleConditions\": [\n        {\n            \"RuleConditionType\": \"Path\",\n            \"RuleConditionValue\": [\n                \"\\\\cc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6437f6a-18e9-4a61-895b-28d5083297f4\",\n        \"TaskId\": \"2347cd92-de71-40d9-a6b4-eeee09a14513\"\n    }\n}",
+        "title": "修改七层转发规则"
+      }
+    ],
+    "ModifyGlobalAccelerator": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalAccelerator\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-agq60v0o\",\n    \"Name\": \"modify\",\n    \"Description\": \"modify\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c3584f7-e7d4-447f-9087-1768365513f8\",\n        \"TaskId\": \"49ca6da7-321b-40a6-ad2a-28f5e5c4081f\"\n    }\n}",
+        "title": "修改全球加速实例"
+      }
+    ],
+    "ModifyListener": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-5lkfom8v\",\n    \"Name\": \"garendu-UDP-modify\",\n    \"Description\": \"garendu-UDP-modify\",\n    \"IdleTimeout\": 16\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"141079e2-c9ce-424f-9d5a-e0474b2da088\",\n        \"TaskId\": \"24fdeb66-ad40-4a78-864c-15e49b6ef8d0\"\n    }\n}",
+        "title": "修改监听器"
       }
     ]
   },
