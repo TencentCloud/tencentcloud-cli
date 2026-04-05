@@ -196,6 +196,14 @@
         "title": "创建分配解析线路的 DNS 记录"
       }
     ],
+    "CreateEdgeKVNamespace": [
+      {
+        "document": "在站点 zone-3j1xw7910arp 下创建一个名为 ns-011 的 EdgeKV 命名空间，描述为 remark。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeKVNamespace\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\",\n    \"Remark\": \"remark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6204eccd-8da9-4b9c-b52c-0c28b5563a87\"\n    }\n}",
+        "title": "创建 EdgeKV 命名空间"
+      }
+    ],
     "CreateFunction": [
       {
         "document": "",
@@ -614,6 +622,14 @@
         "title": "删除 DNS 记录"
       }
     ],
+    "DeleteEdgeKVNamespace": [
+      {
+        "document": "删除站点 zone-3j1xw7910arp 下的命名空间 ns-011。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeKVNamespace\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"537e3551-918f-4f6d-814d-540dc57e0216\"\n    }\n}",
+        "title": "删除 EdgeKV 命名空间"
+      }
+    ],
     "DeleteFunction": [
       {
         "document": "",
@@ -948,12 +964,28 @@
         "title": "查询指定记录类型的 DNS 记录列表"
       }
     ],
+    "DescribeEdgeKVNamespaces": [
+      {
+        "document": "查询站点 zone-3j1xw7910arp 下的 EdgeKV 命名空间列表，从第 0 条开始，每页返回 10 条，按创建时间降序排列。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeKVNamespaces\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"SortBy\": \"created-on\",\n    \"SortOrder\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KVNamespaces\": [\n            {\n                \"Capacity\": 1073741824,\n                \"CapacityUsed\": 0,\n                \"CreatedOn\": \"2026-03-25T17:16:01+08:00\",\n                \"ModifiedOn\": \"2026-03-25T17:16:01+08:00\",\n                \"Namespace\": \"ns-011\",\n                \"References\": [],\n                \"Remark\": \"remark\"\n            }\n        ],\n        \"TotalCount\": 9,\n        \"RequestId\": \"ce0353db-f6f6-48ee-8275-50e1ebf990e8\"\n    }\n}",
+        "title": "查询 EdgeKV 命名空间列表"
+      }
+    ],
     "DescribeEnvironments": [
       {
         "document": "查询站点 ID 为 zone-2k3lomh6sdcb 的站点的环境列表信息。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironments\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2k3lomh6sdcb\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvInfos\": [\n            {\n                \"EnvId\": \"env-2kplomhisdcb\",\n                \"EnvType\": \"production\",\n                \"Status\": \"running\",\n                \"Scope\": [\n                    \"ALL\"\n                ],\n                \"CreateTime\": \"2023-09-21T00:00:00+00:00\",\n                \"UpdateTime\": \"2023-09-22T00:00:00+00:00\",\n                \"CurrentConfigGroupVersionInfos\": [\n                    {\n                        \"VersionId\": \"ver-2k3lomh6sdcb\",\n                        \"VersionNumber\": \"1.0\",\n                        \"GroupId\": \"cg-2k3lomh6sdcb\",\n                        \"GroupType\": \"l7_acceleration\",\n                        \"Description\": \"用于生产\",\n                        \"Status\": \"active\",\n                        \"CreateTime\": \"2023-09-22T00:00:00+00:00\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"9bd9c732-0f9a-4cd3-a3e8-1e9db5e53631\"\n    }\n}",
         "title": "查询版本发布环境列表"
+      }
+    ],
+    "DescribeFunctionComponentBindings": [
+      {
+        "document": "查询站点 zone-3j1xw7910arp 下边缘函数 ef-x5tuixcj 的组件绑定列表，从第 0 条开始，每页返回 10 条。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionComponentBindings\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"FunctionId\": \"ef-x5tuixcj\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionComponentBindings\": [\n            {\n                \"KVNamespaceParameters\": {\n                    \"Namespace\": \"ns-011\",\n                    \"ZoneId\": \"zone-3j1xw7910arp\"\n                },\n                \"Type\": \"kv_namespace\",\n                \"VariableName\": \"MY_KV\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"34da5ee4-18b8-4d18-9354-907df99d4234\"\n    }\n}",
+        "title": "查询边缘函数组件绑定列表"
       }
     ],
     "DescribeFunctionRules": [
@@ -1456,6 +1488,44 @@
         "title": "下载七层离线日志"
       }
     ],
+    "EdgeKVDelete": [
+      {
+        "document": "删除站点 zone-3j1xw7910arp 的命名空间 ns-011 中键名为 hello 的键值对。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EdgeKVDelete\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\",\n    \"Keys\": [\n        \"hello\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b5c92a0-a9ae-4b28-baee-82fdca52ff7e\"\n    }\n}",
+        "title": "删除 EdgeKV 键值对"
+      }
+    ],
+    "EdgeKVGet": [
+      {
+        "document": "查询站点 zone-3j1xw7910arp 的命名空间 ns-011 中键名为 hello 的键值对内容。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EdgeKVGet\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\",\n    \"Keys\": [\n        \"hello\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Expiration\": \"2026-03-26T08:20:00Z\",\n                \"Key\": \"hello\",\n                \"Value\": \"world\"\n            }\n        ],\n        \"RequestId\": \"07aea30b-d34f-4480-b14c-ffb4f7e10555\"\n    }\n}",
+        "title": "查询 EdgeKV 键值对"
+      }
+    ],
+    "EdgeKVList": [
+      {
+        "document": "列举站点 zone-3j1xw7910arp 的命名空间 ns-011 中前缀为 he 的键列表，每次返回 1 条。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EdgeKVList\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\",\n    \"Prefix\": \"he\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Cursor\": \"hello\",\n        \"Keys\": [\n            \"hello\"\n        ],\n        \"RequestId\": \"3be98a20-737d-488d-aeb3-85ebc95288fc\"\n    }\n}",
+        "title": "列举 EdgeKV 键列表（首次查询）"
+      },
+      {
+        "document": "使用上一次查询返回的 Cursor 值 hello 继续列举站点 zone-3j1xw7910arp 的命名空间 ns-011 中前缀为 he 的下一页键列表。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EdgeKVList\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\",\n    \"Prefix\": \"he\",\n    \"Cursor\": \"hello\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Cursor\": \"\",\n        \"Keys\": [\n            \"hello1\"\n        ],\n        \"RequestId\": \"bc3370e5-a969-4760-ada8-e9071084f047\"\n    }\n}",
+        "title": "列举 EdgeKV 键列表（翻页查询）"
+      }
+    ],
+    "EdgeKVPut": [
+      {
+        "document": "向站点 zone-3j1xw7910arp 的命名空间 ns-011 中写入一个键名为 hello、值为 world 的键值对，过期时间戳为 1774513200，TTL 为 3600 秒。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EdgeKVPut\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\",\n    \"Key\": \"hello\",\n    \"Value\": \"world\",\n    \"Expiration\": 1774513200,\n    \"ExpirationTTL\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fc4b004-890f-44dc-9c88-e6addd1cf146\"\n    }\n}",
+        "title": "写入 EdgeKV 键值对"
+      }
+    ],
     "EnableOriginACL": [
       {
         "document": "ZoneId 为 'zone-3ly7orr0u97o' 的站点开启源站防护，并配置七层加速域名‘www.qq.com’启用控制域为gaz的回源 IP 网段回源。",
@@ -1692,12 +1762,28 @@
         "title": "批量修改 DNS 记录状态"
       }
     ],
+    "ModifyEdgeKVNamespace": [
+      {
+        "document": "修改站点 zone-3j1xw7910arp 下命名空间 ns-011 的描述信息为 second remark。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeKVNamespace\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"Namespace\": \"ns-011\",\n    \"Remark\": \"second remark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"306476ec-7647-482e-a7c2-f722e4f05813\"\n    }\n}",
+        "title": "修改 EdgeKV 命名空间描述"
+      }
+    ],
     "ModifyFunction": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunction\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2gqxim9jstab\",\n    \"FunctionId\": \"ef-1pakhnuy\",\n    \"Remark\": \"my function\",\n    \"Content\": \"addEventListener('fetch', e => {\\r\\n  const response = new Response('Hello World!');\\r\\n  e.respondWith(response);\\r\\n});\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b660855b-a0a7-4cd3-832d-e01fb1b8da93\"\n    }\n}",
         "title": "修改边缘函数"
+      }
+    ],
+    "ModifyFunctionComponentBindings": [
+      {
+        "document": "为站点 zone-3j1xw7910arp 下的边缘函数 ef-x5tuixcj 新增一个 EdgeKV 命名空间绑定，将变量名 MY_KV 绑定到命名空间 ns-011。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionComponentBindings\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3j1xw7910arp\",\n    \"FunctionId\": \"ef-x5tuixcj\",\n    \"Operation\": \"bind\",\n    \"FunctionComponentBindings\": [\n        {\n            \"Type\": \"kv_namespace\",\n            \"VariableName\": \"MY_KV\",\n            \"KVNamespaceParameters\": {\n                \"ZoneId\": \"zone-3j1xw7910arp\",\n                \"Namespace\": \"ns-011\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fe9013c-47a3-4f0c-a660-e5f6e02faba1\"\n    }\n}",
+        "title": "绑定 EdgeKV 命名空间到边缘函数"
       }
     ],
     "ModifyFunctionRule": [

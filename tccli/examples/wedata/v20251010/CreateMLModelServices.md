@@ -1,0 +1,137 @@
+**Example 1: CreateMLModelServices**
+
+
+
+Input: 
+
+```
+tccli wedata CreateMLModelServices --cli-unfold-argument  \
+    --WorkspaceId 1464962169590902784 \
+    --LogEnable True \
+    --Services.0.Replicas 1 \
+    --Services.0.ScheduledAction.ScheduleStop False \
+    --Services.0.ScheduledAction.ScheduleStopTime 2025-10-24T14:42:17+08:00 \
+    --Services.0.CatalogName test_1 \
+    --Services.0.SchemaName test_s \
+    --Services.0.ChargeType POSTPAID_BY_HOUR \
+    --Services.0.ServiceLimit.EnableInstanceRpsLimit False \
+    --Services.0.ServiceLimit.InstanceRpsLimit 500 \
+    --Services.0.ServiceLimit.EnableInstanceReqLimit False \
+    --Services.0.ServiceLimit.InstanceReqLimit 1 \
+    --Services.0.InstanceType TI.S6.LARGE8.POST \
+    --Services.0.MlModelInfo.Id m-5fd06f1b5daa48c690376ad6fc6674ea \
+    --Services.0.MlModelInfo.Name dive_1106_2 \
+    --Services.0.MlModelInfo.Version 2 \
+    --Services.0.MlModelInfo.ModelPath models:/m-5fd06f1b5daa48c690376ad6fc6674ea \
+    --ServiceName tiny_test120303 \
+    --ServiceDescription 顶顶顶顶 \
+    --InferenceTablePushEnable True \
+    --ModelSource MODEL \
+    --LogConfig.LogsetId 2b59c4a1-1611-46fe-a04f-5933736721f5 \
+    --LogConfig.TopicId 956ae47b-ea7e-496a-9b64-8cd81c5aaecc \
+    --CatalogPath DataLakeCatalog \
+    --SchemaPath tiny_wedata \
+    --PayloadPath  \
+    --Status NEW \
+    --ServiceAction START \
+    --AuthorizationEnable True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "AuthTokens": null,
+            "AuthorizationEnable": false,
+            "BillingInfo": null,
+            "BusinessStatus": null,
+            "CreateBy": "100044235093",
+            "CreateTime": "2025-10-16T14:00:55",
+            "Description": null,
+            "InferenceTableCosBucket": "abe-test-1315051789",
+            "InferenceTablePushEnable": true,
+            "LatestVersion": "1",
+            "LogConfig": {
+                "LogsetId": "54ab04b8-1a1e-4303-bfc6-e1469577329a",
+                "TopicId": "7dea72a8-10bd-40dd-9dae-c1bae94db044"
+            },
+            "LogEnable": true,
+            "WorkspaceId": "1464962169590902784",
+            "RunningServiceCount": null,
+            "ServiceCount": 1,
+            "ServiceGroupId": "ef16f77c-fd0b-48a9-bc77-da8714f0d31e",
+            "ServiceGroupName": "blueszzhang-model-test-final",
+            "ServiceType": "MACHINE_LEARNING",
+            "Services": [
+                {
+                    "AuthorizationEnable": true,
+                    "BillingInfo": "",
+                    "BillingStatus": "",
+                    "BillingUnits": [],
+                    "ChargeType": "POSTPAID_BY_HOUR",
+                    "Command": null,
+                    "CreateBy": "100044235093",
+                    "CreateTime": "2025-10-16T14:00:55",
+                    "Description": null,
+                    "Env": null,
+                    "ImageInfo": null,
+                    "InferenceTableCosBucket": "abe-test-1315051789",
+                    "InferenceTablePushEnable": true,
+                    "InstanceType": "TI.S6.LARGE8.POST",
+                    "LogConfig": {
+                        "LogsetId": "54ab04b8-1a1e-4303-bfc6-e1469577329a",
+                        "TopicId": "7dea72a8-10bd-40dd-9dae-c1bae94db044"
+                    },
+                    "LogEnable": true,
+                    "LogStatus": "ENABLING",
+                    "MlModelInfo": {
+                        "Id": "c96facaa03584d948f1f375a9e385839",
+                        "ModelPath": "mlflow-artifacts:/7/c96facaa03584d948f1f375a9e385839/artifacts/model",
+                        "Name": "iris_classifier_best_3_1464962169590902784",
+                        "Version": "1"
+                    },
+                    "ModelSource": "MODEL",
+                    "PodInfos": null,
+                    "WorkspaceId": "1464962169590902784",
+                    "Region": "ap-guangzhou",
+                    "Replicas": 1,
+                    "ResourceGroupId": null,
+                    "ResourceGroupName": null,
+                    "Resources": null,
+                    "ScaleMode": "MANUAL",
+                    "ScheduledAction": {
+                        "ScheduleStop": false,
+                        "ScheduleStopTime": "2025-10-16T14:30:18+08:00"
+                    },
+                    "ServiceEIPInfo": null,
+                    "ServiceGroupId": "ef16f77c-fd0b-48a9-bc77-da8714f0d31e",
+                    "ServiceId": "ef16f77c-fd0b-48a9-bc77-da8714f0d31e-1",
+                    "ServiceLimit": {
+                        "EnableInstanceReqLimit": false,
+                        "EnableInstanceRpsLimit": false,
+                        "InstanceReqLimit": 1,
+                        "InstanceRpsLimit": 500
+                    },
+                    "ServiceName": "blueszzhang-model-test-final",
+                    "ServicePort": null,
+                    "ServiceType": "MACHINE_LEARNING",
+                    "Status": "NEW",
+                    "TiOneServiceGroupId": null,
+                    "TiOneServiceId": null,
+                    "UpdateTime": "2025-10-16T14:00:55",
+                    "Version": 1,
+                    "Weight": null,
+                    "WorkloadStatus": null
+                }
+            ],
+            "Status": "NEW",
+            "TiOneServiceGroupId": null,
+            "UpdateTime": "2025-10-16T14:00:55",
+            "WeightUpdateStatus": null
+        },
+        "RequestId": "8cf81a59-d68a-4997-ad20-e244c47075fd"
+    }
+}
+```
+

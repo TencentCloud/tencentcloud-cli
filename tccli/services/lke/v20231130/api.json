@@ -18459,7 +18459,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点运行的ID",
+          "document": "<p>节点运行的ID</p>",
           "example": "32d82e0553507b4c1ba771fb53029492",
           "member": "string",
           "name": "NodeRunId",
@@ -18470,7 +18470,7 @@
         },
         {
           "disabled": false,
-          "document": "节点ID",
+          "document": "<p>节点ID</p>",
           "example": "e60de932-b050-65ce-261e-027760e93d81",
           "member": "string",
           "name": "NodeId",
@@ -18481,7 +18481,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行实例的ID",
+          "document": "<p>工作流运行实例的ID</p>",
           "example": "8ad82e0553507b4c1ba771fb53029492",
           "member": "string",
           "name": "WorkflowRunId",
@@ -18492,7 +18492,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称",
+          "document": "<p>节点名称</p>",
           "example": "工具节点1",
           "member": "string",
           "name": "NodeName",
@@ -18503,7 +18503,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型。\n1： 开始节点\n2：参数提取节点\n3：大模型节点\n4：知识问答节点\n5：知识检索节点\n6：标签提取节点\n7：代码执行节点\n8：工具节点\n9：逻辑判断节点\n10：回复节点\n11：选项卡节点\n12：循环节点\n13：意图识别节点\n14：工作流节点\n15：插件节点\n16：结束节点\n17: 变量聚合节点数据\n18: 批处理节点\n19: 消息队列节点",
+          "document": "<p>节点类型。<br>1： 开始节点<br>2：参数提取节点<br>3：大模型节点<br>4：知识问答节点<br>5：知识检索节点<br>6：标签提取节点<br>7：代码执行节点<br>8：工具节点<br>9：逻辑判断节点<br>10：回复节点<br>11：选项卡节点<br>12：循环节点<br>13：意图识别节点<br>14：工作流节点<br>15：插件节点<br>16：结束节点<br>17: 变量聚合节点数据<br>18: 批处理节点<br>19: 消息队列节点</p>",
           "example": "1",
           "member": "uint64",
           "name": "NodeType",
@@ -18514,7 +18514,7 @@
         },
         {
           "disabled": false,
-          "document": "运行状态。0: 初始状态；1: 运行中；2: 运行成功； 3: 运行失败； 4: 已取消",
+          "document": "<p>运行状态。0: 初始状态；1: 运行中；2: 运行成功； 3: 运行失败； 4: 已取消</p>",
           "example": "1",
           "member": "uint64",
           "name": "State",
@@ -18525,7 +18525,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码",
+          "document": "<p>错误码</p>",
           "example": "NodeErr.CallPluginToolFailed",
           "member": "string",
           "name": "FailCode",
@@ -18536,7 +18536,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "<p>错误信息</p>",
           "example": "工具节点运行失败。",
           "member": "string",
           "name": "FailMessage",
@@ -18547,7 +18547,7 @@
         },
         {
           "disabled": false,
-          "document": "消耗时间（毫秒）",
+          "document": "<p>消耗时间（毫秒）</p>",
           "example": "12000",
           "member": "uint64",
           "name": "CostMilliseconds",
@@ -18558,7 +18558,7 @@
         },
         {
           "disabled": false,
-          "document": "消耗的token总数",
+          "document": "<p>消耗的token总数</p>",
           "example": "560",
           "member": "uint64",
           "name": "TotalTokens",
@@ -18566,6 +18566,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分支下标列表</p><p>单位：无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "BranchIndexList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -23495,7 +23506,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1\"",
           "member": "string",
           "name": "NodeId",
@@ -23506,7 +23517,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "NodeType",
@@ -23517,7 +23528,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"name\"",
           "member": "string",
           "name": "NodeName",
@@ -23528,7 +23539,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -23539,7 +23550,7 @@
         },
         {
           "disabled": false,
-          "document": "输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"input\"",
           "member": "string",
           "name": "Input",
@@ -23550,7 +23561,7 @@
         },
         {
           "disabled": false,
-          "document": "输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"output\"",
           "member": "string",
           "name": "Output",
@@ -23561,7 +23572,7 @@
         },
         {
           "disabled": false,
-          "document": "任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"taskOutput\"",
           "member": "string",
           "name": "TaskOutput",
@@ -23572,7 +23583,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"msg\"",
           "member": "string",
           "name": "FailMessage",
@@ -23583,7 +23594,7 @@
         },
         {
           "disabled": false,
-          "document": "花费时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>花费时长，单位为毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "CostMilliSeconds",
@@ -23594,7 +23605,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>大模型输出信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StatisticInfo",
           "name": "StatisticInfos",
@@ -23605,7 +23616,7 @@
         },
         {
           "disabled": false,
-          "document": "错误代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"NodeErr.MissingParam\"",
           "member": "string",
           "name": "FailCode",

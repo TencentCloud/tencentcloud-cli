@@ -3143,6 +3143,34 @@
       ],
       "type": "object"
     },
+    "ClientConnection": {
+      "document": "调度器客户端连接配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端与服务器连接时每秒允许的最大查询数",
+          "example": "100",
+          "member": "float",
+          "name": "QPS",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端在短时间内超过QPS限制的突发请求数量",
+          "example": "150",
+          "member": "uint64",
+          "name": "Burst",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Cluster": {
       "document": "集群信息结构体",
       "members": [
@@ -19954,6 +19982,101 @@
       ],
       "usage": "in"
     },
+    "ExtenderClientConfig": {
+      "document": "扩展调度器(Extenders)客户端配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问extender服务url设置",
+          "example": "无",
+          "member": "ServiceReference",
+          "name": "Service",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtenderManagedResource": {
+      "document": "扩展调度器(Extender)管理的扩展资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义资源的名称",
+          "example": "tke.cloud.tencent.com/qgpu-core",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Extenders": {
+      "document": "扩展调度器(Extenders)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤阶段接口",
+          "example": "scheduler/filter",
+          "member": "string",
+          "name": "FilterVerb",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "打分阶段扩展接口",
+          "example": "scheduler/score",
+          "member": "string",
+          "name": "PrioritizeVerb",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "打分阶段节点分数的权重,取值范围限定(0,2】",
+          "example": "1",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展调度器(Extender)管理的扩展资源",
+          "example": "无",
+          "member": "ExtenderManagedResource",
+          "name": "ManagedResources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "extender客户端配置",
+          "example": "无",
+          "member": "ExtenderClientConfig",
+          "name": "ExtenderClientConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExtensionAddon": {
       "document": "创建集群时，选择安装的扩展组件的信息",
       "members": [
@@ -23674,11 +23797,20 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-ewewqe",
+          "example": "cls-5e7wsn94",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SchedulerPolicy配置信息",
+          "example": "无",
+          "member": "SchedulerPolicyConfig",
+          "name": "SchedulerPolicyConfig",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -23691,8 +23823,26 @@
         },
         {
           "disabled": false,
+          "document": "客户端连接",
+          "example": "无",
+          "member": "ClientConnection",
+          "name": "ClientConnection",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "扩展调度器",
+          "example": "无",
+          "member": "Extenders",
+          "name": "Extenders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "高性能模式",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "HighPerformance",
           "required": false,
@@ -25652,6 +25802,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PluginSet": {
+      "document": "管理调度插件(plugins)的启用和禁用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定需要额外启用的插件列表",
+          "example": "无",
+          "member": "SchedulerPolicyPriority",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定需要禁用的默认插件列表",
+          "example": "无",
+          "member": "SchedulerPolicyPriority",
+          "name": "Disabled",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -29805,6 +29983,73 @@
       ],
       "type": "object"
     },
+    "SchedulerPluginConfigs": {
+      "document": "调度器plugin配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置的插件的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NodeResourcesFit",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "初始化时传递给插件的参数，对{\"apiVersion\":\"kubescheduler.config.k8s.io/v1beta3\",\"kind\":\"NodeResourcesFitArgs\",\"scoringStrategy\":{\"type\":\"LeastAllocated\"}}base64后的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eyJraW5kIjoiTm9kZVJlc291cmNlc0ZpdEFyZ3MiLCJhcGlWZXJzaW9uIjoia3ViZXNjaGVkdWxlci5jb25maWcuazhzLmlvL3YxIiwic2NvcmluZ1N0cmF0ZWd5Ijp7InR5cGUiOiJNb3N0QWxsb2NhdGVkIiwicmVzb3VyY2VzIjpbeyJuYW1lIjoiY3B1Iiwid2VpZ2h0IjoxfSx7Im5hbWUiOiJtZW1vcnkiLCJ3ZWlnaHQiOjF9XX19",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SchedulerPolicyConfig": {
+      "document": "SchedulerPolicy配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调度器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default-scheduler",
+          "member": "string",
+          "name": "SchedulerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度器plugin配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SchedulerPluginConfigs",
+          "name": "PluginConfigs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "插件配置",
+          "example": "无",
+          "member": "PluginSet",
+          "name": "PluginSet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SchedulerPolicyPriority": {
       "document": "调度策略权重",
       "members": [
@@ -29952,6 +30197,67 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceReference": {
+      "document": "调度器访问自定义 Extender 服务 URL 的设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "m-scheduler-extender",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "8010",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务路径",
+          "example": "scheduler",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务协议",
+          "example": "http",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
