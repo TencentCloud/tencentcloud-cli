@@ -187,7 +187,7 @@
     "DescribeRecordStatistic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-10-13\",\n    \"StartTime\": \"2019-10-11\",\n    \"SdkAppId\": \"1400123456\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-10-13\",\n    \"StartTime\": \"2019-10-11\",\n    \"SdkAppId\": 1400123456\n}",
         "output": "{\n    \"Response\": {\n        \"SdkAppIdUsages\": [\n            {\n                \"SdkAppId\": \"1400123456\",\n                \"Usages\": [\n                    {\n                        \"TimeKey\": \"2019-10-11\",\n                        \"Class1VideoTime\": 556026,\n                        \"Class2VideoTime\": 86361829,\n                        \"Class3VideoTime\": 0,\n                        \"AudioTime\": 64169044\n                    },\n                    {\n                        \"TimeKey\": \"2019-10-12\",\n                        \"Class1VideoTime\": 551103,\n                        \"Class2VideoTime\": 85103796,\n                        \"Class3VideoTime\": 0,\n                        \"AudioTime\": 64156599\n                    },\n                    {\n                        \"TimeKey\": \"2019-10-13\",\n                        \"Class1VideoTime\": 515249,\n                        \"Class2VideoTime\": 82982805,\n                        \"Class3VideoTime\": 0,\n                        \"AudioTime\": 65673394\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b24\"\n    }\n}",
         "title": "获取录制的时长统计数据"
       }
@@ -275,7 +275,7 @@
     "DescribeTrtcMcuTranscodeTime": [
       {
         "document": "多日查询",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcMcuTranscodeTime\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-08\",\n    \"StartTime\": \"2020-09-07\",\n    \"SdkAppId\": \"1400123456\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcMcuTranscodeTime\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-08\",\n    \"StartTime\": \"2020-09-07\",\n    \"SdkAppId\": 1400123456\n}",
         "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"SdkAppId\": \"1400123456\",\n                \"TotalNum\": 1,\n                \"SdkAppIdTranscodeTimeUsages\": [\n                    {\n                        \"Flux\": 10,\n                        \"AudioTime\": 12,\n                        \"VideoTimeHd\": 21,\n                        \"VideoTimeFhd\": 234,\n                        \"VideoTimeSd\": 198,\n                        \"TimeKey\": \"2020-09-07\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b23\"\n    }\n}",
         "title": "查询旁路转码计费时长"
       }

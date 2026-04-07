@@ -1,5 +1,19 @@
 {
   "actions": {
+    "ActivateSSAI": {
+      "document": "开通SSAI",
+      "input": "ActivateSSAIRequest",
+      "name": "开通SSAI",
+      "output": "ActivateSSAIResponse",
+      "status": "online"
+    },
+    "ActivateStreamPackage": {
+      "document": "创建媒体封装用户。",
+      "input": "ActivateStreamPackageRequest",
+      "name": "创建媒体封装用户",
+      "output": "ActivateStreamPackageResponse",
+      "status": "online"
+    },
     "BatchDeleteStreamLinkFlow": {
       "document": "批量删除媒体传输流。",
       "input": "BatchDeleteStreamLinkFlowRequest",
@@ -203,6 +217,41 @@
       "output": "CreateStreamLinkSecurityGroupResponse",
       "status": "online"
     },
+    "CreateStreamPackageLinearAssemblyChannel": {
+      "document": "创建媒体包装频道。",
+      "input": "CreateStreamPackageLinearAssemblyChannelRequest",
+      "name": "创建线性组装频道",
+      "output": "CreateStreamPackageLinearAssemblyChannelResponse",
+      "status": "online"
+    },
+    "CreateStreamPackageLinearAssemblyProgram": {
+      "document": "创建线性组装Program。",
+      "input": "CreateStreamPackageLinearAssemblyProgramRequest",
+      "name": "创建线性组装Program",
+      "output": "CreateStreamPackageLinearAssemblyProgramResponse",
+      "status": "online"
+    },
+    "CreateStreamPackageSSAIChannel": {
+      "document": "创建SSAI广告插入配置。",
+      "input": "CreateStreamPackageSSAIChannelRequest",
+      "name": "创建SSAI广告插入配置",
+      "output": "CreateStreamPackageSSAIChannelResponse",
+      "status": "online"
+    },
+    "CreateStreamPackageSource": {
+      "document": "创建媒体包装频道。",
+      "input": "CreateStreamPackageSourceRequest",
+      "name": "创建线性组装Source",
+      "output": "CreateStreamPackageSourceResponse",
+      "status": "online"
+    },
+    "CreateStreamPackageSourceLocation": {
+      "document": "创建媒体包装频道。",
+      "input": "CreateStreamPackageSourceLocationRequest",
+      "name": "创建线性组装SourceLocation",
+      "output": "CreateStreamPackageSourceLocationResponse",
+      "status": "online"
+    },
     "CreateSubtitleEmbedTemplate": {
       "document": "创建自定义字幕压制模板",
       "input": "CreateSubtitleEmbedTemplateRequest",
@@ -399,6 +448,62 @@
       "output": "DeleteStreamLinkSecurityGroupResponse",
       "status": "online"
     },
+    "DeleteStreamPackageLinearAssemblyChannel": {
+      "document": "删除媒体包装Channel。",
+      "input": "DeleteStreamPackageLinearAssemblyChannelRequest",
+      "name": "删除线性组装Channel",
+      "output": "DeleteStreamPackageLinearAssemblyChannelResponse",
+      "status": "online"
+    },
+    "DeleteStreamPackageLinearAssemblyChannels": {
+      "document": "批量删除媒体包装Channel。",
+      "input": "DeleteStreamPackageLinearAssemblyChannelsRequest",
+      "name": "批量删除线性组装Channel",
+      "output": "DeleteStreamPackageLinearAssemblyChannelsResponse",
+      "status": "online"
+    },
+    "DeleteStreamPackageLinearAssemblyProgram": {
+      "document": "删除线性组装Program。",
+      "input": "DeleteStreamPackageLinearAssemblyProgramRequest",
+      "name": "删除线性组装Program",
+      "output": "DeleteStreamPackageLinearAssemblyProgramResponse",
+      "status": "online"
+    },
+    "DeleteStreamPackageLinearAssemblyPrograms": {
+      "document": "批量删除线性组装Program。",
+      "input": "DeleteStreamPackageLinearAssemblyProgramsRequest",
+      "name": "批量删除线性组装Program",
+      "output": "DeleteStreamPackageLinearAssemblyProgramsResponse",
+      "status": "online"
+    },
+    "DeleteStreamPackageLinearAssemblyProgramsByChannel": {
+      "document": "批量删除同一Channel下的ID",
+      "input": "DeleteStreamPackageLinearAssemblyProgramsByChannelRequest",
+      "name": "批量删除同一Channel的线性组装Programs",
+      "output": "DeleteStreamPackageLinearAssemblyProgramsByChannelResponse",
+      "status": "online"
+    },
+    "DeleteStreamPackageSSAIChannel": {
+      "document": "删除广告插入配置。",
+      "input": "DeleteStreamPackageSSAIChannelRequest",
+      "name": "删除广告插入配置",
+      "output": "DeleteStreamPackageSSAIChannelResponse",
+      "status": "online"
+    },
+    "DeleteStreamPackageSource": {
+      "document": "批量删除媒体包装Source。",
+      "input": "DeleteStreamPackageSourceRequest",
+      "name": "删除线性组装Source",
+      "output": "DeleteStreamPackageSourceResponse",
+      "status": "online"
+    },
+    "DeleteStreamPackageSourceLocation": {
+      "document": "删除媒体包装SourceLocation。",
+      "input": "DeleteStreamPackageSourceLocationRequest",
+      "name": "删除线性组装SourceLocation",
+      "output": "DeleteStreamPackageSourceLocationResponse",
+      "status": "online"
+    },
     "DeleteSubtitleEmbedTemplate": {
       "document": "删除用户自定义字幕压制模板。",
       "input": "DeleteSubtitleEmbedTemplateRequest",
@@ -539,6 +644,13 @@
       "output": "DescribeLiveRecordTemplatesResponse",
       "status": "online"
     },
+    "DescribeMDPMPSUserInfo": {
+      "document": "查询用户开通mps信息，是否开通/授权。",
+      "input": "DescribeMDPMPSUserInfoRequest",
+      "name": "查询mdp用户开通mps信息",
+      "output": "DescribeMDPMPSUserInfoResponse",
+      "status": "online"
+    },
     "DescribeMediaMetaData": {
       "document": "获取媒体的元信息，包括视频画面宽、高、编码格式、时长、帧率等。",
       "input": "DescribeMediaMetaDataRequest",
@@ -565,6 +677,13 @@
       "input": "DescribeQualityControlTemplatesRequest",
       "name": "获取媒体质检模板列表",
       "output": "DescribeQualityControlTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeSSAIActivateState": {
+      "document": "查询SSAI开通状态",
+      "input": "DescribeSSAIActivateStateRequest",
+      "name": "查询SSAI开通状态",
+      "output": "DescribeSSAIActivateStateResponse",
       "status": "online"
     },
     "DescribeSampleSnapshotTemplates": {
@@ -691,6 +810,118 @@
       "input": "DescribeStreamLinkSecurityGroupsRequest",
       "name": "批量查询安全组信息",
       "output": "DescribeStreamLinkSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageActivateState": {
+      "document": "查询媒体封装用户开通情况。",
+      "input": "DescribeStreamPackageActivateStateRequest",
+      "name": "查询媒体封装用户开通情况",
+      "output": "DescribeStreamPackageActivateStateResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageLinearAssemblyChannel": {
+      "document": "查询媒体包装线性组装频道信息。",
+      "input": "DescribeStreamPackageLinearAssemblyChannelRequest",
+      "name": "查询线性组装Channel信息",
+      "output": "DescribeStreamPackageLinearAssemblyChannelResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageLinearAssemblyChannelAlerts": {
+      "document": "查询线性组装频道告警信息。",
+      "input": "DescribeStreamPackageLinearAssemblyChannelAlertsRequest",
+      "name": "查询线性组装频道告警信息",
+      "output": "DescribeStreamPackageLinearAssemblyChannelAlertsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageLinearAssemblyChannels": {
+      "document": "查询线性组装频道信息列表。",
+      "input": "DescribeStreamPackageLinearAssemblyChannelsRequest",
+      "name": "查询线性组装Channel信息列表",
+      "output": "DescribeStreamPackageLinearAssemblyChannelsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageLinearAssemblyProgram": {
+      "document": "查询媒体包装Program信息。",
+      "input": "DescribeStreamPackageLinearAssemblyProgramRequest",
+      "name": "查询线性组装Program信息",
+      "output": "DescribeStreamPackageLinearAssemblyProgramResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageLinearAssemblyProgramSchedules": {
+      "document": "查询Programe信息列表。",
+      "input": "DescribeStreamPackageLinearAssemblyProgramSchedulesRequest",
+      "name": "查询线性组装Programl组装调度信息列表",
+      "output": "DescribeStreamPackageLinearAssemblyProgramSchedulesResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageLinearAssemblyPrograms": {
+      "document": "查询Programe信息列表。",
+      "input": "DescribeStreamPackageLinearAssemblyProgramsRequest",
+      "name": "查询线性组装Programl信息列表",
+      "output": "DescribeStreamPackageLinearAssemblyProgramsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageLinearAssemblyUsage": {
+      "document": "频道线性组装用量查询",
+      "input": "DescribeStreamPackageLinearAssemblyUsageRequest",
+      "name": "查询线性组装频道用量信息",
+      "output": "DescribeStreamPackageLinearAssemblyUsageResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSSAIChannel": {
+      "document": "查询广告插入配置。",
+      "input": "DescribeStreamPackageSSAIChannelRequest",
+      "name": "查询广告插入配置",
+      "output": "DescribeStreamPackageSSAIChannelResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSSAIChannels": {
+      "document": "批量查询广告插入配置。",
+      "input": "DescribeStreamPackageSSAIChannelsRequest",
+      "name": "批量查询广告插入配置",
+      "output": "DescribeStreamPackageSSAIChannelsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSSAIUsage": {
+      "document": "SSAI广告替换用量查询",
+      "input": "DescribeStreamPackageSSAIUsageRequest",
+      "name": "查询SSAI用量信息",
+      "output": "DescribeStreamPackageSSAIUsageResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSource": {
+      "document": "查询媒体包装Source信息。",
+      "input": "DescribeStreamPackageSourceRequest",
+      "name": "查询线性组装Source信息",
+      "output": "DescribeStreamPackageSourceResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSourceAlerts": {
+      "document": "查询线性组装Source告警信息。",
+      "input": "DescribeStreamPackageSourceAlertsRequest",
+      "name": "查询线性组装Source告警信息",
+      "output": "DescribeStreamPackageSourceAlertsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSourceLocation": {
+      "document": "查询媒体包装SourceLocation信息。",
+      "input": "DescribeStreamPackageSourceLocationRequest",
+      "name": "查询线性组装SourceLocation信息",
+      "output": "DescribeStreamPackageSourceLocationResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSourceLocations": {
+      "document": "查询SourceLocation信息列表。",
+      "input": "DescribeStreamPackageSourceLocationsRequest",
+      "name": "查询线性组装SourceLocation信息列表",
+      "output": "DescribeStreamPackageSourceLocationsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageSources": {
+      "document": "查询Source信息列表。",
+      "input": "DescribeStreamPackageSourcesRequest",
+      "name": "查询线性组装Source信息列表",
+      "output": "DescribeStreamPackageSourcesResponse",
       "status": "online"
     },
     "DescribeSubtitleEmbedTemplates": {
@@ -987,6 +1218,41 @@
       "output": "ModifyStreamLinkSecurityGroupResponse",
       "status": "online"
     },
+    "ModifyStreamPackageLinearAssemblyChannel": {
+      "document": "修改媒体包装Source信息。",
+      "input": "ModifyStreamPackageLinearAssemblyChannelRequest",
+      "name": "修改线性组装Channel配置",
+      "output": "ModifyStreamPackageLinearAssemblyChannelResponse",
+      "status": "online"
+    },
+    "ModifyStreamPackageLinearAssemblyProgram": {
+      "document": "修改媒体包装Program信息。",
+      "input": "ModifyStreamPackageLinearAssemblyProgramRequest",
+      "name": "修改线性组装Program配置",
+      "output": "ModifyStreamPackageLinearAssemblyProgramResponse",
+      "status": "online"
+    },
+    "ModifyStreamPackageSSAIChannel": {
+      "document": "修改广告插入配置。",
+      "input": "ModifyStreamPackageSSAIChannelRequest",
+      "name": "修改广告插入配置",
+      "output": "ModifyStreamPackageSSAIChannelResponse",
+      "status": "online"
+    },
+    "ModifyStreamPackageSource": {
+      "document": "修改媒体包装Source信息。",
+      "input": "ModifyStreamPackageSourceRequest",
+      "name": "修改线性组装Source配置",
+      "output": "ModifyStreamPackageSourceResponse",
+      "status": "online"
+    },
+    "ModifyStreamPackageSourceLocation": {
+      "document": "修改媒体包装SourceLocation信息。",
+      "input": "ModifyStreamPackageSourceLocationRequest",
+      "name": "修改线性组装SourceLocation配置",
+      "output": "ModifyStreamPackageSourceLocationResponse",
+      "status": "online"
+    },
     "ModifySubtitleEmbedTemplate": {
       "document": "修改用户自定义字幕压制模板。",
       "input": "ModifySubtitleEmbedTemplateRequest",
@@ -1078,11 +1344,25 @@
       "output": "StartStreamLinkFlowResponse",
       "status": "online"
     },
+    "StartStreamPackageLinearAssemblyChannel": {
+      "document": "启动媒体包装频道。",
+      "input": "StartStreamPackageLinearAssemblyChannelRequest",
+      "name": "启动线性组装频道",
+      "output": "StartStreamPackageLinearAssemblyChannelResponse",
+      "status": "online"
+    },
     "StopStreamLinkFlow": {
       "document": "停止媒体传输流。",
       "input": "StopStreamLinkFlowRequest",
       "name": "停止媒体传输流",
       "output": "StopStreamLinkFlowResponse",
+      "status": "online"
+    },
+    "StopStreamPackageLinearAssemblyChannel": {
+      "document": "停止线性组装频道。",
+      "input": "StopStreamPackageLinearAssemblyChannelRequest",
+      "name": "停止线性组装频道",
+      "output": "StopStreamPackageLinearAssemblyChannelResponse",
       "status": "online"
     },
     "SyncDubbing": {
@@ -1362,6 +1642,40 @@
         }
       ],
       "usage": "both"
+    },
+    "ActivateSSAIRequest": {
+      "document": "ActivateSSAI请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ActivateSSAIResponse": {
+      "document": "ActivateSSAI返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateStreamPackageRequest": {
+      "document": "ActivateStreamPackage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ActivateStreamPackageResponse": {
+      "document": "ActivateStreamPackage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Activity": {
       "document": "编排原子任务",
@@ -1712,6 +2026,100 @@
         }
       ],
       "usage": "out"
+    },
+    "AdBreakInfo": {
+      "document": "AdBreakInfo。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocationId。",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "SourceLocationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VodSourceName。",
+          "example": "source_name",
+          "member": "string",
+          "name": "VodSourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Offset。",
+          "example": "64000",
+          "member": "uint64",
+          "name": "Offset",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MessageType，分SpliceInsert和TimeSignal。",
+          "example": "SpliceInsert",
+          "member": "string",
+          "name": "MessageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TimeSignalConf。",
+          "example": "无",
+          "member": "TimeSignalInfo",
+          "name": "TimeSignalConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SpliceInsertConf。",
+          "example": "无",
+          "member": "SpliceInsertInfo",
+          "name": "SpliceInsertConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Metadatas。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SourceLocationName。",
+          "example": "ad_location",
+          "member": "string",
+          "name": "SourceLocationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AdaptiveDynamicStreamingInfoItem": {
       "document": "转自适应码流信息",
@@ -7599,6 +8007,34 @@
       ],
       "usage": "both"
     },
+    "AliasValueConf": {
+      "document": "Alias-value配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Alias。",
+          "example": "india",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Value。",
+          "example": "ap-mumbai",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AnimatedGraphicTaskInput": {
       "document": "转动图任务类型。",
       "members": [
@@ -8087,6 +8523,128 @@
         }
       ],
       "usage": "in"
+    },
+    "AssemblyUsageDetail": {
+      "document": "线性组装信息查询",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>频道id</p>",
+          "example": "69CA28574083B064D4BB",
+          "member": "string",
+          "name": "ChannelID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期</p>",
+          "example": "2026-02-10",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询开始时间</p>",
+          "example": "2026-02-10T11:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间</p>",
+          "example": "2026-02-10T11:20:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>持续时间</p>",
+          "example": "60",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道类型</p>",
+          "example": "Basic",
+          "member": "string",
+          "name": "ChannelTier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道名称</p>",
+          "example": "test_channel",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AssemblyUsageInfo": {
+      "document": "线性组装用量查询响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "频道线性组装用量明细",
+          "example": "无",
+          "member": "AssemblyUsageDetail",
+          "name": "AssemblyUsageDetails",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Basic频道类型总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "SumBasicChannelDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Standard频道类型总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "SumStandardChannelDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AudioBeautifyConfig": {
       "document": "音量美化配置",
@@ -9082,6 +9640,32 @@
       ],
       "usage": "out"
     },
+    "ChannelAlertResp": {
+      "document": "线性组装频道告警返回信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program告警聚合信息。",
+          "example": "无",
+          "member": "ProgramAlertCounts",
+          "name": "ProgramAlertCounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Program告警明细信息。",
+          "example": "无",
+          "member": "ProgramAlertInfos",
+          "name": "ProgramAlertInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClassificationConfigureInfo": {
       "document": "智能分类任务控制参数",
       "members": [
@@ -9113,6 +9697,56 @@
         }
       ],
       "usage": "in"
+    },
+    "ClipRangeInfo": {
+      "document": "垫片配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vod类型有效，内容有效起始时间，可选Entire和SpecifyTimeRange。",
+          "example": "Entire",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,Type为SpecifyTimeRange时有效。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始偏移量,Type为SpecifyTimeRange时有效。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartOffset",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束偏移量,Type为SpecifyTimeRange时有效。",
+          "example": "10",
+          "member": "uint64",
+          "name": "EndOffset",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ColorEnhanceConfig": {
       "document": "色彩增强配置",
@@ -9963,6 +10597,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ConfigAliasesInfo": {
+      "document": "参数配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名。",
+          "example": "region",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "alias-value配置。",
+          "example": "无",
+          "member": "AliasValueConf",
+          "name": "AliasValueList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ContainerDiagnoseResultItem": {
       "document": "容器格式诊断结果",
@@ -13230,6 +13892,389 @@
       ],
       "type": "object"
     },
+    "CreateStreamPackageLinearAssemblyChannelRequest": {
+      "document": "CreateStreamPackageLinearAssemblyChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Channel名称。",
+          "example": "test_channel",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定义channel的特性，Standard支持直播和点播源，Basic只支持点播源编排，可选值：Standard、Basic。",
+          "example": "Standard",
+          "member": "string",
+          "name": "Tier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "频道中的source切换的模式，分Linear线性和Loop循环，Basic只支持Linear，Standard两种都支持。",
+          "example": "Linear",
+          "member": "string",
+          "name": "PlaybackMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时移开启开关，只有Tier为Standard时有效。",
+          "example": "true",
+          "member": "bool",
+          "name": "TimeShiftEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "时移配置，时移开关开启时有效。",
+          "example": "无",
+          "member": "TimeShiftInfo",
+          "name": "TimeShiftConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "垫片配置，只有PlaybackMode为Linear时有效。",
+          "example": "无",
+          "member": "SlateInfo",
+          "name": "SlateConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出配置。",
+          "example": "无",
+          "member": "OutputReq",
+          "name": "Outputs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageLinearAssemblyChannelResponse": {
+      "document": "CreateStreamPackageLinearAssemblyChannel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "channel信息。",
+          "example": "无",
+          "member": "LinearAssemblyChannelInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageLinearAssemblyProgramRequest": {
+      "document": "CreateStreamPackageLinearAssemblyProgram请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program名称。",
+          "example": "test_program2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的channel。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "AttachedChannel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD",
+          "example": "VOD",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的source location。",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "SourceLocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的直播or点播，source名称，location下全局唯一。",
+          "example": "test_source",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PlaybackConf。",
+          "example": "无",
+          "member": "PlaybackInfoReq",
+          "name": "PlaybackConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "AdBreaks，只有source类型为Vod时有效。",
+          "example": "无",
+          "member": "AdBreakInfo",
+          "name": "AdBreaks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageLinearAssemblyProgramResponse": {
+      "document": "CreateStreamPackageLinearAssemblyProgram返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "channel信息。",
+          "example": "无",
+          "member": "LinearAssemblyProgramInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageSSAIChannelRequest": {
+      "document": "CreateStreamPackageSSAIChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "广告插入配置名称，全局唯一，不能与其他频道重复。",
+          "example": "TestConf",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源流地址前缀",
+          "example": "https://www.tencent.com/abc",
+          "member": "string",
+          "name": "ContentSource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "广告插入配置",
+          "example": "无",
+          "member": "SSAIConf",
+          "name": "SSAIInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageSSAIChannelResponse": {
+      "document": "CreateStreamPackageSSAIChannel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的广告插入配置信息。",
+          "example": "无",
+          "member": "SSAIChannelInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageSourceLocationRequest": {
+      "document": "CreateStreamPackageSourceLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocation名称。",
+          "example": "location_name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基准URL。",
+          "example": "https://base.com/",
+          "member": "string",
+          "name": "BaseUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启补片。",
+          "example": "true",
+          "member": "bool",
+          "name": "SegmentDeliverEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "补片配置。",
+          "example": "无",
+          "member": "SegmentDeliverInfo",
+          "name": "SegmentDeliverConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启package分发分片，默认开启。",
+          "example": "true",
+          "member": "bool",
+          "name": "SegmentDeliverUsePackageEnable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageSourceLocationResponse": {
+      "document": "CreateStreamPackageSourceLocation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocation信息。",
+          "example": "无",
+          "member": "SourceLocationInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageSourceRequest": {
+      "document": "CreateStreamPackageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该source所属的location id，必填且唯一绑定一个location。",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "AttachedLocation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Source名称，在location下面全局唯一。",
+          "example": "test_source1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区分直播Live和点播VOD source类型，可选值：Live、VOD。",
+          "example": "VOD",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "source具体配置。",
+          "example": "无",
+          "member": "SourcePackageConf",
+          "name": "PackageConfs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "sourcetag标签，ADS可以根据Source Tag信息，返回更精准的广告",
+          "example": "无",
+          "member": "SourceTag",
+          "name": "SourceTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamPackageSourceResponse": {
+      "document": "CreateStreamPackageSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source信息。",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSubtitleEmbedTemplateRequest": {
       "document": "CreateSubtitleEmbedTemplate请求参数结构体",
       "members": [
@@ -13776,6 +14821,56 @@
         }
       ],
       "type": "object"
+    },
+    "DashManifestInfo": {
+      "document": "Type为DASH时manifest配置使用的字段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每个清单的总持续时间（以秒为单位）。[30, 3600]，类型：整数，默认值60。",
+          "example": "60",
+          "member": "int64",
+          "name": "Windows",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放器在缓冲区中保持的最小缓存时间（以秒为单位）。[2, 60]，类型：整数，默认值30。",
+          "example": "30",
+          "member": "int64",
+          "name": "MinBufferTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放器在请求更新清单之前应等待的最短时间（以秒为单位）。[2, 60]，类型：整数，默认值2。",
+          "example": "10",
+          "member": "int64",
+          "name": "MinUpdatePeriod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放器启播时距离最新直播时间点的时间，是一个回退量（以秒为单位）。[2, 60]，类型：整数，默认值10。",
+          "example": "10",
+          "member": "int64",
+          "name": "SuggestedPresentationDelay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteAIAnalysisTemplateRequest": {
       "document": "DeleteAIAnalysisTemplate请求参数结构体",
@@ -14343,6 +15438,231 @@
     },
     "DeleteStreamLinkSecurityGroupResponse": {
       "document": "DeleteStreamLinkSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyChannelRequest": {
+      "document": "DeleteStreamPackageLinearAssemblyChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "频道id。",
+          "example": "698ADB641D3EA62D0C18",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyChannelResponse": {
+      "document": "DeleteStreamPackageLinearAssemblyChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyChannelsRequest": {
+      "document": "DeleteStreamPackageLinearAssemblyChannels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "频道id列表。",
+          "example": "[\"698ADB7C1D3EA6831FFF\"]",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyChannelsResponse": {
+      "document": "DeleteStreamPackageLinearAssemblyChannels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyProgramRequest": {
+      "document": "DeleteStreamPackageLinearAssemblyProgram请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program id。",
+          "example": "698BFA7B1D3EA5A517B6",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyProgramResponse": {
+      "document": "DeleteStreamPackageLinearAssemblyProgram返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyProgramsByChannelRequest": {
+      "document": "DeleteStreamPackageLinearAssemblyProgramsByChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>频道的ID</p>",
+          "example": "69CA28574083B064D4BB",
+          "member": "string",
+          "name": "ChannelID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要删除的Id数组</p>",
+          "example": "[\"69CA280B4083B089741E\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyProgramsByChannelResponse": {
+      "document": "DeleteStreamPackageLinearAssemblyProgramsByChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyProgramsRequest": {
+      "document": "DeleteStreamPackageLinearAssemblyPrograms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program id列表。",
+          "example": "[\"698BFB151D3EA5656164\"]",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageLinearAssemblyProgramsResponse": {
+      "document": "DeleteStreamPackageLinearAssemblyPrograms返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageSSAIChannelRequest": {
+      "document": "DeleteStreamPackageSSAIChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的广告插入配置ID。",
+          "example": "654CA8EF0000CE02BXXX",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageSSAIChannelResponse": {
+      "document": "DeleteStreamPackageSSAIChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageSourceLocationRequest": {
+      "document": "DeleteStreamPackageSourceLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocation Id。",
+          "example": "698AE30F1D3EA53D198C",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageSourceLocationResponse": {
+      "document": "DeleteStreamPackageSourceLocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageSourceRequest": {
+      "document": "DeleteStreamPackageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source Id。",
+          "example": "66503E8E0000930000F1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamPackageSourceResponse": {
+      "document": "DeleteStreamPackageSource返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16541,6 +17861,33 @@
       ],
       "type": "object"
     },
+    "DescribeMDPMPSUserInfoRequest": {
+      "document": "DescribeMDPMPSUserInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMDPMPSUserInfoResponse": {
+      "document": "DescribeMDPMPSUserInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户状态，取值为：\n<li> InvalidMpsUser：未开通mps；</li>\n<li>Normal：正常 ；</li>\n<li> Closed：下线；</li>\n<li> Arrearage：欠费停服</li>",
+          "example": "InvalidMpsUser",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMediaMetaDataRequest": {
       "document": "DescribeMediaMetaData请求参数结构体",
       "members": [
@@ -17461,6 +18808,33 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeSSAIActivateStateRequest": {
+      "document": "DescribeSSAIActivateState请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSSAIActivateStateResponse": {
+      "document": "DescribeSSAIActivateState返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SSAI开通状态，0表示正常开通，-1表示未开通",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeSampleSnapshotTemplatesRequest": {
       "document": "DescribeSampleSnapshotTemplates请求参数结构体",
@@ -18781,6 +20155,1034 @@
           "name": "Infos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageActivateStateRequest": {
+      "document": "DescribeStreamPackageActivateState请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeStreamPackageActivateStateResponse": {
+      "document": "DescribeStreamPackageActivateState返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户已激活为0，否则为非0。",
+          "example": "-1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyChannelAlertsRequest": {
+      "document": "DescribeStreamPackageLinearAssemblyChannelAlerts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "频道ID。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间，Unix时间戳，支持最近七天的查询。",
+          "example": "1590508800",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，Unix时间戳，支持最近七天的查询。",
+          "example": "1590508900",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyChannelAlertsResponse": {
+      "document": "DescribeStreamPackageLinearAssemblyChannelAlerts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "频道告警信息。",
+          "example": "无",
+          "member": "ChannelAlertResp",
+          "name": "Infos",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyChannelRequest": {
+      "document": "DescribeStreamPackageLinearAssemblyChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "频道id。",
+          "example": "66503E8E0000930000F3",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyChannelResponse": {
+      "document": "DescribeStreamPackageLinearAssemblyChannel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Channel信息。",
+          "example": "无",
+          "member": "LinearAssemblyChannelInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyChannelsRequest": {
+      "document": "DescribeStreamPackageLinearAssemblyChannels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数，取值范围为[1, 1000]。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，取值范围为[1, 1000]。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyChannelsResponse": {
+      "document": "DescribeStreamPackageLinearAssemblyChannels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Channel列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinearAssemblyChannelInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyProgramRequest": {
+      "document": "DescribeStreamPackageLinearAssemblyProgram请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "program id。",
+          "example": "698BF44F1D3EA5656163",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyProgramResponse": {
+      "document": "DescribeStreamPackageLinearAssemblyProgram返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program信息。",
+          "example": "无",
+          "member": "LinearAssemblyProgramInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyProgramSchedulesRequest": {
+      "document": "DescribeStreamPackageLinearAssemblyProgramSchedules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询某个Channel下面的所有Program。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "窗口时长信息，单位秒。最大7776000s",
+          "example": "10",
+          "member": "uint64",
+          "name": "TimeWindow",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页数，取值范围为[1, 10000]。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，取值范围为[1, 1000]。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyProgramSchedulesResponse": {
+      "document": "DescribeStreamPackageLinearAssemblyProgramSchedules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program的调度列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinearAssemblyProgramInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyProgramsRequest": {
+      "document": "DescribeStreamPackageLinearAssemblyPrograms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数，取值范围为[1, 1000]。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，取值范围为[1, 10000]。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询某个Channel下面的所有Program。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按Name过滤，模糊匹配",
+          "example": "test_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyProgramsResponse": {
+      "document": "DescribeStreamPackageLinearAssemblyPrograms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinearAssemblyProgramInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyUsageRequest": {
+      "document": "DescribeStreamPackageLinearAssemblyUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "2026-02-10T11:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "2026-02-10T11:20:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维度，可选值：summary对应false；detail 对应true",
+          "example": "false",
+          "member": "bool",
+          "name": "Dimension",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的频道ID列表",
+          "example": "[\"698A9F401D3EA6831FD9\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的频道类型，可选Basic/Standard；若为空，默认查询所有类型",
+          "example": "[\"Standard\"]",
+          "member": "string",
+          "name": "ChannelTiers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageLinearAssemblyUsageResponse": {
+      "document": "DescribeStreamPackageLinearAssemblyUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "线性组装用量详情",
+          "example": "无",
+          "member": "AssemblyUsageInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSSAIChannelRequest": {
+      "document": "DescribeStreamPackageSSAIChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "广告插入配置ID。",
+          "example": "654CA8EF0000CE02BXXX",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSSAIChannelResponse": {
+      "document": "DescribeStreamPackageSSAIChannel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "广告插入配置信息。",
+          "example": "无",
+          "member": "SSAIChannelInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSSAIChannelsRequest": {
+      "document": "DescribeStreamPackageSSAIChannels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，默认1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSSAIChannelsResponse": {
+      "document": "DescribeStreamPackageSSAIChannels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "广告插入配置信息。",
+          "example": "无",
+          "member": "SSAIChannelInfo",
+          "name": "Infos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页码。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条目数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSSAIUsageRequest": {
+      "document": "DescribeStreamPackageSSAIUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2026-02-10T00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2026-02-10T02+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的channel_id",
+          "example": "[\"698AAD421D3EA5656115\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的广告类型。可选Pre-roll/Mid-roll/VOD；若为空，默认查询所有类型",
+          "example": "[\"Pre-roll\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维度，可选值：summary对应false；detail 对应true",
+          "example": "true",
+          "member": "bool",
+          "name": "Dimension",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSSAIUsageResponse": {
+      "document": "DescribeStreamPackageSSAIUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SSAI用量信息",
+          "example": "无",
+          "member": "SSAIUsageInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceAlertsRequest": {
+      "document": "DescribeStreamPackageSourceAlerts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source ID。",
+          "example": "66503E8E0000930000F1",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间，Unix时间戳，支持最近七天的查询。",
+          "example": "1590508800",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，Unix时间戳，支持最近七天的查询。",
+          "example": "1590508900",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceAlertsResponse": {
+      "document": "DescribeStreamPackageSourceAlerts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source告警信息。",
+          "example": "无",
+          "member": "SourceAlert",
+          "name": "Infos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceLocationRequest": {
+      "document": "DescribeStreamPackageSourceLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocation Id。",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceLocationResponse": {
+      "document": "DescribeStreamPackageSourceLocation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocation信息。",
+          "example": "无",
+          "member": "SourceLocationInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceLocationsRequest": {
+      "document": "DescribeStreamPackageSourceLocations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数，取值范围为[1, 1000]。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，取值范围为[1, 1000]。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceLocationsResponse": {
+      "document": "DescribeStreamPackageSourceLocations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocation列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceLocationInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceRequest": {
+      "document": "DescribeStreamPackageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source Id。",
+          "example": "66503E8E0000930000F1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourceResponse": {
+      "document": "DescribeStreamPackageSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source信息。",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourcesRequest": {
+      "document": "DescribeStreamPackageSources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数，取值范围为[1, 1000]。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，取值范围为[1, 1000]。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Location Id，查询该location下面所有source。",
+          "example": "66503E8E0000930000F0",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Source的类型，分直播Live和点播VOD。",
+          "example": "VOD",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageSourcesResponse": {
+      "document": "DescribeStreamPackageSources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -23376,6 +25778,282 @@
       ],
       "usage": "out"
     },
+    "LinearAssemblyChannelInfo": {
+      "document": "线性组装频道信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>线性组装频道名称。</p>",
+          "example": "test_channel2",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定义channel的特性，Standard支持直播和点播源，Basic只支持点播源编排。</p>",
+          "example": "Standard",
+          "member": "string",
+          "name": "Tier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道中的source切换的模式，分Linear线性和Loop循环，直播只支持Linear。</p>",
+          "example": "Linear",
+          "member": "string",
+          "name": "PlaybackMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时移配置，vod有效。</p>",
+          "example": "无",
+          "member": "TimeShiftInfo",
+          "name": "TimeShiftConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>垫片配置。</p>",
+          "example": "无",
+          "member": "SlateInfo",
+          "name": "SlateConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>output信息。</p>",
+          "example": "无",
+          "member": "OutputInfo",
+          "name": "Outputs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该channel绑定的program列表。</p>",
+          "example": "[\"67CA28574083B064D4CB\"]",
+          "member": "string",
+          "name": "AttachedPrograms",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>program信息。</p>",
+          "example": "无",
+          "member": "ProgramScheduleInfo",
+          "name": "ProgramSchedules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Id。</p>",
+          "example": "69CA28574083B064D4BB",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Region。</p>",
+          "example": "ap-mumbai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>State。</p>",
+          "example": "IDLE",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时移开启开关。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TimeShiftEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>channel创建时间，unix秒时间戳。</p>",
+          "example": "1774856279",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LinearAssemblyProgramInfo": {
+      "document": "频道线性组装program信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "program名称。",
+          "example": "test_program5",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "编排的目标source的类型，分直播和点播。",
+          "example": "VOD",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的source location id。",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "SourceLocationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SourceId，唯一标识一个source。",
+          "example": "6985B2641D3EA53D16FD",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的直播or点播，source名称，location下全局唯一。",
+          "example": "test_source",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的channel。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "AttachedChannel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放配置。",
+          "example": "无",
+          "member": "PlaybackInfo",
+          "name": "PlaybackConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AdBreaks。",
+          "example": "无",
+          "member": "AdBreakInfo",
+          "name": "AdBreaks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Id。",
+          "example": "698BFB151D3EA5656164",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Region。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SourceLocation名称。",
+          "example": "location_name",
+          "member": "string",
+          "name": "SourceLocationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LiveActivityResItem": {
       "document": "直播编排子任务输出",
       "members": [
@@ -25414,6 +28092,34 @@
         }
       ],
       "type": "object"
+    },
+    "ManifestInfo": {
+      "document": "线性组装频道配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单位秒。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Windows",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "打到output广告标签的格式，可选Date Range和Enhanced SCTE-35。",
+          "example": "Enhanced SCTE-35",
+          "member": "string",
+          "name": "AdMarkupType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MediaAiAnalysisClassificationItem": {
       "document": "智能分类结果",
@@ -27544,6 +30250,34 @@
       ],
       "usage": "out"
     },
+    "Metadata": {
+      "document": "Metadata。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Key。",
+          "example": "test-key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Value。",
+          "example": "test-val",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyAIAnalysisTemplateRequest": {
       "document": "ModifyAIAnalysisTemplate请求参数结构体",
       "members": [
@@ -29576,6 +32310,366 @@
       ],
       "type": "object"
     },
+    "ModifyStreamPackageLinearAssemblyChannelRequest": {
+      "document": "ModifyStreamPackageLinearAssemblyChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Channel Id。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的名称。",
+          "example": "test_channel",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定义channel的特性，Standard支持直播和点播源，Basic只支持点播源编排。",
+          "example": "Standard",
+          "member": "string",
+          "name": "Tier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "频道中的source切换的模式，分Linear线性和Loop循环，直播只支持Linear。",
+          "example": "Linear",
+          "member": "string",
+          "name": "PlaybackMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时移开启开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "TimeShiftEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "时移配置。\t",
+          "example": "无",
+          "member": "TimeShiftInfo",
+          "name": "TimeShiftConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "垫片配置。\t",
+          "example": "无",
+          "member": "SlateInfo",
+          "name": "SlateConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出配置。\t",
+          "example": "无",
+          "member": "OutputInfo",
+          "name": "Outputs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageLinearAssemblyChannelResponse": {
+      "document": "ModifyStreamPackageLinearAssemblyChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageLinearAssemblyProgramRequest": {
+      "document": "ModifyStreamPackageLinearAssemblyProgram请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Program Id。",
+          "example": "698BF44F1D3EA5656163",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的名称。",
+          "example": "test_program2",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "编排的目标source的类型，分直播和点播。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD",
+          "example": "VOD",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的source location。\t",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "SourceLocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的直播or点播，source名称，location下全局唯一。",
+          "example": "test_source",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PlaybackConf。",
+          "example": "无",
+          "member": "PlaybackInfoReq",
+          "name": "PlaybackConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "AdBreaks。",
+          "example": "无",
+          "member": "AdBreakInfo",
+          "name": "AdBreaks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageLinearAssemblyProgramResponse": {
+      "document": "ModifyStreamPackageLinearAssemblyProgram返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageSSAIChannelRequest": {
+      "document": "ModifyStreamPackageSSAIChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "广告插入配置名称，全局唯一，不能与其他频道重复。",
+          "example": "TestConf",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通配广告源地址。",
+          "example": "https://www.tencent.com/abc",
+          "member": "string",
+          "name": "ContentSource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "广告插入配置信息。",
+          "example": "无",
+          "member": "SSAIConf",
+          "name": "SSAIInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "广告插入配置ID。",
+          "example": "698AAD421D3EA5656115",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageSSAIChannelResponse": {
+      "document": "ModifyStreamPackageSSAIChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageSourceLocationRequest": {
+      "document": "ModifyStreamPackageSourceLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SourceLocation Id。",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的名称。",
+          "example": "location_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基准URL。\t",
+          "example": "https://tencent.com/base",
+          "member": "string",
+          "name": "BaseUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启补片。",
+          "example": "true",
+          "member": "bool",
+          "name": "SegmentDeliverEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "补片配置。\t",
+          "example": "无",
+          "member": "SegmentDeliverInfo",
+          "name": "SegmentDeliverConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启package分发分片，默认开启。\t",
+          "example": "true",
+          "member": "bool",
+          "name": "SegmentDeliverUsePackageEnable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageSourceLocationResponse": {
+      "document": "ModifyStreamPackageSourceLocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageSourceRequest": {
+      "document": "ModifyStreamPackageSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source Id。",
+          "example": "698A9AAB1D3EA5F03229",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的名称。",
+          "example": "test_source_2",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区分直播Live和点播VOD source类型。\t",
+          "example": "VOD",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "source配置。\t",
+          "example": "无",
+          "member": "SourcePackageConf",
+          "name": "PackageConfs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ADS可以根据Source Tag信息，返回更精准的广告。",
+          "example": "无",
+          "member": "SourceTag",
+          "name": "SourceTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamPackageSourceResponse": {
+      "document": "ModifyStreamPackageSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySubtitleEmbedTemplateRequest": {
       "document": "ModifySubtitleEmbedTemplate请求参数结构体",
       "members": [
@@ -29968,6 +33062,34 @@
       ],
       "usage": "both"
     },
+    "NameServer": {
+      "document": "自定义服务器信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称。",
+          "example": "server_name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址。",
+          "example": "https://testserver.com/\"",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NumberFormat": {
       "document": "输出文件名的`{number}`变量的规则。",
       "members": [
@@ -30118,6 +33240,78 @@
       ],
       "usage": "out"
     },
+    "OutputInfo": {
+      "document": "线性组装output信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HLS DASH。",
+          "example": "HLS",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "output group名称，可以和source的group名称对应关联起来。",
+          "example": "group_name",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "channel program调度后输出的文件名。",
+          "example": "master",
+          "member": "string",
+          "name": "ManifestName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Type为HLS时manifest配置使用的字段。",
+          "example": "无",
+          "member": "ManifestInfo",
+          "name": "ManifestConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放地址。",
+          "example": "http://251009588.ap-shanghai.streampackage.srclivepull.myqcloud.com/channel_assembly/698ADB7C1D3EA6831FFF/master.m3u8",
+          "member": "string",
+          "name": "PlaybackURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Type为DASH时manifest配置使用的字段。",
+          "example": "无",
+          "member": "DashManifestInfo",
+          "name": "DashManifestConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OutputRISTSourceAddressResp": {
       "document": "RIST输出的监听地址。",
       "members": [
@@ -30143,6 +33337,67 @@
         }
       ],
       "usage": "out"
+    },
+    "OutputReq": {
+      "document": "线性组装output信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出类型，区分HLS DASH。",
+          "example": "HLS",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "output group名称，可以和source的group名称对应关联起来。",
+          "example": "group_name",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "channel program调度后输出的文件名。",
+          "example": "master",
+          "member": "string",
+          "name": "ManifestName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Type为HLS时manifest配置使用的字段。",
+          "example": "无",
+          "member": "ManifestInfo",
+          "name": "ManifestConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Type为DASH时manifest配置使用的字段。",
+          "example": "无",
+          "member": "DashManifestInfo",
+          "name": "DashManifestConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OutputSRTSourceAddressResp": {
       "document": "SRT输出的监听地址。",
@@ -30657,6 +33912,161 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PlaybackInfo": {
+      "document": "program播放配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>program持续时间，单位毫秒，直播有效。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>program启动方式，直播只支持Absolute，点播还支持Relative。</p>",
+          "example": "Absolute",
+          "member": "string",
+          "name": "TransitionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>unix时间戳，Absolute场景下program的开始执行时间。</p>",
+          "example": "1770789719",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>和所选program的插入顺序关系，分After和Before。</p>",
+          "example": "After",
+          "member": "string",
+          "name": "RelativePosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所选的插入参考program id。</p>",
+          "example": "69CA3E5D4083AFE14663",
+          "member": "string",
+          "name": "RelativeProgramId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>垫片配置。</p>",
+          "example": "无",
+          "member": "ClipRangeInfo",
+          "name": "ClipRangeConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>RelativeProgramName。</p>",
+          "example": "test_program1",
+          "member": "string",
+          "name": "RelativeProgramName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlaybackInfoReq": {
+      "document": "program播放配置请求。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "program启动方式，直播只支持Absolute，点播还支持Relative。PlaybackMode类型为Linear的VOD支持Absolute和Relative。PlaybackMode类型为Loop的VOD只支持Relative",
+          "example": "Absolute",
+          "member": "string",
+          "name": "TransitionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "unix时间戳，absolute场景下program的开始执行时间。最多大于当前90天（7776000）。",
+          "example": "1770789719",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "program持续时间，单位毫秒，直播有效。支持600000-86400000。默认600000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "和所选program的插入顺序关系，分After和Before。",
+          "example": "After",
+          "member": "string",
+          "name": "RelativePosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所选的插入参考program id。",
+          "example": "66503E8E0000930000F7",
+          "member": "string",
+          "name": "RelativeProgramId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "垫片配置。",
+          "example": "无",
+          "member": "ClipRangeInfo",
+          "name": "ClipRangeConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -31802,6 +35212,231 @@
         }
       ],
       "type": "object"
+    },
+    "ProgramAlertCounts": {
+      "document": "线性组装Program聚合告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Program ID。</p>",
+          "example": "69CA28574083B064D4BB",
+          "member": "string",
+          "name": "ProgramId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Program名称。</p>",
+          "example": "test_program",
+          "member": "string",
+          "name": "ProgramName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警分类。</p>",
+          "example": "Warning",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出现次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "1774861917",
+          "member": "uint64",
+          "name": "LastModifiedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProgramAlertInfos": {
+      "document": "线性组装program告警信息详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>频道ID。</p>",
+          "example": "69CA3EA14083B04FDE2D",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道名称。</p>",
+          "example": "test_channel",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ProgramName。</p>",
+          "example": "69CA3E5D4083AFE14663",
+          "member": "string",
+          "name": "ProgramId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ProgramName。</p>",
+          "example": "64C33E5D4083AFE14662",
+          "member": "string",
+          "name": "ProgramName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警事件码。</p>",
+          "example": "5002",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警分类。</p>",
+          "example": "Warning",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警消息。</p>",
+          "example": "InvalidPara",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "1774861917",
+          "member": "uint64",
+          "name": "LastModifiedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProgramScheduleInfo": {
+      "document": "该channel下面Program的调度信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>program名称。</p>",
+          "example": "test_program",
+          "member": "string",
+          "name": "ProgramName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>program id。</p>",
+          "example": "69CA28574083B064D4BB",
+          "member": "string",
+          "name": "ProgramId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>source类型。</p>",
+          "example": "VOD",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>source id。</p>",
+          "example": "69CA280B4083B089741E",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>source location的id。</p>",
+          "example": "69CA27E04083B089741D",
+          "member": "string",
+          "name": "SourceLocationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间戳。</p>",
+          "example": "1774861917",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>持续时长。</p>",
+          "example": "60",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ProhibitedAsrReviewTemplateInfo": {
       "document": "语音违禁任务控制参数",
@@ -33645,6 +37280,355 @@
       ],
       "usage": "both"
     },
+    "SSAIChannelInfo": {
+      "document": "广告插入频道配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "频道ID，全局唯一标识。",
+          "example": "698AAD421D3EA5656115",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "频道名称。",
+          "example": "TestConf",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "广告源信息。",
+          "example": "https://www.tencent.com/abc",
+          "member": "string",
+          "name": "ContentSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放地址。",
+          "example": "http://251009588.ap-shanghai.streampackage.srclivepull.myqcloud.com/v1/ssai/master/019c45b4c912150043f634b5a3c17/",
+          "member": "string",
+          "name": "PlaybackPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "广告插入SSAI配置信息。",
+          "example": "无",
+          "member": "SSAIConf",
+          "name": "SSAIInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域信息。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于clickthrough地址",
+          "example": "http://251009588.ap-shanghai.streampackage.srclivepull.myqcloud.com/v1/ssai/session/019c45b4c912150043f634b5a3c17/",
+          "member": "string",
+          "name": "SessionInitPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SSAIConf": {
+      "document": "SSAI广告插入配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>广告决策服务器URL(ADS)。</p>",
+          "example": "https://g.adspeed.net/ad.php?do=vast&zid=130114&oid=29173&wd=-1&ht=-1&vastver=3&cb=1745402245",
+          "member": "string",
+          "name": "AdsUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigAliasesInfo",
+          "name": "ConfigAliases",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启广告标记透传。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AdMarkerPassthrough",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>如何处理广告中的标记,可选值[1-2]：<br>1:所有SCTE-35类型标记全部处理-all（默认）<br>2:SCTE-35enhanced，解析部分类型。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SCTE35AdType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认广告url。</p>",
+          "example": "https://lxqtokyo-1306038592.cos.ap-tokyo.myqcloud.com/cos/10s_ad.mp4",
+          "member": "string",
+          "name": "SlateAd",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>未填充的最大时长，单位：秒。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Threshold",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启mpd location, true对应enable， false对应disable。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DashMPDLocation",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被视作广告的标记类型，可选值[1-8]：</p><ol><li>Splice insert<br>2.Provider advertisement</li><li>Distributor advertisement</li><li>Provider placement opportunity</li><li>Distributor placement opportunity</li><li>Break</li><li>Provider overlay placement opportunity</li><li>Distributor overlay placement opportunity。</li></ol>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[2]",
+          "member": "uint64",
+          "name": "AdTriggers",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被视作广告的分发限制类型，可选值[1-4]：<br>1:None<br>2:Restricted（默认） 3:Unrestricted<br>4.Both</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "DeliveryRestrictions",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>源流CDN前缀，需要以http://或者https://开头。</p>",
+          "example": "https://www.tencent.com/abc",
+          "member": "string",
+          "name": "SourceCDNPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告CDN前缀，需要以http://或者https://开头。</p>",
+          "example": "https://www.tencent.com/abc",
+          "member": "string",
+          "name": "AdCDNPrefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预加载广告决策服务地址。</p>",
+          "example": "https://g.adspeed.net/ad.php?do=vast&zid=130114&oid=29173&wd=-1&ht=-1&vastver=3&cb=1745402245",
+          "member": "string",
+          "name": "PreRollAdsUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预加载广告最大允许时长，0-3600。</p>",
+          "example": "120",
+          "member": "int64",
+          "name": "PreRollMaxAllowedDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启多次请求ADS,开启后将优先请求ADS，请求失败后再请求兜底广告</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MultiRequest",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SSAIUsageInfo": {
+      "document": "SSAI用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "广告请求成功次数",
+          "example": "0",
+          "member": "uint64",
+          "name": "AdRequestSuccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "广告请求失败次数",
+          "example": "0",
+          "member": "uint64",
+          "name": "AdRequestFail",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "曝光次数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Impression",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中贴个性化广告填充率",
+          "example": "0",
+          "member": "float",
+          "name": "MidFillRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中贴广告标记时间",
+          "example": "0",
+          "member": "float",
+          "name": "AdMarkerTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中贴个性化替换时间",
+          "example": "0",
+          "member": "float",
+          "name": "ReplacedTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前贴广告替换率",
+          "example": "0",
+          "member": "float",
+          "name": "PreReplaceRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前贴广告请求数",
+          "example": "0",
+          "member": "uint64",
+          "name": "PreReqNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前贴广告替换数",
+          "example": "0",
+          "member": "uint64",
+          "name": "PreReplacedNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "各广告配置用量详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageDetail",
+          "name": "UsageDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SampleSnapshotTaskInput": {
       "document": "对视频做采样截图任务输入参数类型。",
       "members": [
@@ -34668,6 +38652,34 @@
       ],
       "usage": "out"
     },
+    "SegmentDeliverInfo": {
+      "document": "SourceLocation垫片配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认内容源地址。",
+          "example": "https://tencent.com",
+          "member": "string",
+          "name": "DefaultSegmentUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义服务器地址。",
+          "example": "无",
+          "member": "NameServer",
+          "name": "NameServers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SegmentRecognitionItem": {
       "document": "智能拆条片段。",
       "members": [
@@ -34965,6 +38977,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SlateInfo": {
+      "document": "线性组装频道垫片配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "source location的ID。",
+          "example": "698557DC1D3EA60266EB",
+          "member": "string",
+          "name": "SourceLocationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应的vod垫片内容源名称。",
+          "example": "test_source_2",
+          "member": "string",
+          "name": "VodSourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -36540,6 +40580,360 @@
       ],
       "usage": "out"
     },
+    "SourceAlert": {
+      "document": "线性组装Location告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Source ID。",
+          "example": "66503E8E0000930000F1",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Source名称。",
+          "example": "source_name",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警事件码。",
+          "example": "20012",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警分类。",
+          "example": "PLAYBACK_WARNING",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警消息。",
+          "example": "https://test.com/demo.m3u8 request response http 404.",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "1590508900",
+          "member": "uint64",
+          "name": "LastModifiedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SourceInfo": {
+      "document": "源信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称。",
+          "example": "test_source",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "source类型，区分直播Live和点播Vod。",
+          "example": "VOD",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源配置。",
+          "example": "无",
+          "member": "SourcePackageConf",
+          "name": "PackageConf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ID。",
+          "example": "6985B2641D3EA53D16FD",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳。",
+          "example": "1770369636",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳。",
+          "example": "1770369636",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Region。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源标签",
+          "example": "无",
+          "member": "SourceTag",
+          "name": "SourceTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SourceLocationInfo": {
+      "document": "SourceLocation配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ID，唯一标识。</p>",
+          "example": "69CA3E5D4083AFE14663",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SourceLocation名称。</p>",
+          "example": "test_channel",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域。</p>",
+          "example": "ap-mumbai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BaseUrl信息。</p>",
+          "example": "http://www.baidu.com",
+          "member": "string",
+          "name": "BaseUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启补片。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SegmentDeliverEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>补片配置。</p>",
+          "example": "无",
+          "member": "SegmentDeliverInfo",
+          "name": "SegmentDeliverConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的直播source id列表。</p>",
+          "example": "[\"69CA3EA14083B04FDE2D\"]",
+          "member": "string",
+          "name": "AttachedLiveSources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的点播source id列表。</p>",
+          "example": "[\"69CA25CB4083B064D4BA\"]",
+          "member": "string",
+          "name": "AttachedVodSources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>source location创建时间，Unix时间戳。</p>",
+          "example": "1774861917",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>source location最近一次修改时间，Unix时间戳。</p>",
+          "example": "1774861985",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启package分发分片，默认开启。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SegmentDeliverUsePackageEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SourcePackageConf": {
+      "document": "源文件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "group名称，当channel为Linear模式并且选择了vod source的时候，该group 名称和channel output的输出组名称对应。",
+          "example": "group_test",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型，区分HLS和DASH，可选值：HLS、DASH。",
+          "example": "HLS",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问路径。",
+          "example": "/vod/main.m3u8",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SourceTag": {
+      "document": "type SourceTag struct {\n\tKey   string `json:\"Key\"`\n\tValue string `json:\"Value\"`\n}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sourcetag的key，支持1-50位的大写字母、数字、下划线、中划线",
+          "example": "SPORT",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sourcetag的value，支持1-200位的字母、数字下划线、中划线、英文句号、百分号（%）",
+          "example": "sport",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SpecificationDataItem": {
       "document": "指定规格任务统计数据。",
       "members": [
@@ -36627,6 +41021,56 @@
       ],
       "usage": "both"
     },
+    "SpliceInsertInfo": {
+      "document": "SpliceInsertInfo。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EventID。",
+          "example": "1",
+          "member": "string",
+          "name": "EventID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AvailNum。",
+          "example": "0",
+          "member": "string",
+          "name": "AvailNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AvailExpected。",
+          "example": "0",
+          "member": "string",
+          "name": "AvailExpected",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ProgramID。",
+          "example": "3",
+          "member": "string",
+          "name": "ProgramID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StartStreamLinkFlowRequest": {
       "document": "StartStreamLinkFlow请求参数结构体",
       "members": [
@@ -36654,6 +41098,33 @@
       ],
       "type": "object"
     },
+    "StartStreamPackageLinearAssemblyChannelRequest": {
+      "document": "StartStreamPackageLinearAssemblyChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Channel ID。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartStreamPackageLinearAssemblyChannelResponse": {
+      "document": "StartStreamPackageLinearAssemblyChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopStreamLinkFlowRequest": {
       "document": "StopStreamLinkFlow请求参数结构体",
       "members": [
@@ -36671,6 +41142,33 @@
     },
     "StopStreamLinkFlowResponse": {
       "document": "StopStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopStreamPackageLinearAssemblyChannelRequest": {
+      "document": "StopStreamPackageLinearAssemblyChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Channel ID。",
+          "example": "698A9F401D3EA6831FD9",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopStreamPackageLinearAssemblyChannelResponse": {
+      "document": "StopStreamPackageLinearAssemblyChannel返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -38834,6 +43332,117 @@
       ],
       "usage": "in"
     },
+    "TimeShiftInfo": {
+      "document": "线性组装频道时移配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回看窗口，单位秒。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TimeWindows",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TimeSignalInfo": {
+      "document": "TimeSignalInfo。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EventID。",
+          "example": "1",
+          "member": "string",
+          "name": "EventID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "UPIDType。",
+          "example": "0",
+          "member": "string",
+          "name": "UPIDType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "UPID。",
+          "example": "0",
+          "member": "string",
+          "name": "UPID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TypeID。",
+          "example": "3",
+          "member": "string",
+          "name": "TypeID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Num。",
+          "example": "3",
+          "member": "string",
+          "name": "Num",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Expected。",
+          "example": "33",
+          "member": "string",
+          "name": "Expected",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SubsegmentNum。",
+          "example": "33",
+          "member": "string",
+          "name": "SubsegmentNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SubsegmentsExpected。",
+          "example": "12",
+          "member": "string",
+          "name": "SubsegmentsExpected",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TimeSpotCheck": {
       "document": "媒体质检的检测策略。",
       "members": [
@@ -39585,6 +44194,302 @@
         }
       ],
       "usage": "both"
+    },
+    "UsageDetail": {
+      "document": "广告配置及广告类型维度下的SSAI用量详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>广告配置uniq_id</p>",
+          "example": "13565212",
+          "member": "string",
+          "name": "UniqId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告配置id</p>",
+          "example": "69CA3EA14083B04FDE2D",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告配置名称</p>",
+          "example": "test_channel",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告类型</p>",
+          "example": "AVOD",
+          "member": "string",
+          "name": "AdType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告请求成功数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "AdRequestSuccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告请求失败数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AdRequestFail",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告曝光数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Impression",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告开始播放数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Start",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告播放到1/4处数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "FirstQuarter",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告播放到1/2处数</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "Midpoint",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告播放到3/4处数</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "ThirdQuarter",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告播放完成数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Complete",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>中贴广告标记时间</p>",
+          "example": "10.5",
+          "member": "float",
+          "name": "AdMarkerTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>中贴个性化替换时间</p>",
+          "example": "10.5",
+          "member": "float",
+          "name": "ReplacedTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>中贴个性化广告填充率</p>",
+          "example": "0.5",
+          "member": "float",
+          "name": "MidFillRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>前贴广告请求数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PreReqNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>前贴广告替换数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PreReplacedNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>前贴广告替换率</p>",
+          "example": "0.5",
+          "member": "float",
+          "name": "PreReplaceRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>在清单中发现了广告标记次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ADMarkerFound",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>向ADS请求广告次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MakeAdsRequest",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>从ADS收到VAST返回次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "VASTResponse",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>成功填充了广告次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilledAvail",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行广告替换时遇到问题次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "WarningNoAd",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ADS返回超时次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ErrorAdsTimeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ADS 返回了一个空的 VAST 响应次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EmptyVASTResponse",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ADS 返回了一个空的VMAP 响应次数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EmptyVMAPResponse",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期</p>",
+          "example": "2026-03-20",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-02-10T11:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-02-10T11:20:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UserDefineAsrTextReviewTemplateInfo": {
       "document": "用户自定义语音审核任务控制参数",

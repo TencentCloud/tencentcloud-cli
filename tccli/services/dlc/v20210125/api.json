@@ -3050,7 +3050,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "列名称，不区分大小写，最大支持25个字符。",
+          "document": "<p>列名称，不区分大小写，最大支持25个字符。</p>",
           "example": "col1",
           "member": "string",
           "name": "Name",
@@ -3061,7 +3061,7 @@
         },
         {
           "disabled": false,
-          "document": "string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array|map|struct|uniontype",
+          "document": "<p>string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array|map|struct|uniontype</p>",
           "example": "string",
           "member": "string",
           "name": "Type",
@@ -3072,7 +3072,7 @@
         },
         {
           "disabled": false,
-          "document": "对该类的注释。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对该类的注释。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "create by zhangsan",
           "member": "string",
           "name": "Comment",
@@ -3083,7 +3083,7 @@
         },
         {
           "disabled": false,
-          "document": "表示整个 numeric 的长度",
+          "document": "<p>表示整个 numeric 的长度</p>",
           "example": "5",
           "member": "int64",
           "name": "Precision",
@@ -3094,7 +3094,7 @@
         },
         {
           "disabled": false,
-          "document": "表示小数部分的长度",
+          "document": "<p>表示小数部分的长度</p>",
           "example": "2",
           "member": "int64",
           "name": "Scale",
@@ -3105,7 +3105,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为null",
+          "document": "<p>是否为null</p>",
           "example": "Nullable",
           "member": "string",
           "name": "Nullable",
@@ -3116,7 +3116,7 @@
         },
         {
           "disabled": false,
-          "document": "字段位置，小的在前",
+          "document": "<p>字段位置，小的在前</p>",
           "example": "1",
           "member": "int64",
           "name": "Position",
@@ -3127,7 +3127,7 @@
         },
         {
           "disabled": false,
-          "document": "字段创建时间",
+          "document": "<p>字段创建时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
           "example": "2021-09-07 06:19:23",
           "member": "string",
           "name": "CreateTime",
@@ -3138,7 +3138,7 @@
         },
         {
           "disabled": false,
-          "document": "字段修改时间",
+          "document": "<p>字段修改时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
           "example": "2021-09-07 06:19:23",
           "member": "string",
           "name": "ModifiedTime",
@@ -3149,7 +3149,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为分区字段",
+          "document": "<p>是否为分区字段</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPartition",
@@ -3160,7 +3160,7 @@
         },
         {
           "disabled": false,
-          "document": "数据脱敏策略信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据脱敏策略信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataMaskStrategyInfo",
           "name": "DataMaskStrategyInfo",
@@ -3168,6 +3168,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据字段说明</p>",
+          "example": "decimal",
+          "member": "string",
+          "name": "TypeText",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

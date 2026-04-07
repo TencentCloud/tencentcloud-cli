@@ -2556,7 +2556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间话术 ID。",
+          "document": "<p>数字人直播间话术 ID。</p>",
           "example": "1000",
           "member": "string",
           "name": "ScriptId",
@@ -2566,7 +2566,17 @@
         },
         {
           "disabled": false,
-          "document": "话术标题。",
+          "document": "<p>数字人直播间产品 ID。</p>",
+          "example": "100",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>话术标题。</p>",
           "example": "标题",
           "member": "string",
           "name": "Title",
@@ -2576,7 +2586,7 @@
         },
         {
           "disabled": false,
-          "document": "话术内容。",
+          "document": "<p>话术内容。</p>",
           "example": "live",
           "member": "string",
           "name": "Content",
@@ -2586,7 +2596,7 @@
         },
         {
           "disabled": false,
-          "document": "话术状态。\nPENDING --未生成。\nPROCESSING --生成中。\nREADY --已生成。",
+          "document": "<p>话术状态。PENDING --未生成。PROCESSING --生成中。READY --已生成。FAILED-失败</p><p>枚举值：</p><ul><li>FAILED： 失败</li></ul>",
           "example": "PENDING",
           "member": "string",
           "name": "Status",
@@ -2596,7 +2606,7 @@
         },
         {
           "disabled": false,
-          "document": "时长。单位：毫秒。",
+          "document": "<p>时长。单位：毫秒。</p>",
           "example": "1200",
           "member": "int64",
           "name": "Duration",
@@ -2606,7 +2616,7 @@
         },
         {
           "disabled": false,
-          "document": "话术位置。",
+          "document": "<p>话术位置。</p>",
           "example": "100",
           "member": "int64",
           "name": "Position",
@@ -2616,7 +2626,7 @@
         },
         {
           "disabled": false,
-          "document": "话术创建时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "document": "<p>话术创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>",
           "example": "2025-07-02T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -2626,7 +2636,7 @@
         },
         {
           "disabled": false,
-          "document": "话术最后更新时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "document": "<p>话术最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>",
           "example": "2025-07-03T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",

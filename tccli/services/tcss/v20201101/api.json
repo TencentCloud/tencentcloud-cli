@@ -23388,8 +23388,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>\n<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>\n<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>\n<li>Status - string  - 是否必填: 否 -事件状态筛选</li>\n<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>\n<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>\n<li>ClusterName - string  - 是否必填: 否 -集群名称</li>\n<li>ClusterID - string  - 是否必填: 否 -集群ID</li>",
-          "example": "[{\"ExactMatch\": false, \"Name\": \"Status\", \"Values\": [\"1\"]}]",
+          "document": "<p>过滤条件。</p><li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li><li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li><li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li><li>Status - string  - 是否必填: 否 -事件状态筛选</li><li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li><li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li><li>ClusterName - string  - 是否必填: 否 -集群名称</li><li>ClusterID - string  - 是否必填: 否 -集群ID</li>",
+          "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
           "required": false,
@@ -23397,7 +23397,7 @@
         },
         {
           "disabled": false,
-          "document": "需要返回的数量，默认为10，最大值为100",
+          "document": "<p>需要返回的数量，默认为10，最大值为100</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -23406,7 +23406,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -23415,7 +23415,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p>",
           "example": "asc",
           "member": "string",
           "name": "Order",
@@ -23424,7 +23424,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段\nLatestFoundTime: 最近生成时间\nAlarmCount: 告警数量",
+          "document": "<p>排序字段<br>LatestFoundTime: 最近生成时间<br>AlarmCount: 告警数量</p>",
           "example": "LatestFoundTime",
           "member": "string",
           "name": "By",
@@ -23439,8 +23439,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件列表",
-          "example": "[{\"AlarmCount\": 3072, \"ClusterID\": \"5218b602415fa2e49804346ca9d0****\", \"ClusterName\": \"cluster.l****\", \"ClusterRunningStatus\": \"CSR_RUN****\", \"Desc\": \"\\u68c0\\u6d4b\\u5230\\u60a8\\u7684K8s API Server\\u5b58\\u5728\\u533f\\u540d\\u7528\\u6237\\u8bbf\\u95ee\\u8bf7\\u6c42\\uff0c\\u653b\\u51fb\\u8005\\u53ef\\u5229\\u7528\\u533f\\u540d\\u7528\\u6237\\uff0c\\u901a\\u8fc7API Server\\u8bbf\\u95ee\\u96c6\\u7fa4\\u8d44\\u6e90\\uff0c\\u5982\\u8fdb\\u5165\\u5bb9\\u5668\\u6267\\u884c****\", \"FirstCreateTime\": \"2024-10-30T16:00****\", \"ID\": 3210074, \"LastCreateTime\": \"2024-10-31T13:56****\", \"MatchRule\": {\"Action\": \"RULE_MODE_A****\", \"IsDelete\": false, \"RiskLevel\": \"HIGH\", \"Scope\": \"{\\\"RequestUser\\\": \\\"system:anonymous\\\", \\\"RequestUserGroups\\\": \\\"system:anonymo****\", \"Status\": false}, \"MatchRuleType\": \"ANONYMOUS_AC****\", \"RiskLevel\": \"HIGH\", \"RuleName\": \"\\u7cfb\\u7edf\\u89c4\\u5219\", \"RuleType\": \"SYSTEM_DEFINED_****\", \"Status\": \"EVENT_UN****\", \"Suggestion\": \"\\u542f\\u7528\\u533f\\u540d\\u7528\\u6237\\u5b58\\u5728\\u8f83\\u9ad8\\u7684\\u98ce\\u9669\\uff0c\\u5efa\\u8bae\\u60a8\\u53ca\\u65f6\\u505c\\u7528\\u533f\\u540d\\u7528\\u6237\\uff0c\\u907f\\u514d\\u88ab\\u653b\\u51fb\\u8005\\u5229\\u7528\\uff1b\\u5e76\\u6392\\u67e5\\u6765\\u6e90IP\\u548c\\u64cd\\u4f5c\\u7684\\u8d44\\u6e90\\u662f\\u5426\\u5c5e\\u4e8e\\u6b63\\u5e38\\u8fd0\\u7ef4\\u64cd\\u4f5c\\u3002\\n1\\u3001\\u4fee\\u6539API Server \\u914d\\u7f6e\\u6587\\u4ef6\\uff08\\u5982\\uff1a/etc/kubernetes/manifests/kube-apiserver.yaml\\uff09\\u5c06anonymous-auth\\u6539\\u4e3afalse\\uff1b\\u5e76\\u4fee\\u6539bind-address\\uff0c\\u907f\\u514d\\u76d1\\u542c\\u57280.0.0.0\\uff0c\\u6216\\u4f7f\\u7528\\u5b89\\u5168\\u7ec4\\u9650\\u5236\\uff1b\\u53bb\\u6389insecure-port\\u914d\\u7f6e\\u3002\\n2\\u3001\\u7981\\u7528kubelet\\u7684\\u533f\\u540d\\u8ba4\\u8bc1\\u529f\\u80fd\\uff0c\\u5982\\u53bb\\u9664kubelet\\u670d\\u52a1\\u914d\\u7f6e\\u6587\\u4ef6\\u4e2d\\u7684anonymous-auth\\u914d\\u7f6e\\u3002\\n\\u5efa\\u8bae\\u4fee\\u6539\\u914d\\u7f6e\\u524d\\uff0c\\u786e\\u8ba4\\u662f\\u5426\\u4e3a\\u4e1a\\u52a1\\u6240\\u9700\\uff1b\\u5728\\u4fee\\u6539\\u914d\\u7f6e\\u6587\\u4ef6\\u524d\\uff0c\\u505a****\"}]",
+          "document": "<p>事件列表</p>",
+          "example": "无",
           "member": "K8sApiAbnormalEventListItem",
           "name": "List",
           "output_required": true,
@@ -23449,12 +23449,22 @@
         },
         {
           "disabled": false,
-          "document": "总数量",
+          "document": "<p>总数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>k8s告警类型和对应中文翻译</p>",
+          "example": "无",
+          "member": "K8SAPIRuleTypeZhItem",
+          "name": "RuleTypeZhSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -23732,7 +23742,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "趋势周期(默认为7天)",
+          "document": "<p>趋势周期(默认为7天)</p>",
           "example": "7",
           "member": "uint64",
           "name": "TendencyPeriod",
@@ -23747,11 +23757,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "趋势列表",
-          "example": "[{\"AbnormalScheduledTaskCount\": 0, \"AnonymousAccessCount\": 0, \"AnonymousUserRightCount\": 0, \"CmdExecCount\": 0, \"CredentialInformationObtainCount\": 0, \"Date\": \"2024-1****\", \"DoubtfulContainerCreateCount\": 0, \"ExceptionUARequestCount\": 0, \"PrivilegeContainerCount\": 0, \"SensitiveDataMountCount\": 0, \"StaticsPodCreateCount\": 0, \"UserDefinedRuleCount\": 0}]",
+          "document": "<p>趋势列表</p>",
+          "example": "无",
           "member": "K8sApiAbnormalTendencyItem",
           "name": "List",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类型对应中文</p>",
+          "example": "无",
+          "member": "K8SAPIRuleTypeZhItem",
+          "name": "RuleTypeZhSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -36759,12 +36779,64 @@
       ],
       "type": "object"
     },
+    "K8SAPIRuleTypeCountItem": {
+      "document": "k8s告警类型和对应的告警数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则类型</p><p>枚举值：</p><ul><li>ABNORMAL_CREATE_POD： 可疑容器创建</li></ul>",
+          "example": "ABNORMAL_CREATE_POD",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则对应告警数量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "K8SAPIRuleTypeZhItem": {
+      "document": "k8s告警类型和中文映射",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则类型</p><p>枚举值：</p><ul><li>&quot;rule_type&quot;: &quot;ABNORMAL_CREATE_POD&quot;,： 可疑容器创建</li></ul>",
+          "example": "MOUNT_SENSITIVE_PATH",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类型对应中文</p>",
+          "example": "用户自定义",
+          "member": "string",
+          "name": "RuleTypeZh",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "K8sApiAbnormalEventInfo": {
       "document": "k8sApi异常事件详情",
       "members": [
         {
           "disabled": false,
-          "document": "命中规则名称",
+          "document": "<p>命中规则名称</p>",
           "example": "系统规则",
           "member": "string",
           "name": "MatchRuleName",
@@ -36774,7 +36846,7 @@
         },
         {
           "disabled": false,
-          "document": "命中规则类型",
+          "document": "<p>命中规则类型</p>",
           "example": "ANONYMOUS_ACCESS",
           "member": "string",
           "name": "MatchRuleType",
@@ -36784,7 +36856,7 @@
         },
         {
           "disabled": false,
-          "document": "告警等级",
+          "document": "<p>告警等级</p>",
           "example": "HIGH",
           "member": "string",
           "name": "RiskLevel",
@@ -36794,7 +36866,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-abhq0j4o-666",
           "member": "string",
           "name": "ClusterID",
@@ -36804,7 +36876,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cls-xdfehuhf",
           "member": "string",
           "name": "ClusterName",
@@ -36814,7 +36886,7 @@
         },
         {
           "disabled": false,
-          "document": "集群运行状态，CSR_RUNNING-运行中，CSR_EXCEPTION-异常，CSR_CREATING-创建中",
+          "document": "<p>集群运行状态，CSR_RUNNING-运行中，CSR_EXCEPTION-异常，CSR_CREATING-创建中</p>",
           "example": "CSR_RUNNING",
           "member": "string",
           "name": "ClusterRunningStatus",
@@ -36824,7 +36896,7 @@
         },
         {
           "disabled": false,
-          "document": "初次生成时间",
+          "document": "<p>初次生成时间</p>",
           "example": "2024-10-22T11:00:45Z",
           "member": "string",
           "name": "FirstCreateTime",
@@ -36834,7 +36906,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次生成时间",
+          "document": "<p>最近一次生成时间</p>",
           "example": "2024-10-22T11:00:45Z",
           "member": "string",
           "name": "LastCreateTime",
@@ -36844,7 +36916,7 @@
         },
         {
           "disabled": false,
-          "document": "告警数量",
+          "document": "<p>告警数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "AlarmCount",
@@ -36854,7 +36926,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n\"EVENT_UNDEAL\":未处理\n\"EVENT_DEALED\": 已处理\n\"EVENT_IGNORE\": 忽略\n\"EVENT_DEL\": 删除\n\"EVENT_ADD_WHITE\": 加白",
+          "document": "<p>状态<br>&quot;EVENT_UNDEAL&quot;:未处理<br>&quot;EVENT_DEALED&quot;: 已处理<br>&quot;EVENT_IGNORE&quot;: 忽略<br>&quot;EVENT_DEL&quot;: 删除<br>&quot;EVENT_ADD_WHITE&quot;: 加白</p>",
           "example": "EVENT_UNDEAL",
           "member": "string",
           "name": "Status",
@@ -36864,7 +36936,7 @@
         },
         {
           "disabled": false,
-          "document": "集群masterIP",
+          "document": "<p>集群masterIP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "ClusterMasterIP",
@@ -36874,7 +36946,7 @@
         },
         {
           "disabled": false,
-          "document": "k8s版本",
+          "document": "<p>k8s版本</p>",
           "example": "1.0.1",
           "member": "string",
           "name": "K8sVersion",
@@ -36884,7 +36956,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时组件",
+          "document": "<p>运行时组件</p>",
           "example": "[\"etcd\"]",
           "member": "string",
           "name": "RunningComponent",
@@ -36894,7 +36966,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "检测到您的K8s API Server存在匿名用户访问请求，攻击者可利用匿名用户，通过API Server访问集群资源，如进入容器执行命令等。",
           "member": "string",
           "name": "Desc",
@@ -36904,7 +36976,7 @@
         },
         {
           "disabled": false,
-          "document": "建议",
+          "document": "<p>建议</p>",
           "example": "启用匿名用户存在较高的风险，建议您及时停用匿名用户",
           "member": "string",
           "name": "Suggestion",
@@ -36914,8 +36986,8 @@
         },
         {
           "disabled": false,
-          "document": "请求信息",
-          "example": "{\\\"Verb\\\": \\\"list\\\", \\\"AuditID\\\": \\\"4e477a26-b171-4702-a2ac-1ac494ae8c85\\\", \\\"PodNameIP\\\": \\\"\\\", \\\"SourceIPS\\\": \\\"[\\\\\\\"10.0.0.4\\\\\\\"]\\\", \\\"UserAgent\\\": \\\"tcss_agent_cluster/v0.0.0 (linux/amd64) kubernetes/$Format\\\", \\\"RequestURI\\\": \\\"/api/v1/namespaces?limit=1\\\", \\\"RequestUser\\\": \\\"{\\\\\\\"groups\\\\\\\":\\\\\\\"[\\\\\\\\\\\\\\\"system:unauthenticated\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"uid\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"username\\\\\\\":\\\\\\\"system:anonymous\\\\\\\"}\\\", \\\"MountHostDir\\\": \\\"\\\", \\\"RequestObject\\\": \\\"{\\\\\\\"metadata\\\\\\\":\\\\\\\"\\\\\\\"}\\\", \\\"ResponseObject\\\": \\\"{\\\\\\\"metadata\\\\\\\":\\\\\\\"\\\\\\\"}\\\", \\\"ResponseStatusCode\\\": \\\"200\\\"}",
+          "document": "<p>请求信息</p>",
+          "example": "{\\\"Verb\\\": \\\"list\\\", \\\"AuditID\\\": \\\"4e477a26-b171-4702-a2ac-1ac494ae8c85\\\", \\\"RequestObject\\\": \\\"{\\\\\\\"metadata\\\\\\\":\\\\\\\"\\\\\\\"}\\\", \\\"ResponseObject\\\": \\\"{\\\\\\\"metadata\\\\\\\":\\\\\\\"\\\\\\\"}\\\", \\\"ResponseStatusCode\\\": \\\"200\\\"}",
           "member": "string",
           "name": "Info",
           "output_required": true,
@@ -36924,7 +36996,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID",
+          "document": "<p>规则ID</p>",
           "example": "SYSTEM",
           "member": "string",
           "name": "MatchRuleID",
@@ -36934,7 +37006,7 @@
         },
         {
           "disabled": false,
-          "document": "高亮字段数组",
+          "document": "<p>高亮字段数组</p>",
           "example": "[\"system\"]",
           "member": "string",
           "name": "HighLightFields",
@@ -36944,12 +37016,32 @@
         },
         {
           "disabled": false,
-          "document": "命中规则",
-          "example": "{'Action': 'RULE_MODE_A****', 'IsDelete': False, 'RiskLevel': 'HIGH', 'Scope': '{\"RequestUser\": \"system:anonymous\", \"RequestUserGroups\": \"system:anonymo****', 'Status': False}",
+          "document": "<p>命中规则</p>",
+          "example": "无",
           "member": "K8sApiAbnormalRuleScopeInfo",
           "name": "MatchRule",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高亮字段对应的命中规则内容(JSON字符串, 如: {&quot;field1&quot;:&quot;value1&quot;,&quot;field2&quot;:&quot;value2&quot;})</p><p>参数格式：{&quot;field1&quot;:&quot;value1&quot;,&quot;field2&quot;:&quot;value2&quot;}</p>",
+          "example": "{\\\"RequestUser\\\":\\\"system:anonymous\\\",\\\"RequestUserGroups\\\":\\\"system:anonymous\\\"}",
+          "member": "string",
+          "name": "HighLightFieldsVal",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则中文</p>",
+          "example": "命令执行",
+          "member": "string",
+          "name": "RuleTypeZH",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -37275,7 +37367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "范围\n系统事件:\nANONYMOUS_ACCESS: 匿名访问\nABNORMAL_UA_REQ: 异常UA请求\nANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动\nGET_CREDENTIALS: 凭据信息获取\nMOUNT_SENSITIVE_PATH: 敏感路径挂载\nCOMMAND_RUN: 命令执行\nPRIVILEGE_CONTAINER: 特权容器\nEXCEPTION_CRONTAB_TASK: 异常定时任务\nSTATICS_POD: 静态pod创建\nABNORMAL_CREATE_POD: 异常pod创建\nUSER_DEFINED: 用户自定义",
+          "document": "<p>范围<br>系统事件:<br>ANONYMOUS_ACCESS: 匿名访问<br>ABNORMAL_UA_REQ: 异常UA请求<br>ANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动<br>GET_CREDENTIALS: 凭据信息获取<br>MOUNT_SENSITIVE_PATH: 敏感路径挂载<br>COMMAND_RUN: 命令执行<br>PRIVILEGE_CONTAINER: 特权容器<br>EXCEPTION_CRONTAB_TASK: 异常定时任务<br>STATICS_POD: 静态pod创建<br>ABNORMAL_CREATE_POD: 异常pod创建<br>USER_DEFINED: 用户自定义</p>",
           "example": "{\\\"RequestURI\\\":\\\"/apis/cowsajhhoa.k8s.io/v\\\",\\\"RequestUser\\\":\\\"“name”:”sanpasahsad-contaosaer-leader”）\\\\\\\"\\\",\\\"ResponseStatusCode\\\":\\\"200\\\",\\\"SourceIPS\\\":\\\"10.255.0.43\\\",\\\"UserAgent\\\":\\\"snapshot-controller\\\",\\\"Verb\\\":\\\"update\\\"}",
           "member": "string",
           "name": "Scope",
@@ -37286,7 +37378,7 @@
         },
         {
           "disabled": false,
-          "document": "动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)",
+          "document": "<p>动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)</p>",
           "example": "RULE_MODE_ALERT",
           "member": "string",
           "name": "Action",
@@ -37297,7 +37389,7 @@
         },
         {
           "disabled": false,
-          "document": "威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示",
+          "document": "<p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>",
           "example": "NOTICE",
           "member": "string",
           "name": "RiskLevel",
@@ -37308,7 +37400,7 @@
         },
         {
           "disabled": false,
-          "document": "开关状态(true:开 false:关) 适用于系统规则",
+          "document": "<p>开关状态(true:开 false:关) 适用于系统规则</p>",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -37319,13 +37411,24 @@
         },
         {
           "disabled": false,
-          "document": "是否被删除 适用于自定义规则入参",
+          "document": "<p>是否被删除 适用于自定义规则入参</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDelete",
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类型对应中文</p>",
+          "example": "可疑容器创建",
+          "member": "string",
+          "name": "RuleTypeZH",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -37336,7 +37439,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日期",
+          "document": "<p>日期</p>",
           "example": "2024-11-04 14:27:34",
           "member": "string",
           "name": "Date",
@@ -37346,7 +37449,7 @@
         },
         {
           "disabled": false,
-          "document": "异常UA请求事件数",
+          "document": "<p>异常UA请求事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "ExceptionUARequestCount",
@@ -37356,7 +37459,7 @@
         },
         {
           "disabled": false,
-          "document": "匿名用户权限事件数",
+          "document": "<p>匿名用户权限事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "AnonymousUserRightCount",
@@ -37366,7 +37469,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据信息获取事件数",
+          "document": "<p>凭据信息获取事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "CredentialInformationObtainCount",
@@ -37376,7 +37479,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据挂载事件数",
+          "document": "<p>敏感数据挂载事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "SensitiveDataMountCount",
@@ -37386,7 +37489,7 @@
         },
         {
           "disabled": false,
-          "document": "命令执行事件数",
+          "document": "<p>命令执行事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "CmdExecCount",
@@ -37396,7 +37499,7 @@
         },
         {
           "disabled": false,
-          "document": "异常定时任务事件数",
+          "document": "<p>异常定时任务事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "AbnormalScheduledTaskCount",
@@ -37406,7 +37509,7 @@
         },
         {
           "disabled": false,
-          "document": "静态Pod创建数",
+          "document": "<p>静态Pod创建数</p>",
           "example": "1",
           "member": "uint64",
           "name": "StaticsPodCreateCount",
@@ -37416,7 +37519,7 @@
         },
         {
           "disabled": false,
-          "document": "可疑容器创建数",
+          "document": "<p>可疑容器创建数</p>",
           "example": "1",
           "member": "uint64",
           "name": "DoubtfulContainerCreateCount",
@@ -37426,7 +37529,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则事件数",
+          "document": "<p>自定义规则事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "UserDefinedRuleCount",
@@ -37436,7 +37539,7 @@
         },
         {
           "disabled": false,
-          "document": "匿名访问事件数",
+          "document": "<p>匿名访问事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "AnonymousAccessCount",
@@ -37446,12 +37549,22 @@
         },
         {
           "disabled": false,
-          "document": "特权容器事件数",
+          "document": "<p>特权容器事件数</p>",
           "example": "1",
           "member": "uint64",
           "name": "PrivilegeContainerCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类型对应告警数量</p>",
+          "example": "无",
+          "member": "K8SAPIRuleTypeCountItem",
+          "name": "RuleTypeCountSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

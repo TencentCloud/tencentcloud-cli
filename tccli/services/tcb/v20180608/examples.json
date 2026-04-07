@@ -500,14 +500,6 @@
         "title": "销毁资源"
       }
     ],
-    "EditAuthConfig": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditAuthConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"618223f6-f247-05dc-2638-7a72c876b7d1\"\n    }\n}",
-        "title": "修改登录密码更新策略配置"
-      }
-    ],
     "GetProviders": [
       {
         "document": "",
@@ -628,14 +620,6 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"EnvId\": \"testenv-123\",\n    \"Uid\": \"1\",\n    \"Name\": \"test_user_01\",\n    \"Type\": \"internalUser\",\n    \"Password\": \"test123@\",\n    \"UserStatus\": \"ACTIVE\",\n    \"NickName\": \"test_user_01\",\n    \"Phone\": \"18xxxx9078\",\n    \"Email\": \"example@qq.com\",\n    \"AvatarUrl\": \"https://example.avatat\",\n    \"Description\": \"测试账号\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Success\": true\n        },\n        \"RequestId\": \"76c0ca0f-4cf2-4f89-80b9-cdbf9ab7dd77\"\n    }\n}",
         "title": "更新用户信息"
-      }
-    ],
-    "ReinstateEnv": [
-      {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=ReinstateEnv\n&EnvId=envid\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
-        "title": "恢复已隔离的免费环境"
       }
     ],
     "RenewEnv": [

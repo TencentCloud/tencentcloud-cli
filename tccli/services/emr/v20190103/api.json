@@ -2976,29 +2976,29 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点Label数组",
+          "document": "<p>节点Label数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TkeLabel",
           "name": "Labels",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点污点",
+          "document": "<p>节点污点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "base64 编码的用户脚本，在初始化节点之前执行",
+          "document": "<p>base64 编码的用户脚本，在初始化节点之前执行</p>",
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
           "name": "PreStartUserScript",
@@ -3009,7 +3009,7 @@
         },
         {
           "disabled": false,
-          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看",
+          "document": "<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>",
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
           "name": "UserScript",
@@ -3450,7 +3450,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EMR产品版本名称如EMR-V2.3.0 表示2.3.0版本的EMR， 当前支持产品版本名称查询：[产品版本名称](https://cloud.tencent.com/document/product/589/66338)",
+          "document": "<p>EMR产品版本名称如EMR-V2.3.0 表示2.3.0版本的EMR， 当前支持产品版本名称查询：<a href=\"https://cloud.tencent.com/document/product/589/66338\">产品版本名称</a></p>",
           "example": "EMR-V1.3.1",
           "member": "string",
           "name": "ProductVersion",
@@ -3459,7 +3459,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启节点高可用。取值范围：\n<li>true：表示开启节点高可用。</li>\n<li>false：表示不开启节点高可用。</li>",
+          "document": "<p>是否开启节点高可用。取值范围：</p><li>true：表示开启节点高可用。</li><li>false：表示不开启节点高可用。</li>",
           "example": "true",
           "member": "bool",
           "name": "EnableSupportHAFlag",
@@ -3468,7 +3468,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。\n<li>长度限制为6-36个字符。</li>\n<li>只允许包含中文、字母、数字、-、_。</li>",
+          "document": "<p>实例名称。</p><li>长度限制为6-36个字符。</li><li>只允许包含中文、字母、数字、-、_。</li>",
           "example": "emr测试",
           "member": "string",
           "name": "InstanceName",
@@ -3477,7 +3477,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：\n<li>PREPAID：预付费，即包年包月。</li>\n<li>POSTPAID_BY_HOUR：按小时后付费。</li>",
+          "document": "<p>实例计费模式。取值范围：</p><li>PREPAID：预付费，即包年包月。</li><li>POSTPAID_BY_HOUR：按小时后付费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -3486,7 +3486,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。\n<li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li>\n<li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
+          "document": "<p>实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。</p><li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li><li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
@@ -3495,7 +3495,7 @@
         },
         {
           "disabled": false,
-          "document": "集群应用场景以及支持部署组件配置",
+          "document": "<p>集群应用场景以及支持部署组件配置</p>",
           "example": "无",
           "member": "SceneSoftwareConfig",
           "name": "SceneSoftwareConfig",
@@ -3504,7 +3504,7 @@
         },
         {
           "disabled": false,
-          "document": "即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "document": "<p>即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -3513,7 +3513,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
+          "document": "<p>实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/215/15808\">DescribeSecurityGroups</a> 的返回值中的SecurityGroupId字段来获取。</p>",
           "example": "[\"sg-test\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -3522,7 +3522,7 @@
         },
         {
           "disabled": false,
-          "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/589/35656\">引导操作</a>脚本设置。</p>",
           "example": "无",
           "member": "ScriptBootstrapActionConfig",
           "name": "ScriptBootstrapActionConfig",
@@ -3531,7 +3531,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808",
+          "document": "<p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>",
           "example": "sdcdwxxxws",
           "member": "string",
           "name": "ClientToken",
@@ -3540,7 +3540,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启集群Master节点公网。取值范围：\n<li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li>\n<li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
+          "document": "<p>是否开启集群Master节点公网。取值范围：</p><li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li><li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
           "example": "NEED_MASTER_WAN",
           "member": "string",
           "name": "NeedMasterWan",
@@ -3549,7 +3549,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启外网远程登录。（在SecurityGroupId不为空时，该参数无效）不填默认为不开启 取值范围：\n<li>true：表示开启</li>\n<li>false：表示不开启</li>",
+          "document": "<p>是否开启外网远程登录。（在SecurityGroupId不为空时，该参数无效）不填默认为不开启 取值范围：</p><li>true：表示开启</li><li>false：表示不开启</li>",
           "example": "true",
           "member": "bool",
           "name": "EnableRemoteLoginFlag",
@@ -3558,7 +3558,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启Kerberos认证。默认不开启 取值范围：\n<li>true：表示开启</li>\n<li>false：表示不开启</li>",
+          "document": "<p>是否开启Kerberos认证。默认不开启 取值范围：</p><li>true：表示开启</li><li>false：表示不开启</li>",
           "example": "true",
           "member": "bool",
           "name": "EnableKerberosFlag",
@@ -3567,7 +3567,7 @@
         },
         {
           "disabled": false,
-          "document": "[自定义软件配置](https://cloud.tencent.com/document/product/589/35655?from_cn_redirect=1)",
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/589/35655?from_cn_redirect=1\">自定义软件配置</a></p>",
           "example": "`{ \"serviceName\": \"\",\"classification\": \"\", \"serviceVersion\": \"\", \"properties\": { \"dfs.blocksize\": \"\", } }`",
           "member": "string",
           "name": "CustomConf",
@@ -3576,7 +3576,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。",
+          "document": "<p>标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3585,7 +3585,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)的返回值中的DisasterRecoverGroupId字段来获取。",
+          "document": "<p>分散置放群组ID列表，当前只支持指定一个。<br>该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/213/17810\">DescribeDisasterRecoverGroups</a>的返回值中的DisasterRecoverGroupId字段来获取。</p>",
           "example": "[\"disa-xxxxx\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -3594,7 +3594,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启集群维度CBS加密。默认不加密 取值范围：\n<li>true：表示加密</li>\n<li>false：表示不加密</li>",
+          "document": "<p>是否开启集群维度CBS加密。默认不加密 取值范围：</p><li>true：表示加密</li><li>false：表示不加密</li>",
           "example": "true",
           "member": "bool",
           "name": "EnableCbsEncryptFlag",
@@ -3603,7 +3603,7 @@
         },
         {
           "disabled": false,
-          "document": "MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser MetaDataPass UnifyMetaInstanceId不用填\n当MetaType选择EMR_EXIT_META时，填写UnifyMetaInstanceId\n当MetaType选择USER_CUSTOM_META时，填写MetaDataJdbcUrl MetaDataUser MetaDataPass",
+          "document": "<p>MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser MetaDataPass UnifyMetaInstanceId不用填<br>当MetaType选择EMR_EXIT_META时，填写UnifyMetaInstanceId<br>当MetaType选择USER_CUSTOM_META时，填写MetaDataJdbcUrl MetaDataUser MetaDataPass</p>",
           "example": "无",
           "member": "CustomMetaDBInfo",
           "name": "MetaDBInfo",
@@ -3612,7 +3612,7 @@
         },
         {
           "disabled": false,
-          "document": "共享组件信息",
+          "document": "<p>共享组件信息</p>",
           "example": "无",
           "member": "DependService",
           "name": "DependService",
@@ -3621,7 +3621,7 @@
         },
         {
           "disabled": false,
-          "document": "节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。",
+          "document": "<p>节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。</p>",
           "example": "无",
           "member": "ZoneResourceConfiguration",
           "name": "ZoneResourceConfiguration",
@@ -3630,7 +3630,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶路径，创建StarRocks存算分离集群时用到",
+          "document": "<p>cos桶路径，创建StarRocks存算分离集群时用到</p>",
           "example": "test-cos-1258469122",
           "member": "string",
           "name": "CosBucket",
@@ -3639,7 +3639,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标识信息，目前只提供给tf平台使用",
+          "document": "<p>节点标识信息，目前只提供给tf平台使用</p>",
           "example": "无",
           "member": "NodeMark",
           "name": "NodeMarks",
@@ -3648,7 +3648,7 @@
         },
         {
           "disabled": false,
-          "document": "clb id",
+          "document": "<p>clb id</p>",
           "example": "lb-xxxxxxxx",
           "member": "string",
           "name": "LoadBalancerId",
@@ -3657,7 +3657,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本：mysql8/tdsql8/mysql5",
+          "document": "<p>数据库版本：mysql8/tdsql8/mysql5</p>",
           "example": "mysql8",
           "member": "string",
           "name": "DefaultMetaVersion",
@@ -3666,7 +3666,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通数据库审计",
+          "document": "<p>是否开通数据库审计</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedCdbAudit",
@@ -3675,12 +3675,21 @@
         },
         {
           "disabled": false,
-          "document": "安全指定来源ip",
+          "document": "<p>安全指定来源ip</p>",
           "example": "10.0.0.0/8",
           "member": "string",
           "name": "SgIP",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组分区</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3690,7 +3699,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "emr-f2da1cd",
           "member": "string",
           "name": "InstanceId",
@@ -3758,7 +3767,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n51:表示STARROCKS-V1.4.0\n54:表示STARROCKS-V2.0.0\n27:表示KAFKA-V1.0.0\n50:表示KAFKA-V2.0.0\n16:表示EMR-V2.3.0\n20:表示EMR-V2.5.0\n30:表示EMR-V2.6.0\n38:表示EMR-V2.7.0\n25:表示EMR-V3.1.0\n33:表示EMR-V3.2.1\n34:表示EMR-V3.3.0\n37:表示EMR-V3.4.0\n44:表示EMR-V3.5.0\n53:表示EMR-V3.6.0\n58:表示EMR-3.6.1\n59:表示EMR-serverless-1.0.0\n60:表示EMR-TKE-1.1.0\n61:表示SR-V2.1.0\n62:表示SR-V2.1.0-SharedData\n63:表示SR-V2.1.0.tlinux\n64:表示统一元数据管理项目\n65:表示EMR-TKE-AI-1.0.0\n66:表示RSS-1.0.0\n67:表示SR-V2.2.0\n68:表示SR-V2.2.0.tlinux\n69:表示EMR-AI-1.1.0\n70:表示SR-V2.2.1\n71:表示EMR-3.7.0\n72:表示EMR-serverless-1.0.1\n73:表示KAFKA-2.0.1\n74:表示SR-V2.2.2\n75:表示EMR-TKE-AI-1.1.0\n76:表示EMR-V3.7.1\n77:表示SERVERLESS-TCBASE-1.0.0\n78:表示EMR-V3.6.2\n79:表示STARROCKS-V2.2.2\n80:表示EMR-AI-V1.1.1\n",
+          "document": "<p>产品ID，不同产品ID表示不同的EMR产品版本。取值范围：<br>51:表示STARROCKS-V1.4.0<br>54:表示STARROCKS-V2.0.0<br>27:表示KAFKA-V1.0.0<br>50:表示KAFKA-V2.0.0<br>16:表示EMR-V2.3.0<br>20:表示EMR-V2.5.0<br>30:表示EMR-V2.6.0<br>38:表示EMR-V2.7.0<br>25:表示EMR-V3.1.0<br>33:表示EMR-V3.2.1<br>34:表示EMR-V3.3.0<br>37:表示EMR-V3.4.0<br>44:表示EMR-V3.5.0<br>53:表示EMR-V3.6.0<br>58:表示EMR-3.6.1<br>59:表示EMR-serverless-1.0.0<br>60:表示EMR-TKE-1.1.0<br>61:表示SR-V2.1.0<br>62:表示SR-V2.1.0-SharedData<br>63:表示SR-V2.1.0.tlinux<br>64:表示统一元数据管理项目<br>65:表示EMR-TKE-AI-1.0.0<br>66:表示RSS-1.0.0<br>67:表示SR-V2.2.0<br>68:表示SR-V2.2.0.tlinux<br>69:表示EMR-AI-1.1.0<br>70:表示SR-V2.2.1<br>71:表示EMR-3.7.0<br>72:表示EMR-serverless-1.0.1<br>73:表示KAFKA-2.0.1<br>74:表示SR-V2.2.2<br>75:表示EMR-TKE-AI-1.1.0<br>76:表示EMR-V3.7.1<br>77:表示SERVERLESS-TCBASE-1.0.0<br>78:表示EMR-V3.6.2<br>79:表示STARROCKS-V2.2.2<br>80:表示EMR-AI-V1.1.1</p>",
           "example": "4",
           "member": "uint64",
           "name": "ProductId",
@@ -3767,7 +3776,7 @@
         },
         {
           "disabled": false,
-          "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；\n填写实例值：hive、flink。",
+          "document": "<p>部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：<a href=\"https://cloud.tencent.com/document/product/589/20279\">组件版本</a> ；<br>填写实例值：hive、flink。</p>",
           "example": "[\"hadoop-2.8.4\\n\",\"zookeeper-3.4.9\\n\",\"knox-1.2.0\\n\"]",
           "member": "string",
           "name": "Software",
@@ -3776,7 +3785,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。</li>",
+          "document": "<p>是否开启节点高可用。取值范围：</p><li>0：表示不开启节点高可用。</li><li>1：表示开启节点高可用。</li>",
           "example": "0",
           "member": "uint64",
           "name": "SupportHA",
@@ -3785,7 +3794,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。\n<li>长度限制为6-36个字符。</li>\n<li>只允许包含中文、字母、数字、-、_。</li>",
+          "document": "<p>实例名称。</p><li>长度限制为6-36个字符。</li><li>只允许包含中文、字母、数字、-、_。</li>",
           "example": "emr测试",
           "member": "string",
           "name": "InstanceName",
@@ -3794,7 +3803,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "document": "<p>实例计费模式。取值范围：</p><li>0：表示按量计费。</li><li>1：表示包年包月。</li>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -3803,7 +3812,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "document": "<p>购买实例的时长。结合TimeUnit一起使用。</p><li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li><li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
@@ -3812,7 +3821,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "document": "<p>购买实例的时间单位。取值范围：</p><li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li><li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "s",
           "member": "string",
           "name": "TimeUnit",
@@ -3821,7 +3830,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。\n<li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li>\n<li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
+          "document": "<p>实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。</p><li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li><li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
@@ -3830,7 +3839,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "document": "<p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>",
           "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
@@ -3839,7 +3848,7 @@
         },
         {
           "disabled": false,
-          "document": "节点资源的规格。",
+          "document": "<p>节点资源的规格。</p>",
           "example": "无",
           "member": "NewResourceSpec",
           "name": "ResourceSpec",
@@ -3848,7 +3857,7 @@
         },
         {
           "disabled": false,
-          "document": "开启COS访问需要设置的参数。",
+          "document": "<p>开启COS访问需要设置的参数。</p>",
           "example": "无",
           "member": "COSSettings",
           "name": "COSSettings",
@@ -3857,7 +3866,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "document": "<p>实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。</p>",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -3866,7 +3875,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
+          "document": "<p>实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/215/15808\">DescribeSecurityGroups</a> 的返回值中的SecurityGroupId字段来获取。</p>",
           "example": "sg-xxxxxxxxxx",
           "member": "string",
           "name": "SgId",
@@ -3875,7 +3884,7 @@
         },
         {
           "disabled": false,
-          "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/589/35656\">引导操作</a>脚本设置。</p>",
           "example": "无",
           "member": "PreExecuteFileSettings",
           "name": "PreExecutedFileSettings",
@@ -3884,7 +3893,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月实例是否自动续费。取值范围：\n<li>0：表示不自动续费。</li>\n<li>1：表示自动续费。</li>",
+          "document": "<p>包年包月实例是否自动续费。取值范围：</p><li>0：表示不自动续费。</li><li>1：表示自动续费。</li>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
@@ -3893,7 +3902,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-****-****-****-fae36063280",
+          "document": "<p>唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae36063280</p>",
           "example": "a9a90aa6-****-****-****-fae36063280",
           "member": "string",
           "name": "ClientToken",
@@ -3902,7 +3911,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启集群Master节点公网。取值范围：\n<li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li>\n<li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
+          "document": "<p>是否开启集群Master节点公网。取值范围：</p><li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li><li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
           "example": "NEED_MASTER_WAN",
           "member": "string",
           "name": "NeedMasterWan",
@@ -3911,7 +3920,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要开启外网远程登录，即22号端口。在SgId不为空时，该参数无效。",
+          "document": "<p>是否需要开启外网远程登录，即22号端口。在SgId不为空时，该参数无效。</p>",
           "example": "22",
           "member": "int64",
           "name": "RemoteLoginAtCreate",
@@ -3920,7 +3929,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启安全集群。0表示不开启，非0表示开启。",
+          "document": "<p>是否开启安全集群。0表示不开启，非0表示开启。</p>",
           "example": "0",
           "member": "int64",
           "name": "CheckSecurity",
@@ -3929,7 +3938,7 @@
         },
         {
           "disabled": false,
-          "document": "访问外部文件系统。",
+          "document": "<p>访问外部文件系统。</p>",
           "example": "fs",
           "member": "string",
           "name": "ExtendFsField",
@@ -3938,7 +3947,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。",
+          "document": "<p>标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3947,7 +3956,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/213/15486 ) 的返回值中的SecurityGroupId字段来获取。",
+          "document": "<p>分散置放群组ID列表，当前只支持指定一个。<br>该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/213/15486\">DescribeSecurityGroups</a> 的返回值中的SecurityGroupId字段来获取。</p>",
           "example": "[\"disa-xxxxx\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -3956,7 +3965,7 @@
         },
         {
           "disabled": false,
-          "document": "集群维度CBS加密盘，默认0表示不加密，1表示加密",
+          "document": "<p>集群维度CBS加密盘，默认0表示不加密，1表示加密</p>",
           "example": "0",
           "member": "uint64",
           "name": "CbsEncrypt",
@@ -3965,7 +3974,7 @@
         },
         {
           "disabled": false,
-          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_DEFAULT_META：表示集群默认创建</li>\n<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "document": "<p>hive共享元数据库类型。取值范围：</p><li>EMR_DEFAULT_META：表示集群默认创建</li><li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li><li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
           "example": "EMR_EXIT_META",
           "member": "string",
           "name": "MetaType",
@@ -3974,7 +3983,7 @@
         },
         {
           "disabled": false,
-          "document": "EMR-MetaDB实例",
+          "document": "<p>EMR-MetaDB实例</p>",
           "example": "instdxxxxx",
           "member": "string",
           "name": "UnifyMetaInstanceId",
@@ -3983,7 +3992,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义MetaDB信息",
+          "document": "<p>自定义MetaDB信息</p>",
           "example": "无",
           "member": "CustomMetaInfo",
           "name": "MetaDBInfo",
@@ -3992,7 +4001,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义应用角色。",
+          "document": "<p>自定义应用角色。</p>",
           "example": "roleName",
           "member": "string",
           "name": "ApplicationRole",
@@ -4001,7 +4010,7 @@
         },
         {
           "disabled": false,
-          "document": "场景化取值：\nHadoop-Kudu\nHadoop-Zookeeper\nHadoop-Presto\nHadoop-Hbase",
+          "document": "<p>场景化取值：<br>Hadoop-Kudu<br>Hadoop-Zookeeper<br>Hadoop-Presto<br>Hadoop-Hbase</p>",
           "example": "Hadoop-Kudu",
           "member": "string",
           "name": "SceneName",
@@ -4010,7 +4019,7 @@
         },
         {
           "disabled": false,
-          "document": "共享组件信息",
+          "document": "<p>共享组件信息</p>",
           "example": "无",
           "member": "ExternalService",
           "name": "ExternalService",
@@ -4019,7 +4028,7 @@
         },
         {
           "disabled": false,
-          "document": "如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。",
+          "document": "<p>如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。</p>",
           "example": "1",
           "member": "int64",
           "name": "VersionID",
@@ -4028,7 +4037,7 @@
         },
         {
           "disabled": false,
-          "document": "true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。",
+          "document": "<p>true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。</p>",
           "example": "false",
           "member": "bool",
           "name": "MultiZone",
@@ -4037,7 +4046,7 @@
         },
         {
           "disabled": false,
-          "document": "节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。",
+          "document": "<p>节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。</p>",
           "example": "无",
           "member": "MultiZoneSetting",
           "name": "MultiZoneSettings",
@@ -4046,7 +4055,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶路径，创建StarRocks存算分离集群时用到",
+          "document": "<p>cos桶路径，创建StarRocks存算分离集群时用到</p>",
           "example": "aicv-prod-1306440315",
           "member": "string",
           "name": "CosBucket",
@@ -4055,7 +4064,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标识信息，目前只提供给tf平台使用",
+          "document": "<p>节点标识信息，目前只提供给tf平台使用</p>",
           "example": "无",
           "member": "NodeMark",
           "name": "NodeMarks",
@@ -4064,7 +4073,7 @@
         },
         {
           "disabled": false,
-          "document": "CLB id",
+          "document": "<p>CLB id</p>",
           "example": "lb-xxxxxx",
           "member": "string",
           "name": "LoadBalancerId",
@@ -4073,7 +4082,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型：mysql8/tdsql8",
+          "document": "<p>数据库类型：mysql8/tdsql8</p>",
           "example": "mysql8",
           "member": "string",
           "name": "DefaultMetaVersion",
@@ -4082,7 +4091,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通审计：0:不开通,1:开通",
+          "document": "<p>是否开通审计：0:不开通,1:开通</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedCdbAudit",
@@ -4091,12 +4100,21 @@
         },
         {
           "disabled": false,
-          "document": "安全组指定来源ip",
+          "document": "<p>安全组指定来源ip</p>",
           "example": "10.0.0.0/8",
           "member": "string",
           "name": "SgIP",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组分区</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4106,7 +4124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "emr-xxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -17920,7 +17938,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点规格描述，如CVM.SA2。",
+          "document": "<p>节点规格描述，如CVM.SA2。</p>",
           "example": "CVM.SA2",
           "member": "string",
           "name": "Spec",
@@ -17931,7 +17949,7 @@
         },
         {
           "disabled": false,
-          "document": "取值范围:\n\"LOCAL_SSD\"   3     //本地SSD \n\"CLOUD_SSD\"   4     //云SSD \n\"CLOUD_PREMIUM\"  5  //高效云盘\n\"CLOUD_HSSD\"   6    //增强型SSD云硬盘 \n\"CLOUD_THROUGHPUT\" 11//吞吐型云硬盘 \n\"CLOUD_TSSD\"  12     //极速型SSD云硬盘 \n\"CLOUD_BSSD\"    13   //通用型SSD云硬盘 \n\"CLOUD_BIGDATA\" 14   //大数据型云硬盘\n\"CLOUD_HIGHIO\"  15   //高IO型云硬盘 \n\n该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口",
+          "document": "<p>取值范围:<br>&quot;LOCAL_SSD&quot;   3     //本地SSD<br>&quot;CLOUD_SSD&quot;   4     //云SSD<br>&quot;CLOUD_PREMIUM&quot;  5  //高效云盘<br>&quot;CLOUD_HSSD&quot;   6    //增强型SSD云硬盘<br>&quot;CLOUD_THROUGHPUT&quot; 11//吞吐型云硬盘<br>&quot;CLOUD_TSSD&quot;  12     //极速型SSD云硬盘<br>&quot;CLOUD_BSSD&quot;    13   //通用型SSD云硬盘<br>&quot;CLOUD_BIGDATA&quot; 14   //大数据型云硬盘<br>&quot;CLOUD_HIGHIO&quot;  15   //高IO型云硬盘 </p><p>该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口</p>",
           "example": "5",
           "member": "int64",
           "name": "StorageType",
@@ -17942,7 +17960,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘类型 取值范围：\n\nCLOUD_SSD：表示云SSD。\n\nCLOUD_PREMIUM：表示高效云盘。\n\nCLOUD_BASIC：表示云硬盘。\n\nLOCAL_BASIC：表示本地盘。\n\nLOCAL_SSD：表示本地SSD。\n\nCLOUD_HSSD：表示增强型SSD云硬盘。\n\nCLOUD_THROUGHPUT：表示吞吐型云硬盘。\n\nCLOUD_TSSD：表示极速型SSD云硬盘。\n\nCLOUD_BIGDATA：表示大数据型云硬盘。\n\nCLOUD_HIGHIO：表示高IO型云硬盘。\n\nCLOUD_BSSD：表示通用型SSD云硬盘。\n\nREMOTE_SSD：表示远端SSD盘。",
+          "document": "<p>数据盘类型 取值范围：</p><p>CLOUD_SSD：表示云SSD。</p><p>CLOUD_PREMIUM：表示高效云盘。</p><p>CLOUD_BASIC：表示云硬盘。</p><p>LOCAL_BASIC：表示本地盘。</p><p>LOCAL_SSD：表示本地SSD。</p><p>CLOUD_HSSD：表示增强型SSD云硬盘。</p><p>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</p><p>CLOUD_TSSD：表示极速型SSD云硬盘。</p><p>CLOUD_BIGDATA：表示大数据型云硬盘。</p><p>CLOUD_HIGHIO：表示高IO型云硬盘。</p><p>CLOUD_BSSD：表示通用型SSD云硬盘。</p><p>REMOTE_SSD：表示远端SSD盘。</p>",
           "example": "LOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
@@ -17953,7 +17971,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量,单位为M",
+          "document": "<p>内存容量,单位为M</p>",
           "example": "131072",
           "member": "int64",
           "name": "MemSize",
@@ -17964,7 +17982,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数",
+          "document": "<p>CPU核数</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
@@ -17975,7 +17993,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘容量",
+          "document": "<p>数据盘容量</p>",
           "example": "300",
           "member": "int64",
           "name": "DiskSize",
@@ -17986,7 +18004,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘容量",
+          "document": "<p>系统盘容量</p>",
           "example": "0",
           "member": "int64",
           "name": "RootSize",
@@ -17997,7 +18015,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiDisk",
           "name": "MultiDisks",
@@ -18008,7 +18026,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>需要绑定的标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -18019,7 +18037,7 @@
         },
         {
           "disabled": false,
-          "document": "规格类型，如S2.MEDIUM8",
+          "document": "<p>规格类型，如S2.MEDIUM8</p>",
           "example": "S2.MEDIUM8",
           "member": "string",
           "name": "InstanceType",
@@ -18030,7 +18048,7 @@
         },
         {
           "disabled": false,
-          "document": "本地盘数量，该字段已废弃",
+          "document": "<p>本地盘数量，该字段已废弃</p>",
           "example": "1",
           "member": "uint64",
           "name": "LocalDiskNum",
@@ -18041,7 +18059,7 @@
         },
         {
           "disabled": false,
-          "document": "本地盘数量，如2",
+          "document": "<p>本地盘数量，如2</p>",
           "example": "2",
           "member": "uint64",
           "name": "DiskNum",
@@ -18052,13 +18070,24 @@
         },
         {
           "disabled": false,
-          "document": "GPU信息",
+          "document": "<p>GPU信息</p>",
           "example": "1 * NVIDIA T4",
           "member": "string",
           "name": "GpuDesc",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组分区数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -18836,7 +18865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点计费模式。取值范围：\n<li>PREPAID：预付费，即包年包月。</li>\n<li>POSTPAID_BY_HOUR：按小时后付费。</li>\n<li>SPOTPAID：竞价付费（仅支持TASK节点）。</li>",
+          "document": "<p>节点计费模式。取值范围：</p><li>PREPAID：预付费，即包年包月。</li><li>POSTPAID_BY_HOUR：按小时后付费。</li><li>SPOTPAID：竞价付费（仅支持TASK节点）。</li>",
           "example": "\"SPOTPAID\"",
           "member": "string",
           "name": "InstanceChargeType",
@@ -18845,7 +18874,7 @@
         },
         {
           "disabled": false,
-          "document": "集群实例ID。",
+          "document": "<p>集群实例ID。</p>",
           "example": "\"emr-ge0vrqkl\"",
           "member": "string",
           "name": "InstanceId",
@@ -18854,7 +18883,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容节点类型以及数量",
+          "document": "<p>扩容节点类型以及数量</p>",
           "example": "无",
           "member": "ScaleOutNodeConfig",
           "name": "ScaleOutNodeConfig",
@@ -18863,7 +18892,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-****-****-****-fae36063280",
+          "document": "<p>唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae36063280</p>",
           "example": "a9a90aa6-****-****-****-fae36063280",
           "member": "string",
           "name": "ClientToken",
@@ -18872,7 +18901,7 @@
         },
         {
           "disabled": false,
-          "document": "即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "document": "<p>即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -18881,7 +18910,7 @@
         },
         {
           "disabled": false,
-          "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/589/35656\">引导操作</a>脚本设置。</p>",
           "example": "无",
           "member": "ScriptBootstrapActionConfig",
           "name": "ScriptBootstrapActionConfig",
@@ -18890,7 +18919,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容部署服务，新增节点将默认继承当前节点类型中所部署服务，部署服务含默认可选服务，该参数仅支持可选服务填写，如：存量task节点已部署HDFS、YARN、impala；使用api扩容task节不部署impala时，部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)。",
+          "document": "<p>扩容部署服务，新增节点将默认继承当前节点类型中所部署服务，部署服务含默认可选服务，该参数仅支持可选服务填写，如：存量task节点已部署HDFS、YARN、impala；使用api扩容task节不部署impala时，部署服务仅填写HDFS、YARN。<a href=\"https://cloud.tencent.com/document/product/589/98760\">组件名对应的映射关系表</a>。</p>",
           "example": "[1,2]",
           "member": "int64",
           "name": "SoftDeployInfo",
@@ -18899,7 +18928,7 @@
         },
         {
           "disabled": false,
-          "document": "部署进程，默认部署扩容服务的全部进程，支持修改部署进程，如：当前task节点部署服务为：HDFS、YARN、impala，默认部署服务为：DataNode,NodeManager,ImpalaServer，若用户需修改部署进程信息，部署进程：\tDataNode,NodeManager,ImpalaServerCoordinator或DataNode,NodeManager,ImpalaServerExecutor。[进程名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)。",
+          "document": "<p>部署进程，默认部署扩容服务的全部进程，支持修改部署进程，如：当前task节点部署服务为：HDFS、YARN、impala，默认部署服务为：DataNode,NodeManager,ImpalaServer，若用户需修改部署进程信息，部署进程：    DataNode,NodeManager,ImpalaServerCoordinator或DataNode,NodeManager,ImpalaServerExecutor。<a href=\"https://cloud.tencent.com/document/product/589/98760\">进程名对应的映射关系表</a>。</p>",
           "example": "[7]",
           "member": "int64",
           "name": "ServiceNodeInfo",
@@ -18908,7 +18937,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)的返回值中的DisasterRecoverGroupId字段来获取。",
+          "document": "<p>分散置放群组ID列表，当前只支持指定一个。<br>该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/213/17810\">DescribeDisasterRecoverGroups</a>的返回值中的DisasterRecoverGroupId字段来获取。</p>",
           "example": "[\"ps-ery9dr5n\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -18917,7 +18946,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容节点绑定标签列表。",
+          "document": "<p>扩容节点绑定标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -18926,7 +18955,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容所选资源类型，可选范围为\"HOST\",\"POD\",\"MNode\"，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型",
+          "document": "<p>扩容所选资源类型，可选范围为&quot;HOST&quot;,&quot;POD&quot;,&quot;MNode&quot;，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型</p>",
           "example": "HOST",
           "member": "string",
           "name": "HardwareSourceType",
@@ -18935,7 +18964,7 @@
         },
         {
           "disabled": false,
-          "document": "Pod相关资源信息",
+          "document": "<p>Pod相关资源信息</p>",
           "example": "无",
           "member": "PodSpecInfo",
           "name": "PodSpecInfo",
@@ -18944,7 +18973,7 @@
         },
         {
           "disabled": false,
-          "document": "使用clickhouse集群扩容时，选择的机器分组名称",
+          "document": "<p>使用clickhouse集群扩容时，选择的机器分组名称</p>",
           "example": "name-test",
           "member": "string",
           "name": "ClickHouseClusterName",
@@ -18953,7 +18982,7 @@
         },
         {
           "disabled": false,
-          "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
+          "document": "<p>使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组</p>",
           "example": "new",
           "member": "string",
           "name": "ClickHouseClusterType",
@@ -18962,7 +18991,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容指定 Yarn Node Label",
+          "document": "<p>扩容指定 Yarn Node Label</p>",
           "example": "CLOUD",
           "member": "string",
           "name": "YarnNodeLabel",
@@ -18971,7 +19000,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后是否启动服务，默认取值否\n<li>true：是</li>\n<li>false：否</li>",
+          "document": "<p>扩容后是否启动服务，默认取值否</p><li>true：是</li><li>false：否</li>",
           "example": "true",
           "member": "bool",
           "name": "EnableStartServiceFlag",
@@ -18980,7 +19009,7 @@
         },
         {
           "disabled": false,
-          "document": "规格设置",
+          "document": "<p>规格设置</p>",
           "example": "无",
           "member": "NodeResourceSpec",
           "name": "ResourceSpec",
@@ -18989,7 +19018,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用[DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
+          "document": "<p>实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用<a href=\"https://cloud.tencent.com/document/product/213/15707\">DescribeZones</a> 的返回值中的Zone字段来获取。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -18998,7 +19027,7 @@
         },
         {
           "disabled": false,
-          "document": "子网，默认是集群创建时的子网",
+          "document": "<p>子网，默认是集群创建时的子网</p>",
           "example": "sub-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -19007,7 +19036,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容指定配置组",
+          "document": "<p>扩容指定配置组</p>",
           "example": "无",
           "member": "ScaleOutServiceConfGroupsInfo",
           "name": "ScaleOutServiceConfGroupsInfo",
@@ -19016,7 +19045,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标记信息，当前只提供给tf平台使用",
+          "document": "<p>节点标记信息，当前只提供给tf平台使用</p>",
           "example": "无",
           "member": "NodeMark",
           "name": "NodeMarks",
@@ -19025,12 +19054,21 @@
         },
         {
           "disabled": false,
-          "document": "扩容指定计算组名称",
+          "document": "<p>扩容指定计算组名称</p>",
           "example": "default_warehouse",
           "member": "string",
           "name": "WarehouseName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组分区</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -19040,7 +19078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "emr-5n3l5c83",
           "member": "string",
           "name": "InstanceId",
@@ -19050,7 +19088,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端Token。",
+          "document": "<p>客户端Token。</p>",
           "example": "testtesttest",
           "member": "string",
           "name": "ClientToken",
@@ -19060,7 +19098,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容流程ID。",
+          "document": "<p>扩容流程ID。</p>",
           "example": "1928287",
           "member": "int64",
           "name": "FlowId",
@@ -19070,7 +19108,7 @@
         },
         {
           "disabled": false,
-          "document": "查询流程状态，流程额外信息",
+          "document": "<p>查询流程状态，流程额外信息</p>",
           "example": "1731833622-448635-8003549",
           "member": "string",
           "name": "TraceId",
@@ -19080,7 +19118,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订单号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1731867961-23673-5000362\"]",
           "member": "string",
           "name": "DealNames",
@@ -19090,7 +19128,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号。",
+          "document": "<p>大订单号。</p>",
           "example": "20241118053073481639521",
           "member": "string",
           "name": "BillId",
@@ -19112,7 +19150,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "document": "<p>扩容的时间单位。取值范围：</p><li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li><li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "s",
           "member": "string",
           "name": "TimeUnit",
@@ -19121,7 +19159,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "document": "<p>扩容的时长。结合TimeUnit一起使用。</p><li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li><li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
@@ -19130,7 +19168,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "emr-5n3l5c83",
           "member": "string",
           "name": "InstanceId",
@@ -19139,7 +19177,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "document": "<p>实例计费模式。取值范围：</p><li>0：表示按量计费。</li><li>1：表示包年包月。</li>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -19148,7 +19186,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-****-****-****-fae36063280",
+          "document": "<p>唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae36063280</p>",
           "example": "a9a90aa6-****-****-****-fae36063280",
           "member": "string",
           "name": "ClientToken",
@@ -19157,7 +19195,7 @@
         },
         {
           "disabled": false,
-          "document": "引导操作脚本设置。",
+          "document": "<p>引导操作脚本设置。</p>",
           "example": "无",
           "member": "PreExecuteFileSettings",
           "name": "PreExecutedFileSettings",
@@ -19166,7 +19204,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的Task节点数量。",
+          "document": "<p>扩容的Task节点数量。</p>",
           "example": "0",
           "member": "uint64",
           "name": "TaskCount",
@@ -19175,7 +19213,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的Core节点数量。",
+          "document": "<p>扩容的Core节点数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "CoreCount",
@@ -19184,7 +19222,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容时不需要安装的进程。",
+          "document": "<p>扩容时不需要安装的进程。</p>",
           "example": "[53]",
           "member": "uint64",
           "name": "UnNecessaryNodeList",
@@ -19193,7 +19231,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的Router节点数量。",
+          "document": "<p>扩容的Router节点数量。</p>",
           "example": "0",
           "member": "uint64",
           "name": "RouterCount",
@@ -19202,7 +19240,7 @@
         },
         {
           "disabled": false,
-          "document": "部署的服务。\n<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>\n<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>",
+          "document": "<p>部署的服务。</p><li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li><li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>",
           "example": "[1,2,25]",
           "member": "uint64",
           "name": "SoftDeployInfo",
@@ -19211,7 +19249,7 @@
         },
         {
           "disabled": false,
-          "document": "启动的进程。",
+          "document": "<p>启动的进程。</p>",
           "example": "[7]",
           "member": "uint64",
           "name": "ServiceNodeInfo",
@@ -19220,7 +19258,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组ID列表，当前仅支持指定一个。",
+          "document": "<p>分散置放群组ID列表，当前仅支持指定一个。</p>",
           "example": "[\"ps-ery9dr5n\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -19229,7 +19267,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容节点绑定标签列表。",
+          "document": "<p>扩容节点绑定标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -19238,7 +19276,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容所选资源类型，可选范围为\"HOST\",\"POD\",\"MNode\"，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型",
+          "document": "<p>扩容所选资源类型，可选范围为&quot;HOST&quot;,&quot;POD&quot;,&quot;MNode&quot;，HOST为普通的CVM资源，POD为TKE集群或EKS集群提供的资源,MNode为全托管资源类型</p>",
           "example": "HOST",
           "member": "string",
           "name": "HardwareResourceType",
@@ -19247,7 +19285,7 @@
         },
         {
           "disabled": false,
-          "document": "使用Pod资源扩容时，指定的Pod规格以及来源等信息",
+          "document": "<p>使用Pod资源扩容时，指定的Pod规格以及来源等信息</p>",
           "example": "无",
           "member": "PodSpec",
           "name": "PodSpec",
@@ -19256,7 +19294,7 @@
         },
         {
           "disabled": false,
-          "document": "使用clickhouse集群扩容时，选择的机器分组名称",
+          "document": "<p>使用clickhouse集群扩容时，选择的机器分组名称</p>",
           "example": "name-test",
           "member": "string",
           "name": "ClickHouseClusterName",
@@ -19265,7 +19303,7 @@
         },
         {
           "disabled": false,
-          "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
+          "document": "<p>使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组</p>",
           "example": "new",
           "member": "string",
           "name": "ClickHouseClusterType",
@@ -19274,7 +19312,7 @@
         },
         {
           "disabled": false,
-          "document": "规则扩容指定 yarn node label",
+          "document": "<p>规则扩容指定 yarn node label</p>",
           "example": "CLOUD",
           "member": "string",
           "name": "YarnNodeLabel",
@@ -19283,7 +19321,7 @@
         },
         {
           "disabled": false,
-          "document": "POD自定义权限和自定义参数",
+          "document": "<p>POD自定义权限和自定义参数</p>",
           "example": "无",
           "member": "PodParameter",
           "name": "PodParameter",
@@ -19292,7 +19330,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的Master节点的数量。\n使用clickhouse集群扩容时，该参数不生效。\n使用kafka集群扩容时，该参数不生效。\n当HardwareResourceType=POD时，该参数不生效。",
+          "document": "<p>扩容的Master节点的数量。<br>使用clickhouse集群扩容时，该参数不生效。<br>使用kafka集群扩容时，该参数不生效。<br>当HardwareResourceType=POD时，该参数不生效。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MasterCount",
@@ -19301,7 +19339,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后是否启动服务，true：启动，false：不启动",
+          "document": "<p>扩容后是否启动服务，true：启动，false：不启动</p>",
           "example": "\"true\"",
           "member": "string",
           "name": "StartServiceAfterScaleOut",
@@ -19310,7 +19348,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区，默认是集群的主可用区",
+          "document": "<p>可用区，默认是集群的主可用区</p>",
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
@@ -19319,7 +19357,7 @@
         },
         {
           "disabled": false,
-          "document": "子网，默认是集群创建时的子网",
+          "document": "<p>子网，默认是集群创建时的子网</p>",
           "example": "sub-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -19328,7 +19366,7 @@
         },
         {
           "disabled": false,
-          "document": "预设配置组",
+          "document": "<p>预设配置组</p>",
           "example": "{\\\"HDFS-3.2.2\\\":-1,\\\"YARN-3.2.2\\\":-1}",
           "member": "string",
           "name": "ScaleOutServiceConfAssign",
@@ -19337,7 +19375,7 @@
         },
         {
           "disabled": false,
-          "document": "0表示关闭自动续费，1表示开启自动续费",
+          "document": "<p>0表示关闭自动续费，1表示开启自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenew",
@@ -19346,7 +19384,7 @@
         },
         {
           "disabled": false,
-          "document": "类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识",
+          "document": "<p>类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识</p>",
           "example": "ComputeResource",
           "member": "string",
           "name": "ResourceBaseType",
@@ -19355,7 +19393,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源id",
+          "document": "<p>计算资源id</p>",
           "example": "emr-cr-xxxx",
           "member": "string",
           "name": "ComputeResourceId",
@@ -19364,7 +19402,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源高级设置",
+          "document": "<p>计算资源高级设置</p>",
           "example": "无",
           "member": "ComputeResourceAdvanceParams",
           "name": "ComputeResourceAdvanceParams",
@@ -19373,7 +19411,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标记信息，目前只提供tf平台使用",
+          "document": "<p>节点标记信息，目前只提供tf平台使用</p>",
           "example": "无",
           "member": "NodeMark",
           "name": "NodeMarks",
@@ -19382,12 +19420,21 @@
         },
         {
           "disabled": false,
-          "document": "扩容指定计算组",
+          "document": "<p>扩容指定计算组</p>",
           "example": "default_warehouse",
           "member": "string",
           "name": "WarehouseName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组分区</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -19397,7 +19444,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "emr-5n3l5c83",
           "member": "string",
           "name": "InstanceId",
@@ -19407,7 +19454,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订单号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"20200309357833\",\"20200309357834\",\"20200309357835\",\"20200309357836\"]",
           "member": "string",
           "name": "DealNames",
@@ -19417,7 +19464,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端Token。",
+          "document": "<p>客户端Token。</p>",
           "example": "testtesttest",
           "member": "string",
           "name": "ClientToken",
@@ -19427,7 +19474,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容流程ID。",
+          "document": "<p>扩容流程ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "FlowId",
@@ -19437,7 +19484,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号。",
+          "document": "<p>大订单号。</p>",
           "example": "20241118053073481639521",
           "member": "string",
           "name": "BillId",
@@ -19447,7 +19494,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容TraceId",
+          "document": "<p>扩容TraceId</p>",
           "example": "1731867961-23673-5000362",
           "member": "string",
           "name": "TraceId",

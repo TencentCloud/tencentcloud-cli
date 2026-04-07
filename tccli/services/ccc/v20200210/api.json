@@ -3539,6 +3539,33 @@
           "name": "LocalNumberTrimAC",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "被叫格式透传 （完成透传用户输入，不做处理）",
+          "example": "false",
+          "member": "bool",
+          "name": "CalleeFormatPassthrough",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "主叫格式透传 （完成透传用户输入，不做处理）",
+          "example": "false",
+          "member": "bool",
+          "name": "CallerFormatPassthrough",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "国际长途前缀码",
+          "example": "00",
+          "member": "string",
+          "name": "InternationalNumberPrefix",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8371,6 +8398,33 @@
           "name": "LocalNumberTrimAC",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "被叫格式透传 （完成透传用户输入，不做处理）",
+          "example": "false",
+          "member": "bool",
+          "name": "CalleeFormatPassthrough",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "主叫格式透传 （完成透传用户输入，不做处理）",
+          "example": "false",
+          "member": "bool",
+          "name": "CallerFormatPassthrough",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "国际长途前缀码",
+          "example": "00",
+          "member": "string",
+          "name": "InternationalNumberPrefix",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

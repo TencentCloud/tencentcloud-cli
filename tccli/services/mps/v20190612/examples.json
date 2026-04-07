@@ -1,5 +1,21 @@
 {
   "actions": {
+    "ActivateSSAI": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateSSAI\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45f56180-8d78-4e61-b67e-9e669ec59058\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "ActivateStreamPackage": [
+      {
+        "document": "",
+        "input": "https://mdp.tencentcloudapi.com/?Action=ActivateStreamPackage\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "BatchDeleteStreamLinkFlow": [
       {
         "document": "请求示例",
@@ -286,6 +302,46 @@
         "title": "请求示例"
       }
     ],
+    "CreateStreamPackageLinearAssemblyChannel": [
+      {
+        "document": "创建媒体包装频道。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamPackageLinearAssemblyChannel\n<公共请求参数>\n\n{\n    \"Name\": \"test_channel\",\n    \"Tier\": \"Standard\",\n    \"PlaybackMode\": \"Linear\",\n    \"TimeShiftEnable\": true,\n    \"TimeShiftConf\": {\n        \"TimeWindows\": 10\n    },\n    \"SlateConf\": {\n        \"SourceLocationId\": \"698557DC1D3EA60266EB\",\n        \"VodSourceName\": \"test_source_2\"\n    },\n    \"Outputs\": [\n        {\n            \"Type\": \"HLS\",\n            \"GroupName\": \"group_name\",\n            \"ManifestName\": \"master\",\n            \"ManifestConf\": {\n                \"Windows\": 60,\n                \"AdMarkupType\": \"Enhanced SCTE-35\"\n            },\n            \"DashManifestConf\": {\n                \"Windows\": 60,\n                \"MinBufferTime\": 30,\n                \"MinUpdatePeriod\": 10,\n                \"SuggestedPresentationDelay\": 10\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"AttachedPrograms\": [],\n            \"CreateTime\": 1770692416,\n            \"Id\": \"698A9F401D3EA6831FD9\",\n            \"Name\": \"test_channel\",\n            \"Outputs\": [\n                {\n                    \"DashManifestConf\": {\n                        \"MinBufferTime\": 0,\n                        \"MinUpdatePeriod\": 0,\n                        \"SuggestedPresentationDelay\": 0,\n                        \"Windows\": 0\n                    },\n                    \"GroupName\": \"group_name\",\n                    \"ManifestConf\": {\n                        \"AdMarkupType\": \"Enhanced SCTE-35\",\n                        \"Windows\": 60\n                    },\n                    \"ManifestName\": \"master\",\n                    \"PlaybackURL\": \"http://25100****.ap-shanghai.streampack***.srclivepull.myqcloud.com/channel*******ly/698A9F401D3EA68*****/****er.m3u8\",\n                    \"Type\": \"HLS\"\n                }\n            ],\n            \"PlaybackMode\": \"Linear\",\n            \"ProgramSchedules\": [],\n            \"Region\": \"ap-shanghai\",\n            \"SlateConf\": {\n                \"SourceLocationId\": \"698557DC1D3EA60266EB\",\n                \"VodSourceName\": \"test_source_2\"\n            },\n            \"State\": \"IDLE\",\n            \"Tier\": \"Standard\",\n            \"TimeShiftConf\": {\n                \"TimeWindows\": 10\n            },\n            \"TimeShiftEnable\": true\n        },\n        \"RequestId\": \"3aebd063-df23-4efe-b51d-845eac508efb\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateStreamPackageLinearAssemblyProgram": [
+      {
+        "document": "创建线性组装Program。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamPackageLinearAssemblyProgram\n<公共请求参数>\n\n{\n    \"Name\": \"demo_program\",\n    \"AttachedChannel\": \"66503E8E0000930000F3\",\n    \"SourceType\": \"VOD\",\n    \"SourceLocationId\": \"66503E8E0000930000F0\",\n    \"SourceName\": \"vod_source\",\n    \"PlaybackConf\": {\n        \"TransitionType\": \"Relative\",\n        \"StartTime\": 0,\n        \"Duration\": 0,\n        \"RelativePosition\": \"After\",\n        \"RelativeProgramId\": \"66503E8E0000930000F7\",\n        \"ClipRangeConf\": {\n            \"Type\": \"Entire\",\n            \"Offset\": 0\n        }\n    },\n    \"AdBreaks\": [\n        {\n            \"SourceLocationId\": \"66503E8E0000930000F1\",\n            \"VodSourceName\": \"ad_source\",\n            \"Offset\": 64000,\n            \"MessageType\": \"SpliceInsert\",\n            \"SpliceInsertConf\": {\n                \"EventID\": \"1\",\n                \"AvailNum\": \"0\",\n                \"AvailExpected\": \"0\",\n                \"ProgramID\": \"3\"\n            },\n            \"Metadatas\": [\n                {\n                    \"Key\": \"test-key\",\n                    \"Value\": \"test-value\"\n                }\n            ],\n            \"SourceLocationName\": \"ad_location\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Name\": \"demo_program\",\n            \"SourceType\": \"VOD\",\n            \"SourceLocationId\": \"66503E8E0000930000F0\",\n            \"SourceId\": \"66503E8E0000930000F1\",\n            \"SourceName\": \"vod_source\",\n            \"AttachedChannel\": \"66503E8E0000930000F2\",\n            \"PlaybackConf\": {\n                \"Duration\": 0,\n                \"TransitionType\": \"Relative\",\n                \"StartTime\": 0,\n                \"RelativePosition\": \"After\",\n                \"RelativeProgramId\": \"66503E8E0000930000F3\",\n                \"ClipRangeConf\": {\n                    \"Type\": \"Entire\",\n                    \"Offset\": 0\n                },\n                \"RelativeProgramName\": \"relative_program\"\n            },\n            \"AdBreaks\": [\n                {\n                    \"SourceLocationId\": \"66503E8E0000930000F4\",\n                    \"VodSourceName\": \"ad_source\",\n                    \"Offset\": 64000,\n                    \"MessageType\": \"SpliceInsert\",\n                    \"SpliceInsertConf\": {\n                        \"EventID\": \"1\",\n                        \"AvailNum\": \"0\",\n                        \"AvailExpected\": \"0\",\n                        \"ProgramID\": \"3\"\n                    },\n                    \"Metadatas\": [\n                        {\n                            \"Key\": \"test-key\",\n                            \"Value\": \"test-value\"\n                        }\n                    ],\n                    \"SourceLocationName\": \"ad_location\"\n                }\n            ],\n            \"Id\": \"66503E8E0000930000F5\",\n            \"Region\": \"ap-singapore\",\n            \"SourceLocationName\": \"demo_location\"\n        },\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateStreamPackageSSAIChannel": [
+      {
+        "document": "创建SSAI广告插入配置",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamPackageSSAIChannel\n<公共请求参数>\n\n{\n    \"Name\": \"TestConf\",\n    \"ContentSource\": \"https://www.tencent.com/abc\",\n    \"SSAIInfo\": {\n        \"AdsUrl\": \"https://www.tencent.com/abc\",\n        \"ConfigAliases\": [\n            {\n                \"ParamName\": \"region\",\n                \"AliasValueList\": [\n                    {\n                        \"Alias\": \"india\",\n                        \"Value\": \"ap-mumbai\"\n                    }\n                ]\n            }\n        ],\n        \"AdMarkerPassthrough\": true,\n        \"SCTE35AdType\": 1,\n        \"SlateAd\": \"https://www.tencent.com/abc.mp4\",\n        \"Threshold\": 12,\n        \"DashMPDLocation\": true,\n        \"AdTriggers\": [\n            1\n        ],\n        \"DeliveryRestrictions\": 1,\n        \"SourceCDNPrefix\": \"https://www.tencent.com/abc\",\n        \"AdCDNPrefix\": \"https://www.tencent.com/abc\",\n        \"PreRollAdsUrl\": \"https://www.tencent.com/abc\",\n        \"PreRollMaxAllowedDuration\": 30,\n        \"MultiRequest\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"ContentSource\": \"https://www.tencent.com/abc\",\n            \"ID\": \"698AAD421D3EA5656115\",\n            \"Name\": \"TestConf\",\n            \"PlaybackPrefix\": \"http://xxx.a*-mumbai.streampackage.s*************qcloud.com/v1/ssai/m***er/**94d961674a1eb4611d3xxxxx**\",\n            \"Region\": \"ap-shanghai\",\n            \"SSAIInfo\": {\n                \"AdCDNPrefix\": \"https://www.tencent.com/abc\",\n                \"AdMarkerPassthrough\": true,\n                \"AdTriggers\": [\n                    1\n                ],\n                \"AdsUrl\": \"https://www.tencent.com/abc\",\n                \"ConfigAliases\": [\n                    {\n                        \"AliasValueList\": [\n                            {\n                                \"Alias\": \"india\",\n                                \"Value\": \"ap-mumbai\"\n                            }\n                        ],\n                        \"ParamName\": \"region\"\n                    }\n                ],\n                \"DashMPDLocation\": false,\n                \"DeliveryRestrictions\": 1,\n                \"MultiRequest\": true,\n                \"PreRollAdsUrl\": \"https://www.tencent.com/abc\",\n                \"PreRollMaxAllowedDuration\": 30,\n                \"SCTE35AdType\": 1,\n                \"SlateAd\": \"https://www.tencent.com/abc.mp4\",\n                \"SourceCDNPrefix\": \"https://www.tencent.com/abc\",\n                \"Threshold\": 12\n            },\n            \"SessionInitPrefix\": \"http://251***5**.ap-s******i.stream******e***clivepull.myqcloud.*om/v**ssai/session/019c45b4c9121500****34b5a3c17/\"\n        },\n        \"RequestId\": \"cf3cc57b-2091-4061-b120-ec950d913412\"\n    }\n}",
+        "title": "创建SSAI广告插入配置"
+      }
+    ],
+    "CreateStreamPackageSource": [
+      {
+        "document": "创建媒体包装频道。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamPackageSource\n<公共请求参数>\n\n{\n    \"AttachedLocation\": \"66503E8E0000930000F0\",\n    \"Name\": \"source_name\",\n    \"Type\": \"VOD\",\n    \"PackageConfs\": [\n        {\n            \"GroupName\": \"group_name\",\n            \"Type\": \"HLS\",\n            \"Path\": \"/vod/main.m3u8\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Name\": \"source_name\",\n            \"Type\": \"VOD\",\n            \"PackageConf\": [\n                {\n                    \"GroupName\": \"group_name\",\n                    \"Type\": \"HLS\",\n                    \"Path\": \"/vod/main.m3u8\"\n                }\n            ],\n            \"Id\": \"66503E8E0000930000F0\",\n            \"CreateTime\": 1590508800,\n            \"UpdateTime\": 1590508800,\n            \"Region\": \"ap-singapore\"\n        },\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateStreamPackageSourceLocation": [
+      {
+        "document": "创建媒体包装频道。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamPackageSourceLocation\n<公共请求参数>\n\n{\n    \"Name\": \"location_name\",\n    \"BaseUrl\": \"https://base.com/\",\n    \"SegmentDeliverEnable\": true,\n    \"SegmentDeliverConf\": {\n        \"DefaultSegmentUrl\": \"https://base.com/demo/\",\n        \"NameServers\": [\n            {\n                \"Name\": \"server_name\",\n                \"Url\": \"https://test.com/\"\n            }\n        ]\n    },\n    \"SegmentDeliverUsePackageEnable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Id\": \"66503E8E0000930000F0\",\n            \"Name\": \"location_name\",\n            \"Region\": \"ap-singapore\",\n            \"BaseUrl\": \"https://base.com/\",\n            \"SegmentDeliverEnable\": true,\n            \"SegmentDeliverConf\": {\n                \"DefaultSegmentUrl\": \"https://base.com/demo/\",\n                \"NameServers\": [\n                    {\n                        \"Name\": \"server_name\",\n                        \"Url\": \"https://test.com/\"\n                    }\n                ]\n            },\n            \"AttachedLiveSources\": [\n                \"66503E8E0000930000F2\"\n            ],\n            \"AttachedVodSources\": [\n                \"66503E8E0000930000F1\"\n            ],\n            \"CreateTime\": 1590508800,\n            \"UpdateTime\": 1590508800,\n            \"SegmentDeliverUsePackageEnable\": true\n        },\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateSubtitleEmbedTemplate": [
       {
         "document": "",
@@ -534,6 +590,70 @@
         "title": "请求示例"
       }
     ],
+    "DeleteStreamPackageLinearAssemblyChannel": [
+      {
+        "document": "删除媒体包装Channel。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageLinearAssemblyChannel\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteStreamPackageLinearAssemblyChannels": [
+      {
+        "document": "批量删除媒体包装Channel。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageLinearAssemblyChannels\n<公共请求参数>\n\n{\n    \"Ids\": [\n        \"66503E8E0000930000F4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteStreamPackageLinearAssemblyProgram": [
+      {
+        "document": "删除线性组装Program。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageLinearAssemblyProgram\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteStreamPackageLinearAssemblyPrograms": [
+      {
+        "document": "批量删除线性组装Program。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageLinearAssemblyPrograms\n<公共请求参数>\n\n{\n    \"Ids\": [\n        \"66503E8E0000930000F4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteStreamPackageLinearAssemblyProgramsByChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageLinearAssemblyProgramsByChannel\n<公共请求参数>\n\n{\n    \"ChannelID\": \"69CA28574083B064D4BB\",\n    \"IDs\": [\n        \"69CA280B4083B089741E\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63e34fd0-df43-4a38-ac99-fda4bfc04cd8\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DeleteStreamPackageSSAIChannel": [
+      {
+        "document": "删除广告插入配置",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageSSAIChannel\n<公共请求参数>\n\n{\n    \"ID\": \"654CA8EF0000CE02BXXX\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0xxxxd32-1043-4e1b-bd20-1bfad0xxxx70\"\n    }\n}",
+        "title": "删除广告插入配置"
+      }
+    ],
+    "DeleteStreamPackageSource": [
+      {
+        "document": "批量删除媒体包装SourceLocation。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageSource\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteStreamPackageSourceLocation": [
+      {
+        "document": "删除媒体包装SourceLocation。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamPackageSourceLocation\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DeleteSubtitleEmbedTemplate": [
       {
         "document": "",
@@ -712,6 +832,14 @@
         "title": "获取直播录制模板"
       }
     ],
+    "DescribeMDPMPSUserInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMDPMPSUserInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01110537-b47b-456744654-757749d3\",\n        \"Status\": \"InvalidMpsUser\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeMediaMetaData": [
       {
         "document": "",
@@ -742,6 +870,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityControlTemplates\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Definitions\": [\n        200058\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"QualityControlTemplateSet\": [\n            {\n                \"Definition\": 200058,\n                \"Name\": \"0529\",\n                \"Comment\": \"\",\n                \"Type\": \"Custom\",\n                \"QualityControlItemSet\": [\n                    {\n                        \"Type\": \"LowEvaluation\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"Mosaic\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"CrashScreen\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"Blur\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"BlackWhiteEdge\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"LowLighting\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HighLighting\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"NoVoice\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"LowVoice\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HighVoice\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoResolutionChanged\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioSampleRateChanged\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioChannelsChanged\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"ParameterSetsChanged\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"DarOrSarInvalid\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"TimestampFallback\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"DtsJitter\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"PtsJitter\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AACDurationDeviation\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioDroppingFrames\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoDroppingFrames\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AVTimestampInterleave\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"PtsLessThanDts\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"ReceiveFpsJitter\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"ReceiveFpsTooSmall\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"FpsJitter\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"StreamOpenFailed\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"StreamEnd\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"StreamParseFailed\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoFirstFrameNotIdr\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"StreamNALUError\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"TsStreamNoAud\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioStreamLack\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoStreamLack\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"LackAudioRecover\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"LackVideoRecover\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoBitrateOutofRange\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioBitrateOutofRange\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoDecodeFailed\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioDecodeFailed\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioOutOfPhase\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoDuplicatedFrame\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"AudioDuplicatedFrame\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoRotation\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"TsMultiPrograms\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"Mp4InvalidCodecFourcc\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSBadM3u8Format\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSInvalidMasterM3u8\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSInvalidMediaM3u8\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSMasterM3u8Recommended\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSMediaM3u8Recommended\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSMediaM3u8DiscontinuityExist\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSMediaSegmentsStreamNumChange\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSMediaSegmentsPTSJitterDeviation\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"HLSMediaSegmentsDTSJitterDeviation\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"TimecodeTrackExist\",\n                        \"Switch\": \"OFF\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 0,\n                        \"Threshold\": \"\"\n                    },\n                    {\n                        \"Type\": \"VideoFreezedFrame\",\n                        \"Switch\": \"ON\",\n                        \"Sampling\": \"\",\n                        \"IntervalTime\": 0,\n                        \"Duration\": 1000,\n                        \"Threshold\": \"0.001\"\n                    }\n                ],\n                \"CreateTime\": \"2024-05-29T03:01:54Z\",\n                \"UpdateTime\": \"2024-05-29T03:01:54Z\"\n            }\n        ],\n        \"RequestId\": \"76d831ad-105e-48eb-90dd-00deaa00b52a\"\n    }\n}",
         "title": "查询媒体质检模板列表"
+      }
+    ],
+    "DescribeSSAIActivateState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSSAIActivateState\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b5de9a3d-d988-466f-bd0f-d650e29787b6\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "DescribeSampleSnapshotTemplates": [
@@ -891,6 +1027,134 @@
         "document": "批量查询安全组信息。",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamLinkSecurityGroups\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Id\": \"019202e96d9f09dc0f325e7f7a2a\",\n                \"Name\": \"live_test\",\n                \"Whitelist\": [\n                    \"0.0.0.0\"\n                ],\n                \"OccupiedInputs\": [\n                    \"01937702c54509dc0f3269ca341f\"\n                ],\n                \"Region\": \"ap-shanghai\"\n            }\n        ],\n        \"RequestId\": \"019202e96d9f09dc0f325e7f7a2a\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageActivateState": [
+      {
+        "document": "",
+        "input": "https://mdp.tencentcloudapi.com/?Action=DescribeStreamPackageActivateState\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"11-222-333\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageLinearAssemblyChannel": [
+      {
+        "document": "查询媒体包装线性组装频道信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageLinearAssemblyChannel\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Name\": \"demo_channel\",\n            \"Tier\": \"Standard\",\n            \"PlaybackMode\": \"Linear\",\n            \"SlateConf\": {\n                \"SourceLocationId\": \"6760EC9700006786ABB0\",\n                \"VodSourceName\": \"slate_vod_1\"\n            },\n            \"Outputs\": [\n                {\n                    \"Type\": \"HLS\",\n                    \"GroupName\": \"source_group_1\",\n                    \"ManifestName\": \"master\",\n                    \"ManifestConf\": {\n                        \"Windows\": 60,\n                        \"AdMarkupType\": \"Enhanced SCTE-35\"\n                    },\n                    \"PlaybackURL\": \"http://123456.ap-tokyo.streampackage.srcli****ll.myqcloud.com/channel_ass**bly/6761180C89C8CFE2334C/ma*ter.m3u8\"\n                }\n            ],\n            \"AttachedPrograms\": [\n                \"67612E1189C8D039B3F6\"\n            ],\n            \"ProgramSchedules\": [\n                {\n                    \"ProgramName\": \"demo_program\",\n                    \"ProgramId\": \"67612E1189C8D039B3F6\",\n                    \"SourceType\": \"Vod\",\n                    \"SourceId\": \"67613EEB0000B2AC7ED5\",\n                    \"SourceLocationId\": \"6760EC9700006786ABB0\",\n                    \"StartTime\": 1739265386,\n                    \"Duration\": \"60000\"\n                }\n            ],\n            \"Id\": \"66503E8E0000930000F3\",\n            \"Region\": \"ap-tokyo\",\n            \"State\": \"Running\",\n            \"TimeShiftEnable\": false,\n            \"CreateTime\": 1739263386\n        },\n        \"RequestId\": \"7d4b42b2-a5d4-499e-ac9b-cdabd9b46026\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageLinearAssemblyChannelAlerts": [
+      {
+        "document": "查询线性组装频道告警信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageLinearAssemblyChannelAlerts\n<公共请求参数>\n\n{\n    \"ChannelId\": \"66503E8E0000930000F3\",\n    \"StartTime\": 1590508800,\n    \"EndTime\": 1590508900\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": {\n            \"ProgramAlertCounts\": [\n                {\n                    \"ProgramId\": \"66503E8E0000930000F4\",\n                    \"ProgramName\": \"demo_program\",\n                    \"Category\": \"PLAYBACK_WARNING\",\n                    \"Count\": 1,\n                    \"LastModifiedTime\": 1590508810\n                }\n            ],\n            \"ProgramAlertInfos\": [\n                {\n                    \"ChannelId\": \"66503E8E0000930000F3\",\n                    \"ChannelName\": \"demo_channel\",\n                    \"ProgramId\": \"66503E8E0000930000F4\",\n                    \"ProgramName\": \"demo_program\",\n                    \"Code\": 30002,\n                    \"Category\": \"PLAYBACK_WARNING\",\n                    \"Message\": \"During the channel assembly, a mismatched 'resolution' was encountered in the 'demo_channel' channel. The discrepancy lies in the 'demo_group' group between the manifest of '1590508810531' at 'testStreaming_1336638_1.m3u8' with 'resolution' 852x480, and the manifest of 'Filler slate' at 'testStreaming_1336638_0.m3u8' with 'resolution' 426x240.\",\n                    \"LastModifiedTime\": 1590508810\n                }\n            ]\n        },\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageLinearAssemblyChannels": [
+      {
+        "document": "查询线性组装频道信息列表。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageLinearAssemblyChannels\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Name\": \"demo_channel\",\n                \"Tier\": \"Standard\",\n                \"PlaybackMode\": \"Linear\",\n                \"SlateConf\": {\n                    \"SourceLocationId\": \"6760EC9700006786ABB0\",\n                    \"VodSourceName\": \"slate_vod_1\"\n                },\n                \"Outputs\": [\n                    {\n                        \"Type\": \"HLS\",\n                        \"GroupName\": \"source_group_1\",\n                        \"ManifestName\": \"master\",\n                        \"ManifestConf\": {\n                            \"Windows\": 60,\n                            \"AdMarkupType\": \"Enhanced SCTE-35\"\n                        },\n                        \"PlaybackURL\": \"http://123456.ap-tokyo.streampackage.srclivepull.myqcloud.com/channel_assembly/6761180C89C8CFE2334C/master.m3u8\"\n                    }\n                ],\n                \"AttachedPrograms\": [\n                    \"67612E1189C8D039B3F6\"\n                ],\n                \"ProgramSchedules\": [\n                    {\n                        \"ProgramName\": \"demo_program\",\n                        \"ProgramId\": \"67612E1189C8D039B3F6\",\n                        \"SourceType\": \"Vod\",\n                        \"SourceId\": \"67613EEB0000B2AC7ED5\",\n                        \"SourceLocationId\": \"6760EC9700006786ABB0\",\n                        \"StartTime\": 1739265386,\n                        \"Duration\": \"60000\"\n                    }\n                ],\n                \"Id\": \"6761180C89C8CFE2334C\",\n                \"Region\": \"ap-tokyo\",\n                \"State\": \"Running\",\n                \"TimeShiftEnable\": false,\n                \"CreateTime\": 1739263386\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 1,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageLinearAssemblyProgram": [
+      {
+        "document": "查询媒体包装Program信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageLinearAssemblyProgram\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Name\": \"demo_program\",\n            \"SourceType\": \"VOD\",\n            \"SourceLocationId\": \"66503E8E0000930000F0\",\n            \"SourceId\": \"66503E8E0000930000F1\",\n            \"SourceName\": \"vod_source\",\n            \"AttachedChannel\": \"66503E8E0000930000F2\",\n            \"PlaybackConf\": {\n                \"Duration\": 0,\n                \"TransitionType\": \"Relative\",\n                \"StartTime\": 0,\n                \"RelativePosition\": \"After\",\n                \"RelativeProgramId\": \"66503E8E0000930000F3\",\n                \"ClipRangeConf\": {\n                    \"Type\": \"Entire\",\n                    \"Offset\": 0\n                },\n                \"RelativeProgramName\": \"relative_program\"\n            },\n            \"AdBreaks\": [\n                {\n                    \"SourceLocationId\": \"66503E8E0000930000F4\",\n                    \"VodSourceName\": \"ad_source\",\n                    \"Offset\": 64000,\n                    \"MessageType\": \"SpliceInsert\",\n                    \"SpliceInsertConf\": {\n                        \"EventID\": \"1\",\n                        \"AvailNum\": \"0\",\n                        \"AvailExpected\": \"0\",\n                        \"ProgramID\": \"3\"\n                    },\n                    \"Metadatas\": [\n                        {\n                            \"Key\": \"test-key\",\n                            \"Value\": \"test-value\"\n                        }\n                    ],\n                    \"SourceLocationName\": \"ad_location\"\n                }\n            ],\n            \"Id\": \"66503E8E0000930000F5\",\n            \"Region\": \"ap-singapore\",\n            \"SourceLocationName\": \"demo_location\"\n        },\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageLinearAssemblyProgramSchedules": [
+      {
+        "document": "查询Programe信息列表。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageLinearAssemblyProgramSchedules\n<公共请求参数>\n\n{\n    \"ChannelId\": \"66503E8E0000930000F2\",\n    \"TimeWindow\": 100,\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Name\": \"demo_program\",\n                \"SourceType\": \"VOD\",\n                \"SourceLocationId\": \"66503E8E0000930000F0\",\n                \"SourceId\": \"66503E8E0000930000F1\",\n                \"SourceName\": \"vod_source\",\n                \"AttachedChannel\": \"66503E8E0000930000F2\",\n                \"PlaybackConf\": {\n                    \"Duration\": 0,\n                    \"TransitionType\": \"Relative\",\n                    \"StartTime\": 0,\n                    \"RelativePosition\": \"After\",\n                    \"RelativeProgramId\": \"66503E8E0000930000F3\",\n                    \"ClipRangeConf\": {\n                        \"Type\": \"Entire\",\n                        \"Offset\": 0\n                    },\n                    \"RelativeProgramName\": \"relative_program\"\n                },\n                \"AdBreaks\": [\n                    {\n                        \"SourceLocationId\": \"66503E8E0000930000F4\",\n                        \"VodSourceName\": \"ad_source\",\n                        \"Offset\": 64000,\n                        \"MessageType\": \"SpliceInsert\",\n                        \"SpliceInsertConf\": {\n                            \"EventID\": \"1\",\n                            \"AvailNum\": \"0\",\n                            \"AvailExpected\": \"0\",\n                            \"ProgramID\": \"3\"\n                        },\n                        \"Metadatas\": [\n                            {\n                                \"Key\": \"test-key\",\n                                \"Value\": \"test-value\"\n                            }\n                        ],\n                        \"SourceLocationName\": \"ad_location\"\n                    }\n                ],\n                \"Id\": \"66503E8E0000930000F5\",\n                \"Region\": \"ap-singapore\",\n                \"SourceLocationName\": \"demo_location\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageLinearAssemblyPrograms": [
+      {
+        "document": "查询Programe信息列表。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageLinearAssemblyPrograms\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10,\n    \"ChannelId\": \"66503E8E0000930000F2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Name\": \"demo_program\",\n                \"SourceType\": \"VOD\",\n                \"SourceLocationId\": \"66503E8E0000930000F0\",\n                \"SourceId\": \"66503E8E0000930000F1\",\n                \"SourceName\": \"vod_source\",\n                \"AttachedChannel\": \"66503E8E0000930000F2\",\n                \"PlaybackConf\": {\n                    \"Duration\": 0,\n                    \"TransitionType\": \"Relative\",\n                    \"StartTime\": 0,\n                    \"RelativePosition\": \"After\",\n                    \"RelativeProgramId\": \"66503E8E0000930000F3\",\n                    \"ClipRangeConf\": {\n                        \"Type\": \"Entire\",\n                        \"Offset\": 0\n                    },\n                    \"RelativeProgramName\": \"relative_program\"\n                },\n                \"AdBreaks\": [\n                    {\n                        \"SourceLocationId\": \"66503E8E0000930000F4\",\n                        \"VodSourceName\": \"ad_source\",\n                        \"Offset\": 64000,\n                        \"MessageType\": \"SpliceInsert\",\n                        \"SpliceInsertConf\": {\n                            \"EventID\": \"1\",\n                            \"AvailNum\": \"0\",\n                            \"AvailExpected\": \"0\",\n                            \"ProgramID\": \"3\"\n                        },\n                        \"Metadatas\": [\n                            {\n                                \"Key\": \"test-key\",\n                                \"Value\": \"test-value\"\n                            }\n                        ],\n                        \"SourceLocationName\": \"ad_location\"\n                    }\n                ],\n                \"Id\": \"66503E8E0000930000F5\",\n                \"Region\": \"ap-singapore\",\n                \"SourceLocationName\": \"demo_location\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageLinearAssemblyUsage": [
+      {
+        "document": "查询线性组装频道用量信息",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageLinearAssemblyUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-02-10T11:00:00+08:00\",\n    \"EndTime\": \"2026-02-10T11:20:00+08:00\",\n    \"Dimension\": false,\n    \"ChannelIds\": [\n        \"698A9F401D3EA6831FD9\"\n    ],\n    \"ChannelTiers\": [\n        \"Standard\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"AssemblyUsageDetails\": [\n                {\n                    \"ChannelID\": \"698A9F401D3EA6831FD9\",\n                    \"ChannelName\": \"test_channel\",\n                    \"ChannelTier\": \"Standard\",\n                    \"Duration\": 0\n                }\n            ],\n            \"SumBasicChannelDuration\": 0,\n            \"SumStandardChannelDuration\": 0\n        },\n        \"RequestId\": \"84cb1a5a-9c26-4e3d-aabc-4f228e6136c5\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeStreamPackageSSAIChannel": [
+      {
+        "document": "查询广告插入配置",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSSAIChannel\n<公共请求参数>\n\n{\n    \"ID\": \"654CA8EF0000CE02BXXX\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"ID\": \"654CA8EF0000CE02BXXX\",\n            \"Name\": \"TestConf\",\n            \"ContentSource\": \"http://origin-server.com/abc/\",\n            \"PlaybackPrefix\": \"http://xxx.ap-mumbai.streampackage.srclivepull.myqcloud.com/v1/ssai/master/0194d961674a1eb4611d3xxxxxx/\",\n            \"SSAIInfo\": {\n                \"AdsUrl\": \"https://my.ads.com/path?ad_type=[player_params.ad_type]&region=[player_params.region]\",\n                \"ConfigAliases\": [\n                    {\n                        \"ParamName\": \"region\",\n                        \"AliasValueList\": [\n                            {\n                                \"Alias\": \"india\",\n                                \"Value\": \"ap-mumbai\"\n                            }\n                        ]\n                    }\n                ],\n                \"AdMarkerPassthrough\": true,\n                \"Threshold\": 12,\n                \"SlateAd\": \"https://hostname/xxx/xxx.mp4\",\n                \"SCTE35AdType\": 1,\n                \"AdTriggers\": [\n                    1\n                ],\n                \"DeliveryRestrictions\": 1,\n                \"SourceCDNPrefix\": \"https://example_cdn.com/\",\n                \"AdCDNPrefix\": \"https://example_ad_cdn.com/\",\n                \"DashMPDLocation\": false\n            }\n        },\n        \"RequestId\": \"0xxxxd32-1043-4e1b-bd20-1bfad0xxxx70\"\n    }\n}",
+        "title": "查询广告插入配置"
+      }
+    ],
+    "DescribeStreamPackageSSAIChannels": [
+      {
+        "document": "批量查询广告插入配置",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSSAIChannels\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"ID\": \"654CA8EF0000CE02BXXX\",\n                \"Name\": \"TestConf\",\n                \"ContentSource\": \"http://origin-server.com/abc/\",\n                \"PlaybackPrefix\": \"http://xxx.ap-mumbai.streampackage.srclivepull.myqcloud.com/v1/ssai/master/0194d961674a1eb4611d3xxxxxx/\",\n                \"SSAIInfo\": {\n                    \"AdsUrl\": \"https://my.ads.com/path?ad_type=[player_params.ad_type]&region=[player_params.region]\",\n                    \"ConfigAliases\": [\n                        {\n                            \"ParamName\": \"region\",\n                            \"AliasValueList\": [\n                                {\n                                    \"Alias\": \"india\",\n                                    \"Value\": \"ap-mumbai\"\n                                }\n                            ]\n                        }\n                    ],\n                    \"AdMarkerPassthrough\": true,\n                    \"Threshold\": 12,\n                    \"SlateAd\": \"https://hostname/xxx/xxx.mp4\",\n                    \"SCTE35AdType\": 1,\n                    \"AdTriggers\": [\n                        1\n                    ],\n                    \"DeliveryRestrictions\": 1,\n                    \"SourceCDNPrefix\": \"https://example_cdn.com/\",\n                    \"AdCDNPrefix\": \"https://example_ad_cdn.com/\",\n                    \"DashMPDLocation\": false\n                }\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 1,\n        \"TotalNum\": 1,\n        \"RequestId\": \"0xxxxd32-1043-4e1b-bd20-1bfad0xxxx70\"\n    }\n}",
+        "title": "批量查询广告插入配置"
+      }
+    ],
+    "DescribeStreamPackageSSAIUsage": [
+      {
+        "document": "查询SSAI用量",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSSAIUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2025-05-01T00+08:00\",\n    \"EndTime\": \"2025-05-01T10+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"AdRequestSuccess\": 1,\n            \"AdRequestFail\": 0,\n            \"Impression\": 0,\n            \"AdMarkerTime\": 0,\n            \"ReplacedTime\": 0,\n            \"MidFillRate\": 0,\n            \"PreReqNum\": 1,\n            \"PreReplacedNum\": 0,\n            \"PreReplaceRate\": 0,\n            \"UsageDetails\": [\n                {\n                    \"UniqId\": \"018f141593c91ea540e603706c52\",\n                    \"ChannelId\": \"66503E8E0000930000F9\",\n                    \"ChannelName\": \"ssai_channel\",\n                    \"AdType\": \"Preroll\",\n                    \"AdRequestSuccess\": 1,\n                    \"AdRequestFail\": 0,\n                    \"Impression\": 0,\n                    \"Start\": 0,\n                    \"FirstQuarter\": 0,\n                    \"Midpoint\": 0,\n                    \"ThirdQuarter\": 0,\n                    \"Complete\": 0,\n                    \"AdMarkerTime\": 0,\n                    \"ReplacedTime\": 0,\n                    \"MidFillRate\": 0,\n                    \"PreReqNum\": 1,\n                    \"PreReplacedNum\": 0,\n                    \"PreReplaceRate\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"req-xxx123\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeStreamPackageSource": [
+      {
+        "document": "查询媒体包装Source信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSource\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Name\": \"source_name\",\n            \"Type\": \"VOD\",\n            \"PackageConf\": [\n                {\n                    \"GroupName\": \"group_name\",\n                    \"Type\": \"HLS\",\n                    \"Path\": \"/vod/main.m3u8\"\n                }\n            ],\n            \"Id\": \"66503E8E0000930000F1\",\n            \"CreateTime\": 1590508800,\n            \"UpdateTime\": 1590508800,\n            \"Region\": \"ap-singapore\"\n        },\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageSourceAlerts": [
+      {
+        "document": "查询线性组装Source告警信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSourceAlerts\n<公共请求参数>\n\n{\n    \"SourceId\": \"66503E8E0000930000F1\",\n    \"StartTime\": 1590508800,\n    \"EndTime\": 1590508900\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"SourceId\": \"66503E8E0000930000F1\",\n                \"SourceName\": \"source_name\",\n                \"Code\": 20012,\n                \"Category\": \"PLAYBACK_WARNING\",\n                \"Message\": \"https://test.com/demo.m3u8 request response http 404.\",\n                \"LastModifiedTime\": 1590508900\n            }\n        ],\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageSourceLocation": [
+      {
+        "document": "查询媒体包装SourceLocation信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSourceLocation\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Id\": \"66503E8E0000930000F0\",\n            \"Name\": \"location_name\",\n            \"Region\": \"ap-singapore\",\n            \"BaseUrl\": \"https://base.com/\",\n            \"SegmentDeliverEnable\": true,\n            \"SegmentDeliverConf\": {\n                \"DefaultSegmentUrl\": \"https://base.com/demo/\",\n                \"NameServers\": [\n                    {\n                        \"Name\": \"server_name\",\n                        \"Url\": \"https://test.com/\"\n                    }\n                ]\n            },\n            \"AttachedLiveSources\": [\n                \"66503E8E0000930000F2\"\n            ],\n            \"AttachedVodSources\": [\n                \"66503E8E0000930000F1\"\n            ],\n            \"CreateTime\": 1590508800,\n            \"UpdateTime\": 1590508800,\n            \"SegmentDeliverUsePackageEnable\": true\n        },\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageSourceLocations": [
+      {
+        "document": "查询SourceLocation信息列表。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSourceLocations\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Id\": \"66503E8E0000930000F0\",\n                \"Name\": \"location_name\",\n                \"Region\": \"ap-singapore\",\n                \"BaseUrl\": \"https://base.com/\",\n                \"SegmentDeliverEnable\": true,\n                \"SegmentDeliverConf\": {\n                    \"DefaultSegmentUrl\": \"https://base.com/demo/\",\n                    \"NameServers\": [\n                        {\n                            \"Name\": \"server_name\",\n                            \"Url\": \"https://test.com/\"\n                        }\n                    ]\n                },\n                \"AttachedLiveSources\": [\n                    \"66503E8E0000930000F2\"\n                ],\n                \"AttachedVodSources\": [\n                    \"66503E8E0000930000F1\"\n                ],\n                \"CreateTime\": 1590508800,\n                \"UpdateTime\": 1590508800,\n                \"SegmentDeliverUsePackageEnable\": true\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 1,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageSources": [
+      {
+        "document": "查询Source信息列表。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageSources\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 1,\n    \"LocationId\": \"66503E8E0000930000F0\",\n    \"Type\": \"VOD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Name\": \"source_name\",\n                \"Type\": \"VOD\",\n                \"PackageConf\": [\n                    {\n                        \"GroupName\": \"group_name\",\n                        \"Type\": \"HLS\",\n                        \"Path\": \"/vod/demo.m3u8\"\n                    }\n                ],\n                \"Id\": \"66503E8E0000930000F1\",\n                \"CreateTime\": 1590508800,\n                \"UpdateTime\": 1590508800,\n                \"Region\": \"ap-singapore\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 1,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"req-xxx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -1326,6 +1590,46 @@
         "title": "请求示例"
       }
     ],
+    "ModifyStreamPackageLinearAssemblyChannel": [
+      {
+        "document": "修改媒体包装Source信息。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamPackageLinearAssemblyChannel\n<公共请求参数>\n\n{\n    \"Id\": \"698A9F401D3EA6831FD9\",\n    \"Name\": \"test_channel\",\n    \"Tier\": \"Standard\",\n    \"PlaybackMode\": \"Linear\",\n    \"TimeShiftEnable\": true,\n    \"SlateConf\": {\n        \"SourceLocationId\": \"698557DC1D3EA60266EB\",\n        \"VodSourceName\": \"test_source_2\"\n    },\n    \"Outputs\": [\n        {\n            \"Type\": \"HLS\",\n            \"GroupName\": \"group_name\",\n            \"ManifestName\": \"master\",\n            \"ManifestConf\": {\n                \"Windows\": 60,\n                \"AdMarkupType\": \"Enhanced SCTE-35\"\n            },\n            \"PlaybackURL\": \"http://**100***8.ap-shanghai.streampa**age.srcl*****ll.myqcloud.com/****nel_assembly/698A9F40*****6831FD9/master.m3u8\",\n            \"DashManifestConf\": {\n                \"Windows\": 0,\n                \"MinBufferTime\": 0,\n                \"MinUpdatePeriod\": 0,\n                \"SuggestedPresentationDelay\": 0\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44a14b7a-8589-48d2-b392-087f18f458df\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyStreamPackageLinearAssemblyProgram": [
+      {
+        "document": "修改媒体包装Program信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamPackageLinearAssemblyProgram\n<公共请求参数>\n\n{\n    \"Id\": \"67612E1189C8D039B3F6\",\n    \"Name\": \"demo\",\n    \"SourceType\": \"vod_source\",\n    \"SourceLocationId\": \"6760EC9700006786ABB0\",\n    \"SourceName\": \"vod1\",\n    \"PlaybackConf\": {\n        \"TransitionType\": \"Relative\",\n        \"RelativePosition\": \"After\",\n        \"RelativeProgramId\": \"67612E1189E3D039B3F6\",\n        \"ClipRangeConf\": {\n            \"Type\": \"SpecifyTimeRange\",\n            \"Offset\": 30000\n        }\n    },\n    \"AdBreaks\": [\n        {\n            \"SourceLocationId\": \"6760EC9700006786ABB0\",\n            \"VodSourceName\": \"ad_1\",\n            \"Offset\": 0,\n            \"MessageType\": \"SpliceInsert\",\n            \"SpliceInsertConf\": {\n                \"EventID\": \"0\",\n                \"AvailNum\": \"0\",\n                \"AvailExpected\": \"1\",\n                \"ProgramID\": \"0\"\n            },\n            \"Metadatas\": [\n                {\n                    \"Key\": \"key1\",\n                    \"Value\": \"value1\"\n                }\n            ],\n            \"SourceLocationName\": \"demo_source_location\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d4b42b2-a5d4-499e-ac9b-cdabd9b46026\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyStreamPackageSSAIChannel": [
+      {
+        "document": "修改广告插入配置",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamPackageSSAIChannel\n<公共请求参数>\n\n{\n    \"Name\": \"TestConf\",\n    \"ContentSource\": \"http://origin-server.com/abc/\",\n    \"SSAIInfo\": {\n        \"AdsUrl\": \"https://my.ads.com/path?ad_type=[player_params.ad_type]&region=[player_params.region]\",\n        \"ConfigAliases\": [\n            {\n                \"ParamName\": \"region\",\n                \"AliasValueList\": [\n                    {\n                        \"Alias\": \"india\",\n                        \"Value\": \"ap-mumbai\"\n                    }\n                ]\n            }\n        ],\n        \"AdMarkerPassthrough\": true,\n        \"Threshold\": 12,\n        \"SlateAd\": \"https://hostname/xxx/xxx.mp4\",\n        \"SCTE35AdType\": 1,\n        \"AdTriggers\": [\n            1\n        ],\n        \"DeliveryRestrictions\": 1,\n        \"SourceCDNPrefix\": \"https://example_cdn.com/\",\n        \"AdCDNPrefix\": \"https://example_ad_cdn.com/\"\n    },\n    \"ID\": \"654CA8EF0000CE02BXXX\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0xxxxd32-1043-4e1b-bd20-1bfad0xxxx70\"\n    }\n}",
+        "title": "修改广告插入配置"
+      }
+    ],
+    "ModifyStreamPackageSource": [
+      {
+        "document": "修改媒体包装Source信息。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamPackageSource\n<公共请求参数>\n\n{\n    \"Id\": \"698A9AAB1D3EA5F03229\",\n    \"Name\": \"test_source_2\",\n    \"Type\": \"VOD\",\n    \"PackageConfs\": [\n        {\n            \"GroupName\": \"group_name\",\n            \"Type\": \"HLS\",\n            \"Path\": \"/vod/main.m3u8\"\n        }\n    ],\n    \"SourceTags\": [\n        {\n            \"Key\": \"SPORT\",\n            \"Value\": \"sport\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a0d7180-4579-49a9-a0f0-c22602b3b0f7\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyStreamPackageSourceLocation": [
+      {
+        "document": "修改媒体包装SourceLocation信息。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamPackageSourceLocation\n<公共请求参数>\n\n{\n    \"Id\": \"67D7CBB600005DBB0001\",\n    \"Name\": \"location_name\",\n    \"BaseUrl\": \"https://test.com/base\",\n    \"SegmentDeliverEnable\": true,\n    \"SegmentDeliverConf\": {\n        \"DefaultSegmentUrl\": \"https://test.com/\",\n        \"NameServers\": [\n            {\n                \"Name\": \"server_name\",\n                \"Url\": \"https://testserver.com/\"\n            }\n        ]\n    },\n    \"SegmentDeliverUsePackageEnable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ModifySubtitleEmbedTemplate": [
       {
         "document": "",
@@ -1454,11 +1758,27 @@
         "title": "请求示例"
       }
     ],
+    "StartStreamPackageLinearAssemblyChannel": [
+      {
+        "document": "启动媒体包装频道。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartStreamPackageLinearAssemblyChannel\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "StopStreamLinkFlow": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamLinkFlow\n<公共请求参数>\n\n{\n    \"FlowId\": \"019202e96d9f09dc0f325e7f7a2a\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0193d38d4e5d09dc0f326fd4342d\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StopStreamPackageLinearAssemblyChannel": [
+      {
+        "document": "停止线性组装频道。",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamPackageLinearAssemblyChannel\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
         "title": "请求示例"
       }
     ],

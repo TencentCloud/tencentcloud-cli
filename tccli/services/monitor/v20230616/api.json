@@ -1410,7 +1410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "官网通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>官网通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QCloudYeheNoticeTmplMatcher",
           "name": "QCloudYehe",
@@ -1421,7 +1421,7 @@
         },
         {
           "disabled": false,
-          "document": "企业微信机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业微信机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WeWorkRobotNoticeTmplMatcher",
           "name": "WeWorkRobot",
@@ -1432,7 +1432,7 @@
         },
         {
           "disabled": false,
-          "document": "钉钉机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>钉钉机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DingDingRobotNoticeTmplMatcher",
           "name": "DingDingRobot",
@@ -1443,7 +1443,7 @@
         },
         {
           "disabled": false,
-          "document": "飞书机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>飞书机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FeiShuRobotNoticeTmplMatcher",
           "name": "FeiShuRobot",
@@ -1454,7 +1454,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义Webhook通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义Webhook通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebhookNoticeTmplMatcher",
           "name": "Webhook",
@@ -1465,7 +1465,7 @@
         },
         {
           "disabled": false,
-          "document": "Teams机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Teams机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TeamsRobotNoticeTmplMatcher",
           "name": "TeamsRobot",
@@ -1476,7 +1476,7 @@
         },
         {
           "disabled": false,
-          "document": "PagerDutyRobot机器人通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>PagerDutyRobot机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PagerDutyRobotNoticeTmplMatcher",
           "name": "PagerDutyRobot",
@@ -1487,10 +1487,21 @@
         },
         {
           "disabled": false,
-          "document": "GoogleChat",
+          "document": "<p>GoogleChat</p>",
           "example": "无",
           "member": "GoogleChatRobotNoticeTmplMatcher",
           "name": "GoogleChatRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Slack</p>",
+          "example": "无",
+          "member": "SlackRobotNoticeTmplMatcher",
+          "name": "SlackRobot",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -1893,6 +1904,51 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SlackRobotNoticeTmpl": {
+      "document": "企业微信机器人内容模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>内容模板</p>",
+          "example": "base64编码模板内容",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SlackRobotNoticeTmplMatcher": {
+      "document": "企业微信机器人通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匹配状态 Invalid;<br>Trigger 告警触发; Recovery 告警恢复</p>",
+          "example": "[\"Trigger\"]",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板配置</p>",
+          "example": "无",
+          "member": "SlackRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

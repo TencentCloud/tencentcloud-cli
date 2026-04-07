@@ -15048,7 +15048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -15057,7 +15057,7 @@
         },
         {
           "disabled": false,
-          "document": "合同审查任务ID",
+          "document": "<p>合同审查任务ID</p>",
           "example": "yDtzKUUckffzxURVliRllhLFtn",
           "member": "string",
           "name": "TaskId",
@@ -15066,7 +15066,7 @@
         },
         {
           "disabled": false,
-          "document": "导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）; 3 = 不带批注文件",
+          "document": "<p>导出文件类型</p><p>枚举值：</p><ul><li>1： WORD、PDF当前带风险批注文件</li><li>2： 审查结果＆摘要（.xIsx）</li><li>3： WORD、PDF审查合同内容时的文件（最原始文件）</li><li>4： WORD、PDF当前无风险批注文件</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "FileType",
@@ -15075,7 +15075,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -15090,7 +15090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件下载链接",
+          "document": "<p>文件下载链接</p>",
           "example": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.DOCX?hkey=5336d1f1606055b00949c2a27818dc99723b96edadd6266ca2a4a65decf5b5203f6234f47e8c765759681bd08309e78d046c49a2a52fa864",
           "member": "string",
           "name": "Url",

@@ -910,6 +910,14 @@
         "title": "查询集群路由"
       }
     ],
+    "DescribeClusterSchedulerPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterSchedulerPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-ncmx45jw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientConnection\": {\n            \"Burst\": 100,\n            \"QPS\": 50\n        },\n        \"HighPerformance\": true,\n        \"Policy\": \"\",\n        \"SchedulerPolicyConfig\": [\n            {\n                \"PluginConfigs\": [\n                    {\n                        \"Args\": \"eyJraW5kIjoiTm9kZVJlc291cmNlc0ZpdEFyZ3MiLCJhcGlWZXJzaW9uIjoia3ViZXNjaGVkdWxlci5jb25maWcuazhzLmlvL3YxIiwic2NvcmluZ1N0cmF0ZWd5Ijp7InR5cGUiOiJMZWFzdEFsbG9jYXRlZCIsInJlc291cmNlcyI6W3sibmFtZSI6ImNwdSIsIndlaWdodCI6MX0seyJuYW1lIjoibWVtb3J5Iiwid2VpZ2h0IjoxfV19fQ==\",\n                        \"Name\": \"NodeResourcesFit\"\n                    }\n                ],\n                \"PluginSet\": {\n                    \"Disabled\": [\n                        {\n                            \"Name\": \"qGPU\"\n                        }\n                    ],\n                    \"Enabled\": [\n                        {\n                            \"Name\": \"NodeResourcesFit\",\n                            \"Weight\": 1\n                        }\n                    ]\n                },\n                \"SchedulerName\": \"default-scheduler\"\n            }\n        ],\n        \"RequestId\": \"ba8878e9-05c5-450a-af5f-aff1a2ff4a44\"\n    }\n}",
+        "title": "查询调度器参数信息"
+      }
+    ],
     "DescribeClusterSecurity": [
       {
         "document": "集群的密钥信息",
@@ -1944,6 +1952,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterRuntimeConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clx-o8hjuza0\",\n    \"DstK8SVersion\": \"1.24.4\",\n    \"ClusterRuntimeConfig\": {\n        \"RuntimeType\": \"containerd\",\n        \"RuntimeVersion\": \"1.6.9\"\n    },\n    \"NodePoolRuntimeConfig\": [\n        {\n            \"NodePoolId\": \"np-3z37njiu\",\n            \"RuntimeType\": \"containerd\",\n            \"RuntimeVersion\": \"1.6.9\",\n            \"NodePoolName\": \"np-test\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb370cb6-df57-4077-hjxk-758225788b9b\"\n    }\n}",
         "title": "修改集群运行时配置"
+      }
+    ],
+    "ModifyClusterSchedulerPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterSchedulerPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-ncmx45jw\",\n    \"SchedulerPolicyConfig\": [\n        {\n            \"SchedulerName\": \"default-scheduler\",\n            \"PluginConfigs\": [\n                {\n                    \"Name\": \"NodeResourcesFit\",\n                    \"Args\": \"eyJraW5kIjoiTm9kZVJlc291cmNlc0ZpdEFyZ3MiLCJhcGlWZXJzaW9uIjoia3ViZXNjaGVkdWxlci5jb25maWcuazhzLmlvL3YxIiwic2NvcmluZ1N0cmF0ZWd5Ijp7InR5cGUiOiJMZWFzdEFsbG9jYXRlZCIsInJlc291cmNlcyI6W3sibmFtZSI6ImNwdSIsIndlaWdodCI6MX0seyJuYW1lIjoibWVtb3J5Iiwid2VpZ2h0IjoxfV19fQ==\"\n                }\n            ],\n            \"PluginSet\": {\n                \"Enabled\": [\n                    {\n                        \"Name\": \"NodeResourcesFit\",\n                        \"Weight\": 1\n                    }\n                ],\n                \"Disabled\": [\n                    {\n                        \"Name\": \"DefaultPreemption\",\n                        \"Weight\": 0\n                    }\n                ]\n            }\n        }\n    ],\n    \"Extenders\": [\n        {\n            \"ExtenderClientConfig\": {\n                \"Service\": {\n                    \"Name\": \"m-scheduler-extender\",\n                    \"Namespace\": \"default\",\n                    \"Path\": \"scheduler\",\n                    \"Port\": 8010,\n                    \"Scheme\": \"http\"\n                }\n            },\n            \"FilterVerb\": \"scheduler/test1\",\n            \"PrioritizeVerb\": \"scheduler/score\",\n            \"Weight\": 1\n        }\n    ],\n    \"ClientConnection\": {\n        \"QPS\": 51,\n        \"Burst\": 101\n    },\n    \"HighPerformance\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96fbca81-f0fe-46d6-ad81-ab87f6ae24f6\"\n    }\n}",
+        "title": "修改调度器参数信息"
       }
     ],
     "ModifyClusterTags": [

@@ -595,6 +595,13 @@
       "output": "DescribeInstanceSpecsResponse",
       "status": "online"
     },
+    "DescribeInstanceSpecsByOperationType": {
+      "document": "根据操作类型查询实例规格",
+      "input": "DescribeInstanceSpecsByOperationTypeRequest",
+      "name": "根据操作类型查询实例规格",
+      "output": "DescribeInstanceSpecsByOperationTypeResponse",
+      "status": "online"
+    },
     "DescribeInstances": {
       "document": "本接口(DescribeInstances)用于查询实例列表。",
       "input": "DescribeInstancesRequest",
@@ -2021,7 +2028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-6gtlgm5l",
           "member": "string",
           "name": "ClusterId",
@@ -2030,7 +2037,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu核数",
+          "document": "<p>Cpu核数</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
@@ -2039,7 +2046,7 @@
         },
         {
           "disabled": false,
-          "document": "内存，单位为GB",
+          "document": "<p>内存，单位为GB</p>",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -2048,7 +2055,7 @@
         },
         {
           "disabled": false,
-          "document": "新增只读实例数，取值范围为(0,15]",
+          "document": "<p>新增只读实例数，取值范围为(0,15]</p>",
           "example": "1",
           "member": "int64",
           "name": "ReadOnlyCount",
@@ -2057,7 +2064,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型，支持值如下：\n- common：表示通用型\n- exclusive：表示独享型",
+          "document": "<p>实例机器类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
@@ -2066,7 +2073,7 @@
         },
         {
           "disabled": true,
-          "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。",
+          "document": "<p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>",
           "example": "cynosmysql-grp-xxxxxxxx",
           "member": "string",
           "name": "InstanceGrpId",
@@ -2075,7 +2082,7 @@
         },
         {
           "disabled": false,
-          "document": "所属VPC网络ID。",
+          "document": "<p>所属VPC网络ID。</p>",
           "example": "vpc-1ptuei0b",
           "member": "string",
           "name": "VpcId",
@@ -2084,7 +2091,7 @@
         },
         {
           "disabled": false,
-          "document": "所属子网ID，如果设置了VpcId，则SubnetId必填。",
+          "document": "<p>所属子网ID，如果设置了VpcId，则SubnetId必填。</p>",
           "example": "subnet-1tmw9t4o",
           "member": "string",
           "name": "SubnetId",
@@ -2093,7 +2100,7 @@
         },
         {
           "disabled": false,
-          "document": "新增RO组时使用的Port，取值范围为[0,65535)",
+          "document": "<p>新增RO组时使用的Port，取值范围为[0,65535)</p>",
           "example": "2000",
           "member": "int64",
           "name": "Port",
@@ -2102,7 +2109,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'",
+          "document": "<p>实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，&#39;_&#39;,&#39;-&#39;,&#39;.&#39;</p>",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
           "name": "InstanceName",
@@ -2111,7 +2118,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动选择代金券 1是 0否 默认为0",
+          "document": "<p>是否自动选择代金券 1是 0否 默认为0</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -2120,7 +2127,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
+          "document": "<p>数据库类型，取值范围: </p><li> MYSQL </li>",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -2129,7 +2136,7 @@
         },
         {
           "disabled": false,
-          "document": "订单来源，字符串长度范围为[0,64)",
+          "document": "<p>订单来源，字符串长度范围为[0,64)</p>",
           "example": "api",
           "member": "string",
           "name": "OrderSource",
@@ -2138,7 +2145,7 @@
         },
         {
           "disabled": false,
-          "document": "交易模式 0-下单并支付 1-下单",
+          "document": "<p>交易模式 0-下单并支付 1-下单</p>",
           "example": "0",
           "member": "int64",
           "name": "DealMode",
@@ -2147,7 +2154,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板ID",
+          "document": "<p>参数模板ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ParamTemplateId",
@@ -2156,7 +2163,7 @@
         },
         {
           "disabled": false,
-          "document": "参数列表，ParamTemplateId 传入时InstanceParams才有效",
+          "document": "<p>参数列表，ParamTemplateId 传入时InstanceParams才有效</p>",
           "example": "无",
           "member": "ModifyParamItem",
           "name": "InstanceParams",
@@ -2165,7 +2172,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID，新建只读实例时可以指定安全组。",
+          "document": "<p>安全组ID，新建只读实例时可以指定安全组。</p>",
           "example": "[\"sg-rgf3qgld\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -2174,7 +2181,7 @@
         },
         {
           "disabled": false,
-          "document": "proxy同步升级",
+          "document": "<p>proxy同步升级</p>",
           "example": "无",
           "member": "UpgradeProxy",
           "name": "UpgradeProxy",
@@ -2189,7 +2196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "冻结流水，一次开通一个冻结流水。",
+          "document": "<p>冻结流水，一次开通一个冻结流水。</p>",
           "example": "myTranId",
           "member": "string",
           "name": "TranId",
@@ -2199,7 +2206,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费订单号。",
+          "document": "<p>付费的订单号。说明：建议您使用 <a href=\"https://cloud.tencent.com/document/product/1003/52131\">DescribeResourcesByDealName</a> 接口查询订单关联实例。</p>",
           "example": "[\"182711111\"]",
           "member": "string",
           "name": "DealNames",
@@ -2208,8 +2215,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "发货资源id列表。",
+          "disabled": true,
+          "document": "<p>发货资源id列表。</p>",
           "example": "[\"cynosdbmysql-mwg712mm\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -2219,7 +2226,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号",
+          "document": "<p>大订单号</p>",
           "example": "[\"202411073872\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -14090,6 +14097,70 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceSpecsByOperationTypeRequest": {
+      "document": "DescribeInstanceSpecsByOperationType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型\naddROInstance：新增RO实例\nmodifyInstance：变配",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID，查询变配规格时必传",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例机器类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceSpecsByOperationTypeResponse": {
+      "document": "DescribeInstanceSpecsByOperationType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例规格信息",
+          "example": "无",
+          "member": "InstanceSpec",
+          "name": "InstanceSpecSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceSpecsRequest": {
       "document": "DescribeInstanceSpecs请求参数结构体",
       "members": [
@@ -17194,6 +17265,15 @@
           "name": "OssClusterId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储架构类型。枚举值：1.0/2.0  默认值：1.0",
+          "example": "1.0",
+          "member": "string",
+          "name": "StorageVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
