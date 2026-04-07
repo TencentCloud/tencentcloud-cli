@@ -488,6 +488,20 @@
         "title": "查询公共算法版本列表"
       }
     ],
+    "DescribeResourceGroupRelativeResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGroupRelativeResources\n<公共请求参数>\n\n{\n    \"ResourceGroupIds\": [\n        \"rsg-wvlc6fcp\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceGroupRelativeResources\": [\n            {\n                \"SlaveResourceType\": \"trainingtask\",\n                \"SlaveResources\": [\n                    {\n                        \"MasterResourceID\": \"rsg-wvlc6fcp\",\n                        \"SlaveResourceIDs\": [\n                            \"train-1544125357018442368\"\n                        ]\n                    }\n                ],\n                \"TotalCount\": 2\n            }\n        ],\n        \"TotalCount\": 9,\n        \"RequestId\": \"90da9a70-b8c6-4894-9abe-d08b052fc76c\"\n    }\n}",
+        "title": "主资源ID查询所有从资源列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGroupRelativeResources\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceType\",\n            \"Values\": [\n                \"batch\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceGroupRelativeResources\": [\n            {\n                \"SlaveResourceType\": \"batch\",\n                \"SlaveResources\": [\n                    {\n                        \"MasterResourceID\": \"rsg-wvlc6fcp\",\n                        \"SlaveResourceIDs\": [\n                            \"batch-b9q1ub55p8cg\"\n                        ]\n                    }\n                ],\n                \"TotalCount\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"73fec2f0-4e13-41f1-bf19-458c44551a5c\"\n    }\n}",
+        "title": "从资源ID查询主资源ID"
+      }
+    ],
     "DescribeSubAccountLinuxUserInfos": [
       {
         "document": "批量查询子账号Linux用户信息",

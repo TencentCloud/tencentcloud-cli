@@ -524,14 +524,6 @@
         "title": "销毁资源"
       }
     ],
-    "EditAuthConfig": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditAuthConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"618223f6-f247-05dc-2638-7a72c876b7d1\"\n    }\n}",
-        "title": "修改登录密码更新策略配置"
-      }
-    ],
     "GetProviders": [
       {
         "document": "",
@@ -670,12 +662,12 @@
         "title": "通知资源用尽"
       }
     ],
-    "ReinstateEnv": [
+    "RefreshClsIndex": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=ReinstateEnv\n&EnvId=envid\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
-        "title": "恢复已隔离的免费环境"
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshClsIndex\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-4gs26nnz095f6f4d\",\n    \"RebuildIndex\": true,\n    \"RebuildTime\": -1,\n    \"IndexFields\": [\n        {\n            \"Key\": \"log\",\n            \"Type\": \"text\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99649fbd-1b4f-4581-b0f3-881707f6c521\"\n    }\n}",
+        "title": "刷新索引"
       }
     ],
     "RenewEnv": [

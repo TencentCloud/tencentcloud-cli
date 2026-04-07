@@ -15,6 +15,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85d1906b-274b-44ac-a22e-4fdc00822347\"\n    }\n}",
         "title": "批量修改消息接收渠道"
       }
+    ],
+    "ShortenUrlLite": [
+      {
+        "document": "长链换短链-成功",
+        "input": "POST / HTTP/1.1\nHost: message.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ShortenUrlLite\n<公共请求参数>\n\n{\n    \"Url\": \"http://cloud.tencent.com/henry/testing/123\",\n    \"ValidPeriod\": 3600,\n    \"Creator\": \"henryhzhao\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ShortUrl\": null,\n        \"RequestId\": \"8198f4a1-eadd-4c3e-80c8-ec933fee4b51\"\n    }\n}",
+        "title": "轻量长链换短链"
+      }
     ]
   },
   "version": "1.0"

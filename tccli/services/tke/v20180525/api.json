@@ -791,6 +791,13 @@
       "output": "DescribeClusterRoutesResponse",
       "status": "online"
     },
+    "DescribeClusterSchedulerPolicy": {
+      "document": "查询集群调度策略",
+      "input": "DescribeClusterSchedulerPolicyRequest",
+      "name": "查询集群调度策略",
+      "output": "DescribeClusterSchedulerPolicyResponse",
+      "status": "online"
+    },
     "DescribeClusterSecurity": {
       "document": "集群的密钥信息",
       "input": "DescribeClusterSecurityRequest",
@@ -12079,6 +12086,93 @@
           "name": "RouteSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterSchedulerPolicyRequest": {
+      "document": "DescribeClusterSchedulerPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "cls-5e7wsn94",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterSchedulerPolicyResponse": {
+      "document": "DescribeClusterSchedulerPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调度策略json字符串</p>",
+          "example": "\"{\\\"kind\\\":\\\"Policy\\\",\\\"apiVersion\\\":\\\"v1\\\",\"priorities\\\":[{\\\"name\\\":\\\"NodePreferAvoidPodsPriority\\\",\\\"weight\\\":10000}],\\\"extenders\\\":[]}\"",
+          "member": "string",
+          "name": "Policy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SchedulerPolicy配置信息</p>",
+          "example": "无",
+          "member": "SchedulerPolicyConfig",
+          "name": "SchedulerPolicyConfig",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端连接</p>",
+          "example": "无",
+          "member": "ClientConnection",
+          "name": "ClientConnection",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展调度器</p>",
+          "example": "无",
+          "member": "Extenders",
+          "name": "Extenders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高性能模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HighPerformance",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>池化调度器启动参数</p>",
+          "example": "无",
+          "member": "PoolSchedulerStartArg",
+          "name": "PoolSchedulerStartArg",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

@@ -934,6 +934,14 @@
         "title": "查询集群路由"
       }
     ],
+    "DescribeClusterSchedulerPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterSchedulerPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-ncmx45jw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientConnection\": {\n            \"Burst\": 100,\n            \"QPS\": 50\n        },\n        \"HighPerformance\": true,\n        \"Policy\": \"\",\n        \"PoolSchedulerStartArg\": {\n            \"PoolingKeyLabels\": \"aaa_ccc\",\n            \"PoolingShardingCount\": 10,\n            \"VirtualNodeCount\": 150\n        },\n        \"SchedulerPolicyConfig\": [\n            {\n                \"PluginConfigs\": [\n                    {\n                        \"Args\": \"eyJraW5kIjoiTm9kZVJlc291cmNlc0ZpdEFyZ3MiLCJhcGlWZXJzaW9uIjoia3ViZXNjaGVkdWxlci5jb25maWcuazhzLmlvL3YxIiwic2NvcmluZ1N0cmF0ZWd5Ijp7InR5cGUiOiJMZWFzdEFsbG9jYXRlZCIsInJlc291cmNlcyI6W3sibmFtZSI6ImNwdSIsIndlaWdodCI6MX0seyJuYW1lIjoibWVtb3J5Iiwid2VpZ2h0IjoxfV19fQ==\",\n                        \"Name\": \"NodeResourcesFit\"\n                    }\n                ],\n                \"PluginSet\": {\n                    \"Disabled\": [\n                        {\n                            \"Name\": \"qGPU\"\n                        }\n                    ],\n                    \"Enabled\": [\n                        {\n                            \"Name\": \"NodeResourcesFit\",\n                            \"Weight\": 1\n                        }\n                    ]\n                },\n                \"SchedulerName\": \"default-scheduler\"\n            }\n        ],\n        \"RequestId\": \"ba8878e9-05c5-450a-af5f-aff1a2ff4a44\"\n    }\n}",
+        "title": "查询调度器参数信息"
+      }
+    ],
     "DescribeClusterSecurity": [
       {
         "document": "集群的密钥信息",

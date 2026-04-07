@@ -427,6 +427,13 @@
       "output": "DescribePublicAlgoVersionListResponse",
       "status": "online"
     },
+    "DescribeResourceGroupRelativeResources": {
+      "document": "查询资源组关联的任务列表（任务式建模、模型优化、主观评测、客观评测、开发机、离线跑批）",
+      "input": "DescribeResourceGroupRelativeResourcesRequest",
+      "name": "查询资源组关联的任务列表（任务式建模、模型优化、主观评测、客观评测、开发机、离线跑批)",
+      "output": "DescribeResourceGroupRelativeResourcesResponse",
+      "status": "online"
+    },
     "DescribeSubAccountLinuxUserInfos": {
       "document": "批量查询子账号Linux用户信息",
       "input": "DescribeSubAccountLinuxUserInfosRequest",
@@ -7667,6 +7674,98 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGroupRelativeResourcesRequest": {
+      "document": "DescribeResourceGroupRelativeResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源组ID：最多20个</p>",
+          "example": "[\"rsg-wvlc6fcp\"]",
+          "member": "string",
+          "name": "ResourceGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Filter.Name：ResourceType：资源类型（不传资源类型，表示请求所有类型任务）Filter.Values：trainingtask, notebook，modelacctask，objeval，subeval，batch<p></p><p>Filter.Name: ResourceId：资源Id （传资源类型，必须传资源Id）<br>Filter.Values: train-1538469534163656576:（任务式建模Id）, nb-1539152169982668032（开发机Id），acc-bhweo0wjrls0（模型优化ID），eval-obotyyequh4ao（客观评测Id），eval-sb85tfdzsgw74（主观评测Id），batch-bjfwjmt85lds（离线跑批ID）</p></p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认为0；分页查询起始位置，如：Limit为100，第一页Offset为0，第二页OffSet为100....即每页左边为闭区间</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询每页大小，最大500，其中notebook类型最大为100，batch最大为30</p>",
+          "example": "30",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段：CreateTime</p>",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGroupRelativeResourcesResponse": {
+      "document": "DescribeResourceGroupRelativeResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源总数； 注意接口是分页拉取的，total是指资源总数，不是本次返回中数组Resources的大小</p>",
+          "example": "9",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源列表</p>",
+          "example": "无",
+          "member": "ResourceGroupRelativeResource",
+          "name": "ResourceGroupRelativeResources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15346,6 +15445,42 @@
       ],
       "usage": "out"
     },
+    "ResourceGroupRelativeResource": {
+      "document": "资源组关联的任务ID列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>从资源类型</p>",
+          "example": "batch",
+          "member": "string",
+          "name": "SlaveResourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>从资源总数</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>从资源列表</p>",
+          "example": "无",
+          "member": "SlaveResource",
+          "name": "SlaveResources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResourceGroupSupervisor": {
       "document": "资源组负责人",
       "members": [
@@ -17644,6 +17779,32 @@
         }
       ],
       "usage": "both"
+    },
+    "SlaveResource": {
+      "document": "从资源ID列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主资源ID</p>",
+          "example": "rsg-7gtzgkl7",
+          "member": "string",
+          "name": "MasterResourceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>从资源ID列表</p>",
+          "example": "[\"batch-b9q1ub55p8cg\"]",
+          "member": "string",
+          "name": "SlaveResourceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Spec": {
       "document": "计费项内容",
