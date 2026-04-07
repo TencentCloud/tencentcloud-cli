@@ -17,6 +17,7 @@ def du_object(args, parsed_globals):
     try:
         total_size = 0
         total_count = 0
+        total_dir_count = 0
         storage_stats = {}
         marker = ""
 
@@ -31,8 +32,9 @@ def du_object(args, parsed_globals):
             if "Contents" in response:
                 for content in response["Contents"]:
                     key = content["Key"]
-                    # 跳过目录标记
+                    # 目录标记单独统计
                     if key.endswith("/"):
+                        total_dir_count += 1
                         continue
                     size = int(content.get("Size", 0))
                     storage_class = content.get("StorageClass", "STANDARD")
@@ -54,7 +56,8 @@ def du_object(args, parsed_globals):
         target = "cos://%s/%s" % (bucket, prefix) if prefix else "cos://%s" % bucket
         print("统计: %s" % target)
         print("-" * 60)
-        print("总对象数: %d" % total_count)
+        print("总文件数: %d" % total_count)
+        print("总文件夹数: %d" % total_dir_count)
         print("总大小:   %s (%d 字节)" % (format_size(total_size), total_size))
 
         if storage_stats:

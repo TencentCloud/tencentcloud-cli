@@ -203,6 +203,34 @@ def list_all_objects(client, bucket, prefix=""):
     return objects
 
 
+def list_all_objects_with_dirs(client, bucket, prefix=""):
+    """列出存储桶中指定前缀下的所有对象（包含 / 结尾的目录标记）"""
+    objects = {}
+    marker = ""
+    while True:
+        response = client.list_objects(
+            Bucket=bucket,
+            Prefix=prefix,
+            Marker=marker,
+            MaxKeys=1000,
+        )
+        if "Contents" in response:
+            for content in response["Contents"]:
+                key = content["Key"]
+                objects[key] = {
+                    "Size": int(content.get("Size", 0)),
+                    "ETag": content.get("ETag", ""),
+                    "LastModified": content.get("LastModified", ""),
+                    "StorageClass": content.get("StorageClass", "STANDARD"),
+                    "IsDir": key.endswith("/"),
+                }
+        if response.get("IsTruncated") == "true":
+            marker = response.get("NextMarker", "")
+        else:
+            break
+    return objects
+
+
 def list_local_files(local_dir):
     """递归列出本地目录下的所有文件"""
     files = {}
@@ -250,6 +278,8 @@ class TransferProgressMonitor(object):
         # 每个文件的已传输字节数追踪（用于 progress_callback）
         self._file_progress = {}  # file_id -> consumed_bytes
         self._file_id_counter = 0
+        # 失败记录列表：每项为 dict {"path": ..., "reason": ...}
+        self._fail_records = []
         # 速度计算
         self._start_time = time.time()
         self._last_snap_time = time.time()
@@ -296,12 +326,30 @@ class TransferProgressMonitor(object):
             self.deal_size += size
             self.skip_size += size
 
-    def update_err(self, file_id=None):
-        """更新失败计数"""
+    def update_err(self, file_id=None, path=None, reason=None,
+                   src_path=None, dest_path=None, request_id=None):
+        """更新失败计数，可选记录失败路径和原因
+        - path: 兼容旧接口，作为 src_path 使用（若 src_path 未指定）
+        - src_path: 源路径（本地文件路径或 COS key）
+        - dest_path: 目标路径（本地文件路径或 COS key）
+        - request_id: SDK 返回的 RequestId
+        - reason: 失败原因（SDK 错误信息）
+        """
+        import datetime
         with self._lock:
             self.err_num += 1
             if file_id is not None:
                 self._file_progress.pop(file_id, None)
+            record_src = src_path or path or ""
+            record_dest = dest_path or ""
+            if record_src or reason:
+                self._fail_records.append({
+                    "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "src_path": record_src,
+                    "dest_path": record_dest,
+                    "reason": reason or "",
+                    "request_id": request_id or "",
+                })
 
     def create_progress_callback(self, file_size):
         """创建一个可以传给 COS SDK 的 progress_callback 函数。
@@ -331,12 +379,44 @@ class TransferProgressMonitor(object):
         self._progress_thread = _threading.Thread(target=self._progress_loop, daemon=True)
         self._progress_thread.start()
 
-    def stop(self):
-        """停止进度条并输出最终结果"""
+    def stop(self, log_file=None):
+        """停止进度条并输出最终结果，如果指定 log_file 则写入失败日志"""
         self._stop_event.set()
         if self._progress_thread:
             self._progress_thread.join(timeout=2)
         self._print_finish_bar()
+        if log_file and self._fail_records:
+            self._write_log_file(log_file)
+
+    def _write_log_file(self, log_file):
+        """将失败记录写入日志文件（结构化格式，每条记录含时间/源路径/目标路径/错误信息/RequestId）"""
+        import datetime
+        try:
+            log_dir = os.path.dirname(log_file)
+            if log_dir and not os.path.exists(log_dir):
+                os.makedirs(log_dir)
+            elapsed = time.time() - self._start_time
+            with open(log_file, "w", encoding="utf-8") as f:
+                f.write("# %s 失败日志\n" % self.op_type)
+                f.write("# 生成时间: %s\n" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+                f.write("# 执行耗时: %.1fs\n" % elapsed)
+                f.write("# 失败总数: %d\n" % len(self._fail_records))
+                f.write("#\n")
+                for i, record in enumerate(self._fail_records, 1):
+                    f.write("[%d]\n" % i)
+                    f.write("  Time      : %s\n" % record.get("time", ""))
+                    f.write("  Source    : %s\n" % record.get("src_path", ""))
+                    if record.get("dest_path"):
+                        f.write("  Dest      : %s\n" % record["dest_path"])
+                    f.write("  Reason    : %s\n" % record.get("reason", ""))
+                    if record.get("request_id"):
+                        f.write("  RequestId : %s\n" % record["request_id"])
+                    f.write("\n")
+            sys.stderr.write("失败日志已写入: %s\n" % log_file)
+            sys.stderr.flush()
+        except Exception as e:
+            sys.stderr.write("写入失败日志出错: %s\n" % str(e))
+            sys.stderr.flush()
 
     def _progress_loop(self):
         """进度条刷新循环"""
@@ -433,7 +513,7 @@ class TransferProgressMonitor(object):
         sys.stderr.write("\r" + bar + " " * padding + "\n")
         sys.stderr.flush()
 
-        # 输出平均速度
+        # 输出平均速度和总耗时
         if elapsed > 0:
-            sys.stderr.write("AvgSpeed: %s/s\n" % format_size(int(avg_speed)))
+            sys.stderr.write("AvgSpeed: %s/s, Elapsed: %.1fs\n" % (format_size(int(avg_speed)), elapsed))
             sys.stderr.flush()

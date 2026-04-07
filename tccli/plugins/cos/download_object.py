@@ -27,11 +27,16 @@ def download_object(args, parsed_globals):
     part_size = args.get("part_size", 20) or 20
     rate_limiting = args.get("rate_limiting", 0) or 0
     version_id = args.get("version_id", "") or ""
+    log_file = args.get("log_file", "") or ""
+    retry = args.get("retry", 3)
+    if retry is None:
+        retry = 3
+    retry = int(retry)
 
     try:
         if recursive:
             _download_directory(client, bucket, cos_key, local_path, include, exclude,
-                                thread_num, routines, part_size, rate_limiting, version_id)
+                                thread_num, routines, part_size, rate_limiting, version_id, log_file, retry)
         else:
             # 确保本地目录存在
             local_dir = os.path.dirname(local_path)
@@ -39,7 +44,7 @@ def download_object(args, parsed_globals):
                 os.makedirs(local_dir)
 
             _download_single(client, bucket, cos_key, local_path,
-                             thread_num, part_size, rate_limiting, version_id)
+                             thread_num, part_size, rate_limiting, version_id, log_file, retry)
 
     except CosServiceError as e:
         print("Error: %s (Code: %s, RequestId: %s)" % (
@@ -65,7 +70,7 @@ def _build_download_kwargs(bucket, cos_key, local_path, thread_num, part_size, r
 
 
 def _download_single(client, bucket, cos_key, local_path,
-                     thread_num, part_size, rate_limiting, version_id):
+                     thread_num, part_size, rate_limiting, version_id, log_file="", retry=3):
     """下载单个文件（带进度监控）"""
     monitor = TransferProgressMonitor("download")
 
@@ -80,21 +85,34 @@ def _download_single(client, bucket, cos_key, local_path,
     monitor.start()
 
     progress_cb, file_id = monitor.create_progress_callback(file_size)
-    try:
-        kwargs = _build_download_kwargs(bucket, cos_key, local_path,
-                                        thread_num, part_size, rate_limiting, version_id)
-        kwargs["progress_callback"] = progress_cb
-        client.download_file(**kwargs)
-        monitor.update_ok(file_size, file_id)
-    except CosServiceError:
-        monitor.update_err(file_id)
-        raise
-    finally:
-        monitor.stop()
+    last_err = None
+    for attempt in range(max(1, retry + 1)):
+        try:
+            kwargs = _build_download_kwargs(bucket, cos_key, local_path,
+                                            thread_num, part_size, rate_limiting, version_id)
+            kwargs["progress_callback"] = progress_cb
+            client.download_file(**kwargs)
+            monitor.update_ok(file_size, file_id)
+            last_err = None
+            break
+        except CosServiceError as e:
+            last_err = e
+            if attempt < retry:
+                progress_cb, file_id = monitor.create_progress_callback(file_size)
+    if last_err is not None:
+        err_reason = "%s (Code: %s)" % (last_err.get_error_msg(), last_err.get_error_code())
+        monitor.update_err(file_id,
+                           src_path="cos://%s/%s" % (bucket, cos_key),
+                           dest_path=local_path,
+                           reason=err_reason,
+                           request_id=last_err.get_request_id())
+    monitor.stop(log_file=log_file)
+    if last_err is not None:
+        raise last_err
 
 
 def _download_directory(client, bucket, prefix, local_dir, include, exclude,
-                        thread_num, routines, part_size, rate_limiting, version_id):
+                        thread_num, routines, part_size, rate_limiting, version_id, log_file="", retry=3):
     """递归下载 COS 前缀下的所有对象
     - thread_num: 单文件分块并发（传给 SDK MAXThread）
     - routines: 文件间并发（同时下载的文件数）
@@ -104,6 +122,7 @@ def _download_directory(client, bucket, prefix, local_dir, include, exclude,
 
     # 先收集所有待下载的文件任务
     tasks = []
+    empty_local_dirs = []  # COS 上 / 结尾的空目录对象，需在本地创建对应目录
     total_size = 0
     skip_count = 0
     marker = ""
@@ -119,10 +138,19 @@ def _download_directory(client, bucket, prefix, local_dir, include, exclude,
         if "Contents" in response:
             for content in response["Contents"]:
                 key = content["Key"]
-                if key.endswith("/"):
-                    continue
-
                 rel_key = key[len(prefix):].lstrip("/") if prefix else key
+
+                # 处理 COS 上的空目录对象（以 / 结尾，Size=0）
+                if key.endswith("/") and int(content.get("Size", 0)) == 0:
+                    if rel_key:
+                        # include/exclude 过滤目录
+                        dir_rel = rel_key.rstrip("/")
+                        if not match_filters(dir_rel, include, exclude):
+                            skip_count += 1
+                            continue
+                        local_subdir = os.path.join(local_dir, dir_rel.replace("/", os.sep))
+                        empty_local_dirs.append(local_subdir)
+                    continue
 
                 # include/exclude 过滤
                 if not match_filters(rel_key, include, exclude):
@@ -139,8 +167,8 @@ def _download_directory(client, bucket, prefix, local_dir, include, exclude,
         else:
             break
 
-    # 设置扫描结果
-    monitor.set_scan_info(len(tasks) + skip_count, total_size)
+    # 设置扫描结果（文件数 + 空目录数 + 跳过数）
+    monitor.set_scan_info(len(tasks) + len(empty_local_dirs) + skip_count, total_size)
     for _ in range(skip_count):
         monitor.update_skip(0)
 
@@ -159,17 +187,30 @@ def _download_directory(client, bucket, prefix, local_dir, include, exclude,
                     created_dirs.add(file_dir)
 
     def _do_download(key, local_file, file_size):
-        """单个文件下载任务"""
+        """单个文件下载任务（含重试）"""
+        last_err = None
         progress_cb, file_id = monitor.create_progress_callback(file_size)
-        try:
-            _ensure_dir(local_file)
-            kwargs = _build_download_kwargs(bucket, key, local_file,
-                                            thread_num, part_size, rate_limiting, version_id)
-            kwargs["progress_callback"] = progress_cb
-            client.download_file(**kwargs)
-            monitor.update_ok(file_size, file_id)
-        except CosServiceError as e:
-            monitor.update_err(file_id)
+        for attempt in range(max(1, retry + 1)):
+            try:
+                _ensure_dir(local_file)
+                kwargs = _build_download_kwargs(bucket, key, local_file,
+                                                thread_num, part_size, rate_limiting, version_id)
+                kwargs["progress_callback"] = progress_cb
+                client.download_file(**kwargs)
+                monitor.update_ok(file_size, file_id)
+                last_err = None
+                break
+            except CosServiceError as e:
+                last_err = e
+                if attempt < retry:
+                    progress_cb, file_id = monitor.create_progress_callback(file_size)
+        if last_err is not None:
+            err_reason = "%s (Code: %s)" % (last_err.get_error_msg(), last_err.get_error_code())
+            monitor.update_err(file_id,
+                               src_path="cos://%s/%s" % (bucket, key),
+                               dest_path=local_file,
+                               reason=err_reason,
+                               request_id=last_err.get_request_id())
 
     # 使用线程池并发下载多个文件，routines 控制文件间并发
     if tasks:
@@ -181,4 +222,10 @@ def _download_directory(client, bucket, prefix, local_dir, include, exclude,
             for future in as_completed(futures):
                 future.result()
 
-    monitor.stop()
+    # 在本地创建 COS 上的空目录
+    for local_subdir in empty_local_dirs:
+        if local_subdir and not os.path.exists(local_subdir):
+            os.makedirs(local_subdir, exist_ok=True)
+        monitor.update_ok(0)
+
+    monitor.stop(log_file=log_file)

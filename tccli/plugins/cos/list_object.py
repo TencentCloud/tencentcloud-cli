@@ -21,8 +21,11 @@ def list_object(args, parsed_globals):
     exclude = args.get("exclude", "") or ""
 
     # 递归模式下不使用 delimiter，以列出所有层级的对象
+    # 非递归模式下若未指定 delimiter，默认使用 / 只列出当前层级
     if recursive:
         delimiter = ""
+    elif not delimiter:
+        delimiter = "/"
 
     try:
         total_count = 0
