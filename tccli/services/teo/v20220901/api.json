@@ -5543,7 +5543,7 @@
         },
         {
           "disabled": false,
-          "document": "认证方法。取值有：\n<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>\n<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>",
+          "document": "认证方法。取值有：\n<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>\n<li>TC-CAPTCHA: 使用天御验证码进行认证；</li>\n<li>TC-EO-CAPTCHA: 使用 EdgeOne 人机校验进行认证。</li>",
           "example": "\"turing-rce\"",
           "member": "string",
           "name": "AttesterSource",
@@ -5580,6 +5580,17 @@
           "example": "无",
           "member": "TCCaptchaOption",
           "name": "TCCaptchaOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TC-EO-CAPTCHA 认证的配置信息。\n<li>当 AttesterSource 参数值为 TC-EO-CAPTCHA 时，此字段必填。</li>",
+          "example": "无",
+          "member": "TCEOCaptchaOption",
+          "name": "TCEOCaptchaOption",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -30451,6 +30462,23 @@
           "name": "AppSecretKey",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TCEOCaptchaOption": {
+      "document": "EdgeOne 人机校验认证实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EdgeOne 人机校验模式，取值有：<li> Invisible：无感验证；</li><li>Adaptive：自适应交互验证。</li>",
+          "example": "Adaptive",
+          "member": "string",
+          "name": "CaptchaMode",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

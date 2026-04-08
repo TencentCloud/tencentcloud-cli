@@ -834,8 +834,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveAvatarScripts\n<公共请求参数>\n\n{\n    \"RoomId\": \"1002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InfoList\": [\n            {\n                \"Title\": \"title\",\n                \"Content\": \"hello\",\n                \"CreateTime\": \"2025-07-02T07:19:08Z\",\n                \"ScriptId\": \"100\",\n                \"Duration\": 0,\n                \"Status\": \"PENDING\",\n                \"UpdateTime\": \"2025-07-02T07:19:08Z\"\n            }\n        ],\n        \"LimitCreateNum\": 100,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"TotalNum\": 1\n    }\n}",
-        "title": "请求示例"
+        "output": "{\n    \"Response\": {\n        \"InfoList\": [\n            {\n                \"Title\": \"title\",\n                \"Content\": \"hello\",\n                \"CreateTime\": \"2025-07-02T07:19:08Z\",\n                \"ProductId\": \"1002\",\n                \"ScriptId\": \"100\",\n                \"Duration\": 0,\n                \"Status\": \"PENDING\",\n                \"UpdateTime\": \"2025-07-02T07:19:08Z\"\n            }\n        ],\n        \"LimitCreateNum\": 100,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"TotalNum\": 1\n    }\n}",
+        "title": "请求一个正在处理中的话术"
       }
     ],
     "DescribeLiveAvatarTemporaryScriptList": [

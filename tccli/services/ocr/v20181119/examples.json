@@ -80,6 +80,14 @@
         "title": "门头照分类示例"
       }
     ],
+    "CropEnhanceImageOCR": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CropEnhanceImageOCR\n<公共请求参数>\n\n{\n    \"ImageBase64\": \"/9j/4AAQSkZJRg.....s97n//2Q==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CroppedHeight\": 1128,\n        \"CroppedImage\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"CroppedWidth\": 756,\n        \"Position\": [\n            75,\n            285,\n            644,\n            267,\n            791,\n            1135,\n            38,\n            1135\n        ],\n        \"RequestId\": \"6d9a9d4c-f3d1-49ce-a01a-41e2ec7c09bd\"\n    }\n}",
+        "title": "图像增强"
+      }
+    ],
     "DescribeExtractDocAgentJob": [
       {
         "document": "调用失败示例",
@@ -166,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnterpriseLicenseOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnterpriseLicenseInfos\": [\n            {\n                \"Name\": \"统一社会信用代码\",\n                \"Value\": \"91440300000XX0000H\"\n            },\n            {\n                \"Name\": \"法定代表人\",\n                \"Value\": \"李峰\"\n            },\n            {\n                \"Name\": \"名称\",\n                \"Value\": \"深圳市信息技术服务有限公司\"\n            },\n            {\n                \"Name\": \"住所\",\n                \"Value\": \"深圳市福田区沙头街道xxx街7号\"\n            },\n            {\n                \"Name\": \"主体类型\",\n                \"Value\": \"有限责任公司(自然人独资)\"\n            },\n            {\n                \"Name\": \"成立日期\",\n                \"Value\": \"2017年06月30日\"\n            }\n        ],\n        \"Angle\": 0,\n        \"RequestId\": \"f5b9110f-82db-4a5f-b872-ad39aa2eb09a\"\n    }\n}",
         "title": "EnterpriseLicenseOCR调用"
+      }
+    ],
+    "EraseHandwrittenImageOCR": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EraseHandwrittenImageOCR\n<公共请求参数>\n\n{\n    \"ImageBase64\": \"9j/4AAQSkZJRg.....s97n//2Q==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"RequestId\": \"be54d2be-577e-4b07-94d8-2bf7857ad700\"\n    }\n}",
+        "title": "试卷擦除"
       }
     ],
     "EstateCertOCR": [

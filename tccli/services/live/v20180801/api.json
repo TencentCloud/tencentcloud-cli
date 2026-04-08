@@ -148,7 +148,7 @@
       "status": "online"
     },
     "CreateLiveAvatarScript": {
-      "document": "调用该接口，用于创建数字人直播间话术。",
+      "document": "调用该接口，用于创建数字人直播间/AIGC直播间话术。",
       "input": "CreateLiveAvatarScriptRequest",
       "name": "创建数字人直播间话术",
       "output": "CreateLiveAvatarScriptResponse",
@@ -701,7 +701,7 @@
       "status": "online"
     },
     "DescribeLiveAvatarScripts": {
-      "document": "调用该接口，查询数字人直播间话术信息列表。",
+      "document": "调用该接口，查询数字人直播间话术信息列表。新增产品ID参数",
       "input": "DescribeLiveAvatarScriptsRequest",
       "name": "查询数字人直播间话术列表",
       "output": "DescribeLiveAvatarScriptsResponse",
@@ -1317,7 +1317,7 @@
       "status": "online"
     },
     "ModifyLiveAvatarRoom": {
-      "document": "调用该接口，用于修改数字人直播间。",
+      "document": "调用该接口，用于修改数字人(包括AIGC数字人)直播间。",
       "input": "ModifyLiveAvatarRoomRequest",
       "name": "修改数字人直播间配置",
       "output": "ModifyLiveAvatarRoomResponse",
@@ -1478,7 +1478,7 @@
       "status": "online"
     },
     "StartLiveAvatarRoom": {
-      "document": "调用该接口，用于启动数字人直播间。",
+      "document": "调用该接口，用于启动数字人（包括AIGC数字人）直播间。",
       "input": "StartLiveAvatarRoomRequest",
       "name": "启动数字人直播间",
       "output": "StartLiveAvatarRoomResponse",
@@ -5883,7 +5883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "话术标题。限制500字节。",
+          "document": "<p>话术标题。限制500字节。</p>",
           "example": "进入主题",
           "member": "string",
           "name": "Title",
@@ -5892,7 +5892,7 @@
         },
         {
           "disabled": false,
-          "document": "话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。",
+          "document": "<p>话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。</p>",
           "example": "hello, this is avatar.",
           "member": "string",
           "name": "Content",
@@ -5901,7 +5901,7 @@
         },
         {
           "disabled": false,
-          "document": "话术所属的数字人直播间 ID。",
+          "document": "<p>话术所属的数字人直播间 ID。</p>",
           "example": "10001",
           "member": "string",
           "name": "RoomId",
@@ -5910,7 +5910,7 @@
         },
         {
           "disabled": false,
-          "document": "话术插入时，可根据已有话术位置，指定新话术插入位置。\n如已有三条话术100，200，300。\n新话术可选择150插入到第一条和第二条中间。",
+          "document": "<p>话术插入时，可根据已有话术位置，指定新话术插入位置。<br>如已有三条话术100，200，300。<br>新话术可选择150插入到第一条和第二条中间。</p>",
           "example": "50",
           "member": "int64",
           "name": "SpecifyPosition",
@@ -5919,10 +5919,19 @@
         },
         {
           "disabled": false,
-          "document": "操作者。",
+          "document": "<p>操作者。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>话术所属的数字人产品 ID。</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "ProductId",
           "required": false,
           "type": "string"
         }
@@ -5934,7 +5943,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "话术 ID。",
+          "document": "<p>话术 ID。</p>",
           "example": "10003",
           "member": "string",
           "name": "ScriptId",
@@ -10839,7 +10848,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "1001",
           "member": "string",
           "name": "RoomId",
@@ -10848,7 +10857,7 @@
         },
         {
           "disabled": false,
-          "document": "数字人直播间话术 ID。",
+          "document": "<p>数字人直播间话术 ID。</p>",
           "example": "10002",
           "member": "string",
           "name": "ScriptId",
@@ -10857,7 +10866,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询的页数。",
+          "document": "<p>分页查询的页数。</p>",
           "example": "1",
           "member": "int64",
           "name": "PageIndex",
@@ -10866,12 +10875,21 @@
         },
         {
           "disabled": false,
-          "document": "分页查询的每页个数。",
+          "document": "<p>分页查询的每页个数。</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字人该话术所属的产品 ID。</p>",
+          "example": "10002",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10881,7 +10899,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间话术信息列表。",
+          "document": "<p>数字人直播间话术信息列表。</p>",
           "example": "无",
           "member": "AvatarScriptInfo",
           "name": "InfoList",
@@ -10891,7 +10909,7 @@
         },
         {
           "disabled": false,
-          "document": "限制可创建的数字人直播间话术总条数。",
+          "document": "<p>限制可创建的数字人直播间话术总条数。</p>",
           "example": "100",
           "member": "int64",
           "name": "LimitCreateNum",
@@ -10901,7 +10919,7 @@
         },
         {
           "disabled": false,
-          "document": "当前数字人直播间话术总条数。",
+          "document": "<p>当前数字人直播间话术总条数。</p>",
           "example": "3",
           "member": "int64",
           "name": "TotalNum",
@@ -18120,7 +18138,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "10002",
           "member": "string",
           "name": "RoomId",
@@ -18129,7 +18147,7 @@
         },
         {
           "disabled": false,
-          "document": "直播间名称。",
+          "document": "<p>直播间名称。</p>",
           "example": "my live",
           "member": "string",
           "name": "Name",
@@ -18138,7 +18156,7 @@
         },
         {
           "disabled": false,
-          "document": "数字人形象KEY。",
+          "document": "<p>数字人形象KEY。</p>",
           "example": "sfsdfefsd",
           "member": "string",
           "name": "AvatarKey",
@@ -18147,7 +18165,7 @@
         },
         {
           "disabled": false,
-          "document": "音色KEY。",
+          "document": "<p>音色KEY。</p>",
           "example": "afdsdfs",
           "member": "string",
           "name": "TimbreKey",
@@ -18156,7 +18174,7 @@
         },
         {
           "disabled": false,
-          "document": "背景图片URL。",
+          "document": "<p>背景图片URL。</p>",
           "example": "http://avatar.image.com/live/background.png",
           "member": "string",
           "name": "BackgroundUrl",
@@ -18165,7 +18183,7 @@
         },
         {
           "disabled": false,
-          "document": "主播大小，默认1.00。\n取值范围(0, 15.00]。\n精度：使用小数点后两位。",
+          "document": "<p>主播大小，默认1.00。<br>取值范围(0, 15.00]。<br>精度：使用小数点后两位。</p>",
           "example": "1.00",
           "member": "float",
           "name": "AnchorScale",
@@ -18174,7 +18192,7 @@
         },
         {
           "disabled": false,
-          "document": "主播纵向位置。默认-1贴底部。\n左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。\n即该纵向位置最大为：数字人分辨率的高 - 形象高。",
+          "document": "<p>主播纵向位置。默认-1贴底部。<br>左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。<br>即该纵向位置最大为：数字人分辨率的高 - 形象高。</p>",
           "example": "10",
           "member": "int64",
           "name": "AnchorVerticalPos",
@@ -18183,7 +18201,7 @@
         },
         {
           "disabled": false,
-          "document": "主播横向位置。默认-1居中。\n左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。\n即最大值为：数字人分辨率的宽 - 形象宽。",
+          "document": "<p>主播横向位置。默认-1居中。<br>左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。<br>即最大值为：数字人分辨率的宽 - 形象宽。</p>",
           "example": "10",
           "member": "int64",
           "name": "AnchorHorizontalPos",
@@ -18192,7 +18210,7 @@
         },
         {
           "disabled": false,
-          "document": "语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。",
+          "document": "<p>语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。</p>",
           "example": "1.0",
           "member": "float",
           "name": "SpeechSpeed",
@@ -18201,7 +18219,7 @@
         },
         {
           "disabled": false,
-          "document": "音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。",
+          "document": "<p>音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。</p>",
           "example": "5",
           "member": "int64",
           "name": "SpeechVolume",
@@ -18210,10 +18228,19 @@
         },
         {
           "disabled": false,
-          "document": "操作者。",
+          "document": "<p>操作者。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>",
+          "example": "AIGC",
+          "member": "string",
+          "name": "RoomType",
           "required": false,
           "type": "string"
         }
@@ -22419,7 +22446,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "10001",
           "member": "string",
           "name": "RoomId",
@@ -22428,7 +22455,7 @@
         },
         {
           "disabled": false,
-          "document": "目标地址描述。",
+          "document": "<p>目标地址描述。</p>",
           "example": "推往视频号",
           "member": "string",
           "name": "Comment",
@@ -22437,7 +22464,7 @@
         },
         {
           "disabled": false,
-          "document": "推流目标地址。",
+          "document": "<p>推流目标地址。</p>",
           "example": "rtmp://5000.livepush.com/live/stream",
           "member": "string",
           "name": "ToUrl",
@@ -22446,10 +22473,19 @@
         },
         {
           "disabled": false,
-          "document": "操作者。",
+          "document": "<p>操作者。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>",
+          "example": "AIGC",
+          "member": "string",
+          "name": "RoomType",
           "required": false,
           "type": "string"
         }

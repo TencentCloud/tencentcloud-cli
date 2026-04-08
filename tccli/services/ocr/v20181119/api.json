@@ -70,6 +70,13 @@
       "output": "ClassifyStoreNameResponse",
       "status": "online"
     },
+    "CropEnhanceImageOCR": {
+      "document": "图像切边矫正增强是面向文档类图片提供的图像增强处理能力，包括切边增强、图像矫正、阴影去除、摩尔纹去除等；可以有效优化文档类的图片质量，提升文字的清晰度，可以作为所有识别场景的图像预处理原子能力，从而提升识别效果。",
+      "input": "CropEnhanceImageOCRRequest",
+      "name": "图像切边增强",
+      "output": "CropEnhanceImageOCRResponse",
+      "status": "online"
+    },
     "DescribeExtractDocAgentJob": {
       "document": "模型参数更大，速度更慢。推荐场景：可以接受异步（超过30s返回），样本输入输出token大于2000，长文本类文档建议用异步模型。需要 SubmitExtractDocAgentJob（提交任务）、DescribeExtractDocAgentJob（查询任务）两个接口配套使用，计费发生在提交任务后。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】",
       "input": "DescribeExtractDocAgentJobRequest",
@@ -124,6 +131,13 @@
       "input": "EnterpriseLicenseOCRRequest",
       "name": "企业证照识别",
       "output": "EnterpriseLicenseOCRResponse",
+      "status": "online"
+    },
+    "EraseHandwrittenImageOCR": {
+      "document": "本功能可自动清除试卷图片中的手写与批改痕迹，并输出洁净的空白试卷。也可以配合集成图像切边矫正技术，能自动定位、拉平试卷区域，从而在最优预处理基础上实现更佳的擦除效果。",
+      "input": "EraseHandwrittenImageOCRRequest",
+      "name": "试卷手写擦除",
+      "output": "EraseHandwrittenImageOCRResponse",
       "status": "online"
     },
     "EstateCertOCR": {
@@ -2945,7 +2959,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -2954,10 +2968,28 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
           "member": "string",
           "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出具体场景标签。注：开启后耗时会增加。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SceneType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入商户名称，辅助判断具体场景标签。注：仅SceneType配置为true时支持。</p>",
+          "example": "商户名称",
+          "member": "string",
+          "name": "StoreInfo",
           "required": false,
           "type": "string"
         }
@@ -2969,12 +3001,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "门头照标签",
-          "example": "标准门头照",
+          "document": "<p>门头照标签</p>",
+          "example": "[\"标准门头照\"]",
           "member": "string",
           "name": "StoreLabel",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。</p>",
+          "example": "快餐店（mcc数字）、各类服装及饰物店（mcc数字）、五金商店（mcc数字）",
+          "member": "string",
+          "name": "SceneType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3092,6 +3134,146 @@
         }
       ],
       "usage": "out"
+    },
+    "CropEnhanceImageOCRRequest": {
+      "document": "CropEnhanceImageOCR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0表示关闭切边<br>1表示开启切边，默认为1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Crop",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0表示关闭弯曲矫正<br>1表示开启弯曲矫正，默认为1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Deskew",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0表示返回处理后的图和坐标，默认为0<br>1表示只返回坐标，不返回图片</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "OnlyPosition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认-1</p><ul><li>-1 不处理增强</li><li>1 增亮</li><li>2 增强并锐化</li><li>3 黑白</li><li>4 灰度</li><li>5 去阴影增强</li><li>6 点阵图</li></ul>",
+          "example": "-1",
+          "member": "int64",
+          "name": "EnhanceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0表示不矫正图像方向，默认为0  1表示矫正图像方向</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AdjustOrientation",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CropEnhanceImageOCRResponse": {
+      "document": "CropEnhanceImageOCR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理后图的宽</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "CroppedWidth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理后图的高</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "CroppedHeight",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图像处理后的jpg图片，base64格式</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "CroppedImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>切图区域的4个角点坐标, 是个长度为8的数组<br>[0,1,2,3,4,5,6,7]</p><p>(0,1) 左上角坐标<br>(2,3) 右上角坐标<br>(4,5) 右下角坐标<br>(6,7) 左下角坐标</p>",
+          "example": "[0,1,2,3,4,5,6,7]",
+          "member": "int64",
+          "name": "Position",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图像角度，AdjustOrientation =1时生效, 返回值如下  -1: 失败  0、90、180、270</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Angle",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CustomsDeclaration": {
       "document": "海关进/出口货物报关单",
@@ -5401,6 +5583,97 @@
           "name": "Angle",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EraseHandwrittenImageOCRRequest": {
+      "document": "EraseHandwrittenImageOCR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0表示关闭切边，默认为0\n1表示开启切边",
+          "example": "0",
+          "member": "int64",
+          "name": "Crop",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0表示关闭弯曲矫正，默认为0\n1表示开启弯曲矫正",
+          "example": "0",
+          "member": "int64",
+          "name": "Deskew",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0表示关闭增强锐化，默认为0\n1表示开启增强锐化",
+          "example": "0",
+          "member": "int64",
+          "name": "Sharpen",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0表示返回黑白图像\n1表示返回彩色图像，默认为1",
+          "example": "0",
+          "member": "int64",
+          "name": "Grayscale",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EraseHandwrittenImageOCRResponse": {
+      "document": "EraseHandwrittenImageOCR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图像处理后的jpg图片，base64格式",
+          "example": "9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "Image",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

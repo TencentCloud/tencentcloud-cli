@@ -782,6 +782,14 @@
         "title": "创建流量镜像"
       }
     ],
+    "CreateTrafficMirrorFilterRules": [
+      {
+        "document": "创建流量镜像过滤规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrafficMirrorFilterRules\n<公共请求参数>\n\n{\n    \"TrafficMirrorId\": \"imgf-9ryixdn6\",\n    \"IngressFilterRules\": [\n        {\n            \"SrcNet\": \"192.168.0.0/16\",\n            \"DstNet\": \"10.0.0.0/16\",\n            \"Protocol\": \"TCP\",\n            \"SrcPort\": \"1000-2000\",\n            \"DstPort\": \"1000-2000\",\n            \"Priority\": 1,\n            \"Action\": \"ACCEPT\",\n            \"Description\": \"rule_1\"\n        }\n    ],\n    \"EgressFilterRules\": [\n        {\n            \"SrcNet\": \"192.168.0.0/16\",\n            \"DstNet\": \"10.0.0.0/16\",\n            \"Protocol\": \"TCP\",\n            \"SrcPort\": \"2000-3000\",\n            \"DstPort\": \"2000-3000\",\n            \"Priority\": 1,\n            \"Action\": \"DROP\",\n            \"Description\": \"rule_1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EgressFilterRules\": [\n            {\n                \"Action\": \"DROP\",\n                \"CreatedTime\": \"2026-03-30 20:50:13\",\n                \"Description\": \"rule_1\",\n                \"DstNet\": \"10.0.0.0/16\",\n                \"DstPort\": \"2000-3000\",\n                \"Priority\": 1,\n                \"Protocol\": \"TCP\",\n                \"SrcNet\": \"192.168.0.0/16\",\n                \"SrcPort\": \"2000-3000\",\n                \"TrafficMirrorFilterRuleId\": \"tmfi-bbc6a8cv\"\n            }\n        ],\n        \"IngressFilterRules\": [\n            {\n                \"Action\": \"ACCEPT\",\n                \"CreatedTime\": \"2026-03-30 20:50:13\",\n                \"Description\": \"rule_1\",\n                \"DstNet\": \"10.0.0.0/16\",\n                \"DstPort\": \"1000-2000\",\n                \"Priority\": 1,\n                \"Protocol\": \"TCP\",\n                \"SrcNet\": \"192.168.0.0/16\",\n                \"SrcPort\": \"1000-2000\",\n                \"TrafficMirrorFilterRuleId\": \"tmfi-7gk0gtdz\"\n            }\n        ],\n        \"TrafficMirrorId\": \"imgf-9ryixdn6\",\n        \"RequestId\": \"a5358fa4-7656-4fcc-a5bd-b338e74f3ff2\"\n    }\n}",
+        "title": "创建流量镜像过滤规则"
+      }
+    ],
     "CreateTrafficPackages": [
       {
         "document": "",
@@ -1286,6 +1294,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTrafficMirror\n&TrafficMirrorId=imgf-cvfp7xo8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
         "title": "删除流量镜像"
+      }
+    ],
+    "DeleteTrafficMirrorFilterRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrafficMirrorFilterRules\n<公共请求参数>\n\n{\n    \"TrafficMirrorId\": \"imgf-9ryixdn6\",\n    \"EgressFilterRuleIds\": [\n        \"tmfi-bbc6a8cv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cdd38684-a9d2-4120-b39a-472bca1b9252\"\n    }\n}",
+        "title": "删除流量镜像过滤规则"
       }
     ],
     "DeleteTrafficPackages": [
@@ -2344,6 +2360,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"false\"\n            ],\n            \"Name\": \"is-security-lock\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CcnSet\": [\n            {\n                \"CcnId\": \"ccn-d0s0mkw1\"\n            },\n            {\n                \"CcnId\": \"ccn-kwgk02zl\"\n            },\n            {\n                \"CcnId\": \"ccn-gyt67ffz\"\n            },\n            {\n                \"CcnId\": \"ccn-e7wopzfz\"\n            }\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"495efea0-0073-451c-a577-77a23626432c\"\n    }\n}",
         "title": "根据is-security-lock过滤查询"
+      }
+    ],
+    "DescribeTrafficMirrorFilterRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficMirrorFilterRules\n<公共请求参数>\n\n{\n    \"TrafficMirrorId\": \"imgf-9ryixdn6\",\n    \"TrafficMirrorFilterRuleIds\": [\n        \"tmfi-bbc6a8cv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EgressFilterRules\": [\n            {\n                \"Action\": \"DROP\",\n                \"CreatedTime\": \"2026-03-30 20:50:13\",\n                \"Description\": \"rule_1\",\n                \"DstNet\": \"10.0.0.0/16\",\n                \"DstPort\": \"2000-3000\",\n                \"Priority\": 1,\n                \"Protocol\": \"TCP\",\n                \"SrcNet\": \"192.168.0.0/16\",\n                \"SrcPort\": \"2000-3000\",\n                \"TrafficMirrorFilterRuleId\": \"tmfi-bbc6a8cv\"\n            }\n        ],\n        \"IngressFilterRules\": [\n            {\n                \"Action\": \"ACCEPT\",\n                \"CreatedTime\": \"2026-03-30 20:50:13\",\n                \"Description\": \"rule_1\",\n                \"DstNet\": \"10.0.0.0/16\",\n                \"DstPort\": \"1000-2000\",\n                \"Priority\": 1,\n                \"Protocol\": \"TCP\",\n                \"SrcNet\": \"192.168.0.0/16\",\n                \"SrcPort\": \"1000-2000\",\n                \"TrafficMirrorFilterRuleId\": \"tmfi-7gk0gtdz\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"TrafficMirrorId\": \"imgf-9ryixdn6\",\n        \"RequestId\": \"8984d5f4-72c1-4eae-9cc9-7dc2c346316d\"\n    }\n}",
+        "title": "查询流量镜像过滤规则"
       }
     ],
     "DescribeTrafficMirrors": [
@@ -3460,6 +3484,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyTrafficMirrorAttribute\n&TrafficMirrorId=imgf-7h62jza4\n&TrafficMirrorName=demo\n&TrafficMirrorDescription=demo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
         "title": "修改流量镜像属性"
+      }
+    ],
+    "ModifyTrafficMirrorFilterRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTrafficMirrorFilterRules\n<公共请求参数>\n\n{\n    \"TrafficMirrorId\": \"imgf-9ryixdn6\",\n    \"IngressFilterRules\": [\n        {\n            \"Protocol\": \"UDP\",\n            \"TrafficMirrorFilterRuleId\": \"tmfi-7gk0gtdz\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11797f58-1eb9-4d92-bd2e-dc467e3d5ccb\"\n    }\n}",
+        "title": "修改流量镜像过滤规则"
       }
     ],
     "ModifyVpcAttribute": [

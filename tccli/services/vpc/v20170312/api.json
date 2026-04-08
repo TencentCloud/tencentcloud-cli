@@ -595,6 +595,13 @@
       "output": "CreateTrafficMirrorResponse",
       "status": "online"
     },
+    "CreateTrafficMirrorFilterRules": {
+      "document": "创建流量镜像五元组过滤规则。",
+      "input": "CreateTrafficMirrorFilterRulesRequest",
+      "name": "创建流量镜像过滤规则。",
+      "output": "CreateTrafficMirrorFilterRulesResponse",
+      "status": "online"
+    },
     "CreateTrafficPackages": {
       "document": "本接口 (CreateTrafficPackages) 用于创建共享流量包。",
       "input": "CreateTrafficPackagesRequest",
@@ -999,6 +1006,13 @@
       "input": "DeleteTrafficMirrorRequest",
       "name": "删除流量镜像",
       "output": "DeleteTrafficMirrorResponse",
+      "status": "online"
+    },
+    "DeleteTrafficMirrorFilterRules": {
+      "document": "删除流量镜像五元组过滤规则。",
+      "input": "DeleteTrafficMirrorFilterRulesRequest",
+      "name": "删除流量镜像过滤规则。",
+      "output": "DeleteTrafficMirrorFilterRulesResponse",
       "status": "online"
     },
     "DeleteTrafficPackages": {
@@ -1783,6 +1797,13 @@
       "input": "DescribeTenantCcnsRequest",
       "name": "查询租户云联网实例",
       "output": "DescribeTenantCcnsResponse",
+      "status": "online"
+    },
+    "DescribeTrafficMirrorFilterRules": {
+      "document": "查询流量镜像五元组过滤规则。",
+      "input": "DescribeTrafficMirrorFilterRulesRequest",
+      "name": "查询流量镜像过滤规则。",
+      "output": "DescribeTrafficMirrorFilterRulesResponse",
       "status": "online"
     },
     "DescribeTrafficMirrors": {
@@ -2665,6 +2686,13 @@
       "input": "ModifyTrafficMirrorAttributeRequest",
       "name": "修改流量镜像属性",
       "output": "ModifyTrafficMirrorAttributeResponse",
+      "status": "online"
+    },
+    "ModifyTrafficMirrorFilterRules": {
+      "document": "修改流量镜像五元组过滤规则。",
+      "input": "ModifyTrafficMirrorFilterRulesRequest",
+      "name": "修改流量镜像过滤规则。",
+      "output": "ModifyTrafficMirrorFilterRulesResponse",
       "status": "online"
     },
     "ModifyVpcAttribute": {
@@ -11342,6 +11370,81 @@
       ],
       "type": "object"
     },
+    "CreateTrafficMirrorFilterRulesRequest": {
+      "document": "CreateTrafficMirrorFilterRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像实例唯一ID。",
+          "example": "imgf-meti475i",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrafficMirrorFilterRulesResponse": {
+      "document": "CreateTrafficMirrorFilterRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像实例唯一ID。",
+          "example": "imgf-meti475i",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTrafficMirrorRequest": {
       "document": "CreateTrafficMirror请求参数结构体",
       "members": [
@@ -14731,6 +14834,51 @@
     },
     "DeleteTemplateMemberResponse": {
       "document": "DeleteTemplateMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrafficMirrorFilterRulesRequest": {
+      "document": "DeleteTrafficMirrorFilterRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像实例唯一ID。",
+          "example": "imgf-jfzb00ia",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤唯一ID列表。",
+          "example": "[\"tmfi-7gk0gtdz\"]",
+          "member": "string",
+          "name": "IngressFilterRuleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤唯一ID列表。",
+          "example": "[\"tmfi-4bk0gdkz\"]",
+          "member": "string",
+          "name": "EgressFilterRuleIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrafficMirrorFilterRulesResponse": {
+      "document": "DeleteTrafficMirrorFilterRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22004,6 +22152,109 @@
       ],
       "type": "object"
     },
+    "DescribeTrafficMirrorFilterRulesRequest": {
+      "document": "DescribeTrafficMirrorFilterRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像唯一ID",
+          "example": "imgf-jfzb00ia",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站、入站过滤唯一ID列表。",
+          "example": "[\"tmfi-qfhrb7yj\" , \"tmfi-qghouehx\"]",
+          "member": "string",
+          "name": "TrafficMirrorFilterRuleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<li>traffic-mirror-filter-rule-id - String - （过滤条件） 流量镜像过滤规则，形如：tmfi-qfhrb7yj。 </li>\n<li>action - String - （过滤条件）策略， 支持类型： ACCEPT， DROP。 </li>\n<li>description - String - （过滤条件）描述。 </li>\n<li>direction - String - （过滤条件）方向, 支持类型：INGRESS， EGRESS。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorFilterRulesResponse": {
+      "document": "DescribeTrafficMirrorFilterRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像实例唯一ID。",
+          "example": "imgf-jfzb00ia",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例数量。分页查询的时候，如果IngressFilterRules的长度加上IngressFilterRules的长度，小于limit的时候表示已经查询完毕。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTrafficMirrorsRequest": {
       "document": "DescribeTrafficMirrors请求参数结构体",
       "members": [
@@ -28861,7 +29112,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EIP唯一标识ID列表，形如'eip-xxxx'，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。\n",
+          "document": "<p>EIP唯一标识ID列表，形如&#39;eip-xxxx&#39;，可以使用<a href=\"https://cloud.tencent.com/document/product/215/16702\">DescribeAddresses</a>接口获取AddressId。</p>",
           "example": "[\"eip-alfxy9c8\"]",
           "member": "string",
           "name": "AddressIds",
@@ -28870,7 +29121,7 @@
         },
         {
           "disabled": false,
-          "document": "调整带宽目标值，可调整的带宽上限值参考产品文档[带宽上限](https://cloud.tencent.com/document/product/1199/48333)。",
+          "document": "<p>调整带宽目标值，可调整的带宽上限值参考产品文档<a href=\"https://cloud.tencent.com/document/product/1199/48333\">带宽上限</a>。</p>",
           "example": "2",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
@@ -28879,7 +29130,7 @@
         },
         {
           "disabled": true,
-          "document": "包月带宽起始时间(已废弃，输入无效)",
+          "document": "<p>包月带宽起始时间(已废弃，输入无效)</p>",
           "example": "2021-07-20 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -28888,7 +29139,7 @@
         },
         {
           "disabled": true,
-          "document": "包月带宽结束时间(已废弃，输入无效)",
+          "document": "<p>包月带宽结束时间(已废弃，输入无效)</p>",
           "example": "2021-07-20 00:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -28903,7 +29154,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "document": "<p>异步任务TaskId。可以使用<a href=\"https://cloud.tencent.com/document/api/215/36271\">DescribeTaskResult</a>接口查询任务状态。</p>",
           "example": "11531422",
           "member": "string",
           "name": "TaskId",
@@ -31499,6 +31750,51 @@
     },
     "ModifyTrafficMirrorAttributeResponse": {
       "document": "ModifyTrafficMirrorAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTrafficMirrorFilterRulesRequest": {
+      "document": "ModifyTrafficMirrorFilterRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像实例唯一ID。",
+          "example": "imgf-jfzb00ia",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像入站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "IngressFilterRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像出站过滤规则。",
+          "example": "无",
+          "member": "TrafficMirrorFilter",
+          "name": "EgressFilterRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTrafficMirrorFilterRulesResponse": {
+      "document": "ModifyTrafficMirrorFilterRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -8198,7 +8198,7 @@
         },
         {
           "disabled": false,
-          "document": "源流URL【必填】。如果是视频流，分辨率请保持不变。",
+          "document": "源流URL【必填】。如果是视频流，分辨率请保持不变，视频流的最大分辨率限制1080p，最大帧率限制30fps。",
           "example": "https://a.b/test.mp4",
           "member": "string",
           "name": "StreamUrl",
@@ -8279,7 +8279,7 @@
         },
         {
           "disabled": false,
-          "document": "音量，取值范围[0, 100]，默认100，表示原音量。",
+          "document": "音量，取值范围[0, 200]，默认100，表示原音量。",
           "example": "90",
           "member": "uint64",
           "name": "Volume",
@@ -8303,6 +8303,15 @@
           "name": "Tempo",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "播放任务处于空闲状态的最大时长（秒）, 不填时任务会自适应销毁，可取[0, 600]，空闲状态超过设置的 IdleTimeout 后，该播放任务会自动销毁",
+          "example": "1",
+          "member": "int64",
+          "name": "IdleTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9790,7 +9799,7 @@
         },
         {
           "disabled": false,
-          "document": "音量，取值范围[0, 100]，默认100，表示原音量。",
+          "document": "音量，取值范围[0, 200]，默认100，表示原音量。",
           "example": "90",
           "member": "uint64",
           "name": "Volume",

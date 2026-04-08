@@ -1776,7 +1776,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "插件id",
+          "document": "<p>插件id</p>",
           "example": "0960ae93-80a0-408d-928b-f484064f834a",
           "member": "string",
           "name": "PluginId",
@@ -1787,7 +1787,7 @@
         },
         {
           "disabled": false,
-          "document": "应用配置的插件header信息",
+          "document": "<p>应用配置的插件header信息</p>",
           "example": "无",
           "member": "AgentPluginHeader",
           "name": "Headers",
@@ -1798,7 +1798,7 @@
         },
         {
           "disabled": false,
-          "document": "插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentModelInfo",
           "name": "Model",
@@ -1809,7 +1809,7 @@
         },
         {
           "disabled": false,
-          "document": "插件信息类型; 0: 未指定类型; 1: 知识库问答插件",
+          "document": "<p>插件信息类型; 0: 未指定类型; 1: 知识库问答插件</p>",
           "example": "0",
           "member": "uint64",
           "name": "PluginInfoType",
@@ -1820,7 +1820,7 @@
         },
         {
           "disabled": false,
-          "document": "知识库问答插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>知识库问答插件配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentKnowledgeQAPlugin",
           "name": "KnowledgeQa",
@@ -1831,7 +1831,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用一键授权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否使用一键授权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableRoleAuth",
@@ -1842,7 +1842,7 @@
         },
         {
           "disabled": false,
-          "document": "应用配置的插件query信息",
+          "document": "<p>应用配置的插件query信息</p>",
           "example": "无",
           "member": "AgentPluginQuery",
           "name": "Query",
@@ -1853,7 +1853,7 @@
         },
         {
           "disabled": false,
-          "document": "MCP类型",
+          "document": "<p>MCP类型</p><p>枚举值：</p><ul><li>0： SSE 模式</li><li>1： Streamable Http 模式</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "McpType",
@@ -2314,6 +2314,45 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentTask": {
+      "document": "智能体任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务序号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务内容</p>",
+          "example": "搜索信息",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4562,7 +4601,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息内容类型\ntext：文本\nimage：图片\nfile：文件\noption_cards：选项卡\ncustom_params：用户自定义业务参数\nsandbox：云桌面\ncustom_variables：自定义输入参数\nweb_search: 网页搜索内容\nfile_collection：文件收集信息\nwidget：widget信息\nwidget_action：用户端widget动作信息",
+          "document": "<p>消息内容类型<br>text：文本<br>image：图片<br>file：文件<br>option_cards：选项卡<br>custom_params：用户自定义业务参数<br>sandbox：云桌面<br>custom_variables：自定义输入参数<br>web_search: 网页搜索内容<br>file_collection：文件收集信息<br>widget：widget信息<br>widget_action：用户端widget动作信息</p>",
           "example": "text",
           "member": "string",
           "name": "Type",
@@ -4573,7 +4612,7 @@
         },
         {
           "disabled": false,
-          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文本内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "你好",
           "member": "string",
           "name": "Text",
@@ -4584,7 +4623,7 @@
         },
         {
           "disabled": false,
-          "document": "引用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引用信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QuoteInfo",
           "name": "QuoteInfos",
@@ -4595,7 +4634,7 @@
         },
         {
           "disabled": false,
-          "document": "参考文献信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参考文献信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContentReference",
           "name": "References",
@@ -4606,7 +4645,7 @@
         },
         {
           "disabled": false,
-          "document": "图片信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfoContent",
           "name": "Image",
@@ -4617,7 +4656,7 @@
         },
         {
           "disabled": false,
-          "document": "文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfoContent",
           "name": "File",
@@ -4628,7 +4667,7 @@
         },
         {
           "disabled": false,
-          "document": "选项卡信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>选项卡信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"选项1\",\"选项2\"]",
           "member": "string",
           "name": "OptionCards",
@@ -4639,7 +4678,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义业务参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户自定义业务参数信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"{\\\"name\\\":\\\"test\\\"}\"]",
           "member": "string",
           "name": "CustomParams",
@@ -4650,7 +4689,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"{\\\"name\\\":\\\"test\\\"}\"]",
           "member": "string",
           "name": "CustomVariables",
@@ -4661,7 +4700,7 @@
         },
         {
           "disabled": false,
-          "document": "沙盒信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>沙盒信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SandboxContent",
           "name": "Sandbox",
@@ -4672,7 +4711,7 @@
         },
         {
           "disabled": false,
-          "document": "网页搜索内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网页搜索内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebSearchContent",
           "name": "WebSearch",
@@ -4683,7 +4722,7 @@
         },
         {
           "disabled": false,
-          "document": "文件收集信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件收集信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileCollection",
           "name": "FileCollection",
@@ -4694,7 +4733,7 @@
         },
         {
           "disabled": false,
-          "document": "Widget信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Widget信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Widget",
           "name": "Widget",
@@ -4705,7 +4744,7 @@
         },
         {
           "disabled": false,
-          "document": "Widget动作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Widget动作信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WidgetAction",
           "name": "WidgetAction",
@@ -4713,6 +4752,39 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentTask",
+          "name": "Tasks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>问卷信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Questionnaire",
+          "name": "Questionnaire",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项卡模式</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OptionMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9633,18 +9705,18 @@
       "members": [
         {
           "disabled": true,
-          "document": "实时文档解析接口返回的 DocBizId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1982108829427482944",
-          "member": "uint64",
+          "document": "<p>实时文档解析接口返回的 DocBizId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
           "name": "DocBizId",
           "output_required": false,
           "required": false,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "讲师资料.txt",
           "member": "string",
           "name": "FileName",
@@ -9655,7 +9727,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "txt",
           "member": "string",
           "name": "FileType",
@@ -9666,18 +9738,18 @@
         },
         {
           "disabled": false,
-          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1024",
-          "member": "uint64",
+          "document": "<p>文件大小，单位为Byte</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
           "name": "FileSize",
           "output_required": false,
           "required": false,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "文件 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件 URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://sample.com",
           "member": "string",
           "name": "FileUrl",
@@ -9688,24 +9760,24 @@
         },
         {
           "disabled": false,
-          "document": "实时文档解析接口返回的 doc_id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "uint64",
+          "document": "<p>实时文档解析接口返回的 doc_id。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "77778856",
+          "member": "string",
           "name": "DocId",
           "output_required": false,
           "required": false,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "文件创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "uint64",
+          "document": "<p>文件创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1775528923977",
+          "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -18227,6 +18299,162 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "QuestionOption": {
+      "document": "问题可选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>选项的标签</p>",
+          "example": "确认并开始执行",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项的描述</p>",
+          "example": "按上述3个步骤执行：搜索新闻→整理内容→创建Word文档",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Questionnaire": {
+      "document": "问卷信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>问卷的标题</p>",
+          "example": "任务确认",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问卷的问题列表</p>",
+          "example": "无",
+          "member": "QuestionnaireQuestion",
+          "name": "Questions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问卷的答案列表</p>",
+          "example": "无",
+          "member": "QuestionnaireQuestionAnswer",
+          "name": "Answers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QuestionnaireQuestion": {
+      "document": "问卷的问题",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>问题的序号</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题的内容</p>",
+          "example": "请确认以下任务步骤是否符合您的需求",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题类型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否必选</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Required",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题的选项</p>",
+          "example": "无",
+          "member": "QuestionOption",
+          "name": "Options",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QuestionnaireQuestionAnswer": {
+      "document": "问卷问题的答案",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>问题</p>",
+          "example": "请确认以下任务步骤是否符合您的需求",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选中的答案标签</p>",
+          "example": "[\"确认并开始执行\"]",
+          "member": "string",
+          "name": "SelectedLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

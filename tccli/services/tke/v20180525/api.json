@@ -18783,13 +18783,24 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义资源的名称",
+          "document": "<p>自定义资源的名称</p>",
           "example": "tke.cloud.tencent.com/qgpu-core",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度器是否忽略该资源的默认处理</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoredByScheduler",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -18800,7 +18811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤阶段接口",
+          "document": "<p>过滤阶段接口</p>",
           "example": "scheduler/filter",
           "member": "string",
           "name": "FilterVerb",
@@ -18811,7 +18822,7 @@
         },
         {
           "disabled": false,
-          "document": "打分阶段扩展接口",
+          "document": "<p>打分阶段扩展接口</p>",
           "example": "scheduler/score",
           "member": "string",
           "name": "PrioritizeVerb",
@@ -18822,7 +18833,7 @@
         },
         {
           "disabled": false,
-          "document": "打分阶段节点分数的权重,取值范围限定(0,2】",
+          "document": "<p>打分阶段节点分数的权重,取值范围限定(0,2】</p>",
           "example": "1",
           "member": "int64",
           "name": "Weight",
@@ -18833,7 +18844,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展调度器(Extender)管理的扩展资源",
+          "document": "<p>扩展调度器(Extender)管理的扩展资源</p>",
           "example": "无",
           "member": "ExtenderManagedResource",
           "name": "ManagedResources",
@@ -18844,13 +18855,35 @@
         },
         {
           "disabled": false,
-          "document": "extender客户端配置",
+          "document": "<p>extender客户端配置</p>",
           "example": "无",
           "member": "ExtenderClientConfig",
           "name": "ExtenderClientConfig",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>抢占接口</p>",
+          "example": "preempt/housekeeper",
+          "member": "string",
+          "name": "PreemptVerb",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点缓存能力</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NodeCacheCapable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

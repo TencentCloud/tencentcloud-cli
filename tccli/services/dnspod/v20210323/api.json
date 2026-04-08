@@ -581,6 +581,13 @@
       "output": "ModifyRecordBatchResponse",
       "status": "online"
     },
+    "ModifyRecordBatchV3": {
+      "document": "批量修改记录",
+      "input": "ModifyRecordBatchV3Request",
+      "name": "批量修改记录V3",
+      "output": "ModifyRecordBatchV3Response",
+      "status": "online"
+    },
     "ModifyRecordFields": {
       "document": "修改记录可选字段",
       "input": "ModifyRecordFieldsRequest",
@@ -8934,6 +8941,43 @@
       ],
       "type": "object"
     },
+    "ModifyRecordBatchV3Request": {
+      "document": "ModifyRecordBatchV3请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的记录列表",
+          "example": "无",
+          "member": "ModifyRecordItem",
+          "name": "ModifyRecordList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordBatchV3Response": {
+      "document": "ModifyRecordBatchV3返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量任务ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "JobId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRecordFieldsRequest": {
       "document": "ModifyRecordFields请求参数结构体",
       "members": [
@@ -9061,6 +9105,102 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyRecordItem": {
+      "document": "批量修改记录入参，指定修改的记录ID和记录内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录 ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主机记录",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录类型",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录线路",
+          "example": "默认",
+          "member": "string",
+          "name": "RecordLine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录值",
+          "example": "119.29.29.29",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解析记录状态 1：开启 0：暂停",
+          "example": "1",
+          "member": "string",
+          "name": "Enabled",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "20",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "MX优先级",
+          "example": "5",
+          "member": "uint64",
+          "name": "MX",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TTL缓存时间",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyRecordRemarkRequest": {
       "document": "ModifyRecordRemark请求参数结构体",
