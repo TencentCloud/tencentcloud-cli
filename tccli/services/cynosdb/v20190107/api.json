@@ -12394,7 +12394,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cynosdbmysql-h30xf5d7",
           "member": "string",
           "name": "ClusterId",
@@ -12404,7 +12404,7 @@
         },
         {
           "disabled": false,
-          "document": "集群name",
+          "document": "<p>集群name</p>",
           "example": "backupT_202602021412",
           "member": "string",
           "name": "ClusterName",
@@ -12414,7 +12414,7 @@
         },
         {
           "disabled": false,
-          "document": "备份信息",
+          "document": "<p>备份信息</p>",
           "example": "无",
           "member": "BackupFileInfo",
           "name": "BackupFileInfo",
@@ -12842,7 +12842,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-0n3rg5on",
           "member": "string",
           "name": "ClusterId",
@@ -12852,7 +12852,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "backupT_202602011518",
           "member": "string",
           "name": "ClusterName",
@@ -12862,7 +12862,7 @@
         },
         {
           "disabled": false,
-          "document": "Binlog文件信息",
+          "document": "<p>Binlog文件信息</p>",
           "example": "无",
           "member": "BinlogItem",
           "name": "BinlogFileInfo",
@@ -17156,7 +17156,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-03e2xlyd",
           "member": "string",
           "name": "ClusterId",
@@ -17166,7 +17166,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "backupT_202602021239",
           "member": "string",
           "name": "ClusterName",
@@ -17176,7 +17176,7 @@
         },
         {
           "disabled": false,
-          "document": "RedoLog文件信息",
+          "document": "<p>RedoLog文件信息</p>",
           "example": "无",
           "member": "RedoLogItem",
           "name": "RedoFileInfo",

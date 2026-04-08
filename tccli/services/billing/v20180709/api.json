@@ -10635,7 +10635,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支付者uin",
+          "document": "<p>支付者uin</p>",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
@@ -10645,7 +10645,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称",
+          "document": "<p>产品名称</p>",
           "example": "移动推送",
           "member": "string",
           "name": "BusinessCodeName",
@@ -10655,7 +10655,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称",
+          "document": "<p>子产品名称</p>",
           "example": "移动推送基础服务",
           "member": "string",
           "name": "ProductCodeName",
@@ -10665,7 +10665,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式名称",
+          "document": "<p>计费模式名称</p>",
           "example": "包年包月",
           "member": "string",
           "name": "PayModeName",
@@ -10675,7 +10675,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称",
+          "document": "<p>项目名称</p>",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -10685,7 +10685,7 @@
         },
         {
           "disabled": false,
-          "document": "区域名称",
+          "document": "<p>区域名称</p>",
           "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
@@ -10695,7 +10695,7 @@
         },
         {
           "disabled": false,
-          "document": "地区名称",
+          "document": "<p>地区名称</p>",
           "example": "其他",
           "member": "string",
           "name": "ZoneName",
@@ -10705,7 +10705,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id",
+          "document": "<p>资源id</p>",
           "example": "tpns1150002173220210809400005346410791c7c8b9aff765f56aaa052c8f16",
           "member": "string",
           "name": "ResourceId",
@@ -10715,7 +10715,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称",
+          "document": "<p>资源名称</p>",
           "example": "未命名",
           "member": "string",
           "name": "ResourceName",
@@ -10725,7 +10725,7 @@
         },
         {
           "disabled": false,
-          "document": "类型名称",
+          "document": "<p>类型名称</p>",
           "example": "包年包月续费",
           "member": "string",
           "name": "ActionTypeName",
@@ -10735,7 +10735,7 @@
         },
         {
           "disabled": false,
-          "document": "订单id",
+          "document": "<p>订单id</p>",
           "example": "20211009400006732337101",
           "member": "string",
           "name": "OrderId",
@@ -10745,7 +10745,7 @@
         },
         {
           "disabled": false,
-          "document": "交易id",
+          "document": "<p>交易id</p>",
           "example": "20211009400006732337101",
           "member": "string",
           "name": "BillId",
@@ -10755,7 +10755,7 @@
         },
         {
           "disabled": false,
-          "document": "费用开始时间",
+          "document": "<p>费用开始时间</p>",
           "example": "2021-11-03 00:00:00",
           "member": "string",
           "name": "FeeBeginTime",
@@ -10765,7 +10765,7 @@
         },
         {
           "disabled": false,
-          "document": "费用结束时间",
+          "document": "<p>费用结束时间</p>",
           "example": "2021-11-03 23:59:59",
           "member": "string",
           "name": "FeeEndTime",
@@ -10775,7 +10775,7 @@
         },
         {
           "disabled": false,
-          "document": "组件明细",
+          "document": "<p>组件明细</p>",
           "example": "无",
           "member": "CostComponentSet",
           "name": "ComponentSet",
@@ -10785,7 +10785,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称代码",
+          "document": "<p>子产品名称代码</p>",
           "example": "sp_tpns_basic",
           "member": "string",
           "name": "ProductCode",
@@ -10795,12 +10795,42 @@
         },
         {
           "disabled": false,
-          "document": "标签信息\t",
+          "document": "<p>标签信息</p>",
           "example": "无",
           "member": "BillTagInfo",
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用者UIN：实际使用资源的账号 ID</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扣费时间：结算扣费时间</p>",
+          "example": "2026-03-16 08:16:24",
+          "member": "string",
+          "name": "PayTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

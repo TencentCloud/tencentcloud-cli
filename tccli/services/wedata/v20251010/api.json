@@ -3963,6 +3963,34 @@
     "serviceShortName": "wedata"
   },
   "objects": {
+    "AccessInfo": {
+      "document": "访问信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问类型，参考枚举：ComputeResourceAccessType（0-未指定, 1-引擎JDBC连接, 2-引擎ODBC连接）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问连接详情<br>/ 连接串</p>",
+          "example": "jdbc:dlc:dlc.tencentcloudapi.com?task_type=SparkSQLTask&database_name={DatabaseName}&datasource_connection_name=DataLakeCatalog&region=ap-guangzhou&data_engine_name=分析型-1&resource_group_name=default-rg-6bxwt80vzm",
+          "member": "string",
+          "name": "AccessConnectionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AccessPoliciesRequest": {
       "document": "AccessPolicies请求参数结构体",
       "members": [
@@ -9941,7 +9969,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>价格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "29.34",
           "member": "string",
           "name": "TotalPriceDiscount",
@@ -9958,7 +9986,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "资源类型",
+          "document": "<p>资源类型</p>",
           "example": "0",
           "member": "int64",
           "name": "ResourceTypes",
@@ -9967,7 +9995,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组购买地域",
+          "document": "<p>资源组购买地域</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
@@ -9976,7 +10004,7 @@
         },
         {
           "disabled": false,
-          "document": "规格大小",
+          "document": "<p>规格大小</p>",
           "example": "64",
           "member": "int64",
           "name": "Size",
@@ -9985,7 +10013,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式",
+          "document": "<p>付费模式</p>",
           "example": "postpay",
           "member": "string",
           "name": "BillingMode",
@@ -9994,12 +10022,57 @@
         },
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "<p>资源类型</p>",
           "example": "2",
           "member": "int64",
           "name": "ResourceType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 机器规格，如 GN10X.2XLARGE40</p>",
+          "example": "GN7.5XLARGE80",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 机器数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时长</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时长单位：m-月</p>",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费项标识，如 &quot;sv_dlc_gpu_gn10xp_10cu_1v100_32g&quot;，GPU 询价时必填</p>",
+          "example": "sv_dlc_gpu_gn7_20cu_1t4_16g",
+          "member": "string",
+          "name": "BillingItemLabel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10009,7 +10082,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "获取资源权限详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>获取资源权限详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CalculatePriceDetails",
           "name": "Data",
@@ -17226,7 +17299,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，目前仅支持 postpaid（按量计费）",
+          "document": "计费模式，目前支持 postpaid（按量计费）prepaid （预付费）",
           "example": "\"postpaid\"",
           "member": "string",
           "name": "BillType",
@@ -17244,12 +17317,30 @@
         },
         {
           "disabled": false,
-          "document": "资源创建方式",
+          "document": "资源创建方式\n\nenum CreateType {\n    CreateTypeNone = 0;\n    CreateTypeOnyCreate = 1; // 仅创建\n    CreateTypeCreateAndStart = 2; // 创建并启动\n}",
           "example": "1",
           "member": "int64",
           "name": "CreateType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费信息",
+          "example": "无",
+          "member": "PayInfo",
+          "name": "PayInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "引擎镜像版本，可选。对应 EngineImage.Id，如 \"Standard-S 1.1\"、\"Ai-Universal\"、\"Standard-S 1.1 native\"。不传默认使用最新版本。如果传入，需在配置的镜像列表中存在，否则报错",
+          "example": "Standard-S 1.1",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -32953,7 +33044,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源id",
+          "document": "<p>资源id</p>",
           "example": "res_001",
           "member": "string",
           "name": "ResourceId",
@@ -32962,7 +33053,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间id",
+          "document": "<p>工作空间id</p>",
           "example": "17625100163628872",
           "member": "string",
           "name": "WorkspaceId",
@@ -32977,7 +33068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算资源详情信息",
+          "document": "<p>计算资源详情信息</p>",
           "example": "无",
           "member": "GetComputeResourceRsp",
           "name": "Data",
@@ -32999,7 +33090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基本信息",
+          "document": "<p>基本信息</p>",
           "example": "无",
           "member": "ExecAdminComputeResourceBasicInfo",
           "name": "BasicInfo",
@@ -33010,7 +33101,7 @@
         },
         {
           "disabled": false,
-          "document": "计费类型",
+          "document": "<p>计费类型</p>",
           "example": "postpaid",
           "member": "string",
           "name": "BillType",
@@ -33021,7 +33112,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "testt t",
           "member": "string",
           "name": "Creator",
@@ -33032,7 +33123,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "“1234567890”",
           "member": "string",
           "name": "UpdateTime",
@@ -33043,7 +33134,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息",
+          "document": "<p>描述信息</p>",
           "example": "testttt",
           "member": "string",
           "name": "Description",
@@ -33054,7 +33145,7 @@
         },
         {
           "disabled": false,
-          "document": "资源信息",
+          "document": "<p>资源信息</p>",
           "example": "无",
           "member": "ExecAdminComputeResourceConfig",
           "name": "ResourceConfig",
@@ -33065,7 +33156,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎id",
+          "document": "<p>引擎id</p>",
           "example": "engine_id",
           "member": "string",
           "name": "EngineId",
@@ -33076,7 +33167,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎区域",
+          "document": "<p>引擎区域</p>",
           "example": "beijing",
           "member": "string",
           "name": "EngineRegion",
@@ -33087,13 +33178,57 @@
         },
         {
           "disabled": false,
-          "document": "权限",
+          "document": "<p>权限</p>",
           "example": "[\"read\"]",
           "member": "string",
           "name": "Capabilities",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p>",
+          "example": "1805291485220",
+          "member": "string",
+          "name": "ExpirationTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问信息列表</p>",
+          "example": "无",
+          "member": "AccessInfo",
+          "name": "AccessInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PayInfo</p>",
+          "example": "无",
+          "member": "PayInfo",
+          "name": "PayInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1773219720849",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -35187,12 +35322,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "6820251106013628053",
           "member": "string",
           "name": "JobId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定查询的子任务ID列表，非空时只返回指定子任务；当 ReturnAllSubJobs=true 时此字段忽略</p>",
+          "example": "[\"0f38ac8b-b723-48e7-b773-59ee84f6d1a9\"]",
+          "member": "string",
+          "name": "SubJobIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回全量子任务数据，true-返回所有子任务，false-不返回（默认false）；优先级高于 SubJobIds，为true时忽略 SubJobIds</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnAllSubJobs",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -35202,7 +35355,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据",
+          "document": "<p>返回数据</p>",
           "example": "无",
           "member": "GetJobExecutionInfoRsp",
           "name": "Data",
@@ -35224,7 +35377,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "6820260113181436097",
           "member": "string",
           "name": "JobId",
@@ -35235,7 +35388,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
+          "document": "<p>任务状态</p>",
           "example": "KILLED",
           "member": "string",
           "name": "JobStatus",
@@ -35246,7 +35399,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误信息",
+          "document": "<p>任务执行错误信息</p>",
           "example": "1134105",
           "member": "int64",
           "name": "JobErrCode",
@@ -35257,7 +35410,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误信息",
+          "document": "<p>任务执行错误信息</p>",
           "example": "type:business, code:111, msg:type:framework, code:111, msg:tcp client transport dial, cost: 1.711054ms, caused by dial tcp 30.188.180.60:25000: connect: connection refused",
           "member": "string",
           "name": "JobErrMsg",
@@ -35268,13 +35421,35 @@
         },
         {
           "disabled": false,
-          "document": "任务额外属性，比如git url，branch等信息",
+          "document": "<p>任务额外属性，比如git url，branch等信息</p>",
           "example": "{\"GitBranch\":\"http://test.mock/6820260108175402026.branch\",\"GitURL\":\"http://test.mock/6820260108175402026.url\"}",
           "member": "string",
           "name": "JobExtAttr",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务列表</p>",
+          "example": "无",
+          "member": "SubJobExecutionInfo",
+          "name": "SubJobs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行进度百分比（0-100）</p>",
+          "example": "100",
+          "member": "float",
+          "name": "TaskExecutionProgress",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -64306,6 +64481,45 @@
       ],
       "usage": "both"
     },
+    "PayInfo": {
+      "document": "付费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>购买/续费时长，包年包月必填，最少1，最长120</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时长单位：m-月（默认），y-年</p>",
+          "example": "1",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>：0-手动续费（默认） 1-自动续费 2-明确不续费</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PermissionCheckResult": {
       "document": "权限检查结果",
       "members": [
@@ -73848,6 +74062,122 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SubJobExecutionInfo": {
+      "document": "子任务执行信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子任务ID</p>",
+          "example": "0f38ac8b-b723-48e7-b773-59ee84f6d1a9",
+          "member": "string",
+          "name": "SubJobId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务执行内容</p>",
+          "example": "Generated from YAML templates",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>枚举参考common.exec_job.ExecJobStatus</p>",
+          "example": "ISSUED",
+          "member": "string",
+          "name": "JobStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务开始执行时间，单位秒</p>",
+          "example": "1766978563",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务结束执行时间，单位秒</p>",
+          "example": "1766978569",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务执行进度百分比（0-100）</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Percentage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务执行错误码</p>",
+          "example": "10001",
+          "member": "int64",
+          "name": "JobErrCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务执行错误信息</p>",
+          "example": "mock error: something went wrong",
+          "member": "string",
+          "name": "JobErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务透传字段，原样返回</p>",
+          "example": "{\"mock_key\": \"mock_value\"}",
+          "member": "string",
+          "name": "BizExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务扩展属性（JSON），包含 WebUI 地址等，与父任务 JobExtAttr 结构一致</p>",
+          "example": "{\"SparkUI\":\"http://21.215.197.47/history/spark-c2dd525ed9734d3e98576673629c4d29/none/none/jobs/\"}",
+          "member": "string",
+          "name": "JobExtAttr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
