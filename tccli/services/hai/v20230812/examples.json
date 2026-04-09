@@ -11,9 +11,9 @@
     "CreateInferServiceByTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferServiceByTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tpl-ydcs88qr\",\n    \"ServiceName\": \"hai-infer\",\n    \"Replicas\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"svc-bhbxouv0\",\n        \"RequestId\": \"3cb9720e-c96c-47fc-be47-6463197641c2\"\n    }\n}",
-        "title": "CreateInferServiceByTemplate"
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferServiceByTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tpl-dt2x59dd\",\n    \"ServiceName\": \"sisis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"svc-b9mhdkse\",\n        \"RequestId\": \"9779b007-504f-42ca-8fce-87548b843a9a\"\n    }\n}",
+        "title": "根据模板创建服务"
       }
     ],
     "CreateMuskPrompt": [

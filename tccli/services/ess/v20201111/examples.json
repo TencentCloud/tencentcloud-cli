@@ -1128,6 +1128,12 @@
     ],
     "CreateOrganizationInfoChangeUrl": [
       {
+        "document": "设置changeType为2，生成企业信息变更链接。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf************************pt7m\"\n    },\n    \"ChangeType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695780634,\n        \"RequestId\": \"f037****-****-****-****-********c036\",\n        \"Url\": \"https://essurl.cn/003D0UGNSJ \"\n    }\n}",
+        "title": "创建企业信息变更链接"
+      },
+      {
         "document": "设置changeType为1，生成超管变更链接。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf************************pt7m\"\n    },\n    \"ChangeType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695780491,\n        \"RequestId\": \"e35e****-****-****-****-********7876\",\n        \"Url\": \"https://essurl.cn/003D0UGNSJ \"\n    }\n}",
@@ -1140,16 +1146,16 @@
         "title": "创建链接-主代子操作"
       },
       {
-        "document": "设置changeType为2，生成企业信息变更链接。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf************************pt7m\"\n    },\n    \"ChangeType\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695780634,\n        \"RequestId\": \"f037****-****-****-****-********c036\",\n        \"Url\": \"https://essurl.cn/003D0UGNSJ \"\n    }\n}",
-        "title": "创建企业信息变更链接"
-      },
-      {
         "document": "设置changeType为3，接口返回错误提示。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf************************pt7m\"\n    },\n    \"ChangeType\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"不支持的变更类型:3,请确认后重新\"\n        },\n        \"RequestId\": \"42df****-****-****-****-********6d37\"\n    }\n}",
         "title": "错误示例-变更类型不合法"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UU**********wIpMfa0uw\"\n    },\n    \"ChangeType\": 1,\n    \"UnifiedSocialCreditCode\": \"913101*****Q3W\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1776253917,\n        \"Url\": \"https://test.essurl.cn/1c9BUBTlcT\",\n        \"RequestId\": \"4a332737-9376-438e-b845-274e9a11ad1d\"\n    }\n}",
+        "title": "生成他方企业信息变更链接"
       }
     ],
     "CreatePartnerAuthorizationLink": [

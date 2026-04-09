@@ -2905,12 +2905,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能分类模板 ID。",
+          "document": "<p>视频智能分类模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"class\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3003,12 +3013,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能封面模板 ID。",
+          "document": "<p>视频智能封面模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"cover\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3111,13 +3131,24 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能抠图模板 ID。",
+          "document": "<p>视频智能抠图模板 ID。</p>",
           "example": "34",
           "member": "uint64",
           "name": "Definition",
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"cutout\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3240,12 +3271,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能擦除模板 ID。",
+          "document": "<p>视频智能擦除模板 ID。</p>",
           "example": "293034",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"delogo\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3388,12 +3429,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能描述模板 ID。",
+          "document": "<p>视频智能描述模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"des\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3476,12 +3527,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频译制模板 ID。",
+          "document": "<p>视频译制模板 ID。</p>",
           "example": "32",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"dubb\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3594,12 +3655,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能按帧标签模板 ID。",
+          "document": "<p>视频智能按帧标签模板 ID。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"frame\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3692,12 +3763,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "片头片尾识别模板 ID。",
+          "document": "<p>片头片尾识别模板 ID。</p>",
           "example": "319919",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"seek\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3790,12 +3871,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能精彩片段模板 ID。",
+          "document": "<p>视频智能精彩片段模板 ID。</p>",
           "example": "26",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"hht\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3888,13 +3979,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能横转竖模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频智能横转竖模板 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "28",
           "member": "uint64",
           "name": "Definition",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"htv\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4024,12 +4125,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能成片模板 ID。",
+          "document": "<p>智能成片模板 ID。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"aianaly\":\"task\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4182,12 +4293,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "拆条任务模板 ID。",
+          "document": "<p>拆条任务模板 ID。</p>",
           "example": "27",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"segment\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4280,12 +4401,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能标签模板 ID。",
+          "document": "<p>视频智能标签模板 ID。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"tag\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4378,12 +4509,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频（音频）理解模板ID",
+          "document": "<p>视频（音频）理解模板ID</p>",
           "example": "33",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"compre\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4526,12 +4667,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频智能去重模板 ID",
+          "document": "<p>视频智能去重模板 ID</p>",
           "example": "28",
           "member": "uint64",
           "name": "Definition",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\"remake\":\"\"}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -35741,7 +35892,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "为true时表示视频无音频轨。",
+          "document": "<p>为true时表示视频无音频轨。</p>",
           "example": "true",
           "member": "bool",
           "name": "NoAudio",
@@ -35751,7 +35902,7 @@
         },
         {
           "disabled": false,
-          "document": "为true时表示视频无视频轨。",
+          "document": "<p>为true时表示视频无视频轨。</p>",
           "example": "true",
           "member": "bool",
           "name": "NoVideo",
@@ -35761,7 +35912,7 @@
         },
         {
           "disabled": false,
-          "document": "视频无参考质量评分，百分制。",
+          "document": "<p>视频无参考质量评分，百分制。</p>",
           "example": "95",
           "member": "int64",
           "name": "QualityEvaluationScore",
@@ -35771,7 +35922,7 @@
         },
         {
           "disabled": false,
-          "document": "视频无参考质量评分，MOS分数。",
+          "document": "<p>视频无参考质量评分，MOS分数。</p>",
           "example": "4.75",
           "member": "float",
           "name": "QualityEvaluationMeanOpinionScore",
@@ -35781,7 +35932,17 @@
         },
         {
           "disabled": false,
-          "document": "内容质检检出异常项。",
+          "document": "<p>视频美学评分，范围：[0,100]。</p>",
+          "example": "80",
+          "member": "int64",
+          "name": "AestheticEvaluationScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容质检检出异常项。</p>",
           "example": "无",
           "member": "QualityControlResult",
           "name": "QualityControlResultSet",
@@ -35791,7 +35952,7 @@
         },
         {
           "disabled": false,
-          "document": "格式诊断检出异常项。",
+          "document": "<p>格式诊断检出异常项。</p>",
           "example": "无",
           "member": "ContainerDiagnoseResultItem",
           "name": "ContainerDiagnoseResultSet",

@@ -99,8 +99,8 @@
     "StartSandboxInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Timeout\": \"10m\",\n    \"ClientToken\": \"instance-token-456\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"12345678123412341234123456789abc\",\n            \"ToolId\": \"sdt-ee4ywozw\",\n            \"ToolName\": \"my-browser-tool\",\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 600,\n            \"ExpiresAt\": \"2024-01-01T10:30:00Z\",\n            \"CreateTime\": \"2024-01-01T10:00:00Z\",\n            \"UpdateTime\": \"2024-01-01T10:00:00Z\"\n        },\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-m1v36fnp\",\n    \"Timeout\": \"10m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"CreateTime\": \"2026-04-09T15:56:22+08:00\",\n            \"ExpiresAt\": \"2026-04-09T16:06:22+08:00\",\n            \"InstanceId\": \"6k56rm47ciif3kzljg655rsyuauboyggnqqxv6l6\",\n            \"NetworkMode\": \"PUBLIC\",\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 600,\n            \"ToolId\": \"sdt-m1v36fnp\",\n            \"ToolName\": \"e2e-ops-test-8bdd5d61\",\n            \"UpdateTime\": \"2026-04-09T15:56:22+08:00\"\n        },\n        \"RequestId\": \"d8856bc9-f668-4837-aeaf-c2747bca46f3\"\n    }\n}",
         "title": "启动沙箱实例"
       }
     ],

@@ -128,6 +128,14 @@
         "title": "创建暴露数据库白名单规则"
       }
     ],
+    "CreateNatFwDnatRule": [
+      {
+        "document": "创建Nat防火墙Dnat规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"abc\",\n    \"DnatRules\": [\n        {\n            \"IpProtocol\": \"abc\",\n            \"PublicIpAddress\": \"abc\",\n            \"PublicPort\": 0,\n            \"PrivateIpAddress\": \"abc\",\n            \"PrivatePort\": 0,\n            \"Description\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建Nat防火墙Dnat规则"
+      }
+    ],
     "CreateNatFwInstance": [
       {
         "document": "新增模式示例",
@@ -202,6 +210,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlockIgnoreRuleNew\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"100.12.31.2\",\n            \"RuleType\": 2\n        }\n    ],\n    \"DeleteAll\": 0,\n    \"RuleType\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19df3039-eec2-4a8a-8a51-d552b9cf67f3\"\n    }\n}",
         "title": "删除示例"
+      }
+    ],
+    "DeleteNatFwDnatRule": [
+      {
+        "document": "删除Nat防火墙Dnat规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"abc\",\n    \"DnatRules\": [\n        {\n            \"IpProtocol\": \"abc\",\n            \"PublicIpAddress\": \"abc\",\n            \"PublicPort\": 0,\n            \"PrivateIpAddress\": \"abc\",\n            \"PrivatePort\": 0,\n            \"Description\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除Nat防火墙Dnat规则"
       }
     ],
     "DeleteNatFwInstance": [

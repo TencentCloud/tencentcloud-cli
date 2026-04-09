@@ -171,8 +171,8 @@
     "CreateOrganizationMember": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMember\n<公共请求参数>\n\n{\n    \"Remark\": \"create member\",\n    \"Name\": \"member_name\",\n    \"NodeId\": 1001,\n    \"AccountName\": \"member_name\",\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"PolicyType\": \"Finical\",\n    \"IdentityRoleID\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Uin\": 111111111111,\n        \"RequestId\": \"1a556fac-cd38-4732-86ef-6283d6abddd7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMember\n<公共请求参数>\n\n{\n    \"Name\": \"member_name\",\n    \"PolicyType\": \"Financial\",\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"NodeId\": 100000000001,\n    \"AccountName\": \"member_name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 111111111111,\n        \"RequestId\": \"baf86769-f4d5-47bd-8efc-3644add42458\"\n    }\n}",
         "title": "创建组织成员"
       }
     ],

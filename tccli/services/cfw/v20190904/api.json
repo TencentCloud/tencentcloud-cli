@@ -91,6 +91,13 @@
       "output": "CreateDatabaseWhiteListRulesResponse",
       "status": "online"
     },
+    "CreateNatFwDnatRule": {
+      "document": "创建Nat防火墙Dnat规则",
+      "input": "CreateNatFwDnatRuleRequest",
+      "name": "创建Nat防火墙Dnat规则",
+      "output": "CreateNatFwDnatRuleResponse",
+      "status": "online"
+    },
     "CreateNatFwInstance": {
       "document": "创建NAT防火墙实例（Region参数必填）",
       "input": "CreateNatFwInstanceRequest",
@@ -145,6 +152,13 @@
       "input": "DeleteBlockIgnoreRuleNewRequest",
       "name": "批量删除入侵防御封禁列表、放通列表规则（新）",
       "output": "DeleteBlockIgnoreRuleNewResponse",
+      "status": "online"
+    },
+    "DeleteNatFwDnatRule": {
+      "document": "删除Nat防火墙Dnat规则",
+      "input": "DeleteNatFwDnatRuleRequest",
+      "name": "删除Nat防火墙Dnat规则",
+      "output": "DeleteNatFwDnatRuleResponse",
       "status": "online"
     },
     "DeleteNatFwInstance": {
@@ -3240,6 +3254,51 @@
       ],
       "type": "object"
     },
+    "CreateNatFwDnatRuleRequest": {
+      "document": "CreateNatFwDnatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0：cfw新增模式，1：cfw接入模式。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例id，该字段必须传递。",
+          "example": "cfwnat-d2afc817",
+          "member": "string",
+          "name": "CfwInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "添加或删除操作的Dnat规则列表。",
+          "example": "无",
+          "member": "CfwNatDnatRule",
+          "name": "DnatRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatFwDnatRuleResponse": {
+      "document": "CreateNatFwDnatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNatFwInstanceRequest": {
       "document": "CreateNatFwInstance请求参数结构体",
       "members": [
@@ -4295,6 +4354,51 @@
     },
     "DeleteBlockIgnoreRuleNewResponse": {
       "document": "DeleteBlockIgnoreRuleNew返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatFwDnatRuleRequest": {
+      "document": "DeleteNatFwDnatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0：cfw新增模式，1：cfw接入模式。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例id，该字段必须传递。",
+          "example": "cfwnat-d2afc817",
+          "member": "string",
+          "name": "CfwInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "添加或删除操作的Dnat规则列表。",
+          "example": "无",
+          "member": "CfwNatDnatRule",
+          "name": "DnatRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatFwDnatRuleResponse": {
+      "document": "DeleteNatFwDnatRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -1,12 +1,12 @@
-**Example 1: 获取代金券相关信息**
+**Example 1: 正常调用**
 
-获取代金券相关信息
+
 
 Input: 
 
 ```
 tccli billing DescribeVoucherInfo --cli-unfold-argument  \
-    --Limit 10 \
+    --Limit 1 \
     --Offset 1
 ```
 
@@ -14,85 +14,43 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "9988deda-d6b4-4c74-9bbf-b3f0cd4f5dba",
-        "TotalBalance": 42000000000,
-        "TotalCount": 2,
+        "TotalBalance": 265645002000000,
+        "TotalCount": 1828,
+        "RequestId": "47f4df05-5c77-467b-8c83-6b9304e20321",
         "VoucherInfos": [
             {
-                "ApplicableProducts": {
-                    "GoodsName": "全产品通用",
-                    "PayMode": "postPay"
-                },
-                "Balance": 12000000000,
-                "BeginTime": "2023-01-10 14:42:17",
-                "EndTime": "2023-04-10 14:42:17",
+                "Status": "",
+                "PolicyRemark": "",
+                "EndTime": "0002-11-30",
+                "NominalValue": 1200000000,
+                "CreateTime": "2016-03-12 14:51:52",
+                "BeginTime": "0002-11-30",
+                "PayMode": "prePay",
+                "PayScene": "purchase,renew",
+                "VoucherId": "PPVIA653S3T7L07A4P",
                 "ExcludedProducts": [
                     {
-                        "GoodsName": "域名注册",
-                        "PayMode": "postPay"
+                        "PayMode": "*",
+                        "GoodsName": "轻量应用服务器"
                     },
                     {
-                        "GoodsName": "云市场",
-                        "PayMode": "postPay"
+                        "PayMode": "*",
+                        "GoodsName": "腾讯企点客服"
                     },
                     {
-                        "GoodsName": "云市场镜像",
-                        "PayMode": "postPay"
-                    },
-                    {
-                        "GoodsName": "培训服务training",
-                        "PayMode": "postPay"
-                    },
-                    {
-                        "GoodsName": "节省计划",
-                        "PayMode": "postPay"
+                        "PayMode": "*",
+                        "GoodsName": "腾讯企点营销云Tencent QiDian Marketing Cloud"
                     }
                 ],
-                "NominalValue": 30000000000,
-                "OwnerUin": "100026601318",
-                "PayMode": "postPay",
-                "PayScene": "settle account",
-                "Status": "unUsed",
-                "VoucherId": "OZRCGNAV5AB9H9ECMP1VVP"
-            },
-            {
+                "OwnerUin": "909619400",
+                "Balance": 1200000000,
                 "ApplicableProducts": {
-                    "GoodsName": "全产品通用",
-                    "PayMode": "postPay"
-                },
-                "Balance": 30000000000,
-                "BeginTime": "2023-02-07 16:40:45",
-                "EndTime": "2023-05-08 16:40:45",
-                "ExcludedProducts": [
-                    {
-                        "GoodsName": "域名注册",
-                        "PayMode": "postPay"
-                    },
-                    {
-                        "GoodsName": "云市场",
-                        "PayMode": "postPay"
-                    },
-                    {
-                        "GoodsName": "云市场镜像",
-                        "PayMode": "postPay"
-                    },
-                    {
-                        "GoodsName": "培训服务training",
-                        "PayMode": "postPay"
-                    },
-                    {
-                        "GoodsName": "节省计划",
-                        "PayMode": "postPay"
-                    }
-                ],
-                "NominalValue": 30000000000,
-                "OwnerUin": "100026601318",
-                "PayMode": "postPay",
-                "PayScene": "settle account",
-                "Status": "unUsed",
-                "VoucherId": "OZRCGNAV8D9BMI9KMG1FIQ"
+                    "PayMode": "prePay",
+                    "GoodsName": "云服务器CVM"
+                }
             }
-        ]
+        ],
+        "Unit": "micro"
     }
 }
 ```

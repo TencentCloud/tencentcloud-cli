@@ -2108,7 +2108,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
+          "document": "<p>成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>",
           "example": "member_name",
           "member": "string",
           "name": "Name",
@@ -2117,7 +2117,7 @@
         },
         {
           "disabled": false,
-          "document": "关系策略。取值：Financial",
+          "document": "<p>关系策略。取值：Financial</p>",
           "example": "Financial",
           "member": "string",
           "name": "PolicyType",
@@ -2126,7 +2126,7 @@
         },
         {
           "disabled": false,
-          "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须",
+          "document": "<p>成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "PermissionIds",
@@ -2135,7 +2135,7 @@
         },
         {
           "disabled": false,
-          "document": "成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取",
+          "document": "<p>成员所属部门的节点ID。可以通过<a href=\"https://cloud.tencent.com/document/product/850/82926\">DescribeOrganizationNodes</a>获取</p>",
           "example": "1001",
           "member": "int64",
           "name": "NodeId",
@@ -2144,7 +2144,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
+          "document": "<p>账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>",
           "example": "member_name",
           "member": "string",
           "name": "AccountName",
@@ -2153,7 +2153,7 @@
         },
         {
           "disabled": false,
-          "document": "备注。",
+          "document": "<p>备注。</p>",
           "example": "create member",
           "member": "string",
           "name": "Remark",
@@ -2162,7 +2162,7 @@
         },
         {
           "disabled": false,
-          "document": "成员创建记录ID。创建异常重试时需要",
+          "document": "<p>成员创建记录ID。创建异常重试时需要</p>",
           "example": "0",
           "member": "int64",
           "name": "RecordId",
@@ -2171,7 +2171,7 @@
         },
         {
           "disabled": false,
-          "document": "代付者Uin。成员代付费时需要",
+          "document": "<p>代付者Uin。成员代付费时需要</p>",
           "example": "100000000001",
           "member": "string",
           "name": "PayUin",
@@ -2180,7 +2180,7 @@
         },
         {
           "disabled": false,
-          "document": "成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持",
+          "document": "<p>成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "IdentityRoleID",
@@ -2189,7 +2189,7 @@
         },
         {
           "disabled": false,
-          "document": "认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取",
+          "document": "<p>认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取</p>",
           "example": "0",
           "member": "int64",
           "name": "AuthRelationId",
@@ -2198,7 +2198,7 @@
         },
         {
           "disabled": false,
-          "document": "成员标签列表。最大10个",
+          "document": "<p>成员标签列表。最大10个</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -2213,7 +2213,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员Uin。",
+          "document": "<p>成员Uin。</p>",
           "example": "111111111111",
           "member": "int64",
           "name": "Uin",

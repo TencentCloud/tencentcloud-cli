@@ -6,13 +6,11 @@ Input:
 
 ```
 tccli organization CreateOrganizationMember --cli-unfold-argument  \
-    --Remark create member \
     --Name member_name \
-    --NodeId 1001 \
-    --AccountName member_name \
+    --PolicyType Financial \
     --PermissionIds 1 2 \
-    --PolicyType Finical \
-    --IdentityRoleID 1
+    --NodeId 100000000001 \
+    --AccountName member_name
 ```
 
 Output: 
@@ -20,7 +18,7 @@ Output:
 {
     "Response": {
         "Uin": 111111111111,
-        "RequestId": "1a556fac-cd38-4732-86ef-6283d6abddd7"
+        "RequestId": "baf86769-f4d5-47bd-8efc-3644add42458"
     }
 }
 ```

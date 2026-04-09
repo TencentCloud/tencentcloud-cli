@@ -975,7 +975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "保护策略ID列表",
+          "document": "<p>保护策略ID列表</p>",
           "example": "[\"policy-aaaa\",\"policy-aaaa\"]",
           "member": "string",
           "name": "TaskPolicyIdList",
@@ -986,7 +986,7 @@
         },
         {
           "disabled": false,
-          "document": "保护策略状态",
+          "document": "<p>保护策略状态</p><p>枚举值：</p><ul><li>已触发： 表示已触发护栏策略</li><li>未触发： 表示未触发护栏策略</li><li>已恢复： 表示护栏策略已恢复</li></ul>",
           "example": "已触发",
           "member": "string",
           "name": "TaskPolicyStatus",
@@ -997,7 +997,7 @@
         },
         {
           "disabled": false,
-          "document": "策略规则",
+          "document": "<p>策略规则</p>",
           "example": "or",
           "member": "string",
           "name": "TaskPolicyRule",
@@ -1008,7 +1008,7 @@
         },
         {
           "disabled": false,
-          "document": "护栏策略生效处理策略 1:顺序执行，2:暂停",
+          "document": "<p>护栏策略生效处理策略 1:顺序执行，2:暂停</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskPolicyDealType",
@@ -1670,6 +1670,15 @@
           "name": "Record",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "IncludeRecordInReport",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1868,7 +1877,7 @@
         {
           "disabled": false,
           "document": "字段类型 0:str 1:list",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "output_required": false,
@@ -2712,7 +2721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务分组动作ID",
+          "document": "<p>任务分组动作ID</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskGroupActionId",
@@ -2723,7 +2732,7 @@
         },
         {
           "disabled": false,
-          "document": "任务分组动作实例列表",
+          "document": "<p>任务分组动作实例列表</p>",
           "example": "无",
           "member": "TaskGroupInstance",
           "name": "TaskGroupInstances",
@@ -2734,7 +2743,7 @@
         },
         {
           "disabled": false,
-          "document": "动作ID",
+          "document": "<p>动作ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ActionId",
@@ -2745,7 +2754,7 @@
         },
         {
           "disabled": false,
-          "document": "分组动作顺序",
+          "document": "<p>分组动作顺序</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskGroupActionOrder",
@@ -2756,7 +2765,7 @@
         },
         {
           "disabled": false,
-          "document": "分组动作通用配置",
+          "document": "<p>分组动作通用配置</p>",
           "example": "{\"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
           "member": "string",
           "name": "TaskGroupActionGeneralConfiguration",
@@ -2767,7 +2776,7 @@
         },
         {
           "disabled": false,
-          "document": "分组动作自定义配置",
+          "document": "<p>分组动作自定义配置</p>",
           "example": "{\"Weight\": 1, \"Methods\": 0, \"InjectMod\": \"all\"}",
           "member": "string",
           "name": "TaskGroupActionCustomConfiguration",
@@ -2778,8 +2787,8 @@
         },
         {
           "disabled": false,
-          "document": "分组动作状态",
-          "example": "1",
+          "document": "<p>分组动作状态</p><p>枚举值：</p><ul><li>2001： 未开始</li><li>2002： 待执行</li><li>2003： 执行中</li><li>2004： 执行结束</li></ul>",
+          "example": "2001",
           "member": "int64",
           "name": "TaskGroupActionStatus",
           "output_required": true,
@@ -2789,7 +2798,7 @@
         },
         {
           "disabled": false,
-          "document": "动作分组创建时间",
+          "document": "<p>动作分组创建时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupActionCreateTime",
@@ -2800,7 +2809,7 @@
         },
         {
           "disabled": false,
-          "document": "动作分组更新时间",
+          "document": "<p>动作分组更新时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupActionUpdateTime",
@@ -2811,7 +2820,7 @@
         },
         {
           "disabled": false,
-          "document": "动作名称",
+          "document": "<p>动作名称</p>",
           "example": "关机",
           "member": "string",
           "name": "ActionTitle",
@@ -2822,7 +2831,7 @@
         },
         {
           "disabled": false,
-          "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过",
+          "document": "<p>状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过</p>",
           "example": "0",
           "member": "int64",
           "name": "TaskGroupActionStatusType",
@@ -2833,7 +2842,7 @@
         },
         {
           "disabled": false,
-          "document": "RandomId",
+          "document": "<p>RandomId</p>",
           "example": "207538",
           "member": "int64",
           "name": "TaskGroupActionRandomId",
@@ -2844,7 +2853,7 @@
         },
         {
           "disabled": false,
-          "document": "RecoverId",
+          "document": "<p>RecoverId</p>",
           "example": "204392",
           "member": "int64",
           "name": "TaskGroupActionRecoverId",
@@ -2855,7 +2864,7 @@
         },
         {
           "disabled": false,
-          "document": "ExecuteId",
+          "document": "<p>ExecuteId</p>",
           "example": "206754",
           "member": "int64",
           "name": "TaskGroupActionExecuteId",
@@ -2866,7 +2875,7 @@
         },
         {
           "disabled": false,
-          "document": "调用api类型，0:tat, 1:云api",
+          "document": "<p>调用api类型，0:tat, 1:云api</p>",
           "example": "0",
           "member": "int64",
           "name": "ActionApiType",
@@ -2877,7 +2886,7 @@
         },
         {
           "disabled": false,
-          "document": "1:故障，2:恢复",
+          "document": "<p>1:故障，2:恢复</p>",
           "example": "1",
           "member": "int64",
           "name": "ActionAttribute",
@@ -2888,7 +2897,7 @@
         },
         {
           "disabled": false,
-          "document": "动作类型：平台、自定义",
+          "document": "<p>动作类型：平台、自定义</p>",
           "example": "平台",
           "member": "string",
           "name": "ActionType",
@@ -2899,7 +2908,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可重试",
+          "document": "<p>是否可重试</p>",
           "example": "true",
           "member": "bool",
           "name": "IsExecuteRedo",
@@ -2910,7 +2919,7 @@
         },
         {
           "disabled": false,
-          "document": "动作风险级别",
+          "document": "<p>动作风险级别</p>",
           "example": "高风险",
           "member": "string",
           "name": "ActionRisk",
@@ -2921,7 +2930,7 @@
         },
         {
           "disabled": false,
-          "document": "动作运行时间",
+          "document": "<p>动作运行时间</p><p>单位：秒</p>",
           "example": "10",
           "member": "int64",
           "name": "TaskGroupActionExecuteTime",
@@ -2932,7 +2941,7 @@
         },
         {
           "disabled": false,
-          "document": "动作开始执行时间",
+          "document": "<p>动作开始执行时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupActionStartTime",
@@ -3066,7 +3075,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstanceId",
@@ -3077,7 +3086,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins_d1fr3",
           "member": "string",
           "name": "TaskGroupInstanceObjectId",
@@ -3088,7 +3097,7 @@
         },
         {
           "disabled": false,
-          "document": "实例动作执行状态",
+          "document": "<p>实例动作执行状态</p><p>枚举值：</p><ul><li>3001： 未开始</li><li>3002： 执行中</li><li>3003： 执行结束</li><li>3004： 准备中</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstanceStatus",
@@ -3099,7 +3108,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间",
+          "document": "<p>实例创建时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceCreateTime",
@@ -3110,7 +3119,7 @@
         },
         {
           "disabled": false,
-          "document": "实例更新时间",
+          "document": "<p>实例更新时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceUpdateTime",
@@ -3121,7 +3130,7 @@
         },
         {
           "disabled": false,
-          "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过",
+          "document": "<p>状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstanceStatusType",
@@ -3132,7 +3141,7 @@
         },
         {
           "disabled": false,
-          "document": "执行开始时间",
+          "document": "<p>执行开始时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceStartTime",
@@ -3143,7 +3152,7 @@
         },
         {
           "disabled": false,
-          "document": "执行结束时间",
+          "document": "<p>执行结束时间</p>",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceEndTime",
@@ -3154,7 +3163,7 @@
         },
         {
           "disabled": true,
-          "document": "实例动作执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例动作执行日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"2024-01-10 14:01:00 执行完成\"",
           "member": "string",
           "name": "TaskGroupInstanceExecuteLog",
@@ -3165,7 +3174,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否可重试",
+          "document": "<p>实例是否可重试</p>",
           "example": "true",
           "member": "bool",
           "name": "TaskGroupInstanceIsRedo",
@@ -3176,7 +3185,7 @@
         },
         {
           "disabled": false,
-          "document": "动作实例执行时间",
+          "document": "<p>动作实例执行时间</p><p>单位：秒</p>",
           "example": "10",
           "member": "int64",
           "name": "TaskGroupInstanceExecuteTime",
@@ -3193,7 +3202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例选取模式",
+          "document": "<p>实例选取模式</p><p>枚举值：</p><ul><li>1： 全部注入</li><li>2： 随机选取指定比例注入</li><li>3： 随机选取指定数量注入</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstancesExecuteMode",
@@ -3204,7 +3213,7 @@
         },
         {
           "disabled": false,
-          "document": "按比例选取模式下选取比例",
+          "document": "<p>按比例选取模式下选取比例</p>",
           "example": "100",
           "member": "int64",
           "name": "TaskGroupInstancesExecutePercent",
@@ -3215,7 +3224,7 @@
         },
         {
           "disabled": false,
-          "document": "按数量选取模式下选取数量",
+          "document": "<p>按数量选取模式下选取数量</p>",
           "example": "10",
           "member": "int64",
           "name": "TaskGroupInstancesExecuteNum",
@@ -3615,7 +3624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标标签ID",
+          "document": "<p>目标标签ID</p>",
           "example": "1",
           "member": "int64",
           "name": "TargetId",
@@ -3626,7 +3635,7 @@
         },
         {
           "disabled": false,
-          "document": "目标描述",
+          "document": "<p>目标描述</p>",
           "example": "迁移上云",
           "member": "string",
           "name": "TargetDesc",
@@ -3637,7 +3646,7 @@
         },
         {
           "disabled": false,
-          "document": "1:演练场景\n2:演练目标",
+          "document": "<p>1:演练场景<br>2:演练目标</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -3648,7 +3657,7 @@
         },
         {
           "disabled": false,
-          "document": "1:平台 2:用户个人",
+          "document": "<p>1:平台 2:用户个人</p>",
           "example": "1",
           "member": "int64",
           "name": "Source",
@@ -3659,7 +3668,7 @@
         },
         {
           "disabled": false,
-          "document": "目标标签是否已被删除",
+          "document": "<p>目标标签是否已被删除</p><p>枚举值：</p><ul><li>0： 未删除</li><li>1： 已删除</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "TargetStatus",

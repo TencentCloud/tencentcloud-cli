@@ -1591,7 +1591,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联产品的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联产品的实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "prom-xxxxxx",
           "member": "string",
           "name": "PeerId",
@@ -1601,7 +1601,7 @@
         },
         {
           "disabled": false,
-          "document": "关联关系状态：1（启用）、2（不启用）、3（已失效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联关系状态：1（启用）、2（不启用）、3（已失效）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1611,10 +1611,20 @@
         },
         {
           "disabled": false,
-          "document": "CKafka消息主题",
+          "document": "<p>CKafka消息主题</p>",
           "example": "\"test-topic\"",
           "member": "string",
           "name": "Topic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ckafka消费主题</p><p>用于Kafka指标投递</p>",
+          "example": "\"apm-metric\"",
+          "member": "string",
+          "name": "MetricTopic",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5761,7 +5771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联的产品名，当前只支持Prometheus、CKafka",
+          "document": "<p>关联的产品名，当前只支持Prometheus、CKafka</p>",
           "example": "Prometheus",
           "member": "string",
           "name": "ProductName",
@@ -5770,7 +5780,7 @@
         },
         {
           "disabled": false,
-          "document": "关联关系的状态：// 关联关系状态：1（启用）、2（不启用）",
+          "document": "<p>关联关系的状态：// 关联关系状态：1（启用）、2（不启用）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -5779,7 +5789,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统ID",
+          "document": "<p>业务系统ID</p>",
           "example": "apm-059oXBfTL",
           "member": "string",
           "name": "InstanceId",
@@ -5788,7 +5798,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的产品实例ID",
+          "document": "<p>关联的产品实例ID</p>",
           "example": "prom-xxxxxx",
           "member": "string",
           "name": "PeerId",
@@ -5797,10 +5807,19 @@
         },
         {
           "disabled": false,
-          "document": "CKafka消息主题",
+          "document": "<p>CKafka消息主题</p>",
           "example": "apm-trace",
           "member": "string",
           "name": "Topic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ckafka消息主题</p>",
+          "example": "apm-metric",
+          "member": "string",
+          "name": "MetricTopic",
           "required": false,
           "type": "string"
         }

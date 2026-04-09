@@ -615,7 +615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ID 标识",
+          "document": "<p>ID 标识</p>",
           "example": "870",
           "member": "string",
           "name": "ID",
@@ -625,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "agent 名称",
+          "document": "<p>agent 名称</p>",
           "example": "OpenClaw",
           "member": "string",
           "name": "AgentName",
@@ -635,7 +635,7 @@
         },
         {
           "disabled": false,
-          "document": "agent 使用模型名称",
+          "document": "<p>agent 使用模型名称</p>",
           "example": "[\"hunyuan-turbos-latest\"]",
           "member": "string",
           "name": "AgentModel",
@@ -645,8 +645,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "ins-eu96gt2i",
+          "document": "<p>实例 ID</p>",
+          "example": "ins-eu*****i",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,
@@ -655,7 +655,17 @@
         },
         {
           "disabled": false,
-          "document": "metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA",
+          "document": "<p>实例名称</p>",
+          "example": "VM-32-9-ubuntu",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA</p>",
           "example": "[\"USER_DATA\"]",
           "member": "string",
           "name": "MetadataRiskList",
@@ -665,7 +675,7 @@
         },
         {
           "disabled": false,
-          "document": "首次检出时间",
+          "document": "<p>首次检出时间</p>",
           "example": "2026-03-16T06:17:43Z",
           "member": "datetime_iso",
           "name": "IdentityTimeFirst",
@@ -675,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "最近检出时间",
+          "document": "<p>最近检出时间</p>",
           "example": "2026-03-16T08:14:29Z",
           "member": "datetime_iso",
           "name": "IdentityTimeLast",
@@ -685,7 +695,7 @@
         },
         {
           "disabled": false,
-          "document": "检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出",
+          "document": "<p>检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出</p>",
           "example": "ASSET",
           "member": "string",
           "name": "IdentityMethod",
@@ -695,7 +705,7 @@
         },
         {
           "disabled": false,
-          "document": "暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；\n3. UNKNOWN;",
+          "document": "<p>暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；</p><ol start=\"3\"><li>UNKNOWN;</li></ol>",
           "example": "UNKNOWN",
           "member": "string",
           "name": "ExposureStatus",
@@ -705,8 +715,8 @@
         },
         {
           "disabled": false,
-          "document": "metadata 有风险时对应路径",
-          "example": "http://metadata.tencentyun.com/latest/meta-data/cam/security-credentials",
+          "document": "<p>metadata 有风险时对应路径</p>",
+          "example": "http://me**************************************************************s",
           "member": "string",
           "name": "MetadataRiskURL",
           "output_required": false,
@@ -715,7 +725,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "无",
           "member": "SkillState",
           "name": "SkillState",

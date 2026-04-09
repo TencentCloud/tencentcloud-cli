@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli ags StartSandboxInstance --cli-unfold-argument  \
-    --ToolId sdt-ee4ywozw \
-    --Timeout 10m \
-    --ClientToken instance-token-456
+    --ToolId sdt-m1v36fnp \
+    --Timeout 10m
 ```
 
 Output: 
@@ -16,16 +15,17 @@ Output:
 {
     "Response": {
         "Instance": {
-            "InstanceId": "12345678123412341234123456789abc",
-            "ToolId": "sdt-ee4ywozw",
-            "ToolName": "my-browser-tool",
+            "CreateTime": "2026-04-09T15:56:22+08:00",
+            "ExpiresAt": "2026-04-09T16:06:22+08:00",
+            "InstanceId": "6k56rm47ciif3kzljg655rsyuauboyggnqqxv6l6",
+            "NetworkMode": "PUBLIC",
             "Status": "RUNNING",
             "TimeoutSeconds": 600,
-            "ExpiresAt": "2024-01-01T10:30:00Z",
-            "CreateTime": "2024-01-01T10:00:00Z",
-            "UpdateTime": "2024-01-01T10:00:00Z"
+            "ToolId": "sdt-m1v36fnp",
+            "ToolName": "e2e-ops-test-8bdd5d61",
+            "UpdateTime": "2026-04-09T15:56:22+08:00"
         },
-        "RequestId": "12345678123412341234123456789012"
+        "RequestId": "d8856bc9-f668-4837-aeaf-c2747bca46f3"
     }
 }
 ```

@@ -471,7 +471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像相关信息",
+          "document": "<p>镜像相关信息</p>",
           "example": "无",
           "member": "ImageInfo",
           "name": "Image",
@@ -482,7 +482,7 @@
         },
         {
           "disabled": false,
-          "document": "服务监听端口",
+          "document": "<p>服务监听端口</p>",
           "example": "30000",
           "member": "string",
           "name": "Port",
@@ -493,7 +493,7 @@
         },
         {
           "disabled": false,
-          "document": "启动命令",
+          "document": "<p>启动命令</p>",
           "example": "[\"echo \\\"Hello, World!\\\"\"]",
           "member": "string",
           "name": "Scripts",
@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量列表",
+          "document": "<p>环境变量列表</p>",
           "example": "无",
           "member": "EnvParam",
           "name": "Envs",
@@ -515,13 +515,24 @@
         },
         {
           "disabled": false,
-          "document": "存储挂载配置",
+          "document": "<p>存储挂载配置</p>",
           "example": "无",
           "member": "StorageInfo",
           "name": "Storages",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探针信息</p>",
+          "example": "无",
+          "member": "ProbeInfo",
+          "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -587,7 +598,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版ID",
+          "document": "<p>模版ID</p>",
           "example": "tpl-gxbn79mi",
           "member": "string",
           "name": "TemplateId",
@@ -596,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "Qwen3-235B-A22B",
           "member": "string",
           "name": "ServiceName",
@@ -605,7 +616,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数",
+          "document": "<p>副本数</p>",
           "example": "1",
           "member": "int64",
           "name": "Replicas",
@@ -614,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式，POSTPAID_BY_HOUR按量后付费",
+          "document": "<p>付费方式，POSTPAID_BY_HOUR按量后付费</p>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ServiceChargeType",
@@ -623,7 +634,7 @@
         },
         {
           "disabled": false,
-          "document": "描述了服务的超参数配置",
+          "document": "<p>描述了服务的超参数配置</p>",
           "example": "无",
           "member": "HyperParam",
           "name": "HyperParam",
@@ -632,7 +643,7 @@
         },
         {
           "disabled": false,
-          "document": "网络设置",
+          "document": "<p>网络设置</p>",
           "example": "无",
           "member": "NetworkSetting",
           "name": "NetworkSetting",
@@ -647,7 +658,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "svc-rwyu5sv2",
           "member": "string",
           "name": "ServiceId",
@@ -1558,6 +1569,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HttpConfig": {
+      "document": "http配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定健康检查的URL路径</p>",
+          "example": "/health",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定健康检查的端口</p>",
+          "example": "30000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2488,6 +2527,117 @@
         }
       ],
       "usage": "out"
+    },
+    "ProbeConfig": {
+      "document": "探针配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>HTTP GET请求进行健康检查</p>",
+          "example": "无",
+          "member": "HttpConfig",
+          "name": "HttpGet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器启动后，等待多少秒开始第一次探测</p>",
+          "example": "60",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每次执行探测的间隔时间（秒）</p>",
+          "example": "35",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每次探测等待响应的超时时间（秒）</p>",
+          "example": "35",
+          "member": "int64",
+          "name": "TimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败后，最小连续成功次数才被认为成功</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败后，Kubernetes的重试次数</p>",
+          "example": "400",
+          "member": "int64",
+          "name": "FailureThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProbeInfo": {
+      "document": "探针信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存活探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "LivenessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>就绪探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "ReadinessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "StartupProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RegionInfo": {
       "document": "地域列表",

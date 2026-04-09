@@ -1,4 +1,4 @@
-**Example 1: CreateInferServiceByTemplate**
+**Example 1: 根据模板创建服务**
 
 
 
@@ -6,17 +6,16 @@ Input:
 
 ```
 tccli hai CreateInferServiceByTemplate --cli-unfold-argument  \
-    --TemplateId tpl-ydcs88qr \
-    --ServiceName hai-infer \
-    --Replicas 1
+    --TemplateId tpl-dt2x59dd \
+    --ServiceName sisis
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ServiceId": "svc-bhbxouv0",
-        "RequestId": "3cb9720e-c96c-47fc-be47-6463197641c2"
+        "ServiceId": "svc-b9mhdkse",
+        "RequestId": "9779b007-504f-42ca-8fce-87548b843a9a"
     }
 }
 ```
