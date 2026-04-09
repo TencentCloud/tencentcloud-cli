@@ -336,6 +336,13 @@
       "output": "CreateCosTempCredentialResponse",
       "status": "online"
     },
+    "CreateCustomKnowledge": {
+      "document": "通过知识库名称定位内置知识库，写入/更新一条知识条目。适用于指标知识库(builtin_indicator)、名词知识库(builtin_term) 等，以 KnowledgeId 为幂等 key，重复写入会覆盖",
+      "input": "CreateCustomKnowledgeRequest",
+      "name": "写入自定义知识",
+      "output": "CreateCustomKnowledgeResponse",
+      "status": "online"
+    },
     "CreateExperiment": {
       "document": "创建模型实验",
       "input": "CreateExperimentRequest",
@@ -390,6 +397,13 @@
       "input": "CreateIntegrationTaskExecutionRequest",
       "name": "运行离线集成调试任务",
       "output": "CreateIntegrationTaskExecutionResponse",
+      "status": "online"
+    },
+    "CreateKnowledgeBase": {
+      "document": "创建一个新的知识库，同时在 ACL 注册资源，创建者默认 MANAGE 权限",
+      "input": "CreateKnowledgeBaseRequest",
+      "name": "创建知识库",
+      "output": "CreateKnowledgeBaseResponse",
       "status": "online"
     },
     "CreateLabelValues": {
@@ -497,6 +511,13 @@
       "output": "CreateSchemaResponse",
       "status": "online"
     },
+    "CreateSemanticFromYaml": {
+      "document": "通过 YAML 创建数据语义（面向 AI Agent API 场景）。通过提交 YAML 格式的配置来创建 model、dimension、metric，三者独立处理，YAML 中可以只包含其中任意一种或多种。前置条件：需要传入 WorkspaceId 和合法的 YAML 内容。错误码：YAML 格式错误返回解析失败信息，部分配置项失败时返回详细的逐项结果。",
+      "input": "CreateSemanticFromYamlRequest",
+      "name": "通过YAML创建数据语义",
+      "output": "CreateSemanticFromYamlResponse",
+      "status": "online"
+    },
     "CreateStreamTask": {
       "document": "创建集成任务",
       "input": "CreateStreamTaskRequest",
@@ -516,6 +537,13 @@
       "input": "CreateTableFromFilesAsyncRequest",
       "name": "从文件创建表（异步）",
       "output": "CreateTableFromFilesAsyncResponse",
+      "status": "online"
+    },
+    "CreateTableKnowledge": {
+      "document": "将表的元数据（catalog/schema/table/columns）写入 builtin_table 知识库，以 {Catalog}.{Schema}.{Table} 为幂等 key，重复写入会覆盖",
+      "input": "CreateTableKnowledgeRequest",
+      "name": "写入表元数据",
+      "output": "CreateTableKnowledgeResponse",
       "status": "online"
     },
     "CreateTrainingTasksTag": {
@@ -971,6 +999,13 @@
       "input": "DescribeJobExecutionResultRequest",
       "name": "获取子记录的结果",
       "output": "DescribeJobExecutionResultResponse",
+      "status": "online"
+    },
+    "DisableSemanticFromYaml": {
+      "document": "通过 YAML 下线数据语义（面向 AI Agent API 场景）。通过 YAML 中的配置名称自动查找已有配置并执行下线（将状态设为 OFFLINE）。前置条件：需要传入 WorkspaceId 和合法的 YAML 内容，YAML 中的配置名称必须已存在。错误码：配置项不存在时返回未找到错误，部分配置项失败时返回详细的逐项结果。",
+      "input": "DisableSemanticFromYamlRequest",
+      "name": "通过YAML下线数据语义",
+      "output": "DisableSemanticFromYamlResponse",
       "status": "online"
     },
     "DownloadAppCode": {
@@ -3155,6 +3190,13 @@
       "input": "SearchCatalogTreeRequest",
       "name": "搜索Catalog目录树",
       "output": "SearchCatalogTreeResponse",
+      "status": "online"
+    },
+    "SearchKnowledgeDocument": {
+      "document": "统一的知识检索接口，BM25 + 向量混合 + Rerank，通过管理面转发到数据面",
+      "input": "SearchKnowledgeDocumentRequest",
+      "name": "检索知识",
+      "output": "SearchKnowledgeDocumentResponse",
       "status": "online"
     },
     "SearchModels": {
@@ -17520,6 +17562,96 @@
       ],
       "type": "object"
     },
+    "CreateCustomKnowledgeRequest": {
+      "document": "CreateCustomKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库名称，如 builtin_indicator / builtin_term</p>",
+          "example": "qizhi_test",
+          "member": "string",
+          "name": "KnowledgeBaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识条目唯一标识（业务方自行管理的 ID）</p>",
+          "example": "2",
+          "member": "string",
+          "name": "KnowledgeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON 字符串，包含知识库字段数据，key 与字段定义一一对应。指标示例：{&quot;key&quot;:&quot;monthly_active_users&quot;,&quot;description&quot;:&quot;月活跃用户数&quot;,&quot;business_owner_id&quot;:&quot;user123&quot;,&quot;develop_owner_id&quot;:&quot;dev456&quot;,&quot;semantic_model_id&quot;:&quot;model789&quot;,&quot;project_id&quot;:&quot;proj001&quot;,&quot;metadata&quot;:&quot;{...}&quot;}。名词示例：{&quot;key&quot;:&quot;DAU&quot;,&quot;description&quot;:&quot;Daily Active Users，日活跃用户数&quot;,&quot;metadata&quot;:&quot;{...}&quot;}</p>",
+          "example": "{\"key\": \"monthly_active_users\"}",
+          "member": "string",
+          "name": "JsonData",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomKnowledgeResponse": {
+      "document": "CreateCustomKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>写入/更新自定义知识响应</p>",
+          "example": "无",
+          "member": "CreateCustomKnowledgeRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomKnowledgeRsp": {
+      "document": "写入/更新自定义知识响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0表示成功</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "写入知识失败: type:framework, code:102, msg:tcp client transport ReadFrame, caused by read tcp 11.141.75.90:60494->21.215.197.116:8081: i/o timeout",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateExperimentData": {
       "document": "创建实验返回数据",
       "members": [
@@ -18128,6 +18260,124 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateKnowledgeBaseRequest": {
+      "document": "CreateKnowledgeBase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>索引字段定义，至少包含 1 个字段，max 50。创建后不可变更</p>",
+          "example": "无",
+          "member": "KnowledgeFieldDefinition",
+          "name": "Fields",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库名称，max 256</p>",
+          "example": "qizhi1231111111111111",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID，max 64</p>",
+          "example": "1",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库描述，max 1024</p>",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Embedding 向量维度，范围 1~4096，默认 2048</p>",
+          "example": "2048",
+          "member": "int64",
+          "name": "EmbeddingDim",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库标签列表，用于分类和筛选，max 20，每个标签 max 64 字符</p>",
+          "example": "[\"test1\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKnowledgeBaseResponse": {
+      "document": "CreateKnowledgeBase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建知识库响应</p>",
+          "example": "无",
+          "member": "CreateKnowledgeBaseRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKnowledgeBaseRsp": {
+      "document": "创建知识库响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0表示成功</p>",
+          "example": "-1",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "同名知识库已存在",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台生成的知识库ID</p>",
+          "example": "80616e3e-5fcf-4547-9d7d-75441f02418b",
+          "member": "string",
+          "name": "KbId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateLabelInfo": {
       "document": "创建标签信息",
@@ -20028,6 +20278,52 @@
       ],
       "usage": "out"
     },
+    "CreateSemanticFromYamlRequest": {
+      "document": "CreateSemanticFromYaml请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>YAML 配置内容，必填，规格: 最大 100K 字符</p>",
+          "example": "yamlcontent",
+          "member": "string",
+          "name": "YamlContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间 ID，必填</p>",
+          "example": "17623497097012366",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSemanticFromYamlResponse": {
+      "document": "CreateSemanticFromYaml返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "SemanticOperationRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateServiceInfos": {
       "document": "多个服务信息",
       "members": [
@@ -20695,6 +20991,123 @@
           "name": "Progress",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateTableKnowledgeRequest": {
+      "document": "CreateTableKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录名</p>",
+          "example": "asdasda",
+          "member": "string",
+          "name": "Catalog",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库/Schema 名</p>",
+          "example": "asda",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名</p>",
+          "example": "asdsa",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表描述</p>",
+          "example": "asdasd",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>列信息列表</p>",
+          "example": "无",
+          "member": "KnowledgeColumnInfo",
+          "name": "Columns",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展元数据（JSON 字符串）</p>",
+          "example": "{\"a\": 1}",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTableKnowledgeResponse": {
+      "document": "CreateTableKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>写入/更新表元数据响应</p>",
+          "example": "无",
+          "member": "CreateTableKnowledgeRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTableKnowledgeRsp": {
+      "document": "写入/更新表元数据响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0表示成功</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "写入表元数据失败: type:framework, code:102, msg:tcp client transport ReadFrame, caused by read tcp 21.90.232.42:57016->21.215.192.21:8081: i/o timeout",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -21814,7 +22227,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user_db",
           "member": "string",
           "name": "DatabaseName",
@@ -21822,6 +22235,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>catalog类型</p>",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "CatalogType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -26157,6 +26581,52 @@
         }
       ],
       "usage": "both"
+    },
+    "DisableSemanticFromYamlRequest": {
+      "document": "DisableSemanticFromYaml请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>YAML 配置内容，必填，规格: 最大 100K 字符</p>",
+          "example": "yamlContent",
+          "member": "string",
+          "name": "YamlContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间 ID，必填</p>",
+          "example": "17623497097012366",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableSemanticFromYamlResponse": {
+      "document": "DisableSemanticFromYaml返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "SemanticOperationRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DownloadAppCodeFileInfo": {
       "document": "创建app出参",
@@ -37980,6 +38450,15 @@
           "name": "ConnectionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -43241,25 +43720,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "key",
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "key",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "值",
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Value",
           "member": "string",
           "name": "Value",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -43578,6 +44057,67 @@
       ],
       "type": "object"
     },
+    "KnowledgeColumnInfo": {
+      "document": "列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>列名</p>",
+          "example": "11",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据类型，如 string/int/bigint 等</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列描述</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可为空</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Nullable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "KnowledgeCreateItem": {
       "document": "知识",
       "members": [
@@ -43602,6 +44142,267 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeFieldDefinition": {
+      "document": "字段定义，决定该字段支持哪些检索方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否启用 embedding 向量字段（仅 text 类型生效），开启后自动生成 {Name}_embedding dense_vector 字段，支持向量检索</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableEmbedding",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 .keyword 子字段（仅 text 类型生效），开启后支持精确检索（term）和通配符检索（wildcard）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableKeyword",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段名，只能包含小写字母、数字、_、-</p>",
+          "example": "key",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型：text / keyword。text — ES text 类型，支持分词检索（match），可选开启 keyword 子字段和 embedding；keyword — ES keyword 类型，精确匹配/通配符，不分词</p>",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeSearchFilter": {
+      "document": "过滤条件，用于检索时按字段值精确过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤字段名，必须是 keyword 类型字段，或 text 类型且 EnableKeyword=true 的字段</p>",
+          "example": "key",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作符：eq / ne / in / not_in / wildcard</p>",
+          "example": "wildcard",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤值列表，max 100</p>",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeSearchOptions": {
+      "document": "检索参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Rerank 开关：0=默认开启 1=显式开启 2=显式关闭</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableRerank",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最低分数阈值 0~1</p>",
+          "example": "0.2",
+          "member": "float",
+          "name": "MinScore",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>KNN 候选集大小，仅向量检索和混合检索生效，默认 100，max 1000</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "NumCandidates",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果数量，默认 10，max 100</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TopK",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeSearchQuery": {
+      "document": "单个检索查询，支持独立的检索模式和权重",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定检索的目标字段列表（可选），max 20。不传则检索所有支持对应 SearchMode 的字段</p>",
+          "example": "[\"description\"]",
+          "member": "string",
+          "name": "Fields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询文本，max 2000，不能为空</p>",
+          "example": "复杂",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索模式：0=混合检索(BM25+向量，默认) 1=纯向量检索 2=精确检索/通配符检索 3=分词检索</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "SearchMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该 Query 在综合评分中的权重，默认 1.0</p>",
+          "example": "1",
+          "member": "float",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeSearchResult": {
+      "document": "检索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命中文档的字段内容，KV 结构</p>",
+          "example": "{\"catalog\":\"catalogaaaaa\",\"description\":\"这是一个复杂表\",\"metadata\":\"{\\\"a\\\":1}\",\"schema\":\"schemabbbbb\",\"table\":\"tablecccccc\"}",
+          "member": "string",
+          "name": "Document",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属知识库ID</p>",
+          "example": "48a8c528-060e-4f96-a797-41c06e5c85bd",
+          "member": "string",
+          "name": "KbId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>条目唯一标识</p>",
+          "example": "catalogaaaaa.schemabbbbb.tablecccccc",
+          "member": "string",
+          "name": "KnId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台元数据（只读）</p>",
+          "example": "{\"a\":1}",
+          "member": "string",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>综合得分，0~1</p>",
+          "example": "0.7919483",
+          "member": "float",
+          "name": "Score",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1</p>",
+          "example": "{\"from\": \"wedata\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -50271,6 +51072,15 @@
           "name": "SubType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -51231,6 +52041,15 @@
           "example": "2024",
           "member": "string",
           "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "",
+          "member": "string",
+          "name": "ResourceGroupId",
           "required": false,
           "type": "string"
         }
@@ -55194,6 +56013,15 @@
           "name": "Keyword",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -56200,6 +57028,15 @@
           "example": "SUPER_TABLE",
           "member": "string",
           "name": "SuperTableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "",
+          "member": "string",
+          "name": "ResourceGroupId",
           "required": false,
           "type": "string"
         }
@@ -57649,7 +58486,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Catalog名称",
+          "document": "<p>Catalog名称</p>",
           "example": "catalog",
           "member": "string",
           "name": "CatalogName",
@@ -57658,7 +58495,7 @@
         },
         {
           "disabled": false,
-          "document": "Schema名称",
+          "document": "<p>Schema名称</p>",
           "example": "schema",
           "member": "string",
           "name": "SchemaName",
@@ -57667,7 +58504,7 @@
         },
         {
           "disabled": false,
-          "document": "Volume名称",
+          "document": "<p>Volume名称</p>",
           "example": "volume",
           "member": "string",
           "name": "VolumeName",
@@ -57676,7 +58513,7 @@
         },
         {
           "disabled": false,
-          "document": "Volume内路径",
+          "document": "<p>Volume内路径</p>",
           "example": "/",
           "member": "string",
           "name": "Path",
@@ -57685,7 +58522,7 @@
         },
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",
@@ -57694,12 +58531,21 @@
         },
         {
           "disabled": false,
-          "document": "文件数量",
+          "document": "<p>文件数量</p>",
           "example": "1000",
           "member": "int64",
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键字</p>",
+          "example": "yy",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -57709,7 +58555,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件总数",
+          "document": "<p>文件总数</p>",
           "example": "无",
           "member": "ListVolumeDirectoryRsp",
           "name": "Data",
@@ -70397,6 +71243,134 @@
       ],
       "type": "object"
     },
+    "SearchKnowledgeDocumentRequest": {
+      "document": "SearchKnowledgeDocument请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检索查询列表，至少包含 1 个，max 10</p>",
+          "example": "无",
+          "member": "KnowledgeSearchQuery",
+          "name": "Queries",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID，max 64</p>",
+          "example": "1",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务字段过滤条件（可选），max 20，多个 Filter 之间为 AND 关系</p>",
+          "example": "无",
+          "member": "KnowledgeSearchFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库 ID 列表，max 50，不传则全量检索（在 ACL 有权范围内）</p>",
+          "example": "[\"48a8c528-060e-4f96-a797-41c06e5c85bd\"]",
+          "member": "string",
+          "name": "KbIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索参数配置</p>",
+          "example": "无",
+          "member": "KnowledgeSearchOptions",
+          "name": "Options",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>111</p>",
+          "example": "[\"builtin_table\"]",
+          "member": "string",
+          "name": "KbNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKnowledgeDocumentResponse": {
+      "document": "SearchKnowledgeDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检索知识响应</p>",
+          "example": "无",
+          "member": "SearchKnowledgeDocumentRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKnowledgeDocumentRsp": {
+      "document": "检索知识响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，0表示成功</p>",
+          "example": "1630003",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "所有检索均失败 (1/1):",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索结果列表</p>",
+          "example": "无",
+          "member": "KnowledgeSearchResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中结果总数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SearchModelsRequest": {
       "document": "SearchModels请求参数结构体",
       "members": [
@@ -70757,6 +71731,200 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SemanticOperationDetail": {
+      "document": "单个语义操作项的详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "my_metric",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置项类型：MODEL / METRIC / DIMENSION\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MODEL",
+          "member": "string",
+          "name": "ItemType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作类型：CREATE / UPDATE / DELETE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CREATE",
+          "member": "string",
+          "name": "OperationType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误消息（操作失败时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "example1",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作的对象 ID（操作成功时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SemanticOperationRsp": {
+      "document": "语义操作响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整体操作是否成功（所有配置项都成功时为 true）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "整体消息（成功时为成功提示，失败时为错误汇总）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "操作成功",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作汇总信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SemanticOperationSummary",
+          "name": "Summary",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型操作结果（为空表示 YAML 中未包含 model 配置）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SemanticOperationDetail",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维度操作结果列表（为空表示 YAML 中未包含 dimensions 配置）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SemanticOperationDetail",
+          "name": "Dimensions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标操作结果列表（为空表示 YAML 中未包含 metrics 配置）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SemanticOperationDetail",
+          "name": "Metrics",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SemanticOperationSummary": {
+      "document": "语义操作汇总信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总操作项数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalItems",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FailedCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作类型：CREATE / UPDATE / DELETE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CREATE",
+          "member": "string",
+          "name": "OperationType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

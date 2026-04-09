@@ -1,4 +1,4 @@
-**Example 1: 查看文件夹**
+**Example 1: 查询Volume文件夹**
 
 
 
@@ -8,10 +8,11 @@ Input:
 tccli wedata ListVolumeDirectory --cli-unfold-argument  \
     --CatalogName newvolume \
     --SchemaName schema_01 \
-    --VolumeName legendlu \
+    --VolumeName data2 \
     --Path / \
     --PageNumber 0 \
-    --PageSize 10
+    --PageSize 10 \
+    --Keywords yy
 ```
 
 Output: 
@@ -25,14 +26,14 @@ Output:
                     "FileType": 2,
                     "IsDirectory": true,
                     "ModifiedTime": "0",
-                    "Name": "legendlu_00",
-                    "Path": "gvfs://fileset/newvolume/schema_01/legendlu/legendlu_00",
+                    "Name": "yy0408",
+                    "Path": "gvfs://fileset/newvolume/schema_01/data2/yy0408",
                     "Size": "0"
                 }
             ],
             "TotalCount": "1"
         },
-        "RequestId": "6a05f37c-afe8-460b-992f-95778e4808b8"
+        "RequestId": "b0c6aa30-0d14-423f-9120-426ad94c5ccc"
     }
 }
 ```

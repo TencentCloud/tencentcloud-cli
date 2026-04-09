@@ -5931,36 +5931,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "数组元素为json序列化字符串",
-          "example": "",
+          "document": "数组元素为json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ { \"Name\": \"InstanceId\", \"Value\": \"ins-j0hk02zo\" } ]\t",
           "member": "string",
           "name": "Dimension",
+          "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "域名名称，如：ap-guangzhou",
-          "example": "",
+          "document": "域名名称，如：ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "类型名称，如：tags",
-          "example": "",
+          "document": "类型名称，如：tags\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tags",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DashboardMetricQuery": {
       "document": "Dashboard 2.0 指标查询入参结构体",
@@ -5968,7 +5971,7 @@
         {
           "disabled": false,
           "document": "查询时间段的开始时间，使用ISO格式 如：2018-04-10T10:15:58.858Z",
-          "example": "",
+          "example": "2021-04-08T10:01:10+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -5978,7 +5981,7 @@
         {
           "disabled": false,
           "document": "查询时间段的结束时间，使用ISO格式 如：2018-04-10T10:15:58.858Z",
-          "example": "",
+          "example": "2021-04-08T10:01:10+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -5988,7 +5991,7 @@
         {
           "disabled": false,
           "document": "数据源",
-          "example": "",
+          "example": "DS_QCEMetric",
           "member": "string",
           "name": "DataSource",
           "required": true,
@@ -5998,7 +6001,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "",
+          "example": "QCE/CVM",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -6008,7 +6011,7 @@
         {
           "disabled": false,
           "document": "查询指标名称",
-          "example": "",
+          "example": "LanOuttraffic",
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -6018,7 +6021,7 @@
         {
           "disabled": false,
           "document": "统计粒度，默认值为60，单位秒",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -6028,7 +6031,7 @@
         {
           "disabled": false,
           "document": "聚合方式，根据指标类型填写聚合方式",
-          "example": "",
+          "example": "min",
           "member": "string",
           "name": "Aggregate",
           "required": true,
@@ -6038,7 +6041,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "",
+          "example": "无",
           "member": "DashboardMetricCondition",
           "name": "Conditions",
           "required": true,
@@ -6048,7 +6051,7 @@
         {
           "disabled": false,
           "document": "分组，填写指标维度",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -6058,7 +6061,7 @@
         {
           "disabled": false,
           "document": "查询标识",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SeriesId",
           "required": false,
@@ -6068,7 +6071,7 @@
         {
           "disabled": false,
           "document": "数据源地域名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DataSourceRegion",
           "required": false,
@@ -6078,7 +6081,7 @@
         {
           "disabled": false,
           "document": "产品配置ID",
-          "example": "",
+          "example": "cvm",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -6088,7 +6091,7 @@
         {
           "disabled": false,
           "document": "查询版本号，老版本不用传，新版本传\"2020-10-21\"",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "QueryVersion",
           "required": false,
@@ -6098,7 +6101,7 @@
         {
           "disabled": false,
           "document": "排序值的计算方式，avg|sum|min|max",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -6108,7 +6111,7 @@
         {
           "disabled": false,
           "document": "排序顺序，asc|desc",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AscDesc",
           "required": false,
@@ -6118,11 +6121,21 @@
         {
           "disabled": false,
           "document": "排序个数",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警策略View名",
+          "example": "无",
+          "member": "string",
+          "name": "ViewName",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -15567,12 +15580,77 @@
     },
     "ExportPrometheusReadOnlyDynamicAPIRequest": {
       "document": "ExportPrometheusReadOnlyDynamicAPI请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "Prometheus 实例 ID",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 方法名 GET/POST/PUT/DELETE 等",
+          "example": "",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 路径（包括 query string）",
+          "example": "",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 请求体，任何数据",
+          "example": "",
+          "member": "string",
+          "name": "RequestBody",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 请求头",
+          "example": "",
+          "member": "PrometheusStringKeyValuePair",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。",
+          "example": "",
+          "member": "bool",
+          "name": "SelfMonitor",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "ExportPrometheusReadOnlyDynamicAPIResponse": {
       "document": "ExportPrometheusReadOnlyDynamicAPI返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 响应数据",
+          "example": "",
+          "member": "PrometheusDynamicAPIResponseHTTP",
+          "name": "HTTP",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -20842,6 +20920,32 @@
       ],
       "usage": "both"
     },
+    "PrometheusDynamicAPIResponseHTTP": {
+      "document": "Prometheus 内部动态 api 代理响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 状态码",
+          "example": "",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 响应体",
+          "example": "",
+          "member": "string",
+          "name": "ResponseBody",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusInstanceGrantInfo": {
       "document": "实例的授权信息",
       "members": [
@@ -22145,6 +22249,34 @@
         }
       ],
       "usage": "out"
+    },
+    "PrometheusStringKeyValuePair": {
+      "document": "Prometheus 通用字符串类型 kv",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PrometheusTag": {
       "document": "Prometheus 托管服务标签",

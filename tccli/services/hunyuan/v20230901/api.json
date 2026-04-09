@@ -77,6 +77,13 @@
       "output": "Describe3DSmartTopologyJobResponse",
       "status": "online"
     },
+    "DescribeConvert3DFormatJob": {
+      "document": "输入3D模型文件后，根据格式转换生成。",
+      "input": "DescribeConvert3DFormatJobRequest",
+      "name": "查询3D文件格式转换任务",
+      "output": "DescribeConvert3DFormatJobResponse",
+      "status": "online"
+    },
     "DescribeHunyuanTo3DUVJob": {
       "document": "查询组件拆分任务。",
       "input": "DescribeHunyuanTo3DUVJobRequest",
@@ -236,6 +243,13 @@
       "input": "Submit3DSmartTopologyJobRequest",
       "name": "提交智能拓扑任务",
       "output": "Submit3DSmartTopologyJobResponse",
+      "status": "online"
+    },
+    "SubmitConvert3DFormatJob": {
+      "document": "输入3D模型文件后，根据格式转换生成。",
+      "input": "SubmitConvert3DFormatJobRequest",
+      "name": "提交3D文件格式转换任务",
+      "output": "SubmitConvert3DFormatJobResponse",
       "status": "online"
     },
     "SubmitHunyuan3DPartJob": {
@@ -1507,6 +1521,73 @@
         {
           "disabled": false,
           "document": "生成文件的URL地址，有效期1天。\t",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConvert3DFormatJobRequest": {
+      "document": "DescribeConvert3DFormatJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "1433027947910201344",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConvert3DFormatJobResponse": {
+      "document": "DescribeConvert3DFormatJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。</p>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>",
+          "example": "FailedOperation.InnerError",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "服务内部错误，请重试。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成文件的URL地址，有效期1天。</p>",
           "example": "无",
           "member": "File3D",
           "name": "ResultFile3Ds",
@@ -4939,6 +5020,52 @@
           "member": "string",
           "name": "JobId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitConvert3DFormatJobRequest": {
+      "document": "SubmitConvert3DFormatJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>3D文件url地址，模型文件大小≤200m，支持fbx，obj，glb格式3D文件输入。<br>obj格式需上传压缩包url，包含obj，mtl格式的 3d 模型文件url，以及texture纹理贴图，建议传入混元生3D生成的obj模型。</p>",
+          "example": "无",
+          "member": "InputFile3D",
+          "name": "File",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回的3D文件格式，参考值：GLB,OBJ,STL, USDZ, FBX, MP4, GIF。</p>",
+          "example": "OBJ",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitConvert3DFormatJobResponse": {
+      "document": "SubmitConvert3DFormatJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务Id</p>",
+          "example": "1433020173532856320",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

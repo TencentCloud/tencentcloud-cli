@@ -2838,7 +2838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Cos 桶名称",
+          "document": "<p>Cos 桶名称</p>",
           "example": "\"examplebucket-1250000000\"",
           "member": "string",
           "name": "CosBucket",
@@ -2849,7 +2849,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 桶所在区域",
+          "document": "<p>Cos 桶所在区域</p>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CosRegion",
@@ -2860,7 +2860,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库类型，LOG : 应用日志  ARCHIVE: 应用存档",
+          "document": "<p>仓库类型，LOG : 应用日志  ARCHIVE: 应用存档</p>",
           "example": "\"LOG|ARCHIVE\"",
           "member": "string",
           "name": "StoreType",
@@ -2871,7 +2871,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库状态，ON: 打开 OFF:关闭",
+          "document": "<p>仓库状态，ON: 打开 OFF:关闭</p>",
           "example": "\"ON|OFF\"",
           "member": "string",
           "name": "StoreState",
@@ -2882,13 +2882,24 @@
         },
         {
           "disabled": false,
-          "document": "仓库路径",
+          "document": "<p>仓库路径</p><p>主路径数据，如果 StoreType 为 ARCHIVE 类型 且 配置了 SubStorePaths 时，会使用系统默认值。</p>",
           "example": "\"Windows\\\\log\"",
           "member": "string",
           "name": "StorePath",
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子路径列表</p><p>子路径数据（即多路径模式），只支持 StoreType 为 ARCHIVE 类型；最多 25 条数据。</p>",
+          "example": "[\"Windows\\\\SavaData1\", \"Windows\\\\SavaData2\"]",
+          "member": "string",
+          "name": "SubStorePaths",
+          "output_required": true,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

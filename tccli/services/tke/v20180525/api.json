@@ -18012,7 +18012,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EKSId",
+          "document": "<p>EKSId</p>",
           "example": "eks-12345678",
           "member": "string",
           "name": "EKSId",
@@ -18022,7 +18022,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-12345678",
           "member": "string",
           "name": "ClusterId",
@@ -18032,8 +18032,8 @@
         },
         {
           "disabled": false,
-          "document": "pod名称",
-          "example": "test-0",
+          "document": "<p>pod名称</p>",
+          "example": "my-pod-0",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -18042,7 +18042,7 @@
         },
         {
           "disabled": false,
-          "document": "pod的namespace",
+          "document": "<p>pod的namespace</p>",
           "example": "default",
           "member": "string",
           "name": "Namespace",
@@ -18052,7 +18052,7 @@
         },
         {
           "disabled": false,
-          "document": "工作负载类型",
+          "document": "<p>工作负载类型</p>",
           "example": "statefulset",
           "member": "string",
           "name": "Kind",
@@ -18062,8 +18062,8 @@
         },
         {
           "disabled": false,
-          "document": "工作负载名称",
-          "example": "test",
+          "document": "<p>工作负载名称</p>",
+          "example": "my-pod",
           "member": "string",
           "name": "KindName",
           "output_required": true,
@@ -18072,7 +18072,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -18082,7 +18082,7 @@
         },
         {
           "disabled": false,
-          "document": "vpcId",
+          "document": "<p>vpcId</p>",
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
@@ -18092,7 +18092,7 @@
         },
         {
           "disabled": false,
-          "document": "子网Id",
+          "document": "<p>子网Id</p>",
           "example": "subnet-12345678",
           "member": "string",
           "name": "SubnetId",
@@ -18102,7 +18102,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu",
+          "document": "<p>cpu</p>",
           "example": "1",
           "member": "float",
           "name": "CPU",
@@ -18112,7 +18112,7 @@
         },
         {
           "disabled": false,
-          "document": "内存",
+          "document": "<p>内存</p>",
           "example": "2",
           "member": "float",
           "name": "Memory",
@@ -18122,7 +18122,7 @@
         },
         {
           "disabled": false,
-          "document": "机型",
+          "document": "<p>机型</p>",
           "example": "S5.MEDIUM8",
           "member": "string",
           "name": "InstanceType",
@@ -18132,7 +18132,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱uuid",
+          "document": "<p>沙箱uuid</p>",
           "example": "86681154-7d29-4f29-8a63-f5ec2af58935",
           "member": "string",
           "name": "Uuid",
@@ -18142,7 +18142,7 @@
         },
         {
           "disabled": false,
-          "document": "Pod的IP",
+          "document": "<p>Pod的IP</p>",
           "example": "10.0.0.1",
           "member": "string",
           "name": "PodIp",
@@ -18152,12 +18152,92 @@
         },
         {
           "disabled": false,
-          "document": " 沙箱状态",
+          "document": "<p>沙箱状态</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户AppId</p>",
+          "example": "251441366",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "my-pod-name",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱启动时间</p>",
+          "example": "2026-03-31 16:38:49",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 卡数</p>",
+          "example": "1",
+          "member": "string",
+          "name": "GpuNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像 ID</p>",
+          "example": "img-alm504f7",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统盘 ID</p>",
+          "example": "disk-mbn86bhq",
+          "member": "string",
+          "name": "CbsId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 卡型</p>",
+          "example": "t4",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Pod绑定的安全组</p>",
+          "example": "[\"sg-12345678\"]",
+          "member": "string",
+          "name": "SecurityGroups",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

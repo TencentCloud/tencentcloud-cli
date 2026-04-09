@@ -3868,7 +3868,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -3877,7 +3877,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -3886,7 +3886,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组ID",
+          "document": "<p>账号组ID</p>",
           "example": "ca-sdfs7734h24",
           "member": "string",
           "name": "AccountGroupId",
@@ -3895,7 +3895,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包名称",
+          "document": "<p>合规包名称</p>",
           "example": "1",
           "member": "string",
           "name": "CompliancePackName",
@@ -3904,7 +3904,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "document": "<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "RiskLevel",
@@ -3913,7 +3913,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包状态 ACTIVE、NO_ACTIVE",
+          "document": "<p>合规包状态 ACTIVE、NO_ACTIVE</p>",
           "example": "ACTICE",
           "member": "string",
           "name": "Status",
@@ -3922,8 +3922,8 @@
         },
         {
           "disabled": false,
-          "document": "评估状态合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'",
-          "example": "COMPLIANT",
+          "document": "<p>评估状态合规： &#39;COMPLIANT&#39;<br>不合规： &#39;NON_COMPLIANT&#39;</p>",
+          "example": "[\"COMPLIANT\"]",
           "member": "string",
           "name": "ComplianceResult",
           "required": false,
@@ -3931,10 +3931,19 @@
         },
         {
           "disabled": false,
-          "document": "排序类型, 倒序：desc，顺序：asc",
+          "document": "<p>排序类型, 倒序：desc，顺序：asc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含合规包结果定义</p><p>枚举值：</p><ul><li>NO： 不包含</li></ul><p>默认值：空</p><p>此字段为新增，因此不传或者传了YES都会默认返回包含合规结果数据，其他枚举值后面视情况丰富</p>",
+          "example": "NO",
+          "member": "string",
+          "name": "IncludeCompliancePackRuleResult",
           "required": false,
           "type": "string"
         }
@@ -3946,19 +3955,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "4",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详情",
+          "document": "<p>详情</p>",
           "example": "无",
           "member": "ConfigCompliancePack",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

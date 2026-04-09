@@ -408,6 +408,14 @@
         "title": "创建COS临时凭证"
       }
     ],
+    "CreateCustomKnowledge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomKnowledge\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1\",\n    \"KnowledgeBaseName\": \"qizhi_test\",\n    \"KnowledgeId\": \"2\",\n    \"JsonData\": \"{\\\"key\\\": \\\"monthly_active_users\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorCode\": 0,\n            \"ErrorMessage\": \"\"\n        },\n        \"RequestId\": \"c4745ff1-6e8b-49fb-b75d-6e9bfe61e30e\"\n    }\n}",
+        "title": "创建自定义知识，注意 jsondata 中要和字段保持一致"
+      }
+    ],
     "CreateExperiment": [
       {
         "document": "",
@@ -470,6 +478,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationTaskExecution\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"test_workspace_01\",\n    \"TaskId\": \"4313be0b-742d-4dd9-afa8-08281047188e\",\n    \"TaskVersion\": \"20251226161431\",\n    \"ResourceGroupId\": \"resource_1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorMessage\": \"\",\n            \"JobId\": \"6820251229231645008\",\n            \"OpStatus\": true,\n            \"TaskId\": \"4313be0b-742d-4dd9-afa8-08281047188e\"\n        },\n        \"RequestId\": \"b2c5b7b1-8f64-428f-804b-1c2766763e10\"\n    }\n}",
         "title": "调试数据接入任务"
+      }
+    ],
+    "CreateKnowledgeBase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeBase\n<公共请求参数>\n\n{\n    \"Fields\": [\n        {\n            \"EnableEmbedding\": true,\n            \"EnableKeyword\": true,\n            \"Name\": \"key\",\n            \"Type\": \"text\"\n        }\n    ],\n    \"Name\": \"qizhi1231111111111111\",\n    \"WorkspaceId\": \"1\",\n    \"Description\": \"这是一个描述\",\n    \"EmbeddingDim\": 2048,\n    \"Tags\": [\n        \"test1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorCode\": 0,\n            \"ErrorMessage\": \"\",\n            \"KbId\": \"a62bf901-8cbf-44a5-96a0-e836f589c7f3\"\n        },\n        \"RequestId\": \"0e258a29-89ea-4b22-9d17-28803a34ef8a\"\n    }\n}",
+        "title": "测试"
       }
     ],
     "CreateLabelValues": [
@@ -592,6 +608,14 @@
         "title": "创建schema"
       }
     ],
+    "CreateSemanticFromYaml": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSemanticFromYaml\n<公共请求参数>\n\n{\n    \"YamlContent\": \"version: 1.0 \\nmetrics:\\n  # 原子指标\\n  - name: \\\"simple_metric_3\\\" # 指标英文名\\n    description: \\\"\\\" #optional\\n    type: SIMPLE # 指标类型,原子指标\\n    # 只剩自定义配置\\n    type_params:\\n      model_ref: yaml_nq_1\\n      source_table: c4.wedata_dev.customer2  # 指标的来源表,catalogName.databaseName.tableName\\n      expr: \\\"SUM(account_num)\\\"\\n      time_dimension: nq_dim1 # 指标的时间维度标识\",\n    \"WorkspaceId\": \"17623497097012366\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Dimensions\": [],\n            \"Message\": \"操作成功，共处理1个配置项\",\n            \"Metrics\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"Id\": \"1040\",\n                    \"ItemType\": \"METRIC\",\n                    \"Name\": \"simple_metric_3\",\n                    \"OperationType\": \"CREATE\",\n                    \"Success\": true\n                }\n            ],\n            \"Success\": true,\n            \"Summary\": {\n                \"FailedCount\": 0,\n                \"OperationType\": \"CREATE\",\n                \"SuccessCount\": 1,\n                \"TotalItems\": 1\n            }\n        },\n        \"RequestId\": \"fbd2c176-8008-43ab-8cf6-4355ed7d1292\"\n    }\n}",
+        "title": "CreateSemanticFromYaml"
+      }
+    ],
     "CreateStreamTask": [
       {
         "document": "",
@@ -614,6 +638,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteOperationAsync\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1\",\n    \"Operation\": \"CREATE_TABLE\",\n    \"FilePaths\": [\n        \"cosn://bucket/path/to/file.csv\"\n    ],\n    \"Catalog\": \"\",\n    \"Schema\": \"\",\n    \"Table\": \"employees\",\n    \"ResourceId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"20251017177920000001\",\n            \"Status\": \"SUBMITTED\",\n            \"Progress\": 10\n        },\n        \"RequestId\": \"419bf816-cf61-42b1-9273-75459b655c04\"\n    }\n}",
         "title": "从文件创建表（异步）"
+      }
+    ],
+    "CreateTableKnowledge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTableKnowledge\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1\",\n    \"Catalog\": \"asdasda\",\n    \"Schema\": \"asda\",\n    \"Table\": \"asdsa\",\n    \"Description\": \"asdasd\",\n    \"Columns\": [\n        {\n            \"Name\": \"11\",\n            \"Type\": \"string\",\n            \"Description\": \"string\",\n            \"Nullable\": true,\n            \"Comment\": \"string\"\n        }\n    ],\n    \"Metadata\": \"{\\\"a\\\": 1}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorCode\": 0,\n            \"ErrorMessage\": \"\"\n        },\n        \"RequestId\": \"fee7a2d1-5221-4275-87db-7348eb6622eb\"\n    }\n}",
+        "title": "创建表"
       }
     ],
     "CreateTrainingTasksTag": [
@@ -1140,6 +1172,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobExecutionResult\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17623497097012366\",\n    \"JobId\": \"6820260106105841034\",\n    \"JobExecutionId\": \"9caaf6a0eaab11f0b434525400cb32dc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"select 1\",\n            \"CostTime\": \"15437\",\n            \"CreateTime\": \"1767668323723\",\n            \"Data\": \"[[\\\"1\\\"],[\\\"1\\\"]]\",\n            \"ResultSchema\": [\n                {\n                    \"ColumnName\": \"1\",\n                    \"ColumnType\": \"1\",\n                    \"Comment\": \"\"\n                }\n            ],\n            \"TotalCount\": \"0\"\n        },\n        \"RequestId\": \"fd8ce2fd-35de-47b4-a073-23e57b0c3004\"\n    }\n}",
         "title": "获取子记录的结果"
+      }
+    ],
+    "DisableSemanticFromYaml": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableSemanticFromYaml\n<公共请求参数>\n\n{\n    \"YamlContent\": \"version: 1.0 \\nmetrics:\\n  # 原子指标\\n  - name: \\\"simple_metric_3\\\" # 指标英文名\\n    description: \\\"\\\" #optional\\n    type: SIMPLE # 指标类型,原子指标\\n    # 只剩自定义配置\\n    type_params:\\n      model_ref: yaml_nq_1\\n      source_table: c4.wedata_dev.customer2  # 指标的来源表,catalogName.databaseName.tableName\\n      expr: \\\"SUM(account_num)\\\"\\n      time_dimension: nq_dim1 # 指标的时间维度标识\",\n    \"WorkspaceId\": \"17623497097012366\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Dimensions\": [],\n            \"Message\": \"操作成功，共处理1个配置项\",\n            \"Metrics\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"Id\": \"1040\",\n                    \"ItemType\": \"METRIC\",\n                    \"Name\": \"simple_metric_3\",\n                    \"OperationType\": \"OFFLINE\",\n                    \"Success\": true\n                }\n            ],\n            \"Success\": true,\n            \"Summary\": {\n                \"FailedCount\": 0,\n                \"OperationType\": \"DISABLE\",\n                \"SuccessCount\": 1,\n                \"TotalItems\": 1\n            }\n        },\n        \"RequestId\": \"09813272-901f-439f-9430-626601cafe5d\"\n    }\n}",
+        "title": "DisableSemanticFromYaml"
       }
     ],
     "DownloadAppCode": [
@@ -3115,9 +3155,9 @@
     "ListVolumeDirectory": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVolumeDirectory\n<公共请求参数>\n\n{\n    \"CatalogName\": \"newvolume\",\n    \"SchemaName\": \"schema_01\",\n    \"VolumeName\": \"legendlu\",\n    \"Path\": \"/\",\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Files\": [\n                {\n                    \"CreatedTime\": \"0\",\n                    \"FileType\": 2,\n                    \"IsDirectory\": true,\n                    \"ModifiedTime\": \"0\",\n                    \"Name\": \"legendlu_00\",\n                    \"Path\": \"gvfs://fileset/newvolume/schema_01/legendlu/legendlu_00\",\n                    \"Size\": \"0\"\n                }\n            ],\n            \"TotalCount\": \"1\"\n        },\n        \"RequestId\": \"6a05f37c-afe8-460b-992f-95778e4808b8\"\n    }\n}",
-        "title": "查看文件夹"
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVolumeDirectory\n<公共请求参数>\n\n{\n    \"CatalogName\": \"newvolume\",\n    \"SchemaName\": \"schema_01\",\n    \"VolumeName\": \"data2\",\n    \"Path\": \"/\",\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"Keywords\": \"yy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Files\": [\n                {\n                    \"CreatedTime\": \"0\",\n                    \"FileType\": 2,\n                    \"IsDirectory\": true,\n                    \"ModifiedTime\": \"0\",\n                    \"Name\": \"yy0408\",\n                    \"Path\": \"gvfs://fileset/newvolume/schema_01/data2/yy0408\",\n                    \"Size\": \"0\"\n                }\n            ],\n            \"TotalCount\": \"1\"\n        },\n        \"RequestId\": \"b0c6aa30-0d14-423f-9120-426ad94c5ccc\"\n    }\n}",
+        "title": "查询Volume文件夹"
       }
     ],
     "ListVolumeNames": [
@@ -3666,6 +3706,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCatalogTree\n<公共请求参数>\n\n{\n    \"MaxResults\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AssetGuid\": \"\",\n                    \"AssetName\": \"tsing_catalog\",\n                    \"AssetType\": \"CATALOG\",\n                    \"CatalogContentType\": \"TABLE\",\n                    \"ChildNodes\": [\n                        {\n                            \"AssetGuid\": \"\",\n                            \"AssetName\": \"default\",\n                            \"AssetType\": \"SCHEMA\",\n                            \"CatalogContentType\": \"TABLE\",\n                            \"ChildNodes\": [],\n                            \"Comment\": \"Default database for catalog tsing_catalog\",\n                            \"CreateTime\": \"1764760675268\",\n                            \"FullName\": \"tsing_catalog.default\",\n                            \"IsFavorite\": false\n                        }\n                    ],\n                    \"Comment\": \"tsing_catalog111\",\n                    \"CreateTime\": \"1762605465451\",\n                    \"FullName\": \"tsing_catalog\",\n                    \"IsFavorite\": false\n                }\n            ],\n            \"NextPageToken\": \"{\\\"offset\\\":2,\\\"pageSize\\\":200,\\\"isEnd\\\":false}\"\n        },\n        \"RequestId\": \"a5f874a1-4ee2-4dec-bb9d-f5efb5547b2f\"\n    }\n}",
         "title": "搜索目录树"
+      }
+    ],
+    "SearchKnowledgeDocument": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKnowledgeDocument\n<公共请求参数>\n\n{\n    \"Queries\": [\n        {\n            \"Fields\": [\n                \"description\"\n            ],\n            \"Query\": \"复杂\",\n            \"SearchMode\": 1\n        }\n    ],\n    \"WorkspaceId\": \"1\",\n    \"KbIds\": [\n        \"48a8c528-060e-4f96-a797-41c06e5c85bd\"\n    ],\n    \"KbNames\": [\n        \"builtin_table\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorCode\": 0,\n            \"ErrorMessage\": \"\",\n            \"Results\": [\n                {\n                    \"Document\": \"{\\\"catalog\\\":\\\"catalogaaaaa\\\",\\\"description\\\":\\\"这是一个复杂表\\\",\\\"metadata\\\":\\\"{\\\\\\\"a\\\\\\\":1}\\\",\\\"schema\\\":\\\"schemabbbbb\\\",\\\"table\\\":\\\"tablecccccc\\\"}\",\n                    \"ExtInfo\": \"{\\\"from\\\": \\\"wedata\\\"}\",\n                    \"KbId\": \"48a8c528-060e-4f96-a797-41c06e5c85bd\",\n                    \"KnId\": \"catalogaaaaa.schemabbbbb.tablecccccc\",\n                    \"Metadata\": \"{\\\"a\\\":1}\",\n                    \"Score\": 0.8776221\n                }\n            ],\n            \"Total\": 3\n        },\n        \"RequestId\": \"476a6ded-c887-44b9-9e67-7d7e81ccf384\"\n    }\n}",
+        "title": "检索表知识"
       }
     ],
     "SearchModels": [
