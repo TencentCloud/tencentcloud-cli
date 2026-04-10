@@ -35,6 +35,20 @@
       "output": "DeleteVolumeDataResponse",
       "status": "online"
     },
+    "DescribeApplicationVersions": {
+      "document": "查询应用版本列表",
+      "input": "DescribeApplicationVersionsRequest",
+      "name": "查询应用版本",
+      "output": "DescribeApplicationVersionsResponse",
+      "status": "online"
+    },
+    "DescribeApplications": {
+      "document": "查询项目应用列表",
+      "input": "DescribeApplicationsRequest",
+      "name": "查询项目应用列表",
+      "output": "DescribeApplicationsResponse",
+      "status": "online"
+    },
     "DescribeEnvironments": {
       "document": "查询环境列表。",
       "input": "DescribeEnvironmentsRequest",
@@ -54,6 +68,20 @@
       "input": "DescribeHPCNodesRequest",
       "name": "查询HPC节点列表",
       "output": "DescribeHPCNodesResponse",
+      "status": "online"
+    },
+    "DescribeInputTemplates": {
+      "document": "查询运行参数模板列表",
+      "input": "DescribeInputTemplatesRequest",
+      "name": "查询运行参数模板列表",
+      "output": "DescribeInputTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeProjects": {
+      "document": "查询项目列表",
+      "input": "DescribeProjectsRequest",
+      "name": "查询项目列表",
+      "output": "DescribeProjectsResponse",
       "status": "online"
     },
     "DescribeRunGroups": {
@@ -91,6 +119,13 @@
       "output": "DescribeVolumesResponse",
       "status": "online"
     },
+    "GetInputTemplateFile": {
+      "document": "查询运行参数模板内容",
+      "input": "GetInputTemplateFileRequest",
+      "name": "查询运行参数模板文件",
+      "output": "GetInputTemplateFileResponse",
+      "status": "online"
+    },
     "GetRunCalls": {
       "document": "查询作业详情。",
       "input": "GetRunCallsRequest",
@@ -110,6 +145,13 @@
       "input": "GetRunStatusRequest",
       "name": "查询任务详情",
       "output": "GetRunStatusResponse",
+      "status": "online"
+    },
+    "ImportCommonApplication": {
+      "document": "导入公共应用到项目",
+      "input": "ImportCommonApplicationRequest",
+      "name": "导入公共应用",
+      "output": "ImportCommonApplicationResponse",
       "status": "online"
     },
     "ImportTableFile": {
@@ -169,6 +211,172 @@
     "serviceShortName": "omics"
   },
   "objects": {
+    "Application": {
+      "document": "应用详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "app-unique-olive-yeti-950894",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "prj-efficient-maroon-slug-075080",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "scBERT_test_1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "开发调试",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>",
+          "example": "NEXTFLOW",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码入口</p>",
+          "example": "nextflow/scBERT.nf",
+          "member": "string",
+          "name": "Entrypoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-04-07 14:33:21",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-04-07 14:33:21",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>",
+          "example": "100031066699",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人ID</p>",
+          "example": "100031066699",
+          "member": "string",
+          "name": "CreatorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VersionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本列表</p>",
+          "example": "无",
+          "member": "ApplicationVersion",
+          "name": "Versions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GIT信息</p>",
+          "example": "无",
+          "member": "GitInfo",
+          "name": "GitSource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行限制</p>",
+          "example": "无",
+          "member": "RunConstraints",
+          "name": "RunConstraints",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用COS文件信息</p>",
+          "example": "无",
+          "member": "CosFileInfo",
+          "name": "CosSource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序顺序</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SortOrder",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ApplicationVersion": {
       "document": "应用版本。",
       "members": [
@@ -782,6 +990,163 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationVersionsRequest": {
+      "document": "DescribeApplicationVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "prj-wide-cerulean-cicadia-967487",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行应用ID</p>",
+          "example": "app-articulate-aqua-starfish-027347",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationVersionsResponse": {
+      "document": "DescribeApplicationVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用运行版本列表</p>",
+          "example": "无",
+          "member": "ApplicationVersion",
+          "name": "ApplicationVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用运行版本列表总数</p>",
+          "example": "6",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsRequest": {
+      "document": "DescribeApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "prj-quiet-bleak-llama-652571",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器，支持过滤字段：</p><ul><li>Name：应用名称</li><li>ApplicationId：应用ID</li><li>HasRun</li><li>CreatorId：创建人ID</li><li>Type：应用类型</li></ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序</p>",
+          "example": "SortOrder",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsResponse": {
+      "document": "DescribeApplications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用列表总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用列表</p>",
+          "example": "无",
+          "member": "Application",
+          "name": "Applications",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEnvironmentsRequest": {
       "document": "DescribeEnvironments请求参数结构体",
       "members": [
@@ -976,6 +1341,163 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInputTemplatesRequest": {
+      "document": "DescribeInputTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "prj-efficient-maroon-slug-075080",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器，支持过滤字段：</p><ul><li>Name：模板名称</li><li>InputTemplateId：模板ID</li></ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行应用版本ID</p>",
+          "example": "0",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行应用ID</p>",
+          "example": "app-remarkable-bleak-terrier-617099",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInputTemplatesResponse": {
+      "document": "DescribeInputTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>运行应用参数模板列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputTemplate",
+          "name": "InputTemplates",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行参数模板列表总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsRequest": {
+      "document": "DescribeProjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页入参</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器，支持过滤字段：</p><ul><li>Name：项目名称</li><li>ProjectId：项目ID</li><li>Region：地域</li></ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsResponse": {
+      "document": "DescribeProjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目列表总数</p>",
+          "example": "108",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目列表</p>",
+          "example": "无",
+          "member": "Project",
+          "name": "Projects",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1658,6 +2180,80 @@
         }
       ],
       "usage": "in"
+    },
+    "GetInputTemplateFileRequest": {
+      "document": "GetInputTemplateFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>运行参数模板ID</p>",
+          "example": "in-slow-cerulean-anchovy-423943",
+          "member": "string",
+          "name": "InputTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "prj-best-orange-squid-853353",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行应用版本ID</p>",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行应用ID</p>",
+          "example": "app-friendly-aqua-mink-955627",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInputTemplateFileResponse": {
+      "document": "GetInputTemplateFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>COS签名url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://genomics-****",
+          "member": "string",
+          "name": "CosSignedUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"FastpDemo.in1\":\"cos://***\",\"FastpDemo.in2\":\"cos://***\",\"FastpDemo.RunFastp.json\":\"fastp.json\",\"FastpDemo.RunFastp.html\":\"fastp.html\",\"FastpDemo.RunFastp.report_title\":\"fastp report\"}",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetRunCallsRequest": {
       "document": "GetRunCalls请求参数结构体",
@@ -2456,6 +3052,88 @@
       ],
       "usage": "both"
     },
+    "ImportCommonApplicationRequest": {
+      "document": "ImportCommonApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>公共应用ID</p>",
+          "example": "0de1b4ae-1543-4882-8bae-b5ee87968bc5",
+          "member": "string",
+          "name": "CommonAppUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公共应用重命名</p>",
+          "example": "scBERT_test_1",
+          "member": "string",
+          "name": "CommonAppNewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "prj-efficient-maroon-slug-075080",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公共应用类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>",
+          "example": "NEXTFLOW",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>NEXTFLOW版本</p>",
+          "example": "v24.04.3",
+          "member": "string",
+          "name": "NextflowVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否内部应用</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Internal",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportCommonApplicationResponse": {
+      "document": "ImportCommonApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app-unique-olive-yeti-950894",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ImportTableFileRequest": {
       "document": "ImportTableFile请求参数结构体",
       "members": [
@@ -2528,6 +3206,111 @@
         }
       ],
       "type": "object"
+    },
+    "InputTemplate": {
+      "document": "运行参数模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>唯一ID</p>",
+          "example": "0e5c1233-bdad-4541-9e15-39f39a46c934",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用输入模板ID</p>",
+          "example": "in-best-teal-gorilla-731558",
+          "member": "string",
+          "name": "InputTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联项目ID</p>",
+          "example": "prj-efficient-maroon-slug-075080",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联应用ID</p>",
+          "example": "in-best-teal-gorilla-731558",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联应用版本</p>",
+          "example": "0",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "test-template",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "添加描述测试",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>",
+          "example": "chanh_test",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人ID</p>",
+          "example": "a7a67c817c5b4012adde352c045295ba",
+          "member": "string",
+          "name": "CreatorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LimitRange": {
       "document": "资源限制范围。",
@@ -2720,6 +3503,92 @@
           "example": "false",
           "member": "bool",
           "name": "CurrentUserEmail",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Project": {
+      "document": "项目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "prj-wide-cerulean-cicadia-967487",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "demo project for testing",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "2",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2023-10-25 20:17:58",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-12-11 16:08:17",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>",
+          "example": "OneID账号62896595",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否默认项目</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -3363,6 +4232,23 @@
         }
       ],
       "type": "object"
+    },
+    "RunConstraints": {
+      "document": "运行限制",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>运行时可选的Nextflow版本</p>",
+          "example": "[\"v24.04.3\"]",
+          "member": "string",
+          "name": "NextflowVersion",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RunGroup": {
       "document": "任务。",
