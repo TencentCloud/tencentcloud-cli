@@ -4550,6 +4550,34 @@
       ],
       "type": "object"
     },
+    "AdvancedDependencyConfig": {
+      "document": "高级运行参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上游任务间的逻辑运行符号\nOR 或者 AND\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OR",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务运行条件规则项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskRunConditionRule",
+          "name": "Conditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AgentDetailItem": {
       "document": "Agent详情",
       "members": [
@@ -4715,7 +4743,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警 ID，创建时无需传入\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9527",
           "member": "string",
           "name": "AlarmId",
@@ -4726,7 +4754,7 @@
         },
         {
           "disabled": false,
-          "document": "警的监控对象类型，如工作流、任务等，当前支持 1. WORKFLOW 2. TASK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警的监控对象类型，如工作流、任务等，当前支持 1. WORKFLOW 2. TASK\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WORKFLOW",
           "member": "string",
           "name": "AlarmMonitorType",
@@ -8320,6 +8348,34 @@
       ],
       "usage": "both"
     },
+    "AssetPermissionFilter": {
+      "document": "catalog资产权限过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产类型，参考AssetType定义，如CATALOG、SCHEMA、VOLUME等",
+          "example": "",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该资产类型下需要过滤的权限列表，仅返回当前用户拥有指定权限的该类型资产",
+          "example": "",
+          "member": "string",
+          "name": "FilterPermissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AssetQueryItem": {
       "document": "资产查询项",
       "members": [
@@ -10720,6 +10776,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "bool",
+          "name": "IsExternal",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -13471,7 +13549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎的名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "engine1",
           "member": "string",
           "name": "EngineName",
@@ -13482,7 +13560,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎所在地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "beijing",
           "member": "string",
           "name": "EngineRegion",
@@ -13493,7 +13571,7 @@
         },
         {
           "disabled": false,
-          "document": "spark高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark高级参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KernelParameterDto",
           "name": "KernelArgs",
@@ -13504,7 +13582,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "engineId",
           "member": "string",
           "name": "EngineId",
@@ -13515,7 +13593,7 @@
         },
         {
           "disabled": false,
-          "document": "eg地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>eg地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eg",
           "member": "string",
           "name": "EngineGatewayUrl",
@@ -13526,7 +13604,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计算资源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resourceId",
           "member": "string",
           "name": "ResourceId",
@@ -13537,13 +13615,24 @@
         },
         {
           "disabled": false,
-          "document": "计算资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计算资源名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name1",
           "member": "string",
           "name": "ResourceName",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源模式，0：默认；1：分布式；2:单节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -14544,6 +14633,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段策略",
+          "example": "",
+          "member": "DataMaskStrategyInfo",
+          "name": "DataMaskStrategyInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -16477,6 +16577,15 @@
           "example": "test create",
           "member": "string",
           "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "connection 的 ID",
+          "example": "1",
+          "member": "string",
+          "name": "ConnectionId",
           "required": false,
           "type": "string"
         }
@@ -22082,6 +22191,106 @@
         }
       ],
       "usage": "out"
+    },
+    "DataMaskGroup": {
+      "document": "用户组脱敏规则，描述某个用户组对应的脱敏方法",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作组 ID，对应 WeData 用户组 ID，必填，字符串类型。示例值：\"17738042827013749\"",
+          "example": "17738042827013749",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脱敏方法（策略类型），必填，直接透传给 DLC。合法值：MASK_SHOW_FIRST_4（保留前四个字符）、MASK_SHOW_LAST_4（保留后四个字符）、MASK_HASH（哈希脱敏）、MASK_DATE_SHOW_YEAR（日期脱敏保留年份）、MASK_NULL（置为 NULL）、MASK_DEFAULT（默认值脱敏）",
+          "example": "MASK_HASH",
+          "member": "string",
+          "name": "StrategyType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DataMaskStrategyInfo": {
+      "document": "创建脱敏策略时的策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略名称，必填，长度 1~128 字符，同一项目下唯一\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "哈希脱敏策略",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组脱敏规则列表，必填，至少包含一条规则。每条规则描述某个用户组对应的脱敏方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataMaskGroup",
+          "name": "Groups",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略类型，必填，直接透传给 DLC。合法值：MASK_SHOW_FIRST_4（保留前四个字符）、MASK_SHOW_LAST_4（保留后四个字符）、MASK_HASH（哈希脱敏）、MASK_DATE_SHOW_YEAR（日期脱敏保留年份）、MASK_NULL（置为 NULL）、MASK_DEFAULT（默认值脱敏）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MASK_HASH",
+          "member": "string",
+          "name": "StrategyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述，可选，最大 512 字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "StrategyDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DataPoint": {
       "document": "数据点",
@@ -28932,6 +29141,67 @@
       ],
       "usage": "out"
     },
+    "FeatureTableDetail": {
+      "document": "catalog特征表详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特征表主键字段列表",
+          "example": "",
+          "member": "string",
+          "name": "PrimaryKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特征表时间戳字段名称",
+          "example": "",
+          "member": "string",
+          "name": "TimestampField",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在线特征表对应的来源表名称（离线表）",
+          "example": "",
+          "member": "string",
+          "name": "SourceTableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在线特征表关联的工作流ID",
+          "example": "",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线特征表对应生成的在线特征表名称",
+          "example": "",
+          "member": "string",
+          "name": "OnlineTableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FeedBackChatBiDialogueRequest": {
       "document": "FeedBackChatBiDialogue请求参数结构体",
       "members": [
@@ -29013,6 +29283,78 @@
         }
       ],
       "type": "object"
+    },
+    "FetchOption": {
+      "document": "catalog元数据获取选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否在响应中返回权限列表，默认false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FetchPermissions",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否获取特征表详情，当AssetType为TABLE时有效</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FetchFeatureTableDetail",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按权限过滤，传入权限列表，仅返回当前用户拥有指定权限的实体；只对list接口生效，为空时不进行权限过滤</p>",
+          "example": "[\"USE_CATALOG\"]",
+          "member": "string",
+          "name": "FilterPermissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在响应中返回负责人信息，可选。不传或为true时返回负责人信息（默认返回），显式传false时不返回</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FetchOwners",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否将用户Uin转换为用户名(userName)，可选。影响范围：Audit中的CreatorName/LastModifierName、MetaOwner中的OwnerName。不传或为true时执行转换（默认转换），显式传false时不转换（Audit和MetaOwner中直接返回Uin）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FetchUserInfo",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回字段脱敏策略信息，默认不传，不用返回，传true 则会查询表字段对应的字段脱敏策略信息</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FetchMask",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "FieldDefinition": {
       "document": "文件中的数据字段定义",
@@ -29820,6 +30162,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -30873,6 +31226,15 @@
           "name": "CatalogId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -34146,7 +34508,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dlc-spark",
           "member": "string",
           "name": "EngineName",
@@ -34156,7 +34518,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
           "name": "EngineRegion",
@@ -34166,10 +34528,20 @@
         },
         {
           "disabled": false,
-          "document": "引擎内核参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎内核参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KernelParameterDto",
           "name": "KernelArgs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>不同资源模式的内核参数数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceModeKernelParameters",
+          "name": "ResourceModeParameters",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
@@ -36954,6 +37326,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -37497,6 +37878,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -38319,7 +38709,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录名",
+          "document": "<p>数据目录名</p>",
           "example": "DataLakeCatalog",
           "member": "string",
           "name": "CatalogName",
@@ -38328,7 +38718,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "default",
           "member": "string",
           "name": "SchemaName",
@@ -38337,7 +38727,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "modify_1024_05",
           "member": "string",
           "name": "TableName",
@@ -38346,12 +38736,21 @@
         },
         {
           "disabled": false,
-          "document": "调用时所在workspace唯一id",
+          "document": "<p>调用时所在workspace唯一id</p>",
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -38361,7 +38760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetTableRsp",
           "name": "Data",
@@ -38777,6 +39176,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -38894,6 +39302,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -39396,6 +39813,15 @@
           "name": "TaskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展返回字段\n\n如果想要返回 CreateTime、UpdateTime、CreateUserUin 字段，需要显式标记出来；\n\n注意：目前附加返回字段仅支持 CreateTime、UpdateTime、CreateUserUin；",
+          "example": "[\"UpdateTime\",\"CreateTime\"]",
+          "member": "string",
+          "name": "ExtendReturnFieldList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -46647,6 +47073,15 @@
           "name": "CurrentWorkspaceOnly",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -54908,6 +55343,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -56114,6 +56558,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -57140,6 +57593,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -58429,6 +58891,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -58757,6 +59228,15 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据获取选项，可选，控制是否返回权限信息及按权限过滤",
+          "example": "",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -63186,6 +63666,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -63809,7 +64300,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控指标 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控指标 ID，创建时无需传入\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9527",
           "member": "string",
           "name": "MonitorMetricId",
@@ -63820,7 +64311,7 @@
         },
         {
           "disabled": false,
-          "document": "警的监控对象类型，如工作流、任务等，当前支持 1. WORKFLOW 2. TASK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警的监控对象类型，如工作流、任务等，当前支持 1. WORKFLOW 2. TASK\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WORKFLOW",
           "member": "string",
           "name": "AlarmMonitorType",
@@ -65407,6 +65898,34 @@
         }
       ],
       "usage": "out"
+    },
+    "PermissionDetail": {
+      "document": "catalog实体权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前用户对该实体真正拥有的权限列表，已自动处理权限依赖关系，返回的都是有效权限",
+          "example": "",
+          "member": "string",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "catalog在工作空间上的权限信息（可选），取值：WORKSPACE_READONLY（只读）或 WORKSPACE_READWRITE（读写）",
+          "example": "WORKSPACE_READONLY",
+          "member": "string",
+          "name": "CatalogWorkspacePrivilege",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PermissionEntry": {
       "document": "catalog授权workspace的权限信息",
@@ -69130,6 +69649,34 @@
       ],
       "usage": "both"
     },
+    "ResourceModeKernelParameters": {
+      "document": "资源模式对应的内核参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源模式，0：默认；1：分布式；2:单节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ResourceMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应资源模式的内核参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KernelParameterDto",
+          "name": "KernelArgs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ResourcePrivilegeDetail": {
       "document": "ResourcePrivilegeDetail",
       "members": [
@@ -70698,6 +71245,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -71191,6 +71749,33 @@
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为每种AssetType单独指定需过滤的权限列表，未指定的AssetType不进行权限过滤",
+          "example": "",
+          "member": "AssetPermissionFilter",
+          "name": "PermissionFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Catalog 内容类型 取值：LAKEHOUSE, MODEL,VOLUME",
+          "example": "LAKEHOUSE",
+          "member": "string",
+          "name": "CatalogContentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只返回当前工作空间有权限的，false: 会额外返回当前用户有权限管理的catalog，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "CurrentWorkspaceOnly",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -76090,6 +76675,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特征表详细信息，仅当FeatureTableType不为空时有值",
+          "example": "",
+          "member": "FeatureTableDetail",
+          "name": "FeatureTableDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -76304,7 +76911,7 @@
         },
         {
           "disabled": false,
-          "document": "任依赖运行条件\n\n* ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功\n* ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功\n* NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中\n* ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败\n* ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败\n* ALL_FAILED: 全部失败：所有上游依赖任务都失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任依赖运行条件\n\n* ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功\n* ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功\n* NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中\n* ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败\n* ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败\n* ALL_FAILED: 全部失败：所有上游依赖任务都失败\n* ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\n* ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n* ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\n* ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\n* NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n* ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\n* ADVANCED:运行条件为高级模式时配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
@@ -76370,6 +76977,17 @@
         },
         {
           "disabled": false,
+          "document": "任务高级运行参数，当DependOnRunCondition为ADVANCED时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedDependencyConfig",
+          "name": "AdvancedDependencyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "任务X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400.1",
           "member": "float",
@@ -76388,6 +77006,50 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（入参不填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1768229915900",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（入参不填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1768455054042",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "任务额外参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskExtConfiguration",
+          "name": "TaskExtConfigurationList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人Uin（入参不填）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100046609411",
+          "member": "string",
+          "name": "CreateUserUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -76501,6 +77163,28 @@
           "example": "无",
           "member": "TaskRetryStrategy",
           "name": "TaskRetryStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务依赖运行条件\n\nALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功\nONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功\nNONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中\nALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败\nONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败\nALL_FAILED: 全部失败：所有上游依赖任务都失败\nALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\nALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\nALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\nNONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\nADVANCED:运行条件为高级模式时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL_SUCCESS",
+          "member": "string",
+          "name": "DependOnRunCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务高级运行参数，当DependOnRunCondition为ADVANCED时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedDependencyConfig",
+          "name": "AdvancedDependencyConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -76961,6 +77645,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务依赖运行条件\n\nALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功\nONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功\nNONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中\nALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败\nONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败\nALL_FAILED: 全部失败：所有上游依赖任务都失败\nALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\nALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\nALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\nNONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\nALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\nADVANCED:运行条件为高级模式时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL_SUCCESS",
+          "member": "string",
+          "name": "DependOnRunCondition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务高级运行参数，当DependOnRunCondition为ADVANCED时配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedDependencyConfig",
+          "name": "AdvancedDependencyConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -77020,6 +77724,34 @@
         }
       ],
       "usage": "out"
+    },
+    "TaskExtConfiguration": {
+      "document": "工作流任务额外配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数Key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParamKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TaskInstanceInfoDto": {
       "document": "实例信息",
@@ -77121,6 +77853,45 @@
       ],
       "usage": "both"
     },
+    "TaskRunConditionRule": {
+      "document": "任务运行条件规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上游任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "69e39c9c-8dc1-4004-ac8d-ae41a74a1916",
+          "member": "string",
+          "name": "UpstreamTaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上游任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testTask1",
+          "member": "string",
+          "name": "UpstreamTaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务可运行条件\n支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"EXCLUDED\"]",
+          "member": "string",
+          "name": "AllowedStates",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TaskSchedulerConfiguration": {
       "document": "工作流信息",
       "members": [
@@ -77189,11 +77960,11 @@
       "usage": "both"
     },
     "TaskType": {
-      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述 | UI类型 | 是否必需 |\n|--------|----------|------|--------|----------|\n| Source | 来源 | 来源 2:GIT, 3: CFS | TASK_SOURCE_SELECT | 是 |\n| NotebookPath | Notebook 相对路径 | NOTEBOOK相对路径 | WORKSPACE_FILE_SELECT | Source 为 2、3 时，必填 |\n| PreCodeCosPath | 预执行代码 Cos 路径 | PreCodeCosPath | INPUT | 否 |\n| CodeFileId | 文件ID | Code File Id | INPUT | Source 为 3 时，必填 |\n| DisplayPath | 显示路径 | Display path | INPUT | 否 |\n| NotebookAbsolutePath | 绝对路径 | Absolute path | INPUT | 否 |\n\n\n\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述 | UI类型 | 是否必需 |\n|--------|----------|------|--------|----------|\n| Source | 来源 | 4:COS | INPUT | 是 |\n| TemplatePath | 数据接入任务配置路径 | TemplatePath | INPUT | 是 |\n| DataIntegrationTaskId | 数据接入任务ID | Offline data access task id | DATA_INTEGRATION_SELECT | 是 |\n| DataIntegrationTaskName | 数据接入任务名称 | Offline data access task name | INPUT | 否 |\n\n\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述 | UI类型 | 是否必需 |\n|--------|----------|------|--------|----------|\n| WorkflowName | 工作流名称 | Workflow Name | INPUT | 否 |\n| WorkflowId | 选择工作流 | Workflow ID | WORKFLOW_SELECT | 是 |\n\n\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述 | UI类型 | 是否必需 |\n|--------|----------|------|--------|----------|\n| Source | 来源 | 来源 2:GIT,  5:WORKSPACE | TASK_SOURCE_SELECT | 是 |\n| SqlPath | SQL脚本路径 | SQL script path | SQL_FILE_SELECT | Source 为 2 时，必填 |\n| Schema | 模式 | Schema | INPUT | 否 |\n| Catalog | 目录 | Catalog | INPUT | 否 |\n| CodeFileName | 文件名称 | Code File Name | INPUT | 否 |\n| CodeFileId | 文件ID | Code File Id | INPUT | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本 | Code File Version | INPUT | 否 |",
+      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 可填2或5,来源 2:GIT, 5:工作空间 | TASK_SOURCE_SELECT | 是   |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | WORKSPACE_FILE_SELECT | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 必填:4,表示来源为COS | INPUT | 是   |\n| TemplatePath | 数据接入任务配置路径 | 需从（ListIntegrationTasks）接口获取 | INPUT | 是   |\n| DataIntegrationTaskId | 数据接入任务ID | 需从（ListIntegrationTasks）接口获取 | DATA_INTEGRATION_SELECT | 是   |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | WORKFLOW_SELECT | 是   |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 可填2或5,来源 2:GIT, 5:工作空间 | TASK_SOURCE_SELECT | 是   |\n| SqlPath | SQL脚本路径 | SQL脚本路径 | SQL_FILE_SELECT | Source 为 2 时，必填 |\n| CodeFileName | 文件名称 | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT | 否   |\n| CodeFileId | 文件ID | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本 | Source为5时，需从（ListReleasedCodeFile）接口获取 | INPUT | 否   |\n\n### 5. Python File 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 可填2或5,来源 2:GIT, 5:工作空间 | TASK_SOURCE_SELECT | 是   |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | WORKSPACE_FILE_SELECT | 是   |\n\n### 6.质量监控 任务类型\n\n#### 属性配置\n\n| 属性键 | 属性名称 | 描述  | UI类型 | 是否必需 |\n| --- | --- | --- | --- | --- |\n| Source | 来源  | 必填:4,表示来源为COS | INPUT | 是   |\n| TemplatePath | 质量监控配置路径 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT | 是   |\n| SourceUniqueId | 质量监控ID | 需从(ListDataQualityTasksForWorkflow)接口获取 | DATA_QUALITY_SELECT | 是   |\n| ExecutionType | 执行类型 | 必填:SQL | INPUT | 是   |\n| AfterAspect | 质量任务后置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT | 否   |\n| BeforeAspect | 质量任务前置切面 | 需从(ListDataQualityTasksForWorkflow)接口获取 | INPUT | 否   |",
       "members": [
         {
           "disabled": false,
-          "document": "任务类型：\n\n- SQL：用于执行SQL查询和数据处理操作；\n- DATA_INTEGRATION： 用于离线数据接入操作；\n- NOTEBOOK： 用于运行Notebook脚本；\n- RUN_WORKFLOW： 用于执行嵌套工作流；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型：</p><ul><li>SQL：用于执行SQL查询和数据处理操作；</li><li>DATA_INTEGRATION： 用于离线数据接入操作；</li><li>NOTEBOOK： 用于运行Notebook脚本；</li><li>RUN_WORKFLOW： 用于执行嵌套工作流；</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTEBOOK",
           "member": "string",
           "name": "TaskTypeName",
@@ -77204,7 +77975,7 @@
         },
         {
           "disabled": true,
-          "document": "（废弃）notebook任务扩展属性，请使用 TaskTypePropList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>（废弃）notebook任务扩展属性，请使用 TaskTypePropList</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskTypeNotebookExt",
           "name": "Notebook",
@@ -77215,10 +77986,21 @@
         },
         {
           "disabled": false,
-          "document": "任务扩展属性列表，具体填写参考 ListWorkflowTaskTypeProperties 接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务扩展属性列表，具体填写参考 ListWorkflowTaskTypeProperties 接口</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskTypeProperty",
           "name": "TaskTypePropertyList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskTypeProperty",
+          "name": "RuntimePropertyList",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -87341,6 +88123,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -87456,6 +88249,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
