@@ -2558,7 +2558,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "训练任务名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "document": "<p>训练任务名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>",
           "example": "TaskName",
           "member": "string",
           "name": "Name",
@@ -2567,7 +2567,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，eg：PREPAID 包年包月（资源组）;\nPOSTPAID_BY_HOUR 按量计费",
+          "document": "<p>计费模式，eg：PREPAID 包年包月（资源组）;<br>POSTPAID_BY_HOUR 按量计费</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -2576,7 +2576,7 @@
         },
         {
           "disabled": false,
-          "document": "资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{\"Role\":\"WORKER\", \"InstanceType\": \"TI.S.MEDIUM.POST\", \"InstanceNum\": 1}]",
+          "document": "<p>资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{&quot;Role&quot;:&quot;WORKER&quot;, &quot;InstanceType&quot;: &quot;TI.S.MEDIUM.POST&quot;, &quot;InstanceNum&quot;: 1}]</p>",
           "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
@@ -2585,7 +2585,7 @@
         },
         {
           "disabled": false,
-          "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH",
+          "document": "<p>训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH</p>",
           "example": "TENSORFLOW",
           "member": "string",
           "name": "FrameworkName",
@@ -2594,7 +2594,7 @@
         },
         {
           "disabled": false,
-          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9",
+          "document": "<p>训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9</p>",
           "example": "1.15",
           "member": "string",
           "name": "FrameworkVersion",
@@ -2603,7 +2603,7 @@
         },
         {
           "disabled": false,
-          "document": "训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu",
+          "document": "<p>训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu</p>",
           "example": "tf1.15-py3.7-cpu",
           "member": "string",
           "name": "FrameworkEnvironment",
@@ -2612,7 +2612,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询",
+          "document": "<p>预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询</p>",
           "example": "rsg-1368bcxs",
           "member": "string",
           "name": "ResourceGroupId",
@@ -2621,7 +2621,7 @@
         },
         {
           "disabled": false,
-          "document": "标签配置",
+          "document": "<p>标签配置</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -2630,7 +2630,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义镜像信息",
+          "document": "<p>自定义镜像信息</p>",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
@@ -2639,7 +2639,7 @@
         },
         {
           "disabled": false,
-          "document": "COS代码包路径",
+          "document": "<p>COS代码包路径</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "CodePackagePath",
@@ -2648,7 +2648,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数",
+          "document": "<p>任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数</p>",
           "example": "无",
           "member": "StartCmdInfo",
           "name": "StartCmdInfo",
@@ -2657,7 +2657,7 @@
         },
         {
           "disabled": false,
-          "document": "训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD",
+          "document": "<p>训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD</p>",
           "example": "PS_WORKER",
           "member": "string",
           "name": "TrainingMode",
@@ -2666,7 +2666,7 @@
         },
         {
           "disabled": false,
-          "document": "数据配置，依赖DataSource字段，数量不超过10个",
+          "document": "<p>数据配置，依赖DataSource字段，数量不超过10个</p>",
           "example": "无",
           "member": "DataConfig",
           "name": "DataConfigs",
@@ -2675,7 +2675,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC Id",
+          "document": "<p>VPC Id</p>",
           "example": "vpc-xxxxx",
           "member": "string",
           "name": "VpcId",
@@ -2684,7 +2684,7 @@
         },
         {
           "disabled": false,
-          "document": "子网Id",
+          "document": "<p>子网Id</p>",
           "example": "subnet-xxxx",
           "member": "string",
           "name": "SubnetId",
@@ -2693,7 +2693,7 @@
         },
         {
           "disabled": false,
-          "document": "COS训练输出路径",
+          "document": "<p>COS训练输出路径</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "Output",
@@ -2702,7 +2702,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志配置",
+          "document": "<p>CLS日志配置</p>",
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
@@ -2711,7 +2711,7 @@
         },
         {
           "disabled": false,
-          "document": "调优参数，不超过2048个字符",
+          "document": "<p>调优参数，不超过2048个字符</p>",
           "example": "{\"TrainMode\":\"DDP\"}",
           "member": "string",
           "name": "TuningParameters",
@@ -2720,7 +2720,7 @@
         },
         {
           "disabled": false,
-          "document": "是否上报日志",
+          "document": "<p>是否上报日志</p>",
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
@@ -2729,7 +2729,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，不超过1024个字符",
+          "document": "<p>备注，不超过1024个字符</p>",
           "example": "\"Remark\"",
           "member": "string",
           "name": "Remark",
@@ -2738,7 +2738,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx",
+          "document": "<p>数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx</p>",
           "example": "DATASET",
           "member": "string",
           "name": "DataSource",
@@ -2747,7 +2747,7 @@
         },
         {
           "disabled": false,
-          "document": "回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)",
+          "document": "<p>回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&amp;内容详见：<a href=\"https://cloud.tencent.com/document/product/851/84292\">[TI-ONE接口回调说明]</a></p>",
           "example": "http://callback.url",
           "member": "string",
           "name": "CallbackUrl",
@@ -2756,7 +2756,7 @@
         },
         {
           "disabled": false,
-          "document": "编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效",
+          "document": "<p>编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效</p>",
           "example": "无",
           "member": "EncodedStartCmdInfo",
           "name": "EncodedStartCmdInfo",
@@ -2765,7 +2765,7 @@
         },
         {
           "disabled": false,
-          "document": "代码仓库配置",
+          "document": "<p>代码仓库配置</p>",
           "example": "无",
           "member": "CodeRepoConfig",
           "name": "CodeRepos",
@@ -2774,12 +2774,21 @@
         },
         {
           "disabled": false,
-          "document": "网络暴露配置",
+          "document": "<p>网络暴露配置</p>",
           "example": "无",
           "member": "ExposeNetworkConfig",
           "name": "ExposeNetworkConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2789,7 +2798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "训练任务ID",
+          "document": "<p>训练任务ID</p>",
           "example": "train-13766824497408",
           "member": "string",
           "name": "Id",
@@ -3096,7 +3105,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源ID",
+          "document": "<p>数据源ID</p>",
           "example": "dse-cfs-abced",
           "member": "string",
           "name": "Id",
@@ -3106,7 +3115,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源名称",
+          "document": "<p>数据源名称</p>",
           "example": "数据源abc",
           "member": "string",
           "name": "Name",
@@ -3116,7 +3125,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者uin",
+          "document": "<p>创建者uin</p>",
           "example": "282833212",
           "member": "string",
           "name": "Creator",
@@ -3126,7 +3135,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者名称",
+          "document": "<p>创建者名称</p>",
           "example": "testname",
           "member": "string",
           "name": "CreatorName",
@@ -3136,7 +3145,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型英文名",
+          "document": "<p>数据源类型英文名</p>",
           "example": "Cfs",
           "member": "string",
           "name": "Type",
@@ -3146,7 +3155,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源权限，取值有RW RO",
+          "document": "<p>数据源权限，取值有RW RO</p>",
           "example": "RW",
           "member": "string",
           "name": "Permission",
@@ -3156,7 +3165,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源所属存储实例ID",
+          "document": "<p>数据源所属存储实例ID</p>",
           "example": "cfs-abcdef",
           "member": "string",
           "name": "StorageId",
@@ -3166,7 +3175,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源所属存储实例名称",
+          "document": "<p>数据源所属存储实例名称</p>",
           "example": "测试名称",
           "member": "string",
           "name": "StorageName",
@@ -3176,7 +3185,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源挂载配置",
+          "document": "<p>数据源挂载配置</p>",
           "example": "无",
           "member": "MountConfigureInfo",
           "name": "MountConfigure",
@@ -3186,7 +3195,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间, 格式为yyyy-mm-ddThh:mm:ssZ",
+          "document": "<p>创建时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>",
           "example": "2025-06-04T11:53:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -3196,7 +3205,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间, 格式为yyyy-mm-ddThh:mm:ssZ",
+          "document": "<p>更新时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>",
           "example": "2025-06-04T11:53:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -3206,7 +3215,7 @@
         },
         {
           "disabled": false,
-          "document": "限制开关是否开启，只有开启时才有限制",
+          "document": "<p>限制开关是否开启，只有开启时才有限制</p>",
           "example": "true",
           "member": "bool",
           "name": "LimitMount",
@@ -3216,7 +3225,7 @@
         },
         {
           "disabled": false,
-          "document": "标签配置",
+          "document": "<p>标签配置</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3226,7 +3235,7 @@
         },
         {
           "disabled": false,
-          "document": "额外配置,对应存储实例的额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外配置,对应存储实例的额外配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StorageExtraConf",
           "name": "ExtraConf",
@@ -9826,7 +9835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型英文名",
+          "document": "<p>类型英文名</p>",
           "example": "Cfs",
           "member": "string",
           "name": "Type",
@@ -9836,7 +9845,7 @@
         },
         {
           "disabled": false,
-          "document": "存储实例ID",
+          "document": "<p>存储实例ID</p>",
           "example": "cfs-abcdef",
           "member": "string",
           "name": "StorageId",
@@ -9846,7 +9855,7 @@
         },
         {
           "disabled": false,
-          "document": "存储实例名称",
+          "document": "<p>存储实例名称</p>",
           "example": "名称1",
           "member": "string",
           "name": "StorageName",
@@ -9856,7 +9865,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，0可挂载 1不可挂载(挂载限制)",
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 可挂载（正常）</li><li>1： 不可挂载（挂载限制）</li><li>2： 不可挂载（存储配置关闭）</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -9866,7 +9875,7 @@
         },
         {
           "disabled": false,
-          "document": "额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StorageExtraConf",
           "name": "ExtraConf",
@@ -9882,7 +9891,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源类型英文名",
+          "document": "<p>数据源类型英文名</p>",
           "example": "Cfs",
           "member": "string",
           "name": "Type",
@@ -9892,7 +9901,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源所属存储实例ID",
+          "document": "<p>数据源所属存储实例ID</p>",
           "example": "cfs-abcdef",
           "member": "string",
           "name": "StorageId",
@@ -9902,7 +9911,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源所属存储实例名称",
+          "document": "<p>数据源所属存储实例名称</p>",
           "example": "测试名称",
           "member": "string",
           "name": "StorageName",
@@ -9912,7 +9921,7 @@
         },
         {
           "disabled": false,
-          "document": "限制开关是否开启，只有开启时才有限制",
+          "document": "<p>限制开关是否开启，只有开启时才有限制</p>",
           "example": "true",
           "member": "bool",
           "name": "LimitMount",
@@ -9922,7 +9931,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者uin",
+          "document": "<p>创建者uin</p>",
           "example": "282833212",
           "member": "string",
           "name": "Creator",
@@ -9932,7 +9941,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者名称",
+          "document": "<p>创建者名称</p>",
           "example": "testname",
           "member": "string",
           "name": "CreatorName",
@@ -9942,7 +9951,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间, 格式为yyyy-mm-ddThh:mm:ssZ",
+          "document": "<p>创建时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>",
           "example": "2025-06-04T11:53:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -9952,7 +9961,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间, 格式为yyyy-mm-ddThh:mm:ssZ",
+          "document": "<p>更新时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>",
           "example": "2025-06-04T11:53:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -9962,7 +9971,7 @@
         },
         {
           "disabled": false,
-          "document": "额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StorageExtraConf",
           "name": "ExtraConf",
@@ -15395,7 +15404,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "训练任务ID",
+          "document": "<p>训练任务ID</p>",
           "example": "train-123311",
           "member": "string",
           "name": "Id",
@@ -15405,7 +15414,7 @@
         },
         {
           "disabled": false,
-          "document": "训练任务名称",
+          "document": "<p>训练任务名称</p>",
           "example": "测试训练任务",
           "member": "string",
           "name": "Name",
@@ -15415,7 +15424,7 @@
         },
         {
           "disabled": false,
-          "document": "框架名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>框架名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TENSORFLOW",
           "member": "string",
           "name": "FrameworkName",
@@ -15425,7 +15434,7 @@
         },
         {
           "disabled": false,
-          "document": "训练框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>训练框架版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.12",
           "member": "string",
           "name": "FrameworkVersion",
@@ -15435,7 +15444,7 @@
         },
         {
           "disabled": false,
-          "document": "框架运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>框架运行环境</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tf2.4-py3.8-cpu",
           "member": "string",
           "name": "FrameworkEnvironment",
@@ -15445,7 +15454,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式",
+          "document": "<p>计费模式</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -15455,7 +15464,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
+          "document": "<p>计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中</p>",
           "example": "NOT_BILLING",
           "member": "string",
           "name": "ChargeStatus",
@@ -15465,7 +15474,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预付费专用资源组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rsg-xxxxx",
           "member": "string",
           "name": "ResourceGroupId",
@@ -15475,7 +15484,7 @@
         },
         {
           "disabled": false,
-          "document": "资源配置",
+          "document": "<p>资源配置</p>",
           "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
@@ -15485,7 +15494,7 @@
         },
         {
           "disabled": false,
-          "document": "训练模式eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>训练模式eg：PS_WORKER、DDP、MPI、HOROVOD</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PS_WORKER",
           "member": "string",
           "name": "TrainingMode",
@@ -15495,7 +15504,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，eg：SUBMITTING提交中、PENDING排队中、\nSTARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
+          "document": "<p>任务状态，eg：SUBMITTING提交中、PENDING排队中、<br>STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>",
           "example": "SUBMITTING",
           "member": "string",
           "name": "Status",
@@ -15505,7 +15514,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行时长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "RuntimeInSeconds",
@@ -15515,7 +15524,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -15525,7 +15534,7 @@
         },
         {
           "disabled": false,
-          "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>训练开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -15535,7 +15544,7 @@
         },
         {
           "disabled": false,
-          "document": "训练结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>训练结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -15545,7 +15554,7 @@
         },
         {
           "disabled": false,
-          "document": "训练输出",
+          "document": "<p>训练输出</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "Output",
@@ -15555,7 +15564,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Failed",
           "member": "string",
           "name": "FailureReason",
@@ -15565,7 +15574,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -15575,7 +15584,7 @@
         },
         {
           "disabled": false,
-          "document": "计费金额信息，eg：2.00元/小时 (按量计费)",
+          "document": "<p>计费金额信息，eg：2.00元/小时 (按量计费)</p>",
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
@@ -15585,7 +15594,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费专用资源组名称",
+          "document": "<p>预付费专用资源组名称</p>",
           "example": "测试资源组",
           "member": "string",
           "name": "ResourceGroupName",
@@ -15595,7 +15604,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义镜像信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
@@ -15605,7 +15614,7 @@
         },
         {
           "disabled": false,
-          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试任务",
           "member": "string",
           "name": "Message",
@@ -15615,7 +15624,7 @@
         },
         {
           "disabled": false,
-          "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -15625,7 +15634,7 @@
         },
         {
           "disabled": false,
-          "document": "回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回调地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "callbackurl",
           "member": "string",
           "name": "CallbackUrl",
@@ -15635,7 +15644,7 @@
         },
         {
           "disabled": false,
-          "document": "任务subUin信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务subUin信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "834573",
           "member": "string",
           "name": "SubUin",
@@ -15645,7 +15654,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务创建者名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
           "name": "SubUinName",
@@ -15655,12 +15664,22 @@
         },
         {
           "disabled": false,
-          "document": "任务AppId",
+          "document": "<p>任务AppId</p>",
           "example": "1318247800",
           "member": "string",
           "name": "AppId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Envs",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

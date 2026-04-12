@@ -1350,7 +1350,35 @@
     },
     "DescribeLicenseListRequest": {
       "document": "DescribeLicenseList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从0开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数据量</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>pc端还是mobile端</p>",
+          "example": "mobile",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeLicenseListResponse": {
@@ -1358,7 +1386,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "临期license数量",
+          "document": "<p>临期license数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "Count",
@@ -1368,7 +1396,7 @@
         },
         {
           "disabled": false,
-          "document": "正式license总览统计数据",
+          "document": "<p>正式license总览统计数据</p>",
           "example": "无",
           "member": "Overview",
           "name": "Overview",
@@ -1378,7 +1406,7 @@
         },
         {
           "disabled": false,
-          "document": "临期license列表",
+          "document": "<p>临期license列表</p>",
           "example": "无",
           "member": "OverviewLicense",
           "name": "LicenseList",
@@ -1388,7 +1416,7 @@
         },
         {
           "disabled": false,
-          "document": "测试license总览统计数据",
+          "document": "<p>测试license总览统计数据</p>",
           "example": "无",
           "member": "Overview",
           "name": "TrialOverview",

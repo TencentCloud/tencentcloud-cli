@@ -9266,7 +9266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理的文件输入信息。",
+          "document": "<p>媒体处理的文件输入信息。</p>",
           "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
@@ -9275,7 +9275,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。\n注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出",
+          "document": "<p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出</p>",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -9284,7 +9284,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与 InputInfo 中文件所在的目录一致。",
+          "document": "<p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>",
           "example": "/movie/test/",
           "member": "string",
           "name": "OutputDir",
@@ -9293,7 +9293,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕",
+          "document": "<p>智能字幕</p>",
           "example": "无",
           "member": "SmartSubtitlesTaskInput",
           "name": "SmartSubtitlesTask",
@@ -9302,7 +9302,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "document": "<p>任务的事件通知信息，不填代表不获取事件通知。</p>",
           "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
@@ -9311,7 +9311,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
+          "document": "<p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>",
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
@@ -9320,7 +9320,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
           "example": "UserDefinedInfo",
           "member": "string",
           "name": "SessionContext",
@@ -9329,7 +9329,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。",
+          "document": "<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>",
           "example": "vts-24000123-0",
           "member": "string",
           "name": "ResourceId",
@@ -9338,12 +9338,21 @@
         },
         {
           "disabled": false,
-          "document": "是否跳过元信息获取，可选值： \n0：表示不跳过 \n1：表示跳过 \n默认值：0\t",
+          "document": "<p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>",
           "example": "0",
           "member": "int64",
           "name": "SkipMateData",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行模式，可选值：</p><li>Parallel: 并发执行</li><li>Serial: 串行执行</li>注意：默认并发执行。",
+          "example": "Parallel",
+          "member": "string",
+          "name": "TaskMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9353,7 +9362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID。",
+          "document": "<p>任务 ID。</p>",
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
@@ -17389,7 +17398,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片处理任务的任务 ID。",
+          "document": "<p>图片处理任务的任务 ID。</p>",
           "example": "235303****-WorkflowTask-80108cc3380155d98b2e3573a48a******",
           "member": "string",
           "name": "TaskId",
@@ -17404,7 +17413,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，目前取值有：\n<li>WorkflowTask：工作流处理任务。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型，目前取值有：</p><li>WorkflowTask：工作流处理任务。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WorkflowTask",
           "member": "string",
           "name": "TaskType",
@@ -17414,7 +17423,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，取值：\n<li>WAITING：等待中；</li>\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务状态，取值：</p><li>WAITING：等待中；</li><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
@@ -17424,7 +17433,7 @@
         },
         {
           "disabled": false,
-          "document": "任务失败时的错误码。",
+          "document": "<p>任务失败时的错误码。</p>",
           "example": "40000",
           "member": "int64",
           "name": "ErrCode",
@@ -17434,7 +17443,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
           "example": "InvalidParameterValue.FaceNotFound",
           "member": "string",
           "name": "ErrMsg",
@@ -17444,7 +17453,7 @@
         },
         {
           "disabled": false,
-          "document": "任务异常Message。",
+          "document": "<p>任务异常Message。</p>",
           "example": "Face Not Found",
           "member": "string",
           "name": "Message",
@@ -17454,7 +17463,7 @@
         },
         {
           "disabled": false,
-          "document": "图片处理任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片处理任务的执行状态与结果。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageProcessTaskResult",
           "name": "ImageProcessTaskResultSet",
@@ -17464,7 +17473,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务的创建时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:27Z",
           "member": "string",
           "name": "CreateTime",
@@ -17474,13 +17483,43 @@
         },
         {
           "disabled": false,
-          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务执行完毕的时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板唯一标识。</p>",
+          "example": "20043",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务发起参数。</p>",
+          "example": "无",
+          "member": "ImageTaskInput",
+          "name": "ImageTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片任务输入信息。</p>",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -39852,7 +39891,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务进度。",
+          "document": "<p>任务进度。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Progress",
@@ -39862,7 +39901,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS，WAITING 和 FAIL 四种。</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
@@ -39872,7 +39911,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
           "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
@@ -39882,7 +39921,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
+          "document": "<p>错误信息。</p>",
           "example": "task fail",
           "member": "string",
           "name": "Message",
@@ -39892,7 +39931,7 @@
         },
         {
           "disabled": false,
-          "document": "翻译任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>翻译任务输出信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartSubtitleTaskTransTextResultOutput",
           "name": "TransTextTask",
@@ -39902,7 +39941,7 @@
         },
         {
           "disabled": false,
-          "document": "语音全文识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>语音全文识别任务输出信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartSubtitleTaskAsrFullTextResultOutput",
           "name": "AsrFullTextTask",

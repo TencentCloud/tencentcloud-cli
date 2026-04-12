@@ -84,6 +84,13 @@
       "output": "DescribeProjectsResponse",
       "status": "online"
     },
+    "DescribePublicApplications": {
+      "document": "查询公共应用列表。",
+      "input": "DescribePublicApplicationsRequest",
+      "name": "查询公共应用列表",
+      "output": "DescribePublicApplicationsResponse",
+      "status": "online"
+    },
     "DescribeRunGroups": {
       "document": "查询任务批次列表。",
       "input": "DescribeRunGroupsRequest",
@@ -1498,6 +1505,62 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicApplicationsRequest": {
+      "document": "DescribePublicApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicApplicationsResponse": {
+      "document": "DescribePublicApplications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公共应用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicApplication",
+          "name": "Applications",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3596,6 +3659,82 @@
       ],
       "usage": "out"
     },
+    "PublicApplication": {
+      "document": "公共应用。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID。</p>",
+          "example": "publicapp-nf-ori-collection",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称。</p>",
+          "example": "ORI Collection (Nextflow)",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型。</p>",
+          "example": "NEXTFLOW",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用标记</p><p>枚举值：</p><ul><li>SUB_APP： 子应用</li><li>APP_COLLECTION： 合集</li><li>STANDALONE_APP： 独立应用</li></ul>",
+          "example": "APP_COLLECTION",
+          "member": "string",
+          "name": "AppGroupType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Nextflow版本</p>",
+          "example": "[\"v23.10.3\"]",
+          "member": "string",
+          "name": "NextflowVersion",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用分类</p>",
+          "example": "无",
+          "member": "ToolRepoTag",
+          "name": "AppTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用标识</p>",
+          "example": "5c63718b-d24f-4a9f-9838-4177185f414a",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RebootHPCNodesRequest": {
       "document": "RebootHPCNodes请求参数结构体",
       "members": [
@@ -5390,6 +5529,34 @@
         }
       ],
       "type": "object"
+    },
+    "ToolRepoTag": {
+      "document": "应用分类标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用分类标签ID</p>",
+          "example": "fbf53a9e-3acc-45cb-b47e-c2118e3f258b",
+          "member": "string",
+          "name": "TagId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用分类标签名称</p>",
+          "example": "宏基因组",
+          "member": "string",
+          "name": "TagName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VPCOption": {
       "document": "私有网络配置。",

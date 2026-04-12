@@ -96,6 +96,14 @@
         "title": "查询项目列表"
       }
     ],
+    "DescribePublicApplications": [
+      {
+        "document": "查询公共应用列表。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicApplications\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Applications\": [\n            {\n                \"ApplicationId\": \"publicapp-nf-taxprofiler\",\n                \"Name\": \"taxprofiler\",\n                \"Type\": \"NEXTFLOW\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-nf-mag\",\n                \"Name\": \"mag\",\n                \"Type\": \"NEXTFLOW\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-nf-scrnaseq\",\n                \"Name\": \"scrnaseq\",\n                \"Type\": \"NEXTFLOW\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-nf-sarek\",\n                \"Name\": \"sarek\",\n                \"Type\": \"NEXTFLOW\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-nf-rnaseq\",\n                \"Name\": \"rnaseq\",\n                \"Type\": \"NEXTFLOW\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-wdl-gatk-wes-germline-snps-indels\",\n                \"Name\": \"gatk-WES-germline-snps/indels\",\n                \"Type\": \"WDL\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-wdl-fastp\",\n                \"Name\": \"fastp\",\n                \"Type\": \"WDL\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-wdl-soapnuke\",\n                \"Name\": \"SOAPnuke\",\n                \"Type\": \"WDL\"\n            },\n            {\n                \"ApplicationId\": \"publicapp-wdl-gatk-wgs-germline-snps-indels\",\n                \"Name\": \"gatk-WGS-germline-snps-indels\",\n                \"Type\": \"WDL\"\n            }\n        ],\n        \"RequestId\": \"29b98f59-7e20-4817-87fe-85aa11a890c4\",\n        \"TotalCount\": 9\n    }\n}",
+        "title": "查询公共应用列表"
+      }
+    ],
     "DescribeRunGroups": [
       {
         "document": "查询任务批次列表。",

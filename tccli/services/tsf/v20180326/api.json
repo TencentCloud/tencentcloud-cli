@@ -2001,7 +2001,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "api-0i1r0zuh",
           "member": "string",
           "name": "ApiId",
@@ -2011,7 +2011,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命名空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "namespace-qab7bq9v",
           "member": "string",
           "name": "NamespaceId",
@@ -2021,7 +2021,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命名空间名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ns_default",
           "member": "string",
           "name": "NamespaceName",
@@ -2031,7 +2031,7 @@
         },
         {
           "disabled": false,
-          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-ba2jlxvk",
           "member": "string",
           "name": "MicroserviceId",
@@ -2041,7 +2041,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "provider-demo",
           "member": "string",
           "name": "MicroserviceName",
@@ -2051,7 +2051,7 @@
         },
         {
           "disabled": false,
-          "document": "API 请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API 请求路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/checkToken",
           "member": "string",
           "name": "Path",
@@ -2061,7 +2061,7 @@
         },
         {
           "disabled": false,
-          "document": "Api 映射路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Api 映射路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/checkToken",
           "member": "string",
           "name": "PathMapping",
@@ -2071,7 +2071,7 @@
         },
         {
           "disabled": false,
-          "document": "请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求方法</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GET",
           "member": "string",
           "name": "Method",
@@ -2081,7 +2081,7 @@
         },
         {
           "disabled": false,
-          "document": "所属分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属分组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "grp-nb08ur29",
           "member": "string",
           "name": "GroupId",
@@ -2091,7 +2091,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否禁用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
@@ -2101,7 +2101,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发布状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "released",
           "member": "string",
           "name": "ReleaseStatus",
@@ -2111,7 +2111,7 @@
         },
         {
           "disabled": false,
-          "document": "开启限流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开启限流</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "disabled",
           "member": "string",
           "name": "RateLimitStatus",
@@ -2121,7 +2121,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启mock\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启mock</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "disabled",
           "member": "string",
           "name": "MockStatus",
@@ -2131,7 +2131,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-23 01:30:03",
           "member": "string",
           "name": "CreatedTime",
@@ -2141,7 +2141,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-23 01:30:03",
           "member": "string",
           "name": "UpdatedTime",
@@ -2151,7 +2151,7 @@
         },
         {
           "disabled": false,
-          "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发布时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-23 01:30:03",
           "member": "string",
           "name": "ReleasedTime",
@@ -2161,7 +2161,7 @@
         },
         {
           "disabled": false,
-          "document": "所属分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属分组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "grp_name",
           "member": "string",
           "name": "GroupName",
@@ -2171,7 +2171,7 @@
         },
         {
           "disabled": false,
-          "document": "API 超时，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API 超时，单位毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "int64",
           "name": "Timeout",
@@ -2181,7 +2181,7 @@
         },
         {
           "disabled": false,
-          "document": "Api所在服务host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Api所在服务host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://www.qq.com",
           "member": "string",
           "name": "Host",
@@ -2191,7 +2191,7 @@
         },
         {
           "disabled": false,
-          "document": "API类型。 ms ： 微服务API； external :外部服务Api\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API类型。 ms ： 微服务API； external :外部服务Api</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms",
           "member": "string",
           "name": "ApiType",
@@ -2201,7 +2201,7 @@
         },
         {
           "disabled": false,
-          "document": "Api描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Api描述信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is desc",
           "member": "string",
           "name": "Description",
@@ -2211,7 +2211,7 @@
         },
         {
           "disabled": false,
-          "document": "API路径匹配类型。normal：普通API；wildcard：通配API。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API路径匹配类型。normal：普通API；wildcard：通配API。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
           "name": "ApiMatchType",
@@ -2221,8 +2221,8 @@
         },
         {
           "disabled": false,
-          "document": "RPC 额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"shortServiceName\":\"provider-demo\",\"interfaceName\":\"com.tencent.tsf.atom.example.alibaba.dubbo.PersonService\",\"methodName\":\"findByName\",\"parameterTypes\":\"java.lang.String\",\"group\":null,\"version\":\"1.0\",\"loadbalance\":null,\"retries\":null,\"timeout\":null,\"protocol\":\"dubbo\",\"url\":null}",
+          "document": "<p>RPC 额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"shortServiceName\":\"demo-app\",\"interfaceName\":\"com.tencent.tsf.Service\",\"methodName\":\"find\",\"parameterTypes\":\"java.lang.String\",\"group\":null,\"version\":\"1.0\",\"loadbalance\":null,\"retries\":null,\"timeout\":null,\"protocol\":\"dubbo\",\"url\":null}",
           "member": "string",
           "name": "RpcExt",
           "output_required": true,
@@ -2231,7 +2231,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部署组id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group-ldap5yok",
           "member": "string",
           "name": "GatewayDeployGroupId",
@@ -2241,7 +2241,7 @@
         },
         {
           "disabled": false,
-          "document": "md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>md5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "37025610cc82b1a9a8f192159c6di3d9",
           "member": "string",
           "name": "Md5",
@@ -2251,13 +2251,33 @@
         },
         {
           "disabled": false,
-          "document": "RPC 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>RPC 类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http",
           "member": "string",
           "name": "RpcType",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用短路径访问开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PathMappingUnsupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>禁用短路径访问开关原因</p>",
+          "example": "API带路径参数场景暂不支持短路径访问",
+          "member": "string",
+          "name": "PathMappingUnsupportedMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2608,7 +2628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "rule Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>rule Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rule-ov3yyria",
           "member": "string",
           "name": "RuleId",
@@ -2618,7 +2638,7 @@
         },
         {
           "disabled": false,
-          "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "api-c5tc8x6j",
           "member": "string",
           "name": "ApiId",
@@ -2628,7 +2648,7 @@
         },
         {
           "disabled": false,
-          "document": "限流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>限流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gateway-proxy-rule_grp-kehvi94a_api-c5tc8x6j",
           "member": "string",
           "name": "RuleName",
@@ -2638,7 +2658,7 @@
         },
         {
           "disabled": false,
-          "document": "最大限流qps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大限流qps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "uint64",
           "name": "MaxQps",
@@ -2648,7 +2668,7 @@
         },
         {
           "disabled": false,
-          "document": "生效/禁用, enabled/disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生效/禁用, enabled/disabled</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
@@ -2658,7 +2678,7 @@
         },
         {
           "disabled": false,
-          "document": "规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "忽略，接口冗余字段。",
           "member": "string",
           "name": "RuleContent",
@@ -2668,7 +2688,7 @@
         },
         {
           "disabled": false,
-          "document": "Tsf Rule ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Tsf Rule ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rate-9ov6lpv3",
           "member": "string",
           "name": "TsfRuleId",
@@ -2678,7 +2698,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is desc",
           "member": "string",
           "name": "Description",
@@ -2688,7 +2708,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-19 21:00:00",
           "member": "string",
           "name": "CreatedTime",
@@ -2698,7 +2718,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-19 21:00:00",
           "member": "string",
           "name": "UpdatedTime",
@@ -2708,7 +2728,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分页参数limit</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -2718,7 +2738,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分页参数offset</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2728,13 +2748,23 @@
         },
         {
           "disabled": false,
-          "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>AppId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AppId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>旧格式 method 与 path 分开，新格式 path-Method,如 /checkToken-GET，默认为新格式</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UsePathAndMethodFormat",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24444,7 +24474,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-vzge6mz8",
           "member": "string",
           "name": "MicroserviceId",
@@ -24455,7 +24485,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "consumer-demo",
           "member": "string",
           "name": "MicroserviceName",
@@ -24466,7 +24496,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微服务描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
@@ -24477,7 +24507,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1732784732000",
           "member": "int64",
           "name": "CreateTime",
@@ -24488,7 +24518,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1732784732000",
           "member": "int64",
           "name": "UpdateTime",
@@ -24499,7 +24529,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命名空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "namespace-96a79v5b",
           "member": "string",
           "name": "NamespaceId",
@@ -24510,7 +24540,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务的运行实例数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微服务的运行实例数目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RunInstanceCount",
@@ -24521,13 +24551,35 @@
         },
         {
           "disabled": false,
-          "document": "微服务的离线实例数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微服务的离线实例数目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CriticalInstanceCount",
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用删除按钮，true：是；false：否。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteDisabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>禁用删除原因。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "请删除分组,API和重定向配置后重试,如开启单元化,请先关闭单元化",
+          "member": "string",
+          "name": "DeleteDisabledReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -25022,7 +25074,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "灰度发布规则ID。该参数可以通过调用 [DescribeLaneRules](https://cloud.tencent.com/document/product/649/44505) 的返回值中的 RuleId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lanerule)查看；也可以调用[CreateLaneRule](https://cloud.tencent.com/document/product/649/44507)创建新的灰度发布规则。",
+          "document": "<p>灰度发布规则ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/649/44505\">DescribeLaneRules</a> 的返回值中的 RuleId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&amp;subTab=lanerule\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/44507\">CreateLaneRule</a>创建新的灰度发布规则。</p>",
           "example": "lane-r-yqg4kmbd",
           "member": "string",
           "name": "RuleId",
@@ -25031,7 +25083,7 @@
         },
         {
           "disabled": false,
-          "document": "灰度发布规则名称，最多支持60个字符，支持中英文字符。",
+          "document": "<p>灰度发布规则名称，最多支持60个字符，支持中英文字符。</p>",
           "example": "rule_app",
           "member": "string",
           "name": "RuleName",
@@ -25040,7 +25092,7 @@
         },
         {
           "disabled": false,
-          "document": "灰度发布规则备注，最多支持200个字符。",
+          "document": "<p>灰度发布规则备注，最多支持200个字符。</p>",
           "example": "This is desc",
           "member": "string",
           "name": "Remark",
@@ -25049,7 +25101,7 @@
         },
         {
           "disabled": false,
-          "document": "灰度发布规则标签列表。",
+          "document": "<p>灰度发布规则标签列表。</p>",
           "example": "无",
           "member": "LaneRuleTag",
           "name": "RuleTagList",
@@ -25058,16 +25110,7 @@
         },
         {
           "disabled": false,
-          "document": "灰度发布规则标签关系。- RELEATION_AND：与- RELEATION_OR：或",
-          "example": "RELEATION_AND",
-          "member": "string",
-          "name": "RuleTagRelationship",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "泳道配置ID。该参数可以通过调用 [DescribeLanes](https://cloud.tencent.com/document/product/649/44504) 的返回值中的 LaneId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lane)查看；也可以调用[CreateLane](https://cloud.tencent.com/document/product/649/44508)创建新的泳道配置。",
+          "document": "<p>泳道配置ID。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/product/649/44504\">DescribeLanes</a> 的返回值中的 LaneId 字段来获取或通过登录<a href=\"https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&amp;subTab=lane\">控制台</a>查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/44508\">CreateLane</a>创建新的泳道配置。</p>",
           "example": "lane-ap62k7ol",
           "member": "string",
           "name": "LaneId",
@@ -25076,12 +25119,21 @@
         },
         {
           "disabled": false,
-          "document": "开启状态。\n- true：开启\n- false：关闭",
+          "document": "<p>开启状态。</p><ul><li>true：开启</li><li>false：关闭</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>灰度发布规则标签关系。- RELEATION_AND：与- RELEATION_OR：或</p>",
+          "example": "RELEATION_AND",
+          "member": "string",
+          "name": "RuleTagRelationship",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25091,7 +25143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改结果。\n- true：成功\n- false：失败",
+          "document": "<p>修改结果。</p><ul><li>true：成功</li><li>false：失败</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -28737,7 +28789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问",
+          "document": "<p>0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问</p>",
           "example": "2",
           "member": "int64",
           "name": "AccessType",
@@ -28748,7 +28800,7 @@
         },
         {
           "disabled": false,
-          "document": "容器端口映射",
+          "document": "<p>容器端口映射</p>",
           "example": "无",
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
@@ -28759,7 +28811,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-d15zonly",
           "member": "string",
           "name": "SubnetId",
@@ -28770,7 +28822,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建 k8s service，默认为 false",
+          "document": "<p>是否创建 k8s service，默认为 false</p>",
           "example": "false",
           "member": "bool",
           "name": "DisableService",
@@ -28781,7 +28833,7 @@
         },
         {
           "disabled": false,
-          "document": "service 是否为 headless 类型",
+          "document": "<p>service 是否为 headless 类型</p>",
           "example": "false",
           "member": "bool",
           "name": "HeadlessService",
@@ -28792,7 +28844,7 @@
         },
         {
           "disabled": false,
-          "document": "当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用",
+          "document": "<p>当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用</p>",
           "example": "false",
           "member": "bool",
           "name": "AllowDeleteService",
@@ -28803,7 +28855,7 @@
         },
         {
           "disabled": false,
-          "document": "开启SessionAffinity，true为开启，false为不开启，默认为false",
+          "document": "<p>开启SessionAffinity，true为开启，false为不开启，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "OpenSessionAffinity",
@@ -28814,7 +28866,7 @@
         },
         {
           "disabled": false,
-          "document": "SessionAffinity会话时间，默认10800",
+          "document": "<p>SessionAffinity会话时间，默认10800</p>",
           "example": "10800",
           "member": "int64",
           "name": "SessionAffinityTimeoutSeconds",
@@ -28825,7 +28877,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "svc-name",
           "member": "string",
           "name": "ServiceName",
@@ -28836,7 +28888,7 @@
         },
         {
           "disabled": false,
-          "document": "外部流量策略",
+          "document": "<p>外部流量策略</p>",
           "example": "Local",
           "member": "string",
           "name": "ExternalTrafficStrategy",
@@ -28847,7 +28899,7 @@
         },
         {
           "disabled": false,
-          "document": "外部流量策略",
+          "document": "<p>外部流量策略</p>",
           "example": "Local",
           "member": "string",
           "name": "ExternalTrafficPolicy",
@@ -28858,7 +28910,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡提供者",
+          "document": "<p>负载均衡提供者</p>",
           "example": "tgw",
           "member": "string",
           "name": "LoadBalancerProvisioner",
@@ -28869,7 +28921,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡类型，Intranet表示内网，Internet表示外网",
+          "document": "<p>负载均衡类型，Intranet表示内网，Internet表示外网</p>",
           "example": "Intranet",
           "member": "string",
           "name": "LoadBalancingType",
@@ -28880,7 +28932,7 @@
         },
         {
           "disabled": false,
-          "document": "k8s负载均衡内网vip",
+          "document": "<p>k8s负载均衡内网vip</p>",
           "example": "192.168.21.2",
           "member": "string",
           "name": "ClusterIp",
@@ -28891,7 +28943,7 @@
         },
         {
           "disabled": false,
-          "document": "禁用服务Int记录",
+          "document": "<p>禁用服务Int记录</p>",
           "example": "0",
           "member": "uint64",
           "name": "DisableServiceInt",
@@ -28902,7 +28954,7 @@
         },
         {
           "disabled": false,
-          "document": "开启SessionAffinity Int记录",
+          "document": "<p>开启SessionAffinity Int记录</p>",
           "example": "0",
           "member": "uint64",
           "name": "OpenSessionAffinityInt",
@@ -28913,7 +28965,7 @@
         },
         {
           "disabled": false,
-          "document": "开启HeadlessService int记录",
+          "document": "<p>开启HeadlessService int记录</p>",
           "example": "0",
           "member": "uint64",
           "name": "HeadlessServiceInt",
@@ -28924,7 +28976,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "svc-name",
           "member": "string",
           "name": "Name",
@@ -28935,7 +28987,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC网络ID",
+          "document": "<p>VPC网络ID</p>",
           "example": "vpcid",
           "member": "string",
           "name": "VpcId",
@@ -28946,7 +28998,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡VIP",
+          "document": "<p>负载均衡VIP</p>",
           "example": "loadbalanceIp",
           "member": "string",
           "name": "LoadBalancingIp",
@@ -28957,7 +29009,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡id",
+          "document": "<p>负载均衡id</p>",
           "example": "loadbalanceId",
           "member": "string",
           "name": "LoadBalancerId",
@@ -28968,13 +29020,24 @@
         },
         {
           "disabled": false,
-          "document": "已存在的负载均衡id",
+          "document": "<p>已存在的负载均衡id</p>",
           "example": "existingLoadbalancerId",
           "member": "string",
           "name": "ExistingLoadBalancerId",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为全局服务（仅TCS环境使用）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableGlobalService",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -29698,6 +29761,26 @@
           "example": "kube-ns",
           "member": "string",
           "name": "K8sNamespaceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-09-01 19:26:24",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-10-22 23:32:16",
+          "member": "string",
+          "name": "UpdatedTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -32236,6 +32319,15 @@
           "name": "MaxQps",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "旧格式 method 与 path 分开，新格式 path-<Method>,如 /checkToken-GET，默认为新格式",
+          "example": "true",
+          "member": "bool",
+          "name": "UsePathAndMethodFormat",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

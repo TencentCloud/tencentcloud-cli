@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli vcube DescribeLicenseList --cli-unfold-argument ```
+tccli vcube DescribeLicenseList --cli-unfold-argument  \
+    --PageNumber 0 \
+    --PageSize 10 \
+    --Platform pc
+```
 
 Output: 
 ```

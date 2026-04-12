@@ -84,6 +84,20 @@
       "output": "DescribeAppSingleCaseListResponse",
       "status": "online"
     },
+    "DescribeApplicationExitReportDetail": {
+      "document": "获取应用退出个例上报详情",
+      "input": "DescribeApplicationExitReportDetailRequest",
+      "name": "【融合版】获取异常退出分析个例详情",
+      "output": "DescribeApplicationExitReportDetailResponse",
+      "status": "online"
+    },
+    "DescribeApplicationExitReportList": {
+      "document": "获取应用退出个例上报列表",
+      "input": "DescribeApplicationExitReportListRequest",
+      "name": "【融合版】获取异常退出分析个例列表",
+      "output": "DescribeApplicationExitReportListResponse",
+      "status": "online"
+    },
     "DescribeData": {
       "document": "转发monitor查询",
       "input": "DescribeDataRequest",
@@ -301,6 +315,104 @@
       "output": "DescribeErrorResponse",
       "status": "online"
     },
+    "DescribeExceptionDetail": {
+      "document": "获取异常问题详情数据",
+      "input": "DescribeExceptionDetailRequest",
+      "name": "【融合版】获取异常问题详情数据",
+      "output": "DescribeExceptionDetailResponse",
+      "status": "online"
+    },
+    "DescribeExceptionReportList": {
+      "document": "获取异常个例列表",
+      "input": "DescribeExceptionReportListRequest",
+      "name": "【融合版】获取异常(崩溃 错误 安卓anr 安卓foom)个例列表",
+      "output": "DescribeExceptionReportListResponse",
+      "status": "online"
+    },
+    "DescribeFOOMMallocProblemDetail": {
+      "document": "获取FOOM内存分配问题详情数据",
+      "input": "DescribeFOOMMallocProblemDetailRequest",
+      "name": "【融合版】FOOM内存分配问题详情",
+      "output": "DescribeFOOMMallocProblemDetailResponse",
+      "status": "online"
+    },
+    "DescribeFOOMMallocProblemList": {
+      "document": "获取FOOM内存分配问题列表数据",
+      "input": "DescribeFOOMMallocProblemListRequest",
+      "name": "【融合版】获取FOOM内存分配问题列表数据",
+      "output": "DescribeFOOMMallocProblemListResponse",
+      "status": "online"
+    },
+    "DescribeFOOMMallocReportList": {
+      "document": "获取FOOM内存分配问题上报列表",
+      "input": "DescribeFOOMMallocReportListRequest",
+      "name": "【融合版】FOOM内存分配问题个例列表",
+      "output": "DescribeFOOMMallocReportListResponse",
+      "status": "online"
+    },
+    "DescribeFOOMProblemDetail": {
+      "document": "获取FOOM问题详情数据",
+      "input": "DescribeFOOMProblemDetailRequest",
+      "name": "【融合版】获取FOOM个例详情数据",
+      "output": "DescribeFOOMProblemDetailResponse",
+      "status": "online"
+    },
+    "DescribeFOOMProblemList": {
+      "document": "获取FOOM问题列表数据",
+      "input": "DescribeFOOMProblemListRequest",
+      "name": "【融合版】获取FOOM问题列表数据",
+      "output": "DescribeFOOMProblemListResponse",
+      "status": "online"
+    },
+    "DescribeFOOMReportList": {
+      "document": "获取FOOM问题上报列表",
+      "input": "DescribeFOOMReportListRequest",
+      "name": "【融合版】获取FOOM个例列表",
+      "output": "DescribeFOOMReportListResponse",
+      "status": "online"
+    },
+    "DescribeIssuesDistribution": {
+      "document": "获取问题分布数据",
+      "input": "DescribeIssuesDistributionRequest",
+      "name": "【融合版】获取问题指定维度下的分布数据",
+      "output": "DescribeIssuesDistributionResponse",
+      "status": "online"
+    },
+    "DescribeIssuesList": {
+      "document": "获取问题列表数据",
+      "input": "DescribeIssuesListRequest",
+      "name": "【融合版】获取问题列表数据",
+      "output": "DescribeIssuesListResponse",
+      "status": "online"
+    },
+    "DescribeIssuesStatisticsTrend": {
+      "document": "获取问题趋势数据",
+      "input": "DescribeIssuesStatisticsTrendRequest",
+      "name": "【融合版】获取问题趋势数据",
+      "output": "DescribeIssuesStatisticsTrendResponse",
+      "status": "online"
+    },
+    "DescribeLagANRProblemAccountDetail": {
+      "document": "获取卡顿ANR问题用户详情",
+      "input": "DescribeLagANRProblemAccountDetailRequest",
+      "name": "【融合版】获取卡顿ANR问题个例详情",
+      "output": "DescribeLagANRProblemAccountDetailResponse",
+      "status": "online"
+    },
+    "DescribeLagANRProblemFeatureAccounts": {
+      "document": "获取卡顿ANR问题用户列表",
+      "input": "DescribeLagANRProblemFeatureAccountsRequest",
+      "name": "【融合版】获取卡顿ANR问题个例列表",
+      "output": "DescribeLagANRProblemFeatureAccountsResponse",
+      "status": "online"
+    },
+    "DescribeLagANRProblemList": {
+      "document": "获取卡顿ANR问题列表数据",
+      "input": "DescribeLagANRProblemListRequest",
+      "name": "【融合版】获取卡顿ANR问题列表",
+      "output": "DescribeLagANRProblemListResponse",
+      "status": "online"
+    },
     "DescribeProjectLimits": {
       "document": "获取应用上报抽样信息",
       "input": "DescribeProjectLimitsRequest",
@@ -399,6 +511,20 @@
       "output": "DescribeTawInstancesResponse",
       "status": "online"
     },
+    "DescribeToken": {
+      "document": "查询令牌",
+      "input": "DescribeTokenRequest",
+      "name": "【融合版】获取查询参数的token",
+      "output": "DescribeTokenResponse",
+      "status": "online"
+    },
+    "DescribeTopIssues": {
+      "document": "查询top问题列表",
+      "input": "DescribeTopIssuesRequest",
+      "name": "【融合版】查询top问题列表",
+      "output": "DescribeTopIssuesResponse",
+      "status": "online"
+    },
     "DescribeUvList": {
       "document": "获取项目下的UV列表",
       "input": "DescribeUvListRequest",
@@ -470,6 +596,56 @@
     "serviceShortName": "rum"
   },
   "objects": {
+    "CompareCondition": {
+      "document": "BugLY比较结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "App版本",
+          "example": "1.23.5",
+          "member": "string",
+          "name": "AppVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1742982420",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1745488020",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateReleaseFileRequest": {
       "document": "CreateReleaseFile请求参数结构体",
       "members": [
@@ -1271,6 +1447,246 @@
           "member": "string",
           "name": "Data",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationExitReportDetailRequest": {
+      "document": "DescribeApplicationExitReportDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题Id",
+          "example": "无",
+          "member": "string",
+          "name": "ClientIdentify",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1742982420",
+          "member": "int64",
+          "name": "StartEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1745488020",
+          "member": "int64",
+          "name": "EndEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationExitReportDetailResponse": {
+      "document": "DescribeApplicationExitReportDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationExitReportListRequest": {
+      "document": "DescribeApplicationExitReportList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationExitReportListResponse": {
+      "document": "DescribeApplicationExitReportList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8552,6 +8968,1956 @@
       ],
       "type": "object"
     },
+    "DescribeExceptionDetailRequest": {
+      "document": "DescribeExceptionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1056",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "ClientIdentify",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群堆栈类型",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterStackType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "network",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题类型",
+          "example": "1",
+          "member": "int64",
+          "name": "IssueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件开始时间",
+          "example": "1742982420",
+          "member": "int64",
+          "name": "StartEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间",
+          "example": "1745488020",
+          "member": "int64",
+          "name": "EndEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExceptionDetailResponse": {
+      "document": "DescribeExceptionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExceptionReportListRequest": {
+      "document": "DescribeExceptionReportList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1025",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 form_list 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题类型",
+          "example": "1",
+          "member": "int64",
+          "name": "IssueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "exception",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "5",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExceptionReportListResponse": {
+      "document": "DescribeExceptionReportList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMMallocProblemDetailRequest": {
+      "document": "DescribeFOOMMallocProblemDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1056",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "ClientIdentify",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "foom",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件开始时间",
+          "example": "1742982420",
+          "member": "int64",
+          "name": "StartEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间",
+          "example": "1745488020",
+          "member": "int64",
+          "name": "EndEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMMallocProblemDetailResponse": {
+      "document": "DescribeFOOMMallocProblemDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMMallocProblemListRequest": {
+      "document": "DescribeFOOMMallocProblemList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMMallocProblemListResponse": {
+      "document": "DescribeFOOMMallocProblemList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMMallocReportListRequest": {
+      "document": "DescribeFOOMMallocReportList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "foom_malloc",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMMallocReportListResponse": {
+      "document": "DescribeFOOMMallocReportList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMProblemDetailRequest": {
+      "document": "DescribeFOOMProblemDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1056",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "ClientIdentify",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "foom",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件开始时间",
+          "example": "1742982420",
+          "member": "int64",
+          "name": "StartEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间",
+          "example": "1745488020",
+          "member": "int64",
+          "name": "EndEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMProblemDetailResponse": {
+      "document": "DescribeFOOMProblemDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMProblemListRequest": {
+      "document": "DescribeFOOMProblemList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMProblemListResponse": {
+      "document": "DescribeFOOMProblemList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMReportListRequest": {
+      "document": "DescribeFOOMReportList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "foom",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFOOMReportListResponse": {
+      "document": "DescribeFOOMReportList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIssuesDistributionRequest": {
+      "document": "DescribeIssuesDistribution请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1025",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分布维度是自定义维度时，填‘user_custom’",
+          "example": "user_custom",
+          "member": "string",
+          "name": "DimType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维度，e.g. os_version, app_version, model等",
+          "example": "app_version",
+          "member": "string",
+          "name": "Dimension",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字类型字段的区间范围",
+          "example": "[2,6]",
+          "member": "int64",
+          "name": "Intervals",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 form_list 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题Id",
+          "example": "13ed5***",
+          "member": "string",
+          "name": "IssueId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题类型",
+          "example": "1",
+          "member": "int64",
+          "name": "IssueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制返回的个数，默认返回所有值",
+          "example": "10",
+          "member": "int64",
+          "name": "ParamLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "key1",
+          "member": "string",
+          "name": "MapKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "name1",
+          "member": "string",
+          "name": "MapName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标类型",
+          "example": "2",
+          "member": "int64",
+          "name": "MetricType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "5",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义维度key",
+          "example": "os_version",
+          "member": "string",
+          "name": "UserCustomKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIssuesDistributionResponse": {
+      "document": "DescribeIssuesDistribution返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIssuesListRequest": {
+      "document": "DescribeIssuesList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1025",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListA",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 form_list 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题类型",
+          "example": "1",
+          "member": "int64",
+          "name": "IssueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "5",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值",
+          "example": "RATIO",
+          "member": "string",
+          "name": "SortABRatio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式：false:问题列表模式，true:对比列表模式",
+          "example": "false",
+          "member": "bool",
+          "name": "Compare",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "对比状态 0:所有 1:新增 2：遗留 3:已解决",
+          "example": "1",
+          "member": "int64",
+          "name": "CompareStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIssuesListResponse": {
+      "document": "DescribeIssuesList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIssuesStatisticsTrendRequest": {
+      "document": "DescribeIssuesStatisticsTrend请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1025",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 form_list 的值",
+          "example": "token",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "form",
+          "member": "string",
+          "name": "FormList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题Id",
+          "example": "23dt55***",
+          "member": "string",
+          "name": "IssueId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题类型",
+          "example": "1",
+          "member": "int64",
+          "name": "IssueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间窗口",
+          "example": "4",
+          "member": "int64",
+          "name": "TimeWindow",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "累计值",
+          "example": "false",
+          "member": "bool",
+          "name": "TotalSize",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "1",
+          "member": "int64",
+          "name": "Stat",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指标类型",
+          "example": "2",
+          "member": "int64",
+          "name": "MetricType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "head",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "5",
+          "member": "int64",
+          "name": "TrendStat",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIssuesStatisticsTrendResponse": {
+      "document": "DescribeIssuesStatisticsTrend返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "data",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLagANRProblemAccountDetailRequest": {
+      "document": "DescribeLagANRProblemAccountDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1056",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "ClientIdentify",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "lag",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件开始时间",
+          "example": "1742982420",
+          "member": "int64",
+          "name": "StartEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间",
+          "example": "1745488020",
+          "member": "int64",
+          "name": "EndEventTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLagANRProblemAccountDetailResponse": {
+      "document": "DescribeLagANRProblemAccountDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLagANRProblemFeatureAccountsRequest": {
+      "document": "DescribeLagANRProblemFeatureAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题特征",
+          "example": "lag",
+          "member": "string",
+          "name": "Feature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLagANRProblemFeatureAccountsResponse": {
+      "document": "DescribeLagANRProblemFeatureAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLagANRProblemListRequest": {
+      "document": "DescribeLagANRProblemList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1035",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展数据",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLagANRProblemListResponse": {
+      "document": "DescribeLagANRProblemList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProjectLimitsRequest": {
       "document": "DescribeProjectLimits请求参数结构体",
       "members": [
@@ -9635,6 +12001,228 @@
       ],
       "type": "object"
     },
+    "DescribeTokenRequest": {
+      "document": "DescribeToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "无",
+          "member": "string",
+          "name": "FormListString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅对比模式下填写，筛选条件A",
+          "example": "无",
+          "member": "string",
+          "name": "FormListAString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅对比模式下填写，筛选条件B",
+          "example": "无",
+          "member": "string",
+          "name": "FormListBString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenResponse": {
+      "document": "DescribeToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopIssuesRequest": {
+      "document": "DescribeTopIssues请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Id",
+          "example": "1025",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要对比的查询条件，没有则不填",
+          "example": "无",
+          "member": "CompareCondition",
+          "name": "Compare",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "无",
+          "member": "CompareCondition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "问题类型",
+          "example": "1",
+          "member": "int64",
+          "name": "IssueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "report_time",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topN",
+          "example": "10",
+          "member": "int64",
+          "name": "TopNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段",
+          "example": "data",
+          "member": "string",
+          "name": "ExtraData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "string",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopIssuesResponse": {
+      "document": "DescribeTopIssues返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUvListRequest": {
       "document": "DescribeUvList请求参数结构体",
       "members": [
@@ -9761,6 +12349,78 @@
         }
       ],
       "usage": "in"
+    },
+    "Filters": {
+      "document": "BugLY筛选结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否反转",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReversed",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "name1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运算符",
+          "example": "+",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "[\"values1\",\"values2\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Kafka": {
       "document": "旁路kafka配置",
