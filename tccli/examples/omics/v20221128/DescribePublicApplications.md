@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli omics DescribePublicApplications --cli-unfold-argument ```
+tccli omics DescribePublicApplications --cli-unfold-argument  \
+    --Limit 10 \
+    --Offset 0
+```
 
 Output: 
 ```
@@ -13,53 +16,22 @@ Output:
     "Response": {
         "Applications": [
             {
-                "ApplicationId": "publicapp-nf-taxprofiler",
-                "Name": "taxprofiler",
+                "AppGroupType": "APP_COLLECTION",
+                "AppId": "c798f9c0-cd28-446c-b8e4-3ec30ec1a7ff",
+                "AppTags": [
+                    {
+                        "TagId": "3e497318-03ef-4483-838b-5c592d78d362",
+                        "TagName": "AI 模型"
+                    }
+                ],
+                "ApplicationId": "publicapp-nf-ori-collection",
+                "Name": "ORI Collection (Nextflow)",
+                "NextflowVersion": [],
                 "Type": "NEXTFLOW"
-            },
-            {
-                "ApplicationId": "publicapp-nf-mag",
-                "Name": "mag",
-                "Type": "NEXTFLOW"
-            },
-            {
-                "ApplicationId": "publicapp-nf-scrnaseq",
-                "Name": "scrnaseq",
-                "Type": "NEXTFLOW"
-            },
-            {
-                "ApplicationId": "publicapp-nf-sarek",
-                "Name": "sarek",
-                "Type": "NEXTFLOW"
-            },
-            {
-                "ApplicationId": "publicapp-nf-rnaseq",
-                "Name": "rnaseq",
-                "Type": "NEXTFLOW"
-            },
-            {
-                "ApplicationId": "publicapp-wdl-gatk-wes-germline-snps-indels",
-                "Name": "gatk-WES-germline-snps/indels",
-                "Type": "WDL"
-            },
-            {
-                "ApplicationId": "publicapp-wdl-fastp",
-                "Name": "fastp",
-                "Type": "WDL"
-            },
-            {
-                "ApplicationId": "publicapp-wdl-soapnuke",
-                "Name": "SOAPnuke",
-                "Type": "WDL"
-            },
-            {
-                "ApplicationId": "publicapp-wdl-gatk-wgs-germline-snps-indels",
-                "Name": "gatk-WGS-germline-snps-indels",
-                "Type": "WDL"
             }
         ],
-        "RequestId": "29b98f59-7e20-4817-87fe-85aa11a890c4",
-        "TotalCount": 9
+        "TotalCount": 19,
+        "RequestId": "68c85386-9cd7-4761-a664-7b0f522fabae"
     }
 }
 ```

@@ -3405,9 +3405,9 @@
     "OperateDataValidateTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateDataValidateTask\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"id_1\",\n    \"TaskId\": \"task_id_1\",\n    \"Operate\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": null,\n            \"OperateResult\": true\n        },\n        \"RequestId\": \"2e71fa49-9abd-4f02-aff1-d6e55f6fe926\"\n    }\n}",
-        "title": "OperateDataValidateTask调用示例"
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateDataValidateTask\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697667906247629\",\n    \"TaskId\": \"ta-e7d8f2e5\",\n    \"Operate\": 1,\n    \"OperateVersion\": \"tv-0e45ca02\",\n    \"OperateType\": \"STOP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"操作已提交\",\n            \"OperateResult\": true\n        },\n        \"RequestId\": \"8b6e9e3c-b21a-4612-a94b-50720f8f1fab\"\n    }\n}",
+        "title": "example"
       }
     ],
     "OperateStreamTask": [

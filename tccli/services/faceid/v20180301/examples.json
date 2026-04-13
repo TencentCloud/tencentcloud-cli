@@ -665,6 +665,14 @@
         "output": "{\n    \"Response\": {\n        \"Description\": \"信息不一致\",\n        \"Isp\": \"联通\",\n        \"RequestId\": \"74182f34-cc90-40b6-b96d-e4189726f0ba\",\n        \"Result\": \"-4\"\n    }\n}",
         "title": "联通手机号三要素核验不一致示例"
       }
+    ],
+    "VideoLivenessCompare": [
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=VideoLivenessCompare\n&ImageUrl=<ImageUrl>\n&VideoUrl=<VideoUrl>\n&LivenessType=SILENT\n&ImageMd5=682e24b207acf1825286c1fceef5631c\n&VideoMd5=682e24b207acf1825286c1fceef5631c\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrame\": {\n            \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n            \"MD5\": \"682e24b207acf1825286c1fceef5631c\",\n            \"Size\": 9430792\n        },\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
+        "title": "静默活体人脸比对"
+      }
     ]
   },
   "version": "1.0"

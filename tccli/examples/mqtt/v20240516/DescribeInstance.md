@@ -6,48 +6,50 @@ Input:
 
 ```
 tccli mqtt DescribeInstance --cli-unfold-argument  \
-    --InstanceId mqtt-7peanr83
+    --InstanceId mqtt-3ja5wo5b
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AuthorizationPolicy": false,
-        "AuthorizationPolicyLimit": 20,
+        "AuthorizationPolicy": true,
+        "AuthorizationPolicyLimit": 10,
         "AutoSubscriptionPolicyLimit": 10,
-        "AutomaticActivation": true,
-        "ClientNumLimit": 4000,
-        "CreatedTime": 1756879989,
+        "AutomaticActivation": false,
+        "BlockRuleLimit": 5,
+        "ClientNumLimit": 2000,
+        "CreatedTime": 1772163943,
         "DestroyTime": 0,
         "DeviceCertificateProvisionType": "API",
-        "ExpiryTime": 1759471988911,
-        "InstanceId": "mqtt-7peanr83",
-        "InstanceName": "instance-1",
+        "ExpiryTime": 0,
+        "InstanceId": "mqtt-3ja5wo5b",
+        "InstanceName": "mqtt-shared-test3",
         "InstanceStatus": "RUNNING",
-        "InstanceType": "PRO",
+        "InstanceType": "BASIC",
         "MaxCaNum": 20,
-        "MaxSubscription": 120000,
+        "MaxSubscription": 60000,
         "MaxSubscriptionPerClient": 30,
-        "MaxTopicFilterPerAutoSubscriptionPolicy": 20,
+        "MaxTopicFilterPerAutoSubscriptionPolicy": 5,
         "MaxTopicFilterPerSharedSubscriptionGroup": 10,
+        "MessageEnrichmentRuleLimit": 10,
         "MessageRate": -1,
-        "PayMode": "PREPAID",
-        "RegistrationCode": "client-test",
+        "PayMode": "POSTPAID",
+        "RegistrationCode": "",
         "Remark": "",
         "RenewFlag": 1,
         "ServerCertLimit": 3,
         "SharedSubscriptionGroupLimit": 20,
-        "SkuCode": "pro_2k_2",
+        "SkuCode": "basic_2k",
         "TopicNum": 0,
-        "TopicNumLimit": 300,
+        "TopicNumLimit": 20,
         "TopicPrefixSlashLimit": 2,
         "TpsLimit": 2000,
         "TransportLayerSecurity": "TLSv1.3,TLSv1.2,TLSv1.1,TLSv1",
         "TrustedCaLimit": 3,
         "UseDefaultServerCert": true,
-        "X509Mode": "BYOC",
-        "RequestId": "8a95a551-ca77-45f6-aa00-77a090cac898"
+        "X509Mode": "TLS",
+        "RequestId": "2202b107-4def-4fa4-a487-0499c77620db"
     }
 }
 ```
