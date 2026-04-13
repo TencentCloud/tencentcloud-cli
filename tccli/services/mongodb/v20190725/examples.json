@@ -568,6 +568,14 @@
         "title": "重启Mongod节点"
       }
     ],
+    "RestoreDBInstance": [
+      {
+        "document": "回档数据库实例到指定时间点",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-o59c****\",\n    \"RestoreTime\": \"2026-03-16 17:45:24\",\n    \"Databases\": [\n        {\n            \"Db\": \"testdb\",\n            \"Collections\": [\n                {\n                    \"OldCollection\": \"users\",\n                    \"NewCollection\": \"users_bak0316174524\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 100000068,\n        \"RequestId\": \"653add02-24bc-4e00-ac03-45078117895b\"\n    }\n}",
+        "title": "回档实例"
+      }
+    ],
     "SetAccountUserPrivilege": [
       {
         "document": "为当前实例的指定账号设置操作权限",

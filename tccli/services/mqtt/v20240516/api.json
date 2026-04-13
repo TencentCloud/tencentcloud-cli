@@ -3315,7 +3315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -3330,7 +3330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版",
+          "document": "<p>实例类型<br>BASIC 基础版<br>PRO  专业版<br>PLATINUM 铂金版</p>",
           "example": "PRO",
           "member": "string",
           "name": "InstanceType",
@@ -3340,7 +3340,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "mqtt-mwmdg9dm",
           "member": "string",
           "name": "InstanceId",
@@ -3350,7 +3350,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "name",
           "member": "string",
           "name": "InstanceName",
@@ -3360,7 +3360,7 @@
         },
         {
           "disabled": false,
-          "document": "主题数量",
+          "document": "<p>主题数量</p>",
           "example": "2",
           "member": "int64",
           "name": "TopicNum",
@@ -3370,7 +3370,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最大主题数量",
+          "document": "<p>实例最大主题数量</p>",
           "example": "1000",
           "member": "int64",
           "name": "TopicNumLimit",
@@ -3380,7 +3380,7 @@
         },
         {
           "disabled": false,
-          "document": "TPS限流值",
+          "document": "<p>TPS限流值</p>",
           "example": "1000",
           "member": "int64",
           "name": "TpsLimit",
@@ -3390,7 +3390,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，秒为单位",
+          "document": "<p>创建时间，秒为单位</p>",
           "example": "1711955420",
           "member": "int64",
           "name": "CreatedTime",
@@ -3400,7 +3400,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -3410,7 +3410,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中",
+          "document": "<p>实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
@@ -3420,7 +3420,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格",
+          "document": "<p>实例规格</p>",
           "example": "pro_10k_1",
           "member": "string",
           "name": "SkuCode",
@@ -3430,7 +3430,7 @@
         },
         {
           "disabled": false,
-          "document": "单客户端最大订阅数",
+          "document": "<p>单客户端最大订阅数</p>",
           "example": "30",
           "member": "int64",
           "name": "MaxSubscriptionPerClient",
@@ -3440,7 +3440,7 @@
         },
         {
           "disabled": false,
-          "document": "授权规则条数",
+          "document": "<p>授权规则条数</p>",
           "example": "10",
           "member": "int64",
           "name": "AuthorizationPolicyLimit",
@@ -3450,7 +3450,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端数量上限",
+          "document": "<p>客户端数量上限</p>",
           "example": "1000",
           "member": "int64",
           "name": "ClientNumLimit",
@@ -3460,7 +3460,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端证书注册方式：\nJITP：自动注册\nAPI：通过API手动注册",
+          "document": "<p>客户端证书注册方式：<br>JITP：自动注册<br>API：通过API手动注册</p>",
           "example": "API",
           "member": "string",
           "name": "DeviceCertificateProvisionType",
@@ -3470,7 +3470,7 @@
         },
         {
           "disabled": false,
-          "document": "自动注册设备证书时是否自动激活",
+          "document": "<p>自动注册设备证书时是否自动激活</p>",
           "example": "false",
           "member": "bool",
           "name": "AutomaticActivation",
@@ -3480,7 +3480,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费",
+          "document": "<p>是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
@@ -3490,7 +3490,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式， POSTPAID，按量计费 PREPAID，包年包月",
+          "document": "<p>计费模式， POSTPAID，按量计费 PREPAID，包年包月</p>",
           "example": "POSTPAID",
           "member": "string",
           "name": "PayMode",
@@ -3500,7 +3500,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间，毫秒级时间戳",
+          "document": "<p>到期时间，毫秒级时间戳</p>",
           "example": "1713164969433",
           "member": "int64",
           "name": "ExpiryTime",
@@ -3510,7 +3510,7 @@
         },
         {
           "disabled": false,
-          "document": "预销毁时间，毫秒级时间戳",
+          "document": "<p>预销毁时间，毫秒级时间戳</p>",
           "example": "1713164969433",
           "member": "int64",
           "name": "DestroyTime",
@@ -3520,7 +3520,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS,单向认证    mTLS,双向认证    BYOC;一机一证",
+          "document": "<p>TLS,单向认证    mTLS,双向认证    BYOC;一机一证</p>",
           "example": "TLS",
           "member": "string",
           "name": "X509Mode",
@@ -3530,7 +3530,7 @@
         },
         {
           "disabled": false,
-          "document": "最大Ca配额",
+          "document": "<p>最大Ca配额</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxCaNum",
@@ -3540,7 +3540,7 @@
         },
         {
           "disabled": false,
-          "document": "证书注册码",
+          "document": "<p>证书注册码</p>",
           "example": "2140c1c2-e26d-47f6-9048-0573f91b219b",
           "member": "string",
           "name": "RegistrationCode",
@@ -3550,7 +3550,7 @@
         },
         {
           "disabled": false,
-          "document": "集群最大订阅数",
+          "document": "<p>集群最大订阅数</p>",
           "example": "120000",
           "member": "int64",
           "name": "MaxSubscription",
@@ -3560,7 +3560,7 @@
         },
         {
           "disabled": false,
-          "document": "授权策略开关",
+          "document": "<p>授权策略开关</p>",
           "example": "false",
           "member": "bool",
           "name": "AuthorizationPolicy",
@@ -3570,7 +3570,7 @@
         },
         {
           "disabled": false,
-          "document": "共享订阅组数最大限制",
+          "document": "<p>共享订阅组数最大限制</p>",
           "example": "20",
           "member": "int64",
           "name": "SharedSubscriptionGroupLimit",
@@ -3579,8 +3579,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "单个共享订阅组TopicFilter数限制",
+          "disabled": true,
+          "document": "<p>单个共享订阅组TopicFilter数限制</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxTopicFilterPerSharedSubscriptionGroup",
@@ -3590,7 +3590,7 @@
         },
         {
           "disabled": false,
-          "document": "自动订阅规则条数限制",
+          "document": "<p>自动订阅规则条数限制</p>",
           "example": "10",
           "member": "int64",
           "name": "AutoSubscriptionPolicyLimit",
@@ -3600,7 +3600,7 @@
         },
         {
           "disabled": false,
-          "document": "单条自动订阅规则TopicFilter数限制",
+          "document": "<p>单条自动订阅规则TopicFilter数限制</p>",
           "example": "5",
           "member": "int64",
           "name": "MaxTopicFilterPerAutoSubscriptionPolicy",
@@ -3610,7 +3610,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用默认的服务端证书",
+          "document": "<p>是否使用默认的服务端证书</p>",
           "example": "false",
           "member": "bool",
           "name": "UseDefaultServerCert",
@@ -3620,7 +3620,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端CA最大数量",
+          "document": "<p>服务端CA最大数量</p>",
           "example": "3",
           "member": "int64",
           "name": "TrustedCaLimit",
@@ -3630,7 +3630,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端证书最大数量",
+          "document": "<p>服务端证书最大数量</p>",
           "example": "3",
           "member": "int64",
           "name": "ServerCertLimit",
@@ -3640,7 +3640,7 @@
         },
         {
           "disabled": false,
-          "document": "topic前缀最大层级",
+          "document": "<p>topic前缀最大层级</p>",
           "example": "3",
           "member": "int64",
           "name": "TopicPrefixSlashLimit",
@@ -3650,7 +3650,7 @@
         },
         {
           "disabled": false,
-          "document": "单客户端发送消息限速，单位 条/秒",
+          "document": "<p>单客户端发送消息限速，单位 条/秒</p>",
           "example": "10",
           "member": "int64",
           "name": "MessageRate",
@@ -3660,7 +3660,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1",
+          "document": "<p>服务端tls支持的协议，使用“,”分割。例如：TLSv1.3,TLSv1.2,TLSv1.1,TLSv1</p>",
           "example": "TLSv1.3,TLSv1.2,TLSv1.1,TLSv1",
           "member": "string",
           "name": "TransportLayerSecurity",
@@ -3670,10 +3670,20 @@
         },
         {
           "disabled": false,
-          "document": "消息属性增强规则配额",
+          "document": "<p>消息属性增强规则配额</p>",
           "example": "10",
           "member": "int64",
           "name": "MessageEnrichmentRuleLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁规则最大数量</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "BlockRuleLimit",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

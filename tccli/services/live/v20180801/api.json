@@ -20018,7 +20018,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板id。",
+          "document": "<p>模板id。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TemplateId",
@@ -20029,7 +20029,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。",
+          "document": "<p>模板名称。</p>",
           "example": "templatename",
           "member": "string",
           "name": "TemplateName",
@@ -20040,7 +20040,7 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容。",
+          "document": "<p>垫片内容。</p>",
           "example": "https://test.com/a.mp4",
           "member": "string",
           "name": "Url",
@@ -20051,7 +20051,7 @@
         },
         {
           "disabled": false,
-          "document": "模板创建时间。",
+          "document": "<p>模板创建时间。</p>",
           "example": "2020-01-01 08:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -20062,7 +20062,7 @@
         },
         {
           "disabled": false,
-          "document": "模板修改时间。",
+          "document": "<p>模板修改时间。</p>",
           "example": "2020-01-01 08:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -20073,7 +20073,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述。",
+          "document": "<p>模板描述。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -20084,7 +20084,7 @@
         },
         {
           "disabled": false,
-          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "document": "<p>断流等待时间。<br>取值范围：0-30000。<br>单位：ms。</p>",
           "example": "0",
           "member": "uint64",
           "name": "WaitDuration",
@@ -20095,7 +20095,7 @@
         },
         {
           "disabled": false,
-          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "document": "<p>最大垫片时长。<br>取值范围：0 - 正无穷。<br>单位：ms。</p>",
           "example": "0",
           "member": "uint64",
           "name": "MaxDuration",
@@ -20106,11 +20106,22 @@
         },
         {
           "disabled": false,
-          "document": "垫片内容类型： 1：图片，2：视频。 默认值：1。",
+          "document": "<p>垫片内容类型： 1：图片，2：视频。 默认值：1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
           "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>断流垫片触发条件</p><p>枚举值：</p><ul><li>0： 主动及异常断流</li><li>1： 异常断流</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TriggerCondition",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

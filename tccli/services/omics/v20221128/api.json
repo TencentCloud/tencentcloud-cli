@@ -1520,8 +1520,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
-          "example": "无",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1529,12 +1529,30 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
-          "example": "无",
+          "document": "<p>偏移量，默认为0。</p>",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>父应用ID</p>",
+          "example": "c798f9c0-cd28-446c-b8e4-3ec30ec1a7ff",
+          "member": "string",
+          "name": "ParentAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>",
+          "example": "NEXTFLOW",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1544,7 +1562,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公共应用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公共应用。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PublicApplication",
           "name": "Applications",
@@ -1554,8 +1572,8 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>符合条件的数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,

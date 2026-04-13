@@ -364,6 +364,13 @@
       "output": "DestroyStaticStoreResponse",
       "status": "online"
     },
+    "ExecutePGSql": {
+      "document": "在Postgres数据库上执行SQL",
+      "input": "ExecutePGSqlRequest",
+      "name": "在PostgreSQL数据库上执行SQL查询",
+      "output": "ExecutePGSqlResponse",
+      "status": "online"
+    },
     "GetProviders": {
       "document": "查询指定云开发环境下的身份认证源列表。返回该环境已配置的所有身份认证源信息，包括第三方登录（OAuth、OIDC、SAML）、微信小程序登录、自定义登录和邮箱登录等。返回结果包含认证源基本信息、关联应用、配置状态及启用情况。若自定义登录或邮箱登录的身份源尚未创建，接口会自动追加一个默认关闭状态的身份源记录。",
       "input": "GetProvidersRequest",
@@ -5762,6 +5769,91 @@
         }
       ],
       "usage": "out"
+    },
+    "ExecutePGSqlRequest": {
+      "document": "ExecutePGSql请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云开发环境ID</p>",
+          "example": "pg-mikejliu-0g9cqmar358527a9",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要执行的SQL语句</p>",
+          "example": "select column_name FROM information_schema.columns WHERE table_schema = 'public'   AND table_name = 'test_products'",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定 role 执行 SQL</p>",
+          "example": "cloudbase_postgres",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecutePGSqlResponse": {
+      "document": "ExecutePGSql返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>影响行数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AffectedRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段名列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"column_name\"]",
+          "member": "string",
+          "name": "Columns",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"[\\\"id\\\"]\"]",
+          "member": "string",
+          "name": "Rows",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL执行耗时</p><p>单位：毫秒</p>",
+          "example": "58",
+          "member": "int64",
+          "name": "ExecutionTimeMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExternalStorage": {
       "document": "外部存储。\n标识该存储介质，并非由云开发CloudBase创建，而是绑定的其他存储介质。\n目前仅支持 [腾讯云-对象存储](https://cloud.tencent.com/document/product/436)。",

@@ -21,6 +21,13 @@
       "output": "CreateInstanceResponse",
       "status": "online"
     },
+    "CreateMigrationTask": {
+      "document": "创建元数据迁移上云任务",
+      "input": "CreateMigrationTaskRequest",
+      "name": "创建元数据迁移上云任务",
+      "output": "CreateMigrationTaskResponse",
+      "status": "online"
+    },
     "CreateRole": {
       "document": "添加角色。\n当前 API 适用集群：5.x 集群。4.x 集群的创建角色接口文档见 [CreateRocketMQRole](https://cloud.tencent.com/document/product/1179/107538)，给角色授权接口文档见 [CreateRocketMQEnvironmentRole](https://cloud.tencent.com/document/product/1179/107539)。",
       "input": "CreateRoleRequest",
@@ -947,6 +954,69 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMigrationTaskRequest": {
+      "document": "CreateMigrationTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0 - 未指定（存量）\n1 - 元数据导入",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的消费组列表",
+          "example": "无",
+          "member": "TopicItem",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的消费组列表",
+          "example": "无",
+          "member": "ConsumeGroupItem",
+          "name": "Groups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的角色列表",
+          "example": "role",
+          "member": "RoleItem",
+          "name": "Roles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMigrationTaskResponse": {
+      "document": "CreateMigrationTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

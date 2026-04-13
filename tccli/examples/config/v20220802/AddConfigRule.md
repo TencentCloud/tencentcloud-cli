@@ -20,7 +20,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "da85d5e2-4432-4f02-9863-0ab07adeff33"
+        "RequestId": "da85d5e2-4432-4f02-9863-0ab07adeff33",
+        "RuleId": "cr-3xhsd76j603v0a8ma0i73"
     }
 }
 ```

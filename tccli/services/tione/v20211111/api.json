@@ -1518,7 +1518,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增版本时需要填写",
+          "document": "<p>新增版本时需要填写</p>",
           "example": "ms-testtest",
           "member": "string",
           "name": "ServiceGroupId",
@@ -1527,7 +1527,7 @@
         },
         {
           "disabled": false,
-          "document": "不超过60个字，仅支持英文、数字、下划线\"_\"、短横\"-\"，只能以英文、数字开头",
+          "document": "<p>不超过60个字，仅支持英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以英文、数字开头</p>",
           "example": "test-myname",
           "member": "string",
           "name": "ServiceGroupName",
@@ -1536,7 +1536,7 @@
         },
         {
           "disabled": false,
-          "document": "模型服务的描述",
+          "document": "<p>模型服务的描述</p>",
           "example": "这是一个用于测试的模型服务",
           "member": "string",
           "name": "ServiceDescription",
@@ -1545,7 +1545,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）",
+          "document": "<p>付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -1554,7 +1554,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费模式下所属的资源组id，同服务组下唯一",
+          "document": "<p>预付费模式下所属的资源组id，同服务组下唯一</p>",
           "example": "ins-ttttt",
           "member": "string",
           "name": "ResourceGroupId",
@@ -1563,7 +1563,7 @@
         },
         {
           "disabled": false,
-          "document": "模型信息，需要挂载模型时填写",
+          "document": "<p>模型信息，需要挂载模型时填写</p>",
           "example": "无",
           "member": "ModelInfo",
           "name": "ModelInfo",
@@ -1572,7 +1572,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像信息，配置服务运行所需的镜像地址等信息",
+          "document": "<p>镜像信息，配置服务运行所需的镜像地址等信息</p>",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
@@ -1581,7 +1581,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量，可选参数，用于配置容器中的环境变量",
+          "document": "<p>环境变量，可选参数，用于配置容器中的环境变量</p>",
           "example": "无",
           "member": "EnvVar",
           "name": "Env",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写",
+          "document": "<p>资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写</p>",
           "example": "无",
           "member": "ResourceInfo",
           "name": "Resources",
@@ -1599,7 +1599,7 @@
         },
         {
           "disabled": false,
-          "document": "使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:\nTI.S.MEDIUM.POST\t2C4G\nTI.S.LARGE.POST\t4C8G\nTI.S.2XLARGE16.POST\t8C16G\nTI.S.2XLARGE32.POST\t8C32G\nTI.S.4XLARGE32.POST\t16C32G\nTI.S.4XLARGE64.POST\t16C64G\nTI.S.6XLARGE48.POST\t24C48G\nTI.S.6XLARGE96.POST\t24C96G\nTI.S.8XLARGE64.POST\t32C64G\nTI.S.8XLARGE128.POST 32C128G\nTI.GN7.LARGE20.POST\t4C20G T4*1/4\nTI.GN7.2XLARGE40.POST\t10C40G T4*1/2\nTI.GN7.2XLARGE32.POST\t8C32G T4*1\nTI.GN7.5XLARGE80.POST\t20C80G T4*1\nTI.GN7.8XLARGE128.POST\t32C128G T4*1\nTI.GN7.10XLARGE160.POST\t40C160G T4*2\nTI.GN7.20XLARGE320.POST\t80C320G T4*4",
+          "document": "<p>使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:<br>TI.S.MEDIUM.POST    2C4G<br>TI.S.LARGE.POST    4C8G<br>TI.S.2XLARGE16.POST    8C16G<br>TI.S.2XLARGE32.POST    8C32G<br>TI.S.4XLARGE32.POST    16C32G<br>TI.S.4XLARGE64.POST    16C64G<br>TI.S.6XLARGE48.POST    24C48G<br>TI.S.6XLARGE96.POST    24C96G<br>TI.S.8XLARGE64.POST    32C64G<br>TI.S.8XLARGE128.POST 32C128G<br>TI.GN7.LARGE20.POST    4C20G T4<em>1/4<br>TI.GN7.2XLARGE40.POST    10C40G T4</em>1/2<br>TI.GN7.2XLARGE32.POST    8C32G T4<em>1<br>TI.GN7.5XLARGE80.POST    20C80G T4</em>1<br>TI.GN7.8XLARGE128.POST    32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST    40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST    80C320G T4*4</p>",
           "example": "TI.S.MEDIUM.POS",
           "member": "string",
           "name": "InstanceType",
@@ -1608,7 +1608,7 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容类型 支持：自动 - \"AUTO\", 手动 - \"MANUAL\",默认为MANUAL",
+          "document": "<p>扩缩容类型 支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;,默认为MANUAL</p>",
           "example": "AUTO",
           "member": "string",
           "name": "ScaleMode",
@@ -1617,7 +1617,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量, 不同计费模式和调节模式下对应关系如下\nPREPAID 和 POSTPAID_BY_HOUR:\n手动调节模式下对应 实例数量\n自动调节模式下对应 基于时间的默认策略的实例数量\nHYBRID_PAID:\n后付费实例手动调节模式下对应 实例数量\n后付费实例自动调节模式下对应 时间策略的默认策略的实例数量",
+          "document": "<p>实例数量, 不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>",
           "example": "1",
           "member": "int64",
           "name": "Replicas",
@@ -1626,7 +1626,7 @@
         },
         {
           "disabled": false,
-          "document": "自动伸缩信息",
+          "document": "<p>自动伸缩信息</p>",
           "example": "无",
           "member": "HorizontalPodAutoscaler",
           "name": "HorizontalPodAutoscaler",
@@ -1635,7 +1635,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日志投递，开启后需填写配置投递到指定cls",
+          "document": "<p>是否开启日志投递，开启后需填写配置投递到指定cls</p>",
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
@@ -1644,7 +1644,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置，需要投递服务日志到指定cls时填写",
+          "document": "<p>日志配置，需要投递服务日志到指定cls时填写</p>",
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
@@ -1653,7 +1653,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权",
+          "document": "<p>是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权</p>",
           "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
@@ -1662,7 +1662,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云标签",
+          "document": "<p>腾讯云标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1671,7 +1671,7 @@
         },
         {
           "disabled": false,
-          "document": "是否新增版本",
+          "document": "<p>是否新增版本</p>",
           "example": "true",
           "member": "bool",
           "name": "NewVersion",
@@ -1680,7 +1680,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务配置，使用定时策略时填写",
+          "document": "<p>定时任务配置，使用定时策略时填写</p>",
           "example": "无",
           "member": "CronScaleJob",
           "name": "CronScaleJobs",
@@ -1689,7 +1689,7 @@
         },
         {
           "disabled": false,
-          "document": "自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩",
+          "document": "<p>自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩</p>",
           "example": "HPA",
           "member": "string",
           "name": "ScaleStrategy",
@@ -1698,7 +1698,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数",
+          "document": "<p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数</p>",
           "example": "1",
           "member": "int64",
           "name": "HybridBillingPrepaidReplicas",
@@ -1707,7 +1707,7 @@
         },
         {
           "disabled": false,
-          "document": "[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]",
+          "document": "<p>[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]</p>",
           "example": "AUTO_ML",
           "member": "string",
           "name": "CreateSource",
@@ -1716,7 +1716,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启模型的热更新。默认不开启",
+          "document": "<p>是否开启模型的热更新。默认不开启</p>",
           "example": "false",
           "member": "bool",
           "name": "ModelHotUpdateEnable",
@@ -1725,7 +1725,7 @@
         },
         {
           "disabled": false,
-          "document": "定时停止配置",
+          "document": "<p>定时停止配置</p>",
           "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
@@ -1734,7 +1734,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载配置，目前只支持CFS",
+          "document": "<p>挂载配置，目前只支持CFS</p>",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMount",
@@ -1743,7 +1743,7 @@
         },
         {
           "disabled": false,
-          "document": "服务限速限流相关配置",
+          "document": "<p>服务限速限流相关配置</p>",
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
@@ -1752,7 +1752,7 @@
         },
         {
           "disabled": false,
-          "document": "回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)",
+          "document": "<p>回调地址，用于回调创建服务状态信息，回调格式&amp;内容详情见：<a href=\"https://cloud.tencent.com/document/product/851/84292\">TI-ONE 接口回调说明</a></p>",
           "example": "http://callback.com/callback",
           "member": "string",
           "name": "CallbackUrl",
@@ -1761,7 +1761,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。",
+          "document": "<p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>",
           "example": "false",
           "member": "bool",
           "name": "ModelTurboEnable",
@@ -1770,7 +1770,7 @@
         },
         {
           "disabled": false,
-          "document": "服务分类",
+          "document": "<p>服务分类</p>",
           "example": "Normal",
           "member": "string",
           "name": "ServiceCategory",
@@ -1779,7 +1779,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数",
+          "document": "<p>服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数</p>",
           "example": "sleep 36000",
           "member": "string",
           "name": "Command",
@@ -1788,7 +1788,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。",
+          "document": "<p>是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。</p>",
           "example": "无",
           "member": "ServiceEIP",
           "name": "ServiceEIP",
@@ -1797,7 +1797,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效",
+          "document": "<p>服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效</p>",
           "example": "c2xlZXAgMzYwMDA=",
           "member": "string",
           "name": "CommandBase64",
@@ -1806,7 +1806,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092",
+          "document": "<p>服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092</p>",
           "example": "8501",
           "member": "int64",
           "name": "ServicePort",
@@ -1815,7 +1815,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD",
+          "document": "<p>服务的部署类型 [标准部署，分布式多机部署，] 默认STANDARD</p><p>枚举值：</p><ul><li>STANDARD： 标准部署</li><li>DIST： 多机分布式部署</li><li>ROLE_SET： 多角色部署</li></ul>",
           "example": "STANDARD",
           "member": "string",
           "name": "DeployType",
@@ -1824,7 +1824,7 @@
         },
         {
           "disabled": false,
-          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1",
+          "document": "<p>单副本下的实例数，仅在部署类型为DIST时生效，默认1</p>",
           "example": "1",
           "member": "int64",
           "name": "InstancePerReplicas",
@@ -1833,7 +1833,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "document": "<p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>",
           "example": "30",
           "member": "int64",
           "name": "TerminationGracePeriodSeconds",
@@ -1842,7 +1842,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "document": "<p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>",
           "example": "[\"sleep\",\"60\"]",
           "member": "string",
           "name": "PreStopCommand",
@@ -1851,7 +1851,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用 grpc 端口",
+          "document": "<p>是否启用 grpc 端口</p>",
           "example": "false",
           "member": "bool",
           "name": "GrpcEnable",
@@ -1860,7 +1860,7 @@
         },
         {
           "disabled": false,
-          "document": "健康探针",
+          "document": "<p>健康探针</p>",
           "example": "无",
           "member": "HealthProbe",
           "name": "HealthProbe",
@@ -1869,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动更新策略",
+          "document": "<p>滚动更新策略</p>",
           "example": "无",
           "member": "RollingUpdate",
           "name": "RollingUpdate",
@@ -1878,7 +1878,7 @@
         },
         {
           "disabled": false,
-          "document": "sidecar配置",
+          "document": "<p>sidecar配置</p>",
           "example": "无",
           "member": "SidecarSpec",
           "name": "Sidecar",
@@ -1887,7 +1887,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。",
+          "document": "<p>数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。</p>",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMounts",
@@ -1896,7 +1896,7 @@
         },
         {
           "disabled": false,
-          "document": "调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用",
+          "document": "<p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>",
           "example": "binpack",
           "member": "string",
           "name": "SchedulingStrategy",
@@ -1905,7 +1905,7 @@
         },
         {
           "disabled": false,
-          "document": "网关日志投递相关配置",
+          "document": "<p>网关日志投递相关配置</p>",
           "example": "无",
           "member": "LogConfig",
           "name": "GatewayLogConfig",
@@ -1914,7 +1914,7 @@
         },
         {
           "disabled": false,
-          "document": "网关相关配置",
+          "document": "<p>网关相关配置</p>",
           "example": "无",
           "member": "GatewayConfig",
           "name": "GatewayConfig",
@@ -1929,7 +1929,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的模型服务",
+          "document": "<p>生成的模型服务</p>",
           "example": "无",
           "member": "Service",
           "name": "Service",
@@ -5217,7 +5217,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测\n枚举值：\n- TRAIN\n- NOTEBOOK\n- INFER\n- BATCH",
+          "document": "<p>服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测<br>枚举值：</p><ul><li>TRAIN</li><li>NOTEBOOK</li><li>INFER</li><li>BATCH</li></ul>",
           "example": "TRAIN",
           "member": "string",
           "name": "Service",
@@ -5226,7 +5226,7 @@
         },
         {
           "disabled": false,
-          "document": "日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时",
+          "document": "<p>日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时</p>",
           "example": "2021-11-30T16:22:09+08:00",
           "member": "string",
           "name": "StartTime",
@@ -5235,7 +5235,7 @@
         },
         {
           "disabled": false,
-          "document": "日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间",
+          "document": "<p>日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间</p>",
           "example": "2021-11-30T16:22:09+08:00",
           "member": "string",
           "name": "EndTime",
@@ -5244,7 +5244,7 @@
         },
         {
           "disabled": false,
-          "document": "日志查询条数，默认值100，最大值1000",
+          "document": "<p>日志查询条数，默认值100，最大值1000</p>",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -5253,7 +5253,7 @@
         },
         {
           "disabled": false,
-          "document": "服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：\n- Service类型为TRAIN：\n  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId\n- Service类型为NOTEBOOK：\n  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName\n- Service类型为INFER：\n  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId\n- Service类型为BATCH：\n  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId",
+          "document": "<p>服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href=\"/document/product/851/75089\">DescribeTrainingTask接口</a>查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId</li><li>Service类型为NOTEBOOK：<br>调用<a href=\"/document/product/851/95662\">DescribeNotebook接口</a>查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href=\"/document/product/851/82285\">DescribeModelServiceGroup接口</a>查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId</li><li>Service类型为BATCH：<br>调用<a href=\"/document/product/851/80180\">DescribeBatchTask接口</a>查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId</li></ul>",
           "example": "train-fsdjl-1",
           "member": "string",
           "name": "ServiceId",
@@ -5262,7 +5262,7 @@
         },
         {
           "disabled": false,
-          "document": "Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：\n- Service类型为TRAIN：\n  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames\n- Service类型为NOTEBOOK：\n  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName\n- Service类型为INFER：\n  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos\n- Service类型为BATCH：\n  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList\n注：支持结尾通配符*",
+          "document": "<p>Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href=\"/document/product/851/75088\">DescribeTrainingTaskPods接口</a>查询训练任务pod列表，PodName为接口返回值中Response.PodNames</li><li>Service类型为NOTEBOOK：<br>调用<a href=\"/document/product/851/95662\">DescribeNotebook接口</a>查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href=\"/document/product/851/82287\">DescribeModelService接口</a>查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos</li><li>Service类型为BATCH：<br>调用<a href=\"/document/product/851/80180\">DescribeBatchTask接口</a>查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList<br>注：支持结尾通配符*</li></ul>",
           "example": "train-fsdjl-1",
           "member": "string",
           "name": "PodName",
@@ -5271,7 +5271,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方向（可选值为ASC, DESC ），默认为DESC",
+          "document": "<p>排序方向（可选值为ASC, DESC ），默认为DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -5280,7 +5280,7 @@
         },
         {
           "disabled": false,
-          "document": "按哪个字段排序（可选值为Timestamp），默认值为Timestamp",
+          "document": "<p>按哪个字段排序（可选值为Timestamp），默认值为Timestamp</p>",
           "example": "Timestamp",
           "member": "string",
           "name": "OrderField",
@@ -5289,7 +5289,7 @@
         },
         {
           "disabled": false,
-          "document": "日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回",
+          "document": "<p>日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回</p>",
           "example": "aaa-bbb-ccc",
           "member": "string",
           "name": "Context",
@@ -5298,7 +5298,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n注意: \n1. Filter.Name：目前只支持Key（也就是按关键字过滤日志）\n2. Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足\n3. Filter. Negative和Filter. Fuzzy没有使用",
+          "document": "<p>过滤条件<br>注意: </p><ol><li>Filter.Name：目前只支持Key（也就是按关键字过滤日志）</li><li>Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足</li><li>Filter. Negative和Filter. Fuzzy没有使用</li></ol>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5307,7 +5307,7 @@
         },
         {
           "disabled": false,
-          "document": "使用OFFSET分页查询时，指定返回的数据偏移量，默认为0",
+          "document": "<p>使用OFFSET分页查询时，指定返回的数据偏移量，默认为0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5322,7 +5322,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分页的游标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa-bbb-ccc",
           "member": "string",
           "name": "Context",
@@ -5332,7 +5332,7 @@
         },
         {
           "disabled": false,
-          "document": "日志数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogIdentity",
           "name": "Content",
@@ -8760,7 +8760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型版本id, DescribeTrainingModelVersion查询模型接口时的id\n自动学习类型的模型填写自动学习的任务id",
+          "document": "<p>模型版本id, DescribeTrainingModelVersion查询模型接口时的id<br>自动学习类型的模型填写自动学习的任务id</p>",
           "example": "m-dddd-1",
           "member": "string",
           "name": "ModelVersionId",
@@ -8771,7 +8771,7 @@
         },
         {
           "disabled": false,
-          "document": "模型id",
+          "document": "<p>模型id</p>",
           "example": "m-dddd",
           "member": "string",
           "name": "ModelId",
@@ -8782,7 +8782,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名",
+          "document": "<p>模型名</p>",
           "example": "mn-xx",
           "member": "string",
           "name": "ModelName",
@@ -8793,7 +8793,7 @@
         },
         {
           "disabled": false,
-          "document": "模型版本",
+          "document": "<p>模型版本</p>",
           "example": "1",
           "member": "string",
           "name": "ModelVersion",
@@ -8804,7 +8804,7 @@
         },
         {
           "disabled": false,
-          "document": "模型来源",
+          "document": "<p>模型来源</p>",
           "example": "COS",
           "member": "string",
           "name": "ModelSource",
@@ -8815,7 +8815,7 @@
         },
         {
           "disabled": false,
-          "document": "cos路径信息",
+          "document": "<p>cos路径信息</p>",
           "example": "无",
           "member": "CosPathInfo",
           "name": "CosPathInfo",
@@ -8826,7 +8826,7 @@
         },
         {
           "disabled": false,
-          "document": "GooseFSx的配置，ModelSource为GooseFSx时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GooseFSx的配置，ModelSource为GooseFSx时有效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GooseFSx",
           "name": "GooseFSx",
@@ -8837,7 +8837,7 @@
         },
         {
           "disabled": false,
-          "document": "模型对应的算法框架，预留\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型对应的算法框架，预留</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pmml",
           "member": "string",
           "name": "AlgorithmFramework",
@@ -8848,7 +8848,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为 NORMAL, 已加速模型: ACCELERATE, 自动学习模型 AUTO_ML\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>默认为 NORMAL, 已加速模型: ACCELERATE, 自动学习模型 AUTO_ML</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ACCELERATE",
           "member": "string",
           "name": "ModelType",
@@ -8859,7 +8859,7 @@
         },
         {
           "disabled": false,
-          "document": "模型格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型格式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pmml",
           "member": "string",
           "name": "ModelFormat",
@@ -8870,7 +8870,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为私有化大模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否为私有化大模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsPrivateModel",
@@ -8881,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "模型的类别 多模态MultiModal, 文本大模型 LLM",
+          "document": "<p>模型的类别 多模态MultiModal, 文本大模型 LLM</p>",
           "example": "MultiModal",
           "member": "string",
           "name": "ModelCategory",
@@ -8892,7 +8892,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源的配置",
+          "document": "<p>数据源的配置</p>",
           "example": "无",
           "member": "PublicDataSourceFS",
           "name": "PublicDataSource",
@@ -12686,7 +12686,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的业务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务的业务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nCREATE_SUCCEED 创建成功\nARREARS_STOP 因欠费停止\nWHITELIST_STOP 白名单额度不足\nRELEASE_FAILED 资源释放失败\nWHITELIST_RELEASE_FAILED 白名单资源释放失败\nTIMEOUT_EXCEPTION 创建超时异常\nBILLING 计费中\nWHITELIST_USING 白名单试用中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CREATING",
           "member": "string",
           "name": "BusinessStatus",
@@ -12726,7 +12726,7 @@
         },
         {
           "disabled": false,
-          "document": "服务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nNormal\t正常运行中\nStopped  已停止\nStopping 停止中\nAbnormal 异常\nPending 启动中\nWaiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nTIMEOUT_EXCEPTION 创建超时异常\nNormal 正常运行中\nStopped 已停止\nStopping 停止中\nAbnormal 异常\nPending 启动中\nWaiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
           "name": "Status",
@@ -13122,7 +13122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务组id",
+          "document": "<p>服务组id</p>",
           "example": "ms-testtest",
           "member": "string",
           "name": "ServiceGroupId",
@@ -13132,7 +13132,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组名",
+          "document": "<p>服务组名</p>",
           "example": "ms-testtest",
           "member": "string",
           "name": "ServiceGroupName",
@@ -13142,7 +13142,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "creater",
           "member": "string",
           "name": "CreatedBy",
@@ -13152,7 +13152,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-09-02T21:32:06+08:00",
           "member": "string",
           "name": "CreateTime",
@@ -13162,7 +13162,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2021-09-02T21:32:06+08:00",
           "member": "string",
           "name": "UpdateTime",
@@ -13172,7 +13172,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号",
+          "document": "<p>主账号</p>",
           "example": "999555555",
           "member": "string",
           "name": "Uin",
@@ -13182,7 +13182,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组下服务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组下服务总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "ServiceCount",
@@ -13192,7 +13192,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组下在运行的服务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组下在运行的服务数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "RunningServiceCount",
@@ -13202,7 +13202,7 @@
         },
         {
           "disabled": false,
-          "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Service",
           "name": "Services",
@@ -13212,7 +13212,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组状态，与服务一致\n CREATING 创建中\n     CREATE_FAILED 创建失败\n     Normal\t正常运行中\n     Stopped  已停止\n     Stopping 停止中\n     Abnormal 异常\n     Pending 启动中\n     Waiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组状态，与服务一致<br> CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     Normal    正常运行中<br>     Stopped  已停止<br>     Stopping 停止中<br>     Abnormal 异常<br>     Pending 启动中<br>     Waiting 就绪中</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
           "name": "Status",
@@ -13222,7 +13222,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -13232,7 +13232,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组下最高版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组下最高版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
           "name": "LatestVersion",
@@ -13242,7 +13242,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的业务状态\nCREATING 创建中\n     CREATE_FAILED 创建失败\n     ARREARS_STOP 因欠费被强制停止\n     BILLING 计费中\n     WHITELIST_USING 白名单试用中\n     WHITELIST_STOP 白名单额度不足\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的业务状态<br>CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     ARREARS_STOP 因欠费被强制停止<br>     BILLING 计费中<br>     WHITELIST_USING 白名单试用中<br>     WHITELIST_STOP 白名单额度不足</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ARREARS_STOP",
           "member": "string",
           "name": "BusinessStatus",
@@ -13252,7 +13252,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的计费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的计费信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.2 元/小时",
           "member": "string",
           "name": "BillingInfo",
@@ -13262,7 +13262,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的创建来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的创建来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
           "member": "string",
           "name": "CreateSource",
@@ -13272,7 +13272,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组的权重更新状态 \nUPDATING 更新中\n     UPDATED 更新成功\n     UPDATE_FAILED 更新失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组的权重更新状态<br>UPDATING 更新中<br>     UPDATED 更新成功<br>     UPDATE_FAILED 更新失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UPDATING",
           "member": "string",
           "name": "WeightUpdateStatus",
@@ -13282,7 +13282,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组下运行的pod数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组下运行的pod数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ReplicasCount",
@@ -13292,7 +13292,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组下期望的pod数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务组下期望的pod数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "AvailableReplicasCount",
@@ -13302,7 +13302,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组的subuin",
+          "document": "<p>服务组的subuin</p>",
           "example": "999555555",
           "member": "string",
           "name": "SubUin",
@@ -13312,7 +13312,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组的app_id",
+          "document": "<p>服务组的app_id</p>",
           "example": "73598888",
           "member": "int64",
           "name": "AppId",
@@ -13322,7 +13322,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启鉴权",
+          "document": "<p>是否开启鉴权</p>",
           "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
@@ -13332,7 +13332,7 @@
         },
         {
           "disabled": false,
-          "document": "限流鉴权 token 列表",
+          "document": "<p>限流鉴权 token 列表</p>",
           "example": "无",
           "member": "AuthToken",
           "name": "AuthTokens",
@@ -13342,7 +13342,7 @@
         },
         {
           "disabled": false,
-          "document": "用于监控的创建来源字段",
+          "document": "<p>用于监控的创建来源字段</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "MonitorSource",
@@ -13352,7 +13352,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户的 nickname",
+          "document": "<p>子用户的 nickname</p>",
           "example": "user2",
           "member": "string",
           "name": "SubUinName",
@@ -13362,7 +13362,7 @@
         },
         {
           "disabled": false,
-          "document": "网关日志投递相关配置",
+          "document": "<p>网关日志投递相关配置</p>",
           "example": "无",
           "member": "LogConfig",
           "name": "GatewayLogConfig",
@@ -13372,7 +13372,7 @@
         },
         {
           "disabled": false,
-          "document": "网关路由相关配置",
+          "document": "<p>网关路由相关配置</p>",
           "example": "无",
           "member": "GatewayConfig",
           "name": "GatewayConfig",
@@ -13388,7 +13388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "期望运行的Pod数量，停止状态是0\n不同计费模式和调节模式下对应关系如下\nPREPAID 和 POSTPAID_BY_HOUR:\n手动调节模式下对应 实例数量\n自动调节模式下对应 基于时间的默认策略的实例数量\nHYBRID_PAID:\n后付费实例手动调节模式下对应 实例数量\n后付费实例自动调节模式下对应 时间策略的默认策略的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>期望运行的Pod数量，停止状态是0<br>不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Replicas",
@@ -13399,7 +13399,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>镜像信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
@@ -13410,7 +13410,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EnvVar",
           "name": "Env",
@@ -13421,7 +13421,7 @@
         },
         {
           "disabled": false,
-          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceInfo",
           "name": "Resources",
@@ -13432,7 +13432,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费实例对应的机型规格",
+          "document": "<p>后付费实例对应的机型规格</p>",
           "example": "TI.S.MEDIUM.POS",
           "member": "string",
           "name": "InstanceType",
@@ -13443,7 +13443,7 @@
         },
         {
           "disabled": false,
-          "document": "模型信息",
+          "document": "<p>模型信息</p>",
           "example": "无",
           "member": "ModelInfo",
           "name": "ModelInfo",
@@ -13454,7 +13454,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用日志",
+          "document": "<p>是否启用日志</p>",
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
@@ -13465,7 +13465,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置",
+          "document": "<p>日志配置</p>",
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
@@ -13476,7 +13476,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启鉴权",
+          "document": "<p>是否开启鉴权</p>",
           "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
@@ -13487,7 +13487,7 @@
         },
         {
           "disabled": false,
-          "document": "hpa配置",
+          "document": "<p>hpa配置</p>",
           "example": "无",
           "member": "HorizontalPodAutoscaler",
           "name": "HorizontalPodAutoscaler",
@@ -13498,7 +13498,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的状态描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkloadStatus",
           "name": "Status",
@@ -13509,7 +13509,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>权重</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
@@ -13520,7 +13520,7 @@
         },
         {
           "disabled": false,
-          "document": "资源总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源总量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceInfo",
           "name": "ResourceTotal",
@@ -13531,7 +13531,7 @@
         },
         {
           "disabled": false,
-          "document": "历史实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>历史实例数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OldReplicas",
@@ -13542,7 +13542,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "HybridBillingPrepaidReplicas",
@@ -13553,7 +13553,7 @@
         },
         {
           "disabled": false,
-          "document": "历史 HYBRID_PAID 时的实例数，用户恢复服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>历史 HYBRID_PAID 时的实例数，用户恢复服务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OldHybridBillingPrepaidReplicas",
@@ -13564,7 +13564,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启模型的热更新。默认不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启模型的热更新。默认不开启</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ModelHotUpdateEnable",
@@ -13575,7 +13575,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的规格别名",
+          "document": "<p>服务的规格别名</p>",
           "example": "8核40GB V100*1",
           "member": "string",
           "name": "InstanceAlias",
@@ -13586,7 +13586,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量调节方式,默认为手动\n支持：自动 - \"AUTO\", 手动 - \"MANUAL\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例数量调节方式,默认为手动<br>支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUTO",
           "member": "string",
           "name": "ScaleMode",
@@ -13597,7 +13597,7 @@
         },
         {
           "disabled": false,
-          "document": "定时伸缩任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>定时伸缩任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CronScaleJob",
           "name": "CronScaleJobs",
@@ -13608,7 +13608,7 @@
         },
         {
           "disabled": false,
-          "document": "定时伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>定时伸缩策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HPC",
           "member": "string",
           "name": "ScaleStrategy",
@@ -13619,7 +13619,7 @@
         },
         {
           "disabled": false,
-          "document": "定时停止的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>定时停止的配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
@@ -13630,7 +13630,7 @@
         },
         {
           "disabled": true,
-          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"w\"]",
           "member": "string",
           "name": "PodList",
@@ -13641,7 +13641,7 @@
         },
         {
           "disabled": true,
-          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Pod列表信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Pod",
           "name": "Pods",
@@ -13652,7 +13652,7 @@
         },
         {
           "disabled": false,
-          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Pod列表信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Pod",
           "name": "PodInfos",
@@ -13663,7 +13663,7 @@
         },
         {
           "disabled": false,
-          "document": "服务限速限流相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务限速限流相关配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
@@ -13674,7 +13674,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ModelTurboEnable",
@@ -13685,7 +13685,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>挂载</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMount",
@@ -13696,7 +13696,7 @@
         },
         {
           "disabled": false,
-          "document": "推理代码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>推理代码信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InferCodeInfo",
           "name": "InferCodeInfo",
@@ -13707,7 +13707,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的启动命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务的启动命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sleep 36000",
           "member": "string",
           "name": "Command",
@@ -13718,7 +13718,7 @@
         },
         {
           "disabled": false,
-          "document": "开启TIONE内网访问外部设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开启TIONE内网访问外部设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceEIP",
           "name": "ServiceEIP",
@@ -13729,7 +13729,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口，默认为8501\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务端口，默认为8501</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8501",
           "member": "int64",
           "name": "ServicePort",
@@ -13740,7 +13740,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "document": "<p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>",
           "example": "30",
           "member": "int64",
           "name": "TerminationGracePeriodSeconds",
@@ -13751,7 +13751,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "document": "<p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>",
           "example": "[\"sleep\",\"60\"]",
           "member": "string",
           "name": "PreStopCommand",
@@ -13762,7 +13762,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用grpc端口",
+          "document": "<p>是否启用grpc端口</p>",
           "example": "false",
           "member": "bool",
           "name": "GrpcEnable",
@@ -13773,7 +13773,7 @@
         },
         {
           "disabled": false,
-          "document": "健康探针",
+          "document": "<p>健康探针</p>",
           "example": "无",
           "member": "HealthProbe",
           "name": "HealthProbe",
@@ -13784,7 +13784,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动更新配置",
+          "document": "<p>滚动更新配置</p>",
           "example": "无",
           "member": "RollingUpdate",
           "name": "RollingUpdate",
@@ -13795,7 +13795,7 @@
         },
         {
           "disabled": false,
-          "document": "单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1",
+          "document": "<p>单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1</p>",
           "example": "1",
           "member": "int64",
           "name": "InstancePerReplicas",
@@ -13806,7 +13806,7 @@
         },
         {
           "disabled": false,
-          "document": "批量数据盘挂载配置",
+          "document": "<p>批量数据盘挂载配置</p>",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMounts",
@@ -13817,7 +13817,7 @@
         },
         {
           "disabled": false,
-          "document": "调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用",
+          "document": "<p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>",
           "example": "binpack",
           "member": "string",
           "name": "SchedulingStrategy",
@@ -13828,7 +13828,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实际运行的节点数",
+          "document": "<p>服务实际运行的节点数</p>",
           "example": "1",
           "member": "int64",
           "name": "NodeCount",
@@ -15852,7 +15852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cfs的配置信息",
+          "document": "<p>cfs的配置信息</p>",
           "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
@@ -15863,7 +15863,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS",
+          "document": "<p>挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS</p>",
           "example": "CFS",
           "member": "string",
           "name": "VolumeSourceType",
@@ -15874,7 +15874,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义容器内挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义容器内挂载路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/MountPath",
           "member": "string",
           "name": "MountPath",
@@ -15885,7 +15885,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载数据源时的配置信息",
+          "document": "<p>挂载数据源时的配置信息</p>",
           "example": "无",
           "member": "PublicDataSourceFS",
           "name": "PublicDataSource",

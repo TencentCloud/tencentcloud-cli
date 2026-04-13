@@ -9583,7 +9583,7 @@
         {
           "disabled": false,
           "document": "唯一标识一个任务",
-          "example": "无",
+          "example": "v2_20260320_5kxNg4E1YPwVbIoKbf2hPbzno_kvwjs-H7iyc_ZcgeqJxHbQ-cKxpj2HQW3Hfg_cV-VPmE9RCdNBYnqOM3sjz6sL-Hw7X3Gm",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -9592,7 +9592,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新，机器人的欢迎语",
-          "example": "无",
+          "example": "你好啊",
           "member": "string",
           "name": "WelcomeMessage",
           "required": false,
@@ -9601,7 +9601,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新。智能打断模式，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "InterruptMode",
           "required": false,
@@ -9610,7 +9610,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新。InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "InterruptSpeechDuration",
           "required": false,
@@ -9619,7 +9619,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新，LLM配置，详情见StartAIConversation接口",
-          "example": "无",
+          "example": "{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-xxx\", \\\"APIKey\\\": \\\"xxxxxxxx\\\", \\\"APIUrl\\\": \\\"https://api.xxx.com/v1/chat/completions\\\\\", \\\"Streaming\\\": true}",
           "member": "string",
           "name": "LLMConfig",
           "required": false,
@@ -9628,7 +9628,7 @@
         {
           "disabled": false,
           "document": "不填写则不进行更新，TTS配置，详情见StartAIConversation接口",
-          "example": "无",
+          "example": "{\\\"TTSType\\\": \\\"flow\\\",\\\"VoiceId\\\": \\\"v-female-R2s4N9qJ\\\", \\\"Speed\\\": 1}",
           "member": "string",
           "name": "TTSConfig",
           "required": false,

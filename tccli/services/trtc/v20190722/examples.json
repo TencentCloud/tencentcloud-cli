@@ -576,7 +576,7 @@
       {
         "document": "在对话过程中，想要动态更新tts的音色",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"your-taskid\",\n    \"TTSConfig\": \"your-tts-config-json\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"df81f274-c1b8-4342-b0a1-e552072cc48e\"\n    }\n}",
         "title": "更新tts音色"
       }
     ],

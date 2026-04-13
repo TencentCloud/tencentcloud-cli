@@ -32117,8 +32117,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260408150048612",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -32128,8 +32128,8 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "task_260408_150040",
           "member": "string",
           "name": "TaskName",
           "output_required": true,
@@ -32139,8 +32139,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "433",
+          "document": "<p>工作流id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9cbf9946-660b-4f9e-83e5-1621b641c88c",
           "member": "string",
           "name": "WorkflowId",
           "output_required": true,
@@ -32150,8 +32150,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "工作流",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wf_260408_145840",
           "member": "string",
           "name": "WorkflowName",
           "output_required": true,
@@ -32161,7 +32161,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "32",
           "member": "int64",
           "name": "TaskTypeId",
@@ -32172,7 +32172,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DLC",
           "member": "string",
           "name": "TaskType",
@@ -32183,8 +32183,8 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "765",
+          "document": "<p>项目id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3197263226677186560",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -32194,10 +32194,21 @@
         },
         {
           "disabled": false,
-          "document": "任务周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务周期类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HOUR_CYCLE",
           "member": "string",
           "name": "CycleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "event_01",
+          "member": "string",
+          "name": "EventName",
           "output_required": false,
           "required": false,
           "type": "string",

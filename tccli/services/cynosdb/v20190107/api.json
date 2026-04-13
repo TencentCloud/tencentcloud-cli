@@ -2582,7 +2582,7 @@
         {
           "disabled": false,
           "document": "日志命中规则模板的基本信息",
-          "example": "[{\"RuleTemplateId\": \"\tcynosdb-art-ns0u376\",\"RuleTemplateName\": \"andy_rule\",\"AlarmLevel\": \"2\",\"RuleTemplateStatus\": \"1\"}]",
+          "example": "无",
           "member": "LogRuleTemplateInfo",
           "name": "TemplateInfo",
           "output_required": false,
@@ -2595,6 +2595,16 @@
           "example": "13365",
           "member": "int64",
           "name": "TrxId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端端口",
+          "example": "40050",
+          "member": "int64",
+          "name": "ClientPort",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

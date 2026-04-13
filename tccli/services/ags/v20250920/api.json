@@ -1315,7 +1315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志推送CLS的配置。",
+          "document": "<p>日志推送CLS的配置。</p>",
           "example": "无",
           "member": "CLSConfig",
           "name": "CLSConfig",

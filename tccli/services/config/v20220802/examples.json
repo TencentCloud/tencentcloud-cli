@@ -16,6 +16,14 @@
         "title": "添加规则"
       }
     ],
+    "AddAlarmPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAlarmPolicy\n<公共请求参数>\n\n{\n    \"Name\": \"告警规则1\",\n    \"EventScope\": [\n        1\n    ],\n    \"RiskLevel\": [\n        1\n    ],\n    \"NoticeTime\": \"09:30:00~23:30:00\",\n    \"NotificationMechanism\": \"实时发送\",\n    \"Status\": 1,\n    \"NoticePeriod\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmPolicyId\": 2,\n        \"RequestId\": \"e2c458f6-dedc-46eb-955a-6d2c3555c597\"\n    }\n}",
+        "title": "创建告警"
+      }
+    ],
     "AddCompliancePack": [
       {
         "document": "创建合规包",
@@ -27,8 +35,8 @@
     "AddConfigRule": [
       {
         "document": "添加规则",
-        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddConfigRule\n<公共请求参数>\n\n \n\n{\n    \"Identifier\": \"cam-user-group-bound\",\n    \"IdentifierType\": \"SYSTEM\",\n    \"RuleName\": \"CAM访问管理子用户必须关联用户组\",\n    \"ResourceType\": [\n        \"QCS::CAM::User\"\n    ],\n    \"RiskLevel\": 3,\n    \"Description\": \"帐号访问管理中用户至少关联一个用户组，则符合规则。\",\n    \"TriggerType\": [\n        {\n            \"MessageType\": \"ScheduledNotification\",\n            \"MaximumExecutionFrequency\": \"TwentyFour_Hours\"\n        }\n    ],\n    \"InputParameter\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da85d5e2-4432-4f02-9863-0ab07adeff33\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddConfigRule\n<公共请求参数>\n\n{\n    \"Identifier\": \"cam-user-group-bound\",\n    \"IdentifierType\": \"SYSTEM\",\n    \"RuleName\": \"CAM访问管理子用户必须关联用户组\",\n    \"ResourceType\": [\n        \"QCS::CAM::User\"\n    ],\n    \"RiskLevel\": 3,\n    \"Description\": \"帐号访问管理中用户至少关联一个用户组，则符合规则。\",\n    \"TriggerType\": [\n        {\n            \"MessageType\": \"ScheduledNotification\",\n            \"MaximumExecutionFrequency\": \"TwentyFour_Hours\"\n        }\n    ],\n    \"InputParameter\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da85d5e2-4432-4f02-9863-0ab07adeff33\",\n        \"RuleId\": \"cr-3xhsd76j603v0a8ma0i73\"\n    }\n}",
         "title": "添加规则"
       }
     ],
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAggregateConfigRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"cr-3xhsd76j603v0a8ma0i73\",\n    \"AccountGroupId\": \"ca-sdfs7734h24h3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"857db07e-d8b5-41f8-ae80-e9c4eec09386\"\n    }\n}",
         "title": "删除规则"
+      }
+    ],
+    "DeleteAlarmPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmPolicy\n<公共请求参数>\n\n{\n    \"AlarmPolicyId\": 18\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9047c59f-22af-4dcb-8f3b-29677c8a513d\"\n    }\n}",
+        "title": "删除告警策略"
       }
     ],
     "DeleteCompliancePack": [
@@ -264,6 +280,14 @@
         "title": "获取账号组列表"
       }
     ],
+    "ListAlarmPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAlarmPolicy\n<公共请求参数>\n\n{\n    \"Offset\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmPolicyList\": [],\n        \"Total\": 2,\n        \"RequestId\": \"04ec0d59-723e-4800-ae75-5209394aeabf\"\n    }\n}",
+        "title": "查询告警列表"
+      }
+    ],
     "ListCompliancePacks": [
       {
         "document": "",
@@ -422,6 +446,14 @@
         "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAggregateConfigRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"cr-bdunf5kx3aywn0ac5bkk\",\n    \"RuleName\": \"CAM访问管理子用户必须关联用户组\",\n    \"Description\": \"帐号访问管理中用户至少关联一个用户组，则符合规则。\",\n    \"RiskLevel\": 3,\n    \"TriggerType\": [\n        {\n            \"MessageType\": \"ScheduledNotification\",\n            \"MaximumExecutionFrequency\": \"TwentyFour_Hours\"\n        }\n    ],\n    \"InputParameter\": [],\n    \"AccountGroupId\": \"ca-sdfs7734h24h3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"da85d5e2-4432-4f02-9863-0ab07adeff33\"\n    }\n}",
         "title": "编辑规则"
+      }
+    ],
+    "UpdateAlarmPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAlarmPolicy\n<公共请求参数>\n\n{\n    \"AlarmPolicyId\": 123,\n    \"Name\": \"u544au8b66u89c4u5219\",\n    \"EventScope\": [\n        1\n    ],\n    \"RiskLevel\": [\n        1\n    ],\n    \"NoticeTime\": \"09:30:00~23:30:00\",\n    \"NotificationMechanism\": \"u5b9eu65f6u53d1u9001\",\n    \"Status\": 1,\n    \"NoticePeriod\": [\n        1\n    ],\n    \"Description\": \"u5bf9u4e0du5408u89c4u89c4u5219u8fdbu884cu544au8b66\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7a78dce-732b-4c5e-8cd1-c11ea0e4a40e\"\n    }\n}",
+        "title": "更新告警设置"
       }
     ],
     "UpdateCompliancePack": [

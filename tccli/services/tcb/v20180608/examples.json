@@ -500,6 +500,20 @@
         "title": "销毁资源"
       }
     ],
+    "ExecutePGSql": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecutePGSql\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-mikejliu-0g9cqmar358527a9\",\n    \"Sql\": \"CREATE TABLE test_products (\\n    id SERIAL PRIMARY KEY,                        -- 产品唯一标识\\n    sku VARCHAR(20) UNIQUE NOT NULL,             -- 库存单位编码，唯一且必填\\n    name TEXT NOT NULL,                          -- 产品名称\\n    category VARCHAR(50),                        -- 分类\\n    price NUMERIC(12, 2) NOT NULL DEFAULT 0.00,  -- 单价\\n    stock_quantity INTEGER DEFAULT 0,            -- 库存数量\\n    tags JSONB,                                  -- 标签（使用 JSONB 存储扩展属性）\\n    last_updated TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW() -- 最后更新时间\\n);\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Columns\": null,\n        \"ExecutionTimeMs\": 34,\n        \"Rows\": null,\n        \"RequestId\": \"5cf1d355-cdb7-4879-bd22-4e89ddc10095\"\n    }\n}",
+        "title": "创建表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecutePGSql\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-mikejliu-0g9cqmar358527a9\",\n    \"Sql\": \"select column_name FROM information_schema.columns WHERE table_schema = 'public'   AND table_name = 'test_products'\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Columns\": [\n            \"column_name\"\n        ],\n        \"ExecutionTimeMs\": 58,\n        \"Rows\": [\n            \"[\\\"id\\\"]\"\n        ],\n        \"RequestId\": \"21b3df84-7ea3-4487-9583-e4de88b4ab89\"\n    }\n}",
+        "title": "查询表字段"
+      }
+    ],
     "GetProviders": [
       {
         "document": "",
