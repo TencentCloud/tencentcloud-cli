@@ -5636,8 +5636,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "rocketmq-xxxx",
+          "document": "<p>集群ID</p>",
+          "example": "rocketmq-9npap34p9pa4",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -5645,7 +5645,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型：\n0，集群迁移\n1，导入到指定命名空间",
+          "document": "<p>任务类型：<br>0，集群迁移<br>1，导入到指定命名空间</p>",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -5654,7 +5654,7 @@
         },
         {
           "disabled": false,
-          "document": "待导入的主题列表",
+          "document": "<p>待导入的主题列表</p>",
           "example": "无",
           "member": "RocketMQTopicConfig",
           "name": "Topics",
@@ -5663,7 +5663,7 @@
         },
         {
           "disabled": false,
-          "document": "待导入的消费组列表",
+          "document": "<p>待导入的消费组列表</p>",
           "example": "无",
           "member": "RocketMQGroupConfig",
           "name": "Groups",
@@ -5672,8 +5672,8 @@
         },
         {
           "disabled": false,
-          "document": "待导入的角色列表",
-          "example": "role",
+          "document": "<p>待导入的角色列表</p>",
+          "example": "无",
           "member": "RocketMQRoleConfig",
           "name": "Roles",
           "required": false,
@@ -5681,8 +5681,8 @@
         },
         {
           "disabled": false,
-          "document": "指定导入的命名空间",
-          "example": "xxx",
+          "document": "<p>指定导入的命名空间</p>",
+          "example": "test_ns",
           "member": "string",
           "name": "Namespace",
           "required": false,

@@ -1,4 +1,4 @@
-**Example 1: 更新沙箱实例**
+**Example 1: 更新实例超时时间**
 
 
 
@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ags UpdateSandboxInstance --cli-unfold-argument  \
-    --InstanceId 12345678123412341234123456789abc \
-    --Timeout 1h
+    --InstanceId gw524aigytlvl2qwzsgw5yud5cjuiq3worjeir57 \
+    --Timeout 30m
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "12345678123412341234123456789012"
+        "RequestId": "0846f2dc-f1d2-465a-93a2-d1873c66f715"
     }
 }
 ```

@@ -11698,6 +11698,15 @@
           "name": "TTSConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，ExperimentalParams",
+          "example": "{\"internal\": \"tccc\"}",
+          "member": "string",
+          "name": "ExperimentalParams",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

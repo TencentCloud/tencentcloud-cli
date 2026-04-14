@@ -1,4 +1,4 @@
-**Example 1: 查看第三方节点列表**
+**Example 1: 查看注册节点列表**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DescribeExternalNode --cli-unfold-argument  \
-    --ClusterId cls-abcd1234 \
-    --NodePoolId np-abcd1234
+    --ClusterId cls-2isgxkje \
+    --NodePoolId np-bnd1ybd4
 ```
 
 Output: 
@@ -16,15 +16,18 @@ Output:
     "Response": {
         "Nodes": [
             {
-                "CreatedTime": "2021-04-29T06:30:44Z",
-                "IP": "10.0.0.135",
-                "Name": "lkongtest",
-                "NodePoolId": "np-0nwzqj10",
-                "Location": "gz"
+                "CreatedTime": "2026-03-19T08:10:41Z",
+                "IP": "30.1.0.12",
+                "Location": "",
+                "Name": "node-30.1.0.12",
+                "NodePoolId": "np-bnd1ybd4",
+                "Reason": "",
+                "Status": "Running",
+                "Unschedulable": false
             }
         ],
-        "RequestId": "1ac0d3ae-063e-4789-93fe-3c73e93191b9",
-        "TotalCount": 1
+        "TotalCount": 1,
+        "RequestId": "6aa56aff-48d9-4296-89ae-9561d2fd4aa1"
     }
 }
 ```

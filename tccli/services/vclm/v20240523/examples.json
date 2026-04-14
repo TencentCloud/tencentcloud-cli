@@ -136,6 +136,14 @@
         "title": "提交图生视频通用任务"
       }
     ],
+    "SubmitImageToVideoViduJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageToVideoViduJob\n<公共请求参数>\n\n{\n    \"Images\": [\n        \"https://cos.ap-guangzhou.myqcloud.com/xxx.png\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1384472585461940224\",\n        \"RequestId\": \"3ca4a3d1-28c7-4be5-a394-5902c97dcca4\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "SubmitPortraitSingJob": [
       {
         "document": "调用成功",

@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tdmq CreateRocketMQMigrationTask --cli-unfold-argument  \
-    --Namespace abcd \
-    --Topics.0.Namespace abcd \
-    --Topics.0.Remark test \
+    --Namespace test_ns \
+    --Topics.0.Namespace test_ns \
+    --Topics.0.Remark test topic info. \
     --Topics.0.Type Normal \
-    --Topics.0.TopicName 123456 \
+    --Topics.0.TopicName test_topic \
     --Topics.0.Partitions 2 \
     --ClusterId rocketmq-9npap34p9pa4 \
     --Type 0 \
     --Groups.0.ConsumeBroadcastEnable true \
-    --Groups.0.GroupName test1 \
-    --Groups.0.Remark testg \
-    --Groups.0.Namespace abcd \
+    --Groups.0.GroupName test_group \
+    --Groups.0.Remark test group info. \
+    --Groups.0.Namespace test_ns \
     --Groups.0.ConsumeEnable true
 ```
 

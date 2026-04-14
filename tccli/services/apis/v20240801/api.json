@@ -2925,6 +2925,42 @@
       ],
       "type": "object"
     },
+    "DescribeAIMCredentialAgentItem": {
+      "document": "凭据绑定智能体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体ID",
+          "example": "agt-KFjJoo6y",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体名称",
+          "example": "demo_agent",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeAIMCredentialRequest": {
       "document": "DescribeAIMCredential请求参数结构体",
       "members": [
@@ -2948,6 +2984,42 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeAIMCredentialResourceItem": {
+      "document": "凭据绑定资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "res-LDFxL6nq",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "腾讯云cvm",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否公开",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPublic",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeAIMCredentialResp": {
       "document": "凭据详情响应",
@@ -3061,6 +3133,46 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID列表",
+          "example": "[\"res-LDFxL6nq\"]",
+          "member": "string",
+          "name": "ResourceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定智能体详情列表",
+          "example": "无",
+          "member": "DescribeAIMCredentialAgentItem",
+          "name": "Agents",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定资源详情列表",
+          "example": "无",
+          "member": "DescribeAIMCredentialResourceItem",
+          "name": "Resources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定智能体数量，仅列表接口返回",
+          "example": "2",
+          "member": "uint64",
+          "name": "AgentCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

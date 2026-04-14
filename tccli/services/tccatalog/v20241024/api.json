@@ -9060,7 +9060,27 @@
       "members": [
         {
           "disabled": false,
-          "document": "函数名",
+          "document": "<p>数据目录名称</p>",
+          "example": "test_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数名</p>",
           "example": "function1",
           "member": "string",
           "name": "Name",
@@ -9070,7 +9090,7 @@
         },
         {
           "disabled": false,
-          "document": "函数类型",
+          "document": "<p>函数类型</p>",
           "example": "java",
           "member": "string",
           "name": "FunctionType",
@@ -9080,7 +9100,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型",
+          "document": "<p>引擎类型</p>",
           "example": "hive",
           "member": "string",
           "name": "EngineType",
@@ -9090,7 +9110,7 @@
         },
         {
           "disabled": false,
-          "document": "类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>类名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "com.example.Function",
           "member": "string",
           "name": "ClassName",
@@ -9100,8 +9120,8 @@
         },
         {
           "disabled": false,
-          "document": "函数依赖的资源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>函数依赖的资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FunctionResource",
           "name": "Resources",
           "output_required": false,
@@ -9110,7 +9130,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "example function",
           "member": "string",
           "name": "Comment",
@@ -9120,7 +9140,7 @@
         },
         {
           "disabled": false,
-          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KVPair",
           "name": "Properties",
@@ -9130,7 +9150,7 @@
         },
         {
           "disabled": false,
-          "document": "审计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审计信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Audit",
           "name": "Audit",
@@ -9802,7 +9822,27 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名",
+          "document": "<p>目录名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名</p>",
           "example": "model1",
           "member": "string",
           "name": "Name",
@@ -9812,7 +9852,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "comment message",
           "member": "string",
           "name": "Comment",
@@ -9822,7 +9862,7 @@
         },
         {
           "disabled": false,
-          "document": "最近版本",
+          "document": "<p>最近版本</p>",
           "example": "1",
           "member": "int64",
           "name": "LatestVersion",
@@ -9832,7 +9872,7 @@
         },
         {
           "disabled": false,
-          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KVPair",
           "name": "Properties",
@@ -9842,7 +9882,7 @@
         },
         {
           "disabled": false,
-          "document": "审计信息",
+          "document": "<p>审计信息</p>",
           "example": "无",
           "member": "Audit",
           "name": "Audit",
@@ -9852,7 +9892,7 @@
         },
         {
           "disabled": true,
-          "document": "uuid",
+          "document": "<p>uuid</p>",
           "example": "321321312",
           "member": "string",
           "name": "Id",
@@ -9862,28 +9902,8 @@
         },
         {
           "disabled": false,
-          "document": "目录名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "CatalogName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "schema名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "SchemaName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "所属用户",
-          "example": "",
+          "document": "<p>所属用户</p>",
+          "example": "user1",
           "member": "string",
           "name": "Owner",
           "output_required": false,
@@ -13974,7 +13994,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "名字",
+          "document": "<p>数据库名称</p>",
+          "example": "test_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名字</p>",
           "example": "dwd",
           "member": "string",
           "name": "Name",
@@ -13984,7 +14014,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "明细层",
           "member": "string",
           "name": "Comment",
@@ -13994,8 +14024,8 @@
         },
         {
           "disabled": false,
-          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Key\":\"Owner\", \"Value\":\"Allen\"}]",
+          "document": "<p>属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "KVPair",
           "name": "Properties",
           "output_required": false,
@@ -14004,11 +14034,11 @@
         },
         {
           "disabled": false,
-          "document": "审计信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Creator\":\"Allen\",\"CreatedTime\":\"2024-11-01 10:01:01\"}\t",
+          "document": "<p>审计信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Audit",
           "name": "Audit",
-          "output_required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -14769,7 +14799,27 @@
       "members": [
         {
           "disabled": false,
-          "document": "表名称",
+          "document": "<p>数据目录名称</p>",
+          "example": "test_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名称</p>",
           "example": "products",
           "member": "string",
           "name": "Name",
@@ -14779,7 +14829,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "products",
           "member": "string",
           "name": "Comment",
@@ -14789,7 +14839,7 @@
         },
         {
           "disabled": false,
-          "document": "字段信息",
+          "document": "<p>字段信息</p>",
           "example": "无",
           "member": "ColumnInfo",
           "name": "Columns",
@@ -14799,7 +14849,7 @@
         },
         {
           "disabled": false,
-          "document": "属性值",
+          "document": "<p>属性值</p>",
           "example": "无",
           "member": "KVPair",
           "name": "Properties",
@@ -14809,7 +14859,7 @@
         },
         {
           "disabled": false,
-          "document": "分区",
+          "document": "<p>分区</p>",
           "example": "无",
           "member": "Partitioning",
           "name": "Partitioning",
@@ -14819,7 +14869,7 @@
         },
         {
           "disabled": false,
-          "document": "索引",
+          "document": "<p>索引</p>",
           "example": "无",
           "member": "Index",
           "name": "Indexes",
@@ -14829,7 +14879,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑者",
+          "document": "<p>编辑者</p>",
           "example": "无",
           "member": "Audit",
           "name": "Audit",
@@ -14839,8 +14889,8 @@
         },
         {
           "disabled": false,
-          "document": "表格式",
-          "example": "v1",
+          "document": "<p>表格式</p>",
+          "example": "iceberg",
           "member": "string",
           "name": "TableFormat",
           "output_required": false,
@@ -14849,8 +14899,8 @@
         },
         {
           "disabled": false,
-          "document": "表格式类型",
-          "example": "",
+          "document": "<p>表格式类型</p>",
+          "example": "v2",
           "member": "string",
           "name": "FormatType",
           "output_required": false,
@@ -14859,8 +14909,8 @@
         },
         {
           "disabled": false,
-          "document": "表类型：内部表、外部表",
-          "example": "",
+          "document": "<p>表类型：内部表、外部表</p>",
+          "example": "Managed",
           "member": "string",
           "name": "TableType",
           "output_required": false,
@@ -15438,7 +15488,27 @@
       "members": [
         {
           "disabled": false,
-          "document": "视图名",
+          "document": "<p>数据目录名称</p>",
+          "example": "test_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图名</p>",
           "example": "v1",
           "member": "string",
           "name": "Name",
@@ -15448,7 +15518,7 @@
         },
         {
           "disabled": false,
-          "document": "视图类型",
+          "document": "<p>视图类型</p>",
           "example": "VIEW",
           "member": "string",
           "name": "ViewType",
@@ -15458,7 +15528,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型",
+          "document": "<p>引擎类型</p>",
           "example": "hive",
           "member": "string",
           "name": "EngineType",
@@ -15468,7 +15538,7 @@
         },
         {
           "disabled": false,
-          "document": "视图定义",
+          "document": "<p>视图定义</p>",
           "example": "select * from table1",
           "member": "string",
           "name": "ViewDefinition",
@@ -15478,7 +15548,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test view",
           "member": "string",
           "name": "Comment",
@@ -15488,7 +15558,7 @@
         },
         {
           "disabled": false,
-          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KVPair",
           "name": "Properties",
@@ -15498,7 +15568,7 @@
         },
         {
           "disabled": false,
-          "document": "审计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审计信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Audit",
           "name": "Audit",
@@ -15508,8 +15578,8 @@
         },
         {
           "disabled": false,
-          "document": "结果列\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>结果列</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ColumnInfo",
           "name": "Columns",
           "output_required": false,
@@ -15560,7 +15630,27 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据卷名",
+          "document": "<p>数据目录名称</p>",
+          "example": "test_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据卷名</p>",
           "example": "events",
           "member": "string",
           "name": "Name",
@@ -15570,7 +15660,7 @@
         },
         {
           "disabled": false,
-          "document": "数据卷类型",
+          "document": "<p>数据卷类型</p>",
           "example": "External",
           "member": "string",
           "name": "Type",
@@ -15580,7 +15670,7 @@
         },
         {
           "disabled": false,
-          "document": "存储路径",
+          "document": "<p>存储路径</p>",
           "example": "cosn://bucket-10000/events",
           "member": "string",
           "name": "StorageLocation",
@@ -15590,7 +15680,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "事件数据",
           "member": "string",
           "name": "Comment",
@@ -15600,8 +15690,8 @@
         },
         {
           "disabled": false,
-          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Owner\":\"allen\"}]",
+          "document": "<p>属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "KVPair",
           "name": "Properties",
           "output_required": false,
@@ -15610,8 +15700,8 @@
         },
         {
           "disabled": false,
-          "document": "审计信息",
-          "example": "{\"Creator\":\"Allen\",\"CreatedTime\":\"2024-11-01 10:01:01\"}\t",
+          "document": "<p>审计信息</p>",
+          "example": "无",
           "member": "Audit",
           "name": "Audit",
           "output_required": false,
@@ -15921,7 +16011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "jack",
           "member": "string",
           "name": "User",
@@ -15932,7 +16022,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名",
+          "document": "<p>角色名</p>",
           "example": "role001",
           "member": "string",
           "name": "Role",
@@ -15943,7 +16033,7 @@
         },
         {
           "disabled": false,
-          "document": "授权对象",
+          "document": "<p>授权对象</p>",
           "example": "User",
           "member": "string",
           "name": "AuthorityEntity",
@@ -15954,7 +16044,7 @@
         },
         {
           "disabled": false,
-          "document": "权限列表",
+          "document": "<p>权限列表</p>",
           "example": "[\"SELECT\"]",
           "member": "string",
           "name": "Privileges",
@@ -15965,14 +16055,25 @@
         },
         {
           "disabled": false,
-          "document": "资源",
-          "example": "",
+          "document": "<p>资源</p>",
+          "example": "无",
           "member": "WeDataResource",
           "name": "Resource",
           "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>继承授权资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WeDataResource",
+          "name": "InheritedObject",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -15982,8 +16083,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据湖",
-          "example": "",
+          "document": "<p>数据湖</p>",
+          "example": "default",
           "member": "string",
           "name": "Metalake",
           "output_required": false,
@@ -15993,7 +16094,7 @@
         },
         {
           "disabled": false,
-          "document": "catalog 名称",
+          "document": "<p>catalog 名称</p>",
           "example": "catalog1",
           "member": "string",
           "name": "Catalog",
@@ -16004,7 +16105,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名称",
+          "document": "<p>schema名称</p>",
           "example": "schema1",
           "member": "string",
           "name": "Schema",
@@ -16015,7 +16116,7 @@
         },
         {
           "disabled": false,
-          "document": "table名称",
+          "document": "<p>table名称</p>",
           "example": "table1",
           "member": "string",
           "name": "Table",
@@ -16026,7 +16127,7 @@
         },
         {
           "disabled": false,
-          "document": "column名称",
+          "document": "<p>column名称</p>",
           "example": "column1",
           "member": "string",
           "name": "Column",
@@ -16037,7 +16138,7 @@
         },
         {
           "disabled": false,
-          "document": "function 名称",
+          "document": "<p>function 名称</p>",
           "example": "function1",
           "member": "string",
           "name": "Function",
@@ -16048,7 +16149,7 @@
         },
         {
           "disabled": false,
-          "document": "视图名称",
+          "document": "<p>视图名称</p>",
           "example": "view1",
           "member": "string",
           "name": "View",
@@ -16059,7 +16160,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "model",
           "member": "string",
           "name": "Model",
@@ -16070,10 +16171,21 @@
         },
         {
           "disabled": false,
-          "document": "卷名称",
-          "example": "",
+          "document": "<p>卷名称</p>",
+          "example": "test_volumn",
           "member": "string",
           "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储地址</p>",
+          "example": "cosn://aabbccfun",
+          "member": "string",
+          "name": "Location",
           "output_required": false,
           "required": false,
           "type": "string",
