@@ -653,7 +653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略名",
+          "document": "<p>告警策略名</p>",
           "example": "规则告警",
           "member": "string",
           "name": "Name",
@@ -662,7 +662,16 @@
         },
         {
           "disabled": false,
-          "document": "事件范围  1：当前账号  2：多账号",
+          "document": "<p>事件类型 1：资源不合规事件</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件范围  1：当前账号  2：多账号</p>",
           "example": "[1]",
           "member": "int64",
           "name": "EventScope",
@@ -671,7 +680,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级 1：高风险  2：中风险 3：低风险",
+          "document": "<p>风险等级 1：高风险  2：中风险 3：低风险</p>",
           "example": "[1]",
           "member": "int64",
           "name": "RiskLevel",
@@ -680,7 +689,7 @@
         },
         {
           "disabled": false,
-          "document": "通知时间段",
+          "document": "<p>通知时间段</p>",
           "example": "00:00:00~12:12:12",
           "member": "string",
           "name": "NoticeTime",
@@ -689,7 +698,7 @@
         },
         {
           "disabled": false,
-          "document": "通知机制",
+          "document": "<p>通知机制</p>",
           "example": "实时发送",
           "member": "string",
           "name": "NotificationMechanism",
@@ -698,7 +707,7 @@
         },
         {
           "disabled": false,
-          "document": "状态 1：启用 2：停用",
+          "document": "<p>状态 1：启用 2：停用</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -707,7 +716,7 @@
         },
         {
           "disabled": false,
-          "document": "通知周期",
+          "document": "<p>通知周期</p>",
           "example": "[1]",
           "member": "int64",
           "name": "NoticePeriod",
@@ -716,7 +725,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述",
+          "document": "<p>策略描述</p>",
           "example": "告警描述",
           "member": "string",
           "name": "Description",
@@ -731,7 +740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警策略唯一id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "AlarmPolicyId",

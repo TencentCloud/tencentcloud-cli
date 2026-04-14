@@ -106,7 +106,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywordLib\n<公共请求参数>\n\n{\n    \"MatchType\": \"ExactMatch\",\n    \"Name\": \"黄暴过滤\",\n    \"Suggestion\": \"Block\",\n    \"Description\": \"自定义词库\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n    }\n}",
         "title": "直播审核创建词库"
       }
     ],

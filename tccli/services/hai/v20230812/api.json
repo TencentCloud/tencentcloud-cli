@@ -3310,7 +3310,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "svc-3m6xrkjj",
           "member": "string",
           "name": "ServiceId",
@@ -3319,12 +3319,21 @@
         },
         {
           "disabled": false,
-          "document": "期望副本数",
+          "document": "<p>期望副本数</p>",
           "example": "2",
           "member": "int64",
           "name": "TargetReplicas",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动参数、环境变量等参数</p>",
+          "example": "无",
+          "member": "DeploymentConfig",
+          "name": "DeploymentConfigs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

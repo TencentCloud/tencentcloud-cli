@@ -99,9 +99,9 @@
     "StartSandboxInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-m1v36fnp\",\n    \"Timeout\": \"10m\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"CreateTime\": \"2026-04-09T15:56:22+08:00\",\n            \"ExpiresAt\": \"2026-04-09T16:06:22+08:00\",\n            \"InstanceId\": \"6k56rm47ciif3kzljg655rsyuauboyggnqqxv6l6\",\n            \"NetworkMode\": \"PUBLIC\",\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 600,\n            \"ToolId\": \"sdt-m1v36fnp\",\n            \"ToolName\": \"e2e-ops-test-8bdd5d61\",\n            \"UpdateTime\": \"2026-04-09T15:56:22+08:00\"\n        },\n        \"RequestId\": \"d8856bc9-f668-4837-aeaf-c2747bca46f3\"\n    }\n}",
-        "title": "启动沙箱实例"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolName\": \"test-abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"CreateTime\": \"2026-04-14T21:12:48+08:00\",\n            \"CustomConfiguration\": {\n                \"Args\": [\n                    \"-g\"\n                ],\n                \"Command\": [\n                    \"nginx\"\n                ],\n                \"Image\": \"ccr.ccs.tencentyun.com/library/nginx:alpine\",\n                \"ImageDigest\": \"sha256:e7e5b7fa7a0b1ab2f59d6066092a6d35984864cc8baf2caf7c088ee409657e57\",\n                \"ImageRegistryType\": \"personal\",\n                \"Probe\": {\n                    \"FailureThreshold\": 10,\n                    \"HttpGet\": {\n                        \"Path\": \"/\",\n                        \"Port\": 80,\n                        \"Scheme\": \"HTTP\"\n                    },\n                    \"ProbePeriodMs\": 1000,\n                    \"ProbeTimeoutMs\": 1000,\n                    \"ReadyTimeoutMs\": 30000,\n                    \"SuccessThreshold\": 1\n                },\n                \"Resources\": {\n                    \"CPU\": \"1\",\n                    \"Memory\": \"1Gi\"\n                }\n            },\n            \"ExpiresAt\": \"2026-04-14T22:02:46+08:00\",\n            \"InstanceId\": \"f72t34xiwxop6rpcunzbs3lnlqxjscawrihz26bn\",\n            \"NetworkMode\": \"PUBLIC\",\n            \"Persistent\": false,\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 3600,\n            \"ToolId\": \"sdt-m6abdmgv\",\n            \"ToolName\": \"test-abc\",\n            \"UpdateTime\": \"2026-04-14T21:12:48+08:00\"\n        },\n        \"RequestId\": \"3a2c71e2-869c-4117-9239-5362b928d568\"\n    }\n}",
+        "title": "成功启动实例"
       }
     ],
     "StopSandboxInstance": [
@@ -115,9 +115,9 @@
     "UpdateSandboxInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\",\n    \"Timeout\": \"1h\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
-        "title": "更新沙箱实例"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gw524aigytlvl2qwzsgw5yud5cjuiq3worjeir57\",\n    \"Timeout\": \"30m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0846f2dc-f1d2-465a-93a2-d1873c66f715\"\n    }\n}",
+        "title": "更新实例超时时间"
       }
     ],
     "UpdateSandboxTool": [

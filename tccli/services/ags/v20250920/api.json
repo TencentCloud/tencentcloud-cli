@@ -536,6 +536,15 @@
           "name": "LogConfiguration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>常驻沙箱标识</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Persistent",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1675,6 +1684,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>是否常驻实例</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Persistent",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>超时时间（秒），null 表示无超时设置</p>",
           "example": "600",
           "member": "uint64",
@@ -1831,6 +1851,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否常驻沙箱</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Persistent",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

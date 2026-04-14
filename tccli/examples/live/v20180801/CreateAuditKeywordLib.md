@@ -16,7 +16,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
+        "LibId": "4c49c04f-6617-4705-b3ff-bedce642bfcb"
     }
 }
 ```

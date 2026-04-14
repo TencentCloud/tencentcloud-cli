@@ -119,6 +119,13 @@
       "output": "CreateRocketMQGroupV2Response",
       "status": "online"
     },
+    "CreateRocketMQMigrationTask": {
+      "document": "创建RocketMQ元数据迁移任务，用于批量创建主题和消费组数据",
+      "input": "CreateRocketMQMigrationTaskRequest",
+      "name": "创建RocketMQ元数据迁移任务",
+      "output": "CreateRocketMQMigrationTaskResponse",
+      "status": "online"
+    },
     "CreateRocketMQNamespace": {
       "document": "创建 RocketMQ 命名空间。\n当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。",
       "input": "CreateRocketMQNamespaceRequest",
@@ -4417,6 +4424,78 @@
     },
     "CreateRocketMQGroupV2Response": {
       "document": "CreateRocketMQGroupV2返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQMigrationTaskRequest": {
+      "document": "CreateRocketMQMigrationTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "rocketmq-9npap34p9pa4",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型：<br>0，集群迁移<br>1，导入到指定命名空间</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待导入的主题列表</p>",
+          "example": "无",
+          "member": "RocketMQTopicConfig",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待导入的消费组列表</p>",
+          "example": "无",
+          "member": "RocketMQGroupConfig",
+          "name": "Groups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待导入的角色列表</p>",
+          "example": "无",
+          "member": "RocketMQRoleConfig",
+          "name": "Roles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定导入的命名空间</p>",
+          "example": "test_ns",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQMigrationTaskResponse": {
+      "document": "CreateRocketMQMigrationTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20175,6 +20254,75 @@
         }
       ],
       "usage": "out"
+    },
+    "RocketMQRoleConfig": {
+      "document": "RocketMQ角色配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名，对应SecretKey",
+          "example": "test_role",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "accessKey",
+          "example": "akTd0eozCSH78BYp1E",
+          "member": "string",
+          "name": "RoleToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test_ns",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色权限",
+          "example": "[   \"produce\",   \"consume\" ]",
+          "member": "string",
+          "name": "Permissions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark info",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）",
+          "example": "Cluster",
+          "member": "string",
+          "name": "PermType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic和Group维度权限配置",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedRolePerms",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "RocketMQSubscription": {
       "document": "RocketMQ消费组订阅信息",

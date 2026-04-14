@@ -208,6 +208,14 @@
         "title": "创建图片处理模板"
       }
     ],
+    "CreateProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"ProjectName\": \"斗破苍穹\",\n    \"TermBase\": [\n        {\n            \"Src\": \"Canaan Academy\",\n            \"Dst\": \"迦南学院\"\n        }\n    ],\n    \"Description\": \"玄幻题材有声剧\",\n    \"Speakers\": [\n        {\n            \"SpeakerId\": \"xiao_yan\",\n            \"VoiceId\": \"voice_001\",\n            \"Gender\": \"male\",\n            \"AgeGroup\": \"youth\",\n            \"Description\": \"主角萧炎\",\n            \"NameTerms\": [\n                {\n                    \"Src\": \"Xiao Yan\",\n                    \"Dst\": \"萧炎\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ProjectId\": \"458f16b1-7da9-4a56-a841-78567c5bee48\",\n        \"RequestId\": \"28d958f5-86e5-4ccc-be23-77c87dc748f0\"\n    }\n}",
+        "title": "剧集项目创建"
+      }
+    ],
     "CreateQualityControlTemplate": [
       {
         "document": "",
@@ -508,6 +516,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProcessImageTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20043\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c43b64a-8f21-4c2e-ab6e-a490ee5c439d\"\n    }\n}",
         "title": "删除图片处理模板"
+      }
+    ],
+    "DeleteProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"458f16b1-7da9-4a56-a841-78567c5bee48\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5c4574-3c6c-4801-8a75-b7c488dcab03\"\n    }\n}",
+        "title": "剧集项目删除"
       }
     ],
     "DeleteQualityControlTemplate": [
@@ -1726,6 +1742,14 @@
         "title": "发起转码任务"
       }
     ],
+    "QueryProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"458f16b1-7da9-4a56-a841-78567c5bee48\",\n    \"ProjectName\": \"斗破苍穹\",\n    \"Page\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreatedAt\": 1775011251,\n                \"Description\": \"玄幻题材有声剧\",\n                \"ProjectId\": \"458f16b1-7da9-4a56-a841-78567c5bee48\",\n                \"ProjectName\": \"斗破苍穹\",\n                \"Speakers\": [\n                    {\n                        \"AgeGroup\": \"youth\",\n                        \"Description\": \"主角萧炎\",\n                        \"Gender\": \"male\",\n                        \"NameTerms\": [\n                            {\n                                \"Dst\": \"萧炎\",\n                                \"Src\": \"Xiao Yan\"\n                            }\n                        ],\n                        \"SpeakerId\": \"xiao_yan\",\n                        \"VoiceId\": \"voice_001\"\n                    }\n                ],\n                \"TermBase\": [\n                    {\n                        \"Dst\": \"迦南学院\",\n                        \"Src\": \"Canaan Academy\"\n                    }\n                ],\n                \"UpdatedAt\": 1775011251\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"7f1115a9-5cfa-4455-9800-d354ade736c5\"\n    }\n}",
+        "title": "查询项目"
+      }
+    ],
     "RecognizeAudio": [
       {
         "document": "",
@@ -1802,6 +1826,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslation\n<公共请求参数>\n\n{\n    \"SourceText\": \"hello\",\n    \"Source\": \"zh\",\n    \"Target\": \"en\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6411c585-ee14-4a53-8642-dea0f16e161d\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetText\": \"hello\"\n    }\n}",
         "title": "文本翻译请求示例"
+      }
+    ],
+    "UpdateProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"458f16b1-7da9-4a56-a841-78567c5bee48\",\n    \"ProjectName\": \"斗破苍穹（第二季）\",\n    \"TermBase\": [\n        {\n            \"Src\": \"Canaan Academy\",\n            \"Dst\": \"迦南学院\"\n        }\n    ],\n    \"Description\": \"玄幻题材有声剧第二季\",\n    \"Speakers\": [\n        {\n            \"SpeakerId\": \"xiao_yan\",\n            \"VoiceId\": \"voice_001\",\n            \"Gender\": \"male\",\n            \"Description\": \"主角萧炎\",\n            \"NameTerms\": [\n                {\n                    \"Src\": \"Xiao Yan\",\n                    \"Dst\": \"萧炎\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0789fbea-b682-4719-ba5e-306bec1b4629\"\n    }\n}",
+        "title": "剧集项目更新"
       }
     ],
     "WithdrawsWatermark": [

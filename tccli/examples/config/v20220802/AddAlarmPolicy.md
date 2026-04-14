@@ -7,6 +7,7 @@ Input:
 ```
 tccli config AddAlarmPolicy --cli-unfold-argument  \
     --Name 告警规则1 \
+    --Type 1 \
     --EventScope 1 \
     --RiskLevel 1 \
     --NoticeTime 09:30:00~23:30:00 \

@@ -239,9 +239,9 @@
     "CreateExternalNodePool": [
       {
         "document": "创建注册节点池",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"InstanceAdvancedSettings\": {\n        \"PreStartUserScript\": \"xx\",\n        \"DockerGraphPath\": \"xx\",\n        \"Labels\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"ExtraArgs\": {\n            \"Kubelet\": [\n                \"xx\"\n            ]\n        },\n        \"Taints\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\",\n                \"Effect\": \"xx\"\n            }\n        ],\n        \"Unschedulable\": 0,\n        \"UserScript\": \"xx\",\n        \"DesiredPodNumber\": 61,\n        \"GPUArgs\": {\n            \"MIGEnable\": true,\n            \"CustomDriver\": {\n                \"Address\": \"xx\"\n            },\n            \"Driver\": {\n                \"Version\": \"xx\",\n                \"Name\": \"xx\"\n            },\n            \"CUDA\": {\n                \"Version\": \"xx\",\n                \"Name\": \"xx\"\n            },\n            \"CUDNN\": {\n                \"DocName\": \"xx\",\n                \"Version\": \"xx\",\n                \"Name\": \"xx\",\n                \"DevName\": \"xx\"\n            }\n        },\n        \"MountTarget\": \"xx\",\n        \"DataDisks\": [\n            {\n                \"DiskPartition\": \"xx\",\n                \"DiskType\": \"xx\",\n                \"DiskSize\": 0,\n                \"FileSystem\": \"xx\",\n                \"AutoFormatAndMount\": true,\n                \"MountTarget\": \"xx\"\n            }\n        ]\n    },\n    \"Name\": \"IDC节点池\",\n    \"ContainerRuntime\": \"docker\",\n    \"RuntimeVersion\": \"19.3\",\n    \"Labels\": [\n        {\n            \"Name\": \"lkong1\",\n            \"Value\": \"lkong1\"\n        },\n        {\n            \"Name\": \"tke.cloud.tencent.com/location\",\n            \"Value\": \"gz\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NodePoolId\": \"np-kennkdng\",\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx\"\n    }\n}",
-        "title": "创建第三方节点池"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-edk3h1cs\",\n    \"Name\": \"测试注册节点池\",\n    \"ContainerRuntime\": \"containerd\",\n    \"RuntimeVersion\": \"1.7.28\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePoolId\": \"np-rpyicty0\",\n        \"RequestId\": \"98b380d5-97d6-4ecc-9904-c0872168fc45\"\n    }\n}",
+        "title": "创建注册节点池"
       }
     ],
     "CreateGlobalMaintenanceWindowAndExclusions": [
@@ -511,7 +511,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"Names\": [\n        \"node1\",\n        \"node2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
-        "title": "删除第三方节点"
+        "title": "删除注册节点"
       }
     ],
     "DeleteExternalNodePool": [
@@ -519,7 +519,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExternalNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"NodePoolIds\": [\n        \"np-kennkdng\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
-        "title": "删除第三方节点池"
+        "title": "删除注册节点池"
       }
     ],
     "DeleteGlobalMaintenanceWindowAndExclusion": [
@@ -1097,33 +1097,33 @@
     "DescribeExternalNode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodePoolId\": \"np-abcd1234\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Nodes\": [\n            {\n                \"CreatedTime\": \"2021-04-29T06:30:44Z\",\n                \"IP\": \"10.0.0.135\",\n                \"Name\": \"lkongtest\",\n                \"NodePoolId\": \"np-0nwzqj10\",\n                \"Location\": \"gz\"\n            }\n        ],\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查看第三方节点列表"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-2isgxkje\",\n    \"NodePoolId\": \"np-bnd1ybd4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Nodes\": [\n            {\n                \"CreatedTime\": \"2026-03-19T08:10:41Z\",\n                \"IP\": \"30.1.0.12\",\n                \"Location\": \"\",\n                \"Name\": \"node-30.1.0.12\",\n                \"NodePoolId\": \"np-bnd1ybd4\",\n                \"Reason\": \"\",\n                \"Status\": \"Running\",\n                \"Unschedulable\": false\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6aa56aff-48d9-4296-89ae-9561d2fd4aa1\"\n    }\n}",
+        "title": "查看注册节点列表"
       }
     ],
     "DescribeExternalNodePools": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodePools\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"ClusterCIDR\": \"172.16.0.0/16\",\n                \"InstanceAdvancedSettings\": {\n                    \"DockerGraphPath\": \"/var/lib/docker\",\n                    \"ExtraArgs\": {\n                        \"Kubelet\": null\n                    },\n                    \"Unschedulable\": 0\n                },\n                \"Labels\": [\n                    {\n                        \"Name\": \"lkong1\",\n                        \"Value\": \"lkong1\"\n                    },\n                    {\n                        \"Name\": \"tke.cloud.tencent.com/location\",\n                        \"Value\": \"gz\"\n                    }\n                ],\n                \"LifeState\": \"normal\",\n                \"Name\": \"IDC节点池\",\n                \"NetworkType\": \"\",\n                \"NodePoolId\": \"np-0nwzqj10\",\n                \"RuntimeConfig\": {\n                    \"RuntimeType\": \"docker\",\n                    \"RuntimeVersion\": \"19.3\"\n                },\n                \"Taints\": []\n            }\n        ],\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查看第三方节点池列表"
+        "document": "查看注册节点池列表",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodePools\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-edk3h1cs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"ClusterCIDR\": \"\",\n                \"DeletionProtection\": false,\n                \"InstanceAdvancedSettings\": {\n                    \"DataDisks\": null,\n                    \"DesiredPodNumber\": 0,\n                    \"DockerGraphPath\": \"\",\n                    \"ExtraArgs\": {\n                        \"Kubelet\": []\n                    },\n                    \"GPUArgs\": null,\n                    \"Labels\": null,\n                    \"MountTarget\": \"\",\n                    \"PreStartUserScript\": \"\",\n                    \"Taints\": null,\n                    \"Unschedulable\": 0,\n                    \"UserScript\": \"\"\n                },\n                \"Labels\": [\n                    {\n                        \"Name\": \"tke.cloud.tencent.com/nodepool-id\",\n                        \"Value\": \"np-rpyicty0\"\n                    },\n                    {\n                        \"Name\": \"node.kubernetes.io/instance-type\",\n                        \"Value\": \"external\"\n                    },\n                    {\n                        \"Name\": \"tke.cloud.tencent.com/cbs-mountable\",\n                        \"Value\": \"false\"\n                    }\n                ],\n                \"LifeState\": \"normal\",\n                \"Name\": \"注册节点池\",\n                \"NetworkType\": \"\",\n                \"NodePoolId\": \"np-rpyicty0\",\n                \"NodeType\": \"CPU\",\n                \"RuntimeConfig\": {\n                    \"RuntimeType\": \"containerd\",\n                    \"RuntimeVersion\": \"1.7.28\"\n                },\n                \"Taints\": []\n            }\n        ],\n        \"RequestId\": \"7526c3f8-4ac5-458a-bf42-cafbc8a92927\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看注册节点池列表"
       }
     ],
     "DescribeExternalNodeScript": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodeScript\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"NodePoolId\": \"np-0nwzqj10\",\n    \"Interface\": \"eth0\",\n    \"Name\": \"node1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48849133-f394-4c4c-9891-f013e209c025\",\n        \"Link\": \"https://tke-edge-1253687700.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-19zn81yu3321337994100018114712ap-guangzhou%2Fadd2tkectl?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDTeaJo55GyQgvzojguuSl24qNey3wa7NN%26q-sign-time%3D1618561008%3B1618564608%26q-key-time%3D1618561008%3B1618564608%26q-header-list%3Dx-cos-token%26q-url-param-list%3D%26q-signature%3D7994096869abf8492c0c6cbc68f93701bab7ac4f\",\n        \"Token\": \"UAkOh6wCxzr8M8zf\",\n        \"Command\": \"wget --header=\\\"x-cos-token:UAkOh6wCxzr8M8zf\\\" https://tke-edge-1253687700.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-19zn81yu3321337994100018114712ap-guangzhou%2Fadd2tkectl?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDTeaJo55GyQgvzojguuSl24qNey3wa7NN%26q-sign-time%3D1618561008%3B1618564608%26q-key-time%3D1618561008%3B1618564608%26q-header-list%3Dx-cos-token%26q-url-param-list%3D%26q-signature%3D7994096869abf8492c0c6cbc68f93701bab7ac4f -O add2tkectl && chmod +x add2tkectl\"\n    }\n}",
-        "title": "查看第三方节点列表"
+        "document": "获取注册节点初始化脚本",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodeScript\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-2isgxkje\",\n    \"NodePoolId\": \"np-bnd1ybd4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"wget --header=\\\"x-cos-token:tokenvalue\\\" 'http://example.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-2isgxkje700000446531700000446531gz%2Fadd2tkectl?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1773902065%3B1773905665&q-key-time=1773902065%3B1773905665&q-header-list=host%3Bx-cos-token&q-url-param-list=&q-signature=92db17c604be5987fc41524be89f9247afb34aee' -O add2tkectl-cls-2isgxkje-np-bnd1ybd4 && chmod +x add2tkectl-cls-2isgxkje-np-bnd1ybd4\",\n        \"Link\": \"https://example.cos.ap-guangzhou.myqcloud.com/user-pkgs%2Fcls-2isgxkje700000446531700000446531gz%2Fadd2tkectl?q-sign-algorithm=sha1&q-ak=xxxx&q-sign-time=1773902065%3B1773905665&q-key-time=1773902065%3B1773905665&q-header-list=host%3Bx-cos-token&q-url-param-list=&q-signature=92db17c604be5987fc41524be89f9247afb34aee\",\n        \"Token\": \"tokenvalue\",\n        \"RequestId\": \"7b4dae36-4a1a-4583-9317-419851aef6b4\"\n    }\n}",
+        "title": "获取注册节点初始化脚本"
       }
     ],
     "DescribeExternalNodeSupportConfig": [
       {
-        "document": "",
+        "document": "查看开启注册节点池配置信息",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodeSupportConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44d\",\n        \"ClusterCIDR\": \"172.22.0.0/16\",\n        \"NetworkType\": \"CiliumVXLan\",\n        \"SubnetId\": \"subnet-e55paxnt\",\n        \"Enabled\": true,\n        \"AS\": \"1001\",\n        \"SwitchIP\": \"1.1.1.1\",\n        \"Status\": \"Initializing\",\n        \"Proxy\": \"1.1.1.1\",\n        \"Master\": \"1.1.1.1\",\n        \"Progress\": [\n            {\n                \"EndAt\": \"2021-11-05T12:40:51Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureNodeMasterCommunicate\",\n                \"StartAt\": \"2021-11-05T12:40:45Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:52Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureInClusterAccess\",\n                \"StartAt\": \"2021-11-05T12:40:51Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureExternalNodeProxy\",\n                \"StartAt\": \"2021-11-05T12:40:52Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureBootStrap\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureAdmissionController\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:41:00Z\",\n                \"Message\": \"\",\n                \"Name\": \"InstallUnderlayCilium\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:41:00Z\",\n                \"Message\": \"\",\n                \"Name\": \"CompleteEnable\",\n                \"StartAt\": \"2021-11-05T12:41:00Z\",\n                \"Status\": \"success\"\n            }\n        ],\n        \"FailedReason\": \"fail\"\n    }\n}",
-        "title": "查看开启第三方节点池配置信息"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44d\",\n        \"ClusterCIDR\": \"172.22.0.0/16\",\n        \"NetworkType\": \"CiliumOverlay\",\n        \"SubnetId\": \"subnet-e55paxnt\",\n        \"Enabled\": true,\n        \"AS\": \"1001\",\n        \"SwitchIP\": \"1.1.1.1\",\n        \"Status\": \"Initializing\",\n        \"Proxy\": \"1.1.1.1\",\n        \"Master\": \"1.1.1.1\",\n        \"Progress\": [\n            {\n                \"EndAt\": \"2021-11-05T12:40:51Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureNodeMasterCommunicate\",\n                \"StartAt\": \"2021-11-05T12:40:45Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:52Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureInClusterAccess\",\n                \"StartAt\": \"2021-11-05T12:40:51Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureExternalNodeProxy\",\n                \"StartAt\": \"2021-11-05T12:40:52Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureBootStrap\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureAdmissionController\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:41:00Z\",\n                \"Message\": \"\",\n                \"Name\": \"InstallUnderlayCilium\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:41:00Z\",\n                \"Message\": \"\",\n                \"Name\": \"CompleteEnable\",\n                \"StartAt\": \"2021-11-05T12:41:00Z\",\n                \"Status\": \"success\"\n            }\n        ],\n        \"FailedReason\": \"fail\"\n    }\n}",
+        "title": "查看开启注册节点池配置信息"
       }
     ],
     "DescribeGlobalMaintenanceWindowAndExclusions": [
@@ -1677,9 +1677,9 @@
     "DrainExternalNode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DrainExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"Name\": \"node1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "驱逐第三方节点"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DrainExternalNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-edk3h1cs\",\n    \"Name\": \"node-10.0.5.25\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"84fb84b9-b8c1-42c0-bb06-6affa4fc92c8\"\n    }\n}",
+        "title": "驱逐注册节点"
       }
     ],
     "EnableClusterAudit": [
@@ -1733,9 +1733,9 @@
     "EnableExternalNodeSupport": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableExternalNodeSupport\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"ClusterExternalConfig\": {\n        \"ClusterCIDR\": \"172.22.0.0/16\",\n        \"NetworkType\": \"CiliumVXLan\",\n        \"SubnetId\": \"subnet-drsvvxxx\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx\"\n    }\n}",
-        "title": "开启第三方节点池支持"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableExternalNodeSupport\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-edk3h1cs\",\n    \"ClusterExternalConfig\": {\n        \"NetworkType\": \"HostNetwork\",\n        \"SubnetId\": \"subnet-1ed3gqns\",\n        \"Enabled\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea4ba3bb-b020-42a3-932e-0a33a88182be\"\n    }\n}",
+        "title": "开启注册节点池支持"
       }
     ],
     "EnableVpcCniNetworkType": [
@@ -1877,9 +1877,9 @@
     "ModifyClusterAttribute": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"AutoUpgradeClusterLevel\": {\n        \"IsAutoUpgrade\": true\n    },\n    \"ClusterName\": \"tke\",\n    \"ProjectId\": 0,\n    \"ClusterDesc\": \"tke\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"ClusterLevel\": \"L5\",\n    \"ClusterProperty\": {\n        \"NodeNameType\": \"lan-ip\"\n    },\n    \"IsHighAvailability\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"ClusterName\": \"tke\",\n        \"ProjectId\": 0,\n        \"ClusterDesc\": \"tke\",\n        \"QGPUShareEnable\": true,\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ClusterLevel\": \"L5\",\n        \"ClusterProperty\": {\n            \"NodeNameType\": \"lan-ip\"\n        },\n        \"IsHighAvailability\": true\n    }\n}",
-        "title": "修改集群属性"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-p8wo3t7e\",\n    \"SecurityModeConfig\": {\n        \"Enabled\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": false\n        },\n        \"ClusterDesc\": \"\",\n        \"ClusterLevel\": \"\",\n        \"ClusterName\": \"\",\n        \"ClusterProperty\": {\n            \"NodeNameType\": \"\"\n        },\n        \"IsHighAvailability\": false,\n        \"ProjectId\": 0,\n        \"QGPUShareEnable\": false,\n        \"SecurityModeConfig\": {\n            \"Enabled\": false\n        },\n        \"RequestId\": \"ac4991da-f84d-4915-bf2d-2a7c8e6d8abf\"\n    }\n}",
+        "title": "修改安全模式参数"
       }
     ],
     "ModifyClusterAuthenticationOptions": [
@@ -1980,10 +1980,10 @@
     ],
     "ModifyExternalNodePool": [
       {
-        "document": "",
+        "document": "修改注册节点池",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExternalNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\",\n    \"NodePoolId\": \"np-kennkdng\",\n    \"Name\": \"IDC节点池Modified\",\n    \"Labels\": [\n        {\n            \"Name\": \"lkong1modify\",\n            \"Value\": \"lkong1modify\"\n        },\n        {\n            \"Name\": \"tke.cloud.tencent.com/location\",\n            \"Value\": \"gz\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
-        "title": "修改第三方节点池"
+        "title": "修改注册节点池"
       }
     ],
     "ModifyGlobalMaintenanceWindowAndExclusions": [

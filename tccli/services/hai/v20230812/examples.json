@@ -195,9 +195,15 @@
     "UpdateServiceConfigs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceConfigs\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-3m6xrkjj\",\n    \"TargetReplicas\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bea1c2c8-b839-42d2-9458-4c3a2cffac4b\"\n    }\n}",
-        "title": "UpdateServiceConfigs"
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceConfigs\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-b0t60zrw\",\n    \"TargetReplicas\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6b9561e7-7aa8-4e65-9870-2dc6db8014a0\"\n    }\n}",
+        "title": "修改副本数"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceConfigs\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-b0t60zrw\",\n    \"DeploymentConfigs\": [\n        {\n            \"Container\": {\n                \"Image\": {\n                    \"ImageRegistryUrl\": \"aicompute.tencentcloudcr.com/aibench/sglang:v0.5.3rc0-hml-mooncake-0.3.6\"\n                },\n                \"Port\": \"30000\",\n                \"Envs\": [\n                    {\n                        \"Name\": \"TEST\",\n                        \"Value\": \"UPDATED_ENV\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5a0d6fb-a235-4dc4-a888-0a219eb88d4b\"\n    }\n}",
+        "title": "更新环境变量"
       }
     ]
   },

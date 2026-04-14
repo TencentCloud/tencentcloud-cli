@@ -140,6 +140,13 @@
       "output": "CreateProcessImageTemplateResponse",
       "status": "online"
     },
+    "CreateProject": {
+      "document": "剧集项目创建",
+      "input": "CreateProjectRequest",
+      "name": "剧集项目创建",
+      "output": "CreateProjectResponse",
+      "status": "online"
+    },
     "CreateQualityControlTemplate": {
       "document": "创建媒体质检模板，数量上限：50。",
       "input": "CreateQualityControlTemplateRequest",
@@ -376,6 +383,13 @@
       "input": "DeleteProcessImageTemplateRequest",
       "name": "删除图片处理模板",
       "output": "DeleteProcessImageTemplateResponse",
+      "status": "online"
+    },
+    "DeleteProject": {
+      "document": "剧集项目删除接口",
+      "input": "DeleteProjectRequest",
+      "name": "剧集项目删除",
+      "output": "DeleteProjectResponse",
       "status": "online"
     },
     "DeleteQualityControlTemplate": {
@@ -1316,6 +1330,13 @@
       "output": "ProcessMediaResponse",
       "status": "online"
     },
+    "QueryProject": {
+      "document": "剧集项目查询",
+      "input": "QueryProjectRequest",
+      "name": "剧集项目查询",
+      "output": "QueryProjectResponse",
+      "status": "online"
+    },
     "RecognizeAudio": {
       "document": "同步接口，返回语音识别结果",
       "input": "RecognizeAudioRequest",
@@ -1377,6 +1398,13 @@
       "input": "TextTranslationRequest",
       "name": "文本翻译",
       "output": "TextTranslationResponse",
+      "status": "online"
+    },
+    "UpdateProject": {
+      "document": "剧集项目更新",
+      "input": "UpdateProjectRequest",
+      "name": "剧集项目更新",
+      "output": "UpdateProjectResponse",
       "status": "online"
     },
     "WithdrawsWatermark": {
@@ -13222,6 +13250,70 @@
       ],
       "type": "object"
     },
+    "CreateProjectRequest": {
+      "document": "CreateProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目名称</p>",
+          "example": "斗破苍穹",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目术语表</p>",
+          "example": "无",
+          "member": "TermBase",
+          "name": "TermBase",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目描述</p>",
+          "example": "玄幻题材有声剧",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "无",
+          "member": "Speakers",
+          "name": "Speakers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResponse": {
+      "document": "CreateProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目id</p>",
+          "example": "458f16b1-7da9-4a56-a841-78567c5bee48",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateQualityControlTemplateRequest": {
       "document": "CreateQualityControlTemplate请求参数结构体",
       "members": [
@@ -15319,6 +15411,33 @@
     },
     "DeleteProcessImageTemplateResponse": {
       "document": "DeleteProcessImageTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目id</p>",
+          "example": "458f16b1-7da9-4a56-a841-78567c5bee48",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -35824,6 +35943,89 @@
       ],
       "usage": "in"
     },
+    "Project": {
+      "document": "剧集项目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目id</p>",
+          "example": "458f16b1-7da9-4a56-a841-78567c5bee48",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目名称</p>",
+          "example": "斗破苍穹（第二季）",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目描述</p>",
+          "example": "玄幻题材有声剧",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目术语库</p>",
+          "example": "无",
+          "member": "TermBase",
+          "name": "TermBase",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "无",
+          "member": "Speakers",
+          "name": "Speakers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 时间戳）</p>",
+          "example": "1775011251",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix 时间戳）</p>",
+          "example": "1775014479",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PureSubtitleTransResult": {
       "document": "纯字幕翻译结果",
       "members": [
@@ -36259,6 +36461,80 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryProjectRequest": {
+      "document": "QueryProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目id</p>",
+          "example": "458f16b1-7da9-4a56-a841-78567c5bee48",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目名称</p>",
+          "example": "斗破苍穹",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从 1 开始，默认 1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryProjectResponse": {
+      "document": "QueryProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目数据</p>",
+          "example": "无",
+          "member": "Project",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RTMPAddressDestination": {
       "document": "RTMP转推的目标地址信息。",
@@ -41134,6 +41410,78 @@
       ],
       "usage": "both"
     },
+    "Speakers": {
+      "document": "角色列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色唯一标识</p>",
+          "example": "xiao_yan",
+          "member": "string",
+          "name": "SpeakerId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的音色 ID</p>",
+          "example": "voice_001",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别：male / female，默认 male</p>",
+          "example": "male",
+          "member": "string",
+          "name": "Gender",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>年龄段：child / teenager / youth / middle_aged/ senior，默认 youth</p>",
+          "example": "youth",
+          "member": "string",
+          "name": "AgeGroup",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色描述</p>",
+          "example": "女主薰儿",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色人名术语表</p>",
+          "example": "无",
+          "member": "TermBase",
+          "name": "NameTerms",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SpecificationDataItem": {
       "document": "指定规格任务统计数据。",
       "members": [
@@ -43118,6 +43466,34 @@
       ],
       "usage": "out"
     },
+    "TermBase": {
+      "document": "术语表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>术语原语言</p>",
+          "example": "Xun Er",
+          "member": "string",
+          "name": "Src",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>术语目标语言</p>",
+          "example": "薰儿",
+          "member": "string",
+          "name": "Dst",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TerrorismConfigureInfo": {
       "document": "涉敏任务控制参数",
       "members": [
@@ -44195,6 +44571,69 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateProjectRequest": {
+      "document": "UpdateProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目id</p>",
+          "example": "458f16b1-7da9-4a56-a841-78567c5bee48",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目名称</p>",
+          "example": "斗破苍穹（第二季）",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目术语表</p>",
+          "example": "无",
+          "member": "TermBase",
+          "name": "TermBase",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目描述</p>",
+          "example": "玄幻题材有声剧第二季",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "无",
+          "member": "Speakers",
+          "name": "Speakers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProjectResponse": {
+      "document": "UpdateProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateSmartErasePrivacyConfig": {
       "document": "智能擦除模板隐私保护配置",

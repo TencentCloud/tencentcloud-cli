@@ -73,7 +73,7 @@
     "CloseLog": {
       "document": "关闭日志",
       "input": "CloseLogRequest",
-      "name": "关闭日志",
+      "name": "关闭审计日志",
       "output": "CloseLogResponse",
       "status": "online"
     },
@@ -682,7 +682,7 @@
     "ModifyLog": {
       "document": "修改日志",
       "input": "ModifyLogRequest",
-      "name": "修改日志",
+      "name": "修改审计日志",
       "output": "ModifyLogResponse",
       "status": "online"
     },
@@ -717,7 +717,7 @@
     "OpenLog": {
       "document": "开启日志",
       "input": "OpenLogRequest",
-      "name": "开启日志",
+      "name": "开启审计日志",
       "output": "OpenLogResponse",
       "status": "online"
     },
@@ -5504,7 +5504,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志开关。不传查询所有日志实例。</p><ul><li>on：开启。</li><li>off：关闭。</li></ul>",
+          "document": "<p>日志开关。</p><p>枚举值：</p><ul><li>on： 开启</li><li>off： 关闭</li></ul><p>默认值：off</p>",
           "example": "on",
           "member": "string",
           "name": "LogSwitch",

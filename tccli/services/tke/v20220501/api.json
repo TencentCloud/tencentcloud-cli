@@ -1056,6 +1056,15 @@
           "name": "SortBy",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回节点云标签",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1086,7 +1095,7 @@
         {
           "disabled": false,
           "document": "错误信息集合",
-          "example": "eks not support",
+          "example": "[\"fill cvm tags failed: describe cvm instances for tags failed: [TencentCloudSDKError] Code=AuthFailure, Message=CAM鉴权失败...\"]",
           "member": "string",
           "name": "Errors",
           "output_required": true,
@@ -3279,7 +3288,7 @@
         {
           "disabled": false,
           "document": "安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[sg-4h43fuxjx]",
+          "example": "[\"sg-4h43fuxjx\"]",
           "member": "string",
           "name": "SecurityGroupIDs",
           "output_required": true,
@@ -3334,6 +3343,16 @@
           "name": "InstanceId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原生节点云标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3808,7 +3827,7 @@
         {
           "disabled": false,
           "document": "节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
+          "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "output_required": true,
@@ -3823,6 +3842,16 @@
           "name": "AutoscalingGroupId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "普通节点云标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4300,6 +4329,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "eklet-4h43fuxj",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包销时长",
+          "example": "5y",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费资源ID",
+          "example": "kn-79sn38nq",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -5918,7 +5918,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>",
+          "document": "<p>登录方式</p><p>枚举值：</p><ul><li>0： 账号密码鉴权</li><li>1： 匿名登录</li><li>2： 第三方认证登录</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "LoginMode",
@@ -5936,7 +5936,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>",
+          "document": "<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>",
           "example": "无",
           "member": "ConsoleAccount",
           "name": "Accounts",
@@ -19449,7 +19449,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>",
+          "document": "<p>登录方式</p><p>枚举值：</p><ul><li>0： 账号密码鉴权</li><li>1： 匿名登录</li><li>2： 第三方认证登录</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "LoginMode",
@@ -19467,7 +19467,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>",
+          "document": "<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>",
           "example": "无",
           "member": "ConsoleAccount",
           "name": "Accounts",

@@ -1,4 +1,4 @@
-**Example 1: 开启第三方节点池支持**
+**Example 1: 开启注册节点池支持**
 
 
 
@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tke EnableExternalNodeSupport --cli-unfold-argument  \
-    --ClusterId cls-lm91rql0 \
-    --ClusterExternalConfig.ClusterCIDR 172.22.0.0/16 \
-    --ClusterExternalConfig.NetworkType CiliumVXLan \
-    --ClusterExternalConfig.SubnetId subnet-drsvvxxx
+    --ClusterId cls-edk3h1cs \
+    --ClusterExternalConfig.NetworkType HostNetwork \
+    --ClusterExternalConfig.SubnetId subnet-1ed3gqns \
+    --ClusterExternalConfig.Enabled True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx"
+        "RequestId": "ea4ba3bb-b020-42a3-932e-0a33a88182be"
     }
 }
 ```

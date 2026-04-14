@@ -826,6 +826,13 @@
       "output": "UpdateGroupResponse",
       "status": "online"
     },
+    "UpdateIPWhitelist": {
+      "document": "更新新建ip白名单",
+      "input": "UpdateIPWhitelistRequest",
+      "name": "更新新建ip白名单",
+      "output": "UpdateIPWhitelistResponse",
+      "status": "online"
+    },
     "UpdateOrganizationIdentity": {
       "document": "更新组织身份",
       "input": "UpdateOrganizationIdentityRequest",
@@ -12056,6 +12063,52 @@
           "name": "GroupInfo",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIPWhitelistRequest": {
+      "document": "UpdateIPWhitelist请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID",
+          "example": "z-vft38p2hq**",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip白名单（上限100个）",
+          "example": "[\"172.16.0.0/16\", \"198.51.100.5\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIPWhitelistResponse": {
+      "document": "UpdateIPWhitelist返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功返回",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

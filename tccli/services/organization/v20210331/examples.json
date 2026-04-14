@@ -944,6 +944,14 @@
         "title": "修改用户组信息"
       }
     ],
+    "UpdateIPWhitelist": [
+      {
+        "document": "UpdateIPWhitelist",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIPWhitelist\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-dh5i84h4u***\",\n    \"IpWhitelist\": [\n        \"21.36.103.0/8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd8b40f8-ddcf-4e31-bb71-4a1738f91934\",\n        \"Success\": true\n    }\n}",
+        "title": "UpdateIPWhitelist"
+      }
+    ],
     "UpdateOrganizationIdentity": [
       {
         "document": "",

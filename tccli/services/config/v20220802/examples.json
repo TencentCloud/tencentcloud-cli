@@ -19,7 +19,7 @@
     "AddAlarmPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAlarmPolicy\n<公共请求参数>\n\n{\n    \"Name\": \"告警规则1\",\n    \"EventScope\": [\n        1\n    ],\n    \"RiskLevel\": [\n        1\n    ],\n    \"NoticeTime\": \"09:30:00~23:30:00\",\n    \"NotificationMechanism\": \"实时发送\",\n    \"Status\": 1,\n    \"NoticePeriod\": [\n        1\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAlarmPolicy\n<公共请求参数>\n\n{\n    \"Name\": \"告警规则1\",\n    \"Type\": 1,\n    \"EventScope\": [\n        1\n    ],\n    \"RiskLevel\": [\n        1\n    ],\n    \"NoticeTime\": \"09:30:00~23:30:00\",\n    \"NotificationMechanism\": \"实时发送\",\n    \"Status\": 1,\n    \"NoticePeriod\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AlarmPolicyId\": 2,\n        \"RequestId\": \"e2c458f6-dedc-46eb-955a-6d2c3555c597\"\n    }\n}",
         "title": "创建告警"
       }
