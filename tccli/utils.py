@@ -3,6 +3,7 @@ import six
 import json
 import time
 import os
+import uuid
 import tccli.options_define as options_define
 
 
@@ -84,12 +85,22 @@ class Utils(object):
         file_dir = os.path.split(filename)[0]
         if not os.path.isdir(file_dir):
             os.makedirs(file_dir)
-        with open(filename, "w") as f:
+
+        temp_file = filename + uuid.uuid4().hex + ".tmp"
+        with open(temp_file, "w") as f:
             json.dump(data, f,
                       indent=2,
                       separators=(',', ': '),
                       ensure_ascii=False,
                       sort_keys=True)
+        try:
+            if os.path.exists(filename):
+                os.remove(filename)
+            os.rename(temp_file, filename)
+        except Exception:
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
+            raise Exception("write configure file failed")
 
     @staticmethod
     def get_call_mode():
@@ -109,3 +120,11 @@ class Utils(object):
                 return mode
         return None
 
+    @staticmethod
+    def is_bool(s):
+        if s.lower() == 'true':
+            return True, True
+        elif s.lower() == 'false':
+            return True, False
+        else:
+            return False, None

@@ -27,7 +27,7 @@ class BasicCommand(object):
         parsed_args, remaining = parser.parse_known_args(args)
 
         if hasattr(parsed_args, 'help'):
-            self._display_help(parsed_args, parsed_globals)
+            self._display_help(remaining, parsed_globals)
         elif getattr(parsed_args, 'subcommand', None) is None:
             if remaining:
                 raise ParamValidationError(

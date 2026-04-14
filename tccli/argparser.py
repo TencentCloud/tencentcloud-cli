@@ -51,12 +51,14 @@ class BaseArgParser(argparse.ArgumentParser):
                 for word in possible:
                     extra.append('  * %s' % word)
                 msg.extend(extra)
+            msg.append("Invalid choice: The specified command or option is not found, " \
+                       "try lastest version by running `pip install --upgrade tccli`.")
             raise argparse.ArgumentError(action, '\n'.join(msg))
 
     def parse_known_args(self, args=None, namespace=None):
         parsed, remaining = super(BaseArgParser, self).parse_known_args(args, namespace)
         terminal_encoding = getattr(sys.stdin, 'encoding', 'utf-8')
-        if terminal_encoding is None:
+        if terminal_encoding is None or terminal_encoding == 'cp65001':
             terminal_encoding = 'utf-8'
         for arg, value in vars(parsed).items():
             if isinstance(value, six.binary_type):
@@ -139,10 +141,10 @@ class ArgMapArgParser(BaseArgParser):
             self.add_argument('subcommand', action=CustomAction, command_map=command_map, nargs='?')
 
     def parse_known_args(self, args=None, namespace=None):
-        if len(args) == 1 and args[0] == 'help':
+        if len(args) > 0 and args[0] == 'help':
             namespace = argparse.Namespace()
             namespace.help = 'help'
-            return namespace, []
+            return namespace, args[1:]
         else:
             return super(ArgMapArgParser, self).parse_known_args(
                 args, namespace)

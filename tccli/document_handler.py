@@ -80,7 +80,6 @@ class ServiceDocumentHandler(BaseDocumentHandler):
         self.doc.style.h2('Available Versions')
         versions = self._cli_data.get_available_services()[self._service]
         for version in versions:
-            self.doc.doc_title_indent(version)
             if version == versions[0]:
                 self.doc.doc_title_indent(version + "  (recommended)")
             else:
@@ -257,7 +256,7 @@ class ActionDocumentHandler(BaseDocumentHandler):
 
     def _doc_title(self, option, param, param_info):
         if option == "Available Parameters":
-            self.doc.doc_title('--%s (%s | %s)' % (param, self._param_type(param_info), param_info["required"]))
+            self.doc.doc_title('--%s (%s | %s)' % (param, self._param_type(param_info), param_info.get("required")))
         else:
             self.doc.doc_title('%s -> (%s)' % (param, self._param_type(param_info)))
 

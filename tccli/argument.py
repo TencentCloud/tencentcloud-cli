@@ -1,7 +1,18 @@
-
+import argparse
 import json
 from tccli.exceptions import ParamError
 from tccli.loaders import CLI_BASE_TYPE
+
+
+def str_to_bool(value):
+    if isinstance(value, bool):
+        return value
+    if value.lower() in ('true', 't', '1'):
+        return True
+    elif value.lower() in ('false', 'f', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Value of Boolean must be true/false, t/f, 1/0')
 
 
 class BaseArgument(object):
@@ -169,7 +180,7 @@ class CLIArgument(BaseArgument):
         'Float': float,
         'Integer': int,
         'Timestamp': str,
-        'Boolean': bool
+        'Boolean': str_to_bool
     }
 
     def __init__(self, name, argument_model, action_model,

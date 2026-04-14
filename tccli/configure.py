@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import copy
 import os
 import sys
 import six
@@ -28,7 +28,7 @@ class BasicConfigure(BasicCommand):
             OptionsDefine.Language
         ]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
-                          OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]
+                          OptionsDefine.RoleArn, OptionsDefine.RoleSessionName, OptionsDefine.UseCVMRole]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
@@ -47,6 +47,9 @@ class BasicConfigure(BasicCommand):
         is_exist, config_path = self._profile_existed(profile_name)
         if is_exist:
             conf_data = Utils.load_json_msg(config_path)
+            old_data = copy.deepcopy(conf_data)
+        else:
+            old_data = None
 
         if profile_name.endswith(".configure") and OptionsDefine.SysParam not in conf_data:
             conf_data[OptionsDefine.SysParam] = {}
@@ -84,7 +87,8 @@ class BasicConfigure(BasicCommand):
                                          "Received input format: %s\n "
                                          "Valid input format eg. set cvm.version 2017-03-12"
                                          % (err, k))
-        Utils.dump_json_msg(config_path, conf_data)
+        if conf_data != old_data:
+            Utils.dump_json_msg(config_path, conf_data)
 
     def _checkout_config(self, profile_name):
         is_conexit, config_path = self._profile_existed(profile_name + ".configure")
@@ -211,6 +215,16 @@ class ConfigureSetCommand(BasicConfigure):
 
         for varname, value in zip(varnames, values):
             if varname in self.cred_list:
+                if varname == OptionsDefine.UseCVMRole:
+                    identifier, bool_value = Utils.is_bool(value)
+                    if identifier:
+                        if bool_value:
+                            cred["type"] = 'cvm-role'
+                        else:
+                            cred["type"] = 'default'
+                    else:
+                        raise ParamError("use-cvm-role must be true or false")
+                    continue
                 cred[varname] = value
             elif varname in self.config_list:
                 if varname == OptionsDefine.Output and value not in ['json', 'text', 'table']:
@@ -228,6 +242,50 @@ class ConfigureSetCommand(BasicConfigure):
             self._init_configure(profile_name + '.configure', config, extra)
         if cred:
             self._init_configure(profile_name + '.credential', cred)
+
+
+class ConfigureSetRootDomainCommand(BasicConfigure):
+    NAME = 'set-root-domain'
+    DESCRIPTION = 'Set the root domain name for all endpoints.'
+    USEAGE = 'tccli configure set-root-domain [root-domain-value] [--profile profile-name]'
+    AVAILABLECONFIG = "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point root domain name"
+    EXAMPLES = "$ tccli configure set-root-domain internal.tencentcloudapi.com --profile test"
+    ARG_TABLE = [
+        {'name': 'varname',
+         'help_text': 'The name of the root domain value to set.',
+         'action': 'store',
+         'nargs': '+',
+         'cli_type_name': 'string',
+         'positional_arg': True},
+    ]
+
+    def __init__(self):
+        super(ConfigureSetRootDomainCommand, self).__init__()
+
+    def _run_main(self, args, parsed_globals):
+        var_value = args.varname
+        if len(var_value) != 1:
+            raise ParamError("Unexpected format\n"
+                             "Expected input format：\n\n"
+                             "   $tccli configure set-root-domain internal.tencentcloudapi.com\n")
+        profile_name = self._get_profile_name(parsed_globals)
+        profile_name = profile_name + '.configure'
+
+        conf_data = {}
+        is_exist, config_path = self._profile_existed(profile_name)
+        if is_exist:
+            conf_data = Utils.load_json_msg(config_path)
+        if profile_name.endswith(".configure"):
+            for mod in self._cli_data.get_available_services().keys():
+                if mod not in conf_data:
+                    conf_data[mod] = {}
+                    conf_data[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
+                if mod != 'autoscaling':
+                    conf_data[mod]["endpoint"] = "%s.%s" % (mod, var_value[0])
+                else:
+                    conf_data[mod]["endpoint"] = "as.%s" % var_value[0]
+                conf_data[mod]["version"] = self._cli_data.get_available_services()[mod][0]
+        Utils.dump_json_msg(config_path, conf_data)
 
 
 class ConfigureGetCommand(BasicConfigure):
@@ -342,7 +400,8 @@ class ConfigureCommand(BasicConfigure):
         {'name': 'list', 'command_class': ConfigureListCommand},
         {'name': 'get', 'command_class': ConfigureGetCommand},
         {'name': 'set', 'command_class': ConfigureSetCommand},
-        {'name': 'remove', 'command_class': ConfigureRemoveCommand}
+        {'name': 'remove', 'command_class': ConfigureRemoveCommand},
+        {'name': 'set-root-domain', 'command_class': ConfigureSetRootDomainCommand},
     ]
 
     VALUES_TO_PROMPT = [
@@ -416,16 +475,24 @@ class ConfigureCommand(BasicConfigure):
 
     def init_configures(self):
         config = {}
-        if not self._profile_existed("default.configure")[0]:
+        import argparse
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--profile", type=str)
+        args, _ = parser.parse_known_args()
+        profile = args.profile or "default"
+        profile_file = "%s.configure" % profile
+
+        if not self._profile_existed(profile_file)[0]:
             config = {
                 "region": "ap-guangzhou",
                 "output": "json",
                 "arrayCount": 10,
                 "warning": "off"
             }
-        self._init_configure("default.configure", config)
+        self._init_configure(profile_file, config)
+
         for profile_name in os.listdir(self.cli_path):
-            if profile_name == "default.configure":
+            if profile_name == profile_file:
                 continue
             if profile_name.endswith(".configure"):
                 self._init_configure(profile_name, {})
