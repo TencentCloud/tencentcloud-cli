@@ -385,6 +385,13 @@
       "output": "DescribeLogsResponse",
       "status": "online"
     },
+    "DescribeNDRAssetIdentificationList": {
+      "document": "DescribeNDRAssetIdentificationList - 获取NDR资产识别结果列表",
+      "input": "DescribeNDRAssetIdentificationListRequest",
+      "name": "获取NDR资产识别结果列表",
+      "output": "DescribeNDRAssetIdentificationListResponse",
+      "status": "online"
+    },
     "DescribeNatAcRule": {
       "document": "查询NAT访问控制列表",
       "input": "DescribeNatAcRuleRequest",
@@ -5866,6 +5873,15 @@
         },
         {
           "disabled": false,
+          "document": "blocklist 封禁列表\nwhitelist 白名单列表",
+          "example": "blocklist",
+          "member": "string",
+          "name": "ShowType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "搜索参数，json格式字符串，空则传\"{}\"，域名：domain，危险等级：level，放通原因：ignore_reason，安全事件来源：rule_source，地理位置：address，模糊搜索：common",
           "example": "{\\\"service_type\\\":\"1\",\\\"service_name\\\":\\\"\\\"}",
           "member": "string",
@@ -5881,15 +5897,6 @@
           "name": "RuleType",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "blocklist 封禁列表\nwhitelist 白名单列表",
-          "example": "blocklist",
-          "member": "string",
-          "name": "ShowType",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -7546,6 +7553,169 @@
           "member": "string",
           "name": "AppProtocolList",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNDRAssetIdentificationListRequest": {
+      "document": "DescribeNDRAssetIdentificationList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，asc正序 desc倒序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "FirstIdentificationTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤条件，多个条件之间为AND的关系",
+          "example": "无",
+          "member": "OperatorFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNDRAssetIdentificationListResponse": {
+      "document": "DescribeNDRAssetIdentificationList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果列表",
+          "example": "无",
+          "member": "NDRAssetServiceInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型统计结果",
+          "example": "无",
+          "member": "NDRAssetCategoryStats",
+          "name": "AssetCategoryStats",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "RegionOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP版本可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "IpVersionOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP类型可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "IpTypeOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "AssetCategoryOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别来源可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "IdentificationSourceOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "ProtocolOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "InstanceTypeOptions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10158,6 +10328,32 @@
         }
       ],
       "type": "object"
+    },
+    "FieldOption": {
+      "document": "字段可选项枚举值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段展示值",
+          "example": "广州",
+          "member": "string",
+          "name": "Text",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段存储值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FwCidrInfo": {
       "document": "防火墙网段信息",
@@ -12996,6 +13192,254 @@
       ],
       "usage": "in"
     },
+    "NDRAssetCategoryStats": {
+      "document": "NDR资产识别服务类型统计结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务类型",
+          "example": "Web",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务统计结果",
+          "example": "无",
+          "member": "NDRAssetServiceStats",
+          "name": "Services",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NDRAssetServiceInfo": {
+      "document": "NDR资产识别信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产ID",
+          "example": "9154555129771386479",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-jjr1tew0",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "as-tke-np-po75qvbq1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID",
+          "example": "vpc-39sc6ru5",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络名称",
+          "example": "test",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务IP",
+          "example": "10.116.101.29",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "8000",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP版本 \n\"0\": IPv4\n\"1\": IPv6",
+          "example": "0",
+          "member": "string",
+          "name": "IpVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP类型\n\"0\": 公网IP\n\"1\": EIP\n\"-1\": 内网IP",
+          "example": "0",
+          "member": "string",
+          "name": "IpType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "Nginx",
+          "member": "string",
+          "name": "AssetService",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务版本",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "AssetVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型",
+          "example": "Web",
+          "member": "string",
+          "name": "AssetCategory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别来源\n\"0\": 流量识别\n\"1\": 云资产实例",
+          "example": "0",
+          "member": "string",
+          "name": "IdentificationSource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次识别时间",
+          "example": "2025-03-11 19:23:49",
+          "member": "string",
+          "name": "FirstIdentificationTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近识别时间",
+          "example": "2025-03-11 19:45:49",
+          "member": "string",
+          "name": "LatestIdentificationTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "10.116.101.29:8000",
+          "member": "string",
+          "name": "ServerAddr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NDRAssetServiceStats": {
+      "document": "NDR资产服务统计结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务计数",
+          "example": "5",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NatFwEipsInfo": {
       "document": "Nat防火墙弹性公网ip列表",
       "members": [
@@ -13702,6 +14146,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "OperatorFilter": {
+      "document": "查询过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配的值",
+          "example": "[\"ins-17ye5faf\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型：\n1：等于 field = value\n2：大于 field > value\n3：小于 field < value\n4：大于等于 field >= value\n5：小于等于 field <= value\n6：不等于 field <> value\n7：IN field IN (value1, value2...)\n8：NOT IN field NOT IN (value1, value2...)\n9：模糊匹配 field LIKE value\n13：非模糊匹配 field NOT LIKE value\n14：按位与 field & value = value\n15：between and field between value1 and value2",
+          "example": "1",
+          "member": "uint64",
+          "name": "OperatorType",
+          "required": true,
+          "type": "int"
         }
       ],
       "usage": "in"

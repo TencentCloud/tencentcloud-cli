@@ -5519,7 +5519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账户下该环境唯一标识",
+          "document": "<p>账户下该环境唯一标识</p>",
           "example": "tcb-xxx",
           "member": "string",
           "name": "EnvId",
@@ -5529,7 +5529,7 @@
         },
         {
           "disabled": false,
-          "document": "环境来源。包含以下取值：\n<li>miniapp：微信小程序</li>\n<li>qcloud ：腾讯云</li>",
+          "document": "<p>环境来源。包含以下取值：</p><li>miniapp：微信小程序</li><li>qcloud ：腾讯云</li>",
           "example": "qcloud",
           "member": "string",
           "name": "Source",
@@ -5539,7 +5539,7 @@
         },
         {
           "disabled": false,
-          "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "document": "<p>环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符</p>",
           "example": "tcb",
           "member": "string",
           "name": "Alias",
@@ -5549,7 +5549,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-26",
           "member": "datetime",
           "name": "CreateTime",
@@ -5559,7 +5559,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间",
+          "document": "<p>最后修改时间</p>",
           "example": "2021-04-26",
           "member": "datetime",
           "name": "UpdateTime",
@@ -5569,7 +5569,7 @@
         },
         {
           "disabled": false,
-          "document": "环境状态。包含以下取值：\n<li>NORMAL：正常可用</li>\n<li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
+          "document": "<p>环境状态。包含以下取值：</p><li>NORMAL：正常可用</li><li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
@@ -5579,7 +5579,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库列表",
+          "document": "<p>数据库列表</p>",
           "example": "无",
           "member": "DatabasesInfo",
           "name": "Databases",
@@ -5589,7 +5589,7 @@
         },
         {
           "disabled": false,
-          "document": "存储列表",
+          "document": "<p>存储列表</p>",
           "example": "无",
           "member": "StorageInfo",
           "name": "Storages",
@@ -5599,7 +5599,7 @@
         },
         {
           "disabled": false,
-          "document": "函数列表",
+          "document": "<p>函数列表</p>",
           "example": "无",
           "member": "FunctionInfo",
           "name": "Functions",
@@ -5609,7 +5609,7 @@
         },
         {
           "disabled": false,
-          "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
+          "document": "<p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>",
           "example": "basic1",
           "member": "string",
           "name": "PackageId",
@@ -5619,7 +5619,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐中文名称，参考DescribePackages接口的返回值。",
+          "document": "<p>套餐中文名称，参考DescribePackages接口的返回值。</p>",
           "example": "基础版1",
           "member": "string",
           "name": "PackageName",
@@ -5629,7 +5629,7 @@
         },
         {
           "disabled": false,
-          "document": "云日志服务列表",
+          "document": "<p>云日志服务列表</p>",
           "example": "无",
           "member": "LogServiceInfo",
           "name": "LogServices",
@@ -5639,7 +5639,7 @@
         },
         {
           "disabled": false,
-          "document": "静态资源信息",
+          "document": "<p>静态资源信息</p>",
           "example": "无",
           "member": "StaticStorageInfo",
           "name": "StaticStorages",
@@ -5649,7 +5649,7 @@
         },
         {
           "disabled": false,
-          "document": "是否到期自动降为免费版",
+          "document": "<p>是否到期自动降为免费版</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAutoDegrade",
@@ -5659,7 +5659,7 @@
         },
         {
           "disabled": false,
-          "document": "环境渠道",
+          "document": "<p>环境渠道</p>",
           "example": "qc_console",
           "member": "string",
           "name": "EnvChannel",
@@ -5669,7 +5669,7 @@
         },
         {
           "disabled": false,
-          "document": "支付方式。包含以下取值：\n<li> prepayment：预付费</li>\n<li> postpaid：后付费</li>",
+          "document": "<p>支付方式。包含以下取值：</p><li> prepayment：预付费</li><li> postpaid：后付费</li>",
           "example": "postpaid",
           "member": "string",
           "name": "PayMode",
@@ -5679,7 +5679,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为默认环境",
+          "document": "<p>是否为默认环境</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDefault",
@@ -5689,7 +5689,7 @@
         },
         {
           "disabled": false,
-          "document": "环境所属地域",
+          "document": "<p>环境所属地域</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -5699,7 +5699,7 @@
         },
         {
           "disabled": false,
-          "document": "环境标签列表",
+          "document": "<p>环境标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -5709,7 +5709,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义日志服务",
+          "document": "<p>自定义日志服务</p>",
           "example": "无",
           "member": "ClsInfo",
           "name": "CustomLogServices",
@@ -5719,7 +5719,7 @@
         },
         {
           "disabled": false,
-          "document": "环境类型：baas, run, hoting, weda",
+          "document": "<p>环境类型：baas, run, hoting, weda</p>",
           "example": "baas",
           "member": "string",
           "name": "EnvType",
@@ -5729,7 +5729,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是dau新套餐",
+          "document": "<p>是否是dau新套餐</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDauPackage",
@@ -5739,7 +5739,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型:空\\baas\\tcbr",
+          "document": "<p>套餐类型:空\\baas\\tcbr</p>",
           "example": "baas",
           "member": "string",
           "name": "PackageType",
@@ -5749,7 +5749,7 @@
         },
         {
           "disabled": false,
-          "document": "架构类型",
+          "document": "<p>架构类型</p>",
           "example": "multi_tenant ｜ stand_alone_cluster",
           "member": "string",
           "name": "ArchitectureType",
@@ -5759,7 +5759,7 @@
         },
         {
           "disabled": false,
-          "document": "回收标志，默认为空",
+          "document": "<p>回收标志，默认为空</p>",
           "example": "recycle | \"\"",
           "member": "string",
           "name": "Recycle",
@@ -9468,7 +9468,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "静态CDN域名",
+          "document": "<p>静态CDN域名</p>",
           "example": "cloudbase.cloudbaseapp.com",
           "member": "string",
           "name": "StaticDomain",
@@ -9478,7 +9478,7 @@
         },
         {
           "disabled": false,
-          "document": "静态CDN默认文件夹，当前为根目录",
+          "document": "<p>静态CDN默认文件夹，当前为根目录</p>",
           "example": "\"/\"",
           "member": "string",
           "name": "DefaultDirName",
@@ -9488,7 +9488,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态(process/online/offline/init)",
+          "document": "<p>资源状态(process/online/offline/init)</p>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -9498,7 +9498,7 @@
         },
         {
           "disabled": false,
-          "document": "cos所属区域",
+          "document": "<p>cos所属区域</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -9508,12 +9508,32 @@
         },
         {
           "disabled": false,
-          "document": "bucket信息",
+          "document": "<p>bucket信息</p>",
           "example": "my-bucket-name-appid",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间（秒级时间戳）</p>",
+          "example": "12745980357",
+          "member": "int64",
+          "name": "AccessExpire",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部存储。</p>",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "ExternalStorage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -9590,7 +9610,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源所属地域。\n当前支持ap-shanghai",
+          "document": "<p>资源所属地域。<br>当前支持ap-shanghai</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -9600,7 +9620,7 @@
         },
         {
           "disabled": false,
-          "document": "桶名，存储资源的唯一标识",
+          "document": "<p>桶名，存储资源的唯一标识</p>",
           "example": "my-bucket-name-appid",
           "member": "string",
           "name": "Bucket",
@@ -9610,7 +9630,7 @@
         },
         {
           "disabled": false,
-          "document": "cdn 域名",
+          "document": "<p>cdn 域名</p>",
           "example": "cloudbase.tencentcloud.com",
           "member": "string",
           "name": "CdnDomain",
@@ -9620,12 +9640,22 @@
         },
         {
           "disabled": false,
-          "document": "资源所属用户的腾讯云appId",
+          "document": "<p>资源所属用户的腾讯云appId</p>",
           "example": "1265124512",
           "member": "string",
           "name": "AppId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部存储介质相关信息。</p>",
+          "example": "无",
+          "member": "ExternalStorage",
+          "name": "ExternalStorage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

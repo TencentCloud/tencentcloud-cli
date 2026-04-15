@@ -43,7 +43,7 @@
       "status": "online"
     },
     "ChannelCreateBatchQuickSignUrl": {
-      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n7. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
+      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n7. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
       "input": "ChannelCreateBatchQuickSignUrlRequest",
       "name": "获取H5批量签署或查看链接",
       "output": "ChannelCreateBatchQuickSignUrlResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n\n⚠️ **注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持在支付宝、APP打开、浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n   如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在**仅支持中国大陆身份证、中国港澳台居民居住证**。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n\n⚠️ **注意**\n1. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持在支付宝、APP打开、浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n   如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在**仅支持中国大陆身份证、中国港澳台居民居住证**。",
       "input": "ChannelCreateFlowSignUrlRequest",
       "name": "获取用户H5签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
@@ -833,6 +833,15 @@
           "name": "ForbidAddSignDate",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>渠道方签署人不会触发</li><li>非渠道方签署人在指定签署人姓名，证件号的情况下会触发</li></ul>",
+          "example": "REPLACE",
+          "member": "string",
+          "name": "ApproverMobileMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1855,7 +1864,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n<ul>\n<li>若为个人参与方：ApproverType:\"PERSON\"</li>\n<li>若为企业参与方：ApproverType:\"ORGANIZATION\"。同时若签署方为saas企业员工， OrganizationName 参数需传入参与方企业名称。若签署方为渠道子客企业员工，除了 OrganizationName 还需要传 OpenId、OrganizationOpenId。（如果OrganizationOpenId对应子客企业已经认证激活，则可以省略OrganizationName参数）</li>\n</ul>\n\n注:\n`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`\n`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
+          "document": "<p>批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。</p><ul><li>若为个人参与方：ApproverType:\"PERSON\"</li><li>若为企业参与方：ApproverType:\"ORGANIZATION\"。同时若签署方为saas企业员工， OrganizationName 参数需传入参与方企业名称。若签署方为渠道子客企业员工，除了 OrganizationName 还需要传 OpenId、OrganizationOpenId。（如果OrganizationOpenId对应子客企业已经认证激活，则可以省略OrganizationName参数）</li></ul><p>注:<br><code>1. 暂不支持签署人拖动签署控件功能，以及签批控件。</code><br><code>2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。</code></p>",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfo",
@@ -1864,7 +1873,7 @@
         },
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1873,7 +1882,7 @@
         },
         {
           "disabled": false,
-          "document": "批量签署的合同流程ID数组。\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
+          "document": "<p>批量签署的合同流程ID数组。<br>注: <code>在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。</code></p>",
           "example": "[\"yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E\"]",
           "member": "string",
           "name": "FlowIds",
@@ -1882,7 +1891,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组编号\n注：`该参数和合同流程ID数组必须二选一`",
+          "document": "<p>合同组编号<br>注：<code>该参数和合同流程ID数组必须二选一</code></p>",
           "example": "yDwFdUUckpsveo27UEQPEVo14KnASuGI",
           "member": "string",
           "name": "FlowGroupId",
@@ -1891,7 +1900,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)",
+          "document": "<p>签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)</p>",
           "example": "https://YOUR_CUSTOM_URL/xxxx",
           "member": "string",
           "name": "JumpUrl",
@@ -1900,7 +1909,7 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li>\n<li>**5**：长效手写签名（包含手写签名）</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>\n<li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li>\n</ul>",
+          "document": "<p>指定批量签署合同的签名类型，可传递以下值：</p><ul><li>**0**：手写签名(默认)</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>默认情况下，签名类型为手写签名</li><li>您可以传递多种值，表示可用多种签名类型。</li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li><li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li></ul>",
           "example": "[0, 1, 2, 3, 4]",
           "member": "int64",
           "name": "SignatureTypes",
@@ -1909,7 +1918,7 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>\n<li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>\n注：\n<ul><li>默认情况下，认证校验方式为人脸和密码认证</li>\n<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>",
+          "document": "<p>指定批量签署合同的认证校验方式，可传递以下值：</p><ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li><li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li><li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>注：<ul><li>默认情况下，认证校验方式为人脸和密码认证</li><li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>",
           "example": "[1, 2, 3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -1918,7 +1927,7 @@
         },
         {
           "disabled": false,
-          "document": "生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：\n<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>\n<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>\n注：\n`不指定该值时，默认为签署方自行选择。`",
+          "document": "<p>生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：</p><ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li><li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>注：<code>不指定该值时，默认为签署方自行选择。</code>",
           "example": "0",
           "member": "uint64",
           "name": "SignTypeSelector",
@@ -1927,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。\t\n\n注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`",
+          "document": "<p>批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。    </p><p>注: <code>若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充</code></p>",
           "example": "无",
           "member": "FlowBatchUrlInfo",
           "name": "FlowBatchUrlInfo",
@@ -1936,7 +1945,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。  注意： 1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。 2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。",
+          "document": "<p><b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。  注意： 1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。 2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。</p>",
           "example": "无",
           "member": "Intention",
           "name": "Intention",
@@ -1945,7 +1954,7 @@
         },
         {
           "disabled": false,
-          "document": "用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。",
+          "document": "<p>用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。</p>",
           "example": "5",
           "member": "int64",
           "name": "VideoVerifyTimesLimit",
@@ -1954,7 +1963,7 @@
         },
         {
           "disabled": false,
-          "document": "缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。\n\n注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`",
+          "document": "<p>缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。</p><p>注: <code>若参与方为企业员工时，暂不支持对参与方信息进行缓存</code></p>",
           "example": "false",
           "member": "bool",
           "name": "CacheApproverInfo",
@@ -1963,7 +1972,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`",
+          "document": "<p>是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：<code>当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。</code></p>",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -1972,7 +1981,7 @@
         },
         {
           "disabled": false,
-          "document": "预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。",
+          "document": "<p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>",
           "example": "无",
           "member": "PresetApproverInfo",
           "name": "PresetApproverInfo",
@@ -1981,12 +1990,21 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`",
+          "document": "<p>是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：<code>1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。</code></p>",
           "example": "false",
           "member": "bool",
           "name": "CanSkipReadFlow",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>链接的有效时间，单位为秒。取值范围为 30分钟（1800）-90天（7776000）。如果不传，默认有效期为30分钟。</p><p>注意：</p><ol><li><code>出于安全性考虑，若有效期大于30分钟，同设备24小时内点击链接查看合同需要进行手机验证码校验。</code></li><li><code>动态签署方链接暂不支持修改过期时间。</code></li></ol>",
+          "example": "1800",
+          "member": "int64",
+          "name": "ExpiredOn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1996,7 +2014,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署人签署链接信息",
+          "document": "<p>签署人签署链接信息</p>",
           "example": "无",
           "member": "FlowApproverUrlInfo",
           "name": "FlowApproverUrlInfo",
@@ -3152,7 +3170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3161,7 +3179,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "document": "<p>合同流程ID，为32位字符串。<br>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。<br>可登录腾讯电子签控制台，在 &quot;合同&quot;-&gt;&quot;合同中心&quot; 中查看某个合同的FlowId(在页面中展示为合同ID)。</p>",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -3170,7 +3188,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的ApproverType必传。\n若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。\n若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）\n\n此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：\n1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。\n2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。\n3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。\n4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
+          "document": "<p>流程签署人列表，其中结构体的ApproverType必传。<br>若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。<br>若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）</p><p>此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：</p><ol><li>RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。</li><li>ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。</li><li>SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。</li><li>Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。</li></ol><p>注:<br><code>1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。</code><br><code>2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传</code></p>",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfos",
@@ -3179,7 +3197,7 @@
         },
         {
           "disabled": false,
-          "document": "用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。",
+          "document": "<p>用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。</p>",
           "example": "5",
           "member": "int64",
           "name": "VideoVerifyTimesLimit",
@@ -3188,7 +3206,7 @@
         },
         {
           "disabled": true,
-          "document": "用户信息，暂未开放",
+          "document": "<p>用户信息，暂未开放</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3197,7 +3215,7 @@
         },
         {
           "disabled": true,
-          "document": "机构信息，暂未开放",
+          "document": "<p>机构信息，暂未开放</p>",
           "example": "无",
           "member": "OrganizationInfo",
           "name": "Organization",
@@ -3206,7 +3224,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 <a href=\"https://qian.tencent.com/developers/company/openqianh5\" target=\"_blank\">跳转电子签H5</a>\n",
+          "document": "<p>签署完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 <a href=\"https://qian.tencent.com/developers/company/openqianh5\" target=\"_blank\">跳转电子签H5</a></p>",
           "example": "https://YOUR_CUSTOM_URL/xxxx",
           "member": "string",
           "name": "JumpUrl",
@@ -3215,10 +3233,19 @@
         },
         {
           "disabled": false,
-          "document": "链接类型，支持指定以下类型\n<ul><li>0 : 签署链接 (默认值)</li>\n<li>1 : 预览链接</li></ul>\n注:\n`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`\n`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`",
+          "document": "<p>链接类型，支持指定以下类型</p><ul><li>0 : 签署链接 (默认值)</li><li>1 : 预览链接</li></ul>注:<code>1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。</code><code>2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。</code>",
           "example": "1",
           "member": "int64",
           "name": "UrlType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>链接的有效时间，单位为秒。取值范围为 30分钟（1800）-90天（7776000）。如果不传，默认有效期为30分钟。</p><p>注意：</p><ol><li><code>出于安全性考虑，若有效期大于30分钟，同设备24小时内点击链接查看合同需要进行手机验证码校验。</code></li><li><code>若生成合同发起方预览链接，有效期大于30分钟，则需要进行验证码校验的手机号为发起方账号绑定的手机号。</code></li></ol>",
+          "example": "1800",
+          "member": "int64",
+          "name": "ExpiredOn",
           "required": false,
           "type": "int"
         }
@@ -3230,7 +3257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署人签署链接信息",
+          "document": "<p>签署人签署链接信息</p>",
           "example": "无",
           "member": "FlowApproverUrlInfo",
           "name": "FlowApproverUrlInfos",
@@ -10866,7 +10893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。",
+          "document": "<p>签署方经办人的姓名。<br>经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。</p>",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -10875,7 +10902,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "<p>签署方经办人的证件类型，支持以下类型</p><ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li><li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li><li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li><li>OTHER_CARD_TYPE : 其他证件</li></ul><p>注: <code>其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。</code></p>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -10884,7 +10911,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "<p>签署方经办人的证件号码，应符合以下规则</p><ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li><li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
@@ -10893,7 +10920,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。\n请确认手机号所有方为此合同签署方。",
+          "document": "<p>签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。<br>请确认手机号所有方为此合同签署方。</p>",
           "example": "13888888888",
           "member": "string",
           "name": "Mobile",
@@ -10902,7 +10929,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "document": "<p>组织机构名称。<br>请确认该名称与企业营业执照中注册的名称一致。<br>如果名称中包含英文括号()，请使用中文括号（）代替。</p>",
           "example": "典子谦示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -10911,7 +10938,7 @@
         },
         {
           "disabled": false,
-          "document": "指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。\n<ul>\n<li>false: 默认值，第三方平台子客企业下员工</li>\n<li>true: SaaS平台企业下的员工</li>\n</ul>\n",
+          "document": "<p>指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。</p><ul><li>false: 默认值，第三方平台子客企业下员工</li><li>true: SaaS平台企业下的员工</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "NotChannelOrganization",
@@ -10920,7 +10947,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成\n\n当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程\n\n注： \n如果传进来的<font color=\"red\">OpenId已经实名并且加入企业， 则忽略Name，IdCardType，IdCardNumber，Mobile这四个入参</font>（会用此OpenId实名的身份证和登录的手机号覆盖）",
+          "document": "<p>第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成</p><p>当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程</p><p>注：<br>如果传进来的<font color=\"red\">OpenId已经实名并且加入企业， 则忽略Name，IdCardType，IdCardNumber，Mobile这四个入参</font>（会用此OpenId实名的身份证和登录的手机号覆盖）</p>",
           "example": "userdianziqian",
           "member": "string",
           "name": "OpenId",
@@ -10929,7 +10956,7 @@
         },
         {
           "disabled": false,
-          "document": "同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符",
+          "document": "<p>同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符</p>",
           "example": "orgtencent",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -10938,7 +10965,7 @@
         },
         {
           "disabled": false,
-          "document": "在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:\n<ul><li> **PERSON** :个人/自然人</li>\n<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>\n<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>\n<li> **ENTERPRISESERVER** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>\n\n注:  \n`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`\n`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`\n<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>\n<li>条件2：子客之间完成授权</li>\n<li>条件3：联系对接的客户经理沟通如何使用</li></ul>",
+          "document": "<p>在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:</p><ul><li> **PERSON** :个人/自然人</li><li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li><li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li><li> **ENTERPRISESERVER** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul><p>注:<br><code>1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。</code><br><code>2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：</code></p><ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li><li>条件2：子客之间完成授权</li><li>条件3：联系对接的客户经理沟通如何使用</li></ul>",
           "example": "PERSON",
           "member": "string",
           "name": "ApproverType",
@@ -10947,7 +10974,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；",
+          "document": "<p>签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；</p>",
           "example": "yDRS4UUgygqdcjjdUuO4zjEC0osCOsHS",
           "member": "string",
           "name": "RecipientId",
@@ -10956,7 +10983,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人的签署截止时间，格式为Unix标准时间戳（秒）\n\n注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`",
+          "document": "<p>签署人的签署截止时间，格式为Unix标准时间戳（秒）</p><p>注: <code>若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同</code></p>",
           "example": "1689688460",
           "member": "int64",
           "name": "Deadline",
@@ -10965,7 +10992,7 @@
         },
         {
           "disabled": true,
-          "document": "签署完回调url，最大长度1000个字符",
+          "document": "<p>签署完回调url，最大长度1000个字符</p>",
           "example": "https://qq.com",
           "member": "string",
           "name": "CallbackUrl",
@@ -10974,7 +11001,7 @@
         },
         {
           "disabled": false,
-          "document": "使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)",
+          "document": "<p>使用PDF文件直接发起合同时，签署人指定的签署控件；<br>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。</p><p><img src=\"https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png\" alt=\"image\"></p>",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -10983,7 +11010,7 @@
         },
         {
           "disabled": false,
-          "document": "当签署方控件类型为 <b>SIGN_SIGNATURE</b> 时，可以指定签署方签名方式。如果不指定，签署人可以使用所有的签名类型，可指定的签名类型包括：\n\n<ul><li> <b>HANDWRITE</b> :需要实时手写的手写签名。</li>\n<li> <b>HANDWRITTEN_ESIGN</b> :长效手写签名， 是使用保存到个人中心的印章列表的手写签名。(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> :AI智能识别手写签名。</li>\n<li> <b>ESIGN</b> :个人印章类型。</li>\n<li> <b>IMG_ESIGN</b>  : 图片印章。该类型支持用户在签署将上传的PNG格式的图片作为签名。</li>\n<li> <b>SYSTEM_ESIGN</b> :系统签名。该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署。</li></ul>\n\n各种签名的样式可以参考下图：\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)",
+          "document": "<p>当签署方控件类型为 <b>SIGN_SIGNATURE</b> 时，可以指定签署方签名方式。如果不指定，签署人可以使用所有的签名类型，可指定的签名类型包括：</p><ul><li> <b>HANDWRITE</b> :需要实时手写的手写签名。</li><li> <b>HANDWRITTEN_ESIGN</b> :长效手写签名， 是使用保存到个人中心的印章列表的手写签名。(并且包含HANDWRITE)</li><li> <b>OCR_ESIGN</b> :AI智能识别手写签名。</li><li> <b>ESIGN</b> :个人印章类型。</li><li> <b>IMG_ESIGN</b>  : 图片印章。该类型支持用户在签署将上传的PNG格式的图片作为签名。</li><li> <b>SYSTEM_ESIGN</b> :系统签名。该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署。</li></ul><p>各种签名的样式可以参考下图：<br><img src=\"https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg\" alt=\"image\"></p>",
           "example": "[\"OCR_ESIGN\"]",
           "member": "string",
           "name": "ComponentLimitType",
@@ -10992,7 +11019,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。\n\n若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：\n<ul>\n<li>合同页数少于等于2页，阅读时间为3秒；</li>\n<li>合同页数为3到5页，阅读时间为5秒；</li>\n<li>合同页数大于等于6页，阅读时间为10秒。</li>\n</ul>",
+          "document": "<p>签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。</p><p>若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：</p><ul><li>合同页数少于等于2页，阅读时间为3秒；</li><li>合同页数为3到5页，阅读时间为5秒；</li><li>合同页数大于等于6页，阅读时间为10秒。</li></ul>",
           "example": "3",
           "member": "int64",
           "name": "PreReadTime",
@@ -11001,7 +11028,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完前端跳转的url，此字段的用法场景请联系客户经理确认",
+          "document": "<p>签署完前端跳转的url，此字段的用法场景请联系客户经理确认</p>",
           "example": "https://www.qq.com/success",
           "member": "string",
           "name": "JumpUrl",
@@ -11010,7 +11037,7 @@
         },
         {
           "disabled": false,
-          "document": "可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。\n详细操作可以参考开发者中心的ApproverOption结构体。",
+          "document": "<p>可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。<br>详细操作可以参考开发者中心的ApproverOption结构体。</p>",
           "example": "无",
           "member": "ApproverOption",
           "name": "ApproverOption",
@@ -11019,7 +11046,7 @@
         },
         {
           "disabled": false,
-          "document": "此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>\n企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)",
+          "document": "<p>此签署人（员工或者个人）签署前，是否需要发起方企业进行审批，取值如下：</p><ul><li>**false**：（默认）不需要审批，直接签署。</li><li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待发起方企业内部审批完成。</li></ul>企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li><li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul><p>注：<code>此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同</code></p><p><img src=\"https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png\" alt=\"image\"></p>",
           "example": "false",
           "member": "bool",
           "name": "ApproverNeedSignReview",
@@ -11028,7 +11055,7 @@
         },
         {
           "disabled": false,
-          "document": "指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段可传多个校验方式</li></ul>",
+          "document": "<p>指定个人签署方查看合同的校验方式,可以传值如下:</p><ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li><li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>注: <ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li><li>此字段可传多个校验方式</li></ul>",
           "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
@@ -11037,7 +11064,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署合同时的认证方式\n<ul><li> **1** :人脸认证</li>\n<li> **2** :签署密码</li>\n<li> **3** :运营商三要素（如果是港澳台客户，建议不要选择这个）</li>\n<li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>\n<li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>\n\n默认为：\n1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)\n\n注: \n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明\n3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。\n4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。",
+          "document": "<p>签署人签署合同时的认证方式</p><ul><li> **1** :人脸认证</li><li> **2** :签署密码</li><li> **3** :运营商三要素（如果是港澳台客户，建议不要选择这个）</li><li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li><li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul><p>默认为：<br>1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)</p><p>注: </p><ol><li>用<font color=\"red\">模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color=\"red\">在创建合同重新指定无效</font></li><li>运营商三要素认证方式对手机号运营商及前缀有限制,可以参考<a href=\"https://qian.tencent.com/developers/partner/mobile_support\">运营商支持列表类</a>得到具体的支持说明</li><li>校验方式不允许只包含<font color=\"red\">设备指纹识别</font>和<font color=\"red\">设备面容识别</font>，至少需要再增加一种其他校验方式。</li><li><font color=\"red\">设备指纹识别</font>和<font color=\"red\">设备面容识别</font>只支持小程序使用，其他端暂不支持。</li></ol>",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -11046,7 +11073,7 @@
         },
         {
           "disabled": false,
-          "document": "签署ID\n- 发起流程时系统自动补充\n- 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息",
+          "document": "<p>签署ID</p><ul><li>发起流程时系统自动补充</li><li>创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息</li></ul>",
           "example": "06f2bc0f1772d8deac2f92b5df61a5ac",
           "member": "string",
           "name": "SignId",
@@ -11055,7 +11082,7 @@
         },
         {
           "disabled": false,
-          "document": "通知签署方经办人的方式, 有以下途径:\n<ul><li> **SMS** :(默认)短信</li>\n<li> **NONE** : 不通知</li></ul>\n\n注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`",
+          "document": "<p>通知签署方经办人的方式（仅在指定NotChannelOrganization=true时有效）, 有以下途径:</p><ul><li> **SMS** :(默认)短信</li><li> **EMAIL** :邮件</li><li> **ALL** :短信+邮件</li><li> **NONE** : 不通知</li></ul><p>注: <code>签署方为第三方子客企业时会被置为NONE,   不会发短信通知</code></p><p>枚举值：</p><ul><li>SMS： 发送短信</li><li>EMAIL： 发送邮件</li><li>ALL： 同时发送短信和邮件</li><li>NODE： 不做任何形式的通知</li></ul>",
           "example": "SMS",
           "member": "string",
           "name": "NotifyType",
@@ -11064,7 +11091,7 @@
         },
         {
           "disabled": false,
-          "document": "[通过文件创建签署流程](https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID,或者印章类型）或签名方式。\n\n注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`",
+          "document": "<p><a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\">通过文件创建签署流程</a>时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID,或者印章类型）或签名方式。</p><p>注：<code>限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。</code></p>",
           "example": "无",
           "member": "ComponentLimit",
           "name": "AddSignComponentsLimits",
@@ -11073,7 +11100,7 @@
         },
         {
           "disabled": false,
-          "document": "可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。\n\n注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`",
+          "document": "<p>可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。</p><p>注: <code>如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的</code></p>",
           "example": "乙方",
           "member": "string",
           "name": "ApproverRoleName",
@@ -11082,7 +11109,7 @@
         },
         {
           "disabled": false,
-          "document": "生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：\n<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>\n<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>\n注：\n`不指定该值时，默认为签署方自行选择。`",
+          "document": "<p>生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：</p><ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li><li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>注：<code>不指定该值时，默认为签署方自行选择。</code>",
           "example": "0",
           "member": "uint64",
           "name": "SignTypeSelector",
@@ -11091,7 +11118,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n<li>数据表格等填写控件</li></ul>\n\n具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/partner/createFlowByFiles#为签署方指定填写控件)\n\n注：`此参数仅在通过文件发起合同或者合同组时生效`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)",
+          "document": "<p>签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体</p><ul><li>单行文本控件</li><li>多行文本控件</li><li>勾选框控件</li><li>数字控件</li><li>图片控件</li><li>数据表格等填写控件</li></ul><p>具体使用说明可参考<a href=\"https://qian.tencent.cn/developers/partner/createFlowByFiles#为签署方指定填写控件\">为签署方指定填写控件</a></p><p>注：<code>此参数仅在通过文件发起合同或者合同组时生效</code></p><p><img src=\"https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png\" alt=\"image\"></p>",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -11100,7 +11127,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。\n\n您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。\n\n注意：\n1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。\n2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。\n3. 签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。",
+          "document": "<p><b>只有在生成H5签署链接的情形下</b>（ 如调用<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl\" target=\"_blank\">获取H5签署链接</a>、<a href=\"https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl\" target=\"_blank\">获取H5批量签署链接</a>等接口），该配置才会生效。</p><p>您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。</p><p>注意：</p><ol><li>视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。</li><li>使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。</li><li>签署完成后，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo\" target=\"_blank\">查询签署认证人脸视频</a>获取到当时的视频。</li></ol>",
           "example": "无",
           "member": "Intention",
           "name": "Intention",
@@ -11109,12 +11136,21 @@
         },
         {
           "disabled": false,
-          "document": "进入签署流程的限制，目前支持以下选项：\n<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>",
+          "document": "<p>进入签署流程的限制，目前支持以下选项：</p><ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>",
           "example": "[\"link\"]",
           "member": "string",
           "name": "SignEndpoints",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户指定的邮箱地址</p>",
+          "example": "aaaa@qq.com",
+          "member": "string",
+          "name": "ApproverEmail",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

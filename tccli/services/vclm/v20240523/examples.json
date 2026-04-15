@@ -48,12 +48,44 @@
         "title": "查询图生视频通用任务"
       }
     ],
+    "DescribeImageToVideoJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageToVideoJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1431473604960264192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Duration\": \"5.041\",\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"FinalUnitDeduction\": \"4.5\",\n        \"ResultVideoUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"Status\": \"DONE\",\n        \"VideoId\": \"868874594953220151\",\n        \"RequestId\": \"5e9c30c8-d227-4ccd-9401-6fff3b58554f\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeImageToVideoViduJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageToVideoViduJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1384472585461940224\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"5d676ea6-27be-4459-a97f-829106d637b8\",\n        \"ResultVideoUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeMotionControlKlingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMotionControlKlingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1429083941754249216\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Duration\": \"9.066\",\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"FinalUnitDeduction\": \"4.5\",\n        \"ResultVideoUrl\": \"https://**g*t**************.cos.ap-guangzhou.tencentcos.cn/videoed**********sults/************9e868f-e479-4ef4-bf25-6d1ef6569b2b_1774614562.mp4?q-sign-algorithm=sha1&q-ak=***********x*******************MrLgp&q-sign-time=1774614562%3B1774700962&q-key-time=1774614562%3B1774700962&q-header-list=host&q-url-param-list=&q-signature=c6352b834071a755c86489c8097e2cc3dafe78c3\",\n        \"Status\": \"DONE\",\n        \"RequestId\": \"739f6a7f-35e5-4937-b501-100cf6a10bd2\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
     "DescribePortraitSingJob": [
       {
         "document": "任务完成",
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePortraitSingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1199964964965990400\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1199964964965990400\",\n        \"RequestId\": \"2564192f-1af0-4d1d-ac92-fac0f5844f73\",\n        \"ResultVideoUrl\": \"https://***.mp4\",\n        \"StatusCode\": \"DONE\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
         "title": "调用成功-任务完成"
+      }
+    ],
+    "DescribeReferenceToVideoViduJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReferenceToVideoViduJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1384476881817550848\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"3be6d0bd-3820-419d-94ed-0fcf506de2a5\",\n        \"ResultVideoUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "DescribeTemplateToVideoJob": [
@@ -64,12 +96,44 @@
         "title": "任务成功完成"
       }
     ],
+    "DescribeTextToVideoJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTextToVideoJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1431196242095972352\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Duration\": \"5.041\",\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"FinalUnitDeduction\": \"2\",\n        \"ResultVideoUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"Status\": \"DONE\",\n        \"VideoId\": \"868596973359087678\",\n        \"RequestId\": \"ac6b24b6-c5bf-48fe-975d-57ae9d84e084\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeTextToVideoViduJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTextToVideoViduJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1384470610896863232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"0b092885-36a7-4a57-b109-940d1504ed5f\",\n        \"ResultVideoUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeVideoEditJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoEditJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1390533681507581952\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"3e5aa436-aa7e-487d-93e0-4526404dc7e6\",\n        \"ResultVideoUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
         "title": "调用示例"
+      }
+    ],
+    "DescribeVideoEditKlingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoEditKlingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1430167672855101440\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultVideoUrl\": \"https://vcg-prod-1258344699.cos.ap-guangzhou.tencentcos.cn/videoeditkling/results/1259088371/fabf6b42-b09c-4bf2-ab15-a13bff1fd9be_1774872944.mp4\",\n        \"Status\": \"DONE\",\n        \"RequestId\": \"b07133dd-a59d-43eb-b60c-4b8417354e85\"\n    }\n}",
+        "title": "查询omini"
+      }
+    ],
+    "DescribeVideoExtendKlingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoExtendKlingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1429040713202016256\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Duration\": \"10.433\",\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"submit ****** ******* ***\",\n        \"FinalUnitDeduction\": \"2\",\n        \"ResultVideoUrl\": \"https://*******************.cos.ap-guangzhou.tencentcos.cn/****************/results/**********0ff6f28b-c876-40*9*98d2-ad8b9eda48c7_1774604256.mp4?q-sign-algorithm=sha1&q-ak*******************************lMrLgp&q-sign-time=1774604256%3B1774690656&q-key-time=1774604256%3B1774690656&q-header-list=host&q-url-param-list=&q-signature=39674cf99f549978bf19d00aee72a05762b2dd51\",\n        \"Status\": \"DONE\",\n        \"RequestId\": \"ab2bf032-1457-49ec-9560-aa975c831fb3\",\n        \"VideoId\": \"867555************\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ],
     "DescribeVideoFaceFusionJob": [
@@ -136,12 +200,28 @@
         "title": "提交图生视频通用任务"
       }
     ],
+    "SubmitImageToVideoJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageToVideoJob\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Url\": \"https://cqicchen-test-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/neckyang/templatetovideo/downson.png?q-sign-algorithm=sha1&q-ak=*****&q-sign-time=1774494815;1774502015&q-key-time=1774494815;1774502015&q-header-list=host&q-url-param-list=&q-signature=****\"\n    },\n    \"CameraControl\": {\n        \"Type\": \"simple\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1428581788753207296\",\n        \"RequestId\": \"b867e180-074e-4b7d-a275-cc5c0032931c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "SubmitImageToVideoViduJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageToVideoViduJob\n<公共请求参数>\n\n{\n    \"Images\": [\n        \"https://cos.ap-guangzhou.myqcloud.com/xxx.png\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1384472585461940224\",\n        \"RequestId\": \"3ca4a3d1-28c7-4be5-a394-5902c97dcca4\"\n    }\n}",
         "title": "调用示例"
+      }
+    ],
+    "SubmitMotionControlKlingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitMotionControlKlingJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"参考图任务动作和视频保持一致\",\n    \"Model\": \"kling-v3\",\n    \"Mode\": \"std\",\n    \"CallbackUrl\": \"http://*********:8080\",\n    \"Image\": \"https://************************.cos.ap-guangzhou.myqcloud.com/********/video/motion-control/motion-control.jpg\",\n    \"Video\": \"https://************************.cos.ap-guangzhou.myqcloud.com/********/video/motion-control/motion-control.mp4\",\n    \"KeepOriginalSound\": \"yes\",\n    \"CharacterOrientation\": \"image\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1428569086702002176\",\n        \"RequestId\": \"67f7771e-ebf2-49cf-ad5d-bd9fd1fa3724\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ],
     "SubmitPortraitSingJob": [
@@ -176,6 +256,14 @@
         "title": "调用失败-图片大小超限"
       }
     ],
+    "SubmitReferenceToVideoViduJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitReferenceToVideoViduJob\n<公共请求参数>\n\n{\n    \"Images\": [\n        \"https://cos.ap-guangzhou.myqcloud.com/xxx.png\"\n    ],\n    \"Prompt\": \"圣诞老人与熊在湖边相拥。\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1384475658808836096\",\n        \"RequestId\": \"3ca4a3d1-28c7-4be5-a394-5902c97dcca4\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "SubmitTemplateToVideoJob": [
       {
         "document": "",
@@ -184,12 +272,44 @@
         "title": "提交视频特效任务"
       }
     ],
+    "SubmitTextToVideoJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextToVideoJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"一只兔子在草原上奔跑\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1339558839695589376\",\n        \"RequestId\": \"e44cc7dc-7e0f-4c45-bfd6-48d817130edd\"\n    }\n}",
+        "title": "提交文生视频任务"
+      }
+    ],
+    "SubmitTextToVideoViduJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextToVideoViduJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"圣诞老人与熊在湖边相拥。\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1384470610896863232\",\n        \"RequestId\": \"76d0ba5a-268c-4e43-b254-34872439e48a\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "SubmitVideoEditJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoEditJob\n<公共请求参数>\n\n{\n    \"VideoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.mp4\",\n    \"Prompt\": \"Edit the object in the video\",\n    \"Image\": {\n        \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.png\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1390601287988002816\",\n        \"RequestId\": \"33de6b6d-99cd-498c-a3b2-f31db1e94ab8\"\n    }\n}",
         "title": "调用示例"
+      }
+    ],
+    "SubmitVideoEditKlingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoEditKlingJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"一个女孩在跳舞\",\n    \"AspectRatio\": \"16:9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1428937152266903552\",\n        \"RequestId\": \"91e1dfc5-7bfc-4e41-92b5-1367dc1264d9\"\n    }\n}",
+        "title": "提交视频编辑任务"
+      }
+    ],
+    "SubmitVideoExtendKlingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoExtendKlingJob\n<公共请求参数>\n\n{\n    \"VideoId\": \"8663489104********\",\n    \"Prompt\": \"小狗跳舞\",\n    \"CfgScale\": 0.5,\n    \"CallbackUrl\": \"http://*************:808*\",\n    \"LogoAdd\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1428951145945636864\",\n        \"RequestId\": \"b0f2021a-e647-4a6c-bc08-f1013ae9281f\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ],
     "SubmitVideoFaceFusionJob": [

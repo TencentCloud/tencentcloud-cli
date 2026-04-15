@@ -126,6 +126,13 @@
       "output": "DescribeAutoScaleStrategiesResponse",
       "status": "online"
     },
+    "DescribeBootScript": {
+      "document": "获取引导脚本",
+      "input": "DescribeBootScriptRequest",
+      "name": "获取引导脚本",
+      "output": "DescribeBootScriptResponse",
+      "status": "online"
+    },
     "DescribeClusterFlowStatusDetail": {
       "document": "查询EMR任务运行详情状态",
       "input": "DescribeClusterFlowStatusDetailRequest",
@@ -453,6 +460,13 @@
       "input": "ModifyAutoScaleStrategyRequest",
       "name": "修改自动扩缩容规则",
       "output": "ModifyAutoScaleStrategyResponse",
+      "status": "online"
+    },
+    "ModifyBootScript": {
+      "document": "修改引导脚本",
+      "input": "ModifyBootScriptRequest",
+      "name": "修改引导脚本",
+      "output": "ModifyBootScriptResponse",
       "status": "online"
     },
     "ModifyGlobalConfig": {
@@ -4999,6 +5013,98 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeBootScriptRequest": {
+      "document": "DescribeBootScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例序列号",
+          "example": "emr-examples",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引导脚本类型，resourceAfter,clusterAfter,clusterBefore不填时表示全部时机",
+          "example": "clusterBefore",
+          "member": "string",
+          "name": "BootType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBootScriptResponse": {
+      "document": "DescribeBootScript返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引导脚本详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeBootScriptRsp",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBootScriptRsp": {
+      "document": "引导脚本回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源初始化结束自定义脚本文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ResourceAfter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群启动前自定义脚本文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ClusterBefore",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群启动后自定义脚本文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ClusterAfter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务下线前自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "ServiceBefore",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeClusterFlowStatusDetailRequest": {
       "document": "DescribeClusterFlowStatusDetail请求参数结构体",
@@ -13158,6 +13264,51 @@
       ],
       "type": "object"
     },
+    "ModifyBootScriptRequest": {
+      "document": "ModifyBootScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例Id",
+          "example": "emr-examples",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引导脚本类型,resourceAfter,clusterAfter,clusterBefore",
+          "example": "clusterBefore",
+          "member": "string",
+          "name": "BootType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引导脚本的具体变更，如为空表示WhenRun时机无引导脚本",
+          "example": "无",
+          "member": "PreExecuteFileSetting",
+          "name": "PreExecutedFileSettings",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBootScriptResponse": {
+      "document": "ModifyBootScript返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyGlobalConfigRequest": {
       "document": "ModifyGlobalConfig请求参数结构体",
       "members": [
@@ -17110,6 +17261,155 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PreExecuteFileSetting": {
+      "document": "预执行脚本配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脚本在COS上路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行脚本参数",
+          "example": "无",
+          "member": "string",
+          "name": "Args",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS的Bucket名称",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS的Region名称",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS的Domain数据",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行顺序",
+          "example": "无",
+          "member": "int64",
+          "name": "RunOrder",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "resourceAfter 或 clusterAfter",
+          "example": "无",
+          "member": "string",
+          "name": "WhenRun",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脚本文件名",
+          "example": "无",
+          "member": "string",
+          "name": "CosFileName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脚本的cos地址",
+          "example": "无",
+          "member": "string",
+          "name": "CosFileURI",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos的SecretId",
+          "example": "无",
+          "member": "string",
+          "name": "CosSecretId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos的SecretKey",
+          "example": "无",
+          "member": "string",
+          "name": "CosSecretKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos的appid",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

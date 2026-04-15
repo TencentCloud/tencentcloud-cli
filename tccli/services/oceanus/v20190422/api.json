@@ -510,7 +510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "<p>集群 ID</p>",
           "example": "cluster-xxxx",
           "member": "string",
           "name": "ClusterId",
@@ -520,7 +520,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cluster",
           "member": "string",
           "name": "Name",
@@ -530,7 +530,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -540,7 +540,7 @@
         },
         {
           "disabled": false,
-          "document": "用户 AppID",
+          "document": "<p>用户 AppID</p>",
           "example": "12314214",
           "member": "uint64",
           "name": "AppId",
@@ -550,7 +550,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号 UIN",
+          "document": "<p>主账号 UIN</p>",
           "example": "yte",
           "member": "string",
           "name": "OwnerUin",
@@ -560,7 +560,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者 UIN",
+          "document": "<p>创建者 UIN</p>",
           "example": "t1",
           "member": "string",
           "name": "CreatorUin",
@@ -570,7 +570,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态, 1 未初始化,3 初始化中，2 运行中",
+          "document": "<p>集群状态, 1 未初始化,3 初始化中，2 运行中</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -580,7 +580,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "r1",
           "member": "string",
           "name": "Remark",
@@ -590,7 +590,7 @@
         },
         {
           "disabled": false,
-          "document": "集群创建时间",
+          "document": "<p>集群创建时间</p>",
           "example": "2020-01-21 00:00:10",
           "member": "string",
           "name": "CreateTime",
@@ -600,7 +600,7 @@
         },
         {
           "disabled": false,
-          "document": "最后一次操作集群的时间",
+          "document": "<p>最后一次操作集群的时间</p>",
           "example": "2020-01-21 01:00:10",
           "member": "string",
           "name": "UpdateTime",
@@ -610,7 +610,7 @@
         },
         {
           "disabled": false,
-          "document": "CU 数量",
+          "document": "<p>CU 数量</p>",
           "example": "12",
           "member": "uint64",
           "name": "CuNum",
@@ -620,7 +620,7 @@
         },
         {
           "disabled": false,
-          "document": "CU 内存规格",
+          "document": "<p>CU 内存规格</p>",
           "example": "4",
           "member": "uint64",
           "name": "CuMem",
@@ -630,7 +630,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -640,7 +640,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述",
+          "document": "<p>状态描述</p>",
           "example": "1",
           "member": "string",
           "name": "StatusDesc",
@@ -650,7 +650,7 @@
         },
         {
           "disabled": false,
-          "document": "网络",
+          "document": "<p>网络</p>",
           "example": "无",
           "member": "CCN",
           "name": "CCNs",
@@ -660,7 +660,7 @@
         },
         {
           "disabled": false,
-          "document": "网络",
+          "document": "<p>网络</p>",
           "example": "2",
           "member": "uint64",
           "name": "NetEnvironmentType",
@@ -670,7 +670,7 @@
         },
         {
           "disabled": false,
-          "document": "空闲 CU",
+          "document": "<p>空闲 CU</p>",
           "example": "2",
           "member": "int64",
           "name": "FreeCuNum",
@@ -680,7 +680,7 @@
         },
         {
           "disabled": false,
-          "document": "集群绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群绑定的标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -690,7 +690,7 @@
         },
         {
           "disabled": false,
-          "document": "集群隔离时间; 没隔离时间，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群隔离时间; 没隔离时间，则为 -</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-12 10:00:00",
           "member": "string",
           "name": "IsolatedTime",
@@ -700,7 +700,7 @@
         },
         {
           "disabled": false,
-          "document": "集群过期时间; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群过期时间; 没过期概念，则为 -</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-12 10:00:00",
           "member": "string",
           "name": "ExpireTime",
@@ -710,7 +710,7 @@
         },
         {
           "disabled": false,
-          "document": "距离过期还有多少秒; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>距离过期还有多少秒; 没过期概念，则为 -</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-12 10:00:00",
           "member": "string",
           "name": "SecondsUntilExpiry",
@@ -720,7 +720,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -730,7 +730,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的默认 COS 存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的默认 COS 存储桶</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cos-1",
           "member": "string",
           "name": "DefaultCOSBucket",
@@ -740,7 +740,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的CLS 日志集 LogSet\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的CLS 日志集 LogSet</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx-xx-xx-xxxx",
           "member": "string",
           "name": "CLSLogSet",
@@ -750,7 +750,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的CLS 日志主题 TopicId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的CLS 日志主题 TopicId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx-xx-xx-xxxx",
           "member": "string",
           "name": "CLSTopicId",
@@ -760,7 +760,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的CLS 日志集  名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的CLS 日志集  名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "日志集名字",
           "member": "string",
           "name": "CLSLogName",
@@ -770,7 +770,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的CLS 日志主题  名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的CLS 日志主题  名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "日志主题名字",
           "member": "string",
           "name": "CLSTopicName",
@@ -780,7 +780,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的版本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClusterVersion",
           "name": "Version",
@@ -790,7 +790,7 @@
         },
         {
           "disabled": false,
-          "document": "细粒度资源下的空闲CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>细粒度资源下的空闲CU</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
           "member": "float",
           "name": "FreeCu",
@@ -800,7 +800,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的默认日志采集配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的默认日志采集配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "log",
           "member": "string",
           "name": "DefaultLogCollectConf",
@@ -810,7 +810,7 @@
         },
         {
           "disabled": false,
-          "document": "取值：0-没有设置，1-已设置，2-不允许设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>取值：0-没有设置，1-已设置，2-不允许设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "CustomizedDNSEnabled",
@@ -820,7 +820,7 @@
         },
         {
           "disabled": false,
-          "document": "空间信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空间信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkSpaceClusterItem",
           "name": "Correlations",
@@ -830,7 +830,7 @@
         },
         {
           "disabled": false,
-          "document": "运行CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行CU</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
           "member": "float",
           "name": "RunningCu",
@@ -840,7 +840,7 @@
         },
         {
           "disabled": false,
-          "document": "0 后付费,1 预付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 后付费,1 预付费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -850,7 +850,7 @@
         },
         {
           "disabled": false,
-          "document": "前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IsNeedManageNode",
@@ -860,7 +860,7 @@
         },
         {
           "disabled": false,
-          "document": "session集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>session集群信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClusterSession",
           "name": "ClusterSessions",
@@ -870,7 +870,7 @@
         },
         {
           "disabled": false,
-          "document": "V3版本 = 2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>V3版本 = 2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ArchGeneration",
@@ -880,7 +880,7 @@
         },
         {
           "disabled": false,
-          "document": "0:TKE, 1:EKS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0:TKE, 1:EKS</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ClusterType",
@@ -890,7 +890,7 @@
         },
         {
           "disabled": false,
-          "document": "订单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订单信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Order",
           "name": "Orders",
@@ -900,7 +900,7 @@
         },
         {
           "disabled": false,
-          "document": "Gateway信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Gateway信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SqlGatewayItem",
           "name": "SqlGateways",
@@ -910,7 +910,7 @@
         },
         {
           "disabled": false,
-          "document": "0 公网访问 // 1 内网访问\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 公网访问 // 1 内网访问</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "WebUIType",
@@ -920,7 +920,7 @@
         },
         {
           "disabled": false,
-          "document": "2 独享集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>2 独享集群</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Type",
@@ -930,7 +930,7 @@
         },
         {
           "disabled": false,
-          "document": "子eks集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子eks集群</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubEks",
           "name": "SubEks",
@@ -940,7 +940,7 @@
         },
         {
           "disabled": false,
-          "document": "上级集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上级集群</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "serialId-1",
           "member": "string",
           "name": "AgentSerialId",
@@ -950,7 +950,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ResourceType",
@@ -960,7 +960,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1\"",
           "member": "string",
           "name": "BillingResourceMode",
@@ -970,7 +970,7 @@
         },
         {
           "disabled": false,
-          "document": "Cu比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Cu比例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "MemRatio",
@@ -980,7 +980,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启跨租户弹性网卡",
+          "document": "<p>是否开启跨租户弹性网卡</p>",
           "example": "0",
           "member": "int64",
           "name": "CrossTenantEniMode",
@@ -990,7 +990,7 @@
         },
         {
           "disabled": false,
-          "document": "总的CPU",
+          "document": "<p>总的CPU</p>",
           "example": "0.1",
           "member": "float",
           "name": "TotalCpu",
@@ -1000,7 +1000,7 @@
         },
         {
           "disabled": false,
-          "document": "总的内存",
+          "document": "<p>总的内存</p>",
           "example": "0.1",
           "member": "float",
           "name": "TotalMem",
@@ -1010,7 +1010,7 @@
         },
         {
           "disabled": false,
-          "document": "运行的CPU",
+          "document": "<p>运行的CPU</p>",
           "example": "0.1",
           "member": "float",
           "name": "RunningCpu",
@@ -1020,7 +1020,7 @@
         },
         {
           "disabled": false,
-          "document": "运行的内存",
+          "document": "<p>运行的内存</p>",
           "example": "0.1",
           "member": "float",
           "name": "RunningMem",
@@ -1030,7 +1030,7 @@
         },
         {
           "disabled": false,
-          "document": "setats集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>setats集群</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Setats",
           "name": "Setats",
@@ -1040,7 +1040,7 @@
         },
         {
           "disabled": false,
-          "document": "[]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>[]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HadoopYarnItem",
           "name": "Yarns",
@@ -1050,7 +1050,7 @@
         },
         {
           "disabled": false,
-          "document": "0 单可用区 1多可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 单可用区 1多可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DeploymentMode",
@@ -1060,7 +1060,7 @@
         },
         {
           "disabled": false,
-          "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SlaveZone",
           "name": "SlaveZones",
@@ -1070,7 +1070,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的日志cos存储",
+          "document": "<p>集群的日志cos存储</p>",
           "example": "cos-2",
           "member": "string",
           "name": "LogCOSBucket",
@@ -1080,13 +1080,33 @@
         },
         {
           "disabled": false,
-          "document": "Cdc集群Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Cdc集群Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群进度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "init",
+          "member": "string",
+          "name": "ClusterProcessMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单作业最大可配置 CU 数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxCuPerJob",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3476,7 +3496,7 @@
         {
           "disabled": false,
           "document": "事件类型。如果不传则返回所有类型的数据",
-          "example": "[1,2]",
+          "example": "[\"1\"]",
           "member": "string",
           "name": "Types",
           "required": false,
@@ -3509,7 +3529,7 @@
         {
           "disabled": false,
           "document": "该作业指定范围内的事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[ ]",
+          "example": "无",
           "member": "JobEvent",
           "name": "Events",
           "output_required": true,
@@ -3948,7 +3968,7 @@
         {
           "disabled": false,
           "document": "作业列表",
-          "example": "[{}]",
+          "example": "无",
           "member": "JobV1",
           "name": "JobSet",
           "output_required": true,
@@ -4355,7 +4375,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录",
+          "document": "<p>筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4364,7 +4384,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 Serialid",
+          "document": "<p>工作空间 Serialid</p>",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
@@ -4379,7 +4399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "父节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父节点ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "root-xxx",
           "member": "string",
           "name": "ParentId",
@@ -4389,7 +4409,7 @@
         },
         {
           "disabled": false,
-          "document": "当前文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前文件夹ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "folder-xxx",
           "member": "string",
           "name": "Id",
@@ -4399,7 +4419,7 @@
         },
         {
           "disabled": false,
-          "document": "当前文件夹名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前文件夹名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "New Folder",
           "member": "string",
           "name": "Name",
@@ -4409,7 +4429,7 @@
         },
         {
           "disabled": false,
-          "document": "当前文件夹下的作业列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前文件夹下的作业列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TreeJobSets",
           "name": "JobSet",
@@ -4419,7 +4439,7 @@
         },
         {
           "disabled": false,
-          "document": "迭代子目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>迭代子目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeTreeJobsRsp",
           "name": "Children",
@@ -8398,6 +8418,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型：0 公网，1 内网</p><p>枚举值：</p><ul><li>0： 公网</li><li>1： 内网</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "WebUIType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

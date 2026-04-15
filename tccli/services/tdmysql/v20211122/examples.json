@@ -32,6 +32,14 @@
         "title": "获取数据库当前参数"
       }
     ],
+    "DescribeDBSArchiveLogs": [
+      {
+        "document": "查询实例归档日志列表信息",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSArchiveLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-000d02ac\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ArchiveLogId\": 7365,\n                \"BackupDuration\": 59610,\n                \"BackupStatus\": \"success\",\n                \"EndTime\": \"2025-07-31 16:02:34\",\n                \"ErrorMessage\": \"\",\n                \"ExpiredTime\": \"2025-08-07 16:02:34\",\n                \"FileName\": \"2025-07-31\",\n                \"FileSize\": 397689856,\n                \"InstanceId\": \"tdsql3-000d02ac\",\n                \"StartTime\": \"2025-07-30 23:42:34\"\n            }\n        ],\n        \"RequestId\": \"e8f0457c-f287-45a0-b45f-a5be3ef7a30b\",\n        \"TotalCount\": 8\n    }\n}",
+        "title": "查询实例归档日志列表"
+      }
+    ],
     "DescribeDBSAvailableRecoveryTime": [
       {
         "document": "可恢复时间查询",

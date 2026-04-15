@@ -100,8 +100,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpSchedules\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"str\"\n    }\n}",
-        "title": "获取备份、迁移任务"
+        "output": "{\n    \"Response\": {\n        \"CurrentTime\": \"2026-03-12 19:09:36\",\n        \"RequestId\": \"3bf34b8b-bac3-4474-ad5d-631664d70fb3\"\n    }\n}",
+        "title": "查询"
       }
     ],
     "DescribeBackUpTables": [
@@ -122,10 +122,10 @@
     ],
     "DescribeClusterConfigs": [
       {
-        "document": "在xml方式下修改配置文件内容时，获取集群配置文件内容",
-        "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=DescribeClusterConfigs\n&InstanceId=cdwch-xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterConfList\": [\n            {\n                \"NeedRestart\": 1,\n                \"OriParam\": \"ss=sc\",\n                \"KeyConf\": \"ss=sc\",\n                \"FileConf\": \"ss=sc\",\n                \"FileName\": \"str\"\n            }\n        ],\n        \"RequestId\": \"xx-aa\"\n    }\n}",
-        "title": "获取集群配置文件内容"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterConfigs\n<公共请求参数>\n\n{\n\n  \"InstanceId\": \"cdwdoris-xxxxxxxx\",\n  \"ConfigType\": 0,\n  \"ClusterConfigType\": 0,\n  \"IPAddress\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterConfList\": [\n            {\n                \"ComputeGroupId\": \"\",\n                \"FileName\": \"fe.conf\",\n                \"FileConf\": \"priority_networks = 10.0.0.0/24\\n...\",\n                \"FilePath\": \"/usr/local/service/doris/conf\",\n                \"KeyConf\": \"\",\n                \"OriParam\": \"base64编码后的原始配置内容\",\n                \"NeedRestart\": 0,\n                \"FileKeyValuesNew\": [\n                    {\n                        \"KeyName\": \"priority_networks\",\n                        \"Value\": \"10.0.0.0/24\",\n                        \"Message\": \"配置说明\",\n                        \"Display\": 1,\n                        \"SupportHotUpdate\": 0\n                    }\n                ]\n            },\n            {\n                \"ComputeGroupId\": \"\",\n                \"FileName\": \"be.conf\",\n                \"FileConf\": \"...\",\n                \"FilePath\": \"/usr/local/service/doris/conf\",\n                \"KeyConf\": \"\",\n                \"OriParam\": \"base64编码后的原始配置内容\",\n                \"NeedRestart\": 0,\n                \"FileKeyValuesNew\": [\n                    {\n                        \"KeyName\": \"be_port\",\n                        \"Value\": \"9060\",\n                        \"Message\": \"\",\n                        \"Display\": 1,\n                        \"SupportHotUpdate\": 0\n                    }\n                ]\n            }\n        ],\n        \"ExistingJarConfList\": [\n            {\n                \"ComputeGroupId\": \"\",\n                \"FileName\": \"mysql-connector-java-8.0.28.jar\",\n                \"FileConf\": \"\",\n                \"FilePath\": \"/path/to/jar\",\n                \"KeyConf\": \"\",\n                \"OriParam\": \"jdbc:mysql://host:port/db\",\n                \"NeedRestart\": 0,\n                \"FileKeyValuesNew\": []\n            }\n        ],\n        \"HasCN\": false,\n        \"RequestId\": \"bb1a7d1f-d2b0-4470-984d-c2d0f8963071\",\n        \"ErrorMsg\": \"\",\n        \"BuildVersion\": \"doris-2.0.3-rc06\"\n    }\n}",
+        "title": "获取配置"
       }
     ],
     "DescribeClusterConfigsHistory": [

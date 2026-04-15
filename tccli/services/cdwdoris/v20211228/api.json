@@ -872,6 +872,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务调度id",
+          "example": "311",
+          "member": "int64",
+          "name": "ScheduleId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2733,7 +2744,7 @@
         {
           "disabled": false,
           "document": "地域列表",
-          "example": "[ ]",
+          "example": "无",
           "member": "RegionAreaInfo",
           "name": "Items",
           "output_required": true,
@@ -2758,6 +2769,16 @@
           "name": "AvailableWhiteListNames",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离天数",
+          "example": "7",
+          "member": "int64",
+          "name": "IsolationDays",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2995,6 +3016,15 @@
           "name": "EncryptionFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调度任务id过滤",
+          "example": "312",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3393,6 +3423,16 @@
           "name": "ExistingJarConfList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ipdb的文件大小 byte",
+          "example": "31311",
+          "member": "string",
+          "name": "IPDBFileSizeLimit",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5390,7 +5430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cdwdoris-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -5405,7 +5445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组信息",
+          "document": "<p>资源组信息</p>",
           "example": "无",
           "member": "WorkloadGroupConfig",
           "name": "WorkloadGroups",
@@ -5415,7 +5455,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启资源组：开启-open、关闭-close",
+          "document": "<p>是否开启资源组：开启-open、关闭-close</p>",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -5425,12 +5465,22 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "<p>错误信息</p>",
           "example": "error message",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启监控，0：未开启，1：开启</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -6296,6 +6346,26 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "SyncerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持sql convertor",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSqlConv",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群时区，默认+08:00",
+          "example": "+08:00",
+          "member": "string",
+          "name": "TimeZone",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9380,6 +9450,17 @@
           "example": "10",
           "member": "int64",
           "name": "RemainLatestNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "天数单位\n0：天\n1：季度\n2：年",
+          "example": "0",
+          "member": "int64",
+          "name": "RemainDaysUnit",
           "output_required": false,
           "required": false,
           "type": "int",

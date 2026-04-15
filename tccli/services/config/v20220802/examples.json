@@ -283,7 +283,7 @@
     "ListAlarmPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAlarmPolicy\n<公共请求参数>\n\n{\n    \"Offset\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAlarmPolicy\n<公共请求参数>\n\n{\n    \"Offset\": 10,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"AlarmPolicyList\": [],\n        \"Total\": 2,\n        \"RequestId\": \"04ec0d59-723e-4800-ae75-5209394aeabf\"\n    }\n}",
         "title": "查询告警列表"
       }

@@ -4652,10 +4652,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "10",
           "member": "uint64",
           "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页展示数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
           "required": true,
           "type": "int"
         }
@@ -4667,7 +4676,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回记录的数量",
+          "document": "<p>返回记录的数量</p>",
           "example": "2",
           "member": "int64",
           "name": "Total",
@@ -4677,7 +4686,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略返回值",
+          "document": "<p>告警策略返回值</p>",
           "example": "无",
           "member": "AlarmPolicyRsp",
           "name": "AlarmPolicyList",

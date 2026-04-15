@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli config ListAlarmPolicy --cli-unfold-argument  \
-    --Offset 10
+    --Offset 10 \
+    --Limit 10
 ```
 
 Output: 

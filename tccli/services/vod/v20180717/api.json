@@ -7531,6 +7531,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成图片张数。*<em>仅ModelName为Kling时有效，可选值 1-9 *</em>。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "OutputImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8117,6 +8128,17 @@
           "example": "Disabled",
           "member": "string",
           "name": "LogoAdd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为生成的视频添加背景音乐。</p><p>枚举值：</p><ul><li>Enabled： 系统将从预设 BGM 库中自动挑选合适的音乐并添加。</li><li>Disabled： 不添加BGM。</li></ul><p>默认值：Disabled</p>",
+          "example": "Disabled",
+          "member": "string",
+          "name": "EnableBGM",
           "output_required": false,
           "required": false,
           "type": "string",

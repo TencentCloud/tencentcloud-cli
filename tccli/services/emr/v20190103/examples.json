@@ -144,6 +144,14 @@
         "title": "获取自动扩缩容规则"
       }
     ],
+    "DescribeBootScript": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeBootScript\n&InstanceId=emr-examples\n&BootType=clusterBefore\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Detail\": [],\n        \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\n    }\n}",
+        "title": "获取引导脚本"
+      }
+    ],
     "DescribeClusterFlowStatusDetail": [
       {
         "document": "",
@@ -518,6 +526,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScaleStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-123\",\n    \"StrategyType\": 0,\n    \"LoadAutoScaleStrategies\": [\n        {\n            \"CalmDownTime\": 60,\n            \"GraceDownFlag\": false,\n            \"GraceDownTime\": 0,\n            \"GroupId\": 0,\n            \"LoadMetricsConditions\": {\n                \"LoadMetrics\": [\n                    {\n                        \"Conditions\": [\n                            {\n                                \"CompareMethod\": 1,\n                                \"Threshold\": 16\n                            }\n                        ],\n                        \"LoadMetrics\": \"AvailableVCores#root.default\",\n                        \"MetricId\": 1,\n                        \"StatisticPeriod\": 60,\n                        \"TriggerThreshold\": 1\n                    }\n                ]\n            },\n            \"MeasureMethod\": \"INSTANCE\",\n            \"Priority\": 3,\n            \"ProcessMethod\": 3,\n            \"ScaleAction\": 2,\n            \"ScaleNum\": 2,\n            \"Soft\": \"yarn\",\n            \"StrategyId\": 1521,\n            \"StrategyName\": \"负载缩容\",\n            \"StrategyStatus\": 3\n        }\n    ],\n    \"TimeAutoScaleStrategies\": [\n        {\n            \"CompensateFlag\": 1,\n            \"ConfigGroupAssigned\": \"{\\\"HDFS-2.8.5\\\":-1,\\\"YARN-2.8.5\\\":-1}\",\n            \"GraceDownFlag\": false,\n            \"GraceDownTime\": 0,\n            \"GroupId\": 0,\n            \"IntervalTime\": 0,\n            \"MaxUse\": 8,\n            \"MeasureMethod\": \"INSTANCE\",\n            \"Priority\": 2,\n            \"RepeatStrategy\": {\n                \"Expire\": \"2025-11-05 23:59:59\",\n                \"NotRepeat\": {\n                    \"ExecuteAt\": \"2024-11-06 09:10:00\"\n                },\n                \"RepeatType\": \"NONE\"\n            },\n            \"RetryValidTime\": 60,\n            \"ScaleAction\": 1,\n            \"ScaleNum\": 6,\n            \"ServiceNodeInfo\": [\n                7\n            ],\n            \"SoftDeployInfo\": [\n                1,\n                2\n            ],\n            \"StrategyId\": 1783,\n            \"StrategyName\": \"测试准实时任务扩容\",\n            \"StrategyStatus\": 3,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"group\",\n                    \"TagValue\": \"data\"\n                }\n            ],\n            \"TerminatePolicy\": \"TIMING\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8833a2df-1487-4f78-89b6-eff26058a240\"\n    }\n}",
         "title": "修改扩缩容规则"
+      }
+    ],
+    "ModifyBootScript": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=ModifyBootScript\n&InstanceId=emr-examples\n&BootType=clusterBefore\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\n    }\n}",
+        "title": "修改引导脚本"
       }
     ],
     "ModifyGlobalConfig": [

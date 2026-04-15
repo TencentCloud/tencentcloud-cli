@@ -6774,7 +6774,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "英文缩写",
+          "document": "<p>英文缩写</p>",
           "example": "\"英文缩写\"",
           "member": "string",
           "name": "Code",
@@ -6784,7 +6784,7 @@
         },
         {
           "disabled": false,
-          "document": "标准缩写",
+          "document": "<p>标准缩写</p>",
           "example": "\"标准缩写\"",
           "member": "string",
           "name": "Scode",
@@ -6794,7 +6794,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称",
+          "document": "<p>项目名称</p>",
           "example": "生长激素",
           "member": "string",
           "name": "Name",
@@ -6804,7 +6804,7 @@
         },
         {
           "disabled": false,
-          "document": "标准名",
+          "document": "<p>标准名</p>",
           "example": "\"标准名\"",
           "member": "string",
           "name": "Sname",
@@ -6814,7 +6814,7 @@
         },
         {
           "disabled": false,
-          "document": "结果",
+          "document": "<p>结果</p>",
           "example": "0.23",
           "member": "string",
           "name": "Result",
@@ -6824,7 +6824,7 @@
         },
         {
           "disabled": false,
-          "document": "单位",
+          "document": "<p>单位</p>",
           "example": "ug/L",
           "member": "string",
           "name": "Unit",
@@ -6834,7 +6834,7 @@
         },
         {
           "disabled": false,
-          "document": "参考范围",
+          "document": "<p>参考范围</p>",
           "example": "&lt;7.50",
           "member": "string",
           "name": "Range",
@@ -6844,7 +6844,7 @@
         },
         {
           "disabled": false,
-          "document": "上下箭头",
+          "document": "<p>上下箭头</p>",
           "example": "\"上/下箭头符号\"",
           "member": "string",
           "name": "Arrow",
@@ -6854,7 +6854,7 @@
         },
         {
           "disabled": false,
-          "document": "是否正常",
+          "document": "<p>是否正常</p>",
           "example": "true",
           "member": "bool",
           "name": "Normal",
@@ -6864,7 +6864,7 @@
         },
         {
           "disabled": false,
-          "document": "项目原文",
+          "document": "<p>项目原文</p>",
           "example": "生长激素",
           "member": "string",
           "name": "ItemString",
@@ -6874,7 +6874,7 @@
         },
         {
           "disabled": false,
-          "document": "指标项ID",
+          "document": "<p>指标项ID</p>",
           "example": "11",
           "member": "int64",
           "name": "Id",
@@ -6883,9 +6883,9 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "指标项坐标位置",
-          "example": "object",
+          "disabled": true,
+          "document": "<p>指标项坐标位置</p>",
+          "example": "无",
           "member": "Coordinate",
           "name": "Coords",
           "output_required": false,
@@ -6894,7 +6894,7 @@
         },
         {
           "disabled": false,
-          "document": "推测结果是否异常",
+          "document": "<p>推测结果是否异常</p>",
           "example": "正常",
           "member": "string",
           "name": "InferNormal",
@@ -6904,7 +6904,7 @@
         },
         {
           "disabled": false,
-          "document": "标本",
+          "document": "<p>标本</p>",
           "example": "血",
           "member": "string",
           "name": "Sample",
@@ -6914,12 +6914,22 @@
         },
         {
           "disabled": false,
-          "document": "检测方法",
+          "document": "<p>检测方法</p>",
           "example": "检测方法",
           "member": "string",
           "name": "Method",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检验指标项坐标信息</p>",
+          "example": "无",
+          "member": "ItemCoordinate",
+          "name": "ItemCoords",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -7850,6 +7860,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ItemCoordinate": {
+      "document": "检验指标内容坐标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指标项名称坐标</p>",
+          "example": "无",
+          "member": "Coordinate",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标结果称坐标</p>",
+          "example": "无",
+          "member": "Coordinate",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标项范围坐标</p>",
+          "example": "无",
+          "member": "Coordinate",
+          "name": "Range",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "KeyValueItem": {
       "document": "体检报告信息",

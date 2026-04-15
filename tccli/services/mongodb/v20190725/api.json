@@ -1222,7 +1222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "cmgo-ca2n****",
           "member": "string",
           "name": "InstanceId",
@@ -1232,7 +1232,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。\n- 0：自动备份。\n- 1：手动备份。",
+          "document": "<p>备份方式。</p><ul><li>0：自动备份。</li><li>1：手动备份。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BackupType",
@@ -1242,7 +1242,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件名称。",
+          "document": "<p>备份文件名称。</p>",
           "example": "cmgo-ca2n****_2021-12-13 02:02",
           "member": "string",
           "name": "BackupName",
@@ -1252,7 +1252,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务备注信息。",
+          "document": "<p>备份任务备注信息。</p>",
           "example": "系统后台每日定时自动备份",
           "member": "string",
           "name": "BackupDesc",
@@ -1262,7 +1262,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件大小，单位：KB。",
+          "document": "<p>备份文件大小，单位：KB。</p>",
           "example": "326594030",
           "member": "uint64",
           "name": "BackupSize",
@@ -1272,7 +1272,7 @@
         },
         {
           "disabled": false,
-          "document": "备份开始时间。",
+          "document": "<p>备份开始时间。</p>",
           "example": "2021-12-13 02:02:51",
           "member": "string",
           "name": "StartTime",
@@ -1282,7 +1282,7 @@
         },
         {
           "disabled": false,
-          "document": "备份结束时间。",
+          "document": "<p>备份结束时间。</p>",
           "example": "2021-12-13 03:02:51",
           "member": "string",
           "name": "EndTime",
@@ -1292,7 +1292,7 @@
         },
         {
           "disabled": false,
-          "document": "备份状态。\n- 1：备份中。\n- 2：备份成功。",
+          "document": "<p>备份状态。</p><ul><li>1：备份中。</li><li>2：备份成功。</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -1302,7 +1302,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。\n- 0：逻辑备份。\n- 1：物理备份。\n- 3：快照备份。\n**说明:**\n- 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。\n- 实例开通存储加密，则备份方式不能为物理备份。",
+          "document": "<p>备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明:</strong></li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BackupMethod",
@@ -1312,7 +1312,7 @@
         },
         {
           "disabled": false,
-          "document": "备份记录 ID。",
+          "document": "<p>备份记录 ID。</p>",
           "example": "6997433",
           "member": "int64",
           "name": "BackId",
@@ -1322,7 +1322,7 @@
         },
         {
           "disabled": false,
-          "document": "备份删除时间。",
+          "document": "<p>备份删除时间。</p>",
           "example": "2099-01-01 00:00:00",
           "member": "string",
           "name": "DeleteTime",
@@ -1332,7 +1332,7 @@
         },
         {
           "disabled": false,
-          "document": "异地备份地域。",
+          "document": "<p>异地备份地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BackupRegion",
@@ -1342,7 +1342,7 @@
         },
         {
           "disabled": false,
-          "document": "备份支持的回档时间。",
+          "document": "<p>备份支持的回档时间。</p>",
           "example": "2021-12-13 03:02:51",
           "member": "string",
           "name": "RestoreTime",
@@ -8861,7 +8861,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "cmgo-p8vn****",
           "member": "string",
           "name": "InstanceId",
@@ -8870,7 +8870,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。\n- 0：逻辑备份。\n- 1：物理备份。\n- 3：快照备份。\n**说明**:\n1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。\n2. 实例开通存储加密，则备份方式不能为物理备份。",
+          "document": "<p>备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "BackupMethod",
@@ -8879,7 +8879,7 @@
         },
         {
           "disabled": false,
-          "document": "设置自动备份开始时间。取值范围为：[0,23]，例如：该参数设置为2，表示02:00开始备份。",
+          "document": "<p>设置自动备份开始时间。取值范围为：[0,23]，例如：该参数设置为2，表示02:00开始备份。</p>",
           "example": "2",
           "member": "uint64",
           "name": "BackupTime",
@@ -8888,7 +8888,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每日自动备份频率。\n- 12: 每日备份2次，间隔约12小时。\n- 24: 每日备份1次（默认），间隔约24小时。",
+          "document": "<p>指定每日自动备份频率。</p><ul><li>12: 每日备份2次，间隔约12小时。</li><li>24: 每日备份1次（默认），间隔约24小时。</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "BackupFrequency",
@@ -8897,7 +8897,7 @@
         },
         {
           "disabled": false,
-          "document": "设置自动备份发生错误时，是否发送失败告警。\n- true：发送。\n- false：不发送。",
+          "document": "<p>设置自动备份发生错误时，是否发送失败告警。</p><ul><li>true：发送。</li><li>false：不发送。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Notify",
@@ -8906,7 +8906,7 @@
         },
         {
           "disabled": false,
-          "document": "指定备份数据保留时长。\n- 单位：天，默认为 7 天。\n- 取值范围：[7,365]。",
+          "document": "<p>指定备份数据保留时长。</p><ul><li>单位：天，默认为 7 天。</li><li>取值范围：[7,365]。</li></ul>",
           "example": "7",
           "member": "uint64",
           "name": "BackupRetentionPeriod",
@@ -8915,7 +8915,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每周内执行自动备份的具体日期。\n- 格式：请输入 0-6 之间的数字代表周日至周六（例如：1 代表周一），多个日期请用英文逗号 , 分隔。\n- 示例：输入 1,3,5 表示系统将在每周的周一、周三、周五执行备份。\n- 默认值：不设置，则默认为全周期 (0,1,2,3,4,5,6)，即每日执行备份。",
+          "document": "<p>指定每周内执行自动备份的具体日期。</p><ul><li>格式：请输入 0-6 之间的数字代表周日至周六（例如：1 代表周一），多个日期请用英文逗号 , 分隔。</li><li>示例：输入 1,3,5 表示系统将在每周的周一、周三、周五执行备份。</li><li>默认值：不设置，则默认为全周期 (0,1,2,3,4,5,6)，即每日执行备份。</li></ul>",
           "example": "0,1,2,3,4,5,6",
           "member": "string",
           "name": "ActiveWeekdays",
@@ -8924,7 +8924,7 @@
         },
         {
           "disabled": false,
-          "document": "长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval",
+          "document": "<p>长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval</p>",
           "example": "monthly",
           "member": "string",
           "name": "LongTermUnit",
@@ -8933,7 +8933,7 @@
         },
         {
           "disabled": false,
-          "document": "指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。\n- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。\n- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。",
+          "document": "<p>指定用于长期保留的具体备份日期。此设置仅在 <strong>LongTermUnit</strong> 被设为<strong>weekly</strong> 或 <strong>monthly</strong> 时生效。</p><ul><li>按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。</li><li>按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。</li></ul>",
           "example": "1,2",
           "member": "string",
           "name": "LongTermActiveDays",
@@ -8942,7 +8942,7 @@
         },
         {
           "disabled": false,
-          "document": "长期备份保留时长。取值范围[30,1075]。",
+          "document": "<p>长期备份保留时长。取值范围[30,1075]。</p>",
           "example": "30",
           "member": "int64",
           "name": "LongTermExpiredDays",
@@ -8951,7 +8951,7 @@
         },
         {
           "disabled": false,
-          "document": "增量备份保留时长。\n- 单位：天。\n- 默认值：7天。\n- 取值范围：[7,365]。",
+          "document": "<p>增量备份保留时长。</p><ul><li>单位：天。</li><li>默认值：7天。</li><li>取值范围：[7,365]。</li></ul>",
           "example": "7",
           "member": "int64",
           "name": "OplogExpiredDays",
@@ -8960,7 +8960,7 @@
         },
         {
           "disabled": false,
-          "document": "指定备份版本。\n- 旧版本备份：0。\n- 开启高级备份：1。",
+          "document": "<p>指定备份版本。</p><ul><li>旧版本备份：0。</li><li>开启高级备份：1。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "BackupVersion",
@@ -8969,7 +8969,7 @@
         },
         {
           "disabled": false,
-          "document": "设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold",
+          "document": "<p>设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold</p>",
           "example": "100",
           "member": "int64",
           "name": "AlarmWaterLevel",
@@ -8978,7 +8978,7 @@
         },
         {
           "disabled": false,
-          "document": "长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。",
+          "document": "<p>长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。</p>",
           "example": "monthly",
           "member": "string",
           "name": "LongTermInterval",
@@ -8987,7 +8987,7 @@
         },
         {
           "disabled": false,
-          "document": "设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。",
+          "document": "<p>设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。</p>",
           "example": "100",
           "member": "int64",
           "name": "AlertThreshold",

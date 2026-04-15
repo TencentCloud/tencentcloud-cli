@@ -3242,6 +3242,14 @@
         "title": "修改本地网关"
       }
     ],
+    "ModifyNatGatewayAdvancedAttribute": [
+      {
+        "document": "修改 NAT 网关的超时时间",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatGatewayAdvancedAttribute\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"nat-2njz5nh8\",\n    \"UDPMappingTimeout\": 180,\n    \"TCPEstablishedConnectionTimeout\": 10800,\n    \"TCPTimeWaitTimeout\": 120\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34557d2b-28ea-4270-b76b-bf21328157d7\"\n    }\n}",
+        "title": "修改 NAT 网关高级属性"
+      }
+    ],
     "ModifyNatGatewayAttribute": [
       {
         "document": "只支持修改NAT网关的名称和NAT网关最大外网出带宽。更新NAT网关并发连接上限请使用ResetNatGatewayConnection接口。",
