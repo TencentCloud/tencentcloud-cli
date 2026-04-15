@@ -1540,7 +1540,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "<p>模板ID</p>",
           "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称",
+          "document": "<p>模板名称</p>",
           "example": "模板1",
           "member": "string",
           "name": "TemplateName",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "TimeSections",
@@ -1570,7 +1570,7 @@
         },
         {
           "disabled": false,
-          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "DevTimeSections",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "上云倍速（支持1，2，4倍速）",
+          "document": "<p>上云倍速（支持1，2，4倍速）</p>",
           "example": "2",
           "member": "int64",
           "name": "Scale",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreateAt",
@@ -1600,12 +1600,22 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DayOffset",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1616,7 +1626,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）",
+          "document": "<p>模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）</p>",
           "example": "模板1",
           "member": "string",
           "name": "TemplateName",
@@ -1625,7 +1635,7 @@
         },
         {
           "disabled": false,
-          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "TimeSections",
@@ -1634,7 +1644,7 @@
         },
         {
           "disabled": false,
-          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "DevTimeSections",
@@ -1643,11 +1653,20 @@
         },
         {
           "disabled": false,
-          "document": "上云倍速（支持1，2，4倍速）",
+          "document": "<p>上云倍速（支持1，2，4倍速）</p>",
           "example": "2",
           "member": "int64",
           "name": "Scale",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p><p>取值范围：[0, 90]</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DayOffset",
+          "required": false,
           "type": "int"
         }
       ],
@@ -1658,7 +1677,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据",
+          "document": "<p>返回数据</p>",
           "example": "无",
           "member": "AddRecordBackupTemplateData",
           "name": "Data",
@@ -5338,7 +5357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "<p>模板ID</p>",
           "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
@@ -5348,7 +5367,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称",
+          "document": "<p>模板名称</p>",
           "example": "录像备份模板1",
           "member": "string",
           "name": "TemplateName",
@@ -5358,7 +5377,7 @@
         },
         {
           "disabled": false,
-          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "TimeSections",
@@ -5368,7 +5387,7 @@
         },
         {
           "disabled": false,
-          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "DevTimeSections",
@@ -5378,7 +5397,7 @@
         },
         {
           "disabled": false,
-          "document": "上云倍速（支持1，2，4倍速）",
+          "document": "<p>上云倍速（支持1，2，4倍速）</p>",
           "example": "2",
           "member": "int64",
           "name": "Scale",
@@ -5388,7 +5407,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreateAt",
@@ -5398,12 +5417,22 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2023-09-06 15:53:34",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DayOffset",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7816,7 +7845,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "<p>模板ID</p>",
           "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
@@ -7826,7 +7855,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称",
+          "document": "<p>模板名称</p>",
           "example": "录像上云模板1",
           "member": "string",
           "name": "TemplateName",
@@ -7836,7 +7865,7 @@
         },
         {
           "disabled": false,
-          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "TimeSections",
@@ -7846,7 +7875,7 @@
         },
         {
           "disabled": false,
-          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "DevTimeSections",
@@ -7856,7 +7885,7 @@
         },
         {
           "disabled": false,
-          "document": "上云倍速（支持1，2，4倍速）",
+          "document": "<p>上云倍速（支持1，2，4倍速）</p>",
           "example": "2",
           "member": "int64",
           "name": "Scale",
@@ -7866,7 +7895,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreateAt",
@@ -7876,12 +7905,22 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期偏移量，默认1，表示拉去昨天的，0表示拉去今天的，3表示拉去前天的</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DayOffset",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10921,7 +10960,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "<p>模板ID</p>",
           "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
@@ -10931,7 +10970,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称",
+          "document": "<p>模板名称</p>",
           "example": "录像上云模板1",
           "member": "string",
           "name": "TemplateName",
@@ -10941,7 +10980,7 @@
         },
         {
           "disabled": false,
-          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "TimeSections",
@@ -10951,7 +10990,7 @@
         },
         {
           "disabled": false,
-          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "<p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>",
           "example": "无",
           "member": "RecordTemplateTimeSections",
           "name": "DevTimeSections",
@@ -10961,7 +11000,7 @@
         },
         {
           "disabled": false,
-          "document": "上云倍速（支持1，2，4倍速）",
+          "document": "<p>上云倍速（支持1，2，4倍速）</p>",
           "example": "2",
           "member": "int64",
           "name": "Scale",
@@ -10971,7 +11010,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreateAt",
@@ -10981,12 +11020,22 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DayOffset",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

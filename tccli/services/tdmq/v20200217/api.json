@@ -4432,7 +4432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "多可用区部署选择三个可用区，示例[200002,200003,200004]\n\n单可用区部署选择一个可用区，示例[200002]",
+          "document": "<p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>",
           "example": "[200002,200003,200004]",
           "member": "int64",
           "name": "ZoneIds",
@@ -4441,7 +4441,7 @@
         },
         {
           "disabled": false,
-          "document": "集群规格代号\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
+          "document": "<p>集群规格代号<br>参考 <a href=\"https://cloud.tencent.com/document/product/1179/83705\">专业集群规格</a></p>",
           "example": "PULSAR.P1.MINI2",
           "member": "string",
           "name": "ProductName",
@@ -4450,7 +4450,7 @@
         },
         {
           "disabled": false,
-          "document": "1: true，开启自动按月续费\n\n0: false，关闭自动按月续费",
+          "document": "<p>1: true，开启自动按月续费</p><p>0: false，关闭自动按月续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -4459,7 +4459,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，取值范围：1～50",
+          "document": "<p>购买时长，取值范围：1～50</p>",
           "example": "3",
           "member": "int64",
           "name": "TimeSpan",
@@ -4468,7 +4468,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。",
+          "document": "<p>集群名称不能为空，支持数字、字母、中文以及符号 “-_=:.”，长度不超过64个字符</p>",
           "example": "default",
           "member": "string",
           "name": "ClusterName",
@@ -4477,7 +4477,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动选择代金券 1是 0否 默认为0",
+          "document": "<p>是否自动选择代金券 1是 0否 默认为0</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoVoucher",
@@ -4486,7 +4486,7 @@
         },
         {
           "disabled": false,
-          "document": "存储规格\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
+          "document": "<p>存储规格<br>参考 <a href=\"https://cloud.tencent.com/document/product/1179/83705\">专业集群规格</a></p>",
           "example": "200",
           "member": "int64",
           "name": "StorageSize",
@@ -4495,7 +4495,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络标签",
+          "document": "<p>vpc网络标签</p>",
           "example": "无",
           "member": "VpcInfo",
           "name": "Vpc",
@@ -4504,12 +4504,21 @@
         },
         {
           "disabled": false,
-          "document": "集群的标签列表(已废弃)",
+          "document": "<p>集群的标签列表(已废弃)</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群版本信息</p>",
+          "example": "不传 默认是 2.9.2，\u000b可以指定 2.9.2 或者 3.0.0",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4519,7 +4528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子订单号",
+          "document": "<p>子订单号</p>",
           "example": "20231020394041338776131",
           "member": "string",
           "name": "DealName",
@@ -4529,7 +4538,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号",
+          "document": "<p>订单号</p>",
           "example": "20231020394041338776121",
           "member": "string",
           "name": "BigDealId",
@@ -4539,7 +4548,7 @@
         },
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "<p>集群Id</p>",
           "example": "pulsar-8x3jzjxxgzvg",
           "member": "string",
           "name": "ClusterId",
@@ -4549,7 +4558,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "default",
           "member": "string",
           "name": "ClusterName",
@@ -24429,7 +24438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色名称。",
+          "document": "<p>角色名称。</p>",
           "example": "test_role_name",
           "member": "string",
           "name": "RoleName",
@@ -24439,7 +24448,7 @@
         },
         {
           "disabled": false,
-          "document": "角色token值。",
+          "document": "<p>角色token值。</p>",
           "example": "eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY",
           "member": "string",
           "name": "Token",
@@ -24449,7 +24458,7 @@
         },
         {
           "disabled": false,
-          "document": "备注说明。",
+          "document": "<p>备注说明。</p>",
           "example": "测试账号",
           "member": "string",
           "name": "Remark",
@@ -24459,7 +24468,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
@@ -24469,7 +24478,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间。",
+          "document": "<p>更新时间。</p>",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
@@ -24479,12 +24488,42 @@
         },
         {
           "disabled": false,
-          "document": "授权类型（Cluster：集群；TopicAndGroup：主题或消费组）",
+          "document": "<p>授权类型（Cluster：集群；TopicAndGroup：主题或消费组）</p>",
           "example": "Cluster",
           "member": "string",
           "name": "PermType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色类型</p><p>枚举值：</p><ul><li>Temporary： 轮转密钥</li><li>Permanent： 永久密钥</li></ul>",
+          "example": "`Temporary`：轮转密钥；`Permanent`：永久密钥",
+          "member": "string",
+          "name": "TokenType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSM 唯一 ID</p>",
+          "example": "aasdsa",
+          "member": "string",
+          "name": "SecretName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>轮转周期</p><p>单位：天</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "RotateFreq",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

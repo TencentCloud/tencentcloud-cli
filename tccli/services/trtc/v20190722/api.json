@@ -961,6 +961,56 @@
       ],
       "usage": "in"
     },
+    "AlignmentItem": {
+      "document": "字幕对齐",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕对应的时间起点",
+          "example": "0",
+          "member": "uint64",
+          "name": "TimeBeginMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的时间尾点",
+          "example": "760",
+          "member": "uint64",
+          "name": "TimeEndMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的文本索引起点",
+          "example": "0",
+          "member": "uint64",
+          "name": "TextBegin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的文本索引尾点",
+          "example": "2",
+          "member": "uint64",
+          "name": "TextEnd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AmbientSound": {
       "document": "背景音设置，将在通话中添加环境音效，使体验更加逼真。目前支持以下选项：\ncoffee_shops: 咖啡店氛围，背景中有人聊天。\nbusy_office: 客服中心\nstreet_traffic: 户外街道\nevening_mountain: 户外山林",
       "members": [
@@ -1133,7 +1183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的音频格式\n\n- TextToSpeechSSE 流式接口\n\n 支持 pcm, 默认: pcm\n\n- TextToSpeech 非流式接口\n\n 支持 pcm,wav,mp3,  默认: pcm",
+          "document": "生成的音频格式\n\n- TextToSpeechSSE 流式接口\n\n 支持 pcm, 默认: pcm\n\n- TextToSpeech 非流式接口\n\n 支持 pcm,wav,mp3,  默认: pcm\n\n- AsyncTextToSpeech\n支持pcm,mp3, 默认：mp3",
           "example": "pcm",
           "member": "string",
           "name": "Format",
@@ -7926,6 +7976,34 @@
       ],
       "usage": "in"
     },
+    "PronunciationDict": {
+      "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要纠正发音的词语，前后空格自动去除。同一请求中若有重复词语，以最后一条为准。",
+          "example": "银行",
+          "member": "string",
+          "name": "Word",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标发音，支持以下格式：<br>① 带声调数字的拼音（1=阴平，2=阳平，3=上声，4=去声，5=轻声），如 yin2 hang2；<br>② 拼音连写（无空格），如 yin2hang2；<br>③ 文字+拼音混写，如 银hang2；<br>④ 直接文本替换，会将原始文本替换为目标文本",
+          "example": "yin2 hang2",
+          "member": "string",
+          "name": "Pronunciation",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PublishCdnParams": {
       "document": "第三方CDN转推参数",
       "members": [
@@ -11220,6 +11298,24 @@
           "name": "Language",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11235,6 +11331,16 @@
           "name": "Audio",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对齐数据",
+          "example": "无",
+          "member": "AlignmentItem",
+          "name": "Alignments",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11311,6 +11417,24 @@
           "name": "Language",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

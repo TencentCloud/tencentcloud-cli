@@ -4118,11 +4118,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录id",
+          "document": "<p>数据目录id</p>",
           "example": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1",
           "member": "string",
           "name": "CatalogId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "test_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
           "type": "string"
         }
       ],
@@ -4133,8 +4142,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录详情",
-          "example": "复杂类型",
+          "document": "<p>数据目录详情</p>",
+          "example": "无",
           "member": "CatalogConfig",
           "name": "Catalog",
           "output_required": false,

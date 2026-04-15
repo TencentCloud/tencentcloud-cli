@@ -4583,7 +4583,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "17678671667189298",
           "member": "string",
           "name": "WorkspaceId",
@@ -4594,7 +4594,7 @@
         },
         {
           "disabled": false,
-          "document": "实体 Key（agentKey）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实体 Key（agentKey）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "68fece4d1774960346672188f9b98",
           "member": "string",
           "name": "Key",
@@ -4605,7 +4605,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Agent 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tiny-test1",
           "member": "string",
           "name": "AgentName",
@@ -4616,7 +4616,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent 描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Agent 描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tiny-test1-describe",
           "member": "string",
           "name": "Description",
@@ -4627,7 +4627,7 @@
         },
         {
           "disabled": false,
-          "document": "调用端点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调用端点名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wedata.test3.tencentcloudapi.com",
           "member": "string",
           "name": "Endpoint",
@@ -4638,7 +4638,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent 类型，可选值：\"CUSTOM\"(自定义Agent)，默认为 \"CUSTOM\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Agent 类型，可选值：&quot;CUSTOM&quot;(自定义Agent)，默认为 &quot;CUSTOM&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CUSTOM",
           "member": "string",
           "name": "AgentType",
@@ -4649,7 +4649,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的 App Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联的 App Key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "05c1284e1774960341224d6f6db0f",
           "member": "string",
           "name": "RefAppKey",
@@ -4659,8 +4659,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "关联的 App 名称（展示用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "<p>关联的 App 名称（展示用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tiny-test1",
           "member": "string",
           "name": "RefAppName",
@@ -4671,7 +4671,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的实验 Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联的实验 Key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "29",
           "member": "string",
           "name": "RefExperimentKey",
@@ -4682,7 +4682,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "700002164619",
           "member": "string",
           "name": "CreatedBy",
@@ -4693,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间（毫秒时间戳）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1774960346671",
           "member": "string",
           "name": "CreatedOn",
@@ -4704,7 +4704,7 @@
         },
         {
           "disabled": false,
-          "document": "修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "700002164619",
           "member": "string",
           "name": "ModifiedBy",
@@ -4715,7 +4715,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间（毫秒时间戳）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1774960346671",
           "member": "string",
           "name": "ModifiedOn",
@@ -4726,13 +4726,24 @@
         },
         {
           "disabled": false,
-          "document": "创建人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wedata30-test1@tencent.com",
           "member": "string",
           "name": "CreatedUser",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent权限信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationPermissionInfo",
+          "name": "PermissionInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -5108,7 +5119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "114865e1177451518052754673a6c",
           "member": "string",
           "name": "Key",
@@ -5118,7 +5129,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "700002352753",
           "member": "string",
           "name": "CreatedBy",
@@ -5128,7 +5139,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1774515180526",
           "member": "string",
           "name": "CreatedOn",
@@ -5138,7 +5149,7 @@
         },
         {
           "disabled": false,
-          "document": "修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "700002352753",
           "member": "string",
           "name": "ModifiedBy",
@@ -5148,7 +5159,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1774515185995",
           "member": "string",
           "name": "ModifiedOn",
@@ -5158,7 +5169,7 @@
         },
         {
           "disabled": false,
-          "document": "App 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "app_auth20",
           "member": "string",
           "name": "AppName",
@@ -5168,7 +5179,7 @@
         },
         {
           "disabled": false,
-          "document": "App 描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "app_auth20_description",
           "member": "string",
           "name": "Description",
@@ -5178,7 +5189,7 @@
         },
         {
           "disabled": false,
-          "document": "App 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AGENT",
           "member": "string",
           "name": "AppType",
@@ -5188,7 +5199,7 @@
         },
         {
           "disabled": false,
-          "document": "模板 Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板 Key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5139ea16-26b4-11f1-a6da-00f100004023",
           "member": "string",
           "name": "TemplateKey",
@@ -5198,7 +5209,7 @@
         },
         {
           "disabled": false,
-          "document": "App 状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App 状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CREATED",
           "member": "string",
           "name": "Status",
@@ -5208,7 +5219,7 @@
         },
         {
           "disabled": false,
-          "document": "当前运行版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前运行版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v1",
           "member": "string",
           "name": "CurrentVersion",
@@ -5218,7 +5229,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的资源列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppResourceItem",
           "name": "Resources",
@@ -5228,7 +5239,7 @@
         },
         {
           "disabled": false,
-          "document": "App权限信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>App权限信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApplicationPermissionInfo",
           "name": "PermissionInfo",
@@ -5238,10 +5249,20 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wedata30-test1@tencent.com",
           "member": "string",
           "name": "CreatedUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>App权限类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL_USERS",
+          "member": "string",
+          "name": "PermissionType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7697,6 +7718,7 @@
           "member": "string",
           "name": "Permission",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7707,11 +7729,12 @@
           "member": "string",
           "name": "AuthList",
           "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ApplicationQueryFilterParam": {
       "document": "数据应用查询过滤入参",
@@ -16089,6 +16112,15 @@
           "name": "DataSourceInfoList",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据来源:CATALOG/FILE",
+          "example": "FILE",
+          "member": "string",
+          "name": "DataFrom",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -20180,7 +20212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页面URL标识符",
+          "document": "<p>页面URL标识符</p>",
           "example": "cce32647",
           "member": "string",
           "name": "CustomerRefId",
@@ -20189,7 +20221,7 @@
         },
         {
           "disabled": false,
-          "document": "页面名称",
+          "document": "<p>页面名称</p>",
           "example": "未命名页面",
           "member": "string",
           "name": "DisplayName",
@@ -20198,7 +20230,7 @@
         },
         {
           "disabled": false,
-          "document": "页面类型",
+          "document": "<p>页面类型</p>",
           "example": "PAGE_TYPE_NORMAL",
           "member": "string",
           "name": "PageType",
@@ -20207,7 +20239,7 @@
         },
         {
           "disabled": false,
-          "document": "父仪表盘唯一标识",
+          "document": "<p>父仪表盘唯一标识</p>",
           "example": "da66c5198cf14a40b36479a59b842da7",
           "member": "string",
           "name": "DashboardAccessKey",
@@ -20216,7 +20248,7 @@
         },
         {
           "disabled": false,
-          "document": "父仪表盘版本号",
+          "document": "<p>父仪表盘版本号</p>",
           "example": "1",
           "member": "int64",
           "name": "DashboardVersion",
@@ -20225,7 +20257,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "1",
           "member": "string",
           "name": "WorkspaceId",
@@ -20234,7 +20266,7 @@
         },
         {
           "disabled": false,
-          "document": "页面排序列表",
+          "document": "<p>页面排序列表</p>",
           "example": "[\"63b19a3b56ba48931764662025322948da53e302e5f92\",\"b3e8b8bbb2144d741764662034758af51532b8788f3f8\",\"74b4720fb3f34dfb1764838202972a39de5c56b6c103d\"]",
           "member": "string",
           "name": "PageOrderList",
@@ -20249,7 +20281,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建页面响应",
+          "document": "<p>创建页面响应</p>",
           "example": "无",
           "member": "CreatePageRsp",
           "name": "Data",
@@ -21789,6 +21821,15 @@
           "example": "7294c133afec40b71763537883497946d8ceae35b3810",
           "member": "string",
           "name": "DataSetAccessKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改标识etag",
+          "example": "111111111111111111111111111111111111.1774869897002",
+          "member": "string",
+          "name": "EditSession",
           "required": false,
           "type": "string"
         }
@@ -25523,7 +25564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "1",
           "member": "string",
           "name": "WorkspaceId",
@@ -25532,7 +25573,7 @@
         },
         {
           "disabled": false,
-          "document": "页面唯一标识",
+          "document": "<p>页面唯一标识</p>",
           "example": "f65237558c0b4354b1579bfb0ef6d18b",
           "member": "string",
           "name": "PageAccessKey",
@@ -25541,7 +25582,7 @@
         },
         {
           "disabled": false,
-          "document": "页面版本号",
+          "document": "<p>页面版本号</p>",
           "example": "1",
           "member": "int64",
           "name": "PageVersion",
@@ -25550,7 +25591,7 @@
         },
         {
           "disabled": false,
-          "document": "父仪表盘唯一标识",
+          "document": "<p>父仪表盘唯一标识</p>",
           "example": "da66c5198cf14a40b36479a59b842da7",
           "member": "string",
           "name": "DashboardAccessKey",
@@ -25559,7 +25600,7 @@
         },
         {
           "disabled": false,
-          "document": "父仪表盘版本号",
+          "document": "<p>父仪表盘版本号</p>",
           "example": "1",
           "member": "int64",
           "name": "DashboardVersion",
@@ -25568,12 +25609,21 @@
         },
         {
           "disabled": false,
-          "document": "页面排序列表",
+          "document": "<p>页面排序列表</p>",
           "example": "[\"63b19a3b56ba48931764662025322948da53e302e5f92\",\"b3e8b8bbb2144d741764662034758af51532b8788f3f8\",\"74b4720fb3f34dfb1764838202972a39de5c56b6c103d\"]",
           "member": "string",
           "name": "PageOrderList",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改表示etag</p>",
+          "example": "111111111111111111111111111111111111.1774869897005",
+          "member": "string",
+          "name": "EditSession",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25583,7 +25633,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新页面响应",
+          "document": "<p>更新页面响应</p>",
           "example": "无",
           "member": "DeletePageRsp",
           "name": "Data",
@@ -26231,6 +26281,15 @@
           "example": "widget_layouts_json",
           "member": "string",
           "name": "PageLayouts",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改标识etag",
+          "example": "111111111111111111111111111111111111.1774869897004",
+          "member": "string",
+          "name": "EditSession",
           "required": false,
           "type": "string"
         }
@@ -54649,8 +54708,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间ID",
-          "example": "1",
+          "document": "<p>工作空间ID</p>",
+          "example": "17678671667189298",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -54658,8 +54717,8 @@
         },
         {
           "disabled": false,
-          "document": "MLFlow 实验 ID",
-          "example": "1",
+          "document": "<p>MLFlow 实验 ID</p>",
+          "example": "3",
           "member": "string",
           "name": "ExperimentId",
           "required": true,
@@ -54667,7 +54726,7 @@
         },
         {
           "disabled": false,
-          "document": "最多返回条数",
+          "document": "<p>最多返回条数</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxResults",
@@ -54676,12 +54735,30 @@
         },
         {
           "disabled": false,
-          "document": "排序字段列表",
+          "document": "<p>排序字段列表</p>",
           "example": "[\"1\"]",
           "member": "string",
           "name": "OrderBy",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤信息</p>",
+          "example": "attributes.run_id ='e3df72274e614137a8e25824404f2a44'",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token</p>",
+          "example": "eyJvZmZzZXQiOiAxfQ==",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -54691,7 +54768,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ListMlTracesRsp",
           "name": "Data",
@@ -64723,6 +64800,15 @@
           "name": "PageVersion",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改表示etag",
+          "example": "111111111111111111111111111111111111.1774869897004",
+          "member": "string",
+          "name": "EditSession",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -84616,7 +84702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页面唯一标识",
+          "document": "<p>页面唯一标识</p>",
           "example": "f65237558c0b4354b1579bfb0ef6d18b",
           "member": "string",
           "name": "PageAccessKey",
@@ -84625,7 +84711,7 @@
         },
         {
           "disabled": false,
-          "document": "页面版本号",
+          "document": "<p>页面版本号</p>",
           "example": "1",
           "member": "int64",
           "name": "PageVersion",
@@ -84634,7 +84720,7 @@
         },
         {
           "disabled": false,
-          "document": "父仪表盘唯一标识",
+          "document": "<p>父仪表盘唯一标识</p>",
           "example": "da66c5198cf14a40b36479a59b842da7",
           "member": "string",
           "name": "DashboardAccessKey",
@@ -84643,7 +84729,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "1",
           "member": "string",
           "name": "WorkspaceId",
@@ -84652,7 +84738,7 @@
         },
         {
           "disabled": false,
-          "document": "页面URL标识符",
+          "document": "<p>页面URL标识符</p>",
           "example": "cce32647",
           "member": "string",
           "name": "CustomerRefId",
@@ -84661,7 +84747,7 @@
         },
         {
           "disabled": false,
-          "document": "页面名称",
+          "document": "<p>页面名称</p>",
           "example": "未命名页面",
           "member": "string",
           "name": "DisplayName",
@@ -84670,10 +84756,19 @@
         },
         {
           "disabled": false,
-          "document": "页面布局json",
+          "document": "<p>页面布局json</p>",
           "example": "\"{}\"",
           "member": "string",
           "name": "PageLayout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改标识etag</p>",
+          "example": "111111111111111111111111111111111111.1774869897005",
+          "member": "string",
+          "name": "EditSession",
           "required": false,
           "type": "string"
         }
@@ -84685,7 +84780,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新页面响应",
+          "document": "<p>更新页面响应</p>",
           "example": "无",
           "member": "UpdatePageRsp",
           "name": "Data",
@@ -86316,6 +86411,15 @@
           "example": "7294c133afec40b71763537883497946d8ceae35b3810",
           "member": "string",
           "name": "DataSetAccessKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改标识etag",
+          "example": "1111111111111111111111111111111111111.1774869897005",
+          "member": "string",
+          "name": "EditSession",
           "required": false,
           "type": "string"
         }

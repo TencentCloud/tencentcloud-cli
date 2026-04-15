@@ -1,6 +1,6 @@
 **Example 1: 智能生成检索语句-不开启深度思考-流式调用**
 
-此示例说明如何通过流式调用接口，以及如何传递历史上下文会话内容。注意：流式调用的请求域名需使用 cls.ai.tencentcloudapi.com。
+此示例说明如何通过流式调用接口，以及如何传递历史上下文会话内容。注意：流式调用的请求域名，请务必配置为 cls.ai.tencentcloudapi.com (VPC内网环境可配置 cls.ai.internal.tencentcloudapi.com）。
 
 Input: 
 
