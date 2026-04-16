@@ -1332,6 +1332,34 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志源配置</p>",
+          "example": "无",
+          "member": "LogSources",
+          "name": "LogSources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogSources": {
+      "document": "日志源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>需要采集的日志文件路径，必须是 /logs/ 目录下的文件，不支持子目录，最大支持 10 个文件。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/logs/2026-04-08.log\"]",
+          "member": "string",
+          "name": "Files",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

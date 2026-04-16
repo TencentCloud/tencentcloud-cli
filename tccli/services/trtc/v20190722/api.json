@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AsyncTextToSpeech": {
+      "document": "异步语音合成",
+      "input": "AsyncTextToSpeechRequest",
+      "name": "异步实时文本转语音",
+      "output": "AsyncTextToSpeechResponse",
+      "status": "online"
+    },
     "ControlAIConversation": {
       "document": "提供服务端控制机器人的功能",
       "input": "ControlAIConversationRequest",
@@ -110,6 +117,13 @@
       "input": "DescribeAITranscriptionRequest",
       "name": "查询AI转录任务状态",
       "output": "DescribeAITranscriptionResponse",
+      "status": "online"
+    },
+    "DescribeAsyncTextToSpeech": {
+      "document": "查询异步语音合成状态",
+      "input": "DescribeAsyncTextToSpeechRequest",
+      "name": "查询异步语音合成",
+      "output": "DescribeAsyncTextToSpeechResponse",
       "status": "online"
     },
     "DescribeCallDetailInfo": {
@@ -809,6 +823,56 @@
       ],
       "usage": "in"
     },
+    "AlignmentItem": {
+      "document": "字幕对齐",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕对应的时间起点",
+          "example": "0",
+          "member": "uint64",
+          "name": "TimeBeginMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的时间尾点",
+          "example": "760",
+          "member": "uint64",
+          "name": "TimeEndMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的文本索引起点",
+          "example": "0",
+          "member": "uint64",
+          "name": "TextBegin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对应的文本索引尾点",
+          "example": "2",
+          "member": "uint64",
+          "name": "TextEnd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AmbientSound": {
       "document": "背景音设置，将在通话中添加环境音效，使体验更加逼真。目前支持以下选项：\ncoffee_shops: 咖啡店氛围，背景中有人聊天。\nbusy_office: 客服中心\nstreet_traffic: 户外街道\nevening_mountain: 户外山林",
       "members": [
@@ -887,6 +951,106 @@
         }
       ],
       "usage": "in"
+    },
+    "AsyncTextToSpeechRequest": {
+      "document": "AsyncTextToSpeech请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文本转语音的声音配置",
+          "example": "无",
+          "member": "Voice",
+          "name": "Voice",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的SdkAppId",
+          "example": "1600019222",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文本转语音的输出音频的格式",
+          "example": "无",
+          "member": "AudioFormat",
+          "name": "AudioFormat",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TTS的模型，当前固定为：flow_01_turbo",
+          "example": "flow_01_turbo",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）",
+          "example": "zh",
+          "member": "string",
+          "name": "LanguageCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AsyncTextToSpeechResponse": {
+      "document": "AsyncTextToSpeech返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "3d5f26c1-**9*-*f***883e-b543337b8eab",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AudioEncode": {
       "document": "音频编码参数。",
@@ -981,7 +1145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的音频格式\n\n- TextToSpeechSSE 流式接口\n\n 支持 pcm, 默认: pcm\n\n- TextToSpeech 非流式接口\n\n 支持 pcm,wav,mp3,  默认: pcm",
+          "document": "生成的音频格式\n\n- TextToSpeechSSE 流式接口\n\n 支持 pcm, 默认: pcm\n\n- TextToSpeech 非流式接口\n\n 支持 pcm,wav,mp3,  默认: pcm\n\n- AsyncTextToSpeech\n支持pcm,mp3, 默认：mp3",
           "example": "pcm",
           "member": "string",
           "name": "Format",
@@ -2408,6 +2572,63 @@
           "example": "无",
           "member": "string",
           "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsyncTextToSpeechRequest": {
+      "document": "DescribeAsyncTextToSpeech请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "86edb448-dc2f-4853-be31-8f05c7d3f6fe",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsyncTextToSpeechResponse": {
+      "document": "DescribeAsyncTextToSpeech返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态\n- Processing，处理中\n- Success，任务成功\n- Failed，任务失败\n- Expired，任务过期",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频下载url",
+          "example": "https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/result.mp3",
+          "member": "string",
+          "name": "AudioDownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕下载url",
+          "example": "https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/subtitle.json",
+          "member": "string",
+          "name": "SubtitleDownloadUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6606,6 +6827,34 @@
       ],
       "usage": "in"
     },
+    "PronunciationDict": {
+      "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要纠正发音的词语，前后空格自动去除。同一请求中若有重复词语，以最后一条为准。",
+          "example": "银行",
+          "member": "string",
+          "name": "Word",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标发音，支持以下格式：<br>① 带声调数字的拼音（1=阴平，2=阳平，3=上声，4=去声，5=轻声），如 yin2 hang2；<br>② 拼音连写（无空格），如 yin2hang2；<br>③ 文字+拼音混写，如 银hang2；<br>④ 直接文本替换，会将原始文本替换为目标文本",
+          "example": "yin2 hang2",
+          "member": "string",
+          "name": "Pronunciation",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PublishCdnParams": {
       "document": "第三方CDN转推参数",
       "members": [
@@ -9155,6 +9404,24 @@
           "name": "Language",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9170,6 +9437,16 @@
           "name": "Audio",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕对齐数据",
+          "example": "无",
+          "member": "AlignmentItem",
+          "name": "Alignments",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9246,6 +9523,24 @@
           "name": "Language",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。",
+          "example": "无",
+          "member": "PronunciationDict",
+          "name": "PronunciationDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，0表示不生成字幕，1表示生成字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlignmentMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -7,6 +7,27 @@
       "output": "CheckAnimateImageJobResponse",
       "status": "online"
     },
+    "CreateAigcElement": {
+      "document": "提交视频特效任务接口",
+      "input": "CreateAigcElementRequest",
+      "name": "创建主体",
+      "output": "CreateAigcElementResponse",
+      "status": "online"
+    },
+    "DeleteAigcElement": {
+      "document": "删除主体库",
+      "input": "DeleteAigcElementRequest",
+      "name": "删除主体库",
+      "output": "DeleteAigcElementResponse",
+      "status": "online"
+    },
+    "DescribeAigcElement": {
+      "document": "提交视频特效任务接口",
+      "input": "DescribeAigcElementRequest",
+      "name": "查询主体",
+      "output": "DescribeAigcElementResponse",
+      "status": "online"
+    },
     "DescribeAigcVideoJob": {
       "document": "查询生视频任务",
       "input": "DescribeAigcVideoJobRequest",
@@ -443,6 +464,331 @@
           "name": "CheckPass",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcElementRequest": {
+      "document": "CreateAigcElement请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "xincheng_0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "这是我的一个主体测试",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "image_refer",
+          "member": "string",
+          "name": "ReferenceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "无",
+          "member": "ElementImageList",
+          "name": "ElementImageList",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "[\"https://cos-internal.ap-guangzhou.tencentcos.cn/5s.mp4\"]",
+          "member": "string",
+          "name": "VideoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "[\"kling\"]",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcElementResponse": {
+      "document": "CreateAigcElement返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "1429096434393178112",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "elem_c49a7c2f-d440-4e16-b727-2064e8fb44a4",
+          "member": "string",
+          "name": "ElementId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "pending",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "[\"kling\"]",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "2026-03-27T21:19:01+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAigcElementRequest": {
+      "document": "DeleteAigcElement请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e",
+          "member": "string",
+          "name": "ElementId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAigcElementResponse": {
+      "document": "DeleteAigcElement返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e",
+          "member": "string",
+          "name": "ElementId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "true",
+          "member": "bool",
+          "name": "Deleted",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcElementRequest": {
+      "document": "DescribeAigcElement请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e",
+          "member": "string",
+          "name": "ElementId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcElementResponse": {
+      "document": "DescribeAigcElement返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主体名称</p>",
+          "example": "xincheng_0",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体id</p>",
+          "example": "elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e",
+          "member": "string",
+          "name": "ElementId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体描述</p>",
+          "example": "这是我的一个主体测试",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体参考方式</p><p>枚举值：</p><ul><li>video_refer： 视频角色主体</li><li>image_refer： 多图主体</li></ul>",
+          "example": "image_refer",
+          "member": "string",
+          "name": "ReferenceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>pending： 执行中</li><li>failed： 任务失败</li><li>succeed： 任务成功</li></ul>",
+          "example": "succeed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>厂商列表</p>",
+          "example": "[\"kling\"]",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体参考图，可通过多张图片设定主体及其细节</p>",
+          "example": "无",
+          "member": "ElementImageList",
+          "name": "ElementImageList",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体参考视频，可通过视频设定主体及其细节</p>",
+          "example": "[\"https://cos.ap-guangzhou.tencentcos.cn/input/251197765/3f316138-fa8c-4f2d-90f9-ad766e200503_1774581810_0.mp4\"]",
+          "member": "string",
+          "name": "VideoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>为主体配置标签，一个主体可以配置多个标签</p>",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>厂商聚合字段</p>",
+          "example": "无",
+          "member": "ProviderDetail",
+          "name": "ProviderDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-03-27T21:21:35+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-03-27T21:21:39+08:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2012,6 +2358,34 @@
       ],
       "usage": "both"
     },
+    "ElementImageList": {
+      "document": "主体正面图 参考图列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主体参考图</p>",
+          "example": "无",
+          "member": "ReferImageItem",
+          "name": "ReferImages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体主图</p>",
+          "example": "https://cos-internal.ap-guangzhou.tencentcos.cn/82fe54a8-4ebf-4407-b64d-56e675f93d5d.jpeg",
+          "member": "string",
+          "name": "FrontalImage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExtraParam": {
       "document": "扩展字段。",
       "members": [
@@ -2349,6 +2723,62 @@
           "example": "5",
           "member": "string",
           "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProviderDetail": {
+      "document": "ProviderDetail",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>供应商详情</p>",
+          "example": "kling",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "pending",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "SUCCEED",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReferImageItem": {
+      "document": "生成视频时所引用的音色",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片地址</p>",
+          "example": "https://vcg.cos.ap-guangzhou.tencentcos.cn/1.png",
+          "member": "string",
+          "name": "ImageUrl",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -4662,6 +5092,23 @@
         }
       ],
       "type": "object"
+    },
+    "TagList": {
+      "document": "生成视频时所引用的音色",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>tag标签</p>",
+          "example": "o_102",
+          "member": "string",
+          "name": "TagId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Trajectory": {
       "document": "运动轨迹坐标序列",

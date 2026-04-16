@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AsyncTextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AsyncTextToSpeech\n<公共请求参数>\n\n{\n    \"Text\": \"你好\",\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"SdkAppId\": 1600019222,\n    \"AlignmentMode\": 1,\n    \"LanguageCode\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"3d5f26c1-**9*-*f***883e-b543337b8eab\",\n        \"RequestId\": \"dcbccd58-c660-4546-b4fa-522d9223556e\"\n    }\n}",
+        "title": "开启异步任务"
+      }
+    ],
     "ControlAIConversation": [
       {
         "document": "当您想让机器人主动播报文本的时候，可以使用该接口",
@@ -126,6 +134,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"v2_20250424_n3cHsk5kBFa09E5SEa7I_fKIxuKqZjiUsmteLPc2uXoTxpgc6F4TsigwJ1dH9SakK24SdUhLW86jhofgDHERZUHhCa0FJvu4Qgod\"\n}",
         "output": "{\n    \"Response\": {\n        \"StartTime\": \"2025-04-24 16:17:56.931660\",\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"287d3c69-246a-4e6d-bb12-bba573177512\"\n    }\n}",
         "title": "样例"
+      }
+    ],
+    "DescribeAsyncTextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncTextToSpeech\n<公共请求参数>\n\n{\n    \"TaskId\": \"86edb448-dc2f-4853-be31-8f05c7d3f6fe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioDownloadUrl\": \"https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/result.m****-sign-algorithm=sha1&************************************KhndC&q-**gn-time=1775910013%3B1775942413&q-key-time=1775910013%3B1775942413&q-header-list=host&q-url-param-list=&q-signature=6618730ea4953adf7912d4d5188eeff0ee56cfa9\",\n        \"Status\": \"Success\",\n        \"SubtitleDownloadUrl\": \"https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/subtitle.json?******-algorithm=sha1&******************U***hphJfkY5MM6Zlg***dC&q-sign-time=1775910013%3B1775942413&q-key-time=1775910013%3B1775942413&q-header-list=host&q-url-param-list=&q-signature=32d59684e4cb9884c38b8d32f1b1dfbfac1ae42f\",\n        \"RequestId\": \"ec74e0f9-1921-4781-87d3-b724d9b9a1d1\"\n    }\n}",
+        "title": "查询例子"
       }
     ],
     "DescribeCallDetailInfo": [
@@ -559,17 +575,23 @@
     "TextToSpeech": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeech\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 1466000000,\n    \"Voice\": {\n        \"VoiceId\": \"256\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Audio\": \"inxxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "开始一个语音合成"
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeech\n<公共请求参数>\n\n{\n    \"Text\": \"你好\",\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"SdkAppId\": 160001234,\n    \"AlignmentMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Alignments\": [\n            {\n                \"TextBegin\": 0,\n                \"TextEnd\": 2,\n                \"TimeBeginMs\": 0,\n                \"TimeEndMs\": 760\n            }\n        ],\n        \"Audio\": \"base64audio\",\n        \"RequestId\": \"9b9b5959-8d17-46f2-a216-8a0ce219f92f\"\n    }\n}",
+        "title": "语音合成"
       }
     ],
     "TextToSpeechSSE": [
       {
-        "document": "启动一个SSE流式语音合成，注意在解析时，音频的Type为chunk，其他的Type 非音频",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"256\"\n    }\n}",
-        "output": "data: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_0\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 0, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_1\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 1, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_2\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 2, \"IsEnd\": true}",
-        "title": "启动一个SSE流式语音合成"
+        "document": "注意sse接口需要使用trtc.ai.tencentcloudapi.com域名，否则会调用接口失败",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"AlignmentMode\": 1\n}",
+        "output": "data: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_0\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 0, \"IsEnd\": false}\n\ndata: {\"Type\": \"error\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"Error\": {\"Code\": \"InternalError\", \"Message\": \"internal error message\"}}",
+        "title": "中途合成出错"
+      },
+      {
+        "document": "注意sse接口需要使用trtc.ai.tencentcloudapi.com域名，否则会调用接口失败",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"AlignmentMode\": 1\n}",
+        "output": "data: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_0\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 0, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_1\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 1, \"Alignments\": [{\"TimeBeginMs\": 0, \"TimeEndMs\": 600, \"TextBegin\": 0, \"TextEnd\": 2}, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_2\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 2, \"IsEnd\": true}",
+        "title": "流式语音合成"
       }
     ],
     "UpdateAIConversation": [

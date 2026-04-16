@@ -630,6 +630,13 @@
       "output": "DescribeContentReviewTemplatesResponse",
       "status": "online"
     },
+    "DescribeDesignTask": {
+      "document": "查询配音相关任务（异步）结果",
+      "input": "DescribeDesignTaskRequest",
+      "name": "查询音色设计任务结果",
+      "output": "DescribeDesignTaskResponse",
+      "status": "online"
+    },
     "DescribeGroupAttachFlowsById": {
       "document": "根据安全组反差关联的Flow信息。",
       "input": "DescribeGroupAttachFlowsByIdRequest",
@@ -1013,6 +1020,13 @@
       "input": "DescribeWorkflowsRequest",
       "name": "获取工作流列表",
       "output": "DescribeWorkflowsResponse",
+      "status": "online"
+    },
+    "DesignVoiceAsync": {
+      "document": "音色设计，根据prompt生成音色ID",
+      "input": "DesignVoiceAsyncRequest",
+      "name": "音色设计-异步",
+      "output": "DesignVoiceAsyncResponse",
       "status": "online"
     },
     "DisableSchedule": {
@@ -17178,6 +17192,83 @@
       ],
       "type": "object"
     },
+    "DescribeDesignTaskRequest": {
+      "document": "DescribeDesignTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "1300057393-DesignVoiceAsync-88434eca-1484-4fcc-8589-e98027fc174e",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDesignTaskResponse": {
+      "document": "DescribeDesignTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>success： 成功</li><li>fail： 失败</li><li>processing： 处理中</li></ul>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1_kuuEfwa/ADAozD26I/1sVcQgNNNj0egjBFWrvjnyqiaXzF8qfejCmOlUQc8n5Ss+CoRyMoYOrD3o9E0=",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"name\": \"甜美女声\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEvent": {
       "document": "查询Event的配置信息。",
       "members": [
@@ -22503,6 +22594,72 @@
           "name": "WorkflowInfoSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DesignVoiceAsyncRequest": {
+      "document": "DesignVoiceAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音色描述</p>",
+          "example": "电影解说男声，抑扬顿挫，低沉富有磁性",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，json字符串</p>",
+          "example": "{\n    \"promptEnhance\": true\n}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DesignVoiceAsyncResponse": {
+      "document": "DesignVoiceAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务id，查询任务时使用</p>",
+          "example": "1300057393-DesignVoiceAsync-f255b8b7-82a7-41e1-8e88-b61e247cc510",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

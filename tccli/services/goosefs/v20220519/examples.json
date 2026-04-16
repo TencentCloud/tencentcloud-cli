@@ -83,9 +83,15 @@
     "CreateLoadTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_********\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"DistributedLoad\",\n        \"Priority\": 5454,\n        \"Description\": \"sdasdasd\",\n        \"MetadataLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/\"\n        },\n        \"DistributedLoadAttrs\": {\n            \"LoadType\": \"LoadByList\",\n            \"LoadByList\": \"cos://**********-**-**********/test.txt\",\n            \"Replica\": \"SingleReplica\"\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"10dda4fd-a28e-4c43-b4cd-e2678571a078\",\n        \"RequestId\": \"d457f4a3-34ba-4c49-a21a-7c5614796596\"\n    }\n}",
-        "title": "创建预热任务"
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x*******\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"DistributedLoad\",\n        \"Priority\": 111,\n        \"Description\": \"LoadTaskTest\",\n        \"DistributedLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/\",\n            \"Replica\": \"SingleReplica\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"32d8680e-fcdb-****-a190-47c140389246\",\n        \"RequestId\": \"7f1b61db-b822-48b2-9004-f5edda11217c\"\n    }\n}",
+        "title": "创建DistributedLoad预热任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x*******\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"MetadataLoad\",\n        \"Priority\": 222,\n        \"Description\": \"LoadTaskTest\",\n        \"MetadataLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/goosefs_path/\"\n        },\n        \"ReportPath\": \"cos://******-bj-**********/\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"c637a3b7-5593-****-b9cc-d65cf0fe2bb2\",\n        \"RequestId\": \"9a3845e3-dc68-468d-8d88-6ccc459e118d\"\n    }\n}",
+        "title": "创建MetadataLoad预热任务"
       }
     ],
     "DeleteCrossVpcSubnetSupportForClientNode": [

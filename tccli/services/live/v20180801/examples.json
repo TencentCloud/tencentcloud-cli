@@ -86,6 +86,14 @@
         "title": "取消示例"
       }
     ],
+    "CloseSourceStream": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=CloseSourceStream\r\n&DomainName=5000.liveplay.myqcloud.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CopyCaster": [
       {
         "document": "",
@@ -1270,6 +1278,14 @@
         "title": "查询某个监播报告"
       }
     ],
+    "DescribeOriginStreamInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginStreamInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c8e1724-8e56-4ae0-ab6e-2cef6e3c3a20\"\n    }\n}",
+        "title": "获取直播源站配置信息"
+      }
+    ],
     "DescribePlayErrorCodeDetailInfoList": [
       {
         "document": "",
@@ -1652,6 +1668,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Profile\": \"main\",\n    \"AudioBitrate\": \"600\",\n    \"Rotate\": \"0\",\n    \"Description\": \"transcode\",\n    \"VideoBitrate\": \"1500\",\n    \"Vcodec\": \"h265\",\n    \"Height\": \"240\",\n    \"Width\": \"250\",\n    \"NeedAudio\": \"1\",\n    \"FpsToOrig\": \"0\",\n    \"Fps\": \"30\",\n    \"TemplateId\": \"1001\",\n    \"BitrateToOrig\": \"0\",\n    \"HeightToOrig\": \"0\",\n    \"NeedVideo\": \"1\",\n    \"Gop\": \"3\",\n    \"Acodec\": \"aac\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifyOriginStreamInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginStreamInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b73d79c-2726-4906-810c-7ad2f2c6f76e\"\n    }\n}",
+        "title": "ModifyOriginStreamInfo"
       }
     ],
     "ModifyPullStreamConfig": [

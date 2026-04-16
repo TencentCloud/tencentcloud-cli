@@ -789,7 +789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "左上角X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>左上角X坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "X",
@@ -800,7 +800,7 @@
         },
         {
           "disabled": false,
-          "document": "左上角Y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>左上角Y坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Y",
@@ -811,7 +811,7 @@
         },
         {
           "disabled": false,
-          "document": "方框宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>方框宽度<br>单位为 px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Width",
@@ -822,7 +822,7 @@
         },
         {
           "disabled": false,
-          "document": "方框高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>方框高度<br>单位为 px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Height",

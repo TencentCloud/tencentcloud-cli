@@ -70,6 +70,13 @@
       "output": "CancelCommonMixStreamResponse",
       "status": "online"
     },
+    "CloseSourceStream": {
+      "document": "用于关闭回源客户源站功能",
+      "input": "CloseSourceStreamRequest",
+      "name": "关闭回源客户源站",
+      "output": "CloseSourceStreamResponse",
+      "status": "online"
+    },
     "CopyCaster": {
       "document": "该接口用来复制导播台配置",
       "input": "CopyCasterRequest",
@@ -1085,6 +1092,13 @@
       "output": "DescribeMonitorReportResponse",
       "status": "online"
     },
+    "DescribeOriginStreamInfo": {
+      "document": "获取直播源站配置信息，支持直播原站格式。",
+      "input": "DescribeOriginStreamInfoRequest",
+      "name": "获取直播源站配置信息",
+      "output": "DescribeOriginStreamInfoResponse",
+      "status": "online"
+    },
     "DescribePlayErrorCodeDetailInfoList": {
       "document": "该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。\n查询下行播放错误码信息，某段时间内1分钟粒度的各http错误码出现的次数，包括4xx，5xx。",
       "input": "DescribePlayErrorCodeDetailInfoListRequest",
@@ -1419,6 +1433,13 @@
       "input": "ModifyLiveTranscodeTemplateRequest",
       "name": "修改转码模板配置",
       "output": "ModifyLiveTranscodeTemplateResponse",
+      "status": "online"
+    },
+    "ModifyOriginStreamInfo": {
+      "document": "变更直播源站配置，支持直播原站格式。",
+      "input": "ModifyOriginStreamInfoRequest",
+      "name": "变更直播源站配置",
+      "output": "ModifyOriginStreamInfoResponse",
       "status": "online"
     },
     "ModifyPullStreamConfig": {
@@ -4662,6 +4683,33 @@
         }
       ],
       "usage": "out"
+    },
+    "CloseSourceStreamRequest": {
+      "document": "CloseSourceStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "播放域名。",
+          "example": "",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseSourceStreamResponse": {
+      "document": "CloseSourceStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CloudEffectInfo": {
       "document": "云端特效信息。",
@@ -14032,6 +14080,33 @@
       ],
       "type": "object"
     },
+    "DescribeOriginStreamInfoRequest": {
+      "document": "DescribeOriginStreamInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOriginStreamInfoResponse": {
+      "document": "DescribeOriginStreamInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存格式规则。 \n0：默认格式。\n1：云直播源站格式。\n当 OriginStreamPlayType 为 customization 时候生效。",
+          "example": "1",
+          "member": "int64",
+          "name": "CacheFormatRule",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePlayErrorCodeDetailInfoListRequest": {
       "document": "DescribePlayErrorCodeDetailInfoList请求参数结构体",
       "members": [
@@ -19764,6 +19839,23 @@
     },
     "ModifyLiveTranscodeTemplateResponse": {
       "document": "ModifyLiveTranscodeTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOriginStreamInfoRequest": {
+      "document": "ModifyOriginStreamInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyOriginStreamInfoResponse": {
+      "document": "ModifyOriginStreamInfo返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

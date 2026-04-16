@@ -158,6 +158,14 @@
         "title": "查询同步任务校验结果"
       }
     ],
+    "DescribeCompareDiffItems": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompareDiffItems\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-test\",\n    \"CompareTaskId\": \"dts-test-cmp-1234\",\n    \"ChunkId\": 2,\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Items\": [\n            {\n                \"DBName\": \"db1\",\n                \"TableName\": \"t1\",\n                \"ChunkId\": 0,\n                \"Identifier\": \"pk\",\n                \"DiffType\": \"data\",\n                \"SchemaInfo\": [\n                    \"c1\"\n                ],\n                \"SrcItem\": [\n                    \"value1\"\n                ],\n                \"DstItem\": [\n                    \"value2\"\n                ],\n                \"FinishedAt\": \"2023-12-19 15:54:18\"\n            }\n        ],\n        \"RequestId\": \"9efd789e-5d6a-4031-b5b8-6d1f031ec614\"\n    }\n}",
+        "title": "查询不一致数据详情信息"
+      }
+    ],
     "DescribeCompareReport": [
       {
         "document": "",
@@ -260,6 +268,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribeReturnable\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\"\n}",
         "output": "{\n    \"Response\": {\n        \"IsReturnable\": true,\n        \"ReturnFailMessage\": \"\",\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "查询订阅实例是否可以退换"
+      }
+    ],
+    "DescribeSyncCompareDiffItems": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSyncCompareDiffItems\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-gfp15owc\",\n    \"CompareTaskId\": \"sync-gfp15owc-cmp-3judx43g\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Items\": [\n            {\n                \"DBName\": \"db1\",\n                \"TableName\": \"t1\",\n                \"ChunkId\": 0,\n                \"Identifier\": \"pk\",\n                \"DiffType\": \"data\",\n                \"SchemaInfo\": [\n                    \"c1\"\n                ],\n                \"SrcItem\": [\n                    \"value1\"\n                ],\n                \"DstItem\": [\n                    \"value2\"\n                ],\n                \"FinishedAt\": \"2023-12-19 15:54:18\"\n            }\n        ],\n        \"RequestId\": \"9efd789e-5d6a-4031-b5b8-6d1f031ec614\"\n    }\n}",
+        "title": "查询不一致数据详情信息"
       }
     ],
     "DescribeSyncCompareReport": [

@@ -133,6 +133,13 @@
       "output": "DescribeCheckSyncJobResultResponse",
       "status": "online"
     },
+    "DescribeCompareDiffItems": {
+      "document": "本接口用于查询一致性校验任务中，不一致数据块的详情信息",
+      "input": "DescribeCompareDiffItemsRequest",
+      "name": "查询不一致内容详情",
+      "output": "DescribeCompareDiffItemsResponse",
+      "status": "online"
+    },
     "DescribeCompareReport": {
       "document": "查询一致性校验任务详情",
       "input": "DescribeCompareReportRequest",
@@ -222,6 +229,13 @@
       "input": "DescribeSubscribeReturnableRequest",
       "name": "查询订阅实例是否可以退换",
       "output": "DescribeSubscribeReturnableResponse",
+      "status": "online"
+    },
+    "DescribeSyncCompareDiffItems": {
+      "document": "本接口用于查询一致性校验任务中，不一致数据块的详情信息",
+      "input": "DescribeSyncCompareDiffItemsRequest",
+      "name": "查询同步校验不一致内容详情",
+      "output": "DescribeSyncCompareDiffItemsResponse",
       "status": "online"
     },
     "DescribeSyncCompareReport": {
@@ -3681,6 +3695,116 @@
       ],
       "type": "object"
     },
+    "DescribeCompareDiffItemsRequest": {
+      "document": "DescribeCompareDiffItems请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移任务 Id",
+          "example": "dts-test1234",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "校验任务 Id",
+          "example": "dts-test1234-cmp-test1234",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "db1",
+          "member": "string",
+          "name": "DBName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名",
+          "example": "schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表名",
+          "example": "tbl1",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据分块号",
+          "example": "1",
+          "member": "int64",
+          "name": "ChunkId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条件，查询结果返回条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条件，查询的起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompareDiffItemsResponse": {
+      "document": "DescribeCompareDiffItems返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果的数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffChunkItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCompareReportRequest": {
       "document": "DescribeCompareReport请求参数结构体",
       "members": [
@@ -4404,7 +4528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID，如：dts-amm1jw5q",
+          "document": "<p>数据迁移任务ID，如：dts-amm1jw5q</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -4413,7 +4537,7 @@
         },
         {
           "disabled": false,
-          "document": "数据迁移任务名称",
+          "document": "<p>数据迁移任务名称</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobName",
@@ -4422,7 +4546,7 @@
         },
         {
           "disabled": false,
-          "document": "数据迁移任务状态，可取值包括：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)",
+          "document": "<p>数据迁移任务状态，可取值包括：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)</p>",
           "example": "[\"running\"]",
           "member": "string",
           "name": "Status",
@@ -4431,7 +4555,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例ID，格式如：cdb-c1nl9rpv",
+          "document": "<p>源实例ID，格式如：cdb-c1nl9rpv</p>",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "SrcInstanceId",
@@ -4440,7 +4564,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例地域，如：ap-guangzhou",
+          "document": "<p>源实例地域，如：ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcRegion",
@@ -4449,7 +4573,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例数据库类型，如：sqlserver,mysql,mongodb,redis,tendis,keewidb,clickhouse,cynosdbmysql,percona,tdsqlpercona,mariadb,tdsqlmysql,postgresql",
+          "document": "<p>源实例数据库类型，如：sqlserver,mysql,mongodb,redis,tendis,keewidb,clickhouse,cynosdbmysql,percona,tdsqlpercona,mariadb,tdsqlmysql,postgresql</p>",
           "example": "[\"mysql\"]",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -4458,7 +4582,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例接入类型，值包括：extranet(外网)、vpncloud(云vpn接入的实例)、dcg(专线接入的实例)、ccn(云联网接入的实例)、cdb(云上cdb实例)、cvm(cvm自建实例)",
+          "document": "<p>源实例接入类型，值包括：extranet(外网)、vpncloud(云vpn接入的实例)、dcg(专线接入的实例)、ccn(云联网接入的实例)、cdb(云上cdb实例)、cvm(cvm自建实例)</p>",
           "example": "[\"cdb\"]",
           "member": "string",
           "name": "SrcAccessType",
@@ -4467,7 +4591,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例ID，格式如：cdb-c1nl9rpv",
+          "document": "<p>目标实例ID，格式如：cdb-c1nl9rpv</p>",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "DstInstanceId",
@@ -4476,7 +4600,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例地域，如：ap-guangzhou",
+          "document": "<p>目标实例地域，如：ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "DstRegion",
@@ -4485,7 +4609,7 @@
         },
         {
           "disabled": false,
-          "document": "目标源实例数据库类型，如：sqlserver,mysql,mongodb,redis,tendis,keewidb,clickhouse,cynosdbmysql,percona,tdsqlpercona,mariadb,tdsqlmysql,postgresql",
+          "document": "<p>目标源实例数据库类型，如：sqlserver,mysql,mongodb,redis,tendis,keewidb,clickhouse,cynosdbmysql,percona,tdsqlpercona,mariadb,tdsqlmysql,postgresql</p>",
           "example": "[\"mysql\"]",
           "member": "string",
           "name": "DstDatabaseType",
@@ -4494,7 +4618,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例接入类型，值包括：extranet(外网)、vpncloud(云vpn接入的实例)、dcg(专线接入的实例)、ccn(云联网接入的实例)、cdb(云上cdb实例)、cvm(cvm自建实例)",
+          "document": "<p>目标实例接入类型，值包括：extranet(外网)、vpncloud(云vpn接入的实例)、dcg(专线接入的实例)、ccn(云联网接入的实例)、cdb(云上cdb实例)、cvm(cvm自建实例)</p>",
           "example": "[\"cdb\"]",
           "member": "string",
           "name": "DstAccessType",
@@ -4503,7 +4627,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行模式，值包括：immediate(立即运行)，timed(定时运行)",
+          "document": "<p>任务运行模式，值包括：immediate(立即运行)，timed(定时运行)</p>",
           "example": "immediate",
           "member": "string",
           "name": "RunMode",
@@ -4512,7 +4636,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，可能取值为asc、desc，默认按照创建时间倒序",
+          "document": "<p>排序方式，可能取值为asc、desc，默认按照创建时间倒序</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderSeq",
@@ -4521,7 +4645,7 @@
         },
         {
           "disabled": false,
-          "document": "返回实例数量，默认20，有效区间[1,100]",
+          "document": "<p>返回实例数量，默认20，有效区间[1,100]</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -4530,7 +4654,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "<p>偏移量，默认为0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4539,7 +4663,7 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤",
+          "document": "<p>标签过滤</p>",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -4554,7 +4678,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务数量",
+          "document": "<p>迁移任务数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -4564,7 +4688,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移任务列表",
+          "document": "<p>迁移任务列表</p>",
           "example": "无",
           "member": "JobItem",
           "name": "JobList",
@@ -5350,6 +5474,116 @@
       ],
       "type": "object"
     },
+    "DescribeSyncCompareDiffItemsRequest": {
+      "document": "DescribeSyncCompareDiffItems请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移任务 Id",
+          "example": "dts-test1234",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "校验任务 Id",
+          "example": "dts-test1234-cmp-test1234",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "db1",
+          "member": "string",
+          "name": "DBName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名",
+          "example": "schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表名",
+          "example": "tbl1",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据分块号",
+          "example": "1",
+          "member": "int64",
+          "name": "ChunkId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条件，查询结果返回条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条件，查询的起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncCompareDiffItemsResponse": {
+      "document": "DescribeSyncCompareDiffItems返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果的数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffChunkItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSyncCompareReportRequest": {
       "document": "DescribeSyncCompareReport请求参数结构体",
       "members": [
@@ -5898,6 +6132,112 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DiffChunkItem": {
+      "document": "数据块内不一致数据的详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "db1",
+          "member": "string",
+          "name": "DBName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "schema名",
+          "example": "schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tbl1",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分块号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ChunkId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据标识符，比如主键信息等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "Identifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "srcLack",
+          "member": "string",
+          "name": "DiffType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表结构信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"id\",\"name\"]",
+          "member": "string",
+          "name": "SchemaInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\",\"dts\"]",
+          "member": "string",
+          "name": "SrcItem",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2\",\"sync\"]",
+          "member": "string",
+          "name": "DstItem",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-31 10:00:00",
+          "member": "string",
+          "name": "FinishedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7728,7 +8068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移对象选项，需要告知迁移服务迁移哪些库表对象",
+          "document": "<p>迁移对象选项，需要告知迁移服务迁移哪些库表对象</p>",
           "example": "无",
           "member": "DatabaseTableObject",
           "name": "DatabaseTable",
@@ -7739,7 +8079,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移类型，full(全量迁移)，structure(结构迁移)，fullAndIncrement(全量加增量迁移)， 默认为fullAndIncrement;注意redis,keewidb产品只支持fullAndIncrement类型。",
+          "document": "<p>迁移类型，full(全量迁移)，structure(结构迁移)，fullAndIncrement(全量加增量迁移)， 默认为fullAndIncrement;注意redis,keewidb产品只支持fullAndIncrement类型。</p>",
           "example": "fullAndIncrement",
           "member": "string",
           "name": "MigrateType",
@@ -7750,7 +8090,7 @@
         },
         {
           "disabled": false,
-          "document": "数据一致性校验选项， 默认为不开启一致性校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据一致性校验选项， 默认为不开启一致性校验</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConsistencyOption",
           "name": "Consistency",
@@ -7761,7 +8101,7 @@
         },
         {
           "disabled": false,
-          "document": "是否迁移账号，true(迁移账号)，false(不迁移账号)",
+          "document": "<p>是否迁移账号，true(迁移账号)，false(不迁移账号)</p>",
           "example": "false",
           "member": "bool",
           "name": "IsMigrateAccount",
@@ -7772,7 +8112,7 @@
         },
         {
           "disabled": false,
-          "document": "是否用源库Root账户覆盖目标库，值包括：false-不覆盖，true-覆盖，选择库表或者结构迁移时应该为false，注意只对旧版迁移有效",
+          "document": "<p>是否用源库Root账户覆盖目标库，值包括：false-不覆盖，true-覆盖，选择库表或者结构迁移时应该为false，注意只对旧版迁移有效</p>",
           "example": "false",
           "member": "bool",
           "name": "IsOverrideRoot",
@@ -7783,7 +8123,7 @@
         },
         {
           "disabled": false,
-          "document": "是否在迁移时设置目标库只读(仅对mysql有效)，true(设置只读)、false(不设置只读，默认此值)",
+          "document": "<p>是否在迁移时设置目标库只读(仅对mysql有效)，true(设置只读)、false(不设置只读，默认此值)</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDstReadOnly",
@@ -7794,7 +8134,7 @@
         },
         {
           "disabled": false,
-          "document": "其他附加信息，对于特定库可设置额外参数，Redis可定义如下的参数: \n[\"DstWriteMode\":normal, \t目标库写入模式,可取值clearData(清空目标实例数据)、overwrite(以覆盖写的方式执行任务)、normal(要求目标端为空，否则校验不通过) ，不显示指定默认以覆盖写的方式执行任务\t\"IsDstReadOnly\":true, \t是否在迁移时设置目标库只读,true(设置只读)、false(不设置只读) \t\"ClientOutputBufferHardLimit\":512, \t从机缓冲区的硬性容量限制(MB) \t\"ClientOutputBufferSoftLimit\":512, \t从机缓冲区的软性容量限制(MB) \t\"ClientOutputBufferPersistTime\":60, 从机缓冲区的软性限制持续时间(秒) \t\"ReplBacklogSize\":512, \t环形缓冲区容量限制(MB) \t\"ReplTimeout\":120，\t\t复制超时时间(秒) \t\"IsExpireKey\":\"true\",过期key自动淘汰]",
+          "document": "<p>其他附加信息，对于特定库可设置额外参数，Redis可定义如下的参数:<br>[&quot;DstWriteMode&quot;:normal,     目标库写入模式,可取值clearData(清空目标实例数据)、overwrite(以覆盖写的方式执行任务)、normal(要求目标端为空，否则校验不通过) ，不显示指定默认以覆盖写的方式执行任务    &quot;IsDstReadOnly&quot;:true,     是否在迁移时设置目标库只读,true(设置只读)、false(不设置只读)     &quot;ClientOutputBufferHardLimit&quot;:512,     从机缓冲区的硬性容量限制(MB)     &quot;ClientOutputBufferSoftLimit&quot;:512,     从机缓冲区的软性容量限制(MB)     &quot;ClientOutputBufferPersistTime&quot;:60, 从机缓冲区的软性限制持续时间(秒)     &quot;ReplBacklogSize&quot;:512,     环形缓冲区容量限制(MB)     &quot;ReplTimeout&quot;:120，        复制超时时间(秒)     &quot;IsExpireKey&quot;:&quot;true&quot;,过期key自动淘汰]</p>",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
@@ -7805,7 +8145,7 @@
         },
         {
           "disabled": false,
-          "document": "pgsql迁移分类：logical(逻辑迁移)、physical(物理迁移)",
+          "document": "<p>pgsql迁移分类：logical(逻辑迁移)、physical(物理迁移)</p>",
           "example": "logical",
           "member": "string",
           "name": "MigrateWay",

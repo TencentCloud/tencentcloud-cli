@@ -1155,8 +1155,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
-          "example": "g_cvm_********",
+          "document": "<p>集群 ID</p>",
+          "example": "g_cvm_x*******",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1164,7 +1164,7 @@
         },
         {
           "disabled": false,
-          "document": "创建预热任务参数",
+          "document": "<p>创建预热任务参数</p>",
           "example": "无",
           "member": "LoadTaskCreationAttrs",
           "name": "LoadTaskCreationAttrs",
@@ -1179,8 +1179,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "预热任务 ID",
-          "example": "10dda4fd-a28e-4c43-b4cd-e2678571a078",
+          "document": "<p>预热任务 ID</p>",
+          "example": "32d8680e-fcdb-****-a190-47c140389246",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
