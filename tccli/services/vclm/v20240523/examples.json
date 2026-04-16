@@ -8,6 +8,30 @@
         "title": "检测输入图成功案例"
       }
     ],
+    "CreateAigcElement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcElement\n<公共请求参数>\n\n{\n    \"Name\": \"xincheng_0\",\n    \"Description\": \"这是我的一个主体测试\",\n    \"ReferenceType\": \"image_refer\",\n    \"ElementImageList\": {\n        \"ReferImages\": [\n            {\n                \"ImageUrl\": \"https://*************************cos-internal.ap-guangzhou.tencentcos.cn**********/82fe54a8-4ebf-4407-b64d-56e675f93d5d.jpeg*****************************************************************************************************************************************************************************************************************************\"\n            }\n        ],\n        \"FrontalImage\": \"https://*************************cos-internal.ap-guangzhou.tencentcos.cn**********/82fe54a8-4ebf-4407-b64d-56e675f93d5d.jpeg*****************************************************************************************************************************************************************************************************************************\"\n    },\n    \"Provider\": [\n        \"kling\"\n    ],\n    \"TagList\": [\n        {\n            \"TagId\": \"o_102\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreatedAt\": \"2026-03-27T21:19:01+08:00\",\n        \"ElementId\": \"elem_c49a7c2f-d440-4e16-b727-2064e8fb44a4\",\n        \"JobId\": \"1429096434393178112\",\n        \"Provider\": [\n            \"kling\"\n        ],\n        \"Status\": \"pending\",\n        \"RequestId\": \"c49a7c2f-d440-4e16-b727-2064e8fb44a4\"\n    }\n}",
+        "title": "创建主体"
+      }
+    ],
+    "DeleteAigcElement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAigcElement\n<公共请求参数>\n\n{\n    \"ElementId\": \"elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deleted\": true,\n        \"ElementId\": \"elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e\",\n        \"RequestId\": \"d75b99a4-a79c-4d61-ac67-85893bcdbe3c\"\n    }\n}",
+        "title": "删除主体"
+      }
+    ],
+    "DescribeAigcElement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcElement\n<公共请求参数>\n\n{\n    \"ElementId\": \"elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreatedAt\": \"2026-03-27T21:21:35+08:00\",\n        \"Description\": \"这是我的一个主体测试\",\n        \"ElementId\": \"elem_b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e\",\n        \"ElementImageList\": {\n            \"FrontalImage\": \"https://********************cos.ap-guangzhou.tencentcos.cn/material/input/1259088371/b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e_1774617695_0.jpg******************************************************************************************************************************************************************************************************************b407db7759c28a8\",\n            \"ReferImages\": [\n                {\n                    \"ImageUrl\": \"https://********************cos.ap-guangzhou.tencentcos.cn/material/input/1259088371/b9cc80f7-c9aa-41a5-85a6-49c4f0f97f2e_1774617695_1.jpg******************************************************************************************************************************************************************************************************************38c6535a1490d19\"\n                }\n            ]\n        },\n        \"Name\": \"xincheng_0\",\n        \"Provider\": [\n            \"kling\"\n        ],\n        \"ProviderDetails\": [\n            {\n                \"ErrorMessage\": \"\",\n                \"Provider\": \"kling\",\n                \"Status\": \"succeed\"\n            }\n        ],\n        \"ReferenceType\": \"image_refer\",\n        \"Status\": \"succeed\",\n        \"TagList\": [\n            {\n                \"TagId\": \"o_102\"\n            }\n        ],\n        \"UpdatedAt\": \"2026-03-27T21:21:39+08:00\",\n        \"VideoList\": [],\n        \"RequestId\": \"9eec7037-8458-40a3-a31b-536e7c377487\"\n    }\n}",
+        "title": "查询主体"
+      }
+    ],
     "DescribeAigcVideoJob": [
       {
         "document": "",

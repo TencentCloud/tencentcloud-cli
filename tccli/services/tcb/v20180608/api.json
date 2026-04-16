@@ -252,6 +252,13 @@
       "output": "DescribeEnvAccountCircleResponse",
       "status": "online"
     },
+    "DescribeEnvInfoInner": {
+      "document": "查询环境详细信息",
+      "input": "DescribeEnvInfoInnerRequest",
+      "name": "查询环境详情（对内接口）",
+      "output": "DescribeEnvInfoInnerResponse",
+      "status": "online"
+    },
     "DescribeEnvLimit": {
       "document": "查询环境个数上限",
       "input": "DescribeEnvLimitRequest",
@@ -568,6 +575,72 @@
     "serviceShortName": "tcb"
   },
   "objects": {
+    "AccountInfoInner": {
+      "document": "B端账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>uin</p>",
+          "example": "100007485704",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云 appid</p>",
+          "example": "1257619089",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信 appid</p>",
+          "example": "wx3a9c8da37416766c",
+          "member": "string",
+          "name": "WxAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信开放平台 appid</p>",
+          "example": "wx3a9c8da37416766c",
+          "member": "string",
+          "name": "OpenAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-01-01T12:34:56+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-01-01T12:34:56+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AddProviderRequest": {
       "document": "AddProvider请求参数结构体",
       "members": [
@@ -4426,6 +4499,43 @@
       ],
       "type": "object"
     },
+    "DescribeEnvInfoInnerRequest": {
+      "document": "DescribeEnvInfoInner请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境Id</p>",
+          "example": "goreliu-1-0gvmsp6sd8c22011",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvInfoInnerResponse": {
+      "document": "DescribeEnvInfoInner返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境资源详情</p>",
+          "example": "无",
+          "member": "EnvInfoInner",
+          "name": "EnvInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEnvLimitRequest": {
       "document": "DescribeEnvLimit请求参数结构体",
       "members": [],
@@ -6373,6 +6483,82 @@
           "example": "NORMAL",
           "member": "string",
           "name": "EnvStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvInfoInner": {
+      "document": "EnvInfo，环境详细信息（公司内部版）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境基础信息</p>",
+          "example": "无",
+          "member": "EnvInfo",
+          "name": "EnvBaseInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境计费信息</p>",
+          "example": "无",
+          "member": "EnvBillingInfoItem",
+          "name": "BillingInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境用户信息</p>",
+          "example": "无",
+          "member": "AccountInfoInner",
+          "name": "UserInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境自增 ID</p>",
+          "example": "3170434",
+          "member": "uint64",
+          "name": "Eid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点</p><p>枚举值：</p><ul><li>cn： 国内站</li><li>intl： 国际站</li></ul>",
+          "example": "cn",
+          "member": "string",
+          "name": "SiteFlag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期起始时间</p>",
+          "example": "2026-04-01 00:00:00",
+          "member": "string",
+          "name": "CircleStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期结束时间</p>",
+          "example": "2026-04-30 23:59:59",
+          "member": "string",
+          "name": "CircleEndTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

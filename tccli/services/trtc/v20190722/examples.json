@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AsyncTextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AsyncTextToSpeech\n<公共请求参数>\n\n{\n    \"Text\": \"你好\",\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"SdkAppId\": 1600019222,\n    \"AlignmentMode\": 1,\n    \"LanguageCode\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"3d5f26c1-**9*-*f***883e-b543337b8eab\",\n        \"RequestId\": \"dcbccd58-c660-4546-b4fa-522d9223556e\"\n    }\n}",
+        "title": "开启异步任务"
+      }
+    ],
     "ControlAIConversation": [
       {
         "document": "当您想让机器人主动播报文本的时候，可以使用该接口",
@@ -204,6 +212,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=DescribeAppStatList\n&OrderField=create_time\n&OrderType=0\n&Offset=0\n&Limit=3\n&GmeFlag=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SdkAppInfos\": [\n            {\n                \"Status\": 1,\n                \"LastDayCC\": 1,\n                \"Description\": \"string\",\n                \"HasAccount\": 1,\n                \"InWhiteList\": false,\n                \"CurMonthCC\": 1,\n                \"BizScheme\": 1,\n                \"PrewhiteFlag\": 1,\n                \"AccountMode\": 1,\n                \"Name\": \"string\",\n                \"RegisterFrom\": 1,\n                \"LastDay\": 1,\n                \"BizSubScheme\": 1,\n                \"UiMode\": 0,\n                \"CreateTime\": \"string\",\n                \"CreateTimeStamp\": 123,\n                \"License\": \"string\",\n                \"SubProductCode\": \"string\",\n                \"ID\": 1,\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"string\",\n                        \"TagValue\": \"string\"\n                    }\n                ],\n                \"UsageMode\": [\n                    0,\n                    1,\n                    2\n                ]\n            }\n        ],\n        \"RequestId\": \"string\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "获取用户名下的应用列表"
+      }
+    ],
+    "DescribeAsyncTextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncTextToSpeech\n<公共请求参数>\n\n{\n    \"TaskId\": \"86edb448-dc2f-4853-be31-8f05c7d3f6fe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioDownloadUrl\": \"https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/result.m****-sign-algorithm=sha1&************************************KhndC&q-**gn-time=1775910013%3B1775942413&q-key-time=1775910013%3B1775942413&q-header-list=host&q-url-param-list=&q-signature=6618730ea4953adf7912d4d5188eeff0ee56cfa9\",\n        \"Status\": \"Success\",\n        \"SubtitleDownloadUrl\": \"https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/subtitle.json?******-algorithm=sha1&******************U***hphJfkY5MM6Zlg***dC&q-sign-time=1775910013%3B1775942413&q-key-time=1775910013%3B1775942413&q-header-list=host&q-url-param-list=&q-signature=32d59684e4cb9884c38b8d32f1b1dfbfac1ae42f\",\n        \"RequestId\": \"ec74e0f9-1921-4781-87d3-b724d9b9a1d1\"\n    }\n}",
+        "title": "查询例子"
       }
     ],
     "DescribeCallDetailInfo": [
