@@ -6,7 +6,6 @@ sync_upload 操作：本地 -> COS 同步上传
 - routines: 文件间并发数（同时上传的文件数）
 """
 import os
-import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import (init_cos_client, match_filters, build_cos_key, parse_meta,
@@ -139,8 +138,8 @@ def sync_upload_object(args, parsed_globals):
                 futures = []
                 for file_info, cos_key in tasks:
                     futures.append(executor.submit(_do_upload, file_info, cos_key))
-            for future in as_completed(futures):
-                future.result()
+                for future in as_completed(futures):
+                    future.result()
 
         # 在 COS 上创建空目录标记
         for dir_key in empty_dir_keys:

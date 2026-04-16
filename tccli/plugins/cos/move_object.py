@@ -4,7 +4,6 @@ move 操作：移动/重命名 COS 上的文件
 对齐 coscli cp --move (COS->COS) 命令
 - routines: 文件间并发数（同时移动的文件数）
 """
-import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import init_cos_client, match_filters, build_cos_key, list_all_objects_with_dirs, TransferProgressMonitor

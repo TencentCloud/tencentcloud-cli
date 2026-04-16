@@ -6,7 +6,6 @@ upload 操作：上传本地文件到 COS
 - routines: 文件间并发数（同时上传的文件数）
 """
 import os
-import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import init_cos_client, match_filters, parse_meta, TransferProgressMonitor

@@ -4,7 +4,6 @@ copy 操作：复制 COS 上的文件
 对齐 coscli cp (COS->COS) 命令
 - routines: 文件间并发数（同时复制的文件数）
 """
-import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import init_cos_client, match_filters, parse_meta, build_cos_key, TransferProgressMonitor

@@ -142,8 +142,8 @@ def sync_download_object(args, parsed_globals):
                 futures = []
                 for cos_key, local_file, file_size in tasks:
                     futures.append(executor.submit(_do_download, cos_key, local_file, file_size))
-            for future in as_completed(futures):
-                future.result()
+                for future in as_completed(futures):
+                    future.result()
 
         # 在本地创建 COS 上的空目录
         for local_dir in empty_dirs:
