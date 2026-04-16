@@ -2,6 +2,112 @@
 type: always
 ---
 
+# 规则：项目结构与代码组织
+
+## 目录职责
+
+```
+tccli/plugins/cos/
+├── __init__.py          # 插件入口：_spec 定义（actions/objects）+ 所有函数 import
+├── utils.py             # 工具模块：init_cos_client、TransferProgressMonitor、match_filters 等
+├── upload_object.py     # 上传命令（单文件 + recursive 批量）
+├── download_object.py   # 下载命令（单文件 + recursive 批量）
+├── copy_object.py       # 复制命令（单文件 + recursive 批量）
+├── move_object.py       # 移动命令（= copy + delete）
+├── sync_upload_object.py    # 同步上传（增量比较 + 批量传输）
+├── sync_download_object.py  # 同步下载
+├── sync_copy_object.py      # 同步复制
+├── delete_object.py     # 删除命令（单文件 + recursive 批量）
+├── list_object.py       # 列出对象
+├── head_object.py       # 查询对象元信息
+├── acl_object.py        # ACL 操作（get/put）
+├── tagging_object.py    # 标签操作（get/put/delete）
+├── signurl_object.py    # 生成预签名 URL
+├── create_bucket.py     # 创建存储桶
+└── delete_bucket.py     # 删除存储桶
+```
+
+## 命令文件固定结构
+
+每个 `tccli/plugins/cos/<name>.py` 文件必须按以下顺序组织：
+
+```python
+# -*- coding: utf-8 -*-
+"""
+<command> 操作：<一句话描述>
+对齐 coscli <对应命令> 命令
+"""
+# 1. import 块
+from qcloud_cos import CosServiceError
+from .utils import init_cos_client  # 及其他需要的工具函数
+
+# 2. 命令函数（签名固定）
+def command_name(args, parsed_globals):
+    """函数文档字符串"""
+    client, region = init_cos_client(parsed_globals)
+    # ① 读取必填参数
+    # ② 读取可选参数（带默认值，处理 None）
+    # ③ 参数校验（本地路径存在性等）
+    # ④ 调用 COS SDK
+    # ⑤ 输出结果
+
+# 3. 私有辅助函数（可选，复杂逻辑抽取）
+def _do_single_upload(...):
+    ...
+def _do_batch_upload(...):
+    ...
+```
+
+## `__init__.py` 注册规范
+
+### actions 定义
+
+```python
+"actions": {
+    "<action_key>": {
+        "name": "<命令中文名>",
+        "document": "<命令描述>",
+        "input": "<action_key>Request",
+        "output": "<action_key>Response",
+        "action_caller": <function_name>,  # 直接引用函数对象，不加引号
+    },
+}
+```
+
+### objects 定义
+
+```python
+"objects": {
+    "<action_key>Request": {
+        "members": [
+            {"name": "bucket", "member": "string", "type": "string", "required": True,
+             "document": "存储桶名称，格式如 my-bucket-1250000000"},
+            {"name": "cos_key", "member": "string", "type": "string", "required": True,
+             "document": "<参数说明>"},
+            {"name": "optional_param", "member": "string", "type": "string", "required": False,
+             "document": "<参数说明，包含默认值>"},
+        ],
+    },
+    "<action_key>Response": {
+        "members": [],   # 统一为空列表，输出由函数自行 print
+    },
+}
+```
+
+### 参数类型规范
+
+| 参数类型 | `"type"` 值 | 示例 |
+|---|---|---|
+| 字符串 | `"string"` | `bucket`、`cos_key`、`include` |
+| 整数 | `"integer"` | `thread_num`、`routines`、`part_size` |
+| 布尔值 | `"boolean"` | `recursive`、`force`、`delete_extra` |
+| 浮点数 | `"float"` | `rate_limiting` |
+
+**禁止**在 `_spec["objects"]` 中声明以下全局参数（由 tccli 框架自动注入）：
+`secretId`、`secretKey`、`token`、`region`、`endpoint`、`profile`
+
+---
+
 # 规则：客户端初始化与参数处理
 
 ## 客户端初始化规范

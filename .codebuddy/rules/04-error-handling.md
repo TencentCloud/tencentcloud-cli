@@ -153,3 +153,80 @@ except:
 import logging
 logging.error("...")  # 禁止
 ```
+
+---
+
+# 规则：单元测试规范
+
+## 测试框架
+
+```python
+import pytest
+from unittest.mock import patch, MagicMock
+```
+
+## 核心原则
+
+1. **只 mock `qcloud_cos` SDK 方法和 `init_cos_client`**，禁止产生真实的外部服务调用
+2. `utils.match_filters`、`utils.build_cos_key` 等纯逻辑函数**不需要 mock**，让其正常执行
+3. 每个命令必须覆盖：SDK 调用失败、成功路径、各重要参数组合
+
+## 标准测试结构
+
+```python
+# 标准测试全局参数（不依赖真实凭据）
+MOCK_GLOBALS = {
+    "secretId": "test-secret-id",
+    "secretKey": "test-secret-key",
+    "token": None,
+    "region": "ap-guangzhou",
+    "endpoint": None,
+    "profile": "default",
+}
+
+
+class TestHeadObject:
+
+    @patch("tccli.plugins.cos.head_object.init_cos_client")
+    def test_success(self, mock_init_client):
+        """成功路径"""
+        mock_client = MagicMock()
+        mock_init_client.return_value = (mock_client, "ap-guangzhou")
+        mock_client.head_object.return_value = {"Content-Length": "1024"}
+        args = {"bucket": "test-bucket-1250000000", "cos_key": "test/file.txt"}
+        head_object(args, MOCK_GLOBALS)
+        mock_client.head_object.assert_called_once()
+
+    @patch("tccli.plugins.cos.head_object.init_cos_client")
+    def test_sdk_error(self, mock_init_client):
+        """SDK 调用失败，不抛出异常"""
+        from qcloud_cos import CosServiceError
+        mock_client = MagicMock()
+        mock_init_client.return_value = (mock_client, "ap-guangzhou")
+        mock_client.head_object.side_effect = CosServiceError(
+            "GET", "NoSuchKey", 404, "NoSuchKey", "Object not found", "req-123"
+        )
+        args = {"bucket": "test-bucket-1250000000", "cos_key": "not-exist.txt"}
+        head_object(args, MOCK_GLOBALS)  # 不应抛出异常
+```
+
+## 打桩边界原则
+
+| 调用类型 | 是否 mock | 说明 |
+|---|---|---|
+| `qcloud_cos.CosS3Client` 的所有方法 | ✅ 必须 mock | 会产生真实 HTTP 请求 |
+| `utils.init_cos_client` | ✅ 通常 mock | 避免真实凭据校验 |
+| `utils.match_filters`、`utils.build_cos_key` 等纯逻辑函数 | ❌ 不 mock | 纯本地逻辑，正常执行 |
+| `utils.list_all_objects`、`utils.list_local_files` | 视情况 | 若内部有 SDK 调用则 mock |
+
+## 覆盖率要求
+
+每个命令的测试用例必须覆盖以下所有分支：
+
+| 分支类型 | 是否必须 |
+|---|---|
+| SDK 调用失败（CosServiceError） | ✅ |
+| 成功路径 | ✅ |
+| 各重要可选参数（version_id、storage_class 等） | ✅ |
+| 本地路径不存在（传输命令） | ✅ |
+| 重试逻辑（传输命令） | ✅ |
