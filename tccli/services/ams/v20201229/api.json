@@ -1289,7 +1289,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。",
+          "document": "<p>该字段表示文件访问类型，取值为<strong>URL</strong>（资源链接）和<strong>COS</strong> (腾讯云对象存储)。</p>",
           "example": "URL",
           "member": "string",
           "name": "Type",
@@ -1299,7 +1299,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。",
+          "document": "<p>该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。</p>",
           "example": "http://cms.xxx.xx/5.mp4",
           "member": "string",
           "name": "Url",
@@ -1309,13 +1309,33 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BucketInfo",
           "name": "BucketInfo",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型审核可选输入图片列表</p>",
+          "example": "[\"https://adsfs.heytapimage.com/ads-material-depot/image/aede6f87d2ba8fcd0ff4f5d8d60d078f.jpg\"]",
+          "member": "string",
+          "name": "ImageUrlList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型审核场景下，base64编码的审核要求内容</p>",
+          "example": "772b5p0772d5bu66K6u5pma5LiK55yL77yM5LiA5qyh5oCn55yL5Liq",
+          "member": "string",
+          "name": "TextContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

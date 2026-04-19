@@ -20,6 +20,20 @@
       "name": "事件风险评估",
       "output": "AssessRiskResponse",
       "status": "online"
+    },
+    "DescribeCameraRisk": {
+      "document": "相机指纹检测",
+      "input": "DescribeCameraRiskRequest",
+      "name": "相机指纹检测",
+      "output": "DescribeCameraRiskResponse",
+      "status": "online"
+    },
+    "DescribeDeviceRisk": {
+      "document": "设备风险检测",
+      "input": "DescribeDeviceRiskRequest",
+      "name": "检测设备风险",
+      "output": "DescribeDeviceRiskResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -79,6 +93,530 @@
         }
       ],
       "type": "object"
+    },
+    "CameraRiskBizData": {
+      "document": "相机指纹检测的业务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>慧眼业务场景码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FaceIdBizCode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品模式</p>",
+          "example": "PLUS",
+          "member": "string",
+          "name": "ProductMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件场景码</p>",
+          "example": "1",
+          "member": "string",
+          "name": "SceneCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>交易流水号</p>",
+          "example": "123***90",
+          "member": "string",
+          "name": "FaceIdToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>相机指纹特征Token</p>",
+          "example": "DQAB***G5heEE9",
+          "member": "string",
+          "name": "CamToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标识</p>",
+          "example": "U***d",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户信息</p>",
+          "example": "无",
+          "member": "Customer",
+          "name": "Customer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。</p><p>示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Cust": {
+      "document": "与RCE-PRO约定的定制化参数，K:V 格式的对象数组。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识符",
+          "example": "login_attempt_cnt",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Customer": {
+      "document": "腾讯云客户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户的腾讯云主账号的app id。",
+          "example": "256***201",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户的腾讯云主账号uin。",
+          "example": "1000***5481",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户的腾讯云子账号subuin。若无子账号，该字段请填入uin信息。",
+          "example": "1000***5481",
+          "member": "string",
+          "name": "SubUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户ID。当客户为渠道路径，可填充您系统中维护的客户ID。",
+          "example": "7100***6325",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户名称。当客户为渠道路径，可填充您系统中维护的客户名称。",
+          "example": "腾讯**公司",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户所属行业。枚举值：\n- internet-泛互联网，\n- finance-金融，\n- health-医疗，\n- transportation-交通与物流，\n- education-教育，\n- retail-零售与消费，\n- energy-能源与工业，\n- mobility-汽车与出行，\n- agriculture-农业与食品，\n- government-政务与公共服务，\n- culture-文旅，\n- other-其他。",
+          "example": "internet",
+          "member": "string",
+          "name": "Industry",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeCameraRiskRequest": {
+      "document": "DescribeCameraRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务参数</p>",
+          "example": "无",
+          "member": "CameraRiskBizData",
+          "name": "BizData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCameraRiskResponse": {
+      "document": "DescribeCameraRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务出参</p>",
+          "example": "无",
+          "member": "OutputCameraRiskInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceRiskRequest": {
+      "document": "DescribeDeviceRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务入参信息</p>",
+          "example": "无",
+          "member": "DeviceRiskBizData",
+          "name": "BizData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceRiskResponse": {
+      "document": "DescribeDeviceRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务出参信息</p>",
+          "example": "无",
+          "member": "OutputDeviceRiskInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceRiskBizData": {
+      "document": "设备风险检测的业务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务场景码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "FaceIdBizCode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品模式</p>",
+          "example": "PLUS",
+          "member": "string",
+          "name": "ProductMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件场景码</p>",
+          "example": "1",
+          "member": "string",
+          "name": "SceneCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>交易流水号</p>",
+          "example": "123****890",
+          "member": "string",
+          "name": "FaceIdToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源请求</p>",
+          "example": "faceid",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备风险识别token</p>",
+          "example": "AYIAw******S6bb3lEz",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标识</p>",
+          "example": "U***d",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备IP</p>",
+          "example": "100.***.***.20",
+          "member": "string",
+          "name": "DeviceIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户信息</p>",
+          "example": "无",
+          "member": "Customer",
+          "name": "Customer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。</p><p>示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "OutputCameraRiskInfo": {
+      "document": "检测相机指纹风险的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>决策结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reject",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "RiskScore",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MRF3A2995****E12F1E",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"默认策略\\\":\\\"10000\\\"}",
+          "member": "string",
+          "name": "HitRules",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求序列号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1773974177-****-****-457251643",
+          "member": "string",
+          "name": "Seq",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓展字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"ActionSequence\\\":\\\"1\\\",\\\"EnableCameraRisk\\\":\\\"false\\\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险标签，根据策略命中情况输出一个或者多个风险标签</p>",
+          "example": "无",
+          "member": "RiskLabel",
+          "name": "RiskLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDeviceRiskInfo": {
+      "document": "检测设备风险的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>决策结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "review",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险分数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "RiskScore",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MRF3***2F1E",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>相机指纹参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DQABU***N6WT0=",
+          "member": "string",
+          "name": "CamParam",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中规则id和名称集合</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"默认策略\\\":\\\"10000\\\"}",
+          "member": "string",
+          "name": "HitRules",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求序列号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1776133822-****-****-625117693",
+          "member": "string",
+          "name": "Seq",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓展字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"ActionSequence\\\":\\\"1\\\",\\\"EnableCameraRisk\\\":\\\"false\\\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险标签，根据策略命中情况输出一个或者多个风险标签。</p>",
+          "example": "无",
+          "member": "RiskLabel",
+          "name": "RiskLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RiskLabel": {
+      "document": "风险标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "11004",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险描述",
+          "example": "Bvt_payment_risk",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

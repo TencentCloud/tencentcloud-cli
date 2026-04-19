@@ -15118,6 +15118,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置扩展信息",
+          "example": "",
+          "member": "Extensions",
+          "name": "Extensions",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -28997,6 +29008,23 @@
       ],
       "usage": "out"
     },
+    "Extensions": {
+      "document": "配置项扩展字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "gitConf对应的auth状态，0-不存在，1-存在",
+          "example": "",
+          "member": "string",
+          "name": "AuthStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FailureEntry": {
       "document": "catalog授权workspace权限错误详情",
       "members": [
@@ -40047,6 +40075,16 @@
           "name": "Config",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "ConfigItem",
+          "name": "ConfigItems",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

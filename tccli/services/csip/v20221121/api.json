@@ -19359,7 +19359,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "首次发现时间",
+          "document": "<p>首次发现时间</p>",
           "example": "2025-01-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -19369,7 +19369,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-01-01 12:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -19379,7 +19379,7 @@
         },
         {
           "disabled": false,
-          "document": "风险状态",
+          "document": "<p>风险状态</p>",
           "example": "0",
           "member": "int64",
           "name": "RiskStatus",
@@ -19389,7 +19389,7 @@
         },
         {
           "disabled": false,
-          "document": "风险内容",
+          "document": "<p>风险内容</p>",
           "example": "风险配置内容",
           "member": "string",
           "name": "RiskContent",
@@ -19399,7 +19399,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商",
+          "document": "<p>云厂商</p>",
           "example": "tencent",
           "member": "string",
           "name": "Provider",
@@ -19409,7 +19409,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商名称",
+          "document": "<p>云厂商名称</p>",
           "example": "腾讯云",
           "member": "string",
           "name": "ProviderName",
@@ -19419,7 +19419,7 @@
         },
         {
           "disabled": false,
-          "document": "云账号",
+          "document": "<p>云账号</p>",
           "example": "102787547",
           "member": "string",
           "name": "CloudAccountId",
@@ -19429,7 +19429,7 @@
         },
         {
           "disabled": false,
-          "document": "云账号名称",
+          "document": "<p>云账号名称</p>",
           "example": "声声乌龙",
           "member": "string",
           "name": "CloudAccountName",
@@ -19439,7 +19439,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xs989xs",
           "member": "string",
           "name": "InstanceId",
@@ -19449,7 +19449,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "AI测试",
           "member": "string",
           "name": "InstanceName",
@@ -19459,7 +19459,7 @@
         },
         {
           "disabled": false,
-          "document": "风险ID",
+          "document": "<p>风险ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "RiskId",
@@ -19469,7 +19469,7 @@
         },
         {
           "disabled": false,
-          "document": "风险规则ID",
+          "document": "<p>风险规则ID</p>",
           "example": "tc_001",
           "member": "string",
           "name": "RiskRuleId",
@@ -19479,7 +19479,7 @@
         },
         {
           "disabled": false,
-          "document": "风险验证状态",
+          "document": "<p>风险验证状态</p>",
           "example": "running",
           "member": "string",
           "name": "CheckStatus",
@@ -19489,8 +19489,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>用户AppID</p>",
+          "example": "13097511058",
           "member": "uint64",
           "name": "AppID",
           "output_required": false,
