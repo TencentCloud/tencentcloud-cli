@@ -6461,7 +6461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤器的名称",
+          "document": "<p>过滤器的名称</p>",
           "example": "tag-key",
           "member": "string",
           "name": "Name",
@@ -6470,7 +6470,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器的值数组",
+          "document": "<p>过滤器的值数组</p>",
           "example": "[\"tke-clusterId\"]",
           "member": "string",
           "name": "Values",

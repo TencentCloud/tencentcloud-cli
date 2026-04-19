@@ -5228,7 +5228,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "my-prom-instance",
           "member": "string",
           "name": "InstanceName",
@@ -5237,7 +5237,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)",
+          "document": "<p>VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)</p>",
           "example": "vpc-345xdef",
           "member": "string",
           "name": "VpcId",
@@ -5246,7 +5246,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID(可通过 vpc:DescribeSubnets 接口获取)",
+          "document": "<p>子网 ID(可通过 vpc:DescribeSubnets 接口获取)</p>",
           "example": "subnet-axxersx",
           "member": "string",
           "name": "SubnetId",
@@ -5255,7 +5255,7 @@
         },
         {
           "disabled": false,
-          "document": "数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一",
+          "document": "<p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>",
           "example": "30",
           "member": "int64",
           "name": "DataRetentionTime",
@@ -5264,7 +5264,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区(与子网同可用区)",
+          "document": "<p>可用区(与子网同可用区)</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -5273,7 +5273,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的标签",
+          "document": "<p>实例的标签</p>",
           "example": "无",
           "member": "PrometheusTag",
           "name": "TagSpecification",
@@ -5282,12 +5282,21 @@
         },
         {
           "disabled": false,
-          "document": "需要关联的 Grafana 实例",
+          "document": "<p>需要关联的 Grafana 实例</p>",
           "example": "grafana-xxxx",
           "member": "string",
           "name": "GrafanaInstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>",
+          "example": "无",
+          "member": "PrometheusRuleKV",
+          "name": "InstanceAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5297,7 +5306,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "prom-3xz2asxa",
           "member": "string",
           "name": "InstanceId",
@@ -17517,7 +17526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "prom-2rsas2",
           "member": "string",
           "name": "InstanceId",
@@ -17526,7 +17535,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "my-prom-gg",
           "member": "string",
           "name": "InstanceName",
@@ -17535,12 +17544,21 @@
         },
         {
           "disabled": false,
-          "document": "数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一",
+          "document": "<p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>",
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>",
+          "example": "无",
+          "member": "PrometheusRuleKV",
+          "name": "InstanceAttributes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -19450,7 +19468,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "prom-123456",
           "member": "string",
           "name": "InstanceId",
@@ -19460,7 +19478,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
@@ -19470,7 +19488,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：\n<ul>\n<li>2：包年包月</li>\n<li>3：按量</li>\n</ul>",
+          "document": "<p>实例计费模式。取值范围：</p><ul><li>2：包年包月</li><li>3：按量</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "InstanceChargeType",
@@ -19480,7 +19498,7 @@
         },
         {
           "disabled": false,
-          "document": "地域 ID",
+          "document": "<p>地域 ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -19490,7 +19508,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -19500,7 +19518,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
+          "document": "<p>VPC ID</p>",
           "example": "vpc-123456",
           "member": "string",
           "name": "VpcId",
@@ -19510,7 +19528,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID",
+          "document": "<p>子网 ID</p>",
           "example": "subnet-123456",
           "member": "string",
           "name": "SubnetId",
@@ -19520,7 +19538,7 @@
         },
         {
           "disabled": false,
-          "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储周期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
@@ -19530,7 +19548,7 @@
         },
         {
           "disabled": false,
-          "document": "实例业务状态。取值范围：\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重建中</li>\n<li>5：销毁中</li>\n<li>6：已停服</li>\n<li>8：欠费停服中</li>\n<li>9：欠费已停服</li>\n</ul>",
+          "document": "<p>实例业务状态。取值范围：</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重建中</li><li>5：销毁中</li><li>6：已停服</li><li>8：欠费停服中</li><li>9：欠费已停服</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "InstanceStatus",
@@ -19540,7 +19558,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Grafana 面板 URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://url",
           "member": "string",
           "name": "GrafanaURL",
@@ -19550,7 +19568,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CreatedAt",
@@ -19560,7 +19578,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 Grafana\n<li>0：不开启</li>\n<li>1：开启</li>",
+          "document": "<p>是否开启 Grafana</p><li>0：不开启</li><li>1：开启</li>",
           "example": "1",
           "member": "int64",
           "name": "EnableGrafana",
@@ -19570,7 +19588,7 @@
         },
         {
           "disabled": false,
-          "document": "实例IPV4地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例IPV4地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.2",
           "member": "string",
           "name": "IPv4Address",
@@ -19580,7 +19598,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例关联的标签列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusTag",
           "name": "TagSpecification",
@@ -19590,7 +19608,7 @@
         },
         {
           "disabled": false,
-          "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>购买的实例过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "ExpireTime",
@@ -19600,7 +19618,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态\n<ul>\n<li>1：正常</li>\n<li>2：过期</li>\n<li>3：销毁</li>\n<li>4：分配中</li>\n<li>5：分配失败</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费状态</p><ul><li>1：正常</li><li>2：过期</li><li>3：销毁</li><li>4：分配中</li><li>5：分配失败</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ChargeStatus",
@@ -19610,7 +19628,7 @@
         },
         {
           "disabled": false,
-          "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规格名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "基础1",
           "member": "string",
           "name": "SpecName",
@@ -19620,7 +19638,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记\n<ul>\n<li>0：不自动续费</li>\n<li>1：开启自动续费</li>\n<li>2：禁止自动续费</li>\n<li>-1：无效</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动续费标记</p><ul><li>0：不自动续费</li><li>1：开启自动续费</li><li>2：禁止自动续费</li><li>-1：无效</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -19630,7 +19648,7 @@
         },
         {
           "disabled": false,
-          "document": "是否快过期\n<ul>\n<li>0：否</li>\n<li>1：快过期</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否快过期</p><ul><li>0：否</li><li>1：快过期</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IsNearExpire",
@@ -19640,7 +19658,7 @@
         },
         {
           "disabled": false,
-          "document": "数据写入需要的 Token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据写入需要的 Token</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "token",
           "member": "string",
           "name": "AuthToken",
@@ -19650,7 +19668,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus Remote Write 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Prometheus Remote Write 的地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://url",
           "member": "string",
           "name": "RemoteWrite",
@@ -19660,7 +19678,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus HTTP Api 根地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Prometheus HTTP Api 根地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://url",
           "member": "string",
           "name": "ApiRootPath",
@@ -19670,7 +19688,7 @@
         },
         {
           "disabled": false,
-          "document": "Proxy 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Proxy 的地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0:9090",
           "member": "string",
           "name": "ProxyAddress",
@@ -19680,7 +19698,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 运行状态\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重启中</li>\n<li>5：销毁中</li>\n<li>6：已停机</li>\n<li>7：已删除</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Grafana 运行状态</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重启中</li><li>5：销毁中</li><li>6：已停机</li><li>7：已删除</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "GrafanaStatus",
@@ -19690,7 +19708,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana IP 白名单列表，使用英文分号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Grafana IP 白名单列表，使用英文分号分隔</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.2",
           "member": "string",
           "name": "GrafanaIpWhiteList",
@@ -19700,7 +19718,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的授权信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusInstanceGrantInfo",
           "name": "Grant",
@@ -19710,7 +19728,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的 Grafana 实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的 Grafana 实例 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "grafana-xxxx",
           "member": "string",
           "name": "GrafanaInstanceId",
@@ -19720,7 +19738,7 @@
         },
         {
           "disabled": false,
-          "document": "告警规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警规则限制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "150",
           "member": "int64",
           "name": "AlertRuleLimit",
@@ -19730,7 +19748,7 @@
         },
         {
           "disabled": false,
-          "document": "预聚合规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预聚合规则限制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "150",
           "member": "int64",
           "name": "RecordingRuleLimit",
@@ -19740,12 +19758,22 @@
         },
         {
           "disabled": false,
-          "document": "迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "MigrationType",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p><p>实例创建方式：<br>key: CreatedFrom<br>value: 0 - 来自prom控制台<br>1 - 来自tke集群详情页<br>2 - 来自新建集群页</p><p>免费试用到期时间:<br>key: FreeTrialExpireAt<br>value: RFC3339 格式时间字符串</p><p>关联的资源包ID:<br>key: ResourcePackageID<br>value: prompkg-xxxxx</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusRuleKV",
+          "name": "InstanceAttributes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

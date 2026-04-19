@@ -1624,6 +1624,13 @@
       "output": "ModifyGlobalMaintenanceWindowAndExclusionsResponse",
       "status": "online"
     },
+    "ModifyLogConfig": {
+      "document": "修改日志采集配置",
+      "input": "ModifyLogConfigRequest",
+      "name": "修改日志采集配置",
+      "output": "ModifyLogConfigResponse",
+      "status": "online"
+    },
     "ModifyMasterComponent": {
       "document": "修改master组件，支持kube-apiserver、kube-scheduler、kube-controller-manager副本数调整为0和恢复",
       "input": "ModifyMasterComponentRequest",
@@ -22851,6 +22858,51 @@
     },
     "ModifyGlobalMaintenanceWindowAndExclusionsResponse": {
       "document": "ModifyGlobalMaintenanceWindowAndExclusions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogConfigRequest": {
+      "document": "ModifyLogConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-kaftesta",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志采集配置的json表达",
+          "example": "参考 https://cloud.tencent.com/document/product/457/48425",
+          "member": "string",
+          "name": "LogConfig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前集群类型支持tke（标准集群）、eks（serverless集群）",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogConfigResponse": {
+      "document": "ModifyLogConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -631,7 +631,7 @@
       "status": "online"
     },
     "DescribeDesignTask": {
-      "document": "查询配音相关任务（异步）结果",
+      "document": "查询音色设计任务（异步）结果",
       "input": "DescribeDesignTaskRequest",
       "name": "查询音色设计任务结果",
       "output": "DescribeDesignTaskResponse",
@@ -38001,13 +38001,24 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>广告决策服务器URL(ADS)。</p>",
+          "document": "<p>广告决策服务器URL(ADS)。注意：填了AdsUrl会自动代替覆盖AdsUrls[0]</p>",
           "example": "https://g.adspeed.net/ad.php?do=vast&zid=130114&oid=29173&wd=-1&ht=-1&vastver=3&cb=1745402245",
           "member": "string",
           "name": "AdsUrl",
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>广告决策服务器URL数组(ADS)</p>",
+          "example": "[\"https://g.adspeed.net/ad.php?do=vast&zid=130114&oid=29173&wd=-1&ht=-1&vastver=3&cb=1745402245\"]",
+          "member": "string",
+          "name": "AdsUrls",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -38122,13 +38133,24 @@
         },
         {
           "disabled": false,
-          "document": "<p>预加载广告决策服务地址。</p>",
+          "document": "<p>预加载广告决策服务地址。注意：填了PreRollAdsUrl会自动代替覆盖PreRollAdsUrls[0]</p>",
           "example": "https://g.adspeed.net/ad.php?do=vast&zid=130114&oid=29173&wd=-1&ht=-1&vastver=3&cb=1745402245",
           "member": "string",
           "name": "PreRollAdsUrl",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预加载广告决策服务地址数组</p>",
+          "example": "[\"https://g.adspeed.net/ad.php?do=vast&zid=130114&oid=29173&wd=-1&ht=-1&vastver=3&cb=1745402245\"]",
+          "member": "string",
+          "name": "PreRollAdsUrls",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

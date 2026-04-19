@@ -363,41 +363,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户 Id。",
+          "document": "<p>用户 Id。</p>",
           "example": "1000000001",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户手机号码。",
+          "document": "<p>用户手机号码。</p>",
           "example": "15515555055",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户昵称。",
+          "document": "<p>用户昵称。</p>",
           "example": "Nick",
           "member": "string",
           "name": "Nick",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号状态，取值：\n<li>Normal：有效；</li>\n<li>Stopped：无效。</li>",
+          "document": "<p>账号状态，取值：</p><li>Normal：有效；</li><li>Stopped：无效。</li>",
           "example": "Normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户的创建时间。</p><p>参数格式：使用 ISO 日期格式。</p>",
+          "example": "2018-10-01T18:00:00+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

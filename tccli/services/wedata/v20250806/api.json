@@ -931,6 +931,13 @@
       "output": "ListTenantRolesResponse",
       "status": "online"
     },
+    "ListTriggerTaskRuns": {
+      "document": "查询工作流运行",
+      "input": "ListTriggerTaskRunsRequest",
+      "name": "查询任务运行详情",
+      "output": "ListTriggerTaskRunsResponse",
+      "status": "online"
+    },
     "ListTriggerTaskVersions": {
       "document": "任务保存版本列表",
       "input": "ListTriggerTaskVersionsRequest",
@@ -3500,7 +3507,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型:枚举值\n\n- MYSQL\n- TENCENT_MYSQL\n- POSTGRE\n- ORACLE\n- SQLSERVER\n- FTP\n- HIVE\n- HUDI\n- HDFS\n- ICEBERG\n- KAFKA\n- DTS_KAFKA\n- HBASE\n- SPARK\n- TBASE\n- DB2\n- DM\n- GAUSSDB\n- GBASE\n- IMPALA\n- ES\n- TENCENT_ES\n- GREENPLUM\n- SAP_HANA\n- SFTP\n- OCEANBASE\n- CLICKHOUSE\n- KUDU\n- VERTICA\n- REDIS\n- COS\n- DLC\n- DORIS\n- CKAFKA\n- S3_DATAINSIGHT\n- TDSQL\n- TDSQL_MYSQL\n- MONGODB\n- TENCENT_MONGODB\n- REST_API\n- TiDB\n- StarRocks\n- Trino\n- Kyuubi\n- TCHOUSE_X\n- TCHOUSE_P\n- TCHOUSE_C\n- TCHOUSE_D\n- INFLUXDB\n- BIG_QUERY\n- SSH\n- BLOB\n- TDSQL_POSTGRE\n- GDB\n- TDENGINE\n- TDSQLC\n- FileSystem\n- TCLake\n",
+          "document": "数据源类型:枚举值- MYSQL- TENCENT_MYSQL- POSTGRE- ORACLE- SQLSERVER- FTP- HIVE- HUDI- HDFS- ICEBERG- KAFKA- DTS_KAFKA- HBASE- SPARK- TBASE- DB2- DM- GAUSSDB- GBASE- IMPALA- ES- TENCENT_ES- GREENPLUM- SAP_HANA- SFTP- OCEANBASE- CLICKHOUSE- KUDU- VERTICA- REDIS- COS- DLC- DORIS- CKAFKA- S3_DATAINSIGHT- TDSQL- TDSQL_MYSQL- MONGODB- TENCENT_MONGODB- REST_API- TiDB- StarRocks- Trino- Kyuubi- TCHOUSE_X- TCHOUSE_P- TCHOUSE_C- TCHOUSE_D- INFLUXDB- BIG_QUERY- SSH- BLOB- TDSQL_POSTGRE- GDB- TDENGINE- TDSQLC- FileSystem- TCLake- TDSQL_BOUNDLESS",
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
@@ -4786,7 +4793,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "周期类型：默认为 DAY_CYCLE\n\n支持的类型为 \n\n* ONEOFF_CYCLE: 一次性\n* YEAR_CYCLE: 年\n* MONTH_CYCLE: 月\n* WEEK_CYCLE: 周\n* DAY_CYCLE: 天\n* HOUR_CYCLE: 小时\n* MINUTE_CYCLE: 分钟\n* CRONTAB_CYCLE: crontab表达式类型",
+          "document": "<p>周期类型：默认为 DAY_CYCLE</p><p>支持的类型为 </p><ul><li>ONEOFF_CYCLE: 一次性</li><li>YEAR_CYCLE: 年</li><li>MONTH_CYCLE: 月</li><li>WEEK_CYCLE: 周</li><li>DAY_CYCLE: 天</li><li>HOUR_CYCLE: 小时</li><li>MINUTE_CYCLE: 分钟</li><li>CRONTAB_CYCLE: crontab表达式类型</li></ul>",
           "example": "DAY_CYCLE",
           "member": "string",
           "name": "CycleType",
@@ -4795,7 +4802,7 @@
         },
         {
           "disabled": false,
-          "document": "时区，默认为 UTC+8",
+          "document": "<p>时区，默认为 UTC+8</p>",
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
@@ -4804,7 +4811,7 @@
         },
         {
           "disabled": false,
-          "document": "Cron表达式，默认为 0 0 0 * * ? * ",
+          "document": "<p>Cron表达式，默认为 0 0 0 * * ? *</p>",
           "example": "0 0 0 * * ? *",
           "member": "string",
           "name": "CrontabExpression",
@@ -4813,7 +4820,7 @@
         },
         {
           "disabled": false,
-          "document": "生效日期，默认为当前日期的 00:00:00",
+          "document": "<p>生效日期，默认为当前日期的 00:00:00</p>",
           "example": "2025-08-26 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -4822,7 +4829,7 @@
         },
         {
           "disabled": false,
-          "document": "结束日期，默认为 2099-12-31 23:59:59",
+          "document": "<p>结束日期，默认为 2099-12-31 23:59:59</p>",
           "example": "2099-12-31 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -4831,7 +4838,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间 左闭区间，默认 00:00",
+          "document": "<p>执行时间 左闭区间，默认 00:00</p>",
           "example": "00:00",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -4840,7 +4847,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间 右闭区间，默认 23:59",
+          "document": "<p>执行时间 右闭区间，默认 23:59</p>",
           "example": "23:59",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -4849,7 +4856,7 @@
         },
         {
           "disabled": false,
-          "document": "日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0",
+          "document": "<p>日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0</p>",
           "example": "0",
           "member": "string",
           "name": "CalendarOpen",
@@ -4858,7 +4865,7 @@
         },
         {
           "disabled": false,
-          "document": "日历调度 日历 ID",
+          "document": "<p>日历调度 日历 ID</p>",
           "example": "26",
           "member": "string",
           "name": "CalendarId",
@@ -4867,7 +4874,7 @@
         },
         {
           "disabled": false,
-          "document": "自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)",
+          "document": "<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>",
           "example": "serial",
           "member": "string",
           "name": "SelfDepend",
@@ -4876,7 +4883,7 @@
         },
         {
           "disabled": false,
-          "document": "上游依赖数组",
+          "document": "<p>上游依赖数组</p>",
           "example": "无",
           "member": "DependencyTaskBrief",
           "name": "UpstreamDependencyConfigList",
@@ -4885,7 +4892,7 @@
         },
         {
           "disabled": false,
-          "document": "事件数组",
+          "document": "<p>事件数组</p>",
           "example": "无",
           "member": "EventListener",
           "name": "EventListenerList",
@@ -4894,7 +4901,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑&补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;",
+          "document": "<p>重跑&amp;补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;</p>",
           "example": "ALL",
           "member": "string",
           "name": "AllowRedoType",
@@ -4903,7 +4910,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数数组",
+          "document": "<p>输出参数数组</p>",
           "example": "无",
           "member": "OutTaskParameter",
           "name": "ParamTaskOutList",
@@ -4912,7 +4919,7 @@
         },
         {
           "disabled": false,
-          "document": "输入参数数组",
+          "document": "<p>输入参数数组</p>",
           "example": "无",
           "member": "InTaskParameter",
           "name": "ParamTaskInList",
@@ -4921,7 +4928,7 @@
         },
         {
           "disabled": false,
-          "document": "产出登记",
+          "document": "<p>产出登记</p>",
           "example": "无",
           "member": "TaskDataRegistry",
           "name": "TaskOutputRegistryList",
@@ -4930,7 +4937,7 @@
         },
         {
           "disabled": false,
-          "document": "**实例生成策略**\n* T_PLUS_0: T+0生成,默认策略\n* T_PLUS_1: T+1生成",
+          "document": "<p><strong>实例生成策略</strong></p><ul><li>T_PLUS_0: T+0生成,默认策略</li><li>T_PLUS_1: T+1生成</li></ul>",
           "example": "T_PLUS_0",
           "member": "string",
           "name": "InitStrategy",
@@ -4939,7 +4946,7 @@
         },
         {
           "disabled": true,
-          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0",
+          "document": "<p>调度类型: 0 正常调度 1 空跑调度，默认为 0</p>",
           "example": "0",
           "member": "string",
           "name": "ScheduleRunType",
@@ -4948,7 +4955,7 @@
         },
         {
           "disabled": true,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6",
+          "document": "<p>任务调度优先级 运行优先级 4高 5中 6低 , 默认:6</p>",
           "example": "6",
           "member": "string",
           "name": "RunPriority",
@@ -4957,7 +4964,7 @@
         },
         {
           "disabled": true,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5",
+          "document": "<p>重试策略 重试等待时间,单位分钟: 默认: 5</p>",
           "example": "5",
           "member": "string",
           "name": "RetryWait",
@@ -4966,7 +4973,7 @@
         },
         {
           "disabled": true,
-          "document": "重试策略 最大尝试次数, 默认: 4",
+          "document": "<p>重试策略 最大尝试次数, 默认: 4</p>",
           "example": "4",
           "member": "string",
           "name": "MaxRetryAttempts",
@@ -4975,7 +4982,7 @@
         },
         {
           "disabled": true,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1",
+          "document": "<p>超时处理策略 运行耗时超时（单位：分钟）默认为 -1</p>",
           "example": "-1",
           "member": "string",
           "name": "ExecutionTTL",
@@ -4984,7 +4991,7 @@
         },
         {
           "disabled": true,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1",
+          "document": "<p>超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1</p>",
           "example": "-1",
           "member": "string",
           "name": "WaitExecutionTotalTTL",
@@ -4993,7 +5000,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0",
+          "document": "<p>调度类型: 0 正常调度 1 空跑调度，默认为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "ScheduleType",
@@ -5002,7 +5009,7 @@
         },
         {
           "disabled": false,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6",
+          "document": "<p>任务调度优先级 运行优先级 4高 5中 6低 , 默认:6</p>",
           "example": "6",
           "member": "int64",
           "name": "RunPriorityType",
@@ -5011,7 +5018,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5",
+          "document": "<p>重试策略 重试等待时间,单位分钟: 默认: 5</p>",
           "example": "5",
           "member": "int64",
           "name": "RetryWaitMinute",
@@ -5020,7 +5027,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 最大尝试次数, 默认: 4",
+          "document": "<p>重试策略 最大尝试次数, 默认: 4</p>",
           "example": "4",
           "member": "int64",
           "name": "MaxRetryNumber",
@@ -5029,7 +5036,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1",
+          "document": "<p>超时处理策略 运行耗时超时（单位：分钟）默认为 -1</p>",
           "example": "-1",
           "member": "int64",
           "name": "ExecutionTTLMinute",
@@ -5038,7 +5045,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1",
+          "document": "<p>超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1</p>",
           "example": "-1",
           "member": "int64",
           "name": "WaitExecutionTotalTTLMinute",
@@ -5047,12 +5054,21 @@
         },
         {
           "disabled": false,
-          "document": "- 任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置\n- ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败\n- ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行\n- ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功\n- ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\n- ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行\n- ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行\n- ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行\n- ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\n- NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败\n- ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\n- NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n- ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行",
+          "document": "<ul><li>任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置</li><li>ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败</li><li>ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行</li><li>ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行</li><li>ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行</li><li>ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li></ul>",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependencyTriggerPolicy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>是否允许下游依赖 1允许 0不允许</p><p>取值范围：[0, 1]</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AllowDownstreamDependency",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -5291,7 +5307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "上游依赖的任务数组",
+          "document": "<p>上游依赖的任务数组</p>",
           "example": "无",
           "member": "DependencyTriggerTaskBrief",
           "name": "UpstreamDependencyConfigList",
@@ -5300,7 +5316,7 @@
         },
         {
           "disabled": false,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6",
+          "document": "<p>任务调度优先级 运行优先级 4高 5中 6低 , 默认:6</p>",
           "example": "6",
           "member": "int64",
           "name": "RunPriorityType",
@@ -5309,7 +5325,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5",
+          "document": "<p>重试策略 重试等待时间,单位分钟: 默认: 5</p>",
           "example": "5",
           "member": "int64",
           "name": "RetryWaitMinute",
@@ -5318,7 +5334,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 最大尝试次数, 默认: 4",
+          "document": "<p>重试策略 最大尝试次数, 默认: 4</p>",
           "example": "4",
           "member": "int64",
           "name": "MaxRetryNumber",
@@ -5327,7 +5343,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1",
+          "document": "<p>超时处理策略 运行耗时超时（单位：分钟）默认为 -1</p>",
           "example": "-1",
           "member": "int64",
           "name": "ExecutionTTLMinute",
@@ -5336,7 +5352,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1",
+          "document": "<p>超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1</p>",
           "example": "-1",
           "member": "int64",
           "name": "WaitExecutionTotalTTLMinute",
@@ -5345,7 +5361,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑&补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;",
+          "document": "<p>重跑&amp;补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;</p>",
           "example": "ALL",
           "member": "string",
           "name": "AllowRedoType",
@@ -5354,7 +5370,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数数组",
+          "document": "<p>输出参数数组</p>",
           "example": "无",
           "member": "OutTaskParameter",
           "name": "ParamTaskOutList",
@@ -5363,7 +5379,7 @@
         },
         {
           "disabled": false,
-          "document": "输入参数数组",
+          "document": "<p>输入参数数组</p>",
           "example": "无",
           "member": "InTaskParameter",
           "name": "ParamTaskInList",
@@ -5372,7 +5388,7 @@
         },
         {
           "disabled": false,
-          "document": "产出登记",
+          "document": "<p>产出登记</p>",
           "example": "无",
           "member": "TaskDataRegistry",
           "name": "TaskOutputRegistryList",
@@ -5381,12 +5397,21 @@
         },
         {
           "disabled": false,
-          "document": "- 任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置\n- ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败\n- ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行\n- ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功\n- ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\n- ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行\n- ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行\n- ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行\n- ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\n- NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败\n- ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\n- NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n- ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行",
+          "document": "<ul><li>任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置</li><li>ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败</li><li>ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行</li><li>ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行</li><li>ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行</li><li>ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li></ul>",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependencyTriggerPolicy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许下游依赖 1允许 0不允许</p><p>取值范围：[0, 1]</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AllowDownstreamDependency",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -12404,7 +12429,7 @@
         {
           "disabled": false,
           "document": "表唯一ID",
-          "example": "",
+          "example": "1230000",
           "member": "string",
           "name": "TableUniqueId",
           "required": true,
@@ -12449,7 +12474,7 @@
         {
           "disabled": false,
           "document": "来源：WEDATA|THIRD 默认WEDATA",
-          "example": "",
+          "example": "WEDATA",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -16436,6 +16461,321 @@
         }
       ],
       "usage": "out"
+    },
+    "ListTriggerTaskRunBrief": {
+      "document": "查询任务运行列表返回参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ba84de3e-3c83-433c-a773-80f6a476a469",
+          "member": "string",
+          "name": "ExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25e2a265-9310-48e6-9ee8-176d51122f63",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "74bcce7c-be90-4347-9a80-0cbf53a08939",
+          "member": "string",
+          "name": "WorkflowExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260205211120670",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Manual",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "等待时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "132576",
+          "member": "string",
+          "name": "WaitTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700001893691",
+          "member": "string",
+          "name": "ExecuteUserUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计划调度时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1770802186493",
+          "member": "string",
+          "name": "ScheduleTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1770802348000",
+          "member": "string",
+          "name": "ExecutionStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1770802349000",
+          "member": "string",
+          "name": "ExecutionEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "string",
+          "name": "ExecutionTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统自动重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "RetryTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DependencyNotSatisfiedSkipped",
+          "member": "string",
+          "name": "ErrorCodeStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "t1_C",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "t1",
+          "member": "string",
+          "name": "WorkflowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户手动重跑次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "RerunTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SKIPPED",
+          "member": "string",
+          "name": "TaskExecutionState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是最新一次运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLatestExecution",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListTriggerTaskRunResult": {
+      "document": "查询工作流结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务运行信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListTriggerTaskRunBrief",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListTriggerTaskRunsRequest": {
+      "document": "ListTriggerTaskRuns请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "3149092944204222464",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数，任务名称或ID查询: Keyword，工作流ID查询: WorkflowId，文件夹查询: FolderId，负责人查询: InChargeUin，工作流执行ID: WorkflowExecutionId，任务执行ID: ExecutionId，任务ID: TaskId，计划调度时间区间: ScheduleTimeGreaterEqual / ScheduleTimeLessEqual",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，排序字段名称\t如下开始时间：CreateTime，结束时间：EndTime，计划调度时间：ScheduleTime",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTriggerTaskRunsResponse": {
+      "document": "ListTriggerTaskRuns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务运行查询结果",
+          "example": "无",
+          "member": "ListTriggerTaskRunResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListTriggerTaskVersions": {
       "document": "查询任务版本分页列表",
@@ -24458,7 +24798,7 @@
         },
         {
           "disabled": false,
-          "document": "回收的项目id，与UserUin参数只能填一个",
+          "document": "回收的项目id，与RevokeUser参数只能选填一个，或者都不传当RevokeProjectId与RevokeUser都不传时，表示回收当前数据源所有权限（数据源为项目共享时，不回收当前数据源创建项目下所有用户对该数据源的权限，当数据源为个人和项目管理员共享时，不回收当前数据源创建项目下数据源创建用户和管理员的权限）",
           "example": "1836253",
           "member": "string",
           "name": "RevokeProjectId",
@@ -24467,7 +24807,7 @@
         },
         {
           "disabled": false,
-          "document": "回收项目下用户列表，格式为：项目id_用户id\n与RevokeProjectId参数只能填一个\n\n",
+          "document": "回收项目下用户列表，格式为：项目id_用户id\n与RevokeProjectId参数只能选填一个，或者都不传\n当RevokeProjectId与RevokeUser都不传时，表示回收当前数据源所有权限（\n数据源为项目共享时，不回收当前数据源创建项目下所有用户对该数据源的权限，当数据源为个人和项目管理员共享时，不回收当前数据源创建项目下数据源创建用户和管理员的权限）\n\n",
           "example": "1836253_3562",
           "member": "string",
           "name": "RevokeUser",
@@ -27632,7 +27972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "周期类型：支持的类型为\n\nONEOFF_CYCLE: 一次性\nYEAR_CYCLE: 年\nMONTH_CYCLE: 月\nWEEK_CYCLE: 周\nDAY_CYCLE: 天\nHOUR_CYCLE: 小时\nMINUTE_CYCLE: 分钟\nCRONTAB_CYCLE: crontab表达式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>周期类型：支持的类型为</p><p>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DAY_CYCLE",
           "member": "string",
           "name": "CycleType",
@@ -27643,7 +27983,7 @@
         },
         {
           "disabled": false,
-          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
@@ -27654,7 +27994,7 @@
         },
         {
           "disabled": false,
-          "document": "0 2 3 1,L,2 * ?\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 2 3 1,L,2 * ?</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Cron表达式",
           "member": "string",
           "name": "CrontabExpression",
@@ -27665,7 +28005,7 @@
         },
         {
           "disabled": false,
-          "document": "生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生效日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-07-30 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -27676,7 +28016,7 @@
         },
         {
           "disabled": false,
-          "document": "结束日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结束日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2099-12-31 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -27687,7 +28027,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间 左闭区间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间 左闭区间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00:00",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -27698,7 +28038,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间 右闭区间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间 右闭区间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "23:59",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -27709,7 +28049,7 @@
         },
         {
           "disabled": false,
-          "document": "日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "CalendarOpen",
@@ -27720,7 +28060,7 @@
         },
         {
           "disabled": false,
-          "document": "日历调度 日历 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日历调度 日历 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "720",
           "member": "string",
           "name": "CalendarId",
@@ -27731,7 +28071,7 @@
         },
         {
           "disabled": false,
-          "document": "日历调度 日历名称, 需要从 DescribeScheduleCalendarPageList 中获取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日历调度 日历名称, 需要从 DescribeScheduleCalendarPageList 中获取</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "交易所日历",
           "member": "string",
           "name": "CalendarName",
@@ -27742,7 +28082,7 @@
         },
         {
           "disabled": false,
-          "document": "自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "serial",
           "member": "string",
           "name": "SelfDepend",
@@ -27753,7 +28093,7 @@
         },
         {
           "disabled": false,
-          "document": "上游依赖数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上游依赖数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependencyTaskBrief",
           "name": "UpstreamDependencyConfigList",
@@ -27764,7 +28104,7 @@
         },
         {
           "disabled": false,
-          "document": "下游依赖数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下游依赖数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependencyTaskBrief",
           "name": "DownstreamDependencyConfigList",
@@ -27775,7 +28115,7 @@
         },
         {
           "disabled": false,
-          "document": "事件数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EventListener",
           "name": "EventListenerList",
@@ -27786,7 +28126,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑&补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重跑&amp;补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
           "member": "string",
           "name": "AllowRedoType",
@@ -27797,7 +28137,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出参数数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutTaskParameter",
           "name": "ParamTaskOutList",
@@ -27808,7 +28148,7 @@
         },
         {
           "disabled": false,
-          "document": "输入参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入参数数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InTaskParameter",
           "name": "ParamTaskInList",
@@ -27819,7 +28159,7 @@
         },
         {
           "disabled": false,
-          "document": "产出登记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产出登记</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskDataRegistry",
           "name": "TaskOutputRegistryList",
@@ -27830,7 +28170,7 @@
         },
         {
           "disabled": false,
-          "document": "**实例生成策略**\n* T_PLUS_0: T+0生成,默认策略\n* T_PLUS_1: T+1生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p><strong>实例生成策略</strong></p><ul><li>T_PLUS_0: T+0生成,默认策略</li><li>T_PLUS_1: T+1生成</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "T_PLUS_0",
           "member": "string",
           "name": "InitStrategy",
@@ -27841,7 +28181,7 @@
         },
         {
           "disabled": true,
-          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度类型: 0 正常调度 1 空跑调度，默认为 0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ScheduleRunType",
@@ -27852,7 +28192,7 @@
         },
         {
           "disabled": true,
-          "document": "（废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>（废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependencyTaskBrief",
           "name": "DownStreamDependencyConfigList",
@@ -27863,7 +28203,7 @@
         },
         {
           "disabled": true,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务调度优先级 运行优先级 4高 5中 6低 , 默认:6</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
           "member": "uint64",
           "name": "RunPriority",
@@ -27874,7 +28214,7 @@
         },
         {
           "disabled": true,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试策略 重试等待时间,单位分钟: 默认: 5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "RetryWait",
@@ -27885,7 +28225,7 @@
         },
         {
           "disabled": true,
-          "document": "重试策略 最大尝试次数, 默认: 4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试策略 最大尝试次数, 默认: 4</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "MaxRetryAttempts",
@@ -27896,7 +28236,7 @@
         },
         {
           "disabled": true,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超时处理策略 运行耗时超时（单位：分钟）默认为 -1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "ExecutionTTL",
@@ -27907,7 +28247,7 @@
         },
         {
           "disabled": true,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "string",
           "name": "WaitExecutionTotalTTL",
@@ -27918,7 +28258,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度类型: 0 正常调度 1 空跑调度，默认为 0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ScheduleType",
@@ -27929,7 +28269,7 @@
         },
         {
           "disabled": false,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务调度优先级 运行优先级 4高 5中 6低 , 默认:6</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
           "member": "int64",
           "name": "RunPriorityType",
@@ -27940,7 +28280,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试策略 重试等待时间,单位分钟: 默认: 5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "RetryWaitMinute",
@@ -27951,7 +28291,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 最大尝试次数, 默认: 4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试策略 最大尝试次数, 默认: 4</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "MaxRetryNumber",
@@ -27962,7 +28302,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超时处理策略 运行耗时超时（单位：分钟）默认为 -1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "ExecutionTTLMinute",
@@ -27973,7 +28313,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "WaitExecutionTotalTTLMinute",
@@ -27984,13 +28324,24 @@
         },
         {
           "disabled": false,
-          "document": "- 任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置\n- ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败\n- ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行\n- ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功\n- ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\n- ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行\n- ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行\n- ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行\n- ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\n- NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败\n- ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\n- NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n- ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<ul><li>任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置</li><li>ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败</li><li>ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行</li><li>ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行</li><li>ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行</li><li>ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependencyTriggerPolicy",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许下游依赖 1允许 0不允许</p><p>取值范围：[0, 1]</p><p>默认值：1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AllowDownstreamDependency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -29772,7 +30123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "上游依赖数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上游依赖数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependencyTriggerTaskBrief",
           "name": "UpstreamDependencyConfigList",
@@ -29783,7 +30134,7 @@
         },
         {
           "disabled": false,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务调度优先级 运行优先级 4高 5中 6低 , 默认:6</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
           "member": "int64",
           "name": "RunPriorityType",
@@ -29794,7 +30145,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试策略 重试等待时间,单位分钟: 默认: 5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "RetryWaitMinute",
@@ -29805,7 +30156,7 @@
         },
         {
           "disabled": false,
-          "document": "重试策略 最大尝试次数, 默认: 4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试策略 最大尝试次数, 默认: 4</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "MaxRetryNumber",
@@ -29816,7 +30167,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超时处理策略 运行耗时超时（单位：分钟）默认为 -1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "ExecutionTTLMinute",
@@ -29827,7 +30178,7 @@
         },
         {
           "disabled": false,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "WaitExecutionTotalTTLMinute",
@@ -29838,7 +30189,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑&补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重跑&amp;补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
           "member": "string",
           "name": "AllowRedoType",
@@ -29849,7 +30200,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出参数数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutTaskParameter",
           "name": "ParamTaskOutList",
@@ -29860,7 +30211,7 @@
         },
         {
           "disabled": false,
-          "document": "输入参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入参数数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InTaskParameter",
           "name": "ParamTaskInList",
@@ -29871,7 +30222,7 @@
         },
         {
           "disabled": false,
-          "document": "产出登记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产出登记</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskDataRegistry",
           "name": "TaskOutputRegistryList",
@@ -29882,13 +30233,24 @@
         },
         {
           "disabled": false,
-          "document": "- 任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置\n- ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败\n- ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行\n- ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功\n- ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行\n- ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行\n- ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行\n- ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行\n- ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游\n- NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败\n- ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行\n- NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行\n- ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<ul><li>任务依赖运行条件，默认为ALL_SUCCESS，暂时只支持工作流调度项目下配置</li><li>ALL_SUCCESS： 全部成功：所有上游依赖任务都达到终态时，进行依赖判断，如果上游全部都成功，则依赖判断成功，否则如果上游有一个跳过运行，则标记为跳过运行，其余情况标记为上游失败</li><li>ALL_FAILED：全部失败：所有上游依赖任务都达到终态时，进行依赖判断，如果上游状态都是失败或者上游失败，则依赖判断成功，否则就标记为跳过运行</li><li>ALL_DONE：全部完成：所有上游依赖任务都达到终态时，进行依赖判断，直接是依赖判断成功</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部都跳过: 所有上游依赖任务都达到终态时，进行依赖判断，所有的上游都是跳过状态才算依赖判断成功，否则当前节点就是跳过运行</li><li>ONE_FAILED：至少一个失败: 上游只要有一个失败了，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有失败，则跳过运行</li><li>ONE_SUCCESS：至少一个成功：上游只要有一个成功，就进行依赖判断，且依赖判断成功，如果上游全部完成但是没有成功，则跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>NONE_FAILED：上游全部完成，没有失败: 所有上游依赖任务都达到终态时，进行依赖判断，如果上游都是成功或者跳过运行，则依赖判断成功，否则标记为上游失败</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependencyTriggerPolicy",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许下游依赖 1允许 0不允许</p><p>取值范围：[0, 1]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AllowDownstreamDependency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

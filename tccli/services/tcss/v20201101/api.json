@@ -6923,7 +6923,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "为客户分配的唯一的资产项的ID。",
+          "document": "<p>为客户分配的唯一的资产项的ID。</p>",
           "example": "1001",
           "member": "uint64",
           "name": "CustomerAssetId",
@@ -6933,7 +6933,7 @@
         },
         {
           "disabled": false,
-          "document": "资产项的名称。",
+          "document": "<p>资产项的名称。</p>",
           "example": "container-1001",
           "member": "string",
           "name": "AssetName",
@@ -6943,7 +6943,7 @@
         },
         {
           "disabled": false,
-          "document": "资产项的类型",
+          "document": "<p>资产项的类型</p>",
           "example": "ASSET_CONTAINER",
           "member": "string",
           "name": "AssetType",
@@ -6953,7 +6953,7 @@
         },
         {
           "disabled": false,
-          "document": "检测状态\n\nCHECK_INIT, 待检测\n\nCHECK_RUNNING, 检测中\n\nCHECK_FINISHED, 检测完成\n\nCHECK_FAILED, 检测失败",
+          "document": "<p>检测状态</p><p>CHECK_INIT, 待检测</p><p>CHECK_RUNNING, 检测中</p><p>CHECK_FINISHED, 检测完成</p><p>CHECK_FAILED, 检测失败</p>",
           "example": "Success",
           "member": "string",
           "name": "CheckStatus",
@@ -6963,7 +6963,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称。",
+          "document": "<p>节点名称。</p>",
           "example": "as-tke-np-7pid****",
           "member": "string",
           "name": "NodeName",
@@ -6973,7 +6973,7 @@
         },
         {
           "disabled": false,
-          "document": "上次检测的时间，格式为”YYYY-MM-DD HH:m::SS“。\n\n如果没有检测过，此处为”0000-00-00 00:00:00“。",
+          "document": "<p>上次检测的时间，格式为”YYYY-MM-DD HH:m::SS“。</p><p>如果没有检测过，此处为”0000-00-00 00:00:00“。</p>",
           "example": "2024-11-01 10:1****",
           "member": "string",
           "name": "LastCheckTime",
@@ -6983,7 +6983,7 @@
         },
         {
           "disabled": false,
-          "document": "检测结果。取值为：\n\nRESULT_FAILED: 未通过\n\nRESULT_PASSED: 通过",
+          "document": "<p>检测结果。取值为：</p><p>RESULT_FAILED: 未通过</p><p>RESULT_PASSED: 通过</p>",
           "example": "RESULT_PASSED",
           "member": "string",
           "name": "CheckResult",
@@ -6993,7 +6993,7 @@
         },
         {
           "disabled": false,
-          "document": "主机IP",
+          "document": "<p>主机IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "HostIP",
@@ -7003,7 +7003,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像的tag",
+          "document": "<p>镜像的tag</p>",
           "example": "latest",
           "member": "string",
           "name": "ImageTag",
@@ -7013,7 +7013,7 @@
         },
         {
           "disabled": false,
-          "document": "检查项验证信息",
+          "document": "<p>检查项验证信息</p>",
           "example": "/etc/kubenetes/ca.key  600",
           "member": "string",
           "name": "VerifyInfo",
@@ -7023,7 +7023,7 @@
         },
         {
           "disabled": false,
-          "document": "主机实例id",
+          "document": "<p>主机实例id</p>",
           "example": "ins-asoqewkn",
           "member": "string",
           "name": "InstanceId",
@@ -7033,8 +7033,8 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库信息",
-          "example": "{\"Name\":\"wh\",\"Type\":\"tcr\",\"Address\":\"ccr.ccs.tencentyun.com/t-pot/logstash\"}",
+          "document": "<p>镜像仓库信息</p>",
+          "example": "无",
           "member": "ImageRegistryInfo",
           "name": "ImageRegistryInfo",
           "output_required": true,
@@ -7043,7 +7043,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cls-m2x0ndjy",
           "member": "string",
           "name": "ClusterID",
@@ -7053,11 +7053,21 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "cls-m2x0ndjy",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产唯一ID</p><p>默认值：-</p>",
+          "example": "a2b696b20891f59c762c8091dfbdeee22d446226229e39623e2da35bfb225786",
+          "member": "string",
+          "name": "AssetUniqueID",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7205,7 +7215,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户资产的ID。",
+          "document": "<p>客户资产的ID。</p>",
           "example": "1001",
           "member": "uint64",
           "name": "CustomerAssetId",
@@ -7215,7 +7225,7 @@
         },
         {
           "disabled": false,
-          "document": "资产类别。",
+          "document": "<p>资产类别。</p>",
           "example": "ASSET_CONTAINER",
           "member": "string",
           "name": "AssetType",
@@ -7225,7 +7235,7 @@
         },
         {
           "disabled": false,
-          "document": "资产的名称。",
+          "document": "<p>资产的名称。</p>",
           "example": "happy_container",
           "member": "string",
           "name": "AssetName",
@@ -7235,7 +7245,7 @@
         },
         {
           "disabled": false,
-          "document": "当资产为镜像时，这个字段为镜像Tag。",
+          "document": "<p>当资产为镜像时，这个字段为镜像Tag。</p>",
           "example": "latest",
           "member": "string",
           "name": "ImageTag",
@@ -7245,7 +7255,7 @@
         },
         {
           "disabled": false,
-          "document": "资产所在的主机IP。",
+          "document": "<p>资产所在的主机IP。</p>",
           "example": "10.10.10.10",
           "member": "string",
           "name": "HostIP",
@@ -7255,7 +7265,7 @@
         },
         {
           "disabled": false,
-          "document": "资产所属的节点的名称",
+          "document": "<p>资产所属的节点的名称</p>",
           "example": "node-1",
           "member": "string",
           "name": "NodeName",
@@ -7265,7 +7275,7 @@
         },
         {
           "disabled": false,
-          "document": "检测状态\n\nCHECK_INIT, 待检测\n\nCHECK_RUNNING, 检测中\n\nCHECK_FINISHED, 检测完成\n\nCHECK_FAILED, 检测失败",
+          "document": "<p>检测状态</p><p>CHECK_INIT, 待检测</p><p>CHECK_RUNNING, 检测中</p><p>CHECK_FINISHED, 检测完成</p><p>CHECK_FAILED, 检测失败</p>",
           "example": "CHECK_FINISHED",
           "member": "string",
           "name": "CheckStatus",
@@ -7275,7 +7285,7 @@
         },
         {
           "disabled": false,
-          "document": "此类资产通过的检测项的数目。",
+          "document": "<p>此类资产通过的检测项的数目。</p>",
           "example": "0",
           "member": "uint64",
           "name": "PassedPolicyItemCount",
@@ -7285,7 +7295,7 @@
         },
         {
           "disabled": false,
-          "document": "此类资产未通过的检测的数目。",
+          "document": "<p>此类资产未通过的检测的数目。</p>",
           "example": "0",
           "member": "uint64",
           "name": "FailedPolicyItemCount",
@@ -7295,7 +7305,7 @@
         },
         {
           "disabled": false,
-          "document": "上次检测的时间。",
+          "document": "<p>上次检测的时间。</p>",
           "example": "2021-04-07 14:11:00",
           "member": "datetime",
           "name": "LastCheckTime",
@@ -7305,7 +7315,7 @@
         },
         {
           "disabled": false,
-          "document": "检测结果：\nRESULT_FAILED: 未通过。\nRESULT_PASSED: 通过。",
+          "document": "<p>检测结果：<br>RESULT_FAILED: 未通过。<br>RESULT_PASSED: 通过。</p>",
           "example": "RESULT_PASSED",
           "member": "string",
           "name": "CheckResult",
@@ -7315,8 +7325,8 @@
         },
         {
           "disabled": false,
-          "document": "主机节点的实例id",
-          "example": "ins-asoqewkn ",
+          "document": "<p>主机节点的实例id</p>",
+          "example": "ins-asoqewkn",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -7325,8 +7335,8 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库信息",
-          "example": "{\"Name\":\"wh\",\"Type\":\"tcr\",\"Address\":\"ccr.ccs.tencentyun.com/t-pot/logstash\"}",
+          "document": "<p>镜像仓库信息</p>",
+          "example": "无",
           "member": "ImageRegistryInfo",
           "name": "ImageRegistryInfo",
           "output_required": true,
@@ -7335,7 +7345,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "test-cluster-id",
           "member": "string",
           "name": "ClusterID",
@@ -7345,11 +7355,21 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "<p>集群名称</p>",
           "example": "test-cluster-name",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产唯一ID</p><p>默认值：-</p>",
+          "example": "a236b6b20891f59c762c8091dfbdeee22d446226229e39623e2da35bfb225786",
+          "member": "string",
+          "name": "AssetUniqueID",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

@@ -1308,6 +1308,12 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusInstanceAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2rsas2\",\n    \"InstanceName\": \"my-prom-gg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "修改 Prometheus 实例相关属性"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusInstanceAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2rsas2\",\n    \"DataRetentionTime\": 30,\n    \"InstanceAttributes\": [\n        {\n            \"Key\": \"LongTermStorageRetentionTime\",\n            \"Value\": \"90\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "修改 Prometheus 实例存储时长与归档存储时长"
       }
     ],
     "ModifyPrometheusRecordRuleYaml": [
