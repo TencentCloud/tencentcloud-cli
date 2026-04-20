@@ -1,6 +1,6 @@
-**Example 1: 创建SINK任务**
+**Example 1: 创建连接器任务**
 
-SINK任务
+创建连接器任务
 
 Input: 
 

@@ -36,45 +36,7 @@ Output:
 }
 ```
 
-**Example 2: 根据用户传入的指标，拉取一段时间内的监控数据**
-
-云托管相关指标，需要传入ResourceID。不传入period，返回默认时间粒度的指标。
-
-Input: 
-
-```
-tccli tcb DescribeCurveData --cli-unfold-argument  \
-    --EnvId envid-xxxxxxx \
-    --MetricName TkeInvokeNumService \
-    --StartTime 2026-03-16 00:00:00 \
-    --EndTime 2026-03-16 23:59:59 \
-    --ResourceID ibot-agent123
-```
-
-Output: 
-```
-{
-    "Response": {
-        "EndTime": "2026-03-16 23:55:00",
-        "MetricName": "TkeInvokeNumService",
-        "NewValues": [
-            0
-        ],
-        "Period": 300,
-        "StartTime": "2026-03-16 00:00:00",
-        "Statistics": "sum",
-        "Time": [
-            1773590400
-        ],
-        "Values": [
-            0
-        ],
-        "RequestId": "cd2cec9d-c0e9-4bab-b889-0ccc230cdc83"
-    }
-}
-```
-
-**Example 3: 根据用户传入的指标以及资源id，拉取一段时间内的监控数据**
+**Example 2: 根据用户传入的指标以及资源id，拉取一段时间内的监控数据**
 
 查询云托管某个版本的监控数据，需要传入ResourceID以及SubresourceID。不传入period，返回默认时间粒度的指标。
 
@@ -109,6 +71,44 @@ Output:
             0
         ],
         "RequestId": "e9271644-4eb0-4b17-981a-330f2ca534b1"
+    }
+}
+```
+
+**Example 3: 根据用户传入的指标，拉取一段时间内的监控数据**
+
+云托管相关指标，需要传入ResourceID。不传入period，返回默认时间粒度的指标。
+
+Input: 
+
+```
+tccli tcb DescribeCurveData --cli-unfold-argument  \
+    --EnvId envid-xxxxxxx \
+    --MetricName TkeInvokeNumService \
+    --StartTime 2026-03-16 00:00:00 \
+    --EndTime 2026-03-16 23:59:59 \
+    --ResourceID ibot-agent123
+```
+
+Output: 
+```
+{
+    "Response": {
+        "EndTime": "2026-03-16 23:55:00",
+        "MetricName": "TkeInvokeNumService",
+        "NewValues": [
+            0
+        ],
+        "Period": 300,
+        "StartTime": "2026-03-16 00:00:00",
+        "Statistics": "sum",
+        "Time": [
+            1773590400
+        ],
+        "Values": [
+            0
+        ],
+        "RequestId": "cd2cec9d-c0e9-4bab-b889-0ccc230cdc83"
     }
 }
 ```

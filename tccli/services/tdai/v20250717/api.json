@@ -360,7 +360,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能体实例ID",
+          "document": "<p>智能体实例ID</p>",
           "example": "agentins-efbt5y3h",
           "member": "string",
           "name": "InstanceId",
@@ -371,7 +371,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例名称",
+          "document": "<p>智能体实例名称</p>",
           "example": "风险SQL治理Agent实例",
           "member": "string",
           "name": "InstanceName",
@@ -382,7 +382,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体ID",
+          "document": "<p>智能体ID</p>",
           "example": "agt-xpcn2t3e",
           "member": "string",
           "name": "AgentId",
@@ -393,7 +393,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体名称",
+          "document": "<p>智能体名称</p>",
           "example": "风险SQL治理智能体",
           "member": "string",
           "name": "AgentName",
@@ -404,7 +404,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体类型",
+          "document": "<p>智能体类型</p>",
           "example": "aid",
           "member": "string",
           "name": "AgentInternalName",
@@ -415,7 +415,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体服务模式",
+          "document": "<p>智能体服务模式</p>",
           "example": "service",
           "member": "string",
           "name": "AgentType",
@@ -426,7 +426,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体版本",
+          "document": "<p>智能体版本</p>",
           "example": "v1.0.0.0",
           "member": "string",
           "name": "AgentVersion",
@@ -437,7 +437,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例状态",
+          "document": "<p>智能体实例状态</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -448,7 +448,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例参数列表",
+          "document": "<p>智能体实例参数列表</p>",
           "example": "无",
           "member": "Parameter",
           "name": "Parameters",
@@ -459,7 +459,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-07-15 16:06:10",
           "member": "string",
           "name": "CreateTime",
@@ -470,7 +470,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2025-07-15 16:06:10",
           "member": "string",
           "name": "UpdateTime",
@@ -481,13 +481,90 @@
         },
         {
           "disabled": false,
-          "document": "资源绑定Tag列表",
+          "document": "<p>资源绑定Tag列表</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署位置,intranet-共享版，userVpc-专享版</p>",
+          "example": "intranet",
+          "member": "string",
+          "name": "DeployPlace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的告警策略ID。</p>",
+          "example": "[\"Policy-zxas32qq\"]",
+          "member": "string",
+          "name": "PolicyIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "ClawConfigInfo",
+          "name": "ClawConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"view\"]",
+          "member": "string",
+          "name": "AllowedActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "2026-04-13 14:39:00",
+          "member": "string",
+          "name": "LastActiveTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "newnewDescription",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -645,6 +722,84 @@
       ],
       "usage": "out"
     },
+    "ClawConfigInfo": {
+      "document": "databaseClaw实例配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"postgresql\"]",
+          "member": "string",
+          "name": "DbTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "ClawDeployInfo",
+          "name": "Deploy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClawDeployInfo": {
+      "document": "databaseClaw实例部署详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "vpc-iar32aw9",
+          "member": "string",
+          "name": "UserVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "subnet-pjbev7x8",
+          "member": "string",
+          "name": "UserSubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "UserVpcRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CodeRepo": {
       "document": "仓库信息",
       "members": [
@@ -789,6 +944,51 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "Skills",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SoulId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1184,7 +1384,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "document": "<p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>",
           "example": "agentins-efbt5y3h",
           "member": "string",
           "name": "InstanceId",
@@ -1193,7 +1393,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名，为空时查询所有，如果填写则会根据InstanceName筛选",
+          "document": "<p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>",
           "example": "风险SQL治理Agent实例",
           "member": "string",
           "name": "InstanceName",
@@ -1202,7 +1402,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体ID，为空时查询所有，如果填写则会根据AgentId筛选",
+          "document": "<p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>",
           "example": "agt-xpcn2t3e",
           "member": "string",
           "name": "AgentId",
@@ -1211,7 +1411,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体名称，为空时查询所有，如果填写则会根据AgentName筛选",
+          "document": "<p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>",
           "example": "风险SQL治理Agent智能体",
           "member": "string",
           "name": "AgentName",
@@ -1220,7 +1420,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体类型，为空时查询所有，如果填写则会根据AgentName筛选",
+          "document": "<p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>",
           "example": "aid",
           "member": "string",
           "name": "AgentInternalName",
@@ -1229,7 +1429,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例状态，为空时查询所有，如果填写则会根据Status筛选",
+          "document": "<p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -1238,12 +1438,21 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤信息",
+          "document": "<p>标签过滤信息</p>",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilter",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1263,10 +1472,20 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例列表",
+          "document": "<p>智能体实例列表</p>",
           "example": "无",
           "member": "AgentInstance",
           "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "StatusItem",
+          "name": "StatusCounts",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -2049,6 +2268,34 @@
         }
       ],
       "type": "object"
+    },
+    "StatusItem": {
+      "document": "实例状态描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TagFilter": {
       "document": "通过标签对资源进行过滤",

@@ -1351,7 +1351,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸框左上角横坐标。",
+          "document": "<p>人脸框左上角横坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "X",
@@ -1362,7 +1362,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框左上角纵坐标。",
+          "document": "<p>人脸框左上角纵坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "Y",
@@ -1373,7 +1373,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框宽度。",
+          "document": "<p>人脸框宽度。<br>单位：px</p>",
           "example": "30",
           "member": "int64",
           "name": "Width",
@@ -1384,7 +1384,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸框高度。",
+          "document": "<p>人脸框高度。<br>单位：px</p>",
           "example": "30",
           "member": "int64",
           "name": "Height",

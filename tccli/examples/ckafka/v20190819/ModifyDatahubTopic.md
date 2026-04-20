@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka ModifyDatahubTopic --cli-unfold-argument  \
-    --Note yournote \
-    --Name yourname \
+    --Note note-test \
+    --Name appId-test \
     --RetentionMs 3600000
 ```
 

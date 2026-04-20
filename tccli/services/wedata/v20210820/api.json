@@ -57464,7 +57464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色id",
+          "document": "<p>角色id</p>",
           "example": "1",
           "member": "string",
           "name": "RoleId",
@@ -57474,7 +57474,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>角色名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Name",
           "member": "string",
           "name": "Name",
@@ -57484,7 +57484,7 @@
         },
         {
           "disabled": false,
-          "document": "角色昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>角色昵称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Name",
           "member": "string",
           "name": "NameCn",
@@ -57494,8 +57494,8 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "读写",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -57504,8 +57504,8 @@
         },
         {
           "disabled": false,
-          "document": "角色权限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "<p>角色权限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RolePrivilege",
           "name": "Privileges",
           "output_required": true,
@@ -57514,8 +57514,8 @@
         },
         {
           "disabled": false,
-          "document": "方法路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "<p>方法路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"abe\"]",
           "member": "string",
           "name": "MethodPaths",
           "output_required": true,
@@ -57524,8 +57524,8 @@
         },
         {
           "disabled": false,
-          "document": "角色类型, 分为System,Tenant,Project,Commercial\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>角色类型, 分为System,Tenant,Project,Commercial</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Custom",
           "member": "string",
           "name": "RoleType",
           "output_required": true,
@@ -57534,8 +57534,8 @@
         },
         {
           "disabled": false,
-          "document": "是否系统默认\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>是否系统默认</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "SystemInit",
           "output_required": true,
@@ -57544,11 +57544,31 @@
         },
         {
           "disabled": false,
-          "document": "自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>自定义参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“12”",
           "member": "string",
           "name": "Params",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1652252787000",
+          "member": "string",
+          "name": "CreateTimeStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zhangshan",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

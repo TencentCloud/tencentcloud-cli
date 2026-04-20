@@ -8307,7 +8307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -8316,7 +8316,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/HmtResidentPermitOCR/HmtResidentPermitOCR1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -8325,7 +8325,7 @@
         },
         {
           "disabled": false,
-          "document": "FRONT：有照片的一面（人像面），\nBACK：无照片的一面（国徽面），\n该参数如果不填或填错，将为您自动判断正反面。",
+          "document": "<p>FRONT：有照片的一面（人像面），<br>BACK：无照片的一面（国徽面），<br>该参数如果不填或填错，将为您自动判断正反面。</p>",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -8334,7 +8334,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回头像和位置坐标",
+          "document": "<p>是否返回头像和位置坐标</p>",
           "example": "false",
           "member": "bool",
           "name": "CropPortrait",
@@ -8349,7 +8349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证件姓名",
+          "document": "<p>证件姓名</p>",
           "example": "李优优",
           "member": "string",
           "name": "Name",
@@ -8359,7 +8359,7 @@
         },
         {
           "disabled": false,
-          "document": "性别",
+          "document": "<p>性别</p>",
           "example": "女",
           "member": "string",
           "name": "Sex",
@@ -8369,7 +8369,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期",
+          "document": "<p>出生日期</p>",
           "example": "1997/6/2",
           "member": "string",
           "name": "Birth",
@@ -8379,7 +8379,7 @@
         },
         {
           "disabled": false,
-          "document": "地址",
+          "document": "<p>地址</p>",
           "example": "上海市徐汇区古美路1528号A1栋腾讯优图1号",
           "member": "string",
           "name": "Address",
@@ -8389,7 +8389,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号",
+          "document": "<p>身份证号</p>",
           "example": "830000199706020042",
           "member": "string",
           "name": "IdCardNo",
@@ -8399,7 +8399,7 @@
         },
         {
           "disabled": false,
-          "document": "0-正面\n1-反面",
+          "document": "<p>0-正面<br>1-反面</p>",
           "example": "0",
           "member": "int64",
           "name": "CardType",
@@ -8409,7 +8409,7 @@
         },
         {
           "disabled": false,
-          "document": "证件有效期限",
+          "document": "<p>证件有效期限</p>",
           "example": "2018.09.06-2023.09.06",
           "member": "string",
           "name": "ValidDate",
@@ -8419,7 +8419,7 @@
         },
         {
           "disabled": false,
-          "document": "签发机关",
+          "document": "<p>签发机关</p>",
           "example": "合肥市公安局高新分局",
           "member": "string",
           "name": "Authority",
@@ -8429,7 +8429,7 @@
         },
         {
           "disabled": false,
-          "document": "签发次数",
+          "document": "<p>签发次数</p>",
           "example": "0",
           "member": "string",
           "name": "VisaNum",
@@ -8439,7 +8439,7 @@
         },
         {
           "disabled": false,
-          "document": "通行证号码",
+          "document": "<p>通行证号码</p>",
           "example": "0",
           "member": "string",
           "name": "PassNo",
@@ -8449,7 +8449,7 @@
         },
         {
           "disabled": false,
-          "document": "头像和坐标信息",
+          "document": "<p>头像和坐标信息</p>",
           "example": "无",
           "member": "PortraitImageInfo",
           "name": "PortraitImageInfo",
@@ -10692,7 +10692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -10701,7 +10701,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/MainlandPermitOCR/MainlandPermitOCR1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -10710,7 +10710,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回头像。默认不返回。",
+          "document": "<p>是否返回头像。默认不返回。</p>",
           "example": "false",
           "member": "bool",
           "name": "RetProfile",
@@ -10719,7 +10719,7 @@
         },
         {
           "disabled": false,
-          "document": "图片正反面\nFRONT：正面\nBACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）\n默认为FRONT",
+          "document": "<p>图片正反面<br>FRONT：正面<br>BACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）<br>默认为FRONT</p>",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -10734,7 +10734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "中文姓名",
+          "document": "<p>中文姓名</p>",
           "example": "李明",
           "member": "string",
           "name": "Name",
@@ -10744,7 +10744,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名",
+          "document": "<p>英文姓名</p>",
           "example": "LIMING",
           "member": "string",
           "name": "EnglishName",
@@ -10754,7 +10754,7 @@
         },
         {
           "disabled": false,
-          "document": "性别",
+          "document": "<p>性别</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -10764,7 +10764,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期",
+          "document": "<p>出生日期</p>",
           "example": "1981.08.03",
           "member": "string",
           "name": "Birthday",
@@ -10774,7 +10774,7 @@
         },
         {
           "disabled": false,
-          "document": "签发机关",
+          "document": "<p>签发机关</p>",
           "example": "公安部出入境管理局",
           "member": "string",
           "name": "IssueAuthority",
@@ -10784,7 +10784,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期限",
+          "document": "<p>有效期限</p>",
           "example": "2018.10.09-2028.10.08",
           "member": "string",
           "name": "ValidDate",
@@ -10794,7 +10794,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号",
+          "document": "<p>证件号</p>",
           "example": "C00000000",
           "member": "string",
           "name": "Number",
@@ -10804,7 +10804,7 @@
         },
         {
           "disabled": false,
-          "document": "签发地点",
+          "document": "<p>签发地点</p>",
           "example": "广东",
           "member": "string",
           "name": "IssueAddress",
@@ -10814,7 +10814,7 @@
         },
         {
           "disabled": false,
-          "document": "签发次数",
+          "document": "<p>签发次数</p>",
           "example": "02",
           "member": "string",
           "name": "IssueNumber",
@@ -10824,7 +10824,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。",
+          "document": "<p>证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。</p>",
           "example": "台湾居民来往大陆通行证",
           "member": "string",
           "name": "Type",
@@ -10834,7 +10834,7 @@
         },
         {
           "disabled": false,
-          "document": "RetProfile为True时返回头像字段， Base64编码",
+          "document": "<p>RetProfile为True时返回头像字段， Base64编码</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Profile",
@@ -10844,7 +10844,7 @@
         },
         {
           "disabled": false,
-          "document": "国籍",
+          "document": "<p>国籍</p>",
           "example": "中国",
           "member": "string",
           "name": "Nationality",
@@ -10854,7 +10854,7 @@
         },
         {
           "disabled": false,
-          "document": "背面字段信息",
+          "document": "<p>背面字段信息</p>",
           "example": "无",
           "member": "MainlandTravelPermitBackInfos",
           "name": "MainlandTravelPermitBackInfos",

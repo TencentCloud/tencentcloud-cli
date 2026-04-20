@@ -505,7 +505,7 @@
       "status": "online"
     },
     "ModifyLoadBalancerSla": {
-      "document": "本接口（ModifyLoadBalancerSla）用于调整按量计费模式实例的性能容量型规格，如共享型升级性能容量型，性能容量型实例规格调整。<br/>\n限制条件：\n- 本接口只支持调整按量计费的CLB实例，包年包月的CLB实例升级请通过控制台进行调整。\n- 共享型升级为性能容量型实例后，不支持再回退到共享型实例。\n- 传统型负载均衡实例不支持升级为性能容量型实例。",
+      "document": "本接口（ModifyLoadBalancerSla）用于调整按量计费模式实例的性能容量型规格，如共享型升级性能容量型，性能容量型实例规格调整。<br/>\n限制条件：\n- 共享型升级为性能容量型实例后，不支持再回退到共享型实例。\n- 传统型负载均衡实例不支持升级为性能容量型实例。",
       "input": "ModifyLoadBalancerSlaRequest",
       "name": "调整实例的性能容量型规格",
       "output": "ModifyLoadBalancerSlaResponse",
@@ -9867,6 +9867,16 @@
     "ModifyLoadBalancerSlaResponse": {
       "document": "ModifyLoadBalancerSla返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "2022XXXX",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

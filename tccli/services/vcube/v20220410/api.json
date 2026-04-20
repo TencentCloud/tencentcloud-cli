@@ -684,7 +684,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名",
+          "document": "<p>应用名</p>",
           "example": "QQ",
           "member": "string",
           "name": "AppName",
@@ -693,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "com.company.appName",
           "member": "string",
           "name": "BundleId",
@@ -702,7 +702,7 @@
         },
         {
           "disabled": false,
-          "document": "包名",
+          "document": "<p>包名</p>",
           "example": "com.company.appName",
           "member": "string",
           "name": "PackageName",
@@ -711,8 +711,17 @@
         },
         {
           "disabled": false,
-          "document": "资源包ID",
-          "example": "luvcf7c026193b54454f1",
+          "document": "<p>鸿蒙包包名</p>",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "BundleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源包ID</p>",
+          "example": "[\"awdqwe1231241251212\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -720,7 +729,7 @@
         },
         {
           "disabled": false,
-          "document": "营业执照",
+          "document": "<p>营业执照</p>",
           "example": "http://www.tencent.com/business.jpg",
           "member": "string",
           "name": "CompanyPermit",
@@ -729,7 +738,7 @@
         },
         {
           "disabled": false,
-          "document": "公司类型",
+          "document": "<p>公司类型</p>",
           "example": "教育",
           "member": "string",
           "name": "CompanyType",
@@ -738,7 +747,7 @@
         },
         {
           "disabled": false,
-          "document": "公司名称",
+          "document": "<p>公司名称</p>",
           "example": "微店",
           "member": "string",
           "name": "CompanyName",
@@ -747,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "优图资源id列表",
+          "document": "<p>优图资源id列表</p>",
           "example": "[\"luvcf7c026193b54454f1\"]",
           "member": "string",
           "name": "XMagicResourceIds",
@@ -756,7 +765,7 @@
         },
         {
           "disabled": false,
-          "document": "Mac 进程名",
+          "document": "<p>Mac 进程名</p>",
           "example": "com.company",
           "member": "string",
           "name": "MacBundleId",
@@ -765,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "Windows 进程名",
+          "document": "<p>Windows 进程名</p>",
           "example": "com.company",
           "member": "string",
           "name": "WinProcessName",
@@ -774,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "要开通的域名列表",
+          "document": "<p>要开通的域名列表</p>",
           "example": "[\"tencent.com\",\"xxx.cn\"]",
           "member": "string",
           "name": "DomainList",
@@ -783,7 +792,7 @@
         },
         {
           "disabled": false,
-          "document": "要开通的端，web/mobile/pc",
+          "document": "<p>要开通的端，web/mobile/pc</p>",
           "example": "web",
           "member": "string",
           "name": "Platform",
@@ -1019,7 +1028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名",
+          "document": "<p>应用名</p>",
           "example": "QQ",
           "member": "string",
           "name": "AppName",
@@ -1028,7 +1037,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "com.company.appName",
           "member": "string",
           "name": "BundleId",
@@ -1037,7 +1046,7 @@
         },
         {
           "disabled": false,
-          "document": "包名",
+          "document": "<p>包名</p>",
           "example": "com.company.appName",
           "member": "string",
           "name": "PackageName",
@@ -1046,7 +1055,16 @@
         },
         {
           "disabled": false,
-          "document": "功能 id 数组",
+          "document": "<p>鸿蒙包包名</p>",
+          "example": "com.company.appName",
+          "member": "string",
+          "name": "BundleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>功能 id 数组</p>",
           "example": "[3,16]",
           "member": "int64",
           "name": "FeatureIds",
@@ -1055,7 +1073,7 @@
         },
         {
           "disabled": false,
-          "document": "是否要开通优图功能",
+          "document": "<p>是否要开通优图功能</p>",
           "example": "true",
           "member": "bool",
           "name": "XMagic",
@@ -1064,7 +1082,7 @@
         },
         {
           "disabled": false,
-          "document": "营业执照",
+          "document": "<p>营业执照</p>",
           "example": "http://tencent.com/nengc.jpg",
           "member": "string",
           "name": "CompanyPermit",
@@ -1073,7 +1091,7 @@
         },
         {
           "disabled": false,
-          "document": "公司类型",
+          "document": "<p>公司类型</p>",
           "example": "教育",
           "member": "string",
           "name": "CompanyType",
@@ -1082,7 +1100,7 @@
         },
         {
           "disabled": false,
-          "document": "公司名称",
+          "document": "<p>公司名称</p>",
           "example": "能成",
           "member": "string",
           "name": "CompanyName",
@@ -1091,7 +1109,7 @@
         },
         {
           "disabled": false,
-          "document": "要开通的测试功能名称，基础套餐只能有一个",
+          "document": "<p>要开通的测试功能名称，基础套餐只能有一个</p>",
           "example": "[\"S1-04\",\"sticker_ar\"]",
           "member": "string",
           "name": "PlanList",
@@ -1100,7 +1118,7 @@
         },
         {
           "disabled": false,
-          "document": "Mac 进程名",
+          "document": "<p>Mac 进程名</p>",
           "example": "com.company",
           "member": "string",
           "name": "MacBundleId",
@@ -1109,7 +1127,7 @@
         },
         {
           "disabled": false,
-          "document": "Windows 进程名",
+          "document": "<p>Windows 进程名</p>",
           "example": "com.company",
           "member": "string",
           "name": "WinProcessName",
@@ -1118,7 +1136,7 @@
         },
         {
           "disabled": false,
-          "document": "要创建到哪个平台，web、mobile、pc，默认mobile",
+          "document": "<p>要创建到哪个平台，web、mobile、pc，默认mobile</p>",
           "example": "mobile",
           "member": "string",
           "name": "Platform",
@@ -1127,8 +1145,8 @@
         },
         {
           "disabled": false,
-          "document": "授权域名列表",
-          "example": "[yunzhi.com]",
+          "document": "<p>授权域名列表</p>",
+          "example": "[\"yunzhi.com\"]",
           "member": "string",
           "name": "DomainList",
           "required": false,

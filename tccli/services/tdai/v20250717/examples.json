@@ -13,7 +13,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentInstance\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-xpcn2t3e\",\n    \"AgentVersion\": \"v1.0.0.0\",\n    \"InstanceName\": \"agentins-efbt5y3h\",\n    \"Parameters\": [\n        {\n            \"Key\": \"git_branch\",\n            \"Value\": \"master\",\n            \"ValueType\": \"string\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"InstanceId\": \"agentins-efbt5y3h\",\n        \"InstanceName\": \"agentins-efbt5y3h\"\n    }\n}",
-        "title": "创建智能体实例"
+        "title": "创建databaseClaw实例"
       }
     ],
     "CreateChatCompletion": [

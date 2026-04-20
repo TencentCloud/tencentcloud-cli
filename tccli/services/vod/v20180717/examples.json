@@ -154,6 +154,14 @@
         "title": "创建视频主体"
       }
     ],
+    "CreateAigcVideoRedrawTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcVideoRedrawTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 221073,\n    \"FileInfo\": {\n        \"Type\": \"Url\",\n        \"Url\": \"https://cg-sdk-1258344699.cos.ap-nanjing.myqcloud.com/BackendBeauty/testcase/input.mp4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"221073-AigcVideoRedrawTask-2242390fb******************e33b0t\",\n        \"RequestId\": \"6b3ebd10-f36c-4286-9389-f91b17e7042b\"\n    }\n}",
+        "title": "创建创建视频转绘任务"
+      }
+    ],
     "CreateAigcVideoTask": [
       {
         "document": "",

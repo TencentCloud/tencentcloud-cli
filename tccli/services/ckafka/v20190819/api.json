@@ -64,9 +64,9 @@
       "status": "online"
     },
     "CreateConnectResource": {
-      "document": "创建Datahub连接源",
+      "document": "创建连接器连接",
       "input": "CreateConnectResourceRequest",
-      "name": "创建Datahub连接源",
+      "name": "创建连接器连接",
       "output": "CreateConnectResourceResponse",
       "status": "online"
     },
@@ -78,9 +78,9 @@
       "status": "online"
     },
     "CreateDatahubTask": {
-      "document": "创建DIP转储任务",
+      "document": "创建连接器任务",
       "input": "CreateDatahubTaskRequest",
-      "name": "创建DIP转储任务",
+      "name": "创建连接器任务",
       "output": "CreateDatahubTaskResponse",
       "status": "online"
     },
@@ -169,16 +169,16 @@
       "status": "online"
     },
     "DeleteConnectResource": {
-      "document": "删除Datahub连接源",
+      "document": "删除连接器连接",
       "input": "DeleteConnectResourceRequest",
-      "name": "删除Datahub连接源",
+      "name": "删除连接器连接",
       "output": "DeleteConnectResourceResponse",
       "status": "online"
     },
     "DeleteDatahubTask": {
-      "document": "删除Dip任务",
+      "document": "删除连接器任务",
       "input": "DeleteDatahubTaskRequest",
-      "name": "删除Dip任务",
+      "name": "删除连接器任务",
       "output": "DeleteDatahubTaskResponse",
       "status": "online"
     },
@@ -259,6 +259,13 @@
       "output": "DescribeACLResponse",
       "status": "online"
     },
+    "DescribeAccessPolicy": {
+      "document": "查询实例公网IP白名单列表接口",
+      "input": "DescribeAccessPolicyRequest",
+      "name": "查看实例公网IP白名单配置",
+      "output": "DescribeAccessPolicyResponse",
+      "status": "online"
+    },
     "DescribeAclRule": {
       "document": "查询ACL规则列表",
       "input": "DescribeAclRuleRequest",
@@ -281,16 +288,16 @@
       "status": "online"
     },
     "DescribeConnectResource": {
-      "document": "查询Datahub连接源",
+      "document": "查询连接器连接详情",
       "input": "DescribeConnectResourceRequest",
-      "name": "查询Datahub连接源",
+      "name": "查询连接器连接详情",
       "output": "DescribeConnectResourceResponse",
       "status": "online"
     },
     "DescribeConnectResources": {
-      "document": "查询Datahub连接源列表",
+      "document": "查询连接器连接列表",
       "input": "DescribeConnectResourcesRequest",
-      "name": "查询Datahub连接源列表",
+      "name": "查询连接器连接列表",
       "output": "DescribeConnectResourcesResponse",
       "status": "online"
     },
@@ -316,16 +323,16 @@
       "status": "online"
     },
     "DescribeDatahubTask": {
-      "document": "查询Datahub任务信息",
+      "document": "查询连接器任务详情",
       "input": "DescribeDatahubTaskRequest",
-      "name": "查询Datahub任务信息",
+      "name": "查询连接器任务详情",
       "output": "DescribeDatahubTaskResponse",
       "status": "online"
     },
     "DescribeDatahubTasks": {
-      "document": "查询Datahub任务列表",
+      "document": "查询连接器任务列表",
       "input": "DescribeDatahubTasksRequest",
-      "name": "查询Datahub任务列表",
+      "name": "查询连接器任务列表",
       "output": "DescribeDatahubTasksResponse",
       "status": "online"
     },
@@ -539,6 +546,13 @@
       "output": "InstanceScalingDownResponse",
       "status": "online"
     },
+    "ModifyAccessPolicy": {
+      "document": "修改实例公网IP白名单列表接口",
+      "input": "ModifyAccessPolicyRequest",
+      "name": "修改实例公网IP白名单配置",
+      "output": "ModifyAccessPolicyResponse",
+      "status": "online"
+    },
     "ModifyAclRule": {
       "document": "修改ACL策略，目前只支持预设规则的是否应用到新增topic这一项的修改",
       "input": "ModifyAclRuleRequest",
@@ -547,16 +561,16 @@
       "status": "online"
     },
     "ModifyConnectResource": {
-      "document": "编辑Datahub连接源",
+      "document": "编辑连接器连接",
       "input": "ModifyConnectResourceRequest",
-      "name": "编辑Datahub连接源",
+      "name": "编辑连接器连接",
       "output": "ModifyConnectResourceResponse",
       "status": "online"
     },
     "ModifyDatahubTask": {
-      "document": "修改Datahub任务",
+      "document": "修改连接器任务",
       "input": "ModifyDatahubTaskRequest",
-      "name": "修改Datahub任务",
+      "name": "修改连接器任务",
       "output": "ModifyDatahubTaskResponse",
       "status": "online"
     },
@@ -610,9 +624,9 @@
       "status": "online"
     },
     "PauseDatahubTask": {
-      "document": "暂停Dip任务",
+      "document": "暂停连接器任务",
       "input": "PauseDatahubTaskRequest",
-      "name": "暂停Dip任务",
+      "name": "暂停连接器任务",
       "output": "PauseDatahubTaskResponse",
       "status": "online"
     },
@@ -624,16 +638,16 @@
       "status": "online"
     },
     "RestartDatahubTask": {
-      "document": "Datahub任务异常时，重启Datahub任务",
+      "document": "连接器任务异常时，重启连接器任务",
       "input": "RestartDatahubTaskRequest",
-      "name": "重启Datahub任务",
+      "name": "重启连接器任务",
       "output": "RestartDatahubTaskResponse",
       "status": "online"
     },
     "ResumeDatahubTask": {
-      "document": "恢复Dip任务",
+      "document": "恢复连接器任务",
       "input": "ResumeDatahubTaskRequest",
-      "name": "恢复Dip任务",
+      "name": "恢复连接器任务",
       "output": "ResumeDatahubTaskResponse",
       "status": "online"
     },
@@ -2626,7 +2640,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cos 存储桶名称",
+          "document": "<p>cos 存储桶名称</p>",
           "example": "bucket-name-test",
           "member": "string",
           "name": "BucketName",
@@ -2637,7 +2651,7 @@
         },
         {
           "disabled": false,
-          "document": "地域代码",
+          "document": "<p>地域代码</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -2648,7 +2662,7 @@
         },
         {
           "disabled": false,
-          "document": "对象名称",
+          "document": "<p>对象名称</p>",
           "example": "key-test",
           "member": "string",
           "name": "ObjectKey",
@@ -2659,7 +2673,7 @@
         },
         {
           "disabled": false,
-          "document": "汇聚消息量的大小（单位：MB)",
+          "document": "<p>汇聚消息量的大小（单位：MB)</p>",
           "example": "100",
           "member": "uint64",
           "name": "AggregateBatchSize",
@@ -2670,7 +2684,7 @@
         },
         {
           "disabled": false,
-          "document": "汇聚的时间间隔（单位：小时）",
+          "document": "<p>汇聚的时间间隔（单位：小时）</p>",
           "example": "1",
           "member": "uint64",
           "name": "AggregateInterval",
@@ -2681,7 +2695,7 @@
         },
         {
           "disabled": false,
-          "document": "消息汇聚后的文件格式（支持csv, json）",
+          "document": "<p>消息汇聚后的文件格式（支持csv, json）</p>",
           "example": "json",
           "member": "string",
           "name": "FormatOutputType",
@@ -2692,7 +2706,7 @@
         },
         {
           "disabled": false,
-          "document": "转储的对象目录前缀",
+          "document": "<p>转储的对象目录前缀</p>",
           "example": "prefix-test",
           "member": "string",
           "name": "ObjectKeyPrefix",
@@ -2703,7 +2717,7 @@
         },
         {
           "disabled": false,
-          "document": "根据strptime 时间格式化的分区格式",
+          "document": "<p>根据strptime 时间格式化的分区格式</p>",
           "example": "/%Y/%m/%d/%H",
           "member": "string",
           "name": "DirectoryTimeFormat",
@@ -3020,7 +3034,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源名称",
+          "document": "<p>连接源名称</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceName",
@@ -3029,7 +3043,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源类型",
+          "document": "<p>连接源类型</p>",
           "example": "KAFKA",
           "member": "string",
           "name": "Type",
@@ -3038,7 +3052,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源描述",
+          "document": "<p>连接源描述</p>",
           "example": "description-test",
           "member": "string",
           "name": "Description",
@@ -3047,8 +3061,8 @@
         },
         {
           "disabled": false,
-          "document": "Dts配置，Type为DTS时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"GroupId\":\"group-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"Topic\":\"topic-test\"}",
+          "document": "<p>Dts配置，Type为DTS时必填</p>",
+          "example": "无",
           "member": "DtsConnectParam",
           "name": "DtsConnectParam",
           "required": false,
@@ -3056,8 +3070,8 @@
         },
         {
           "disabled": false,
-          "document": "MongoDB配置，Type为MONGODB时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>MongoDB配置，Type为MONGODB时必填</p>",
+          "example": "无",
           "member": "MongoDBConnectParam",
           "name": "MongoDBConnectParam",
           "required": false,
@@ -3065,8 +3079,8 @@
         },
         {
           "disabled": false,
-          "document": "Es配置，Type为ES时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>Es配置，Type为ES时必填</p>",
+          "example": "无",
           "member": "EsConnectParam",
           "name": "EsConnectParam",
           "required": false,
@@ -3074,8 +3088,8 @@
         },
         {
           "disabled": false,
-          "document": "ClickHouse配置，Type为CLICKHOUSE时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时必填</p>",
+          "example": "无",
           "member": "ClickHouseConnectParam",
           "name": "ClickHouseConnectParam",
           "required": false,
@@ -3083,8 +3097,8 @@
         },
         {
           "disabled": false,
-          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"ClusterId\":\"cynosdbmysql-test\",\"SelfBuilt\":false}",
+          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填</p>",
+          "example": "无",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
           "required": false,
@@ -3092,8 +3106,8 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ClusterId\":\"tdcpg-test\",\"IsUpdate\":true,\"SelfBuilt\":false}",
+          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>",
+          "example": "无",
           "member": "PostgreSQLConnectParam",
           "name": "PostgreSQLConnectParam",
           "required": false,
@@ -3101,8 +3115,8 @@
         },
         {
           "disabled": false,
-          "document": "MariaDB配置，Type为MARIADB时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "document": "<p>MariaDB配置，Type为MARIADB时必填</p>",
+          "example": "无",
           "member": "MariaDBConnectParam",
           "name": "MariaDBConnectParam",
           "required": false,
@@ -3110,8 +3124,8 @@
         },
         {
           "disabled": false,
-          "document": "SQLServer配置，Type为SQLSERVER时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":1433,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "document": "<p>SQLServer配置，Type为SQLSERVER时必填</p>",
+          "example": "无",
           "member": "SQLServerConnectParam",
           "name": "SQLServerConnectParam",
           "required": false,
@@ -3119,8 +3133,8 @@
         },
         {
           "disabled": false,
-          "document": "Doris 配置，Type为 DORIS 时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":9030,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"SelfBuilt\":false,\"BePort\":8040}",
+          "document": "<p>Doris 配置，Type为 DORIS 时必填</p>",
+          "example": "无",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
           "required": false,
@@ -3128,8 +3142,8 @@
         },
         {
           "disabled": false,
-          "document": "Kafka配置，Type为 KAFKA 时必填",
-          "example": "{\"Resource\":\"ckafka-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"BrokerAddress\":\"10.0.0.30:9092,10.0.0.31:9092\",\"Region\":\"ap-guangzhou\"}",
+          "document": "<p>Kafka配置，Type为 KAFKA 时必填</p>",
+          "example": "无",
           "member": "KafkaConnectParam",
           "name": "KafkaConnectParam",
           "required": false,
@@ -3137,12 +3151,21 @@
         },
         {
           "disabled": false,
-          "document": "MQTT配置，Type为 MQTT 时必填",
-          "example": "{\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"Region\":\"ap-guangzhou\"}",
+          "document": "<p>MQTT配置，Type为 MQTT 时必填</p>",
+          "example": "无",
           "member": "MqttConnectParam",
           "name": "MqttConnectParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3152,8 +3175,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
-          "example": "{\"ResourceId\":\"resource-test\"}",
+          "document": "<p>连接源的Id</p>",
+          "example": "无",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
           "output_required": true,
@@ -3238,7 +3261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)",
+          "document": "<p>任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskName",
@@ -3247,7 +3270,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "document": "<p>任务类型，SOURCE数据接入，SINK数据流出</p>",
           "example": "SINK",
           "member": "string",
           "name": "TaskType",
@@ -3256,7 +3279,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源",
+          "document": "<p>数据源</p>",
           "example": "无",
           "member": "DatahubResource",
           "name": "SourceResource",
@@ -3265,7 +3288,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目标",
+          "document": "<p>数据目标</p>",
           "example": "无",
           "member": "DatahubResource",
           "name": "TargetResource",
@@ -3274,7 +3297,7 @@
         },
         {
           "disabled": false,
-          "document": "数据处理规则",
+          "document": "<p>数据处理规则</p>",
           "example": "无",
           "member": "TransformParam",
           "name": "TransformParam",
@@ -3283,7 +3306,7 @@
         },
         {
           "disabled": true,
-          "document": "实例连接参数【已废弃】",
+          "document": "<p>实例连接参数【已废弃】</p>",
           "example": "无",
           "member": "PrivateLinkParam",
           "name": "PrivateLinkParam",
@@ -3292,7 +3315,7 @@
         },
         {
           "disabled": false,
-          "document": "选择所要绑定的SchemaId",
+          "document": "<p>选择所要绑定的SchemaId</p>",
           "example": "schema-test",
           "member": "string",
           "name": "SchemaId",
@@ -3301,7 +3324,7 @@
         },
         {
           "disabled": false,
-          "document": "数据处理规则",
+          "document": "<p>数据处理规则</p>",
           "example": "无",
           "member": "TransformsParam",
           "name": "TransformsParam",
@@ -3310,7 +3333,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -3319,7 +3342,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3328,7 +3351,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述信息",
+          "document": "<p>任务描述信息</p>",
           "example": "任务描述信息",
           "member": "string",
           "name": "Description",
@@ -3369,7 +3392,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果",
+          "document": "<p>返回结果</p>",
           "example": "无",
           "member": "CreateDatahubTaskRes",
           "name": "Result",
@@ -3391,8 +3414,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)",
-          "example": "appId-test",
+          "document": "<p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>",
+          "example": "251203011-test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3400,7 +3423,7 @@
         },
         {
           "disabled": false,
-          "document": "Partition个数，大于0",
+          "document": "<p>Partition个数，最大值为500，大于0</p>",
           "example": "1",
           "member": "int64",
           "name": "PartitionNum",
@@ -3409,7 +3432,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时间，单位ms，当前最小值为60000ms",
+          "document": "<p>消息保留时间，单位ms，当前最小值为60000ms</p>",
           "example": "60000",
           "member": "int64",
           "name": "RetentionMs",
@@ -3418,7 +3441,7 @@
         },
         {
           "disabled": false,
-          "document": "主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "document": "<p>主题备注，是一个不超过 64 个字符的字符串，可以包含字母、数字和横划线(-)。</p>",
           "example": "note-test",
           "member": "string",
           "name": "Note",
@@ -3427,8 +3450,8 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
-          "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]",
+          "document": "<p>标签列表</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3442,8 +3465,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回创建结果",
-          "example": "{\"TopicName\":\"topic-test\",\"TopicId\":\"topic-test\"}",
+          "document": "<p>返回创建结果</p>",
+          "example": "无",
           "member": "DatahubTopicResp",
           "name": "Result",
           "output_required": true,
@@ -5146,7 +5169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -5156,7 +5179,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "task测试",
           "member": "string",
           "name": "TaskName",
@@ -5166,7 +5189,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "document": "<p>任务类型，SOURCE数据接入，SINK数据流出</p>",
           "example": "SINK",
           "member": "string",
           "name": "TaskType",
@@ -5176,7 +5199,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败",
+          "document": "<p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -5186,7 +5209,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源",
+          "document": "<p>数据源</p>",
           "example": "无",
           "member": "DatahubResource",
           "name": "SourceResource",
@@ -5196,7 +5219,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目标",
+          "document": "<p>数据目标</p>",
           "example": "无",
           "member": "DatahubResource",
           "name": "TargetResource",
@@ -5206,7 +5229,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "2019-08-19 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -5216,7 +5239,7 @@
         },
         {
           "disabled": false,
-          "document": "异常信息",
+          "document": "<p>异常信息</p>",
           "example": "message-test",
           "member": "string",
           "name": "ErrorMessage",
@@ -5226,7 +5249,7 @@
         },
         {
           "disabled": false,
-          "document": "创建进度百分比",
+          "document": "<p>创建进度百分比</p>",
           "example": "90",
           "member": "float",
           "name": "TaskProgress",
@@ -5236,7 +5259,7 @@
         },
         {
           "disabled": false,
-          "document": "任务当前处于的步骤",
+          "document": "<p>任务当前处于的步骤</p>",
           "example": "等待连接",
           "member": "string",
           "name": "TaskCurrentStep",
@@ -5246,7 +5269,7 @@
         },
         {
           "disabled": false,
-          "document": "Datahub转储Id",
+          "document": "<p>Datahub转储Id</p>",
           "example": "datahub-test",
           "member": "string",
           "name": "DatahubId",
@@ -5256,7 +5279,7 @@
         },
         {
           "disabled": false,
-          "document": "步骤列表",
+          "document": "<p>步骤列表</p>",
           "example": "[\"step-test\"]",
           "member": "string",
           "name": "StepList",
@@ -5266,12 +5289,42 @@
         },
         {
           "disabled": false,
-          "document": "任务描述信息",
+          "document": "<p>任务描述信息</p>",
           "example": "任务描述信息",
           "member": "string",
           "name": "Description",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务并发数</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务同步限流值,单位MB/s</p><p>默认值：20MB/s</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "SyncThrottleLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务是否自动扩容标识</p><p>枚举值：</p><ul><li>true： 自动扩容</li><li>false： 手动扩容</li></ul><p>默认值：true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoExpandFlag",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -5586,7 +5639,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
+          "document": "<p>连接源的Id</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceId",
@@ -5601,8 +5654,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
-          "example": "{\"ResourceId\":\"resource-test\"}",
+          "document": "<p>连接源的Id</p>",
+          "example": "无",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
           "output_required": true,
@@ -5623,7 +5676,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -5638,8 +5691,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果",
-          "example": "{\"TaskId\":\"task-test\"}",
+          "document": "<p>操作结果</p>",
+          "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
           "output_required": true,
@@ -6222,6 +6275,52 @@
       ],
       "type": "object"
     },
+    "DescribeAccessPolicyRequest": {
+      "document": "DescribeAccessPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ckafka-ay3z77qe",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由ID</p>",
+          "example": "137946",
+          "member": "int64",
+          "name": "RouteId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessPolicyResponse": {
+      "document": "DescribeAccessPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例公网IP白名单配置列表</p>",
+          "example": "无",
+          "member": "ExternalAccessInfoWrapper",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAclRuleRequest": {
       "document": "DescribeAclRule请求参数结构体",
       "members": [
@@ -6401,7 +6500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
+          "document": "<p>连接源的Id</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceId",
@@ -6411,7 +6510,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源名称",
+          "document": "<p>连接源名称</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceName",
@@ -6421,7 +6520,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源描述",
+          "document": "<p>连接源描述</p>",
           "example": "description-test",
           "member": "string",
           "name": "Description",
@@ -6431,7 +6530,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源类型",
+          "document": "<p>连接源类型</p>",
           "example": "KAFKA",
           "member": "string",
           "name": "Type",
@@ -6441,7 +6540,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的状态",
+          "document": "<p>连接源的状态</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -6451,7 +6550,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的创建时间",
+          "document": "<p>连接源的创建时间</p>",
           "example": "2019-08-19 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -6461,7 +6560,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的异常信息",
+          "document": "<p>连接源的异常信息</p>",
           "example": "message-test",
           "member": "string",
           "name": "ErrorMessage",
@@ -6471,7 +6570,7 @@
         },
         {
           "disabled": false,
-          "document": "该连接源关联的Datahub任务数",
+          "document": "<p>该连接源关联的Datahub任务数</p>",
           "example": "1",
           "member": "int64",
           "name": "DatahubTaskCount",
@@ -6481,7 +6580,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的当前所处步骤",
+          "document": "<p>连接源的当前所处步骤</p>",
           "example": "step-test",
           "member": "string",
           "name": "CurrentStep",
@@ -6491,7 +6590,7 @@
         },
         {
           "disabled": false,
-          "document": "创建进度百分比",
+          "document": "<p>创建进度百分比</p>",
           "example": "0",
           "member": "float",
           "name": "TaskProgress",
@@ -6501,7 +6600,7 @@
         },
         {
           "disabled": false,
-          "document": "步骤列表",
+          "document": "<p>步骤列表</p>",
           "example": "[\"step-test\"]",
           "member": "string",
           "name": "StepList",
@@ -6511,8 +6610,8 @@
         },
         {
           "disabled": false,
-          "document": "Dts配置，Type为DTS时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"GroupId\":\"group-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"Topic\":\"topic-test\"}",
+          "document": "<p>Dts配置，Type为DTS时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DtsConnectParam",
           "name": "DtsConnectParam",
           "output_required": true,
@@ -6521,8 +6620,8 @@
         },
         {
           "disabled": false,
-          "document": "MongoDB配置，Type为MONGODB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>MongoDB配置，Type为MONGODB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MongoDBConnectParam",
           "name": "MongoDBConnectParam",
           "output_required": true,
@@ -6531,8 +6630,8 @@
         },
         {
           "disabled": false,
-          "document": "Es配置，Type为ES时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>Es配置，Type为ES时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EsConnectParam",
           "name": "EsConnectParam",
           "output_required": true,
@@ -6541,8 +6640,8 @@
         },
         {
           "disabled": false,
-          "document": "ClickHouse配置，Type为CLICKHOUSE时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClickHouseConnectParam",
           "name": "ClickHouseConnectParam",
           "output_required": true,
@@ -6551,8 +6650,8 @@
         },
         {
           "disabled": false,
-          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"ClusterId\":\"cynosdbmysql-test\",\"SelfBuilt\":false}",
+          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
           "output_required": true,
@@ -6561,8 +6660,8 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ClusterId\":\"tdcpg-test\",\"IsUpdate\":true,\"SelfBuilt\":false}",
+          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PostgreSQLConnectParam",
           "name": "PostgreSQLConnectParam",
           "output_required": true,
@@ -6571,8 +6670,8 @@
         },
         {
           "disabled": false,
-          "document": "MariaDB配置，Type为MARIADB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "document": "<p>MariaDB配置，Type为MARIADB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MariaDBConnectParam",
           "name": "MariaDBConnectParam",
           "output_required": true,
@@ -6581,8 +6680,8 @@
         },
         {
           "disabled": false,
-          "document": "SQLServer配置，Type为SQLSERVER时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":1433,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "document": "<p>SQLServer配置，Type为SQLSERVER时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SQLServerConnectParam",
           "name": "SQLServerConnectParam",
           "output_required": true,
@@ -6591,8 +6690,8 @@
         },
         {
           "disabled": false,
-          "document": "Ctsdb配置，Type为CTSDB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\"}",
+          "document": "<p>Ctsdb配置，Type为CTSDB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CtsdbConnectParam",
           "name": "CtsdbConnectParam",
           "output_required": true,
@@ -6601,8 +6700,8 @@
         },
         {
           "disabled": false,
-          "document": "Doris 配置，Type 为 DORIS 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":9030,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"SelfBuilt\":false,\"BePort\":8040}",
+          "document": "<p>Doris 配置，Type 为 DORIS 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
           "output_required": true,
@@ -6611,8 +6710,8 @@
         },
         {
           "disabled": false,
-          "document": "Kafka配置，Type 为 KAFKA 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"ckafka-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"BrokerAddress\":\"10.0.0.30:9092,10.0.0.31:9092\",\"Region\":\"ap-guangzhou\"}",
+          "document": "<p>Kafka配置，Type 为 KAFKA 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "KafkaConnectParam",
           "name": "KafkaConnectParam",
           "output_required": true,
@@ -6621,13 +6720,23 @@
         },
         {
           "disabled": false,
-          "document": "MQTT配置，Type 为 MQTT 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"Region\":\"ap-guangzhou\"}",
+          "document": "<p>MQTT配置，Type 为 MQTT 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MqttConnectParam",
           "name": "MqttConnectParam",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6637,7 +6746,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
+          "document": "<p>连接源的Id</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceId",
@@ -6652,7 +6761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
+          "document": "<p>连接源的Id</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceId",
@@ -6662,7 +6771,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源名称",
+          "document": "<p>连接源名称</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceName",
@@ -6672,7 +6781,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源描述",
+          "document": "<p>连接源描述</p>",
           "example": "description-test",
           "member": "string",
           "name": "Description",
@@ -6682,7 +6791,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源类型",
+          "document": "<p>连接源类型</p>",
           "example": "KAFKA",
           "member": "string",
           "name": "Type",
@@ -6692,7 +6801,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)",
+          "document": "<p>连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -6702,7 +6811,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的创建时间",
+          "document": "<p>连接源的创建时间</p>",
           "example": "2019-08-19 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -6712,7 +6821,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的异常信息",
+          "document": "<p>连接源的异常信息</p>",
           "example": "message-test",
           "member": "string",
           "name": "ErrorMessage",
@@ -6722,7 +6831,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的当前所处步骤",
+          "document": "<p>连接源的当前所处步骤</p>",
           "example": "step-test",
           "member": "string",
           "name": "CurrentStep",
@@ -6732,7 +6841,7 @@
         },
         {
           "disabled": false,
-          "document": "步骤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>步骤列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"step-test\"]",
           "member": "string",
           "name": "StepList",
@@ -6742,7 +6851,7 @@
         },
         {
           "disabled": false,
-          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
@@ -6752,7 +6861,7 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PostgreSQLConnectParam",
           "name": "PostgreSQLConnectParam",
@@ -6762,7 +6871,7 @@
         },
         {
           "disabled": false,
-          "document": "Dts配置，Type为DTS时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Dts配置，Type为DTS时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DtsConnectParam",
           "name": "DtsConnectParam",
@@ -6772,7 +6881,7 @@
         },
         {
           "disabled": false,
-          "document": "MongoDB配置，Type为MONGODB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MongoDB配置，Type为MONGODB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MongoDBConnectParam",
           "name": "MongoDBConnectParam",
@@ -6782,7 +6891,7 @@
         },
         {
           "disabled": false,
-          "document": "Es配置，Type为ES时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Es配置，Type为ES时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EsConnectParam",
           "name": "EsConnectParam",
@@ -6792,7 +6901,7 @@
         },
         {
           "disabled": false,
-          "document": "ClickHouse配置，Type为CLICKHOUSE时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClickHouseConnectParam",
           "name": "ClickHouseConnectParam",
@@ -6802,7 +6911,7 @@
         },
         {
           "disabled": false,
-          "document": "MariaDB配置，Type为MARIADB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MariaDB配置，Type为MARIADB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MariaDBConnectParam",
           "name": "MariaDBConnectParam",
@@ -6812,7 +6921,7 @@
         },
         {
           "disabled": false,
-          "document": "SQLServer配置，Type为SQLSERVER时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SQLServer配置，Type为SQLSERVER时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SQLServerConnectParam",
           "name": "SQLServerConnectParam",
@@ -6822,7 +6931,7 @@
         },
         {
           "disabled": false,
-          "document": "Ctsdb配置，Type为CTSDB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Ctsdb配置，Type为CTSDB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CtsdbConnectParam",
           "name": "CtsdbConnectParam",
@@ -6832,7 +6941,7 @@
         },
         {
           "disabled": false,
-          "document": "Doris 配置，Type 为 DORIS 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Doris 配置，Type 为 DORIS 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
@@ -6842,7 +6951,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka配置，Type 为 KAFKA 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kafka配置，Type 为 KAFKA 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KafkaConnectParam",
           "name": "KafkaConnectParam",
@@ -6852,13 +6961,23 @@
         },
         {
           "disabled": false,
-          "document": "MQTT配置，Type 为 MQTT 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MQTT配置，Type 为 MQTT 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MqttConnectParam",
           "name": "MqttConnectParam",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6868,7 +6987,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源数据信息",
+          "document": "<p>连接源数据信息</p>",
           "example": "无",
           "member": "DescribeConnectResourceResp",
           "name": "Result",
@@ -6890,7 +7009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源类型",
+          "document": "<p>连接源类型</p>",
           "example": "KAFKA",
           "member": "string",
           "name": "Type",
@@ -6899,7 +7018,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源名称的关键字查询,支持模糊匹配",
+          "document": "<p>连接源名称的关键字查询,支持模糊匹配</p>",
           "example": "search-test",
           "member": "string",
           "name": "SearchWord",
@@ -6908,7 +7027,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认为0",
+          "document": "<p>分页偏移量，默认为0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6917,7 +7036,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)",
+          "document": "<p>返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -6926,7 +7045,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)",
+          "document": "<p>连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
@@ -6967,7 +7086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源列表",
+          "document": "<p>连接源列表</p>",
           "example": "无",
           "member": "DescribeConnectResourcesResp",
           "name": "Result",
@@ -7172,7 +7291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -7187,7 +7306,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -7197,7 +7316,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskName",
@@ -7207,7 +7326,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "document": "<p>任务类型，SOURCE数据接入，SINK数据流出</p>",
           "example": "SINK",
           "member": "string",
           "name": "TaskType",
@@ -7217,7 +7336,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败",
+          "document": "<p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7227,8 +7346,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源",
-          "example": "{\"Type\":\"KAFKA\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"}}",
+          "document": "<p>数据源</p>",
+          "example": "无",
           "member": "DatahubResource",
           "name": "SourceResource",
           "output_required": true,
@@ -7237,8 +7356,8 @@
         },
         {
           "disabled": false,
-          "document": "数据目标",
-          "example": "{\"Type\":\"KAFKA\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"}}",
+          "document": "<p>数据目标</p>",
+          "example": "无",
           "member": "DatahubResource",
           "name": "TargetResource",
           "output_required": true,
@@ -7247,8 +7366,8 @@
         },
         {
           "disabled": false,
-          "document": "Connection列表",
-          "example": "[{\"TopicName\":\"topic-test\",\"GroupId\":\"group-test\",\"TopicId\":\"topic-test\"}]",
+          "document": "<p>Connection列表</p>",
+          "example": "无",
           "member": "Connection",
           "name": "Connections",
           "output_required": true,
@@ -7257,7 +7376,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "2019/8/19 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -7267,7 +7386,7 @@
         },
         {
           "disabled": false,
-          "document": "消息处理规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息处理规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TransformParam",
           "name": "TransformParam",
@@ -7277,7 +7396,7 @@
         },
         {
           "disabled": false,
-          "document": "数据接入ID",
+          "document": "<p>数据接入ID</p>",
           "example": "task-test",
           "member": "string",
           "name": "DatahubId",
@@ -7287,7 +7406,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的SchemaId",
+          "document": "<p>绑定的SchemaId</p>",
           "example": "schema-test",
           "member": "string",
           "name": "SchemaId",
@@ -7297,7 +7416,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的Schema名称",
+          "document": "<p>绑定的Schema名称</p>",
           "example": "schema-test",
           "member": "string",
           "name": "SchemaName",
@@ -7307,8 +7426,8 @@
         },
         {
           "disabled": false,
-          "document": "数据处理规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":\"{\\\"name\\\":\\\"value\\\"}\",\"FieldChain\":{\"Analyse\":{\"Format\":\"JSON\"}}}",
+          "document": "<p>数据处理规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TransformsParam",
           "name": "TransformsParam",
           "output_required": false,
@@ -7317,7 +7436,7 @@
         },
         {
           "disabled": false,
-          "document": "异常信息",
+          "document": "<p>异常信息</p>",
           "example": "message-test",
           "member": "string",
           "name": "ErrorMessage",
@@ -7327,8 +7446,8 @@
         },
         {
           "disabled": false,
-          "document": "任务标签列表",
-          "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]",
+          "document": "<p>任务标签列表</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -7337,8 +7456,8 @@
         },
         {
           "disabled": false,
-          "document": "任务描述信息\t",
-          "example": "任务描述信息\t",
+          "document": "<p>任务描述信息</p>",
+          "example": "任务描述信息",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -7347,12 +7466,42 @@
         },
         {
           "disabled": false,
-          "document": "1:正常 2:隔离中",
+          "document": "<p>1:正常 2:隔离中</p>",
           "example": "1",
           "member": "int64",
           "name": "IsolateStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>并发数</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>并发流量预估参考上限，MB/s</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SyncThrottleLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动扩容 true:自动扩容 false:手动扩容</p><p>默认值：true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoExpandFlag",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -7363,8 +7512,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果",
-          "example": "{\"TaskId\":\"task-test\",\"TaskName\":\"task-test\",\"TaskType\":\"SINK\",\"Status\":1,\"SourceResource\":{\"Type\":\"KAFKA\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"}},\"TargetResource\":{\"Type\":\"KAFKA\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"}},\"Connections\":[],\"CreateTime\":\"2019/8/19 00:00:00\",\"TransformParam\":{},\"DatahubId\":\"task-test\",\"SchemaId\":\"schema-test\",\"SchemaName\":\"schema-test\",\"TransformsParam\":{},\"ErrorMessage\":\"message-test\",\"Tags\":[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]}",
+          "document": "<p>返回结果</p>",
+          "example": "无",
           "member": "DescribeDatahubTaskRes",
           "name": "Result",
           "output_required": true,
@@ -7385,7 +7534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100 (超过100限制为100)",
+          "document": "<p>返回数量，默认为20，最大值为100 (超过100限制为100)</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7394,7 +7543,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认为0",
+          "document": "<p>分页偏移量，默认为0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7403,7 +7552,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，按照 TaskName 过滤，支持模糊查询",
+          "document": "<p>过滤条件，按照 TaskName 过滤，支持模糊查询</p>",
           "example": "search-test",
           "member": "string",
           "name": "SearchWord",
@@ -7412,7 +7561,7 @@
         },
         {
           "disabled": false,
-          "document": "转储的目标类型",
+          "document": "<p>转储的目标类型</p>",
           "example": "KAFKA",
           "member": "string",
           "name": "TargetType",
@@ -7421,7 +7570,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "document": "<p>任务类型，SOURCE数据接入，SINK数据流出</p>",
           "example": "SINK",
           "member": "string",
           "name": "TaskType",
@@ -7430,7 +7579,7 @@
         },
         {
           "disabled": false,
-          "document": "转储的源类型",
+          "document": "<p>转储的源类型</p>",
           "example": "KAFKA",
           "member": "string",
           "name": "SourceType",
@@ -7439,7 +7588,7 @@
         },
         {
           "disabled": false,
-          "document": "转储的资源",
+          "document": "<p>转储的资源</p>",
           "example": "resource-test",
           "member": "string",
           "name": "Resource",
@@ -7480,7 +7629,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回任务查询结果",
+          "document": "<p>返回任务查询结果</p>",
           "example": "无",
           "member": "DescribeDatahubTasksRes",
           "name": "Result",
@@ -10348,6 +10497,32 @@
       ],
       "usage": "both"
     },
+    "ExternalAccessInfoWrapper": {
+      "document": "实例公网路由IP白名单返回结果对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>IP白名单放通规则数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单</p>",
+          "example": "无",
+          "member": "IpWhitelistDTO",
+          "name": "IpWhitelist",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FailureParam": {
       "document": "数据处理规则失败处理",
       "members": [
@@ -13204,7 +13379,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否为自建集群",
+          "document": "<p>是否为自建集群</p>",
           "example": "false",
           "member": "bool",
           "name": "SelfBuilt",
@@ -13215,7 +13390,7 @@
         },
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "<p>ckafka集群实例Id</p>",
           "example": "ckafka-test",
           "member": "string",
           "name": "Resource",
@@ -13226,7 +13401,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名，多个以“,”分隔",
+          "document": "<p>主题名，多个以“,”分隔</p>",
           "example": "topic-test",
           "member": "string",
           "name": "Topic",
@@ -13237,7 +13412,7 @@
         },
         {
           "disabled": false,
-          "document": "Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "timestamp",
           "member": "string",
           "name": "OffsetType",
@@ -13248,7 +13423,7 @@
         },
         {
           "disabled": false,
-          "document": "Offset类型为timestamp时必传，传时间戳，精确到秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1566144000",
           "member": "uint64",
           "name": "StartTime",
@@ -13259,7 +13434,7 @@
         },
         {
           "disabled": false,
-          "document": "实例资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例资源名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ckafka测试",
           "member": "string",
           "name": "ResourceName",
@@ -13270,7 +13445,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100003",
           "member": "int64",
           "name": "ZoneId",
@@ -13281,7 +13456,7 @@
         },
         {
           "disabled": false,
-          "document": "主题Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主题Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "topic-test",
           "member": "string",
           "name": "TopicId",
@@ -13292,7 +13467,7 @@
         },
         {
           "disabled": false,
-          "document": "Topic的分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Topic的分区数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PartitionNum",
@@ -13303,7 +13478,7 @@
         },
         {
           "disabled": false,
-          "document": "启用容错实例/开启死信队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>启用容错实例/开启死信队列</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableToleration",
@@ -13314,7 +13489,7 @@
         },
         {
           "disabled": false,
-          "document": "Qps 限制",
+          "document": "<p>Qps 限制</p>",
           "example": "4000",
           "member": "uint64",
           "name": "QpsLimit",
@@ -13325,8 +13500,8 @@
         },
         {
           "disabled": false,
-          "document": "Table到Topic的路由，「分发到多个topic」开关打开时必传\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Database\":\"db1\",\"Table\":\"table1\",\"Topic\":\"topic1\",\"TopicId\":\"topic-id\"}]",
+          "document": "<p>Table到Topic的路由，「分发到多个topic」开关打开时必传</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TableMapping",
           "name": "TableMappings",
           "output_required": true,
@@ -13336,7 +13511,7 @@
         },
         {
           "disabled": false,
-          "document": "「分发到多个topic」开关，默认为false",
+          "document": "<p>「分发到多个topic」开关，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "UseTableMapping",
@@ -13347,7 +13522,7 @@
         },
         {
           "disabled": false,
-          "document": "使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）",
+          "document": "<p>使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）</p>",
           "example": "false",
           "member": "bool",
           "name": "UseAutoCreateTopic",
@@ -13358,7 +13533,7 @@
         },
         {
           "disabled": false,
-          "document": "写入Topic时是否进行压缩，不开启填\"none\"，开启的话，填写\"open\"。",
+          "document": "<p>写入Topic时是否进行压缩，不开启填&quot;none&quot;，开启的话，填写&quot;open&quot;。</p>",
           "example": "none",
           "member": "string",
           "name": "CompressionType",
@@ -13369,7 +13544,7 @@
         },
         {
           "disabled": false,
-          "document": "源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)",
+          "document": "<p>源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)</p>",
           "example": "1",
           "member": "int64",
           "name": "MsgMultiple",
@@ -13380,7 +13555,7 @@
         },
         {
           "disabled": false,
-          "document": "数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写\"META_SYNC_INSTANCE_TYPE\", 同步元数据及全部topic内消息的填写\"META_AND_DATA_SYNC_INSTANCE_TYPE\"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写\"DATA_SYNC_TYPE\"",
+          "document": "<p>数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写&quot;META_SYNC_INSTANCE_TYPE&quot;, 同步元数据及全部topic内消息的填写&quot;META_AND_DATA_SYNC_INSTANCE_TYPE&quot;; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写&quot;DATA_SYNC_TYPE&quot;</p>",
           "example": "DATA_SYNC_TYPE",
           "member": "string",
           "name": "ConnectorSyncType",
@@ -13391,7 +13566,7 @@
         },
         {
           "disabled": false,
-          "document": "数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false",
+          "document": "<p>数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "KeepPartition",
@@ -13402,7 +13577,7 @@
         },
         {
           "disabled": false,
-          "document": "正则匹配Topic列表",
+          "document": "<p>正则匹配Topic列表</p>",
           "example": "mytest",
           "member": "string",
           "name": "TopicRegularExpression",
@@ -13413,8 +13588,8 @@
         },
         {
           "disabled": false,
-          "document": "Topic 前缀",
-          "example": "",
+          "document": "<p>Topic 前缀</p>",
+          "example": "A",
           "member": "string",
           "name": "Prefix",
           "output_required": false,
@@ -13424,13 +13599,24 @@
         },
         {
           "disabled": false,
-          "document": "Topic前缀分隔符",
-          "example": "",
+          "document": "<p>Topic前缀分隔符</p>",
+          "example": ".",
           "member": "string",
           "name": "Separator",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多选topic列表</p>",
+          "example": "[\"topic-test1\"]",
+          "member": "string",
+          "name": "TopicList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -13814,6 +14000,61 @@
       ],
       "usage": "both"
     },
+    "ModifyAccessPolicyRequest": {
+      "document": "ModifyAccessPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ckafka-ay3z77qe",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由ID</p>",
+          "example": "137946",
+          "member": "int64",
+          "name": "RouteId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网IP白名单配置</p><p>不传默认删除全部配置</p>",
+          "example": "无",
+          "member": "IpWhitelistDTO",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessPolicyResponse": {
+      "document": "ModifyAccessPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>修改公网IP白名单结果</p>",
+          "example": "Succeed",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAclRuleRequest": {
       "document": "ModifyAclRule请求参数结构体",
       "members": [
@@ -13874,7 +14115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
+          "document": "<p>连接源的Id</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceId",
@@ -13883,7 +14124,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源名称，为空时不修改",
+          "document": "<p>连接源名称，为空时不修改</p>",
           "example": "resource-test",
           "member": "string",
           "name": "ResourceName",
@@ -13892,7 +14133,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源描述，为空时不修改",
+          "document": "<p>连接源描述，为空时不修改</p>",
           "example": "description-test",
           "member": "string",
           "name": "Description",
@@ -13901,7 +14142,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源类型，修改数据源参数时，需要与原Type相同，否则编辑数据源无效",
+          "document": "<p>连接源类型，修改数据源参数时，需要与原Type相同，否则编辑数据源无效</p>",
           "example": "KAFKA",
           "member": "string",
           "name": "Type",
@@ -13910,8 +14151,8 @@
         },
         {
           "disabled": false,
-          "document": "Dts配置，Type为DTS时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"GroupId\":\"group-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"Topic\":\"topic-test\"}",
+          "document": "<p>Dts配置，Type为DTS时必填</p>",
+          "example": "无",
           "member": "DtsModifyConnectParam",
           "name": "DtsConnectParam",
           "required": false,
@@ -13919,8 +14160,8 @@
         },
         {
           "disabled": false,
-          "document": "MongoDB配置，Type为MONGODB时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>MongoDB配置，Type为MONGODB时必填</p>",
+          "example": "无",
           "member": "MongoDBModifyConnectParam",
           "name": "MongoDBConnectParam",
           "required": false,
@@ -13928,8 +14169,8 @@
         },
         {
           "disabled": false,
-          "document": "Es配置，Type为ES时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>Es配置，Type为ES时必填</p>",
+          "example": "无",
           "member": "EsModifyConnectParam",
           "name": "EsConnectParam",
           "required": false,
@@ -13937,8 +14178,8 @@
         },
         {
           "disabled": false,
-          "document": "ClickHouse配置，Type为CLICKHOUSE时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时必填</p>",
+          "example": "无",
           "member": "ClickHouseModifyConnectParam",
           "name": "ClickHouseConnectParam",
           "required": false,
@@ -13946,8 +14187,8 @@
         },
         {
           "disabled": false,
-          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"ClusterId\":\"cynosdbmysql-test\",\"SelfBuilt\":false}",
+          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填</p>",
+          "example": "无",
           "member": "MySQLModifyConnectParam",
           "name": "MySQLConnectParam",
           "required": false,
@@ -13955,8 +14196,8 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ClusterId\":\"tdcpg-test\",\"IsUpdate\":true,\"SelfBuilt\":false}",
+          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>",
+          "example": "无",
           "member": "PostgreSQLModifyConnectParam",
           "name": "PostgreSQLConnectParam",
           "required": false,
@@ -13964,8 +14205,8 @@
         },
         {
           "disabled": false,
-          "document": "MariaDB配置，Type为MARIADB时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "document": "<p>MariaDB配置，Type为MARIADB时必填</p>",
+          "example": "无",
           "member": "MariaDBModifyConnectParam",
           "name": "MariaDBConnectParam",
           "required": false,
@@ -13973,8 +14214,8 @@
         },
         {
           "disabled": false,
-          "document": "SQLServer配置，Type为SQLSERVER时必填",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":1433,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "document": "<p>SQLServer配置，Type为SQLSERVER时必填</p>",
+          "example": "无",
           "member": "SQLServerModifyConnectParam",
           "name": "SQLServerConnectParam",
           "required": false,
@@ -13982,8 +14223,8 @@
         },
         {
           "disabled": false,
-          "document": "Ctsdb配置，Type为CTSDB",
-          "example": "{\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\"}",
+          "document": "<p>Ctsdb配置，Type为CTSDB</p>",
+          "example": "无",
           "member": "CtsdbModifyConnectParam",
           "name": "CtsdbConnectParam",
           "required": false,
@@ -13991,8 +14232,8 @@
         },
         {
           "disabled": false,
-          "document": "Doris配置，Type为DORIS",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":9030,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"SelfBuilt\":false,\"BePort\":8040}",
+          "document": "<p>Doris配置，Type为DORIS</p>",
+          "example": "无",
           "member": "DorisModifyConnectParam",
           "name": "DorisConnectParam",
           "required": false,
@@ -14000,8 +14241,8 @@
         },
         {
           "disabled": false,
-          "document": "Kafka配置，Type为 KAFKA 时必填",
-          "example": "{\"Resource\":\"ckafka-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"BrokerAddress\":\"10.0.0.30:9092,10.0.0.31:9092\",\"Region\":\"ap-guangzhou\"}",
+          "document": "<p>Kafka配置，Type为 KAFKA 时必填</p>",
+          "example": "无",
           "member": "KafkaConnectParam",
           "name": "KafkaConnectParam",
           "required": false,
@@ -14009,8 +14250,8 @@
         },
         {
           "disabled": false,
-          "document": "MQTT配置，Type为 MQTT 时必填",
-          "example": "{\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"Region\":\"ap-guangzhou\"}",
+          "document": "<p>MQTT配置，Type为 MQTT 时必填</p>",
+          "example": "无",
           "member": "MqttConnectParam",
           "name": "MqttConnectParam",
           "required": false,
@@ -14024,8 +14265,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
-          "example": "{\"ResourceId\":\"resource-test\"}",
+          "document": "<p>连接源的Id</p>",
+          "example": "无",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
           "output_required": true,
@@ -14046,7 +14287,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -14055,7 +14296,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "task-name",
           "member": "string",
           "name": "TaskName",
@@ -14064,12 +14305,39 @@
         },
         {
           "disabled": false,
-          "document": "任务描述信息",
+          "document": "<p>任务描述信息</p>",
           "example": "任务描述信息",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务并发上限</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TasksMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据同步限流值上限</p>单位：MB/s",
+          "example": "40",
+          "member": "int64",
+          "name": "SyncThrottleLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启自动扩容</p>枚举值：<ul><li> true： 自动扩容</li><li> false： 手动扩容</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoExpandFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14079,8 +14347,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
-          "example": "{\"taskId\":\"task-test\"}",
+          "document": "<p>任务id</p>",
+          "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
           "output_required": true,
@@ -14101,7 +14369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性topic名称",
+          "document": "<p>弹性topic名称</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/597/86863\">DescribeDatahubTopics</a></p>",
           "example": "appId-test",
           "member": "string",
           "name": "Name",
@@ -14110,7 +14378,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时间，单位：ms，当前最小值为60000ms。",
+          "document": "<p>消息保留时间，单位：ms，当前最小值为60000ms。</p>",
           "example": "360000",
           "member": "int64",
           "name": "RetentionMs",
@@ -14119,7 +14387,7 @@
         },
         {
           "disabled": false,
-          "document": "主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。",
+          "document": "<p>主题备注</p><p>入参限制：不超过64个字符</p>",
           "example": "note-test",
           "member": "string",
           "name": "Note",
@@ -14128,7 +14396,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -14143,7 +14411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果集",
+          "document": "<p>返回结果集</p>",
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
@@ -16104,7 +16372,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -16119,8 +16387,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"TaskId\":\"1\"}",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
           "output_required": true,
@@ -16971,7 +17239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -16986,8 +17254,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"taskId\":\"task-test\"}",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
           "output_required": true,
@@ -17008,7 +17276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-test",
           "member": "string",
           "name": "TaskId",
@@ -17023,8 +17291,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"TaskId\":\"task-test\"}",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
           "output_required": true,
@@ -18041,7 +18309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Tdw的bid",
+          "document": "<p>Tdw的bid</p>",
           "example": "bid-test",
           "member": "string",
           "name": "Bid",
@@ -18052,7 +18320,7 @@
         },
         {
           "disabled": false,
-          "document": "Tdw的tid",
+          "document": "<p>Tdw的tid</p>",
           "example": "tid-test",
           "member": "string",
           "name": "Tid",
@@ -18063,7 +18331,7 @@
         },
         {
           "disabled": false,
-          "document": "默认true",
+          "document": "<p>默认true</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDomestic",
@@ -18074,7 +18342,7 @@
         },
         {
           "disabled": false,
-          "document": "TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com",
+          "document": "<p>TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com</p>",
           "example": "tl-tdbank-tdmanager.tencent-distribute.com",
           "member": "string",
           "name": "TdwHost",
@@ -18085,7 +18353,7 @@
         },
         {
           "disabled": false,
-          "document": "TDW端口，默认8099",
+          "document": "<p>TDW端口，默认8099</p>",
           "example": "8099",
           "member": "int64",
           "name": "TdwPort",

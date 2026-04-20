@@ -116,6 +116,14 @@
         "title": "创建单声道音频编码配置"
       }
     ],
+    "DeleteAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccount\n<公共请求参数>\n\n{\n    \"Platform\": \"15****6788\",\n    \"UserId\": \"7b3a5***********************ce76a905\",\n    \"Operator\": \"7b*****e-3***-**9************e76a905\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02c1d62c-6bae-4d30-8eec-1d0733532fa6\"\n    }\n}",
+        "title": "删除账户"
+      }
+    ],
     "DeleteClass": [
       {
         "document": "",
@@ -466,6 +474,14 @@
         "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FlattenListMedia\n<公共请求参数>\n\n{\n    \"Owner\": {\n        \"Type\": \"PERSON\",\n        \"Id\": \"user_id_8ad3d628dc30001bd0343\"\n    },\n    \"Platform\": \"1000000009\",\n    \"ClassPath\": \"/a/b\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"281921553743710210\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810xxxxxxx2.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"user_id_8ad3d628dc30001bd0343\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
         "title": "平铺浏览媒体"
+      }
+    ],
+    "ForbidAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ForbidAccount\n<公共请求参数>\n\n{\n    \"Platform\": \"1500006788\",\n    \"UserId\": \"dd00afa4-2c13-414e-b0a2-ca6627aa20cf\",\n    \"Operator\": \"aad96************************aff94a3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d701ff6c-0642-4e60-8425-813c670760fc\"\n    }\n}",
+        "title": "禁用账户"
       }
     ],
     "GenerateVideoSegmentationSchemeByAi": [

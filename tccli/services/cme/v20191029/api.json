@@ -49,6 +49,13 @@
       "output": "CreateVideoEncodingPresetResponse",
       "status": "online"
     },
+    "DeleteAccount": {
+      "document": "删除平台归属的账户。",
+      "input": "DeleteAccountRequest",
+      "name": "删除账号",
+      "output": "DeleteAccountResponse",
+      "status": "online"
+    },
     "DeleteClass": {
       "document": "删除分类信息，删除时检验下述限制：\n<li>分类路径必须存在；</li>\n<li>分类下没有绑定素材。</li>",
       "input": "DeleteClassRequest",
@@ -229,6 +236,13 @@
       "input": "FlattenListMediaRequest",
       "name": "平铺浏览媒体",
       "output": "FlattenListMediaResponse",
+      "status": "online"
+    },
+    "ForbidAccount": {
+      "document": "禁用账号。",
+      "input": "ForbidAccountRequest",
+      "name": "禁用账户",
+      "output": "ForbidAccountResponse",
       "status": "online"
     },
     "GenerateVideoSegmentationSchemeByAi": {
@@ -1475,6 +1489,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountRequest": {
+      "document": "DeleteAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台 Id，指定访问的平台。关于平台概念，请参见文档 <a href=\"https://cloud.tencent.com/document/product/1156/43767\">平台</a>。</p>",
+          "example": "15****6788",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标识 。</p>",
+          "example": "7b3a5***********************ce76a905",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者。如不填，默认为 <code>cmeid_system</code>，表示平台管理员操作，可以操作任意账户。如果指定操作者，则操作者必须为账户所有者。</p>",
+          "example": "7b*****e-3***-**9************e76a905",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountResponse": {
+      "document": "DeleteAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3669,6 +3728,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForbidAccountRequest": {
+      "document": "ForbidAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台 Id，指定访问的平台。关于平台概念，请参见文档 <a href=\"https://cloud.tencent.com/document/product/1156/43767\">平台</a>。</p>",
+          "example": "1500006788",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标识 。</p>",
+          "example": "dd00afa4-2c13-414e-b0a2-ca6627aa20cf",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者。如不填，默认为 <code>cmeid_system</code>，表示平台管理员操作，可以操作任意账户。如果指定操作者，则操作者必须为账户所有者。</p>",
+          "example": "aad96************************aff94a3",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForbidAccountResponse": {
+      "document": "ForbidAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

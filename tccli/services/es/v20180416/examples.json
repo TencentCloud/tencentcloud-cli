@@ -474,10 +474,10 @@
     ],
     "UpdateIndex": [
       {
-        "document": "更新索引元数据",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIndex\n<公共请求参数>\n\n{\n    \"Username\": \"1\",\n    \"UpdateMetaJson\": \"1\",\n    \"IndexType\": \"1\",\n    \"InstanceId\": \"1\",\n    \"IndexName\": \"1\",\n    \"Password\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
-        "title": "更新索引元数据"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIndex\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-h3pzdpd6\",\n    \"IndexName\": \"asd\",\n    \"IndexType\": \"normal\",\n    \"UpdateMetaJson\": \"{\\\"mappings\\\":{\\\"properties\\\":{\\\"aa\\\":{\\\"analyzer\\\":\\\"standard\\\",\\\"index\\\":true,\\\"type\\\":\\\"text\\\"}}},\\\"settings\\\":{}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cf36e17-abdf-4a75-a95a-78a0e59fc959\"\n    }\n}",
+        "title": "更新索引"
       }
     ],
     "UpdateInstance": [

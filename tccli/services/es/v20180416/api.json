@@ -593,7 +593,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后备索引名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后备索引名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testnew",
           "member": "string",
           "name": "IndexName",
@@ -603,7 +603,7 @@
         },
         {
           "disabled": false,
-          "document": "后备索引状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后备索引状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GREEN",
           "member": "string",
           "name": "IndexStatus",
@@ -613,8 +613,8 @@
         },
         {
           "disabled": false,
-          "document": "后备索引存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "30GB",
+          "document": "<p>后备索引存储大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
           "member": "int64",
           "name": "IndexStorage",
           "output_required": true,
@@ -623,7 +623,7 @@
         },
         {
           "disabled": false,
-          "document": "后备索引当前生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后备索引当前生命周期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hot",
           "member": "string",
           "name": "IndexPhrase",
@@ -633,13 +633,23 @@
         },
         {
           "disabled": false,
-          "document": "后备索引创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后备索引创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "IndexCreateTime",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引Uuid</p>",
+          "example": "xaQ113",
+          "member": "string",
+          "name": "IndexUuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6847,7 +6857,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3d",
           "member": "string",
           "name": "ExpireMaxAge",
@@ -6858,7 +6868,7 @@
         },
         {
           "disabled": false,
-          "document": "过期大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>过期大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2GB",
           "member": "string",
           "name": "ExpireMaxSize",
@@ -6869,7 +6879,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>滚动周期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1d",
           "member": "string",
           "name": "RolloverMaxAge",
@@ -6880,7 +6890,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启动态滚动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启动态滚动</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "string",
           "name": "RolloverDynamic",
@@ -6891,7 +6901,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启动态分片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启动态分片</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "string",
           "name": "ShardNumDynamic",
@@ -6902,7 +6912,7 @@
         },
         {
           "disabled": false,
-          "document": "时间分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间分区字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "@timestamp",
           "member": "string",
           "name": "TimestampField",
@@ -6913,7 +6923,7 @@
         },
         {
           "disabled": false,
-          "document": "写入模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>写入模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "append_only",
           "member": "string",
           "name": "WriteMode",
@@ -6921,6 +6931,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启完全卸载</p><p>枚举值：</p><ul><li>true： 开启完全卸载</li><li>false： 关闭完全卸载</li></ul>",
+          "example": "fasle",
+          "member": "string",
+          "name": "FullOffloadedEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完全卸载生命周期</p>",
+          "example": "1d",
+          "member": "string",
+          "name": "FullOffloadedMaxAge",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完全卸载后备索引取回后生命周期</p>",
+          "example": "2d",
+          "member": "string",
+          "name": "FullOffloadedRetrieveMaxAge",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12626,7 +12669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ES集群ID",
+          "document": "<p>ES集群ID</p>",
           "example": "es-abcdefgh",
           "member": "string",
           "name": "InstanceId",
@@ -12635,7 +12678,7 @@
         },
         {
           "disabled": false,
-          "document": "更新的索引类型。auto：自治索引；normal：普通索引",
+          "document": "<p>更新的索引类型。auto：自治索引；normal：普通索引</p>",
           "example": "auto",
           "member": "string",
           "name": "IndexType",
@@ -12644,7 +12687,7 @@
         },
         {
           "disabled": false,
-          "document": "更新的索引名",
+          "document": "<p>更新的索引名</p>",
           "example": "index_name",
           "member": "string",
           "name": "IndexName",
@@ -12653,7 +12696,7 @@
         },
         {
           "disabled": false,
-          "document": "更新的索引元数据JSON，如mappings、settings",
+          "document": "<p>更新的索引元数据JSON，如mappings、settings</p>",
           "example": "{\"index.number_of_replicas\": 1}",
           "member": "string",
           "name": "UpdateMetaJson",
@@ -12662,7 +12705,7 @@
         },
         {
           "disabled": false,
-          "document": "集群访问用户名",
+          "document": "<p>集群访问用户名</p>",
           "example": "elastic",
           "member": "string",
           "name": "Username",
@@ -12671,7 +12714,7 @@
         },
         {
           "disabled": false,
-          "document": "集群访问密码",
+          "document": "<p>集群访问密码</p>",
           "example": "G7j#kL9p$2w",
           "member": "string",
           "name": "Password",
@@ -12680,12 +12723,39 @@
         },
         {
           "disabled": false,
-          "document": "是否滚动后备索引",
+          "document": "<p>是否滚动后备索引</p>",
           "example": "false",
           "member": "bool",
           "name": "RolloverBackingIndex",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为取回完全卸载索引</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "MountIndex",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引Uuid</p>",
+          "example": "Axs1xa13",
+          "member": "string",
+          "name": "IndexUuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>后备索引名</p>",
+          "example": ".ds-test1-000001",
+          "member": "string",
+          "name": "BackingIndexName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
