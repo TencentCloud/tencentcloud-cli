@@ -14445,7 +14445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Program名称。",
+          "document": "<p>Program名称。</p>",
           "example": "test_program2",
           "member": "string",
           "name": "Name",
@@ -14454,7 +14454,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的channel。",
+          "document": "<p>绑定的channel。</p>",
           "example": "698A9F401D3EA6831FD9",
           "member": "string",
           "name": "AttachedChannel",
@@ -14463,7 +14463,7 @@
         },
         {
           "disabled": false,
-          "document": "编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD",
+          "document": "<p>编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD</p>",
           "example": "VOD",
           "member": "string",
           "name": "SourceType",
@@ -14472,7 +14472,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的source location。",
+          "document": "<p>关联的source location。</p>",
           "example": "698557DC1D3EA60266EB",
           "member": "string",
           "name": "SourceLocationId",
@@ -14481,7 +14481,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的直播or点播，source名称，location下全局唯一。",
+          "document": "<p>关联的直播or点播，source名称，location下全局唯一。</p>",
           "example": "test_source",
           "member": "string",
           "name": "SourceName",
@@ -14490,7 +14490,7 @@
         },
         {
           "disabled": false,
-          "document": "PlaybackConf。",
+          "document": "<p>PlaybackConf。</p>",
           "example": "无",
           "member": "PlaybackInfoReq",
           "name": "PlaybackConf",
@@ -14499,12 +14499,21 @@
         },
         {
           "disabled": false,
-          "document": "AdBreaks，只有source类型为Vod时有效。",
+          "document": "<p>AdBreaks，只有source类型为Vod时有效。</p>",
           "example": "无",
           "member": "AdBreakInfo",
           "name": "AdBreaks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>",
+          "example": "PreCaching",
+          "member": "string",
+          "name": "VodAcquisitionMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14514,7 +14523,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "channel信息。",
+          "document": "<p>channel信息。</p>",
           "example": "无",
           "member": "LinearAssemblyProgramInfo",
           "name": "Info",
@@ -26878,7 +26887,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "program名称。",
+          "document": "<p>program名称。</p>",
           "example": "test_program5",
           "member": "string",
           "name": "Name",
@@ -26889,7 +26898,7 @@
         },
         {
           "disabled": false,
-          "document": "编排的目标source的类型，分直播和点播。",
+          "document": "<p>编排的目标source的类型，分直播和点播。</p>",
           "example": "VOD",
           "member": "string",
           "name": "SourceType",
@@ -26900,7 +26909,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的source location id。",
+          "document": "<p>关联的source location id。</p>",
           "example": "698557DC1D3EA60266EB",
           "member": "string",
           "name": "SourceLocationId",
@@ -26911,7 +26920,7 @@
         },
         {
           "disabled": false,
-          "document": "SourceId，唯一标识一个source。",
+          "document": "<p>SourceId，唯一标识一个source。</p>",
           "example": "6985B2641D3EA53D16FD",
           "member": "string",
           "name": "SourceId",
@@ -26922,7 +26931,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的直播or点播，source名称，location下全局唯一。",
+          "document": "<p>关联的直播or点播，source名称，location下全局唯一。</p>",
           "example": "test_source",
           "member": "string",
           "name": "SourceName",
@@ -26933,7 +26942,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的channel。",
+          "document": "<p>绑定的channel。</p>",
           "example": "698A9F401D3EA6831FD9",
           "member": "string",
           "name": "AttachedChannel",
@@ -26944,7 +26953,7 @@
         },
         {
           "disabled": false,
-          "document": "播放配置。",
+          "document": "<p>播放配置。</p>",
           "example": "无",
           "member": "PlaybackInfo",
           "name": "PlaybackConf",
@@ -26955,7 +26964,7 @@
         },
         {
           "disabled": false,
-          "document": "AdBreaks。",
+          "document": "<p>AdBreaks。</p>",
           "example": "无",
           "member": "AdBreakInfo",
           "name": "AdBreaks",
@@ -26966,7 +26975,7 @@
         },
         {
           "disabled": false,
-          "document": "Id。",
+          "document": "<p>Id。</p>",
           "example": "698BFB151D3EA5656164",
           "member": "string",
           "name": "Id",
@@ -26977,7 +26986,7 @@
         },
         {
           "disabled": false,
-          "document": "Region。",
+          "document": "<p>Region。</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -26988,10 +26997,21 @@
         },
         {
           "disabled": false,
-          "document": "SourceLocation名称。",
+          "document": "<p>SourceLocation名称。</p>",
           "example": "location_name",
           "member": "string",
           "name": "SourceLocationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>",
+          "example": "PreCaching",
+          "member": "string",
+          "name": "VodAcquisitionMethod",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -33523,7 +33543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Program Id。",
+          "document": "<p>Program Id。</p>",
           "example": "698BF44F1D3EA5656163",
           "member": "string",
           "name": "Id",
@@ -33532,7 +33552,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的名称。",
+          "document": "<p>修改后的名称。</p>",
           "example": "test_program2",
           "member": "string",
           "name": "Name",
@@ -33541,7 +33561,7 @@
         },
         {
           "disabled": false,
-          "document": "编排的目标source的类型，分直播和点播。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD",
+          "document": "<p>编排的目标source的类型，分直播和点播。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD</p>",
           "example": "VOD",
           "member": "string",
           "name": "SourceType",
@@ -33550,7 +33570,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的source location。\t",
+          "document": "<p>关联的source location。</p>",
           "example": "698557DC1D3EA60266EB",
           "member": "string",
           "name": "SourceLocationId",
@@ -33559,7 +33579,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的直播or点播，source名称，location下全局唯一。",
+          "document": "<p>关联的直播or点播，source名称，location下全局唯一。</p>",
           "example": "test_source",
           "member": "string",
           "name": "SourceName",
@@ -33568,7 +33588,7 @@
         },
         {
           "disabled": false,
-          "document": "PlaybackConf。",
+          "document": "<p>PlaybackConf。</p>",
           "example": "无",
           "member": "PlaybackInfoReq",
           "name": "PlaybackConf",
@@ -33577,12 +33597,21 @@
         },
         {
           "disabled": false,
-          "document": "AdBreaks。",
+          "document": "<p>AdBreaks。</p>",
           "example": "无",
           "member": "AdBreakInfo",
           "name": "AdBreaks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>",
+          "example": "PreCaching",
+          "member": "string",
+          "name": "VodAcquisitionMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

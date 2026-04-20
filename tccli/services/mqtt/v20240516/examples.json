@@ -360,6 +360,14 @@
         "title": "示例"
       }
     ],
+    "DescribeSharedSubscriptionGroups": [
+      {
+        "document": "查询共享订阅组列表",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedSubscriptionGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-zj944d74\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreateTime\": 1749468454000,\n                \"ExpiryInterval\": 10,\n                \"InstanceId\": \"mqtt-zj944d74\",\n                \"LbStrategy\": 1,\n                \"Remark\": \"helklo2\",\n                \"SharedName\": \"test-aa\",\n                \"UpdateTime\": 1749798776000\n            },\n            {\n                \"CreateTime\": 1749398400000,\n                \"ExpiryInterval\": 10,\n                \"InstanceId\": \"mqtt-zj944d74\",\n                \"LbStrategy\": 1,\n                \"Remark\": null,\n                \"SharedName\": \"test-bb\",\n                \"UpdateTime\": 1749398400000\n            },\n            {\n                \"CreateTime\": 1749475014000,\n                \"ExpiryInterval\": 10,\n                \"InstanceId\": \"mqtt-zj944d74\",\n                \"LbStrategy\": 1,\n                \"Remark\": null,\n                \"SharedName\": \"test-cc\",\n                \"UpdateTime\": 1749475016000\n            },\n            {\n                \"CreateTime\": 1749475039000,\n                \"ExpiryInterval\": 15,\n                \"InstanceId\": \"mqtt-zj944d74\",\n                \"LbStrategy\": 1,\n                \"Remark\": null,\n                \"SharedName\": \"test-dd\",\n                \"UpdateTime\": 1749475041000\n            },\n            {\n                \"CreateTime\": 1749798707000,\n                \"ExpiryInterval\": 10,\n                \"InstanceId\": \"mqtt-zj944d74\",\n                \"LbStrategy\": 1,\n                \"Remark\": \"hello\",\n                \"SharedName\": \"test-ee\",\n                \"UpdateTime\": 1749798707000\n            }\n        ],\n        \"RequestId\": \"f320bebc-c033-4cc5-ab39-72c477e98b24\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "查询共享订阅组列表"
+      }
+    ],
     "DescribeSharedSubscriptionLag": [
       {
         "document": "示例",

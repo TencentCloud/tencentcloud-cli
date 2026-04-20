@@ -52799,7 +52799,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录名",
+          "document": "<p>数据目录名</p>",
           "example": "tsing_catalog",
           "member": "string",
           "name": "CatalogName",
@@ -52808,7 +52808,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "tsing_schema1",
           "member": "string",
           "name": "SchemaName",
@@ -52817,7 +52817,7 @@
         },
         {
           "disabled": false,
-          "document": "最大结果条数",
+          "document": "<p>最大结果条数</p>",
           "example": "1",
           "member": "int64",
           "name": "MaxResults",
@@ -52826,7 +52826,7 @@
         },
         {
           "disabled": false,
-          "document": "分页token信息",
+          "document": "<p>分页token信息</p>",
           "example": "eyJvZmZzZXQiOjF9",
           "member": "string",
           "name": "PageToken",
@@ -52835,12 +52835,21 @@
         },
         {
           "disabled": false,
-          "document": "调用时所在workspace唯一id",
+          "document": "<p>调用时所在workspace唯一id</p>",
           "example": "17678671667189298",
           "member": "string",
           "name": "WorkspaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -52850,7 +52859,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页查询函数列表返回包",
+          "document": "<p>分页查询函数列表返回包</p>",
           "example": "无",
           "member": "ListFunctionsRsp",
           "name": "Data",

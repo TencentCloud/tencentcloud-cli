@@ -1,33 +1,10 @@
-# Release 3.0.1406.1
+# Release 3.0.1407.1
 
-## 音频内容安全(ams) 版本：2020-12-29
+## AI Agent 安全网关(apis) 版本：2024-08-01
 
-### 第 16 次发布
+### 第 13 次发布
 
-发布时间：2026-04-20 01:07:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InputInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#InputInfo)
-
-	* 新增成员：ImageUrlList, TextContent
-
-
-
-
-## 音频内容安全(ams) 版本：2020-06-08
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 136 次发布
-
-发布时间：2026-04-20 01:40:07
+发布时间：2026-04-21 01:10:03
 
 本次发布包含了以下内容：
 
@@ -35,37 +12,37 @@
 
 修改接口：
 
-* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/589/76813)
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/1805/88920)
 
-	* 新增入参：WebUiVersion
+	* 新增入参：SensitiveDataCheckStatus, SensitiveDataCheckConfig
 
-* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/589/34261)
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/1805/88916)
 
-	* 新增入参：WebUiVersion
+	* 新增入参：SensitiveDataCheckStatus, SensitiveDataCheckConfig
 
 
 新增数据结构：
 
-* [WebUiData](http://document.tencentcloudapi.woa.com/document/product/589/33981#WebUiData)
+* [SensitiveDataCheckConfigDTO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#SensitiveDataCheckConfigDTO)
 
 修改数据结构：
 
-* [ServiceGroup](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceGroup)
+* [DescribeModelServiceResponseVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeModelServiceResponseVO)
 
-	* 新增成员：WebUIUrls
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
+	* 新增成员：SensitiveDataCheckStatus, SensitiveDataCheckConfig
 
 
 
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 121 次发布
+## 负载均衡(clb) 版本：2023-04-17
 
-发布时间：2026-04-20 01:59:59
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 83 次发布
+
+发布时间：2026-04-21 01:22:13
 
 本次发布包含了以下内容：
 
@@ -73,48 +50,105 @@
 
 修改接口：
 
-* [CreatePrometheusMultiTenantInstancePostPayMode](http://document.tencentcloudapi.woa.com/document/product/248/75067)
+* [ModifyLoadBalancerSla](http://document.tencentcloudapi.woa.com/document/product/214/63892)
 
-	* 新增入参：InstanceAttributes
+	* 新增出参：DealName
 
-* [ModifyPrometheusInstanceAttributes](http://document.tencentcloudapi.woa.com/document/product/248/75019)
 
-	* 新增入参：InstanceAttributes
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 145 次发布
+
+发布时间：2026-04-21 01:23:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeKafkaConsumer](http://document.tencentcloudapi.woa.com/document/product/614/81449)
+
+	* 新增出参：HasServicesLog, ScopeType
+
+* [ModifyKafkaConsumer](http://document.tencentcloudapi.woa.com/document/product/614/81450)
+
+	* 新增入参：HasServicesLog, ScopeType
+
+* [OpenKafkaConsumer](http://document.tencentcloudapi.woa.com/document/product/614/72339)
+
+	* 新增入参：HasServicesLog, ScopeType
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 105 次发布
+
+发布时间：2026-04-21 01:42:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateIndex](http://document.tencentcloudapi.woa.com/document/product/845/74380)
+
+	* 新增入参：MountIndex, IndexUuid, BackingIndexName
 
 
 修改数据结构：
 
-* [PrometheusInstancesItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusInstancesItem)
+* [BackingIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#BackingIndexMetaField)
 
-	* 新增成员：InstanceAttributes
+	* 新增成员：IndexUuid
+
+* [IndexOptionsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#IndexOptionsField)
+
+	* 新增成员：FullOffloadedEnable, FullOffloadedMaxAge, FullOffloadedRetrieveMaxAge
 
 
 
 
 ## 媒体处理(mps) 版本：2019-06-12
 
-### 第 164 次发布
+### 第 165 次发布
 
-发布时间：2026-04-20 02:01:47
+发布时间：2026-04-21 02:02:03
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [CreateStreamPackageLinearAssemblyProgram](http://document.tencentcloudapi.woa.com/document/product/862/89909)
+
+	* 新增入参：VodAcquisitionMethod
+
+* [ModifyStreamPackageLinearAssemblyProgram](http://document.tencentcloudapi.woa.com/document/product/862/89888)
+
+	* 新增入参：VodAcquisitionMethod
+
+
 修改数据结构：
 
-* [SSAIConf](http://document.tencentcloudapi.woa.com/document/product/862/37615#SSAIConf)
+* [LinearAssemblyProgramInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LinearAssemblyProgramInfo)
 
-	* 新增成员：AdsUrls, PreRollAdsUrls
-
-
+	* 新增成员：VodAcquisitionMethod
 
 
-## 风险识别 RCE(rce) 版本：2025-11-13
 
-### 第 3 次发布
 
-发布时间：2026-04-20 02:11:14
+## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+
+### 第 26 次发布
+
+发布时间：2026-04-21 02:04:19
 
 本次发布包含了以下内容：
 
@@ -122,87 +156,33 @@
 
 新增接口：
 
-* [DescribeCameraRisk](http://document.tencentcloudapi.woa.com/document/product/1343/90019)
-* [DescribeDeviceRisk](http://document.tencentcloudapi.woa.com/document/product/1343/90018)
+* [DescribeSharedSubscriptionGroups](http://document.tencentcloudapi.woa.com/document/product/1773/90023)
 
 新增数据结构：
 
-* [CameraRiskBizData](http://document.tencentcloudapi.woa.com/document/product/1343/90020#CameraRiskBizData)
-* [Cust](http://document.tencentcloudapi.woa.com/document/product/1343/90020#Cust)
-* [Customer](http://document.tencentcloudapi.woa.com/document/product/1343/90020#Customer)
-* [DeviceRiskBizData](http://document.tencentcloudapi.woa.com/document/product/1343/90020#DeviceRiskBizData)
-* [OutputCameraRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1343/90020#OutputCameraRiskInfo)
-* [OutputDeviceRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1343/90020#OutputDeviceRiskInfo)
-* [RiskLabel](http://document.tencentcloudapi.woa.com/document/product/1343/90020#RiskLabel)
-
-
-
-## 风险识别 RCE(rce) 版本：2025-04-25
-
-
-
-## 风险识别 RCE(rce) 版本：2020-11-03
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 52 次发布
-
-发布时间：2026-04-20 02:19:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ComplianceAffectedAsset](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ComplianceAffectedAsset)
-
-	* 新增成员：AssetUniqueID
-
-* [ComplianceAssetInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ComplianceAssetInfo)
-
-	* 新增成员：AssetUniqueID
-
+* [SharedGroup](http://document.tencentcloudapi.woa.com/document/product/1773/84898#SharedGroup)
 
 
 
 ## 边缘安全加速平台(teo) 版本：2022-09-01
 
-### 第 76 次发布
+### 第 77 次发布
 
-发布时间：2026-04-20 02:24:16
+发布时间：2026-04-21 02:21:48
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增数据结构：
+
+* [ShieldParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ShieldParameters)
+
 修改数据结构：
 
-* [AdaptiveFrequencyControl](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AdaptiveFrequencyControl)
+* [RuleEngineAction](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RuleEngineAction)
 
-	* 新增成员：Id
-
-* [BandwidthAbuseDefense](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BandwidthAbuseDefense)
-
-	* 新增成员：Id
-
-* [BotIntelligence](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BotIntelligence)
-
-	* 新增成员：Id
-
-* [ClientFiltering](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ClientFiltering)
-
-	* 新增成员：Id
-
-* [FrequentScanningProtection](http://document.tencentcloudapi.woa.com/document/product/1738/81211#FrequentScanningProtection)
-
-	* 新增成员：Id
-
-* [SlowAttackDefense](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SlowAttackDefense)
-
-	* 新增成员：Id
+	* 新增成员：ShieldParameters
 
 
 
@@ -211,49 +191,40 @@
 
 
 
-## 容器服务(tke) 版本：2022-05-01
+## 私有网络(vpc) 版本：2017-03-12
 
+### 第 249 次发布
 
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 124 次发布
-
-发布时间：2026-04-20 02:27:43
+发布时间：2026-04-21 02:31:50
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [ModifyLogConfig](http://document.tencentcloudapi.woa.com/document/product/457/90021)
+* [VpnGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpnGateway)
+
+	* 新增成员：TagSet
+
 
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2025-10-10
 
-### 第 12 次发布
+### 第 13 次发布
 
-发布时间：2026-04-20 02:38:31
+发布时间：2026-04-21 02:36:22
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
+修改接口：
 
-* [Extensions](http://document.tencentcloudapi.woa.com/document/product/1607/88970#Extensions)
+* [ListFunctions](http://document.tencentcloudapi.woa.com/document/product/1607/89345)
 
-修改数据结构：
-
-* [ConfigItem](http://document.tencentcloudapi.woa.com/document/product/1607/88970#ConfigItem)
-
-	* 新增成员：Extensions
-
-* [GetWorkspaceConfigRsp](http://document.tencentcloudapi.woa.com/document/product/1607/88970#GetWorkspaceConfigRsp)
-
-	* 新增成员：ConfigItems
+	* 新增入参：FetchOption
 
 
 

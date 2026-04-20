@@ -14224,7 +14224,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>日志主题Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "FromTopicId",
@@ -14239,7 +14239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka协议消费是否打开",
+          "document": "<p>Kafka协议消费是否打开</p>",
           "example": "false",
           "member": "bool",
           "name": "Status",
@@ -14249,7 +14249,7 @@
         },
         {
           "disabled": false,
-          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "document": "<p>KafkaConsumer 消费时使用的Topic参数</p>",
           "example": "out-a5ce0c9c-0690-44a5-bc79-5f2190626bd0",
           "member": "string",
           "name": "TopicID",
@@ -14259,7 +14259,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
+          "document": "<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>",
           "example": "2",
           "member": "int64",
           "name": "Compression",
@@ -14269,7 +14269,7 @@
         },
         {
           "disabled": false,
-          "document": "kafka协议消费数据格式",
+          "document": "<p>kafka协议消费数据格式</p>",
           "example": "无",
           "member": "KafkaConsumerContent",
           "name": "ConsumerContent",
@@ -14279,7 +14279,17 @@
         },
         {
           "disabled": false,
-          "document": "外网消费开关。",
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网消费开关。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableInternetConsume",
@@ -14289,12 +14299,22 @@
         },
         {
           "disabled": false,
-          "document": "内网消费开关。",
+          "document": "<p>内网消费开关。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableIntranetConsume",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费范围类型，0:最新，1:历史+最新</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScopeType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -22589,7 +22609,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>日志主题Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "FromTopicId",
@@ -22598,7 +22618,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩",
+          "document": "<p>压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩</p>",
           "example": "2",
           "member": "int64",
           "name": "Compression",
@@ -22607,7 +22627,7 @@
         },
         {
           "disabled": false,
-          "document": "kafka协议消费数据格式",
+          "document": "<p>kafka协议消费数据格式</p>",
           "example": "无",
           "member": "KafkaConsumerContent",
           "name": "ConsumerContent",
@@ -22616,7 +22636,16 @@
         },
         {
           "disabled": false,
-          "document": "外网消费开关。",
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网消费开关。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableInternetConsume",
@@ -22625,12 +22654,21 @@
         },
         {
           "disabled": false,
-          "document": "内网消费开关。",
+          "document": "<p>内网消费开关。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableIntranetConsume",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费范围类型，0:最新，1:历史+最新</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScopeType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -24923,7 +24961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>日志主题Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "FromTopicId",
@@ -24932,7 +24970,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0",
+          "document": "<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0</p>",
           "example": "0",
           "member": "int64",
           "name": "Compression",
@@ -24941,7 +24979,7 @@
         },
         {
           "disabled": false,
-          "document": "kafka协议消费数据格式",
+          "document": "<p>kafka协议消费数据格式</p>",
           "example": "无",
           "member": "KafkaConsumerContent",
           "name": "ConsumerContent",
@@ -24950,7 +24988,16 @@
         },
         {
           "disabled": false,
-          "document": "外网消费开关，默认开启",
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网消费开关，默认开启</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableInternetConsume",
@@ -24959,12 +25006,21 @@
         },
         {
           "disabled": false,
-          "document": "内网消费开关，默认开启",
+          "document": "<p>内网消费开关，默认开启</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableIntranetConsume",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费范围类型，0:最新；1:历史+最新；默认值:0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScopeType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -24974,7 +25030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "document": "<p>KafkaConsumer 消费时使用的Topic参数</p>",
           "example": "out-57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicID",

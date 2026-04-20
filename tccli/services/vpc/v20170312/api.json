@@ -74728,7 +74728,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关实例ID。",
+          "document": "<p>网关实例ID。</p>",
           "example": "vpngw-az2xuzp5",
           "member": "string",
           "name": "VpnGatewayId",
@@ -74738,7 +74738,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC实例ID。",
+          "document": "<p>VPC实例ID。</p>",
           "example": "vpc-qqa5rnd5",
           "member": "string",
           "name": "VpcId",
@@ -74748,7 +74748,7 @@
         },
         {
           "disabled": false,
-          "document": "网关实例名称。",
+          "document": "<p>网关实例名称。</p>",
           "example": "test-gateway",
           "member": "string",
           "name": "VpnGatewayName",
@@ -74758,7 +74758,7 @@
         },
         {
           "disabled": false,
-          "document": "网关实例类型：'IPSEC', 'SSL','CCN','SSL_CCN'。",
+          "document": "<p>网关实例类型</p><p>枚举值：</p><ul><li>IPSEC： IPSEC VPC类型VPN</li><li>SSL： SSL VPC类型VPN</li><li>CCN： IPSEC CCN类型VPN</li><li>SSL_CCN： SSL CCN类型VPN</li></ul><p>默认值：IPSEC</p>",
           "example": "IPSEC",
           "member": "string",
           "name": "Type",
@@ -74768,7 +74768,7 @@
         },
         {
           "disabled": false,
-          "document": "网关实例状态， 'PENDING'：生产中，'PENDING_ERROR'：生产失败，'DELETING'：删除中，'DELETING_ERROR'：删除失败，'AVAILABLE'：运行中。",
+          "document": "<p>网关实例状态。</p><p>枚举值：</p><ul><li>PENDING： 生产中</li><li>PENDING_ERROR： 生产失败</li><li>DELETING： 删除中</li><li>DELETING_ERROR： 生产失败</li><li>AVAILABLE： 运行中</li></ul>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "State",
@@ -74778,7 +74778,7 @@
         },
         {
           "disabled": false,
-          "document": "网关公网IP。",
+          "document": "<p>网关公网IP。</p>",
           "example": "139.124.3.2",
           "member": "string",
           "name": "PublicIpAddress",
@@ -74788,7 +74788,7 @@
         },
         {
           "disabled": false,
-          "document": "网关续费类型：'NOTIFY_AND_MANUAL_RENEW'：手动续费，'NOTIFY_AND_AUTO_RENEW'：自动续费，'NOT_NOTIFY_AND_NOT_RENEW'：到期不续费。",
+          "document": "<p>网关续费类型：&#39;NOTIFY_AND_MANUAL_RENEW&#39;：手动续费，&#39;NOTIFY_AND_AUTO_RENEW&#39;：自动续费，&#39;NOT_NOTIFY_AND_NOT_RENEW&#39;：到期不续费。</p>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -74798,7 +74798,7 @@
         },
         {
           "disabled": false,
-          "document": "网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。",
+          "document": "<p>网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。</p>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -74808,7 +74808,7 @@
         },
         {
           "disabled": false,
-          "document": "网关出带宽，单位：Mbps。",
+          "document": "<p>网关出带宽</p><p>单位：Mbps</p>",
           "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -74818,7 +74818,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2021-04-25 17:14:34",
           "member": "datetime",
           "name": "CreatedTime",
@@ -74828,7 +74828,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费网关过期时间。",
+          "document": "<p>预付费网关过期时间。</p>",
           "example": "2021-04-25 17:14:34",
           "member": "datetime",
           "name": "ExpiredTime",
@@ -74838,7 +74838,7 @@
         },
         {
           "disabled": false,
-          "document": "公网IP是否被封堵。",
+          "document": "<p>公网IP是否被封堵。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAddressBlocked",
@@ -74848,7 +74848,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。",
+          "document": "<p>计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。</p>",
           "example": "PREPAID_TO_POSTPAID",
           "member": "string",
           "name": "NewPurchasePlan",
@@ -74858,7 +74858,7 @@
         },
         {
           "disabled": false,
-          "document": "网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。",
+          "document": "<p>网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。</p>",
           "example": "PROTECTIVELY_ISOLATED",
           "member": "string",
           "name": "RestrictState",
@@ -74868,7 +74868,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区，如：ap-guangzhou-2。",
+          "document": "<p>可用区，如：ap-guangzhou-2。</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -74878,7 +74878,7 @@
         },
         {
           "disabled": false,
-          "document": "网关带宽配额信息。",
+          "document": "<p>网关带宽配额信息。</p>",
           "example": "无",
           "member": "VpnGatewayQuota",
           "name": "VpnGatewayQuotaSet",
@@ -74888,7 +74888,7 @@
         },
         {
           "disabled": false,
-          "document": "网关实例版本信息。",
+          "document": "<p>网关实例版本信息。</p>",
           "example": "1.0",
           "member": "string",
           "name": "Version",
@@ -74898,7 +74898,7 @@
         },
         {
           "disabled": false,
-          "document": "Type值为CCN时，该值表示云联网实例ID。",
+          "document": "<p>Type值为CCN/SSL_CCN时，该值表示云联网实例ID。</p>",
           "example": "ccn-gree226l",
           "member": "string",
           "name": "NetworkInstanceId",
@@ -74908,7 +74908,7 @@
         },
         {
           "disabled": false,
-          "document": "CDC 实例ID。",
+          "document": "<p>CDC 实例ID。</p>",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
@@ -74918,7 +74918,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN 客户端连接数。",
+          "document": "<p>SSL-VPN 客户端连接数。</p>",
           "example": "5",
           "member": "uint64",
           "name": "MaxConnection",
@@ -74928,7 +74928,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN是否支持云联网动态传递云端地址池；",
+          "document": "<p>SSL-VPN是否支持云联网动态传递云端地址池；</p>",
           "example": "0",
           "member": "uint64",
           "name": "SslVpnDynamicLocalAddressFlag",
@@ -74938,7 +74938,7 @@
         },
         {
           "disabled": false,
-          "document": "IPSEC-VPN是否支持通道HUB。",
+          "document": "<p>IPSEC-VPN是否支持通道HUB。</p>",
           "example": "0",
           "member": "uint64",
           "name": "VpnGatewayHubFlag",
@@ -74948,7 +74948,7 @@
         },
         {
           "disabled": false,
-          "document": "Bgp ASN",
+          "document": "<p>Bgp ASN</p>",
           "example": "61413",
           "member": "uint64",
           "name": "BgpAsn",
@@ -74958,12 +74958,22 @@
         },
         {
           "disabled": false,
-          "document": "实例关联CCN状态，未关联情况下展示为\"\"：\n<li>`PENDING`：申请中</li>\n<li>`ACTIVE`：已连接</li>\n<li>`EXPIRED`：已过期</li>\n<li>`REJECTED`：已拒绝</li>\n<li>`DELETED`：已删除</li>\n<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>\n<li>`ATTACHING`：关联中</li>\n<li>`DETACHING`：解关联中</li>\n<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>",
+          "document": "<p>实例关联CCN状态，未关联情况下展示为&quot;&quot;：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>",
           "example": "ACTIVE",
           "member": "string",
           "name": "AssociationState",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
