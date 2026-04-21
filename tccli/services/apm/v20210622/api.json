@@ -4194,7 +4194,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务系统 ID",
+          "document": "<p>业务系统 ID</p>",
           "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
@@ -4203,7 +4203,7 @@
         },
         {
           "disabled": false,
-          "document": "Span 查询开始时间戳（单位：秒）",
+          "document": "<p>Span 查询开始时间戳（单位：秒）</p>",
           "example": "1617123538",
           "member": "int64",
           "name": "StartTime",
@@ -4212,7 +4212,7 @@
         },
         {
           "disabled": false,
-          "document": "Span 查询结束时间戳（单位：秒）",
+          "document": "<p>Span 查询结束时间戳（单位：秒）</p>",
           "example": "1617123538",
           "member": "int64",
           "name": "EndTime",
@@ -4221,7 +4221,7 @@
         },
         {
           "disabled": false,
-          "document": "通用过滤参数",
+          "document": "<p>通用过滤参数 支持的过滤key如service.name</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4230,7 +4230,7 @@
         },
         {
           "disabled": false,
-          "document": "排序\n现支持的 Key 有：\n\n- startTime(开始时间)\n- endTime(结束时间)\n- duration(响应时间)\n\n现支持的 Value 有：\n\n- desc(降序排序)\n- asc(升序排序)",
+          "document": "<p>排序<br>现支持的 Key 有：</p><ul><li>startTime(开始时间)</li><li>endTime(结束时间)</li><li>duration(响应时间)</li></ul><p>现支持的 Value 有：</p><ul><li>desc(降序排序)</li><li>asc(升序排序)</li></ul>",
           "example": "无",
           "member": "OrderBy",
           "name": "OrderBy",
@@ -4239,7 +4239,7 @@
         },
         {
           "disabled": false,
-          "document": "业务自身服务名，控制台用户请填写taw",
+          "document": "<p>业务自身服务名，控制台用户请填写taw</p>",
           "example": "taw",
           "member": "string",
           "name": "BusinessName",
@@ -4248,7 +4248,7 @@
         },
         {
           "disabled": false,
-          "document": "单页项目个数，默认为10000，合法取值范围为0～10000",
+          "document": "<p>单页项目个数，默认为10000，合法取值范围为0～10000</p>",
           "example": "15",
           "member": "int64",
           "name": "Limit",
@@ -4257,7 +4257,7 @@
         },
         {
           "disabled": false,
-          "document": "分页",
+          "document": "<p>分页</p>",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -4272,7 +4272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数量",
+          "document": "<p>总数量</p>",
           "example": "200",
           "member": "int64",
           "name": "TotalCount",
@@ -4282,7 +4282,7 @@
         },
         {
           "disabled": false,
-          "document": "Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。\n1. 将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。\n2. 使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。\n3. 使用 UTF-8 字符集，将压缩前的字节数组转换为文本。\n",
+          "document": "<p>Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。</p><ol><li>将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。</li><li>使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。</li><li>使用 UTF-8 字符集，将压缩前的字节数组转换为文本。</li></ol>",
           "example": "H4sIAAAAAAAA/8RY3W7bPBJ9lYDXlixKoiz5bjcNii6KoGjSYIFNEFDk2GZkkSxJOU4Dv/tCcn4sx6LTtMB3Y0AUz4jDc+bPj8iAVY1hcKGptGj6v9cVNH1E1DkjysbB9lUFD2iKLJiVYBBKWgMaoRVdNt1m64yQ86vtI",
           "member": "string",
           "name": "Spans",
@@ -4304,7 +4304,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务系统 ID",
+          "document": "<p>业务系统 ID</p>",
           "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
@@ -4313,7 +4313,7 @@
         },
         {
           "disabled": false,
-          "document": "Span 查询开始时间戳（单位：秒）",
+          "document": "<p>Span 查询开始时间戳（单位：秒）</p>",
           "example": "1617123538",
           "member": "int64",
           "name": "StartTime",
@@ -4322,7 +4322,7 @@
         },
         {
           "disabled": false,
-          "document": "Span 查询结束时间戳（单位：秒）",
+          "document": "<p>Span 查询结束时间戳（单位：秒）</p>",
           "example": "1617123538",
           "member": "int64",
           "name": "EndTime",
@@ -4331,7 +4331,7 @@
         },
         {
           "disabled": false,
-          "document": "通用过滤参数",
+          "document": "<p>通用过滤参数 支持的过滤key如service.name</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4340,7 +4340,7 @@
         },
         {
           "disabled": false,
-          "document": "排序\n现支持的 Key 有：\n\n- startTime(开始时间)\n- endTime(结束时间)\n- duration(响应时间)\n\n现支持的 Value 有：\n\n- desc(降序排序)\n- asc(升序排序)",
+          "document": "<p>排序<br>现支持的 Key 有：</p><ul><li>startTime(开始时间)</li><li>endTime(结束时间)</li><li>duration(响应时间)</li></ul><p>现支持的 Value 有：</p><ul><li>desc(降序排序)</li><li>asc(升序排序)</li></ul>",
           "example": "无",
           "member": "OrderBy",
           "name": "OrderBy",
@@ -4349,7 +4349,7 @@
         },
         {
           "disabled": false,
-          "document": "业务自身服务名，控制台用户请填写taw",
+          "document": "<p>业务自身服务名，控制台用户请填写taw</p>",
           "example": "taw",
           "member": "string",
           "name": "BusinessName",
@@ -4358,7 +4358,7 @@
         },
         {
           "disabled": false,
-          "document": "单页项目个数，默认为1000，合法取值范围为1～1000",
+          "document": "<p>单页项目个数，默认为1000，合法取值范围为1～1000</p>",
           "example": "15",
           "member": "int64",
           "name": "Limit",
@@ -4367,7 +4367,7 @@
         },
         {
           "disabled": false,
-          "document": "分页",
+          "document": "<p>分页</p>",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -4382,7 +4382,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数量",
+          "document": "<p>总数量</p>",
           "example": "200",
           "member": "int64",
           "name": "TotalCount",
@@ -4392,7 +4392,7 @@
         },
         {
           "disabled": false,
-          "document": "Span 分页列表",
+          "document": "<p>Span 分页列表</p>",
           "example": "无",
           "member": "Span",
           "name": "Spans",
@@ -5065,7 +5065,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤方式（=, !=, in）",
+          "document": "<p>过滤方式（=, !=, in）</p>",
           "example": "=",
           "member": "string",
           "name": "Type",
@@ -5076,7 +5076,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤维度名",
+          "document": "<p>过滤维度名</p><p>详情参考实际接口字段描述</p>",
           "example": "service.name",
           "member": "string",
           "name": "Key",
@@ -5087,7 +5087,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤值，in过滤方式用逗号分割多个值",
+          "document": "<p>过滤值，in过滤方式用逗号分割多个值</p>",
           "example": "sso-api",
           "member": "string",
           "name": "Value",

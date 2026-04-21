@@ -1624,10 +1624,32 @@
       "members": [
         {
           "disabled": false,
-          "document": "tcr仓库地址",
+          "document": "<p>tcr仓库地址</p>",
           "example": "hai-beijing.tencentcloudcr.com/ai/vllm:v0.11.2",
           "member": "string",
           "name": "ImageRegistryUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库用户名</p>",
+          "example": "10*03*751422",
+          "member": "string",
+          "name": "ImageRegistryUsername",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库密码</p>",
+          "example": "eyJhbGciOiJSUzI1NiIsI",
+          "member": "string",
+          "name": "ImageRegistryPassword",
           "output_required": false,
           "required": false,
           "type": "string",

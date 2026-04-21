@@ -781,7 +781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "敏捷上云名称",
+          "document": "<p>敏捷上云名称</p>",
           "example": "测试线路名",
           "member": "string",
           "name": "Name",
@@ -790,7 +790,7 @@
         },
         {
           "disabled": false,
-          "document": "需要接入敏捷上云的IDC的地址",
+          "document": "<p>需要接入敏捷上云的IDC的地址</p>",
           "example": "湖北省武汉市高薪大道xx机房xxx地址",
           "member": "string",
           "name": "IdcAddress",
@@ -799,7 +799,7 @@
         },
         {
           "disabled": false,
-          "document": "需要接入敏捷上云的IDC的互联网服务提供商类型",
+          "document": "<p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>",
           "example": "CUCC",
           "member": "string",
           "name": "IdcType",
@@ -808,7 +808,7 @@
         },
         {
           "disabled": false,
-          "document": "敏捷上云的带宽，单位为MB",
+          "document": "<p>敏捷上云的带宽，单位为MB</p>",
           "example": "100",
           "member": "uint64",
           "name": "Bandwidth",
@@ -817,7 +817,7 @@
         },
         {
           "disabled": false,
-          "document": "联系电话",
+          "document": "<p>联系电话</p>",
           "example": "13888888888",
           "member": "string",
           "name": "Telephone",
@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "购买时长6个月",
           "member": "string",
           "name": "Remarks",
@@ -835,7 +835,7 @@
         },
         {
           "disabled": false,
-          "document": "接入地域",
+          "document": "<p>接入地域</p>",
           "example": "gz",
           "member": "string",
           "name": "ArRegion",
@@ -844,7 +844,7 @@
         },
         {
           "disabled": false,
-          "document": "IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方",
+          "document": "<p>IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>",
           "example": "CLOUD",
           "member": "string",
           "name": "IdcPointType",
@@ -853,12 +853,21 @@
         },
         {
           "disabled": false,
-          "document": "运营商链路是否有保护",
+          "document": "<p>运营商链路是否有保护</p>",
           "example": "true",
           "member": "bool",
           "name": "BIapLinkProtected",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型，SHARE-共享型，EXCLUSIVE-独占型</p>",
+          "example": "SHARE",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

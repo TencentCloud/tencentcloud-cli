@@ -343,6 +343,20 @@
       "output": "QueryIpTraceLogResponse",
       "status": "online"
     },
+    "RequestInstances": {
+      "document": "请求集群实例",
+      "input": "RequestInstancesRequest",
+      "name": "请求es集群本身",
+      "output": "RequestInstancesResponse",
+      "status": "online"
+    },
+    "RequestInstancesByGet": {
+      "document": "GET请求集群实例",
+      "input": "RequestInstancesByGetRequest",
+      "name": "请求es集群本身仅 GET 请求",
+      "output": "RequestInstancesByGetResponse",
+      "status": "online"
+    },
     "RestartInstance": {
       "document": "重启ES集群实例(用于系统版本更新等操作)",
       "input": "RestartInstanceRequest",
@@ -3083,7 +3097,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ES集群ID",
+          "document": "<p>ES集群ID</p>",
           "example": "es-abcdefgh",
           "member": "string",
           "name": "InstanceId",
@@ -3092,7 +3106,7 @@
         },
         {
           "disabled": false,
-          "document": "删除的索引类型。auto：自治索引；normal：普通索引",
+          "document": "<p>删除的索引类型。auto：自治索引；normal：普通索引</p>",
           "example": "auto",
           "member": "string",
           "name": "IndexType",
@@ -3101,7 +3115,7 @@
         },
         {
           "disabled": false,
-          "document": "删除的索引名",
+          "document": "<p>删除的索引名</p>",
           "example": "log_xxx",
           "member": "string",
           "name": "IndexName",
@@ -3110,7 +3124,7 @@
         },
         {
           "disabled": false,
-          "document": "集群访问用户名",
+          "document": "<p>集群访问用户名</p>",
           "example": "elastic",
           "member": "string",
           "name": "Username",
@@ -3119,7 +3133,7 @@
         },
         {
           "disabled": false,
-          "document": "集群访问密码",
+          "document": "<p>集群访问密码</p>",
           "example": "G7j#kL9****",
           "member": "string",
           "name": "Password",
@@ -3128,10 +3142,19 @@
         },
         {
           "disabled": false,
-          "document": "后备索引名",
+          "document": "<p>后备索引名</p>",
           "example": ".ds-log_xxx-2024.12.16-000001",
           "member": "string",
           "name": "BackingIndexName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引生命阶段</p>",
+          "example": "hot",
+          "member": "string",
+          "name": "IndexPhrase",
           "required": false,
           "type": "string"
         }
@@ -10835,6 +10858,40 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RequestInstancesByGetRequest": {
+      "document": "RequestInstancesByGet请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RequestInstancesByGetResponse": {
+      "document": "RequestInstancesByGet返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RequestInstancesRequest": {
+      "document": "RequestInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RequestInstancesResponse": {
+      "document": "RequestInstances返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

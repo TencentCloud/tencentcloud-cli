@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库实例的配置信息**
+**Example 1: 查询实例架构信息**
 
 
 
@@ -6,28 +6,28 @@ Input:
 
 ```
 tccli cdb DescribeDBInstanceConfig --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj
+    --InstanceId cdbro-j99ornco
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "SlaveConfig": {
-            "ReplicationMode": "async",
-            "Zone": "ap-guangzhou-3"
-        },
         "BackupConfig": {
             "ReplicationMode": "sync",
-            "Vip": "172.1.1.1",
-            "Vport": 3306,
-            "Zone": "ap-guangzhou-3"
+            "Vip": "",
+            "Vport": 0,
+            "Zone": "ap-guangzhou-4"
         },
-        "ProtectMode": 0,
-        "Zone": "ap-guangzhou-3",
-        "DeployMode": 1,
-        "Switched": false
+        "DeployMode": 0,
+        "ProtectMode": 2,
+        "RequestId": "e6ad4a50-f251-4236-9c30-1887f330a38c",
+        "SlaveConfig": {
+            "ReplicationMode": "sync",
+            "Zone": "ap-guangzhou-4"
+        },
+        "Switched": false,
+        "Zone": "ap-guangzhou-4"
     }
 }
 ```

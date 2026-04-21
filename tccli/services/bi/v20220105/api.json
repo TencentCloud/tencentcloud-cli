@@ -49,6 +49,20 @@
       "output": "CreateProjectResponse",
       "status": "online"
     },
+    "CreateUserGroup": {
+      "document": "CreateUserGroup",
+      "input": "CreateUserGroupRequest",
+      "name": "创建用户组",
+      "output": "CreateUserGroupResponse",
+      "status": "online"
+    },
+    "CreateUserGroupMember": {
+      "document": "CreateUserGroupMember",
+      "input": "CreateUserGroupMemberRequest",
+      "name": "创建用户组成员",
+      "output": "CreateUserGroupMemberResponse",
+      "status": "online"
+    },
     "CreateUserRole": {
       "document": "创建用户角色",
       "input": "CreateUserRoleRequest",
@@ -75,6 +89,20 @@
       "input": "DeleteProjectRequest",
       "name": "删除项目",
       "output": "DeleteProjectResponse",
+      "status": "online"
+    },
+    "DeleteUserGroup": {
+      "document": "DeleteUserGroup",
+      "input": "DeleteUserGroupRequest",
+      "name": "删除用户组",
+      "output": "DeleteUserGroupResponse",
+      "status": "online"
+    },
+    "DeleteUserGroupMember": {
+      "document": "DeleteUserGroupMember",
+      "input": "DeleteUserGroupMemberRequest",
+      "name": "删除用户组成员",
+      "output": "DeleteUserGroupMemberResponse",
       "status": "online"
     },
     "DeleteUserRole": {
@@ -140,6 +168,34 @@
       "output": "DescribeProjectListResponse",
       "status": "online"
     },
+    "DescribeResourceUserGroupPageList": {
+      "document": "用户组资源权限查询接口",
+      "input": "DescribeResourceUserGroupPageListRequest",
+      "name": "查看当前资源的用户组权限",
+      "output": "DescribeResourceUserGroupPageListResponse",
+      "status": "online"
+    },
+    "DescribeUserGroupInfo": {
+      "document": "DescribeUserGroupInfo",
+      "input": "DescribeUserGroupInfoRequest",
+      "name": "查询用户组详情",
+      "output": "DescribeUserGroupInfoResponse",
+      "status": "online"
+    },
+    "DescribeUserGroupMemberList": {
+      "document": "DescribeUserGroupMemberList",
+      "input": "DescribeUserGroupMemberListRequest",
+      "name": "查询用户组成员列表",
+      "output": "DescribeUserGroupMemberListResponse",
+      "status": "online"
+    },
+    "DescribeUserGroupTreeList": {
+      "document": "用户组数查询接口",
+      "input": "DescribeUserGroupTreeListRequest",
+      "name": "用户组-树形结构",
+      "output": "DescribeUserGroupTreeListResponse",
+      "status": "online"
+    },
     "DescribeUserProjectList": {
       "document": "项目内-用户接口",
       "input": "DescribeUserProjectListRequest",
@@ -189,6 +245,34 @@
       "output": "ModifyProjectResponse",
       "status": "online"
     },
+    "ModifyResourceUserGroup": {
+      "document": "更新用户组权限",
+      "input": "ModifyResourceUserGroupRequest",
+      "name": "更新用户组权限",
+      "output": "ModifyResourceUserGroupResponse",
+      "status": "online"
+    },
+    "ModifyResourceUserGroupResource": {
+      "document": "按资源 - 更新用户组权限",
+      "input": "ModifyResourceUserGroupResourceRequest",
+      "name": "按资源 - 更新用户组权限",
+      "output": "ModifyResourceUserGroupResourceResponse",
+      "status": "online"
+    },
+    "ModifyUserDetailInfo": {
+      "document": "修改用户角色信息",
+      "input": "ModifyUserDetailInfoRequest",
+      "name": "修改用户角色信息和用户组信息",
+      "output": "ModifyUserDetailInfoResponse",
+      "status": "online"
+    },
+    "ModifyUserGroup": {
+      "document": "ModifyUserGroup",
+      "input": "ModifyUserGroupRequest",
+      "name": "更新用户组",
+      "output": "ModifyUserGroupResponse",
+      "status": "online"
+    },
     "ModifyUserRole": {
       "document": "修改用户角色信息",
       "input": "ModifyUserRoleRequest",
@@ -201,6 +285,13 @@
       "input": "ModifyUserRoleProjectRequest",
       "name": "项目-修改用户角色信息",
       "output": "ModifyUserRoleProjectResponse",
+      "status": "online"
+    },
+    "QueryUserGroupMember": {
+      "document": "QueryUserGroupMember",
+      "input": "QueryUserGroupMemberRequest",
+      "name": "查询用户组成员",
+      "output": "QueryUserGroupMemberResponse",
       "status": "online"
     }
   },
@@ -1561,6 +1652,88 @@
       ],
       "type": "object"
     },
+    "CreateUserGroupMemberRequest": {
+      "document": "CreateUserGroupMember请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateUserGroupMemberResponse": {
+      "document": "CreateUserGroupMember返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupRequest": {
+      "document": "CreateUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "用户组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Location",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "父用户组id",
+          "example": "-1",
+          "member": "int64",
+          "name": "ParentId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupResponse": {
+      "document": "CreateUserGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserRoleProjectRequest": {
       "document": "CreateUserRoleProject请求参数结构体",
       "members": [
@@ -2404,6 +2577,89 @@
       ],
       "type": "object"
     },
+    "DeleteUserGroupMemberRequest": {
+      "document": "DeleteUserGroupMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组id",
+          "example": "124",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户id集合",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "UserIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupMemberResponse": {
+      "document": "DeleteUserGroupMember返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupRequest": {
+      "document": "DeleteUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组id",
+          "example": "124",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupResponse": {
+      "document": "DeleteUserGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteUserRoleProjectRequest": {
       "document": "DeleteUserRoleProject请求参数结构体",
       "members": [
@@ -3212,6 +3468,466 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUserGroupPageListRequest": {
+      "document": "DescribeResourceUserGroupPageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面Id",
+          "example": "1",
+          "member": "int64",
+          "name": "PageId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "page",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否分页",
+          "example": "1",
+          "member": "int64",
+          "name": "AllPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索关键字",
+          "example": "zhang",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤条件",
+          "example": "无",
+          "member": "ResourceTagValue",
+          "name": "TagValueList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "sys_project_admin",
+          "member": "string",
+          "name": "ModuleCollection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否授权",
+          "example": "null",
+          "member": "string",
+          "name": "ResourceValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型",
+          "example": "PageShareAndIframe",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "父id",
+          "example": "1",
+          "member": "int64",
+          "name": "ParentId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "1",
+          "member": "int64",
+          "name": "EntityId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUserGroupPageListResponse": {
+      "document": "DescribeResourceUserGroupPageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"xsa\":\"sa\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupPageTreeVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupInfoRequest": {
+      "document": "DescribeUserGroupInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组id",
+          "example": "123",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupInfoResponse": {
+      "document": "DescribeUserGroupInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupMemberListRequest": {
+      "document": "DescribeUserGroupMemberList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组id集合",
+          "example": "[124,56]",
+          "member": "int64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "asc正序,desc倒序",
+          "example": "asc",
+          "member": "string",
+          "name": "CreatedOnOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字",
+          "example": "搜索关键字",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要分页",
+          "example": "false",
+          "member": "bool",
+          "name": "AllPage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupMemberListResponse": {
+      "document": "DescribeUserGroupMemberList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupTreeListRequest": {
+      "document": "DescribeUserGroupTreeList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否分页",
+          "example": "1",
+          "member": "int64",
+          "name": "AllPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤条件",
+          "example": "无",
+          "member": "ResourceTagValue",
+          "name": "TagValueList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点集合",
+          "example": "无",
+          "member": "UserGroupTreeNodeDTO",
+          "name": "Nodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户组id集合",
+          "example": "[1]",
+          "member": "int64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询下一个code",
+          "example": "1",
+          "member": "bool",
+          "name": "QueryNextNode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "父id集合",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ParentIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询所有节点",
+          "example": "true",
+          "member": "bool",
+          "name": "QueryAllNode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "过滤组id集合",
+          "example": "[1]",
+          "member": "int64",
+          "name": "FilterGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索关键字",
+          "example": "q",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupTreeListResponse": {
+      "document": "DescribeUserGroupTreeList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"xsa\":\"sa\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupTreeVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -4736,6 +5452,415 @@
       ],
       "type": "object"
     },
+    "ModifyResourceUserGroupRequest": {
+      "document": "ModifyResourceUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户组id集合",
+          "example": "[1]",
+          "member": "int64",
+          "name": "UserGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作的资源权限",
+          "example": "无",
+          "member": "ResourceListDTO",
+          "name": "Resource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "page",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询所有孩子节点",
+          "example": "true",
+          "member": "bool",
+          "name": "QueryChildren",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceUserGroupResourceRequest": {
+      "document": "ModifyResourceUserGroupResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "1",
+          "member": "int64",
+          "name": "UserGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源",
+          "example": "无",
+          "member": "UserResourceDTO",
+          "name": "Resource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实体类",
+          "example": "[1]",
+          "member": "int64",
+          "name": "EntityIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "page",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceUserGroupResourceResponse": {
+      "document": "ModifyResourceUserGroupResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"xsa\":\"sa\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceUserGroupResponse": {
+      "document": "ModifyResourceUserGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"xsa\":\"sa\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserDetailInfoRequest": {
+      "document": "ModifyUserDetailInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "120120",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色ID 列表",
+          "example": "[2121,231,342]",
+          "member": "int64",
+          "name": "RoleIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱",
+          "example": "123***@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "861212***211",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机区号",
+          "example": "086",
+          "member": "string",
+          "name": "AreaCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业微信应用用户id",
+          "example": "12012",
+          "member": "string",
+          "name": "AppUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启手机验证码登录（0 关闭，1 开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "LoginSecurityStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启密码过期提醒（0 关闭，1 开启",
+          "example": "0",
+          "member": "int64",
+          "name": "ResetPassWordTip",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "强制修改密码（0 关闭，1 开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "ForceResetPassWord",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码过期提醒时间，30、60、90（默认）、180天",
+          "example": "90",
+          "member": "int64",
+          "name": "PasswordExpired",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户组id",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "UserGroupIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserDetailInfoResponse": {
+      "document": "ModifyUserDetailInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"xsa\":\"sa\"}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "返回为null",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupRequest": {
+      "document": "ModifyUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组更新list",
+          "example": "无",
+          "member": "UserGroupUpdateDTO",
+          "name": "UpdateList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupResponse": {
+      "document": "ModifyUserGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserRoleProjectRequest": {
       "document": "ModifyUserRoleProject请求参数结构体",
       "members": [
@@ -5553,6 +6678,106 @@
       ],
       "usage": "out"
     },
+    "QueryUserGroupMemberRequest": {
+      "document": "QueryUserGroupMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组id集合",
+          "example": "[124,56]",
+          "member": "int64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字",
+          "example": "搜索关键字",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要分页",
+          "example": "false",
+          "member": "bool",
+          "name": "AllPage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户组节点信息",
+          "example": "无",
+          "member": "UserGroupTreeNodeDTO",
+          "name": "Nodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "无",
+          "member": "ResourceTagValue",
+          "name": "TagValueList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的用户组",
+          "example": "[123]",
+          "member": "int64",
+          "name": "FilterGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserGroupMemberResponse": {
+      "document": "QueryUserGroupMember返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RankInfo": {
       "document": "行列权限内容",
       "members": [
@@ -5635,6 +6860,178 @@
         }
       ],
       "usage": "both"
+    },
+    "ResourceDTO": {
+      "document": "资源权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ResourceValue",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "能否变更\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanChange",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tips",
+          "member": "string",
+          "name": "Tips",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceItem": {
+      "document": "资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PageView",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ResourceValue",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可变更\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanChange",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "继承自用户组",
+          "member": "string",
+          "name": "Tips",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceListDTO": {
+      "document": "操作的资源权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EntityId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceItem",
+          "name": "ResourceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceTagValue": {
+      "document": "资源权限标签过滤参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签id",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签值列表",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "Role": {
       "document": "角色",
@@ -5988,6 +7385,280 @@
       ],
       "usage": "both"
     },
+    "UserGroupPageTreeVO": {
+      "document": "用户组权限树",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupTreeVO",
+          "name": "List",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserGroupTreeNodeDTO": {
+      "document": "用户组数节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否查询子节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "QueryChildNodes",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserGroupTreeVO": {
+      "document": "用户组权限树",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前实体ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ParentId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p1",
+          "member": "string",
+          "name": "ParentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "是否默认",
+          "member": "int64",
+          "name": "IsDefault",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin",
+          "member": "string",
+          "name": "AdminUserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserVO",
+          "name": "UserList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "孩子节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupTreeVO",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有孩子节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasChildren",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceDTO",
+          "name": "ResourceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserGroupUpdateDTO": {
+      "document": "用户组更新入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组管理员",
+          "example": "subuin",
+          "member": "string",
+          "name": "AdminUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "用户组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Location",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "父节点id",
+          "example": "-1",
+          "member": "int64",
+          "name": "ParentId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户组id",
+          "example": "12",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "父节点名称",
+          "example": "名称",
+          "member": "string",
+          "name": "ParentName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "UserIdAndUserName": {
       "document": "用户ID和用户名",
       "members": [
@@ -6325,6 +7996,56 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserResourceDTO": {
+      "document": "用户资源入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CorpId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceItem",
+          "name": "ResourceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -6677,6 +8398,34 @@
         }
       ],
       "usage": "out"
+    },
+    "UserVO": {
+      "document": "基础用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "u1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户id",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "zhang\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户名",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WidgetListVO": {
       "document": "页面组件信息",

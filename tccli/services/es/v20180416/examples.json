@@ -392,6 +392,22 @@
         "title": "查询IP溯源日志"
       }
     ],
+    "RequestInstances": [
+      {
+        "document": "请求集群实例",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RequestInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17610294-3b6b-11f0-bc85-525400d25xxx1\"\n    }\n}",
+        "title": "请求集群实例"
+      }
+    ],
+    "RequestInstancesByGet": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RequestInstancesByGet\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"38a864d1-9cee-4166-bada-a4ad6bc55411\"\n    }\n}",
+        "title": "RequestInstancesByGet"
+      }
+    ],
     "RestartInstance": [
       {
         "document": "用以进行版本更新等操作",

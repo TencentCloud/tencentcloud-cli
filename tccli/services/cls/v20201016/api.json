@@ -22662,6 +22662,15 @@
           "name": "Tag",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否创建 trace 主题，默认为 false</p><p>枚举值：</p><ul><li>true： 创建trace 主题</li><li>false： 不创建trace 主题</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableTrace",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -22785,6 +22794,26 @@
           "example": "clawpro_session_log_collect",
           "member": "string",
           "name": "SessionLogConfigName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>trace 主题 ID</p>",
+          "example": "openclaw-trace-topic-ap-guangzhou-open-1254139626",
+          "member": "string",
+          "name": "TraceTopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>trace 主题名称</p>",
+          "example": "openclaw_trace_topic",
+          "member": "string",
+          "name": "TraceTopicName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

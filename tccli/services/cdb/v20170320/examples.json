@@ -199,19 +199,19 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"Memory\": 1000,\n    \"Volume\": 200,\n    \"Period\": 12,\n    \"GoodsNum\": 1,\n    \"Zone\": \"ap-guangzhou-ziyan3\",\n    \"UniqVpcId\": \"vpc-grpykq9v\",\n    \"UniqSubnetId\": \"subnet-aq06sf6a\",\n    \"Port\": 3306,\n    \"InstanceRole\": \"master\",\n    \"Password\": \"190228bh\",\n    \"ProtectMode\": 1,\n    \"DeployMode\": 0,\n    \"SlaveZone\": \"ap-guangzhou-ziyan3\",\n    \"SecurityGroup\": [\n        \"sg-9c3k3gtd\"\n    ],\n    \"InstanceName\": \"test_create-api2\",\n    \"InstanceNodes\": 2,\n    \"Cpu\": 1,\n    \"EngineType\": \"InnoDB\"\n}",
         "output": "{\n    \"Response\": {\n        \"DealIds\": [\n            \"20251117217021754844851\"\n        ],\n        \"InstanceIds\": [\n            \"cdb-4wixd9pn\"\n        ],\n        \"RequestId\": \"bae642bd-305a-40fe-b64c-356dc809977b\"\n    }\n}",
-        "title": "购买主实例"
+        "title": "示例1 购买主实例"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"RoGroup\": {\n        \"RoGroupMode\": \"allinone\",\n        \"RoGroupName\": \"jersey\",\n        \"RoMaxDelayTime\": 5,\n        \"MinRoInGroup\": 1,\n        \"RoOfflineDelay\": 1\n    },\n    \"GoodsNum\": 1,\n    \"InstanceRole\": \"ro\",\n    \"MasterInstanceId\": \"cdb-fn3f9xpx\",\n    \"Period\": 1,\n    \"Volume\": 100,\n    \"Memory\": 4000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171205110051\"\n        ],\n        \"InstanceIds\": [\n            \"cdbro-hlpl4ik9\"\n        ]\n    }\n}",
-        "title": "购买只读实例"
+        "title": "示例2 购买只读实例"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"Memory\": 1000,\n    \"Volume\": 25,\n    \"Period\": 1,\n    \"GoodsNum\": 1,\n    \"Zone\": \"ap-beijing-3\",\n    \"UniqVpcId\": \"vpc-4pagx2lk\",\n    \"UniqSubnetId\": \"subnet-a2eaqb1t\",\n    \"InstanceRole\": \"master\",\n    \"EngineVersion\": \"8.0\",\n    \"ParamList\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"0\"\n        }\n    ],\n    \"DeviceType\": \"UNIVERSAL\",\n    \"Cpu\": 1,\n    \"EngineType\": \"InnoDB\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6166b535-64e8-4372-86fc-d6e25791f4fc\",\n        \"InstanceIds\": [\n            \"cdb-grq113rc\"\n        ],\n        \"DealIds\": [\n            \"20250519054092411681521\"\n        ]\n    }\n}",
-        "title": "创建实例时设置表名大小写敏感"
+        "title": "示例3 创建实例时设置表名大小写敏感"
       }
     ],
     "CreateDBInstanceHour": [
@@ -597,9 +597,9 @@
     "DescribeDBInstanceConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"async\",\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"172.1.1.1\",\n            \"Vport\": 3306,\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"ProtectMode\": 0,\n        \"Zone\": \"ap-guangzhou-3\",\n        \"DeployMode\": 1,\n        \"Switched\": false\n    }\n}",
-        "title": "查询云数据库实例的配置信息"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-j99ornco\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"\",\n            \"Vport\": 0,\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"DeployMode\": 0,\n        \"ProtectMode\": 2,\n        \"RequestId\": \"e6ad4a50-f251-4236-9c30-1887f330a38c\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"Switched\": false,\n        \"Zone\": \"ap-guangzhou-4\"\n    }\n}",
+        "title": "查询实例架构信息"
       }
     ],
     "DescribeDBInstanceGTID": [
@@ -1099,9 +1099,9 @@
     "ModifyDBInstanceModes": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceModes\n&InstanceId=cdb-xxxx\n&Mode=protectMode\n&ProtectMode=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"9ad9c2d5-88007b27-7d2c8b8c-f2598f12\"\n    }\n}",
-        "title": "更改云数据库的模式"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceModes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-5cahthon\",\n    \"Mode\": \"protectMode\",\n    \"ProtectMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"2a3f5881-fed4de4d-edaca28e-8d16c732\",\n        \"RequestId\": \"d226dcb0-e893-4a3b-bda1-0e5af6a191e4\"\n    }\n}",
+        "title": "修改实例复制方式"
       }
     ],
     "ModifyDBInstanceName": [
