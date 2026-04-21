@@ -22,7 +22,7 @@ def sync_download_object(args, parsed_globals):
     local_path = args["local_path"]
     cos_prefix = args.get("cos_key", "") or ""
     recursive = args.get("recursive", False)
-    delete_extra = args.get("delete_extra", False)
+    delete = args.get("delete", False)
     ignore_existing = args.get("ignore_existing", False)
     update = args.get("update", False)
     include = args.get("include", "") or ""
@@ -160,7 +160,7 @@ def sync_download_object(args, parsed_globals):
 
         # 删除本地多余的文件和空目录
         deleted = 0
-        if delete_extra:
+        if delete:
             # 第一步：删除多余的文件
             for rel_path, file_info in local_files.items():
                 cos_key = build_cos_key(cos_prefix, rel_path)

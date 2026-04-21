@@ -478,7 +478,7 @@ tccli cos sync_upload [参数]
 | `--local_path` | string | ✅ | - | 本地目录路径 |
 | `--cos_key` | string | ❌ | 空 | COS 上的目标前缀 |
 | `--recursive` | bool | ❌ | false | 是否递归同步目录 |
-| `--delete_extra` | bool | ❌ | false | 是否删除 COS 上多余的文件（本地不存在的） |
+| `--delete` | bool | ❌ | false | 是否删除 COS 上多余的文件（本地不存在的） |
 | `--include` | string | ❌ | 空 | 包含匹配模式，支持通配符 |
 | `--exclude` | string | ❌ | 空 | 排除匹配模式，支持通配符 |
 | `--storage_class` | string | ❌ | STANDARD | 上传时的存储类型 |
@@ -498,7 +498,7 @@ tccli cos sync_upload --bucket my-bucket-1250000000 --local_path /data/backup --
 
 # 同步并删除 COS 上多余的文件（镜像同步）
 tccli cos sync_upload --bucket my-bucket-1250000000 --local_path /data/backup --cos_key backup/ \
-  --recursive true --delete_extra true
+  --recursive true --delete true
 
 # 只同步 txt 和 csv 文件
 tccli cos sync_upload --bucket my-bucket-1250000000 --local_path /data --cos_key data/ \
@@ -528,7 +528,7 @@ tccli cos sync_download [参数]
 | `--local_path` | string | ✅ | - | 本地目标目录路径 |
 | `--cos_key` | string | ❌ | 空 | COS 上的源前缀 |
 | `--recursive` | bool | ❌ | false | 是否递归同步目录 |
-| `--delete_extra` | bool | ❌ | false | 是否删除本地多余的文件（COS 上不存在的） |
+| `--delete` | bool | ❌ | false | 是否删除本地多余的文件（COS 上不存在的） |
 | `--include` | string | ❌ | 空 | 包含匹配模式，支持通配符 |
 | `--exclude` | string | ❌ | 空 | 排除匹配模式，支持通配符 |
 | `--thread_num` | int | ❌ | 5 | 单文件分片下载并发线程数 |
@@ -545,7 +545,7 @@ tccli cos sync_download --bucket my-bucket-1250000000 --cos_key data/ --local_pa
 
 # 同步并删除本地多余的文件（镜像同步）
 tccli cos sync_download --bucket my-bucket-1250000000 --cos_key data/ --local_path /tmp/data \
-  --recursive true --delete_extra true
+  --recursive true --delete true
 
 # 只同步图片文件
 tccli cos sync_download --bucket my-bucket-1250000000 --cos_key images/ --local_path /tmp/images \
@@ -573,7 +573,7 @@ tccli cos sync_copy [参数]
 | `--dest_key` | string | ❌ | 空 | 目标 COS 前缀 |
 | `--dest_region` | string | ❌ | 同当前地域 | 目标地域 |
 | `--recursive` | bool | ❌ | false | 是否递归同步复制 |
-| `--delete_extra` | bool | ❌ | false | 是否删除目标端多余的文件（源端不存在的） |
+| `--delete` | bool | ❌ | false | 是否删除目标端多余的文件（源端不存在的） |
 | `--include` | string | ❌ | 空 | 包含匹配模式，支持通配符 |
 | `--exclude` | string | ❌ | 空 | 排除匹配模式，支持通配符 |
 | `--storage_class` | string | ❌ | 空 | 目标存储类型 |
@@ -590,7 +590,7 @@ tccli cos sync_copy --bucket my-bucket-1250000000 --cos_key data/ --dest_key bac
 # 跨桶同步复制（镜像同步）
 tccli cos sync_copy --bucket src-bucket-1250000000 --cos_key data/ \
   --dest_bucket dst-bucket-1250000000 --dest_key data/ \
-  --recursive true --delete_extra true
+  --recursive true --delete true
 
 # 跨地域同步复制
 tccli cos sync_copy --bucket src-bucket-1250000000 --cos_key data/ \

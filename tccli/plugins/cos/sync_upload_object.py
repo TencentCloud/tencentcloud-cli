@@ -21,7 +21,7 @@ def sync_upload_object(args, parsed_globals):
     local_path = args["local_path"]
     cos_prefix = args.get("cos_key", "") or ""
     recursive = args.get("recursive", False)
-    delete_extra = args.get("delete_extra", False)
+    delete = args.get("delete", False)
     ignore_existing = args.get("ignore_existing", False)
     update = args.get("update", False)
     include = args.get("include", "") or ""
@@ -162,7 +162,7 @@ def sync_upload_object(args, parsed_globals):
 
         # 删除 COS 上多余的文件和文件夹
         deleted = 0
-        if delete_extra:
+        if delete:
             # 重新获取包含目录对象的完整列表
             from .utils import list_all_objects_with_dirs
             cos_all_objects = list_all_objects_with_dirs(client, bucket, cos_prefix)

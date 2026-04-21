@@ -21,7 +21,7 @@ def sync_copy_object(args, parsed_globals):
     dest_prefix = args.get("dest_key", "") or ""
     dest_region = args.get("dest_region", region) or region
     recursive = args.get("recursive", False)
-    delete_extra = args.get("delete_extra", False)
+    delete = args.get("delete", False)
     ignore_existing = args.get("ignore_existing", False)
     update = args.get("update", False)
     include = args.get("include", "") or ""
@@ -151,7 +151,7 @@ def sync_copy_object(args, parsed_globals):
 
         # 删除目标多余的文件和文件夹
         deleted = 0
-        if delete_extra:
+        if delete:
             # 重新获取目标端包含目录对象的完整列表
             dest_all_objects = list_all_objects_with_dirs(client, dest_bucket, dest_prefix)
             for dest_key, obj_info in dest_all_objects.items():
