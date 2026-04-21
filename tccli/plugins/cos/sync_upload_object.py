@@ -9,7 +9,8 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import (init_cos_client, match_filters, build_cos_key, parse_meta,
-                    list_all_objects, list_local_files, TransferProgressMonitor)
+                    list_all_objects, list_local_files, TransferProgressMonitor,
+                    should_skip_sync_upload)
 
 
 def sync_upload_object(args, parsed_globals):
@@ -21,6 +22,8 @@ def sync_upload_object(args, parsed_globals):
     cos_prefix = args.get("cos_key", "") or ""
     recursive = args.get("recursive", False)
     delete_extra = args.get("delete_extra", False)
+    ignore_existing = args.get("ignore_existing", False)
+    update = args.get("update", False)
     include = args.get("include", "") or ""
     exclude = args.get("exclude", "") or ""
     storage_class = args.get("storage_class", "") or ""
@@ -78,8 +81,14 @@ def sync_upload_object(args, parsed_globals):
 
             cos_key = build_cos_key(cos_prefix, rel_path)
 
-            # 检查 COS 上是否已存在且大小一致（增量同步）
-            if cos_key in cos_objects and cos_objects[cos_key]["Size"] == file_info["Size"]:
+            # 增量同步：对齐 coscli sync 跳过逻辑
+            # - 默认：对比本地 CRC64 与 COS CRC64（x-cos-hash-crc64ecma）
+            # - --ignore-existing：目标存在即跳过
+            # - --update：按 Last-Modified 时间比较
+            if cos_key in cos_objects and should_skip_sync_upload(
+                    client, bucket, cos_key,
+                    file_info["FullPath"], file_info.get("MTime", 0),
+                    ignore_existing=ignore_existing, update=update):
                 skip_count += 1
                 skip_size += file_info["Size"]
                 continue

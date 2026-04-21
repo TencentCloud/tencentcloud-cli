@@ -159,12 +159,37 @@ def _upload_directory(client, bucket, local_dir, cos_prefix, include, exclude,
 
 ## 同步操作模式（增量比较）
 
-同步操作在传输前先比较源和目标，跳过已存在且大小一致的文件：
+同步操作对齐 **coscli sync** 的跳过逻辑：通过 `utils.py` 提供的统一判断函数实现，禁止使用"大小相同即跳过"的简化逻辑。
+
+### 跳过规则（优先级从高到低）
+
+| 参数 | 判断方式 | 说明 |
+|---|---|---|
+| `--ignore-existing` | 目标存在即跳过 | 不做任何内容比较，仅判断对象是否存在 |
+| `--update` | 按 `Last-Modified` 对比 | 目标 `Last-Modified` >= 源 `Last-Modified`（或本地 mtime）则跳过 |
+| （默认） | CRC64 比较 | 对比 COS HEAD 的 `x-cos-hash-crc64ecma` 与对端 CRC64；相等则跳过 |
+
+**目标不存在** → 一律不跳过（无论是否指定上述参数）。
+
+### sync 专用工具函数（位于 utils.py）
+
+| 函数 | 用途 |
+|---|---|
+| `calculate_local_crc64(file_path)` | 计算本地文件 CRC64（ECMA-182），返回字符串；未装 crcmod 或失败返回 `None` |
+| `get_object_head(client, bucket, cos_key)` | 封装 `head_object`，对象不存在或异常时返回 `None` |
+| `parse_http_time(time_str)` | 解析 RFC1123/RFC3339 时间字符串为 Unix 时间戳 |
+| `should_skip_sync_upload(client, bucket, cos_key, local_full_path, local_mtime, ignore_existing, update)` | sync_upload 跳过判定 |
+| `should_skip_sync_download(client, bucket, cos_key, cos_head_info, local_full_path, ignore_existing, update)` | sync_download 跳过判定 |
+| `should_skip_sync_copy(client, src_bucket, src_key, dest_bucket, dest_key, ignore_existing, update)` | sync_copy 跳过判定 |
+
+### sync_upload 示例
 
 ```python
-# 同步上传：比较本地文件和 COS 上的文件
-local_files = list_local_files(local_path)    # 递归列出本地文件
-cos_objects = list_all_objects(client, bucket, cos_prefix)  # 列出 COS 上的对象
+from .utils import (list_local_files, list_all_objects, build_cos_key,
+                    match_filters, should_skip_sync_upload)
+
+local_files = list_local_files(local_path)                 # 含 "MTime" 字段
+cos_objects = list_all_objects(client, bucket, cos_prefix)
 
 for rel_path, file_info in local_files.items():
     if not match_filters(rel_path, include, exclude):
@@ -173,14 +198,69 @@ for rel_path, file_info in local_files.items():
 
     cos_key = build_cos_key(cos_prefix, rel_path)
 
-    # 增量判断：COS 上已存在且大小一致则跳过
-    if cos_key in cos_objects and cos_objects[cos_key]["Size"] == file_info["Size"]:
+    # ✅ 正确：对齐 coscli sync 的跳过逻辑（CRC64 / update / ignore-existing）
+    if cos_key in cos_objects and should_skip_sync_upload(
+            client, bucket, cos_key,
+            file_info["FullPath"], file_info.get("MTime", 0),
+            ignore_existing=ignore_existing, update=update):
         skip_count += 1
         skip_size += file_info["Size"]
         continue
 
+    # ❌ 错误：通过大小比较判断（coscli 并不这么做，且同名不同内容时会误跳过）
+    # if cos_key in cos_objects and cos_objects[cos_key]["Size"] == file_info["Size"]:
+    #     continue
+
     tasks.append((file_info, cos_key))
 ```
+
+### sync_download 示例
+
+```python
+from .utils import should_skip_sync_download
+
+local_file = os.path.join(local_path, rel_key.replace("/", os.sep))
+if rel_key in local_files and should_skip_sync_download(
+        client, bucket, cos_key, obj_info, local_file,
+        ignore_existing=ignore_existing, update=update):
+    skip_count += 1
+    skip_size += obj_info["Size"]
+    continue
+```
+
+### sync_copy 示例
+
+```python
+from .utils import should_skip_sync_copy
+
+if dest_key in dest_objects and should_skip_sync_copy(
+        client, bucket, src_key, dest_bucket, dest_key,
+        ignore_existing=ignore_existing, update=update):
+    skip_count += 1
+    skip_size += obj_info["Size"]
+    continue
+```
+
+### 参数规范（`_spec`）
+
+所有三个 sync 命令（sync_upload / sync_download / sync_copy）都必须在 Request 中声明：
+
+```python
+{"name": "ignore_existing", "member": "bool", "type": "bool", "required": False,
+ "document": "目标已存在即跳过，默认 false。与 --update 互斥，优先级高于 --update"},
+{"name": "update", "member": "bool", "type": "bool", "required": False,
+ "document": "仅在源比目标新时更新（按 Last-Modified 比较），默认 false。未指定 --ignore-existing 和 --update 时使用 CRC64 校验判断是否跳过"},
+```
+
+### 依赖说明
+
+CRC64 计算依赖 `crcmod`（项目已使用）：
+
+```
+pip install crcmod
+```
+
+`calculate_local_crc64` 在未安装 `crcmod` 时返回 `None`，此时 `should_skip_sync_*` 会回退为"不跳过"（即重新传输），行为保底安全。
 
 ---
 

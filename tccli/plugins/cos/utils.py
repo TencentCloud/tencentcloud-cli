@@ -242,8 +242,178 @@ def list_local_files(local_dir):
             files[rel_path] = {
                 "Size": os.path.getsize(full_path),
                 "FullPath": full_path,
+                "MTime": os.path.getmtime(full_path),
             }
     return files
+
+
+def calculate_local_crc64(file_path):
+    """
+    计算本地文件的 CRC64 (ECMA-182 多项式)，对齐 COS 返回的 x-cos-hash-crc64ecma 头。
+    参数：polynomial=0x142F0E1EBA9EA3693, initCrc=0, xorOut=0xFFFFFFFFFFFFFFFF, rev=True
+    （该参数组合经实测与 COS 服务端 CRC64 结果精确匹配；与 Go 标准库 hash/crc64 搭配
+    crc64.MakeTable(crc64.ECMA) 并以 ^uint64(0) 作为 xorOut 的行为一致。）
+    返回字符串形式的无符号十进制数；失败返回 None（例如未安装 crcmod 时）。
+    """
+    try:
+        import crcmod
+    except ImportError:
+        return None
+    try:
+        crc64_fn = crcmod.mkCrcFun(
+            0x142F0E1EBA9EA3693,
+            initCrc=0,
+            xorOut=0xFFFFFFFFFFFFFFFF,
+            rev=True,
+        )
+        crc = 0
+        with open(file_path, "rb") as f:
+            while True:
+                data = f.read(65536)
+                if not data:
+                    break
+                crc = crc64_fn(data, crc)
+        return str(crc)
+    except (IOError, OSError):
+        return None
+
+
+def get_object_head(client, bucket, cos_key):
+    """
+    获取 COS 对象的 HEAD 响应。返回 dict（可直接取 'x-cos-hash-crc64ecma'/'Last-Modified' 等头）。
+    对象不存在或任何异常时返回 None。用于 sync 跳过判断。
+    """
+    from qcloud_cos import CosServiceError
+    try:
+        return client.head_object(Bucket=bucket, Key=cos_key)
+    except CosServiceError:
+        return None
+    except Exception:
+        return None
+
+
+def parse_http_time(time_str):
+    """
+    解析 HTTP 时间字符串（RFC1123/RFC3339），返回 Unix 时间戳（float）；失败返回 None。
+    用于 sync --update 模式对比 Last-Modified 时间。
+    """
+    if not time_str:
+        return None
+    import calendar
+    from email.utils import parsedate_tz, mktime_tz
+    # 优先按 RFC1123/RFC822（如 "Mon, 02 Jan 2006 15:04:05 GMT"）
+    parsed = parsedate_tz(time_str)
+    if parsed is not None:
+        try:
+            return float(mktime_tz(parsed))
+        except (TypeError, ValueError, OverflowError):
+            pass
+    # 回退按 RFC3339（如 "2006-01-02T15:04:05Z"）
+    try:
+        import datetime
+        s = time_str.rstrip("Z")
+        dt = datetime.datetime.strptime(s, "%Y-%m-%dT%H:%M:%S")
+        return float(calendar.timegm(dt.timetuple()))
+    except ValueError:
+        return None
+
+
+def should_skip_sync_upload(client, bucket, cos_key, local_full_path, local_mtime,
+                             ignore_existing=False, update=False):
+    """
+    判断同步上传时是否跳过该文件，对齐 coscli 的 skipUpload。
+    跳过规则（优先级从高到低）：
+      1. --ignore-existing：目标存在即跳过
+      2. --update：目标存在且 Last-Modified >= 本地 mtime 则跳过
+      3. 默认（CRC64）：对比本地 CRC64 与 COS HEAD 的 x-cos-hash-crc64ecma；相等则跳过
+    返回 True 表示跳过，False 表示需要上传。
+    目标不存在、无法获取 CRC64 或比较不相等时均返回 False。
+    """
+    head = get_object_head(client, bucket, cos_key)
+    if head is None:
+        return False  # 目标不存在或异常，不跳过
+    if ignore_existing:
+        return True
+    if update:
+        last_modified = head.get("Last-Modified") or head.get("last-modified", "")
+        remote_ts = parse_http_time(last_modified)
+        if remote_ts is not None and remote_ts >= local_mtime:
+            return True
+        return False
+    # 默认：CRC64 比较
+    cos_crc = head.get("x-cos-hash-crc64ecma", "")
+    if not cos_crc:
+        return False
+    local_crc = calculate_local_crc64(local_full_path)
+    if local_crc is None:
+        return False
+    return cos_crc == local_crc
+
+
+def should_skip_sync_download(client, bucket, cos_key, cos_head_info, local_full_path,
+                               ignore_existing=False, update=False):
+    """
+    判断同步下载时是否跳过该文件，对齐 coscli 的 skipDownload。
+    - cos_head_info: 从 list_objects 得到的对象信息 dict（含 'Size' / 'LastModified' 等）
+    跳过规则（优先级从高到低）：
+      1. --ignore-existing：本地存在即跳过
+      2. --update：本地 mtime >= COS LastModified 则跳过
+      3. 默认（CRC64）：对比本地 CRC64 与 COS HEAD 的 x-cos-hash-crc64ecma；相等则跳过
+    返回 True 表示跳过，False 表示需要下载。
+    """
+    if not os.path.exists(local_full_path):
+        return False
+    if ignore_existing:
+        return True
+    if update:
+        local_mtime = os.path.getmtime(local_full_path)
+        remote_ts = parse_http_time(cos_head_info.get("LastModified", ""))
+        if remote_ts is not None and local_mtime >= remote_ts:
+            return True
+        return False
+    # 默认：CRC64 比较
+    local_crc = calculate_local_crc64(local_full_path)
+    if local_crc is None:
+        return False
+    head = get_object_head(client, bucket, cos_key)
+    if head is None:
+        return False
+    cos_crc = head.get("x-cos-hash-crc64ecma", "")
+    if not cos_crc:
+        return False
+    return cos_crc == local_crc
+
+
+def should_skip_sync_copy(client, src_bucket, src_key, dest_bucket, dest_key,
+                           ignore_existing=False, update=False):
+    """
+    判断同步复制时是否跳过该文件，对齐 coscli 的 skipCopy。
+    跳过规则（优先级从高到低）：
+      1. --ignore-existing：目标存在即跳过
+      2. --update：目标 Last-Modified >= 源 Last-Modified 则跳过
+      3. 默认（CRC64）：对比源 CRC64 与目标 CRC64；相等则跳过
+    返回 True 表示跳过，False 表示需要复制。
+    """
+    dest_head = get_object_head(client, dest_bucket, dest_key)
+    if dest_head is None:
+        return False
+    if ignore_existing:
+        return True
+    src_head = get_object_head(client, src_bucket, src_key)
+    if src_head is None:
+        return False
+    if update:
+        src_ts = parse_http_time(src_head.get("Last-Modified", ""))
+        dest_ts = parse_http_time(dest_head.get("Last-Modified", ""))
+        if src_ts is not None and dest_ts is not None and dest_ts >= src_ts:
+            return True
+        return False
+    # 默认：CRC64 比较
+    src_crc = src_head.get("x-cos-hash-crc64ecma", "")
+    dest_crc = dest_head.get("x-cos-hash-crc64ecma", "")
+    if not src_crc or not dest_crc:
+        return False
+    return src_crc == dest_crc
 
 
 # ============================================================

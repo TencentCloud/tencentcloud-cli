@@ -7,7 +7,8 @@ sync_copy 操作：COS -> COS 同步复制
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import (init_cos_client, match_filters, build_cos_key, parse_meta,
-                    list_all_objects, list_all_objects_with_dirs, TransferProgressMonitor)
+                    list_all_objects, list_all_objects_with_dirs, TransferProgressMonitor,
+                    should_skip_sync_copy)
 
 
 def sync_copy_object(args, parsed_globals):
@@ -21,6 +22,8 @@ def sync_copy_object(args, parsed_globals):
     dest_region = args.get("dest_region", region) or region
     recursive = args.get("recursive", False)
     delete_extra = args.get("delete_extra", False)
+    ignore_existing = args.get("ignore_existing", False)
+    update = args.get("update", False)
     include = args.get("include", "") or ""
     exclude = args.get("exclude", "") or ""
     storage_class = args.get("storage_class", "") or ""
@@ -73,8 +76,13 @@ def sync_copy_object(args, parsed_globals):
 
             dest_key = build_cos_key(dest_prefix, rel_key)
 
-            # 检查目标是否已存在且大小一致（增量同步）
-            if dest_key in dest_objects and dest_objects[dest_key]["Size"] == obj_info["Size"]:
+            # 增量同步：对齐 coscli sync 跳过逻辑
+            # - 默认：对比源 CRC64 与目标 CRC64（x-cos-hash-crc64ecma）
+            # - --ignore-existing：目标存在即跳过
+            # - --update：按 Last-Modified 时间比较
+            if dest_key in dest_objects and should_skip_sync_copy(
+                    client, bucket, src_key, dest_bucket, dest_key,
+                    ignore_existing=ignore_existing, update=update):
                 skip_count += 1
                 skip_size += obj_info["Size"]
                 continue

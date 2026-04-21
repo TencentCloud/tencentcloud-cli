@@ -453,7 +453,13 @@ tccli cos hash --local_path /tmp/test.txt --bucket my-bucket-1250000000 --cos_ke
 
 ## 同步操作
 
-同步操作通过比较文件大小来判断是否需要传输，大小相同的文件会被跳过（增量同步）。
+同步操作对齐 `coscli sync` 命令的跳过逻辑（优先级从高到低）：
+
+- `--ignore_existing true`：目标已存在即跳过，不做内容比较
+- `--update true`：按 `Last-Modified` 时间比较，目标 ≥ 源时跳过（用于只向新版本推送）
+- 默认：**CRC64 校验**（对比 COS `x-cos-hash-crc64ecma` 与对端 CRC64），相同则跳过
+
+> 目标不存在时一律不跳过。CRC64 计算依赖 `crcmod` 库（已包含在项目依赖中）。
 
 ### sync_upload - 同步上传
 

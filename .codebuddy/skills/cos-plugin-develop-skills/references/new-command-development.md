@@ -135,7 +135,8 @@ sync_upload 操作：本地 -> COS 同步上传
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import (init_cos_client, match_filters, build_cos_key,
-                    list_all_objects, list_local_files, TransferProgressMonitor)
+                    list_all_objects, list_local_files, TransferProgressMonitor,
+                    should_skip_sync_upload)
 
 
 def sync_upload_object(args, parsed_globals):
@@ -147,6 +148,8 @@ def sync_upload_object(args, parsed_globals):
     cos_prefix = args.get("cos_key", "") or ""
     include = args.get("include", "") or ""
     exclude = args.get("exclude", "") or ""
+    ignore_existing = args.get("ignore_existing", False)
+    update = args.get("update", False)
     routines = args.get("routines", 3) or 3
     retry = args.get("retry", 3)
     if retry is None:
@@ -175,8 +178,11 @@ def sync_upload_object(args, parsed_globals):
                 skip_count += 1
                 continue
             cos_key = build_cos_key(cos_prefix, rel_path)
-            # 增量同步：大小一致则跳过
-            if cos_key in cos_objects and cos_objects[cos_key]["Size"] == file_info["Size"]:
+            # 增量同步：对齐 coscli sync 跳过逻辑（CRC64 / update / ignore-existing）
+            if cos_key in cos_objects and should_skip_sync_upload(
+                    client, bucket, cos_key,
+                    file_info["FullPath"], file_info.get("MTime", 0),
+                    ignore_existing=ignore_existing, update=update):
                 skip_count += 1
                 skip_size += file_info["Size"]
                 continue

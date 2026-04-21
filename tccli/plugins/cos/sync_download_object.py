@@ -10,7 +10,8 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from qcloud_cos import CosServiceError
 from .utils import (init_cos_client, match_filters, build_cos_key,
-                    list_all_objects, list_all_objects_with_dirs, list_local_files, TransferProgressMonitor)
+                    list_all_objects, list_all_objects_with_dirs, list_local_files, TransferProgressMonitor,
+                    should_skip_sync_download)
 
 
 def sync_download_object(args, parsed_globals):
@@ -22,6 +23,8 @@ def sync_download_object(args, parsed_globals):
     cos_prefix = args.get("cos_key", "") or ""
     recursive = args.get("recursive", False)
     delete_extra = args.get("delete_extra", False)
+    ignore_existing = args.get("ignore_existing", False)
+    update = args.get("update", False)
     include = args.get("include", "") or ""
     exclude = args.get("exclude", "") or ""
     thread_num = args.get("thread_num", 5) or 5
@@ -73,8 +76,13 @@ def sync_download_object(args, parsed_globals):
 
             local_file = os.path.join(local_path, rel_key.replace("/", os.sep))
 
-            # 检查本地是否已存在且大小一致（增量同步）
-            if rel_key in local_files and local_files[rel_key]["Size"] == obj_info["Size"]:
+            # 增量同步：对齐 coscli sync 跳过逻辑
+            # - 默认：对比本地 CRC64 与 COS CRC64（x-cos-hash-crc64ecma）
+            # - --ignore-existing：本地存在即跳过
+            # - --update：按 Last-Modified 时间比较
+            if rel_key in local_files and should_skip_sync_download(
+                    client, bucket, cos_key, obj_info, local_file,
+                    ignore_existing=ignore_existing, update=update):
                 skip_count += 1
                 skip_size += obj_info["Size"]
                 continue

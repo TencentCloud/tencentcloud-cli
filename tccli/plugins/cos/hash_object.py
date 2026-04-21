@@ -6,25 +6,16 @@ hash 操作：计算本地文件或 COS 对象的哈希值
 import os
 import hashlib
 from qcloud_cos import CosServiceError
-from .utils import init_cos_client
+from .utils import init_cos_client, calculate_local_crc64
 
 
 def _calculate_local_hash(file_path, hash_type="md5"):
     """计算本地文件的哈希值"""
     if hash_type == "crc64":
-        try:
-            import crcmod
-            crc64_fn = crcmod.mkCrcFun(0x142F0E1EBA9EA3693, initCrc=0, xorOut=0, rev=True)
-            with open(file_path, "rb") as f:
-                crc = 0
-                while True:
-                    data = f.read(8192)
-                    if not data:
-                        break
-                    crc = crc64_fn(data, crc)
-            return str(crc)
-        except ImportError:
+        result = calculate_local_crc64(file_path)
+        if result is None:
             return "Error: 计算 CRC64 需要安装 crcmod 库: pip install crcmod"
+        return result
 
     if hash_type == "md5":
         h = hashlib.md5()

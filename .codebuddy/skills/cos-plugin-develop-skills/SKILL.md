@@ -53,6 +53,11 @@ description: tccli cos 插件（tencentcloud-cli COS 插件）完整开发规范
 **批量传输进度监控**
 → 参考 `references/transfer-operations.md`，使用 `TransferProgressMonitor` 标准流程
 
+**同步命令（sync_upload / sync_download / sync_copy）跳过逻辑**
+→ 参考 `references/transfer-operations.md` 的"同步操作模式（增量比较）"
+→ 对齐 coscli sync：默认 **CRC64 校验**，支持 `--ignore-existing` 与 `--update`
+→ 必须使用 `utils.should_skip_sync_upload/download/copy`，禁止"大小相同即跳过"
+
 ## 项目结构速查
 
 ```
