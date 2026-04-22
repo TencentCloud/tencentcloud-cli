@@ -512,6 +512,14 @@
         "title": "变配询价"
       }
     ],
+    "InstallSoftware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallSoftware\n<公共请求参数>\n\n{\n    \"ExternalService\": [],\n    \"InstanceId\": \"emr-16ybdkys\",\n    \"SoftInfo\": [\n        \"delta-2.2.0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": null,\n        \"RequestId\": \"a7f4bda9-8fc5-4b32-9cc2-7178200d4719\"\n    }\n}",
+        "title": "安装服务"
+      }
+    ],
     "ModifyAutoRenewFlag": [
       {
         "document": "",

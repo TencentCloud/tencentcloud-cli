@@ -5261,7 +5261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。\t可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID。    可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
@@ -5270,7 +5270,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。\t",
+          "document": "<p>查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。</p>",
           "example": "2018-06-10 17:06:38",
           "member": "datetime",
           "name": "StartTime",
@@ -5279,7 +5279,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间，形如2018-01-01 00:00:00。\t",
+          "document": "<p>查询结束时间，形如2018-01-01 00:00:00。</p>",
           "example": "2018-06-11 17:06:38",
           "member": "datetime",
           "name": "EndTime",
@@ -5288,7 +5288,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名字。",
+          "document": "<p>数据库名字。</p>",
           "example": "webapp-use",
           "member": "string",
           "name": "DatabaseName",
@@ -5297,8 +5297,8 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字。",
-          "example": "ERROR",
+          "document": "<p>搜索关键字。</p>",
+          "example": "[\"ERROR\"]",
           "member": "string",
           "name": "SearchKeys",
           "required": false,
@@ -5306,7 +5306,7 @@
         },
         {
           "disabled": false,
-          "document": "每页显示数量，取值范围为1-100。默认值为50。\t",
+          "document": "<p>每页显示数量，取值范围为1-100。默认值为50。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -5315,12 +5315,21 @@
         },
         {
           "disabled": false,
-          "document": "数据偏移量，从0开始。默认值为0。\t",
+          "document": "<p>数据偏移量，从0开始。默认值为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志过滤条件。格式为  [{Type: &quot;ApplicationName&quot;, Compare: &quot;INC&quot;, Value: [&quot;123&quot;]}]。</p>",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "LogFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5330,7 +5339,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询到的日志数量，最大值为10000条。",
+          "document": "<p>查询到的日志数量，最大值为10000条。</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -5340,7 +5349,7 @@
         },
         {
           "disabled": false,
-          "document": "错误日志详细信息集合。",
+          "document": "<p>错误日志详细信息集合。</p>",
           "example": "无",
           "member": "ErrLogDetail",
           "name": "Details",
@@ -7356,7 +7365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "app_user",
           "member": "string",
           "name": "UserName",
@@ -7366,7 +7375,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名字",
+          "document": "<p>数据库名字</p>",
           "example": "user-data-db",
           "member": "string",
           "name": "Database",
@@ -7376,7 +7385,7 @@
         },
         {
           "disabled": false,
-          "document": "错误发生时间",
+          "document": "<p>错误发生时间</p>",
           "example": "2024-12-04 21:13:46",
           "member": "string",
           "name": "ErrTime",
@@ -7386,13 +7395,83 @@
         },
         {
           "disabled": false,
-          "document": "错误消息",
+          "document": "<p>错误消息</p>",
           "example": "2024-12-04 21:13:46.789 UTC [12345] FATAL:  password authentication failed for user \"myuser\"",
           "member": "string",
           "name": "ErrMsg",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进程ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "58892",
+          "member": "int64",
+          "name": "ProcessId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.15.255.3:59834",
+          "member": "string",
+          "name": "ClientAddr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "69e1a253.e60c",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-04-17 11:00:35",
+          "member": "string",
+          "name": "SessionStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>虚拟事务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1125/307",
+          "member": "string",
+          "name": "VirtualTransactionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQLSTATE错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "57014",
+          "member": "string",
+          "name": "SqlStateCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端应用名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "slow_log_test",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8008,6 +8087,39 @@
         }
       ],
       "usage": "out"
+    },
+    "LogFilter": {
+      "document": "日志过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件名称。</p><p>如：sql - SQL命令详情</p><p>host – 客户端 IP；<br>user – 数据库账户。</p>",
+          "example": "ApplicationName",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件匹配类型。支持：<br>INC – 包含；     （多个值之间是||的关系）<br>EXC – 不包含； （多个值之间是&amp;&amp;的关系）<br>EQS – 等于；     （多个值之间是||的关系）<br>NEQ – 不等于；（多个值之间是&amp;&amp;的关系）<br>RG – 范围；</p>",
+          "example": "INC",
+          "member": "string",
+          "name": "Compare",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件匹配值。当Compare=RG时，例：[&quot;1-100&quot;,&quot;200-300&quot;]</p>",
+          "example": "[\"slow_log_test\"]",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyAccountPrivilegesRequest": {
       "document": "ModifyAccountPrivileges请求参数结构体",
@@ -10089,63 +10201,113 @@
       "members": [
         {
           "disabled": false,
-          "document": "慢SQL 语句",
+          "document": "<p>慢SQL 语句</p>",
           "example": "select 1",
           "member": "string",
           "name": "RawQuery",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "慢SQL 查询的数据库",
+          "document": "<p>慢SQL 查询的数据库</p>",
           "example": "postgres",
           "member": "string",
           "name": "DatabaseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "慢SQL执行 耗时",
+          "document": "<p>慢SQL执行 耗时</p>",
           "example": "1.1",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行慢SQL的客户端",
+          "document": "<p>执行慢SQL的客户端</p>",
           "example": "::1",
           "member": "string",
           "name": "ClientAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行慢SQL的用户名",
+          "document": "<p>执行慢SQL的用户名</p>",
           "example": "postgres",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "慢SQL执行的开始时间",
+          "document": "<p>慢SQL执行的开始时间</p>",
           "example": "2020-02-01 01:02:03",
           "member": "string",
           "name": "SessionStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行慢SQL的进程ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21348",
+          "member": "int64",
+          "name": "ProcessId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行慢SQL的会话ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "69e1a22e.5364",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行慢SQL的事务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "893/0",
+          "member": "string",
+          "name": "VirtualTransactionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行慢SQL的状态码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0000X",
+          "member": "string",
+          "name": "SqlStateCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行慢SQL的客户端名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

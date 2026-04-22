@@ -114,6 +114,24 @@
           "name": "Type",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>该字段表示待审核的图片资源链接，最多支持传入4张图片</p>",
+          "example": "[\"https://xxxxxxxxx1.jpg\",\"https://xxxxxxxxx2.jpg\"]",
+          "member": "string",
+          "name": "FileUrlList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待审核的文本内容，需为UTF-8编码并以Base64格式传入，字数限制5000字内。</p>",
+          "example": "5L2g55qE5Lil6LCo6K6p5L2g5Y+R546w77yM5Lqn5ZOB57uP55CG5Y+r5YmR6Z2S",
+          "member": "string",
+          "name": "TextContent",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

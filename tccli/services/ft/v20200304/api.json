@@ -290,46 +290,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸框左上角纵坐标。",
+          "document": "<p>人脸框左上角纵坐标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Y",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "人脸框左上角横坐标。",
+          "document": "<p>人脸框左上角横坐标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "X",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "人脸框宽度。",
+          "document": "<p>人脸框宽度。<br>单位：px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Width",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "人脸框高度。",
+          "document": "<p>人脸框高度。<br>单位：px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Height",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "GenderInfo": {
       "document": "人脸转换性别信息",

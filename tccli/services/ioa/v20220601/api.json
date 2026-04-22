@@ -2176,7 +2176,7 @@
         },
         {
           "disabled": false,
-          "document": "查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）",
+          "document": "<p>查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）</p>",
           "example": "053a8fe1-150f-434c-b8e9-f1d7804ded1f",
           "member": "string",
           "name": "QueryID",
@@ -2191,7 +2191,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件鉴定任务结果数据。详情查看具体数据结构",
+          "document": "<p>文件鉴定任务结果数据。详情查看具体数据结构</p>",
           "example": "无",
           "member": "DescribeDLPFileDetectResultData",
           "name": "Data",

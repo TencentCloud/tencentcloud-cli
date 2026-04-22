@@ -38,6 +38,22 @@
         "title": "查询示例"
       }
     ],
+    "AddBatchCustomRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddBatchCustomRule\n<公共请求参数>\n\n{\n    \"Name\": \"name\",\n    \"ExpireTime\": 0,\n    \"SortId\": 0,\n    \"ActionType\": 1,\n    \"Redirect\": \"/redirect\",\n    \"Bypass\": \"cc\",\n    \"Remark\": \"remark\",\n    \"EventId\": \"11101\",\n    \"Domains\": [\n        \"www.test.com\"\n    ],\n    \"Strategies\": [\n        {\n            \"Field\": \"URL\",\n            \"Arg\": \"\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"/acl\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Res\": \"success\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "批量新增自定义规则接口"
+      }
+    ],
+    "AddBatchCustomWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddBatchCustomWhiteRule\n<公共请求参数>\n\n{\n    \"Name\": \"name\",\n    \"SortId\": \"100\",\n    \"Domains\": [\n        \"waf.com\"\n    ],\n    \"Bypass\": [\n        \"cc\",\n        \"acl\"\n    ],\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 1711618518,\n                \"EndDateTime\": 1711918518\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    },\n    \"Strategies\": [\n        {\n            \"Field\": \"COOKIE\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"cookie_value\",\n            \"Arg\": \"cookie_key\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleId\": 7025\n    }\n}",
+        "title": "添加精准白名单"
+      }
+    ],
     "AddBypassAllRule": [
       {
         "document": "",
@@ -172,6 +188,14 @@
         "title": "创建CLS投递流任务"
       }
     ],
+    "CreateProtectGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateProtectGroup\n<公共请求参数>\n\n{\n    \"Name\": \"group name\",\n    \"Remark\": \"group remark\",\n    \"Domains\": [\n        \"www.testwaf1.com\",\n        \"www.testwaf2.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": 55201922,\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "title": "新建防护对象组"
+      }
+    ],
     "CreateRateLimitV2": [
       {
         "document": "",
@@ -218,6 +242,22 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Ids\": [\n        1,\n        2\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailIds\": [\n            1\n        ],\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
         "title": "查询示例"
+      }
+    ],
+    "DeleteBatchCustomRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBatchCustomRule\n<公共请求参数>\n\n{\n    \"DataType\": \"abc\",\n    \"IsDeleteAll\": 0,\n    \"Ids\": [\n        1\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Res\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "[自定义规则]-批量删除接口"
+      }
+    ],
+    "DeleteBatchCustomWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBatchCustomWhiteRule\n<公共请求参数>\n\n{\n    \"Ids\": [\n        11101,\n        11103\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除批量精准白名单规则"
       }
     ],
     "DeleteBatchIpAccessControl": [
@@ -314,6 +354,22 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOwaspWhiteRule\n<公共请求参数>\n\n{\n    \"Ids\": [\n        1\n    ],\n    \"Domain\": \"owasp.saas3.testwaf.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3223d5a-7dcc-4378-98dd-e4874b1c6f84\"\n    }\n}",
         "title": "删除白名单"
+      }
+    ],
+    "DeleteProtectGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProtectGroup\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除防护对象组"
+      }
+    ],
+    "DeleteProtectGroupDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DeleteProtectGroupDomain\n<公共请求参数>\n\n{\n    \"GroupId\": 11101,\n    \"Domain\": \"www.testwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "title": "解除防护对象组中的域名绑定"
       }
     ],
     "DeleteRateLimitsV2": [
@@ -480,6 +536,22 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoDenyIP\n<公共请求参数>\n\n{\n    \"Count\": 0,\n    \"Category\": \"cc\",\n    \"Domain\": \"www.test.com\",\n    \"Name\": \"name\",\n    \"Ip\": \"192.168.1.1\",\n    \"VtsMax\": 1,\n    \"VtsMin\": 1,\n    \"Sort\": \"CreateTime\",\n    \"Limit\": 1,\n    \"CtsMin\": 1,\n    \"Skip\": 1,\n    \"CtsMax\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"Action\": 32,\n                    \"Category\": \"cc\",\n                    \"Ip\": \"192.168.1.1\",\n                    \"Name\": \"name\",\n                    \"TsVersion\": 1730625888,\n                    \"ValidTs\": 1730625888\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
         "title": "描述WAF自动封禁IP 详情"
+      }
+    ],
+    "DescribeBatchCustomRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchCustomRuleList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"By\": \"abc\",\n    \"Order\": \"abc\",\n    \"DataType\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"Id\": 1101834050,\n                    \"ActionType\": 1,\n                    \"Bypass\": \"\",\n                    \"ExpireTime\": 0,\n                    \"Name\": \"clb访问测试\",\n                    \"Redirect\": \"/\",\n                    \"SortId\": 40,\n                    \"Status\": 1,\n                    \"Domains\": [\n                        \"zhenhua1020.qcloudwaf.com\"\n                    ],\n                    \"Remark\": \"\",\n                    \"Strategies\": [\n                        {\n                            \"Field\": \"URL\",\n                            \"Arg\": \"\",\n                            \"CompareFunc\": \"contains\",\n                            \"Content\": \"/ccc/bbb\",\n                            \"CaseNotSensitive\": 0\n                        }\n                    ],\n                    \"EventId\": \"\",\n                    \"ValidStatus\": 1,\n                    \"CreateTime\": \"2024-10-23 15:23:51\",\n                    \"UpdateTime\": \"2024-10-23 16:17:08\",\n                    \"JobType\": \"TimedJob\",\n                    \"JobDateTime\": {\n                        \"Timed\": [\n                            {\n                                \"StartDateTime\": 0,\n                                \"EndDateTime\": 0\n                            }\n                        ],\n                        \"Cron\": null,\n                        \"TimeTZone\": \"UTC+8\"\n                    },\n                    \"CronType\": \"-\",\n                    \"Label\": \"\",\n                    \"PageId\": \"\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"1547e8aa-b673-1a81-60ea-c91a2b153940\"\n    }\n}",
+        "title": "批量自定义规则列表接口"
+      }
+    ],
+    "DescribeBatchCustomWhiteRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchCustomWhiteRules\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 11101,\n                \"Name\": \"test\",\n                \"SortId\": \"100\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ],\n                \"Bypass\": [\n                    \"geoip\",\n                    \"cc\",\n                    \"owasp\"\n                ],\n                \"JobType\": \"timed\",\n                \"JobDateTime\": {\n                    \"Timed\": [\n                        {\n                            \"StartDateTime\": 1711618518,\n                            \"EndDateTime\": 1711918518\n                        }\n                    ]\n                },\n                \"GroupIds\": [\n                    1101,\n                    1102\n                ],\n                \"ValidStatus\": 1,\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"Status\": \"1\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"c937ce96-cf53-4df8-b288-07c6e092072d\"\n    }\n}",
+        "title": "获取批量精准白名单的规则列表"
       }
     ],
     "DescribeBatchIpAccessControl": [
@@ -830,6 +902,14 @@
         "title": "获取CLS投递流任务列表"
       }
     ],
+    "DescribeProtectGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeProtectGroup\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"Name\": \"ID\",\n            \"Values\": [\n                \"11101\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 11101,\n                \"Name\": \"xxx\",\n                \"Remark\": \"remark\",\n                \"RuleNum\": 12,\n                \"Domains\": [\n                    {\n                        \"Domain\": \"www.testwaf.com\",\n                        \"Instances\": [\n                            {\n                                \"ID\": \"waf_int0dxss\",\n                                \"Name\": \"waf_instance\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"Total\": 122,\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "title": "获取防护对象组详情"
+      }
+    ],
     "DescribeProtectionModes": [
       {
         "document": "查询Tiga引擎大类规则及其防护模式",
@@ -1174,6 +1254,38 @@
         "title": "修改示例"
       }
     ],
+    "ModifyBatchCustomRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchCustomRule\n<公共请求参数>\n\n{\n    \"Id\": 1101,\n    \"Name\": \"\",\n    \"ExpireTime\": 0,\n    \"SortId\": 0,\n    \"ActionType\": 0,\n    \"Redirect\": \"/redirect\",\n    \"Bypass\": \"cc\",\n    \"Remark\": \"remark\",\n    \"EventId\": \"11101\",\n    \"Domains\": [\n        \"www.test.com\"\n    ],\n    \"Strategies\": [\n        {\n            \"Field\": \"URL\",\n            \"Arg\": \"\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"/acl\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Res\": \"success\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "批量编辑自定义规则接口"
+      }
+    ],
+    "ModifyBatchCustomRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchCustomRuleStatus\n<公共请求参数>\n\n{\n    \"Id\": 11101,\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Res\": \"success\",\n        \"RequestId\": \"324b0821-ea0a-e071-3d26-4147c7fdc93e\"\n    }\n}",
+        "title": "批量自定义规则开关接口"
+      }
+    ],
+    "ModifyBatchCustomWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchCustomWhiteRule\n<公共请求参数>\n\n{\n    \"ID\": 1101,\n    \"Name\": \"name\",\n    \"SortId\": \"100\",\n    \"Domains\": [\n        \"waf.tencentcloudapi.com\"\n    ],\n    \"Bypass\": [\n        \"cc\",\n        \"acl\"\n    ],\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 1711618518,\n                \"EndDateTime\": 1711918518\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    },\n    \"Strategies\": [\n        {\n            \"Field\": \"COOKIE\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"cookie_value\",\n            \"Arg\": \"cookie_key\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\"\n    }\n}",
+        "title": "编辑批量精装白名单规则"
+      }
+    ],
+    "ModifyBatchCustomWhiteRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchCustomWhiteRuleStatus\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"Ids\": [\n        11101,\n        11102\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c937ce96-cf53-4df8-b288-07c6e092072d\"\n    }\n}",
+        "title": "更新批量精准白名单规则"
+      }
+    ],
     "ModifyBatchIpAccessControl": [
       {
         "document": "",
@@ -1458,6 +1570,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOwaspWhiteRule\n<公共请求参数>\n\n{\n    \"RuleId\": 10000,\n    \"Name\": \"测试白名单\",\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"Strategies\": [\n        {\n            \"Field\": \"IP\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"1.1.1.1\",\n            \"Arg\": \"GET\",\n            \"CaseNotSensitive\": 1\n        }\n    ],\n    \"Ids\": [\n        10000\n    ],\n    \"Type\": 1,\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 0,\n                \"EndDateTime\": 0\n            }\n        ],\n        \"Cron\": [\n            {\n                \"StartTime\": \"0\",\n                \"EndTime\": \"0\"\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\\t\"\n    },\n    \"ExpireTime\": 0,\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1955c61-d2de-40e2-a084-8fdfa871ceec\"\n    }\n}",
         "title": "修改规则白名单"
+      }
+    ],
+    "ModifyProtectGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyProtectGroup\n<公共请求参数>\n\n{\n    \"GroupId\": 11101,\n    \"Name\": \"group name\",\n    \"Remark\": \"group remark\",\n    \"Domains\": [\n        \"www.testwaf1.com\",\n        \"www.testwaf2.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": 55201922,\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "title": "编辑防护对象组"
       }
     ],
     "ModifyProtectionLevel": [

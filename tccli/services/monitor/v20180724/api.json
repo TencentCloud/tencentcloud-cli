@@ -1778,7 +1778,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知模板 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "18565",
           "member": "string",
           "name": "Id",
@@ -1789,7 +1789,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知模板名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "默认通知",
           "member": "string",
           "name": "Name",
@@ -1800,7 +1800,7 @@
         },
         {
           "disabled": false,
-          "document": "上次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上次修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-11-16 13:56:56",
           "member": "string",
           "name": "UpdatedAt",
@@ -1811,7 +1811,7 @@
         },
         {
           "disabled": false,
-          "document": "上次修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上次修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1500000688",
           "member": "string",
           "name": "UpdatedBy",
@@ -1822,7 +1822,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
           "member": "string",
           "name": "NoticeType",
@@ -1833,7 +1833,7 @@
         },
         {
           "disabled": false,
-          "document": "用户通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户通知列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
@@ -1844,7 +1844,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回调通知列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
@@ -1855,7 +1855,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是系统预设通知模板 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否是系统预设通知模板 0=否 1=是</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IsPreset",
@@ -1866,7 +1866,7 @@
         },
         {
           "disabled": false,
-          "document": "通知语言 zh-CN=中文 en-US=英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通知语言 zh-CN=中文 en-US=英文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
@@ -1877,7 +1877,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板绑定的告警策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知模板绑定的告警策略ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"policy-sdsd\"]",
           "member": "string",
           "name": "PolicyIds",
@@ -1888,7 +1888,7 @@
         },
         {
           "disabled": false,
-          "document": "后台 amp consumer id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后台 amp consumer id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Consumer-asfafasf",
           "member": "string",
           "name": "AMPConsumerId",
@@ -1899,7 +1899,7 @@
         },
         {
           "disabled": false,
-          "document": "推送cls渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>推送cls渠道</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CLSNotice",
           "name": "CLSNotices",
@@ -1910,7 +1910,7 @@
         },
         {
           "disabled": false,
-          "document": "通知模板绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通知模板绑定的标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1921,13 +1921,24 @@
         },
         {
           "disabled": false,
-          "document": "是否免登录，0-否，1-是",
+          "document": "<p>是否免登录，0-否，1-是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsLoginFree",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IANA 时区名</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZoneName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3469,7 +3480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -3478,7 +3489,7 @@
         },
         {
           "disabled": false,
-          "document": "通知模板名称 60字符以内",
+          "document": "<p>通知模板名称 60字符以内</p>",
           "example": "默认通知模板",
           "member": "string",
           "name": "Name",
@@ -3487,7 +3498,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "document": "<p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>",
           "example": "ALL",
           "member": "string",
           "name": "NoticeType",
@@ -3496,7 +3507,7 @@
         },
         {
           "disabled": false,
-          "document": "通知语言 zh-CN=中文 en-US=英文",
+          "document": "<p>通知语言 zh-CN=中文 en-US=英文</p>",
           "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
@@ -3505,7 +3516,7 @@
         },
         {
           "disabled": false,
-          "document": "用户通知 最多5个",
+          "document": "<p>用户通知 最多5个</p>",
           "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
@@ -3514,7 +3525,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知 最多6个",
+          "document": "<p>回调通知 最多6个</p>",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
@@ -3523,7 +3534,7 @@
         },
         {
           "disabled": false,
-          "document": "推送CLS日志服务的操作 最多1个",
+          "document": "<p>推送CLS日志服务的操作 最多1个</p>",
           "example": "无",
           "member": "CLSNotice",
           "name": "CLSNotices",
@@ -3532,7 +3543,7 @@
         },
         {
           "disabled": false,
-          "document": "模板绑定的标签",
+          "document": "<p>模板绑定的标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3541,12 +3552,21 @@
         },
         {
           "disabled": false,
-          "document": "是否免登录，0-否，1-是",
+          "document": "<p>是否免登录，0-否，1-是</p>",
           "example": "0",
           "member": "int64",
           "name": "IsLoginFree",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IANA 时区名</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3556,7 +3576,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板ID",
+          "document": "<p>告警通知模板ID</p>",
           "example": "notice-abcdef",
           "member": "string",
           "name": "NoticeId",
@@ -16428,7 +16448,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名，这里填“monitor”",
+          "document": "<p>模块名，这里填“monitor”</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -16437,7 +16457,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知规则名称 60字符以内",
+          "document": "<p>告警通知规则名称 60字符以内</p>",
           "example": "默认通知模板",
           "member": "string",
           "name": "Name",
@@ -16446,7 +16466,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
+          "document": "<p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>",
           "example": "ALL",
           "member": "string",
           "name": "NoticeType",
@@ -16455,7 +16475,7 @@
         },
         {
           "disabled": false,
-          "document": "通知语言 zh-CN=中文 en-US=英文",
+          "document": "<p>通知语言 zh-CN=中文 en-US=英文</p>",
           "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
@@ -16464,7 +16484,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板 ID",
+          "document": "<p>告警通知模板 ID</p>",
           "example": "notice-xxx",
           "member": "string",
           "name": "NoticeId",
@@ -16473,7 +16493,7 @@
         },
         {
           "disabled": false,
-          "document": "用户通知 最多5个",
+          "document": "<p>用户通知 最多5个</p>",
           "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
@@ -16482,7 +16502,7 @@
         },
         {
           "disabled": false,
-          "document": "回调通知 最多6个",
+          "document": "<p>回调通知 最多6个</p>",
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
@@ -16491,7 +16511,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知推送到CLS服务 最多1个",
+          "document": "<p>告警通知推送到CLS服务 最多1个</p>",
           "example": "无",
           "member": "CLSNotice",
           "name": "CLSNotices",
@@ -16500,7 +16520,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板绑定的告警策略ID列表",
+          "document": "<p>告警通知模板绑定的告警策略ID列表</p>",
           "example": "[\"policy-ssdd\"]",
           "member": "string",
           "name": "PolicyIds",
@@ -16509,12 +16529,21 @@
         },
         {
           "disabled": false,
-          "document": "是否免登录，0-否，1-是",
+          "document": "<p>是否免登录，0-否，1-是</p>",
           "example": "1",
           "member": "int64",
           "name": "IsLoginFree",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IANA 时区名</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -3125,6 +3125,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否生效</p>",
+          "example": "false",
+          "member": "string",
+          "name": "ConfigEffective",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

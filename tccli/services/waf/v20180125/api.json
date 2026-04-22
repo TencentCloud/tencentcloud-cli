@@ -28,6 +28,20 @@
       "output": "AddAttackWhiteRuleResponse",
       "status": "online"
     },
+    "AddBatchCustomRule": {
+      "document": "批量新增自定义规则接口",
+      "input": "AddBatchCustomRuleRequest",
+      "name": "批量新增自定义规则接口",
+      "output": "AddBatchCustomRuleResponse",
+      "status": "online"
+    },
+    "AddBatchCustomWhiteRule": {
+      "document": "增加批量精准白名单规则",
+      "input": "AddBatchCustomWhiteRuleRequest",
+      "name": "添加批量精准白名单规则",
+      "output": "AddBatchCustomWhiteRuleResponse",
+      "status": "online"
+    },
     "AddBypassAllRule": {
       "document": "添加一键bypass能力支持,直接添加APPID",
       "input": "AddBypassAllRuleRequest",
@@ -140,6 +154,13 @@
       "output": "CreatePostCLSFlowResponse",
       "status": "online"
     },
+    "CreateProtectGroup": {
+      "document": "新建防护对象组",
+      "input": "CreateProtectGroupRequest",
+      "name": "新建防护对象组",
+      "output": "CreateProtectGroupResponse",
+      "status": "online"
+    },
     "CreateRateLimitV2": {
       "document": "创建限流规则",
       "input": "CreateRateLimitV2Request",
@@ -180,6 +201,20 @@
       "input": "DeleteAttackWhiteRuleRequest",
       "name": "删除规则引擎白名单",
       "output": "DeleteAttackWhiteRuleResponse",
+      "status": "online"
+    },
+    "DeleteBatchCustomRule": {
+      "document": "[自定义规则]-批量删除接口",
+      "input": "DeleteBatchCustomRuleRequest",
+      "name": "删除批量自定义规则接口",
+      "output": "DeleteBatchCustomRuleResponse",
+      "status": "online"
+    },
+    "DeleteBatchCustomWhiteRule": {
+      "document": "删除批量精准白名单规则",
+      "input": "DeleteBatchCustomWhiteRuleRequest",
+      "name": "删除批量精准白名单规则",
+      "output": "DeleteBatchCustomWhiteRuleResponse",
       "status": "online"
     },
     "DeleteBatchIpAccessControl": {
@@ -264,6 +299,20 @@
       "input": "DeleteOwaspWhiteRuleRequest",
       "name": "删除用户规则引擎白名单",
       "output": "DeleteOwaspWhiteRuleResponse",
+      "status": "online"
+    },
+    "DeleteProtectGroup": {
+      "document": "删除防护对象组",
+      "input": "DeleteProtectGroupRequest",
+      "name": "删除防护对象组",
+      "output": "DeleteProtectGroupResponse",
+      "status": "online"
+    },
+    "DeleteProtectGroupDomain": {
+      "document": "解除防护对象组中的域名绑定",
+      "input": "DeleteProtectGroupDomainRequest",
+      "name": "解除防护对象组中的域名绑定",
+      "output": "DeleteProtectGroupDomainResponse",
       "status": "online"
     },
     "DeleteRateLimitsV2": {
@@ -404,6 +453,20 @@
       "input": "DescribeAutoDenyIPRequest",
       "name": "描述WAF自动封禁IP详情",
       "output": "DescribeAutoDenyIPResponse",
+      "status": "online"
+    },
+    "DescribeBatchCustomRuleList": {
+      "document": "批量自定义规则列表接口",
+      "input": "DescribeBatchCustomRuleListRequest",
+      "name": "批量自定义规则列表接口",
+      "output": "DescribeBatchCustomRuleListResponse",
+      "status": "online"
+    },
+    "DescribeBatchCustomWhiteRules": {
+      "document": "获取批量精准白名单的规则列表",
+      "input": "DescribeBatchCustomWhiteRulesRequest",
+      "name": "获取批量精准白名单列表",
+      "output": "DescribeBatchCustomWhiteRulesResponse",
       "status": "online"
     },
     "DescribeBatchIpAccessControl": {
@@ -698,6 +761,13 @@
       "input": "DescribePostCLSFlowsRequest",
       "name": "获取CLS投递流任务列表",
       "output": "DescribePostCLSFlowsResponse",
+      "status": "online"
+    },
+    "DescribeProtectGroup": {
+      "document": "获取防护对象组详情",
+      "input": "DescribeProtectGroupRequest",
+      "name": "获取防护对象组信息",
+      "output": "DescribeProtectGroupResponse",
       "status": "online"
     },
     "DescribeProtectionModes": {
@@ -1001,6 +1071,34 @@
       "output": "ModifyAttackWhiteRuleResponse",
       "status": "online"
     },
+    "ModifyBatchCustomRule": {
+      "document": "批量编辑自定义规则接口",
+      "input": "ModifyBatchCustomRuleRequest",
+      "name": "批量编辑自定义规则接口",
+      "output": "ModifyBatchCustomRuleResponse",
+      "status": "online"
+    },
+    "ModifyBatchCustomRuleStatus": {
+      "document": "批量自定义规则开关接口",
+      "input": "ModifyBatchCustomRuleStatusRequest",
+      "name": "批量自定义规则开关接口",
+      "output": "ModifyBatchCustomRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifyBatchCustomWhiteRule": {
+      "document": "修改批量精准白名单规则",
+      "input": "ModifyBatchCustomWhiteRuleRequest",
+      "name": "修改批量精准白名单规则",
+      "output": "ModifyBatchCustomWhiteRuleResponse",
+      "status": "online"
+    },
+    "ModifyBatchCustomWhiteRuleStatus": {
+      "document": "更新批量精准白名单规则",
+      "input": "ModifyBatchCustomWhiteRuleStatusRequest",
+      "name": "更新批量精准白名单规则开关",
+      "output": "ModifyBatchCustomWhiteRuleStatusResponse",
+      "status": "online"
+    },
     "ModifyBatchIpAccessControl": {
       "document": "批量IP黑白名单新增接口",
       "input": "ModifyBatchIpAccessControlRequest",
@@ -1223,6 +1321,13 @@
       "input": "ModifyOwaspWhiteRuleRequest",
       "name": "编辑规则引擎白名单",
       "output": "ModifyOwaspWhiteRuleResponse",
+      "status": "online"
+    },
+    "ModifyProtectGroup": {
+      "document": "编辑防护对象组",
+      "input": "ModifyProtectGroupRequest",
+      "name": "编辑防护对象组",
+      "output": "ModifyProtectGroupResponse",
       "status": "online"
     },
     "ModifyProtectionLevel": {
@@ -2106,6 +2211,278 @@
           "disabled": false,
           "document": "规则总数",
           "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddBatchCustomRuleRequest": {
+      "document": "AddBatchCustomRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "测试一下",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
+          "example": "1696867200",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "12",
+          "member": "int64",
+          "name": "SortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向",
+          "example": "2",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重定向地址",
+          "example": "/index.html",
+          "member": "string",
+          "name": "Redirect",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加白模块",
+          "example": "owasp,geoip,cc,antileakage",
+          "member": "string",
+          "name": "Bypass",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注一下",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件Id",
+          "example": "112233",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "策略详情列表",
+          "example": "无",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页面ID",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "PageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作灰度比例",
+          "example": "2",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddBatchCustomRuleResponse": {
+      "document": "AddBatchCustomRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作成功",
+          "example": "success",
+          "member": "string",
+          "name": "Res",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddBatchCustomWhiteRuleRequest": {
+      "document": "AddBatchCustomWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "精准白名单",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "100",
+          "member": "int64",
+          "name": "SortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略详情",
+          "example": "[             {                 \"Field\": \"URL\",                 \"Arg\": \"\",                 \"CompareFunc\": \"eq\",                 \"Content\": \"/acl\"             }         ]",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的模块，owasp：Web防护-规则引擎、ai：Web防护-AI引擎、ip_auto_deny：IP封禁、geoip：访问控制-地域封禁、acl：访问控制-自定义规则、cc：CC防护、antileakage：信息防泄漏防护、bwip：IP黑白名单、botrpc：BOT防护、api：API安全、applet：小程序防护",
+          "example": "[\"owasp\",\"ip_auto_deny\"]",
+          "member": "string",
+          "name": "Bypass",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表，如果绑定的是批量域名，和GroupIds参数二选一",
+          "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，如果绑定的是防护对象组，和Domains参数二选一",
+          "example": "[11101, 11102]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddBatchCustomWhiteRuleResponse": {
+      "document": "AddBatchCustomWhiteRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加成功的规则ID",
+          "example": "7025",
           "member": "uint64",
           "name": "RuleId",
           "output_required": true,
@@ -4463,6 +4840,414 @@
         }
       ],
       "usage": "both"
+    },
+    "BatchCustomRuleListData": {
+      "document": "批量自定义规则列表信息数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "[{\"Id\":1,\"Name\":\"测试一下\",\"Status\":1,\"Source\":\"custom\",\"Areas\":[\"国外\",\"山东\",\"安徽\",\"江西\"],\"Domains\":[\"config.qcloudwaf.com\",\"test.zjw.com\"],\"Remark\":\"xxxx\",\"UpdateTime\":\"2023-06-27 16:55:01\"}]",
+          "member": "BatchCustomRuleListItem",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表总数",
+          "example": "110",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchCustomRuleListItem": {
+      "document": "批量自定义规则列表信息Item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验",
+          "example": "1",
+          "member": "int64",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加白模块",
+          "example": "owasp,cc",
+          "member": "string",
+          "name": "Bypass",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期",
+          "example": "1696867200",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "测试一下",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向地址",
+          "example": "/redirect",
+          "member": "string",
+          "name": "Redirect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "SortId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "无",
+          "member": "Strategy",
+          "name": "Strategies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件Id",
+          "example": "1",
+          "member": "string",
+          "name": "EventId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效状态",
+          "example": "2",
+          "member": "uint64",
+          "name": "ValidStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2023-10-16 17:27:29",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2023-10-16 17:27:29",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期任务粒度",
+          "example": "week",
+          "member": "string",
+          "name": "CronType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "label",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面ID",
+          "example": "1101",
+          "member": "string",
+          "name": "PageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作灰度的比例",
+          "example": "2",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchCustomWhiteRule": {
+      "document": "批量精准白名单规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "规则名",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "100",
+          "member": "int64",
+          "name": "SortId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略详情",
+          "example": "[             {                 \"Field\": \"URL\",                 \"Arg\": \"\",                 \"CompareFunc\": \"eq\",                 \"Content\": \"/acl\"             }         ]",
+          "member": "Strategy",
+          "name": "Strategies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加白的模块，owasp：Web防护-规则引擎、ai：Web防护-AI引擎、ip_auto_deny：IP封禁、geoip：访问控制-地域封禁、acl：访问控制-自定义规则、cc：CC防护、antileakage：信息防泄漏防护、bwip：IP黑白名单、botrpc：BOT防护、api：API安全、applet：小程序防护",
+          "example": "[\"owasp\",\"ip_auto_deny\"]",
+          "member": "string",
+          "name": "Bypass",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期任务的类型",
+          "example": "week",
+          "member": "string",
+          "name": "CronType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名列表，如果绑定的是批量域名",
+          "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，如果绑定的是防护对象组",
+          "example": "[11101,11102]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效状态，1：生效中、0：未生效",
+          "example": "0",
+          "member": "uint64",
+          "name": "ValidStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间",
+          "example": "2012-03-07T13:02:47+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则更新时间",
+          "example": "2012-03-07T13:02:47+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关状态，1：开启、0：关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BatchDomainResult": {
       "document": "批量防护失败的域名以及对应的原因。",
@@ -8677,6 +9462,61 @@
       ],
       "type": "object"
     },
+    "CreateProtectGroupRequest": {
+      "document": "CreateProtectGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组名称",
+          "example": "防护对象组",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组的应用范围",
+          "example": "[\"www.testwaf1.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProtectGroupResponse": {
+      "document": "CreateProtectGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组的ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRateLimitV2Request": {
       "document": "CreateRateLimitV2请求参数结构体",
       "members": [
@@ -9276,6 +10116,97 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchCustomRuleRequest": {
+      "document": "DeleteBatchCustomRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据类型 \n\"custom-rule\"-自定义规则、\"custom-white-rule\"-精准白名单\n",
+          "example": "custom-rule",
+          "member": "string",
+          "name": "DataType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0-指定Id删除、1-删除全部（除部分排除的Id）\n",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDeleteAll",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "具体Ids 由IsDeleteAll而定",
+          "example": "[1697034138,1697035742]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "[{ \t\t\t\"Name\": \"ActionType\", // 执行动作 \t\t\t\"Values\": [\"1\"],      // \"1\"-阻断、\"2\"-人机识别、\"3\"-观察、\"4\"-重定向 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Status\",  // 开关状态 全部不用传该值 \t\t\t\"Values\": [\"1\"], // \"0\"-全部、\"1\"-开启、\"2\"-关闭 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"ValidStatus\",  // 生效状态 全部不用传该值 \t\t\t\"Values\": [\"0\"], // \"0\"-全部、\"1\"-生效中、\"2\"-已过期 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Name\",  // 规则名称 \t\t\t\"Values\": [\"xxxx\"],            \"ExactMatch\": false \t\t}, { \t\t\t\"Name\": \"RuleId\",  // 规则Id \t\t\t\"Values\": [\"123344\"],            \"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Domains\",  // 生效域名 \t\t\t\"Values\": [\"baidu.com\"],            \"ExactMatch\": false \t\t}]",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchCustomRuleResponse": {
+      "document": "DeleteBatchCustomRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作成功",
+          "example": "success",
+          "member": "string",
+          "name": "Res",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchCustomWhiteRuleRequest": {
+      "document": "DeleteBatchCustomWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要删除的规则ID列表",
+          "example": "[11101,11102]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchCustomWhiteRuleResponse": {
+      "document": "DeleteBatchCustomWhiteRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9888,6 +10819,69 @@
     },
     "DeleteOwaspWhiteRuleResponse": {
       "document": "DeleteOwaspWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProtectGroupDomainRequest": {
+      "document": "DeleteProtectGroupDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "解除绑定的域名",
+          "example": "www.testwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProtectGroupDomainResponse": {
+      "document": "DeleteProtectGroupDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProtectGroupRequest": {
+      "document": "DeleteProtectGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，支持批量删除",
+          "example": "[11101,11102]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProtectGroupResponse": {
+      "document": "DeleteProtectGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11870,6 +12864,171 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchCustomRuleListRequest": {
+      "document": "DescribeBatchCustomRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页尺寸\n",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段\n\"update_time\"-更新时间、\"expire_time\"-过期时间、\"sort_id\"-优先级、\"id\"-规则Id、\"create_time\"-创建时间",
+          "example": "update_time",
+          "member": "string",
+          "name": "By",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型\ndesc-降序、asc-升序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据类型 \"custom-rule\"-自定义规则、\"custom-white-rule\"-精准白名单",
+          "example": "custom-rule",
+          "member": "string",
+          "name": "DataType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选列表",
+          "example": "\"Filters\": [{ \t\t\t\"Name\": \"ActionType\", // 执行动作 \t\t\t\"Values\": [\"1\"],      // \"1\"-阻断、\"2\"-人机识别、\"3\"-观察、\"4\"-重定向 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Status\",  // 开关状态 \t\t\t\"Values\": [\"1\"], // \"0\"-全部、\"1\"-开启、\"2\"-关闭 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"ValidStatus\",  // 生效状态 \t\t\t\"Values\": [\"0\"], // \"0\"-全部、\"1\"-生效中、\"2\"-已过期 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Name\",  // 规则名称 \t\t\t\"Values\": [\"xxxx\"],            \"ExactMatch\": false \t\t}, { \t\t\t\"Name\": \"RuleId\",  // 规则Id \t\t\t\"Values\": [\"123344\"],            \"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Domains\",  // 生效域名 \t\t\t\"Values\": [\"baidu.com\"],            \"ExactMatch\": false \t\t}]",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchCustomRuleListResponse": {
+      "document": "DescribeBatchCustomRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作成功",
+          "example": " {                     \"List\": [                         {                             \"Id\": 1101834050,                             \"ActionType\": 1,                             \"Bypass\": \"\",                             \"ExpireTime\": 0,                             \"Name\": \"clb访问测试\",                             \"Redirect\": \"/\",                             \"SortId\": 40,                             \"Status\": 1,                             \"Domains\": [                                 \"zhenhua1020.qcloudwaf.com\"                             ],                             \"Remark\": \"\",                             \"Strategies\": [                                 {                                     \"Field\": \"URL\",                                     \"Arg\": \"\",                                     \"CompareFunc\": \"contains\",                                     \"Content\": \"/ccc/bbb\",                                     \"CaseNotSensitive\": 0                                 }                             ],                             \"EventId\": \"\",                             \"ValidStatus\": 1,                             \"CreateTime\": \"2024-10-23 15:23:51\",                             \"UpdateTime\": \"2024-10-23 16:17:08\",                             \"JobType\": \"TimedJob\",                             \"JobDateTime\": {                                 \"Timed\": [                                     {                                         \"StartDateTime\": 0,                                         \"EndDateTime\": 0                                     }                                 ],                                 \"Cron\": null,                                 \"TimeTZone\": \"UTC+8\"                             },                             \"CronType\": \"-\",                             \"Label\": \"\",                             \"PageId\": \"\"                         } ],                     \"Total\": 1 }",
+          "member": "BatchCustomRuleListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchCustomWhiteRulesRequest": {
+      "document": "DescribeBatchCustomWhiteRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页尺寸，默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段\"modify_time\"-更新时间、\"sort_id\"-优先级、\"id\"-规则Id、\"create_time\"-创建时间，默认为update_time",
+          "example": "modify_time",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型desc-降序、asc-升序，默认为desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选列表，支持按照 ID：规则RuleId、Domain：生效的域名、Name：规则名称来筛选、ValidStatus：生效状态、Status：开关状态、TimerType：生效方式",
+          "example": "[{\"Name\":\"RuleId\",\"Value\":\"11101\"}]",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchCustomWhiteRulesResponse": {
+      "document": "DescribeBatchCustomWhiteRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量规则列表  ",
+          "example": "[                     {                         \"ID\": 1101166750,                         \"Name\": \"test\",                         \"SortId\": 50,                         \"Bypass\": [                             \"owasp\",                             \"ai\",                             \"ip_auto_deny\",                             \"geoip\",                             \"acl\",                             \"cc\",                             \"antileakage\",                             \"bwip\",                             \"botrpc\",                             \"api\",                             \"applet\"                         ],                         \"Domains\": null,                         \"GroupIds\": [                             8500000006                         ],                         \"Strategies\": [                             {                                 \"Field\": \"IP\",                                 \"Arg\": \"\",                                 \"CompareFunc\": \"ipmatch\",                                 \"Content\": \"1.1.1.1\",                                 \"CaseNotSensitive\": 0                             },                             {                                 \"Field\": \"COOKIE\",                                 \"Arg\": \"\",                                 \"CompareFunc\": \"nnull\",                                 \"Content\": \"\",                                 \"CaseNotSensitive\": 0                             }                         ],                         \"JobType\": \"TimedJob\",                         \"JobDateTime\": {                             \"Timed\": [                                 {                                     \"StartDateTime\": 0,                                     \"EndDateTime\": 0                                 }                             ],                             \"Cron\": null,                             \"TimeTZone\": \"UTC+8\"                         },                         \"CronType\": \"\",                         \"ValidStatus\": 1,                         \"CreateTime\": \"2024-07-24T14:39:13+08:00\",                         \"UpdateTime\": \"2024-08-27T10:36:09+08:00\",                         \"Status\": 1                     }]",
+          "member": "BatchCustomWhiteRule",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -15599,6 +16758,89 @@
           "name": "PostCLSFlows",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProtectGroupRequest": {
+      "document": "DescribeProtectGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询防护对象的查询条件，如果为空则获取所有的防护对象组，支持按照 Name：对象组名称、Domain：绑定的域名、InstanceID：实例ID、ID：对象组ID、InstanceName：实例名称",
+          "example": "{\"Key\":\"ID\",\"Value\":[\"11101\"]}",
+          "member": "FiltersItemNew",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "OffSet",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页尺寸，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持按照 \"update_time\"-更新时间、\"create_time\"-创建时间",
+          "example": "update_time",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型desc-降序、asc-升序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProtectGroupResponse": {
+      "document": "DescribeProtectGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组的详情",
+          "example": "[{                         \"ID\": 8500000022,                         \"Name\": \"11\",                         \"Remark\": \"\",                         \"Domains\": null,                         \"RuleNum\": 0,                         \"CreateTime\": \"2024-08-29T10:21:54+08:00\",                         \"UpdateTime\": \"2024-08-29T10:21:54+08:00\"                     }]",
+          "member": "ProtectGroupInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象组的总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -20885,6 +22127,32 @@
       ],
       "usage": "both"
     },
+    "InstanceBriefInfo": {
+      "document": "实例对象的简略结构，只包含实例ID和实例名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "waf_int0xa0dd",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "waf_instance",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceInfo": {
       "document": "一个实例的详细信息",
       "members": [
@@ -24464,6 +25732,377 @@
       ],
       "type": "object"
     },
+    "ModifyBatchCustomRuleRequest": {
+      "document": "ModifyBatchCustomRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量规则Id",
+          "example": "1110111",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "测试一下",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
+          "example": "1696867200",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "SortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验",
+          "example": "2",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重定向地址",
+          "example": "/redirect",
+          "member": "string",
+          "name": "Redirect",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注一下",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件Id",
+          "example": "110222",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略详情列表",
+          "example": "无",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "加白模块",
+          "example": "owasp,geoip,cc,antileakage",
+          "member": "string",
+          "name": "Bypass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表",
+          "example": "[11101,11102]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页面ID",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "PageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作灰度的比例，1-100，默认是100",
+          "example": "2",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchCustomRuleResponse": {
+      "document": "ModifyBatchCustomRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作成功",
+          "example": "success",
+          "member": "string",
+          "name": "Res",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchCustomRuleStatusRequest": {
+      "document": "ModifyBatchCustomRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量Id",
+          "example": "11011",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开关状态 0-关、1-开\n",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchCustomRuleStatusResponse": {
+      "document": "ModifyBatchCustomRuleStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作成功",
+          "example": "success",
+          "member": "string",
+          "name": "Res",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchCustomWhiteRuleRequest": {
+      "document": "ModifyBatchCustomWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "精准白名单",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "100",
+          "member": "int64",
+          "name": "SortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略详情",
+          "example": "[             {                 \"Field\": \"URL\",                 \"Arg\": \"\",                 \"CompareFunc\": \"eq\",                 \"Content\": \"/acl\"             }         ]",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的模块，owasp：Web防护-规则引擎、ai：Web防护-AI引擎、ip_auto_deny：IP封禁、geoip：访问控制-地域封禁、acl：访问控制-自定义规则、cc：CC防护、antileakage：信息防泄漏防护、bwip：IP黑白名单、botrpc：BOT防护、api：API安全、applet：小程序防护",
+          "example": "[\"owasp\",\"ip_auto_deny\"]",
+          "member": "string",
+          "name": "Bypass",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表，如果绑定的是批量域名",
+          "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，如果绑定的是防护对象组",
+          "example": "[1105677,22203345]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchCustomWhiteRuleResponse": {
+      "document": "ModifyBatchCustomWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchCustomWhiteRuleStatusRequest": {
+      "document": "ModifyBatchCustomWhiteRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要更新的规则ID列表",
+          "example": "[11101,11102]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开关，1：开启、0：关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchCustomWhiteRuleStatusResponse": {
+      "document": "ModifyBatchCustomWhiteRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyBatchIpAccessControlRequest": {
       "document": "ModifyBatchIpAccessControl请求参数结构体",
       "members": [
@@ -26707,6 +28346,70 @@
       ],
       "type": "object"
     },
+    "ModifyProtectGroupRequest": {
+      "document": "ModifyProtectGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组名称",
+          "example": "防护对象组",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组的应用范围",
+          "example": "[\"www.testwaf1.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectGroupResponse": {
+      "document": "ModifyProtectGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组的ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyProtectionLevelRequest": {
       "document": "ModifyProtectionLevel请求参数结构体",
       "members": [
@@ -28940,6 +30643,108 @@
         }
       ],
       "usage": "both"
+    },
+    "ProtectGroupDomainInfo": {
+      "document": "防护对象组的域名详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组中绑定的域名",
+          "example": "www.testwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组中绑定的域名对应所属的实例信息，一个域名可能存在多个实例中",
+          "example": "[{\"ID\":\"waf_int0dxss\",\"Name\":\"waf_instance\"}]",
+          "member": "InstanceBriefInfo",
+          "name": "Instances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProtectGroupInfo": {
+      "document": "防护对象组对象详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护对象组ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组名称",
+          "example": "rulename",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组中绑定的域名详情",
+          "example": "[{\"Domain\":\"www.testwaf.com\", \"Instances\":[{\"ID\":\"waf_int0dxss\",\"Name\":\"waf_instance\"}]}]",
+          "member": "ProtectGroupDomainInfo",
+          "name": "Domains",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的批量规则数",
+          "example": "10",
+          "member": "uint64",
+          "name": "RuleNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2012-03-07T13:02:47+08:00\t",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2012-03-07T13:02:47+08:00\t",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "QPSPackageNew": {
       "document": "clb-waf QPS套餐 New",
