@@ -96,6 +96,14 @@
         "title": "创建Credential"
       }
     ],
+    "CreateApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b94efe7a-6fc7-4556-90c1-a631cab0a1ba\"\n    }\n}",
+        "title": "创建API分组"
+      }
+    ],
     "CreateMcpServer": [
       {
         "document": "创建mcp server",
@@ -118,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-********\",\n    \"Name\": \"deepseek\",\n    \"Description\": \"deepseek\",\n    \"PubPath\": \"/deepseek\",\n    \"TargetModels\": [\n        {\n            \"ID\": \"mod-********\",\n            \"Name\": \"deepseek\",\n            \"Rank\": 10\n        }\n    ],\n    \"PathMatchType\": \"prefix\",\n    \"InvokeLimitConfigStatus\": false,\n    \"InvokeLimitConfig\": {\n        \"Type\": \"tokenBucket\",\n        \"TokenBucketMaxNum\": 20000,\n        \"TokenBucketRate\": 1,\n        \"FunnelMaxNum\": 20000,\n        \"FunnelRate\": 1,\n        \"SlidingWindowMaxNum\": 20000,\n        \"SlidingWindowSize\": 1,\n        \"TimeWindow\": 20000,\n        \"TimeWindowInterval\": 1\n    },\n    \"TokenLimitStatus\": false,\n    \"TokenLimitConfig\": {\n        \"LimitRequestBody\": 10,\n        \"LimitWindows\": [\n            {\n                \"Interval\": 60,\n                \"Limit\": 100\n            }\n        ]\n    },\n    \"TmsStatus\": false,\n    \"TmsConfig\": {\n        \"Scope\": [],\n        \"Mode\": \"\",\n        \"Action\": \"\",\n        \"MergeCount\": 0,\n        \"BizType\": \"\",\n        \"InterceptMessage\": \"\"\n    },\n    \"IpWhiteStatus\": false,\n    \"IpWhiteList\": [],\n    \"IpBlackStatus\": false,\n    \"IpBlackList\": [],\n    \"PluginConfigs\": [],\n    \"Timeout\": 60,\n    \"PromptModerateStatus\": true,\n    \"PromptModerateConfig\": {\n        \"Action\": \"intercept\",\n        \"InterceptMessage\": \"intercept\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-********\"\n        },\n        \"RequestId\": \"19539a7c-9462-4cd2-9064-0edaec692f17\"\n    }\n}",
         "title": "CreateModelService"
+      }
+    ],
+    "CreateService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"awdrw1256\"\n    }\n}",
+        "title": "创建服务"
       }
     ],
     "DeleteAIMCredential": [
@@ -176,6 +192,14 @@
         "title": "删除Credential"
       }
     ],
+    "DeleteApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApp\n<公共请求参数>\n\n{\n    \"ID\": \"app-589bc68f\",\n    \"InstanceID\": \"ins-testtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36771609-11e3-43bc-8943-e05e862505de\"\n    }\n}",
+        "title": "删除API分组"
+      }
+    ],
     "DeleteMcpServer": [
       {
         "document": "删除mcp server",
@@ -198,6 +222,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"ID\": \"mds-e9b168e4\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mds-e9b168e4\"\n        },\n        \"RequestId\": \"459519b6-c90e-4b27-bf5f-2e900a888045\"\n    }\n}",
         "title": "删除模型服务"
+      }
+    ],
+    "DeleteService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"ID\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "删除服务"
       }
     ],
     "DescribeAIMCredential": [
@@ -262,6 +294,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentCredentials\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Offset\": 0,\n    \"Keyword\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AppID\": 1300273807,\n                    \"Content\": {\n                        \"Headers\": [\n                            {\n                                \"Key\": \"x-rio-signature\",\n                                \"Value\": \"123456789\"\n                            }\n                        ],\n                        \"STSService\": \"\",\n                        \"STSSystem\": \"\"\n                    },\n                    \"CreateTime\": \"2025-07-14T07:22:40.347Z\",\n                    \"ID\": \"agc-f4431972\",\n                    \"InstanceID\": \"ins-e6fbc9b9\",\n                    \"LastUpdateTime\": \"2025-07-14T07:22:40.347Z\",\n                    \"Name\": \"测试凭据\",\n                    \"RelateAgentAppNum\": 0,\n                    \"RelateMcpServerNum\": 0,\n                    \"Status\": \"normal\",\n                    \"Type\": \"reqKey\",\n                    \"Uin\": \"700001136234\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"77fc4cfd-ca44-4986-9f71-9175b3aaaaca\"\n    }\n}",
         "title": "查询Credential列表"
+      }
+    ],
+    "DescribeApps": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApps\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e7ceb8b-6856-42de-b691-1b55cf77ff5c\"\n    }\n}",
+        "title": "分页查询API分组列表"
       }
     ],
     "DescribeMcpSecurityRule": [
@@ -334,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModels\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-a7af1980\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"IDs\": [\n        \"010101\"\n    ],\n    \"NotIDs\": [\n        \"0202020\"\n    ],\n    \"CredentialID\": \"0303030\",\n    \"Keyword\": \"hehe\",\n    \"Sort\": {\n        \"CreateTime\": 1,\n        \"LastUpdateTime\": 1,\n        \"Name\": -1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"Total\": 0\n        },\n        \"RequestId\": \"dc855e1e-41fd-4a12-9c19-4fdab33e96e3\"\n    }\n}",
         "title": "查询模型列表"
+      }
+    ],
+    "DescribeServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "查询服务列表"
       }
     ],
     "DescribeTokenLogs": [

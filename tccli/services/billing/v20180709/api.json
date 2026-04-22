@@ -4436,7 +4436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "交易类型code",
+          "document": "<p>交易类型code</p><p>枚举值：</p><ul><li>prepay_purchase： 包年包月新购</li><li>prepay_renew： 包年包月续费</li><li>prepay_modify： 包年包月配置变更</li><li>prepay_return： 包年包月退款</li><li>postpay_deduct_h： 按量计费小时结</li><li>postpay_deduct_d： 按量计费日结</li><li>postpay_deduct_m： 按量计费月结</li><li>offline_deduct： 线下项目扣费</li><li>online_deduct： 线下产品扣费</li><li>recon_deduct： 调账扣费</li><li>recon_increase： 调账补偿</li><li>postpay_deduct_s： 竞价实例小时结</li><li>recon_increase_f： 线下项目调账补偿</li><li>pre_to_post： 包年包月转按量</li><li>svp_hour_pay： 节省计划小时费用</li><li>recon_guarantee： 保底扣款</li><li>billVirtualId： 月度计费精度差异</li></ul>",
           "example": "prepay_purchase",
           "member": "string",
           "name": "ActionType",
@@ -4447,7 +4447,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型Name",
+          "document": "<p>交易类型Name</p>",
           "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
@@ -4859,7 +4859,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计费模式code",
+          "document": "<p>计费模式code</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>",
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
@@ -4870,7 +4870,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式Name",
+          "document": "<p>计费模式Name</p>",
           "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
@@ -7418,7 +7418,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "Business",
@@ -7429,7 +7429,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"postPay\"]",
           "member": "string",
           "name": "PayMode",
@@ -7440,7 +7440,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子产品</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sp_cvm\"]",
           "member": "string",
           "name": "ProductCodes",
@@ -7451,7 +7451,7 @@
         },
         {
           "disabled": false,
-          "document": "组件编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>组件编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"v_cpu\"]",
           "member": "string",
           "name": "ComponentCodes",
@@ -7462,7 +7462,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"10001\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -7473,7 +7473,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"47\"]",
           "member": "string",
           "name": "RegionIds",
@@ -7484,7 +7484,7 @@
         },
         {
           "disabled": false,
-          "document": "项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"0\"]",
           "member": "string",
           "name": "ProjectIds",
@@ -7495,7 +7495,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>交易类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"postpay_deduct_d\"]",
           "member": "string",
           "name": "ActionTypes",
@@ -7506,7 +7506,7 @@
         },
         {
           "disabled": false,
-          "document": "消耗类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消耗类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"prepay_purchase\"]",
           "member": "string",
           "name": "ConsumptionTypes",
@@ -7517,7 +7517,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagsForm",
           "name": "Tags",
@@ -7528,7 +7528,7 @@
         },
         {
           "disabled": false,
-          "document": " 末级分账单元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>末级分账单元</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1197623846\"]",
           "member": "string",
           "name": "PayerUins",
@@ -7539,7 +7539,7 @@
         },
         {
           "disabled": false,
-          "document": "主用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主用户Uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1197623846\"]",
           "member": "string",
           "name": "OwnerUins",
@@ -7550,7 +7550,7 @@
         },
         {
           "disabled": false,
-          "document": " 末级分账单元唯一键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>末级分账单元唯一键</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1197623846\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
@@ -9364,7 +9364,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "只支持6和12两个值",
+          "document": "<p>只支持6个月和12个月两个值</p>",
           "example": "6",
           "member": "uint64",
           "name": "TimeRange",
@@ -9373,7 +9373,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称代码",
+          "document": "<p>产品名称代码</p>",
           "example": "p_clb",
           "member": "string",
           "name": "BusinessCode",
@@ -9382,7 +9382,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -9391,7 +9391,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "0",
           "member": "int64",
           "name": "RegionId",
@@ -9400,7 +9400,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，可选prePay和postPay",
+          "document": "<p>付费模式，可选prePay和postPay</p>",
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
@@ -9409,7 +9409,7 @@
         },
         {
           "disabled": false,
-          "document": "资源关键字",
+          "document": "<p>资源关键字</p>",
           "example": "lb-1weg57ny",
           "member": "string",
           "name": "ResourceKeyword",
@@ -9418,8 +9418,8 @@
         },
         {
           "disabled": false,
-          "document": "产品名称代码",
-          "example": "p_clb",
+          "document": "<p>产品名称代码</p>",
+          "example": "[\"p_cws\"]",
           "member": "string",
           "name": "BusinessCodes",
           "required": false,
@@ -9427,8 +9427,8 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称代码",
-          "example": "sp_clb",
+          "document": "<p>子产品名称代码</p>",
+          "example": "[\"sp_cws_mss\"]",
           "member": "string",
           "name": "ProductCodes",
           "required": false,
@@ -9436,8 +9436,8 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
-          "example": "1",
+          "document": "<p>地域ID</p>",
+          "example": "[47]",
           "member": "int64",
           "name": "RegionIds",
           "required": false,
@@ -9445,8 +9445,8 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
-          "example": "0",
+          "document": "<p>项目ID</p>",
+          "example": "[0]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -9454,8 +9454,8 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，可选prePay和postPay",
-          "example": "postPay",
+          "document": "<p>付费模式，可选prePay和postPay</p>",
+          "example": "[\"prePay\"]",
           "member": "string",
           "name": "PayModes",
           "required": false,
@@ -9463,8 +9463,8 @@
         },
         {
           "disabled": false,
-          "document": "交易类型",
-          "example": "postpay_deduct_h",
+          "document": "<p>交易类型</p>",
+          "example": "[\"postpay_deduct_h\"]",
           "member": "string",
           "name": "ActionTypes",
           "required": false,
@@ -9472,7 +9472,7 @@
         },
         {
           "disabled": false,
-          "document": "是否隐藏0元流水",
+          "document": "<p>是否隐藏0元流水</p>",
           "example": "1",
           "member": "int64",
           "name": "HideFreeCost",
@@ -9481,7 +9481,7 @@
         },
         {
           "disabled": false,
-          "document": "排序规则，可选desc和asc",
+          "document": "<p>排序规则，可选desc和asc</p>",
           "example": "asc",
           "member": "string",
           "name": "OrderByCost",
@@ -9490,8 +9490,8 @@
         },
         {
           "disabled": false,
-          "document": "交易ID",
-          "example": "20211101400077789101862",
+          "document": "<p>交易ID</p>",
+          "example": "[\"20211101400077789101862\"]",
           "member": "string",
           "name": "BillIds",
           "required": false,
@@ -9499,8 +9499,8 @@
         },
         {
           "disabled": false,
-          "document": "组件编码",
-          "example": "v_clb_ins",
+          "document": "<p>组件编码</p>",
+          "example": "[\"v_clb_ins\"]",
           "member": "string",
           "name": "ComponentCodes",
           "required": false,
@@ -9508,8 +9508,8 @@
         },
         {
           "disabled": false,
-          "document": "文件ID",
-          "example": "1",
+          "document": "<p>文件ID</p>",
+          "example": "[\"1\"]",
           "member": "string",
           "name": "FileIds",
           "required": false,
@@ -9517,8 +9517,8 @@
         },
         {
           "disabled": false,
-          "document": "文件类型",
-          "example": "CustomizedDosage",
+          "document": "<p>文件类型</p>",
+          "example": "[\"CustomizedDosage\"]",
           "member": "string",
           "name": "FileTypes",
           "required": false,
@@ -9526,8 +9526,8 @@
         },
         {
           "disabled": false,
-          "document": "状态",
-          "example": "1",
+          "document": "<p>状态</p>",
+          "example": "[1]",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -10841,7 +10841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公摊规则列表",
+          "document": "<p>公摊规则列表</p>",
           "example": "无",
           "member": "AllocationRulesSummary",
           "name": "RuleList",
@@ -10850,7 +10850,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -10859,12 +10859,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "int64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10874,7 +10883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增公摊规则ID",
+          "document": "<p>新增公摊规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "Id",
@@ -10923,7 +10932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增分账单元父节点ID",
+          "document": "<p>新增分账单元父节点ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "ParentId",
@@ -10932,7 +10941,7 @@
         },
         {
           "disabled": false,
-          "document": "新增分账单元名称",
+          "document": "<p>新增分账单元名称</p>",
           "example": "财务部",
           "member": "string",
           "name": "Name",
@@ -10941,7 +10950,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -10950,12 +10959,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "int64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10965,7 +10983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增分账单元ID",
+          "document": "<p>新增分账单元ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -10975,7 +10993,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识",
+          "document": "<p>分账单元唯一标识</p>",
           "example": "696856150c9e0",
           "member": "string",
           "name": "TreeNodeUniqKey",
@@ -11153,7 +11171,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则所属分账单元ID",
+          "document": "<p>规则所属分账单元ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "Id",
@@ -11162,7 +11180,7 @@
         },
         {
           "disabled": false,
-          "document": "归集规则详情",
+          "document": "<p>归集规则详情</p>",
           "example": "无",
           "member": "GatherRuleSummary",
           "name": "RuleList",
@@ -11171,7 +11189,7 @@
         },
         {
           "disabled": false,
-          "document": "必须传1",
+          "document": "<p>必须传1</p>",
           "example": "1",
           "member": "uint64",
           "name": "AllocateType",
@@ -11180,7 +11198,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -11189,10 +11207,19 @@
         },
         {
           "disabled": false,
-          "document": "该账号下分账单元唯一键",
+          "document": "<p>该账号下分账单元唯一键</p>",
           "example": "1_15",
           "member": "string",
           "name": "UniqKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -11204,7 +11231,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "归集规则ID",
+          "document": "<p>归集规则ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -12119,7 +12146,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所删除公摊规则ID",
+          "document": "<p>所删除公摊规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "RuleId",
@@ -12128,10 +12155,19 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "月份，默认当前月",
           "member": "string",
           "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -12182,7 +12218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所删除分账单元ID",
+          "document": "<p>所删除分账单元ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -12191,7 +12227,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -12200,12 +12236,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "int64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12284,7 +12329,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所删除归集规则ID",
+          "document": "<p>所删除归集规则ID</p>",
           "example": "13",
           "member": "uint64",
           "name": "RuleId",
@@ -12293,7 +12338,7 @@
         },
         {
           "disabled": false,
-          "document": "必须传1",
+          "document": "<p>必须传1</p>",
           "example": "1",
           "member": "uint64",
           "name": "AllocateType",
@@ -12302,10 +12347,19 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -12506,10 +12560,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -12521,8 +12584,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品筛选列表",
-          "example": "[{\"BusinessCode\":\"p_postgresql\",\"BusinessCodeName\":\"PostgreSQL\",\"Children\":[{\"ProductCode\":\"sp_postgresql_dm\",\"ProductCodeName\":\"PostgreSQL\",\"Children\":[{\"ItemCode\":\"sv_postgresql_disk_i_ssd\",\"ItemCodeName\":\"PostgreSQL-硬盘\"}]}]}]",
+          "document": "<p>产品筛选列表</p>",
+          "example": "无",
           "member": "BillBusinessLink",
           "name": "Business",
           "output_required": true,
@@ -12531,8 +12594,8 @@
         },
         {
           "disabled": false,
-          "document": "子产品筛选列表",
-          "example": "[{\"ProductCode\":\"sp_postgresql_dm\",\"ProductCodeName\":\"云数据库PostgreSQL-双机高可用（一主一从）\"},{\"ProductCode\":\"sp_cbs_essd\",\"ProductCodeName\":\"增强型SSD云硬盘\"}]",
+          "document": "<p>子产品筛选列表</p>",
+          "example": "无",
           "member": "BillProduct",
           "name": "Product",
           "output_required": true,
@@ -12541,8 +12604,8 @@
         },
         {
           "disabled": false,
-          "document": "组件名称筛选列表",
-          "example": "[{\"ItemCode\":\"sv_postgresql_disk_i_ssd\",\"ItemCodeName\":\"云数据库PostgreSQL-硬盘-i-ssd\"},{\"ItemCode\":\"sv_cbs_memspace_essd\",\"ItemCodeName\":\"增强型SSD云硬盘-存储空间\"}]",
+          "document": "<p>组件名称筛选列表</p>",
+          "example": "无",
           "member": "BillItem",
           "name": "Item",
           "output_required": true,
@@ -12551,8 +12614,8 @@
         },
         {
           "disabled": false,
-          "document": "地域筛选列表",
-          "example": "[{\"RegionId\":0,\"RegionName\":\"其他\"},{\"RegionId\":1,\"RegionName\":\"华南地区（广州）\"},{\"RegionId\":3,\"RegionName\":\"华北地区（北京(北京一区 原天津)）\"}]",
+          "document": "<p>地域筛选列表</p>",
+          "example": "无",
           "member": "BillRegion",
           "name": "Region",
           "output_required": true,
@@ -12561,8 +12624,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型筛选列表",
-          "example": "[{\"InstanceType\":\"ri\",\"InstanceTypeName\":\"预留实例\"},{\"InstanceType\":\"svp\",\"InstanceTypeName\":\"节省计划\"}]",
+          "document": "<p>实例类型筛选列表</p>",
+          "example": "无",
           "member": "BillInstanceType",
           "name": "InstanceType",
           "output_required": true,
@@ -12571,8 +12634,8 @@
         },
         {
           "disabled": false,
-          "document": "计费模式筛选列表",
-          "example": "[{\"PayMode\":\"prePay\",\"PayModeName\":\"包年包月\"},{\"PayMode\":\"postPay\",\"PayModeName\":\"按量计费\"}]",
+          "document": "<p>计费模式筛选列表</p>",
+          "example": "无",
           "member": "BillPayMode",
           "name": "PayMode",
           "output_required": true,
@@ -12581,8 +12644,8 @@
         },
         {
           "disabled": false,
-          "document": "项目筛选列表",
-          "example": "[{\"ProjectId\":0,\"ProjectName\":\"默认项目\"},{\"ProjectId\":1003540,\"ProjectName\":\"测试项目\"}]",
+          "document": "<p>项目筛选列表</p>",
+          "example": "无",
           "member": "BillProject",
           "name": "Project",
           "output_required": true,
@@ -12591,8 +12654,8 @@
         },
         {
           "disabled": false,
-          "document": "标签筛选列表",
-          "example": "[{\"TagKey\":\"部门\",\"TagValue\":\"B部门\"},{\"TagKey\":\"部门\",\"TagValue\":\"A部门\"}]",
+          "document": "<p>标签筛选列表</p>",
+          "example": "无",
           "member": "BillTag",
           "name": "Tag",
           "output_required": true,
@@ -12601,8 +12664,8 @@
         },
         {
           "disabled": false,
-          "document": "使用者 UIN 筛选列表",
-          "example": "[{\"OwnerUin\":\"909619400\"},{\"OwnerUin\":\"100022833867\"},{\"OwnerUin\":\"100001053999\"}]",
+          "document": "<p>使用者 UIN 筛选列表</p>",
+          "example": "无",
           "member": "BillOwnerUin",
           "name": "OwnerUin",
           "output_required": true,
@@ -12611,8 +12674,8 @@
         },
         {
           "disabled": false,
-          "document": "操作者 UIN 筛选列表",
-          "example": "[{\"OperateUin\":\"100018367863\"},{\"OperateUin\":\"100032476405\"}]",
+          "document": "<p>操作者 UIN 筛选列表</p>",
+          "example": "无",
           "member": "BillOperateUin",
           "name": "OperateUin",
           "output_required": true,
@@ -12621,8 +12684,8 @@
         },
         {
           "disabled": false,
-          "document": "交易类型筛选列表",
-          "example": "[{\"ActionType\":\"prepay_purchase\",\"ActionTypeName\":\"包年包月新购\"},{\"ActionType\":\"postpay_deduct_h\",\"ActionTypeName\":\"按量计费小时结\"}]",
+          "document": "<p>交易类型筛选列表</p>",
+          "example": "无",
           "member": "BillActionType",
           "name": "ActionType",
           "output_required": true,
@@ -12643,7 +12706,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -12652,8 +12715,8 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识，用作筛选",
-          "example": "909619400-hdngsfxtoqlh",
+          "document": "<p>分账单元唯一标识，用作筛选</p>",
+          "example": "[\"909619400-hdngsfxtoqlh\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
           "required": false,
@@ -12661,7 +12724,7 @@
         },
         {
           "disabled": false,
-          "document": "日期",
+          "document": "<p>日期</p>",
           "example": "[\"2022-10-01\"]",
           "member": "string",
           "name": "BillDates",
@@ -12670,7 +12733,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码",
+          "document": "<p>产品编码</p>",
           "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "BusinessCodes",
@@ -12679,7 +12742,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN",
+          "document": "<p>使用者UIN</p>",
           "example": "[\"909619400\"]",
           "member": "string",
           "name": "OwnerUins",
@@ -12688,7 +12751,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN",
+          "document": "<p>操作者UIN</p>",
           "example": "[\"909619400\"]",
           "member": "string",
           "name": "OperateUins",
@@ -12697,7 +12760,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式编码",
+          "document": "<p>计费模式编码</p>",
           "example": "[\"postPay\"]",
           "member": "string",
           "name": "PayModes",
@@ -12706,7 +12769,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型编码",
+          "document": "<p>交易类型编码</p>",
           "example": "[\"prepay_renew\"]",
           "member": "string",
           "name": "ActionTypes",
@@ -12715,7 +12778,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码",
+          "document": "<p>子产品编码</p>",
           "example": "[\"sp_cvm_c4\"]",
           "member": "string",
           "name": "ProductCodes",
@@ -12724,8 +12787,8 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
-          "example": "[0,1]",
+          "document": "<p>地域ID</p>",
+          "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "RegionIds",
           "required": false,
@@ -12733,8 +12796,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID",
-          "example": "[100002,100003]",
+          "document": "<p>可用区ID</p>",
+          "example": "[\"100002\",\"100003\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -12742,7 +12805,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型编码",
+          "document": "<p>实例类型编码</p>",
           "example": "[\"ri\"]",
           "member": "string",
           "name": "InstanceTypes",
@@ -12751,7 +12814,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "[\"tagKey:tagValue\"]",
           "member": "string",
           "name": "Tag",
@@ -12760,7 +12823,7 @@
         },
         {
           "disabled": false,
-          "document": "组件类型编码",
+          "document": "<p>组件类型编码</p>",
           "example": "[\"virtual_v_cvm_compute\"]",
           "member": "string",
           "name": "ComponentCodes",
@@ -12769,7 +12832,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称编码",
+          "document": "<p>组件名称编码</p>",
           "example": "[\"virtual_v_cvm_compute_c4\"]",
           "member": "string",
           "name": "ItemCodes",
@@ -12778,7 +12841,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索条件",
+          "document": "<p>模糊搜索条件</p>",
           "example": "ins-yhtdg16",
           "member": "string",
           "name": "SearchKey",
@@ -12787,7 +12850,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "[0]",
           "member": "uint64",
           "name": "ProjectIds",
@@ -12796,12 +12859,21 @@
         },
         {
           "disabled": false,
-          "document": "费用归集类型",
+          "document": "<p>费用归集类型</p><p>枚举值：</p><ul><li>0： 分摊</li><li>1： 归集</li><li>-1： 未分配</li></ul>",
           "example": "[0,1]",
           "member": "int64",
           "name": "AllocationType",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12811,8 +12883,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品筛选列表",
-          "example": "[{\"BusinessCode\":\"p_rav\",\"BusinessCodeName\":\"实时音视频\"},{\"BusinessCode\":\"p_scf\",\"BusinessCodeName\":\"云函数SCF\"}]",
+          "document": "<p>产品筛选列表</p>",
+          "example": "无",
           "member": "BillBusiness",
           "name": "Business",
           "output_required": true,
@@ -12821,8 +12893,8 @@
         },
         {
           "disabled": false,
-          "document": "子产品筛选列表",
-          "example": "[{\"ProductCode\":\"sp_011691_tke\",\"ProductCodeName\":\"容器服务TKE\"},{\"ProductCode\":\"sp_cds_dasb_bh_saas_pro\",\"ProductCodeName\":\"T-Sec-堡垒机（SaaS型）/专业版\"}]",
+          "document": "<p>子产品筛选列表</p>",
+          "example": "无",
           "member": "BillProduct",
           "name": "Product",
           "output_required": true,
@@ -12831,8 +12903,8 @@
         },
         {
           "disabled": false,
-          "document": "组件名称筛选列表",
-          "example": "[{\"ItemCode\":\"sv_cls_traffic_index\",\"ItemCodeName\":\"日志服务CLS-流量-标准索引流量\"},{\"ItemCode\":\"sv_cos_mgmt_object_tagging\",\"ItemCodeName\":\"COS 管理对象标签\"}]",
+          "document": "<p>组件名称筛选列表</p>",
+          "example": "无",
           "member": "BillItem",
           "name": "Item",
           "output_required": true,
@@ -12841,8 +12913,8 @@
         },
         {
           "disabled": false,
-          "document": "地域筛选列表",
-          "example": "[{\"RegionId\":0,\"RegionName\":\"其他\"},{\"RegionId\":1,\"RegionName\":\"华南地区（广州）\"}]",
+          "document": "<p>地域筛选列表</p>",
+          "example": "无",
           "member": "BillRegion",
           "name": "Region",
           "output_required": true,
@@ -12851,8 +12923,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型筛选列表",
-          "example": "[{\"InstanceType\":\"ri\",\"InstanceTypeName\":\"预留实例\"},{\"InstanceType\":\"svp\",\"InstanceTypeName\":\"节省计划\"}]",
+          "document": "<p>实例类型筛选列表</p>",
+          "example": "无",
           "member": "BillInstanceType",
           "name": "InstanceType",
           "output_required": true,
@@ -12861,8 +12933,8 @@
         },
         {
           "disabled": false,
-          "document": "计费模式筛选列表",
-          "example": "[{\"PayMode\":\"prePay\",\"PayModeName\":\"包年包月\"},{\"PayMode\":\"postPay\",\"PayModeName\":\"按量计费\"}]",
+          "document": "<p>计费模式筛选列表</p>",
+          "example": "无",
           "member": "BillPayMode",
           "name": "PayMode",
           "output_required": true,
@@ -12871,8 +12943,8 @@
         },
         {
           "disabled": false,
-          "document": "项目筛选列表",
-          "example": "[{\"ProjectId\":0,\"ProjectName\":\"默认项目\"},{\"ProjectId\":1286935,\"ProjectName\":\"游戏项目\"}]",
+          "document": "<p>项目筛选列表</p>",
+          "example": "无",
           "member": "BillProject",
           "name": "Project",
           "output_required": true,
@@ -12881,8 +12953,8 @@
         },
         {
           "disabled": false,
-          "document": "标签筛选列表",
-          "example": "[{\"TagKey\":\"部门\",\"TagValue\":\"运营部门\"},{\"TagKey\":\"机房\",\"TagValue\":\"广州黄埔机房\"}]",
+          "document": "<p>标签筛选列表</p>",
+          "example": "无",
           "member": "BillTag",
           "name": "Tag",
           "output_required": true,
@@ -12891,8 +12963,8 @@
         },
         {
           "disabled": false,
-          "document": "使用者 UIN 筛选列表",
-          "example": "[{\"OwnerUin\":\"909619400\"},{\"OwnerUin\":\"100022833867\"},{\"OwnerUin\":\"100001053999\"}]",
+          "document": "<p>使用者 UIN 筛选列表</p>",
+          "example": "无",
           "member": "BillOwnerUin",
           "name": "OwnerUin",
           "output_required": true,
@@ -12901,8 +12973,8 @@
         },
         {
           "disabled": false,
-          "document": "操作者 UIN 筛选列表",
-          "example": "[{\"OperateUin\":\"100029596223\"},{\"OperateUin\":\"100022833867\"},{\"OperateUin\":\"100037827721\"}]",
+          "document": "<p>操作者 UIN 筛选列表</p>",
+          "example": "无",
           "member": "BillOperateUin",
           "name": "OperateUin",
           "output_required": true,
@@ -12911,8 +12983,8 @@
         },
         {
           "disabled": false,
-          "document": "日期筛选列表",
-          "example": "[{\"BillDay\":\"2024-11-18\"},{\"BillDay\":\"2024-11-17\"}]",
+          "document": "<p>日期筛选列表</p>",
+          "example": "无",
           "member": "BillDays",
           "name": "BillDay",
           "output_required": true,
@@ -12921,8 +12993,8 @@
         },
         {
           "disabled": false,
-          "document": "交易类型筛选列表",
-          "example": "[{\"ActionType\":\"postpay_deduct_d\",\"ActionTypeName\":\"按量计费日结\"},{\"ActionType\":\"billVirtualId\",\"ActionTypeName\":\"月度计费精度差异\"},{\"ActionType\":\"prepay_purchase\",\"ActionTypeName\":\"包年包月新购\"}]",
+          "document": "<p>交易类型筛选列表</p>",
+          "example": "无",
           "member": "BillActionType",
           "name": "ActionType",
           "output_required": true,
@@ -12931,8 +13003,8 @@
         },
         {
           "disabled": false,
-          "document": "组件类型筛选列表",
-          "example": "[{\"ComponentCode\":\"v_cdwch_node\",\"ComponentCodeName\":\"标准型节点\"},{\"ComponentCode\":\"v_yunjing_protection\",\"ComponentCodeName\":\"防护\"}]",
+          "document": "<p>组件类型筛选列表</p>",
+          "example": "无",
           "member": "BillComponent",
           "name": "Component",
           "output_required": true,
@@ -12941,8 +13013,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区筛选列表",
-          "example": "[{\"ZoneId\":1000800001,\"ZoneName\":\"北京物理机一区\"},{\"ZoneId\":160001,\"ZoneName\":\"成都一区\"}]",
+          "document": "<p>可用区筛选列表</p>",
+          "example": "无",
           "member": "BillZoneId",
           "name": "Zone",
           "output_required": true,
@@ -12951,8 +13023,8 @@
         },
         {
           "disabled": false,
-          "document": "分账单元筛选列表",
-          "example": "[{\"TreeNodeUniqKey\":\"909619400-66546b348029\",\"TreeNodeUniqKeyName\":\"研发二组\"},{\"TreeNodeUniqKey\":\"909619400-65b9a02cd832\",\"TreeNodeUniqKeyName\":\"a中心\"}]",
+          "document": "<p>分账单元筛选列表</p>",
+          "example": "无",
           "member": "AllocationTreeNode",
           "name": "AllocationTreeNode",
           "output_required": true,
@@ -12961,7 +13033,7 @@
         },
         {
           "disabled": false,
-          "document": "分账标签键",
+          "document": "<p>分账标签键</p>",
           "example": "[\"游戏项目组\",\"部门\",\"机房\",\"云应用\",\"运营状态\"]",
           "member": "string",
           "name": "TagKey",
@@ -12983,7 +13055,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量，最大值为1000",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -12992,7 +13064,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -13001,7 +13073,7 @@
         },
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -13010,8 +13082,8 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识，用作筛选",
-          "example": "1000***-***",
+          "document": "<p>分账单元唯一标识，用作筛选</p>",
+          "example": "[\"1000***-***\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
           "required": false,
@@ -13019,7 +13091,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，枚举值如下：\nRiTimeSpan - 预留实例抵扣时长\nExtendPayAmount1 - 预留实例抵扣组件原价\nRealCost - 折后总价\nCashPayAmount - 现金金额\nVoucherPayAmount - 代金券金额\nIncentivePayAmount - 赠送金金额\nTransferPayAmount -分成金金额\nCost - 组件原价",
+          "document": "<p>排序字段，枚举值如下：<br>RiTimeSpan - 预留实例抵扣时长<br>ExtendPayAmount1 - 预留实例抵扣组件原价<br>RealCost - 折后总价<br>CashPayAmount - 现金金额<br>VoucherPayAmount - 代金券金额<br>IncentivePayAmount - 赠送金金额<br>TransferPayAmount -分成金金额<br>Cost - 组件原价</p>",
           "example": "realCost",
           "member": "string",
           "name": "Sort",
@@ -13028,7 +13100,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "document": "<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>",
           "example": "asc",
           "member": "string",
           "name": "SortType",
@@ -13037,8 +13109,8 @@
         },
         {
           "disabled": false,
-          "document": "产品编码，用作筛选",
-          "example": "p_cvm",
+          "document": "<p>产品编码，用作筛选</p>",
+          "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "BusinessCodes",
           "required": false,
@@ -13046,8 +13118,8 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN，用作筛选",
-          "example": "909619400",
+          "document": "<p>使用者UIN，用作筛选</p>",
+          "example": "[\"909619400\"]",
           "member": "string",
           "name": "OwnerUins",
           "required": false,
@@ -13055,8 +13127,8 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN，用作筛选",
-          "example": "909619400",
+          "document": "<p>操作者UIN，用作筛选</p>",
+          "example": "[\"909619400\"]",
           "member": "string",
           "name": "OperateUins",
           "required": false,
@@ -13064,8 +13136,8 @@
         },
         {
           "disabled": false,
-          "document": "计费模式编码，用作筛选",
-          "example": "postPay",
+          "document": "<p>计费模式编码，用作筛选</p>",
+          "example": "[\"postPay\"]",
           "member": "string",
           "name": "PayModes",
           "required": false,
@@ -13073,8 +13145,8 @@
         },
         {
           "disabled": false,
-          "document": "交易类型编码，用作筛选",
-          "example": "prepay_renew",
+          "document": "<p>交易类型编码，用作筛选</p>",
+          "example": "[\"prepay_renew\"]",
           "member": "string",
           "name": "ActionTypes",
           "required": false,
@@ -13082,8 +13154,8 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码，用作筛选",
-          "example": "sp_cvm_c4",
+          "document": "<p>子产品编码，用作筛选</p>",
+          "example": "[\"sp_cvm_c4\"]",
           "member": "string",
           "name": "ProductCodes",
           "required": false,
@@ -13091,8 +13163,8 @@
         },
         {
           "disabled": false,
-          "document": "地域ID，用作筛选",
-          "example": "0",
+          "document": "<p>地域ID，用作筛选</p>",
+          "example": "[\"0\"]",
           "member": "string",
           "name": "RegionIds",
           "required": false,
@@ -13100,8 +13172,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID，用作筛选",
-          "example": "0",
+          "document": "<p>可用区ID，用作筛选</p>",
+          "example": "[\"0\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -13109,8 +13181,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型编码，用作筛选",
-          "example": "ri",
+          "document": "<p>实例类型编码，用作筛选</p>",
+          "example": "[\"ri\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -13118,8 +13190,8 @@
         },
         {
           "disabled": false,
-          "document": "标签，用作筛选",
-          "example": "tagKey:tagValue",
+          "document": "<p>标签，用作筛选</p>",
+          "example": "[\"tagKey:tagValue\"]",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -13127,8 +13199,8 @@
         },
         {
           "disabled": false,
-          "document": "组件类型编码，用作筛选",
-          "example": "virtual_v_cvm_compute",
+          "document": "<p>组件类型编码，用作筛选</p>",
+          "example": "[\"virtual_v_cvm_compute\"]",
           "member": "string",
           "name": "ComponentCodes",
           "required": false,
@@ -13136,8 +13208,8 @@
         },
         {
           "disabled": false,
-          "document": "组件名称编码，用作筛选",
-          "example": "sv_cvm",
+          "document": "<p>组件名称编码，用作筛选</p>",
+          "example": "[\"sv_cvm\"]",
           "member": "string",
           "name": "ItemCodes",
           "required": false,
@@ -13145,7 +13217,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索：支持标签、资源id、资源别名",
+          "document": "<p>模糊搜索：支持标签、资源id、资源别名</p>",
           "example": "CVM",
           "member": "string",
           "name": "SearchKey",
@@ -13154,8 +13226,8 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，用作筛选",
-          "example": "0",
+          "document": "<p>项目ID，用作筛选</p>",
+          "example": "[0]",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -13163,10 +13235,19 @@
         },
         {
           "disabled": false,
-          "document": "账单类型，枚举值，不传默认为resource\nresource 资源账单 consumption 消耗账单",
+          "document": "<p>账单类型，枚举值，不传默认为resource<br>resource 资源账单 consumption 消耗账单</p>",
           "example": "resource",
           "member": "string",
           "name": "BillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -13178,7 +13259,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "49545",
           "member": "uint64",
           "name": "RecordNum",
@@ -13188,7 +13269,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单概览金额汇总",
+          "document": "<p>分账账单概览金额汇总</p>",
           "example": "无",
           "member": "AllocationOverviewTotal",
           "name": "Total",
@@ -13198,7 +13279,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单明细",
+          "document": "<p>分账账单明细</p>",
           "example": "无",
           "member": "AllocationDetail",
           "name": "Detail",
@@ -13220,7 +13301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -13229,10 +13310,19 @@
         },
         {
           "disabled": false,
-          "document": "账单类型，枚举值如下： resource - 资源账单 consumption - 消耗账单 application - 云应用账单 applicationConsumption - 云应用消耗账单",
+          "document": "<p>账单类型，枚举值如下： resource - 资源账单 consumption - 消耗账单 application - 云应用账单 applicationConsumption - 云应用消耗账单</p>",
           "example": "resource",
           "member": "string",
           "name": "BillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -13244,7 +13334,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分账账单月概览详情",
+          "document": "<p>分账账单月概览详情</p>",
           "example": "无",
           "member": "AllocationOverviewNode",
           "name": "Detail",
@@ -13254,7 +13344,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单概览金额汇总",
+          "document": "<p>分账账单概览金额汇总</p>",
           "example": "无",
           "member": "AllocationOverviewTotal",
           "name": "Total",
@@ -13276,7 +13366,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量，最大值为1000",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -13285,7 +13375,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -13294,7 +13384,7 @@
         },
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -13303,7 +13393,7 @@
         },
         {
           "disabled": false,
-          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "document": "<p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>",
           "example": "month",
           "member": "string",
           "name": "PeriodType",
@@ -13312,8 +13402,8 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识，用作筛选",
-          "example": "1909619400-674414f2a3dad",
+          "document": "<p>分账单元唯一标识，用作筛选</p>",
+          "example": "[\"1909619400-674414f2a3dad\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
           "required": false,
@@ -13321,7 +13411,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，枚举值如下： \nGatherCashPayAmount - 归集费用(现金)\nGatherVoucherPayAmount- 归集费用(优惠券)\nGatherIncentivePayAmount -  归集费用(赠送金)\nGatherTransferPayAmount - 归集费用(分成金)\nAllocateCashPayAmount - 分摊费用(现金)\nAllocateVoucherPayAmount - 分摊费用(优惠券)\nAllocateIncentivePayAmount - 分摊费用(赠送金)\nAllocateTransferPayAmount - 分摊费用(分成金)\nTotalCashPayAmount - 合计费用(现金)\nTotalVoucherPayAmount - 合计费用(优惠券)\nTotalIncentivePayAmount - 合计费用(赠送金)\nTotalTransferPayAmount - 合计费用(分成金)\nGatherRealCost - 归集费用(折后总额)\nAllocateRealCost - 分摊费用(折后总额)\nRealTotalCost - 合计费用(折后总额)\nRatio  - 占比(折后总额)",
+          "document": "<p>排序字段，枚举值如下：<br>GatherCashPayAmount - 归集费用(现金)<br>GatherVoucherPayAmount- 归集费用(优惠券)<br>GatherIncentivePayAmount -  归集费用(赠送金)<br>GatherTransferPayAmount - 归集费用(分成金)<br>AllocateCashPayAmount - 分摊费用(现金)<br>AllocateVoucherPayAmount - 分摊费用(优惠券)<br>AllocateIncentivePayAmount - 分摊费用(赠送金)<br>AllocateTransferPayAmount - 分摊费用(分成金)<br>TotalCashPayAmount - 合计费用(现金)<br>TotalVoucherPayAmount - 合计费用(优惠券)<br>TotalIncentivePayAmount - 合计费用(赠送金)<br>TotalTransferPayAmount - 合计费用(分成金)<br>GatherRealCost - 归集费用(折后总额)<br>AllocateRealCost - 分摊费用(折后总额)<br>RealTotalCost - 合计费用(折后总额)<br>Ratio  - 占比(折后总额)</p>",
           "example": "realCost",
           "member": "string",
           "name": "Sort",
@@ -13330,7 +13420,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "document": "<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>",
           "example": "asc",
           "member": "string",
           "name": "SortType",
@@ -13339,8 +13429,8 @@
         },
         {
           "disabled": false,
-          "document": "日期，用作筛选",
-          "example": "2022-10",
+          "document": "<p>日期，用作筛选</p>",
+          "example": "[\"2022-10\"]",
           "member": "string",
           "name": "BillDates",
           "required": false,
@@ -13348,7 +13438,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索条件",
+          "document": "<p>模糊搜索条件</p>",
           "example": "billIds",
           "member": "string",
           "name": "SearchKey",
@@ -13357,10 +13447,19 @@
         },
         {
           "disabled": false,
-          "document": "账单类型，枚举值如下： resource - 资源账单 consumption - 消耗账单 application - 云应用账单 applicationConsumption - 云应用消耗账单",
+          "document": "<p>账单类型，枚举值如下： resource - 资源账单 consumption - 消耗账单 application - 云应用账单 applicationConsumption - 云应用消耗账单</p>",
           "example": "resource",
           "member": "string",
           "name": "BillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -13372,7 +13471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordNum",
@@ -13382,7 +13481,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单概览金额汇总",
+          "document": "<p>分账账单概览金额汇总</p>",
           "example": "无",
           "member": "AllocationOverviewTotal",
           "name": "Total",
@@ -13392,7 +13491,7 @@
         },
         {
           "disabled": false,
-          "document": "分账概览明细",
+          "document": "<p>分账概览明细</p>",
           "example": "无",
           "member": "AllocationOverviewDetail",
           "name": "Detail",
@@ -13414,7 +13513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所查询公摊规则ID",
+          "document": "<p>所查询公摊规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "RuleId",
@@ -13423,7 +13522,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -13432,12 +13531,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "int64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13447,7 +13555,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公摊规则ID",
+          "document": "<p>公摊规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "Id",
@@ -13457,7 +13565,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊规则所属UIN",
+          "document": "<p>公摊规则所属UIN</p>",
           "example": "9096",
           "member": "string",
           "name": "Uin",
@@ -13467,7 +13575,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊规则名称",
+          "document": "<p>公摊规则名称</p>",
           "example": "规则名称",
           "member": "string",
           "name": "Name",
@@ -13477,7 +13585,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊策略类型，枚举值如下：\n1 - 自定义分摊占比 \n2 - 等比分摊 \n3 - 按占比分摊",
+          "document": "<p>公摊策略类型，枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -13487,7 +13595,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊规则表达式",
+          "document": "<p>公摊规则表达式</p>",
           "example": "无",
           "member": "AllocationRuleExpression",
           "name": "RuleDetail",
@@ -13497,7 +13605,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊比例表达式，Type为1和2时返回",
+          "document": "<p>公摊比例表达式，Type为1和2时返回</p>",
           "example": "无",
           "member": "AllocationRationExpression",
           "name": "RatioDetail",
@@ -13519,7 +13627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每次获取数据量，最大值1000",
+          "document": "<p>每次获取数据量，最大值1000</p>",
           "example": "5",
           "member": "uint64",
           "name": "Limit",
@@ -13528,7 +13636,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量",
+          "document": "<p>分页偏移量</p>",
           "example": "2",
           "member": "uint64",
           "name": "Offset",
@@ -13537,7 +13645,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -13546,7 +13654,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊策略类型，用于筛选。\n枚举值如下： \n1 - 自定义分摊占比 \n2 - 等比分摊 \n3 - 按占比分摊",
+          "document": "<p>公摊策略类型，用于筛选。<br>枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -13555,7 +13663,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊规则名称或分账单元名称，用于模糊筛选。",
+          "document": "<p>公摊规则名称或分账单元名称，用于模糊筛选。</p>",
           "example": "产品部",
           "member": "string",
           "name": "Name",
@@ -13564,7 +13672,7 @@
         },
         {
           "disabled": false,
-          "document": "存在公摊规则的分账单元id集合",
+          "document": "<p>存在公摊规则的分账单元id集合</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "NodeIdArray",
@@ -13573,12 +13681,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "int64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13588,7 +13705,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公摊规则表达式",
+          "document": "<p>公摊规则表达式</p>",
           "example": "无",
           "member": "AllocationRuleOverview",
           "name": "RuleList",
@@ -13598,7 +13715,7 @@
         },
         {
           "disabled": false,
-          "document": "规则总数",
+          "document": "<p>规则总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -13620,7 +13737,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量，最大值为1000",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -13629,7 +13746,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -13638,7 +13755,7 @@
         },
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月\n",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -13647,7 +13764,7 @@
         },
         {
           "disabled": false,
-          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "document": "<p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>",
           "example": "month",
           "member": "string",
           "name": "PeriodType",
@@ -13656,8 +13773,8 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识，用作筛选\n",
-          "example": "909619400-670615a8c8b23",
+          "document": "<p>分账单元唯一标识，用作筛选</p>",
+          "example": "[\"909619400-670615a8c8b23\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
           "required": false,
@@ -13665,7 +13782,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "document": "<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>",
           "example": "asc",
           "member": "string",
           "name": "SortType",
@@ -13674,7 +13791,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，枚举值如下：\nGatherCashPayAmount - 归集费用(现金)\nGatherVoucherPayAmount- 归集费用(优惠券)\nGatherIncentivePayAmount - 归集费用(赠送金)\nGatherTransferPayAmount - 归集费用(分成金)\nAllocateCashPayAmount - 分摊费用(现金)\nAllocateVoucherPayAmount - 分摊费用(优惠券)\nAllocateIncentivePayAmount - 分摊费用(赠送金)\nAllocateTransferPayAmount - 分摊费用(分成金)\nTotalCashPayAmount - 合计费用(现金)\nTotalVoucherPayAmount - 合计费用(优惠券)\nTotalIncentivePayAmount - 合计费用(赠送金)\nTotalTransferPayAmount - 合计费用(分成金)\nGatherRealCost - 归集费用(折后总额)\nAllocateRealCost - 分摊费用(折后总额)\nRealTotalCost - 合计费用(折后总额)\nBusinessCode - 产品代码\nRatio - 占比(折后总额)\nTrend - 环比(折后总额)",
+          "document": "<p>排序字段，枚举值如下：<br>GatherCashPayAmount - 归集费用(现金)<br>GatherVoucherPayAmount- 归集费用(优惠券)<br>GatherIncentivePayAmount - 归集费用(赠送金)<br>GatherTransferPayAmount - 归集费用(分成金)<br>AllocateCashPayAmount - 分摊费用(现金)<br>AllocateVoucherPayAmount - 分摊费用(优惠券)<br>AllocateIncentivePayAmount - 分摊费用(赠送金)<br>AllocateTransferPayAmount - 分摊费用(分成金)<br>TotalCashPayAmount - 合计费用(现金)<br>TotalVoucherPayAmount - 合计费用(优惠券)<br>TotalIncentivePayAmount - 合计费用(赠送金)<br>TotalTransferPayAmount - 合计费用(分成金)<br>GatherRealCost - 归集费用(折后总额)<br>AllocateRealCost - 分摊费用(折后总额)<br>RealTotalCost - 合计费用(折后总额)<br>BusinessCode - 产品代码<br>Ratio - 占比(折后总额)<br>Trend - 环比(折后总额)</p>",
           "example": "realCost",
           "member": "string",
           "name": "Sort",
@@ -13683,8 +13800,8 @@
         },
         {
           "disabled": false,
-          "document": "日期，用作筛选，PeriodType=day时可传\n",
-          "example": "2022-10",
+          "document": "<p>日期，用作筛选，PeriodType=day时可传</p>",
+          "example": "[\"2022-10\"]",
           "member": "string",
           "name": "BillDates",
           "required": false,
@@ -13692,8 +13809,8 @@
         },
         {
           "disabled": false,
-          "document": "产品编码，用作筛选",
-          "example": "p_cvm",
+          "document": "<p>产品编码，用作筛选</p>",
+          "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "BusinessCodes",
           "required": false,
@@ -13701,7 +13818,7 @@
         },
         {
           "disabled": true,
-          "document": "模糊搜索条件",
+          "document": "<p>模糊搜索条件</p>",
           "example": "billIds",
           "member": "string",
           "name": "SearchKey",
@@ -13710,10 +13827,19 @@
         },
         {
           "disabled": false,
-          "document": "账单类型，枚举值如下： resource - 资源账单 consumption - 消耗账单 application - 云应用账单 applicationConsumption - 云应用消耗账单",
+          "document": "<p>账单类型，枚举值如下： resource - 资源账单 consumption - 消耗账单 application - 云应用账单 applicationConsumption - 云应用消耗账单</p>",
           "example": "resource",
           "member": "string",
           "name": "BillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -13725,7 +13851,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecordNum",
@@ -13735,7 +13861,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单概览金额汇总\n",
+          "document": "<p>分账账单概览金额汇总</p>",
           "example": "无",
           "member": "AllocationOverviewTotal",
           "name": "Total",
@@ -13745,7 +13871,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单按产品汇总明细",
+          "document": "<p>分账账单按产品汇总明细</p>",
           "example": "无",
           "member": "AllocationSummaryByBusiness",
           "name": "Detail",
@@ -13767,7 +13893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量，最大值为1000\n",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -13776,7 +13902,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -13785,7 +13911,7 @@
         },
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月\n",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -13794,7 +13920,7 @@
         },
         {
           "disabled": false,
-          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "document": "<p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>",
           "example": "month",
           "member": "string",
           "name": "PeriodType",
@@ -13803,8 +13929,8 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识，用作筛选\n",
-          "example": "909619400-65b9a02cd832f",
+          "document": "<p>分账单元唯一标识，用作筛选</p>",
+          "example": "[\"909619400-65b9a02cd832f\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
           "required": false,
@@ -13812,7 +13938,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，枚举值如下：\nRiTimeSpan - 预留实例抵扣时长\nExtendPayAmount1 - 预留实例抵扣组件原价\nRealCost - 折后总价\nCashPayAmount - 现金金额\nVoucherPayAmount - 代金券金额\nIncentivePayAmount - 赠送金金额\nTransferPayAmount -分成金金额\nCost - 组件原价",
+          "document": "<p>排序字段，枚举值如下：<br>RiTimeSpan - 预留实例抵扣时长<br>ExtendPayAmount1 - 预留实例抵扣组件原价<br>RealCost - 折后总价<br>CashPayAmount - 现金金额<br>VoucherPayAmount - 代金券金额<br>IncentivePayAmount - 赠送金金额<br>TransferPayAmount -分成金金额<br>Cost - 组件原价</p>",
           "example": "realCost",
           "member": "string",
           "name": "Sort",
@@ -13821,7 +13947,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "document": "<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>",
           "example": "asc",
           "member": "string",
           "name": "SortType",
@@ -13830,8 +13956,8 @@
         },
         {
           "disabled": false,
-          "document": "日期，用作筛选\n",
-          "example": " [\"2024-11-25\", \"2024-11-24\"]",
+          "document": "<p>日期，用作筛选</p>",
+          "example": "[\"2024-11-25\", \"2024-11-24\"]",
           "member": "string",
           "name": "BillDates",
           "required": false,
@@ -13839,7 +13965,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码，用作筛选\n",
+          "document": "<p>产品编码，用作筛选</p>",
           "example": "[\"p_cos\"]",
           "member": "string",
           "name": "BusinessCodes",
@@ -13848,8 +13974,8 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN，用作筛选\n",
-          "example": " [\"909619400\", \"100001053999\"]",
+          "document": "<p>使用者UIN，用作筛选</p>",
+          "example": "[\"909619400\", \"100001053999\"]",
           "member": "string",
           "name": "OwnerUins",
           "required": false,
@@ -13857,8 +13983,8 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN，用作筛选\n",
-          "example": " [\"909619400\", \"100001053999\"]",
+          "document": "<p>操作者UIN，用作筛选</p>",
+          "example": "[\"909619400\", \"100001053999\"]",
           "member": "string",
           "name": "OperateUins",
           "required": false,
@@ -13866,8 +13992,8 @@
         },
         {
           "disabled": false,
-          "document": "计费模式编码，用作筛选\n",
-          "example": " [\"prePay\", \"postPay\"]",
+          "document": "<p>计费模式编码，用作筛选</p>",
+          "example": "[\"prePay\", \"postPay\"]",
           "member": "string",
           "name": "PayModes",
           "required": false,
@@ -13875,7 +14001,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型编码，用作筛选\n",
+          "document": "<p>交易类型编码，用作筛选</p>",
           "example": "[\"postpay_deduct_d\"]",
           "member": "string",
           "name": "ActionTypes",
@@ -13884,8 +14010,8 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码，用作筛选\n",
-          "example": " [\"sp_cos_std\"]",
+          "document": "<p>子产品编码，用作筛选</p>",
+          "example": "[\"sp_cos_std\"]",
           "member": "string",
           "name": "ProductCodes",
           "required": false,
@@ -13893,8 +14019,8 @@
         },
         {
           "disabled": false,
-          "document": "地域ID，用作筛选\n",
-          "example": " [1, 4]",
+          "document": "<p>地域ID，用作筛选</p>",
+          "example": "[\"1\",\"4\"]",
           "member": "string",
           "name": "RegionIds",
           "required": false,
@@ -13902,8 +14028,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID，用作筛选\n",
-          "example": "[200001, 100003]",
+          "document": "<p>可用区ID，用作筛选</p>",
+          "example": "[\"200001\", \"100003\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -13911,7 +14037,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型编码，用作筛选\n",
+          "document": "<p>实例类型编码，用作筛选</p>",
           "example": "[\"ri\", \"svp\"]",
           "member": "string",
           "name": "InstanceTypes",
@@ -13920,8 +14046,8 @@
         },
         {
           "disabled": false,
-          "document": "标签，用作筛选\n",
-          "example": "tagKey:tagValue",
+          "document": "<p>标签，用作筛选</p>",
+          "example": "[\"tagKey:tagValue\"]",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -13929,7 +14055,7 @@
         },
         {
           "disabled": false,
-          "document": "组件类型编码，用作筛选",
+          "document": "<p>组件类型编码，用作筛选</p>",
           "example": "[\"virtual_v_cvm_compute\"]",
           "member": "string",
           "name": "ComponentCodes",
@@ -13938,7 +14064,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称编码，用作筛选",
+          "document": "<p>组件名称编码，用作筛选</p>",
           "example": "[\"virtual_v_cvm_compute_c4\"]",
           "member": "string",
           "name": "ItemCodes",
@@ -13947,7 +14073,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索：支持标签、资源id、资源别名",
+          "document": "<p>模糊搜索：支持标签、资源id、资源别名</p>",
           "example": "4cdntest-10006792",
           "member": "string",
           "name": "SearchKey",
@@ -13956,7 +14082,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，用作筛选\n",
+          "document": "<p>项目ID，用作筛选</p>",
           "example": "[0,1]",
           "member": "uint64",
           "name": "ProjectIds",
@@ -13965,7 +14091,7 @@
         },
         {
           "disabled": false,
-          "document": "费用归集类型，枚举值如下：\n0 - 分摊\n1 - 归集\n-1 - 未分配",
+          "document": "<p>费用归集类型，枚举值如下：<br>0 - 分摊<br>1 - 归集<br>-1 - 未分配</p>",
           "example": "[0,1]",
           "member": "int64",
           "name": "AllocationType",
@@ -13974,10 +14100,19 @@
         },
         {
           "disabled": false,
-          "document": "账单类型，枚举值，不传默认为resource\nresource  资源账单\nconsumption 消耗账单\n",
+          "document": "<p>账单类型，枚举值，不传默认为resource<br>resource  资源账单<br>consumption 消耗账单</p>",
           "example": "resource",
           "member": "string",
           "name": "BillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -13989,7 +14124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数\n",
+          "document": "<p>总条数</p>",
           "example": "10",
           "member": "uint64",
           "name": "RecordNum",
@@ -13999,7 +14134,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单概览金额汇总",
+          "document": "<p>分账账单概览金额汇总</p>",
           "example": "无",
           "member": "AllocationOverviewTotal",
           "name": "Total",
@@ -14009,7 +14144,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单按组件汇总明细\n",
+          "document": "<p>分账账单按组件汇总明细</p>",
           "example": "无",
           "member": "AllocationSummaryByItem",
           "name": "Detail",
@@ -14031,7 +14166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量，最大值为1000\n",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -14040,7 +14175,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -14049,7 +14184,7 @@
         },
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月\n",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -14058,7 +14193,7 @@
         },
         {
           "disabled": false,
-          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "document": "<p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>",
           "example": "month",
           "member": "string",
           "name": "PeriodType",
@@ -14067,8 +14202,8 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识，用作筛选",
-          "example": "909619400-65b9a02cd832f",
+          "document": "<p>分账单元唯一标识，用作筛选</p>",
+          "example": "[\"909619400-65b9a02cd832f\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
           "required": false,
@@ -14076,7 +14211,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，枚举值如下：\nRiTimeSpan - 预留实例抵扣时长\nExtendPayAmount1 - 预留实例抵扣组件原价\nRealCost - 折后总价\nCashPayAmount - 现金金额\nVoucherPayAmount - 代金券金额\nIncentivePayAmount - 赠送金金额\nTransferPayAmount -分成金金额\nCost - 组件原价",
+          "document": "<p>排序字段，枚举值如下：<br>RiTimeSpan - 预留实例抵扣时长<br>ExtendPayAmount1 - 预留实例抵扣组件原价<br>RealCost - 折后总价<br>CashPayAmount - 现金金额<br>VoucherPayAmount - 代金券金额<br>IncentivePayAmount - 赠送金金额<br>TransferPayAmount -分成金金额<br>Cost - 组件原价</p>",
           "example": "realCost",
           "member": "string",
           "name": "Sort",
@@ -14085,7 +14220,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "document": "<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>",
           "example": "asc",
           "member": "string",
           "name": "SortType",
@@ -14094,7 +14229,7 @@
         },
         {
           "disabled": false,
-          "document": "日期，用作筛选",
+          "document": "<p>日期，用作筛选</p>",
           "example": "[\"2024-11-01\",\"2024-11-02\"]",
           "member": "string",
           "name": "BillDates",
@@ -14103,7 +14238,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码，用作筛选",
+          "document": "<p>产品编码，用作筛选</p>",
           "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "BusinessCodes",
@@ -14112,7 +14247,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN，用作筛选",
+          "document": "<p>使用者UIN，用作筛选</p>",
           "example": "[\"sp_cos_std\"]",
           "member": "string",
           "name": "OwnerUins",
@@ -14121,7 +14256,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN，用作筛选",
+          "document": "<p>操作者UIN，用作筛选</p>",
           "example": "[\"909619400\"]",
           "member": "string",
           "name": "OperateUins",
@@ -14130,7 +14265,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式编码，用作筛选",
+          "document": "<p>计费模式编码，用作筛选</p>",
           "example": "[\"postPay\"]",
           "member": "string",
           "name": "PayModes",
@@ -14139,7 +14274,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型编码，用作筛选",
+          "document": "<p>交易类型编码，用作筛选</p>",
           "example": "[\"prepay_purchase\"]",
           "member": "string",
           "name": "ActionTypes",
@@ -14148,7 +14283,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码，用作筛选",
+          "document": "<p>子产品编码，用作筛选</p>",
           "example": "[\"sp_cdn_ov\"]",
           "member": "string",
           "name": "ProductCodes",
@@ -14157,8 +14292,8 @@
         },
         {
           "disabled": false,
-          "document": "地域ID，用作筛选",
-          "example": "[0,1]",
+          "document": "<p>地域ID，用作筛选</p>",
+          "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "RegionIds",
           "required": false,
@@ -14166,8 +14301,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID，用作筛选",
-          "example": "[10001,10002]",
+          "document": "<p>可用区ID，用作筛选</p>",
+          "example": "[\"10001\",\"10002\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -14175,7 +14310,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型编码，用作筛选",
+          "document": "<p>实例类型编码，用作筛选</p>",
           "example": "[\"ri\"]",
           "member": "string",
           "name": "InstanceTypes",
@@ -14184,8 +14319,8 @@
         },
         {
           "disabled": false,
-          "document": "标签，用作筛选",
-          "example": "tagKey:tagValue",
+          "document": "<p>标签，用作筛选</p>",
+          "example": "[\"tagKey:tagValue\"]",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -14193,7 +14328,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索：支持标签、资源id、资源别名",
+          "document": "<p>模糊搜索：支持标签、资源id、资源别名</p>",
           "example": "nugcbucket-1000027",
           "member": "string",
           "name": "SearchKey",
@@ -14202,7 +14337,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，用作筛选",
+          "document": "<p>项目ID，用作筛选</p>",
           "example": "[0,100002]",
           "member": "uint64",
           "name": "ProjectIds",
@@ -14211,12 +14346,21 @@
         },
         {
           "disabled": false,
-          "document": "费用归集类型，枚举值如下：\n0 - 分摊 \n1 - 归集 \n-1 -  未分配",
+          "document": "<p>费用归集类型，枚举值如下：<br>0 - 分摊<br>1 - 归集<br>-1 -  未分配</p>",
           "example": "[0,1]",
           "member": "int64",
           "name": "AllocationType",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14226,7 +14370,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数\n",
+          "document": "<p>总条数</p>",
           "example": "10",
           "member": "uint64",
           "name": "RecordNum",
@@ -14236,7 +14380,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单概览金额汇总\n",
+          "document": "<p>分账账单概览金额汇总</p>",
           "example": "无",
           "member": "AllocationOverviewTotal",
           "name": "Total",
@@ -14246,7 +14390,7 @@
         },
         {
           "disabled": false,
-          "document": "分账账单按资源汇总明细\n",
+          "document": "<p>分账账单按资源汇总明细</p>",
           "example": "无",
           "member": "AllocationSummaryByResource",
           "name": "Detail",
@@ -14268,7 +14412,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分账单元Id，不传入则查询整棵分账单元树",
+          "document": "<p>分账单元Id，不传入则查询整棵分账单元树</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -14277,7 +14421,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -14286,7 +14430,7 @@
         },
         {
           "disabled": false,
-          "document": "0查询当月分账树\n1查询分账树副本，来自分账报表展示",
+          "document": "<p>0查询当月分账树<br>1查询分账树副本，来自分账报表展示</p>",
           "example": "0",
           "member": "uint64",
           "name": "FromDisplay",
@@ -14295,12 +14439,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "int64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14310,7 +14463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分账单元ID",
+          "document": "<p>分账单元ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -14320,7 +14473,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元名称",
+          "document": "<p>分账单元名称</p>",
           "example": "财务部",
           "member": "string",
           "name": "Name",
@@ -14330,7 +14483,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识",
+          "document": "<p>分账单元唯一标识</p>",
           "example": "9096-asd",
           "member": "string",
           "name": "TreeNodeUniqKey",
@@ -14340,7 +14493,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元存在规则情况\n0：不存在规则\n1:同时存在归集规则和公摊规则\n2：仅存在归集规则\n3：仅存在公摊规则",
+          "document": "<p>分账单元存在规则情况<br>0：不存在规则<br>1:同时存在归集规则和公摊规则<br>2：仅存在归集规则<br>3：仅存在公摊规则</p>",
           "example": "1",
           "member": "uint64",
           "name": "Symbol",
@@ -14350,7 +14503,7 @@
         },
         {
           "disabled": false,
-          "document": "子树",
+          "document": "<p>子树</p>",
           "example": "无",
           "member": "AllocationTree",
           "name": "Children",
@@ -14372,7 +14525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -14381,7 +14534,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识",
+          "document": "<p>分账单元唯一标识</p>",
           "example": "909619400-66eb96bf16618",
           "member": "string",
           "name": "TreeNodeUniqKey",
@@ -14390,7 +14543,7 @@
         },
         {
           "disabled": false,
-          "document": "账期区间，枚举 6",
+          "document": "<p>账期区间，枚举 6</p>",
           "example": "6",
           "member": "string",
           "name": "TimeRange",
@@ -14399,7 +14552,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码，用作筛选",
+          "document": "<p>产品编码，用作筛选</p>",
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",
@@ -14408,10 +14561,19 @@
         },
         {
           "disabled": false,
-          "document": "账单类型，枚举值如下： resource - 资源账单  consumption - 消耗账单 application - 云应用账单 applicaionConsumption - 云应用消耗账单",
+          "document": "<p>账单类型，枚举值如下： resource - 资源账单  consumption - 消耗账单 application - 云应用账单 applicaionConsumption - 云应用消耗账单</p>",
           "example": "resource",
           "member": "string",
           "name": "BillType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -14423,8 +14585,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "当月费用信息",
-          "example": "{             \"Month\": \"2024-10\",             \"Name\": \"2024\\u5e7410\\u6708\",             \"RealTotalCost\": \"0.00\"         }",
+          "document": "<p>当月费用信息</p>",
+          "example": "无",
           "member": "AllocationBillTrendDetail",
           "name": "Current",
           "output_required": true,
@@ -14433,8 +14595,8 @@
         },
         {
           "disabled": false,
-          "document": "之前月份费用信息",
-          "example": "{                 \"Month\": \"2024-09\",                 \"Name\": \"2024\\u5e7409\\u6708\",                 \"RealTotalCost\": \"0.00\"             }",
+          "document": "<p>之前月份费用信息</p>",
+          "example": "无",
           "member": "AllocationBillTrendDetail",
           "name": "Previous",
           "output_required": true,
@@ -14443,8 +14605,8 @@
         },
         {
           "disabled": false,
-          "document": "费用统计信息",
-          "example": "{             \"Average\": {                 \"BeginMonth\": \"2024-09\",                 \"EndMonth\": \"2024-10\",                 \"RealTotalCost\": \"0.00\"             }         }",
+          "document": "<p>费用统计信息</p>",
+          "example": "无",
           "member": "AllocationStat",
           "name": "Stat",
           "output_required": true,
@@ -14465,7 +14627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所查询分账单元Id",
+          "document": "<p>所查询分账单元Id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -14474,7 +14636,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -14483,12 +14645,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "uint64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14498,7 +14669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分账单元ID",
+          "document": "<p>分账单元ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -14508,7 +14679,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元所属UIN",
+          "document": "<p>分账单元所属UIN</p>",
           "example": "9096",
           "member": "string",
           "name": "Uin",
@@ -14518,7 +14689,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元名称",
+          "document": "<p>分账单元名称</p>",
           "example": "财务部",
           "member": "string",
           "name": "Name",
@@ -14528,7 +14699,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元父节点ID",
+          "document": "<p>分账单元父节点ID</p>",
           "example": "11",
           "member": "uint64",
           "name": "ParentId",
@@ -14538,7 +14709,7 @@
         },
         {
           "disabled": false,
-          "document": "源组织名称",
+          "document": "<p>源组织名称</p>",
           "example": "一组",
           "member": "string",
           "name": "SourceName",
@@ -14548,7 +14719,7 @@
         },
         {
           "disabled": false,
-          "document": "源组织ID",
+          "document": "<p>源组织ID</p>",
           "example": "asd123",
           "member": "string",
           "name": "SourceId",
@@ -14558,7 +14729,7 @@
         },
         {
           "disabled": false,
-          "document": "备注说明",
+          "document": "<p>备注说明</p>",
           "example": "分账",
           "member": "string",
           "name": "Remark",
@@ -14568,7 +14739,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元标识",
+          "document": "<p>分账单元标识</p>",
           "example": "asd123",
           "member": "string",
           "name": "TreeNodeUniqKey",
@@ -14578,7 +14749,7 @@
         },
         {
           "disabled": false,
-          "document": "若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回",
+          "document": "<p>若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回</p>",
           "example": "12",
           "member": "uint64",
           "name": "RuleId",
@@ -14588,7 +14759,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元存在规则情况\n0：不存在规则\n1:同时存在归集规则和公摊规则\n2：仅存在归集规则\n3：仅存在公摊规则",
+          "document": "<p>分账单元存在规则情况<br>0：不存在规则<br>1:同时存在归集规则和公摊规则<br>2：仅存在归集规则<br>3：仅存在公摊规则</p>",
           "example": "0",
           "member": "uint64",
           "name": "Symbol",
@@ -18078,7 +18249,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量，最大值为1000",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -18087,7 +18258,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -18096,7 +18267,7 @@
         },
         {
           "disabled": false,
-          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "document": "<p>账单月份，格式为2024-02，不传默认当前月</p>",
           "example": "2024-02",
           "member": "string",
           "name": "Month",
@@ -18105,7 +18276,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识，用作筛选",
+          "document": "<p>分账单元唯一标识，用作筛选</p>",
           "example": "909619400-65b9a02cd832f",
           "member": "string",
           "name": "TreeNodeUniqKey",
@@ -18114,7 +18285,7 @@
         },
         {
           "disabled": false,
-          "document": "资源目录类别，枚举值如下：\nall - 全部 \nnone - 未归集",
+          "document": "<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>",
           "example": "all",
           "member": "string",
           "name": "GatherType",
@@ -18123,7 +18294,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，枚举值如下：\nrealCost  - 折后总价\ncashPayAmount - 现金金额\nvoucherPayAmount - 代金券金额\nincentivePayAmount  - 赠送金金额\ntransferPayAmount -分成金金额",
+          "document": "<p>排序字段，枚举值如下：<br>realCost  - 折后总价<br>cashPayAmount - 现金金额<br>voucherPayAmount - 代金券金额<br>incentivePayAmount  - 赠送金金额<br>transferPayAmount -分成金金额</p>",
           "example": "realCost",
           "member": "string",
           "name": "Sort",
@@ -18132,7 +18303,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "document": "<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>",
           "example": "asc",
           "member": "string",
           "name": "SortType",
@@ -18141,7 +18312,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码，用作筛选",
+          "document": "<p>产品编码，用作筛选</p>",
           "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "BusinessCodes",
@@ -18150,7 +18321,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码，用作筛选",
+          "document": "<p>子产品编码，用作筛选</p>",
           "example": "[\"sp_cvm_c4\"]",
           "member": "string",
           "name": "ProductCodes",
@@ -18159,7 +18330,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称编码，用作筛选",
+          "document": "<p>组件名称编码，用作筛选</p>",
           "example": "[\"virtual_v_cvm_compute_c4\"]",
           "member": "string",
           "name": "ItemCodes",
@@ -18168,7 +18339,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID，用作筛选",
+          "document": "<p>地域ID，用作筛选</p>",
           "example": "[4]",
           "member": "uint64",
           "name": "RegionIds",
@@ -18177,7 +18348,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型编码，用作筛选",
+          "document": "<p>实例类型编码，用作筛选</p>",
           "example": "[\"ri\"]",
           "member": "string",
           "name": "InstanceTypes",
@@ -18186,7 +18357,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式编码，用作筛选",
+          "document": "<p>计费模式编码，用作筛选</p>",
           "example": "[\"prePay\"]",
           "member": "string",
           "name": "PayModes",
@@ -18195,7 +18366,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN，用作筛选",
+          "document": "<p>操作者UIN，用作筛选</p>",
           "example": "[\"909619400\"]",
           "member": "string",
           "name": "OperateUins",
@@ -18204,7 +18375,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN，用作筛选",
+          "document": "<p>使用者UIN，用作筛选</p>",
           "example": "[\"909619400\"]",
           "member": "string",
           "name": "OwnerUins",
@@ -18213,7 +18384,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索：支持标签、资源id、资源别名",
+          "document": "<p>模糊搜索：支持标签、资源id、资源别名</p>",
           "example": "nugcbucket-1000027",
           "member": "string",
           "name": "SearchKey",
@@ -18222,7 +18393,7 @@
         },
         {
           "disabled": false,
-          "document": "标签，用作筛选",
+          "document": "<p>标签，用作筛选</p>",
           "example": "[\"tagkey:tagValue\"]",
           "member": "string",
           "name": "Tag",
@@ -18231,7 +18402,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，用作筛选",
+          "document": "<p>项目ID，用作筛选</p>",
           "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "ProjectIds",
@@ -18240,12 +18411,21 @@
         },
         {
           "disabled": false,
-          "document": "交易类型编码，用作筛选",
+          "document": "<p>交易类型编码，用作筛选</p>",
           "example": "[\"postpay_deduct_d\"]",
           "member": "string",
           "name": "ActionTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18255,7 +18435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "12",
           "member": "int64",
           "name": "RecordNum",
@@ -18265,7 +18445,7 @@
         },
         {
           "disabled": false,
-          "document": "资源归集汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源归集汇总</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GatherResourceSummary",
           "name": "GatherResourceSummary",
@@ -18275,7 +18455,7 @@
         },
         {
           "disabled": false,
-          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-11-14 00:00:00",
           "member": "string",
           "name": "LastUpdateTime",
@@ -18297,7 +18477,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所查询归集规则ID",
+          "document": "<p>所查询归集规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "Id",
@@ -18306,7 +18486,7 @@
         },
         {
           "disabled": false,
-          "document": "必须传1",
+          "document": "<p>必须传1</p>",
           "example": "1",
           "member": "uint64",
           "name": "AllocateType",
@@ -18315,10 +18495,19 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -18330,7 +18519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "归集规则ID",
+          "document": "<p>归集规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "Id",
@@ -18340,7 +18529,7 @@
         },
         {
           "disabled": false,
-          "document": "归集规则所属UIN",
+          "document": "<p>归集规则所属UIN</p>",
           "example": "9096",
           "member": "string",
           "name": "Uin",
@@ -18350,7 +18539,7 @@
         },
         {
           "disabled": false,
-          "document": "归集规则最后更新时间",
+          "document": "<p>归集规则最后更新时间</p>",
           "example": "2022-11-14 09:45:24",
           "member": "string",
           "name": "UpdateTime",
@@ -18360,7 +18549,7 @@
         },
         {
           "disabled": false,
-          "document": "归集规则详情",
+          "document": "<p>归集规则详情</p>",
           "example": "无",
           "member": "AllocationRuleExpression",
           "name": "RuleDetail",
@@ -18370,7 +18559,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一键",
+          "document": "<p>分账单元唯一键</p>",
           "example": "4_1081",
           "member": "string",
           "name": "UniqKey",
@@ -24975,7 +25164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所编辑公摊规则ID",
+          "document": "<p>所编辑公摊规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "RuleId",
@@ -24984,7 +25173,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑后公摊规则名称",
+          "document": "<p>编辑后公摊规则名称</p>",
           "example": "规则名称",
           "member": "string",
           "name": "Name",
@@ -24993,7 +25182,7 @@
         },
         {
           "disabled": false,
-          "document": "公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊",
+          "document": "<p>公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -25002,7 +25191,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑后公摊规则表达式",
+          "document": "<p>编辑后公摊规则表达式</p>",
           "example": "无",
           "member": "AllocationRuleExpression",
           "name": "RuleDetail",
@@ -25011,7 +25200,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑后公摊比例表达式",
+          "document": "<p>编辑后公摊比例表达式</p>",
           "example": "无",
           "member": "AllocationRationExpression",
           "name": "RatioDetail",
@@ -25020,10 +25209,19 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
@@ -25047,7 +25245,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所修改分账单元ID",
+          "document": "<p>所修改分账单元ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -25056,7 +25254,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后分账单元名称",
+          "document": "<p>修改后分账单元名称</p>",
           "example": "财务部",
           "member": "string",
           "name": "Name",
@@ -25065,7 +25263,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后分账单元源组织名称",
+          "document": "<p>修改后分账单元源组织名称</p>",
           "example": "财务一组",
           "member": "string",
           "name": "SourceName",
@@ -25074,7 +25272,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后分账单元源组织ID",
+          "document": "<p>修改后分账单元源组织ID</p>",
           "example": "asd123",
           "member": "string",
           "name": "SourceId",
@@ -25083,7 +25281,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元备注说明",
+          "document": "<p>分账单元备注说明</p>",
           "example": "分账",
           "member": "string",
           "name": "Remark",
@@ -25092,7 +25290,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
@@ -25101,12 +25299,21 @@
         },
         {
           "disabled": false,
-          "document": "分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树",
+          "document": "<p>分账目录树类别，枚举值如下： 0 - 标准分账单元树 1 - 云应用分账单元树</p>",
           "example": "0",
           "member": "int64",
           "name": "UniqKeyType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25446,7 +25653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所编辑归集规则ID",
+          "document": "<p>所编辑归集规则ID</p>",
           "example": "12",
           "member": "uint64",
           "name": "Id",
@@ -25455,7 +25662,7 @@
         },
         {
           "disabled": false,
-          "document": "所编辑分账规则详情",
+          "document": "<p>所编辑分账规则详情</p>",
           "example": "无",
           "member": "AllocationRuleExpression",
           "name": "RuleDetail",
@@ -25464,7 +25671,7 @@
         },
         {
           "disabled": false,
-          "document": "必须传1",
+          "document": "<p>必须传1</p>",
           "example": "1",
           "member": "uint64",
           "name": "AllocateType",
@@ -25473,10 +25680,19 @@
         },
         {
           "disabled": false,
-          "document": "月份，不传默认当前月",
+          "document": "<p>月份，不传默认当前月</p>",
           "example": "2022-10-01 00:00:00",
           "member": "string",
           "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
           "required": false,
           "type": "string"
         }
