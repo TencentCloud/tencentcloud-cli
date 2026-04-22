@@ -2592,7 +2592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组件角色名",
+          "document": "<p>组件角色名</p>",
           "example": "Coordinator",
           "member": "string",
           "name": "ComponentName",
@@ -2603,7 +2603,7 @@
         },
         {
           "disabled": false,
-          "document": "pod请求数量",
+          "document": "<p>pod请求数量</p>",
           "example": "2",
           "member": "int64",
           "name": "PodNumber",
@@ -2614,7 +2614,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu请求数量最大值",
+          "document": "<p>Cpu请求数量最大值</p>",
           "example": "4",
           "member": "int64",
           "name": "LimitCpu",
@@ -2625,7 +2625,7 @@
         },
         {
           "disabled": false,
-          "document": "内存请求数量最大值",
+          "document": "<p>内存请求数量最大值</p>",
           "example": "2048",
           "member": "int64",
           "name": "LimitMemory",
@@ -2636,7 +2636,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu类型",
+          "document": "<p>Cpu类型</p>",
           "example": "intel",
           "member": "string",
           "name": "CpuType",
@@ -2647,7 +2647,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu请求数量最小值",
+          "document": "<p>Cpu请求数量最小值</p>",
           "example": "1",
           "member": "int64",
           "name": "RequestCpu",
@@ -2658,7 +2658,7 @@
         },
         {
           "disabled": false,
-          "document": "内存请求数量最小值",
+          "document": "<p>内存请求数量最小值</p>",
           "example": "1024",
           "member": "int64",
           "name": "RequestMemory",
@@ -2669,7 +2669,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘类型，高性能云盘/SSD云硬盘",
+          "document": "<p>云硬盘类型，高性能云盘/SSD云硬盘</p>",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
@@ -2680,7 +2680,7 @@
         },
         {
           "disabled": false,
-          "document": "单个云磁盘容量",
+          "document": "<p>单个云磁盘容量</p>",
           "example": "100",
           "member": "int64",
           "name": "DiskCapacity",
@@ -2691,7 +2691,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘请求数量",
+          "document": "<p>云硬盘请求数量</p>",
           "example": "2",
           "member": "int64",
           "name": "DiskNumber",
@@ -2702,7 +2702,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称，如HIVE",
+          "document": "<p>服务名称，如HIVE</p>",
           "example": "RSS",
           "member": "string",
           "name": "Service",
@@ -2713,7 +2713,7 @@
         },
         {
           "disabled": false,
-          "document": "数据卷目录设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据卷目录设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VolumeSetting",
           "name": "VolumeDir",
@@ -2724,7 +2724,7 @@
         },
         {
           "disabled": false,
-          "document": "组件外部访问设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>组件外部访问设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExternalAccess",
           "name": "ExternalAccess",
@@ -2735,7 +2735,7 @@
         },
         {
           "disabled": false,
-          "document": "节点亲和性设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点亲和性设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeAffinity",
           "name": "Affinity",
@@ -2746,7 +2746,7 @@
         },
         {
           "disabled": false,
-          "document": "所选数据盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所选数据盘信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Disk",
           "name": "Disks",
@@ -2757,7 +2757,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义镜像信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CustomImage",
           "name": "CustomImage",
@@ -2768,7 +2768,7 @@
         },
         {
           "disabled": false,
-          "document": "容忍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容忍</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Toleration",
           "name": "Tolerations",
@@ -2776,6 +2776,61 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>pod亲和性</p>",
+          "example": "无",
+          "member": "PodAffinitySpec",
+          "name": "PodAffinity",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pod反亲和性</p>",
+          "example": "无",
+          "member": "PodAffinitySpec",
+          "name": "PodAntiAffinity",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓扑分布约束</p>",
+          "example": "无",
+          "member": "TopologySpreadConstraint",
+          "name": "TopologySpreadConstraints",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pod标签</p>",
+          "example": "无",
+          "member": "StringMap",
+          "name": "PodLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否创建默认raycluster</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDefaultRayCluster",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3942,6 +3997,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点组Id</p>",
+          "example": "np-ex9388xs",
+          "member": "string",
+          "name": "TkeClusterNodePool",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4135,6 +4201,21 @@
       ],
       "usage": "both"
     },
+    "ContainerExtraConf": {
+      "document": "容器额外配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计算作业代理访问类型，如Spark作业和RayCluster UI；不填写默认使用Internal</p><p>枚举值：</p><ul><li>Internal： 使用内网LB代理访问</li><li>Public： 使用公网LB代理访问</li><li>None： 不创建LB代理访问</li></ul>",
+          "example": "Public",
+          "member": "string",
+          "name": "JobAccessProxyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ConvertPreToPostClusterRequest": {
       "document": "ConvertPreToPostCluster请求参数结构体",
       "members": [
@@ -4176,7 +4257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称。\n<li>长度限制为6-36个字符。</li>\n<li>只允许包含中文、字母、数字、-、_。</li>",
+          "document": "<p>实例名称。</p><li>长度限制为6-36个字符。</li><li>只允许包含中文、字母、数字、-、_。</li>",
           "example": "emrtest",
           "member": "string",
           "name": "InstanceName",
@@ -4185,7 +4266,7 @@
         },
         {
           "disabled": false,
-          "document": "容器集群类型，取值范围\n<li>EMR容器集群实例: EMR-TKE</li>",
+          "document": "<p>容器集群类型，取值范围</p><li>EMR容器集群实例: EMR-TKE</li>",
           "example": "EMR-TKE",
           "member": "string",
           "name": "ClusterClass",
@@ -4194,7 +4275,7 @@
         },
         {
           "disabled": false,
-          "document": "部署的组件列表，不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；\n",
+          "document": "<p>部署的组件列表，不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：<a href=\"https://cloud.tencent.com/document/product/589/20279\">组件版本</a> ；</p>",
           "example": "[\"zookeeper-3.6.3\",\"metastore-3.1.3\",\"openldap-2.4.44\",\"hiveserver2-3.1.3\",\"spark-3.3.2\"]",
           "member": "string",
           "name": "Software",
@@ -4203,7 +4284,7 @@
         },
         {
           "disabled": false,
-          "document": "容器平台类型，取值范围\n<li>EMR容器集群实例: tke</li>",
+          "document": "<p>容器平台类型，取值范围</p><li>EMR容器集群实例: tke</li>",
           "example": "tke",
           "member": "string",
           "name": "PlatFormType",
@@ -4212,7 +4293,7 @@
         },
         {
           "disabled": false,
-          "document": "cos存储桶",
+          "document": "<p>cos存储桶</p>",
           "example": "sparkhistorytest-1258469122",
           "member": "string",
           "name": "CosBucket",
@@ -4221,7 +4302,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -4230,7 +4311,7 @@
         },
         {
           "disabled": false,
-          "document": "容器集群id",
+          "document": "<p>容器集群id</p>",
           "example": "cls-k4bsjrtr",
           "member": "string",
           "name": "EksClusterId",
@@ -4239,7 +4320,7 @@
         },
         {
           "disabled": false,
-          "document": "产品Id，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>60:表示EMR-TKE-V1.1.0</li>\n<li>55:表示EMR-TKE-V1.0.1</li>\n<li>52:表示EMR-TKE-V1.0.0</li>",
+          "document": "<p>产品Id，不同产品ID表示不同的EMR产品版本。取值范围：</p><li>60:表示EMR-TKE-V1.1.0</li><li>55:表示EMR-TKE-V1.0.1</li><li>52:表示EMR-TKE-V1.0.0</li>",
           "example": "60",
           "member": "int64",
           "name": "ProductId",
@@ -4248,7 +4329,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280\n示例值：a9a90aa6fae36063280",
+          "document": "<p>客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280<br>示例值：a9a90aa6fae36063280</p>",
           "example": "a9a90aa6----fae36063280",
           "member": "string",
           "name": "ClientToken",
@@ -4257,7 +4338,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名称",
+          "document": "<p>角色名称</p>",
           "example": "role",
           "member": "string",
           "name": "ApplicationRole",
@@ -4266,7 +4347,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "document": "<p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>",
           "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
@@ -4275,7 +4356,7 @@
         },
         {
           "disabled": false,
-          "document": "所有组件角色及其对应的Pod资源请求信息",
+          "document": "<p>所有组件角色及其对应的Pod资源请求信息</p>",
           "example": "无",
           "member": "CloudResource",
           "name": "CloudResources",
@@ -4284,7 +4365,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组Id，为空默认创建新的安全组",
+          "document": "<p>安全组Id，为空默认创建新的安全组</p>",
           "example": "sg-jfluxxxx",
           "member": "string",
           "name": "SgId",
@@ -4293,7 +4374,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据库信息\nMetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser MetaDataPass UnifyMetaInstanceId不用填\n当MetaType选择EMR_EXIT_META时，填写UnifyMetaInstanceId\n当MetaType选择USER_CUSTOM_META时，填写MetaDataJdbcUrl MetaDataUser MetaDataPass",
+          "document": "<p>元数据库信息<br>MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser MetaDataPass UnifyMetaInstanceId不用填<br>当MetaType选择EMR_EXIT_META时，填写UnifyMetaInstanceId<br>当MetaType选择USER_CUSTOM_META时，填写MetaDataJdbcUrl MetaDataUser MetaDataPass</p>",
           "example": "无",
           "member": "CustomMetaDBInfo",
           "name": "MetaDBInfo",
@@ -4302,7 +4383,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
+          "document": "<p>标签信息</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -4311,7 +4392,7 @@
         },
         {
           "disabled": false,
-          "document": "登录密码，LoginSettings中的Password字段",
+          "document": "<p>登录密码，LoginSettings中的Password字段</p>",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
@@ -4320,7 +4401,7 @@
         },
         {
           "disabled": false,
-          "document": "共享服务信息",
+          "document": "<p>共享服务信息</p>",
           "example": "无",
           "member": "ExternalService",
           "name": "ExternalService",
@@ -4329,7 +4410,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区id",
+          "document": "<p>可用区id</p>",
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
@@ -4338,7 +4419,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义配置项",
+          "document": "<p>自定义配置项</p>",
           "example": "无",
           "member": "Configuration",
           "name": "Configurations",
@@ -4347,7 +4428,7 @@
         },
         {
           "disabled": false,
-          "document": "验证信息",
+          "document": "<p>验证信息</p>",
           "example": "无",
           "member": "AuthenticationInfo",
           "name": "AuthenticationInfo",
@@ -4356,7 +4437,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源Id，如果不存在，会根据ComputeResourceConfig来创建",
+          "document": "<p>计算资源Id，如果不存在，会根据ComputeResourceConfig来创建</p>",
           "example": "emr-ComputerID",
           "member": "string",
           "name": "ComputeResourceId",
@@ -4365,7 +4446,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源配置",
+          "document": "<p>计算资源配置</p>",
           "example": "无",
           "member": "CreateComputeResourceConfig",
           "name": "ComputeResourceConfig",
@@ -4374,7 +4455,7 @@
         },
         {
           "disabled": false,
-          "document": "所有组件是否使用同一个clb。0：不是；1：是",
+          "document": "<p>所有组件是否使用同一个clb。0：不是；1：是</p>",
           "example": "0",
           "member": "int64",
           "name": "UsePublicClb",
@@ -4383,7 +4464,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本",
+          "document": "<p>数据库版本</p>",
           "example": "mysql8",
           "member": "string",
           "name": "DefaultMetaVersion",
@@ -4392,7 +4473,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通审计",
+          "document": "<p>是否开通审计</p>",
           "example": "0",
           "member": "int64",
           "name": "NeedCdbAudit",
@@ -4401,12 +4482,21 @@
         },
         {
           "disabled": false,
-          "document": "安全组来源IP",
+          "document": "<p>安全组来源IP</p>",
           "example": "10.0.0.0/0",
           "member": "string",
           "name": "SgIP",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外容器相关配置</p>",
+          "example": "无",
+          "member": "ContainerExtraConf",
+          "name": "ContainerExtraConf",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4416,7 +4506,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "emr-jkbz9e9q",
           "member": "string",
           "name": "InstanceId",
@@ -14864,6 +14954,15 @@
           "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外容器相关配置</p>",
+          "example": "无",
+          "member": "ContainerExtraConf",
+          "name": "ContainerExtraConf",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -15319,6 +15418,73 @@
         }
       ],
       "usage": "out"
+    },
+    "LabelSelector": {
+      "document": "标签选择器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签精确匹配条件</p>",
+          "example": "无",
+          "member": "StringMap",
+          "name": "MatchLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签表达式匹配条件</p>",
+          "example": "无",
+          "member": "LabelSelectorRequirement",
+          "name": "MatchExpressions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LabelSelectorRequirement": {
+      "document": "标签选择器匹配表达式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "app",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配操作</p>",
+          "example": "NotIn",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "[\"hbase\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LoadAutoScaleStrategy": {
       "document": "自动扩缩容基于负载指标的规则",
@@ -19733,6 +19899,84 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PodAffinitySpec": {
+      "document": "Pod亲和性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调度硬关联规则</p>",
+          "example": "无",
+          "member": "PodAffinityTerm",
+          "name": "RequiredDuringSchedulingIgnoredDuringExecution",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度软关联规则</p>",
+          "example": "无",
+          "member": "WeightedPodAffinityTerm",
+          "name": "PreferredDuringSchedulingIgnoredDuringExecution",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PodAffinityTerm": {
+      "document": "Pod亲和性项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签选择器</p>",
+          "example": "无",
+          "member": "LabelSelector",
+          "name": "LabelSelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间列表</p>",
+          "example": "[\"251233706-emr-3lq4rr8w\"]",
+          "member": "string",
+          "name": "Namespaces",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓扑域键</p>",
+          "example": "topology.kubernetes.io/zone",
+          "member": "string",
+          "name": "TopologyKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间选择器</p>",
+          "example": "无",
+          "member": "LabelSelector",
+          "name": "NamespaceSelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -25250,6 +25494,34 @@
       ],
       "usage": "both"
     },
+    "StringMap": {
+      "document": "通用字符串map",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "testkey",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "testval",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SubnetInfo": {
       "document": "子网信息",
       "members": [
@@ -25620,7 +25892,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "emr-4slr7ad7",
           "member": "string",
           "name": "InstanceId",
@@ -25629,7 +25901,7 @@
         },
         {
           "disabled": false,
-          "document": "销毁节点ID。该参数为预留参数，用户无需配置。",
+          "document": "<p>销毁节点ID。该参数为预留参数，用户无需配置。</p>",
           "example": "[\"id-test\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -25638,7 +25910,7 @@
         },
         {
           "disabled": false,
-          "document": "类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识",
+          "document": "<p>类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识</p>",
           "example": "ComputeResource",
           "member": "string",
           "name": "ResourceBaseType",
@@ -25647,12 +25919,21 @@
         },
         {
           "disabled": false,
-          "document": "计算资源ID",
+          "document": "<p>计算资源ID</p>",
           "example": "emr-cr-0xrwm3bb",
           "member": "string",
           "name": "ComputeResourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>保留计算资源关联的TKE集群</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RetainTkeCluster",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -26126,6 +26407,100 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TopologySpreadConstraint": {
+      "document": "调度拓扑分布",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最大偏差值</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxSkew",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓扑域键</p>",
+          "example": "topology.kubernetes.io/zone",
+          "member": "string",
+          "name": "TopologyKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不满足约束时的处理策略</p>",
+          "example": "DoNotSchedule",
+          "member": "string",
+          "name": "WhenUnsatisfiable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签选择器</p>",
+          "example": "无",
+          "member": "LabelSelector",
+          "name": "LabelSelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小拓扑域数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinDomains",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点亲和性策略</p>",
+          "example": "Honor",
+          "member": "string",
+          "name": "NodeAffinityPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点污点策略</p>",
+          "example": "Honor",
+          "member": "string",
+          "name": "NodeTaintsPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配标签键列表</p>",
+          "example": "[\"pod-template-hash\"]",
+          "member": "string",
+          "name": "MatchLabelKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -26784,6 +27159,34 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WeightedPodAffinityTerm": {
+      "document": "加权pod亲和性项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>权重</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pod亲和性条件</p>",
+          "example": "无",
+          "member": "PodAffinityTerm",
+          "name": "PodAffinityTerm",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

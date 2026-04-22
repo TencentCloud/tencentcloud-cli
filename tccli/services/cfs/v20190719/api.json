@@ -1299,6 +1299,15 @@
           "name": "MetaType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部参数，不对外暴露。集群ID，仅内部调用。如果业务侧未指定ClusterId，则仍按照原逻辑选择集群；如果业务侧指定了ClusterId，直降将文件系统创建在指定集群上。</p><p>取值参考：内部平台获取</p>",
+          "example": "1001",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

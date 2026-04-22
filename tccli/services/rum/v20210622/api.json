@@ -1471,7 +1471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -1480,8 +1480,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -1489,8 +1489,8 @@
         },
         {
           "disabled": false,
-          "document": "问题Id",
-          "example": "无",
+          "document": "<p>问题Id</p>",
+          "example": "dfyuiohjklyuioio",
           "member": "string",
           "name": "ClientIdentify",
           "required": false,
@@ -1498,7 +1498,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1742982420",
           "member": "int64",
           "name": "StartEventTime",
@@ -1507,7 +1507,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1745488020",
           "member": "int64",
           "name": "EndEventTime",
@@ -1516,7 +1516,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -1525,8 +1525,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -1540,8 +1540,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -1582,7 +1582,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -1591,8 +1591,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -1600,8 +1600,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -1609,7 +1609,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -1618,7 +1618,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示最大数量",
+          "document": "<p>每页展示最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -1627,7 +1627,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -1636,7 +1636,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -1645,7 +1645,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -1654,8 +1654,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -1669,8 +1669,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -1679,7 +1679,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -1689,7 +1689,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -8980,7 +8980,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1056",
           "member": "string",
           "name": "ProductId",
@@ -8989,8 +8989,8 @@
         },
         {
           "disabled": false,
-          "document": "消息唯一标识",
-          "example": "无",
+          "document": "<p>消息唯一标识</p>",
+          "example": "ghjkyuiouiop",
           "member": "string",
           "name": "ClientIdentify",
           "required": false,
@@ -8998,7 +8998,7 @@
         },
         {
           "disabled": false,
-          "document": "集群堆栈类型",
+          "document": "<p>集群堆栈类型</p>",
           "example": "1",
           "member": "int64",
           "name": "ClusterStackType",
@@ -9007,7 +9007,7 @@
         },
         {
           "disabled": false,
-          "document": "特征",
+          "document": "<p>特征</p>",
           "example": "network",
           "member": "string",
           "name": "Feature",
@@ -9016,7 +9016,7 @@
         },
         {
           "disabled": false,
-          "document": "问题类型",
+          "document": "<p>问题类型</p>",
           "example": "1",
           "member": "int64",
           "name": "IssueType",
@@ -9025,7 +9025,7 @@
         },
         {
           "disabled": false,
-          "document": "事件开始时间",
+          "document": "<p>事件开始时间</p>",
           "example": "1742982420",
           "member": "int64",
           "name": "StartEventTime",
@@ -9034,7 +9034,7 @@
         },
         {
           "disabled": false,
-          "document": "事件结束时间",
+          "document": "<p>事件结束时间</p>",
           "example": "1745488020",
           "member": "int64",
           "name": "EndEventTime",
@@ -9043,7 +9043,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9052,8 +9052,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9067,8 +9067,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9077,7 +9077,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9087,7 +9087,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9109,7 +9109,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1025",
           "member": "string",
           "name": "ProductId",
@@ -9118,8 +9118,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -9127,8 +9127,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 form_list 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -9136,7 +9136,7 @@
         },
         {
           "disabled": false,
-          "document": "问题类型",
+          "document": "<p>问题类型</p>",
           "example": "1",
           "member": "int64",
           "name": "IssueType",
@@ -9145,7 +9145,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -9154,7 +9154,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -9163,7 +9163,7 @@
         },
         {
           "disabled": false,
-          "document": "特征",
+          "document": "<p>特征</p>",
           "example": "exception",
           "member": "string",
           "name": "Feature",
@@ -9172,7 +9172,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数目",
+          "document": "<p>每页数目</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -9181,7 +9181,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "5",
           "member": "int64",
           "name": "PageNumber",
@@ -9190,7 +9190,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展字段",
+          "document": "<p>拓展字段</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9199,8 +9199,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9214,8 +9214,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -9224,7 +9224,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9234,7 +9234,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9256,7 +9256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1056",
           "member": "string",
           "name": "ProductId",
@@ -9265,8 +9265,8 @@
         },
         {
           "disabled": false,
-          "document": "消息唯一标识",
-          "example": "无",
+          "document": "<p>消息唯一标识</p>",
+          "example": "tyuiopoihgfdfghjkl",
           "member": "string",
           "name": "ClientIdentify",
           "required": false,
@@ -9274,7 +9274,7 @@
         },
         {
           "disabled": false,
-          "document": "特征",
+          "document": "<p>特征</p>",
           "example": "foom",
           "member": "string",
           "name": "Feature",
@@ -9283,7 +9283,7 @@
         },
         {
           "disabled": false,
-          "document": "事件开始时间",
+          "document": "<p>事件开始时间</p>",
           "example": "1742982420",
           "member": "int64",
           "name": "StartEventTime",
@@ -9292,7 +9292,7 @@
         },
         {
           "disabled": false,
-          "document": "事件结束时间",
+          "document": "<p>事件结束时间</p>",
           "example": "1745488020",
           "member": "int64",
           "name": "EndEventTime",
@@ -9301,7 +9301,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9310,8 +9310,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9325,8 +9325,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9335,7 +9335,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9345,7 +9345,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9367,7 +9367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -9376,8 +9376,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -9385,8 +9385,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -9394,7 +9394,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -9403,7 +9403,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示最大数量",
+          "document": "<p>每页展示最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -9412,7 +9412,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -9421,7 +9421,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -9430,7 +9430,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9439,8 +9439,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9454,8 +9454,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9464,7 +9464,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9474,7 +9474,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9496,7 +9496,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -9505,8 +9505,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -9514,8 +9514,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -9523,7 +9523,7 @@
         },
         {
           "disabled": false,
-          "document": "特征",
+          "document": "<p>特征</p>",
           "example": "foom_malloc",
           "member": "string",
           "name": "Feature",
@@ -9532,7 +9532,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -9541,7 +9541,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示最大数量",
+          "document": "<p>每页展示最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -9550,7 +9550,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -9559,7 +9559,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -9568,7 +9568,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9577,8 +9577,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9592,8 +9592,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9602,7 +9602,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9612,7 +9612,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9634,7 +9634,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1056",
           "member": "string",
           "name": "ProductId",
@@ -9643,8 +9643,8 @@
         },
         {
           "disabled": false,
-          "document": "消息唯一标识",
-          "example": "无",
+          "document": "<p>消息唯一标识</p>",
+          "example": "rtyuiofghjkliop[",
           "member": "string",
           "name": "ClientIdentify",
           "required": false,
@@ -9652,7 +9652,7 @@
         },
         {
           "disabled": false,
-          "document": "特征",
+          "document": "<p>特征</p>",
           "example": "foom",
           "member": "string",
           "name": "Feature",
@@ -9661,7 +9661,7 @@
         },
         {
           "disabled": false,
-          "document": "事件开始时间",
+          "document": "<p>事件开始时间</p>",
           "example": "1742982420",
           "member": "int64",
           "name": "StartEventTime",
@@ -9670,7 +9670,7 @@
         },
         {
           "disabled": false,
-          "document": "事件结束时间",
+          "document": "<p>事件结束时间</p>",
           "example": "1745488020",
           "member": "int64",
           "name": "EndEventTime",
@@ -9679,7 +9679,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9688,8 +9688,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9703,8 +9703,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9713,7 +9713,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9723,7 +9723,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9745,7 +9745,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -9754,8 +9754,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -9763,8 +9763,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -9772,7 +9772,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -9781,7 +9781,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示最大数量",
+          "document": "<p>每页展示最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -9790,7 +9790,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -9799,7 +9799,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -9808,7 +9808,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9817,8 +9817,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9832,8 +9832,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9842,7 +9842,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9852,7 +9852,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -9874,7 +9874,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -9883,8 +9883,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -9892,8 +9892,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -9901,7 +9901,7 @@
         },
         {
           "disabled": false,
-          "document": "特征",
+          "document": "<p>特征</p>",
           "example": "foom",
           "member": "string",
           "name": "Feature",
@@ -9910,7 +9910,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -9919,7 +9919,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示最大数量",
+          "document": "<p>每页展示最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -9928,7 +9928,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -9937,7 +9937,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -9946,7 +9946,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -9955,8 +9955,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -9970,8 +9970,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9980,7 +9980,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -9990,7 +9990,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -10049,7 +10049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1025",
           "member": "string",
           "name": "ProductId",
@@ -10058,8 +10058,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -10067,7 +10067,7 @@
         },
         {
           "disabled": false,
-          "document": "分布维度是自定义维度时，填‘user_custom’",
+          "document": "<p>分布维度是自定义维度时，填‘user_custom’</p>",
           "example": "user_custom",
           "member": "string",
           "name": "DimType",
@@ -10076,7 +10076,7 @@
         },
         {
           "disabled": false,
-          "document": "维度，e.g. os_version, app_version, model等",
+          "document": "<p>维度，e.g. os_version, app_version, model等</p>",
           "example": "app_version",
           "member": "string",
           "name": "Dimension",
@@ -10085,7 +10085,7 @@
         },
         {
           "disabled": false,
-          "document": "数字类型字段的区间范围",
+          "document": "<p>数字类型字段的区间范围</p>",
           "example": "[2,6]",
           "member": "int64",
           "name": "Intervals",
@@ -10094,8 +10094,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 form_list 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>",
+          "example": "08b4cecbc9d525804867a0d37190f014",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -10103,7 +10103,7 @@
         },
         {
           "disabled": false,
-          "document": "问题Id",
+          "document": "<p>问题Id</p>",
           "example": "13ed5***",
           "member": "string",
           "name": "IssueId",
@@ -10112,7 +10112,7 @@
         },
         {
           "disabled": false,
-          "document": "问题类型",
+          "document": "<p>问题类型</p>",
           "example": "1",
           "member": "int64",
           "name": "IssueType",
@@ -10121,7 +10121,7 @@
         },
         {
           "disabled": false,
-          "document": "限制返回的个数，默认返回所有值",
+          "document": "<p>限制返回的个数，默认返回所有值</p>",
           "example": "10",
           "member": "int64",
           "name": "ParamLimit",
@@ -10130,7 +10130,7 @@
         },
         {
           "disabled": false,
-          "document": "键",
+          "document": "<p>键</p>",
           "example": "key1",
           "member": "string",
           "name": "MapKey",
@@ -10139,7 +10139,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "name1",
           "member": "string",
           "name": "MapName",
@@ -10148,7 +10148,7 @@
         },
         {
           "disabled": false,
-          "document": "指标类型",
+          "document": "<p>指标类型</p>",
           "example": "2",
           "member": "int64",
           "name": "MetricType",
@@ -10157,7 +10157,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数目",
+          "document": "<p>每页数目</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -10166,7 +10166,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "5",
           "member": "int64",
           "name": "PageNumber",
@@ -10175,7 +10175,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义维度key",
+          "document": "<p>用户自定义维度key</p>",
           "example": "os_version",
           "member": "string",
           "name": "UserCustomKey",
@@ -10184,7 +10184,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展字段",
+          "document": "<p>拓展字段</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -10193,8 +10193,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "BEGIN{\"X-ProductId\":\"e8deb15314\",\"X-Tc-Username\":\"v_wxyawang@700001793941\"}END",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -10208,8 +10208,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -10218,7 +10218,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -10228,7 +10228,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -10250,7 +10250,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1025",
           "member": "string",
           "name": "ProductId",
@@ -10259,8 +10259,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormList",
           "required": false,
@@ -10268,8 +10268,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListA",
           "required": false,
@@ -10277,8 +10277,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListB",
           "required": false,
@@ -10286,8 +10286,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 form_list 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -10295,7 +10295,7 @@
         },
         {
           "disabled": false,
-          "document": "问题类型",
+          "document": "<p>问题类型</p>",
           "example": "1",
           "member": "int64",
           "name": "IssueType",
@@ -10304,7 +10304,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -10313,7 +10313,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -10322,7 +10322,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数目",
+          "document": "<p>每页数目</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -10331,7 +10331,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "5",
           "member": "int64",
           "name": "PageNumber",
@@ -10340,7 +10340,7 @@
         },
         {
           "disabled": false,
-          "document": "问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值",
+          "document": "<p>问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值</p>",
           "example": "RATIO",
           "member": "string",
           "name": "SortABRatio",
@@ -10349,7 +10349,7 @@
         },
         {
           "disabled": false,
-          "document": "模式：false:问题列表模式，true:对比列表模式",
+          "document": "<p>模式：false:问题列表模式，true:对比列表模式</p>",
           "example": "false",
           "member": "bool",
           "name": "Compare",
@@ -10358,7 +10358,7 @@
         },
         {
           "disabled": false,
-          "document": "对比状态 0:所有 1:新增 2：遗留 3:已解决",
+          "document": "<p>对比状态 0:所有 1:新增 2：遗留 3:已解决</p>",
           "example": "1",
           "member": "int64",
           "name": "CompareStatus",
@@ -10367,7 +10367,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展字段",
+          "document": "<p>拓展字段</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -10376,8 +10376,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -10391,8 +10391,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -10401,7 +10401,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -10411,7 +10411,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -10589,7 +10589,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1056",
           "member": "string",
           "name": "ProductId",
@@ -10598,8 +10598,8 @@
         },
         {
           "disabled": false,
-          "document": "消息唯一标识",
-          "example": "无",
+          "document": "<p>消息唯一标识</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ClientIdentify",
           "required": false,
@@ -10607,7 +10607,7 @@
         },
         {
           "disabled": false,
-          "document": "特征",
+          "document": "<p>特征</p>",
           "example": "lag",
           "member": "string",
           "name": "Feature",
@@ -10616,7 +10616,7 @@
         },
         {
           "disabled": false,
-          "document": "事件开始时间",
+          "document": "<p>事件开始时间</p>",
           "example": "1742982420",
           "member": "int64",
           "name": "StartEventTime",
@@ -10625,7 +10625,7 @@
         },
         {
           "disabled": false,
-          "document": "事件结束时间",
+          "document": "<p>事件结束时间</p>",
           "example": "1745488020",
           "member": "int64",
           "name": "EndEventTime",
@@ -10634,7 +10634,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -10643,8 +10643,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -10658,8 +10658,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -10668,7 +10668,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -10678,7 +10678,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -10700,7 +10700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -10709,8 +10709,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -10718,8 +10718,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -10727,7 +10727,7 @@
         },
         {
           "disabled": false,
-          "document": "问题特征",
+          "document": "<p>问题特征</p>",
           "example": "lag",
           "member": "string",
           "name": "Feature",
@@ -10736,7 +10736,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -10745,7 +10745,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -10754,7 +10754,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -10763,7 +10763,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示最大数量",
+          "document": "<p>每页展示最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -10772,7 +10772,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -10781,8 +10781,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -10796,8 +10796,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -10806,7 +10806,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -10816,7 +10816,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -10838,7 +10838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1035",
           "member": "string",
           "name": "ProductId",
@@ -10847,8 +10847,8 @@
         },
         {
           "disabled": false,
-          "document": "提供给前端使用，当填写本字段时，会覆盖 formlist 的值",
-          "example": "无",
+          "document": "<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>",
+          "example": "215DB2393ABB394CD960EE1662CD7E48",
           "member": "string",
           "name": "ParamToken",
           "required": false,
@@ -10856,8 +10856,8 @@
         },
         {
           "disabled": false,
-          "document": "接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息",
-          "example": "无",
+          "document": "<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -10865,7 +10865,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -10874,7 +10874,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示最大数量",
+          "document": "<p>每页展示最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -10883,7 +10883,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -10892,7 +10892,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "<p>排序类型</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -10901,7 +10901,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展数据",
+          "document": "<p>拓展数据</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -10910,8 +10910,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -10925,8 +10925,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -10935,7 +10935,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -10945,7 +10945,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -12050,8 +12050,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选条件",
-          "example": "无",
+          "document": "<p>筛选条件</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListString",
           "required": false,
@@ -12059,8 +12059,8 @@
         },
         {
           "disabled": false,
-          "document": "仅对比模式下填写，筛选条件A",
-          "example": "无",
+          "document": "<p>仅对比模式下填写，筛选条件A</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListAString",
           "required": false,
@@ -12068,8 +12068,8 @@
         },
         {
           "disabled": false,
-          "document": "仅对比模式下填写，筛选条件B",
-          "example": "无",
+          "document": "<p>仅对比模式下填写，筛选条件B</p>",
+          "example": "{ \t\"form_list\": { \t\t\"time_window\": 1, \t\t\"filters\": [{ \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776096000\"], \t\t\t\"operator\": \"GE\" \t\t}, { \t\t\t\"name\": \"event_time\", \t\t\t\"values\": [\"1776787199\"], \t\t\t\"operator\": \"LE\" \t\t}] \t} }",
           "member": "string",
           "name": "FormListBString",
           "required": false,
@@ -12077,8 +12077,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -12086,7 +12086,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展字段",
+          "document": "<p>拓展字段</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -12101,8 +12101,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -12111,7 +12111,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -12121,7 +12121,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -12143,7 +12143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品Id",
+          "document": "<p>产品Id</p>",
           "example": "1025",
           "member": "string",
           "name": "ProductId",
@@ -12152,7 +12152,7 @@
         },
         {
           "disabled": false,
-          "document": "需要对比的查询条件，没有则不填",
+          "document": "<p>需要对比的查询条件，没有则不填</p>",
           "example": "无",
           "member": "CompareCondition",
           "name": "Compare",
@@ -12161,7 +12161,7 @@
         },
         {
           "disabled": false,
-          "document": "查询条件",
+          "document": "<p>查询条件</p>",
           "example": "无",
           "member": "CompareCondition",
           "name": "Condition",
@@ -12170,7 +12170,7 @@
         },
         {
           "disabled": false,
-          "document": "问题类型",
+          "document": "<p>问题类型</p>",
           "example": "1",
           "member": "int64",
           "name": "IssueType",
@@ -12179,7 +12179,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p>",
           "example": "report_time",
           "member": "string",
           "name": "SortField",
@@ -12188,7 +12188,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p>",
           "example": "ASC",
           "member": "string",
           "name": "SortType",
@@ -12197,7 +12197,7 @@
         },
         {
           "disabled": false,
-          "document": "topN",
+          "document": "<p>topN</p>",
           "example": "10",
           "member": "int64",
           "name": "TopNum",
@@ -12206,7 +12206,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展字段",
+          "document": "<p>拓展字段</p>",
           "example": "data",
           "member": "string",
           "name": "ExtraData",
@@ -12215,8 +12215,8 @@
         },
         {
           "disabled": false,
-          "document": "请求头",
-          "example": "无",
+          "document": "<p>请求头</p>",
+          "example": "\"BEGIN{\\\"X-ProductId\\\": \\\"5d4fa0e8d8\\\"}END\"",
           "member": "string",
           "name": "RequestHeader",
           "required": false,
@@ -12230,8 +12230,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
-          "example": "无",
+          "document": "<p>返回值</p>",
+          "example": "{\\\"base_rsp\\\":{\\\"code\\\":0,\\\"msg\\\":\\\"success\\\"}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -12240,7 +12240,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "<p>状态码</p>",
           "example": "200",
           "member": "int64",
           "name": "Code",
@@ -12250,7 +12250,7 @@
         },
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",

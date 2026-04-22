@@ -13166,7 +13166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "高级运行参数,变量替换，map-json String,String\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高级运行参数,变量替换，map-json String,String</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"paramName\":\"paramValue\"}",
           "member": "string",
           "name": "Params",
@@ -13177,7 +13177,7 @@
         },
         {
           "disabled": false,
-          "document": "执行资源ID",
+          "document": "<p>执行资源ID</p>",
           "example": "11",
           "member": "string",
           "name": "ResourceId",
@@ -13188,7 +13188,7 @@
         },
         {
           "disabled": false,
-          "document": "默认catalog",
+          "document": "<p>默认catalog</p>",
           "example": "catalog",
           "member": "string",
           "name": "DefaultCatalog",
@@ -13199,7 +13199,7 @@
         },
         {
           "disabled": false,
-          "document": "默认schema",
+          "document": "<p>默认schema</p>",
           "example": "schema",
           "member": "string",
           "name": "DefaultSchema",
@@ -13210,7 +13210,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置",
+          "document": "<p>高级配置</p>",
           "example": "{\"paramName\":\"paramValue\"}",
           "member": "string",
           "name": "AdvanceConfig",
@@ -13221,7 +13221,7 @@
         },
         {
           "disabled": false,
-          "document": "额外参数",
+          "document": "<p>额外参数</p>",
           "example": "{\"paramName\":\"paramValue\"}",
           "member": "string",
           "name": "ExtraParams",
@@ -13229,6 +13229,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DLC widgets参数信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test_widget\", \"test_value\"]",
+          "member": "string",
+          "name": "Widgets",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -56234,7 +56245,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间id",
+          "document": "<p>工作空间id</p>",
           "example": "122211",
           "member": "string",
           "name": "WorkspaceId",
@@ -56243,7 +56254,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型，sql/ipynb",
+          "document": "<p>文件类型，sql/ipynb</p>",
           "example": "sql",
           "member": "string",
           "name": "FileType",
@@ -56252,7 +56263,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -56261,12 +56272,21 @@
         },
         {
           "disabled": false,
-          "document": "PageSize",
+          "document": "<p>PageSize</p>",
           "example": "2",
           "member": "int64",
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索的文件名称</p>",
+          "example": "abd",
+          "member": "string",
+          "name": "CodeFileName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -56276,7 +56296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ListReleasedCodeFileRsp",
           "name": "Data",
