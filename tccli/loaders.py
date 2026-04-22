@@ -59,6 +59,7 @@ HELPER_MAP = {
     "--language": "specify an output language, valid choices: [zh-CN, en-US], default value: zh-CN",
 }
 
+
 class Loader(object):
     def get_services_path(self):
         base_path = os.path.dirname(os.path.abspath(__file__))
@@ -195,8 +196,8 @@ class Loader(object):
                 profile = args[location]
         conf_path = os.path.join(os.path.expanduser("~"), ".tccli")
         conf = {}
-        if Utils.file_existed(conf_path, profile+".configure")[0]:
-            conf = Utils.load_json_msg(os.path.join(conf_path, profile+".configure"))
+        if Utils.file_existed(conf_path, profile + ".configure")[0]:
+            conf = Utils.load_json_msg(os.path.join(conf_path, profile + ".configure"))
         return conf.get(service, {}).get("version", self.get_available_services()[service][0])
 
     def get_service_model(self, service, version):
@@ -471,14 +472,33 @@ class Loader(object):
 
     def get_action_example_model(self, service, version, action):
         services_path = self.get_services_path()
-        version = "v" + version.replace('-', '')
-        example_path = os.path.join(services_path, service, version, "examples.json")
-        if not os.path.exists(example_path):
-            raise Exception("Not find service:%s version:%s model" % (service, version))
+        compact_version = "v" + version.replace('-', '')
+        example_path = os.path.join(services_path, service, compact_version, "examples.json")
 
-        with open(example_path, 'r') as f:
-            examples = json.load(f)
-        return examples['actions'][action]
+        # 首先尝试从services目录加载examples.json
+        if os.path.exists(example_path):
+            with open(example_path, 'r') as f:
+                examples = json.load(f)
+            return examples['actions'][action]
+
+        # 如果services目录下没有，尝试从插件系统获取示例
+        plugins = plugin.import_plugins()
+
+        # 使用原始版本格式检查插件系统
+        if service in plugins and version in plugins[service]:
+            plugin_spec = plugins[service][version]
+            # 对于插件提供的服务，如果没有examples.json，返回一个完整的示例结构
+            return [{
+                "input": "",
+                "output": "{}",
+                "name": "Example",
+                "title": "Basic Example",
+                "document": "This service is provided via plugin, no detailed example description available",
+                "description": "This service is provided via plugin, no example data available"
+            }]
+
+        # 如果既不在services目录也不在插件系统中，抛出异常
+        raise Exception("Not find service:%s version:%s model" % (service, compact_version))
 
     def generate_cli_example(self, service, version, action):
         examples = self.get_action_example_model(service, version, action)
@@ -556,7 +576,7 @@ class Loader(object):
             param_list.pop()
         # basic type array
         elif isinstance(input_param, list) and len(input_param) > 0 and not isinstance(input_param[0], dict):
-            value = " ".join(["'"+str(param)+"'" if " " in str(param) else str(param) for param in input_param])
+            value = " ".join(["'" + str(param) + "'" if " " in str(param) else str(param) for param in input_param])
             param_list.append(value)
             tmp = copy.deepcopy(param_list)
             all_param_list.append(tmp)
@@ -576,4 +596,3 @@ class Loader(object):
         # null array
         else:
             pass
-
