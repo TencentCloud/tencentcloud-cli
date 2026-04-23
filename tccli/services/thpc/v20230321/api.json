@@ -3088,7 +3088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "<p>作业ID</p>",
           "example": "job-xxx",
           "member": "string",
           "name": "JobId",
@@ -3098,7 +3098,7 @@
         },
         {
           "disabled": false,
-          "document": "作业名称",
+          "document": "<p>作业名称</p>",
           "example": "job-test",
           "member": "string",
           "name": "JobName",
@@ -3108,7 +3108,7 @@
         },
         {
           "disabled": false,
-          "document": "作业描述",
+          "document": "<p>作业描述</p>",
           "example": "job test",
           "member": "string",
           "name": "JobDescription",
@@ -3118,7 +3118,17 @@
         },
         {
           "disabled": false,
-          "document": "作业优先级",
+          "document": "<p>作业创建者</p>",
+          "example": "creator",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业优先级</p>",
           "example": "10",
           "member": "uint64",
           "name": "Priority",
@@ -3128,7 +3138,7 @@
         },
         {
           "disabled": false,
-          "document": "作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, \nFAILED\n",
+          "document": "<p>作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS,<br>FAILED</p>",
           "example": "CREATED",
           "member": "string",
           "name": "JobState",
@@ -3138,7 +3148,7 @@
         },
         {
           "disabled": false,
-          "document": "作业所属集群ID",
+          "document": "<p>作业所属集群ID</p>",
           "example": "hpc-xxxx",
           "member": "string",
           "name": "ClusterId",
@@ -3148,7 +3158,7 @@
         },
         {
           "disabled": false,
-          "document": "作业所属队列名称",
+          "document": "<p>作业所属队列名称</p>",
           "example": "compute",
           "member": "string",
           "name": "QueueName",
@@ -3158,7 +3168,7 @@
         },
         {
           "disabled": false,
-          "document": "完成作业任务所需资源",
+          "document": "<p>完成作业任务所需资源</p>",
           "example": "计算节点: 3",
           "member": "string",
           "name": "OccupyResources",
@@ -3168,8 +3178,8 @@
         },
         {
           "disabled": false,
-          "document": "作业任务创建时间",
-          "example": "无",
+          "document": "<p>作业任务创建时间</p>",
+          "example": "2026-02-28T07:33:17Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -3178,8 +3188,8 @@
         },
         {
           "disabled": false,
-          "document": "作业任务结束时间",
-          "example": "无",
+          "document": "<p>作业任务结束时间</p>",
+          "example": "2026-02-28T07:47:46Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,

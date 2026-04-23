@@ -707,6 +707,13 @@
       "output": "NotifyEmrResponse",
       "status": "online"
     },
+    "ReplaceTkeCluster": {
+      "document": "EMR on TKE更换TKE集群",
+      "input": "ReplaceTkeClusterRequest",
+      "name": "EMR on TKE更换容器集群",
+      "output": "ReplaceTkeClusterResponse",
+      "status": "online"
+    },
     "ResetYarnConfig": {
       "document": "修改YARN资源调度的资源配置",
       "input": "ResetYarnConfigRequest",
@@ -21388,6 +21395,70 @@
         }
       ],
       "usage": "both"
+    },
+    "ReplaceTkeClusterRequest": {
+      "document": "ReplaceTkeCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EMR集群ID</p><p>参数格式：emr-xxxxxxxx</p>",
+          "example": "emr-99xihnsh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器集群ID</p><p>参数格式：cls-xxxxxxxx</p>",
+          "example": "cls-p3yh0ik2",
+          "member": "string",
+          "name": "TkeClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器集群类型</p><p>枚举值：</p><ul><li>tke： TKE标准集群</li><li>eks： TKE Serverless集群</li></ul>",
+          "example": "tke",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方产品名</p>",
+          "example": "dlc",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceTkeClusterResponse": {
+      "document": "ReplaceTkeCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程ID</p>",
+          "example": "88",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResetYarnConfigRequest": {
       "document": "ResetYarnConfig请求参数结构体",

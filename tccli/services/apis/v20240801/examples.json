@@ -136,6 +136,14 @@
         "title": "创建服务"
       }
     ],
+    "CreateSignOnAgentService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSignOnAgentService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-********\",\n    \"AgentID\": \"ins-********\",\n    \"IP\": \"127.0.0.1\",\n    \"Port\": 1234,\n    \"AgentToken\": \"token123\",\n    \"Path\": \"/test\",\n    \"BaseDomain\": \"test.com\",\n    \"AllowedUsers\": [\n        \"user123\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c717c4f0-9ddc-4174-8343-0b32bd2c2430\"\n    }\n}",
+        "title": "CreateSignOnAgentService"
+      }
+    ],
     "DeleteAIMCredential": [
       {
         "document": "DeleteAIMCredential",
@@ -230,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"ID\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "删除服务"
+      }
+    ],
+    "DeleteSignOnAgentService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSignOnAgentService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-********\",\n    \"AgentID\": \"ins-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d130b12-141a-4c9e-8e7c-2bfd54dfd7b9\"\n    }\n}",
+        "title": "DeleteSignOnAgentService"
       }
     ],
     "DescribeAIMCredential": [

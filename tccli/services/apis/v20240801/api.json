@@ -119,6 +119,13 @@
       "output": "CreateServiceResponse",
       "status": "online"
     },
+    "CreateSignOnAgentService": {
+      "document": "创建Agent认证服务",
+      "input": "CreateSignOnAgentServiceRequest",
+      "name": "创建Agent认证服务",
+      "output": "CreateSignOnAgentServiceResponse",
+      "status": "online"
+    },
     "DeleteAIMCredential": {
       "document": "删除Credential",
       "input": "DeleteAIMCredentialRequest",
@@ -201,6 +208,13 @@
       "input": "DeleteServiceRequest",
       "name": "删除服务",
       "output": "DeleteServiceResponse",
+      "status": "online"
+    },
+    "DeleteSignOnAgentService": {
+      "document": "删除Agent认证服务",
+      "input": "DeleteSignOnAgentServiceRequest",
+      "name": "删除Agent认证服务",
+      "output": "DeleteSignOnAgentServiceResponse",
       "status": "online"
     },
     "DescribeAIMCredential": {
@@ -2523,6 +2537,96 @@
       ],
       "type": "object"
     },
+    "CreateSignOnAgentServiceRequest": {
+      "document": "CreateSignOnAgentService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例</p>",
+          "example": "ins-********",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentID</p>",
+          "example": "ins-********",
+          "member": "string",
+          "name": "AgentID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口</p>",
+          "example": "1234",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token</p>",
+          "example": "token123",
+          "member": "string",
+          "name": "AgentToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径</p>",
+          "example": "/test",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "test.com",
+          "member": "string",
+          "name": "BaseDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>允许用户列表</p>",
+          "example": "[\"user123\"]",
+          "member": "string",
+          "name": "AllowedUsers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignOnAgentServiceResponse": {
+      "document": "CreateSignOnAgentService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAIMCredentialRequest": {
       "document": "DeleteAIMCredential请求参数结构体",
       "members": [
@@ -3081,6 +3185,42 @@
     },
     "DeleteServiceResponse": {
       "document": "DeleteService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSignOnAgentServiceRequest": {
+      "document": "DeleteSignOnAgentService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-********",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentID</p>",
+          "example": "ins-********",
+          "member": "string",
+          "name": "AgentID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSignOnAgentServiceResponse": {
+      "document": "DeleteSignOnAgentService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

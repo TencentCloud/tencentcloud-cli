@@ -203,6 +203,13 @@
       "output": "DescribeBillingResourceGroupResponse",
       "status": "online"
     },
+    "DescribeBillingResourceGroupAttachedWorkspaces": {
+      "document": "查询资源组关联的工作空间列表",
+      "input": "DescribeBillingResourceGroupAttachedWorkspacesRequest",
+      "name": "查询资源组绑定的工作空间列表",
+      "output": "DescribeBillingResourceGroupAttachedWorkspacesResponse",
+      "status": "online"
+    },
     "DescribeBillingResourceGroupHealthCheckTasks": {
       "document": "查询资源组健康检测任务列表",
       "input": "DescribeBillingResourceGroupHealthCheckTasksRequest",
@@ -5102,6 +5109,43 @@
     "DeleteTrainingTaskResponse": {
       "document": "DeleteTrainingTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceGroupAttachedWorkspacesRequest": {
+      "document": "DescribeBillingResourceGroupAttachedWorkspaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组ID",
+          "example": "rsg-qdzrqv43",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceGroupAttachedWorkspacesResponse": {
+      "document": "DescribeBillingResourceGroupAttachedWorkspaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间列表",
+          "example": "无",
+          "member": "ResourceGroupAttachedWorkspace",
+          "name": "Workspaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10252,6 +10296,102 @@
         }
       ],
       "usage": "both"
+    },
+    "JobBrief": {
+      "document": "资源组中的任务简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "train-6j9rmdgj",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "LLM训练任务",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "TRAIN",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建者子账号UIN",
+          "example": "100040143562",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建者子账号名称",
+          "example": "算法工程师",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动时间",
+          "example": "2025-10-03 17:59:24",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务调度到的节点信息",
+          "example": "无",
+          "member": "ResourceInstanceInfo",
+          "name": "InstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务启动的Pod名",
+          "example": "[\"train-l3qaafxi\"]",
+          "member": "string",
+          "name": "PodNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LoadBalancerConfig": {
       "document": "用于描述负载均衡绑定的配置",
@@ -15459,6 +15599,42 @@
       ],
       "usage": "out"
     },
+    "ResourceGroupAttachedWorkspace": {
+      "document": "资源组关联的工作空间信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "2073600",
+          "member": "string",
+          "name": "TiProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名",
+          "example": "算法组A",
+          "member": "string",
+          "name": "TiProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组在当前工作空间下占用资源的任务列表",
+          "example": "无",
+          "member": "JobBrief",
+          "name": "RunningJobs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResourceGroupInfo": {
       "document": "在线服务中服务的资源组简略信息结构",
       "members": [
@@ -15653,6 +15829,32 @@
         }
       ],
       "usage": "both"
+    },
+    "ResourceInstanceInfo": {
+      "document": "资源组节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组节点ID",
+          "example": "sm-7z8dc13e",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组节点名称",
+          "example": "HCC-A100",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResourceInstanceRunningJobInfo": {
       "document": "资源组节点运行任务信息",

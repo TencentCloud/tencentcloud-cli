@@ -237,6 +237,61 @@ def doDescribeAgentApps(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteSignOnAgentService(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSignOnAgentServiceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteSignOnAgentService(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeModel(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -787,7 +842,7 @@ def doDescribeServices(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMcpSecurityRules(args, parsed_globals):
+def doDescribeMcpSecurityRuleByPass(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -819,11 +874,11 @@ def doDescribeMcpSecurityRules(args, parsed_globals):
     client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMcpSecurityRulesRequest()
+    model = models.DescribeMcpSecurityRuleByPassRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeMcpSecurityRules(model)
+        rsp = client.DescribeMcpSecurityRuleByPass(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -842,7 +897,7 @@ def doDescribeMcpSecurityRules(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMcpServers(args, parsed_globals):
+def doDescribeAgentAppMcpServers(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -874,11 +929,11 @@ def doDescribeMcpServers(args, parsed_globals):
     client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMcpServersRequest()
+    model = models.DescribeAgentAppMcpServersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeMcpServers(model)
+        rsp = client.DescribeAgentAppMcpServers(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -989,6 +1044,61 @@ def doCreateAgentCredential(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateAgentCredential(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyAgentAppMcpServers(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAgentAppMcpServersRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyAgentAppMcpServers(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1227,7 +1337,7 @@ def doDescribeTokenLogs(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMcpSecurityRuleByPass(args, parsed_globals):
+def doDescribeMcpSecurityRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1259,11 +1369,11 @@ def doDescribeMcpSecurityRuleByPass(args, parsed_globals):
     client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMcpSecurityRuleByPassRequest()
+    model = models.DescribeMcpSecurityRulesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeMcpSecurityRuleByPass(model)
+        rsp = client.DescribeMcpSecurityRules(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1392,7 +1502,7 @@ def doCreateAgentApp(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAgentAppMcpServers(args, parsed_globals):
+def doDescribeMcpServers(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1424,11 +1534,11 @@ def doDescribeAgentAppMcpServers(args, parsed_globals):
     client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAgentAppMcpServersRequest()
+    model = models.DescribeMcpServersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAgentAppMcpServers(model)
+        rsp = client.DescribeMcpServers(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1502,7 +1612,7 @@ def doModifyMcpServer(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAgentAppModelServices(args, parsed_globals):
+def doCreateSignOnAgentService(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1534,11 +1644,11 @@ def doCreateAgentAppModelServices(args, parsed_globals):
     client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAgentAppModelServicesRequest()
+    model = models.CreateSignOnAgentServiceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateAgentAppModelServices(model)
+        rsp = client.CreateSignOnAgentService(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2877,7 +2987,7 @@ def doCreateApp(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAgentAppMcpServers(args, parsed_globals):
+def doEnableByPassMcpSecurityRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2909,11 +3019,11 @@ def doModifyAgentAppMcpServers(args, parsed_globals):
     client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAgentAppMcpServersRequest()
+    model = models.EnableByPassMcpSecurityRuleRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyAgentAppMcpServers(model)
+        rsp = client.EnableByPassMcpSecurityRule(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3427,7 +3537,7 @@ def doBindActMcpSecurityRule(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doEnableByPassMcpSecurityRule(args, parsed_globals):
+def doCreateAgentAppModelServices(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3459,11 +3569,11 @@ def doEnableByPassMcpSecurityRule(args, parsed_globals):
     client = mod.ApisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnableByPassMcpSecurityRuleRequest()
+    model = models.CreateAgentAppModelServicesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.EnableByPassMcpSecurityRule(model)
+        rsp = client.CreateAgentAppModelServices(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3497,6 +3607,7 @@ ACTION_MAP = {
     "DeleteModel": doDeleteModel,
     "DescribeAgentCredential": doDescribeAgentCredential,
     "DescribeAgentApps": doDescribeAgentApps,
+    "DeleteSignOnAgentService": doDeleteSignOnAgentService,
     "DescribeModel": doDescribeModel,
     "DeleteAgentAppMcpServers": doDeleteAgentAppMcpServers,
     "GetAIMCredential": doGetAIMCredential,
@@ -3507,20 +3618,21 @@ ACTION_MAP = {
     "DeleteService": doDeleteService,
     "CreateAgentAppMcpServers": doCreateAgentAppMcpServers,
     "DescribeServices": doDescribeServices,
-    "DescribeMcpSecurityRules": doDescribeMcpSecurityRules,
-    "DescribeMcpServers": doDescribeMcpServers,
+    "DescribeMcpSecurityRuleByPass": doDescribeMcpSecurityRuleByPass,
+    "DescribeAgentAppMcpServers": doDescribeAgentAppMcpServers,
     "ModifyModel": doModifyModel,
     "CreateAgentCredential": doCreateAgentCredential,
+    "ModifyAgentAppMcpServers": doModifyAgentAppMcpServers,
     "CheckMcpServerUnique": doCheckMcpServerUnique,
     "DescribeAgentApp": doDescribeAgentApp,
     "DeleteMcpServer": doDeleteMcpServer,
     "DescribeTokenLogs": doDescribeTokenLogs,
-    "DescribeMcpSecurityRuleByPass": doDescribeMcpSecurityRuleByPass,
+    "DescribeMcpSecurityRules": doDescribeMcpSecurityRules,
     "DescribeMcpSecurityRule": doDescribeMcpSecurityRule,
     "CreateAgentApp": doCreateAgentApp,
-    "DescribeAgentAppMcpServers": doDescribeAgentAppMcpServers,
+    "DescribeMcpServers": doDescribeMcpServers,
     "ModifyMcpServer": doModifyMcpServer,
-    "CreateAgentAppModelServices": doCreateAgentAppModelServices,
+    "CreateSignOnAgentService": doCreateSignOnAgentService,
     "DescribeAIMCredentials": doDescribeAIMCredentials,
     "DeleteApp": doDeleteApp,
     "DeleteAgentAppModelServices": doDeleteAgentAppModelServices,
@@ -3545,7 +3657,7 @@ ACTION_MAP = {
     "CreateModel": doCreateModel,
     "DescribeModels": doDescribeModels,
     "CreateApp": doCreateApp,
-    "ModifyAgentAppMcpServers": doModifyAgentAppMcpServers,
+    "EnableByPassMcpSecurityRule": doEnableByPassMcpSecurityRule,
     "ModifyAgentAppModelServices": doModifyAgentAppModelServices,
     "DeleteAgentAppApiKey": doDeleteAgentAppApiKey,
     "ModifyAgentCredential": doModifyAgentCredential,
@@ -3555,7 +3667,7 @@ ACTION_MAP = {
     "DescribeAgentAppModelServices": doDescribeAgentAppModelServices,
     "DeleteAgentAppSecret": doDeleteAgentAppSecret,
     "BindActMcpSecurityRule": doBindActMcpSecurityRule,
-    "EnableByPassMcpSecurityRule": doEnableByPassMcpSecurityRule,
+    "CreateAgentAppModelServices": doCreateAgentAppModelServices,
 
 }
 
